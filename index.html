@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Visual Study Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="title-group">
+                <h1>LeetCode Visual Study Guide</h1>
+                <span class="badge">3873 Questions</span>
+            </div>
+            <div class="search-container">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="searchInput" placeholder="Search by ID, Pattern, or Title...">
+            </div>
+        </header>
+
+        <main id="mainArea">
+            <div id="loader" class="loader-container">
+                <div class="spinner"></div>
+                <p>Loading 3,800+ questions…</p>
+            </div>
+
+            <div class="table-container" style="display: none;" id="dataContainer">
+                <table id="leetcodeTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 3.5%">ID</th>
+                            <th style="width: 8%">Problem Title</th>
+                            <th style="width: 8%">Brute Force Method</th>
+                            <th style="width: 7%">BF Complexity Vis.</th>
+                            <th style="width: 8%">How to Draw BF</th>
+                            <th style="width: 8%">Optimised Pattern</th>
+                            <th style="width: 7%">Opt Vis. Technique</th>
+                            <th style="width: 9%">Dry Run (Opt)</th>
+                            <th style="width: 9%">How to Draw (Opt)</th>
+                            <th style="width: 7%">Opt Complexity Vis.</th>
+                            <th style="width: 8%">Draw Opt Complexity</th>
+                            <th style="width: 8%">Mem Vis (BF)</th>
+                            <th style="width: 9%">Mem Vis (Opt)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
