@@ -1,0 +1,13 @@
+ID: 1588
+Problem Title: Sum of All Odd Length Subarrays
+Brute Force Method: Generate every possible odd-length subarray [i, j] using three nested loops and sum the elements. $O(N^3)$.
+BF Complexity Visuals: Subarray Pyramid Expansion
+How to Draw BF: Draw the array. Below it, draw all subarrays of length 1, then length 3, then length 5. The overlapping brackets cover the page.
+Optimised Pattern: Combinatorics (Contribution of Each Element)
+Opt Vis. Technique: The Element Frequency Heatmap
+Dry Run (Opt): Calculate how many times arr[i] appears in any odd-length subarray. An element at index i is in ((i+1) \cdot (n-i) + 1) / 2 subarrays. Multiply value by count.
+How to Draw (Opt): Draw the array. Below each index, write a multiplier (e.g., i=0 is in 3 subarrays). Draw arrows from the element to all the hypothetical brackets it belongs to.
+Opt Complexity Visuals: Pure Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Above each node, draw a single math operation box. Total time is N \times $O(1)$.
+Mem Vis (BF): Creating N^2 lists of subarrays. $O(N^3)$.
+Mem Vis (Opt): A single `total_sum` variable. $O(1)$ space.

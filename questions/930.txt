@@ -1,0 +1,13 @@
+ID: 930
+Problem Title: Binary Subarrays With Sum
+Brute Force Method: Nested loops checking every possible subarray (i, j) and calculating the sum of elements within that range.
+BF Complexity Visuals: $O(N^2)$. A dense triangle of overlapping ranges being summed repeatedly.
+How to Draw BF: Draw the array. Below it, draw a "ruler" that starts at index 0 and expands, then starts at index 1 and expands, etc.
+Optimised Pattern: Prefix Sum + Hashmap (or Sliding Window)
+Opt Vis. Technique: A "Look-back" ledger. As you walk, you record your current total. You check the ledger to see how many times (CurrentSum - Goal) occurred in the past.
+Dry Run (Opt): Maintain `currSum`. For each element, `currSum += val`. The number of valid subarrays ending here is `countMap[currSum - goal]`. Update `countMap[currSum]++`.
+How to Draw (Opt): Draw a timeline of running totals. Below each total, draw an arrow pointing back to a previous total that, when subtracted, equals the goal.
+Opt Complexity Visuals: $O(N)$. A single linear sweep with constant time lookups.
+How to Draw Opt Complexity: Draw a straight horizontal arrow. Above it, draw a small table (Map) that updates its tallies as the arrow moves.
+Mem Vis (BF): $O(1)$ extra space if recalculating, but $O(N^2)$ time.
+Mem Vis (Opt): $O(N)$ for the frequency map. Draw a two-column vertical table: [Sum -&gt; Frequency].

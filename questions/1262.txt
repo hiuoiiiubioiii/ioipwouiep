@@ -1,0 +1,13 @@
+ID: 1262
+Problem Title: Greatest Sum Divisible by Three
+Brute Force Method: Generate every possible subsequence of the array. For each subsequence, calculate the sum and check if it's divisible by 3. Keep the max.
+BF Complexity Visuals: Power Set Subset Tree
+How to Draw BF: Draw an array. Branch out "Include" or "Exclude" for every element. Write the sum at each leaf. Circle sums divisible by 3. Write $O(2^N)$.
+Optimised Pattern: Dynamic Programming (Remainder State)
+Opt Vis. Technique: Modular Bucketing (3-State DP)
+Dry Run (Opt): Maintain 3 variables: `dp[0], dp[1], dp[2]` representing the max sum found so far that has a remainder of 0, 1, or 2 when divided by 3. For each number, update all three states based on the new remainder.
+How to Draw (Opt): Draw three boxes labeled 0, 1, 2. Process a number (e.g., 5, remainder 2). Show 5 being added to the value in box 1 and the result potentially updating box 0 (since 1+2=3 equiv 0).
+Opt Complexity Visuals: Fixed-State Linear Pass
+How to Draw Opt Complexity: Draw a horizontal line for the array. Above it, draw three small constant tracks. Write $O(N \cdot 3)$ = $O(N)$.
+Mem Vis (BF): Draw a massive list of 2^N sums.
+Mem Vis (Opt): Draw exactly three integer variables: `rem0`, `rem1`, `rem2`. Space: $O(1)$.

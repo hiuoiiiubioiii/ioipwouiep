@@ -1,0 +1,13 @@
+ID: 2683
+Problem Title: Neighboring Bitwise XOR
+Brute Force Method: Try to reconstruct the original array by guessing the first element (0 or 1) and checking if the entire sequence is valid.
+BF Complexity Visuals: Binary Guess and Check
+How to Draw BF: Draw two branching paths (Start with 0, Start with 1). Follow each to the end to see if they satisfy the XOR condition. $O(N)$.
+Optimised Pattern: XOR Sum Property
+Opt Vis. Technique: Cumulative Parity Check
+Dry Run (Opt): Notice that `derived[i] = original[i] ^ original[i+1]`. If you XOR all elements of `derived`, the result is `original[0] ^ original[1] ^ original[1] ^ ... ^ original[n-1] ^ original[0]`, which equals 0. A valid array exists if `XOR_sum(derived) == 0`.
+How to Draw (Opt): Draw the `derived` array. XOR all numbers together. If the final result is 0, write "True".
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw a single pass arrow XORing elements. $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ constant space (one XOR accumulator).

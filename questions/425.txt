@@ -1,0 +1,13 @@
+ID: 425
+Problem Title: Word Squares
+Brute Force Method: Brute Force Backtracking Try every possible word for every row in the square. Check validity at the end.
+BF Complexity Visuals: Giant Choice Tree
+How to Draw BF: Draw a tree with N levels, where each node has W branches (W = \# of words). $O(W^N)$.
+Optimised Pattern: Trie-Based Backtracking Use a Trie to instantly find all words that start with a specific prefix (the prefix being the current column's characters).
+Opt Vis. Technique: Prefix Constraints
+Dry Run (Opt): Row 0 is "BALL". This means Row 1 MUST start with 'A', Row 2 with 'L', Row 3 with 'L'. Use the Trie to find these words instantly.
+How to Draw (Opt): Draw an empty 4 \times 4 grid. Write "BALL" in row 1. Draw arrows from Row 1's letters to the first letters of subsequent rows.
+Opt Complexity Visuals: Pruned Search Tree
+How to Draw Opt Complexity: Draw the same tree but show most branches ending immediately because the Trie returns "No words with this prefix."
+Mem Vis (BF): Result List Storing thousands of invalid square attempts.
+Mem Vis (Opt): Trie + Recursion Draw the Trie structure and the recursion stack of depth L (word length).

@@ -1,0 +1,13 @@
+ID: 1433
+Problem Title: Check If a String Can Break Another String
+Brute Force Method: Generate all permutations of both strings. For every pair of permutations, check if one "breaks" the other (all chars &gt;=).
+BF Complexity Visuals: Factorial Permutation Explosion
+How to Draw BF: Draw two nodes. Each explodes into N! paths. Draw a matching engine trying to find one valid pair. Label $O(N! \cdot N!)$.
+Optimised Pattern: Sorting + Frequency Counting
+Opt Vis. Technique: Sorted Alignment Check
+Dry Run (Opt): Sort both strings. Check if `s1[i] &gt;= s2[i]` for all `i`. Then check if `s2[i] &gt;= s1[i]` for all `i`. If either is true, return true.
+How to Draw (Opt): Draw two arrays of sorted characters, one above the other. Draw vertical lines connecting `s1[i]` to `s2[i]`. If all arrows point "up" or all arrows point "down", it's a break.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw $O(N \log N)$ Sort -&gt; $O(N)$ Scan. Total $O(N \log N)$.
+Mem Vis (BF): Massive Permutation Set
+Mem Vis (Opt): Two sorted character arrays or two frequency arrays (size 26). Space $O(N)$ or $O(1)$.

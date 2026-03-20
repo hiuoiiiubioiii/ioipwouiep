@@ -1,0 +1,13 @@
+ID: 748
+Problem Title: Shortest Completing Word
+Brute Force Method: For every word in the dictionary, create a frequency map and compare it letter-by-letter with the license plate map.
+BF Complexity Visuals: Nested Map Comparison
+How to Draw BF: Draw the license plate map. Draw a loop that creates and compares a map for every word. $O(\text{Words} \\text{cdot Avg}_\text{Length})$.
+Optimised Pattern: Prime Product Hashing or Frequency Array
+Opt Vis. Technique: Letter Inventory Check
+Dry Run (Opt): Convert license plate to a 26-slot frequency array. For each word, subtract its letters from a copy of the array. If all plate requirements are met, it's a candidate.
+How to Draw (Opt): Draw a checklist based on the license plate. For each word, check off letters. Circle the shortest word that finishes the checklist.
+Opt Complexity Visuals: Linear Scan with Constant Overhead
+How to Draw Opt Complexity: Draw a list of words. Next to it, draw a fixed-size 26-box array being used repeatedly. $O(N)$.
+Mem Vis (BF): Multiple map objects (high overhead).
+Mem Vis (Opt): A fixed 26-integer array (O(1) constant space relative to alphabet).

@@ -1,0 +1,13 @@
+ID: 2458
+Problem Title: Height of Binary Tree After Subtree Removal Queries
+Brute Force Method: For each query (node), physically or logically "remove" the subtree rooted at that node and perform a fresh DFS to calculate the tree height.
+BF Complexity Visuals: Query-Wise Full Tree DFS
+How to Draw BF: Draw a tree. For Query 1, circle a node and draw red 'X's on its children. Redraw the tree. Label $O(Q \cdot N)$.
+Optimised Pattern: DFS + Precomputation (Level-wise Max Depths)
+Opt Vis. Technique: Symmetric DFS traversal with Shadow Tracking
+Dry Run (Opt): Record heights for all nodes. For each level, keep the top 2 maximum heights. If a removed node was the max, the new height uses the 2nd max.
+How to Draw (Opt): Draw the tree. For each node, write its depth and height. Group nodes by level. For each level, circle the two highest "height+depth" values.
+Opt Complexity Visuals: Double DFS Pass
+How to Draw Opt Complexity: Draw two arrows over the tree (Pre-order and Post-order). Label $O(N)$ for precompute and $O(Q)$ for queries. Total $O(N + Q)$.
+Mem Vis (BF): Draw a recursion stack for every query.
+Mem Vis (Opt): Draw Map/Arrays for: `node_height`, `level_max1`, `level_max2`. Label $O(N)$ Space.

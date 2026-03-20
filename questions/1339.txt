@@ -1,0 +1,13 @@
+ID: 1339
+Problem Title: Maximum Product of Splitted Binary Tree
+Brute Force Method: For every edge, physically remove it, run two separate DFS traversals to sum both resulting subtrees, and calculate the product.
+BF Complexity Visuals: Edge-by-Edge Tree Partitioning
+How to Draw BF: Draw a tree. Draw a "scissor" icon on one edge. Color the two resulting pieces. Repeat for every single edge in the tree, showing $O(N²)$ traversals.
+Optimised Pattern: Post-Order DFS Sum Tracking
+Opt Vis. Technique: Subtree Sum Collection
+Dry Run (Opt): Run Pass 1 (DFS) to find the `TotalSum` of the tree. Run Pass 2 (DFS): for each node, calculate its subtree sum and store it. The product is `SubtreeSum * (TotalSum - SubtreeSum)`.
+How to Draw (Opt): Draw a tree. In each node, write the sum of all nodes below it. Calculate the product at each node by multiplying its value with (Total - Value). Circle the maximum.
+Opt Complexity Visuals: Two-Pass Linear Sweep
+How to Draw Opt Complexity: Draw a single line tracing the tree once for summation and once for product calculation, proving strict $O(N)$.
+Mem Vis (BF): $O(N)$ Re-traversal Overhead: Multiple recursive stacks rebuilding sums from scratch for every edge cut.
+Mem Vis (Opt): Single List of Subtree Sums: Draw a `std::vector` that simply records the result of each `dfs(node)` call during one pass.

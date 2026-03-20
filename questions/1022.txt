@@ -1,0 +1,13 @@
+ID: 1022
+Problem Title: Sum of Root To Leaf Binary Numbers
+Brute Force Method: Traverse the tree, passing down a string to build the binary number ("1" -&gt; "10" -&gt; "101"). At each leaf, parse the binary string to an integer and add to a global sum.
+BF Complexity Visuals: A tree where each node holds a dynamically growing string, resulting in heavy string parsing bottlenecks at the leaves.
+How to Draw BF: Draw a binary tree. Next to each node, write the string "101". At the bottom, write `parseInt("101", 2) -&gt; 5`. Write $O(N \cdot H)$ for string operations.
+Optimised Pattern: Pre-order Traversal (Bitwise Accumulation).
+Opt Vis. Technique: A falling snowball that doubles in size (shifts left by 1) and absorbs the current node's value as it rolls down each branch.
+Dry Run (Opt): Start at root with `val = 0`. As you go down, calculate `val = (val &lt;&lt; 1) | node.val` (or `val * 2 + node.val`). When you hit a leaf, return `val`. For non-leaves, return `left_sum + right_sum`.
+How to Draw (Opt): Draw a tree. Pass a number down. Parent passes `2 * P + node.val` to children. At the leaves, circle the final numbers and sum them all up.
+Opt Complexity Visuals: Standard tree traversal visiting each node exactly once.
+How to Draw Opt Complexity: Draw a binary tree with arrows tracing a DFS path. Write Time: $O(N)$.
+Mem Vis (BF): $O(N)$ unique string objects allocated, one for each path down the tree.
+Mem Vis (Opt): $O(H)$ implicit call stack memory (Height of the tree), passing primitive integers. Perfectly bounded.

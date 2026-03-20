@@ -1,0 +1,13 @@
+ID: 614
+Problem Title: Second Degree Follower (SQL)
+Brute Force Method: Correlated subqueries: for every followee, run a new independent query to see if they are also a follower, then count again.
+BF Complexity Visuals: Fractal branching tree with redundant lookups.
+How to Draw BF: Draw a "User A". Draw arrows to 5 followers. For each follower, draw a separate lookup bubble verifying their status. Write $O(N^2)$ lookups.
+Optimised Pattern: Inner Join or Group By with IN clause.
+Opt Vis. Technique: Set Intersection &amp; Aggregation.
+Dry Run (Opt): Isolate unique people who are followers. Filter the `followee` column to only include people from that unique list. Group by the remaining followees and COUNT their followers.
+How to Draw (Opt): Draw two lists: "Followees" and "Followers". Draw straight lines connecting matching names between the two lists. Group the connected names and tally them.
+Opt Complexity Visuals: Two linear passes passing through an $O(1)$ hash map/intersection.
+How to Draw Opt Complexity: Draw two parallel data streams feeding into a single Venn Diagram intersection, merging into a count $O(N)$.
+Mem Vis (BF): Draw a deep stack of temporary tables spawned per row.
+Mem Vis (Opt): Draw a single Hash Set in memory containing valid "follower" names, scaling at $O(U)$ unique users.

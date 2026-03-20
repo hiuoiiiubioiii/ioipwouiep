@@ -1,0 +1,13 @@
+ID: 2098
+Problem Title: Subsequence of Size K With the Largest Even Sum
+Brute Force Method: Generate every possible subsequence of size K, sum them up, and check if the sum is even.
+BF Complexity Visuals: Combination Choice Grid
+How to Draw BF: Draw N items. Choose K. Use $O(N-\text{choose}-K)$ to visualize the massive search space.
+Optimised Pattern: Greedy Selection + Smallest-Odd/Even Swap
+Opt Vis. Technique: Heuristic Swap Logic
+Dry Run (Opt): Sort numbers descending. Pick top K. If sum is even, you're done. If odd, try two swaps: 1) Replace smallest even in K with largest odd outside K, 2) Replace smallest odd in K with largest even outside. Take max.
+How to Draw (Opt): Draw a sorted list. Draw a vertical line after K items. If sum is odd, draw arrows showing potential "trades" across the line to flip parity.
+Opt Complexity Visuals: Sorting Funnel to $O(K)$ Sum
+How to Draw Opt Complexity: Draw a funnel (O(N log N) sort) followed by a single $O(K)$ addition and $O(1)$ swap checks. Total Time $O(N \log N)$.
+Mem Vis (BF): Memory for every possible subsequence combination.
+Mem Vis (Opt): Two separate lists for even and odd numbers. Space $O(N)$.

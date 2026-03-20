@@ -1,0 +1,13 @@
+ID: 554
+Problem Title: Brick Wall
+Brute Force Method: Draw the wall on a grid and check every possible vertical line (every x-coordinate) to count how many bricks it cuts.
+BF Complexity Visuals: Grid scan of Width x Height. $O(W \cdot H)$.
+How to Draw BF: Draw a brick wall. Draw 100 vertical lines through it. For each line, count how many bricks it intersects.
+Optimised Pattern: Hash Map of Edge Frequencies.
+Opt Vis. Technique: A map of "cracks." You are looking for the x-coordinate where the most brick edges align. The more edges, the fewer bricks cut.
+Dry Run (Opt): For each row, track running width (edge position). `Map[edge]++`. The answer is `Rows - Max(Map.values())`.
+How to Draw (Opt): Draw the wall. Below it, draw a number line. For every brick edge, draw a tally mark on the number line. Find the coordinate with the most tallies.
+Opt Complexity Visuals: Linear scan of every brick in the wall. $O(N)$ where N is total bricks.
+How to Draw Opt Complexity: Draw a timeline representing the width of the wall, with a single pass filling a table.
+Mem Vis (BF): A 2D matrix representing the entire wall area (Width x Height).
+Mem Vis (Opt): A Hash Map storing unique edge positions. $O(\text{Number of unique edges})$.

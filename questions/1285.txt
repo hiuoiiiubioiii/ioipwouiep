@@ -1,0 +1,13 @@
+ID: 1285
+Problem Title: Find the Start and End Number of Continuous Ranges (SQL)
+Brute Force Method: For every ID, search for the next ID in a loop. If `ID + 1` doesn't exist, mark it as an "End" and look for the next available ID as a "Start".
+BF Complexity Visuals: Row-by-Row Search Jump
+How to Draw BF: Draw a list of IDs: 1, 2, 3, 7, 8, 10. For '1', look at '2'. For '2', look at '3'. For '3', scan the rest to see if '4' exists. Write $O(N^2)$.
+Optimised Pattern: Gaps and Islands (Row Number Difference)
+Opt Vis. Technique: Parallel Sequence Alignment
+Dry Run (Opt): Line up the IDs in order. Below them, write a sequence of row numbers (1, 2, 3...). Subtract the row number from the ID. Continuous ranges will produce the same constant difference. Group by this difference.
+How to Draw (Opt): Draw a table. Col 1: ID (1, 2, 3, 7, 8). Col 2: RowNum (1, 2, 3, 4, 5). Col 3: Diff (0, 0, 0, 3, 3). Circle the IDs with the same Diff. The min/max of these circles are your Start/End.
+Opt Complexity Visuals: Single Sort-and-Scan
+How to Draw Opt Complexity: Draw a sorted list. Draw a single arrow scanning once, calculating a subtraction at each step. Write $O(N \log N)$.
+Mem Vis (BF): Draw multiple temporary subqueries checking for `id+1` and `id-1`.
+Mem Vis (Opt): Draw a single temporary table with one extra integer column for the "Difference Constant."

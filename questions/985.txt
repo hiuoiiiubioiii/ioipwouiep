@@ -1,0 +1,13 @@
+ID: 985
+Problem Title: Sum of Even Numbers After Queries
+Brute Force Method: For every query, update the array element, then iterate through the entire array and sum all even numbers from scratch.
+BF Complexity Visuals: $O(Q \cdot N)$. A "Full Scan" for every single change.
+How to Draw BF: Draw an array. For Query 1, circle every even number and add them. For Query 2, do it again. The circles overlap and repeat work.
+Optimised Pattern: Global Sum Maintenance (Delta Tracking)
+Opt Vis. Technique: "The Live Counter." Calculate the sum of all even numbers once. For each query, only check if the specific number being changed was even (remove it from sum) or became even (add it to sum).
+Dry Run (Opt): 1. `S = sum(evens)`. 2. For `val, idx` in query: if `A[idx]` was even, `S -= A[idx]`. 3. `A[idx] += val`. 4. If `A[idx]` is now even, `S += A[idx]`. 5. Store `S`.
+How to Draw (Opt): Draw a large "Total" box. When a number changes, draw an arrow "subtracting" the old value out of the box and another arrow "adding" the new value in.
+Opt Complexity Visuals: $O(N + Q)$. One initial scan, then $O(1)$ per query.
+How to Draw Opt Complexity: Draw a horizontal timeline. Below it, draw a single "Running Sum" box that flickers and updates its value at each step.
+Mem Vis (BF): $O(1)$ extra space but very slow.
+Mem Vis (Opt): $O(1)$ extra space (excluding the result array). Draw one small box labeled `evenSum`.

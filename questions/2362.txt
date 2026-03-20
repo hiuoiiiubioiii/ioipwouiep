@@ -1,0 +1,13 @@
+ID: 2362
+Problem Title: Generate the Invoice (SQL Premium)
+Brute Force Method: (Conceptual) For every invoice, join all products, calculate total price per invoice, find the max price, and then re-fetch all items for that specific invoice.
+BF Complexity Visuals: Multiple Full Table Joins
+How to Draw BF: Draw the `Invoices` table. For every single ID, draw an arrow to the `Products` table to find prices, sum them up, and then scan again for the winner.
+Optimised Pattern: CTE + Window Functions (RANK)
+Opt Vis. Technique: Aggregated Winner Filter
+Dry Run (Opt): Use a Common Table Expression (CTE) to sum `price * quantity` grouped by `invoice_id`. Rank them by total price DESC (and ID ASC). Join the top-ranked ID back to the original table.
+How to Draw (Opt): Draw a table. Group by ID. Write the "Total " next to each group. Circle the biggest total. Then, draw a box around only the rows belonging to that circled ID.
+Opt Complexity Visuals: Single Aggregation + Join
+How to Draw Opt Complexity: Draw a data stream into a "Summing Bucket," then through a "Ranking Filter," then back to the "Source" for details.
+Mem Vis (BF): Draw several large temporary tables for every sub-sum.
+Mem Vis (Opt): Draw one Intermediate Result Set with `invoice_id` and its calculated `total_price`.

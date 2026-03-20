@@ -1,0 +1,13 @@
+ID: 2971
+Problem Title: Find Polygon With the Largest Perimeter
+Brute Force Method: Try every possible subset of sides (2^N) and check the polygon inequality for each.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw a binary tree of depth N. Branch into "Take" or "Skip" for each side. Leaves = 2^N.
+Optimised Pattern: Greedy (Sorting + Prefix Sums)
+Opt Vis. Technique: Incremental Boundary Check
+Dry Run (Opt): Sort sides. Keep a running sum of the first i sides. If `sum(0 to i-1) &gt; side[i]`, a polygon is possible with perimeter `sum + side[i]`. Track the max.
+How to Draw (Opt): Draw a sorted array. Below it, draw a "Sum Bar" that grows. For each new element, check if the Bar is longer than the new element.
+Opt Complexity Visuals: Sorting + Single Pass
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ for sort + $O(N)$ for prefix sum scan.
+Mem Vis (BF): Massive recursion stack for subsets.
+Mem Vis (Opt): A single long long for the running sum. Space $O(1)$ (ignoring sort).

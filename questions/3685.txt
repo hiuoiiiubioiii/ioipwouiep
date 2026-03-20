@@ -1,0 +1,13 @@
+ID: 3685
+Problem Title: Subsequence Sum After Capping Elements (Med)
+Brute Force Method: For every possible subsequence, apply the cap to each element, then sum them up. $O(2^N)$.
+BF Complexity Visuals: Recursive Branching with Capping.
+How to Draw BF: Draw the array. For each number, if it's 10 and cap is 5, write 5. Branch "Include" or "Exclude". 2^N leaves. Total failure for N &gt; 25.
+Optimised Pattern: Dynamic Programming (Knapsack variant) or Combinatorial Math. Since capping is a uniform rule, use the frequency of elements to calculate contributions.
+Opt Vis. Technique: The "Ceiling" Partition.
+Dry Run (Opt): Numbers larger than the cap all become the same value. Numbers smaller stay the same. Group them: [Small_Items] and [Large_Items rightarrow Cap]. Solve using 2^Count for the large group.
+How to Draw (Opt): Identify items &gt; Cap. If there are M such items, any subsequence involving any of them contributes the Cap value. Use DP to find sums of the small items and combine with the 2^M combinations of the capped ones.
+Opt Complexity Visuals: Grouped DP Table.
+How to Draw Opt Complexity: Write $O(N \\text{cdot MaxSum})$. Draw a grid where the capped items are handled as a single mathematical constant.
+Mem Vis (BF): A massive recursion stack with 2^N states.
+Mem Vis (Opt): A 1D DP array of size `MaxSum`. Space $O(\text{MaxSum})$.

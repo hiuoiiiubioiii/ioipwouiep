@@ -1,0 +1,13 @@
+ID: 625
+Problem Title: Minimum Factorization
+Brute Force Method: Backtracking/Recursion to find every possible combination of factors that multiply to A, then find the smallest number among them.
+BF Complexity Visuals: Massive multi-way branching factor tree.
+How to Draw BF: Draw number A. Branch out into every possible divisor (2 through 9). Branch again. It becomes an unmanageable explosion.
+Optimised Pattern: Greedy Factorization (Divisors 9 down to 2).
+Opt Vis. Technique: Reverse Digit Assembly.
+Dry Run (Opt): Try to divide A by 9, then 8... down to 2. Append the successful divisor to a result string. Since we want the *smallest* number, we use the largest divisors first and then reverse the string.
+How to Draw (Opt): Write the number A. Divide by 9 as many times as possible. Write the 9s at the end of your "Number-to-be". Move to 8, then 7. Read the digits from right to left.
+Opt Complexity Visuals: Linear scan of digits 9-2 per reduction step.
+How to Draw Opt Complexity: Draw a countdown from 9 to 2. Write $O(\log A)$ because the number A shrinks exponentially.
+Mem Vis (BF): Draw a massive recursion tree in memory with many duplicate states.
+Mem Vis (Opt): Draw a single string or long variable to store the digits. $O(1)$ relative to input magnitude.

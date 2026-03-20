@@ -1,0 +1,13 @@
+ID: 3274
+Problem Title: Check if Two Chessboard Squares Have the Same Color
+Brute Force Method: Create a 2D 8x8 matrix, manually fill it with 0 (black) and 1 (white), and look up the two coordinates. $O(1)$ but inefficient setup.
+BF Complexity Visuals: Static Grid Lookup
+How to Draw BF: Draw an 8x8 grid. Shade it like a chessboard. Circle the two target squares and check if both are shaded or both are white.
+Optimised Pattern: Parity Summation
+Opt Vis. Technique: Coordinate Parity Toggle
+Dry Run (Opt): Calculate (char - 'a') + (digit - '1'). If the sum is even, it's one color; if odd, it's the other. Compare the parity of both squares.
+How to Draw (Opt): Write the two coordinates (e.g., a1, c3). Convert to numbers: (0,0) and (2,2). Sum them: 0 and 4. Both are even, so they match.
+Opt Complexity Visuals: Constant Logic Block
+How to Draw Opt Complexity: Draw a single box with the formula (c+r) mod 2. Label it strictly $O(1)$ time.
+Mem Vis (BF): An 8x8 integer array (64 integers).
+Mem Vis (Opt): Two local integer variables (Strictly $O(1)$ space).

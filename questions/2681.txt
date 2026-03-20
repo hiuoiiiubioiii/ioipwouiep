@@ -1,0 +1,13 @@
+ID: 2681
+Problem Title: Power of Heroes
+Brute Force Method: Generate all possible non-empty subsets, find the max and min of each, and calculate the sum of (max² * min).
+BF Complexity Visuals: Exponential Subset Generation
+How to Draw BF: Draw a power set tree for N elements. Total subsets = 2^N. Label $O(2^N)$.
+Optimised Pattern: Sorting + Dynamic Programming (Prefix Sum)
+Opt Vis. Technique: Cumulative Weighting Transform
+Dry Run (Opt): 1. Sort the array. 2. For each element `nums[i]`, it is the maximum of any subset formed with elements to its left. The sum of minimums of those subsets follows a specific DP pattern: `s = (s * 2 + nums[i-1])`. Total power += `nums[i]² * (nums[i] + s)`.
+How to Draw (Opt): Draw the sorted array. For each number, calculate its "Power" by multiplying its square with its own value plus a running "weighted sum" of everything to its left.
+Opt Complexity Visuals: $O(N \log N)$ Sorting
+How to Draw Opt Complexity: Draw a sorting block $O(N \log N)$ followed by a single $O(N)$ pass with modulo math.
+Mem Vis (BF): Storing all 2^N subsets
+Mem Vis (Opt): $O(1)$ extra space (excluding sorting) if using a single running sum variable.

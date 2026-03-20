@@ -1,0 +1,13 @@
+ID: 3523
+Problem Title: Make Array Non-decreasing (Med)
+Brute Force Method: Try all possible valid increments at each step to satisfy condition, backtracking if total cost is sub-optimal.
+BF Complexity Visuals: Exponential State Space Tree.
+How to Draw BF: Draw an array. From each element, branch out lines representing +1, +2, +3 operations. Results in an explosive tree.
+Optimised Pattern: Greedy Single-Pass / Max-Tracker.
+Opt Vis. Technique: Staircase Leveling.
+Dry Run (Opt): Walk right. If the next step is lower than the current step, physically 'lift' the next step to match. Accumulate lift cost.
+How to Draw (Opt): Draw a bar chart. Draw a horizontal dashed line from the top of the highest bar seen. Shade the empty space to fill.
+Opt Complexity Visuals: Single Rightward Sweep.
+How to Draw Opt Complexity: Draw a horizontal axis. Draw one straight arrow scanning from left to right. $O(N)$.
+Mem Vis (BF): Recursion Call Stack: Draw deep stack frames holding copied, slightly modified array states.
+Mem Vis (Opt): Max-Tracker Variable: Draw just one integer box holding "Max Seen So Far" overwriting itself.

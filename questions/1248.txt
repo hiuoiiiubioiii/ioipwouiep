@@ -1,0 +1,13 @@
+ID: 1248
+Problem Title: Count Number of Nice Subarrays
+Brute Force Method: Generate every possible subarray. For each, count the number of odd integers. If it equals `k`, increment the total count.
+BF Complexity Visuals: Nested Subarray Windowing
+How to Draw BF: Draw an array. Draw brackets for every possible start and end. For each bracket, scan the contents. Write $O(N^2)$.
+Optimised Pattern: Sliding Window / Prefix Sum Hashing
+Opt Vis. Technique: Odd-Number "Running Tally"
+Dry Run (Opt): Convert the problem: Treat odd as 1 and even as 0. Now find the number of subarrays that sum to exactly `k`. Use a Sliding Window to find (at most k) - (at most k-1).
+How to Draw (Opt): Draw an array. Mark odd numbers with a '1'. Draw a window [L, R]. Move R to include k ones. Count how many L positions keep exactly k ones. Total = `Count(atMost(k)) - Count(atMost(k-1))`.
+Opt Complexity Visuals: Linear Runner Sweep
+How to Draw Opt Complexity: Draw an array. Draw two arrows (L, R) moving right. Write $O(N)$.
+Mem Vis (BF): Draw thousands of temporary subarray slices.
+Mem Vis (Opt): Draw a frequency array for prefix sums or just 4-5 integer variables for the sliding window. Space: $O(N)$ or $O(1)$.

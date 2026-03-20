@@ -1,0 +1,13 @@
+ID: 2719
+Problem Title: Count of Integers
+Brute Force Method: Iterate from `num1` to `num2`. Convert each number to a string, sum its characters, and check if it falls between `min_sum` and `max_sum`. TLEs massively on 10^22.
+BF Complexity Visuals: Massive Number Line Scanning
+How to Draw BF: Draw a giant number line. Draw a magnifying glass iterating over every single tick mark. Label it $O(N)$ where N is the massive numeric difference.
+Optimised Pattern: Trillions of temporary string allocations for digit extraction.
+Opt Vis. Technique: Digit DP + Memoization `solve(num2) - solve(num1 - 1)`
+Dry Run (Opt): Digit DP State Tree with Tight Bounds
+How to Draw (Opt): Build the number digit by digit (0-9). Track `current_sum`. If `is_tight` is true, the loop stops at the digit of the upper bound number. If `current_sum &gt; max_sum`, prune the branch immediately. Cache states `(index, current_sum, is_tight)`.
+Opt Complexity Visuals: Draw a tree branching 0-9. Snip branches where sum exceeds limits. Highlight the "tight" path along the rightmost edge mirroring the target number's actual digits.
+How to Draw Opt Complexity: 3D State Space Grid
+Mem Vis (BF): Draw a 3D box labeled Length (23) × MaxSum (400) × Tight (2). Write $O(L \cdot S)$ to show bounded constant time.
+Mem Vis (Opt): 3D Memoization Array (Draw a compact 3D array table to store integer counts, avoiding recalculation).

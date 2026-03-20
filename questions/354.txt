@@ -1,0 +1,13 @@
+ID: 354
+Problem Title: Russian Doll Envelopes
+Brute Force Method: Sort envelopes and use recursion with memoization to find the longest chain of envelopes that fit inside each other.
+BF Complexity Visuals: Recursive Chain Exploration
+How to Draw BF: Draw various sized envelopes. Draw a tree where choosing envelope A leads to choosing B, C, etc. Label $O(2^N)$ or $O(N^2)$ with DP.
+Optimised Pattern: Sort + Longest Increasing Subsequence (LIS) via Binary Search
+Opt Vis. Technique: Dimension Reduction to 1D LIS
+Dry Run (Opt): Sort envelopes by width (ascending). If widths are equal, sort height (descending). Now, find the LIS of the heights. The descending height trick prevents picking two envelopes with the same width.
+How to Draw (Opt): Draw envelopes as pairs (w, h). Sort them. Then extract just the h values and draw the "Patience Sorting" piles used in the $O(N \log N)$ LIS algorithm.
+Opt Complexity Visuals: Log-Linear Sorting &amp; Binary Search
+How to Draw Opt Complexity: Draw the sorting step $O(N \log N)$ followed by the LIS step $O(N \log N)$. Label total as $O(N \log N)$.
+Mem Vis (BF): 2D DP table for the LIS. $O(N)$.
+Mem Vis (Opt): A 1D array `tails` used for binary search LIS. Draw a single horizontal tape of size N. $O(N)$.

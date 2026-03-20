@@ -1,0 +1,13 @@
+ID: 853
+Problem Title: Car Fleet
+Brute Force Method: Simulate the race second-by-second. In each second, move every car, check for collisions (fleets), and update speeds. Stop when all cars reach the target.
+BF Complexity Visuals: Time-Step Simulation. $O(\\text{text}{\text{Time}} \\text{times} N)$.
+How to Draw BF: Draw a track. Draw dots for cars. Draw the track again for T=1, T=2... showing cars bunching up over time.
+Optimised Pattern: Sorting + Monotonic Arrival Times.
+Opt Vis. Technique: "Shadow" Arrival Times.
+Dry Run (Opt): Calculate the time each car *would* take to reach the target if alone (Time = (Target - Pos) / Speed). Sort cars by position (closest to target first). If a car behind takes LESS time than the car in front, they merge into one fleet.
+How to Draw (Opt): Draw cars on a line. Above each, write their "Independent Arrival Time." Look at them from right to left. If you see a "slow" time, any "faster" times to its left get absorbed into it.
+Opt Complexity Visuals: Sorting Bottleneck. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a Sorting Funnel, then one single right-to-left scan of the calculated times.
+Mem Vis (BF): Track State History: Draw many arrays representing snapshots of car positions at every second.
+Mem Vis (Opt): Time Array: Draw an array of floats representing arrival times. $O(N)$ space.

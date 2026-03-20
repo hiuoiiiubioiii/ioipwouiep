@@ -1,0 +1,13 @@
+ID: 421
+Problem Title: Max XOR of Two Numbers
+Brute Force Method: Nested Loops Compare every pair (i, j) and calculate i \oplus j. Keep max.
+BF Complexity Visuals: 2D Grid
+How to Draw BF: Draw an N \times N matrix. Shade the upper triangle. Label it $O(N^2)$.
+Optimised Pattern: Bitwise Trie Insert all numbers into a Binary Trie. For each number, traverse the trie trying to pick the opposite bit.
+Opt Vis. Technique: Decision Path Tunneling
+Dry Run (Opt): Imagine a 32-level deep tree. For each number, you "tunnel" down the path that gives you the most 1s in the result.
+How to Draw (Opt): Draw a binary tree where each node has only '0' and '1' branches. Trace a path for number X, trying to go left if X's bit is 1 and right if 0.
+Opt Complexity Visuals: Linear-Tree hybrid
+How to Draw Opt Complexity: Draw N horizontal lines hitting a tree of height 32. Complexity: $O(N \\text{times} 32)$ \approx $O(N)$.
+Mem Vis (BF): Registers Two CPU registers for XORing.
+Mem Vis (Opt): Trie Structure Draw many small linked nodes representing bits. $O(N)$ space.

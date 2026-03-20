@@ -1,0 +1,13 @@
+ID: 2640
+Problem Title: Find the Score of All Prefixes of an Array
+Brute Force Method: For every prefix, find the max, calculate "conver" values, and sum them up (Nested loops).
+BF Complexity Visuals: Nested Prefix Summations
+How to Draw BF: Draw a triangle of operations: for prefix 1, do 1 step; for prefix 2, do 2 steps. $O(N^2)$.
+Optimised Pattern: Running Max + Prefix Sum (Single Pass)
+Opt Vis. Technique: Rolling Maximum Snowball
+Dry Run (Opt): Maintain a `runningMax`. Calculate `conver[i] = nums[i] + runningMax`. The score is the prefix sum of the `conver` values.
+How to Draw (Opt): Draw the input array. Below it, write the `runningMax` for each index. Below that, write the sum. Draw an arrow moving left to right.
+Opt Complexity Visuals: $O(N)$ Linear Flow
+How to Draw Opt Complexity: Draw a single line arrow across N elements, $O(N)$.
+Mem Vis (BF): Intermediate prefix arrays
+Mem Vis (Opt): In-place conversion or $O(N)$ result array.

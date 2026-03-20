@@ -1,0 +1,13 @@
+ID: 3564
+Problem Title: Seasonal Sales Analysis (Med)
+Brute Force Method: Iterate through every sale record, group by season, and calculate averages using nested loops or heavy sorting.
+BF Complexity Visuals: Iterative Grouping.
+How to Draw BF: Draw sales logs. For each season (Spring, Summer, etc.), scan the entire log and tally. $O(N \cdot S)$.
+Optimised Pattern: Hash Map Aggregation / SQL-style GroupBy.
+Opt Vis. Technique: Data Bucketing.
+Dry Run (Opt): Use a hash map where keys are seasons. For each record, add value to `map[season].sum` and `map[season].count`.
+How to Draw (Opt): Draw 4 large buckets labeled by season. Toss each sale record into its bucket. Divide sum by count at the end.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single pass through the sales data records. $O(1)$ bucket update per record.
+Mem Vis (BF): Sorted Log Duplicates: Draw multiple sorted versions of the raw sales data.
+Mem Vis (Opt): Small Hash Table: Draw a map with exactly 4 entries, each holding two integers (Sum, Count).

@@ -1,0 +1,13 @@
+ID: 1506
+Problem Title: Find Root of N-Ary Tree
+Brute Force Method: Store all children in a Hash Set. Iterate through all nodes; the node not in the children set is the root.
+BF Complexity Visuals: Two Buckets (Difference) $O(N)$
+How to Draw BF: Draw a large circle containing all Node IDs. Cross out any ID that appears as a child. The final uncrossed ID is the root.
+Optimised Pattern: Math (Summation / XOR)
+Opt Vis. Technique: The Balancing Scale
+Dry Run (Opt): Keep a running total. Add the value of every node you visit, and subtract the value of every child you see. The remaining value is the root node.
+How to Draw (Opt): Draw an accumulator variable `val = 0`. As you touch a parent, write `+parent`. For its children, write `-child`. Watch all pairs cancel out until only the root is left.
+Opt Complexity Visuals: Pure Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line weaving through all nodes exactly once. Constant work at each stop.
+Mem Vis (BF): A grid-like Hash Set taking up $O(N)$ memory blocks.
+Mem Vis (Opt): A single box labeled `val`. Cross out the number and rewrite it as it updates. $O(1)$ space.

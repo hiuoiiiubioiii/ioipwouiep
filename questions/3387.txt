@@ -1,0 +1,13 @@
+ID: 3387
+Problem Title: Maximize Amount After Two Days of Conversions
+Brute Force Method: Try every possible sequence of currency conversions for Day 1 and Day 2 using recursion with no pruning.
+BF Complexity Visuals: Exponential Conversion Tree
+How to Draw BF: Draw a starting currency. Branch out to all neighbors. From each neighbor, branch again. The tree depth is effectively infinite.
+Optimised Pattern: BFS / Dijkstra (Day-by-Day)
+Opt Vis. Technique: Layered Graph Expansion
+Dry Run (Opt): Run BFS on Day 1 to find the max amount of every currency reachable from `initialCurrency`. Then use those results as start points for BFS on Day 2 to get back to `initialCurrency`.
+How to Draw (Opt): Draw two separate graphs (Day 1 and Day 2). For Day 1, draw concentric circles showing the best "rate" to reach each node. Repeat for Day 2 starting from those rates.
+Opt Complexity Visuals: Dual Layer Traversal
+How to Draw Opt Complexity: Draw two horizontal blocks representing the two $O(V+E)$ passes. Total $O(V+E)$.
+Mem Vis (BF): Massive recursive stack and rate-combination lists.
+Mem Vis (Opt): Two Hash Maps (one per day) storing `currency: max_amount`. $O(V)$.

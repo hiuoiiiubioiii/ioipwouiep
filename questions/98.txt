@@ -1,0 +1,13 @@
+ID: 98
+Problem Title: Validate Binary Search Tree
+Brute Force Method: Local Comparison Only Check if `node.left.val &lt; node.val &lt; node.right.val` for every node. (Fails if a far-left node is greater than a root ancestor).
+BF Complexity Visuals: The Shallow Scanner
+How to Draw BF: Draw a tree where a leaf node violates a root's range but satisfies its parent. Draw a red "X" through the "Local" logic to show it misses the violation.
+Optimised Pattern: Recursion with Range (Min/Max)
+Opt Vis. Technique: The Descending Constraints
+Dry Run (Opt): Pass a `low` and `high` boundary down the tree. For a left child, update `high = node.val`. For a right child, update `low = node.val`. If a node is out of bounds, return false.
+How to Draw (Opt): Draw a tree. At the root, write (-infty, infty). For the left child, write (-infty, RootValue). For the right, (RootValue, infty). Keep narrowing the boxes.
+Opt Complexity Visuals: Single Node Visit
+How to Draw Opt Complexity: Draw a tree. Show a single DFS path visiting every node exactly once. Time: $O(N)$.
+Mem Vis (BF): N/A - Simple recursion.
+Mem Vis (Opt): Draw the recursion stack. The max depth is the tree height H. Space: $O(H)$.

@@ -1,0 +1,13 @@
+ID: 1465
+Problem Title: Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts
+Brute Force Method: Calculate the area of every single piece of cake created by the intersections of all horizontal and vertical cuts. Find the max.
+BF Complexity Visuals: Grid Exhaustion
+How to Draw BF: Draw a rectangle with all cuts. Draw a loop that calculates the area of every little square inside the grid. Label $O(H_\text{cuts} \cdot V_\text{cuts})$.
+Optimised Pattern: Greedy (Independent Max Gaps)
+Opt Vis. Technique: Orthogonal Max-Gap Projection
+Dry Run (Opt): The maximum area is simply (Maximum horizontal gap) x (Maximum vertical gap). Sort the cut arrays, find the max difference between adjacent cuts, and multiply.
+How to Draw (Opt): Draw the cake. Highlight the largest gap between horizontal lines. Highlight the largest gap between vertical lines. The intersection of these two specific gaps is the largest piece.
+Opt Complexity Visuals: Sort-Centric Bottleneck
+How to Draw Opt Complexity: Draw Sort(H) rightarrow Scan(H) rightarrow Sort(V) rightarrow Scan(V). Label $O(H \log H + V \log V)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Two sorted arrays of cuts. Space $O(H + V)$.

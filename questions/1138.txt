@@ -1,0 +1,13 @@
+ID: 1138
+Problem Title: Alphabet Board Path
+Brute Force Method: BFS to find the shortest path between every consecutive letter in the target word.
+BF Complexity Visuals: Grid Search Expansion (Multiple times)
+How to Draw BF: Draw the board. For each letter, draw a ripple effect (BFS) searching for the next letter. $O(\text{WordLength} x \text{BoardArea})$.
+Optimised Pattern: Coordinate Math (Manhattan Distance Pathing)
+Opt Vis. Technique: Direct Grid Vectoring
+Dry Run (Opt): Map each char to (row, col) where row = char / 5, col = char % 5. Calculate difference Delta R, Delta C. Move Up/Left first to handle 'z' safely.
+How to Draw (Opt): Draw the board grid. Write (R, C) coordinates next to each letter. For a target 'c' to 'o', draw the L-shape path and write the 'U/D/L/R' moves.
+Opt Complexity Visuals: Linear String Pass $O(N)$
+How to Draw Opt Complexity: Draw an arrow through the target word. Each letter transition is calculated in constant time $O(1)$.
+Mem Vis (BF): Queue and Visited Array for BFS
+Mem Vis (Opt): None (In-place coordinate calculation).

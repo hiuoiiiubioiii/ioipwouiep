@@ -1,0 +1,13 @@
+ID: 1562
+Problem Title: Find Latest Group of Size M
+Brute Force Method: For every step i, update the grid, then scan the entire grid to count contiguous groups of 1s of size M. $O(N^2)$.
+BF Complexity Visuals: Redundant Scanning Timeline
+How to Draw BF: Draw a binary string that changes at each step. Below each state, draw a full scan arrow from left-to-right counting clusters. N rows of length N.
+Optimised Pattern: Union-Find or Boundary Mapping
+Opt Vis. Technique: Boundary Length Propagation
+Dry Run (Opt): Maintain an array `count` where `count[i]` is the length of the 1-group containing index i. When a 1 is added at x, only update the *outermost boundaries* of the new merged group.
+How to Draw (Opt): Draw an array of 0s. When you put a '1' at index i, look at i-1 and i+1. If they are part of groups of size L and R, draw a single bridge connecting them. Update only the leftmost and rightmost index with L+R+1.
+Opt Complexity Visuals: Direct Map Update $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. For each element, draw two small "look-aside" arrows to neighbors and one tally update. No nested loops.
+Mem Vis (BF): A new copy of the array for every single bit flip.
+Mem Vis (Opt): An integer array `length` of size N and a `frequency` map. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 3039
+Problem Title: Apply Operations to Make String Empty
+Brute Force Method: Simulate the deletion process step-by-step: in each round, find the first occurrence of every distinct character and remove it. Repeat until the string is empty.
+BF Complexity Visuals: Layered Deletion Stacks
+How to Draw BF: Draw the string. Below it, draw a "strike-through" version for each iteration. Label the iterations to show how many rounds it takes.
+Optimised Pattern: Frequency Counting + Last Occurrence Mapping
+Opt Vis. Technique: Frequency Bar Chart
+Dry Run (Opt): Count the total frequency of each character. Find the maximum frequency max_f. The result consists of characters that appeared max_f times, in the order of their last appearance.
+How to Draw (Opt): Draw the string. Write the frequency above each unique letter. Identify the letters with the highest count. Scan the string from right to left to find their final positions.
+Opt Complexity Visuals: Two-Pass Linear Scan
+How to Draw Opt Complexity: Draw two horizontal arrows: one for "Count" and one for "Build Result". Label as $O(N)$.
+Mem Vis (BF): A list of strings or multiple modified string copies in memory.
+Mem Vis (Opt): A frequency array of size 26 and an array to store the last index of each character.

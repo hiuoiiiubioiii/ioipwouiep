@@ -1,0 +1,13 @@
+ID: 673
+Problem Title: Number of Longest Increasing Subsequence
+Brute Force Method: Generate every possible increasing subsequence and count those with the maximum length.
+BF Complexity Visuals: Subsequence Permutation Tree.
+How to Draw BF: Draw an array. Branch into every valid increasing path. Count the longest ones. Write $O(2^N)$.
+Optimised Pattern: Dynamic Programming (Two 1D Arrays).
+Opt Vis. Technique: Length &amp; Count Accumulation.
+Dry Run (Opt): Maintain two arrays: `lengths[i]` (LIS ending at i) and `counts[i]` (number of LIS ending at i). For each i, look back at j. Update length and sum counts.
+How to Draw (Opt): Draw the array. Under each number, write two values: (Max Length, Count). When looking back, if you find a new max length, reset the count. If equal, add the count.
+Opt Complexity Visuals: Nested loops over array length.
+How to Draw Opt Complexity: Draw an N x N grid (Upper triangle). Write $O(N^2)$.
+Mem Vis (BF): Draw an exponential list of all subsequences.
+Mem Vis (Opt): Draw two 1D arrays of size N. $O(N)$.

@@ -1,0 +1,13 @@
+ID: 63
+Problem Title: Unique Paths II
+Brute Force Method: Recursion with Check Same as Q62, but add an `if(grid[i][j] == 1) return 0;` condition in the recursive calls.
+BF Complexity Visuals: The Blocked Tree
+How to Draw BF: Draw the recursion tree from Q62, but draw red "X"s on branches that lead to obstacles, showing how the search is terminated.
+Optimised Pattern: DP with Obstacle Guard
+Opt Vis. Technique: The Detour Grid
+Dry Run (Opt): Initialize a DP array. If a cell has an obstacle, set its DP value to 0. Otherwise, it is the sum of its top and left neighbors.
+How to Draw (Opt): Draw the grid with a blacked-out obstacle cell. When filling the grid, if you reach the black cell, write '0' and move on. Show how the sums "flow" around the obstacle.
+Opt Complexity Visuals: Single-Pass Grid
+How to Draw Opt Complexity: Draw an M x N grid. Show a single traversal pass. Time: $O(M x N)$.
+Mem Vis (BF): Heavy recursion stack.
+Mem Vis (Opt): Draw a single 1D array representing the current row being calculated. Space: $O(N)$.

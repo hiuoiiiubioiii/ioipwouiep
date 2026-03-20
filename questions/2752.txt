@@ -1,0 +1,13 @@
+ID: 2752
+Problem Title: Customers with Maximum Number of Transactions on Consecutive Days (SQL)
+Brute Force Method: Self-join the transaction table on date = date + 1 for every possible chain length. $O(N^k)$ where k is the chain length.
+BF Complexity Visuals: Recursive Self-Join Grid
+How to Draw BF: Draw the table. Draw arrows from Row A to Row B if dates are consecutive. Then from B to C. The complexity grows exponentially with the sequence length.
+Optimised Pattern: Temporary Join Tables (Visualizing the SQL engine creating massive intermediate tables for each join).
+Opt Vis. Technique: Gaps and Islands (Row Number Difference)
+Dry Run (Opt): Grouped Sequence timeline
+How to Draw (Opt): Use ROW_NUMBER() OVER(PARTITION BY customer_id ORDER BY transaction_date). Subtract this from the date. Consecutive dates will result in the same "base date" (the island). Group by this base date.
+Opt Complexity Visuals: Draw a column of dates and a column of 1, 2, 3... Subtract them. Notice how "2023-01-05" - 1 and "2023-01-06" - 2 both equal "2023-01-04". Highlight that constant group.
+How to Draw Opt Complexity: $O(N \log N)$ Sorting
+Mem Vis (BF): Draw a sort/partition block followed by a window function scan. Label it $O(N \log N)$.
+Mem Vis (Opt): Partition Buffer (Draw the database memory dividing rows into customer buckets before sorting).

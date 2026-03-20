@@ -1,0 +1,13 @@
+ID: 2110
+Problem Title: Number of Smooth Descent Periods of a Stock
+Brute Force Method: Find all $O(N^2)$ subarrays, check if each is a valid smooth descent.
+BF Complexity Visuals: Upper-triangular matrix of subarrays, validating each one element by element.
+How to Draw BF: Nested loops spanning N elements, drawing lines checking i to j.
+Optimised Pattern: Dynamic Programming / Math (Running Count).
+Opt Vis. Technique: Accumulating a running tally that resets on condition failure.
+Dry Run (Opt): dp = 1. If arr[i] == arr[i-1] - 1, dp += 1. Total += dp. Else dp = 1.
+How to Draw (Opt): Line graph of stock prices. Draw triangles under the descending slopes. The area is the total periods.
+Opt Complexity Visuals: $O(N)$ single linear pass.
+How to Draw Opt Complexity: Single horizontal arrow with a running sum counter that drops to 1 occasionally.
+Mem Vis (BF): $O(N)$ memory if subarray slicing is used.
+Mem Vis (Opt): Single integer keeping track of the current descent length $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2361
+Problem Title: Minimum Costs Using the Train Line (Premium)
+Brute Force Method: Exhaustively calculate every possible sequence of "Regular" and "Express" stops for all stations to find the minimum cost to reach each one.
+BF Complexity Visuals: Exponential Path Tree (O(2^N))
+How to Draw BF: Draw a station line. At every station, branch into two paths: "Stay Regular" or "Switch to Express". Repeat N times.
+Optimised Pattern: 1D Dynamic Programming (Two States)
+Opt Vis. Technique: State-Toggle Track Switch
+Dry Run (Opt): Maintain two DP values: `reg[i]` (min cost at station i on regular track) and `exp[i]` (min cost at station i on express track). Transition: `reg[i] = min(reg[i-1] + cost, exp[i-1] + cost)`, etc.
+How to Draw (Opt): Draw two parallel lines (tracks). At each station, draw arrows going straight and arrows crossing over to the other track. Write the "cheapest price so far" on each dot.
+Opt Complexity Visuals: Single Pass DP (O(N))
+How to Draw Opt Complexity: Draw two parallel timelines moving forward together. No branching back or re-calculating previous stations.
+Mem Vis (BF): Draw a massive recursion tree with N levels of depth.
+Mem Vis (Opt): Draw two 1D Arrays (or just four variables: `prevReg`, `prevExp`, `currReg`, `currExp`).

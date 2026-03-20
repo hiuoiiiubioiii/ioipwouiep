@@ -1,0 +1,13 @@
+ID: 945
+Problem Title: Minimum Increment to Make Array Unique
+Brute Force Method: Check every number; if it's a duplicate, increment it by 1 and re-check the entire array for uniqueness. Repeat until all unique.
+BF Complexity Visuals: $O(N^2)$ or $O(N^3)$. Repeatedly re-scanning a growing set of numbers.
+How to Draw BF: Draw a list [1, 1, 1]. Change the second '1' to '2'. Scan. Change the third '1' to '2'. Scan. Realize it's still a duplicate. Change to '3'. Scan.
+Optimised Pattern: Sort + Tracking Next Available
+Opt Vis. Technique: "A Waiting Line." Sort the numbers. If a number is smaller than or equal to the previous number, it must "move up" to be exactly `prev + 1`.
+Dry Run (Opt): Sort `A`. Iterate from index 1: if `A[i] &lt;= A[i-1]`, calculate `diff = A[i-1] + 1 - A[i]`, add `diff` to moves, and set `A[i] = A[i-1] + 1`.
+How to Draw (Opt): Draw a sorted bar chart. If two bars are equal height, draw an arrow pushing the second bar up so it's one unit higher than the first. Count the arrow's length.
+Opt Complexity Visuals: $O(N \log N)$ for sorting, $O(N)$ for the scan.
+How to Draw Opt Complexity: Draw a sorting machine funnel, followed by a straight line with a single "push-up" counter.
+Mem Vis (BF): $O(1)$ extra space, but extremely high time complexity.
+Mem Vis (Opt): $O(1)$ if sorting in-place (or $O(\log N)$ stack space). Draw a single modified array.

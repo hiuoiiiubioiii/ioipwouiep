@@ -1,0 +1,13 @@
+ID: 1987
+Problem Title: Number of Unique Good Subsequences
+Brute Force Method: Generate every possible subsequence, store in a Hash Set to ensure uniqueness, then filter for those starting with '1' (plus '0').
+BF Complexity Visuals: Exponential Power Set
+How to Draw BF: Draw the string. Branch out 2^N times for every "pick or skip" decision. Circle unique results.
+Optimised Pattern: Dynamic Programming (Two-State: Ends in 0, Ends in 1)
+Opt Vis. Technique: Linear State Transition Flow
+Dry Run (Opt): Maintain `ends_with_zero` and `ends_with_one`. When encountering '1', it can be appended to all existing subsequences to form new ones ending in 1.
+How to Draw (Opt): Draw two boxes labeled '0' and '1'. Use a single scan arrow. Update the boxes based on the current digit, subtracting overlaps.
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw one straight line across the string. Each step is $O(1)$. Total $O(N)$.
+Mem Vis (BF): A Hash Set containing up to 2^N string objects.
+Mem Vis (Opt): Two long integer variables and a boolean for the existence of '0'. $O(1)$ space.

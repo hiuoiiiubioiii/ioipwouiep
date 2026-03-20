@@ -1,0 +1,13 @@
+ID: 1157
+Problem Title: Online Majority Element In Subarray
+Brute Force Method: For every query (L, R, threshold), iterate from L to R, count all frequencies using a hash map, and check if any meet the threshold.
+BF Complexity Visuals: Linear Scan per Query $O(Q x N)$
+How to Draw BF: Draw an array. Shade the range [L, R]. Draw a tally chart on the side for that specific range. Repeat for every query.
+Optimised Pattern: Boyer-Moore Voting + Random Sampling / Segment Tree
+Opt Vis. Technique: Probabilistic Sampling Bucket
+Dry Run (Opt): Pick a few random indices in [L, R]. For those values, use a precomputed map of indices to binary search the exact frequency in $O(\log N)$. Threshold ensures high probability of success.
+How to Draw (Opt): Draw a "Spotlight" hitting 20 random spots in the range. For each hit, draw a binary search tree to find how many times that number appears in the total array.
+Opt Complexity Visuals: Logarithmic Queries $O(Q x \log N)$
+How to Draw Opt Complexity: Draw Q small log curves over the array length.
+Mem Vis (BF): None
+Mem Vis (Opt): Map of lists (Value rightarrow Sorted Indices). Draw 26 buckets, each holding a sorted list of positions.

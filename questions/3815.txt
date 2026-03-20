@@ -1,0 +1,13 @@
+ID: 3815
+Problem Title: Design Auction System (Med.)
+Brute Force Method: Maintain a flat array of bids. Every time a bid is added or updated, sort the array to find the highest bid.
+BF Complexity Visuals: Blocks of memory shifting left and right upon every new insertion.
+How to Draw BF: Draw an array. Add a number at the end. Draw arrows swapping it all the way to its sorted position. Write $O(N \log N)$ per operation.
+Optimised Pattern: Hash Map + Max-Heap (Priority Queue) with Lazy Deletion.
+Opt Vis. Technique: A tree structure (Heap) paired with a direct-lookup table (Map).
+Dry Run (Opt): Store active bids in Map. Push (Bid, UserID) to Max-Heap. For top bid, peek Heap. If Heap top doesn't match Map's current bid for that user, pop it (lazy delete).
+How to Draw (Opt): Draw a Binary Tree (Heap). Push a value to the bottom, draw an arrow bubbling it up to the root. Draw a Map beside it linking User-&gt;Bid.
+Opt Complexity Visuals: Logarithmic tree climbing.
+How to Draw Opt Complexity: Draw a balanced tree. Write "Height = log N". Point to insertion path: $O(\log N)$. Point to Map: $O(1)$.
+Mem Vis (BF): A contiguous block of memory reallocating and sorting $O(N)$ data constantly.
+Mem Vis (Opt): Parallel data structures: A dynamic Hash Map taking $O(N)$ space, and a Max-Heap array taking up to $O(M)$ space where M is total bids made.

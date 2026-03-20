@@ -1,0 +1,13 @@
+ID: 3623
+Problem Title: Count Number of Trapezoids I (Med)
+Brute Force Method: Four nested loops to pick every combination of 4 points, calculating slopes for all pairs to check if exactly two sides are parallel. $O(N^4)$.
+BF Complexity Visuals: 4-Point Combinatorial Mesh.
+How to Draw BF: Draw a scatter plot of dots. Draw a 4-loop nested block. Pick 4 random dots, connect them to make a shape, check slopes. Repeat endlessly.
+Optimised Pattern: Group line segments by slope using a Hash Map. A trapezoid is formed by picking 2 segments with the same slope (bases) and ensuring they don't share points.
+Opt Vis. Technique: Grouped Slope Bins.
+Dry Run (Opt): Calculate the slope and midpoint between ALL pairs of points (O(N^2)). Throw these segments into buckets labeled by their slope. Pick combinations of 2 from within the same bucket.
+How to Draw (Opt): Draw several buckets labeled with fractions (slopes). Throw segment lines into them. Inside a bucket, draw lines connecting pairs of segments to form shapes.
+Opt Complexity Visuals: Pair Combinations Flowchart.
+How to Draw Opt Complexity: Write "Find Pairs $O(N^2)$". Draw an arrow to "Group by Slope $O(N^2)$". Draw an arrow to "Count Combinations $O(N^2)$". Total time $O(N^2)$.
+Mem Vis (BF): Storing every single 4-tuple of points in a massive list before validation.
+Mem Vis (Opt): A Hash Map where Keys are reduced Fractions (Slopes) and Values are Lists of point-pairs. Space $O(N^2)$.

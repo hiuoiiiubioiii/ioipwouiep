@@ -1,0 +1,13 @@
+ID: 2517
+Problem Title: Maximum Tastiness of Candy Basket
+Brute Force Method: Generate all possible combinations of size K from the array. For each combination, find the minimum absolute difference between any two elements. Find the max of those minimums.
+BF Complexity Visuals: Combinatorial explosion web connecting every subset of K items.
+How to Draw BF: Write the array. Manually list out every group of K items. Connect every pair in a group, calculate the difference, circle the smallest. Then circle the largest of those smallest differences.
+Optimised Pattern: Sort the array + Binary Search on the Answer Space + Greedy Checking.
+Opt Vis. Technique: A sorted number line (the array) overlaid with a binary search dividing the potential "answer" range.
+Dry Run (Opt): Sort the prices. Set a search range for the answer from 0 to (max_price - min_price). Pick a midpoint `mid`. Greedily walk through the sorted array picking items that are at least `mid` apart. If you can pick K items, search higher. Else, search lower.
+How to Draw (Opt): Draw a sorted array. Write a target gap `G`. Circle the first number. Scan right until you find a number >= first + `G`. Circle it. Repeat. Count circled items. If count >= K, increase `G`.
+Opt Complexity Visuals: A logarithmic halving of the answer space, with an $O(N)$ linear scan happening inside each halving step. $O(N \log(\text{Max Diff})$).
+How to Draw Opt Complexity: Draw a timeline from 0 to Max Diff. Draw brackets cutting the timeline in half repeatedly. For each cut, draw a quick linear arrow under the sorted array representing the greedy check.
+Mem Vis (BF): Massive array storing all combinations of size K.
+Mem Vis (Opt): $O(1)$ extra space (or $O(\log N)$ for the in-place sorting algorithm).

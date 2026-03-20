@@ -1,0 +1,13 @@
+ID: 238
+Problem Title: Product of Array Except Self
+Brute Force Method: For each index, run a loop through all other indices and multiply them.
+BF Complexity Visuals: N x N Matrix Grid: $O(N^2)$ Time.
+How to Draw BF: Draw a grid. For each row `i`, shade every cell except where `column == i`. Area = $O(N^2)$.
+Optimised Pattern: Two-Pass Prefix/Suffix Accumulation
+Opt Vis. Technique: Running Product Tapes
+Dry Run (Opt): Pass 1: Go left to right, storing products of everything before `i`. Pass 2: Go right to left, multiplying by everything after `i`.
+How to Draw (Opt): Draw an array. Draw a line moving right, accumulating products. Below it, draw a line moving left doing the same.
+Opt Complexity Visuals: Parallel Timelines: $O(N)$ Time.
+How to Draw Opt Complexity: Draw two straight arrows (one left-to-right, one right-to-left). Both are linear.
+Mem Vis (BF): Temporary intermediate lists.
+Mem Vis (Opt): In-Place Result Array: Draw one result array being updated twice without extra structures.

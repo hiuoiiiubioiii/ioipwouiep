@@ -1,0 +1,13 @@
+ID: 3609
+Problem Title: Minimum Moves to Reach Target in Grid (Hard)
+Brute Force Method: Standard BFS checking only `(row, col)`, leading to infinite loops or re-visiting cells incorrectly because movement direction isn't tracked.
+BF Complexity Visuals: Exploding Queue Tree.
+How to Draw BF: Draw a massive tree where every grid cell branches out 4 ways, looping back on itself infinitely. Write "Memory Limit Exceeded".
+Optimised Pattern: 0-1 BFS (Deque) or Dijkstra's Algorithm with a 3D State Space `(row, col, direction/momentum)`.
+Opt Vis. Technique: 3D State Space Matrix.
+Dry Run (Opt): Instead of visiting a cell, you visit a "state". Treat arriving at `[2,3]` from the North as a completely different room than arriving at `[2,3]` from the East.
+How to Draw (Opt): Draw a grid. Instead of putting a single checkmark for "visited", draw tiny directional arrows in the cell to show *how* it was reached and if it can be reused.
+Opt Complexity Visuals: State Space Multiplication map.
+How to Draw Opt Complexity: Write Grid Size (R * C) multiplied by number of possible states (e.g., 4 directions). Total Time = $O(R \cdot C \cdot 4)$.
+Mem Vis (BF): A queue extending infinitely off the page holding redundant cyclic paths.
+Mem Vis (Opt): A 3D boolean array `visited[R][C][4]` acting as checkboxes for specific arrival vectors. Space $O(R\cdot C\cdot 4)$.

@@ -1,0 +1,13 @@
+ID: 3030
+Problem Title: Find the Grid of Region Average
+Brute Force Method: For every cell, iterate through all 3 x 3 regions it belongs to, check the "threshold" condition for every neighbor pair, then average them.
+BF Complexity Visuals: Overlapping Grid Stencils
+How to Draw BF: Draw a large grid. Cut a 3 x 3 square out of paper and slide it across the grid, performing 9 checks at every single stop.
+Optimised Pattern: Simulation with Condition Validation
+Opt Vis. Technique: Region Centroid Mapping
+Dry Run (Opt): Pre-calculate if a 3 x 3 block is "valid" (neighbors ≤ threshold). Store sums/counts in a secondary grid. Divide total sum by total counts at the end.
+How to Draw (Opt): Draw the grid. For a valid 3 x 3 block, place a dot in all 9 cells. After scanning, count dots in each cell and write the average.
+Opt Complexity Visuals: $O(\text{Rows} \\text{cdot Cols})$ Constant Sub-grid Pass
+How to Draw Opt Complexity: Draw a grid and show a single pass with a constant-sized window (3 x 3).
+Mem Vis (BF): Recursive checks for neighbors within the nested loops.
+Mem Vis (Opt): Two auxiliary 2D arrays: sumGrid and countGrid of size M x N.

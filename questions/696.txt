@@ -1,0 +1,13 @@
+ID: 696
+Problem Title: Count Binary Substrings
+Brute Force Method: Find all possible substrings and for each, check if it has an equal number of consecutive 0s and 1s.
+BF Complexity Visuals: N-squared substring checks.
+How to Draw BF: Draw a binary string. Draw every possible bracket. For each bracket, scan to count. Write $O(N^2)$.
+Optimised Pattern: Group Consecutive Counts.
+Opt Vis. Technique: Adjacency Compression.
+Dry Run (Opt): Convert "00110" to an array of counts: [2, 2, 1]. The answer is the sum of `min(groups[i], groups[i+1])`. (e.g., min(2,2) + min(2,1) = 3).
+How to Draw (Opt): Draw a string. Group identical neighbors. Write the size of each group underneath. Compare adjacent numbers and circle the smaller one.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight arrow through the string. Write $O(N)$.
+Mem Vis (BF): Draw a list of all substrings generated.
+Mem Vis (Opt): Draw an array of counts (at most N) or use two variables for $O(1)$ space.

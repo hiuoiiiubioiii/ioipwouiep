@@ -1,0 +1,13 @@
+ID: 1877
+Problem Title: Minimize Maximum Pair Sum in Array
+Brute Force Method: Generate all possible ways to pair up N elements and find the maximum sum for each set.
+BF Complexity Visuals: Factorial Pairing Tree.
+How to Draw BF: Draw 4 nodes. Draw all pairing combinations. Show how complexity explodes for N=100,000. $O(N!)$.
+Optimised Pattern: Greedy Strategy + Sorting.
+Opt Vis. Technique: Opposing Sorting Pointers.
+Dry Run (Opt): Sort the array. Pair smallest with largest, second smallest with second largest. The max of these sums is the answer.
+How to Draw (Opt): Draw two parallel sorted lists (or one sorted array). Draw arrows connecting the head to the tail, moving inwards. Write sums next to arrows.
+Opt Complexity Visuals: $O(N \log N)$ Sorting.
+How to Draw Opt Complexity: Draw a Merge Sort tree diagram. Mark as $O(N \log N)$.
+Mem Vis (BF): Massive list of all possible set combinations.
+Mem Vis (Opt): $O(1)$ extra space if sorted in-place.

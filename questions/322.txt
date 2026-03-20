@@ -1,0 +1,13 @@
+ID: 322
+Problem Title: Coin Change
+Brute Force Method: Recursively try every coin for the current amount, branching out for every possibility until you hit 0 or go negative.
+BF Complexity Visuals: N-ary Recursion Tree (Unbounded)
+How to Draw BF: Draw a root with 'Amount'. Draw N branches (one for each coin). Continue until leaves are 0. Show the massive width: $O(S^n)$ where S is amount.
+Optimised Pattern: Dynamic Programming (Bottom-Up)
+Opt Vis. Technique: 1D Distance-to-Zero Map
+Dry Run (Opt): Initialize `dp[amount+1]` with infinity. `dp[0] = 0`. For each coin, update every amount i from `coin` to `target` as `min(dp[i], dp[i-coin] + 1)`.
+How to Draw (Opt): Draw a 1D array indexed 0 to S. For amount 11 with coin 5, draw an arrow jumping back 5 slots to index 6, taking that value, and adding 1.
+Opt Complexity Visuals: Linear Array Fill
+How to Draw Opt Complexity: Draw a single 1D array. Draw a single loop arrow above it indicating a left-to-right pass for each coin. $O(S \\text{times} n)$.
+Mem Vis (BF): Explosive call stack height (up to S deep).
+Mem Vis (Opt): 1D DP Array Block: Draw a contiguous memory block of size S. Shade it to show incremental filling. $O(S)$.

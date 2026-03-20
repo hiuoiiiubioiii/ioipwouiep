@@ -1,0 +1,13 @@
+ID: 2634
+Problem Title: Filter Elements from Array (JS)
+Brute Force Method: Using `Array.splice()` inside a loop to remove elements that don't pass the test.
+BF Complexity Visuals: Shifting Element Grid
+How to Draw BF: Draw an array. Cross an item out. Draw arrows showing every element to the right shifting left. $O(N^2)$.
+Optimised Pattern: Iterative New Array Push
+Opt Vis. Technique: Selection Sieve
+Dry Run (Opt): Create empty result array. Iterate input. If `fn(arr[i], i)` is truthy, push to result. Return result.
+How to Draw (Opt): Draw the input array. Below it, draw a "Pass/Fail" row based on the function. Draw arrows only from "Pass" items to a new array.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a single pass arrow over the array, labeling $O(N)$.
+Mem Vis (BF): In-place modification costs
+Mem Vis (Opt): Standard $O(N)$ space for the new result array.

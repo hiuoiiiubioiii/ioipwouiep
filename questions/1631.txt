@@ -1,0 +1,13 @@
+ID: 1631
+Problem Title: Path With Minimum Effort
+Brute Force Method: DFS/Backtracking to find every possible path from top-left to bottom-right and recording the max effort of each.
+BF Complexity Visuals: 3-Way Branching Recursion Tree
+How to Draw BF: Draw a massive tree where each node splits into 3 (up, down, left, right excluding the parent). $O(3^(M\cdot N)$).
+Optimised Pattern: Dijkstra / Binary Search + BFS
+Opt Vis. Technique: Weighted Expansion Ripple
+Dry Run (Opt): Use a Min-Heap. Always expand to the neighbor that requires the minimum "maximum effort". Mark cells as visited to prevent re-entry.
+How to Draw (Opt): Draw a grid. Mark each cell with its "current min-effort". Use a circle to represent the expanding frontier of the Min-Heap.
+Opt Complexity Visuals: Frontier Log-Linear Growth
+How to Draw Opt Complexity: Draw an expanding circle across a grid. Write E log(V) where E is edges (cell adjacencies) and V is vertices (cells).
+Mem Vis (BF): Infinite Recursion Stack: Draw a stack of grids being passed down through recursive calls.
+Mem Vis (Opt): Priority Queue + 2D Effort Matrix: Draw a min-heap (pyramid) and one static 2D grid storing best effort values.

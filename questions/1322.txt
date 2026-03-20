@@ -1,0 +1,13 @@
+ID: 1322
+Problem Title: Ads Performance (SQL)
+Brute Force Method: Calculate clicks and views separately using two independent subqueries for every ad_id, then join them.
+BF Complexity Visuals: $O(N²)$ Correlated Subquery Overhead
+How to Draw BF: Draw an Ad table. For each row, draw two arrows scanning the whole Click table and the whole View table. Shows redundant IO.
+Optimised Pattern: Conditional Aggregation (SUM + CASE)
+Opt Vis. Technique: Single-Pass Result Bucket
+Dry Run (Opt): Group by `ad_id`. Use `SUM(CASE WHEN action='Clicked' THEN 1 ELSE 0 END)` to count clicks and views in one scan. Use `NULLIF` to handle division by zero.
+How to Draw (Opt): Draw a table of actions. Draw a funnel with two counters: "Clicks" and "Views". Scan once. Calculate `Clicks/(Clicks+Views) * 100`.
+Opt Complexity Visuals: $O(N \log N)$ (Sort + Group)
+How to Draw Opt Complexity: Draw a single line passing through the sorted table. Each ad's data is aggregated in one contiguous block.
+Mem Vis (BF): Temporary Join Tables: Database creating huge intermediate tables in memory.
+Mem Vis (Opt): In-Memory Hash Map: Draw a small hash table keyed by `ad_id` storing click/view tallies.

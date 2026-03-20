@@ -1,0 +1,13 @@
+ID: 3634
+Problem Title: Minimum Removals to Balance Array (Med)
+Brute Force Method: Physically removing an element, shifting the rest of the array left, and recalculating the sum of even and odd indices from scratch. $O(N^2)$.
+BF Complexity Visuals: Array Shift Cascades.
+How to Draw BF: Draw the array. Cross out index 2. Draw arrows moving index 3 to 2, 4 to 3... Then draw a loop summing it all up. Repeat for every index.
+Optimised Pattern: Prefix and Suffix Sums. Precalculate even/odd sums. When you "remove" an element, the suffix even/odd sums simply swap roles!
+Opt Vis. Technique: The "Index Shift" Swap mechanism.
+Dry Run (Opt): Imagine the array as a train. If you remove a car in the middle, all the cars behind it shift forward by one. Therefore, all odd-indexed cars behind it become even, and evens become odd. Just swap your precalculated suffix variables.
+How to Draw (Opt): Draw an array. Write `PrefEven`, `PrefOdd` before a cut point. Write `SuffEven`, `SuffOdd` after it. To test the cut, sum `PrefEven + SuffOdd` and `PrefOdd + SuffEven`.
+Opt Complexity Visuals: Three-Pass Linear Scan.
+How to Draw Opt Complexity: Draw one arrow scanning right (build prefix), one scanning left (build suffix), one scanning right (test cuts). 3 * $O(N)$ = $O(N)$.
+Mem Vis (BF): N copies of the array created in memory to test each removal scenario.
+Mem Vis (Opt): Four 1D arrays of size N for Prefix/Suffix Even/Odd sums. Space $O(N)$. (Can be optimized to $O(1)$ space with running variables).

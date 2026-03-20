@@ -1,0 +1,13 @@
+ID: 2646
+Problem Title: Minimize the Total Price of the Trips
+Brute Force Method: Exhaustive search for every possible combination of "halved" nodes (2^N) and calculating trip costs.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a tree where each node splits into "Halve" or "Don't Halve". Label $O(2^N \\text{cdot Trips} \cdot N)$.
+Optimised Pattern: Tree DP + Frequency Map (BFS/DFS)
+Opt Vis. Technique: Weighted Node Frequency Map
+Dry Run (Opt): 1. For each trip, use BFS/DFS to find the path and increment a "contribution" counter for each node. 2. Use Tree DP: for each node, the cost is `(Freq * Price)`. Recurse to find min cost if current is halved (children cannot be halved) vs not halved.
+How to Draw (Opt): Draw the tree. Write a number inside each node representing how many trips pass through it. Use DP: `dp[u][0]` (not halved) and `dp[u][1]` (halved).
+Opt Complexity Visuals: Linear Tree Traversal
+How to Draw Opt Complexity: Draw $O(\text{Trips} \cdot N)$ for path finding followed by $O(N)$ for the DP pass.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Frequency array and DP table/memoization map.

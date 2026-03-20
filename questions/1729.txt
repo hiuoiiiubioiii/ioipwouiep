@@ -1,0 +1,13 @@
+ID: 1729
+Problem Title: Find Followers Count (SQL)
+Brute Force Method: Use a correlated subquery for every distinct user_id to count their followers independently.
+BF Complexity Visuals: Ping-Pong Querying.
+How to Draw BF: Draw User list. For each user, draw an arrow to the Followers table, run a count, and bring the number back. Inefficient N queries.
+Optimised Pattern: SQL Aggregation: `GROUP BY` + `COUNT()`.
+Opt Vis. Technique: Sorting Bins by User.
+Dry Run (Opt): Scan the table, grouping rows by `user_id`. Apply `COUNT(follower_id)` to each group. Output the results ordered by `user_id`.
+How to Draw (Opt): Draw rows of data. Draw buckets labeled with `user_id`. Toss rows into their respective buckets. Tally the items in each bucket. Order buckets ascending.
+Opt Complexity Visuals: Single Pass Grouping Funnel.
+How to Draw Opt Complexity: Draw unsorted rows flowing into grouping funnels, exiting as aggregated rows, then sorted. $O(N \log N)$ for the final sort.
+Mem Vis (BF): Multiple database cursor memory states.
+Mem Vis (Opt): SQL Engine grouping hash tables. $O(\text{Unique Users})$ space.

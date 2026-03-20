@@ -1,0 +1,13 @@
+ID: 1185
+Problem Title: Day of the Week
+Brute Force Method: Use built-in library functions like `datetime` or `Calendar` to extract the day. (Not useful for learning the algorithm).
+BF Complexity Visuals: Opaque Library Black-box
+How to Draw BF: Draw an input going into a box and an output coming out. No internal visibility.
+Optimised Pattern: Zeller’s Congruence / Sum of Days
+Opt Vis. Technique: Accumulated Time Blocks
+Dry Run (Opt): Calculate total days passed since a known date (e.g., 1971-01-01 was a Friday). Sum days for years, then months (considering leaps), then days. Use `% 7`.
+How to Draw (Opt): Draw a timeline starting at 1971. Draw blocks for years passed, then smaller blocks for months. Sum them up and use a "Wheel of 7" to find the day name.
+Opt Complexity Visuals: Constant $O(1)$
+How to Draw Opt Complexity: Draw a direct path from input (D, M, Y) to the result. Total ~35 additions max.
+Mem Vis (BF): Library object overhead
+Mem Vis (Opt): Constant $O(1)$ space.

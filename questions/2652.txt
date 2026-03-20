@@ -1,0 +1,13 @@
+ID: 2652
+Problem Title: Sum Multiples
+Brute Force Method: Iterate from 1 to N, check if each number is divisible by 3, 5, or 7. Sum the matches.
+BF Complexity Visuals: Linear Filter Scan
+How to Draw BF: Draw a list of numbers 1 to N. Draw a checkbox next to each one that passes the divisibility test. $O(N)$.
+Optimised Pattern: Inclusion-Exclusion Principle (Math)
+Opt Vis. Technique: Overlapping Venn Diagrams
+Dry Run (Opt): Sum multiples of 3, 5, and 7 using the formula for arithmetic progression S = fracn2(first + last). Subtract overlaps (multiples of 15, 21, 35) and add back the triple overlap (105).
+How to Draw (Opt): Draw three circles (3, 5, 7). Label the overlaps. Use the formula Sum = S(3)+S(5)+S(7) - S(15)-S(21)-S(35) + S(105).
+Opt Complexity Visuals: $O(1)$ Algebraic Formula
+How to Draw Opt Complexity: Draw a single block containing the sum formulas. Total $O(1)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ constant space.

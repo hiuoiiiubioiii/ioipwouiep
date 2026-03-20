@@ -1,0 +1,13 @@
+ID: 1510
+Problem Title: Stone Game IV
+Brute Force Method: Pure Minimax recursion. Try subtracting every perfect square from the current stone count. If any move forces the opponent into a losing state, return true.
+BF Complexity Visuals: Exploding Game Tree $O(N^\text{sqrt}(N)$)
+How to Draw BF: Draw a root node N. Branch out with √N edges (one for each perfect square &lt;= N). Repeat this recursively. Watch the tree width explode.
+Optimised Pattern: Dynamic Programming (Bottom-Up 1D)
+Opt Vis. Technique: State Dependency Array
+Dry Run (Opt): Build a boolean array up to N. For each state `i`, check if there's any perfect square `k*k` where `dp[i - k*k]` is False (meaning the next player loses). If so, `dp[i]` is True.
+How to Draw (Opt): Draw a 1D array of boxes. To fill box 10, draw backward arrows jumping to box 9 (-1), box 6 (-4), and box 1 (-9). If any target box has 'F', write 'T' in box 10.
+Opt Complexity Visuals: Sub-linear Lookbacks $O(N \\text{cdot sqrt}(N)$)
+How to Draw Opt Complexity: Draw a straight line N. From each point, draw backward arcs. The number of arcs grows very slowly (as the square root), so the line looks like it has a light "fringe" of arcs.
+Mem Vis (BF): Massive call stack depth $O(N)$. Draw recursive boxes stacked vertically.
+Mem Vis (Opt): A single 1D boolean array. Draw T/F flags sequentially filling up boxes. $O(N)$ space.

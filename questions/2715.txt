@@ -1,0 +1,13 @@
+ID: 2715
+Problem Title: Timeout Cancellation (JS)
+Brute Force Method: Let the `setTimeout` run its full course, but use a boolean flag like `isCancelled` inside the callback to prevent the actual execution of the target function.
+BF Complexity Visuals: Timeline with Wasted Execution Block
+How to Draw BF: Draw a timeline arrow. Mark the target execution time. If cancelled, put an "X" over the function, but show the timer arrow still traveling all the way to the end unnecessarily.
+Optimised Pattern: Floating Closure Memory (The callback and its lexical environment stay in memory until the timer naturally finishes).
+Opt Vis. Technique: clearTimeout Interception
+Dry Run (Opt): Timer Abort Timeline
+How to Draw (Opt): Start the timer and capture its ID. Return a cancel function. If the cancel function is invoked before the delay, immediately pass the ID to clearTimeout, destroying the timer instantly.
+Opt Complexity Visuals: Draw a horizontal timeline arrow. At the timestamp where `cancelFn` is called, draw a literal brick wall blocking the arrow from reaching the target time.
+How to Draw Opt Complexity: $O(1)$ Execution Block
+Mem Vis (BF): Draw a single, solid square representing the `clearTimeout` call. Write $O(1)$ in the center.
+Mem Vis (Opt): Reclaimed Timer ID (Visualize the timer ID integer being passed to the JS engine to garbage collect the pending callback).

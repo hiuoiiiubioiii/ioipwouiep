@@ -1,0 +1,13 @@
+ID: 1996
+Problem Title: The Number of Weak Characters in the Game
+Brute Force Method: For every character, compare it against all other characters to see if both attack and defense are strictly lower.
+BF Complexity Visuals: $O(N^2)$ Pairwise Comparison Matrix
+How to Draw BF: Draw an N x N grid where each cell (i, j) represents a comparison. Shade every cell. $O(N^2)$.
+Optimised Pattern: Sorting (Attack Desc, Defense Asc) + 1-Pass Greedy
+Opt Vis. Technique: Sorted Defense Trendline
+Dry Run (Opt): Sort by Attack descending. If Attack is equal, sort Defense ascending. Maintain `maxDefense` seen so far. If current Defense &lt; `maxDefense`, it's weak.
+How to Draw (Opt): Draw dots on a 2D plane. Sort by X-axis. Draw a horizontal "Max-Line" that moves with the scan. Any point below the line is "weak".
+Opt Complexity Visuals: $O(N \log N)$ Sorting Funnel
+How to Draw Opt Complexity: Draw the array falling into a "Sort" box. Show a single linear scan arrow emerging. $O(N \log N + N)$.
+Mem Vis (BF): Zero extra structures; just indices in the stack.
+Mem Vis (Opt): Sorted array of objects on the heap. $O(N)$ space.

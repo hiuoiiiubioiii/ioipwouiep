@@ -1,0 +1,13 @@
+ID: 2642
+Problem Title: Design Graph Shortest Path Calculator
+Brute Force Method: Run BFS or DFS from scratch every time `shortestPath` is called.
+BF Complexity Visuals: Unoptimized Path Search
+How to Draw BF: Draw a graph. For every query, draw a sprawling web of paths being recalculated. $O(Q \cdot (V+E)$).
+Optimised Pattern: Dijkstra's Algorithm (with Priority Queue)
+Opt Vis. Technique: Expanding Dijkstra Frontiers
+Dry Run (Opt): Use a Priority Queue to always expand the shortest known distance. When `addEdge` is called, update the adjacency list.
+How to Draw (Opt): Draw the start node. Draw a circle (frontier). Expand the circle to the nearest neighbors first. Label edges with weights.
+Opt Complexity Visuals: Logarithmic Heap Operations
+How to Draw Opt Complexity: Draw a loop for Q queries, inside it a Dijkstra block $O(E \log V)$.
+Mem Vis (BF): Adjacency Matrix (N^2)
+Mem Vis (Opt): Adjacency List (V+E) + Min-Heap.

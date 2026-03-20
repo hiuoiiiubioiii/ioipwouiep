@@ -1,0 +1,13 @@
+ID: 1169
+Problem Title: Invalid Transactions
+Brute Force Method: Nested loops $O(N^2)$. For every transaction, check all other transactions for the same name to find time/city conflicts.
+BF Complexity Visuals: Full Cartesian Comparison
+How to Draw BF: Draw a list. For each item, draw arrows to every other item in the list. Shade the ones that violate the rules.
+Optimised Pattern: Hash Map Grouping + Sorting
+Opt Vis. Technique: Grouped Conflict Scanning
+Dry Run (Opt): Map each transaction to a User. For each user, sort transactions by time. Use a sliding window or nested loop within the group to check 60-min city conflicts.
+How to Draw (Opt): Draw "User Folders". Put transactions inside. For each folder, check if amount &gt; 1000. Then, check pairs of items to see if TimeDiff &lt; 60 and City is different.
+Opt Complexity Visuals: Sorted Group Scan $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting curve followed by a linear pass within user groups.
+Mem Vis (BF): None (In-place loops)
+Mem Vis (Opt): Hash Map `Name -&gt; List[Transactions]`. Draw a table of folders.

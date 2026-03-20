@@ -1,0 +1,13 @@
+ID: 3720
+Problem Title: Lexicographically Smallest Permutation Greater Than Target (Med)
+Brute Force Method: Generate all N! possible permutations, sort them lexicographically, find the target, pick the one next to it.
+BF Complexity Visuals: Massive Factorial Tree $O(N!)$.
+How to Draw BF: Draw a branching tree showing every single arrangement of the numbers. Circle the target sequence.
+Optimised Pattern: Next Permutation Algorithm (Suffix Reversal)
+Opt Vis. Technique: Pivot and Flip
+Dry Run (Opt): Scan right-to-left to find the first "dip" (pivot). Swap pivot with next largest on its right. Reverse everything right of the original pivot position.
+How to Draw (Opt): Draw array. Draw an arrow leftward from the end until the number drops (Pivot). Find smallest number bigger than Pivot on right. Swap. Bracket the right side and write "FLIP".
+Opt Complexity Visuals: Three linear passes $O(N)$.
+How to Draw Opt Complexity: Draw three overlapping horizontal line segments on a 1D axis (Find pivot, Find swap, Reverse).
+Mem Vis (BF): Giant array holding all N! permutations.
+Mem Vis (Opt): In-place array swaps $O(1)$ auxiliary space.

@@ -1,0 +1,13 @@
+ID: 146
+Problem Title: LRU Cache
+Brute Force Method: Use a standard array or list to store keys. For every get or put, perform a linear search to find/move the key.
+BF Complexity Visuals: An $O(N)$ linear scan for every single operation, showing a slow search bar moving through a list.
+How to Draw BF: Draw a horizontal list. For every 'get', draw a finger moving from the first element to the last until the key is found.
+Optimised Pattern: Hash Map + Doubly Linked List (DLL).
+Opt Vis. Technique: An "Organized Library." The Hash Map is the index (tells you where the book is), and the DLL is the shelf (tracks which book was touched last).
+Dry Run (Opt): Search in Map for node address (O(1)). Move that node to the 'Head' of the DLL. If capacity exceeded, delete the 'Tail'.
+How to Draw (Opt): Draw a Map (Key rightarrow Node) and a DLL. When a key is accessed, draw an arrow moving that specific node to the front of the line.
+Opt Complexity Visuals: $O(1)$ constant time across all operations. A flat horizontal line on a graph.
+How to Draw Opt Complexity: Draw a single dot. No matter how big the cache gets, the work to find or move an item is just one "hop."
+Mem Vis (BF): Visualise a single Array buffering elements, which is memory-efficient but time-intensive.
+Mem Vis (Opt): Visualize a Map and a DLL together. Each key exists in both, using $O(\text{Capacity})$ space in heap memory.

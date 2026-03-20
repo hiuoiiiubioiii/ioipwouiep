@@ -1,0 +1,13 @@
+ID: 2898
+Problem Title: Maximum Linear Stock Score
+Brute Force Method: For every index i, try to find all other indices j such that the stock prices form a linear sequence (price difference equals index difference).
+BF Complexity Visuals: $O(N^2)$ Pairwise Validation
+How to Draw BF: Draw a stock chart. For every point, draw lines to every other point to check if the slope is exactly 1.
+Optimised Pattern: Frequency Mapping (Coordinate Transformation)
+Opt Vis. Technique: Slope-Intercept Grouping
+Dry Run (Opt): Rewrite the condition price[j] - price[i] = j - i as price[j] - j = price[i] - i. Calculate K = price[i] - i for every element and sum values with the same K.
+How to Draw (Opt): Draw a table with columns: Index, Price, and (Price - Index). Group all rows that have the same (Price - Index) value and sum their prices.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. One pass to compute the key, one pass to update the hash map.
+Mem Vis (BF): $O(1)$ - If using nested loops.
+Mem Vis (Opt): $O(N)$ - To store the sums in a Hash Map.

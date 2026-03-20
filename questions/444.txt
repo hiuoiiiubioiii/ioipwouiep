@@ -1,0 +1,13 @@
+ID: 444
+Problem Title: Sequence Reconstruction
+Brute Force Method: Permutations Generate all possible valid sequences from the rules and see if only one exists.
+BF Complexity Visuals: Factorial Tree
+How to Draw BF: Draw an explosion of possible number orderings. $O(N!)$.
+Optimised Pattern: Topological Sort (Kahn's) Build a graph of dependencies. Check if at every step there is exactly 1 node with an in-degree of 0.
+Opt Vis. Technique: Dependency Waterfall
+Dry Run (Opt): Imagine tasks with arrows between them. You can only pick a task if all arrows pointing to it are "cleared."
+How to Draw (Opt): Draw circles (numbers) and arrows (dependencies). Keep an "In-degree" table on the side. Scratch off counts as you process nodes.
+Opt Complexity Visuals: Graph Traversal
+How to Draw Opt Complexity: Draw nodes (V) and edges (E). Time $O(V + E)$. Space $O(V + E)$.
+Mem Vis (BF): List of Lists Storing all permutations.
+Mem Vis (Opt): Adjacency List Draw a map of numbers pointing to their next neighbors. $O(N)$.

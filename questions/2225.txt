@@ -1,0 +1,13 @@
+ID: 2225
+Problem Title: Find Players With Zero or One Losses
+Brute Force Method: Nested Array ScansFor every player ID from 1 to 10^5, scan the entire `matches` array to count their wins and losses.
+BF Complexity Visuals: Exhaustive ID Lookup
+How to Draw BF: Draw a number line from 1 to 10^5. For number 1, draw a magnifying glass scanning the whole match list. Repeat for 2, 3, etc. Show $O(\text{Max}_\text{ID} \\text{cdot Matches})$ explosion.
+Optimised Pattern: Hash Map / Frequency Array
+Opt Vis. Technique: Filter Buckets
+Dry Run (Opt): Iterate through matches once. Record losses in a Hash Map or Array. Iterate through the unique players and filter them into an "answer[0]" bucket (0 losses) and "answer[1]" bucket (1 loss).
+How to Draw (Opt): Draw a hash table tallying losses. Draw an arrow from players with 0 tallies to a green bucket, and players with 1 tally to a yellow bucket. Discard the rest. Sort the buckets.
+Opt Complexity Visuals: Map Population &amp; Sorting Timeline
+How to Draw Opt Complexity: Draw an $O(N)$ line for scanning matches and updating the map. Draw a second line $O(K \log K)$ representing the sorting of the K unique valid players at the end.
+Mem Vis (BF): Multiple full passes over a large 2D matrix, often loading redundant data.
+Mem Vis (Opt): A single Hash Map or an integer array of size 10^5 (O(N) space where N is unique players).

@@ -1,0 +1,13 @@
+ID: 3819
+Problem Title: Rotate Non Negative Elements (Med.)
+Brute Force Method: Extract all non-negative elements into a new array, rotate that separate array, and then place them back into their original positions.
+BF Complexity Visuals: Memory cloning: Pulling elements out into a floating buffer, shifting them, and re-inserting them.
+How to Draw BF: Draw original array. Draw a separate smaller array. Copy positive numbers over. Shift them. Draw arrows putting them back. Time: $O(N)$, Space: $O(N)$.
+Optimised Pattern: Two Pointers / Cyclic Replacement or Sub-segment Reversal Trick.
+Opt Vis. Technique: In-place juggling of elements without using a secondary holding array.
+Dry Run (Opt): Identify positions of non-negatives. Use the 3-step string reversal trick on the active positions (Reverse all valid, reverse first K valid, reverse remaining).
+How to Draw (Opt): Draw array. Circle positive numbers. Draw curved swap lines reversing the whole positive sub-sequence, then swap lines for the sub-parts.
+Opt Complexity Visuals: Linear scan to find targets, followed by grouped in-place swaps.
+How to Draw Opt Complexity: Draw an array line, point to specific indices, show them swapping. Write $O(N)$ swaps.
+Mem Vis (BF): A secondary dynamic array taking $O(K)$ space where K is the number of non-negative elements.
+Mem Vis (Opt): $O(1)$ memory. Only variable pointers (left, right, temp) are used for the in-place swaps.

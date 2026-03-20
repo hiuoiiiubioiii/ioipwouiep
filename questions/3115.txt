@@ -1,0 +1,13 @@
+ID: 3115
+Problem Title: Maximum Prime Difference
+Brute Force Method: Nested loops comparing every single pair of indices (i, j) and running a prime check on both. **O(N^2 * sqrt(M))**
+BF Complexity Visuals: An N x N matrix calculating distance and primality redundantly.
+How to Draw BF: Draw array. Connect every element to every other element with an arc, run a prime division check manually on both ends of every arc.
+Optimised Pattern: Two Pointers (Inward Search)
+Opt Vis. Technique: Pincers Moving Inwards
+Dry Run (Opt): Scan left-to-right to find the first prime, log index. Scan right-to-left to find the first prime, log index. Return `right - left`.
+How to Draw (Opt): Draw array. Put left finger on start, move right until prime. Put right finger on end, move left until prime. Subtract the indices.
+Opt Complexity Visuals: 1D sweep from both ends stopping early.
+How to Draw Opt Complexity: Draw a straight line of length N. Draw one arrow starting left stopping early, and one starting right stopping early. **O(N * sqrt(M))**.
+Mem Vis (BF): A redundant 2D matrix tracking distances of all valid prime pairs.
+Mem Vis (Opt): Two integer pointer variables `left` and `right`. **O(1)** space.

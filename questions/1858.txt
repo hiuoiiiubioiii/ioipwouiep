@@ -1,0 +1,13 @@
+ID: 1858
+Problem Title: Longest Word With All Prefixes (Premium)
+Brute Force Method: Sort words by length. For each word, manually check if every prefix exists in the original list using a Set.
+BF Complexity Visuals: Nested loop string comparison.
+How to Draw BF: List words. For each, draw arrows checking every prefix length against the whole list. Mark $O(N \cdot L^2)$.
+Optimised Pattern: Trie (Prefix Tree) + DFS.
+Opt Vis. Technique: Path validation in a tree.
+Dry Run (Opt): Insert all words into a Trie. DFS through the Trie, only descending into nodes that are marked as "end of word". Track the deepest node.
+How to Draw (Opt): Draw a tree where each node is a letter. Circle nodes that finish a word. Trace only paths where every circle is solid from the root.
+Opt Complexity Visuals: Linear Trie traversal.
+How to Draw Opt Complexity: Draw an arrow following the paths of the Trie. Mark $O(\\text{text}{\text{Total characters in input}})$.
+Mem Vis (BF): Hash Set containing N large strings.
+Mem Vis (Opt): Recursive tree nodes with 26-sized pointer arrays.

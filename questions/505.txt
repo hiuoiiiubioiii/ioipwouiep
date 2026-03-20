@@ -1,0 +1,13 @@
+ID: 505
+Problem Title: The Maze
+Brute Force Method: Standard DFS, but instead of moving 1 step, move in a direction until hitting a wall. Backtrack if dead end.
+BF Complexity Visuals: Tree expanding drastically due to long paths and deep call stack. $O(M\cdot N)$ but high overhead.
+How to Draw BF: Draw a grid, draw a squiggly line branching infinitely at every wall collision, marking visited poorly.
+Optimised Pattern: BFS (Shortest Path) using a Queue and a Distance 2D Array / Dijkstra.
+Opt Vis. Technique: A radar ping expanding outwards, stopping only at walls before emitting the next ping.
+Dry Run (Opt): Pop node, slide ball in 4 directions until wall. If distance to wall &lt; recorded distance, update and push to queue.
+How to Draw (Opt): Draw a grid map. Mark start. Draw straight arrows hitting walls. Circle wall-hit points, add them to a drawn Queue box.
+Opt Complexity Visuals: Grid traversal where each node is processed efficiently. $O(M\cdot N)$.
+How to Draw Opt Complexity: Draw an M x N grid, shade cells as they are visited to show bounded processing time.
+Mem Vis (BF): Deep vertical stack of recursive function calls.
+Mem Vis (Opt): 2D Array (M x N) for tracking shortest distances + a horizontal Queue line.

@@ -1,0 +1,13 @@
+ID: 2431
+Problem Title: Maximize Total Tastiness of Purchased Fruits
+Brute Force Method: Try every combination of buying, skipping, or using a coupon for each fruit. (Recursive Backtracking).
+BF Complexity Visuals: 3-Way Ternary Decision Tree
+How to Draw BF: Draw a root node splitting into 3 branches. Each level represents a fruit. Label $O(3^N)$ total paths.
+Optimised Pattern: 3D Dynamic Programming (Knapsack Variant)
+Opt Vis. Technique: Layered 2D Budget-Coupon Matrix
+Dry Run (Opt): `dp[i][j][k]` is max tastiness using `i` fruits, `j` money, and `k` coupons. For each fruit, decide: skip, buy full, or buy half.
+How to Draw (Opt): Draw a stack of 2D grids. Each grid represents 'Number of Coupons Used'. In each cell, store max tastiness for (money, items).
+Opt Complexity Visuals: Volume Space Block
+How to Draw Opt Complexity: Draw a cube (N x Money x Coupons). Label $O(N \cdot M \cdot C)$. Total operations are volume of the cube.
+Mem Vis (BF): Draw a recursion stack of depth N. $O(N)$.
+Mem Vis (Opt): Draw a 3D array block (or 2D if space-optimized). Label $O(M \cdot C)$ space.

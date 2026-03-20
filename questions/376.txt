@@ -1,0 +1,13 @@
+ID: 376
+Problem Title: Wiggle Subsequence
+Brute Force Method: Generate every possible subsequence (2^n) and check if it follows the "up-down-up" or "down-up-down" pattern.
+BF Complexity Visuals: N-ary Subsequence Tree (Power Set)
+How to Draw BF: Draw a root. Branch for every inclusion/exclusion. Highlight the paths where the sign of differences alternates. Label $O(2^N)$.
+Optimised Pattern: Greedy (One-Pass Peak-Valley Counting)
+Opt Vis. Technique: Zig-Zag Waveform Tracking
+Dry Run (Opt): Scan the array. If `nums[i] &gt; nums[i-1]`, you are on an "up" trend. If `nums[i] &lt; nums[i-1]`, you are on a "down" trend. Only count a new element when the trend flips.
+How to Draw (Opt): Draw a series of dots on a graph. Draw a zig-zag line connecting them. Circle only the points where the line changes direction (peaks and valleys).
+Opt Complexity Visuals: Linear State-Change Scan
+How to Draw Opt Complexity: Draw a single straight arrow through the array. Above it, draw a "toggle" switch that flips between Up and Down. $O(N)$.
+Mem Vis (BF): Massive collection of subsequence lists.
+Mem Vis (Opt): Two integer variables (`up` and `down`). Draw two small boxes that increment based on the trend flip. $O(1)$.

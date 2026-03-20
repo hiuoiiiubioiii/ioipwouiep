@@ -1,0 +1,13 @@
+ID: 1705
+Problem Title: Maximum Number of Eaten Apples
+Brute Force Method: Nested loop: For every day, scan all remaining apples to find the one that rots earliest.
+BF Complexity Visuals: 2D Grid Check (Days vs Apples array).
+How to Draw BF: Draw days on X axis. Draw apples on Y axis. Cross-reference every day with every remaining apple pile. $O(N^2)$.
+Optimised Pattern: Min-Heap (Priority Queue) tracking `[rot_day, count]`.
+Opt Vis. Technique: Funnel / Sorting Machine.
+Dry Run (Opt): Every day, toss `[rot_day, apples]` into funnel. Shake funnel (heapify). Drop rotten ones. Eat 1 from the top.
+How to Draw (Opt): Draw a tree (Min-Heap). Root is always smallest `rot_day`. Cross out root if expired. Decrement count if eaten.
+Opt Complexity Visuals: Tree Insertion/Extraction (Logarithmic scaling).
+How to Draw Opt Complexity: Draw N elements flowing into a triangle (Heap). Label height as Log(N). Total: $O(N \log N)$.
+Mem Vis (BF): Massive daily snapshot arrays.
+Mem Vis (Opt): A Binary Tree structure (Heap array) storing at most N tuples. $O(N)$ space.

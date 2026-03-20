@@ -1,0 +1,13 @@
+ID: 560
+Problem Title: Subarray Sum Equals K
+Brute Force Method: Nested loops. Outer loop `i` selects start, inner loop `j` selects end, calculate sum of `nums[i...j]` and compare to K.
+BF Complexity Visuals: Triangle of subarray segments. $O(N^2)$.
+How to Draw BF: Draw the array. Draw brackets for every possible start and end point, calculating the sum for each.
+Optimised Pattern: Prefix Sum + Hash Map.
+Opt Vis. Technique: A "target-finder" in history. As you walk forward, you calculate your total distance. You look back at your "history map" to see how many times you were exactly `CurrentDistance - K` units away.
+Dry Run (Opt): Maintain `running_sum`. `count += Map[running_sum - k]`. `Map[running_sum]++`. Initialize `Map[0] = 1`.
+How to Draw (Opt): Draw the array. Below it, write the running sum. Keep a side-table (Map) of `(Sum : Occurrences)`. At each step, subtract K from the sum and look it up in the table.
+Opt Complexity Visuals: Single pass over the array. $O(N)$.
+How to Draw Opt Complexity: Draw a straight timeline with a single pass filling a table.
+Mem Vis (BF): $O(1)$ auxiliary space (just loop variables) but slow time.
+Mem Vis (Opt): A Hash Map storing up to N unique prefix sums. $O(N)$ space.

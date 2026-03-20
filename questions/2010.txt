@@ -1,0 +1,13 @@
+ID: 2010
+Problem Title: The Number of Seniors and Juniors to Join the Company II (SQL)
+Brute Force Method: Cross joins with multiple correlated subqueries to track remaining budget dynamically per row.
+BF Complexity Visuals: Nested Cartesian Grid
+How to Draw BF: Draw multiple tables crossing over each other, heavily shading cells to show iterative, row-by-row budget subtractions $O(N^2)$.
+Optimised Pattern: SQL Window Functions + Common Table Expressions (CTEs)
+Opt Vis. Technique: Data Pipeline / Flowchart
+Dry Run (Opt): CTE1 ranks/sums Seniors. CTE2 finds leftover budget. CTE3 ranks/sums Juniors based on CTE2's leftover budget. Filter final results.
+How to Draw (Opt): Draw 3 distinct boxes (CTEs). Box 1 outputs leftover budget to Box 2. Box 2 passes limits to Box 3. Connect with thick, one-way arrows.
+Opt Complexity Visuals: Sequential Table Scans
+How to Draw Opt Complexity: Draw three straight, parallel lines showing data passing through phases sequentially without looping back. $O(N \log N)$ due to ORDER BY.
+Mem Vis (BF): Huge temporary tables in database memory holding Cartesian products.
+Mem Vis (Opt): Streamlined intermediate tables (CTEs) bounded by N rows, quickly dropped from memory after the final projection.

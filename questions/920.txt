@@ -1,0 +1,13 @@
+ID: 920
+Problem Title: Number of Music Playlists
+Brute Force Method: Recursive backtracking to generate every possible permutation of length L using N songs, checking the 'K' constraint for each.
+BF Complexity Visuals: $O(N^L)$ Exponential. A massive tree where each node has N children, branching L levels deep.
+How to Draw BF: Draw a root node. Branch out N times. From each child, branch N times again. Mark paths that violate the "K songs apart" rule with a red 'X'.
+Optimised Pattern: Dynamic Programming (2D)
+Opt Vis. Technique: Building a playlist "brick by brick." At each step, you either pick a brand new song or a song you've already used (if it's far enough back).
+Dry Run (Opt): `dp[i][j]` is playlists of length `i` with `j` unique songs. Two cases: 1. Last song is new: `dp[i-1][j-1] * (N - (j-1))`. 2. Last song is old: `dp[i-1][j] * max(0, j-K)`.
+How to Draw (Opt): Draw a grid where rows are Playlist Length and columns are Unique Songs. Draw arrows entering a cell from the "top-left" (new song) and "directly above" (old song).
+Opt Complexity Visuals: $O(L \cdot N)$. Filling a rectangular grid of size L x N.
+How to Draw Opt Complexity: Draw a rectangle divided into L x N squares. Draw a single diagonal sweep line to show the order of computation.
+Mem Vis (BF): A massive call stack tree taking up $O(L)$ depth but with a memory-heavy breadth.
+Mem Vis (Opt): $O(L \cdot N)$ for the DP table (can be optimized to $O(N)$ using two rows). Draw two horizontal strips representing the "Current" and "Previous" length states.

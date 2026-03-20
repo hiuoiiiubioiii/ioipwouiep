@@ -1,0 +1,13 @@
+ID: 639
+Problem Title: Decode Ways II
+Brute Force Method: Recursion without memoization to explore every possible 1-digit or 2-digit interpretation, especially with '*' (wildcards).
+BF Complexity Visuals: Massive branching tree (up to 15 branches per '*' node).
+How to Draw BF: Draw '2*'. Branch for 2,1; 2,2... 2,9 and then the 2-digit cases like 21, 22... Write $O(2^N)$.
+Optimised Pattern: Iterative Dynamic Programming (1D).
+Opt Vis. Technique: Weighted Path Tally.
+Dry Run (Opt): `dp[i]` is ways to decode first `i` chars. Calculate based on `dp[i-1]` (1-char) and `dp[i-2]` (2-char). For '*', multiply by 9 or the specific number of 2-digit combos possible.
+How to Draw (Opt): Draw a row of numbers. Under each index, write the "Total Ways" so far. Draw arrows from `i-1` and `i-2` merging into `i`.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight line with two "look-back" arrows at every step. Write $O(N)$.
+Mem Vis (BF): Draw an exponential tree structure in memory.
+Mem Vis (Opt): Draw just three variables: `current`, `prev`, and `prev_prev`. $O(1)$ space.

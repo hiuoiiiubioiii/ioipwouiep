@@ -1,0 +1,13 @@
+ID: 1886
+Problem Title: Determine Whether Matrix Can Be Obtained By Rotation
+Brute Force Method: Manually simulate 90°, 180°, and 270° rotations by creating new matrices and comparing them to the target.
+BF Complexity Visuals: Matrix state-machine flowchart.
+How to Draw BF: Draw a square grid. Draw four arrows pointing to 4 separate grids, each showing the indices shifted. Mark $O(N^2)$ per rotation.
+Optimised Pattern: In-place Matrix Rotation (Transpose + Reverse) or Index Mapping.
+Opt Vis. Technique: Coordinate Transformation Map.
+Dry Run (Opt): Map (i, j) to (j, n-1-i). Check if this mapping holds for all 4 possible rotations without allocating new memory.
+How to Draw (Opt): Draw a 2x2 grid. Label corners (0,0), (0,1), (1,0), (1,1). Show where (0,0) moves in each rotation. Verify target cell matches.
+Opt Complexity Visuals: Single pass comparison over 4 states.
+How to Draw Opt Complexity: Draw an arrow passing through the N \times N matrix once. Mark as $O(N^2)$.
+Mem Vis (BF): Temporary 2D arrays for each rotation stage (O(N^2) space).
+Mem Vis (Opt): $O(1)$ extra space using four boolean flags (rot0, rot90, rot180, rot270).

@@ -1,0 +1,13 @@
+ID: 3665
+Problem Title: Twisted Mirror Path Count (Med)
+Brute Force Method: Recursively trace every possible light beam path, branching at every mirror. $O(2^\text{Mirrors})$.
+BF Complexity Visuals: Exponential Ray Tracing.
+How to Draw BF: Draw a grid with mirrors. One beam hits a mirror and splits/reflects. Each split beam hits another mirror and splits again. The number of active rays explodes.
+Optimised Pattern: Dynamic Programming / BFS with State. State = `(row, col, direction)`. Since the path is "twisted", we track our entering vector.
+Opt Vis. Technique: The "Room-and-Door" Navigator.
+Dry Run (Opt): Imagine entering a room. Depending on which door you used (direction) and the furniture (mirror), there is only one exit door. Map these transitions.
+How to Draw (Opt): Draw a grid. In each cell, draw 4 "ports" (N, S, E, W). Use a arrow to show how entering North reflects out East due to a '/' mirror. Mark cells as "visited" for that specific direction.
+Opt Complexity Visuals: Bounded State-Space Scan.
+How to Draw Opt Complexity: Draw a grid of size R x C. Show that for each cell, there are only 4 directions. Total states = 4 x R x C. Write $O(R x C)$.
+Mem Vis (BF): Infinite recursion frames for circular light paths.
+Mem Vis (Opt): A 3D boolean array `visited[R][C][4]`. Space $O(R x C)$.

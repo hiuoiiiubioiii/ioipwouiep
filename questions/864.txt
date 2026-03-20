@@ -1,0 +1,13 @@
+ID: 864
+Problem Title: Shortest Path to Get All Keys
+Brute Force Method: Try every possible permutation of the order in which you pick up keys. For each order, find the shortest path using BFS.
+BF Complexity Visuals: Factorial Path Exploration. $O(K! x \text{NM})$.
+How to Draw BF: Draw a grid with keys A, B, C. Trace Path A-&gt;B-&gt;C, then A-&gt;C-&gt;B, etc. The number of paths grows to 720 for 6 keys.
+Optimised Pattern: BFS on State (x, y, bitmask_of_keys).
+Opt Vis. Technique: Multi-Floor Labyrinth.
+Dry Run (Opt): A "state" is your coordinates PLUS which keys you have. Use a bitmask (e.g., `001` means key 'a'). You can only cross a lock door 'A' if your mask has the 'a' bit. Use BFS to find the shortest path to a state where the mask is all 1s.
+How to Draw (Opt): Draw the grid. Imagine it has layers (like a 3D building). Every time you pick a key, you "teleport" to a new floor where doors are unlocked.
+Opt Complexity Visuals: BFS on 3D State Space. $O(\text{NM} x 2^K)$.
+How to Draw Opt Complexity: Draw a 3D block of size N x M x 2^K. BFS visits each cell in this 3D space once.
+Mem Vis (BF): Permutation List: Draw a list of K! potential paths.
+Mem Vis (Opt): Visited 3D Array / Set: Draw a 3D matrix (e.g., 30 x 30 x 64 for 6 keys).

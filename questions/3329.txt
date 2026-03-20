@@ -1,0 +1,13 @@
+ID: 3329
+Problem Title: Count Substrings With K-Frequency Characters II
+Brute Force Method: Generate all $O(N^2)$ substrings. Build a frequency map for every single one to check if any char hits count K.
+BF Complexity Visuals: Substring Triangle Grid
+How to Draw BF: Draw an N x N matrix. Every cell is a substring. Inside every cell, draw a mini frequency table. Visualizes massive $O(N^3)$ overlapping work.
+Optimised Pattern: Sliding Window (Expanding Right, Shrinking Left)
+Opt Vis. Technique: Caterpillar with a Trailing Anchor
+Dry Run (Opt): Expand right pointer `r`. Track frequencies. When ANY char hits count `k`, it means the window is valid. Because it's valid, ALL substrings ending at `r` and starting anywhere from `0` to `l` are valid. Add `l` to the answer. Shrink `l`.
+How to Draw (Opt): Draw the string with [ and ] brackets. When a letter hits `k`, draw a long bracket from index 0 all the way to `l`. That bracket represents a "batch" of answers you just found instantly without counting them 1-by-1.
+Opt Complexity Visuals: Parallel Traversal Arrows
+How to Draw Opt Complexity: Draw a horizontal line. Draw `r` moving right. Draw `l` moving right. Neither pointer ever moves backwards, proving $O(N)$ time complexity.
+Mem Vis (BF): $O(1)$ space, but $O(N)$ time spent constantly slicing identical strings into memory just to read them.
+Mem Vis (Opt): A static Hash Map or a flat integer array of size 26, requiring strictly $O(1)$ space to maintain window state.

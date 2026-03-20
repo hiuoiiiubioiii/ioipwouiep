@@ -1,0 +1,13 @@
+ID: 3657
+Problem Title: Find Loyal Customers (Med)
+Brute Force Method: Triple-nested loop: For every customer, for every transaction, check if there is a transaction in every single month of the year. $O(C \\text{times} T)$.
+BF Complexity Visuals: Matrix Intersection Scan.
+How to Draw BF: Draw a table with Customers as rows and Months as columns. For every transaction, find the cell and put a checkmark. Scan every row to see if it has 12 checks.
+Optimised Pattern: Hash Set Aggregation. For each customer, collect `transaction_month` into a Set. Filter customers where `Set.size == 12`.
+Opt Vis. Technique: Monthly Bucket Check.
+Dry Run (Opt): Visualize 12 physical buckets for each customer. Every time they buy something, drop a token into that month's bucket. At the end, count how many customers have no empty buckets.
+How to Draw (Opt): Draw a customer ID. Next to it, draw 12 tiny boxes. As you read the logs, fill the boxes. If all are full, circle the ID.
+Opt Complexity Visuals: Linear Pass with Filtering.
+How to Draw Opt Complexity: Draw one arrow scanning the Transaction table $O(T)$. Draw a second arrow scanning the Customer Summary $O(C)$. Total $O(T + C)$.
+Mem Vis (BF): Creating separate transaction lists for every single customer-month pair.
+Mem Vis (Opt): A Hash Map where Keys are `customer_id` and Values are bitmasks (12 bits) representing months. Space $O(\text{Unique}\_\text{Customers})$.

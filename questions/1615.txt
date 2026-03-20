@@ -1,0 +1,13 @@
+ID: 1615
+Problem Title: Maximal Network Rank
+Brute Force Method: Loop every pair (A,B). For every road, check if it touches A or B. $O(V^2 \cdot E)$.
+BF Complexity Visuals: Exhaustive Edge Checking
+How to Draw BF: Draw V dots. For every pair, draw a magnifying glass inspecting every single edge E in the whole graph.
+Optimised Pattern: Degree Array + Edge Adjacency Matrix
+Opt Vis. Technique: Heavy Node Pairing
+Dry Run (Opt): Precompute road counts. For pair A,B: Rank = count[A] + count[B] - (1 if connected else 0). Find max.
+How to Draw (Opt): Draw nodes sized by their degree (number of roads). Pick the two fattest nodes, sum their sizes, cross out the line between them if it exists.
+Opt Complexity Visuals: Adjacency Lookup Grid
+How to Draw Opt Complexity: Draw a V x V grid. Highlight a quick coordinate lookup $O(1)$ inside an outer pair loop $O(V^2 + E)$.
+Mem Vis (BF): Edge List: Draw a massive, unstructured bag of lines.
+Mem Vis (Opt): 1D Array + 2D Matrix: Draw one horizontal array for degrees, and a checkerboard grid for connections.

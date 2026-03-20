@@ -1,0 +1,13 @@
+ID: 2261
+Problem Title: K Divisible Elements Subarrays
+Brute Force Method: All Subarrays + Divisibility CheckGenerate every possible subarray (O(N^2)). For each, iterate through its elements to count how many are divisible by `p`. If count &lt;= k, add the subarray to a Set to ensure uniqueness.
+BF Complexity Visuals: Triple Nested Iteration
+How to Draw BF: Draw an array. Draw all possible brackets (subarrays). For each bracket, draw a smaller loop inside checking every number. Note the $O(N^3)$ time and $O(N^3)$ space for the Set.
+Optimised Pattern: Sliding Window + Rabin-Karp / Trie
+Opt Vis. Technique: Rolling Hash Subarray Fingerprinting
+Dry Run (Opt): Use two pointers to find valid windows. To handle "uniqueness" without storing full strings, use a Trie to insert each valid subarray. Each path in the Trie represents a unique subarray.
+How to Draw (Opt): Draw a Trie (Prefix Tree). As you find a valid subarray, trace its numbers as a path down the tree. If you reach a new node, increment the `unique_count`. This avoids storing massive strings in a Set.
+Opt Complexity Visuals: Amortized Trie Insertion
+How to Draw Opt Complexity: Draw an $O(N^2)$ loop for all starting positions. For each, draw an $O(N)$ extension that inserts into the Trie. Total time: $O(N^2)$. Space is optimized because overlapping prefixes share nodes.
+Mem Vis (BF): A massive Hash Set storing full copies of every valid subarray as strings or lists.
+Mem Vis (Opt): A Trie where each node stores a single integer and a map of children (O(Total_Unique_Elements) space).

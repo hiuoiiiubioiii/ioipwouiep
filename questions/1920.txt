@@ -1,0 +1,13 @@
+ID: 1920
+Problem Title: Build Array from Permutation
+Brute Force Method: Create a brand new array of size N. Iterate through nums and directly assign `ans[i] = nums[nums[i]]`.
+BF Complexity Visuals: Parallel Array Mapping
+How to Draw BF: Draw `nums` array on top, `ans` array on bottom. Draw crossed arrows mapping values from `nums` as indices back to `nums` and down to `ans`.
+Optimised Pattern: In-Place Encoding (Math / Modulo)
+Opt Vis. Technique: Dual-State Storage (2 values in 1 slot)
+Dry Run (Opt): Traverse the array. Encode the new value alongside the old using `nums[i] = nums[i] + N * (nums[nums[i]] % N)`. Traverse again to extract new values by dividing by N.
+How to Draw (Opt): Draw a single array block. Draw it splitting into two layers conceptually (Remainder for Old, Quotient for New). Run through twice: first packing the box, second unpacking it.
+Opt Complexity Visuals: Two-Pass Linear Scan
+How to Draw Opt Complexity: Draw one straight arrow left to right (Encoding pass). Draw a second straight arrow left to right (Decoding pass). Strictly $O(N)$ time.
+Mem Vis (BF): A newly allocated `ans` array of size N taking up $O(N)$ heap memory.
+Mem Vis (Opt): The input array mutated in place. Zero extra allocations, operating in strictly $O(1)$ extra space.

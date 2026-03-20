@@ -1,0 +1,13 @@
+ID: 2134
+Problem Title: Minimum Swaps to Group All 1's Together II
+Brute Force Method: For every possible starting position in the circular array, count how many 0s exist in a block of size K.
+BF Complexity Visuals: A loop resetting and recalculating the same block over and over.
+How to Draw BF: Draw a circle. Draw a curved bracket. Move the bracket one step, manually count all 0s inside. Repeat. $O(N^2)$.
+Optimised Pattern: Fixed Sliding Window on a Concatenated Array.
+Opt Vis. Technique: A rigid frame sliding over a doubled array.
+Dry Run (Opt): Count total 1s -&gt; `k`. Append array to itself to simulate circularity. Slide a window of size `k`. `Swaps` = `k` minus `max 1s found in any window`.
+How to Draw (Opt): Draw the array twice side-by-side. Draw a rectangle of size `k`. Slide it to the right one step at a time. Keep track of the highest number of 1s you see inside it.
+Opt Complexity Visuals: $O(N)$ linear scan.
+How to Draw Opt Complexity: A single horizontal arrow sliding a fixed-width box across a line.
+Mem Vis (BF): $O(N^2)$ loop counters.
+Mem Vis (Opt): $O(N)$ new duplicated array, OR $O(1)$ if using modulo `% N` math for indices.

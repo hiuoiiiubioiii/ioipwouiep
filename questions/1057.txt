@@ -1,0 +1,13 @@
+ID: 1057
+Problem Title: Campus Bikes
+Brute Force Method: Calculate all possible worker-bike pairings. Use backtracking to try every combination of assignments and find the one that meets the "closest" rule.
+BF Complexity Visuals: A factorial permutation tree of worker-bike assignments.
+How to Draw BF: 3 workers, 3 bikes. List all 3! = 6 assignment sets. Check distances for each. Write $O(N!)$.
+Optimised Pattern: Bucket Sort / Greedy with Priority.
+Opt Vis. Technique: A "Distance Sorter". We group all possible pairs by their distance and process the smallest distances first.
+Dry Run (Opt): Calculate distance for every pair (worker, bike). Put pairs into "buckets" indexed by distance. Iterate buckets 0 to 2000. Assign if worker and bike are both free.
+How to Draw (Opt): Draw a table with distance as rows. In each row, list (w, b) pairs. Scan from top row down. Mark 'w' and 'b' as used once assigned.
+Opt Complexity Visuals: Pair calculation (N*M) + Bucket iteration (Dist).
+How to Draw Opt Complexity: Draw an N x M matrix mapped into a vertical bucket list. Write Time: $O(N \cdot M)$.
+Mem Vis (BF): $O(N!)$ space for permutations.
+Mem Vis (Opt): $O(N \cdot M)$ space to store all pairs in buckets.

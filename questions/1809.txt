@@ -1,0 +1,13 @@
+ID: 1809
+Problem Title: Ad-Free Sessions (SQL)
+Brute Force Method: Cross join Playback and Ads, filter where ad timestamp is between playback times. Exclude matches.
+BF Complexity Visuals: Cartesian product grid.
+How to Draw BF: Draw a table mapping every session to every ad. Cross out rows without time overlaps.
+Optimised Pattern: LEFT JOIN with time range condition + IS NULL check.
+Opt Vis. Technique: Venn diagram with exclusion (Anti-Join).
+Dry Run (Opt): Join Playback to Ads only where ad times overlap. Select Playback IDs where the joined Ad ID is missing.
+How to Draw (Opt): Draw two tables. Draw lines connecting overlapping times. Circle the Playback rows that have NO lines connected.
+Opt Complexity Visuals: Relational Algebra Hash/Merge Join flow.
+How to Draw Opt Complexity: Draw a hash table for intervals to visualize how the DB engine optimizes the join in $O(N \log N)$ or $O(N)$.
+Mem Vis (BF): N x M massive temporary table in disk/memory.
+Mem Vis (Opt): Hash join partitions and filtered result set in memory.

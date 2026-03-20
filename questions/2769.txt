@@ -1,0 +1,13 @@
+ID: 2769
+Problem Title: Find the Maximum Achievable Number
+Brute Force Method: BFS: From num, explore all possible numbers reachable in t steps by incrementing/decrementing both num and an unknown x. $O(2^T)$.
+BF Complexity Visuals: Expanding Range Tree
+How to Draw BF: Draw num. Branch to num+1 and num-1. For each, branch again. Do this for t levels.
+Optimised Pattern: BFS Queue (Visualizing the search space widening with every time step).
+Opt Vis. Technique: Mathematical Maximum Bounds
+Dry Run (Opt): Linear Range Expansion
+How to Draw (Opt): In each of the t steps, you can increase num by 1 and decrease x by 1 to bring them closer. To maximize x, assume x starts far above num. They meet in the middle after 2 * t total distance relative to each other. Result: num + 2 * t.
+Opt Complexity Visuals: Draw a number line. Place num. Draw t arrows of size 2 jumping to the right. The landing spot is the answer.
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single formula box. Write $O(1)$.
+Mem Vis (Opt): Zero Extra Space (Draw a single integer result).

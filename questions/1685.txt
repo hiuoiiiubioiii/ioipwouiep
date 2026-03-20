@@ -1,0 +1,13 @@
+ID: 1685
+Problem Title: Sum of Absolute Differences in a Sorted Array
+Brute Force Method: For every index i, run a second loop to calculate |nums[i] - nums[j]| for all j.
+BF Complexity Visuals: Quadratic Difference Matrix
+How to Draw BF: Draw an N \times N grid of all possible subtraction results. $O(N^2)$.
+Optimised Pattern: Prefix Sums (Mathematical Simplification)
+Opt Vis. Technique: Sectional Area Calculation
+Dry Run (Opt): Total Diff = (Nums to left \times val - LeftSum) + (RightSum - Nums to right \times val). Use precomputed prefix sums to get Left/Right sum in $O(1)$.
+How to Draw (Opt): Draw a bar chart of the array. For any bar, the sum of differences is the area of the "empty space" to its left plus the area above it to its right.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a straight arrow through the array. $O(N)$.
+Mem Vis (BF): Nested Loop Markers: Simple loop indices.
+Mem Vis (Opt): Prefix Sum Array: Draw a single horizontal array of size N storing cumulative totals.

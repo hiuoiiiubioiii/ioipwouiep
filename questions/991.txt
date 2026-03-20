@@ -1,0 +1,13 @@
+ID: 991
+Problem Title: Broken Calculator
+Brute Force Method: BFS starting from `startValue`, exploring `x * 2` and `x - 1` at every step to find the shortest path to `target`.
+BF Complexity Visuals: $O(2^\text{depth})$. The search tree grows exponentially, especially because the value can grow much larger than the target before coming back down.
+How to Draw BF: Draw `startValue`. Branch to `*2` and `-1`. From those, branch again. The tree is lopsided and deep, often looping back on itself.
+Optimised Pattern: Greedy Reverse Engineering (Work Backwards)
+Opt Vis. Technique: "The Path of Least Resistance." It's easier to reach `startValue` from `target`. If `target` is even, you *must* have come from a `*2` (so divide by 2). If odd, you *must* have come from a `-1` (so add 1).
+Dry Run (Opt): While `target &gt; startValue`: if `target % 2 == 0`, `target /= 2`, else `target += 1`. Increment `steps`. Final result = `steps + (startValue - target)`.
+How to Draw (Opt): Draw a number line. Mark Start and Target. Draw a single path from Target moving left. If the number is even, take a "Giant Leap" (divide); if odd, take a "Tiny Step" (plus 1).
+Opt Complexity Visuals: $O(\log(\text{target}/\text{start})$). Each division operation cuts the number in half.
+How to Draw Opt Complexity: Draw a single horizontal line with one arrow moving from right to left, shrinking the target value rapidly.
+Mem Vis (BF): $O(2^\text{depth})$ space to store the BFS queue of reached numbers.
+Mem Vis (Opt): $O(1)$. Only two integer variables. Draw two small boxes: `currentValue` and `steps`.

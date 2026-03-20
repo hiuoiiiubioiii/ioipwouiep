@@ -1,0 +1,13 @@
+ID: 2461
+Problem Title: Maximum Sum of Distinct Subarrays With Length K
+Brute Force Method: Nested loops: for every index `i`, check the subarray of length `k`. Check for distinctness using a Set and then sum.
+BF Complexity Visuals: Nested Window Set-Check
+How to Draw BF: Draw the array. Draw a sliding bracket. Inside the bracket, draw a Hash Set. Label $O(N \cdot K)$.
+Optimised Pattern: Sliding Window + Frequency Map (or Set)
+Opt Vis. Technique: Distinct Sliding Window Accumulator
+Dry Run (Opt): Keep a running sum. Add new element, remove the oldest. Use a Map to track frequencies. If `map.size() == k`, it's a valid candidate for max.
+How to Draw (Opt): Draw the array with a box of size K. Write the running sum above. Maintain a list of counts for the numbers inside the box. Slide box right.
+Opt Complexity Visuals: Constant-Work Sliding Window
+How to Draw Opt Complexity: Draw a single line. Draw a box moving right. Label $O(N)$ Time.
+Mem Vis (BF): Draw K-size arrays for every starting point.
+Mem Vis (Opt): Draw a Hash Map and two sum variables. $O(K)$ Space.

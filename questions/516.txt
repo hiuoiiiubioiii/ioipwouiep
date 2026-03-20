@@ -1,0 +1,13 @@
+ID: 516
+Problem Title: Longest Palindromic Subsequence
+Brute Force Method: Pure Recursion. Test every subsequence by checking left and right pointers. If they match, add 2; else branch twice.
+BF Complexity Visuals: Binary tree exploding downwards as every mismatch creates two new branches. $O(2^N)$.
+How to Draw BF: Write the string. Draw branching lines down, showing string shrinking by 1 char on left, then 1 char on right.
+Optimised Pattern: 2D Dynamic Programming (Bottom-Up).
+Opt Vis. Technique: A triangular grid filling diagonally outward from the center (single characters) to the full string.
+Dry Run (Opt): If ends match, inner core + 2. If ends differ, max of (exclude left, exclude right). Fill table diagonally.
+How to Draw (Opt): Draw an N x N grid. Fill the main diagonal with 1s. Traverse diagonally upwards, writing the max lengths based on the cells below and left.
+Opt Complexity Visuals: A bounded N x N square grid filling up systematically. $O(N^2)$.
+How to Draw Opt Complexity: Draw a square divided into a grid, shading half of it diagonally.
+Mem Vis (BF): Massive deep recursive call stack of height N holding string states.
+Mem Vis (Opt): A 1D array of size N (space optimized from 2D), storing the previous length's results.

@@ -1,0 +1,13 @@
+ID: 2232
+Problem Title: Minimize Result by Adding Parentheses to Expression
+Brute Force Method: String Manipulation SimulationSince constraints are tiny (string length &lt;= 10), the brute force *is* the optimal. Generate all valid splits `num1 * (num2 + num3) * num4`, evaluate using a math parser, and track the minimum.
+BF Complexity Visuals: Combinatorial Splitting Grid
+How to Draw BF: Draw the expression `12+34`. Draw a matrix of choices for the left parenthesis `(` (index 0, 1) and right parenthesis `)` (index 3, 4). Calculate the math for each cell.
+Optimised Pattern: Sliding Boundary Pointers
+Opt Vis. Technique: 4-Part Substring Slicing
+Dry Run (Opt): Find the '+' index. Use an outer loop `i` for the left parenthesis (from 0 to '+') and an inner loop `j` for the right parenthesis (from '+' to end). Slice the string into 4 numeric parts and evaluate `p1 * (p2 + p3) * p4`.
+How to Draw (Opt): Write the string. Highlight the `+` sign as an anchor. Put a left bracket `[` before the `+` and slide it left. Put a right bracket `]` after the `+` and slide it right. Write the multiplication output below each step.
+Opt Complexity Visuals: Nested Loop Bounding Box
+How to Draw Opt Complexity: Draw a small $O(L^2)$ box, where L is the length of the string. Inside the box, draw constant $O(1)$ string-to-integer conversions, showing that small constraints make $O(N^2)$ perfectly optimal.
+Mem Vis (BF): Repeated creation of new substring memory allocations per loop iteration.
+Mem Vis (Opt): Four scalar integer variables holding the parsed substring values for calculation (O(1) space).

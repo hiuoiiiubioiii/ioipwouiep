@@ -1,0 +1,13 @@
+ID: 480
+Problem Title: Sliding Window Median
+Brute Force Method: Sort every window For every window of size k, copy the elements into a new array, sort it, and find the middle.
+BF Complexity Visuals: Repeated Sorting Wall
+How to Draw BF: Draw a sliding window. At each step, draw a full $O(k \log k)$ sorting process. Total $O(N \cdot k \log k)$.
+Optimised Pattern: Two Heaps (Balance) / TreeSet Use a Max-Heap for the left half and a Min-Heap for the right half. Use "Lazy Removal" with a Hash Map to handle elements leaving the window.
+Opt Vis. Technique: Balanced Scales
+Dry Run (Opt): Imagine two buckets. The left is heavy (Max), the right is light (Min). Keep them level. As the window slides, "lazy delete" elements that fell out.
+How to Draw (Opt): Draw two vertical buckets. Write "Small" and "Large". As you slide, draw a tally of "Pending Deletes" next to the buckets. Rebalance so |Small| \approx |Large|.
+Opt Complexity Visuals: Logarithmic Maintenance
+How to Draw Opt Complexity: Draw a single horizontal scan. At each step, show a small $O(\log k)$ heap adjustment. Total $O(N \log k)$.
+Mem Vis (BF): Window Copies Full $O(k)$ array copies at every step.
+Mem Vis (Opt): Heaps + Map Draw two binary heaps and a "Deletes" Map. $O(k)$ space.

@@ -1,0 +1,13 @@
+ID: 3597
+Problem Title: Partition String (Med)
+Brute Force Method: Backtracking to try every possible split point in the string and checking if each part is valid.
+BF Complexity Visuals: Exponential Split Tree.
+How to Draw BF: Draw a string. At every gap between letters, branch into "Split" or "No Split". 2^(N-1) leaf strings.
+Optimised Pattern: Greedy Single Pass with Hash Set.
+Opt Vis. Technique: Window of Uniqueness.
+Dry Run (Opt): Move right. If the current character is already in your "seen" set, it means you MUST split before this character. Reset set.
+How to Draw (Opt): Draw a string. Move a finger letter-by-letter. Toss letters into a "Current Part" bin. If you see a duplicate, draw a vertical line and empty the bin.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single straight arrow passing through the string. $O(1)$ set check per character.
+Mem Vis (BF): Recursive String Fragments: Draw hundreds of substrings stored in memory for every possible partition path.
+Mem Vis (Opt): Hash Set: Draw one small character set (max size 26) that clears itself periodically.

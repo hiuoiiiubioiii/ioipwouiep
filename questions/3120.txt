@@ -1,0 +1,13 @@
+ID: 3120
+Problem Title: Count the Number of Special Characters I
+Brute Force Method: For every character, loop through the entire string again to check if its opposite case exists. $O(N^2)$
+BF Complexity Visuals: Spaghetti web of lines pointing from every character to every other character in the string.
+How to Draw BF: Point to 'a'. Scan your finger all the way to the end looking for 'A'. Point to 'B'. Scan your finger from the start looking for 'b'.
+Optimised Pattern: Hash Set / Boolean Arrays
+Opt Vis. Technique: Two-Row Switchboard
+Dry Run (Opt): Create a Lowercase array and Uppercase array. Scan string once. Flip the switch for the characters seen. AND the two boards together.
+How to Draw (Opt): Draw two rows of 26 checkboxes (a-z and A-Z). Read the string left to right, ticking the corresponding box. Count columns with two ticks.
+Opt Complexity Visuals: Single pass timeline + constant time check.
+How to Draw Opt Complexity: Draw one straight line of length N. Then draw a tiny fixed box of size 26. $O(N)$ time.
+Mem Vis (BF): None (if done in place, but highly inefficient time-wise).
+Mem Vis (Opt): Two tiny fixed arrays of size 26, representing $O(1)$ auxiliary space.

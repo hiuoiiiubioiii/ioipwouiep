@@ -1,0 +1,14 @@
+ID: 3190
+Problem Title: Find Minimum Operations to Make All Elements Divisible by Three
+Brute Force Method: Check all possible +1/-1 combinations for every element to find divisibility. $O(2^N)$.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw an array. For each number, branch "add 1" or "subtract 1". Count which path reaches a 3-multiple faster.
+Optimised Pattern: Modulo Simulation
+Opt Vis. Technique: Single-Pass Remainder Check
+Dry Run (Opt): For each element, if x mod 3 
+eq 0, it takes exactly 1 operation (either +1 or -1) to reach a multiple of 3.
+How to Draw (Opt): Draw the array. Below each number, write its remainder when divided by 3. If it's 1 or 2, write "1 operation." Sum the counts.
+Opt Complexity Visuals: Discrete Linear Scan
+How to Draw Opt Complexity: Draw a straight line 0 rightarrow N. $O(N)$.
+Mem Vis (BF): None (direct scalar tally).
+Mem Vis (Opt): Zero auxiliary space. $O(1)$.

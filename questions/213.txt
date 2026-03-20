@@ -1,0 +1,13 @@
+ID: 213
+Problem Title: House Robber II
+Brute Force Method: Recursively try all subsets, verifying circular adjacency constraint at the end.
+BF Complexity Visuals: Full Binary Tree: $O(2^N)$ Time.
+How to Draw BF: Draw a binary tree branching into 'Rob' and 'Skip' at every house. Cross out valid branches that accidentally robbed the first and last house.
+Optimised Pattern: Dynamic Programming (Two Passes)
+Opt Vis. Technique: Two Parallel 1D Tapes
+Dry Run (Opt): Run the standard House Robber sliding window on houses [0 to N-2]. Run it again on [1 to N-1]. Take the maximum of both final values.
+How to Draw (Opt): Draw two horizontal arrays. One crosses out the last element, one crosses out the first. Trace the max(curr+prev2, prev1) formula across both.
+Opt Complexity Visuals: Parallel Timelines: $O(N)$ Time, $O(1)$ Space.
+How to Draw Opt Complexity: Draw two horizontal lines representing the two linear passes. Total time is 2N, simplifying to $O(N)$.
+Mem Vis (BF): Recursive Call Tree: Expanding bubbles of function calls.
+Mem Vis (Opt): Two Sliding Windows: Draw two sets of tiny boxes (`rob1`, `rob2`) that slide across the array tapes, replacing values dynamically.

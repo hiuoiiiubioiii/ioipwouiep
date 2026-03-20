@@ -1,0 +1,13 @@
+ID: 1525
+Problem Title: Number of Good Ways to Split a String
+Brute Force Method: Loop to place a split at every index `i`. For each split, slice the string into two, dump both into separate Hash Sets, and compare sizes. $O(N^2)$.
+BF Complexity Visuals: Two Sliding Windows $O(N^2)$
+How to Draw BF: Draw a string. Draw a vertical slice. Draw two circles (Sets) processing the left and right halves. Erase everything, move the slice over by 1, and redraw everything from scratch.
+Optimised Pattern: Prefix &amp; Suffix Arrays (State Tracking)
+Opt Vis. Technique: The Meeting Point
+Dry Run (Opt): Precompute how many unique characters exist from right-to-left and store it in an array `suffix_unique`. Then iterate left-to-right, keeping a running set of unique chars, and compare it to the `suffix_unique[i+1]` array.
+How to Draw (Opt): Draw a string. Draw a row of boxes below it (the Suffix array) filled back-to-front with unique counts. Draw a scanner moving left-to-right, tallying unique letters. At each step, compare the scanner's tally with the box immediately to its right.
+Opt Complexity Visuals: Two-Pass Linear $O(N)$
+How to Draw Opt Complexity: Draw two parallel horizontal lines. One arrows points right-to-left (precomputation). The second arrow points left-to-right (the checking phase). Both are $O(N)$.
+Mem Vis (BF): Multiple substring allocations and Set rebuilds taking massive garbage collection space. $O(N^2)$.
+Mem Vis (Opt): One integer array of size N (the suffix tracker) and one integer array of size 26 (the left character tracker). $O(N)$ space.

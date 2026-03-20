@@ -1,0 +1,13 @@
+ID: 450
+Problem Title: Delete Node in a BST
+Brute Force Method: Rebuild Tree Store all nodes in a list (except the target), then rebuild a balanced BST from scratch.
+BF Complexity Visuals: List Transformation
+How to Draw BF: Draw a tree \to Linear List \to New Tree. $O(N)$.
+Optimised Pattern: Recursive Re-linking Find node. If it's a leaf, remove. If 1 child, replace with child. If 2 children, replace with In-order Successor (min in right subtree).
+Opt Vis. Technique: Pointer Re-wiring
+Dry Run (Opt): Visualize the "Successor" climbing up the tree to take the empty seat.
+How to Draw (Opt): Draw a BST. Circle the node to delete. Find the smallest node in its right branch. Draw an arrow moving it into the deleted spot.
+Opt Complexity Visuals: Path Traverse
+How to Draw Opt Complexity: Draw a single path from root to leaf. $O(H)$ where H is height.
+Mem Vis (BF): Extra List Memory for all N nodes.
+Mem Vis (Opt): Call Stack Stack depth equal to $O(H)$.

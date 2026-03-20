@@ -1,0 +1,13 @@
+ID: 2255
+Problem Title: Count Prefixes of a Given String
+Brute Force Method: Nested String ComparisonFor every word in the array, check if it matches the prefix of the target string using a built-in `startsWith()` function or a loop.
+BF Complexity Visuals: Multi-String Matching
+How to Draw BF: Draw the target "apple". Draw the list ["a", "app", "cat"]. Check "a" against "apple", then "app", then "cat". Highlight the repeated comparisons.
+Optimised Pattern: Trie (Prefix Tree) / Hash Map
+Opt Vis. Technique: Prefix Path Traversal
+Dry Run (Opt): Insert the target string's prefixes into a Hash Set, or build a Trie of the word list. For the target string, simply walk the Trie once to count how many words end on its path.
+How to Draw (Opt): Draw a tree where each node is a character. "apple" is a single branch. For each word in the list, see if it fits entirely on that branch. Every time you hit a "Word End" marker, count it.
+Opt Complexity Visuals: Linear Path Count
+How to Draw Opt Complexity: Draw a single pass through the word list. Label it $O(\text{Sum of all word lengths})$. Show that each check is proportional to the word's length, not the total number of words.
+Mem Vis (BF): Multiple substring allocations `s.substring(0, i)` for every comparison.
+Mem Vis (Opt): A Trie structure or a Hash Set containing the unique words/prefixes (O(Total Characters) space).

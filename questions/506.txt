@@ -1,0 +1,13 @@
+ID: 506
+Problem Title: Relative Ranks
+Brute Force Method: Find the max, assign rank, remove it. Repeat N times for all elements. $O(N^2)$ Time.
+BF Complexity Visuals: N iterations over a shrinking array of N elements.
+How to Draw BF: Draw N rows of the array, crossing out the highest number in each row.
+Optimised Pattern: Sorting with Index Tracking / Max-Heap.
+Opt Vis. Technique: A scoreboard that pairs original jersey numbers (indices) with their scores before sorting.
+Dry Run (Opt): Pair scores with indices -&gt; Sort descending -&gt; Assign Gold/Silver/Bronze to first 3 -&gt; Assign "4", "5" to rest -&gt; Map back to original indices.
+How to Draw (Opt): Draw unsorted array. Below it, draw sorted array of pairs (Score, Index). Draw arrows from sorted elements back to a final answer array.
+Opt Complexity Visuals: Tree structure (Heap/Sort) mapping to a linear array. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a balanced binary tree of height log N, followed by a flat N-length line.
+Mem Vis (BF): A second array of N size to hold rankings.
+Mem Vis (Opt): Array of tuples/pairs taking up exactly $O(N)$ space.

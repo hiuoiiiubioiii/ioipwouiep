@@ -1,0 +1,13 @@
+ID: 1723
+Problem Title: Find Minimum Time to Finish All Jobs
+Brute Force Method: Assign every job to every possible worker combinations. For each, calculate the max workload. Find the minimum of these maximums.
+BF Complexity Visuals: K-ary Backtracking Tree.
+How to Draw BF: Draw Job 1. Draw K lines to K workers. From each worker, draw K lines for Job 2. $O(K^N)$.
+Optimised Pattern: Binary Search on Answer + Pruned Backtracking.
+Opt Vis. Technique: Adjustable Limbo Bar + Bucket Filling.
+Dry Run (Opt): Guess a max time 'T'. Try assigning jobs (largest first) to workers. If a worker exceeds T, backtrack. If assignment succeeds, lower T. If impossible, raise T.
+How to Draw (Opt): Draw a line at height T. Drop job blocks into K buckets. If a bucket overflows T, stop, undo, try next bucket. Prune heavily if dropping a block into an empty bucket fails.
+Opt Complexity Visuals: Binary Search wrapping a Decision Tree.
+How to Draw Opt Complexity: Draw Answer Number Line (Log(Sum) steps). Inside each step, draw a heavily crossed-out decision tree.
+Mem Vis (BF): K-sized array duplicated K^N times in call stack.
+Mem Vis (Opt): One K-sized array modified in-place + Recursion stack. $O(K + N)$ space.

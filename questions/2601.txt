@@ -1,0 +1,13 @@
+ID: 2601
+Problem Title: Prime Subtraction Operation
+Brute Force Method: Nested loops calculating primes via trial division for every element.
+BF Complexity Visuals: Branching execution tree
+How to Draw BF: Draw nested loops as repeating blocks; write $O(N \cdot M)$ beside each step.
+Optimised Pattern: Sieve of Eratosthenes + Binary Search (Greedy)
+Opt Vis. Technique: Number Line &amp; Precomputed Lookup
+Dry Run (Opt): Use two fingers: one on the array, one binary-searching the Sieve array to find the largest valid prime.
+How to Draw (Opt): Draw `nums` array and `primes` array. Draw arrows from `nums[i]` to valid prime strictly less than `nums[i] - nums[i-1]`.
+Opt Complexity Visuals: Time Distribution Timeline
+How to Draw Opt Complexity: Write Sieve setup (N log log N) + Array traversal with binary search (N log P) as sequential timeline blocks.
+Mem Vis (BF): Isolated variables memory trace
+Mem Vis (Opt): Contiguous memory block diagrams for Sieve boolean[] array.

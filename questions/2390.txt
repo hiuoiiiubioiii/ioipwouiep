@@ -1,0 +1,13 @@
+ID: 2390
+Problem Title: Removing Stars From a String
+Brute Force Method: Scan the string. Every time you find a '*', look at all previous characters to find the nearest non-star, delete both, and start the scan over.
+BF Complexity Visuals: Repeated Deletion &amp; Re-scanning (O(N^2))
+How to Draw BF: Draw a string. Circle a '*', find the letter to its left, erase both with a big "X", then shift the whole string left. Repeat.
+Optimised Pattern: Stack (LIFO) / Two Pointers
+Opt Vis. Technique: Incremental Character Buffer
+Dry Run (Opt): Iterate through the string. If the character is not a '*', push it onto a stack. If it is a '*', pop the top character from the stack. Join the stack at the end.
+How to Draw (Opt): Draw a string and an empty box (Stack). For every letter, drop it in the box. For every star, reach into the box and pull out the last letter you dropped.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. A stack grows and shrinks as the pointer moves across the input.
+Mem Vis (BF): Draw thousands of intermediate string copies created during deletions.
+Mem Vis (Opt): Draw one Stack (or Character Array) to act as the result buffer.

@@ -1,0 +1,13 @@
+ID: 1017
+Problem Title: Convert to Base -2
+Brute Force Method: Try to formulate it by regular base 2 conversion and fixing signs later, resulting in messy branching, patches, and infinite loops on negatives.
+BF Complexity Visuals: A tangled decision tree of positive and negative remainders branching out of control.
+How to Draw BF: Write N / -2. Get stuck on negative remainders. Cross out and rewrite. Write $O(\text{Unknown})$.
+Optimised Pattern: Math (Modulo with Negative Base).
+Opt Vis. Technique: A continuous division machine where remainders are forced to be positive by artificially adjusting the quotient.
+Dry Run (Opt): Divide N by -2. If remainder is -1, mathematically change it to +1 and add 1 to the quotient. Prepend remainder to result string.
+How to Draw (Opt): Draw a vertical division table. N on left, quotient below, remainder on right. If remainder is &lt; 0, add 2 to it, add 1 to quotient.
+Opt Complexity Visuals: A straight vertical mathematical descent to 0.
+How to Draw Opt Complexity: Draw a cascading division block downwards. Write Time: $O(\log N)$.
+Mem Vis (BF): Heavy call stack or string builder exploding from infinite loops if negative remainders aren't handled.
+Mem Vis (Opt): A simple String/StringBuilder growing to $O(\log N)$ size.

@@ -1,0 +1,13 @@
+ID: 2338
+Problem Title: Count the Number of Ideal Arrays
+Brute Force Method: Backtracking: Build every possible array of length `n` where each element is a multiple of the previous one, and count them.
+BF Complexity Visuals: Recursive Multiplier Tree
+How to Draw BF: Draw a root node. Branch to every multiple (e.g., if 2, branch to 2, 4, 6...). Go `n` levels deep.
+Optimised Pattern: Math (Combinatorics + Stars and Bars)
+Opt Vis. Technique: Prime Factorization Buckets
+Dry Run (Opt): The values in an ideal array change at most 14 times (since 2^14 &gt; 10,000). Use DP to find how many sequences of length `k` (where each element strictly increases and divides the next) exist. Use "Stars and Bars" to distribute the remaining `n-k` spots.
+How to Draw (Opt): Draw a sequence of distinct multipliers (e.g., 1 -&gt; 2 -&gt; 4). Draw "Stars and Bars" dividers to show how many times each number is repeated to fill the total length `n`.
+Opt Complexity Visuals: DP + Combinatorial Product (O(MaxV * log MaxV))
+How to Draw Opt Complexity: Draw a small DP table (MaxV x 14) and a quick factorial calculation for the combinations.
+Mem Vis (BF): Draw a deep recursion stack storing partial arrays.
+Mem Vis (Opt): Draw a 2D DP Table (10000 x 14) and a precomputed Factorial array.

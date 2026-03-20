@@ -1,0 +1,13 @@
+ID: 3022
+Problem Title: Minimize OR of Remaining Elements Using Operations
+Brute Force Method: Use Backtracking/DFS to try all possible valid ways to merge adjacent elements `k` times, calculate the final OR sum, and find the minimum.
+BF Complexity Visuals: Decision Tree of Array Merges
+How to Draw BF: Draw the array. Branch off showing different adjacent pairs combining via bitwise AND, creating $O(2^N)$ nested states.
+Optimised Pattern: Greedy Bitwise Masking (MSB to LSB)
+Opt Vis. Technique: Bit Matrix Filtering
+Dry Run (Opt): Build a target answer bit by bit from most significant to least. Assume we can force a bit to 0. Test if we can group the array elements (using bitwise AND) within `k` operations to achieve this target mask.
+How to Draw (Opt): Write the numbers in binary stacked vertically. Read columns left to right. Try to "cross out" (force to 0) the leftmost column. Group adjacent numbers until their AND result has a 0 in that column. If it takes &lt;= `k` groups, keep it crossed out.
+Opt Complexity Visuals: 30-Bit Linear Check
+How to Draw Opt Complexity: Draw a loop of exactly 30 iterations (for 32-bit integers). Inside the loop, draw an $O(N)$ linear array scan.
+Mem Vis (BF): Deep recursive stacks holding modified array states.
+Mem Vis (Opt): A few integer variables for bit masking: `ans`, `target`, `current_mask`.

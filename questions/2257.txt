@@ -1,0 +1,13 @@
+ID: 2257
+Problem Title: Count Unguarded Cells in the Grid
+Brute Force Method: Full Grid Simulation per GuardFor every guard, initiate a 4-direction scan. For every step in a direction, check the entire list of walls and other guards to see if the vision is blocked.
+BF Complexity Visuals: Guard-to-Obstacle Cross-check
+How to Draw BF: Draw a grid. For one guard, draw vision lines. At every cell, draw a magnifying glass checking the "Wall List". Show the $O(G \cdot (R+C)$ * W) complexity.
+Optimised Pattern: Matrix Marking / State Grid
+Opt Vis. Technique: Vision Obstacle Overwrite
+Dry Run (Opt): Create a 2D grid where walls and guards are marked as 'blocking'. For each guard, radiate vision in 4 directions, stopping immediately when hitting a 'blocking' cell. Count remaining '0' cells.
+How to Draw (Opt): Draw a grid with 'W' for walls. For a guard 'G', draw arrows that stop physically when they hit 'W' or another 'G'. Mark all cells the arrows pass through as 'Watched'.
+Opt Complexity Visuals: Multi-Directional Grid Sweep
+How to Draw Opt Complexity: Draw a grid and show 4 passes (or 1 pass per guard with early exit). Label it $O(R\cdot C + G\cdot (R+C)$). Total time is bounded by the grid area.
+Mem Vis (BF): Large lists of coordinates being re-scanned and filtered constantly.
+Mem Vis (Opt): A 2D integer/char array of size R x C representing the grid states (O(R*C) space).

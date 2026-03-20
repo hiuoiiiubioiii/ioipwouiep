@@ -1,0 +1,13 @@
+ID: 13
+Problem Title: Roman to Integer
+Brute Force Method: Scan with Lookahead Scan left to right, using complex conditionals to check if the next character forms a special pair (like IV or IX).
+BF Complexity Visuals: Clunky Peeking Pointers
+How to Draw BF: Draw a pointer at 'i'. Draw a secondary, dashed pointer peeking at 'i+1' with a question mark, representing the clunky edge-case checks.
+Optimised Pattern: Compare Current vs Next
+Opt Vis. Technique: "Smaller Before Larger" Rule
+Dry Run (Opt): Read left to right. If the current numeral's value is LESS than the next numeral's value, subtract it. Otherwise, add it.
+How to Draw (Opt): Write "MCMXCIV". Write the integer values below each letter. Draw an arrow from C(100) to M(1000). Since 100 &lt; 1000, write a minus sign.
+Opt Complexity Visuals: Single Scan Line
+How to Draw Opt Complexity: Draw a single straight arrow from left to right across the string. We look at each character exactly once. $O(N)$ time.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw a fixed Hash Map containing exactly 7 key-value pairs mapping Roman letters to integers (O(1) space).

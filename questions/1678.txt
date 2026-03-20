@@ -1,0 +1,13 @@
+ID: 1678
+Problem Title: Goal Parser Interpretation
+Brute Force Method: Use a series of global "Replace All" string functions for every pattern ("G", "()", "(al)").
+BF Complexity Visuals: Multi-Pass String Splicing
+How to Draw BF: Draw a string. Draw an arrow scanning it for "G". Then draw a whole new arrow scanning the new string for "()", etc. $O(N^2)$.
+Optimised Pattern: Single-Pass Pointer Scan
+Opt Vis. Technique: Text Stream Decoding
+Dry Run (Opt): Iterate through the string. If current is 'G', append 'G'. If '(', check next: if ')', append 'o'; if 'a', append 'al'.
+How to Draw (Opt): Draw a string of characters. Place a finger (pointer) on a letter. Look at the next 1-2 letters. Write the decoded result in a box underneath.
+Opt Complexity Visuals: Linear Stream Arrow
+How to Draw Opt Complexity: Draw a single straight arrow moving left to right once. $O(N)$.
+Mem Vis (BF): Intermediate Strings: Draw numerous floating blocks for each replaced version of the string.
+Mem Vis (Opt): StringBuilder / Result Array: Draw a single growing horizontal box. $O(N)$ space.

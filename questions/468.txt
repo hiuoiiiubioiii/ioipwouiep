@@ -1,0 +1,13 @@
+ID: 468
+Problem Title: Validate IP Address
+Brute Force Method: String Split + Multi-IF Split by "." or ":" and run a gauntlet of manual checks (length, hex vs dec, leading zeros).
+BF Complexity Visuals: Conditional Maze
+How to Draw BF: Draw a complex flowchart with dozens of "Yes/No" diamonds. $O(N)$ but error-prone.
+Optimised Pattern: Regex or Modular Parsing Use pre-defined Regex patterns for IPv4 and IPv6 to handle boundaries and valid character ranges in one pass.
+Opt Vis. Technique: Template Matching
+Dry Run (Opt): Overlay the input string on top of a "Ghost Template" for IPv4 and IPv6. If it doesn't align with either, reject.
+How to Draw (Opt): Draw the structure: `X.X.X.X` vs `X:X:X:X:X:X:X:X`. Below each segment, write its specific constraints (e.g., 0-255).
+Opt Complexity Visuals: Pattern Match
+How to Draw Opt Complexity: Draw a single pass through the string. $O(N)$.
+Mem Vis (BF): String Pool Extra memory for split substrings.
+Mem Vis (Opt): Regex Engine Negligible extra memory. $O(1)$.

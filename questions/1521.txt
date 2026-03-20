@@ -1,0 +1,13 @@
+ID: 1521
+Problem Title: Find a Value of a Mysterious Function Closest to Target
+Brute Force Method: Generate all possible subarrays using nested loops, calculate the bitwise AND for each, and track the minimum difference to the target. $O(N^2)$.
+BF Complexity Visuals: Overlapping Subarray Grid $O(N^2)$
+How to Draw BF: Draw an array. Underneath it, draw N decreasing blocks of subarrays, doing redundant bitwise AND operations for every single combination.
+Optimised Pattern: Bitwise AND Properties / Hash Set
+Opt Vis. Technique: Shrinking Bit Set
+Dry Run (Opt): Recognize that bitwise AND only *decreases* or stays the same. At any index `i`, the number of unique AND results ending at `i` is at most 32. Use a Set to track valid AND results ending at the previous step, update them with the current number, and check the difference.
+How to Draw (Opt): Draw an array. Below the current element, draw a small box (the Set) containing a few numbers. Draw an arrow pulling the *next* array element into the box, applying the `&amp;` operator to everything inside, dropping duplicates, and updating the global minimum difference.
+Opt Complexity Visuals: Bounded Set Updates $O(N \log(\text{Max}_\text{Val})$)
+How to Draw Opt Complexity: Draw a linear timeline of length N. At each tick, draw a small, fixed-size cluster of max 32 operations representing the set updates.
+Mem Vis (BF): $O(1)$ memory for tracking the current global minimum, but massive redundant variables.
+Mem Vis (Opt): Two small Hash Sets (or arrays of max size 32) representing `prev_results` and `curr_results` swapping back and forth. $O(\log(\text{Max}_\text{Val})$) space.

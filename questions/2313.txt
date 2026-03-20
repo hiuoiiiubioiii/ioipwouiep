@@ -1,0 +1,13 @@
+ID: 2313
+Problem Title: Minimum Flips in Binary Tree to Get Result (Premium)
+Brute Force Method: Generate all combinations of flipping flippable nodes and evaluate the boolean tree from scratch each time.
+BF Complexity Visuals: Combinatorial Exhaustion
+How to Draw BF: Draw a tree where every "NOT", "AND", or "OR" node branches out into a parallel universe of "Flipped" and "Not Flipped".
+Optimised Pattern: Tree DP (Bottom-Up State)
+Opt Vis. Technique: Bubbling Up Pairs [True_Cost, False_Cost]
+Dry Run (Opt): Start at leaves. Pass up an array `[cost_to_make_true, cost_to_make_false]`. At each parent, calculate its own costs based on the operation (AND/OR) and children's costs.
+How to Draw (Opt): Draw a binary tree. Next to each leaf, draw a small box with two numbers `[T: x, F: y]`. Draw arrows pushing these boxes up to the parent, merging them via math.
+Opt Complexity Visuals: Single Tree Traversal (O(N))
+How to Draw Opt Complexity: Draw the outline of the tree exactly once, tracing a line around the perimeter from bottom to top.
+Mem Vis (BF): Draw a Call Stack paired with a massive array tracking flip states.
+Mem Vis (Opt): Draw the Tree nodes, each containing a tiny size-2 Array `[T, F]`.

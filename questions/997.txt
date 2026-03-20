@@ -1,0 +1,13 @@
+ID: 997
+Problem Title: Find the Town Judge
+Brute Force Method: For every person, check if they are trusted by everyone else and if they trust nobody by scanning the whole `trust` list twice.
+BF Complexity Visuals: $O(N^2)$ or $O(N \cdot T)$. Repeated scans of the trust relationships.
+How to Draw BF: Draw N people. For each, count incoming and outgoing arrows by looking through a giant pile of paper (the trust list).
+Optimised Pattern: Trust Score Array (In-Degree vs Out-Degree)
+Opt Vis. Technique: "The Popularity Balance." A person's score is (People who trust them) - (People they trust). The judge must have a score of exactly N-1.
+Dry Run (Opt): Create an array `scores` of size N+1. For each `a, b` in trust: `scores[a]--`, `scores[b]++`. Find the index where `scores[i] == N-1`.
+How to Draw (Opt): Draw a vertical leaderboard. When A trusts B, B's score goes up 1 point and A's goes down 1 point. The Judge will be at the very top with N-1 points.
+Opt Complexity Visuals: $O(T + N)$ where T is the number of trust relationships. One pass through the list, one pass through the scores.
+How to Draw Opt Complexity: Draw a horizontal timeline of trust events. Below it, draw a single 1D array updating its tallies.
+Mem Vis (BF): $O(1)$ extra space but very slow.
+Mem Vis (Opt): $O(N)$ for the scores array. Draw a single row of N boxes.

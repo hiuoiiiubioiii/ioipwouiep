@@ -1,0 +1,13 @@
+ID: 1261
+Problem Title: Find Elements in a Contaminated Binary Tree
+Brute Force Method: Every time the `find(target)` function is called, perform a full DFS or BFS traversal of the tree to search for the value.
+BF Complexity Visuals: Repeated Tree Scans
+How to Draw BF: Draw a tree. For every search query, draw a path that visits every node in the tree until found. Write $O(Q \cdot N)$ where Q is number of queries.
+Optimised Pattern: Pre-computation with Hash Set
+Opt Vis. Technique: Tree Recovery to Bucket Fill
+Dry Run (Opt): During the constructor call, traverse the tree once using the rule (2 * val + 1 or 2 * val + 2) to fix values. Store all recovered values in a Hash Set. `find(target)` becomes a simple $O(1)$ check.
+How to Draw (Opt): Draw the contaminated tree (all nodes are -1). Draw an arrow pointing to a recovered tree (0, 1, 2...). Next to it, draw a large circle (Set) containing all the recovered numbers. For queries, just point at the Set.
+Opt Complexity Visuals: Linear Scan + Constant Time Lookup
+How to Draw Opt Complexity: Draw a single tree traversal arrow followed by multiple small dots representing $O(1)$ lookups. Write $O(N + Q)$.
+Mem Vis (BF): Draw no extra storage, but constant CPU spikes for every query.
+Mem Vis (Opt): Draw a HashSet containing N integers. Space: $O(N)$.

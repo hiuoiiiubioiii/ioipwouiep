@@ -1,0 +1,13 @@
+ID: 1289
+Problem Title: Minimum Falling Path Sum II
+Brute Force Method: Recursively explore every possible path from top to bottom. From cell (r, c), you can move to any cell in row r+1 except those in column c.
+BF Complexity Visuals: N-way Branching Path Tree
+How to Draw BF: Draw a grid. From the first row, draw N-1 arrows to the next row for every cell. The branching is massive. Write $O(N^N)$.
+Optimised Pattern: DP with Two Minimums (Optimization)
+Opt Vis. Technique: Minimum-Only State Transfer
+Dry Run (Opt): Instead of checking all N-1 previous cells, just track the `First Min` and `Second Min` values from the previous row. If current column matches First Min's column, add Second Min. Otherwise, add First Min.
+How to Draw (Opt): Draw two rows of a grid. Above row 1, write "Min1: 5 (Col 2), Min2: 8 (Col 4)". For each cell in row 2, just look at these two values. If you are in Col 2, take 8. Otherwise, take 5.
+Opt Complexity Visuals: Linear Row Processing
+How to Draw Opt Complexity: Draw a grid. Show each row being processed by looking only at two summary values from the row above. Write $O(N^2)$.
+Mem Vis (BF): Draw an enormous recursive tree with N^N nodes.
+Mem Vis (Opt): Draw exactly two 1D arrays of size N (or just track 4 variables for the mins). Space: $O(N)$.

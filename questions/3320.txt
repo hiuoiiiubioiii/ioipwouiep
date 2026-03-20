@@ -1,0 +1,13 @@
+ID: 3320
+Problem Title: Count The Number of Winning Sequences
+Brute Force Method: Generate all 3^N combinations of Rock, Paper, Scissors for Bob, check consecutive rules, and tally points.
+BF Complexity Visuals: Ternary (3-Way) Branching Tree
+How to Draw BF: Draw a starting node. Branch out 3 ways (R, P, S). From each of those, branch 3 ways again. The massive explosion visualizes $O(3^N)$.
+Optimised Pattern: 3D Dynamic Programming (Index, Last Move, Score Diff)
+Opt Vis. Technique: 3D Floating Cube Matrix
+Dry Run (Opt): `dp[i][last_move][score_diff]`. For step `i`, try moves that aren't `last_move`. Calculate points against Alice. Add to the new `score_diff` state.
+How to Draw (Opt): Draw a timeline representing `i`. At a specific `i`, draw 3 buckets (Rock, Paper, Scissors). Inside each bucket, draw a number line (the score difference from -N to +N) and track the counts moving between buckets as `i` advances.
+Opt Complexity Visuals: Rectangular Prism Area
+How to Draw Opt Complexity: Draw a 3D box. Length is N (turns), Width is 3 (moves), Height is 2N (score span). The total volume is exactly $O(N^2)$.
+Mem Vis (BF): Recursive stack depth of N, holding string builders for every generated sequence.
+Mem Vis (Opt): Two rotating 2D arrays (current state and next state) sized `3 x (2N+1)`, strictly using $O(N)$ memory to avoid 3D allocation.

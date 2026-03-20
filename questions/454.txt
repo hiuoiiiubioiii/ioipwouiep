@@ -1,0 +1,13 @@
+ID: 454
+Problem Title: 4Sum II
+Brute Force Method: Quadruple Loop Use four nested loops to check every combination of A[i] + B[j] + C[k] + D[l] == 0.
+BF Complexity Visuals: Hyper-cube
+How to Draw BF: Draw a 4D grid (impossible, so draw 4 nested squares). $O(N^4)$.
+Optimised Pattern: Hash Map (Meet-in-the-Middle) Calculate all A+B and store in a Map `sum: count`. Then iterate C+D and check for -(C+D) in the Map.
+Opt Vis. Technique: Divided Bridge
+Dry Run (Opt): Split the 4 arrays into two pairs. Build a bridge (Map) for one pair. The other pair just checks if they can cross the bridge.
+How to Draw (Opt): Draw two groups of arrays. Group 1: Draw a Map of sums. Group 2: Draw arrows checking their negative sums against the Map.
+Opt Complexity Visuals: Dual Quadratic
+How to Draw Opt Complexity: Draw two $O(N^2)$ blocks side-by-side. Total $O(N^2)$.
+Mem Vis (BF): Registers No extra space beyond loops.
+Mem Vis (Opt): Frequency Map Draw a Map storing up to N^2 sums. $O(N^2)$ space.

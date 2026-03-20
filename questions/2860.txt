@@ -1,0 +1,13 @@
+ID: 2860
+Problem Title: Happy Students
+Brute Force Method: Generate all possible subsets of students. For each subset, check if both conditions (size &gt; selected students' requirements AND size &lt; unselected students' requirements) are met.
+BF Complexity Visuals: $O(2^N)$ Subset Generation
+How to Draw BF: Draw a decision tree with 2^N leaves. Each path is a student selection. Mark valid leaves "Happy."
+Optimised Pattern: Sorting + Greedy Boundary Check
+Opt Vis. Technique: Sorted Threshold Step-Graph
+Dry Run (Opt): Sort the requirements. If we select k students, we should select those with the k smallest requirements. Check if k &gt; nums[k-1] and k &lt; nums[k]. These are the only valid configurations.
+How to Draw (Opt): Write the sorted requirements. Draw a "Divider" at every possible position. For each position, check if the index count is strictly between the numbers on either side of the divider.
+Opt Complexity Visuals: Sort-Bottlenecked Linear Scan $O(N \log N)$
+How to Draw Opt Complexity: Draw a box for Sorting $O(N \log N)$ followed by a single pass $O(N)$. Total time is logarithmic-linear.
+Mem Vis (BF): Visualize the heap filling with 2^N student selection sets.
+Mem Vis (Opt): Visualize a single sorted array of size N. Space $O(N)$ or $O(1)$ depending on sort.

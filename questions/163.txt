@@ -1,0 +1,13 @@
+ID: 163
+Problem Title: Missing Ranges
+Brute Force Method: Iterate through every integer from `lower` to `upper` and check if it exists in the input array.
+BF Complexity Visuals: An $O(\text{Range})$ checklist, where the range can be much larger than the array size.
+How to Draw BF: Draw a long number line from 0 to 100. Check off the 3 numbers you have. Show the enormous amount of "empty" space checked.
+Optimised Pattern: Linear Scan of Adjacent Elements.
+Opt Vis. Technique: "Jumping Stepping Stones." You only look at the numbers you have and calculate the gap (distance) between them.
+Dry Run (Opt): Start with `prev = lower - 1`. For each `curr` in `nums` (plus a final `upper + 1`), if `curr - prev &gt; 1`, add the range `[prev+1, curr-1]`. Update `prev = curr`.
+How to Draw (Opt): Draw array boxes. Draw arrows between them. Label the "missing" range values directly on the arrows between the boxes.
+Opt Complexity Visuals: $O(N)$ time where N is the length of the array, regardless of the numerical range.
+How to Draw Opt Complexity: Draw a single arrow through the array. Mark each gap found with a '!' symbol.
+Mem Vis (BF): A massive boolean array or set to store the presence of every number in the range.
+Mem Vis (Opt): Visualize $O(1)$ extra space (excluding the result list) to store the `prev` tracker.

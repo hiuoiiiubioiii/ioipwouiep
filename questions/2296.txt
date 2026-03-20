@@ -1,0 +1,13 @@
+ID: 2296
+Problem Title: Design a Text Editor
+Brute Force Method: String ConcatenationRepresent the text as a single large string. For every `addText` or `deleteText`, create new substrings and concatenate them. Use `substring()` for cursor movement.
+BF Complexity Visuals: String Slicing &amp; Rebuilding
+How to Draw BF: Draw a long string. To insert "hello", draw a line splitting the string, then redraw the whole string with "hello" in the middle. Show the $O(N)$ cost per edit.
+Optimised Pattern: Two Stacks / Gap Buffer
+Opt Vis. Technique: Cursor-Centric Movement
+Dry Run (Opt): Use two stacks (or strings): `left` (text before cursor) and `right` (text after cursor). `addText` pushes to `left`. `cursorLeft` pops from `left` and pushes to `right`. `deleteText` just pops from `left`.
+How to Draw (Opt): Draw two vertical stacks facing each other. The gap between them is the cursor. To move left, pop a letter from the left stack and drop it into the right. To type, just drop a letter onto the left stack.
+Opt Complexity Visuals: $O(1)$ Amortized Editing
+How to Draw Opt Complexity: Draw two blocks representing the stacks. Show that moving the cursor or adding text only affects the "tops" of the stacks. Label it $O(K)$ where K is characters moved/added.
+Mem Vis (BF): Large immutable string objects created in the heap for every single cursor move.
+Mem Vis (Opt): Two `StringBuilder` objects or character stacks representing the text (O(N) space).

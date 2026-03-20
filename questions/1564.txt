@@ -1,0 +1,13 @@
+ID: 1564
+Problem Title: Put Boxes Into the Warehouse I
+Brute Force Method: For every box, try to push it as far as possible, checking every warehouse room it passes through. $O(B \cdot W)$.
+BF Complexity Visuals: Nested Scanning Grid
+How to Draw BF: Draw boxes on the left and a warehouse on the right. For each box, trace a line through the warehouse until it hits a "low ceiling" or another box.
+Optimised Pattern: Greedy / Preprocessing
+Opt Vis. Technique: Ceiling Normalization
+Dry Run (Opt): A box can only be as tall as the *minimum* height it passed through. Pre-process the warehouse so each room's height is `min(current, previous)`. Sort boxes and fit them greedily from right to left.
+How to Draw (Opt): Draw the warehouse as a jagged ceiling. Draw a "steamroller" smoothing it out from left to right (non-increasing). Then, match the smallest boxes into the furthest available normalized slots.
+Opt Complexity Visuals: Sorting + Linear Scan $O(B \log B + W)$
+How to Draw Opt Complexity: Draw a sorting tree for boxes, followed by two parallel lines (Boxes and Warehouse) with a single pointer on each.
+Mem Vis (BF): Redundant simulation variables.
+Mem Vis (Opt): The original warehouse array (modified in-place) and the sorted box array. $O(1)$ extra space beyond sorting.

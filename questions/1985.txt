@@ -1,0 +1,13 @@
+ID: 1985
+Problem Title: Find the Kth Largest Integer in the Array
+Brute Force Method: Convert all strings to huge integers (or doubles), sort them, and pick the k-th.
+BF Complexity Visuals: Type-Conversion Sorting Funnel
+How to Draw BF: Draw strings turning into giant number blocks. Funnel them into a sort engine. $O(N \log N \cdot \\text{text}{\text{MaxLen}})$.
+Optimised Pattern: Custom Sort (Length then Lexicographical)
+Opt Vis. Technique: String-Length Bucket Sorting
+Dry Run (Opt): Sort the array of strings using a custom comparator: if lengths differ, longer is larger; if equal, use `string::compare`.
+How to Draw (Opt): Draw strings of different lengths. Group by length. Inside groups, sort alphabetically. Find the k-th from the end.
+Opt Complexity Visuals: String-Aware Sort Complexity
+How to Draw Opt Complexity: Draw N elements being compared. Each comparison takes $O(L)$ where L is length. $O(N \log N \cdot L)$.
+Mem Vis (BF): Memory overhead from creating many large BigInteger objects.
+Mem Vis (Opt): A Min-Heap (size K) or in-place sorting of original string array. $O(K \cdot L)$ or $O(1)$ extra space.

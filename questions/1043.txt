@@ -1,0 +1,13 @@
+ID: 1043
+Problem Title: Partition Array for Maximum Sum
+Brute Force Method: Generate all possible ways to partition the array into subarrays of length up to K. Calculate the sum for each and find the max.
+BF Complexity Visuals: An exploding decision tree where at each element you choose to end the partition at length 1, 2... or K.
+How to Draw BF: Draw the array. Branch: [elem1], [elem1, 2], [elem1, 2, 3]. Recurse on what's left. Write $O(K^N)$.
+Optimised Pattern: Dynamic Programming (Linear).
+Opt Vis. Technique: A "Best-Score History" bar. To find the best score for the current element, look back at the best scores of the last K steps.
+Dry Run (Opt): `dp[i]` is the max sum for the first `i` elements. For the current index, look back up to `K` steps. Calculate `(MaxVal in window) * (WindowLength) + dp[i - WindowLength]`. Pick the maximum.
+How to Draw (Opt): Draw the array. Below it, draw a `dp` array. For `dp[i]`, draw K small brackets looking backwards. Pick the best one and fill the `dp` cell.
+Opt Complexity Visuals: A nested loop where the inner loop is limited to K.
+How to Draw Opt Complexity: Draw an array with an arrow sweeping right, and a smaller "backwards" window arrow. Write $O(N \cdot K)$ Time.
+Mem Vis (BF): Massive recursion stack for all partition combinations.
+Mem Vis (Opt): A 1D array of size N. $O(N)$ space.

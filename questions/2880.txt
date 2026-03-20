@@ -1,0 +1,13 @@
+ID: 2880
+Problem Title: Select Data (Filtering)
+Brute Force Method: Loop through every row, check the value of the 'id' column, and if it matches 101, add that row to a result list.
+BF Complexity Visuals: Linear Scan Search
+How to Draw BF: Draw a magnifying glass moving down a column until it finds "101".
+Optimised Pattern: Boolean Indexing: df[df['id'] == 101]
+Opt Vis. Technique: Masking Overlay
+Dry Run (Opt): Imagine a "Stencil" (Boolean Mask) placed over the table where only the row with 101 is "cut out" and visible.
+How to Draw (Opt): Draw a table. Draw a column of "True/False" next to it. Draw an arrow showing only "True" rows passing through a filter.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a straight line y=x representing one check per row.
+Mem Vis (BF): $O(N)$ for intermediate boolean mask array.
+Mem Vis (Opt): $O(N)$ Vectorized processing in C.

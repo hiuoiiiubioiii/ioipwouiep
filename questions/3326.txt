@@ -1,0 +1,13 @@
+ID: 3326
+Problem Title: Minimum Division Operations to Make Array Non Decreasing
+Brute Force Method: From left to right, try dividing every number by all of its proper divisors recursively to find a valid non-decreasing sequence.
+BF Complexity Visuals: Exponential Divisor Tree
+How to Draw BF: Draw an array. Under a number like 24, branch out to 12, 8, 6, 4, etc. Branch out again from those. The massive tree visualizes $O(K^N)$.
+Optimised Pattern: Greedy Traversal (Right-to-Left) + Smallest Prime Factor (SPF)
+Opt Vis. Technique: Reverse Array Waterfall
+Dry Run (Opt): Precompute SPFs using a Sieve. Traverse right-to-left. If `nums[i] &gt; nums[i+1]`, directly replace `nums[i]` with its SPF (which mathematically equals its original value divided by its Largest Proper Divisor).
+How to Draw (Opt): Draw the array. Draw a Left-pointing arrow starting at the end. When a number is too big, draw a "zap" replacing it with its pre-calculated SPF. If it's still too big, draw a big red X (return -1).
+Opt Complexity Visuals: Two Parallel Timelines
+How to Draw Opt Complexity: Draw a block for the $O(M \log \log M)$ Sieve precomputation. Next to it, draw a single straight line of length N representing the $O(N)$ array traversal.
+Mem Vis (BF): Deep recursive stacks branching out on every divisor iteration.
+Mem Vis (Opt): A 1D integer array `lpf` up to 10^6 acting as an $O(M)$ lookup table, plus $O(1)$ auxiliary variables for the traversal.

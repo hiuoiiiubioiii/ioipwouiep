@@ -1,0 +1,13 @@
+ID: 2485
+Problem Title: Find the Pivot Integer
+Brute Force Method: For every `x` from 1 to `n`, calculate the sum of [1, x] and [x, n] manually using a loop and compare.
+BF Complexity Visuals: Iterative Sum Comparison
+How to Draw BF: Draw a number line. For each point, draw two brackets (left and right). Label $O(N^2)$.
+Optimised Pattern: Math (Perfect Square Property)
+Opt Vis. Technique: Algebraic Balance Point
+Dry Run (Opt): The sum of 1 to x is `x(x+1)/2`. The total sum is `n(n+1)/2`. Pivot exists if `sqrt(totalSum)` is an integer.
+How to Draw (Opt): Draw a triangle representing the sum. Cut it. Solve `x^2 = n(n+1)/2`.
+Opt Complexity Visuals: Constant Time Box
+How to Draw Opt Complexity: Draw a single calculation box. Label $O(1)$.
+Mem Vis (BF): Draw loop variables.
+Mem Vis (Opt): Draw 2-3 float/int variables. $O(1)$ Space.

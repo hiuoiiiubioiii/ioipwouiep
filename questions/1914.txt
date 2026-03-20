@@ -1,0 +1,13 @@
+ID: 1914
+Problem Title: Cyclically Rotating a Grid
+Brute Force Method: Shift every single cell in the grid one position clockwise, and repeat this entire process K times.
+BF Complexity Visuals: Concentric Rings Shifting
+How to Draw BF: Draw a grid. Draw tiny arrows moving every cell one spot. Write "Repeat K times" next to it. $O(M\cdot N\cdot K)$.
+Optimised Pattern: 1D Array Extraction &amp; Modular Rotation
+Opt Vis. Technique: Peel, Slice, and Wrap
+Dry Run (Opt): Extract each layer of the grid into a flat 1D array. Rotate the 1D array by `K % length`. Wrap the array back into the grid layer.
+How to Draw (Opt): Draw a 2D grid. Draw an arrow pulling the outer border out into a flat 1D strip. Cut the strip, swap the halves, and push it back into the grid.
+Opt Complexity Visuals: Fixed Operations Pipeline
+How to Draw Opt Complexity: Draw three boxes: "Extract $O(M\cdot N)$", "Shift $O(M\cdot N)$", "Insert $O(M\cdot N)$". $O(M\cdot N)$ total time regardless of K.
+Mem Vis (BF): A temporary 2D grid re-created K times in memory.
+Mem Vis (Opt): A temporary 1D array buffer sized exactly to the perimeter of the current layer being rotated.

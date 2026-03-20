@@ -1,0 +1,13 @@
+ID: 1862
+Problem Title: Sum of Floored Pairs
+Brute Force Method: Nested loops: For every pair (i, j), calculate floor(nums[i] / nums[j]) and sum them up.
+BF Complexity Visuals: N \times N division matrix.
+How to Draw BF: Draw an array. Draw lines connecting every element to every other element. Note the $O(N^2)$ density.
+Optimised Pattern: Frequency Array + Prefix Sums + Math (Harmonic Series block processing).
+Opt Vis. Technique: Range-sum frequency blocks.
+Dry Run (Opt): Count frequencies. Calculate prefix sums. For each unique number x, find how many numbers fall in ranges [x, 2x-1], [2x, 3x-1], etc., using prefix sums. Add (range\_count \times floor\_val) to total.
+How to Draw (Opt): Draw a frequency number line. Pick a number x=3. Draw brackets around [3-5], [6-8], [9-11]. Use prefix sums to quickly count dots in each bracket.
+Opt Complexity Visuals: Harmonic Series Summation $O(M \log M)$ where M is MaxValue.
+How to Draw Opt Complexity: Draw the summation N/1 + N/2 + N/3... and mark the area under the 1/x curve as $O(\log N)$.
+Mem Vis (BF): $O(1)$ stack space, but massive time overhead.
+Mem Vis (Opt): Frequency array and Prefix Sum array of size MaxValue.

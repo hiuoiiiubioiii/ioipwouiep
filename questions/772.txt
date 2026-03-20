@@ -1,0 +1,13 @@
+ID: 772
+Problem Title: Basic Calculator III
+Brute Force Method: Find the innermost parentheses using regex, evaluate the simple expression, replace it in the string, and repeat.
+BF Complexity Visuals: Recursive String Reduction
+How to Draw BF: Draw a long string shrinking as chunks are replaced by numbers. $O(N^2)$ due to string copying.
+Optimised Pattern: Recursive Descent with Operator Precedence
+Opt Vis. Technique: Dual Stack (Values &amp; Ops)
+Dry Run (Opt): Process characters. Use a stack for numbers and a stack for operators. When a ')' is met or a lower precedence op appears, pop and calculate.
+How to Draw (Opt): Draw two vertical boxes. As you read the math, push numbers into one and signs into the other. When a `*` hits a `+`, show the `*` triggering a calculation first.
+Opt Complexity Visuals: Linear Token Stream
+How to Draw Opt Complexity: Draw a single arrow moving left-to-right across the formula. $O(N)$.
+Mem Vis (BF): Multiple intermediate string copies.
+Mem Vis (Opt): Stack of numbers/operators proportional to depth (O(N)).

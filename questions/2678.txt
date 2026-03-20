@@ -1,0 +1,13 @@
+ID: 2678
+Problem Title: Number of Senior Citizens
+Brute Force Method: Convert each string into an array of characters, find the age indices, and parse them.
+BF Complexity Visuals: String-to-Array Conversion
+How to Draw BF: Draw a list of strings. For each, draw a conversion to a char list, then scanning for indices 11 and 12. $O(N\cdot M)$.
+Optimised Pattern: Substring Slicing + Direct Integer Comparison
+Opt Vis. Technique: Fixed-Offset Extraction
+Dry Run (Opt): Iterate through the strings. Use `substring(11, 13)` to extract the age. Convert to an integer and check if it is &gt; 60.
+How to Draw (Opt): Draw a 15-character string. Highlight characters at index 11 and 12. "Age is here." Compare it to 60.
+Opt Complexity Visuals: $O(N)$ Constant Time per String
+How to Draw Opt Complexity: Draw a single pass through the N strings. Since string length is fixed (15), it is $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ constant extra space.

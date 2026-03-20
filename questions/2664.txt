@@ -1,0 +1,13 @@
+ID: 2664
+Problem Title: The Knight's Tour
+Brute Force Method: Exhaustive backtracking trying every move without any heuristic.
+BF Complexity Visuals: Exponential Backtracking Tree
+How to Draw BF: Draw a 5x5 grid. At each step, draw 8 branching arrows. Show the tree depth reaching 25. $O(8^(R\cdot C)$).
+Optimised Pattern: Backtracking (Warnsdorff’s Rule optional)
+Opt Vis. Technique: Recursive Path Finding
+Dry Run (Opt): Use standard backtracking. From (r, c), try all 8 knight moves. If move is valid and unvisited, recurse. If you reach R*C steps, you are done.
+How to Draw (Opt): Draw the grid. Number the start cell '0'. Try a move, number it '1'. If stuck, erase '1' and try a different '1'. Continue until the grid is full.
+Opt Complexity Visuals: $O(8^(R\cdot C)$) (Worst case)
+How to Draw Opt Complexity: Draw the recursive stack depth showing it reaches exactly R * C nodes.
+Mem Vis (BF): Deep recursion stack
+Mem Vis (Opt): $O(R \cdot C)$ for the result matrix and recursion depth.

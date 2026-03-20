@@ -1,0 +1,13 @@
+ID: 1853
+Problem Title: Convert Date Format (SQL)
+Brute Force Method: Fetch all dates into a programming language (like Python), parse them, and reformat manually.
+BF Complexity Visuals: Table-to-Script data flow.
+How to Draw BF: Draw a database table. Draw an arrow to a code block. Inside the block, show string manipulation logic for every row.
+Optimised Pattern: SQL DATE_FORMAT() function.
+Opt Vis. Technique: Transformation pipe.
+Dry Run (Opt): The database engine applies a mask (e.g., `%W, %M %e, %Y`) to each date field internally.
+How to Draw (Opt): Draw a raw date '2021-07-01'. Draw it passing through a "Lens" labeled `%W`. The output is 'Thursday'.
+Opt Complexity Visuals: Linear table scan.
+How to Draw Opt Complexity: Draw an arrow passing through the column. Mark as $O(N)$.
+Mem Vis (BF): Large array of date strings in application RAM.
+Mem Vis (Opt): Zero extra application memory; processed in DB stream.

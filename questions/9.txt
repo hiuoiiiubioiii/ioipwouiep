@@ -1,0 +1,13 @@
+ID: 9
+Problem Title: Palindrome Number
+Brute Force Method: String Reversal Convert the number to a string and use two pointers (Left and Right) moving inward to check for a match.
+BF Complexity Visuals: Inward Pointers
+How to Draw BF: Draw an array of characters. Draw L arrow at index 0, R arrow at the end. Move them inward. Requires extra $O(n)$ space for string conversion.
+Optimised Pattern: Revert Half the Number
+Opt Vis. Technique: Paper Fold
+Dry Run (Opt): Extract the back half of the number digit by digit (like Q7) and build a `reversedHalf`. Stop when `originalNumber &lt;= reversedHalf`.
+How to Draw (Opt): Draw a large number. Draw a scissor line in the middle. Show the right half flipping over and comparing itself to the left half.
+Opt Complexity Visuals: Half-Length Timeline
+How to Draw Opt Complexity: Draw an arrow representing the digits, but stop the arrow exactly in the middle. Time complexity is $O(\log10(n)$ / 2).
+Mem Vis (BF): Draw a string array taking up memory proportional to the number of digits.
+Mem Vis (Opt): Draw two integer variables (Original, ReversedHalf) (O(1) space).

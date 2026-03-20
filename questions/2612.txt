@@ -1,0 +1,13 @@
+ID: 2612
+Problem Title: Minimum Reverse Operations
+Brute Force Method: Standard BFS exploring every possible valid reverse window of size K.
+BF Complexity Visuals: Exploding Graph BFS
+How to Draw BF: Draw a node branching out to $O(K)$ possible reverse states, resulting in a massive $O(N\cdot K)$ unpruned web.
+Optimised Pattern: BFS + Ordered Sets (Parity sets)
+Opt Vis. Technique: Bipartite Parity Number Line
+Dry Run (Opt): Maintain two sets of unvisited indices (Evens and Odds). From current index, calculate reachable min/max window. Search the set within that window, remove them, add to Queue.
+How to Draw (Opt): Draw a number line. Color evens blue, odds red. Draw a bracket [L, R] for the reachable range. Erase numbers in that range from the sets as they are visited.
+Opt Complexity Visuals: Set Deletion Amortized Timeline
+How to Draw Opt Complexity: Draw N elements. Draw arrows crossing them out exactly once. Label $O(N \log N)$ for tree-set lookups.
+Mem Vis (BF): Massive overlapping Queue space
+Mem Vis (Opt): Two Balanced Binary Search Trees / Sets (Even Set, Odd Set).

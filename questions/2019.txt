@@ -1,0 +1,13 @@
+ID: 2019
+Problem Title: The Score of Students Solving Math Expression
+Brute Force Method: Try every single permutation of parentheses for the string, calculating the result recursively without memoization.
+BF Complexity Visuals: Catalan Number Explosion Tree
+How to Draw BF: Draw a tree splitting the string at every operator. It grows exponentially based on Catalan numbers. Completely intractable for longer strings.
+Optimised Pattern: Interval DP (Matrix Chain Multiplication) + HashSet
+Opt Vis. Technique: Expanding Triangle Bottom-Up DP Table
+Dry Run (Opt): Find correct answer using stack. Then use DP: `dp[i][j]` stores all possible results for substring `i` to `j`. Combine subproblems strictly bounding answers to &lt;= 1000.
+How to Draw (Opt): Draw a pyramid. Bottom layer is single digits. Above layers combine digits using operators, storing sets of possible results, capping out at 1000.
+Opt Complexity Visuals: N x N Grid with $O(N)$ cell combinations
+How to Draw Opt Complexity: Draw an N x N matrix. For each cell `(i, j)`, draw arrows pointing to all `k` split points between `i` and `j`. Time $O(N^3)$.
+Mem Vis (BF): Massive recursion stack repeatedly calculating the exact same substrings.
+Mem Vis (Opt): An N x N DP table where each cell contains a Hash Set of integers (max size 1000). Space $O(N^2 \cdot 1000)$.

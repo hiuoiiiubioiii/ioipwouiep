@@ -1,0 +1,13 @@
+ID: 2381
+Problem Title: Shifting Letters II
+Brute Force Method: For every shift in the list, iterate through the string from `start` to `end` and manually change each character's value.
+BF Complexity Visuals: Nested Segment Updates (O(Q * N))
+How to Draw BF: Draw a string. For every shift query, draw a long bracket. Inside the bracket, draw tiny arrows pointing to each letter, changing 'a' to 'b' or 'z' to 'y'.
+Optimised Pattern: Difference Array (Prefix Sum of Shifts)
+Opt Vis. Technique: Cumulative Net-Shift Timeline
+Dry Run (Opt): Initialize an array `diff` of size N+1. For each shift `[start, end, dir]`, add `val` (1 or -1) to `diff[start]` and subtract it from `diff[end + 1]`. Then, compute prefix sums of `diff` to find the net shift for each index.
+How to Draw (Opt): Draw an empty array. For a shift from 3 to 6, put a '+1' at 3 and a '-1' at 7. After all shifts, sweep from left to right, carrying the sum forward. The sum at each index is the total "push" that letter receives.
+Opt Complexity Visuals: Two Linear Passes (O(N + Q))
+How to Draw Opt Complexity: Draw two horizontal lines. One pass marks the "start" and "end" points of shifts. The second pass sweeps across to calculate final positions.
+Mem Vis (BF): Draw numerous modified copies of the string for every shift.
+Mem Vis (Opt): Draw a 1D Integer Array `diff` of size N+1.

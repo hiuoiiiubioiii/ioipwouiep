@@ -1,0 +1,13 @@
+ID: 1859
+Problem Title: Sorting the Sentence
+Brute Force Method: Split the sentence. Use a standard sorting algorithm with a custom comparator that extracts the trailing digit.
+BF Complexity Visuals: Sorting algorithm comparison tree.
+How to Draw BF: Draw words. Use arrows to show a sort (like Bubble or Merge sort) based on the number at the end. $O(N \log N)$.
+Optimised Pattern: String Split + Bucket Array mapping.
+Opt Vis. Technique: Direct Index Placement.
+Dry Run (Opt): Split sentence by spaces. For each word, use the last char as an index. Place the word (minus the digit) into `result[index-1]`. Join result.
+How to Draw (Opt): Draw the sentence and an empty array with slots 1-9. Pick a word, look at its number, and "drop" it into the corresponding slot.
+Opt Complexity Visuals: Single linear pass over the words.
+How to Draw Opt Complexity: Draw an arrow from left to right. Mark $O(N)$ where N is length of sentence.
+Mem Vis (BF): Temporary arrays for the sort.
+Mem Vis (Opt): Fixed-size array (size 9) containing string references.

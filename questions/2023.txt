@@ -1,0 +1,13 @@
+ID: 2023
+Problem Title: Number of Pairs of Strings With Concatenation Equal to Target
+Brute Force Method: Nested loops comparing every string `i` with every other string `j`, checking if `nums[i] + nums[j] == target`. $O(N^2 \cdot L)$.
+BF Complexity Visuals: N x N String Concat Grid
+How to Draw BF: Draw an N x N grid. Inside every cell, write out the concatenated string and a comparison check to the target. Highly repetitive.
+Optimised Pattern: Hash Map (Frequency) + String Prefix/Suffix Splitting
+Opt Vis. Technique: Target Splitting Scissor Cut
+Dry Run (Opt): Count frequencies of all strings. Slice the `target` string at every possible index. If both the left slice (prefix) and right slice (suffix) exist in the map, multiply their frequencies.
+How to Draw (Opt): Write the target string. Draw a vertical dashed line separating it into two parts. Look up both parts in a frequency table drawn to the side.
+Opt Complexity Visuals: L Slices x Hash Lookups
+How to Draw Opt Complexity: Draw the target string of length L. Show L split points. For each point, draw two quick $O(1)$ arrows to a Hash Map. Time $O(N + L^2)$.
+Mem Vis (BF): Countless temporary strings created in memory during the $O(N^2)$ concatenation step.
+Mem Vis (Opt): A single Hash Map storing the original strings as keys and their integer frequencies as values. Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 3224
+Problem Title: Minimum Array Changes to Make Differences Equal
+Brute Force Method: Iterate through all possible difference values X (from 0 to K). For each X, iterate through the N/2 pairs to calculate the cost. $O(N \cdot K)$.
+BF Complexity Visuals: Nested Loop Grid Expansion
+How to Draw BF: Draw a massive matrix. Rows are target differences (0 to K), columns are array pairs (0 to N/2). Shade the whole grid to show the multiplicative $O(N\cdot K)$ work.
+Optimised Pattern: Difference Array / Sweep Line Algorithm
+Opt Vis. Technique: Overlapping Interval Histogram
+Dry Run (Opt): For each pair, calculate ranges of target differences that cost 0, 1, or 2 operations. Mark these boundaries on a difference array. Compute the prefix sum to find the minimum cost.
+How to Draw (Opt): Draw a horizontal number line (0 to K). Draw colored blocks spanning intervals (e.g., cost 1 block, cost 2 block). Stack the blocks. The lowest stack height is the answer.
+Opt Complexity Visuals: Two Sequential Linear Scans
+How to Draw Opt Complexity: Draw a line of length N/2 for interval generation, and a line of length K for prefix sum calculation. Result: strictly $O(N + K)$.
+Mem Vis (BF): Variables tracking local minimums and nested counters (O(1)).
+Mem Vis (Opt): A 1D array of size K+2 tracking interval boundary increments (O(K) space).

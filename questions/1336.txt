@@ -1,0 +1,13 @@
+ID: 1336
+Problem Title: Number of Transactions per Visit (SQL)
+Brute Force Method: Use a recursive CTE to join Visits and Transactions, attempting to count zero-transaction visits by scanning the entire transaction table for missing IDs.
+BF Complexity Visuals: Logical Gaps in Left Joins
+How to Draw BF: Draw a list of visits. Draw empty spaces where no transactions occurred. Note the difficulty in "generating" rows for counts (0, 1, 2...) that don't exist in data.
+Optimised Pattern: Recursive CTE (Range Generation) + Left Join
+Opt Vis. Technique: Sequence-to-Data Alignment
+Dry Run (Opt): 1. Count transactions per visit. 2. Use a Recursive CTE to generate a sequence of numbers from 0 to max_transactions. 3. Left Join the sequence to the counts to fill gaps.
+How to Draw (Opt): Draw a vertical ruler from 0 to Max. Next to it, draw buckets for transaction counts. Map the visits to the buckets. Empty buckets get a count of 0.
+Opt Complexity Visuals: $O(N + \text{MaxCount})$
+How to Draw Opt Complexity: Draw a data stream entering a tally array, followed by a join with a generated sequence.
+Mem Vis (BF): Full Cartesian Product: Trying to join every visit to every possible transaction count.
+Mem Vis (Opt): $O(\text{MaxCount})$ Temporary View: Draw a small generated table of 0 to N used as a skeleton for the final result.

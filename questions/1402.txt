@@ -1,0 +1,13 @@
+ID: 1402
+Problem Title: Reducing Dishes
+Brute Force Method: Generate all possible subsequences (combinations of taking/leaving dishes) while maintaining relative order. Calculate the "like-time coefficient" for each and find the max.
+BF Complexity Visuals: Binary Recursion Tree
+How to Draw BF: Draw a root node splitting into two branches: "Cook Dish[i]" and "Skip Dish[i]". Branch down to depth N. Write $O(2^N)$ at the bottom.
+Optimised Pattern: Sorting + Greedy (or 1D DP)
+Opt Vis. Technique: Accumulator Array / Sliding Prefix Sum
+Dry Run (Opt): Sort dishes descending. Keep a running sum of dishes taken. If the running sum &gt; 0, add it to the total satisfaction. Stop when adding the next dish makes the running sum negative.
+How to Draw (Opt): Draw an array of numbers sorted highest to lowest. Draw a pointer moving right. Below it, draw two boxes: "Running Sum" and "Total Sum", updating their values as the pointer moves.
+Opt Complexity Visuals: Linear Scan Pipeline
+How to Draw Opt Complexity: Draw a box "Sort: $O(N \log N)$" -&gt; an arrow -&gt; a box "Linear Scan: $O(N)$". Circle the sort box as the bottleneck.
+Mem Vis (BF): Call Stack Tower
+Mem Vis (Opt): Draw two variables (RunningSum, Total) updating sequentially. No extra arrays needed, just $O(1)$ auxiliary space.

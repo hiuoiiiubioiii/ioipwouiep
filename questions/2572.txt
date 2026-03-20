@@ -1,0 +1,13 @@
+ID: 2572
+Problem Title: Count the Number of Square-Free Subsets
+Brute Force Method: Generate all 2^N subsets. For each, check if the product of its elements is "square-free" (not divisible by any x^2 &gt; 1). $O(2^N \cdot N)$.
+BF Complexity Visuals: An enormous power-set tree with a heavy primality/square-free check at every leaf.
+How to Draw BF: List the array. Write every combination. Check if any combo has a product divisible by 4, 9, 25. Count the valid ones.
+Optimised Pattern: Bitmask Dynamic Programming (Primes as Bits).
+Opt Vis. Technique: A "Prime Puzzle" where each number is a piece that covers specific prime "slots." You can't use two pieces that cover the same slot.
+Dry Run (Opt): Only numbers up to 30 matter. Primes &lt; 30 are: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 (10 total). Represent each square-free number as a 10-bit mask of its prime factors. Use DP: `dp[mask]` is the number of subsets using these primes. For each number, if its mask doesn't overlap with the current DP state, add it.
+How to Draw (Opt): Draw 10 slots (for the 10 primes). Take a number like 6 (mask: 2 and 3). If you have a subset already using 5, you can add 6. If you have one already using 2, you can't. Record the number of ways in a table of 2^10 (1024) rows.
+Opt Complexity Visuals: $O(N \cdot 2^{10})$ - N elements multiplied by the small constant bitmask space.
+How to Draw Opt Complexity: Draw the array. Below it, draw a table with 1024 rows. Show each array element updating multiple rows in the table simultaneously.
+Mem Vis (BF): Exponential space for 2^N subsets.
+Mem Vis (Opt): $O(1024)$ - A fixed-size array for the DP states.

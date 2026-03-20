@@ -1,0 +1,13 @@
+ID: 943
+Problem Title: Find the Shortest Superstring
+Brute Force Method: Generate all N! permutations of the given words. For each, merge them by removing overlapping prefixes/suffixes and find the shortest result.
+BF Complexity Visuals: $O(N! \cdot N^2)$. Extremely slow for N &gt; 10.
+How to Draw BF: Draw a tree where each node is a word. Every path from root to leaf is a full permutation. Highlight the total length of the merged string at each leaf.
+Optimised Pattern: Traveling Salesperson (TSP) with Bitmask DP
+Opt Vis. Technique: "Finding the Best Route." Treat each word as a city. The "distance" between cities is how many *new* characters are added when merging. Find the shortest path that visits every city.
+Dry Run (Opt): `dp[mask][i]` is the shortest length visiting words in `mask`, ending at word `i`. Pre-calculate overlaps between all pairs of words.
+How to Draw (Opt): Draw a graph where words are nodes. Label edges with the cost (added characters). Use a bitmask (e.g., `1011`) to show which nodes are "lit up" in the current path.
+Opt Complexity Visuals: $O(N^2 \cdot 2^N)$. Still exponential, but much faster than N! (e.g., 12! approx 479M vs 12^2 * 2^12 approx 589K).
+How to Draw Opt Complexity: Draw a grid where rows are bitmasks and columns are word indices. Shade cells to show the order of completion.
+Mem Vis (BF): Storing all permutations.
+Mem Vis (Opt): $O(N \cdot 2^N)$ to store the DP table and parent pointers for reconstruction. Draw a 2D table where one dimension is the power-set of words.

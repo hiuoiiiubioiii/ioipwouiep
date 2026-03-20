@@ -1,0 +1,13 @@
+ID: 1517
+Problem Title: Find Users With Valid E-Mails (Database / String)
+Brute Force Method: Massive nested if/else statements. Loop through the string checking if character 1 is a letter, if characters 2-N are valid symbols, manually checking for '@leetcode.com', etc.
+BF Complexity Visuals: Spaghetti Code Flowchart $O(N \cdot L)$
+How to Draw BF: Draw a word, and from every single letter draw 4-5 erratic arrows pointing to different decision boxes ("Is it a letter?", "Is it a dash?", "Is it an underscore?").
+Optimised Pattern: Regular Expressions (Regex)
+Opt Vis. Technique: Finite State Automaton (FSM)
+Dry Run (Opt): Define a strict pattern: `^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode\.com`. The engine processes the string character by character, moving through states. If it hits an invalid transition, it immediately rejects.
+How to Draw (Opt): Draw 3 large circles (States): "Start", "Prefix", and "Domain". Draw arrows between them. Start -&gt; Prefix (requires letter). Prefix -&gt; Prefix (allows letters/numbers/dash). Prefix -&gt; Domain (requires @leetcode.com).
+Opt Complexity Visuals: Regex Engine Scanning $O(L)$
+How to Draw Opt Complexity: Draw a straight timeline representing the length of the string. Draw a scanner moving left to right. Constant time $O(1)$ decision per character.
+Mem Vis (BF): Multiple boolean variables and temporary string builders taking up memory.
+Mem Vis (Opt): The Regex engine's compiled state table (O(Pattern Length) space), requiring essentially $O(1)$ auxiliary space for the actual string validation.

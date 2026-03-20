@@ -1,0 +1,13 @@
+ID: 1724
+Problem Title: Checking Existence of Edge Length Limited Paths II
+Brute Force Method: For every query (p, q, limit), run a fresh BFS/DFS from `p` to `q` ignoring edges &gt;= limit.
+BF Complexity Visuals: Repeated Graph Traversal.
+How to Draw BF: Draw graph. For Query 1, cross out heavy edges, run BFS. Redraw graph. Query 2, cross out edges, run BFS. $O(Q \cdot (V+E)$).
+Optimised Pattern: Kruskal's MST + LCA (Lowest Common Ancestor) with Binary Lifting.
+Opt Vis. Technique: Bottleneck Hierarchy Tree (Kruskal Reconstruction).
+Dry Run (Opt): Build MST but track merge weights. Treat merges as new parent nodes with the edge weight. Find LCA of `p` and `q` in this tree. If LCA weight &lt; limit, path exists.
+How to Draw (Opt): Draw original graph. Re-draw it bottom-up: nodes merge into a parent circle labeled with the bottleneck edge weight. Trace paths up to common ancestor.
+Opt Complexity Visuals: Graph-to-Tree + $O(Log V)$ Jumps.
+How to Draw Opt Complexity: Draw sorting (E log E) + DSU build. Draw Q arrows jumping up the tree via powers of 2 (Q log V).
+Mem Vis (BF): Standard Queue/Visited sets per query. $O(V)$.
+Mem Vis (Opt): Binary lifting jump table `up[V][logV]`. $O(V \log V)$ space.

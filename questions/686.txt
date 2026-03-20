@@ -1,0 +1,13 @@
+ID: 686
+Problem Title: Repeated String Match
+Brute Force Method: Keep appending string A to itself indefinitely and check `contains(B)` at every single step.
+BF Complexity Visuals: Infinite or very long linear expansion.
+How to Draw BF: Draw string A. Draw an arrow looping back to append A again and again. Draw a search box for B underneath. $O(N \cdot M)$.
+Optimised Pattern: Upper Bound Estimation + String Search.
+Opt Vis. Technique: Minimal Envelope Fit.
+Dry Run (Opt): Repeat A until its length is at least B. Check `contains`. If not, repeat once more and check again. If still not there, it's impossible. (Max repeats: B/A + 2).
+How to Draw (Opt): Draw B. Draw segments of A next to it. See how many 'A' blocks you need to fully cover B's length. Add one extra block for potential overlap at the edges.
+Opt Complexity Visuals: $O(N + M)$ if using KMP or $O(N\cdot M)$ for basic search.
+How to Draw Opt Complexity: Draw two horizontal bars (A_repeated and B). Write $O(\text{RepeatedLength})$.
+Mem Vis (BF): Draw a massive string buffer that grows without a clear exit condition.
+Mem Vis (Opt): Draw a string buffer capped at $O(N + M)$ size.

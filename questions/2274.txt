@@ -1,0 +1,13 @@
+ID: 2274
+Problem Title: Maximum Consecutive Floors Without Special Floors
+Brute Force Method: Boolean Array / BitsetCreate a boolean array from `bottom` to `top`. Mark special floors as `true`. Scan the array for the longest sequence of `false` values.
+BF Complexity Visuals: Full Range Grid Scan
+How to Draw BF: Draw a line of numbers from 1 to 1,000,000,000. Mark the "Special" spots. Count the white space. Show why this fails for large ranges (O(Range)).
+Optimised Pattern: Sorting + Gap Calculation
+Opt Vis. Technique: Sorted Milestone Gaps
+Dry Run (Opt): Sort the `special` floors array. The gaps are: (1) `special[0] - bottom`, (2) `special[i] - special[i-1] - 1`, and (3) `top - special[last]`. Find the maximum of these gaps.
+How to Draw (Opt): Draw a number line. Mark the `bottom` and `top`. Plot the sorted `special` points. Draw "jump" arrows between the points and write the distance above each jump. Pick the longest jump.
+Opt Complexity Visuals: Sort and Linear Difference
+How to Draw Opt Complexity: Draw an $O(S \log S)$ sorting pass for the special floors. Draw an $O(S)$ pass to check the gaps. Label it $O(S \log S)$ where S is the number of special floors, regardless of the building height.
+Mem Vis (BF): A massive boolean array or hash set containing every single floor number in the building.
+Mem Vis (Opt): A single sorted integer array of the special floors (O(S) space).

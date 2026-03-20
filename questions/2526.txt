@@ -1,0 +1,13 @@
+ID: 2526
+Problem Title: Find Consecutive Integers from a Data Stream
+Brute Force Method: Store every single incoming integer in a dynamically growing list. For every query, iterate backward reading the last k elements to check if they all match the target value.
+BF Complexity Visuals: An endlessly growing array with a heavy, backward-scanning loop dragging across the end of it for every single query.
+How to Draw BF: Draw a long queue of numbers. For every new number added, put your finger on it and jump backwards k times to check the history.
+Optimised Pattern: State Machine / Single Counter tracking contiguous valid states.
+Opt Vis. Technique: A single tally counter that increments on success and violently resets to zero on failure.
+Dry Run (Opt): Maintain a count variable. Read the incoming stream. If the number equals value, increment count. If it doesn't, reset count = 0. Return true strictly if count &gt;= k.
+How to Draw (Opt): Write the target `value` and target `k`. Draw a box for your `count`. As a number arrives, if it matches, draw a tally mark. If it fails, erase all tallies. If tallies reach `k`, you win.
+Opt Complexity Visuals: $O(1)$ constant time stream processing.
+How to Draw Opt Complexity: Draw a single box representing the CPU. Draw an incoming arrow for the data stream, a simple math operation inside, and an immediate boolean output. No loops.
+Mem Vis (BF): $O(N)$ unbounded list storing the entire history of the data stream.
+Mem Vis (Opt): $O(1)$ space holding exactly one integer counter.

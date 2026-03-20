@@ -1,0 +1,13 @@
+ID: 2606
+Problem Title: Find the Substring With Maximum Cost
+Brute Force Method: Generate all possible substrings and sum their costs.
+BF Complexity Visuals: Triangle Substring Grid
+How to Draw BF: Draw an N x N grid matrix where cells below the diagonal are crossed out, showing $O(N^2)$ pairings.
+Optimised Pattern: Kadane's Algorithm
+Opt Vis. Technique: 1D Array with Running Sum Tracker
+Dry Run (Opt): Move a pointer right. Add to running sum. If the sum drops below zero, reset it to zero immediately. Keep track of the max seen.
+How to Draw (Opt): Write the array of values. Below it, write a running total. Circle the total whenever you write a new maximum. Strike out negatives when you reset.
+Opt Complexity Visuals: Linear Timeline Strip
+How to Draw Opt Complexity: Draw a single straight line spanning N elements, representing a single $O(N)$ pass.
+Mem Vis (BF): Nested looping pointer diagrams
+Mem Vis (Opt): Constant space variable boxes (MaxSum, CurrentSum) and a Hash Map for char values.

@@ -1,0 +1,13 @@
+ID: 225
+Problem Title: Implement Stack using Queues
+Brute Force Method: Use two queues. For every `push`, move all elements between queues to maintain order.
+BF Complexity Visuals: Data Migration Diagram: $O(N)$ per push.
+How to Draw BF: Draw two circles (Queue 1, Queue 2). For one new item, show all previous items jumping from Q1 to Q2 and back.
+Optimised Pattern: Single Queue Rotation
+Opt Vis. Technique: Circular Queue Loop
+Dry Run (Opt): When pushing a new element, add it to the end of the queue. Then, for (size - 1) times, dequeue the front and enqueue it to the back.
+How to Draw (Opt): Draw a circle with a gap (Queue). Put a new number in. Draw arrows showing the existing numbers "stepping over" the new one to get behind it.
+Opt Complexity Visuals: Rotational Cost: $O(N)$ Push, $O(1)$ Pop.
+How to Draw Opt Complexity: Draw a circular arrow showing N-1 operations inside a single Push block.
+Mem Vis (BF): Two separate Queue structures.
+Mem Vis (Opt): Single Queue structure: Draw one continuous ring or line where the "Front" pointer moves cyclically.

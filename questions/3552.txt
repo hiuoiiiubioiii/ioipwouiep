@@ -1,0 +1,13 @@
+ID: 3552
+Problem Title: Grid Teleportation Traversal (Med)
+Brute Force Method: Simple BFS/DFS visiting every neighbor and checking all possible teleportation coordinates at every step.
+BF Complexity Visuals: Explosive Grid Branching.
+How to Draw BF: Draw a grid. From one cell, draw arrows to 4 neighbors PLUS arrows to every other valid teleport cell.
+Optimised Pattern: Multi-Source BFS / Dijkstra with Coordinate Mapping.
+Opt Vis. Technique: Layered Wavefront Expansion.
+Dry Run (Opt): Group cells by teleportation properties. Use a queue to process distance layers. Teleports act as "shortcuts" to distant clusters.
+How to Draw (Opt): Draw a grid. Color the start cell. Draw "lightning bolt" lines for teleports and regular arrows for steps. Label each cell with min distance.
+Opt Complexity Visuals: $O(N \cdot M)$ or $O(V + E)$.
+How to Draw Opt Complexity: Draw a graph where nodes are cells. Total edges = adjacent + teleport rules. Draw a single BFS wavefront.
+Mem Vis (BF): Massive Path History: Draw a list of every single path sequence ever explored.
+Mem Vis (Opt): Distance Grid: Draw a single 2D array of integers (size N x M) holding only the minimum distance to each cell.

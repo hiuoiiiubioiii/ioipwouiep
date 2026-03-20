@@ -1,0 +1,13 @@
+ID: 1994
+Problem Title: The Number of Good Subsets
+Brute Force Method: Generate every possible subset of the input array and check if the product of its elements is a "good" number (distinct primes).
+BF Complexity Visuals: Exponential Power Set (O(2^N))
+How to Draw BF: Draw a tree branching 2^N times. Most branches lead to "invalid" products with square factors.
+Optimised Pattern: DP with Bitmask (Prime Representation)
+Opt Vis. Technique: Prime Bitmask Transition Lattice
+Dry Run (Opt): Map numbers 1-30 to a 10-bit mask (one bit per prime &lt; 30). Use DP where `dp[mask]` is the count of subsets with that prime signature.
+How to Draw (Opt): Draw a table where columns are numbers 1-30 and rows are bitmask states (0-1023). Show current mask XOR-ing with new number masks.
+Opt Complexity Visuals: Fixed-State Iterative Grid
+How to Draw Opt Complexity: Draw 30 steps. In each step, iterate through 1024 states. $O(30 \\text{times} 2^{10})$.
+Mem Vis (BF): Storing billions of subset combinations in memory.
+Mem Vis (Opt): A frequency array for numbers 1-30 and a DP array of size 1024. $O(1)$ effective space.

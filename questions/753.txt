@@ -1,0 +1,13 @@
+ID: 753
+Problem Title: Cracking the Safe
+Brute Force Method: Generate every possible string of length (k^n + n - 1) and check if all combinations exist.
+BF Complexity Visuals: Random Search / Permutation Scan
+How to Draw BF: Draw a massive string. For every substring, check a list of all k^n permutations. $O(k^n!)$.
+Optimised Pattern: Hierholzer’s Algorithm (Eulerian Path)
+Opt Vis. Technique: Directed Graph Cycle Circuit
+Dry Run (Opt): Treat each sequence of length n-1 as a node. An edge exists for each digit 0..k-1. Find a path that visits every edge exactly once.
+How to Draw (Opt): Draw nodes (e.g., "00", "01"). Draw k arrows leaving each node. Follow arrows without repeating until all edges are used.
+Opt Complexity Visuals: Graph Edge Traversal
+How to Draw Opt Complexity: Draw a graph with V=k^{n-1} nodes and E=k^n edges. Show the path touching each edge once. $O(k^n)$.
+Mem Vis (BF): Massive set of all possible string combinations.
+Mem Vis (Opt): Recursive stack and a StringBuilder to store the path (O(k^n)).

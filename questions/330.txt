@@ -1,0 +1,13 @@
+ID: 330
+Problem Title: Patching Array
+Brute Force Method: Try all possible subset sums for every number from 1 to n. If a number cannot be formed, add it to the array and start over.
+BF Complexity Visuals: Subset Sum Power Set Check
+How to Draw BF: Draw numbers 1 to n. For each, draw a tree of all current array combinations. If a gap is found, patch and repeat. $O(2^N)$.
+Optimised Pattern: Greedy Range Expansion
+Opt Vis. Technique: Sliding Reachable Window
+Dry Run (Opt): Track the current "reachable" range [1, miss). If the next array element is \le miss, extend the range to `miss + nums[i]`. If not, "patch" the array by adding `miss` itself, doubling the reach to `miss + miss`.
+How to Draw (Opt): Draw a number line. Draw a shaded bar representing the current reach. If a gap appears, draw a "patch" block that exactly doubles the length of the shaded bar.
+Opt Complexity Visuals: Logarithmic Growth Path
+How to Draw Opt Complexity: Draw a bar that doubles in size at each step where a patch is added. Show it reaching n very quickly. $O(N)$ or $O(\log n)$.
+Mem Vis (BF): List of all possible subset sums. $O(2^N)$.
+Mem Vis (Opt): A few long/int variables (`miss`, `added`, `i`). Draw three small boxes. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 3753
+Problem Title: Total Waviness of Numbers in Range II (Hard)
+Brute Force Method: Same as part I, iterating every number. Constraints are now massive (up to 10^18), making brute force impossible.
+BF Complexity Visuals: $O(N)$ search on 10^18 elements.
+How to Draw BF: Visualise a timeline so long it disappears into infinity; marking wavy numbers is like finding needles in a haystack.
+Optimised Pattern: Advanced Digit DP with Modulo/State constraints
+Opt Vis. Technique: State-Space Compression
+Dry Run (Opt): Build the number from left to right. Maintain state: [Index][PrevDigit][Trend][IsLess][IsStarted]. Calculate counts using combinatorial math for each state.
+How to Draw (Opt): Draw the DP table on paper as a 5-dimensional coordinate system. Show how filling one cell uses the sum of 10 cells from the previous "Index" layer.
+Opt Complexity Visuals: $O(Log10(\text{Range})$ * 10 * 2) states.
+How to Draw Opt Complexity: Draw a 1D timeline of length ~18 (digits), where each step involves a small 10x2 matrix multiplication.
+Mem Vis (BF): Massive CPU time; memory overflows if storing results.
+Mem Vis (Opt): 5D DP array [18][10][2][2][2] (very compact).

@@ -1,0 +1,13 @@
+ID: 1258
+Problem Title: Synonymous Sentences
+Brute Force Method: Generate every possible combination of words by looking at every synonym for every word in the sentence. Check for cycles and indirect synonyms using nested loops.
+BF Complexity Visuals: Exponential Sentence Generator
+How to Draw BF: Draw the sentence. For each word, branch out for every synonym. If a synonym has a synonym, branch more. Write $O(\text{Synonyms}^N)$.
+Optimised Pattern: DSU (Disjoint Set Union) + Backtracking + Sorting
+Opt Vis. Technique: Synonym "Island" Buckets
+Dry Run (Opt): Group all related synonyms into "islands" using Union-Find. For each word in the sentence, find its island, get all words in that island, sort them, and use backtracking to generate all sentences lexicographically.
+How to Draw (Opt): Draw words as nodes. Draw lines (edges) between pairs of synonyms. Circle the connected components (islands). For each word in the original sentence, replace it with its sorted "island" list and branch.
+Opt Complexity Visuals: Grouped Combinatorial Expansion
+How to Draw Opt Complexity: Draw a Union-Find forest. Show a single backtracking tree branching only by the size of synonym groups. Write $O(\text{Combinations})$.
+Mem Vis (BF): Draw a deep recursion stack with many duplicate synonym lookups.
+Mem Vis (Opt): Draw DSU `parent` map, a Map of `Root -&gt; SortedList`, and the final output list. Space: $O(\text{Total Words})$.

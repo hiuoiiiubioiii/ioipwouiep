@@ -1,0 +1,13 @@
+ID: 591
+Problem Title: Tag Validator
+Brute Force Method: Use a massive, nested regular expression to try and validate the entire XML-like string in one go. (Extremely error-prone and hard to debug).
+BF Complexity Visuals: Non-deterministic finite automaton (NFA) overhead. $O(N)$ but high constant factor.
+How to Draw BF: Draw a complex flow chart with 50+ decision diamonds for every possible character and state.
+Optimised Pattern: Stack-based Parsing + State Machine.
+Opt Vis. Technique: An industrial "Bracket Matcher." Every time you see a start tag ``, you push it onto a stack. Every time you see an end tag ``, you must pop the exact same name from the stack.
+Dry Run (Opt): Iterate string. 1. If starts with ``. 2. If starts with `` and pop stack. 3. If starts with `&lt;`, find `&gt;` and push stack. 4. Ensure stack never empty until the very end.
+How to Draw (Opt): Write ``. Draw a vertical stack box. Push 'a', then push 'b'. When you hit ``, pop 'b'. When you hit ``, pop 'a'. If stack is empty and string remains, fail.
+Opt Complexity Visuals: Single pass over the string. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line with a single pointer moving forward, and a stack growing/shrinking alongside it.
+Mem Vis (BF): Massive string copying and recursive regex backtracking.
+Mem Vis (Opt): A stack to store open tag names. $O(N)$.

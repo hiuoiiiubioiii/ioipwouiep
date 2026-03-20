@@ -1,0 +1,13 @@
+ID: 2507
+Problem Title: Smallest Value After Replacing With Sum of Prime Factors
+Brute Force Method: Recursively calculate the sum of prime factors, potentially branching wildly if implemented poorly without a while loop.
+BF Complexity Visuals: Redundant Factorization Trees
+How to Draw BF: Draw a number. Branch it out into its primes. Sum them. Re-draw the entire tree for the new number.
+Optimised Pattern: Simulation + Prime Factorization
+Opt Vis. Technique: The Prime Sum Collapse
+Dry Run (Opt): Factorize the number N into its primes and sum them. If the sum equals N, stop (it cannot get smaller). Otherwise, set N = sum and repeat.
+How to Draw (Opt): Draw a large number block. Smash it into its prime building blocks. Add their values together to form a new block. Keep smashing until the block stops shrinking.
+Opt Complexity Visuals: Iterative Factorization $O(\text{Answer} \cdot √N)$
+How to Draw Opt Complexity: Draw a loop that runs until stabilization. Inside, draw a fast $O(√N)$ factorization pass.
+Mem Vis (BF): Deep recursion stack.
+Mem Vis (Opt): A few integer tracking variables. $O(1)$ space.

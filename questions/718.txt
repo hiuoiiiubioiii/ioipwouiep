@@ -1,0 +1,13 @@
+ID: 718
+Problem Title: Maximum Length of Repeated Subarray
+Brute Force Method: Generate all subarrays of A and check if they exist in B.
+BF Complexity Visuals: Massive String Overlap
+How to Draw BF: Draw an exhaustive list of all N^2 subarrays of A, sliding them against M^2 subarrays of B. $O(N^3)$ time.
+Optimised Pattern: Dynamic Programming (2D)
+Opt Vis. Technique: 2D Grid Diagonal Streaks
+Dry Run (Opt): Create `dp[N+1][M+1]`. If `A[i] == B[j]`, `dp[i][j] = dp[i-1][j-1] + 1`. Track the global maximum. The DP builds diagonal streaks of matches.
+How to Draw (Opt): Draw a grid. A on top, B on left. Whenever row == col char, draw an arrow from Top-Left diagonal, add 1. Highlight the longest uninterrupted diagonal chain.
+Opt Complexity Visuals: Grid Area Shading
+How to Draw Opt Complexity: Shade the entire M x N grid exactly once to visually prove $O(M\cdot N)$ time complexity.
+Mem Vis (BF): Variables to hold thousands of temporary subarray strings.
+Mem Vis (Opt): A 2D array matrix block (O(M*N)), optimizable to 1D array row (O(M)).

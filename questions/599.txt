@@ -1,0 +1,13 @@
+ID: 599
+Problem Title: Minimum Index Sum of Two Lists
+Brute Force Method: Nested loops. For every restaurant in List 1, search the entire List 2. If found, calculate the index sum and track the minimum.
+BF Complexity Visuals: Quadratic comparison. $O(N \\text{times} M)$.
+How to Draw BF: Draw two lists of 500 restaurants. For the first item in List A, scan all 500 items in List B. Repeat 500 times.
+Optimised Pattern: Hash Map for Index Lookup.
+Opt Vis. Technique: A "Fast-Check" Menu. You put List 1 into a digital directory (Map) so that when you look at List 2, you can instantly see if a restaurant is shared and what its "rank" (index) was.
+Dry Run (Opt): 1. Map `List1` elements to their indices. 2. Iterate `List2`. If item in Map: `sum = i + Map[item]`. If `sum &lt; min_sum`, clear result and add item. If `sum == min_sum`, add item.
+How to Draw (Opt): Draw a table: `Shogun: 0, KFC: 1, BurgerKing: 2`. Now read List 2. For each name, look at the table, add the current index, and keep track of the lowest total.
+Opt Complexity Visuals: Linear scan of both lists. $O(N + M)$.
+How to Draw Opt Complexity: Draw two lists flowing into a single comparison box guided by a Map.
+Mem Vis (BF): $O(1)$ extra space but slow execution.
+Mem Vis (Opt): A Hash Map storing one of the lists. $O(N)$.

@@ -1,0 +1,13 @@
+ID: 2092
+Problem Title: Find All People With Secret
+Brute Force Method: For every new meeting, check if any participant knows the secret. If they do, spread it. Repeat until no new people learn the secret.
+BF Complexity Visuals: Iterative Propagation Matrix
+How to Draw BF: Draw people as nodes. For every time T, draw edges and ripple the "Secret" color. Re-scan every time T repeatedly. $O(T \\text{cdot Meetings})$.
+Optimised Pattern: Sorted Time Processing + DSU with Reset
+Opt Vis. Technique: Time-Chunked Graph Island Merging
+Dry Run (Opt): Sort meetings by time. Process meetings of the same time as a group using DSU. If a person is connected to `Person 0`, they keep the secret. Otherwise, `reset` their parent.
+How to Draw (Opt): Draw groups of meetings by time. Inside each group, draw DSU "bubbles". If a bubble doesn't touch the "Secret Person", pop the bubble (reset parents) before moving to the next time.
+Opt Complexity Visuals: Sorting Funnel to Time-Grouped DSU
+How to Draw Opt Complexity: Draw a funnel (O(M log M) sort). Below, draw small clusters of $O(M)$ DSU operations. Total Time $O(M \log M)$.
+Mem Vis (BF): A massive graph being re-traversed for every single time step.
+Mem Vis (Opt): A `parent` array for DSU and a `secret_holders` set. Space $O(N + M)$.

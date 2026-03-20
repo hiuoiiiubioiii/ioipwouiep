@@ -1,0 +1,13 @@
+ID: 1802
+Problem Title: Maximum Value at a Given Index in a Bounded Array
+Brute Force Method: Linear search from maxSum down to 1, validating each by simulating the array.
+BF Complexity Visuals: Step-by-step array generation grid.
+How to Draw BF: Draw a grid. Row by row, generate the array for a candidate value. Count the sum.
+Optimised Pattern: Binary Search on Answer + Greedy Math (Arithmetic Progression sum).
+Opt Vis. Technique: Search space division line &amp; mountain array shape.
+Dry Run (Opt): Pick mid. Calculate arithmetic sum on left and right. Compare to maxSum to adjust L/R pointers.
+How to Draw (Opt): Draw a horizontal line 1 to maxSum. Mark mid. Draw a triangle (peak at index) and calculate area (sum).
+Opt Complexity Visuals: Binary search halving line + $O(1)$ math evaluation.
+How to Draw Opt Complexity: Draw a line cut in half repeatedly, marking $O(1)$ next to each cut.
+Mem Vis (BF): Full array allocation blocks (O(N) space).
+Mem Vis (Opt): Three variables (L, R, Mid) as isolated memory registers (O(1) space).

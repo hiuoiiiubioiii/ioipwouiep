@@ -1,0 +1,13 @@
+ID: 1049
+Problem Title: Last Stone Weight II
+Brute Force Method: Try every possible combination of stone smashing (brute force recursion) to find the minimum possible final weight.
+BF Complexity Visuals: An exponential decision tree of "this stone minus that stone".
+How to Draw BF: Draw 3 stones. Branch: (A-B), (B-C), (A-C). For each result, smash with the remaining stone. Write $O(2^N)$.
+Optimised Pattern: Dynamic Programming (0/1 Knapsack variation).
+Opt Vis. Technique: A "Tug-of-War" Balancing. We want to divide the stones into two piles with the most similar total weights.
+Dry Run (Opt): The problem is equivalent to finding the maximum weight we can put in a bag of capacity `TotalSum / 2`. Min Weight = `TotalSum - 2 * (Max sum possible in bag)`.
+How to Draw (Opt): Draw a 1D DP array of size `Sum/2`. For each stone, update the array from right to left (Knapsack style).
+Opt Complexity Visuals: Nested loop over stones and half the sum.
+How to Draw Opt Complexity: Draw a matrix (or 1D array) with a double-arrow loop. Write Time: $O(N \\text{cdot Sum})$.
+Mem Vis (BF): Deep recursion stack for all combinations.
+Mem Vis (Opt): A boolean array of size `Sum/2`. $O(\text{Sum})$ space.

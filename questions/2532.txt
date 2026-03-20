@@ -1,0 +1,13 @@
+ID: 2532
+Problem Title: Time to Cross a Bridge
+Brute Force Method: Simulate every single second of time. At each second, check the status of all 4 potential queues and the bridge, moving workers one step at a time. $O(\text{Time} \cdot N)$.
+BF Complexity Visuals: A granular timeline where every millisecond is a discrete state change for all workers.
+How to Draw BF: Draw a timeline. For every tick mark, redraw the bridge and the position of every worker. This becomes unmanageable as time increases.
+Optimised Pattern: Event-Driven Simulation using 4 Priority Queues (Heaps).
+Opt Vis. Technique: A "State Machine" where workers jump between four priority heaps based on their readiness and efficiency scores.
+Dry Run (Opt): Manage workers in heaps: leftWait, rightWait (sorted by efficiency), leftFree, rightFree (sorted by time). Always prioritize rightWait crossing left. Jump time to the next available event (worker finishing a task).
+How to Draw (Opt): Draw a bridge. On each side, draw two boxes (Waiting and Working). Use arrows to move worker IDs between boxes. Always pick the worker from the "Waiting" box with the highest efficiency value.
+Opt Complexity Visuals: $O(N \log W)$ where N is boxes and W is workers. Each worker movement is a heap operation.
+How to Draw Opt Complexity: Draw the bridge. Draw 4 triangles (heaps). Show worker IDs moving from one triangle to the next. Annotate each move with a log W cost.
+Mem Vis (BF): A massive array or list tracking every worker's position for every second of time.
+Mem Vis (Opt): Exactly 4 Heaps storing worker objects/tuples.

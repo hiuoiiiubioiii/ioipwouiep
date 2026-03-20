@@ -1,0 +1,13 @@
+ID: 3
+Problem Title: Longest Substring Without Repeating Characters
+Brute Force Method: Generate All Substrings 3 Nested loops to generate and check validity of all substrings.
+BF Complexity Visuals: Expanding Triangle
+How to Draw BF: Draw a line. Below it, draw shorter and shorter lines representing every possible substring. Count them to show $O(N³)$ operations.
+Optimised Pattern: Sliding Window (Hash Set)
+Opt Vis. Technique: Caterpillar/Accordion
+Dry Run (Opt): Visualize a flexible box covering the string. The right edge stretches right to engulf unique letters. If a duplicate is hit, the left edge pulls in until the duplicate is evicted.
+How to Draw (Opt): Draw the string. Draw a bracket `[` for the left pointer and `]` for the right. Erase and redraw `]` moving right. Erase and redraw `[` moving right when a collision occurs.
+Opt Complexity Visuals: Two Chasing Pointers
+How to Draw Opt Complexity: Draw a timeline. Show pointer R traversing 0 to N. Show pointer L traversing 0 to N. Emphasize that L and R only move *forward*, proving 2N steps = $O(N)$.
+Mem Vis (BF): Draw numerous separate arrays/strings taking up massive heap space if generating actual strings.
+Mem Vis (Opt): Draw a fixed-size HashSet (max 26 for letters, or 128 for ASCII). Shade in boxes as characters enter the window, unshade as they leave.

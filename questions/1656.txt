@@ -1,0 +1,13 @@
+ID: 1656
+Problem Title: Design an Ordered Stream
+Brute Force Method: Every time an ID is inserted, sort the whole collection of IDs to find the next contiguous sequence.
+BF Complexity Visuals: Sorting Funnel Bottleneck
+How to Draw BF: Draw a funnel where every single insertion forces N \log N work. Total $O(N^2 \log N)$ over N calls.
+Optimised Pattern: Pointer-based Simulation
+Opt Vis. Technique: Conveyor Belt with Stopper
+Dry Run (Opt): Keep an array of size N+1. When an ID is inserted, check if the current pointer `ptr` is at that ID. If yes, move `ptr` forward until you hit an empty slot.
+How to Draw (Opt): Draw an array. Place a marker (ptr) at index 1. When a value arrives at 1, move ptr right until it hits a blank. Those skipped indices are your output.
+Opt Complexity Visuals: Amortized Linear Scan
+How to Draw Opt Complexity: Draw a single arrow that moves across the array exactly once over the lifetime of the object. $O(N)$ total.
+Mem Vis (BF): Dynamic List/Tree: Redundant memory overhead from complex data structures.
+Mem Vis (Opt): Fixed-size Array: Draw a simple static horizontal array of size N+1. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 2955
+Problem Title: Number of Same-End Substrings
+Brute Force Method: For each query [L, R], generate all substrings and check if ends are same.
+BF Complexity Visuals: Query Count x Subarray Area
+How to Draw BF: Draw a Q x N^2 grid. Label "TLE" for Q=10^5, N=10^5.
+Optimised Pattern: Prefix Sums + Combinatorics (nC2)
+Opt Vis. Technique: Character Occurrence Map
+Dry Run (Opt): For a character that appears X times in a range, it forms X (single-char) + X(X-1)/2 (pairs) same-end substrings. Use prefix sums to find X in $O(1)$.
+How to Draw (Opt): Draw the string. Below it, draw 26 prefix sum lines. For a query, calculate X = pref[R] - pref[L-1] for each char and apply the formula.
+Opt Complexity Visuals: Preprocessing (26N) + Query (26Q)
+How to Draw Opt Complexity: Draw a line for N. Below it, a line for Q. Each Q point has 26 constant-time lookups. T = $O(26(N+Q)$).
+Mem Vis (BF): Storing all substrings per query.
+Mem Vis (Opt): 2D Prefix Sum Array of size 26 x N. Space $O(26N)$.

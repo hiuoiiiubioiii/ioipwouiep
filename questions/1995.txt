@@ -1,0 +1,13 @@
+ID: 1995
+Problem Title: Count Special Quadruplets
+Brute Force Method: Four nested loops a &lt; b &lt; c &lt; d to check if nums[a] + nums[b] + nums[c] == nums[d].
+BF Complexity Visuals: 4D Index Hypercube (O(N^4))
+How to Draw BF: Draw four pointers (i, j, k, l) slowly incrementing through a list.
+Optimised Pattern: Hash Map (Meet-in-the-Middle logic)
+Opt Vis. Technique: Sum Pair Balancing
+Dry Run (Opt): Rearrange to nums[a] + nums[b] = nums[d] - nums[c]. Fix b and c, and use a Hash Map to store counts of valid a or d values.
+How to Draw (Opt): Draw two arrows. One finds nums[a]+nums[b] and stores it in a box (Map). The second finds nums[d]-nums[c] and looks it up in the box.
+Opt Complexity Visuals: Quadratic Scan Line
+How to Draw Opt Complexity: Draw an $O(N^2)$ nested loop structure. Indicate the $O(1)$ Hash Map lookup inside. $O(N^2)$.
+Mem Vis (BF): Only index variables in the stack.
+Mem Vis (Opt): A Hash Map or Frequency Array for sum occurrences. $O(N)$ or $O(\\text{text}{\text{MaxSum}})$.

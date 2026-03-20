@@ -1,0 +1,13 @@
+ID: 3074
+Problem Title: Apple Redistribution into Boxes
+Brute Force Method: Generate all possible combinations of boxes to see which subset can hold the total apples, then pick the smallest subset size.
+BF Complexity Visuals: Subset Power Set Tree
+How to Draw BF: Draw a root branching 2^N times for "Take Box" or "Leave Box". Label as $O(2^N)$.
+Optimised Pattern: Sorting + Greedy Accumulation
+Opt Vis. Technique: Poured Liquid Visualization
+Dry Run (Opt): Calculate the total sum of apples. Sort the boxes in descending order. "Pour" the total apple sum into the largest boxes first until the "Apple Reservoir" is empty.
+How to Draw (Opt): Draw a large rectangle (Total Apples). Draw boxes of varying widths. Cross off the widest boxes first until their combined width covers the rectangle.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Bar
+How to Draw Opt Complexity: Draw an $O(N \log N)$ block for sorting followed by a single linear $O(N)$ pass for counting.
+Mem Vis (BF): A massive recursive stack tracking current weight and box count for every subset.
+Mem Vis (Opt): A single integer totalApples and a sorted 1D array of box capacities.

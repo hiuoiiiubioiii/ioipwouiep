@@ -1,0 +1,13 @@
+ID: 1710
+Problem Title: Maximum Units on a Truck
+Brute Force Method: 0/1 Knapsack Dynamic Programming or generating all combinations of boxes to fit the truck size.
+BF Complexity Visuals: 2D DP Grid / Exponential Tree.
+How to Draw BF: Draw a grid of Items vs Capacity. Fill out every cell calculating max value for every weight step.
+Optimised Pattern: Greedy + Sorting.
+Opt Vis. Technique: Filling a bucket with the heaviest gold first.
+Dry Run (Opt): Sort boxes by units per box (descending). Throw boxes onto truck until truck size is full. If a whole box batch doesn't fit, take a fraction.
+How to Draw (Opt): Draw boxes of different sizes. Write 'Value' on them. Sort them. Draw a truck box. Move highest value boxes in until full.
+Opt Complexity Visuals: Sort + Linear Accumulation.
+How to Draw Opt Complexity: Draw blocks rearranging (O(N log N)). Draw an arrow moving left to right summing values $O(N)$.
+Mem Vis (BF): A 2D matrix of size `N * TruckCapacity`.
+Mem Vis (Opt): In-place sorting on the input array. $O(1)$ extra space.

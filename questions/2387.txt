@@ -1,0 +1,13 @@
+ID: 2387
+Problem Title: Median of a Row-Wise Sorted Matrix (Premium)
+Brute Force Method: Flatten the entire M x N matrix into a single 1D array, sort it, and pick the middle element.
+BF Complexity Visuals: Flatten and Sort (O(MN log MN))
+How to Draw BF: Draw an M x N grid. Draw an arrow collecting all numbers into one long line, then draw a sorting funnel for that line.
+Optimised Pattern: Binary Search on Range + Upper Bound
+Opt Vis. Technique: Converging Value Guessing
+Dry Run (Opt): The median must be between the matrix min and max. Binary search for a value X. For each row, use `bisect_right` to count elements <= X. If total count &gt; (M x N) / 2, X might be the median.
+How to Draw (Opt): Draw a number line from `min` to `max`. Pick the middle number. For every row in the matrix, count how many numbers are to the left of your pick. Adjust your pick left or right based on the total count.
+Opt Complexity Visuals: Logarithmic Range Search (O(M \log N \log (\text{Max-Min})))
+How to Draw Opt Complexity: Draw a horizontal range [min, max] shrinking by half at each step, with M small arrows pointing into the matrix rows.
+Mem Vis (BF): Draw a large temporary 1D array holding all matrix elements.
+Mem Vis (Opt): Draw zero extra memory (just M row-pointers and 3 variables for Binary Search).

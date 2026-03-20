@@ -1,0 +1,13 @@
+ID: 1599
+Problem Title: Maximum Profit of Operating a Centennial Wheel
+Brute Force Method: Simulate the wheel movement person-by-person until the waitlist is empty. $O(\\text{text}{\text{Total People}})$.
+BF Complexity Visuals: Continuous Simulation Ticker
+How to Draw BF: Draw a wheel with 4 gondolas. Draw a "Waiting" bin. Every rotation, move 4 people from Bin to Wheel. Count profit at each step.
+Optimised Pattern: Simulation / Greedy
+Opt Vis. Technique: The Queue-to-Gondola Flow
+Dry Run (Opt): Maintain `waiting_customers` and `total_profit`. Each rotation, take `min(4, waiting_customers)`, add to `on_board`, subtract costs, and update the `max_profit` index.
+How to Draw (Opt): Draw a 4-slot Gondola. Draw an "Incoming" arrow from the customers array and a "Profit" counter. Fill the gondola, update profit, and repeat until both the array and the waitlist are empty.
+Opt Complexity Visuals: Linear Simulation $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Each step represents one rotation of the wheel. The line length is proportional to total customers.
+Mem Vis (BF): Recording every single profit state in a list.
+Mem Vis (Opt): Variables for `max_profit`, `waiting`, and `current_profit`. $O(1)$ space.

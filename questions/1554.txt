@@ -1,0 +1,13 @@
+ID: 1554
+Problem Title: Strings Differ by One Character
+Brute Force Method: Compare every pair of strings. For each pair, iterate through all characters to count differences. $O(N^2 \cdot L)$.
+BF Complexity Visuals: Nested Loop Matrix $O(N^2 \cdot L)$
+How to Draw BF: Draw a grid of strings. Draw arrows connecting every string to every other string. For each arrow, draw a sub-scanner checking characters.
+Optimised Pattern: Hashing / Rolling Hash
+Opt Vis. Technique: The Masked Hash Set
+Dry Run (Opt): For each string, calculate its hash. Then, for each character position `j`, calculate what the hash would be if char `j` were removed (the "masked hash"). Store these in a Set. If a collision occurs, a match exists.
+How to Draw (Opt): Draw a string "abc". Draw three "ghost" versions: "*bc", "a*c", "ab*". Calculate a numeric ID for each ghost and drop it into a bucket. If a bucket already has an ID, you found the pair.
+Opt Complexity Visuals: Linear Scan with Character Masking $O(N \cdot L)$
+How to Draw Opt Complexity: Draw a 2D grid (Strings x Length). Draw an arrow sweeping every cell exactly once to generate and check hashes.
+Mem Vis (BF): Storing all string pairs.
+Mem Vis (Opt): A Hash Set of masked hashes. $O(N \cdot L)$ space.

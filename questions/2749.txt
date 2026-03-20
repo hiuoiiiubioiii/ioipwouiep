@@ -1,0 +1,13 @@
+ID: 2749
+Problem Title: Minimum Operations to Make the Integer Zero
+Brute Force Method: Backtracking/BFS: From num1, try subtracting 2^i + num2 for all i. Search for the shortest path to 0. $O(\text{Branching}^\text{Depth})$.
+BF Complexity Visuals: Unbounded Search Graph
+How to Draw BF: Draw num1. Draw 40-60 arrows coming out of it representing different subtractions. The state space explodes immediately.
+Optimised Pattern: Queue Memory (Visualizing the BFS queue filling with millions of possible intermediate numbers).
+Opt Vis. Technique: Bit Manipulation + Brute Force on k (Steps)
+Dry Run (Opt): Binary Representation Bound Check
+How to Draw (Opt): Let k be the number of operations. Then num1 - k*num2 must be representable as the sum of k powers of 2. This is true if bitCount(num1 - k*num2) &lt;= k and k &lt;= (num1 - k*num2). Iterate k from 1 to 100.
+Opt Complexity Visuals: Draw a table with k in one column and num1 - k*num2 in the next. Check the binary bits of the result. If the number of '1's is <= k, you found the answer.
+How to Draw Opt Complexity: Constant Time $O(1)$ / $O(60)$
+Mem Vis (BF): Draw a tiny loop that runs at most 60 times. Label it $O(1)$ or $O(\log N)$.
+Mem Vis (Opt): Zero Extra Space (Draw a single integer k and a long integer diff).

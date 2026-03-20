@@ -1,0 +1,13 @@
+ID: 3647
+Problem Title: Maximum Weight in Two Bags (Med)
+Brute Force Method: Try every possible way to partition N items into two bags (Bag A, Bag B, or Discard). $O(3^N)$.
+BF Complexity Visuals: Trinary Decision Tree.
+How to Draw BF: Start at Item 1. Branch 3 ways: Bag A, Bag B, Trash. For each child, branch 3 times again. Total leaves: 3^N. Write "Exponential Failure".
+Optimised Pattern: Dynamic Programming (Knapsack variant) or Meet-in-the-Middle if N is around 30-40.
+Opt Vis. Technique: Two-Half Combination Matrix.
+Dry Run (Opt): Split the items into two halves (N/2). Find all possible weight sums for Half 1. Find all for Half 2. Use a two-pointer scan or Hash Map to pair them such that the total is maximized.
+How to Draw (Opt): Draw two lists of possible sums. Sort both. Use a finger on each list to find pairs that sum as close to the "Weight Limit" as possible without exceeding it.
+Opt Complexity Visuals: Polynomial Complexity Chart.
+How to Draw Opt Complexity: Draw two blocks for $O(3^(N/2)$). Draw an arrow for the "Combine/Sort" step $O(M \log M)$. Write $O(3^(N/2)$) to show it’s much faster than 3^N.
+Mem Vis (BF): A recursion stack reaching depth N and millions of redundant state checks.
+Mem Vis (Opt): A 2D DP table `dp[item_index][current_weight]` or two Hash Sets for Meet-in-the-Middle. Space $O(\text{Max}_\text{Weight})$.

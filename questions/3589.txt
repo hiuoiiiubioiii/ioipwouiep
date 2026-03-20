@@ -1,0 +1,13 @@
+ID: 3589
+Problem Title: Count Prime-Gap Balanced Subarrays (Med)
+Brute Force Method: For every subarray, calculate the gaps between adjacent primes within it and check if they are "balanced."
+BF Complexity Visuals: Subarray Iteration + Gap Check.
+How to Draw BF: Draw an N x N matrix. For each cell, draw a secondary loop scanning the subarray for primes and calculating diffs. $O(N^3)$.
+Optimised Pattern: Sieve + Sliding Window / Prefix Sums.
+Opt Vis. Technique: Gap Sequence Stream.
+Dry Run (Opt): Precompute primes. Transform the array into a sequence of "gaps" between primes. A "balanced" subarray corresponds to a range in the gap sequence.
+How to Draw (Opt): Draw the array. Below, write the gaps: 2, 4, 2... Use a sliding window to find ranges where the sum/count of gaps meets the criteria.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a sequence of gap values. Draw a single straight arrow (sliding window) moving through the gap list.
+Mem Vis (BF): Nested Prime Checks: Draw the CPU repeatedly checking if a number is prime for every subarray.
+Mem Vis (Opt): Prefix Gap Array: Draw a 1D array of gaps and a prefix sum array to instantly calculate gap totals.

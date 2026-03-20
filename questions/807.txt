@@ -1,0 +1,13 @@
+ID: 807
+Problem Title: Max Increase to Keep City Skyline
+Brute Force Method: For every single building (cell), loop through its entire row and entire column right then and there to find the maximums, calculate difference, and add to a total.
+BF Complexity Visuals: Repeated Raycasting / Crosshairs. $O(N^3)$ time.
+How to Draw BF: Draw a grid. Pick one cell. Draw an intersecting horizontal and vertical line stretching across the whole grid. Erase it. Pick the next cell. Draw the crosshairs again. Notice how many times you trace the same cells.
+Optimised Pattern: Precomputation (2D Grid Greedy).
+Opt Vis. Technique: Shadow Projection Screens (Top and Side Views).
+Dry Run (Opt): Project shadows to the North (column max) and West (row max). Look at a building. Look at its North shadow and West shadow. Grow the building vertically until it hits the *shorter* of the two shadows.
+How to Draw (Opt): Draw the main N x N grid. Above it, draw a 1D array (North skyline). To its left, draw a 1D array (West skyline). Draw arrows from a grid cell pointing up and left to find its limits.
+Opt Complexity Visuals: Two-Pass Sweep. $O(N^2)$ time.
+How to Draw Opt Complexity: Draw a grid. First, sweep a highlighter down all columns, then across all rows (Precomputation). Second, dot each cell exactly once with a pen (Calculation).
+Mem Vis (BF): $O(1)$ space, but draw repeated local variables popping into existence and disappearing for every cell.
+Mem Vis (Opt): Two 1D Arrays: Draw two standalone strips of boxes (size N) sitting strictly outside the main grid memory block.

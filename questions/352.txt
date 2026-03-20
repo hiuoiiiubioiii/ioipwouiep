@@ -1,0 +1,13 @@
+ID: 352
+Problem Title: Data Stream as Disjoint Intervals
+Brute Force Method: Store every incoming number in a sorted list. When `getIntervals()` is called, iterate through the list and group consecutive numbers into ranges.
+BF Complexity Visuals: Linear Array Compaction
+How to Draw BF: Draw a number line. Draw dots at 1, 2, 3, 5, 6. Circle the groups. For every call, you redraw these circles. $O(N)$.
+Optimised Pattern: Ordered Map (TreeMap) / Balanced BST
+Opt Vis. Technique: Dynamic Binary Search Segment Merging
+Dry Run (Opt): When adding x, find the interval starting at or before x using `floorKey`. Check if x can merge with the left interval, the right interval (`higherKey`), both, or neither. Update the map accordingly.
+How to Draw (Opt): Draw a number line with existing segments [1, 3] and [5, 6]. Place x=4. Draw arrows from 4 to the neighboring segments showing they all fuse into [1, 6].
+Opt Complexity Visuals: Logarithmic Interval Search
+How to Draw Opt Complexity: Draw a Binary Search Tree where each node is an interval. Highlight the path to find where a new number "lands". $O(\log N)$ per addition.
+Mem Vis (BF): A growing list of integers. $O(N)$.
+Mem Vis (Opt): TreeMap of Intervals. Draw a BST where each node contains a pair `[start, end]`. $O(N)$.

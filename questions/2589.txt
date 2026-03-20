@@ -1,0 +1,13 @@
+ID: 2589
+Problem Title: Minimum Time to Complete All Tasks
+Brute Force Method: Try every possible combination of 1s and 0s for every second in the timeline [1, 2000] to satisfy task durations. $O(2^2000)$.
+BF Complexity Visuals: A binary choice tree of "turn on computer" or "turn off computer" for every second.
+How to Draw BF: Timeline 1...2000. Try turning it on at sec 1, off at sec 2. Check if all tasks finish. Repeat for all combos.
+Optimised Pattern: Greedy Interval Scheduling (End-Point Prioritization).
+Opt Vis. Technique: A "Greedy Backfilling" visual: tasks are sorted by their end times, and their required duration is filled from the end of the interval backwards to maximize overlap with future tasks.
+Dry Run (Opt): 1. Sort tasks by their end time. 2. For each task, check how many seconds are already "on" in its range [start, end]. 3. If more time is needed, turn on the computer starting from the end of the interval moving backwards, but only for seconds that are currently "off".
+How to Draw (Opt): Draw a timeline. Sort tasks by end-point. For the first task, mark the last few available seconds. For the second task, count how many marks are already in its range, then add more marks starting from its end-point.
+Opt Complexity Visuals: $O(N \log N + N x \text{Timeline})$. Sorting plus a nested loop over the timeline.
+How to Draw Opt Complexity: Draw task bars on a timeline. Show a "filling" animation that starts at the right edge of each bar and moves left.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(\text{Timeline})$ - specifically a boolean array of size 2001 to track the computer's state.

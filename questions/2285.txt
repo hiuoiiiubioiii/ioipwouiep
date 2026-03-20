@@ -1,0 +1,13 @@
+ID: 2285
+Problem Title: Maximum Total Importance of Roads
+Brute Force Method: Permutation of ImportanceTry assigning every permutation of importance values (1 to N) to the cities. For each permutation, calculate the total road importance and find the max.
+BF Complexity Visuals: Factorial Assignment Tree
+How to Draw BF: Draw 5 cities. Assign [1,2,3,4,5] in all possible ways. Calculate sum of road values for each. Show the $O(N!)$ explosion.
+Optimised Pattern: Greedy Degree-Based Assignment
+Opt Vis. Technique: High-Degree Priority Sorting
+Dry Run (Opt): Count the "degree" (number of roads) for each city. Assign the highest importance values (N, N-1, etc.) to the cities with the highest degrees.
+How to Draw (Opt): Draw a graph. Write the degree next to each city (e.g., City A has 4 roads). Sort cities by these numbers. Assign '5' to the city with 4 roads, '4' to the next, etc.
+Opt Complexity Visuals: Degree Count + Sort
+How to Draw Opt Complexity: Draw an $O(E)$ pass to count degrees, an $O(V \log V)$ sorting pass, and an $O(V)$ calculation. Total time: $O(E + V \log V)$.
+Mem Vis (BF): A list of every possible assignment of importance values.
+Mem Vis (Opt): A single integer array of size V to store the degrees (O(V) space).

@@ -1,0 +1,13 @@
+ID: 1602
+Problem Title: Find Nearest Right Node in Binary Tree
+Brute Force Method: DFS storing node depths in a Map, then search
+BF Complexity Visuals: Graph Traversal Map
+How to Draw BF: Draw a tree. Next to it, draw a two-column hash map mapping node IDs to integer depths.
+Optimised Pattern: BFS (Level Order Traversal)
+Opt Vis. Technique: Queue Sliding Window
+Dry Run (Opt): Draw a queue. Push root. Pop, check if target, return next in queue. Push children.
+How to Draw (Opt): Draw an open-ended tube (queue). Write node values passing through left-to-right, marking the target node with a star.
+Opt Complexity Visuals: Linear Node Processing
+How to Draw Opt Complexity: Draw N nodes as a straight line showing each visited exactly once for $O(N)$ time.
+Mem Vis (BF): Hash Map &amp; Call Stack: Draw a growing stack and a growing key-value table.
+Mem Vis (Opt): Queue: Draw a segmented tube holding max W elements (W = max width of tree).

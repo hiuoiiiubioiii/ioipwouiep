@@ -1,0 +1,13 @@
+ID: 2582
+Problem Title: Pass the Pillow
+Brute Force Method: Simulate the pillow passing second-by-second for `time` seconds. Keep track of the current person and the direction of movement. $O(T)$.
+BF Complexity Visuals: A linear timeline of pillow hand-offs moving back and forth across a line of people.
+How to Draw BF: Time 1: Person 1 -&gt; 2. Time 2: 2 -&gt; 3. At the end (Person N), flip direction. Repeat for `time` steps.
+Optimised Pattern: Modular Arithmetic (Cycles).
+Opt Vis. Technique: A "Zig-Zag" mathematical visual where the pillow moves in cycles of 2(N-1) steps.
+Dry Run (Opt): One full round trip (1 to N and back to 1) takes (N-1) x 2 steps. Calculate `full_cycles = time / (N-1)` and `extra_steps = time % (N-1)`. If `full_cycles` is even, you are moving forward: result is `1 + extra_steps`. If odd, you are moving backward: result is `N - extra_steps`.
+How to Draw (Opt): Write down N and `time`. Subtract (N-1) repeatedly until you can't. If you subtracted an even number of times, start at 1 and add the remainder. If odd, start at N and subtract the remainder.
+Opt Complexity Visuals: $O(1)$ - A few arithmetic operations regardless of time or number of people.
+How to Draw Opt Complexity: Draw a single box representing the CPU. Write the "Even/Odd" logic inside. No loops or arrows needed.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ - Constant memory.

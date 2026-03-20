@@ -1,0 +1,13 @@
+ID: 3077
+Problem Title: Maximum Strength of K Disjoint Subarrays
+Brute Force Method: Try every possible way to partition the array into k disjoint subarrays using recursion/backtracking.
+BF Complexity Visuals: Partition Tree Explosion
+How to Draw BF: Draw the array. Draw vertical "cut lines" in every possible gap. Branch for every k-cut combination. $O(N^k)$.
+Optimised Pattern: Dynamic Programming (Pick/Skip State)
+Opt Vis. Technique: DP Transition Ribbon
+Dry Run (Opt): Let dp[i][j] be the max strength using j subarrays from the first i elements. States include: "Starting new subarray", "Continuing current", or "Skipping". Multiply by alternating coefficients (k, -(k-1), k-2...).
+How to Draw (Opt): Draw a grid: Rows (Subarrays k), Cols (Array Index N). Draw diagonal arrows showing "Continue" and horizontal arrows showing "Start New".
+Opt Complexity Visuals: $O(k \cdot N)$ Matrix Fill
+How to Draw Opt Complexity: Draw a K x N grid. Show that each cell depends only on the previous row and previous column values.
+Mem Vis (BF): An exponential number of array slices stored in recursive stack frames.
+Mem Vis (Opt): Two 1D arrays (current and previous DP rows) to optimize space from $O(K \cdot N)$ to $O(N)$.

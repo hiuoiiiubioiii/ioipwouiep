@@ -1,0 +1,13 @@
+ID: 539
+Problem Title: Minimum Time Difference
+Brute Force Method: Compare every time in the list with every other time, calculating the absolute difference and handling the 24h wrap-around. $O(N^2)$.
+BF Complexity Visuals: An N x N comparison grid.
+How to Draw BF: Draw a list of times. Draw lines connecting every pair. Write the difference on the line.
+Optimised Pattern: Sorting or Bucket Sort (Boolean Array).
+Opt Vis. Technique: A 24-hour circular clock face with markers. The smallest gap between any two adjacent markers is the answer.
+Dry Run (Opt): Convert times to minutes (0-1439). Sort them. Check diff between neighbors + diff between first and last (wrap-around).
+How to Draw (Opt): Draw a circle with 1440 notches. Mark the given times. Draw an arc between the two closest notches.
+Opt Complexity Visuals: Sorting phase. $O(N \log N)$ or $O(1440)$ if using a fixed-size bucket array.
+How to Draw Opt Complexity: Draw a sorting timeline or a fixed-length line of 1440 slots.
+Mem Vis (BF): $O(1)$ extra space but slow time.
+Mem Vis (Opt): A boolean array of size 1440 or a sorted list of size N. $O(1)$ or $O(N)$.

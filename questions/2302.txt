@@ -1,0 +1,13 @@
+ID: 2302
+Problem Title: Count Subarrays With Score Less Than K
+Brute Force Method: Generate every possible subarray, compute the sum, multiply by length, and check if &lt; k.
+BF Complexity Visuals: N-Squared Triangle Grid
+How to Draw BF: Draw a staircase or a 2D grid where rows are start indices and columns are end indices. Fill cells with computed scores.
+Optimised Pattern: Sliding Window (Two Pointers)
+Opt Vis. Technique: Expanding and Shrinking Caterpillar
+Dry Run (Opt): Place `left` and `right` markers. Move `right` to expand (add to sum). If score &gt;= k, move `left` to shrink (subtract from sum). Add `(right - left + 1)` to total.
+How to Draw (Opt): Draw an array. Draw `L` and `R` arrows pointing to indices. Draw a box showing `Current Sum` and `Current Score` updating as arrows move right.
+Opt Complexity Visuals: Parallel Pointers (O(N))
+How to Draw Opt Complexity: Draw two parallel timelines. The `R` timeline moves forward steadily. The `L` timeline occasionally catches up, but neither moves backward.
+Mem Vis (BF): Draw an empty space (O(1) memory), but sketch a stack of overlapping subarray segments to represent the nested iterations.
+Mem Vis (Opt): Draw two variables (`sum`, `score`) as small boxes whose values get crossed out and updated continuously.

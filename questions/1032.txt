@@ -1,0 +1,13 @@
+ID: 1032
+Problem Title: Stream of Characters
+Brute Force Method: For every new character, append it to a string. Then for every word in the dictionary, check if the string `endsWith(word)`.
+BF Complexity Visuals: A growing scroll of paper. Every time a new letter is added, you search through a massive pile of dictionary books from scratch.
+How to Draw BF: Write "a", "b", "c". Check if "abc" ends with "apple", "cat", etc. Write $O(\text{Queries} \\text{cdot NumWords} \\text{cdot MaxWordLen})$.
+Optimised Pattern: Trie (Prefix Tree) with Reversed Search.
+Opt Vis. Technique: A tree where you start at the leaves and climb toward the root.
+Dry Run (Opt): Store dictionary words in a Trie *backwards*. Keep a stream of letters. When a new letter arrives, walk into the Trie starting from the most recent letter and go backwards. If you hit a "word-end" node, return true.
+How to Draw (Opt): Draw a Trie of reversed words. As letters 'a', 'b', 'c' arrive, look at 'c', then 'b', then 'a' in the tree. If you find a path to a leaf, mark 'Found'.
+Opt Complexity Visuals: A single path walk in a tree per query.
+How to Draw Opt Complexity: Draw a Trie. Draw a pointer moving up one branch. Write Time: $O(\text{MaxWordLen})$ per query.
+Mem Vis (BF): A massive list of word strings stored multiple times during searches.
+Mem Vis (Opt): A Trie structure storing each character exactly once per branch. Space: $O(\text{Total characters in dictionary})$.

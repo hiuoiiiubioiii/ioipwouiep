@@ -1,0 +1,13 @@
+ID: 620
+Problem Title: Not Boring Movies (SQL)
+Brute Force Method: Fetch all rows, then use a programming loop to check `id % 2 != 0` and `description != 'boring'`, then sort.
+BF Complexity Visuals: Entire table loaded into an application-level filter.
+How to Draw BF: Draw a giant table. Draw a "filter" box outside the database. Move all rows into the box, then discard half.
+Optimised Pattern: Direct SQL WHERE Clause + ORDER BY.
+Opt Vis. Technique: Indexing / Predicate Pushdown.
+Dry Run (Opt): The database engine scans the index. It immediately skips even IDs and rows with the 'boring' string at the storage level. Sorts the result.
+How to Draw (Opt): Draw a table. Put a "Filter" mask over it that only lets "Odd" and "Not Boring" rows through. Draw an arrow pointing to the "Rating" column for sorting.
+Opt Complexity Visuals: Scan (O(N)) + Sort (O(K log K)) where K is filtered result count.
+How to Draw Opt Complexity: Draw a narrowing pipe. Most data is blocked at the start (O(N)), only a few rows reach the Sort stage.
+Mem Vis (BF): Draw a full application-side array holding all table data.
+Mem Vis (Opt): Draw a single stream of rows being filtered on-the-fly, requiring minimal buffer space.

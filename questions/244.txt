@@ -1,0 +1,13 @@
+ID: 244
+Problem Title: Shortest Word Distance II
+Brute Force Method: Run the $O(N)$ algorithm from Q243 every time a query is made.
+BF Complexity Visuals: Repeated Linear Scans: $O(Q \cdot N)$.
+How to Draw BF: Draw Q arrows, each scanning the entire array of length N. Total work = Q \times N.
+Optimised Pattern: Hash Map Pre-processing + Two Pointers
+Opt Vis. Technique: Grouped Index Lists
+Dry Run (Opt): Store indices of each word in a Map: `word: [indices]`. For a query, perform a two-pointer merge-style scan on the two sorted index lists.
+How to Draw (Opt): Draw a dictionary. For "apple", show a sorted list `[1, 5, 10]`. For "banana", show `[2, 12]`. Use two pointers to find the closest pair.
+Opt Complexity Visuals: Optimized Query: $O(K + L)$ where K, L are frequency of words.
+How to Draw Opt Complexity: Draw two short timelines (the index lists). Show two pointers moving together to find the minimum gap.
+Mem Vis (BF): Original Array: $O(N)$.
+Mem Vis (Opt): Map of Lists: Draw a table where each key points to a sorted integer array. Total space = $O(N)$.

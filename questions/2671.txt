@@ -1,0 +1,13 @@
+ID: 2671
+Problem Title: Frequency Tracker
+Brute Force Method: Iterate through the entire data structure every time 'hasFrequency' is called to count occurrences.
+BF Complexity Visuals: Linear Search Scan
+How to Draw BF: Draw a list of numbers. When asked for frequency 'f', scan the whole list and count every number's occurrence. $O(N)$ per query.
+Optimised Pattern: Dual Hash Maps (Count of Counts)
+Opt Vis. Technique: Nested Frequency Mapping
+Dry Run (Opt): Maintain two maps: 1. `numberToFreq` (Value -&gt; Count) and 2. `freqToCount` (Count -&gt; How many values have this frequency). On add/remove, update both maps in $O(1)$.
+How to Draw (Opt): Draw two tables. Table A: Number | Freq. Table B: Freq | Count. When adding a number, increment its Freq in A, and update the corresponding tally in B.
+Opt Complexity Visuals: $O(1)$ Constant Time
+How to Draw Opt Complexity: Draw a single lookup arrow into the `freqToCount` map. $O(1)$.
+Mem Vis (BF): Rescanning the entire list
+Mem Vis (Opt): Two Hash Maps (or fixed-size arrays if range is known).

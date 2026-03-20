@@ -1,0 +1,13 @@
+ID: 2563
+Problem Title: Count the Number of Fair Pairs
+Brute Force Method: Use two nested loops to check every pair (i, j) where i &lt; j and see if their sum falls in the range [lower, upper]. $O(N^2)$.
+BF Complexity Visuals: A triangle of index checks (N x N / 2) covering all possible pairs.
+How to Draw BF: Draw the array. Pick the first number. Check its sum with every other number. Pick the second number. Repeat.
+Optimised Pattern: Sorting + Two Pointers (or Binary Search).
+Opt Vis. Technique: A "Sliding Boundary" on a sorted array where pointers find the valid range of j for every i.
+Dry Run (Opt): Sort the array. For each index i, find the range of indices [left, right] such that nums[i] + nums[left] &gt;= lower and nums[i] + nums[right] &lt;= upper. Total count is the sum of (right - left + 1) for all i.
+How to Draw (Opt): Draw a sorted array. Pick a number. Use two "boundary markers" to find the first and last numbers that, when added to your picked number, stay within the limits. Count the distance between markers.
+Opt Complexity Visuals: $O(N \log N)$ for sorting. The two-pointer search is $O(N)$.
+How to Draw Opt Complexity: Draw a sorted number line. Draw a fixed pointer i and a "sliding window" for j that shifts smoothly as i moves.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ extra space beyond the sorting overhead.

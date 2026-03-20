@@ -1,0 +1,13 @@
+ID: 3627
+Problem Title: Maximum Median Sum of Subsequences of Size 3 (Med)
+Brute Force Method: Generate all combinations of size 3 (nC3), find the median of each, sum them up to find the maximum possible configuration. $O(N^3)$.
+BF Complexity Visuals: Combinatorial Explosion Tree.
+How to Draw BF: Draw an array. Branch out to pick the first element, then branch to pick the second, then the third. The paper fills with redundant triplets.
+Optimised Pattern: Greedy Algorithm + Sorting. Sort the array. To maximize medians, pair the largest available, the *next* largest (the median), and the smallest available.
+Opt Vis. Technique: Greedy Two-Pointer Pinch.
+Dry Run (Opt): Sort the numbers. The smallest numbers are "sacrificed" as the left side of the triplets. The largest numbers are the right side. The second-largest numbers become your precious medians.
+How to Draw (Opt): Draw a sorted array. Place pointer L at start, pointer R at end. Group elements: [arr[L], arr[R-1], arr[R]]. The median is always arr[R-1]. Move L right by 1, R left by 2.
+Opt Complexity Visuals: Sorting Bottleneck Block.
+How to Draw Opt Complexity: Draw a large block labeled "Sort: $O(N \log N)$". Next to it, draw a tiny block labeled "Greedy Scan: $O(N)$". Dominant time is sorting.
+Mem Vis (BF): Massive lists of lists storing every generated triplet combination.
+Mem Vis (Opt): In-place pointers on the original array (or a sorted copy). Space $O(1)$ or $O(N)$ depending on sort implementation.

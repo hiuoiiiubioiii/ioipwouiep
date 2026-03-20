@@ -1,0 +1,13 @@
+ID: 174
+Problem Title: Dungeon Game
+Brute Force Method: Recursion with backtracking to explore every possible path from top-left to bottom-right, calculating minimum health needed for each.
+BF Complexity Visuals: A sprawling $O(2^M+N)$ decision tree branching at every cell.
+How to Draw BF: Draw a 3 x 3 grid. From (0,0), draw arrows to (0,1) and (1,0). Repeat. Show the tree structure growing exponentially.
+Optimised Pattern: Bottom-Up Dynamic Programming (Reverse Tabulation).
+Opt Vis. Technique: "Planning for the Future." You start at the Princess (bottom-right) and calculate the health you *need to have* to survive the path to the exit.
+Dry Run (Opt): dp[i][j] = max(1, min(dp[i+1][j], dp[i][j+1]) - dungeon[i][j]). Base case: exit health = 1.
+How to Draw (Opt): Draw the grid. Start at the bottom-right corner with '1'. Move left and up, calculating health required based on the cell's damage/heal value.
+Opt Complexity Visuals: $O(M x N)$ time. Each cell in the grid is visited and calculated exactly once.
+How to Draw Opt Complexity: Draw the grid. Shade it row-by-row starting from the bottom to show the single-pass filling.
+Mem Vis (BF): Massive $O(2^M+N)$ recursive call stack.
+Mem Vis (Opt): $O(M x N)$ 2D array in heap memory (or $O(N)$ with a rolling 1D array optimization).

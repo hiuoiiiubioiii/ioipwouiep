@@ -1,0 +1,13 @@
+ID: 476
+Problem Title: Number Complement
+Brute Force Method: String Conversion Convert integer to binary string, flip '0's to '1's and '1's to '0's, convert back.
+BF Complexity Visuals: Char-by-Char Scan
+How to Draw BF: Draw a string of bits. Draw a second string below with flipped values. $O(\\text{text}{\text{Bits}})$.
+Optimised Pattern: Bitwise Mask XOR Find the highest set bit. Create a mask of all 1s of that length. Result is `num ^ mask`.
+Opt Vis. Technique: Light Switch Filter
+Dry Run (Opt): Imagine the 1s in the mask are "switches." XORing flips the state of the original bits only where the switches are ON.
+How to Draw (Opt): Write the number in binary. Write the mask (all 1s) directly below it. Draw vertical lines; if both are 1, write 0. If 1 and 0, write 1.
+Opt Complexity Visuals: Constant Jump
+How to Draw Opt Complexity: Draw a single bitwise logic gate diagram. Total $O(1)$ (or $O(\\text{text}{\text{bits}})$ which is \le 32).
+Mem Vis (BF): String Pool Buffer for the binary string.
+Mem Vis (Opt): Registers Single integer mask. $O(1)$.

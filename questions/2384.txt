@@ -1,0 +1,13 @@
+ID: 2384
+Problem Title: Largest Palindromic Number
+Brute Force Method: Generate every possible subsequence, check if it's a palindrome, and find the maximum one by comparing strings numerically.
+BF Complexity Visuals: Exponential Subsequence Search (O(2^N))
+How to Draw BF: Draw a list of digits. Branch into "Include" or "Exclude" for every digit. For every leaf, check if the string reads the same backward and forward.
+Optimised Pattern: Frequency Map + Greedy Construction
+Opt Vis. Technique: Mirrored Digit Placement
+Dry Run (Opt): Count the frequency of each digit (0-9). Build the left half by picking pairs of the largest digits (9, 8... 0). Pick the largest single digit left for the center. Reverse the left half to get the right half. Handle leading zeros.
+How to Draw (Opt): Draw 10 buckets (0-9). Put the digits in. Pull out two '9's and put them at the ends: 9_9. Pull out two '8's: 98_89. Finally, pick the largest single digit left (like '7') for the middle: 98789.
+Opt Complexity Visuals: Constant Alphabet Scan (O(N + 10))
+How to Draw Opt Complexity: Draw a linear pass to count digits, followed by a fixed 10-step pass to build the string.
+Mem Vis (BF): Draw a massive recursion stack storing thousands of subsequence strings.
+Mem Vis (Opt): Draw a 10-element Integer Frequency Array and two string builders.

@@ -1,0 +1,13 @@
+ID: 2878
+Problem Title: Get the Size of a DataFrame
+Brute Force Method: Iterate through the rows to get the row count, then iterate through the first row's keys to get the column count.
+BF Complexity Visuals: Iterative Counter Diagram
+How to Draw BF: Draw a table and tally each row one by one. Write "N" for rows and "M" for columns.
+Optimised Pattern: df.shape Attribute Access
+Opt Vis. Technique: Direct Metadata Access
+Dry Run (Opt): Visualize a "Header" block attached to the DataFrame that already contains the integers (Rows, Columns). No traversal is needed.
+How to Draw (Opt): Draw a box labeled "Metadata" with two slots: [R] and [C]. Point an arrow from the DataFrame to these slots.
+Opt Complexity Visuals: Constant Time $O(1)$
+How to Draw Opt Complexity: Draw a single dot. No matter how large the table, the size is stored in a fixed location.
+Mem Vis (BF): $O(N\cdot M)$ - Accessing all elements to count.
+Mem Vis (Opt): $O(1)$ - Accessing a small tuple.

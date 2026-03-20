@@ -1,0 +1,13 @@
+ID: 1388
+Problem Title: Pizza With 3n Slices
+Brute Force Method: Generate every possible combination of picking N non-adjacent slices from a circular array and calculate the max sum.
+BF Complexity Visuals: $O(2^N)$ Combinatorial Explosion
+How to Draw BF: Draw a pizza circle. Pick a slice, cross out neighbors. Pick next. Show the tree of choices branching out for every possible starting slice.
+Optimised Pattern: Dynamic Programming (Linear House Robber Variant)
+Opt Vis. Technique: State Matrix Optimization
+Dry Run (Opt): The problem reduces to: Pick N non-adjacent items from 3N items. Since it's circular, run DP twice: once for slices [0...3N-2] and once for [1...3N-1].
+How to Draw (Opt): Draw the slices in a line. Create a grid: Slices (rows) vs. Items Picked (cols). For each cell, the max value is either "Don't pick this slice" (cell above) or "Pick this slice" (cell 2-above + current value).
+Opt Complexity Visuals: $O(N²)$ Matrix Fill
+How to Draw Opt Complexity: Draw a 2D grid of size 3N x N. Show arrows looking back 1 and 2 steps, filling the matrix sequentially.
+Mem Vis (BF): Recursion Tree Memory: Storing millions of partial sum states in a deep call stack.
+Mem Vis (Opt): 2D DP Table: Draw a `dp[3n][n]` array. (Can be space-optimized to two rows).

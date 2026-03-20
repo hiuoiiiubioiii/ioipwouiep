@@ -1,0 +1,13 @@
+ID: 2026
+Problem Title: Low-Quality Problems (SQL)
+Brute Force Method: Read the entire table into application memory, loop through each row, calculate the percentage, and filter.
+BF Complexity Visuals: Full Table Extraction Pipeline
+How to Draw BF: Draw a massive database cylinder dumping all its contents into a tiny funnel (application memory). Extremely slow I/O.
+Optimised Pattern: Direct SQL Filtering (Math inside WHERE clause)
+Opt Vis. Technique: In-Database Sieve
+Dry Run (Opt): Calculate `likes / (likes + dislikes)` directly in the query. Return only the IDs that evaluate to strictly less than 0.6.
+How to Draw (Opt): Draw a table. Add a temporary column mentally for the calculation. Cross out rows &gt;= 0.6. Read the remaining IDs top to bottom.
+Opt Complexity Visuals: Single Filtered Table Scan
+How to Draw Opt Complexity: Draw one thick arrow passing through a filter block (the WHERE condition) and out comes a smaller subset of IDs. Time $O(N)$.
+Mem Vis (BF): Massive arrays in application memory holding the entire unoptimized dataset.
+Mem Vis (Opt): Zero application memory. The database engine streams the filtered IDs directly.

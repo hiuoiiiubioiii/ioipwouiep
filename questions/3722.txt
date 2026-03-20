@@ -1,0 +1,13 @@
+ID: 3722
+Problem Title: Lexicographically Smallest String After Reverse (Med)
+Brute Force Method: Generate all combinations by reversing every possible substring chunk, then compare all strings lexicographically. $O(N^3)$.
+BF Complexity Visuals: Branching String Permutations.
+How to Draw BF: Write original string. Below it, write dozens of new strings, each with a different arbitrary chunk manually reversed.
+Optimised Pattern: Greedy Traversal / Peak Finder
+Opt Vis. Technique: Left-to-Right Anomaly Detection
+Dry Run (Opt): Scan left to right. Find the first character that breaks optimal order. Find the optimal suffix/prefix to reverse to fix it.
+How to Draw (Opt): Draw string. Move finger left to right. Stop at the first "suboptimal" character. Bracket it to the next target point, draw a swap arrow.
+Opt Complexity Visuals: Linear pass $O(N)$.
+How to Draw Opt Complexity: Draw a single forward arrow, an $O(1)$ swap/reverse action curve, and done.
+Mem Vis (BF): Array of newly allocated strings in memory.
+Mem Vis (Opt): In-place character array mutation (O(1) auxiliary space).

@@ -1,0 +1,13 @@
+ID: 741
+Problem Title: Cherry Pickup
+Brute Force Method: Find the best path from (0,0) to (N-1,N-1), pick cherries, then find the best path back.
+BF Complexity Visuals: Two-Pass Path Greedy
+How to Draw BF: Draw a grid. Trace one path with a pen, erase cherries, then trace a second path. $O(\text{Exponential})$ to find *global* max.
+Optimised Pattern: 3D Dynamic Programming (Simultaneous Path)
+Opt Vis. Technique: Parallel Movement Sync
+Dry Run (Opt): Two people start at (0,0) and move `t` steps simultaneously. If they land on the same cell, cherries are counted once. Move state: `dp[t][r1][r2]`.
+How to Draw (Opt): Draw a grid. Draw two different colored dots. Move them together step by step (right/down). Write the cherry count sum at each "step" layer.
+Opt Complexity Visuals: Pruned State Cube
+How to Draw Opt Complexity: Draw a cube representing N^3 states. Shade the volume representing valid (r1, r2, step) combinations. $O(N^3)$.
+Mem Vis (BF): Massive recursion stack for all path combinations.
+Mem Vis (Opt): 3D array (or 2D optimized) of size N \times N \times N.

@@ -1,0 +1,13 @@
+ID: 6
+Problem Title: Zigzag Conversion
+Brute Force Method: 2D Matrix Simulation Create a massive 2D matrix, physically place characters moving down and diagonally up, then read row by row.
+BF Complexity Visuals: Sparse Grid Traversal
+How to Draw BF: Draw a large grid. Write the word moving down, then diagonally up. Cross out the massive amount of empty space to visualize the wasted $O(\text{numRows} \cdot N)$ memory and time.
+Optimised Pattern: Math / Index Hopping
+Opt Vis. Technique: Jumping Frogs (Cycle Length)
+Dry Run (Opt): Formula: cycle = 2 * numRows - 2. Jump forward by 'cycle' to find the next character for the top/bottom rows. Middle rows have a second inner jump.
+How to Draw (Opt): Write the string out linearly. Draw long arcs jumping over characters for the top row. Draw secondary, shorter alternating arcs for the middle rows.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single straight arrow across the original string. No matrix traversal needed, making it mathematically $O(N)$.
+Mem Vis (BF): Draw a massive 2D grid taking up lots of screen space (O(numRows * N) space).
+Mem Vis (Opt): Draw a single array of strings (one string builder per row) combined at the end (O(N) space).

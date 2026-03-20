@@ -1,0 +1,13 @@
+ID: 2250
+Problem Title: Count Number of Rectangles Containing Each Point
+Brute Force Method: Nested Point-in-Rect LoopFor every point query, iterate through the entire list of rectangles to check if `x_rect &gt;= x_point` and `y_rect &gt;= y_point`.
+BF Complexity Visuals: Point-to-All-Rects Mapping
+How to Draw BF: Draw a query point. Draw 100 rectangles. One-by-one, check if the point is inside. Repeat for every query point. Show the $O(Q \cdot R)$ complexity.
+Optimised Pattern: Sorting + Binary Search (By Height)
+Opt Vis. Technique: Y-Grouped Sorted X-Lists
+Dry Run (Opt): Since heights are small (1-100), group rectangle widths by their heights. Sort each group. For a query `(x, y)`, iterate through heights `h` from `y` to 100 and binary search for `x` in those sorted lists.
+How to Draw (Opt): Draw 100 horizontal shelves (one for each height). Put rectangle widths on their respective shelves in sorted order. For a query, look only at shelves above the point's Y and count widths &gt;= X using binary search.
+Opt Complexity Visuals: Multi-List Binary Search
+How to Draw Opt Complexity: Draw 100 $O(\log N)$ operations for each query. Total time: $O(Q \cdot 100 \cdot \log N)$. Contrast this against the brute force $O(Q \cdot N)$.
+Mem Vis (BF): Storing all rectangles in a single flat list requiring full scans.
+Mem Vis (Opt): An array of 101 lists, each containing sorted integers (O(N) space).

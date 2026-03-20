@@ -1,0 +1,13 @@
+ID: 813
+Problem Title: Largest Sum of Averages
+Brute Force Method: Recursion. Try placing the first partition wall at index 1, then solve for K-1 walls. Then try index 2, solve for K-1 walls, etc.
+BF Complexity Visuals: Partition Tree Explosion. $O(2^N)$ time.
+How to Draw BF: Draw a long rectangular bar. Draw a cut line. From that cut, branch down and draw two more cut lines. The number of partitions grows exponentially.
+Optimised Pattern: 2D Dynamic Programming + Prefix Sums.
+Opt Vis. Technique: Filling a Scorecard with Precomputed Windows.
+Dry Run (Opt): Precalculate all sum intervals using a Prefix Sum array. Create a DP grid: rows are "first i elements", columns are "k partitions". To fill cell (i, k), look at all previous split points (j, k-1) and add the average of the remaining chunk using the prefix sum.
+How to Draw (Opt): Draw a 1D Prefix Sum array at the top. Below it, draw a DP grid. To fill cell (i, k), draw arrows pointing from cells in the (k-1) column, plus an arrow pointing up to the Prefix sum to grab the $O(1)$ average.
+Opt Complexity Visuals: 3 Nested Loops (Grid Traversal). $O(K \cdot N^2)$ time.
+How to Draw Opt Complexity: Draw a grid (N x K). Inside one cell, draw an arrow sliding up a column N times. This visualizes the inner loop running for every cell in the grid.
+Mem Vis (BF): Deep Recursion Stack: Draw vertical overlapping boxes representing the $O(N)$ depth of the recursive calls.
+Mem Vis (Opt): 1D DP Array (Space Optimized): Draw a single row of N boxes that constantly overwrites itself K times. $O(N)$ space.

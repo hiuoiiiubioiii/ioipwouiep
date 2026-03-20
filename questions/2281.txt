@@ -1,0 +1,13 @@
+ID: 2281
+Problem Title: Sum of Total Strength of Wizards
+Brute Force Method: All Subarrays Min * SumGenerate every possible subarray (O(N^2)). For each, find the minimum element and the sum of elements, then multiply and add to total.
+BF Complexity Visuals: Nested Subarray Evaluation
+How to Draw BF: Draw an array. For every possible bracket, manually find the smallest number and add up all numbers. Note the $O(N^3)$ or $O(N^2)$ complexity.
+Optimised Pattern: Monotonic Stack + Prefix Sum of Prefix Sums
+Opt Vis. Technique: Contribution of Min Element
+Dry Run (Opt): For each element `arr[i]`, find the range `(L, R)` where it is the minimum using a monotonic stack. Calculate the sum of all subarrays in that range containing `i` using a "Prefix Sum of Prefix Sums" to achieve $O(1)$ range summation.
+How to Draw (Opt): Draw an element `X`. Draw a boundary to its left and right where it remains the "boss" (the minimum). Use a math formula to "teleport" the sums of all subarrays passing through `X` using precomputed sum-arrays.
+Opt Complexity Visuals: Three-Pass Linear Scan
+How to Draw Opt Complexity: Draw an $O(N)$ pass for the stack (left bounds), an $O(N)$ pass for right bounds, and an $O(N)$ pass for the final math. Total time: $O(N)$.
+Mem Vis (BF): Calculating sums repeatedly in $O(N^2)$ loops.
+Mem Vis (Opt): Two monotonic stack arrays and two prefix-sum-based arrays (O(N) space).

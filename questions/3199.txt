@@ -1,0 +1,13 @@
+ID: 3199
+Problem Title: Count Triplets with Even XOR Sum
+Brute Force Method: Triple nested loops to iterate through all combinations of three arrays and calculate XOR. $O(N^3)$.
+BF Complexity Visuals: 3D Voxel Grid of Comparisons
+How to Draw BF: Draw 3 arrays. Draw lines connecting every i, j, k. Tally if val1 oplus val2 oplus val3 is even.
+Optimised Pattern: Bitwise Parity Counting
+Opt Vis. Technique: Even/Odd Probability Buckets
+Dry Run (Opt): Count even and odd numbers in each array. Triplets with even XOR sum must have 0 or 2 odd numbers. Calculate using combinations of these counts.
+How to Draw (Opt): Draw three boxes (A, B, C). In each, write the count of `even` and `odd`. Multiply the combinations that yield an even sum.
+Opt Complexity Visuals: Discrete Scalar Math
+How to Draw Opt Complexity: Draw a small formula box. Label it $O(N)$.
+Mem Vis (BF): Massive list of all triplet XOR results.
+Mem Vis (Opt): Six integer variables (2 per array). $O(1)$.

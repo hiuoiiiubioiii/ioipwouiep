@@ -1,0 +1,13 @@
+ID: 3551
+Problem Title: Minimum Swaps to Sort by Digit Sum (Med)
+Brute Force Method: Generate all permutations of the array and find the one that matches the digit-sum sort order with minimum swaps.
+BF Complexity Visuals: Factorial Permutation Forest.
+How to Draw BF: Draw a tree where each node is a full array state. Every edge is a swap. N! states total.
+Optimised Pattern: Cycle Decomposition (Permutation Graph).
+Opt Vis. Technique: Directed Cycle Loops.
+Dry Run (Opt): Map each element's current index to its target index in the sorted-by-digit-sum version. Total swaps = Total Elements - Number of Cycles.
+How to Draw (Opt): Draw dots for indices. Draw an arrow from where a number is to where it should be. Count the closed loops.
+Opt Complexity Visuals: $O(N \log N)$ Sorting + $O(N)$ Scan.
+How to Draw Opt Complexity: Draw an arrow for sorting. Then draw a linear array with loops connecting indices. $O(N \log N)$.
+Mem Vis (BF): Permutation Heap: Draw millions of array copies representing possible swap states.
+Mem Vis (Opt): Visited Array: Draw a single 1D boolean array (size N) to mark elements as you traverse cycles.

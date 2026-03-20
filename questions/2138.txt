@@ -1,0 +1,13 @@
+ID: 2138
+Problem Title: Divide a String Into Groups of Size k
+Brute Force Method: Use a loop to build strings character by character, then manually add the `fill` character at the end.
+BF Complexity Visuals: Gluing individual letters together one by one.
+How to Draw BF: Draw characters dropping into a bucket. When bucket has `k` items, move to next bucket. If out of characters, drop `fill` characters. $O(N)$.
+Optimised Pattern: String Chunking / Substring Math.
+Opt Vis. Technique: A cookie cutter chopping a long dough roll into equal pieces.
+Dry Run (Opt): Loop `i` from 0 to N with step `k`. Take substring `s[i:i+k]`. If the last chunk is too short, pad it with the `fill` character using a string multiplier/builder.
+How to Draw (Opt): Write the string. Draw vertical lines every `k` characters. For the very last box, if there are empty slots, draw the `fill` character to pad it out.
+Opt Complexity Visuals: $O(N)$ linear string slicing.
+How to Draw Opt Complexity: A single horizontal arrow jumping forward `k` steps at a time.
+Mem Vis (BF): $O(N)$ intermediate string builder allocations.
+Mem Vis (Opt): $O(N)$ Array of Strings to hold the final result.

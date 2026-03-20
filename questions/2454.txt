@@ -1,0 +1,13 @@
+ID: 2454
+Problem Title: Next Greater Element IV
+Brute Force Method: For each index 'i', run a nested loop to find the first index 'j' &gt; i where nums[j] &gt; nums[i], then another loop from 'j' to find the second greater element.
+BF Complexity Visuals: Double Search Scan
+How to Draw BF: Draw an index. Draw an arrow finding the 1st peak, then a 2nd arrow finding the 2nd peak. Label $O(N^2)$.
+Optimised Pattern: Two Monotonic Stacks + Priority Queue
+Opt Vis. Technique: Sifting Stacks Conveyor
+Dry Run (Opt): Elements move from `Stack1` (no greater found) to `Stack2` (one greater found) to `Result` (two greater found). Use a Min-Heap for Stack2 to process multiple "pending" elements.
+How to Draw (Opt): Draw two vertical bins. When a new number is larger than Bin1's top, move the top to Bin2. If larger than Bin2's top, it's the 2nd greater; write it down.
+Opt Complexity Visuals: Amortized Linear Flow
+How to Draw Opt Complexity: Draw a line with elements jumping between three containers. Every element enters and leaves each stack at most once. Label $O(N \log N)$ (due to heap/sorting).
+Mem Vis (BF): Draw a 1D result array.
+Mem Vis (Opt): Draw two stacks and one Min-Heap. Label $O(N)$ Space.

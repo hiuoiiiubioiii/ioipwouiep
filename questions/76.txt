@@ -1,0 +1,13 @@
+ID: 76
+Problem Title: Minimum Window Substring
+Brute Force Method: All Substrings + Map Check Generate every possible substring of S (O(N^2)) and for each one, check if it contains all characters of T (O(N)).
+BF Complexity Visuals: The Cubic Scanner
+How to Draw BF: Draw a long string. Below it, draw hundreds of smaller lines representing every possible slice. For each slice, draw a "Search" arrow scanning for T. Time: $O(N^3)$.
+Optimised Pattern: Sliding Window (Two Pointers + Map)
+Opt Vis. Technique: The Elastic Band
+Dry Run (Opt): Expand the `right` pointer until the window is "valid" (contains all T). Then, contract the `left` pointer as much as possible while keeping it valid. Track the smallest such window.
+How to Draw (Opt): Draw string S and a frequency map for T. As `R` moves, subtract from map. If a map value hits 0, a character is "satisfied." When all are satisfied, move `L` to shrink.
+Opt Complexity Visuals: Two Chasing Pointers
+How to Draw Opt Complexity: Draw a timeline. Show L and R pointers both moving 0 to N. Since each moves at most N times, it's $O(N+N)$ = $O(N)$.
+Mem Vis (BF): Creating thousands of substring objects in memory.
+Mem Vis (Opt): Draw two frequency maps (Target and Current Window). Space is $O(K)$, where K is the size of the character set (e.g., 52 for A-Z, a-z).

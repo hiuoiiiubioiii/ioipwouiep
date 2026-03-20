@@ -1,0 +1,13 @@
+ID: 2179
+Problem Title: Count Good Triplets in an Array
+Brute Force Method: Three nested loops to check indices i &lt; j &lt; k in array A and their relative positions in array B. $O(N^3)$.
+BF Complexity Visuals: Cubic Position Matching
+How to Draw BF: Draw Array A and B. Pick 3 elements in A. Draw lines trying to find them in the exact same order in B.
+Optimised Pattern: Fenwick Tree (BIT) / Index Mapping
+Opt Vis. Technique: The Pivot-Counting Scales
+Dry Run (Opt): Map elements of A to their indices in B. For each element acting as the middle of the triplet, use a Fenwick tree to count how many valid elements are to its *left*, and math to find how many are to its *right*. Multiply them.
+How to Draw (Opt): Draw the mapped array. Pick a pivot. Look left: "How many smaller numbers?" (Use BIT). Look right: "How many larger?" (Total larger - already seen larger). Multiply Left \times Right.
+Opt Complexity Visuals: Logarithmic Updates $O(N \log N)$
+How to Draw Opt Complexity: Draw a linear scan. Above each step, draw a log-height traversal up a Binary Indexed Tree.
+Mem Vis (BF): None, purely CPU bound.
+Mem Vis (Opt): Two arrays of size N (mapping and BIT). $O(N)$ space.

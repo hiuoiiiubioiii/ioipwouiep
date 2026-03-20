@@ -1,0 +1,13 @@
+ID: 1788
+Problem Title: Maximize the Beauty of the Garden
+Brute Force Method: Find all pairs of identical flowers. For each pair, sum all positive beauties between them. Find the max.
+BF Complexity Visuals: All-Pairs Range Sum (Quadratic).
+How to Draw BF: Draw array. Find identical numbers. Draw a bracket between them and sum the items inside. $O(N^2)$.
+Optimised Pattern: Prefix Sums + First Occurrence Hash Map.
+Opt Vis. Technique: The "Bookend" Summation.
+Dry Run (Opt): Precompute prefix sums of *only* positive beauty values. Store the first occurrence index of each value. When you see the value again at index j, the beauty is 2 \cdot val + (pref[j-1] - pref[first\_idx]).
+How to Draw (Opt): Draw a prefix sum line (only going up for positives). Mark the "First Sight" of each number. When you see it again, subtract the "First Sight" value from the current "Total".
+Opt Complexity Visuals: Single Pass Lookup.
+How to Draw Opt Complexity: Draw one arrow passing over the array. Label $O(N)$.
+Mem Vis (BF): None, just sum variables.
+Mem Vis (Opt): Hash map of size N + Prefix sum array. $O(N)$ space.

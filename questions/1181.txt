@@ -1,0 +1,13 @@
+ID: 1181
+Problem Title: Before and After Puzzle
+Brute Force Method: Nested loops $O(N^2)$. For every pair of phrases, check if the last word of phrase A matches the first word of phrase B.
+BF Complexity Visuals: Pairwise Match Grid
+How to Draw BF: Draw two lists of phrases. Draw lines from every phrase in list 1 to every phrase in list 2. Circle the lines where words overlap.
+Optimised Pattern: Hash Map (First Word Mapping)
+Opt Vis. Technique: Adjacency Grouping Table
+Dry Run (Opt): Store phrases in a map where the key is the *first word*. Iterate phrases; for each, look up its *last word* in the map to find all possible "After" candidates instantly.
+How to Draw (Opt): Draw a table: "First Word" rightarrow [List of Phrases]. Then take a phrase, look at its last word, and draw arrows only to the specific list in your table.
+Opt Complexity Visuals: Linear-ish $O(N \cdot L)$
+How to Draw Opt Complexity: Draw a single pass to build the map, followed by a single pass to join phrases.
+Mem Vis (BF): $O(N^2)$ joined strings
+Mem Vis (Opt): Hash Map for grouping + TreeSet for sorted unique results.

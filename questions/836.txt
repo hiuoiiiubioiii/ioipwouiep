@@ -1,0 +1,13 @@
+ID: 836
+Problem Title: Rectangle Overlap
+Brute Force Method: Check if any corner of rectangle 1 is inside rectangle 2, OR if any edge of rectangle 1 intersects any edge of rectangle 2.
+BF Complexity Visuals: Point-in-Polygon Check. $O(1)$ but logically messy.
+How to Draw BF: Draw two boxes. Draw a flowchart with 8 different conditional checks for corners and edges.
+Optimised Pattern: 1D Projection (Interval Overlap).
+Opt Vis. Technique: Shadow Alignment.
+Dry Run (Opt): Project both rectangles onto the X-axis and Y-axis. They overlap IF and ONLY IF their X-shadows overlap AND their Y-shadows overlap.
+How to Draw (Opt): Draw two rectangles. Draw a light source above them to cast shadows on the ground (X) and a light on the side for the wall (Y). Check for overlap on both lines.
+Opt Complexity Visuals: Constant Time Logic. $O(1)$.
+How to Draw Opt Complexity: Draw a single "Logic Gate" symbol. Input 4 coordinates, output 1 boolean.
+Mem Vis (BF): Temporary coordinate variables: Draw a few small integer boxes.
+Mem Vis (Opt): $O(1)$ Space: Draw four simple comparison variables.

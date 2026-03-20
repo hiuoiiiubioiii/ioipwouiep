@@ -1,0 +1,13 @@
+ID: 1514
+Problem Title: Path with Maximum Probability
+Brute Force Method: DFS to find every possible path from start to end, multiplying probabilities along the way, and returning the maximum.
+BF Complexity Visuals: Exponential Path Branching $O(V!)$
+How to Draw BF: Draw a spiderweb graph. Trace a colored line for every unique path from A to B. The lines will heavily overlap and explode in quantity.
+Optimised Pattern: Graph / Dijkstra's (Max-Heap)
+Opt Vis. Technique: Expanding Wavefront of Certainty
+Dry Run (Opt): Use a Max-Heap initialized with start node (prob 1.0). Pop the node with the highest probability. Multiply its probability with its neighbors' edge weights. If higher than the neighbor's current known probability, update and push to heap.
+How to Draw (Opt): Draw a graph with edge decimals. Draw a starting circle. Draw expanding concentric ripples. When a ripple hits a node, update a small "score box" next to the node if the multiplied path score is higher.
+Opt Complexity Visuals: Heap-Managed Graph Traversal $O((V+E)$ log V)
+How to Draw Opt Complexity: Draw a V+E length line representing edge relaxations. Above it, draw a logV height tree representing the heap rebalancing on every push/pop.
+Mem Vis (BF): Massive recursive call stack and `visited` sets for path tracking. $O(V)$.
+Mem Vis (Opt): A Graph Adjacency List (an array of lists) and a Triangle representing the Max-Heap. $O(V+E)$ space.

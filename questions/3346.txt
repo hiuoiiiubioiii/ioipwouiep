@@ -1,0 +1,13 @@
+ID: 3346
+Problem Title: Maximum Frequency of an Element After Performing Operations I
+Brute Force Method: For every number in the array, try applying +k to -k, and recount the frequency of every resulting number from scratch. $O(N^2 \cdot K)$.
+BF Complexity Visuals: Range-Shift Tally Grid
+How to Draw BF: Draw the array. Pick a number. Try shifting it. Rescan the entire array to see how many match it. Repeat.
+Optimised Pattern: Sliding Window / Sweep Line
+Opt Vis. Technique: The Overlapping Auras
+Dry Run (Opt): Sort the array. For each nums[i], its "reach" is [nums[i]-k, nums[i]+k]. Use a sliding window to find the max number of elements whose reaches overlap at a single point, bounded by the operation limit.
+How to Draw (Opt): Draw numbers on a number line. Draw a "cloud" of size 2k around each. Slide a vertical scanner left to right to find the spot where the most clouds overlap.
+Opt Complexity Visuals: Sorting + Sliding Window $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting tree, followed by a two-pointer sliding window that passes over the array once.
+Mem Vis (BF): Frequency maps for every shift.
+Mem Vis (Opt): Pointers. $O(1)$ auxiliary space.

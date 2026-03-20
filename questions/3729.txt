@@ -1,0 +1,13 @@
+ID: 3729
+Problem Title: Count Distinct Subarrays Divisible by K in Sorted Array (Hard)
+Brute Force Method: Generate all possible subarrays, sum them, check if sum % K == 0. Store valid ones in a Hash Set to ensure they are distinct. $O(N^3)$.
+BF Complexity Visuals: Massive Bracket Overlaps.
+How to Draw BF: Draw every subarray combination. Sum them, check modulo. Write them in a "Seen" list, crossing out duplicates.
+Optimised Pattern: Prefix Sum Modulo K + Trie/String Hashing
+Opt Vis. Technique: Modulo Grouping + Sequence Deduplication
+Dry Run (Opt): Track running Prefix Sum % K. If we see a mod value we've seen before, the sum between is divisible by K. Use a Set/Trie to filter out identical sequences caused by duplicates in the sorted array.
+How to Draw (Opt): Draw array. Below it, write running sum % K. Connect identical modulo numbers with an arc. Feed the elements under the arc into a Set to check for uniqueness.
+Opt Complexity Visuals: $O(N^2)$ depending on distinct verification.
+How to Draw Opt Complexity: Draw a quadratic curve indicating the cost of distinct subarray verification.
+Mem Vis (BF): Massive Hash Set of Arrays.
+Mem Vis (Opt): Prefix Sum array + Trie or Hash Set for distinct sequences.

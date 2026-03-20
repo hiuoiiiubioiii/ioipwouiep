@@ -1,0 +1,13 @@
+ID: 242
+Problem Title: Valid Anagram
+Brute Force Method: Sort both strings (O(N \log N)) and compare them character by character.
+BF Complexity Visuals: Sorting Log-Curve: $O(N \log N)$.
+How to Draw BF: Draw two messy lists of characters. Show them being reorganized into alphabetical order, then compared.
+Optimised Pattern: Frequency Counter (Fixed-size Array)
+Opt Vis. Technique: Alphabet Balance Scale
+Dry Run (Opt): Create an array of 26 zeros. Increment for characters in S, decrement for characters in T. If all zeros at the end, it's an anagram.
+How to Draw (Opt): Draw an array with 26 slots ('a' to 'z'). For S, draw '+' marks in slots; for T, draw '-' marks. Show they cancel each other out.
+Opt Complexity Visuals: Linear Scan: $O(N)$.
+How to Draw Opt Complexity: Draw a single straight arrow passing through both strings once.
+Mem Vis (BF): Copying strings to arrays: $O(N)$.
+Mem Vis (Opt): Fixed Bucket Array: Draw a static box of 26 integers. $O(1)$ space (ignoring alphabet size).

@@ -1,0 +1,13 @@
+ID: 1767
+Problem Title: Find the Subtasks That Did Not Execute (SQL)
+Brute Force Method: Write a script to generate every possible task-subtask pair in memory, then compare with the executed table using double loops.
+BF Complexity Visuals: Full Permutation Scanning.
+How to Draw BF: Draw Table A (Tasks). For each, draw all subtasks. Then scan Table B (Executed) to cross out matches. $O(N^2)$.
+Optimised Pattern: Recursive CTE + LEFT JOIN.
+Opt Vis. Technique: The "Template and Punch-out" Method.
+Dry Run (Opt): Use a Recursive CTE to generate all subtasks from 1 to `subtasks_count` for each task. LEFT JOIN this with the `Executed` table where executed is NULL.
+How to Draw (Opt): Draw a "Shadow Table" (Template) with every expected subtask. Place the "Executed Table" over it. Whatever shadow remains visible is your result.
+Opt Complexity Visuals: Sequential Generation and Filtering.
+How to Draw Opt Complexity: Draw a generation funnel $O(N)$ followed by a filter $O(N)$. Label $O(N)$.
+Mem Vis (BF): Massive arrays in application memory.
+Mem Vis (Opt): SQL Engine temporary result set. $O(N)$ rows.

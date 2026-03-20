@@ -1,0 +1,13 @@
+ID: 1988
+Problem Title: Find Cut-Off Score for Each School (SQL)
+Brute Force Method: For each school, perform a subquery that scans the entire Exam table to find all scores that meet capacity, then take the minimum.
+BF Complexity Visuals: Row-by-Row Correlation Scan
+How to Draw BF: Draw the Schools table. For each row, draw a loop that scans the Exam table. $O(S \\text{times} E)$.
+Optimised Pattern: LEFT JOIN + Aggregation
+Opt Vis. Technique: Relational Bucket Filtering
+Dry Run (Opt): Join Schools and Exams on `capacity &gt;= student_count`. Group by school and select the minimum score. Use `COALESCE` for non-matches.
+How to Draw (Opt): Draw two tables. Draw lines connecting schools to all valid exam scores. Group by school and pick the lowest value in each group.
+Opt Complexity Visuals: Index-Optimized Hash Join
+How to Draw Opt Complexity: Draw a B-tree index on the Score column. Show the engine skipping scores that don't meet student requirements. $O(S \log E)$.
+Mem Vis (BF): Repeated full-table scans slowing down the database cache.
+Mem Vis (Opt): In-memory result sets generated during the Group By aggregation.

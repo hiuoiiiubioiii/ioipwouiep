@@ -1,0 +1,13 @@
+ID: 828
+Problem Title: Count Unique Characters of All Substrings
+Brute Force Method: Generate every substring (N^2), and for each, loop through to count characters that appear exactly once (N).
+BF Complexity Visuals: Substring Cubic Scan. $O(N^3)$.
+How to Draw BF: Draw a string. Draw every possible bracket range. Inside each bracket, draw a tally mark for every character.
+Optimised Pattern: Contribution of Each Character (Index tracking).
+Opt Vis. Technique: Broadcast Range of Uniqueness.
+Dry Run (Opt): A character at index i is unique for all substrings starting after its *previous* occurrence and ending before its *next* occurrence. Count = (i - prev) \times (next - i).
+How to Draw (Opt): Draw a string. Pick a letter 'A'. Draw an arrow back to the last 'A' and forward to the next 'A'. The distance defines its "Contribution Zone."
+Opt Complexity Visuals: Single Pass with Map. $O(N)$.
+How to Draw Opt Complexity: Draw a single straight line through the string, with letters "contributing" their calculated values to a total sum.
+Mem Vis (BF): Massive list of strings: Draw thousands of small string blocks representing every substring.
+Mem Vis (Opt): Index Map: Draw a Map where each key is a char and value is a list of its 2 most recent indices.

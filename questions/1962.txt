@@ -1,0 +1,13 @@
+ID: 1962
+Problem Title: Remove Stones to Minimize the Total
+Brute Force Method: In each of the K operations, sort the entire array to find the largest pile, then halve it.
+BF Complexity Visuals: Repeated Sorting Funnel
+How to Draw BF: Draw K funnels labeled "Sort". After each funnel, draw the first element being updated. $O(K \cdot N \log N)$.
+Optimised Pattern: Max-Priority Queue (Heap)
+Opt Vis. Technique: Heap Bubble-Down Mechanics
+Dry Run (Opt): Insert all piles into a Max-Heap. Extract the top, halve it, and push it back K times. Finally, sum the heap.
+How to Draw (Opt): Draw a Binary Tree (Heap). Highlight the root being popped and a smaller value being "bubbled down" to its correct spot.
+Opt Complexity Visuals: Logarithmic Re-balancing Graph
+How to Draw Opt Complexity: Draw N nodes. Then draw K paths of length log N. Total $O(N + K \log N)$.
+Mem Vis (BF): Multiple temporary copies of sorted arrays during the K loops.
+Mem Vis (Opt): A standard Max-Heap structure (contiguous array representation). $O(N)$ space.

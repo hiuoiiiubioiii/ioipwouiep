@@ -1,0 +1,13 @@
+ID: 2244
+Problem Title: Minimum Rounds to Complete All Tasks
+Brute Force Method: Backtracking / Change MakingFor each task frequency, use recursion to try every combination of subtracting 2 or 3 until the count reaches zero.
+BF Complexity Visuals: Decision Tree (2 vs 3)
+How to Draw BF: Draw a number (e.g., 7). Branch into -2 (5) and -3 (4). Continue branching until you find the shortest path to 0. Show the $O(2^N)$ depth.
+Optimised Pattern: Greedy Math / Frequency Map
+Opt Vis. Technique: Remainder Pattern Logic
+Dry Run (Opt): Group tasks by difficulty. For a frequency `f`: if `f == 1`, impossible. Otherwise, the minimum rounds is `ceil(f / 3.0)`. This covers all cases: `3k`, `3k+1`, and `3k+2`.
+How to Draw (Opt): Draw a frequency bar. If it's 7, group them: [3, 2, 2]. If it's 9, group them: [3, 3, 3]. Note that any number &gt; 1 can be broken into 2s and 3s with a simple formula.
+Opt Complexity Visuals: Map Scan Timeline
+How to Draw Opt Complexity: Draw an $O(N)$ line for the initial frequency count. Draw an $O(U)$ line (unique tasks) for the math calculation. Total time: $O(N)$.
+Mem Vis (BF): Deep recursion stacks for every unique task difficulty.
+Mem Vis (Opt): A Hash Map storing `Difficulty -&gt; Frequency` (O(N) space).

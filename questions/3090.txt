@@ -1,0 +1,13 @@
+ID: 3090
+Problem Title: Maximum Length Substring With Two Occurrences
+Brute Force Method: Generate every substring, build a frequency map for each from scratch, and check if any count exceeds 2. $O(N^3)$.
+BF Complexity Visuals: Resetting Frequency Tally
+How to Draw BF: Draw a string. Bracket a section. Tally all letters. Erase tally. Move bracket. Re-tally.
+Optimised Pattern: Sliding Window (Two Pointers)
+Opt Vis. Technique: The Expand-and-Contract Caterpillar
+Dry Run (Opt): Use `left` and `right` pointers. Expand `right`, adding characters to a frequency map. If a character hits 3, pause `right` and shrink `left` until that specific character's frequency drops back to 2. Update max length.
+How to Draw (Opt): Draw the string. A caterpillar stretches right, eating letters. It eats a 3rd 'a' and gets sick. Its tail pulls forward, spitting out letters until it spits out an 'a'. It stretches right again.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw a single line. The `left` and `right` pointers only ever move forward, making 2N steps total.
+Mem Vis (BF): Creating new maps for N^2 substrings.
+Mem Vis (Opt): A frequency array of size 26. $O(1)$ space.

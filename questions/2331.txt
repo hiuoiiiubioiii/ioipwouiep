@@ -1,0 +1,13 @@
+ID: 2331
+Problem Title: Evaluate Boolean Binary Tree
+Brute Force Method: Repeatedly scan the tree to find leaf nodes, evaluate them, and replace their parent nodes with the result until only the root remains.
+BF Complexity Visuals: Repeated Tree Shrinking (O(N^2))
+How to Draw BF: Draw a full tree. Erase two leaves and their parent, replacing them with a single T/F node. Redraw the entire rest of the tree. Repeat until one node is left.
+Optimised Pattern: Post-Order Traversal (DFS)
+Opt Vis. Technique: Bottom-Up Truth Bubbling
+Dry Run (Opt): Go down to the leaves. Return their boolean values up. At an OR node, return `left || right`. At an AND node, return `left &amp;&amp; right`. Stop early if short-circuiting applies.
+How to Draw (Opt): Draw a tree. Write T or F at the leaves. Draw arrows pointing UP from the leaves to their parent. Cross out the parent's operator (AND/OR) and write the resulting T/F, continuing up to the root.
+Opt Complexity Visuals: Single Perimeter Trace (O(N))
+How to Draw Opt Complexity: Draw a single continuous line that traces the outline of the tree, starting at the root, dipping into every leaf, and ending back at the root.
+Mem Vis (BF): Draw a heavily modified tree structure taking up memory with each pass.
+Mem Vis (Opt): Draw a Call Stack sized to the height of the tree (O(H)), with simple Boolean variables resolving at each frame.

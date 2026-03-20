@@ -1,0 +1,13 @@
+ID: 1691
+Problem Title: Maximum Height by Stacking Cuboids
+Brute Force Method: Try every permutation of cuboid orientations and every possible stacking order.
+BF Complexity Visuals: Factorial Permutation Tree
+How to Draw BF: Draw a node branching into N! paths, with each node having 3^N orientation sub-branches. $O(N! \cdot 3^N)$.
+Optimised Pattern: Dimension Sorting + LIS (Dynamic Programming)
+Opt Vis. Technique: DAG of Valid Stacks
+Dry Run (Opt): Sort dimensions within each cuboid (w \leq l \leq h). Sort cuboids by total dimensions. Apply LIS logic: dp[i] = h[i] + \max(dp[j]) where cuboid j fits under i.
+How to Draw (Opt): Draw cuboids as sorted triplets. Draw arrows from smaller cuboids to larger ones they can support. Label each cuboid with its "max cumulative height".
+Opt Complexity Visuals: Nested Loop Triangle
+How to Draw Opt Complexity: Draw an N \times N triangular grid representing the i and j loops. $O(N^2)$.
+Mem Vis (BF): Recursive Stack: Draw a stack of depth N storing all partial stack states.
+Mem Vis (Opt): 1D DP Array: Draw a horizontal array of size N storing max heights. $O(N)$ space.

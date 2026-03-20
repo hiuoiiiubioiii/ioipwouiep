@@ -1,0 +1,13 @@
+ID: 1331
+Problem Title: Rank Transform of an Array
+Brute Force Method: For every single element, loop through the entire array to count exactly how many unique elements are strictly smaller than it to determine its rank.
+BF Complexity Visuals: $O(N²)$ Nested Comparison Loops
+How to Draw BF: Draw an array. For element 0, draw an arrow pointing to every other element. For element 1, do the same. Darkly shade the massive web of redundant comparisons.
+Optimised Pattern: Sort + De-duplicate + Hash Map
+Opt Vis. Technique: Sorted Unique Mapping
+Dry Run (Opt): Copy array and sort it. Remove duplicates. The index + 1 in this unique sorted array is the rank. Map original values to their new ranks using a Hash Map, then overwrite original array.
+How to Draw (Opt): Draw original array. Below it, draw a sorted copy. Cross out duplicates. Number the remaining items 1, 2, 3... Draw arrows from the original array numbers down to their assigned rank.
+Opt Complexity Visuals: Sorting Funnel -&gt; Dictionary Lookup
+How to Draw Opt Complexity: Draw an array passing through a sorting funnel $O(N \log N)$. Draw a direct 1-to-1 lookup into a dictionary yielding strictly $O(N)$ mapping time.
+Mem Vis (BF): $O(N)$ Set Lookups inside Loops: Dynamically building Sets repeatedly to count unique smaller numbers.
+Mem Vis (Opt): $O(N)$ Vector Copy + Hash Map: Draw a cloned `std::vector` that is sorted, and an `std::unordered_map` mapping values to ranks.

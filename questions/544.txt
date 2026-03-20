@@ -1,0 +1,13 @@
+ID: 544
+Problem Title: Output Contest Matches
+Brute Force Method: Iteratively simulate the tournament by creating new strings for each pair, searching for the "strongest" and "weakest" each time.
+BF Complexity Visuals: Recursive string formatting with multiple internal scans. $O(N \log N)$.
+How to Draw BF: Draw 8 numbers. Draw lines connecting 1-8, 2-7, 3-6, 4-5. Rewrite them as strings and repeat.
+Optimised Pattern: In-place Array Transformation.
+Opt Vis. Technique: A folding piece of paper. You fold the right edge onto the left edge, merging the contents at each step.
+Dry Run (Opt): Initialize array with 1 to N. While `n &gt; 1`: pair `arr[i]` with `arr[n-1-i]`, store in `arr[i]`. Set `n = n / 2`.
+How to Draw (Opt): Write [1, 2, 3, 4]. Draw an arrow from 4 to 1, and 3 to 2. Write the new list: [(1,4), (2,3)]. Repeat.
+Opt Complexity Visuals: Linear reduction of pairs. $O(N)$.
+How to Draw Opt Complexity: Draw N points, then N/2 points, then N/4, until 1 point remains.
+Mem Vis (BF): Large number of intermediate string objects.
+Mem Vis (Opt): A single array of strings being modified in place. $O(N)$.

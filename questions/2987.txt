@@ -1,0 +1,13 @@
+ID: 2987
+Problem Title: Find Expensive Cities
+Brute Force Method: Join the `Listings` table with a subquery that calculates the overall average price of all cities.
+BF Complexity Visuals: Cross-Product Average Mapping
+How to Draw BF: Draw a table and a single "Global Avg" box. Show every row pointing to that box for comparison. $O(N^2)$.
+Optimised Pattern: Aggregate Comparison (HAVING Clause)
+Opt Vis. Technique: Group-Level Thresholding
+Dry Run (Opt): Group by `city` and calculate the average. Use the `HAVING` clause to filter cities where `AVG(price)` &gt; (Global Avg).
+How to Draw (Opt): Draw city clusters. Calculate the mean for each cluster. Compare each cluster's mean against the global mean line.
+Opt Complexity Visuals: Single Grouped Pass
+How to Draw Opt Complexity: Draw a horizontal line of N records. Total T = $O(N)$. Sorting by city takes $O(N \log N)$.
+Mem Vis (BF): Cartesian join memory overhead.
+Mem Vis (Opt): Hash map of city averages. Space $O(\text{Unique Cities})$.

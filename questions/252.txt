@@ -1,0 +1,13 @@
+ID: 252
+Problem Title: Meeting Rooms
+Brute Force Method: Compare every meeting interval with every other meeting interval to check for overlaps.
+BF Complexity Visuals: All-Pairs Overlap Matrix: $O(N^2)$.
+How to Draw BF: Draw N intervals on a timeline. Draw arcs connecting every interval to every other interval. Count the arcs.
+Optimised Pattern: Sorting by Start Time
+Opt Vis. Technique: Linear Timeline Sweep
+Dry Run (Opt): Sort meetings by start time. Iterate once; if any meeting starts before the previous one ends (S_{i+1} &lt; E_i), return false.
+How to Draw (Opt): Draw a horizontal line (time). Plot intervals one above another. Check if the "end tail" of one bar passes the "start head" of the next.
+Opt Complexity Visuals: Sort &amp; Scan: $O(N \log N)$ Time.
+How to Draw Opt Complexity: Draw the $O(N \log N)$ sorting "funnel" followed by a single straight $O(N)$ arrow.
+Mem Vis (BF): None (just loops).
+Mem Vis (Opt): Sorting Space: $O(1)$ or $O(\log N)$ depending on sort implementation. Draw a tiny recursion stack for Quicksort.

@@ -1,0 +1,13 @@
+ID: 543
+Problem Title: Diameter of Binary Tree
+Brute Force Method: For every node, calculate the max depth of the left subtree and the max depth of the right subtree. Sum them and find the global max.
+BF Complexity Visuals: N nodes each performing a depth scan. $O(N^2)$.
+How to Draw BF: Draw a tree. For each node, draw two long lines reaching to the deepest leaves.
+Optimised Pattern: Bottom-Up DFS (Post-order Traversal).
+Opt Vis. Technique: A tape measure that reports the "max height" to its parent while secretly updating a global "longest path" record.
+Dry Run (Opt): DFS returns height. At each node, `left_h = dfs(left)`, `right_h = dfs(right)`. Update `global_max = max(global_max, left_h + right_h)`. Return `1 + max(left_h, right_h)`.
+How to Draw (Opt): Draw a tree. Write heights next to nodes. At each node, write the sum of its children's heights in a different color to track potential diameters.
+Opt Complexity Visuals: Every node visited once. $O(N)$.
+How to Draw Opt Complexity: Draw the tree and trace a single path that lights up every node exactly once.
+Mem Vis (BF): Heavy recursion stack from repeated depth-first calls.
+Mem Vis (Opt): Recursion stack proportional to tree height. $O(H)$.

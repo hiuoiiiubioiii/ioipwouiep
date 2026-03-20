@@ -1,0 +1,13 @@
+ID: 924
+Problem Title: Minimize Malware Spread
+Brute Force Method: For each node in the `initial` malware list, "remove" it, run a full BFS/DFS to see how many nodes get infected, and track the minimum.
+BF Complexity Visuals: $O(I \cdot (V + E)$) where I is initial malware count. Repeatedly traversing the whole graph.
+How to Draw BF: Draw the graph. Draw I separate "what-if" scenarios, where in each one, a different infected node is deleted and the infection spread is colored in.
+Optimised Pattern: Union-Find (Connected Components)
+Opt Vis. Technique: "Islands of Infection." A map of disjoint islands. If an island has exactly ONE infected person, saving them saves the whole island. If it has two, the island is doomed anyway.
+Dry Run (Opt): 1. Group all nodes into components using Union-Find. 2. Count size of each component. 3. Count how many initial infected nodes are in each component. 4. Pick the single-infected component with the largest size.
+How to Draw (Opt): Draw circles around connected clusters of nodes. Inside each circle, draw "Skull" icons for infected nodes. Highlight the largest circle that has exactly one "Skull."
+Opt Complexity Visuals: $O(N^2)$ to process the adjacency matrix once.
+How to Draw Opt Complexity: Draw the adjacency matrix. Draw one sweep through it to build the Union-Find structure, then a second sweep through the malware list.
+Mem Vis (BF): Massive recursion depth or large queue for repeated BFS runs.
+Mem Vis (Opt): $O(N)$ for the `parent` and `size` arrays in Union-Find. Draw two parallel rows of boxes representing the component structure.

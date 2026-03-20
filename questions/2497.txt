@@ -1,0 +1,13 @@
+ID: 2497
+Problem Title: Maximum Star Sum of a Graph
+Brute Force Method: For every node, calculate the sum of all its edges. Then generate all subsets of edges for each node and find the max sum of size ≤ k.
+BF Complexity Visuals: Node-wise Subset Generation
+How to Draw BF: Draw a node with many neighbors. Branch out every possible group of neighbors. Label $O(V \cdot 2^E)$.
+Optimised Pattern: Greedy (Sort Neighbors per Node)
+Opt Vis. Technique: Pruned Neighbor Selection
+Dry Run (Opt): For each node, look at neighbors with positive values. Sort them descending. Take the top `min(k, positive_neighbors)` and add to node's value.
+How to Draw (Opt): Draw a node and its neighbors with values. Cross out negative neighbors. Rank the positive ones: 1st, 2nd, 3rd. Circle the top K.
+Opt Complexity Visuals: Graph Scan + Local Sort
+How to Draw Opt Complexity: Draw a traversal arrow. Label $O(V + E \log E)$ or $O(V + E)$ with min-priority queue.
+Mem Vis (BF): Draw recursive stacks for subsets.
+Mem Vis (Opt): Draw adjacency list. $O(V + E)$ Space.

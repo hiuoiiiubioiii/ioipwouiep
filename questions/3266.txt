@@ -1,0 +1,13 @@
+ID: 3266
+Problem Title: Final Array State After K Multiplication Operations II
+Brute Force Method: Standard Min-Heap simulation (same as 3264). Fails because K can be 10^9.
+BF Complexity Visuals: Infinite Simulation Loop
+How to Draw BF: Draw the heap process. Draw a "Wait" icon. Show that even with $O(\log N)$, 10^9 iterations will never finish within the time limit.
+Optimised Pattern: Simulation + Modular Exponentiation
+Opt Vis. Technique: Stable State Transition / Cycle Mapping
+Dry Run (Opt): Simulate until all numbers reach a "stable" state (minimum &gt; original maximum). Then, use `pow(multiplier, K / N, mod)` to calculate the final bulk increase for all elements simultaneously.
+How to Draw (Opt): Draw the array. Simulate a few steps until all numbers are roughly equal. Draw a "Fast Forward" arrow that jumps through the remaining 10^9 steps using a single math formula.
+Opt Complexity Visuals: Hybrid Complexity Block
+How to Draw Opt Complexity: Draw an $O(N \log N)$ block for initial simulation. Draw a tiny $O(\log K)$ block for Modular Exponentiation. Result: $O(N \log N + \log K)$.
+Mem Vis (BF): $O(1)$ in-place updates.
+Mem Vis (Opt): $O(N)$ heap storage.

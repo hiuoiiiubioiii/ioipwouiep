@@ -1,0 +1,13 @@
+ID: 1276
+Problem Title: Number of Burgers with No Waste
+Brute Force Method: Use nested loops to try every possible combination of Jumbo Burgers (4 tomato, 1 cheese) and Small Burgers (2 tomato, 1 cheese) that could be made with the given total ingredients.
+BF Complexity Visuals: Ingredient Search Grid
+How to Draw BF: Draw a coordinate plane where X is Jumbo and Y is Small. Shade every integer point (X, Y) and check the sum. Write $O(\text{Tomato} \\text{cdot Cheese})$.
+Optimised Pattern: Linear Algebra (System of Equations)
+Opt Vis. Technique: Mathematical Intersection
+Dry Run (Opt): Solve: 4x + 2y = tomato and x + y = cheese. Rearranging gives x = (tomato - 2 * cheese) / 2. Calculate x and y. If they are non-negative integers, you found the answer.
+How to Draw (Opt): Write the two equations. Show the algebra steps leading to the formulas for x and y. Draw a "Filter" box that checks if (tomato - 2cheese) is even and >= 0.
+Opt Complexity Visuals: Constant-Time Calculation
+How to Draw Opt Complexity: Draw a single dot. Write $O(1)$. The time does not grow with the input size.
+Mem Vis (BF): Draw a list of all tried combinations.
+Mem Vis (Opt): Draw two variables for X and Y. Space: $O(1)$.

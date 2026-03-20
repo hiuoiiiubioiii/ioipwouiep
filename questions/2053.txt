@@ -1,0 +1,13 @@
+ID: 2053
+Problem Title: Kth Distinct String in an Array
+Brute Force Method: Nested loops: for each string, iterate through the entire array again to count its occurrences. Store distinct ones in a list and return the Kth.
+BF Complexity Visuals: N x N Comparison Matrix
+How to Draw BF: Draw the array. For the first item, draw a line to every other item to check for equality. Repeat for all N. $O(N^2)$.
+Optimised Pattern: Hash Map (Frequency Counter) + Second Pass
+Opt Vis. Technique: Two-Pass Frequency Sieve
+Dry Run (Opt): Pass 1: Tally all string frequencies in a Hash Map. Pass 2: Iterate the array again; if a string's frequency in the map is 1, decrement K. When K reaches 0, that's the answer.
+How to Draw (Opt): Draw the array on the left and a Hash Map on the right. Tally everything. Then, walk the array again, pointing to the Map. If the tally is '1', tick a "K counter".
+Opt Complexity Visuals: Two Parallel Sequential Lines
+How to Draw Opt Complexity: Draw two straight lines, one for the tally pass and one for the search pass. Total Time $O(N)$.
+Mem Vis (BF): A new list created to hold distinct strings, potentially $O(N)$.
+Mem Vis (Opt): A Hash Map storing strings as keys and integers as values. Space $O(N)$.

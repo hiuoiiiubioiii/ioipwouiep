@@ -1,0 +1,13 @@
+ID: 962
+Problem Title: Maximum Width Ramp
+Brute Force Method: Nested loops checking every pair (i, j) where i &lt; j. If A[i] &lt;= A[j], calculate j - i and track the maximum.
+BF Complexity Visuals: $O(N^2)$. Checking all possible pairs in the array.
+How to Draw BF: Draw a line graph. Pick a low point, then scan every single point to its right to find the furthest high point. Repeat for all low points.
+Optimised Pattern: Monotonic Stack (Decreasing)
+Opt Vis. Technique: "Potential Anchors." Only indices that are smaller than all indices to their left can be the start of the *maximum* ramp. Store these in a stack, then scan backwards.
+Dry Run (Opt): 1. Build a stack of indices i such that A[i] is decreasing. 2. Iterate j from N-1 down to 0. 3. While `A[j] &gt;= A[stack.top()]`, pop stack and update `maxWidth = max(maxWidth, j - popped_i)`.
+How to Draw (Opt): Draw a bar chart. Mark "Anchor" bars that are the lowest seen so far. From the rightmost end, draw a "ruler" stretching left to see which anchor it can reach.
+Opt Complexity Visuals: $O(N)$. One pass to build the stack, one pass to process the ramp widths.
+How to Draw Opt Complexity: Draw a horizontal timeline. Below it, draw a stack of indices. Above it, draw a single pointer moving from right to left.
+Mem Vis (BF): $O(1)$ extra space but unusable time.
+Mem Vis (Opt): $O(N)$ for the stack. Draw a vertical cylinder containing array indices.

@@ -1,0 +1,13 @@
+ID: 651
+Problem Title: 4 Keys Keyboard
+Brute Force Method: Recursion without memoization: explore all 4 choices (A, Ctrl-A, Ctrl-C, Ctrl-V) at every step up to N.
+BF Complexity Visuals: Quad-branching Decision Tree.
+How to Draw BF: Draw N levels. At each level, branch 4 ways. Note how most branches are invalid (can't Paste without Copy). $O(4^N)$.
+Optimised Pattern: Dynamic Programming (1D Array).
+Opt Vis. Technique: Exponential Multiplication Steps.
+Dry Run (Opt): `dp[i]` is max chars after `i` steps. To find `dp[i]`, look back at `j` (from 1 to i-3). You could have done Ctrl-A, Ctrl-C at `j`, then Ctrl-V `(i-j-1)` times. Formula: `dp[i] = max(dp[i-1]+1, dp[j]*(i-j-1))`.
+How to Draw (Opt): Draw a line 1..N. For a cell, draw arrows from previous cells representing "Copy-Paste" multipliers. Circle the highest result.
+Opt Complexity Visuals: Nested loop over N steps.
+How to Draw Opt Complexity: Draw an N x N grid (Upper triangle). Write $O(N^2)$.
+Mem Vis (BF): Draw a recursive stack hitting depth N with massive redundancy.
+Mem Vis (Opt): Draw a single 1D array of size N. $O(N)$.

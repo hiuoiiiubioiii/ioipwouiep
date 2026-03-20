@@ -1,0 +1,13 @@
+ID: 2056
+Problem Title: Number of Valid Move Combinations On Chessboard
+Brute Force Method: Simulate every possible end-position combination for all pieces, and for each, simulate the full paths to check for collisions at every second.
+BF Complexity Visuals: Multi-Dimensional Path Collision Grid
+How to Draw BF: Draw 8x8 boards for every second (T=1, T=2...). Draw arrows for all pieces. Check if any two pieces occupy the same square at the same T. Exponential.
+Optimised Pattern: Backtracking + Recursive State Validation
+Opt Vis. Technique: Decision Tree with Temporal Pruning
+Dry Run (Opt): Generate all valid moves for piece 1. For each, recursively move piece 2. Check collision *only* against pieces already placed. If collision, prune that branch.
+How to Draw (Opt): Draw a tree. Level 1 = Piece 1 moves. Level 2 = Piece 2 moves. At each node, draw a mini-board and mark "X" if paths intersect in time.
+Opt Complexity Visuals: Bounded Exponential Search
+How to Draw Opt Complexity: Draw a tree with a branching factor of max 15 (moves per piece). Depth is number of pieces (max 4). Total $O(15^4)$, which is manageable.
+Mem Vis (BF): Deep nested arrays storing all path coordinate strings for comparison.
+Mem Vis (Opt): A 1D array/stack storing current piece move objects; space $O(\text{Pieces})$.

@@ -1,0 +1,13 @@
+ID: 192
+Problem Title: Word Frequency
+Brute Force Method: Write a complex script that reads the file, splits words into an array, and uses nested loops to count occurrences.
+BF Complexity Visuals: A "Messy Workshop" where data is scattered and checked multiple times manually.
+How to Draw BF: Draw a text file. Draw a list of words. Draw arrows from every word to every other word to find matches. $O(N^2)$.
+Optimised Pattern: Unix Pipeline (cat | tr | sort | uniq -c | sort -nr).
+Opt Vis. Technique: "The Assembly Line." Raw text goes in one end; it is cleaned, sorted, grouped, and counted in a linear flow.
+Dry Run (Opt): 1. tr converts spaces to newlines. 2. sort groups identical words. 3. uniq -c counts adjacent duplicates. 4. sort -nr orders by count.
+How to Draw (Opt): Draw 5 boxes in a line connected by pipes (|). Label them: Clean rightarrow Sort rightarrow Count rightarrow Rank. Draw data moving through.
+Opt Complexity Visuals: $O(N \log N)$ primarily due to the sorting step, which is highly optimized in Unix.
+How to Draw Opt Complexity: Draw a sorting tree. Note that the data volume decreases as it hits the uniq filter.
+Mem Vis (BF): Buffering the entire file content into an internal script variable (RAM heavy).
+Mem Vis (Opt): Visualize "Streaming Memory." Only small chunks of data are in the pipe at any given time (O(1) relative to file size).

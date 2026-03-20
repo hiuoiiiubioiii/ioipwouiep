@@ -1,0 +1,13 @@
+ID: 1975
+Problem Title: Maximum Matrix Sum
+Brute Force Method: Try all possible adjacent swaps to see which configuration maximizes the sum.
+BF Complexity Visuals: Combinatorial Grid Toggling
+How to Draw BF: Draw a 2x2 matrix. Show every possible way to flip pairs of signs (+ to -). $O(2^(N\cdot N)$).
+Optimised Pattern: Greedy Parity Property
+Opt Vis. Technique: Negative Sign Migration
+Dry Run (Opt): Notice that you can "move" a negative sign anywhere. If the count of negatives is even, they all cancel. If odd, one remains at the smallest absolute value.
+How to Draw (Opt): Draw a grid. Draw arrows "pushing" negative signs toward each other until they vanish or only one tiny negative is left.
+Opt Complexity Visuals: Single Pass Grid Reduction
+How to Draw Opt Complexity: Draw an M x N grid. Draw a single scan arrow that tallies the sum, negative count, and min absolute value. $O(N^2)$.
+Mem Vis (BF): Recursive state-space tree of grid states.
+Mem Vis (Opt): Three integer variables: `total_sum`, `min_abs`, and `neg_count`. $O(1)$ space.

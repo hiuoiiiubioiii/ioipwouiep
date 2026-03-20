@@ -1,0 +1,13 @@
+ID: 1134
+Problem Title: Armstrong Number
+Brute Force Method: Convert the number to a string to find the length (k), then iterate through the string, converting back to int to power it.
+BF Complexity Visuals: String-to-Int Conversion Chain
+How to Draw BF: Draw the number as a string. Draw arrows splitting characters. Show conversion blocks for each digit.
+Optimised Pattern: Mathematical Digit Extraction
+Opt Vis. Technique: Modulo-Divide Loop
+Dry Run (Opt): Find length using log_10(N) + 1. Use `n % 10` to get digits and `n /= 10` to strip them. Accumulate the sum of powers.
+How to Draw (Opt): Draw a number. Write "%10" to get the digit, and "/10" to shrink the number. Repeat until number is 0. Show the power sum increasing in a side box.
+Opt Complexity Visuals: Logarithmic $O(\log N)$
+How to Draw Opt Complexity: Draw a shrinking number line. Each step is 10x smaller. Time is proportional to the number of digits.
+Mem Vis (BF): String objects and character arrays
+Mem Vis (Opt): Constant $O(1)$ space for integers.

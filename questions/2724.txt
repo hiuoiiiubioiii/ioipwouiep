@@ -1,0 +1,13 @@
+ID: 2724
+Problem Title: Sort By
+Brute Force Method: Implement a manual Bubble Sort or Selection Sort, calling the fn selector for every comparison (O(N^2 * cost_of_fn)).
+BF Complexity Visuals: Nested Comparison Matrix
+How to Draw BF: Draw the array. Compare adjacent elements by calling `fn` on both. Swap. Repeat. The number of swaps/calls is $O(N^2)$.
+Optimised Pattern: Repeated Function Execution Stack (Multiple redundant calls to the selector function).
+Opt Vis. Technique: Native .sort() with Custom Comparator
+Dry Run (Opt): Optimized Sort Algorithm (Timsort)
+How to Draw (Opt): Pass a comparator to the native sort: (a, b) =&gt; fn(a) - fn(b). The engine uses $O(N \log N)$ comparisons, minimizing the calls to the selector function.
+Opt Complexity Visuals: Draw the array being split into small sorted chunks and merged back together. At each comparison point, show a small "transformer" block (the `fn`) converting the values before they are compared.
+How to Draw Opt Complexity: $O(N \log N)$ Complexity Tree
+Mem Vis (BF): Draw a binary tree of height log N. At each level, work done is $O(N)$.
+Mem Vis (Opt): Temporary Sort Buffer (Visualize the $O(N)$ space often used by stable sort algorithms like Timsort in modern engines).

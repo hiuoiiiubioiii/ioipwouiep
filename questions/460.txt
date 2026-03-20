@@ -1,0 +1,13 @@
+ID: 460
+Problem Title: LFU Cache
+Brute Force Method: Map + Search Use a Map for key-value pairs and a second Map for frequencies. For eviction, scan for the minimum frequency.
+BF Complexity Visuals: Linear Eviction Scan
+How to Draw BF: Draw a Map. Every time you evict, draw a line scanning through all N entries to find the min frequency. $O(N)$ per `put`.
+Optimised Pattern: Hash Map + Linked List of DLLs Map keys to nodes. Have a second "Frequency Map" that points to a Doubly Linked List of all keys with that frequency.
+Opt Vis. Technique: Train of Compartments
+Dry Run (Opt): A train where each car is a "Frequency" (1, 2, 3...). Inside each car is a list of keys. New keys go in Car 1. Used keys move to the next car.
+How to Draw (Opt): Draw a vertical DLL of frequencies. From each frequency node, draw a horizontal DLL of keys. Draw a separate Map pointing directly to key nodes.
+Opt Complexity Visuals: Constant Horizon
+How to Draw Opt Complexity: Draw a straight line for `get` and `put`. Every move is just re-linking pointers. $O(1)$ time.
+Mem Vis (BF): Two Maps Storing keys and frequencies separately.
+Mem Vis (Opt): Hybrid Structure Draw the complex Map + DLL of DLLs structure. $O(N)$ total space.

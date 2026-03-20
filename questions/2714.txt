@@ -1,0 +1,13 @@
+ID: 2714
+Problem Title: Find Shortest Path with K Hops
+Brute Force Method: DFS to find all paths from source to destination. For every edge, branch into "take normally (cost W)" or "hop (cost 0)". Exponential time $O(2^E)$.
+BF Complexity Visuals: Combinatorial Edge Branching
+How to Draw BF: Draw a path. For every line connecting nodes, split it into two parallel lines: one solid (normal cost), one dashed (0 cost hop).
+Optimised Pattern: Brute Force Path Memory (Storing every conceivable route configuration simultaneously).
+Opt Vis. Technique: Dijkstra's Algorithm on 2D State Space (Node, Hops Used)
+Dry Run (Opt): Multi-layered Graph Traversal
+How to Draw (Opt): Treat the graph as having K+1 parallel "floors". Taking a normal edge keeps you on the same floor. Taking a hop edge drops you down to the next floor with 0 cost. Run standard Dijkstra to find the shortest path to the destination on any floor.
+Opt Complexity Visuals: Draw 3 stacked planes of nodes (for K=2). Draw vertical dashed lines representing "hops" falling from node U on layer 0 to node V on layer 1.
+How to Draw Opt Complexity: Priority Queue Expansion Sphere
+Mem Vis (BF): Draw the Dijkstra expansion radius. Note the complexity as $O((V+E)$ log V) * K, showing the base algorithm scaled by the state dimension.
+Mem Vis (Opt): 2D Distance Matrix &amp; Min-Heap (Visualize a grid dist[V][K+1] alongside a priority queue ordering active states).

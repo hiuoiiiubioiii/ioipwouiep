@@ -1,0 +1,13 @@
+ID: 999
+Problem Title: Available Captures for Rook
+Brute Force Method: For every square on the board, if it's a Pawn, check if there is a Rook in the same row or column that can reach it without hitting a Bishop.
+BF Complexity Visuals: $O(64 \cdot 64)$. Redundant checks from every pawn's perspective.
+How to Draw BF: Draw an 8x8 grid. For every 'p', draw four long lines looking for a 'R'. The board becomes a mess of criss-crossing lines.
+Optimised Pattern: Rook-Centric Scan
+Opt Vis. Technique: "The Four-Way Look." Find the Rook first. Then, simply "look" in four directions (Up, Down, Left, Right) until you either hit a Pawn (capture!), a Bishop (blocked!), or the edge.
+Dry Run (Opt): 1. Find Rook `(r, c)`. 2. For each direction `(dr, dc)`: move in that direction until you hit 'p' (count and break), 'B' (break), or edge.
+How to Draw (Opt): Draw an 8x8 grid. Shade the Rook. Draw four straight arrows extending from it. The moment an arrow hits a 'p', circle it. If it hits a 'B', draw a "Wall" icon.
+Opt Complexity Visuals: $O(1)$. The board is always 8x8, so you check at most 32 squares.
+How to Draw Opt Complexity: Draw a central point (Rook) with four "Laser Beams" shooting out toward the boundaries.
+Mem Vis (BF): $O(1)$ space but inefficient logic.
+Mem Vis (Opt): $O(1)$. No extra structures needed beyond a few coordinate variables. Draw four small integer boxes.

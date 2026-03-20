@@ -1,0 +1,13 @@
+ID: 1640
+Problem Title: Check Array Formation Through Concatenation
+Brute Force Method: Try every permutation of 'pieces' to see if any sequence matches the original 'arr'.
+BF Complexity Visuals: Permutation Tree
+How to Draw BF: Draw a tree starting with pieces. Branch out into every possible order. $O(P!)$.
+Optimised Pattern: Hash Map (Piece-Start Mapping)
+Opt Vis. Technique: Index-Linked Jump Scan
+Dry Run (Opt): Store the first element of each piece in a Map. Iterate through `arr`. If current `arr[i]` is a key in the Map, check the whole piece; else return false.
+How to Draw (Opt): Draw `arr` as a long line. Draw pieces as small segments. Use arrows to "snap" piece segments onto the main line based on the starting number.
+Opt Complexity Visuals: Linear Snap-Fit
+How to Draw Opt Complexity: Draw a single straight arrow through `arr`. Pieces are matched instantly via Map lookups. $O(N)$.
+Mem Vis (BF): Permutation List: All possible re-orderings of pieces.
+Mem Vis (Opt): Hash Map: Draw a 2-column table (StartVal | PieceIndex). $O(N)$ space.

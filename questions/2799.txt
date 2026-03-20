@@ -1,0 +1,13 @@
+ID: 2799
+Problem Title: Count Complete Subarrays in an Array
+Brute Force Method: First, find total unique elements K. Then, for every possible subarray [i, j], count unique elements. If count equals K, increment answer. $O(N³)$.
+BF Complexity Visuals: N³ Unique Sub-segment Scan
+How to Draw BF: Draw the array. For every pair of pointers, create a new Set and count its size. The total number of Sets created is N^2.
+Optimised Pattern: Massive Set Allocation (Visualizing thousands of HashSets being created and destroyed in memory).
+Opt Vis. Technique: Sliding Window with Frequency Map
+Dry Run (Opt): Elastic Window Subarray Counter
+How to Draw (Opt): Find total unique K. Use two pointers. Move right until the window contains K unique elements. Once it does, all subarrays starting at left and ending at or after right are "Complete" (there are n - right such subarrays). Move left and repeat.
+Opt Complexity Visuals: Draw the array. Expand a "Golden Bracket" until it has all unique values. Every time it turns golden, all space to the right of the bracket is automatically counted. Shrink the left side and repeat.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal line with two pointers. Label it $O(N)$ to show each element is visited twice.
+Mem Vis (Opt): Window Frequency Map (Draw a HashMap in memory tracking the counts of elements currently inside the window).

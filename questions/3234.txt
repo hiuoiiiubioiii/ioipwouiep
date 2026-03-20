@@ -1,0 +1,13 @@
+ID: 3234
+Problem Title: Count Substrings With Dominant Ones
+Brute Force Method: Nested loops generating all $O(N²)$ substrings and counting 1s and 0s manually (O(N³)).
+BF Complexity Visuals: Dense Nested Loop Matrix
+How to Draw BF: Draw an N x N grid. Shade every single cell. Label the work in each cell as $O(N)$ scan. Total $O(N³)$.
+Optimised Pattern: Enumeration by Zero-Count (O(N√N))
+Opt Vis. Technique: Square Root Threshold Graph
+Dry Run (Opt): Since count(0)² ≤ count(1) ≤ N, max count(0) is ≈ 200 for N=40,000. Group substrings by how many 0s they contain (0 to √N).
+How to Draw (Opt): Draw the binary string. Mark positions of all 0s. Use a sliding window to capture exactly 'k' zeros and calculate the '1s' buffer available mathematically.
+Opt Complexity Visuals: Bucket Progression Chart
+How to Draw Opt Complexity: Draw √N blocks. Each block is an $O(N)$ sweep. Label as $O(N \cdot √N)$. Conclude why √N is the boundary using k^2 <= N.
+Mem Vis (BF): Massive collection of substring objects (O(N³)).
+Mem Vis (Opt): A list of indices for '0' characters (O(N) space).

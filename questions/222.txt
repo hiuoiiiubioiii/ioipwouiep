@@ -1,0 +1,13 @@
+ID: 222
+Problem Title: Count Complete Tree Nodes
+Brute Force Method: Standard DFS or BFS traversal, visiting every single node and incrementing a counter.
+BF Complexity Visuals: Node Population Count: $O(N)$ Time.
+How to Draw BF: Draw a binary tree. Color every node one by one. The total number of colored nodes is N.
+Optimised Pattern: Binary Search on Leaf Nodes + Tree Height Properties
+Opt Vis. Technique: Subtree Depth Comparison
+Dry Run (Opt): Check left height and right height. If equal, left subtree is full. If not, right subtree is full (but one level shorter). Use formula 2^h - 1.
+How to Draw (Opt): Draw a tree. Draw a vertical line down the leftmost and rightmost paths. If paths are equal length, it's a perfect triangle. Use math instead of counting.
+Opt Complexity Visuals: Logarithmic Descent: $O((\log N)$^2) Time.
+How to Draw Opt Complexity: Draw a tree path. At each level, show that you "skip" half the tree. Draw a height line (log N) times a descent (log N).
+Mem Vis (BF): Recursion Stack: Draw a stack of depth H.
+Mem Vis (Opt): Narrow Path Stack: Draw a single line of function calls descending to the leaf level only.

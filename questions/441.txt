@@ -1,0 +1,13 @@
+ID: 441
+Problem Title: Arranging Coins
+Brute Force Method: Linear Iteration Subtract 1, then 2, then 3... from N until the remainder is less than the next row.
+BF Complexity Visuals: Staircase Build
+How to Draw BF: Draw a staircase of coins. Each row adds 1. Show a linear scan of $O(N^{0.5})$.
+Optimised Pattern: Binary Search / Math Search for k such that \frac{k(k+1)}{2} \le N or use the quadratic formula directly.
+Opt Vis. Technique: Number Line Halving
+Dry Run (Opt): Draw a line from 1 to N. Check the midpoint. If too many coins, move left; if too few, move right.
+How to Draw (Opt): Draw a number line. Mark L, M, and R. Calculate the sum for M and cross out half the line in each step.
+Opt Complexity Visuals: Search Tree
+How to Draw Opt Complexity: Draw a binary search tree of depth \log N. Total $O(\log N)$. (Or $O(1)$ for Math).
+Mem Vis (BF): Variable One integer remainder.
+Mem Vis (Opt): Registers Constant space. $O(1)$.

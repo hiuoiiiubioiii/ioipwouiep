@@ -1,0 +1,13 @@
+ID: 3285
+Problem Title: Find Indices of Stable Mountains
+Brute Force Method: Iterate through the mountains. For each mountain i, run a nested loop to check all previous mountains 0 dots i-1 for stability. $O(N^2)$.
+BF Complexity Visuals: Redundant Lookback Scan
+How to Draw BF: Draw the mountains. For mountain 5, draw 4 arrows looking back. For mountain 6, draw 5 arrows. Show the quadratic increase in arrows.
+Optimised Pattern: Single-Pass Linear Scan
+Opt Vis. Technique: Neighbor-Check Pipeline
+Dry Run (Opt): Iterate from i=1 to N-1. Simply check if `height[i-1] &gt; threshold`. If true, index i is "stable".
+How to Draw (Opt): Draw a row of mountains with heights. Place your left finger on mountain i-1 and right finger on mountain i. If the left height is above threshold, circle the right index. Slide both fingers one step right.
+Opt Complexity Visuals: Linear Timeline Pass
+How to Draw Opt Complexity: Draw a single line with N nodes. Show a single arrow moving left-to-right once. Label as $O(N)$.
+Mem Vis (BF): Storing all heights and their previous dependencies.
+Mem Vis (Opt): A result list to store valid indices (O(N) space in worst case).

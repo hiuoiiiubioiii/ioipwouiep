@@ -1,0 +1,13 @@
+ID: 609
+Problem Title: Find Duplicate File in System
+Brute Force Method: Parse all paths into complete file strings. Compare every file's content with every other file's content using nested loops.
+BF Complexity Visuals: N x N Matrix comparing long string blocks.
+How to Draw BF: Draw an N x N grid. In every cell, draw two long strings being compared character by character. Write $O(N^2 \cdot L)$ where L is string length.
+Optimised Pattern: Hash Map grouping (Content -&gt; List of Paths).
+Opt Vis. Technique: Bucketing / Pigeonhole sorting.
+Dry Run (Opt): Read directory string. Extract filename and content. Go to hash map. If content exists, append path to the list. If not, create new bucket. Output buckets with size &gt; 1.
+How to Draw (Opt): Draw several empty buckets. As you read files, look at the content. Draw lines dropping the file paths into the bucket labeled with matching content.
+Opt Complexity Visuals: Linear data flow into hash buckets.
+How to Draw Opt Complexity: Draw an array of strings. Draw arrows from each string directing them into distinct buckets based on their text. Write $O(N \cdot L)$.
+Mem Vis (BF): Draw every file loaded into memory at once, duplicated inside temporary comparison variables.
+Mem Vis (Opt): Draw a Hash Map. Keys are content strings, Values are arrays of path strings. Total space is bounded by $O(N \cdot L)$.

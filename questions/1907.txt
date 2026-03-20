@@ -1,0 +1,13 @@
+ID: 1907
+Problem Title: Count Salary Categories
+Brute Force Method: Iterate through all accounts three separate times to count "Low", "Average", and "High" tiers independently.
+BF Complexity Visuals: Triple Pass Linear Scan
+How to Draw BF: Draw three separate horizontal arrows scanning across the full length of an array representation of the data.
+Optimised Pattern: Single Pass Bucketing (or SQL UNION/GROUP BY)
+Opt Vis. Technique: Multi-bin Dropping
+Dry Run (Opt): Iterate through accounts exactly once. Use if/else logic to increment one of three specific category counters.
+How to Draw (Opt): Draw a conveyor belt (the array). At the end, draw 3 buckets. For each item on the belt, draw an arrow dropping it into the corresponding bucket.
+Opt Complexity Visuals: Single Scan Bar
+How to Draw Opt Complexity: Draw a single straight arrow from start to finish representing strictly $O(N)$ operations.
+Mem Vis (BF): Loading the entire dataset into memory multiple times (High I/O overhead).
+Mem Vis (Opt): Three isolated integer variables (`low`, `avg`, `high`) existing in a constant $O(1)$ memory space.

@@ -1,0 +1,13 @@
+ID: 3638
+Problem Title: Maximum Balanced Shipments (Med)
+Brute Force Method: Generating all possible ways to partition the array into shipments and checking each for "balance". $O(2^N)$.
+BF Complexity Visuals: Binary Partition Tree.
+How to Draw BF: Draw an array. At every gap, branch "Cut" or "No Cut". The tree grows to 2^N leaves. Write "TLE" at the bottom.
+Optimised Pattern: Dynamic Programming with a Fenwick Tree or Segment Tree to find the maximum shipments ending at index `i`.
+Opt Vis. Technique: Step-by-Step Cumulative Peak.
+Dry Run (Opt): For each item i, you want to know: "What is the most shipments I could have made before this, where the balance condition is met?" Query a Fenwick tree for the max value in a specific range.
+How to Draw (Opt): Draw an array. Below it, draw a Fenwick Tree (series of boxes). For each element, look up the "best previous score" from the boxes, add 1, and update the boxes.
+Opt Complexity Visuals: Point Query Timeline.
+How to Draw Opt Complexity: Draw a linear scan (O(N)). Above each step, draw a small tree lookup (O(log N)). Write $O(N \log N)$.
+Mem Vis (BF): Huge recursive tree structures stored in memory.
+Mem Vis (Opt): A single 1D array representing the Fenwick Tree. Space $O(N)$.

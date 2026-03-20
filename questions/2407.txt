@@ -1,0 +1,13 @@
+ID: 2407
+Problem Title: Longest Increasing Subsequence II
+Brute Force Method: Standard Dynamic Programming (DP). For every element, look back at all previous elements to find valid smaller numbers within difference 'k'.
+BF Complexity Visuals: Backward Arrow Web
+How to Draw BF: Draw numbers in a line. From each number, draw curved arrows pointing to every single number before it. Label $O(N^2)$.
+Optimised Pattern: Segment Tree / Fenwick Tree (Range Maximum Query)
+Opt Vis. Technique: Value-Indexed Binary Tree
+Dry Run (Opt): Instead of searching indices, search values. When you see 'num', ask the tree: "What's the max LIS in range [num-k, num-1]?" Add 1, update tree at index 'num'.
+How to Draw (Opt): Draw a tree where leaf nodes represent actual numbers (1 to max_val). Shade the range [num-k, num-1]. Point to the highest number in that shaded region.
+Opt Complexity Visuals: Tree Traversal Path
+How to Draw Opt Complexity: Draw a line for N elements. From the line, draw an arrow up to a tree of height Log(M). Label $O(N \log M)$ where M is max value.
+Mem Vis (BF): Draw a 1D DP array of size N storing lengths. $O(N)$ space.
+Mem Vis (Opt): Draw a complete binary tree block representing $O(M)$ space for the Segment Tree.

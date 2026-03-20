@@ -1,0 +1,13 @@
+ID: 1263
+Problem Title: Minimum Moves to Move a Box to Their Target Location
+Brute Force Method: Standard BFS exploring only the box's position. This fails because the box's movement depends on where the person is standing relative to the box.
+BF Complexity Visuals: Incomplete State Space
+How to Draw BF: Draw a grid. Show the box moving but ignore the person. Draw a red "X" because the pathing is blocked by the person's inability to reach the "push side".
+Optimised Pattern: Nested BFS / State BFS (Box Pos + Person Pos)
+Opt Vis. Technique: Dual-Object Coordination (4D State)
+Dry Run (Opt): The state is `(box_row, box_col, person_row, person_col)`. For every potential box move, run a sub-BFS to see if the person can reach the side of the box required to push it in that direction.
+How to Draw (Opt): Draw a grid. Use a solid circle for the box and a star for the person. Draw a path for the box. At each step, draw a "mini-grid" highlighting the area reachable by the star without crossing the box or walls.
+Opt Complexity Visuals: Bounded 4D State Exploration
+How to Draw Opt Complexity: Draw a M x N grid. Multiply by the number of box positions (M x N). Write $O(M^2 \cdot N^2)$.
+Mem Vis (BF): Draw a simple queue that doesn't track the person's location, leading to incorrect results.
+Mem Vis (Opt): Draw a 4D boolean array `visited[m][n][m][n]` or a Set of 4-tuples, plus a BFS Queue. Space: $O(M^2 \cdot N^2)$.

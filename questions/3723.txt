@@ -1,0 +1,13 @@
+ID: 3723
+Problem Title: Maximize Sum of Squares of Digits (Med)
+Brute Force Method: Iterate all possible valid numbers or combinations within constraints, sum their squares, and find the maximum.
+BF Complexity Visuals: Full Combinatorial Tree.
+How to Draw BF: Draw a branching tree of digit choices (0-9), calculating the square sum at every single leaf node.
+Optimised Pattern: Greedy Digit Allocation
+Opt Vis. Technique: Top-Heavy Buckets
+Dry Run (Opt): Larger numbers squared yield massively larger sums (e.g., 9² + 1² &gt; 5² + 5²). Greedily assign 9s to as many positions as possible.
+How to Draw (Opt): Draw empty slots for digits. Fill them with '9's from left to right until your digit limit/sum limit is completely exhausted.
+Opt Complexity Visuals: Constant time $O(1)$ math or $O(D)$ digits.
+How to Draw Opt Complexity: Draw a short, flat horizontal line representing a direct mathematical calculation.
+Mem Vis (BF): Recursion stack frames.
+Mem Vis (Opt): A few simple integer variables.

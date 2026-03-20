@@ -1,0 +1,13 @@
+ID: 1422
+Problem Title: Maximum Score After Splitting a String
+Brute Force Method: Nested Loops. Iterate the split point `i` from 1 to N-1. For each split, run a loop over the left side to count '0's and a loop over the right side to count '1's. Sum them and track max.
+BF Complexity Visuals: Redundant Substring Scanning
+How to Draw BF: Draw the string. Draw a vertical line cutting it. Draw arrows scanning left from scratch, and right from scratch. Move the cut line, redraw the scanning arrows. Label $O(N^2)$.
+Optimised Pattern: Two-Pass / Prefix Tracking
+Opt Vis. Technique: Sliding Partition Counter
+Dry Run (Opt): Pass 1: Count total '1's in the string. Pass 2: Move split point left to right. If char is '0', increment left_zeros. If char is '1', decrement right_ones. Score = left_zeros + right_ones.
+How to Draw (Opt): Draw the string. Write "Total 1s: X" above it. Draw a sliding vertical partition. Keep two small chalkboards next to it ("Left 0s" and "Right 1s") that increment/decrement instantly as the partition shifts one space.
+Opt Complexity Visuals: Two-Pass Array Traversal
+How to Draw Opt Complexity: Draw an arrow completely across the array (Pass 1), and a second arrow (Pass 2). Label $O(N)$.
+Mem Vis (BF): Multiple String Allocations
+Mem Vis (Opt): Draw two simple integer variables: `left_zeros` and `right_ones`. $O(1)$ space.

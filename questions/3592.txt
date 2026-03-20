@@ -1,0 +1,13 @@
+ID: 3592
+Problem Title: Inverse Coin Change (Med)
+Brute Force Method: Try every possible combination of coin values and see which set produces the target number of ways for value V.
+BF Complexity Visuals: Recursive Choice Tree.
+How to Draw BF: Draw a tree where each node is a potential set of coins. Test standard Coin Change DP for each. $O(2^K \cdot V)$.
+Optimised Pattern: Dynamic Programming (Generating Functions Reconstruction).
+Opt Vis. Technique: Coefficient Extraction.
+Dry Run (Opt): Treat the number of ways as coefficients of a polynomial. Use the relationship between DP[i] and DP[i-coin] to "subtract" the contribution of a coin and find the base set.
+How to Draw (Opt): Draw a DP array. Start from the first index where DP[i] &gt; 0. That's your first coin. "Reverse-subtract" its combinations from the rest of the array.
+Opt Complexity Visuals: $O(N \cdot V)$.
+How to Draw Opt Complexity: Draw a DP array of size V. Show a single pass "cleaning up" the array for each discovered coin.
+Mem Vis (BF): Massive Set Permutations: Draw thousands of candidate coin-sets being simulated in RAM.
+Mem Vis (Opt): In-Place DP Array: Draw a single 1D array representing the "Ways to make Sum" being updated/reduced.

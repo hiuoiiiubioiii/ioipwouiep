@@ -1,0 +1,13 @@
+ID: 2648
+Problem Title: Generate Fibonacci Sequence (JS)
+Brute Force Method: Calculate all Fibonacci numbers up to N and store them in an array before returning.
+BF Complexity Visuals: Pre-calculated Array Buffer
+How to Draw BF: Draw an array filling up with numbers. If the user only needs the 5th number, you've wasted memory on 100.
+Optimised Pattern: Generators (`yield`)
+Opt Vis. Technique: Lazy Evaluation Stream
+Dry Run (Opt): Use `function*`. Maintain two variables `a` and `b`. Inside a `while(true)` loop, `yield a`, then update `[a, b] = [b, a + b]`. The sequence is generated only as requested.
+How to Draw (Opt): Draw a machine with a lever. Every time the lever is pulled (`next()`), one number pops out. The machine then "freezes" its internal state until the next pull.
+Opt Complexity Visuals: $O(1)$ per step
+How to Draw Opt Complexity: Draw a point representing a single execution step. Total time is $O(N)$ only if N numbers are requested.
+Mem Vis (BF): $O(N)$ Array storage
+Mem Vis (Opt): $O(1)$ persistent state (two variables inside the generator scope).

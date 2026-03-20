@@ -1,0 +1,13 @@
+ID: 2861
+Problem Title: Maximum Number of Alloys
+Brute Force Method: Starting from 0, try building X alloys. For each X, calculate the cost for each machine and see if any machine stays under budget. Increment X until the budget is blown for all machines.
+BF Complexity Visuals: Sequential Simulation Search
+How to Draw BF: Draw a "Budget Tank." For 1 alloy, subtract cost. For 2 alloys, subtract cost. Show the search taking millions of steps for large budgets.
+Optimised Pattern: Binary Search on Answer
+Opt Vis. Technique: Range Reduction Search
+Dry Run (Opt): The ability to build X alloys is monotonic. If you can build 100, you can build 99. Binary search the range [0, 2 * 10^8]. For each mid, calculate the cost for each machine in $O(\text{Machines} x \text{Compositions})$.
+How to Draw (Opt): Draw a number line of possible alloy counts. Mark a "Low" and "High." Pick the middle. If possible, move "Low" to mid. If not, move "High" to mid-1.
+Opt Complexity Visuals: $O(M \cdot C \cdot \log(\text{MaxAlloys})$)
+How to Draw Opt Complexity: Draw a box for Binary Search (~30 iterations). Inside, draw a loop for Machines (M) and Compositions (C). Total time is very fast.
+Mem Vis (BF): Visualize $O(1)$ extra space but TLE due to linear search.
+Mem Vis (Opt): Visualize zero extra data structures. Pure $O(1)$ auxiliary space.

@@ -1,0 +1,13 @@
+ID: 2656
+Problem Title: Maximum Sum With Exactly K Elements
+Brute Force Method: Simulate the process: Find max, add to sum, increment it, put it back. Repeat K times.
+BF Complexity Visuals: Iterative Simulation Timeline
+How to Draw BF: Draw a loop running K times. Inside, draw a "Search Max" arrow $O(N)$. Total $O(N\cdot K)$.
+Optimised Pattern: Greedy + Arithmetic Progression
+Opt Vis. Technique: Step-up Arithmetic Series
+Dry Run (Opt): Find the maximum element `m` once. The next elements will be `m+1, m+2, ..., m+(k-1)`. Use the sum formula: Sum = k * m + frack(k-1)2.
+How to Draw (Opt): Draw the array. Circle the max value `m`. Draw K boxes, starting with `m` and increasing by 1. Sum them using the formula.
+Opt Complexity Visuals: $O(N)$ Max Search
+How to Draw Opt Complexity: Draw a single pass $O(N)$ to find max, followed by an $O(1)$ math block.
+Mem Vis (BF): $O(K)$ to store the simulated sequence
+Mem Vis (Opt): $O(1)$ constant space (only the max and sum variables).

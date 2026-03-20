@@ -1,0 +1,13 @@
+ID: 3049
+Problem Title: Earliest Second to Mark Indices II
+Brute Force Method: Recursively explore every possible action (decrement, reset, mark) at every second to find the minimum time.
+BF Complexity Visuals: State-Space Search Tree
+How to Draw BF: Draw a root node branching out for every action choice. Show the depth as T (max time), leading to $O(3^T)$ explosion.
+Optimised Pattern: Binary Search + Greedy Priority Queue
+Opt Vis. Technique: Timeline Slot Filling
+Dry Run (Opt): Binary search for total time T. Working backwards from T to 1, if you hit an index's first appearance, use a Priority Queue to decide if it's "worth" resetting to 0 based on its value.
+How to Draw (Opt): Draw a horizontal line with T slots. Place index numbers in their "earliest reset" spots. Use a small box next to it to track your "Banked" seconds available for marking.
+Opt Complexity Visuals: $O((N+T)$ log T) Binary Search
+How to Draw Opt Complexity: Draw a range [1, T] halving iteratively. Inside, draw a linear scan across the timeline with a Min-Heap.
+Mem Vis (BF): Deep recursive stack holding array states at each second.
+Mem Vis (Opt): A Min-Heap (Priority Queue) to track the values being reset and an array for earliest appearances.

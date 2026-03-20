@@ -1,0 +1,13 @@
+ID: 2912
+Problem Title: Number of Ways to Reach Destination in the Grid
+Brute Force Method: BFS/DFS exploring every valid jump in the grid for exactly K steps.
+BF Complexity Visuals: Massive Expanding Web Graph
+How to Draw BF: Start at one cell. Draw N+M-2 arrows expanding outward. Repeat for each new cell K times. Shows $O((N+M)$^K).
+Optimised Pattern: Combinatorics / 4-State DP (Markov Chain approach)
+Opt Vis. Technique: 4-Node State Machine Diagram
+Dry Run (Opt): Track 4 states: Source, Same Row, Same Col, Different Row/Col. Update their counts simultaneously K times using multiplication and grid dimensions.
+How to Draw (Opt): Draw 4 circles. Label them. Draw directed arrows between them showing valid transitions. Write formulas on the arrows (e.g., multiply by N-2 or M-2).
+Opt Complexity Visuals: Single Horizontal Timeline
+How to Draw Opt Complexity: Draw a single straight line from 1 to K. Each tick represents updating 4 variables. T(N) = $O(K)$.
+Mem Vis (BF): Queue Data Structure overflowing with millions of coordinate pairs. Space $O((N+M)$^K).
+Mem Vis (Opt): Four simple scalar boxes dynamically updating. Strictly $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2984
+Problem Title: Find Peak Calling Hours for Each City
+Brute Force Method: Group by City and Hour, get counts, then write a correlated subquery to rescan and find the max count for that specific city.
+BF Complexity Visuals: Redundant Subquery Scan
+How to Draw BF: Draw City buckets. Inside, draw Hour buckets. Draw a magnifying glass that rescans every Hour bucket twice.
+Optimised Pattern: Window Function (RANK)
+Opt Vis. Technique: The Peak-Hour Ranker
+Dry Run (Opt): Group by City and Hour to get call counts. Wrap this in a CTE, and use `RANK() OVER (PARTITION BY City ORDER BY call_count DESC)`. Select where rank = 1.
+How to Draw (Opt): Draw City buckets. Sort the Hour blocks inside them by height (call count). Slap a "#1" sticker on the tallest block(s) in each bucket and toss the rest.
+Opt Complexity Visuals: Partitioned Sort $O(N \log N)$
+How to Draw Opt Complexity: Draw a pipeline: Group rightarrow Sort rightarrow Rank rightarrow Filter.
+Mem Vis (BF): Temp tables for subquery processing.
+Mem Vis (Opt): DB sorting buffer. $O(\text{Cities})$ space.

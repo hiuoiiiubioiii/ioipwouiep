@@ -1,0 +1,13 @@
+ID: 305
+Problem Title: Number of Islands II
+Brute Force Method: After every new land is added, run a full DFS/BFS from scratch across the entire grid to count the connected islands.
+BF Complexity Visuals: Repeated Graph Flooding
+How to Draw BF: Draw multiple identical grids. On grid 1, draw a DFS wave. On grid 2 (with one new cell), draw the same wave again. Label this $O(K \cdot M \cdot N)$.
+Optimised Pattern: Disjoint Set Union (Union-Find)
+Opt Vis. Technique: Forest of Trees (Component Merging)
+Dry Run (Opt): Grid starts as all water. When land appears, it's a new "tree" (root = itself), count++. Check 4 neighbors. If neighbor is land, union them. If roots are different, merge trees, count--.
+How to Draw (Opt): Draw land cells as circles. When a new land is added, draw it. If adjacent to existing circles, draw lines connecting them. Then draw an arrow from the new circle's root pointing to the old circle's root.
+Opt Complexity Visuals: Ackermann Inverse Amortization
+How to Draw Opt Complexity: Draw a nearly flat, horizontal line graph to represent $O(α(N)$) time. Label it "Effectively $O(1)$ per operation".
+Mem Vis (BF): Large call stack (tall box) for DFS + 2D boolean Visited array per query.
+Mem Vis (Opt): Two parallel 1D arrays: 'parent' and 'rank'. Draw them horizontally of size M*N. Draw arrows showing indices pointing to other indices in the 'parent' array.

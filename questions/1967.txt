@@ -1,0 +1,13 @@
+ID: 1967
+Problem Title: Number of Strings That Appear as Substrings in Word
+Brute Force Method: For each string in the pattern list, perform a standard string search (like `indexOf`) against the target word.
+BF Complexity Visuals: Independent String Comparison Bars
+How to Draw BF: Draw the patterns list. For each pattern, draw a sliding window across the word. $O(\text{Patterns} \\text{cdot PatternLen} \\text{cdot WordLen})$.
+Optimised Pattern: KMP or Optimized Built-in Search
+Opt Vis. Technique: Pattern Matching Pipeline
+Dry Run (Opt): Iterate through patterns and use the most efficient string matching available to count hits.
+How to Draw (Opt): Draw patterns as small blocks. Draw the word as a long conveyor. Check if each block "fits" into any part of the conveyor.
+Opt Complexity Visuals: Summed Linear Search
+How to Draw Opt Complexity: Draw a timeline where each pattern is checked in a single linear pass. $O(\text{Total Length of Patterns})$.
+Mem Vis (BF): Multiple temporary string slices generated during the search.
+Mem Vis (Opt): Pointer-based indexing into existing pattern strings. $O(1)$ extra space.

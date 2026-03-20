@@ -1,0 +1,13 @@
+ID: 709
+Problem Title: To Lower Case
+Brute Force Method: Hash map mapping every uppercase char to its lowercase equivalent.
+BF Complexity Visuals: Dictionary Lookup Table
+How to Draw BF: Draw a 2-column table A-&gt;a, B-&gt;b. Draw string chars pointing to the table $O(N)$.
+Optimised Pattern: ASCII Bit Manipulation / Offset
+Opt Vis. Technique: ASCII Value Shift
+Dry Run (Opt): Iterate string. If char is between 'A' (65) and 'Z' (90), add 32 to its ASCII value (or bitwise OR with 32) to make it lowercase.
+How to Draw (Opt): Write the word. Draw a downward arrow from an uppercase letter with "+32" written next to it, pointing to the new lowercase letter.
+Opt Complexity Visuals: Linear Scanning Line
+How to Draw Opt Complexity: Draw a flat line progressing left-to-right over characters representing $O(N)$ time.
+Mem Vis (BF): Hash map memory overhead.
+Mem Vis (Opt): In-place mutation (if string is mutable) or a new string builder array.

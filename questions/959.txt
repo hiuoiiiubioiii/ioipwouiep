@@ -1,0 +1,13 @@
+ID: 959
+Problem Title: Regions Cut By Slashes
+Brute Force Method: Treat the slashes as lines in a geometry problem. Calculate intersections and find closed polygons using coordinate geometry.
+BF Complexity Visuals: $O(N^4)$ or higher. Extremely complex math with floating point issues.
+How to Draw BF: Draw a grid with slashes. Try to shade in the areas manually and count them. The shapes are triangles and trapezoids.
+Optimised Pattern: Grid Expansion + DFS/BFS (or Union-Find)
+Opt Vis. Technique: "Zooming In." Treat each 1x1 cell as a 3x3 mini-grid. A '/' becomes a diagonal of three colored blocks. Then simply count the number of "white" islands.
+Dry Run (Opt): 1. Create a 3Nx3N grid. 2. For '/', mark `(0,2), (1,1), (2,0)`. For '', mark `(0,0), (1,1), (2,2)`. 3. Run a standard "Number of Islands" algorithm.
+How to Draw (Opt): Draw a square with a slash. Blow it up 3x into a 3x3 grid of pixels. Show the diagonal pixels being "filled in" like a staircase.
+Opt Complexity Visuals: $O(N^2)$. The expanded grid is 9N^2, which is still proportional to the input size.
+How to Draw Opt Complexity: Draw the 3x3 expanded grid. Shade one "island" with a highlighter, then another, until all white space is accounted for.
+Mem Vis (BF): N/A - Too complex to implement.
+Mem Vis (Opt): $O(N^2)$ for the expanded 3Nx3N grid. Draw a large pixelated grid with some cells blackened out.

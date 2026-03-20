@@ -1,0 +1,13 @@
+ID: 730
+Problem Title: Count Different Palindromic Subsequences
+Brute Force Method: Generate all possible subsequences of the string, check if each is a palindrome, and store in a HashSet to count unique ones.
+BF Complexity Visuals: Exponential Subsequence Tree
+How to Draw BF: Draw a tree branching 2^N times. Each leaf represents a unique subsequence. $O(2^N \cdot N)$.
+Optimised Pattern: Dynamic Programming (2D Range DP)
+Opt Vis. Technique: Interval Expansion Matrix
+Dry Run (Opt): `dp[i][j]` counts unique palindromic subsequences in `S[i...j]`. If `S[i] == S[j]`, the count relates to the inner range `dp[i+1][j-1]` with boundary adjustments.
+How to Draw (Opt): Draw the string. Draw a square grid. Fill the diagonal (single letters). Fill the cells above the diagonal by looking at the "inner" range cells.
+Opt Complexity Visuals: Upper Triangle Shading
+How to Draw Opt Complexity: Shade the upper-right triangle of a square matrix. Total operations $O(N^2)$.
+Mem Vis (BF): Massive HashSet storing millions of strings.
+Mem Vis (Opt): 2D DP matrix (O(N^2)) or optimized 3D for character sets (O(4 * N^2)).

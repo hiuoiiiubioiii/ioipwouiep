@@ -1,0 +1,13 @@
+ID: 2951
+Problem Title: Find the Peaks
+Brute Force Method: Iterate from index 1 to N-2 and check if current is greater than neighbors. (This is already the optimal scan).
+BF Complexity Visuals: Single Horizontal Line Sweep
+How to Draw BF: Draw a line of dots. Draw a "V" shape above any dot that is higher than its immediate left and right dots. T(N) = $O(N)$.
+Optimised Pattern: Linear Array Scanning
+Opt Vis. Technique: Three-Element Sliding Bracket
+Dry Run (Opt): Slide a window of size 3. If the middle element is the maximum of the three and no ties exist, mark the index.
+How to Draw (Opt): Draw a bar chart. Circle any bar that is strictly taller than both of its side-neighbors.
+Opt Complexity Visuals: Single Pass Timeline
+How to Draw Opt Complexity: Draw a straight line of length N. One constant time check per index. T = $O(N)$.
+Mem Vis (BF): Simple integer variables for loop counters.
+Mem Vis (Opt): A result list to store peak indices. Space $O(N)$ worst-case.

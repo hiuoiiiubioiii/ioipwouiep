@@ -1,0 +1,13 @@
+ID: 2663
+Problem Title: Lexicographically Smallest Beautiful String
+Brute Force Method: Generate the next lexicographical string, check if it has palindromes. If yes, generate the next. $O(26^N)$.
+BF Complexity Visuals: Endless Lexicographical Checking
+How to Draw BF: Write the string. Increment the last letter. Scan the whole string for palindromes. Repeat millions of times.
+Optimised Pattern: Greedy String Mutation (Right-to-Left)
+Opt Vis. Technique: The Local Suffix Fixer
+Dry Run (Opt): Work backwards from the end of the string. Increment a character. To keep it "beautiful", the new character only needs to differ from `string[i-1]` and `string[i-2]`. Once a valid increment is found, fill the rest of the string with the smallest valid characters.
+How to Draw (Opt): Draw the string. Point to the last letter. Bump it up by 1. Check the 2 letters to its left. If it matches either, bump it again. Once safe, move to the right and fill with 'a', 'b', or 'c' while avoiding local pairs.
+Opt Complexity Visuals: Linear Scan &amp; Fill $O(N)$
+How to Draw Opt Complexity: Draw a line moving right-to-left to find the pivot, then left-to-right to fill the suffix.
+Mem Vis (BF): Millions of generated strings.
+Mem Vis (Opt): A character array. $O(N)$ space.

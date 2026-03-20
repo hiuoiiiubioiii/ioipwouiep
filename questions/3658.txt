@@ -1,0 +1,13 @@
+ID: 3658
+Problem Title: GCD of Odd and Even Sums (Easy)
+Brute Force Method: Iterate through the array, calculate odd sum and even sum separately, then use a loop to find the GCD starting from the smaller sum downwards.
+BF Complexity Visuals: Linear GCD Search.
+How to Draw BF: Calculate Sums (e.g., 20 and 30). Try dividing both by 20, then 19, then 18... until you hit 10. $O(\text{Sum})$.
+Optimised Pattern: Euclidean Algorithm for GCD. `gcd(a, b)` where you repeatedly take the remainder until one reaches zero.
+Opt Vis. Technique: The Rectangle Folding (Euclidean).
+Dry Run (Opt): Visualize a rectangle of A \times B. Cut out the largest possible square. Repeat with the remaining rectangle. The size of the final square is the GCD.
+How to Draw (Opt): Draw two bars (SumOdd, SumEven). Use the Euclidean subtraction: `while b: a, b = b, a % b`. Write the steps: `30 % 20 = 10`, `20 % 10 = 0`. GCD is 10.
+Opt Complexity Visuals: Logarithmic Reduction Line.
+How to Draw Opt Complexity: Draw an arrow representing the values shrinking by half at each step. $O(N + \log(\\text{min}(\text{SumOdd}, \text{SumEven})$)).
+Mem Vis (BF): Converting sums to strings or large objects unnecessarily.
+Mem Vis (Opt): Three integer variables: `sum_odd`, `sum_even`, and `temp`. Space $O(1)$.

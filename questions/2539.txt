@@ -1,0 +1,13 @@
+ID: 2539
+Problem Title: Count the Number of Good Subsequences
+Brute Force Method: Generate every possible subsequence (2^N). For each, count character frequencies and check if they are all equal. $O(2^N \cdot 26)$.
+BF Complexity Visuals: An massive, branching decision tree where most paths are invalid.
+How to Draw BF: Take the string "aabb". Write out every combination: "a", "aa", "ab", "aab", etc. Count the letters in each and verify they match.
+Optimised Pattern: Combinatorics + Frequency Counting.
+Opt Vis. Technique: A character frequency table serving as the base for a series of binomial coefficient multiplications.
+Dry Run (Opt): Count frequencies of each letter. For a fixed frequency f, a letter with count c contributes Comb(c, f) ways if we pick f instances, or 1 way if we pick none. Multiply these contributions for all letters and repeat for all possible f.
+How to Draw (Opt): Write "a:3, b:2". Pick frequency f=1. Ways = (Comb(3,1)+1) * (Comb(2,1)+1) - 1. Repeat for f=2 and f=3. Sum the results.
+Opt Complexity Visuals: $O(26 \cdot N)$ where N is string length (to precompute factorials and iterate through possible frequencies).
+How to Draw Opt Complexity: Draw a table of frequencies (26 rows). Show a loop iterating through possible "counts" from 1 to N. In each loop, show a quick calculation across the 26 rows.
+Mem Vis (BF): Exponential space for subsequences.
+Mem Vis (Opt): $O(N)$ to store precomputed factorials for the Combinations formula.

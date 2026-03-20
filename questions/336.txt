@@ -1,0 +1,13 @@
+ID: 336
+Problem Title: Palindrome Pairs
+Brute Force Method: For every word i, iterate through every other word j. Concatenate them as W_i + W_j and check if the result is a palindrome.
+BF Complexity Visuals: Pairwise String Concatenation Matrix
+How to Draw BF: Draw an N \times N grid where N is the number of words. In each cell (i, j), write the combined string and a checkmark/cross. Label $O(N^2 \cdot K)$.
+Optimised Pattern: Trie (Prefix/Suffix) or Hashing with Word Splitting
+Opt Vis. Technique: Reverse Word Trie with Palindrome Suffixes
+Dry Run (Opt): Store all words in a Trie. For each word, split it into `prefix` and `suffix`. If `prefix` is a palindrome, check if `reversed(suffix)` exists in the Trie. If `suffix` is a palindrome, check if `reversed(prefix)` exists.
+How to Draw (Opt): Draw a Trie of reversed words. For a search word "abc", trace "c"-&gt;"b"-&gt;"a". At each node, check if the "remaining" part of the original word in the Trie is a palindrome.
+Opt Complexity Visuals: Prefix-Suffix Search Space Tree
+How to Draw Opt Complexity: Draw a word as a split bar. Show one side being checked for "Palindromeness" and the other side being looked up in a Hash Map. $O(N \cdot K^2)$.
+Mem Vis (BF): List of all N^2 concatenated strings. $O(N^2 \cdot K)$.
+Mem Vis (Opt): Trie nodes with integer lists. Draw a tree where each node has an array of 26 pointers and a list of indices. $O(N \cdot K)$.

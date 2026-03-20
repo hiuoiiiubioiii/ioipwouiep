@@ -1,0 +1,13 @@
+ID: 3121
+Problem Title: Count the Number of Special Characters II
+Brute Force Method: For every lowercase character, scan the entire rest of the string to find its uppercase counterpart and verify no later lowercase matches exist. $O(N^2)$
+BF Complexity Visuals: Nested loops firing sequential, chaotic arrows scanning forward and backward across the string.
+How to Draw BF: Write the string. Put your finger on 'a'. Move your other finger right scanning for 'A'. If found, rescan to make sure no more 'a's exist.
+Optimised Pattern: Hash Table / Array Mapping (Single Pass)
+Opt Vis. Technique: Dual Timestamp Arrays
+Dry Run (Opt): Read string left to right. Record the *last* seen index of every lowercase char. Record the *first* seen index of every uppercase char. If `last_lower[c] &lt; first_upper[c]`, it's special.
+How to Draw (Opt): Draw two boxes of size 26. As you read the string once, write the current index into the boxes. At the end, compare the two boxes element by element.
+Opt Complexity Visuals: 1D timeline sweep + fixed constant-time check.
+How to Draw Opt Complexity: Draw a line of length N. Follow it with a tiny, fixed box representing exactly 26 constant operations. $O(N)$.
+Mem Vis (BF): Pointers moving dynamically within a double for-loop call stack.
+Mem Vis (Opt): Two arrays of size 26 (representing lowercase and uppercase tracking). $O(1)$ auxiliary space.

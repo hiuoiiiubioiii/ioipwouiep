@@ -1,0 +1,13 @@
+ID: 3215
+Problem Title: Count Triplets with Even XOR Set Bits II
+Brute Force Method: Triple nested loop generating every combination of A, B, C and checking `popcount(A^B^C)`. $O(N^3)$.
+BF Complexity Visuals: 3D Iteration Cube
+How to Draw BF: Draw a 3D cube representing axes i, j, k. Shade the entire volume to visually demonstrate the massive cubic time complexity scaling.
+Optimised Pattern: Bitwise Parity Math / Combinatorics
+Opt Vis. Technique: Probability Tree Diagram
+Dry Run (Opt): Count elements with even and odd set bits in each array. The XOR parity is even if the number of odd-parity elements chosen is 0 or 2. Multiply the combination counts.
+How to Draw (Opt): Draw three buckets for arrays A, B, C. Inside each, write the count of 'Evens' and 'Odds'. Draw paths connecting valid combinations (e.g., Even-Even-Even, Even-Odd-Odd) and multiply.
+Opt Complexity Visuals: Independent Linear Scans
+How to Draw Opt Complexity: Draw three separate horizontal lines of length N. Sum them to $O(N + M + K)$. Beside it, draw a small $O(1)$ box for the final mathematical multiplication.
+Mem Vis (BF): $O(1)$ space, but high CPU register churn.
+Mem Vis (Opt): Six scalar integer variables storing frequency counts (O(1) space).

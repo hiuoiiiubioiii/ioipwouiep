@@ -1,0 +1,13 @@
+ID: 347
+Problem Title: Top K Frequent Elements
+Brute Force Method: Count the frequency of each element in a Hash Map. Convert the map entries to a list and sort the list by frequency in descending order. Pick the first k.
+BF Complexity Visuals: Frequency Map + Global Sort
+How to Draw BF: Draw a frequency table. Then draw the table being rearranged from highest to lowest count. Label $O(N \log N)$.
+Optimised Pattern: Bucket Sort or Min-Heap
+Opt Vis. Technique: Frequency-Indexed Buckets
+Dry Run (Opt): Count frequencies in a Map. Create an array of lists where the index represents the frequency. Iterate from the end of the array to collect elements until you have k.
+How to Draw (Opt): Draw a Map (Key \rightarrow Count). Then draw a row of "buckets" indexed 1, 2, 3... Drop the keys into the bucket corresponding to their count. Scan buckets from right to left.
+Opt Complexity Visuals: Linear Frequency Distribution
+How to Draw Opt Complexity: Draw a single sweep through the frequency map and then a single sweep through the buckets. Label $O(N)$.
+Mem Vis (BF): Sorting the entire set of unique elements.
+Mem Vis (Opt): Frequency Map + Bucket Array. Draw a table and an array of linked lists. $O(N)$ space.

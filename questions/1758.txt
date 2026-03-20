@@ -1,0 +1,13 @@
+ID: 1758
+Problem Title: Minimum Changes To Make Alternating Binary String
+Brute Force Method: Generate all 2^N possible binary strings, check which ones are alternating, and find the minimum distance.
+BF Complexity Visuals: Exponential Search Tree.
+How to Draw BF: Draw a root. Branch 0 or 1 for every index. Huge tree. $O(2^N)$.
+Optimised Pattern: Greedy Comparison (2 Target States).
+Opt Vis. Technique: Target Pattern Overlay.
+Dry Run (Opt): There are only 2 possible alternating strings: "0101..." or "1010...". Count differences with "0101...". The other count is just N - \text{first\_count}.
+How to Draw (Opt): Draw the input string. Below it, write "010101...". Circle every mismatch. Count circles.
+Opt Complexity Visuals: Single Pass Comparison.
+How to Draw Opt Complexity: Draw one arrow passing over the string. Label $O(N)$.
+Mem Vis (BF): Stack frames for recursion or list of all strings.
+Mem Vis (Opt): One or two counter variables. $O(1)$ space.

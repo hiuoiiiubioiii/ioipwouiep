@@ -1,0 +1,13 @@
+ID: 1686
+Problem Title: Stone Game VI
+Brute Force Method: Backtracking to simulate every possible sequence of moves by Alice and Bob to find the optimal scores.
+BF Complexity Visuals: Game Decision Tree
+How to Draw BF: Draw a tree where each level represents a turn. Each node branches into N remaining stones. $O(N!)$.
+Optimised Pattern: Greedy (Sorting by Combined Value)
+Opt Vis. Technique: Value Sum Comparison
+Dry Run (Opt): Alice and Bob don't just pick their best; they pick the stone that denies the most to the opponent. Sort by `aliceValues[i] + bobValues[i]`.
+How to Draw (Opt): Draw a 3-column table: Alice's Value | Bob's Value | Sum. Sort the rows by Sum (desc). Mark 'A' for the first row, 'B' for second, and so on.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw a funnel (O(N log N)) leading to a simple linear sum $O(N)$.
+Mem Vis (BF): Recursive Stack: Deep stack of stone states.
+Mem Vis (Opt): 2D Array / Pair List: Draw a table of N rows and 3 columns for sorting. $O(N)$ space.

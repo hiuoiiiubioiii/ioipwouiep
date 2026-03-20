@@ -1,0 +1,13 @@
+ID: 1738
+Problem Title: Find Kth Largest XOR Coordinate Value
+Brute Force Method: For every (i, j), re-loop from (0,0) to (i,j) to calculate the XOR sum. Store all in a list and sort.
+BF Complexity Visuals: Nested Area Recalculation.
+How to Draw BF: Draw a grid. For each cell, draw a rectangle back to the origin and re-sum. $O(M^2 \cdot N^2)$.
+Optimised Pattern: 2D Prefix Sum (DP) + Quickselect/Min-Heap.
+Opt Vis. Technique: Overlapping Transparency Sheets.
+Dry Run (Opt): `dp[i][j] = matrix[i][j] ^ dp[i-1][j] ^ dp[i][j-1] ^ dp[i-1][j-1]`. Maintain a Min-Heap of size K to find the Kth largest.
+How to Draw (Opt): Draw a cell. Color its top neighbor, its left neighbor, and the diagonal. Use the 2D XOR formula to fill the grid.
+Opt Complexity Visuals: Grid Pass + Heap Maintenance.
+How to Draw Opt Complexity: Draw a grid traversal $O(\text{MN})$ and a small heap $O(\log K)$. Total $O(\text{MN} \log K)$.
+Mem Vis (BF): A huge list of MN elements.
+Mem Vis (Opt): A 2D DP table + Heap of size K. $O(\text{MN})$ space.

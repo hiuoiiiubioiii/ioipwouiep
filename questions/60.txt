@@ -1,0 +1,13 @@
+ID: 60
+Problem Title: Permutation Sequence
+Brute Force Method: Generate &amp; Sort Use backtracking to generate all N! permutations, sort them alphabetically, and return the k-th element.
+BF Complexity Visuals: The Factorial Tree
+How to Draw BF: Draw a tree that branches N! times. Note that for N=9, this is 362,880 strings. Write $O(N! \cdot N)$ time.
+Optimised Pattern: Factorial Number System (Math)
+Opt Vis. Technique: The Bucket Selection
+Dry Run (Opt): Use math to determine which digit must be at each position. For the first position, there are (N-1)! permutations for each starting digit. Use `(k-1) / (n-1)!` to pick the digit.
+How to Draw (Opt): Draw a set of digits {1, 2, 3, 4}. Use the formula to "pluck" one number out and place it in the result. Repeat with the remaining smaller set.
+Opt Complexity Visuals: Iterative Calculation
+How to Draw Opt Complexity: Draw N steps. At each step, show a small division operation and a digit removal. $O(N²)$ time (due to list removal).
+Mem Vis (BF): Draw a massive list in memory holding N! strings. $O(N! \cdot N)$ space.
+Mem Vis (Opt): Draw a small list of N digits and the result string. $O(N)$ space.

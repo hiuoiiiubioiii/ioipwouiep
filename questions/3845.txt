@@ -1,0 +1,13 @@
+ID: 3845
+Problem Title: Maximum Subarray XOR with Bounded Range (Hard)
+Brute Force Method: Generate all $O(N^2)$ subarrays, calculate the XOR for each, and check if it falls within [L, R]. Find the maximum among those that do.
+BF Complexity Visuals: A grid of XOR calculations for every possible start/end point.
+How to Draw BF: Draw an array. Draw brackets for [0,1], [0,2], [0,3]. Recalculate XOR for each. Write $O(N^2)$.
+Optimised Pattern: Prefix XOR + Binary Trie with Range Counting.
+Opt Vis. Technique: A 0/1 decision tree (Trie) where you "search" for a path that maximizes XOR while staying within the [L, R] bounds.
+Dry Run (Opt): Store prefix XORs in a Binary Trie. For each new prefix XOR, search the Trie for the path that yields the highest XOR. Use sub-tree counts to prune paths that can't result in a value between L and R.
+How to Draw (Opt): Draw a tree where every left branch is 0 and right is 1. For a number 'X', show a path descending the tree to find its binary "opposite" to maximize XOR.
+Opt Complexity Visuals: Logarithmic bit-depth searches per element.
+How to Draw Opt Complexity: Draw an array of length N. Under each, draw a tree search of depth 32. Total: $O(N \cdot 32)$ = $O(N)$.
+Mem Vis (BF): $O(1)$ memory, but $O(N^2)$ time complexity.
+Mem Vis (Opt): A Binary Trie structure taking $O(N \cdot 32)$ space to store the bits of all prefix XORs.

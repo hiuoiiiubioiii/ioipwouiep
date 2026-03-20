@@ -1,0 +1,13 @@
+ID: 1112
+Problem Title: Highest Grade For Each Student (SQL)
+Brute Force Method: Correlated Subquery. For each row, run a separate query to find the `MAX(grade)` for that specific `student_id`.
+BF Complexity Visuals: Nested Loop Scanning
+How to Draw BF: Draw a table. For every single row, draw an arrow that loops back and scans the entire table from top to bottom.
+Optimised Pattern: Window Function (ROW_NUMBER)
+Opt Vis. Technique: Partitioning and Sorting Blocks
+Dry Run (Opt): Partition the data by `student_id`. Within each partition, sort by `grade` DESC, then `course_id` ASC. Assign a row number. Filter where `row_num = 1`.
+How to Draw (Opt): Draw boxes around groups of the same `student_id`. Inside each box, draw a sorted list. Highlight the top row of each box.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Diagram
+How to Draw Opt Complexity: Draw a funnel (Partitioning), leading into several mini sorting-tree graphs (processing in parallel).
+Mem Vis (BF): Full Cartesian Product in Memory
+Mem Vis (Opt): Segmented Data Arrays (Partitions).

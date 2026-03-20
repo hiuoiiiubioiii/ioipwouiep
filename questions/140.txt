@@ -1,0 +1,13 @@
+ID: 140
+Problem Title: Word Break II
+Brute Force Method: Standard recursion to find all paths, generating all valid sentences without any result caching.
+BF Complexity Visuals: A fractal-like $O(2^N)$ tree where many branches return identical results, recalculating everything.
+How to Draw BF: Draw the recursion tree. Circle identical sub-calls (e.g., "catsanddog" calling "dog" twice) to show wasted work.
+Optimised Pattern: Backtracking + Memoization (Top-Down DP).
+Opt Vis. Technique: A shared result library. Once a substring's valid partitions are found, they are stored in a catalog for any future branch to use.
+Dry Run (Opt): Recursive function returns a List of strings. Use a Map to store substring -&gt; list_of_sentences. Check map before recursing.
+How to Draw (Opt): Draw a "Memo" table. As the recursion completes a branch, write the result list into the table. Draw arrows from future branches directly to that table entry.
+Opt Complexity Visuals: Complexity depends on the number of results, but the state-space visit is $O(N^2)$ while results could be exponential.
+How to Draw Opt Complexity: Draw a graph where nodes are indices. Show that each node's result is computed once and reused by multiple parents.
+Mem Vis (BF): A massive recursion stack with no reuse, leading to redundant list allocations.
+Mem Vis (Opt): Visualize the Hash Map storing lists of strings. Memory scales with the total length of all possible valid sentences.

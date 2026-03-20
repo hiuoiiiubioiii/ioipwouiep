@@ -1,0 +1,13 @@
+ID: 1545
+Problem Title: Find Kth Bit in Nth Binary String
+Brute Force Method: Physically generate the string S_n using the formula S_n = S_{n-1} + "1" + reverse(invert(S_{n-1})). Then return the Kth character. $O(2^N)$.
+BF Complexity Visuals: Exponential String Builder
+How to Draw BF: Draw S_1. Then draw S_2 which is twice as long. By S_{20}, the string is over 1 million characters. This will crash your memory.
+Optimised Pattern: Recursive Symmetry / Divide &amp; Conquer
+Opt Vis. Technique: The Mirror Logic
+Dry Run (Opt): Notice the string's length is 2^n - 1. If K is the middle bit, it's '1'. If K is in the first half, it's the same as S_{n-1}[k]. If K is in the second half, it's the *inverted* bit of S_{n-1} at the mirrored position.
+How to Draw (Opt): Draw a long bar. Mark the center point. If K is on the right side, "fold" the bar in half. Note that you now need to "invert" the answer. Keep folding until the bar is length 1.
+Opt Complexity Visuals: Logarithmic Depth $O(N)$
+How to Draw Opt Complexity: Draw a line of length N. Each step represents one recursive call where we decide which "half" to zoom into.
+Mem Vis (BF): Storing the full 2^N length string in memory. $O(2^N)$.
+Mem Vis (Opt): Recursive call stack depth. $O(N)$ space.

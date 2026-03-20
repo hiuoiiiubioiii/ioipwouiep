@@ -1,0 +1,13 @@
+ID: 3495
+Problem Title: Minimum Operations to Make Array Elements Zero
+Brute Force Method: For each query [l, r], explicitly construct the array and simulate the pairing of elements to divide by 4 until all are zero. $O(Q \cdot N \log(\text{max} V)$)
+BF Complexity Visuals: Nested Loop Simulation Timeline.
+How to Draw BF: Draw a horizontal query line. For each, draw N vertical bars representing elements. Draw "scissor" marks cutting bars into 1/4 size repeatedly.
+Optimised Pattern: Math + Prefix Sums of "Division Counts". $O(Q \log(\text{Range})$) or $O(Q \cdot 1)$.
+Opt Vis. Technique: Parallel Reduction "Bucket" Logic.
+Dry Run (Opt): Each number x needs h(x) = lceil log_4(x+1) rceil divisions. For a range, the answer is max(lceil (sum h(i)) / 2 rceil, max h(i)). Use prefix sums to find the total divisions instantly.
+How to Draw (Opt): Draw a number line. Mark intervals [4^0, 4^1-1], [4^1, 4^2-1], etc. Color each interval with its h(x) value. Use prefix sums to count elements in each "color block".
+Opt Complexity Visuals: Range Sum Calculation.
+How to Draw Opt Complexity: Draw a prefix sum array. For a query, draw two arrows pointing to l-1 and r. The gap represents the $O(1)$ answer calculation.
+Mem Vis (BF): Storing thousands of intermediate array states in memory.
+Mem Vis (Opt): A fixed-size 1D prefix sum array (size sim 10^5 or a sparse map).

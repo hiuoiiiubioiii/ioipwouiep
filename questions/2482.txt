@@ -1,0 +1,13 @@
+ID: 2482
+Problem Title: Difference Between Ones and Zeros in Row and Column
+Brute Force Method: For every cell (i, j) in the grid, manually iterate through its entire row and its entire column to count 1s and 0s.
+BF Complexity Visuals: Scanning Crosshair Sweep
+How to Draw BF: Draw a grid. For one cell, draw a horizontal line and a vertical line. Label $O(M\cdot N \cdot (M+N)$).
+Optimised Pattern: Precomputation (Row/Col Sum Arrays)
+Opt Vis. Technique: Marginal Accumulation Projection
+Dry Run (Opt): Pre-calculate 1s in each row and column once. Store them in 1D arrays. Use the formula: `diff = onesRow + onesCol - zerosRow - zerosCol`.
+How to Draw (Opt): Draw a grid. Outside the rows, draw a column of sums. Below the columns, draw a row of sums. Fill the grid by adding the corresponding side-sums.
+Opt Complexity Visuals: Quadratic Surface Fill
+How to Draw Opt Complexity: Draw two 1D bars (O(M+N)) and one 2D grid (O(M*N)). Label $O(M\cdot N)$.
+Mem Vis (BF): Draw the result matrix.
+Mem Vis (Opt): Draw two 1D arrays for row/col metadata. $O(M+N)$ Space.

@@ -1,0 +1,13 @@
+ID: 1935
+Problem Title: Maximum Number of Words You Can Type
+Brute Force Method: For every word in the sentence, iterate through every character in `brokenLetters` to check for any intersection.
+BF Complexity Visuals: Nested Loop Intersection
+How to Draw BF: Draw a sentence. Circle each word. For each word, draw arrows comparing its letters to a list of broken letters. $O(\text{WordCount} \\text{cdot WordLen} \\text{cdot BrokenLen})$.
+Optimised Pattern: Hash Set / Boolean Array Lookup
+Opt Vis. Technique: Set-Filtering Pipeline
+Dry Run (Opt): Store `brokenLetters` in a boolean array of size 26. Split the sentence into words. Check if any char in a word exists in the boolean array.
+How to Draw (Opt): Draw the sentence. Draw a "Forbidden Gate" (Set). Words try to pass through. If a word contains a forbidden letter, it's blocked. Count those that pass.
+Opt Complexity Visuals: Linear Stream Processing
+How to Draw Opt Complexity: Draw a single line moving through the sentence once, doing $O(1)$ checks per character. $O(N)$ time.
+Mem Vis (BF): Multiple string comparisons happening in-place without auxiliary structures.
+Mem Vis (Opt): A fixed-size array/set of 26 booleans. $O(1)$ auxiliary space.

@@ -1,0 +1,13 @@
+ID: 706
+Problem Title: Design HashMap
+Brute Force Method: Massive array of size 1,000,001 storing values at the exact index of the key.
+BF Complexity Visuals: Massive Grid
+How to Draw BF: Draw a massive continuous array block. Time is $O(1)$ but space is $O(10^6)$.
+Optimised Pattern: Array of Linked Lists (Chaining)
+Opt Vis. Technique: Buckets and Chains
+Dry Run (Opt): Hash key to get bucket index. Go to array[index]. Traverse linked list. Update if key exists, append if it doesn't.
+How to Draw (Opt): Draw a vertical array. From an index, draw horizontal boxes connected by arrows (Linked List nodes: [key|val|next]).
+Opt Complexity Visuals: Average vs Worst-Case graph
+How to Draw Opt Complexity: Draw a graph. X-axis = elements, Y-axis = time. Draw flat line for $O(1)$ average, and a diagonal spike for $O(N)$ worst-case.
+Mem Vis (BF): Giant continuous memory array (O(Max_Key)).
+Mem Vis (Opt): Array of pointers + scattered heap-allocated node boxes (O(N + K)).

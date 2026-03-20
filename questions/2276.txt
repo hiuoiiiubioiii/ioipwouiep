@@ -1,0 +1,13 @@
+ID: 2276
+Problem Title: Count Integers in Covered Intervals
+Brute Force Method: Boolean Array / SetMaintain a massive boolean array or a Hash Set. For every `add(left, right)`, loop from `left` to `right` and set the values to true. Count the true values for the query.
+BF Complexity Visuals: Unit-by-Unit Marking
+How to Draw BF: Draw a number line from 1 to 10^9. For an interval [5, 1000], draw 995 individual dots. Show why this crashes memory/time for large ranges.
+Optimised Pattern: Segment Tree (Dynamic) / Churning Map
+Opt Vis. Technique: Interval Merging / Overlap Collapse
+Dry Run (Opt): Use a `TreeMap` (in Java) or `SortedDict` to store non-overlapping intervals. When adding `[L, R]`, find all existing intervals that overlap, merge them into one large interval, and update the global count.
+How to Draw (Opt): Draw two existing bars: [10, 20] and [30, 40]. Draw a new bar [15, 35] above them. Show the three bars "melting" together into one single bar [10, 40]. Subtract the old counts and add the new merged length.
+Opt Complexity Visuals: Logarithmic Search &amp; Merge
+How to Draw Opt Complexity: Draw an $O(\log N)$ step to find the overlap start. Draw an $O(K)$ step to delete K overlapping intervals. Show that each interval is added/deleted once, making it amortized $O(\log N)$.
+Mem Vis (BF): Allocating a bit-set of size 10^9 (requires ~125MB) and iterating through it linearly.
+Mem Vis (Opt): A balanced BST or TreeMap storing only the endpoints of disjoint intervals (O(N) where N is number of intervals).

@@ -1,0 +1,13 @@
+ID: 2090
+Problem Title: K Radius Subarray Averages
+Brute Force Method: For every index `i`, manually sum all elements from `i-k` to `i+k` and divide by `2k+1`.
+BF Complexity Visuals: Sliding Sum Overlap
+How to Draw BF: Draw the array. For each element, draw a window of size 2k+1. Recalculate the sum from scratch for every window. $O(N \cdot K)$.
+Optimised Pattern: Sliding Window (Fixed Size) / Prefix Sums
+Opt Vis. Technique: Moving Average Window
+Dry Run (Opt): Calculate the initial sum of the first `2k+1` elements. As the window moves right, subtract the element leaving the left and add the one entering the right.
+How to Draw (Opt): Draw the array. Place a bracket of size 2k+1. As you move the bracket, draw a minus sign on the left edge and a plus sign on the right edge.
+Opt Complexity Visuals: Single Pass with Two Pointers
+How to Draw Opt Complexity: Draw one straight line (O(N)). Each element is added/subtracted once. Total Time $O(N)$.
+Mem Vis (BF): Nested variables for repeated summation.
+Mem Vis (Opt): A single `long` variable for the running sum. Space $O(N)$ for result array.

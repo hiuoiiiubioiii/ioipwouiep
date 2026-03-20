@@ -1,0 +1,13 @@
+ID: 3361
+Problem Title: Shift Distance Between Two Strings
+Brute Force Method: For each character in the string, try all possible shift steps (clockwise and counter-clockwise) while summing the costs at each unit step.
+BF Complexity Visuals: Cyclic Graph Traversal
+How to Draw BF: Draw a circle with 26 dots ('a' to 'z'). To move from 'a' to 'c', draw arrows for every unit step ('a'-&gt;'b'-&gt;'c') and label each with a cost. Repeat for all N characters. $O(N x 26)$.
+Optimised Pattern: Prefix Sums (Cost Optimization)
+Opt Vis. Technique: Segmented Circular Track
+Dry Run (Opt): Precompute the prefix sum of costs for shifting from 'a' to any character. The cost from X to Y is a simple subtraction (handling circular wrap-around).
+How to Draw (Opt): Draw the circle again. This time, mark each segment with a fixed weight. Use a "cut" and "subtract" method on the circle's circumference to find distances instantly.
+Opt Complexity Visuals: Constant String Sweep
+How to Draw Opt Complexity: Draw a single line of length N. Each node in the line has exactly two arrows (Clockwise vs. Counter-clockwise Math). Proves $O(N)$.
+Mem Vis (BF): Recursive calls or repeated loops per character.
+Mem Vis (Opt): Two arrays of size 26 (Prefix sums for forward/backward costs). $O(1)$ relative to N.

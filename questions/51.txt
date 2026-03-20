@@ -1,0 +1,13 @@
+ID: 51
+Problem Title: N-Queens
+Brute Force Method: Generate All Permutations Generate every possible way to place N queens on an N×N board (N² choose N) and check each board for validity.
+BF Complexity Visuals: The Combinatorial Explosion
+How to Draw BF: Draw an empty grid. Note that for N=8, there are over 4 billion combinations. Draw a tiny "Check" box that fails almost every time. $O(N!)$ time.
+Optimised Pattern: Backtracking (Row-by-Row + Bitsets)
+Opt Vis. Technique: The Conflict Radar
+Dry Run (Opt): Place a queen in row 1, then row 2, etc. Use three boolean arrays (or bitsets) to track "locked" columns, positive diagonals, and negative diagonals. If a spot is locked, skip it.
+How to Draw (Opt): Draw an N×N board. Place a 'Q'. Draw vertical and diagonal red lines emanating from it. Move to the next row and only place a 'Q' in the white (unshaded) spaces.
+Opt Complexity Visuals: Pruned Recursive Tree
+How to Draw Opt Complexity: Draw a tree where each level is a row. Show many branches ending early (pruning) because of diagonal conflicts. Time complexity is $O(N!)$.
+Mem Vis (BF): Generating and storing billions of invalid board configurations.
+Mem Vis (Opt): Draw three small boolean arrays: `cols[N]`, `diag1[2N]`, `diag2[2N]`. Space is $O(N)$ for the stack and state tracking.

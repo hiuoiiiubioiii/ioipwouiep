@@ -1,0 +1,13 @@
+ID: 2113
+Problem Title: Elements in Array After Removing and Replacing Elements
+Brute Force Method: Simulate the exact removal and replacement minute by minute, physically copying arrays.
+BF Complexity Visuals: A series of shrinking and growing arrays over time.
+How to Draw BF: Draw array at t=0, below it t=1 with one less item, down to t=n, then growing again. $O(Q \cdot N)$.
+Optimised Pattern: Math / Modulo Arithmetic.
+Opt Vis. Technique: A cyclical timeline (sine wave or clock face).
+Dry Run (Opt): Cycle is `2 * N`. For query `(time, index)`, find `time % (2*N)`. Math checks if it's in the shrink or grow phase.
+How to Draw (Opt): Draw a V-shape. Top-left is full array, bottom is empty, top-right is full again. Map the `time` to a point on this V to find array size.
+Opt Complexity Visuals: $O(1)$ per query.
+How to Draw Opt Complexity: A single dot representing a constant time math formula.
+Mem Vis (BF): Multiple $O(N)$ array copies generated sequentially.
+Mem Vis (Opt): $O(1)$ extra space, purely mathematical index mapping.

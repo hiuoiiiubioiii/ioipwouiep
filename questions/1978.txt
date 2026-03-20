@@ -1,0 +1,13 @@
+ID: 1978
+Problem Title: Employees Whose Manager Left the Company (SQL)
+Brute Force Method: Use a dependent subquery for every row to check if the `manager_id` exists in the `employee_id` column.
+BF Complexity Visuals: Row-by-Row Membership Scan
+How to Draw BF: Draw the table. For one row, draw a loop that scans the entire `employee_id` column of the same table. $O(N^2)$.
+Optimised Pattern: Self-Anti-Join / WHERE NOT IN
+Opt Vis. Technique: Venn Diagram Exclusion
+Dry Run (Opt): Filter rows where salary &lt; 30,000. Use `WHERE manager_id NOT IN (SELECT employee_id FROM Employees)`.
+How to Draw (Opt): Draw two circles. Circle 1: Employees with salary &lt; 30k. Circle 2: All Employee IDs. Highlight parts of Circle 1 not in Circle 2.
+Opt Complexity Visuals: Hash Join / Index Seek
+How to Draw Opt Complexity: Draw a sorted index. Show the engine quickly skipping rows that have a manager match. $O(N \log N)$ or $O(N)$.
+Mem Vis (BF): Repeated full-table scans in database cache.
+Mem Vis (Opt): In-memory Hash Table built from the `employee_id` column for fast lookups.

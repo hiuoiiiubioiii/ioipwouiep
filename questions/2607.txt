@@ -1,0 +1,13 @@
+ID: 2607
+Problem Title: Make K-Subarray Sums Equal
+Brute Force Method: Brute force trial and error of values to satisfy sliding window sums.
+BF Complexity Visuals: System of Linear Equations
+How to Draw BF: Write out the mathematical equations for every window sum, showing overlapping and exploding complexity.
+Optimised Pattern: Graph Cycles + Median Math
+Opt Vis. Technique: Cyclic Permutation Rings
+Dry Run (Opt): Group indices that jump by K (modulo N). For each isolated group, find the median value, and make all items in that ring equal to the median.
+How to Draw (Opt): Draw the array indices in a circle. Draw lines jumping by K. Pull out connected components into separate lists, find median of each.
+Opt Complexity Visuals: Logarithmic sorting bars
+How to Draw Opt Complexity: Draw N bars being grouped into smaller arrays, then sorted. Label $O(N \log N)$ for the sorting steps of components.
+Mem Vis (BF): Heavy recursive tree stack
+Mem Vis (Opt): Disjoint set / separate temporary arrays for each cycle.

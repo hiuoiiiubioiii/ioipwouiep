@@ -1,0 +1,13 @@
+ID: 2545
+Problem Title: Sort the Students by Their Kth Score
+Brute Force Method: Create a new list of objects or pairs containing the student's index and their k-th score. Sort this list, then reconstruct the matrix. $O(M \log M + M\cdot N)$.
+BF Complexity Visuals: A mapping process where the original matrix is disassembled and rebuilt based on a secondary index.
+How to Draw BF: Draw the matrix. Circle the k-th column. Write those numbers on a separate sticky note with the row ID. Sort the sticky notes. Re-arrange the rows of the matrix to match.
+Optimised Pattern: Custom Comparator / Lambda Sorting.
+Opt Vis. Technique: A "Row-Swap" operation where rows are treated as single units and reordered based on a specific "Key" column.
+Dry Run (Opt): Use the built-in sort function on the matrix. Provide a custom comparison rule: "Compare Row A and Row B based on RowA[k] and RowB[k] in descending order."
+How to Draw (Opt): Draw the matrix. Look only at column k. Identify the largest number in that column—move that entire row to the top. Identify the second largest—move that row to second. Repeat.
+Opt Complexity Visuals: $O(M \log M)$ where M is the number of students (rows). Sorting takes M log M comparisons, each comparison is $O(1)$.
+How to Draw Opt Complexity: Draw a vertical arrow pointing at column k. Draw a "Sorting Machine" symbol that takes the whole rows as input and outputs them reordered.
+Mem Vis (BF): $O(M\cdot N)$ to store the intermediate object mapping.
+Mem Vis (Opt): $O(1)$ extra space if the sorting is done in-place (excluding the matrix itself).

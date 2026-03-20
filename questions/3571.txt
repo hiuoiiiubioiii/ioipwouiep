@@ -1,0 +1,13 @@
+ID: 3571
+Problem Title: Find the Shortest Superstring II (Easy)
+Brute Force Method: Try every permutation of strings and concatenate them with maximum possible overlap.
+BF Complexity Visuals: Factorial Orderings.
+How to Draw BF: Draw N strings. Branch into every possible order (N!). For each order, calculate the overlap between adjacent strings.
+Optimised Pattern: Greedy Overlap Selection.
+Opt Vis. Technique: Overlap Merge-Chain.
+Dry Run (Opt): Pick two strings with the maximum overlap, merge them into one, and repeat until only one string remains.
+How to Draw (Opt): Draw strings as rectangles. Shade the overlapping parts. Draw an arrow showing two rectangles "snapping" together into one.
+Opt Complexity Visuals: $O(N^3 \cdot L^2)$.
+How to Draw Opt Complexity: Draw an N x N matrix of overlaps. Highlight the maximum value being picked and the matrix being reduced.
+Mem Vis (BF): Permutation Storage: Draw millions of string orderings being generated in RAM.
+Mem Vis (Opt): Distance Matrix: Draw a single 2D array storing the overlap lengths between every pair of strings.

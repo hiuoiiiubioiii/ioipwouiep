@@ -1,0 +1,13 @@
+ID: 3535
+Problem Title: Unit Conversion II (Med)
+Brute Force Method: BFS/DFS for every query to find the conversion multiplier, handling disconnected subgraphs dynamically.
+BF Complexity Visuals: Blind Maze Running.
+How to Draw BF: Draw a map of units. Start at unit A, wander around multiplying edge weights until hitting unit B. If blocked, return -1.0.
+Optimised Pattern: Graph Precomputation (Anchored Weights) / Component Ratios.
+Opt Vis. Technique: Anchored Weight Networks (Star Graphs).
+Dry Run (Opt): For each isolated group of units, pick a "root" node and assign it a value of 1.0. Precalculate every other node's value relative to that root. Query = value(A) / value(B).
+How to Draw (Opt): Draw isolated groups of stars. The center is 1.0. Branch nodes have floating point values. A query draws a line between two nodes, instantly dividing their values if they share a star.
+Opt Complexity Visuals: Linear Build, Constant Query.
+How to Draw Opt Complexity: Draw an $O(V+E)$ initial setup sweeping the graph. Draw Q queries pointing instantly to a division operation. $O(V+E+Q)$.
+Mem Vis (BF): Recursive Call Stacks: Draw stacks holding intermediate conversion floats during deep graph walks.
+Mem Vis (Opt): Component &amp; Ratio Arrays: Draw two flat arrays: `component_id[node]` and `relative_value[node]`.

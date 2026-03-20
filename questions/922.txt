@@ -1,0 +1,13 @@
+ID: 922
+Problem Title: Sort Array By Parity II
+Brute Force Method: Create two separate lists: one for all even numbers and one for all odd numbers. Then, iterate and alternate picking from each list.
+BF Complexity Visuals: $O(N)$ Time, $O(N)$ Space. Two distinct sorting bins being merged into a third container.
+How to Draw BF: Draw the original array. Below it, draw two "holding pens" (Even/Odd). Draw a third "Final" array and arrows showing the items moving into specific slots.
+Optimised Pattern: Two Pointers (In-place)
+Opt Vis. Technique: Two runners: one on "Even Street" (indices 0, 2, 4) and one on "Odd Street" (indices 1, 3, 5). They only swap when both are standing on the wrong type of number.
+Dry Run (Opt): `i = 0` (even), `j = 1` (odd). While `i &lt; N` and `j &lt; N`: find an `i` where `A[i]` is odd and a `j` where `A[j]` is even. Swap `A[i]` and `A[j]`.
+How to Draw (Opt): Draw the array with indices labeled. Draw a pointer 'E' jumping by 2 and 'O' jumping by 2. Draw a swap arc between the mismatched elements.
+Opt Complexity Visuals: $O(N)$. A single pass where each element is visited once by its respective pointer.
+How to Draw Opt Complexity: Draw a horizontal array. Draw two arrows (Even/Odd) both moving left-to-right in leaps, meeting at the end.
+Mem Vis (BF): $O(N)$ auxiliary space. Three full-sized array blocks drawn on paper.
+Mem Vis (Opt): $O(1)$. No extra arrays. Draw the single original array being shuffled internally.

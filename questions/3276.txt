@@ -1,0 +1,13 @@
+ID: 3276
+Problem Title: Select Cells in Grid with Maximum Score
+Brute Force Method: Backtracking: For every row, try picking every possible value and recurse, checking if the value was used before. $O(2^R x C)$.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a root. Branch out for every cell in Row 1. From those, branch for Row 2. Show the tree width becoming unmanageable almost immediately.
+Optimised Pattern: Bitmask DP + Sorting Values
+Opt Vis. Technique: Value-Driven State Transition
+Dry Run (Opt): Group coordinates by their cell values and sort values descending. Use a bitmask where the i^th bit represents if Row i has been used. dp(val_idx, mask) is the max score.
+How to Draw (Opt): List all values from the grid in descending order. For each value, try assigning it to one of the rows it appears in (if that row's bit in the mask is 0).
+Opt Complexity Visuals: Masked Subproblem Matrix
+How to Draw Opt Complexity: Draw a grid where rows = Unique Values (V) and columns = 2^Rows bitmask states. Label as $O(V \cdot 2^\text{Rows} \\text{cdot Rows})$.
+Mem Vis (BF): Deep recursion stack storing full grid snapshots.
+Mem Vis (Opt): A DP table of size V x 2^Rows (where Rows <= 10). $O(1024 x V)$.

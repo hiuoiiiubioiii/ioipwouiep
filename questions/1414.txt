@@ -1,0 +1,13 @@
+ID: 1414
+Problem Title: Find Min Fibonacci Numbers Whose Sum Is K
+Brute Force Method: Subset Sum Backtracking. Generate all Fibonacci numbers up to K. Try all possible combinations of them to find which subset sums exactly to K with the fewest elements.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw a binary tree deciding "Include Fib[i]" or "Exclude Fib[i]" for all ~45 Fibonacci numbers up to K. Massive $O(2^45)$ search space.
+Optimised Pattern: Greedy Algorithm (Coin Change variation)
+Opt Vis. Technique: Largest Denomination Subtraction
+Dry Run (Opt): Generate Fibonacci numbers up to K. Greedily subtract the largest possible Fibonacci number from K. Repeat with the remainder until K equals 0. Count the subtractions.
+How to Draw (Opt): Draw a number line ending at K. Draw the largest possible backward jump using a Fibonacci number. From that landing spot, draw the next largest valid backward jump, until hitting 0.
+Opt Complexity Visuals: Logarithmic Generation + Scan
+How to Draw Opt Complexity: Draw a loop generating Fibs $O(\log K)$ -&gt; an arrow -&gt; a backwards loop $O(\log K)$. Total $O(\log K)$ time.
+Mem Vis (BF): Massive Recursion Stack
+Mem Vis (Opt): Draw a simple dynamic array (List/Vector) holding about 45 integers (since Fib(45) &gt; 10^9).

@@ -1,0 +1,13 @@
+ID: 203
+Problem Title: Remove Linked List Elements
+Brute Force Method: Iterate linearly. Check `head.next.val`, handle head removal separately.
+BF Complexity Visuals: Linear Step Function: $O(N)$ Time.
+How to Draw BF: Draw a chain of blocks. Put an 'X' over the ones being skipped. Draw a timeline axis underneath mapping N blocks to N seconds.
+Optimised Pattern: Dummy Node + Linear Traversal
+Opt Vis. Technique: Linked List Node-and-Pointer Diagram
+Dry Run (Opt): Point finger at `curr`. If next is target, erase `curr.next` arrow and redraw it pointing to `curr.next.next`.
+How to Draw (Opt): Draw rectangles with [Val|Next] split. Draw curved arrows for pointers. Cross out arrows and draw new ones bypassing the target values.
+Opt Complexity Visuals: Pointer Traversal Graph: $O(N)$ Time, $O(1)$ Space.
+How to Draw Opt Complexity: Draw N nodes. Draw an arrow underneath showing 1 full pass (O(N)). Draw a small constant box for space.
+Mem Vis (BF): List nodes with no extra space. Just standard memory heap boxes.
+Mem Vis (Opt): One extra "Dummy" memory box at the start, pointing to the head. Constant pointer re-assignments.

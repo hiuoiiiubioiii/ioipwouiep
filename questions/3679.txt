@@ -1,0 +1,13 @@
+ID: 3679
+Problem Title: Minimum Discards to Balance Inventory (Med)
+Brute Force Method: Try discarding every possible subset of items (2^N) and check if the remaining inventory is "balanced".
+BF Complexity Visuals: Sub-inventory Power Set.
+How to Draw BF: Draw a list of items. Branch: "Keep item 1" or "Discard item 1". For 40 items, you have 1 trillion combinations.
+Optimised Pattern: Greedy with Frequency Maps or Dynamic Programming. Count the excess of each item type and discard only the necessary surplus.
+Opt Vis. Technique: Surplus "Trimming".
+Dry Run (Opt): Imagine you need exactly 3 of every item. If you have 5 apples, you must discard 2. If you have 2 oranges, you must discard both (because you can't reach 3).
+How to Draw (Opt): Draw a frequency table. Write "Target Count = K". For each item, if `count &gt; K`, subtract `count - K` from inventory. If `count &lt; K`, subtract all. Sum the subtractions.
+Opt Complexity Visuals: Frequency Aggregation Pass.
+How to Draw Opt Complexity: Draw one arrow scanning the inventory $O(N)$. Draw a second pass over the 26/K categories. Total $O(N)$.
+Mem Vis (BF): Massive recursion trees stored in memory.
+Mem Vis (Opt): A Hash Map or Frequency Array. Space $O(\text{Unique}_\text{Items})$.

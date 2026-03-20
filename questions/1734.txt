@@ -1,0 +1,13 @@
+ID: 1734
+Problem Title: Decode XORed Permutation
+Brute Force Method: Backtracking or Guessing the first element `perm[0]` and decoding the whole array to see if it's a valid permutation of 1..N.
+BF Complexity Visuals: Guessing/Backtracking Tree.
+How to Draw BF: Draw branches for every possible starting number. Verify permutation at each leaf. $O(N!)$.
+Optimised Pattern: Bitwise Logic (Total XOR Property).
+Opt Vis. Technique: Mathematical Balance Scale.
+Dry Run (Opt): Total XOR of 1..N is `A`. The XOR of encoded elements at odd positions is `B`. Therefore, `perm[0] = A ^ B`. Once you have `perm[0]`, decode the rest using Q1720 logic.
+How to Draw (Opt): Write 1 to N. XOR them into a result box (Total). Write encoded items. Circle every other item. XOR them. Subtract (XOR) the two boxes to find the missing first element.
+Opt Complexity Visuals: Two Linear Passes.
+How to Draw Opt Complexity: Draw two arrows over the input/output arrays. Label $O(N)$.
+Mem Vis (BF): Stack frames for backtracking.
+Mem Vis (Opt): Output array of size N. $O(N)$ space.

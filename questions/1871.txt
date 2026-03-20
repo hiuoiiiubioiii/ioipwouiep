@@ -1,0 +1,13 @@
+ID: 1871
+Problem Title: Jump Game VII
+Brute Force Method: Recursive DFS: From index i, check every j \in [i + minJump, i + maxJump]. If s[j] == '0', recurse.
+BF Complexity Visuals: Exponential Branching Tree.
+How to Draw BF: Draw a root node. Branch into multiple paths for every possible jump. Note overlapping subproblems and $O(2^N)$ depth.
+Optimised Pattern: Dynamic Programming + Sliding Window (Prefix Sum of Reachable Nodes).
+Opt Vis. Technique: Sliding "Jump Zone" window.
+Dry Run (Opt): Maintain `reachable_count`. For current i, if s[i] == '0' and `reachable_count &gt; 0` in its valid jump source range, mark i as reachable.
+How to Draw (Opt): Draw the string. Below it, draw a window that slides. If the window contains at least one 'True', and the current character is '0', mark current as 'True'.
+Opt Complexity Visuals: Single Pass Linear Scan.
+How to Draw Opt Complexity: Draw an arrow from 0 \to N. Mark $O(N)$ with a sliding window moving in parallel.
+Mem Vis (BF): Deep Recursion Stack (O(N) depth).
+Mem Vis (Opt): Boolean DP array of size N (can be optimized with a queue).

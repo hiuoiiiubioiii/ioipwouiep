@@ -1,0 +1,13 @@
+ID: 2546
+Problem Title: Apply Bitwise Operations to Make Strings Equal
+Brute Force Method: Simulate every possible bitwise operation (s[i]  OR  s[j]) and (s[i]  XOR  s[j]) on all pairs of indices to see if s can transform into target.
+BF Complexity Visuals: A state-space search tree where each node is a version of the string, branching into N^2 possibilities per level.
+How to Draw BF: Draw the string. Pick two bits, apply the rule, and draw the new string. Repeat until you find the target or run out of new strings.
+Optimised Pattern: Logical Invariance (Existence of '1').
+Opt Vis. Technique: A simple "Presence Filter" where the only thing that matters is if at least one '1' exists to "seed" the operations.
+Dry Run (Opt): Check if '1' exists in s and if '1' exists in target. The operations allow a '1' to create more '1's or delete others, but they cannot create a '1' from an all-zero string, nor can they delete the very last '1'. Thus, (s.contains('1') == target.contains('1')).
+How to Draw (Opt): Write s and target. Simply circle any '1' you see in both. If both have at least one circle, or neither has a circle, it's possible.
+Opt Complexity Visuals: $O(N)$ to check for the character '1' in both strings.
+How to Draw Opt Complexity: Draw two horizontal lines. Draw a single arrow over each. If a '1' is hit, stop and move to the next line.
+Mem Vis (BF): Massive recursion or queue for BFS state tracking.
+Mem Vis (Opt): $O(1)$ - Just two boolean flags.

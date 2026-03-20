@@ -1,0 +1,13 @@
+ID: 253
+Problem Title: Meeting Rooms II
+Brute Force Method: Check every possible number of rooms (1 to N) and see if the schedule is valid.
+BF Complexity Visuals: Incremental Simulation: $O(N^2)$.
+How to Draw BF: Draw N timelines. For each new meeting, try placing it in Timeline 1, then 2, etc., until it fits.
+Optimised Pattern: Min-Heap (Priority Queue) of End Times
+Opt Vis. Technique: Dynamic Room Allocation (Chronological)
+Dry Run (Opt): Sort by start time. Use a Min-Heap to track when rooms become free. If start time \ge heap top, reuse room (pop and push new end). Else, add new room.
+How to Draw (Opt): Draw a vertical "Room" axis and horizontal "Time" axis. Draw bars. When a new bar starts, if no existing bar has ended, draw it on a new row.
+Opt Complexity Visuals: Heap-Efficient Sweep: $O(N \log N)$.
+How to Draw Opt Complexity: Draw the timeline. Above it, draw a "Heap" tree that changes shape as you move across the time axis.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Heap Structure: Draw a binary tree containing end-times. Max size of tree = Max concurrent meetings.

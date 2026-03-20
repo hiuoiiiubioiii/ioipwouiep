@@ -1,0 +1,13 @@
+ID: 1731
+Problem Title: The Number of Employees Which Report to Each Employee (SQL)
+Brute Force Method: Nested subqueries to count reports for every employee ID, then another subquery to calculate the average age.
+BF Complexity Visuals: Recursive Loopback Search.
+How to Draw BF: Draw a list of names. For each name, scan the entire list again to find anyone listing them as 'manager'. Very slow.
+Optimised Pattern: Self-Join on ID = Reports_To + Group By.
+Opt Vis. Technique: Organization Chart Linkage.
+Dry Run (Opt): Join Table A (Managers) with Table B (Reports) where `A.employee_id = B.reports_to`. Group by Manager ID and calculate `count(B.id)` and `avg(B.age)`.
+How to Draw (Opt): Draw two identical tables. Draw a line from the 'reports_to' column in table 1 to the 'employee_id' in table 2. Circle the resulting pairs.
+Opt Complexity Visuals: Hash Join Aggregation.
+How to Draw Opt Complexity: Draw a funnel where rows are sorted by manager ID. Tally reports as they pass through. $O(N \log N)$.
+Mem Vis (BF): Multiple memory scans for subqueries.
+Mem Vis (Opt): A single temporary hash table for grouping manager IDs. $O(N)$ space.

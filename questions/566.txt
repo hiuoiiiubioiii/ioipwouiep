@@ -1,0 +1,13 @@
+ID: 566
+Problem Title: Reshape the Matrix
+Brute Force Method: Create a flat list of all M \times N elements by iterating through the original matrix, then iterate through the flat list to fill a new R \times C matrix.
+BF Complexity Visuals: Double-pass traversal with intermediate storage. $O(M \\text{times} N)$.
+How to Draw BF: Draw a 2 \times 2 matrix. Draw an arrow pouring the numbers into a long pipe. Draw the pipe pouring numbers into a 1 \times 4 matrix.
+Optimised Pattern: Direct Index Mapping (Modulo Arithmetic).
+Opt Vis. Technique: A single conveyor belt. As items come off the old grid, they are immediately placed into the new grid without ever touching the floor (intermediate list).
+Dry Run (Opt): Check if M \times N == R \times C. Loop i from 0 to (M \times N - 1). Original element is `mat[i/N][i%N]`. Place it in `res[i/C][i%C]`.
+How to Draw (Opt): Write out the original matrix coordinates. Show the math: `index / total_cols` for row and `index % total_cols` for column. Map these directly to the new dimensions.
+Opt Complexity Visuals: Single pass with no intermediate storage. $O(M \\text{times} N)$.
+How to Draw Opt Complexity: Draw a single arrow weaving through the original matrix and simultaneously appearing in the new one.
+Mem Vis (BF): A flat list/array of size M \times N.
+Mem Vis (Opt): $O(1)$ auxiliary space (excluding the result matrix).

@@ -1,0 +1,13 @@
+ID: 3547
+Problem Title: Maximum Sum of Edge Values in a Graph (Hard)
+Brute Force Method: Generate all possible spanning trees or subgraphs and calculate the sum of edges.
+BF Complexity Visuals: Combinatorial Graph Explosion.
+How to Draw BF: Draw nodes. Draw every possible edge combination. Tally sums for the millions of valid structures. $O(2^E)$.
+Optimised Pattern: Greedy (Kruskal's) or Tree DP (if constrained).
+Opt Vis. Technique: Edge Weight Ranking.
+Dry Run (Opt): Sort all edges by weight descending. Add edges to the graph unless they violate a constraint (like degree limit or cycle).
+How to Draw (Opt): Draw a list of edges sorted by weight. Draw nodes as dots. Connect nodes using the heaviest edges first until you hit a limit.
+Opt Complexity Visuals: $O(E \log E)$ Sorting.
+How to Draw Opt Complexity: Draw a sorted list of edges. Draw a single pass through the list with a DSU 'Check-and-Merge' step.
+Mem Vis (BF): Subgraph Lists: Draw heaps of individual edge-list objects representing different graph configurations.
+Mem Vis (Opt): DSU / Adjacency Map: Draw a parent array for connectivity or a map of node degrees.

@@ -1,0 +1,13 @@
+ID: 2801
+Problem Title: Count Stepping Numbers in Range
+Brute Force Method: Iterate from low to high. For each number, check if the absolute difference between every adjacent digit is 1. $O(N \cdot D)$.
+BF Complexity Visuals: Linear Range Digits Scan
+How to Draw BF: Draw a number line. For every number, pull its digits apart and check the "steps". With a range of 10^100, this is impossible to finish.
+Optimised Pattern: Trillions of Digit Arrays (Visualizing the CPU bottleneck from converting numbers to strings repeatedly).
+Opt Vis. Technique: Digit Dynamic Programming (Digit DP)
+Dry Run (Opt): Recursive Digit Decision Tree
+How to Draw (Opt): Calculate count(high) - count(low-1). Use a DP state: (index, last_digit, is_less, is_started). Place digits 0-9 while ensuring they differ by 1 from last_digit and stay within the upper bound.
+Opt Complexity Visuals: Draw a tree where each level is a digit position. Branches only exist if the next digit is prev ± 1. Highlight the "Tight" path along the number's limit.
+How to Draw Opt Complexity: $O(\text{Length} \cdot 10 \cdot 2)$
+Mem Vis (BF): Draw a 3D table: 100 (Digits) x 10 (Last Digit) x 2 (Tight). Label it $O(D)$ to show it scales with length, not value.
+Mem Vis (Opt): Memoization Table (Draw a 3D array in the heap storing pre-calculated counts for sub-problems).

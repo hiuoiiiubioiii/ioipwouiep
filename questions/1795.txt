@@ -1,0 +1,13 @@
+ID: 1795
+Problem Title: Rearrange Products Table (SQL)
+Brute Force Method: Select all rows. In the application layer, loop through each row and if store1, store2, or store3 prices exist, create a new record for each.
+BF Complexity Visuals: Application-Level Row Multiplying.
+How to Draw BF: Draw one wide row. Draw three arrows pointing to three narrow rows. $O(N)$.
+Optimised Pattern: SQL UNION ALL (Unpivoting).
+Opt Vis. Technique: The "Stacking Transformation".
+Dry Run (Opt): Use `SELECT id, 'store1' AS store, store1 AS price FROM Table WHERE store1 IS NOT NULL` and `UNION ALL` for each store column.
+How to Draw (Opt): Draw a table with 3 price columns. Draw a vertical funnel for each column. The funnels stack the results on top of each other.
+Opt Complexity Visuals: Multi-Pass Filter &amp; Merge.
+How to Draw Opt Complexity: Draw three parallel arrows filtering the same data source. Label $O(N)$.
+Mem Vis (BF): $O(N)$ data loaded into memory.
+Mem Vis (Opt): SQL engine streaming. $O(N)$ output rows.

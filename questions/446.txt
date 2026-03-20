@@ -1,0 +1,13 @@
+ID: 446
+Problem Title: Arithmetic Slices II - Subsequence
+Brute Force Method: Exhaustive Subsequences Generate all 2^N subsequences and check if each is arithmetic.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a binary tree with N levels. Every leaf is a potential subsequence. $O(2^N \cdot N)$.
+Optimised Pattern: DP with Map Matrix Use an array of HashMaps `dp[i]`, where `dp[i][diff]` stores count of slices ending at i with difference `diff`.
+Opt Vis. Technique: Sparse Multi-Table
+Dry Run (Opt): Visualize as a sparse 2D table where Rows are Indices and Columns are "Differences." Each cell stores a count.
+How to Draw (Opt): Draw an array. Below each element, draw a small vertical list of (diff: count) pairs. Draw arrows from previous indices' lists to current.
+Opt Complexity Visuals: Area Calculation
+How to Draw Opt Complexity: Draw a rectangle of N \times N (max possible differences). $O(N^2)$ time.
+Mem Vis (BF): Bitset Huge memory for all 2^N combinations.
+Mem Vis (Opt): Map of Maps Draw N distinct hashmap "clouds" in memory. $O(N^2)$ space.

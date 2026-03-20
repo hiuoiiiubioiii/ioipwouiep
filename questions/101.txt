@@ -1,0 +1,13 @@
+ID: 101
+Problem Title: Symmetric Tree
+Brute Force Method: Create a complete mirrored copy of the left subtree and compare it node-by-node with the right subtree.
+BF Complexity Visuals: Two overlapping full binary tree structures compared at $O(N)$ operations.
+How to Draw BF: Draw the original tree, sketch a mirrored clone beside it, and draw straight lines connecting identical nodes to show the $O(N)$ verification work.
+Optimised Pattern: Two-pointer recursive DFS (or BFS with queue).
+Opt Vis. Technique: Two points of light originating at the root and moving outward symmetrically down the left and right branches.
+Dry Run (Opt): Trace the left pointer moving left while the right pointer moves right. Then left moves right while right moves left.
+How to Draw (Opt): Draw a single tree. Use two different colored pens (e.g., red and blue) to trace the mirrored paths simultaneously from the root downward.
+Opt Complexity Visuals: A single recursion tree where each node represents a pair of nodes being evaluated simultaneously, scaling linearly.
+How to Draw Opt Complexity: Draw a recursion tree, but label each circle with a pair of nodes (e.g., `(2L, 2R)`). Count the pairs to prove $O(N)$ time.
+Mem Vis (BF): Visualize two completely separate tree structures occupying different blocks in heap memory.
+Mem Vis (Opt): Visualize the call stack frames stacking up to the height of the tree $O(h)$, passing two pointers per frame.

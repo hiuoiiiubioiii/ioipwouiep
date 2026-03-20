@@ -1,0 +1,13 @@
+ID: 3570
+Problem Title: Find Books with No Available Copies (Easy)
+Brute Force Method: Double loop: for every book in the library, scan the entire "checked-out" list to see if all copies are gone.
+BF Complexity Visuals: Linear Search per Item.
+How to Draw BF: Draw a list of Books. Draw a list of Loans. For each Book, draw an arrow checking every entry in the Loans list. $O(B \cdot L)$.
+Optimised Pattern: Hash Map (Inventory Counter).
+Opt Vis. Technique: Checklist Tally.
+Dry Run (Opt): Build a map of `TotalCopies`. Scan the `Loans` list and subtract. Any book with `RemainingCount == 0` is the answer.
+How to Draw (Opt): Draw a two-column table (BookID, Copies). As you read the loan log, cross out a copy. Circle rows that reach zero.
+Opt Complexity Visuals: $O(B + L)$.
+How to Draw Opt Complexity: Draw one arrow scanning Books, then one arrow scanning Loans. $O(1)$ map access for each.
+Mem Vis (BF): Multiple Filtered Lists: Draw newly created lists of "Available" vs "Unavailable" books repeatedly.
+Mem Vis (Opt): Tally Map: Draw a single small table mapping Book IDs to their current integer count.

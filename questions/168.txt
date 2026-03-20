@@ -1,0 +1,13 @@
+ID: 168
+Problem Title: Excel Sheet Column Title
+Brute Force Method: Iteratively subtract 1 from the number and try to map it to A-Z, but failing to handle the "Base 26 without Zero" logic correctly.
+BF Complexity Visuals: A "Broken Ladder" visualization where the transition from 'Z' to 'AA' fails.
+How to Draw BF: Draw a number line. Try to label them A, B... Z, then show the confusion when trying to figure out what comes after 26.
+Optimised Pattern: Base-26 Conversion (with Offset Correction).
+Opt Vis. Technique: "Reversing the Alphabet Clock." It’s like converting to binary or hex, but you subtract 1 at each step to align 1-26 with 0-25.
+Dry Run (Opt): While n &gt; 0: n--; char is `(n % 26) + 'A'`. Prepend to result. n = n / 26.
+How to Draw (Opt): Write the number. Draw a box for "Remainder" and "Quotient." Perform the math, write the letter, and repeat with the new quotient.
+Opt Complexity Visuals: $O(\log_26 N)$ time. The number of digits is proportional to the logarithm of the value.
+How to Draw Opt Complexity: Draw a shrinking bar. Each step reduces the size by a factor of 26, showing a very fast $O(\log N)$ termination.
+Mem Vis (BF): Manual list of every possible column title string stored in a table.
+Mem Vis (Opt): Visualize a single string buffer or character array growing to a maximum of 7-10 characters for huge inputs.

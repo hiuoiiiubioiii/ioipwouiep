@@ -1,0 +1,13 @@
+ID: 47
+Problem Title: Permutations II
+Brute Force Method: Permutations 1 + Hash Set Run the exact same brute force algorithm as Q46, but push the final arrays into a global Hash Set to filter out the duplicates caused by repeating numbers.
+BF Complexity Visuals: The Duplicate Funnel
+How to Draw BF: Draw the massive N! tree generating arrays. Show multiple identical arrays (like `[1, 1, 2]`) hitting a Hash Set wall, where the duplicates bounce off and die.
+Optimised Pattern: Sort + Backtracking (Used Array / Skip)
+Opt Vis. Technique: The Smart Branch Pruner
+Dry Run (Opt): Sort the array first. Keep a boolean `used` array. If you are about to use `arr[i]`, but `arr[i] == arr[i-1]` AND `!used[i-1]`, skip it! You already explored this exact path.
+How to Draw (Opt): Draw a sorted array `[1, 1, 2]`. Branch off the first `1`. When the loop reaches the second `1`, draw a thick red "X" through its branch, writing "Duplicate Sibling Skipped".
+Opt Complexity Visuals: Severed Factorial Tree
+How to Draw Opt Complexity: Draw the N! tree, but physically cross out massive subtrees right at the root level. Time is $O(N \cdot N!)$ in the worst case (all unique), but drastically faster in reality.
+Mem Vis (BF): Draw a massive Hash Set holding thousands of redundant array copies.
+Mem Vis (Opt): Draw the original array, a `used` boolean array of size N, and a recursion stack of size N. Space is strictly $O(N)$.

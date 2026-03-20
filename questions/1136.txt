@@ -1,0 +1,13 @@
+ID: 1136
+Problem Title: Parallel Courses
+Brute Force Method: Try all permutations of courses and check if the prerequisite order is respected.
+BF Complexity Visuals: Factorial Permutation Tree
+How to Draw BF: Draw 3 courses. Show 3! = 6 possible sequences. For N courses, show N! branches.
+Optimised Pattern: Topological Sort (Kahn's Algorithm / BFS)
+Opt Vis. Technique: Layered Dependency Slicing
+Dry Run (Opt): Count in-degrees for all nodes. Put nodes with 0 in-degree into a queue (Level 1). Process queue, decrement in-degree of neighbors. Nodes hitting 0 go to next level.
+How to Draw (Opt): Draw the graph. Next to each node, write its current "In-Degree". Cross out nodes as they reach 0 and move them to a "Current Semester" box.
+Opt Complexity Visuals: Linear Graph Scan $O(V + E)$
+How to Draw Opt Complexity: Draw a timeline where each course and each edge is touched exactly once.
+Mem Vis (BF): Adjacency Matrix $O(V^2)$
+Mem Vis (Opt): Adjacency List + In-degree Array + Queue. Draw a 1D array and a list of neighbors.

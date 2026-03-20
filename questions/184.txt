@@ -1,0 +1,13 @@
+ID: 184
+Problem Title: Department Highest Salary
+Brute Force Method: Join all tables, then for every row, check if that salary is the maximum in its specific department by querying the department again.
+BF Complexity Visuals: A "Deep Nest" diagram where every row of the joined result triggers a department-wide aggregate scan.
+How to Draw BF: Draw the joined table. For row 1, draw a sub-table of its department and find the max. Repeat for every row.
+Optimised Pattern: Join with a GROUP BY subquery or Window Function.
+Opt Vis. Technique: "Champions of the Room." Each department (room) identifies its highest salary, and those individuals are then matched with the master list.
+Dry Run (Opt): 1. Find max salary per `DepartmentId`. 2. Join this result back to the `Employee` table on both `DepartmentId` and `Salary`.
+How to Draw (Opt): Draw tables grouped by Dept. Highlight the top row in each. Draw an arrow from these top rows to the final result set.
+Opt Complexity Visuals: $O(N)$ assuming indexes on `DepartmentId` and `Salary`.
+How to Draw Opt Complexity: Draw a partitioned line. Mark the peak point in each partition to show localized $O(N)$ work.
+Mem Vis (BF): Massive temp table creation for every individual row's max-check.
+Mem Vis (Opt): Visualize a small Hash Table in memory storing only `DeptID -&gt; MaxSalary` pairs.

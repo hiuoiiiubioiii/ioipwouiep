@@ -1,0 +1,13 @@
+ID: 2158
+Problem Title: Amount of New Area Painted Each Day
+Brute Force Method: For each day, iterate through the given interval `[start, end]`. Use a boolean array to mark cells as painted. Only count if not marked.
+BF Complexity Visuals: Painting over a wall where some spots are already wet.
+How to Draw BF: Draw a 50,000-cell line. For day 1, shade cells 1-5. For day 2, try shading 3-7, but only count 6-7. Write $O(N \\text{cdot Range})$.
+Optimised Pattern: Merge Intervals / Segment Tree / Jump Pointers (DSU).
+Opt Vis. Technique: A "Skip List" where you leap over already painted segments.
+Dry Run (Opt): Use DSU to point each index to its next unpainted neighbor. When painting index `i`, count it, then `parent[i] = find(i + 1)`.
+How to Draw (Opt): Draw a number line. If you paint a segment, draw an arched "jump" arrow from the start to the end of that segment. Next time you land in it, follow the jump immediately.
+Opt Complexity Visuals: Amortized $O(N + \text{Range})$.
+How to Draw Opt Complexity: A horizontal line with "teleportation" paths that shorten the distance of the scan.
+Mem Vis (BF): $O(N \\text{cdot Range})$ nested loops.
+Mem Vis (Opt): $O(\text{Range})$ array for DSU or Segment Tree nodes.

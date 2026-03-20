@@ -1,0 +1,13 @@
+ID: 738
+Problem Title: Monotone Increasing Digits
+Brute Force Method: Iterate backwards from N to 0, checking every single number to see if its digits are non-decreasing.
+BF Complexity Visuals: Linear Count-Down
+How to Draw BF: Draw a number line. Start at N and tick backwards one by one, checking digits at every step. $O(N \cdot \log N)$.
+Optimised Pattern: Greedy Digit Manipulation
+Opt Vis. Technique: The "Cliff" Correction
+Dry Run (Opt): Scan digits left-to-right. Find the first "cliff" where `digits[i] &gt; digits[i+1]`. Decrement `digits[i]`, then turn all following digits to '9'. Re-check back for cascading cliffs.
+How to Draw (Opt): Write the number. Circle the first digit that is larger than its neighbor. Draw an arrow changing it to -1 and arrows changing all right-side digits to 9.
+Opt Complexity Visuals: Single Pass Sweep
+How to Draw Opt Complexity: Draw the digits as a line. Draw one arrow moving left-to-right to find the cliff, and one moving right-to-left to fix it. $O(Log N)$.
+Mem Vis (BF): $O(1)$ if not counting the string conversion.
+Mem Vis (Opt): Char array of digits (O(Log N)).

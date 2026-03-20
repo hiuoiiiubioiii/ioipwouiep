@@ -1,0 +1,13 @@
+ID: 988
+Problem Title: Smallest String Starting From Leaf
+Brute Force Method: Generate every possible string from leaf to root, store them in a list, sort the list, and return the first one.
+BF Complexity Visuals: $O(N \cdot H)$ or higher. Storing and sorting many full-length paths.
+How to Draw BF: Draw a tree. From every leaf, draw an arrow to the root, writing the resulting string next to the leaf. Highlight the alphabetically smallest.
+Optimised Pattern: DFS with Path Tracking (Bottom-Up Logic)
+Opt Vis. Technique: "The Lexicographical Filter." As you traverse, build the string. When you hit a leaf, compare the current path (reversed) with the global minimum.
+Dry Run (Opt): Recursive `dfs(node, path)`: add current char to `path`. If leaf, `res = min(res, reverse(path))`. Recurse left and right.
+How to Draw (Opt): Draw a tree. At each leaf, draw a speech bubble with its path string. Draw a "Champion" box that holds only the smallest string seen so far, updating as the DFS progresses.
+Opt Complexity Visuals: $O(N \cdot H)$ because string concatenation and comparison take time proportional to the height of the tree.
+How to Draw Opt Complexity: Draw a tree with a single path highlighted, and a small box labeled `smallest` that changes as the traversal moves to different leaves.
+Mem Vis (BF): $O(N \cdot H)$ to store all leaf-to-root strings.
+Mem Vis (Opt): $O(H)$ recursion stack. Draw a vertical column of function calls, each holding a partial string.

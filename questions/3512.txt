@@ -1,0 +1,13 @@
+ID: 3512
+Problem Title: Minimum Operations to Make Array Sum Divisible by K (Easy)
+Brute Force Method: Generate all subsets to remove/modify, checking if sum % K == 0.
+BF Complexity Visuals: Subset Power Set Tree.
+How to Draw BF: Draw a binary tree. Each level decides to keep or modify an element. Check mod K at all 2^N leaves.
+Optimised Pattern: Modular Arithmetic &amp; Hash Map (Prefix Modulos).
+Opt Vis. Technique: Circular Modulo Clock.
+Dry Run (Opt): Calculate total sum % K. Target is to remove subarrays matching this remainder. Map prefix sums to the clock face.
+How to Draw (Opt): Draw a circle with K tick marks. Plot running prefix sums on the clock. Draw chords between identical tick marks to find valid subarrays.
+Opt Complexity Visuals: Linear Scan with Constant Lookups.
+How to Draw Opt Complexity: Draw an array of size N. Underneath, draw a single hash map box with arrows pointing to it in $O(1)$ time.
+Mem Vis (BF): Subset Arrays: Draw thousands of disjointed mini-arrays scattered across memory.
+Mem Vis (Opt): Frequency Map: Draw a small, fixed-size table (size K) mapping remainder keys to index values.

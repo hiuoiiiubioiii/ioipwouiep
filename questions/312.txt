@@ -1,0 +1,13 @@
+ID: 312
+Problem Title: Burst Balloons
+Brute Force Method: Backtracking / Permutations. Try bursting balloon 1 first, then recurse. Try balloon 2, recurse. Generates all possible bursting sequences.
+BF Complexity Visuals: N! Permutation Tree Explosion
+How to Draw BF: Draw a root node with N balloons. Draw N branches downward (representing the first burst). Below each, draw N-1 branches. Show the tree width exploding instantly to represent $O(N!)$.
+Optimised Pattern: Dynamic Programming (Divide and Conquer with Memoization)
+Opt Vis. Technique: Reverse Sub-problem Interval Merging
+Dry Run (Opt): Reverse your thinking: instead of picking the *first* balloon to burst, pick the *last* balloon to burst in the interval (i, j). Its neighbors are locked as nums[i] and nums[j]. Coins = nums[i]*nums[k]*nums[j] + left_subproblem + right_subproblem.
+How to Draw (Opt): Draw an array padded with 1s at the ends. Draw a bracket from index i to j. Pick a balloon k in the middle. Draw a curved line from i to k, and k to j.
+Opt Complexity Visuals: 2D DP Matrix Filling
+How to Draw Opt Complexity: Draw an N x N grid. Draw arrows showing how you fill the diagonal first (subproblems of length 1), then the next diagonal (length 2), up to the top right corner. $O(N^3)$.
+Mem Vis (BF): Deep call stack box of height N, but branching factor N! causing massive overhead.
+Mem Vis (Opt): 2D DP Matrix block: Draw an N x N grid. Shade the upper triangle of the matrix to show where the memoized answers are stored. $O(N^2)$ space.

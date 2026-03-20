@@ -1,0 +1,13 @@
+ID: 2380
+Problem Title: Time Needed to Rearrange a Binary String
+Brute Force Method: Repeatedly scan the string. Every time you see "01", change it to "10". Count how many full passes (seconds) it takes until no "01" remains.
+BF Complexity Visuals: Step-by-Step Simulation (O(N^2))
+How to Draw BF: Draw the string. Circle every "01". Rewrite the string with those changed to "10". Count that as 1 second. Repeat until no circles can be drawn.
+Optimised Pattern: Dynamic Programming / Mathematical Greedy
+Opt Vis. Technique: Leading Zero Delay Tracking
+Dry Run (Opt): Iterate from left to right. Keep track of the number of zeros seen so far (`zeros`). If you hit a '1' and `zeros &gt; 0`, the time it reaches its spot is `max(prev_time + 1, zeros)`.
+How to Draw (Opt): Draw the string. Count the zeros behind every '1'. Imagine the '1's are cars moving left. If a '1' is blocked by another '1', it has to wait 1 extra second. Otherwise, it takes as many seconds as there are zeros in front of it.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. One pass calculates the "wait time" for each '1'.
+Mem Vis (BF): Draw a full copy of the string for every second of the simulation.
+Mem Vis (Opt): Draw two Integer variables: `seconds` and `zeros_count`.

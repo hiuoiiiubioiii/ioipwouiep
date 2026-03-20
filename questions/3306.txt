@@ -1,0 +1,13 @@
+ID: 3306
+Problem Title: Count of Substrings Containing Every Vowel and K Consonants II
+Brute Force Method: Generate all possible substrings, manually count vowels and consonants for each one.
+BF Complexity Visuals: Start-End Matrix Grid
+How to Draw BF: Draw an N x N grid (start vs end index). Fill every cell with the tally of vowels/consonants. This visually proves $O(N^3)$ or $O(N^2)$ work.
+Optimised Pattern: Sliding Window: exact(k) = atLeast(k) - atLeast(k+1)
+Opt Vis. Technique: Expanding &amp; Shrinking Brackets
+Dry Run (Opt): Expand right pointer until valid. Shrink left pointer to count minimum valid windows. Subtract the result of `atLeast(k+1)` from `atLeast(k)`.
+How to Draw (Opt): Draw the string. Place physical brackets [ ] representing pointers. Keep a tally box for a,e,i,o,u and consonants. Shift brackets and update the tally.
+Opt Complexity Visuals: Double Pointer Linear Track
+How to Draw Opt Complexity: Draw a single straight line (N). Draw L and R arrows. Move them exclusively rightward. They traverse the line at most twice, proving $O(N)$.
+Mem Vis (BF): Creating thousands of temporary string variables or slices in memory.
+Mem Vis (Opt): A 5-slot Hash Map/Array for vowels and a single integer counter for consonants (O(1) space).

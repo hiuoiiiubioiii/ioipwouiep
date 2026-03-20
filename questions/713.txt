@@ -1,0 +1,13 @@
+ID: 713
+Problem Title: Subarray Product Less Than K
+Brute Force Method: Nested loops. For every starting index, multiply numbers sequentially until the product &gt;= k.
+BF Complexity Visuals: Nested Iteration Bracket
+How to Draw BF: Draw the array. Draw a bracket starting at 0 expanding right. Then a new bracket at 1 expanding right. $O(N^2)$.
+Optimised Pattern: Sliding Window
+Opt Vis. Technique: Caterpillar / Accordion Window
+Dry Run (Opt): Start Left=0, Right=0. Multiply `product *= arr[Right]`. While `product &gt;= k`, divide by `arr[Left]` and move Left forward. Add `Right - Left + 1` to total.
+How to Draw (Opt): Draw the array. Draw a box around [L, R]. Use a green right-pointing arrow for R expanding, and a red right-pointing arrow for L contracting when the limit is breached.
+Opt Complexity Visuals: Two Independent Trackers
+How to Draw Opt Complexity: Draw an array line of length N. Draw two markers (L, R) traversing it strictly left-to-right. $O(N)$ time.
+Mem Vis (BF): Single counter variable.
+Mem Vis (Opt): Three integer boxes (Left, Right, Product) - $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 843
+Problem Title: Guess the Word
+Brute Force Method: Pick a word at random. Guess it. If not the answer, remove just that one word and repeat.
+BF Complexity Visuals: Linear Elimination. $O(N \\text{times} 10)$.
+How to Draw BF: Draw a list of 1000 words. Cross out one. Pick another. Cross out another. This would take too many guesses (limit is 10).
+Optimised Pattern: Minimax / Information Theory (Heuristic Guessing).
+Opt Vis. Technique: Shrinking the Search Space (Sieve).
+Dry Run (Opt): Pick the word that has the most matches with others (highest overlap). Guess it. If the master returns k matches, throw away all words that DON'T have exactly k matches with your guess.
+How to Draw (Opt): Draw a large circle of dots. Pick one dot. Draw lines to all dots that match it in k places. Erase all dots NOT connected by those lines. The circle shrinks rapidly.
+Opt Complexity Visuals: Probability-weighted Reduction. $O(10 \\text{times} N)$.
+How to Draw Opt Complexity: Draw a funnel. 1000 words enter. 1 guess pass = 100 words left. 2 guess passes = 10 words left.
+Mem Vis (BF): Full list scan: Draw the original array repeatedly.
+Mem Vis (Opt): Candidate List: Draw a list that gets filtered and replaced in each iteration.

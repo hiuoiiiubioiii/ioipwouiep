@@ -1,0 +1,13 @@
+ID: 2391
+Problem Title: Minimum Amount of Time to Collect Garbage
+Brute Force Method: Simulate three separate trucks. For each house, count the garbage types and move the truck one house at a time, calculating travel time repeatedly.
+BF Complexity Visuals: Triple Linear Simulation (O(3 * N))
+How to Draw BF: Draw three truck icons (M, P, G). For each house, draw an arrow moving the truck, then a tiny sub-scan to count the letters in the house string.
+Optimised Pattern: Prefix Sums + Last Occurrence Tracking
+Opt Vis. Technique: Cumulative Travel "Milestone"
+Dry Run (Opt): Calculate the prefix sum of travel times. For each garbage type (M, P, G), find its total count and the index of its **last** occurrence. Total time = (Sum of all garbage counts) + (Prefix Sum of travel up to each last index).
+How to Draw (Opt): Draw a timeline of houses with travel times between them. Mark the last house where "Metal" appears. Draw one long arrow from the start to that last house. Repeat for Paper and Glass. Add the lengths of those three arrows to the total garbage count.
+Opt Complexity Visuals: Two Linear Passes (O(N))
+How to Draw Opt Complexity: Draw a horizontal line. One pass to find the "Finish Lines" for each truck, and one pass to sum the travel costs up to those lines.
+Mem Vis (BF): Draw three separate arrays tracking every individual truck's movement history.
+Mem Vis (Opt): Draw three Integer variables (`lastM`, `lastP`, `lastG`) and one Prefix Sum Array of travel times.

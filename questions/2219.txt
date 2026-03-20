@@ -1,0 +1,13 @@
+ID: 2219
+Problem Title: Maximum Sum Score of Array
+Brute Force Method: Repeated Subarray SumsFor every single index `i`, run an inner loop to sum elements from 0 to `i`, and another inner loop to sum elements from `i` to N-1.
+BF Complexity Visuals: Overlapping Subarray Sweeps
+How to Draw BF: Draw the array. Point to index `i`. Draw a sweeping arrow left to 0, and a sweeping arrow right to N-1. Move the pointer and redraw both sweeps again.
+Optimised Pattern: Prefix Sums / Running Totals
+Opt Vis. Technique: Running Total Accumulator
+Dry Run (Opt): Calculate the total sum of the array first. Traverse left-to-right maintaining a `running_left_sum`. The `right_sum` is instantly `total_sum - running_left_sum + current_val`.
+How to Draw (Opt): Draw the array. Write the Total Sum at the top. Below the array, keep a running sum as you move right. Calculate the right sum by doing basic subtraction on paper.
+Opt Complexity Visuals: Two Parallel Timelines
+How to Draw Opt Complexity: Draw a timeline for the initial Total Sum pass $O(N)$. Draw a second parallel timeline for the Left/Right evaluation pass $O(N)$. Total = $O(N)$.
+Mem Vis (BF): Re-evaluating dynamic sums in temporary variables inside an $O(N^2)$ loop.
+Mem Vis (Opt): Two massive integers (64-bit to prevent overflow): `total_sum` and `running_left_sum` (O(1) space).

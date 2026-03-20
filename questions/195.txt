@@ -1,0 +1,13 @@
+ID: 195
+Problem Title: Tenth Line
+Brute Force Method: Read the file line by line using a counter variable. When count equals 10, print the line and continue (or stop).
+BF Complexity Visuals: A "Blind Crawler" that must count every step even if it only cares about step 10.
+How to Draw BF: Draw a ladder. Draw a climber touching every rung: 1, 2, 3... 10. Show the climber stopping at 10.
+Optimised Pattern: sed or tail + head.
+Opt Vis. Technique: "The Jump Shot." Tools like sed can address a specific line index directly using the underlying file system's stream.
+Dry Run (Opt): sed -n '10p' file.txt. The '-n' suppresses output, and '10p' prints only line 10.
+How to Draw (Opt): Draw a stack of 20 papers. Draw a single arrow pointing directly to the 10th paper from the top.
+Opt Complexity Visuals: $O(L)$ where L is the number of lines to reach the 10th. It stops immediately after line 10.
+How to Draw Opt Complexity: Draw a line representing the file. Cut it off at the 10th mark to show that lines 11+ are never processed.
+Mem Vis (BF): Storing the entire file in an array and then accessing `arr[9]`.
+Mem Vis (Opt): Visualize a "Streaming Buffer." Only the current line being counted is in memory at any time (O(1) space).

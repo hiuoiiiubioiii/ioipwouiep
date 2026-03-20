@@ -1,0 +1,13 @@
+ID: 2594
+Problem Title: Minimum Time to Repair Cars
+Brute Force Method: Try every possible distribution of cars to mechanics. For each distribution, calculate the max time taken by any mechanic and find the minimum. $O(\text{Exponential})$.
+BF Complexity Visuals: A partition problem of distributing N identical items into M distinct bins.
+How to Draw BF: 10 cars, 2 mechanics (ranks 4, 2). Try (5, 5) cars. Time = max(4*5^2, 2*5^2). Try (4, 6) cars. Find the best split.
+Optimised Pattern: Binary Search on Answer Space (Time).
+Opt Vis. Technique: A "Capacity Check" visual: given a fixed amount of time, we calculate the maximum cars each mechanic can handle and see if the sum meets the goal.
+Dry Run (Opt): The answer range is [1, min(ranks) * cars^2]. For a mid-point T, a mechanic with rank r can repair sqrt(T/r) cars. If sum(sqrt(T/r)) &gt;= total_cars, then T is possible; try smaller time. Else, try larger.
+How to Draw (Opt): Pick a time (e.g., 100 minutes). If rank is 4, 4*n^2 = target cars, 100 is "Safe." Try 50.
+Opt Complexity Visuals: $O(N \log(\text{MaxTime})$). Linear check inside a logarithmic search.
+How to Draw Opt Complexity: Draw a timeline of possible times. Draw brackets halving the range. For each "Guess," draw a list of mechanics and their car capacities.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ - Constant space besides the input storage.

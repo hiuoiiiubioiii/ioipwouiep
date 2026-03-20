@@ -1,0 +1,13 @@
+ID: 395
+Problem Title: Longest Substring with At Least K Repeating Characters
+Brute Force Method: Check every possible substring (O(N^2)) and for each, count character frequencies (O(26)) to see if all present characters meet the k requirement.
+BF Complexity Visuals: Triangular Window Scan
+How to Draw BF: Draw a string. Draw a bracket for every start and end. For each bracket, draw a frequency table. $O(26 \cdot N^2)$.
+Optimised Pattern: Divide and Conquer (Split on Invalid Characters)
+Opt Vis. Technique: Recursive Pivot Pruning
+Dry Run (Opt): Find a character in the string that appears &lt; k times. That character **cannot** be in the final substring. Use it as a pivot to split the string into parts and recurse on each part.
+How to Draw (Opt): Draw a long bar (the string). Find a "bad" character like 'z' in the middle. Draw a line through 'z', breaking the bar into two smaller bars. Repeat until all characters in a bar are valid.
+Opt Complexity Visuals: Recursive Sub-problem Tree
+How to Draw Opt Complexity: Draw a tree where each node is a string. If a node has an invalid char, it branches into its left and right substrings. $O(N^2)$ worst, $O(N \log N)$ average.
+Mem Vis (BF): N^2 substring objects.
+Mem Vis (Opt): Recursion stack depth. Draw a vertical stack of "String Fragment" boxes. $O(N)$.

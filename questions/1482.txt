@@ -1,0 +1,13 @@
+ID: 1482
+Problem Title: Minimum Number of Days to Make m Bouquets
+Brute Force Method: Simulation. For every day D from 1 to `max(bloomDay)`, check the entire array to see which flowers have bloomed. See if you can form M bouquets of size K.
+BF Complexity Visuals: Linear Day-by-Day Search
+How to Draw BF: Draw a calendar. For every single day, redraw the flower array and check for contiguous segments of size K. Label $O(\text{maxDay} \cdot N)$.
+Optimised Pattern: Binary Search on Answer Range
+Opt Vis. Technique: Feasibility Threshold Testing
+Dry Run (Opt): Binary search for the day D between `min(bloomDay)` and `max(bloomDay)`. For a given D, use a greedy linear scan to count how many K-sized bouquets can be formed.
+How to Draw (Opt): Draw a slider labeled "Days". Pick the middle day. Check the array: "Can I make M bouquets?". If Yes, move slider Left; if No, move slider Right. Repeat.
+Opt Complexity Visuals: Logarithmic Range Search
+How to Draw Opt Complexity: Draw a binary tree search path of depth log(maxDay). At each node, a linear scan $O(N)$. Total $O(N \log(\text{maxDay})$).
+Mem Vis (BF): Full simulation state storage
+Mem Vis (Opt): N/A. Just a few integer variables (low, high, mid, current_count). Space $O(1)$.

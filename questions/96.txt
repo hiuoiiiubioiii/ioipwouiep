@@ -1,0 +1,13 @@
+ID: 96
+Problem Title: Unique Binary Search Trees
+Brute Force Method: Pure Recursion For each number i from 1 to n, treat it as the root and recursively calculate the number of unique left subtrees and right subtrees, then multiply them.
+BF Complexity Visuals: The Exploding Recursive Tree
+How to Draw BF: Draw a root node N=4. Branch into roots 1, 2, 3, 4. For root 3, show a left branch for N=2 and right for N=1. Point out how often G(2) is recalculated. $O(3^N)$.
+Optimised Pattern: Dynamic Programming (Catalan Number)
+Opt Vis. Technique: The Accumulating List
+Dry Run (Opt): G(n) depends on the results of G(0) dots G(n-1). Build the solution iteratively: G(n) = sum_i=1^n G(i-1) x G(n-i).
+How to Draw (Opt): Draw an array `dp` from 0 to N. Fill `dp[0]=1, dp[1]=1`. For `dp[3]`, show three pairs of multiplications: (dp[0] * dp[2]) + (dp[1] * dp[1]) + (dp[2] * dp[0]).
+Opt Complexity Visuals: Nested Summation Scan
+How to Draw Opt Complexity: Draw two pointers (i and j) moving within an array of size N. i moves from 1 to N, and j scans 0 to i. Total operations = 1+2+dots+N. Time: $O(N^2)$.
+Mem Vis (BF): A massive recursion stack with 3^N depth and no memory.
+Mem Vis (Opt): Draw a single 1D array of size N+1. Space: $O(N)$.

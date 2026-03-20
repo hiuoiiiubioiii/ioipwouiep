@@ -1,0 +1,13 @@
+ID: 1848
+Problem Title: Minimum Distance to the Target Element
+Brute Force Method: Linear scan through the entire array to find all indices where nums[i] == target, then calculate min distance.
+BF Complexity Visuals: Full array linear scan.
+How to Draw BF: Draw an array. Draw an arrow from 0 \dots N-1. Mark $O(N)$.
+Optimised Pattern: Two-way expansion from 'start' index.
+Opt Vis. Technique: Concentric search rings.
+Dry Run (Opt): Check `start`, then `start-1` and `start+1`, then `start-2` and `start+2`. Stop as soon as target is found.
+How to Draw (Opt): Draw an array with a pointer at `start`. Draw arrows pointing outwards in both directions simultaneously. Stop at the first target.
+Opt Complexity Visuals: Linear bounded scan.
+How to Draw Opt Complexity: Draw an arrow starting at `start` and ending at index i. Mark $O(N)$ worst case, but $O(1)$ best case.
+Mem Vis (BF): List to store all matching indices.
+Mem Vis (Opt): $O(1)$ stack variables.

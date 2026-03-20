@@ -1,0 +1,13 @@
+ID: 1745
+Problem Title: Palindrome Partitioning IV
+Brute Force Method: Try all possible ways to split the string into 3 parts (two nested loops for split points). For each part, check if it's a palindrome.
+BF Complexity Visuals: Triple-Split Naive Check.
+How to Draw BF: Draw string. Draw two slicing lines. For each segment, check palindromes. $O(N^3)$ or $O(N^4)$.
+Optimised Pattern: 2D Dynamic Programming (Palindrome Table).
+Opt Vis. Technique: Symmetry Grid (Boolean Matrix).
+Dry Run (Opt): Build a boolean `isPal[i][j]` table where `isPal[i][j]` is true if `s[i...j]` is a palindrome. Then loop over all `i, j` such that `0 &lt; i &lt; j &lt; n-1` and check if `isPal[0][i-1]`, `isPal[i][j]`, and `isPal[j+1][n-1]` are all true.
+How to Draw (Opt): Draw an N x N grid. Fill it diagonally. Once filled, pick two split points `i` and `j`. Check three coordinates in your grid. If all are 'T', result is 'T'.
+Opt Complexity Visuals: Matrix Precomputation + Double Loop.
+How to Draw Opt Complexity: Draw an N x N grid $O(N^2)$. Draw a double loop over the string $O(N^2)$. Total $O(N^2)$.
+Mem Vis (BF): None, just split pointers.
+Mem Vis (Opt): 2D boolean array `isPal[N][N]`. $O(N^2)$ space.

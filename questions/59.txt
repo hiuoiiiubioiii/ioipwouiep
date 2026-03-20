@@ -1,0 +1,13 @@
+ID: 59
+Problem Title: Spiral Matrix II
+Brute Force Method: Hardcoded Directions Attempt to write if-else logic for every single turn based on fixed coordinate boundaries (difficult to generalize).
+BF Complexity Visuals: The Manual Maze
+How to Draw BF: Draw a grid and manually trace a path. Note how complex the logic becomes without a systemic "boundary" approach.
+Optimised Pattern: Boundary Contraction
+Opt Vis. Technique: The Concentric Square Shrink
+Dry Run (Opt): Define Top, Bottom, Left, and Right boundaries. Fill the Top row and move the Top boundary down. Fill the Right col and move the Right boundary left. Repeat until full.
+How to Draw (Opt): Draw a square grid. Draw four arrows (T, B, L, R) pointing inward. As you finish a side, physically move that arrow's line one step toward the center.
+Opt Complexity Visuals: Perfect Grid Filling
+How to Draw Opt Complexity: Draw an N x N grid. Shade every cell exactly once. Total operations = N². $O(N²)$ time.
+Mem Vis (BF): N/A - Standard simulation is required to build the output.
+Mem Vis (Opt): Draw the resulting N x N matrix. No extra auxiliary data structures are used. $O(1)$ extra space (ignoring output).

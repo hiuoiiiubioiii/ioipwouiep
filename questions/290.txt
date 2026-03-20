@@ -1,0 +1,13 @@
+ID: 290
+Problem Title: Word Pattern
+Brute Force Method: Split string into words. Use nested loops to check if every pattern char matches the same word and vice versa.
+BF Complexity Visuals: Quadratic Search: $O(n^2)$.
+How to Draw BF: Draw a pattern "abba" and words "dog cat cat dog". Draw lines connecting every 'a' to 'dog', but then re-verify every 'a' again later.
+Optimised Pattern: Two Hash Maps / One Map + Indexing
+Opt Vis. Technique: Bi-directional Mapping
+Dry Run (Opt): Map `pattern[i]` to `words[i]` AND `words[i]` to `pattern[i]`. If either mapping conflicts (e.g., 'a' already points to 'fish' but now sees 'dog'), return false.
+How to Draw (Opt): Draw two tables side-by-side. Table A: `char -&gt; word`. Table B: `word -&gt; char`. Check for collisions in both tables during a single pass.
+Opt Complexity Visuals: Linear Scan: $O(n)$ where n is length of pattern.
+How to Draw Opt Complexity: Draw a single arrow moving across both the pattern and the words simultaneously.
+Mem Vis (BF): Temporary word lists.
+Mem Vis (Opt): Double Map Storage: Draw two small hash tables. Space: $O(W)$ where W is the number of unique words.

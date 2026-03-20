@@ -1,0 +1,13 @@
+ID: 2694
+Problem Title: Event Emitter (JS)
+Brute Force Method: Using a single global array for all events and scanning the whole array for every emission.
+BF Complexity Visuals: Global Event Scan
+How to Draw BF: Draw a giant list of mixed events. To trigger "click", scan every entry to find "click" listeners. $O(N)$.
+Optimised Pattern: Hash Map of Sets (Callback Registry)
+Opt Vis. Technique: Subscription Mapping
+Dry Run (Opt): Use a `Map` where keys are event names and values are `Sets` (or Arrays) of callback functions. `subscribe` returns an object with an `unsubscribe` method that removes the specific callback.
+How to Draw (Opt): Draw a Filing Cabinet (the Map). Each drawer is labeled with an event name. Inside each drawer is a list of phone numbers (callbacks). When an event happens, call all numbers in that drawer.
+Opt Complexity Visuals: $O(1)$ lookup, $O(K)$ emit
+How to Draw Opt Complexity: Draw a direct Map lookup $O(1)$ followed by a loop through K listeners.
+Mem Vis (BF): Zombie listeners (memory leaks)
+Mem Vis (Opt): Map-based registry with automatic cleanup via the unsubscribe closure.

@@ -1,0 +1,13 @@
+ID: 17
+Problem Title: Letter Combinations of a Phone Number
+Brute Force Method: Iterative Cross-Product Create an array of strings. For every new digit, multiply the existing array size by 3 or 4 and append the new letters.
+BF Complexity Visuals: Exploding Array
+How to Draw BF: Draw a small array `["a", "b", "c"]`. Draw an arrow to a massive new array where every element is copied 3 times to append the next letters. $O(4^N)$ space chaos.
+Optimised Pattern: Backtracking (DFS)
+Opt Vis. Technique: Decision Tree (Depth-First)
+Dry Run (Opt): Build combinations character by character. Go as deep as possible (length of input digits), record the word, then backtrack one step and try the next letter.
+How to Draw (Opt): Draw a root node. Branch out to 'a', 'b', 'c'. From 'a', branch to 'd', 'e', 'f'. Trace a line down to "ad", then back up to 'a', then down to "ae".
+Opt Complexity Visuals: Tree Leaf Counter
+How to Draw Opt Complexity: Draw a tree with a branching factor of 4 (worst case for digits 7 and 9). Draw the depth as N. Note that you visit 4^N leaves. Time is $O(4^N \cdot N)$.
+Mem Vis (BF): Draw giant intermediate arrays taking up huge chunks of memory during the iterative build.
+Mem Vis (Opt): Draw a single string builder (or character array) growing and shrinking. Also draw the recursion stack (depth N). Total space is $O(N)$.

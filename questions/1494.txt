@@ -1,0 +1,13 @@
+ID: 1494
+Problem Title: Parallel Courses II
+Brute Force Method: Greedy: Always take the K courses with the most dependents. (Note: This is a known hard problem where Greedy fails; it requires checking all subsets).
+BF Complexity Visuals: Greedy Heuristic Failure
+How to Draw BF: Draw a dependency graph. Pick the "most important" nodes first. Show a counter-example where this leads to more semesters.
+Optimised Pattern: Dynamic Programming with Bitmasking
+Opt Vis. Technique: State Compression (Course Completion Mask)
+Dry Run (Opt): `dp[mask]` = min semesters to complete courses in mask. For each state, identify all "available" courses (prereqs met). Try all combinations of taking K or fewer available courses.
+How to Draw (Opt): Draw a bitmask of 1010... representing finished courses. Identify nodes with no incoming edges from 0s. Branch into all ways to pick K of those nodes to turn them into 1s.
+Opt Complexity Visuals: Exponential Mask Transition
+How to Draw Opt Complexity: Draw a transition from one bitmask to another. Label $O(3^n)$ or $O(2^n \cdot n^k)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A DP array of size 2^n. Space $O(2^n)$.

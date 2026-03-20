@@ -1,0 +1,13 @@
+ID: 431
+Problem Title: Encode N-ary Tree to Binary Tree
+Brute Force Method: Left-Child Right-Sibling (Basic) Map the first child of a node to the left child of the binary node, and siblings to the right.
+BF Complexity Visuals: Tree Warp
+How to Draw BF: Draw an N-ary tree. Draw a "slanted" version where children are pushed left and siblings right. $O(N)$.
+Optimised Pattern: LCRS (Recursive Pointer Re-assignment) Use a recursive DFS to transform pointers without creating new nodes.
+Opt Vis. Technique: Skewed Perspective
+Dry Run (Opt): Imagine the N-ary tree is flexible. Tilt it 45° so siblings hang vertically from each other.
+How to Draw (Opt): Draw an N-ary tree. Connect siblings with red lines. Erase the original child-parent lines except for the first child.
+Opt Complexity Visuals: Linear Traversal
+How to Draw Opt Complexity: Draw one arrow visiting every node in the N-ary tree once. $O(N)$.
+Mem Vis (BF): New Binary Nodes Create an entirely new $O(N)$ tree structure.
+Mem Vis (Opt): Call Stack Height of the tree $O(H)$.

@@ -1,0 +1,13 @@
+ID: 3385
+Problem Title: Minimum Time to Break Locks II
+Brute Force Method: Try all permutations of which lock to break first. $O(N!)$.
+BF Complexity Visuals: Factorial Lock Sequence
+How to Draw BF: Draw N locks. Branch out for picking lock 1, 2, or 3 first. Tree explodes.
+Optimised Pattern: Bitmask DP
+Opt Vis. Technique: The Multiplier State Grid
+Dry Run (Opt): Use a bitmask to represent broken locks. Your multiplier `X` increases based on how many locks are broken. `dp[mask]` is the minimum time to reach this state. Calculate the wait time for the next lock using `ceil(energy_needed / X)`.
+How to Draw (Opt): Draw a row of locks. Flip them open one by one. Each open lock increases your "Sword Power". Try different orders of opening them, recording the total waiting time for each exact combination of open/closed locks.
+Opt Complexity Visuals: Exponential State Transitions $O(N \cdot 2^N)$
+How to Draw Opt Complexity: Draw a table of 2^N rows. Transitioning to the next state requires checking N possible next locks.
+Mem Vis (BF): Recursive tracking of permutations.
+Mem Vis (Opt): A DP array of size 2^N. $O(2^N)$ space.

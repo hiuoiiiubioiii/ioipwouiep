@@ -1,0 +1,13 @@
+ID: 1286
+Problem Title: Iterator for Combination
+Brute Force Method: Generate every possible combination of length `k` during initialization and store them in a massive list. The `next()` function just returns the next item from that list.
+BF Complexity Visuals: Full Combinatorial Pre-generation
+How to Draw BF: Draw the string "abc". Draw branches for "ab", "ac", "bc". Show them being stored in a giant array. Write $O(N \text{choose} K)$.
+Optimised Pattern: Bitmasking / Backtracking Iterator
+Opt Vis. Technique: Current State Pointer / Binary Toggle
+Dry Run (Opt): Instead of pre-generating, store the current combination's indices. `next()` calculates the next lexicographical combination on the fly. You can use bitmasking to find the next set bit combination.
+How to Draw (Opt): Draw indices [0, 1]. For `next()`, increment the last index. If it hits the limit, increment the one before it and reset. Like a car odometer.
+Opt Complexity Visuals: On-demand State Shift
+How to Draw Opt Complexity: Draw a single state object. Show an arrow shifting one index inside it for each `next()` call. Write $O(K)$ per `next()`.
+Mem Vis (BF): Draw a giant list holding all (n Choose k) strings in memory.
+Mem Vis (Opt): Draw exactly one integer array (indices) of size `k` or one bitmask. Space: $O(K)$.

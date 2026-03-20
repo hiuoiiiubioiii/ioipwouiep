@@ -1,0 +1,13 @@
+ID: 1458
+Problem Title: Max Dot Product of Two Subsequences
+Brute Force Method: Generate all subsequences of `nums1` and all subsequences of `nums2`. Calculate the dot product of all pairs of equal-length subsequences.
+BF Complexity Visuals: Double Exponential Search
+How to Draw BF: Draw two nodes. Each explodes into 2^N paths. Draw a matching engine to pair every path of length L with every other path of length L. Label $O(2^N \cdot 2^M)$.
+Optimised Pattern: 2D Dynamic Programming (LCS Variant)
+Opt Vis. Technique: Choice-Matrix Accumulation
+Dry Run (Opt): `dp[i][j]` = max dot product using prefixes `nums1[0...i]` and `nums2[0...j]`. Options: `nums1[i]*nums2[j] + max(0, dp[i-1][j-1])`, `dp[i-1][j]`, or `dp[i][j-1]`.
+How to Draw (Opt): Draw a grid with `nums1` on top and `nums2` on the left. In each cell, decide: "Do I multiply these two and add previous best, or just take the best from my neighbor?".
+Opt Complexity Visuals: 2D Grid Traversal
+How to Draw Opt Complexity: Draw a nested loop through the DP grid. Label $O(N \cdot M)$.
+Mem Vis (BF): Recursive Path Storage
+Mem Vis (Opt): A 2D DP table (or two 1D rows for space optimization). Space $O(N \cdot M)$.

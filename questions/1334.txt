@@ -1,0 +1,13 @@
+ID: 1334
+Problem Title: Find the City With Smallest Neighbors
+Brute Force Method: Run a standard DFS from every single node, attempting every possible path without weight consideration, exploding with cycles.
+BF Complexity Visuals: Infinite Cyclic Pathing
+How to Draw BF: Draw a graph. Start from Node 0. Trace every path, looping around cycles until the distance limit is hit. Repeat for all nodes, showing astronomical path explosion.
+Optimised Pattern: Floyd-Warshall (All-Pairs Shortest Path)
+Opt Vis. Technique: Adjacency Matrix Relaxation
+Dry Run (Opt): Initialize an N x N matrix with edge weights (infinity where no edge). Use 3 nested loops (k, i, j) to update `dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])`. Count valid cities per row.
+How to Draw (Opt): Draw a grid. Let K be an intermediate city. Pick cell (I, J). Look at (I, K) and (K, J). If their sum is smaller than (I, J), cross out (I, J) and write the new sum. Repeat.
+Opt Complexity Visuals: N x N Matrix Sweeping
+How to Draw Opt Complexity: Draw an N x N grid. Show a sweeping animation processing the grid exactly N times (for each K), proving strict $O(N³)$ deterministic time.
+Mem Vis (BF): Massive Recursion Stack: Holding thousands of DFS path combinations and visited sets.
+Mem Vis (Opt): Dense 2D Matrix: Draw a static `int[][]` array of size N x N. Extremely cache-friendly and strictly $O(N²)$ space.

@@ -1,0 +1,13 @@
+ID: 1238
+Problem Title: Circular Permutation in Binary Representation
+Brute Force Method: Generate all 2^n binary numbers. Try every possible permutation of these numbers until you find one where adjacent values (and the ends) differ by exactly one bit, starting at `start`.
+BF Complexity Visuals: Hamiltonian Path Search (Exponential)
+How to Draw BF: Draw nodes for 00, 01, 10, 11. Draw lines between all. Show a path-finding search attempting every backtrack. Write $O((2^n)$!).
+Optimised Pattern: Gray Code Generation + Bitwise XOR
+Opt Vis. Technique: The "Reflected Binary" Mirror
+Dry Run (Opt): Generate the standard Gray Code sequence of length 2^n (using i oplus (i gg 1)). To start at `start`, XOR every element in the sequence with `start`. This preserves the 1-bit difference property.
+How to Draw (Opt): Write 0, 1. Mirror them: 0, 1 | 1, 0. Add prefix: 00, 01, 11, 10. Then XOR each by `start`. Show how the 1-bit difference stays constant.
+Opt Complexity Visuals: Linear Bitwise Transformation
+How to Draw Opt Complexity: Draw a list of 2^n slots. Draw an arrow pointing to a bit-shifter and an XOR gate. Write $O(2^n)$.
+Mem Vis (BF): Draw massive backtracking stacks and path-storage lists.
+Mem Vis (Opt): Draw a single array of size 2^n. Space: $O(2^n)$.

@@ -1,0 +1,13 @@
+ID: 3267
+Problem Title: Count Almost Equal Pairs II
+Brute Force Method: Check pairs using the 3265 logic, but allow up to two swaps. $O(N² \cdot D⁴)$.
+BF Complexity Visuals: High-Dimensional Search Space
+How to Draw BF: Draw a pair. Branch out for the first swap, then branch again from *each* result for the second swap. Show the exponential growth of possibilities per pair.
+Optimised Pattern: Optimized BFS / DFS on Digit States
+Opt Vis. Technique: Multi-Level Neighbor Graph
+Dry Run (Opt): Similar to 3265, but generate all variations reachable within 2 swaps. Use a Set to avoid double-counting same variations for one number. Use a HashMap for global counts.
+How to Draw (Opt): Draw a number. Draw 1st-level swap neighbors. From those, draw 2nd-level swap neighbors. Use a "Seen" set for this specific number before adding to the global "Global" counter.
+Opt Complexity Visuals: State-Limited Linear Scan
+How to Draw Opt Complexity: Draw a block for $O(N)$ and an inner block representing the fixed number of digit-swap combinations. Label as $O(N \cdot (D⁴)$).
+Mem Vis (BF): $O(N²)$ string allocations.
+Mem Vis (Opt): HashMap and temporary "Per-Number" Sets (O(N * D⁴) space).

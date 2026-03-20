@@ -1,0 +1,13 @@
+ID: 1463
+Problem Title: Cherry Pickup II
+Brute Force Method: Backtracking / Recursion. Simulate all possible moves for Robot 1 and Robot 2 starting from (0, 0) and (0, C-1) down to the last row.
+BF Complexity Visuals: Dual Exponential Branching
+How to Draw BF: Draw two starting points. Each splits into 3 choices per step. Since they move together, it's 3 x 3 = 9 branches at every level. Label $O(9^R)$.
+Optimised Pattern: 3D Dynamic Programming (Top-Down)
+Opt Vis. Technique: Synchronized Multi-Agent State
+Dry Run (Opt): `dp[row][col1][col2]` = max cherries collected when Robot 1 is at `col1` and Robot 2 is at `col2` on the current `row`. Move both to the next row in 9 possible combined directions.
+How to Draw (Opt): Draw a grid. Place two markers on the same row. Draw arrows showing them jumping to the next row simultaneously. Highlight that if they land on the same cell, cherries are only counted once.
+Opt Complexity Visuals: 3D State Space Traversal
+How to Draw Opt Complexity: Draw a 3D cube. Label the axes Row, Col1, Col2. Label $O(R \cdot C^2)$.
+Mem Vis (BF): Massive Recursion Tree
+Mem Vis (Opt): A 3D DP table of size R x C x C. Space $O(R \cdot C^2)$.

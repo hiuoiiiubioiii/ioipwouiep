@@ -1,0 +1,13 @@
+ID: 3367
+Problem Title: Maximize Sum of Weights after Edge Removals
+Brute Force Method: Generate all possible subsets of edges and check if every node satisfies the degree constraint K.
+BF Complexity Visuals: Edge-Selection Power Set
+How to Draw BF: Draw a tree with E edges. For each edge, branch "Keep" or "Remove". Leaf count 2^E is the complexity wall.
+Optimised Pattern: Tree DP with Greedy Sorting
+Opt Vis. Technique: Recursive Bubble Up
+Dry Run (Opt): For each node, calculate two values: (Max weight keeping the parent edge) and (Max weight cutting it). Sort children based on the "gain" of keeping their edge.
+How to Draw (Opt): Draw a node and its children. Write the "Keep" and "Cut" scores next to each child. Draw a "Leaderboard" sorting these differences. Circle the top K or K-1 winners.
+Opt Complexity Visuals: Linear Tree Traversal
+How to Draw Opt Complexity: Draw a tree once. Highlight each node being visited twice (down and up). Show a small sorting icon $O(\text{deg} \\text{log deg})$ at each node. $O(N \log N)$.
+Mem Vis (BF): Storing 2^E edge configurations.
+Mem Vis (Opt): $O(N)$ recursive call stack and a `dp[N][2]` result table.

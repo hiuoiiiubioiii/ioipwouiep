@@ -1,0 +1,13 @@
+ID: 2463
+Problem Title: Minimum Total Distance Traveled
+Brute Force Method: Recursive backtracking: For every robot, try assigning it to every available factory and recurse for the remaining robots.
+BF Complexity Visuals: Explosive Assignment Tree
+How to Draw BF: Draw a robot. Draw branches to all factories. Repeat for each robot. Label $O(F^R)$.
+Optimised Pattern: DP (Sorted Robots &amp; Factories)
+Opt Vis. Technique: Monotonic Assignment Grid
+Dry Run (Opt): Sort robots and factories. `dp[i][j]` = min distance for `i` robots using `j` factories. Robots never "cross" each other in an optimal solution.
+How to Draw (Opt): Draw a grid where rows = Robots, cols = Factories. Fill cells by choosing between "Skip factory" or "Use factory for X robots."
+Opt Complexity Visuals: Quadratic DP Surface
+How to Draw Opt Complexity: Draw an R x F matrix. Label $O(R \cdot F \\text{cdot Capacity}_\text{avg})$. Total $O(R \cdot F \cdot R)$.
+Mem Vis (BF): Draw massive recursion stacks.
+Mem Vis (Opt): Draw an R x F 2D DP table. Label $O(R \cdot F)$ Space.

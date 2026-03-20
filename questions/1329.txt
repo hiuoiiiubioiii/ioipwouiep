@@ -1,0 +1,13 @@
+ID: 1329
+Problem Title: Sort the Matrix Diagonally
+Brute Force Method: Extract each diagonal into a dynamic list, use a standard $O(K \log K)$ sort, and write them back into the matrix using complex boundary math nested inside double loops.
+BF Complexity Visuals: Matrix Teardown and Reassembly
+How to Draw BF: Draw a grid. Draw arrows pulling elements into separate arrays, sorting them individually, and pushing them back in. Highlights high overhead in index management.
+Optimised Pattern: Map of Min-Heaps (Group by i - j)
+Opt Vis. Technique: Diagonal Equivalence Classes
+Dry Run (Opt): Observation: Elements on the same diagonal share the exact same `i - j` value. Create a `unordered_map&gt;`. Push all elements. Iterate matrix again, popping from the PQ for that `i - j`.
+How to Draw (Opt): Draw a matrix. Write `(row - col)` in every cell. You'll see identical numbers form diagonal stripes. Throw all elements of a stripe into a funnel (Heap), and let them drop back in sorted order.
+Opt Complexity Visuals: Hash Table of Sorting Funnels
+How to Draw Opt Complexity: Draw a matrix pointing to a Hash Map. Show the map values are individual Heaps processing data in $O(M\cdot N \log(\text{min}(M,N)$)).
+Mem Vis (BF): Dynamic 2D Arrays: Massive allocations of varying length vectors extracted from the matrix.
+Mem Vis (Opt): Hash Map of Priority Queues: Draw a `std::unordered_map` keyed by integer, holding `std::priority_queue` structures acting as memory-efficient sorting buffers.

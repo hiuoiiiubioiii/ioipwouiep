@@ -1,0 +1,13 @@
+ID: 2199
+Problem Title: Finding the Topic of Each Post (SQL)
+Brute Force Method: For each post, scan the entire keywords table. Use `LIKE` or `REGEXP` for every keyword to see if it exists in the post.
+BF Complexity Visuals: A Cartesian product of posts and keywords.
+How to Draw BF: Draw a Post. Draw lines to every single keyword in the Topic table. Repeat for every Post. Write $O(P \cdot K)$.
+Optimised Pattern: SQL Join + String Aggregation.
+Opt Vis. Technique: A filter that catches specific words and labels them.
+Dry Run (Opt): Join `Posts` and `Topics` where `post_content` contains the `word`. Group by `post_id`. Use `GROUP_CONCAT` or `STRING_AGG` on `topic_id` sorted alphabetically.
+How to Draw (Opt): Draw a table of posts. Draw a table of keywords. Draw lines only where a keyword exists in a post. Group the lines by post and list the topic IDs found.
+Opt Complexity Visuals: $O(P \cdot K)$ - SQL engines optimize this with indexing, but complexity remains bound to string searching.
+How to Draw Opt Complexity: A funnel taking post/keyword pairs and outputting a single string per post.
+Mem Vis (BF): Large intermediate join tables.
+Mem Vis (Opt): $O(P + K)$ database memory buffers.

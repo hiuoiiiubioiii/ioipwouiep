@@ -1,0 +1,13 @@
+ID: 1983
+Problem Title: Widest Pair of Indices With Equal Range Sum
+Brute Force Method: Check every pair (i, j) and calculate sums for both arrays to see if they match.
+BF Complexity Visuals: $O(N^2)$ Nested Loop Grid
+How to Draw BF: Draw two arrays side by side. Draw brackets of varying widths (i, j) over both. $O(N^2)$.
+Optimised Pattern: Prefix Sum + Hash Map (Diff Tracking)
+Opt Vis. Technique: Difference Trendline Convergence
+Dry Run (Opt): Track `diff = sum1[i] - sum2[i]`. If `diff` at index j equals `diff` at index i, the sum of ranges between i and j is equal.
+How to Draw (Opt): Draw a table: `Index | Sum1 | Sum2 | Diff`. Circle the first and last occurrence of the same `Diff`.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single arrow scanning from left to right. $O(N)$.
+Mem Vis (BF): Generating all possible range sums and storing them for comparison.
+Mem Vis (Opt): A Hash Map storing `diff -&gt; first_index_seen`. $O(N)$ space.

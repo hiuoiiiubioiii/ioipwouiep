@@ -1,0 +1,13 @@
+ID: 132
+Problem Title: Palindrome Partitioning II
+Brute Force Method: Solve Q131 to find all valid partitions and then iterate through them to find the one with the minimum number of cuts.
+BF Complexity Visuals: Exponential $O(2^N)$ results being buffered and then compared, showing massive computational waste.
+How to Draw BF: Draw all valid partitions from Q131 as separate rows. Count the commas (cuts) in each row and circle the smallest number.
+Optimised Pattern: 1D Dynamic Programming with 2D Palindrome Pre-processing.
+Opt Vis. Technique: A "best-so-far" runner. A 1D array `dp[i]` stores the minimum cuts needed for the prefix `s[0..i]`.
+Dry Run (Opt): Iterate i from 0 to N. For each i, check all j <= i. If `s[j..i]` is a palindrome, `dp[i] = min(dp[i], dp[j-1] + 1)`.
+How to Draw (Opt): Draw the 1D DP array. For a cell `dp[i]`, draw several "look-back" arrows to previous cells j where a palindrome was found, picking the minimum.
+Opt Complexity Visuals: $O(N^2)$ grid filling. Every pair (i, j) is considered once for the palindrome property and once for the cut update.
+How to Draw Opt Complexity: Draw a square N x N grid. Color it in row-by-row to show that exactly N^2 work-units are performed.
+Mem Vis (BF): Storage of 2^N lists of strings in memory.
+Mem Vis (Opt): Two arrays: a 1D DP array $O(N)$ and a 2D boolean matrix $O(N^2)$ for palindrome lookups.

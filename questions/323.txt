@@ -1,0 +1,13 @@
+ID: 323
+Problem Title: Number of Connected Components
+Brute Force Method: For every node i, run a full BFS/DFS to see which nodes it can reach, even if it was already part of a previously found component.
+BF Complexity Visuals: Redundant Graph Traversal
+How to Draw BF: Draw a graph. Draw a circle around component 1. Then start a new search from a node *inside* that circle anyway. Show overlapping work.
+Optimised Pattern: Disjoint Set Union (DSU)
+Opt Vis. Technique: Dynamic Linkage / Forest of Trees
+Dry Run (Opt): Iterate through edges. For each edge (u, v), `union(u, v)`. If they were in different sets, decrement the component count (initially n).
+How to Draw (Opt): Draw n isolated dots. For each edge, draw a line connecting them. If they are already in the same "cloud" (set), do nothing. Count how many clouds remain.
+Opt Complexity Visuals: Amortized Linear Path Compression
+How to Draw Opt Complexity: Draw a tree that is "squashed" (all nodes point to root). Label it $O(E \\text{alpha}(V)$) to show it's nearly constant time per edge.
+Mem Vis (BF): Adjacency list plus redundant visited sets for every node.
+Mem Vis (Opt): 1D 'Parent' Array: Draw a horizontal tape of size n. Draw pointers from index i to its parent index p. $O(V)$ space.

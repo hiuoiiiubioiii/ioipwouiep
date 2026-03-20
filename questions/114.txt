@@ -1,0 +1,13 @@
+ID: 114
+Problem Title: Flatten Binary Tree to Linked List
+Brute Force Method: Standard Pre-order traversal to collect all nodes into an $O(N)$ array, then a second pass to re-wire all the `right` pointers.
+BF Complexity Visuals: Two completely disconnected sequential blocks: an $O(N)$ Read phase and an $O(N)$ Write phase.
+How to Draw BF: Draw the tree, draw an arrow pulling all nodes into a linear array box, then draw loops linking array elements back together.
+Optimised Pattern: Reverse Post-order Traversal (Right, Left, Root) maintaining a global `prev` pointer.
+Opt Vis. Technique: Building a chain from the end backwards. The tail is secured first, and each preceding node hooks onto it dynamically.
+Dry Run (Opt): Keep global `prev = null`. Traverse Right child, then Left child. Set current node's `right` to `prev`, `left` to null. Update `prev = current`.
+How to Draw (Opt): Draw the tree. Start at the bottom-right-most node. Draw an arrow from its `right` pointer to `prev` (initially null). Update `prev` to point to it. Move backwards.
+Opt Complexity Visuals: In-place $O(N)$ single-pass structural mutation with $O(H)$ recursive space.
+How to Draw Opt Complexity: Draw the nodes. Instead of crossing them out, draw the right-pointers instantly snapping into their final flattened positions sequentially from tail to head.
+Mem Vis (BF): $O(N)$ external heap memory strictly allocated to buffer the nodes before rewiring.
+Mem Vis (Opt): In-place pointer manipulation. Visualize the $O(H)$ call stack navigating the tree while the heap structures physically warp into a linked list.

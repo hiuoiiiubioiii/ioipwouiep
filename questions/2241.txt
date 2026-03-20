@@ -1,0 +1,13 @@
+ID: 2241
+Problem Title: Design an ATM Machine
+Brute Force Method: Full Array Sorting/Re-orderingEvery time a withdrawal is requested, create a copy of the banknote counts, sort them by value, and run a simulation to see if the amount can be reached.
+BF Complexity Visuals: Repeated Snapshot Simulation
+How to Draw BF: Draw the ATM state as a set of cash drawers. For every withdrawal, draw a new set of drawers and cross out bills one by one. Highlight the $O(N)$ cost per withdrawal query.
+Optimised Pattern: Greedy Hash Map / Frequency Array
+Opt Vis. Technique: Static Indexed Buckets
+Dry Run (Opt): Store banknote counts in a fixed-size array of length 5. For withdrawals, iterate from the largest index (500) to the smallest. Use `min(needed, available)` to greedily take bills.
+How to Draw (Opt): Draw 5 labeled boxes: [20, 50, 100, 200, 500]. For a withdrawal of 600, draw an arrow pulling one "500" and then one "100". Update the numbers inside the boxes instantly.
+Opt Complexity Visuals: $O(1)$ Fixed Loop Chart
+How to Draw Opt Complexity: Draw a flow chart with 5 sequential steps (one for each bill type). Label it $O(1)$ because the number of bill types is constant (5), regardless of the withdrawal amount.
+Mem Vis (BF): Creating copies of the entire banknote inventory for every single transaction attempt.
+Mem Vis (Opt): A fixed-size array of 5 long integers representing the count of each banknote (O(1) space).

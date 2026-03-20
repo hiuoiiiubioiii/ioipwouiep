@@ -1,0 +1,13 @@
+ID: 1467
+Problem Title: Probability of a Two Boxes Having The Same Number of Distinct Balls
+Brute Force Method: Generate all possible ways to distribute the balls into two boxes. Count how many ways result in equal ball counts and equal distinct color counts.
+BF Complexity Visuals: Full Permutation Search
+How to Draw BF: Draw balls of different colors. Branch into every possible box assignment. Label $O(N!)$ where N is total balls.
+Optimised Pattern: Dynamic Programming / Backtracking with Memoization
+Opt Vis. Technique: Multi-State Combinatorial Counting
+Dry Run (Opt): `dfs(color_index, balls1, balls2, distinct1, distinct2)`: At each color, decide how many balls of this color go to box 1 and box 2 using combinations (nCr).
+How to Draw (Opt): Draw a row for each color. Use boxes for the two containers. For each color, write down the combinations formula for splitting the count. Show the "distinct color" counter ticking up.
+Opt Complexity Visuals: Memoized State Space
+How to Draw Opt Complexity: Draw a state tree where nodes are (color, count1, count2, diff_distinct). Label $O(\text{Colors} \cdot N^2 \\text{cdot Colors})$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A Map or 4D array for memoization. Space $O(\text{Colors} \cdot N^2)$.

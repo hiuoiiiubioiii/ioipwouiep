@@ -1,0 +1,13 @@
+ID: 1341
+Problem Title: Movie Rating (SQL)
+Brute Force Method: Run two entirely separate SQL queries, one for the user with most ratings and one for the movie with highest avg rating, then UNION them.
+BF Complexity Visuals: Independent Full-Scan Queries
+How to Draw BF: Draw two separate workflows. Query A scans Users/Ratings. Query B scans Movies/Ratings. Both perform heavy sorting twice.
+Optimised Pattern: Window Functions / Order By + Limit 1
+Opt Vis. Technique: Top-K Filtering
+Dry Run (Opt): Join Users and Ratings. Group by User, Sort by Count DESC, Name ASC. Limit 1. Repeat for Movies with Average Rating in Feb 2020.
+How to Draw (Opt): Draw two separate funnels. Funnel 1 filters users by count. Funnel 2 filters movies by avg rating. The "winners" from both are joined at the end.
+Opt Complexity Visuals: $O(N \log N)$
+How to Draw Opt Complexity: Draw two sorting processes. Show the top item from each being selected for the final output.
+Mem Vis (BF): Large Buffer Sorts: Database sorting thousands of strings for lexicographical ties.
+Mem Vis (Opt): Hash Aggregate Buffers: Draw in-memory hashes for user-counts and movie-averages.

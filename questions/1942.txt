@@ -1,0 +1,13 @@
+ID: 1942
+Problem Title: The Number of the Smallest Unoccupied Chair
+Brute Force Method: For each arriving friend, scan through all chairs to find the first one that is unoccupied based on previous departure times.
+BF Complexity Visuals: Linear Chair Search
+How to Draw BF: Draw a row of chairs. For every arrival, draw an arrow checking chair 0, then 1, then 2, until an empty one is found. $O(N^2)$.
+Optimised Pattern: Two Min-Heaps (Priority Queues)
+Opt Vis. Technique: Available vs. Occupied Pools
+Dry Run (Opt): Use one heap to store `(departureTime, chairNumber)` and another for `availableChairNumbers`. As people leave, move chairs back to the available heap.
+How to Draw (Opt): Draw two circles (pools). One pool has "Free Chairs" sorted. The other has "Busy People" sorted by time. Draw arrows transferring chairs between pools.
+Opt Complexity Visuals: Logarithmic Heap Processing
+How to Draw Opt Complexity: Draw N arrivals. For each, draw an $O(\log N)$ heap extraction/insertion. Total $O(N \log N)$.
+Mem Vis (BF): A list of current chair statuses updated row-by-row.
+Mem Vis (Opt): Two balanced Binary Heaps (represented as arrays) and a sorted event list.

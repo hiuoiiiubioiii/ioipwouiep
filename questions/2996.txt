@@ -1,0 +1,13 @@
+ID: 2996
+Problem Title: Smallest Missing Integer Greater Than Sequential Prefix Sum
+Brute Force Method: Calculate the sequential prefix sum, then iterate through the entire array for every integer starting from that sum until one is missing.
+BF Complexity Visuals: Sequential Loop Search
+How to Draw BF: Draw a line. Scan the prefix. Then draw many overlapping loops back to the original array for each check. $O(N^2)$.
+Optimised Pattern: Simulation + Hash Set
+Opt Vis. Technique: Prefix Breakpoint + Membership Set
+Dry Run (Opt): Identify the first index where `nums[i] != nums[i-1] + 1`. Sum the prefix. Use a Hash Set to find the first integer >= sum missing in $O(1)$.
+How to Draw (Opt): Draw the array. Shade the sequential part. Below it, list all unique numbers in a "Membership Box". Start a counter at the sum and "bounce" off the box.
+Opt Complexity Visuals: Single Pass + Constant Membership Checks
+How to Draw Opt Complexity: Draw a line of length N. The Set population is $O(N)$, and the final missing search is at most $O(N)$. Total T = $O(N)$.
+Mem Vis (BF): Storing multiple copies of the array for searches.
+Mem Vis (Opt): A Hash Set of unique integers from the array. Space $O(N)$.

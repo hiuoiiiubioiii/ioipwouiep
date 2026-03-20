@@ -1,0 +1,13 @@
+ID: 378
+Problem Title: Kth Smallest Element in a Sorted Matrix
+Brute Force Method: Flatten the 2D matrix into a 1D array, sort it globally, and pick the element at index k-1.
+BF Complexity Visuals: Global Sorting Funnel
+How to Draw BF: Draw a grid. Draw an arrow pouring all numbers into a single list. Draw a "Sort" box. $O(N^2 \log N^2)$.
+Optimised Pattern: Binary Search on Value Range
+Opt Vis. Technique: Dual-Axis Partition (Staircase Search)
+Dry Run (Opt): Set `low` to min element and `high` to max. For `mid`, count how many elements are \le mid in $O(N)$ by starting at the bottom-left and moving right/up (staircase). Adjust `low`/`high` based on the count.
+How to Draw (Opt): Draw a grid. Draw a "staircase" line separating elements \le mid from those &gt; mid. Show the binary search halving the value range.
+Opt Complexity Visuals: Logarithmic Value Range Search with Linear Step
+How to Draw Opt Complexity: Draw a number line for values. Below it, draw the matrix staircase step. $O(N \log(\\text{text}{\text{Max}} - \\text{text}{\text{Min}})$).
+Mem Vis (BF): A full 1D copy of the matrix. $O(N^2)$.
+Mem Vis (Opt): Constant-time pointers or a small Max-Heap if using the heap approach. Draw three integer boxes (low, high, count). $O(1)$ or $O(N)$.

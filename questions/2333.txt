@@ -1,0 +1,13 @@
+ID: 2333
+Problem Title: Minimum Sum of Squared Difference
+Brute Force Method: Calculate the absolute difference for each pair. For `k1 + k2` times, find the absolute maximum difference in the array, decrement it by 1, and recalculate the squared sum.
+BF Complexity Visuals: Repeated Max Finding (O((K1+K2) * N))
+How to Draw BF: Draw a bar chart of differences. Scan the whole chart to find the tallest bar, erase a tiny slice off the top, and then scan the whole chart all over again.
+Optimised Pattern: Bucket Sort / Frequency Map + Greedy Flattening
+Opt Vis. Technique: Bulldozing the Highest Peaks
+Dry Run (Opt): Total operations `k = k1 + k2`. Create an array of frequencies for each difference. Iterate from the highest difference down to 0. Greedily use `k` to turn the current max difference into the next smaller difference, shifting the frequencies down.
+How to Draw (Opt): Draw a histogram representing difference frequencies. Draw a bulldozer pushing the tallest columns to the left (into shorter difference buckets) until it runs out of gas (`k` operations).
+Opt Complexity Visuals: Linear Histogram Pass (O(N + Max_Diff))
+How to Draw Opt Complexity: Draw a histogram and a single horizontal line sweeping from right (max diff) to left (0), pushing counts over as it goes.
+Mem Vis (BF): Draw the original array constantly modifying and re-sorting itself.
+Mem Vis (Opt): Draw a fixed-size 1D Array `freq` up to size 10^5 (max difference), acting as the histogram buckets.

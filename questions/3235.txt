@@ -1,0 +1,13 @@
+ID: 3235
+Problem Title: Check if Rectangle Corner Is Reachable
+Brute Force Method: Model the rectangle as a high-resolution pixel grid and run BFS/DFS pixel-by-pixel. $O(X \cdot Y)$.
+BF Complexity Visuals: Ultra-Dense Pixel Grid
+How to Draw BF: Draw a rectangle filled with a tiny mesh of dots. Shade circles. Show how pathfinding must visit every single dot.
+Optimised Pattern: Graph connectivity (Union Find / BFS on Circles)
+Opt Vis. Technique: Boundary-to-Boundary Barrier Graph
+Dry Run (Opt): Check if any path of connected circles connects (Top or Left) to (Bottom or Right). If they connect, the path from (0,0) to (X,Y) is blocked.
+How to Draw (Opt): Draw the rectangle. Draw circles. If two circles intersect, draw a line between their centers. If a "wall" of lines cuts from top-left boundary to bottom-right boundary, path is impossible.
+Opt Complexity Visuals: N² Connection Matrix
+How to Draw Opt Complexity: Draw N nodes (circles). Draw lines for every pair checked (N² checks). Label as $O(N²)$ time complexity.
+Mem Vis (BF): Huge 2D Boolean Grid (O(X*Y) space).
+Mem Vis (Opt): Disjoint Set Union (DSU) array of size N (O(N) space).

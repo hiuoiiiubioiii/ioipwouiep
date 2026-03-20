@@ -1,0 +1,13 @@
+ID: 541
+Problem Title: Reverse String II
+Brute Force Method: Iterate through the string, and for every block of 2k characters, generate all possible substrings and reverse the first k manually.
+BF Complexity Visuals: Fragmented string reconstructions. $O(N^2)$ due to repeated string concatenation.
+How to Draw BF: Draw a string. Draw a bracket every 2k chars. Inside each bracket, draw an arrow flipping the first half.
+Optimised Pattern: Two-Pointer In-Place Swap (Jumping by 2k).
+Opt Vis. Technique: A leap-frogging mechanic. A pointer jumps 2k steps at a time, and a mini-reversal occurs at each landing spot.
+Dry Run (Opt): Loop `i` from 0 to N, step `2*k`. Identify `start = i` and `end = min(i + k - 1, n - 1)`. Swap characters at `start` and `end` moving inward.
+How to Draw (Opt): Write the string. Mark chunks of 2k. Inside the first k of each chunk, draw two arrows at the edges pointing toward each other.
+Opt Complexity Visuals: Single pass with in-place swaps. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line with N segments, with small "loop-back" arcs every 2k units.
+Mem Vis (BF): Multiple string objects or character arrays created in each step.
+Mem Vis (Opt): A single character array (if the language has immutable strings) or zero extra space. $O(N)$.

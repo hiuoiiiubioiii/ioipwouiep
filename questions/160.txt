@@ -1,0 +1,13 @@
+ID: 160
+Problem Title: Intersection of Two Linked Lists
+Brute Force Method: For every node in List A, traverse the entirety of List B to see if the node references match (O(M x N)).
+BF Complexity Visuals: A "Cross-Reference Grid" showing every node of A being compared to every node of B.
+How to Draw BF: Draw List A vertically and List B horizontally. Draw a dot at every intersection to show the M * N comparisons.
+Optimised Pattern: Two-Pointer Sync (Head Switching).
+Opt Vis. Technique: "Running the Same Distance." If two people run different routes, they will meet if they each run Path A + Path B total distance.
+Dry Run (Opt): Point pA to headA, pB to headB. When pA hits null, switch to headB. When pB hits null, switch to headA. They meet at intersection.
+How to Draw (Opt): Draw two lists merging. Trace pA through A and then through B. Trace pB through B and then through A. Show them landing on the same node simultaneously.
+Opt Complexity Visuals: $O(M + N)$ linear time. The pointers cover exactly the combined length of both lists.
+How to Draw Opt Complexity: Draw a single line of length M+N. Mark the intersection point to show they reach it after exactly one total traversal.
+Mem Vis (BF): Storing one entire list in a Hash Set to perform $O(1)$ lookups (O(N) space).
+Mem Vis (Opt): Visualize two single pointers in $O(1)$ stack memory. No extra structures.

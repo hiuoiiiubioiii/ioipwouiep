@@ -1,0 +1,13 @@
+ID: 2754
+Problem Title: Bind Function to Context (JS)
+Brute Force Method: Wrap the function in a new function that manually sets context.fn = originalFn, calls it, and then delete context.fn. (Risk of overwriting existing properties).
+BF Complexity Visuals: Property Injection Trace
+How to Draw BF: Draw an object. Draw a new arrow pointing into it representing the injected function. Show it being deleted immediately after.
+Optimised Pattern: Temporary Property Allocation (Mutation of the target object).
+Opt Vis. Technique: Native apply / call Closure
+Dry Run (Opt): Context-Bound Execution Frame
+How to Draw (Opt): Return a new function that uses originalFn.apply(context, args). This leverages the engine's ability to switch the this binding without modifying the context object.
+Opt Complexity Visuals: Draw a function block and an object block. Draw a "Pipe" (apply) that plugs the function into the object's power supply (this) temporarily.
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single wrapper box. Write $O(1)$ as the binding creation is a fixed overhead.
+Mem Vis (Opt): Closure Reference (Draw a small memory bubble holding references to the function and the context object).

@@ -1,0 +1,13 @@
+ID: 1677
+Problem Title: Product's Worth Over Invoices (SQL)
+Brute Force Method: Use correlated subqueries in the SELECT clause to sum Rest, Paid, Canceled, and Refunded amounts for each product.
+BF Complexity Visuals: Nested Loop Subquery Grid
+How to Draw BF: Draw a Product table. For each row, draw 4 separate magnifying glasses scanning the entire Invoice table. $O(P \\text{times} I)$.
+Optimised Pattern: LEFT JOIN + GROUP BY + IFNULL/COALESCE
+Opt Vis. Technique: Product-Invoice Pivot Table
+Dry Run (Opt): Join Product to Invoice. Group by Product Name. Sum all invoice columns. Use `IFNULL(..., 0)` to handle products without invoices.
+How to Draw (Opt): Draw a table on the left (Products) and right (Invoices). Draw lines connecting them. Collapse all invoices for one product into a single "Summary Row".
+Opt Complexity Visuals: Single Simultaneous Scan
+How to Draw Opt Complexity: Draw a straight arrow through both tables once to build a hash-aggregate. $O(P + I)$.
+Mem Vis (BF): Temp Multi-Table Memory: Draw redundant memory buffers for each subquery.
+Mem Vis (Opt): Hash Aggregate Buffer: Draw a small table in RAM being updated as invoices are read.

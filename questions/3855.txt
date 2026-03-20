@@ -1,0 +1,13 @@
+ID: 3855
+Problem Title: Sum of K-Digit Numbers in a Range (Hard)
+Brute Force Method: Linear Summation: Iterate from L to R, check if the number has exactly K digits, and add it to the total sum.
+BF Complexity Visuals: A massive loop that potentially visits billions of numbers.
+How to Draw BF: Draw number line. Check 1000, 1001... up to 99999. Write $O(R-L)$ and show it will time out for large ranges.
+Optimised Pattern: Digit DP / Arithmetic Progression Formula.
+Opt Vis. Technique: A "Block-Based" mathematical summation that treats numbers as strings to count and sum them by position.
+Dry Run (Opt): The sum of all K-digit numbers is the sum of an Arithmetic Progression: Sum = fracn2(first + last). Use `Sum(1 to R) - Sum(1 to L-1)` where only numbers with length K are considered.
+How to Draw (Opt): Draw a range [10^K-1, 10^K]. Identify the overlap of this "K-digit window" with your range [L, R]. Use the sum i = fracn(n+1)2 formula for that overlap.
+Opt Complexity Visuals: Constant time mathematical calculation.
+How to Draw Opt Complexity: Draw a formula box. Write "Identify Overlap: $O(1)$". Write "AP Formula: $O(1)$". Total: $O(1)$.
+Mem Vis (BF): $O(1)$.
+Mem Vis (Opt): $O(1)$ memory. Just a few `long long` variables for the range boundaries and the final sum.

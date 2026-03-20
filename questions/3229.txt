@@ -1,0 +1,13 @@
+ID: 3229
+Problem Title: Minimum Operations to Make Array Equal to Target
+Brute Force Method: Iteratively find subarrays that need incrementing/decrementing, apply +1/-1 step-by-step. $O(N \\text{cdot MaxDiff})$.
+BF Complexity Visuals: Cascading Array Updates
+How to Draw BF: Draw the target array. Cross out and rewrite elements linearly over and over to simulate adding +1 to ranges until they match.
+Optimised Pattern: Difference Array / Greedy Peaks
+Opt Vis. Technique: Elevation Delta Graph
+Dry Run (Opt): Calculate `diff[i] = target[i] - nums[i]`. Traverse left-to-right. Only add to total operations if the current difference requires *new* operations that the previous difference didn't already cover.
+How to Draw (Opt): Draw a bar chart of the required differences. When a bar is taller than the previous one, shade the top portion and write its height delta. The sum of these shaded deltas is the answer.
+Opt Complexity Visuals: Single Linear Scan Block
+How to Draw Opt Complexity: Draw a single straight line sweeping from index 0 to N. Label it strictly $O(N)$ time with $O(1)$ mathematical checks per node.
+Mem Vis (BF): Multiple copies of the array being iteratively modified.
+Mem Vis (Opt): A single 1D difference array (O(N) space).

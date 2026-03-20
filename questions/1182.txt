@@ -1,0 +1,13 @@
+ID: 1182
+Problem Title: Shortest Distance to Target Color
+Brute Force Method: For every query (index, color), scan left and right from that index until you hit the requested color. $O(Q \cdot N)$.
+BF Complexity Visuals: Bidirectional Linear Search
+How to Draw BF: Draw the array. For each query, draw two arrows starting from the query index, expanding outward until they find the color.
+Optimised Pattern: Dynamic Programming (Pre-computed Distances)
+Opt Vis. Technique: 3-Row Distance Matrix
+Dry Run (Opt): Pre-compute three arrays (one for each color). Perform one left-to-right pass and one right-to-left pass to find the nearest distance to each color for every index.
+How to Draw (Opt): Draw 3 rows below the array (Color 1, 2, 3). In each cell, write the distance to the nearest color of that type. Queries are now $O(1)$ lookups.
+Opt Complexity Visuals: Linear Pre-compute $O(N)$
+How to Draw Opt Complexity: Draw two horizontal passes (Left rightarrow Right and Right rightarrow Left). Total $O(N)$.
+Mem Vis (BF): None
+Mem Vis (Opt): $O(3 \cdot N)$ distance matrix. Draw 3 rows of integers.

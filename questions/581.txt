@@ -1,0 +1,13 @@
+ID: 581
+Problem Title: Shortest Unsorted Continuous Subarray
+Brute Force Method: Generate every possible subarray, sort it, and check if the entire array becomes sorted. Find the shortest such subarray.
+BF Complexity Visuals: Combination of subarrays $O(N^2)$ and sorting $O(N \log N)$. Total $O(N^3 \log N)$.
+How to Draw BF: Draw an array. Draw brackets over every segment. Draw a "sorted version" below each and compare it to the original.
+Optimised Pattern: Two-Pass Monotonic Logic (Min/Max Tracking).
+Opt Vis. Technique: A "disorder zone." You look from the left for the first dip and from the right for the first peak. The "damage" caused by these outliers defines the boundaries of the unsorted segment.
+Dry Run (Opt): Find the `min` value of the "unsorted" part (where nums[i] &lt; nums[i-1]). Find the `max` of the same. Find the first index from the left bigger than `min`, and the first from the right smaller than `max`.
+How to Draw (Opt): Draw the array: `[2, 6, 4, 8, 10, 9, 15]`. Identify 4 and 9 as the "troublemakers." Find where 4 *should* have been (index 1) and where 9 *should* have been (index 5). The distance between is the answer.
+Opt Complexity Visuals: Four linear scans (or two passes). $O(N)$.
+How to Draw Opt Complexity: Draw a straight line with two markers (left and right) closing in on the middle "messy" area.
+Mem Vis (BF): Storing all subarray combinations in a list.
+Mem Vis (Opt): $O(1)$ auxiliary space.

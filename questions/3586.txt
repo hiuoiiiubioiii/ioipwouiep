@@ -1,0 +1,13 @@
+ID: 3586
+Problem Title: Find COVID Recovery Patients (Med)
+Brute Force Method: Scan all patient records for 'Positive' status, then for each, scan subsequent dates for 'Negative' results.
+BF Complexity Visuals: Nested Record Scan.
+How to Draw BF: Draw a list of patients. For each patient, draw a secondary loop scanning their specific medical history timeline. $O(P \cdot H)$.
+Optimised Pattern: Hash Map Grouping + Sort &amp; Sweep.
+Opt Vis. Technique: Patient Timeline Filtering.
+Dry Run (Opt): Group records by Patient ID. Sort each group by date. Identify the first 'Positive' and search for two consecutive 'Negative' tests after it.
+How to Draw (Opt): Draw a folder for each patient. Put dated sticky notes inside. Flip through chronologically, marking the recovery window.
+Opt Complexity Visuals: $O(N \log N)$ where N is total records.
+How to Draw Opt Complexity: Draw a single sorted list of all records. Highlight the linear pass checking the "Positive -&gt; Negative" transition.
+Mem Vis (BF): Redundant Sorting: Draw multiple copies of the entire database sorted in different ways.
+Mem Vis (Opt): Map of Lists: Draw a hash map where keys are IDs and values are small, sorted chronological arrays.

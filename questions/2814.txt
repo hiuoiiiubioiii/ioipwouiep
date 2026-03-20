@@ -1,0 +1,13 @@
+ID: 2814
+Problem Title: Minimum Time Takes to Reach Destination Without Drowning
+Brute Force Method: Recursively explore every single path from the start to the destination, recalculating the water expansion at every single step of every path.
+BF Complexity Visuals: Overlapping Grid Recursion
+How to Draw BF: Draw the grid multiple times. Scribble winding paths that get arbitrarily cut off by water. Show the same grid state being recalculated repeatedly, taking $O(4(R\cdot C)$).
+Optimised Pattern: Multi-source BFS (Water) + Standard BFS (Player)
+Opt Vis. Technique: Expanding Boundaries Map
+Dry Run (Opt): Run BFS from all water sources first to populate a grid of "water arrival times". Then run BFS for the player, only allowing moves into cells where the player's time is strictly less than the water's arrival time.
+How to Draw (Opt): Draw two empty grids. On Grid 1, write increasing numbers radiating outward from water cells. On Grid 2, trace the player's shortest path, checking Grid 1 to ensure the player's step count is smaller.
+Opt Complexity Visuals: Two-Pass Grid Sweep
+How to Draw Opt Complexity: Draw two identical rectangles (grids). Label the first $O(R × C)$ for water. Label the second $O(R × C)$ for the player. Total time is linear relative to grid size.
+Mem Vis (BF): Visualize a massive call stack depth of R×C, with deep recursive frames cloning the grid state over and over.
+Mem Vis (Opt): Visualize a 2D integer array for water times, and two distinct FIFO Queues (one for water coords, one for player coords), utilizing max $O(R × C)$ space.

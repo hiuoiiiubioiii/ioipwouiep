@@ -1,0 +1,13 @@
+ID: 2610
+Problem Title: Convert an Array Into a 2D Array With Conditions
+Brute Force Method: Iterate array, for each element search existing 2D rows iteratively to find a spot without duplicates.
+BF Complexity Visuals: Row-by-Row Linear Scanning
+How to Draw BF: Draw an element trying to slot into row 1, getting blocked, then checking row 2. Write $O(N^2)$ for worst-case scanning.
+Optimised Pattern: Frequency Map / Hash Table
+Opt Vis. Technique: Frequency Histogram / Stacking Blocks
+Dry Run (Opt): Tally the frequency of each number. The number of rows equals the highest frequency. Place element `x` into row index equal to its current running count.
+How to Draw (Opt): Draw a tally chart for numbers. Draw empty arrays (rows). Deal out numbers like cards: 1st '3' goes to row 0, 2nd '3' goes to row 1, etc.
+Opt Complexity Visuals: Flat Array to Hash Map Map
+How to Draw Opt Complexity: Draw input array N pointing to a Hash Map setup $O(N)$, pointing to result building $O(N)$.
+Mem Vis (BF): Growing 2D jagged array lists
+Mem Vis (Opt): 1D Array acting as a Frequency Map.

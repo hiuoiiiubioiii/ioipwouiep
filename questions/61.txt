@@ -1,0 +1,13 @@
+ID: 61
+Problem Title: Rotate List
+Brute Force Method: Step-by-Step Rotation For each of the k rotations, find the second-to-last node, make it the new tail, and move the old tail to the head.
+BF Complexity Visuals: The Repeating Cycle
+How to Draw BF: Draw a linked list. Draw an arrow circling from the end back to the start. Note that you traverse the whole list k times. Time: $O(N x K)$.
+Optimised Pattern: The Circular Link (Ring)
+Opt Vis. Technique: The Bracelet Snap
+Dry Run (Opt): Connect the tail to the head to form a circle. Calculate the effective rotation (k % length). Find the node at position (length - (k % length)), make it the new tail by setting its `next` to null, and return the node after it as the new head.
+How to Draw (Opt): Draw the list. Draw a curved line connecting the last node back to the first. Then, draw a "scissor" icon cutting the link at the specific index to turn the circle back into a line.
+Opt Complexity Visuals: Two-Pass Linear
+How to Draw Opt Complexity: Draw one arrow measuring the length (O(N)) and a second arrow moving to the cut point (O(N)). Total time: $O(N)$.
+Mem Vis (BF): $O(1)$ space, but high time complexity due to redundant traversals.
+Mem Vis (Opt): Draw exactly one circular structure in memory. Only pointer references are changed. Space: $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1053
+Problem Title: Previous Permutation With One Swap
+Brute Force Method: Generate all possible single-swap permutations. Find those smaller than the original, then pick the largest among them.
+BF Complexity Visuals: An N^2 set of arrays, each being compared against the original and each other.
+How to Draw BF: Draw [3, 2, 1]. Swap (3,2)-&gt;[2,3,1], (3,1)-&gt;[1,2,3], (2,1)-&gt;[3,1,2]. Pick largest &lt; 3,2,1. Write $O(N^2)$.
+Optimised Pattern: Greedy (Right-to-Left Scan).
+Opt Vis. Technique: A "Last-Minute Dip" search. We look for the first place the sequence stops increasing from right to left, then find its best smaller partner.
+Dry Run (Opt): Find the first index i (from right) where `arr[i] &gt; arr[i+1]`. Then, find the largest `arr[j]` to the right of i such that `arr[j] &lt; arr[i]`. Swap `arr[i]` and `arr[j]`.
+How to Draw (Opt): Draw the array. Move an arrow from right to left. Stop when numbers stop decreasing. Then look right for the biggest number smaller than the current. Swap them.
+Opt Complexity Visuals: Two partial linear scans.
+How to Draw Opt Complexity: Draw the array with two arrows moving right-to-left. Write $O(N)$ Time.
+Mem Vis (BF): $O(N^2)$ space for storing all swapped array variations.
+Mem Vis (Opt): In-place modification of the original array. $O(1)$ extra space.

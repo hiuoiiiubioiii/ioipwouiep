@@ -1,0 +1,13 @@
+ID: 2472
+Problem Title: Maximum Number of Non-overlapping Palindrome Substrings
+Brute Force Method: Find all palindromes of length >= K. Use backtracking to find the maximum non-overlapping set. $O(N^3 + 2^P)$.
+BF Complexity Visuals: Palindrome Combination Web
+How to Draw BF: Bracket every palindrome. Draw lines connecting valid non-overlapping sets.
+Optimised Pattern: DP / Center Expansion + Greedy
+Opt Vis. Technique: The Early-Exit Palindrome Grab
+Dry Run (Opt): Expand around centers to find palindromes. If you find one of length K or K+1, greedily take it! Continuing to expand it to K+5 doesn't help maximize the *count* of non-overlapping substrings.
+How to Draw (Opt): Draw the string. Pick a center. Expand. As soon as the bracket width hits K (or K+1 for even), snap it shut, count it, and jump your scanner past the end of that bracket.
+Opt Complexity Visuals: Linear Center Scan $O(N \cdot K)$
+How to Draw Opt Complexity: Draw a straight line for centers. The expansion is capped at K, making the inner loop strictly bounded.
+Mem Vis (BF): 2D array of all palindromes.
+Mem Vis (Opt): Pointers and a counter. $O(1)$ space.

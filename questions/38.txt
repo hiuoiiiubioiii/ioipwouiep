@@ -1,0 +1,13 @@
+ID: 38
+Problem Title: Count and Say
+Brute Force Method: Heavy String Concatenation Iterate string by string, adding characters together using `str = str + count + char`. This creates massive memory overhead due to string immutability.
+BF Complexity Visuals: The Garbage Generator
+How to Draw BF: Draw the string "11". Add "2" to make a new string "112". Add "1" to make "1121". Draw the old strings piling up in a "Garbage Collector" bin.
+Optimised Pattern: Two Pointers + String Builder
+Opt Vis. Technique: The Chunk Counter
+Dry Run (Opt): To generate the next sequence, read the current sequence using a 'Start' and 'End' pointer. Move 'End' until the character changes. The count is `End - Start`. Append `count + char` to a fast StringBuilder.
+How to Draw (Opt): Draw "111221". Put 'S' and 'E' at index 0. Slide 'E' right until it hits '2'. Bracket the "111". Write "Three 1s" -&gt; append "31". Move 'S' to 'E'.
+Opt Complexity Visuals: Expanding Triangle
+How to Draw Opt Complexity: Draw row 1 as a dot. Row 2 slightly longer. Row N much longer. Time is roughly $O(2^N)$ or bounded by the length of the strings generated at each step.
+Mem Vis (BF): Draw dozens of intermediate string variables taking up $O(2^N)$ space and forcing constant memory reallocation.
+Mem Vis (Opt): Draw a single mutable StringBuilder. Space is $O(L)$ where L is the length of the maximum generated string.

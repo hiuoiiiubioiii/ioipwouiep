@@ -1,0 +1,14 @@
+ID: 191
+Problem Title: Number of 1 Bits
+Brute Force Method: Convert the number to a binary string and loop through every character to count the '1's.
+BF Complexity Visuals: A "Character Scanner" moving across 32 cells regardless of how many 1s exist.
+How to Draw BF: Draw 32 boxes. Draw an arrow pointing at the 1st, then 2nd, then 3rd... up to 32. Show it takes 32 steps for any number.
+Optimised Pattern: Brian Kernighan’s Algorithm (n  &amp;  (n-1)).
+Opt Vis. Technique: "The Bit Eraser." Each operation targets and deletes the rightmost set bit (1) instantly, like a sniper.
+Dry Run (Opt): While n 
+eq 0: n = n  &amp;  (n-1); count++. Each step reduces the number of 1s until the number hits 0.
+How to Draw (Opt): Write n = 101100. Draw an arrow to the rightmost 1. Erase it (n = 101000). Repeat. Count how many times you erased.
+Opt Complexity Visuals: $O(k)$ where k is the number of set bits. In a sparse number like 2^31, it takes only 1 step.
+How to Draw Opt Complexity: Draw a sparse 32-bit row. Mark only the '1's with an 'X' to show that you only visit the bits that matter.
+Mem Vis (BF): $O(1)$ space, but $O(32)$ constant time overhead is higher in the string conversion.
+Mem Vis (Opt): Visualize a single 32-bit integer register in $O(1)$ stack memory being modified in-place.

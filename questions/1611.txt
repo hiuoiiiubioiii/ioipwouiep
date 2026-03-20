@@ -1,0 +1,13 @@
+ID: 1611
+Problem Title: Minimum One Bit Operations to Make Integers Zero
+Brute Force Method: BFS/Recursion trying all valid bit flips at every step to reach 0.
+BF Complexity Visuals: Infinite State Maze
+How to Draw BF: Draw a massive branching tree of binary states going in circles. $O(2^N)$ steps.
+Optimised Pattern: Gray Code Reversal / Bit Manipulation
+Opt Vis. Technique: Recursive Bit Flipping
+Dry Run (Opt): Apply Gray Code math: XOR current with (current-1), apply alternating signs, and accumulate the result.
+How to Draw (Opt): Write the binary number. Cross out the leftmost 1, write its Gray Code integer equivalent underneath, and subtract the next 1's value.
+Opt Complexity Visuals: Logarithmic Ladder
+How to Draw Opt Complexity: Draw a ladder with 32 rungs (for 32 bits), showing the calculation drops instantly to $O(\log N)$.
+Mem Vis (BF): Graph Queue: Draw a massive tube overflowing with visited binary strings.
+Mem Vis (Opt): $O(1)$ Variables: Draw three small, distinct boxes for tracking `n`, `sign`, and `res`.

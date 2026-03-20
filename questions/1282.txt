@@ -1,0 +1,13 @@
+ID: 1282
+Problem Title: Group the People Given the Group Size They Belong To
+Brute Force Method: Iterate through all possible group sizes (1 to N). For each size, scan the entire array to find people who belong to that size and manually group them.
+BF Complexity Visuals: Multi-Scan Filtering
+How to Draw BF: Draw an array. For size 1, scan the whole array. For size 2, scan again. Repeat for all sizes. Write $O(N^2)$.
+Optimised Pattern: Hash Map of Lists (Greedy Accumulation)
+Opt Vis. Technique: Wait-list Buckets
+Dry Run (Opt): Create a Map: `GroupSize -&gt; List of IDs`. As you scan the array, add the person's ID to the list for their size. If the list size equals their `GroupSize`, move that list to the result and clear the map entry.
+How to Draw (Opt): Draw an array of sizes. Below, draw several buckets labeled by size. As you process an ID, drop it into its bucket. When a bucket is full, tip it over into a "Final Groups" box.
+Opt Complexity Visuals: Linear Pass with Map Updates
+How to Draw Opt Complexity: Draw an array. Draw a single arrow scanning right. Draw a Map updating in real-time. Write $O(N)$.
+Mem Vis (BF): Draw multiple temporary arrays for each group size search.
+Mem Vis (Opt): Draw a HashMap where the sum of all list lengths equals N. Space: $O(N)$.

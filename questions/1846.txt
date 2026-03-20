@@ -1,0 +1,13 @@
+ID: 1846
+Problem Title: Maximum Element After Decreasing and Rearranging
+Brute Force Method: Generate all permutations of the array and for each, try to satisfy the condition by decrementing.
+BF Complexity Visuals: Factorial Permutation Tree.
+How to Draw BF: Draw a root node branching into N! paths. Note that it's impossible to compute for large N.
+Optimised Pattern: Sorting + Greedy Pass (or Counting Sort for $O(N)$).
+Opt Vis. Technique: Staircase alignment.
+Dry Run (Opt): Sort the array. Set arr[0] = 1. For i=1 \dots n-1, set arr[i] = \min(arr[i], arr[i-1] + 1). Return arr[n-1].
+How to Draw (Opt): Draw a set of bars of different heights. Sort them. Draw a diagonal line starting at height 1. Cap each bar to be at most 1 unit taller than the previous.
+Opt Complexity Visuals: $O(N \log N)$ Sort or $O(N)$ Count line.
+How to Draw Opt Complexity: Draw a merge-sort tree or a single $O(N)$ pass line.
+Mem Vis (BF): Massive recursion stack for permutations.
+Mem Vis (Opt): $O(1)$ extra space if sorting in-place; $O(N)$ for Counting Sort frequency array.

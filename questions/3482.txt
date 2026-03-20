@@ -1,0 +1,13 @@
+ID: 3482
+Problem Title: Analyze Organization Hierarchy
+Brute Force Method: For every employee record, use a loop to traverse up the hierarchy (manager of manager) to calculate depth/team size. $O(N^2)$
+BF Complexity Visuals: N-rooted Path Traversal.
+How to Draw BF: Draw an org chart (Tree). For every leaf node, draw a long arrow all the way back up to the CEO (Root).
+Optimised Pattern: Recursive CTE (SQL) / DFS with Aggregate Accumulation. $O(N)$
+Opt Vis. Technique: Tree Bubble-up Summation.
+Dry Run (Opt): Perform a single DFS. On the return path (post-order), sum the salaries/counts of children and add to the current node.
+How to Draw (Opt): Draw a tree. Write a number in each leaf. Draw "up-arrows" pushing those numbers to the parent. Parent sums them up and pushes further.
+Opt Complexity Visuals: Linear Tree Scan.
+How to Draw Opt Complexity: Draw a tree and shade it from top to bottom (exactly N nodes visited).
+Mem Vis (BF): Massive result sets from redundant self-joins.
+Mem Vis (Opt): An adjacency list (Map) and a single recursive stack.

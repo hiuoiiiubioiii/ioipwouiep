@@ -1,0 +1,13 @@
+ID: 3776
+Problem Title: Minimum Moves to Balance Circular Array (Med)
+Brute Force Method: Simulate every possible "shift" of elements in a circular fashion. For each shift, calculate the moves to reach a balanced state (e.g., all elements equal to average). $O(N^2)$.
+BF Complexity Visuals: Circular Shift Matrix.
+How to Draw BF: Draw the array as a ring. Try moving "units" clockwise and counter-clockwise between all neighbors until equal. Repeat starting the process from every index.
+Optimised Pattern: Prefix Sums on Doubled Array + Median of Differences
+Opt Vis. Technique: Unrolled Ring Linearization
+Dry Run (Opt): Double the array to handle circularity. A balanced state requires moving values to eliminate the "debt" or "surplus" at each index. The optimal point to "break" the circle is found by the median of the prefix sums of differences.
+How to Draw (Opt): Draw the array twice side-by-side. Calculate prefix sums of (arr[i] - average). Find the median value of these prefix sums. The cost is the sum of absolute distances to this median.
+Opt Complexity Visuals: $O(N \log N)$ due to sorting for median.
+How to Draw Opt Complexity: Draw a linear prefix sum graph and a horizontal "Median" line passing through it.
+Mem Vis (BF): $O(N^2)$ simulation states.
+Mem Vis (Opt): $O(N)$ for doubled prefix sum array.

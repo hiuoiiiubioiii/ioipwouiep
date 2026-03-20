@@ -1,0 +1,13 @@
+ID: 933
+Problem Title: Number of Recent Calls
+Brute Force Method: Store every timestamp ever received in a list. For every `ping(t)`, iterate through the whole list and count values in range [t-3000, t].
+BF Complexity Visuals: $O(N^2)$. A growing history that is re-scanned from the beginning for every single new event.
+How to Draw BF: Draw a timeline. For the 100th ping, draw a long arrow scanning back through all 99 previous pings.
+Optimised Pattern: Sliding Window (Queue)
+Opt Vis. Technique: A "3000ms conveyor belt." New pings enter the front; any ping that has traveled more than 3000ms falls off the back.
+Dry Run (Opt): Push `t` to queue. While `queue.front() &lt; t - 3000`, `queue.pop()`. The answer is `queue.size()`.
+How to Draw (Opt): Draw a horizontal pipe. New numbers enter on the right. If the number on the far left is too "old" (outside the 3000 gap), draw it being kicked out.
+Opt Complexity Visuals: Amortized $O(1)$. Each ping is pushed once and popped once.
+How to Draw Opt Complexity: Draw a timeline. Put a `+` when a ping arrives and a `-` when it is popped. Total operations = 2N.
+Mem Vis (BF): $O(N)$. An ever-growing list that never shrinks.
+Mem Vis (Opt): $O(W)$ where W is the max number of pings within a 3000ms window. Draw a small, fixed-capacity box.

@@ -1,0 +1,13 @@
+ID: 2243
+Problem Title: Calculate Digit Sum of a String
+Brute Force Method: Recursive String RebuildingWhile string length &gt; k, slice the string into groups, convert each to an integer, sum digits, and concatenate back. Repeat recursively.
+BF Complexity Visuals: Layered String Transformation
+How to Draw BF: Draw the string. Draw vertical lines every K characters. Below each group, write the sum. Draw arrows merging those sums into a new, slightly shorter string. Repeat the drawing.
+Optimised Pattern: Iterative StringBuilder / Two-Pointer
+Opt Vis. Technique: Chunk-Based Accumulator
+Dry Run (Opt): Use a `while` loop and an internal `for` loop to jump by `k`. Use a `StringBuilder` to collect sums. This minimizes the overhead of creating many intermediate string objects in memory.
+How to Draw (Opt): Draw the string with a sliding window of size K. As the window slides, calculate the digit sum and drop it into a "Result String" bucket. When the pass is over, the bucket becomes the new string.
+Opt Complexity Visuals: Shrinking Timeline Cascade
+How to Draw Opt Complexity: Draw a wide bar (length N), then a smaller bar (N/K), then smaller. Label the summation of the series. Even though it looks complex, it converges to $O(N)$ or $O(N \log N)$.
+Mem Vis (BF): Creating thousands of immutable string slices and sub-string objects in the heap.
+Mem Vis (Opt): A single reusable `StringBuilder` or `char array` to construct the next iteration (O(N) space).

@@ -1,0 +1,13 @@
+ID: 309
+Problem Title: Best Time to Buy and Sell Stock with Cooldown
+Brute Force Method: Recursively explore 3 choices (Buy, Sell, Cooldown) on every single day.
+BF Complexity Visuals: Ternary Recursion Tree
+How to Draw BF: Draw a root node. Draw 3 branches (Buy, Sell, Rest). From each, draw 3 more. Label the massive bottom width as $O(3^N)$.
+Optimised Pattern: Dynamic Programming (State Machine)
+Opt Vis. Technique: Finite State Machine (FSM) Graph
+Dry Run (Opt): Track 3 states: `Held`, `Sold`, `Reset`. On day i: `Held` comes from resting or buying from `Reset`. `Sold` comes strictly from selling `Held`. `Reset` comes from resting in `Reset` or coming from `Sold`.
+How to Draw (Opt): Draw 3 circles representing the states: Held, Sold, Reset. Draw directed arrows connecting them, labeling the transitions (e.g., arrow from Held to Sold labeled "+Price").
+Opt Complexity Visuals: Linear State Transitions
+How to Draw Opt Complexity: Draw a horizontal timeline array. Under each "day" slot, write three numbers stacked vertically representing the max profit for the 3 states. $O(N)$.
+Mem Vis (BF): Massive deep call stack box (O(N) height).
+Mem Vis (Opt): State Variables Box: Draw just 3 integer boxes that get continually overwritten in a loop. $O(1)$ Space optimization.

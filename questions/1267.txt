@@ -1,0 +1,13 @@
+ID: 1267
+Problem Title: Count Servers that Communicate
+Brute Force Method: For every cell (i, j) containing a server, scan the entire row i and the entire column j to see if another server exists. If so, increment the communicator count.
+BF Complexity Visuals: Cell-by-Cell Cross Scans
+How to Draw BF: Draw a grid. For every server, draw a long horizontal line and a long vertical line. Write $O(M \cdot N \cdot (M+N)$).
+Optimised Pattern: Row/Column Frequency Counting
+Opt Vis. Technique: Projection Sums
+Dry Run (Opt): Pre-calculate the number of servers in each row and store in `rowCount[m]`. Do the same for `colCount[n]`. A server at (i, j) can communicate if `rowCount[i] &gt; 1` OR `colCount[j] &gt; 1`.
+How to Draw (Opt): Draw a grid with servers. At the end of each row, write the total count. At the bottom of each column, write the total count. Circle servers where either their row total or column total is &gt; 1.
+Opt Complexity Visuals: Linear Grid Scan (Two Pass)
+How to Draw Opt Complexity: Draw a grid. Show one horizontal pass for totals, one vertical pass for totals, and a final pass for counting. Write $O(M \cdot N)$.
+Mem Vis (BF): Draw no extra arrays, but massive repeated CPU loops over the same rows.
+Mem Vis (Opt): Draw two 1D arrays of size M and N to store the counts. Space: $O(M + N)$.

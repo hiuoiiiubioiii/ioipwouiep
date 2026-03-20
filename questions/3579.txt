@@ -1,0 +1,13 @@
+ID: 3579
+Problem Title: Minimum Steps to Convert String with Operations (Hard)
+Brute Force Method: BFS to explore all possible string states reachable via the given operations until the target is found.
+BF Complexity Visuals: Explosive State Graph.
+How to Draw BF: Draw the initial string. Draw arrows for every possible operation (swap, delete, etc.). Count levels to reach Target.
+Optimised Pattern: Dijkstra / BFS + A* Search or Dynamic Programming.
+Opt Vis. Technique: Shortest Path in State Space.
+Dry Run (Opt): Map strings to nodes. Use a priority queue to explore the most "promising" string transformations first based on a heuristic.
+How to Draw (Opt): Draw a "Cloud" of strings. Highlight the shortest path of arrows connecting the Start string to the Target string.
+Opt Complexity Visuals: $O(V + E)$ where V is the number of reachable string states.
+How to Draw Opt Complexity: Draw a wavefront expanding from the source node, stopping immediately at the target.
+Mem Vis (BF): Visited Set: Draw a massive hash set storing every string variation ever encountered.
+Mem Vis (Opt): Queue + Map: Draw a small queue for current frontier and a map for min-steps-to-string.

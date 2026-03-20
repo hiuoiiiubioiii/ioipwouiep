@@ -1,0 +1,13 @@
+ID: 3568
+Problem Title: Minimum Moves to Clean the Classroom (Med)
+Brute Force Method: Simulate every possible movement sequence for the cleaner, checking the "clean" status of every cell at each step.
+BF Complexity Visuals: Path Permutation Search.
+How to Draw BF: Draw the classroom. From the starting point, draw every possible path. Use a counter to track moves. Stop when all cells are clean.
+Optimised Pattern: BFS / Dijkstra on Grid State.
+Opt Vis. Technique: Concentric Wavefront.
+Dry Run (Opt): Treat the cleaner's position as a node in a graph. BFS finds the shortest path. If cleaning is sequential, use a Greedy/Line-Sweep approach.
+How to Draw (Opt): Draw the grid. Shade the "dirty" cells. Draw a snake-like line passing through all shaded cells, labeling the number of steps.
+Opt Complexity Visuals: $O(N \cdot M)$.
+How to Draw Opt Complexity: Draw a single straight arrow passing through every cell of the grid once.
+Mem Vis (BF): Call Stack of States: Draw memory blocks for every "visited" coordinate and the current grid status.
+Mem Vis (Opt): Distance Grid: Draw a single 2D array of integers tracking the cleaner's min steps to reach each cell.

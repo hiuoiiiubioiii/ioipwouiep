@@ -1,0 +1,13 @@
+ID: 761
+Problem Title: Special Binary String
+Brute Force Method: Generate all possible permutations of the string and check if they are "special" and lexicographically larger.
+BF Complexity Visuals: Permutation Explosion
+How to Draw BF: Draw a string branching into N! possibilities. Most branches are crossed out (invalid). $O(N!)$.
+Optimised Pattern: Recursion + String Sorting (Divide &amp; Conquer)
+Opt Vis. Technique: Recursive Mountain Parsing
+Dry Run (Opt): Treat '1' as up and '0' as down. Break string into "Special" components (mountain peaks). Recursively sort sub-mountains and join them back in descending order.
+How to Draw (Opt): Draw a line plot (1=up, 0=down). Identify separate peaks that touch the baseline. Extract each peak, recurse, and rearrange the peaks on the paper from largest to smallest.
+Opt Complexity Visuals: Recursive Tree Depth
+How to Draw Opt Complexity: Draw a tree where each node is a substring being sorted. $O(N^2)$ due to repeated string concatenations.
+Mem Vis (BF): Massive set for permutations.
+Mem Vis (Opt): Recursive call stack + list of strings $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1573
+Problem Title: Number of Ways to Split a String
+Brute Force Method: Try every possible pair of split points (i, j) and check if the count of '1's in the three resulting substrings is equal. $O(N^3)$ or $O(N^2)$.
+BF Complexity Visuals: Split-Point Combination Grid
+How to Draw BF: Draw a string. Draw two vertical lines at every possible pair of gaps. The number of combinations is \binom{N-1}{2}.
+Optimised Pattern: Combinatorics / Gap Counting
+Opt Vis. Technique: The "Gap Multiplication" Viz
+Dry Run (Opt): Count total '1's. If not divisible by 3, return 0. If total is 0, use \binom{N-1}{2}. Otherwise, find the size of the gaps of '0's between the 1st/2nd third and the 2nd/3rd third. Result is `(gap1 + 1) * (gap2 + 1)`.
+How to Draw (Opt): Draw 3 groups of '1's. Circle the clusters of '0's between group 1 and 2, and between 2 and 3. Write "Choices" under each circle. Multiply the choice counts.
+Opt Complexity Visuals: Three-Pass Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Mark the locations of the "Split-Ready" zones. No nested operations.
+Mem Vis (BF): Generating all split substrings. $O(N^2)$.
+Mem Vis (Opt): A list of indices for '1's or just a few pointer variables. $O(1)$ extra space if not storing indices.

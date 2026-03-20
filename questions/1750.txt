@@ -1,0 +1,13 @@
+ID: 1750
+Problem Title: Minimum Length of String After Deleting Similar Ends
+Brute Force Method: Recursively or iteratively check the first and last char. If equal, create a new string by trimming all matching prefix/suffix chars and repeat.
+BF Complexity Visuals: String Slicing / Substring Creation.
+How to Draw BF: Draw string. Cut off ends. Write a NEW string. Cut off ends. Write a NEW string. $O(N^2)$ due to allocations.
+Optimised Pattern: Two Pointers (Inward Convergence).
+Opt Vis. Technique: Candle Burning from Both Ends.
+Dry Run (Opt): `left = 0`, `right = n-1`. While `left &lt; right` and `s[left] == s[right]`, store the char and move `left` forward and `right` backward as long as they match that char.
+How to Draw (Opt): Draw string. Place `L` at start, `R` at end. If they match 'a', move `L` past all 'a's and `R` past all 'a's. Stop when they don't match or they cross.
+Opt Complexity Visuals: Converging Linear Scan.
+How to Draw Opt Complexity: Draw two arrows meeting in the middle. Label $O(N)$.
+Mem Vis (BF): Multiple string copies in memory. $O(N^2)$.
+Mem Vis (Opt): Two integer pointers. $O(1)$ space.

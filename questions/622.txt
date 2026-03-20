@@ -1,0 +1,13 @@
+ID: 622
+Problem Title: Design Circular Queue
+Brute Force Method: Use a standard Dynamic Array (like ArrayList). On every `deQueue`, shift every single remaining element one position to the left.
+BF Complexity Visuals: Continuous "Slinky" motion where the whole array moves left.
+How to Draw BF: Draw an array [1, 2, 3]. Cross out 1. Draw arrows moving 2 and 3 into the slots 0 and 1. Write $O(N)$ per dequeue.
+Optimised Pattern: Two-Pointer Array with Modulo Arithmetic.
+Opt Vis. Technique: A clock face or a ring.
+Dry Run (Opt): Maintain `head` and `tail` pointers. When adding, `tail = (tail + 1) % size`. When removing, `head = (head + 1) % size`. Pointers just chase each other in a circle.
+How to Draw (Opt): Draw a circle with 5 slots. Place an 'H' (Head) and 'T' (Tail) pointer. Move them clockwise. Show how 'T' can wrap around behind 'H'.
+Opt Complexity Visuals: Constant time jumps for all operations.
+How to Draw Opt Complexity: Draw a dot (operation) connecting directly to a slot without any scanning. Write $O(1)$.
+Mem Vis (BF): Draw a memory block that frequently resizes and re-copies data during shifts.
+Mem Vis (Opt): Draw one fixed-size array of size K. No resizing, no moving data.

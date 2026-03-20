@@ -1,0 +1,13 @@
+ID: 2790
+Problem Title: Maximum Number of Groups With Increasing Lengths
+Brute Force Method: Try to build groups of length 1, then 2, then 3... by picking elements from usageLimits. Use a priority queue to always pick the most available elements. $O(K \cdot N \log N)$.
+BF Complexity Visuals: Iterative Group Construction with PQ
+How to Draw BF: Draw several buckets. Try to fill them with balls from different colors. For each group, redraw the remaining ball counts. Very complex to track manually.
+Optimised Pattern: Priority Queue Heap State (Visualizing the heap re-balancing for every element used in a group).
+Opt Vis. Technique: Sorting + Greedy Prefix Sum Accumulation
+Dry Run (Opt): Cumulative Resource Staircase
+How to Draw (Opt): Sort usageLimits. Maintain a total sum of available slots. A group of size k+1 can be formed if the total available elements is >= frac(k+1)(k+2)2.
+Opt Complexity Visuals: Draw the sorted limits as bars. Draw a "Staircase" line (1, 3, 6, 10...) over them. As long as your total bar area stays above the staircase line, you can add another step.
+How to Draw Opt Complexity: $O(N \log N)$ Sorting
+Mem Vis (BF): Draw a sort block followed by a single linear pass. Label the bottleneck as $O(N \log N)$.
+Mem Vis (Opt): $O(1)$ Auxiliary Space (Draw a single count and total variable; the sort is in-place).

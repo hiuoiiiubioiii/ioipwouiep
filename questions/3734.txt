@@ -1,0 +1,13 @@
+ID: 3734
+Problem Title: Lexicographically Smallest Palindromic Permutation Greater Than Target (Hard)
+Brute Force Method: Generate all string permutations, filter out the non-palindromes, sort them alphabetically, and find the one right after the target. $O(N!)$.
+BF Complexity Visuals: Giant tree with heavy filtering branches.
+How to Draw BF: Write every scramble of the letters. Violently cross out any that don't read the same backwards. Order the survivors.
+Optimised Pattern: Next Permutation on Half-String
+Opt Vis. Technique: Mirror Flip Reflection
+Dry Run (Opt): Since it must be a palindrome, the right half is just a mirror of the left. Take the left half of the string, find its strictly "Next Permutation", and then mirror it to the right half.
+How to Draw (Opt): Write the string. Cut it in half. Ignore the right side. Run the "swap and reverse" permutation trick on the left half. Then copy the left half, flip it backward, and write it as the right half.
+Opt Complexity Visuals: Linear pass $O(N)$.
+How to Draw Opt Complexity: Draw three quick horizontal segments: Find pivot, Reverse suffix, Mirror string.
+Mem Vis (BF): Huge arrays holding all valid permutations.
+Mem Vis (Opt): In-place character array modification (O(1) extra space).

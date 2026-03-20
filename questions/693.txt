@@ -1,0 +1,13 @@
+ID: 693
+Problem Title: Binary Number with Alternating Bits
+Brute Force Method: Convert the number to a binary string and iterate through the characters to check if `s[i] != s[i-1]`.
+BF Complexity Visuals: String conversion and linear scan.
+How to Draw BF: Write "5" -&gt; "101". Scan. Write "7" -&gt; "111" (Fail!). $O(Log N)$ for string conversion.
+Optimised Pattern: Bit Manipulation (XOR Shift).
+Opt Vis. Technique: Self-Alignment check.
+Dry Run (Opt): Let `n = n ^ (n &gt;&gt; 1)`. If bits were alternating, `n` becomes all 1s (e.g., 1010 ^ 0101 = 1111). Check if `(n &amp; (n+1)) == 0`.
+How to Draw (Opt): Write a binary number. Write it again shifted right by 1. Draw a line for XOR. Check if the result is a solid block of 1s.
+Opt Complexity Visuals: $O(1)$ (Fixed number of bitwise operations).
+How to Draw Opt Complexity: Draw a single logic gate diagram. Write $O(1)$.
+Mem Vis (BF): Draw a string object in memory.
+Mem Vis (Opt): Draw zero extra space, just registers. $O(1)$.

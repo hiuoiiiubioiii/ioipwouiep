@@ -1,0 +1,13 @@
+ID: 1527
+Problem Title: Patients With a Condition (SQL)
+Brute Force Method: Scanning the entire table, loading the string column into memory, and using expensive regex or split operations per row in the application layer.
+BF Complexity Visuals: Full Table String Parsing $O(N \cdot L)$
+How to Draw BF: Draw a massive database block. Draw an arrow pulling every single row into a magnifying glass, where a complex engine slices the string by spaces to check every word.
+Optimised Pattern: SQL LIKE Operator / String Matching
+Opt Vis. Technique: The Dual-Condition Filter
+Dry Run (Opt): Use the SQL `LIKE` operator to check two specific patterns: `conditions LIKE 'DIAB1%'` (starts with it) OR `conditions LIKE '% DIAB1%'` (contains it with a leading space). This ensures we catch the exact condition prefix without false positives.
+How to Draw (Opt): Draw a database table pouring rows into a Y-shaped funnel. One branch checks if the string explicitly starts with 'DIAB1'. The other checks if ' DIAB1' is buried inside. If either is true, the row drops into the result bucket.
+Opt Complexity Visuals: Indexed / Scanned Filter $O(N)$
+How to Draw Opt Complexity: Draw a linear pipeline. The database engine does a single pass over the rows, applying a highly optimized C-level string match.
+Mem Vis (BF): Application memory overhead for loading unneeded rows.
+Mem Vis (Opt): Zero application memory. The filtering happens in the database engine memory buffer. $O(1)$ auxiliary space.

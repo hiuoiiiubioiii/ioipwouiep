@@ -1,0 +1,13 @@
+ID: 1614
+Problem Title: Maximum Nesting Depth of the Parentheses
+Brute Force Method: Use an explicit Stack. Push '(', pop ')'. Track max stack height.
+BF Complexity Visuals: Physical Tower Building
+How to Draw BF: Draw physical blocks being stacked up and then removed. Memory grows to $O(N)$.
+Optimised Pattern: Single Counter Tracking
+Opt Vis. Technique: Elevation Profile / Line Graph
+Dry Run (Opt): Loop string. '(' adds 1 to depth. ')' subtracts 1. Record the peak "altitude".
+How to Draw (Opt): Draw a 2D graph. X-axis is the string index. Y-axis is depth. Draw a line going up on '(' and down on ')'. Peak is the answer.
+Opt Complexity Visuals: Single Flat Scan
+How to Draw Opt Complexity: Draw a straight horizontal arrow scanning the text string exactly once. $O(N)$ time.
+Mem Vis (BF): Stack: Draw a deep vertical tube holding bracket symbols.
+Mem Vis (Opt): Single Variable: Draw a single box holding an integer that constantly overwrites itself.

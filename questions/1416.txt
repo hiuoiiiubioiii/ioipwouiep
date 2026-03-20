@@ -1,0 +1,13 @@
+ID: 1416
+Problem Title: Restore The Array
+Brute Force Method: Pure Recursion. At each character, try placing a split. Convert the resulting substring to an integer. If it's valid (1 to k) and no leading zeros, recursively process the rest of the string.
+BF Complexity Visuals: Exponential Branching Tree
+How to Draw BF: Draw a string. Below it, draw a massive tree where each node splits into up to N branches (for every possible substring length). Label $O(2^N)$.
+Optimised Pattern: 1D Dynamic Programming (Suffix/Prefix Array)
+Opt Vis. Technique: Sliding Window Bounded Checks
+Dry Run (Opt): Work backwards. `dp[i]` = ways to restore suffix starting at `i`. Check substrings `s[i...j]`. Stop if number &gt; k or length exceeds `len(str(k))`. Add `dp[j+1]` to `dp[i]`.
+How to Draw (Opt): Draw the string with a pointer moving right-to-left. From the pointer, draw a small sliding window expanding rightwards, hitting a wall when length &gt; len(str(k)). Write sum updates above it.
+Opt Complexity Visuals: Bounded Linear Scan
+How to Draw Opt Complexity: Draw an array of length N. Inside, draw a nested loop of max size `log10(k)`. Total time $O(N \cdot \log10(k)$).
+Mem Vis (BF): Deep Recursion Call Stack
+Mem Vis (Opt): Draw a single 1D DP array of size N+1. Space $O(N)$.

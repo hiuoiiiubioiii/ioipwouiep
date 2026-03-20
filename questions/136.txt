@@ -1,0 +1,13 @@
+ID: 136
+Problem Title: Single Number
+Brute Force Method: Iterate through the array; for each element, scan the rest of the array to see if a duplicate exists.
+BF Complexity Visuals: Nested loops comparison grid (N x N) showing $O(N^2)$ checks.
+How to Draw BF: Draw an array. For index 0, draw arrows to all other indices. For index 1, repeat. Show the density of arrows.
+Optimised Pattern: Bit Manipulation (XOR).
+Opt Vis. Technique: A "Cancellation Field." Identical values collide and vanish, leaving only the unique value standing.
+Dry Run (Opt): Initialize result = 0. XOR every number. Since a oplus a = 0 and a oplus 0 = a, duplicates cancel.
+How to Draw (Opt): Write numbers in binary. Line them up. Cross out pairs of identical bit columns to show they result in 0. Circle the remaining bits.
+Opt Complexity Visuals: Linear $O(N)$ timeline where each element is "processed" by a single XOR gate.
+How to Draw Opt Complexity: Draw a single horizontal line through the array. Mark each box with a oplus symbol to prove a single pass.
+Mem Vis (BF): Visualizing a "Seen" list growing to $O(N)$ in a Set-based brute force.
+Mem Vis (Opt): A single 32-bit register (the result variable) in $O(1)$ stack memory.

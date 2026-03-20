@@ -1,0 +1,13 @@
+ID: 728
+Problem Title: Self Dividing Numbers
+Brute Force Method: Convert every number to a string to iterate through digits, check divisibility.
+BF Complexity Visuals: Type Casting Pipeline
+How to Draw BF: Draw a number entering a "String Converter" box, then breaking into a char array. $O(N \\text{cdot Number of Digits})$.
+Optimised Pattern: Modulo Digit Extraction
+Opt Vis. Technique: Digit Stripping / Peeling
+Dry Run (Opt): For a number `val`, use `val % 10` to get the last digit and `val / 10` to remove it. Check `original % digit == 0` for each.
+How to Draw (Opt): Write a number (e.g., 128). Draw an arrow peeling off '8', then '2', then '1'. Check each against 128.
+Opt Complexity Visuals: Digit Bound Curve
+How to Draw Opt Complexity: Draw a curve that flattens out (Logarithmic). Each number takes $O(\log10(N)$) time to check. Total $O(N \log N)$.
+Mem Vis (BF): String object creation per number.
+Mem Vis (Opt): No extra space; integer arithmetic only (O(1) extra).

@@ -1,0 +1,13 @@
+ID: 3515
+Problem Title: Shortest Path in a Weighted Tree (Hard)
+Brute Force Method: BFS/DFS from source to destination for every single query.
+BF Complexity Visuals: Repeated Graph Flooding.
+How to Draw BF: Draw the tree. For query 1, color paths red. Erase. For query 2, color paths blue. Repeat Q times. Cost: $O(Q \cdot N)$.
+Optimised Pattern: Lowest Common Ancestor (LCA) with Binary Lifting.
+Opt Vis. Technique: Ancestral V-Shape Paths.
+Dry Run (Opt): Distance(U, V) = Dist(Root, U) + Dist(Root, V) - 2 * Dist(Root, LCA(U, V)). Precompute root distances.
+How to Draw (Opt): Draw a tree. Pick nodes U and V. Trace upward to their highest shared parent (LCA). Draw the mathematical equation next to the V-shape.
+Opt Complexity Visuals: Logarithmic Tree Climbing.
+How to Draw Opt Complexity: Draw a node jumping up the tree in exponentially increasing steps (1, 2, 4, 8). $O(\log N)$ per query. Total: $O(N \log N + Q \log N)$.
+Mem Vis (BF): Call Stack Overload: Draw deep recursive stacks for every individual DFS query.
+Mem Vis (Opt): Sparse Table / 2D Array: Draw an N x log(N) matrix for jump pointers, and a 1D array for root-distances.

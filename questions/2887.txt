@@ -1,0 +1,13 @@
+ID: 2887
+Problem Title: Fill Missing Data
+Brute Force Method: Scan the 'quantity' column. If a cell is null, look up the default value and write it into that cell manually.
+BF Complexity Visuals: Conditional Iteration
+How to Draw BF: Draw a table with gaps. Draw a "Fill" bucket. Draw arrows pouring the bucket into the gaps.
+Optimised Pattern: df['quantity'].fillna(0)
+Opt Vis. Technique: Imputation Masking
+Dry Run (Opt): Visualize a "0" constant being broadcasted only into the indices where the "Null Mask" is True.
+How to Draw (Opt): Draw a grid with holes. Draw a layer of "0"s behind the grid. The "0"s only show through where there are holes.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a straight line. Every row is checked for nullity once.
+Mem Vis (BF): $O(N)$ - Iterating via Python is slow and memory-heavy.
+Mem Vis (Opt): $O(N)$ - Efficiently handled via bitmasks in C.

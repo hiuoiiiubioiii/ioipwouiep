@@ -1,0 +1,13 @@
+ID: 1119
+Problem Title: Remove Vowels from a String
+Brute Force Method: String Concatenation in a loop. Because strings are immutable in many languages, appending creates a full copy of the string every time.
+BF Complexity Visuals: String Copy Waterfall
+How to Draw BF: Draw the original string. Draw a new, slightly longer string below it for every consonant added. Write $O(N^2)$ to highlight the hidden waste.
+Optimised Pattern: Two Pointers / StringBuilder / RegEx
+Opt Vis. Technique: Filter Pipeline
+Dry Run (Opt): Iterate characters. If character is NOT in the vowel set `[a, e, i, o, u]`, append it to a mutable array or StringBuilder.
+How to Draw (Opt): Draw the original string on top. Draw an empty array on the bottom. Draw straight down-arrows for consonants, and an 'X' over vowels.
+Opt Complexity Visuals: Flat Line $O(N)$
+How to Draw Opt Complexity: Draw a single arrow sweeping from left to right exactly once.
+Mem Vis (BF): Pyramid of garbage-collected intermediate strings
+Mem Vis (Opt): Pre-allocated Character Array / StringBuilder $O(N)$.

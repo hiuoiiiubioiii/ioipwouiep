@@ -1,0 +1,13 @@
+ID: 343
+Problem Title: Integer Break
+Brute Force Method: Use backtracking to find every possible set of integers that sum to n, multiply them, and keep the max.
+BF Complexity Visuals: Partition Permutation Tree
+How to Draw BF: Draw a root n. Draw branches for every possible first split (1, 2, \dots, n-1). Show the tree width expanding exponentially. $O(2^N)$.
+Optimised Pattern: Dynamic Programming or Mathematical Optimization (Rule of 3s)
+Opt Vis. Technique: Greedy Factor Decomposition
+Dry Run (Opt): Math: To maximize the product, break n into as many 3s as possible. If the remainder is 1, use two 2s (since 3+1=4 and 3 \times 1 &lt; 2 \times 2). If the remainder is 2, just multiply by that 2.
+How to Draw (Opt): Draw the number n as a long bar. Chop it into segments of length 3. If a small bit is left, show it merging into a 4 to be split into 2 \times 2.
+Opt Complexity Visuals: Linear DP Fill or Constant Math
+How to Draw Opt Complexity: Draw a 1D DP array from 1 to n. Show dp[i] being calculated from previous values. $O(N)$ or $O(\log N)$.
+Mem Vis (BF): Recursive call stack depth of N.
+Mem Vis (Opt): 1D DP array or $O(1)$ if using the math formula. Draw a single result variable box.

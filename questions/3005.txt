@@ -1,0 +1,13 @@
+ID: 3005
+Problem Title: Count Elements With Maximum Frequency
+Brute Force Method: Nested loops. For each element, iterate through the entire array to count its occurrences. Find the max, then iterate again to sum.
+BF Complexity Visuals: Arrow-Matrix Scanning
+How to Draw BF: Write the array horizontally. From each element, draw a looping arrow that bounces across the entire array.
+Optimised Pattern: Single/Double Pass Hash Map (Frequency Array)
+Opt Vis. Technique: Frequency Histogram / Bins
+Dry Run (Opt): Read the array left to right. Drop each number into a labeled bucket, visually increasing its height. Find the tallest bucket(s) and sum their heights.
+How to Draw (Opt): Draw an array of items. Below it, draw buckets (squares). Add tally marks. Circle the bucket(s) with the most tallies.
+Opt Complexity Visuals: Linear Scan Bar
+How to Draw Opt Complexity: Draw two horizontal bars representing $O(N)$ array passes: "Map Building" and "Max Summing".
+Mem Vis (BF): Primitive counter variables shifting constantly with $O(1)$ extra space but heavy time overhead.
+Mem Vis (Opt): A Hash Map drawn as a 2-column table: [Number | Frequency].

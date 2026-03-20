@@ -1,0 +1,13 @@
+ID: 3833
+Problem Title: Count Dominant Indices (Easy)
+Brute Force Method: Double nested loop: For every index 'i', loop through every other index 'j' to verify if `arr[i] &gt;= 2 * arr[j]`.
+BF Complexity Visuals: A dense spiderweb of comparison arrows bouncing between every pair of elements.
+How to Draw BF: Draw an array. Point finger at index 0. Draw arrows pointing from index 0 to every other number. Move to index 1, repeat. Write $O(N^2)$.
+Optimised Pattern: Single-Pass Max &amp; Second Max Tracking.
+Opt Vis. Technique: Two podiums (Gold and Silver) holding the highest values as a conveyor belt of numbers moves past.
+Dry Run (Opt): Initialize Max = -1, SecondMax = -1. Loop once. If num &gt; Max, demote Max to SecondMax, new Max = num. Finally, just check if Max &gt;= 2 * SecondMax.
+How to Draw (Opt): Draw an array. Draw two boxes below: 'M1' and 'M2'. Update them as you read the array left to right. Final step: check if M1 &gt;= M2 * 2.
+Opt Complexity Visuals: A straight horizontal line timeline.
+How to Draw Opt Complexity: Draw a line. Write one arrow spanning left to right. Write $O(N)$.
+Mem Vis (BF): Call stack allocations if implemented recursively, or redundant tracking variables.
+Mem Vis (Opt): $O(1)$ memory. Literally just two integer variables tracking the state.

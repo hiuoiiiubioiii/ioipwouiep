@@ -1,0 +1,13 @@
+ID: 3534
+Problem Title: Path Existence Queries in a Graph II (Hard)
+Brute Force Method: Run constrained BFS/DFS for each query, strictly ignoring edges that violate the current query's threshold.
+BF Complexity Visuals: Filtered Graph Traversals.
+How to Draw BF: Redraw the graph for every query. Manually cross out edges that are too heavy/light, then attempt to trace a path.
+Optimised Pattern: Offline Queries + DSU with Sorting.
+Opt Vis. Technique: Gradual Graph Construction (Line Sweep).
+Dry Run (Opt): Sort edges and queries by threshold. Progressively add edges to the DSU as the threshold allows. Answer queries using the current DSU state exactly when their threshold is met.
+How to Draw (Opt): Draw two queues: Edges and Queries. Move a vertical "threshold" ruler to the right. As edges pass the ruler, drop them into a DSU bubble. As queries pass, answer them instantly.
+Opt Complexity Visuals: Two Sorted Timelines Merging.
+How to Draw Opt Complexity: Draw two sorted arrays being processed by a single two-pointer sweep. $O(E \log E + Q \log Q)$.
+Mem Vis (BF): Full Graph Copies: Storing the entire graph in memory and duplicating sub-graphs for constraint filtering.
+Mem Vis (Opt): Offline Query Array + DSU: Draw an array storing `[query_weight, u, v, original_index]` to remember where to place the answer.

@@ -1,0 +1,13 @@
+ID: 3750
+Problem Title: Minimum Number of Flips to Reverse Binary String (Easy)
+Brute Force Method: Simulate the process. For every discrepancy, apply a full prefix/suffix flip operation to the string array and count steps. $O(N^2)$.
+BF Complexity Visuals: Cascading String Mutations.
+How to Draw BF: Write the string. Find a wrong bit. Flip it and everything after it. Rewrite the entire new string. Repeat.
+Optimised Pattern: State Transition Counting (Adjacent Differences)
+Opt Vis. Technique: Bit Boundary Detection
+Dry Run (Opt): You don't need to physically flip anything! A flip is only required when the binary character *changes* from '0' to '1' or '1' to '0'. Just count the adjacent discrepancies.
+How to Draw (Opt): Write the binary string. Draw a vertical line `|` anywhere a '0' touches a '1'. Count the lines. Add 1 if the first character requires a flip to match the target state.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a flat horizontal timeline moving right, with dots placed only when states flip.
+Mem Vis (BF): Repeated string cloning/modifications.
+Mem Vis (Opt): $O(1)$ memory, just a counter variable.

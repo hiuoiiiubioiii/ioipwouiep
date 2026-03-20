@@ -1,0 +1,13 @@
+ID: 917
+Problem Title: Reverse Only Letters
+Brute Force Method: Extract all letters into a temporary list, reverse that list, then iterate through the original string and put letters back in order.
+BF Complexity Visuals: $O(N)$ Time and $O(N)$ Space. A process of dismantling a machine and rebuilding it elsewhere.
+How to Draw BF: Draw the string. Draw a separate array below it containing only the letters. Draw arrows showing the letters moving out, flipping, and moving back.
+Optimised Pattern: Two Pointers (In-place)
+Opt Vis. Technique: Two bookends sliding inward. They skip non-letters and only swap when both pointers are resting on valid letters.
+Dry Run (Opt): Left at 0, Right at end. While L &lt; R: if L is not letter, L++. If R is not letter, R--. If both are letters, swap and L++, R--.
+How to Draw (Opt): Draw the string. Place 'L' and 'R' at ends. Use arches to show swaps. Draw "skip" symbols (like a hurdle) over punctuation characters.
+Opt Complexity Visuals: $O(N)$. Two pointers meeting in the middle.
+How to Draw Opt Complexity: Draw a horizontal line. Draw two arrows pointing inward, meeting at the center point.
+Mem Vis (BF): $O(N)$ to store the extracted letters. Draw a second string container.
+Mem Vis (Opt): $O(1)$ (or $O(N)$ if string is immutable like in Java/Python). Draw the single original string being modified.

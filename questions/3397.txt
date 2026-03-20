@@ -1,0 +1,13 @@
+ID: 3397
+Problem Title: Maximum Number of Distinct Elements After Operations
+Brute Force Method: For every element i, try every integer in the range [nums[i]-k, nums[i]+k] and check all combinations to maximize unique values.
+BF Complexity Visuals: Combinatorial State Tree
+How to Draw BF: Draw a root. Branch into 2k+1 options for element 1. Repeat for all N. Height N. $O((2k+1)$^N).
+Optimised Pattern: Sorting + Greedy Allocation
+Opt Vis. Technique: Tight-Packing Timeline
+Dry Run (Opt): Sort the array. Keep track of the `lastValue` assigned. For each element, assign it the value max(lastValue + 1, nums[i] - k), provided it doesn't exceed nums[i] + k.
+How to Draw (Opt): Draw a number line. Sort your numbers as dots. For the first dot, move it as far left as possible (to x-k). For the next, place it at last+1 or its own x-k, whichever is higher.
+Opt Complexity Visuals: Log-Linear Sorted Sweep
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort box, followed by a single straight line N representing the greedy scan.
+Mem Vis (BF): Massive tree of all possible assignments.
+Mem Vis (Opt): $O(1)$ auxiliary space beyond the sorted array.

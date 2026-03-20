@@ -1,0 +1,13 @@
+ID: 2064
+Problem Title: Minimized Maximum of Products Distributed to Any Store
+Brute Force Method: Try every possible value for `x` (max products per store) starting from 1. For each `x`, calculate how many stores are needed. Stop when stores &lt;= `n`.
+BF Complexity Visuals: Linear Guess-and-Check
+How to Draw BF: Draw a line of possible answers 1 to MaxValue. For each number, draw a mini-loop dividing all product quantities. $O(\text{Max} \\text{cdot Products})$.
+Optimised Pattern: Binary Search on Answer Range
+Opt Vis. Technique: Logarithmic Zoom into Range
+Dry Run (Opt): Binary search the answer between `1` and `100,000`. For `mid`, calculate required stores: `sum(ceil(quantity / mid))`. If result &lt;= `n`, `mid` is possible; try smaller.
+How to Draw (Opt): Draw a number line `[1 ... 100,000]`. Mark `mid`. Below it, write the product array and divide each by `mid`. If the total "buckets" fit in `n`, shade the left half.
+Opt Complexity Visuals: Log-Linear Search
+How to Draw Opt Complexity: Draw an $O(\\text{log Max})$ binary search loop. Inside it, draw an $O(M)$ sweep over the products. Total Time $O(M \log(\text{MaxVal})$).
+Mem Vis (BF): Storing multiple distribution trial results in a list.
+Mem Vis (Opt): No extra data structures beyond the input. Space $O(1)$.

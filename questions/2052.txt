@@ -1,0 +1,13 @@
+ID: 2052
+Problem Title: Minimum Cost to Separate Sentence Into Rows
+Brute Force Method: Try every possible way to insert line breaks between words using a simple recursion (backtracking).
+BF Complexity Visuals: Exponential Branching Tree
+How to Draw BF: Draw a sentence. After the first word, branch: "Break here" or "Continue". After second word, branch again. Grows to $O(2^N)$.
+Optimised Pattern: Dynamic Programming (1D)
+Opt Vis. Technique: Optimal Path on 1D Array
+Dry Run (Opt): `dp[i]` is the min cost to format the sentence starting from word `i`. For each `i`, look ahead to all possible `j` that fit on one line. `dp[i] = min(cost(i, j) + dp[j+1])`.
+How to Draw (Opt): Draw the words in a line. Underneath, draw an array `dp`. From each cell `i`, draw arcs to future cells `j` that stay within the `k` limit. Choose the cheapest arc.
+Opt Complexity Visuals: Linear Scan with Lookahead Window
+How to Draw Opt Complexity: Draw an array of length N. For each cell, show a small sliding window of lookahead work. Total Time $O(N \cdot K/\text{avg}_\text{word}_\text{len})$.
+Mem Vis (BF): Deep recursion stack storing current string formatting state.
+Mem Vis (Opt): A 1D array of size N to store computed subproblem results (Memoization). Space $O(N)$.

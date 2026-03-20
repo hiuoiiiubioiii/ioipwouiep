@@ -1,0 +1,13 @@
+ID: 2863
+Problem Title: Maximum Length of Semi-Decreasing Subarrays
+Brute Force Method: Use nested loops to find all pairs (i, j) where i &lt; j and nums[i] &gt; nums[j]. Calculate the length j - i + 1 and keep the maximum.
+BF Complexity Visuals: $O(N2)$ Triangle Search
+How to Draw BF: Draw an array. Draw arrows connecting every element to every subsequent element. Label connections "Valid" if decreasing. Note the N(N-1)/2 connections.
+Optimised Pattern: Monotonic Stack + Two Pointers (Right-to-Left)
+Opt Vis. Technique: Boundary Anchoring
+Dry Run (Opt): Build a monotonic decreasing stack from the left (only push if nums[i] is greater than stack top). Then, scan the array from the right. While the right element is smaller than the stack top, pop the stack and update the max length.
+How to Draw (Opt): Draw the array. Circle the "Peaks" (left-to-right increasing elements) to form the stack. Use a finger to move from right-to-left. When your finger points to a value smaller than a peak, draw a bracket from the peak to your finger.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw two parallel lines. Line 1: Left-to-right stack build. Line 2: Right-to-left pointer scan. Each index is touched twice. $O(N)$.
+Mem Vis (BF): Visualize $O(1)$ extra space but TLE in execution.
+Mem Vis (Opt): Visualize a Stack storing indices of "peaks." Memory $O(N)$.

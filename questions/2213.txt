@@ -1,0 +1,13 @@
+ID: 2213
+Problem Title: Longest Substring of One Repeating Character
+Brute Force Method: Update &amp; Linear ScanFor every query, update the character in the string, then run a full $O(N)$ loop over the string to count the longest repeating substring.
+BF Complexity Visuals: Repeated Linear Scanning
+How to Draw BF: Draw the string. Erase one character and write the new one. Draw a loop scanning the entire string left-to-right counting consecutive characters. Repeat for every query.
+Optimised Pattern: Segment Tree
+Opt Vis. Technique: Segment Tree Merging Diagram
+Dry Run (Opt): Build a Segment Tree where each node stores 3 things: longest prefix, longest suffix, and longest overall substring. When combining nodes, if the boundary characters match, merge the left suffix and right prefix.
+How to Draw (Opt): Draw a binary tree over the string. At each node write `[pre, suf, max]`. When a leaf changes, draw arrows moving straight UP the tree, recalculating the 3 numbers at each parent node.
+Opt Complexity Visuals: Tree Path Update
+How to Draw Opt Complexity: Draw the Segment Tree. Highlight a single path from the root down to a leaf and back up. Label the height of the tree as $O(\log N)$ per query.
+Mem Vis (BF): Allocating a new full string or array copy after every query update.
+Mem Vis (Opt): An array of size `4*N` representing the Segment Tree, where each element is an object holding 3 integers.

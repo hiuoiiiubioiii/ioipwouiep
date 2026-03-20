@@ -1,0 +1,13 @@
+ID: 2072
+Problem Title: The Winner University (SQL)
+Brute Force Method: Join both tables, loop through all students, count those with scores &gt;= 90 for each university separately, and then compare.
+BF Complexity Visuals: Cross-Join and Multi-Scan
+How to Draw BF: Draw NewYorkUniv table and CaliforniaUniv table. Draw a loop scanning the first, then a second loop scanning the second. $O(N + M)$.
+Optimised Pattern: Independent Subqueries / Common Table Expressions (CTE)
+Opt Vis. Technique: Score Board Comparison
+Dry Run (Opt): Create two CTEs. CTE1 counts "excellent" students in NY. CTE2 counts "excellent" students in CA. Use a CASE statement in the final query to compare the two counts.
+How to Draw (Opt): Draw two tally boxes labeled NY and CA. Put a checkmark in NY for every score &gt;= 90. Do the same for CA. Compare the final numbers on a podium.
+Opt Complexity Visuals: Two Parallel Filtered Scans
+How to Draw Opt Complexity: Draw two straight parallel lines. Each line filters rows in $O(N)$. Final comparison is $O(1)$. Total Time $O(N + M)$.
+Mem Vis (BF): Temporary tables containing the full data of both universities before filtering.
+Mem Vis (Opt): Two single integer variables storing the counts in memory. Space $O(1)$.

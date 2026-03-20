@@ -1,0 +1,13 @@
+ID: 50
+Problem Title: Pow(x, n)
+Brute Force Method: Iterative Multiplication Run a standard `for` loop `n` times, multiplying `x` by itself. Will Time Limit Exceed (TLE) for massive powers (like n = 2^31).
+BF Complexity Visuals: The Endless Loop
+How to Draw BF: Draw `x * x * x * x...` dragging out across the page. Write $O(N)$ time, explicitly noting that N can be billions, making it way too slow.
+Optimised Pattern: Binary Exponentiation
+Opt Vis. Technique: The Squaring Halver
+Dry Run (Opt): Instead of multiplying by `x`, square the base (`x = x * x`) and halve the exponent (`n = n / 2`). If `n` is odd, multiply the result by `x` once and decrement `n`.
+How to Draw (Opt): Draw a starting box `2^10`. Next arrow points to `4^5` (base squared, power halved). Next points to `4 * 16^2` (handled the odd power). Next points to `4 * 256^1`.
+Opt Complexity Visuals: Halving Block
+How to Draw Opt Complexity: Draw a timeline representing exponent N. At each step, cross out half the remaining line. Logarithmic reduction guarantees $O(\log N)$ time.
+Mem Vis (BF): $O(1)$ space, but $O(N)$ time is unacceptable for production math libraries.
+Mem Vis (Opt): Draw exactly two variables modifying in-place (the base and the current result). Completely $O(1)$ space.

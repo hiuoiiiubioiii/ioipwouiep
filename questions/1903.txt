@@ -1,0 +1,13 @@
+ID: 1903
+Problem Title: Largest Odd Number in String
+Brute Force Method: Generate all possible substrings, check if they are odd, keep track of the maximum length.
+BF Complexity Visuals: Permutation/Substring Tree
+How to Draw BF: Draw a string. Draw overlapping brackets representing every possible substring combination, highlighting $O(N^2)$ possibilities.
+Optimised Pattern: Greedy (Right-to-Left Traversal)
+Opt Vis. Technique: Reverse Linear Scanning
+Dry Run (Opt): Start pointer at the very end of the string. Move left until the first odd digit is found. Slice string from index 0 to that point.
+How to Draw (Opt): Write the string as an array of boxes. Draw an arrow starting at the last box, skipping leftwards. Circle the first odd number, box everything to its left.
+Opt Complexity Visuals: Early Termination Bar Graph
+How to Draw Opt Complexity: Draw a single straight line representing $O(N)$. Put a stop sign at the first odd occurrence to show worst-case linear, best-case $O(1)$ time.
+Mem Vis (BF): A giant memory block holding an array of all generated substring strings (High memory overhead).
+Mem Vis (Opt): Two index integer variables (0 and right_pointer) referencing the original string in place. $O(1)$ space.

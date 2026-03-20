@@ -1,0 +1,13 @@
+ID: 1793
+Problem Title: Maximum Score of a Good Subarray
+Brute Force Method: Generate all subarrays that include index k. For each, find the minimum value and multiply by the subarray length.
+BF Complexity Visuals: Nested Range Search (Quadratic).
+How to Draw BF: Draw the array with k highlighted. Draw all possible brackets (i, j) such that i \le k \le j. Calculate score for each. $O(N^2)$.
+Optimised Pattern: Two Pointers (Expanding from k).
+Opt Vis. Technique: The "Expanding Walls" Search.
+Dry Run (Opt): Start at i = j = k. While you can expand left or right, always move the pointer that points to a larger value to keep the "minimum" as high as possible. Track max score.
+How to Draw (Opt): Draw array. Place i and j at k. Compare arr[i-1] and arr[j+1]. Move to the larger one. Update the "global minimum" as you go.
+Opt Complexity Visuals: Linear Treadmill.
+How to Draw Opt Complexity: Draw one set of pointers converging (or expanding) across the entire array once. Label $O(N)$.
+Mem Vis (BF): None, just variables.
+Mem Vis (Opt): Three integer variables (i, j, \text{min\_val}). $O(1)$ space.

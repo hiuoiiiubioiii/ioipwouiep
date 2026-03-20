@@ -1,0 +1,13 @@
+ID: 657
+Problem Title: Robot Return to Origin
+Brute Force Method: Simulate the movement using a 2D coordinate grid, potentially checking if the robot hits a boundary or re-calculating position on a full map.
+BF Complexity Visuals: Tracking a path on a Cartesian plane.
+How to Draw BF: Draw a grid. Draw a line moving from (0,0) step-by-step. Write $O(N)$.
+Optimised Pattern: Net Displacement Counter.
+Opt Vis. Technique: Zero-Sum Balance.
+Dry Run (Opt): Initialize `x = 0, y = 0`. Increment/Decrement based on U, D, L, R. Return true if `x == 0` and `y == 0` at the end.
+How to Draw (Opt): Draw two "Scales" labeled X and Y. For every move, put a weight on the left or right side. See if the scales are balanced at the end.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight arrow through the string. Write $O(N)$.
+Mem Vis (BF): Draw a full trail of every coordinate visited.
+Mem Vis (Opt): Draw exactly two integer variables. $O(1)$ space.

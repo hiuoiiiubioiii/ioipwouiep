@@ -1,0 +1,13 @@
+ID: 1270
+Problem Title: All People Report to the Given Manager
+Brute Force Method: For every employee, trace their management chain manually using multiple nested subqueries (Level 1, then Level 2, then Level 3).
+BF Complexity Visuals: Static Chain Hardcoding
+How to Draw BF: Draw a person. Draw 3 nested boxes around them. Label the outer box "Boss". Write $O(N)$ with 3 table scans.
+Optimised Pattern: Recursive CTE (Common Table Expression)
+Opt Vis. Technique: Hierarchical Tree Traversal
+Dry Run (Opt): Start with the "Big Boss" (ID 1). Find everyone who reports to them. Then find everyone who reports to those people. Stop exactly at depth 3.
+How to Draw (Opt): Draw ID 1 at the top. Draw arrows to their direct reports. From those, draw arrows to their reports. Stop after 3 levels of arrows. Circle everyone except ID 1.
+Opt Complexity Visuals: BFS-style Level Expansion
+How to Draw Opt Complexity: Draw a tree growing downwards. Highlight only the first 3 levels. Write $O(N)$.
+Mem Vis (BF): Draw several temporary tables for each hardcoded level.
+Mem Vis (Opt): Draw a single result set that expands iteratively in memory.

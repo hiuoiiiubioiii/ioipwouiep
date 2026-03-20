@@ -1,0 +1,13 @@
+ID: 3258
+Problem Title: Count Substrings That Satisfy K-Constraint I
+Brute Force Method: Generate all substrings $O(N^2)$ and count 0s and 1s for each. $O(N^3)$.
+BF Complexity Visuals: Quadratic Substring Grid
+How to Draw BF: Draw an N x N matrix. For each cell (i, j), show an inner loop counting 0s and 1s in S[i dots j]. Label as $O(N³)$.
+Optimised Pattern: Sliding Window (Two Pointers)
+Opt Vis. Technique: Elastic Substring Expansion
+Dry Run (Opt): Expand the right pointer. If both count(0) and count(1) exceed K, shrink the left pointer. The number of valid substrings ending at 'right' is `right - left + 1`.
+How to Draw (Opt): Draw the binary string. Place two pointers (L, R). Slide R right. If you hit k+1 zeros and k+1 ones, move L right until one condition is met. Add the distance (R-L+1) to your total.
+Opt Complexity Visuals: Amortized Linear Timeline
+How to Draw Opt Complexity: Draw a single line for the string. Show L and R moving only forward. Label as $O(N)$.
+Mem Vis (BF): Storing all valid substring strings in a list.
+Mem Vis (Opt): Two integer counters for 0s and 1s (O(1) space).

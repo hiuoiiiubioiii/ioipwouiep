@@ -1,0 +1,13 @@
+ID: 2956
+Problem Title: Find Common Elements Between Two Arrays
+Brute Force Method: For each element in nums1, loop through all of nums2 to check for existence. Repeat for nums2.
+BF Complexity Visuals: Nested Loop Scan
+How to Draw BF: Draw two arrays. Draw an arrow from every element in A to every element in B. $O(N \cdot M)$.
+Optimised Pattern: Hash Set Lookups
+Opt Vis. Technique: Venn Diagram Set Intersection
+Dry Run (Opt): Place nums1 in Set A and nums2 in Set B. For each element in the original nums1, check if it exists in Set B. Increment count if true.
+How to Draw (Opt): Draw two circles representing Sets. List distinct numbers inside. For each number in the array, draw a "check" if it falls in the other circle.
+Opt Complexity Visuals: Two Sequential Passes
+How to Draw Opt Complexity: Draw two parallel lines of length N and M. T = $O(N + M)$.
+Mem Vis (BF): Standard integer counters.
+Mem Vis (Opt): Two Hash Sets storing unique elements. Space $O(N + M)$.

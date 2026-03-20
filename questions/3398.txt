@@ -1,0 +1,13 @@
+ID: 3398
+Problem Title: Smallest Substring With Identical Characters I
+Brute Force Method: Try changing every combination of K characters to see which one minimizes the longest identical block. $O(2^N)$.
+BF Complexity Visuals: Combinatorial Mutation Tree
+How to Draw BF: Draw the string. Branch out by changing '0' to '1' at index 0, then index 1. Calculate block lengths for every variation.
+Optimised Pattern: Binary Search on Answer
+Opt Vis. Technique: The Tolerance Slicer
+Dry Run (Opt): Binary search the *maximum allowed identical streak* L. For a block of X identical characters, the minimum operations to break it into chunks of size <= L is X / (L+1). If total operations <= K, L is possible!
+How to Draw (Opt): Draw the string. Group identical characters into blocks (e.g., "00000" is a block of 5). Guess a max length of 2. You need to "slice" the block of 5 every 3rd character. 5 / (2+1) = 1 slice. Sum the slices needed for all blocks.
+Opt Complexity Visuals: Logarithmic Search $O(N \log N)$
+How to Draw Opt Complexity: Draw a binary search number line. Above each guess, draw a quick linear pass calculating required slices.
+Mem Vis (BF): Tracking all mutated string states.
+Mem Vis (Opt): Variables for binary search pointers. $O(1)$ space.

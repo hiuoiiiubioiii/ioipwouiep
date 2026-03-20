@@ -1,0 +1,13 @@
+ID: 359
+Problem Title: Logger Rate Limiter
+Brute Force Method: Store every single log message and its timestamp. When a new message comes, search through all previous logs to see if it appeared in the last 10 seconds.
+BF Complexity Visuals: Unbounded History Search
+How to Draw BF: Draw a timeline. For every new log, draw arrows pointing back to every previous log. Label $O(N^2)$ over time.
+Optimised Pattern: Hash Map with Expiration Timestamps
+Opt Vis. Technique: Sliding Expiry Window
+Dry Run (Opt): Use a Map (message \rightarrow next_valid_timestamp). If message is new or current_time \ge map[message], update map[message] = current_time + 10 and return true. Else, return false.
+How to Draw (Opt): Draw a table with two columns: "Message" and "Available At". For a new entry, show a "Check" against the clock and an "Update" to the timestamp.
+Opt Complexity Visuals: Constant-Time Lookup
+How to Draw Opt Complexity: Draw a single box representing a Map. Show one arrow going in and one boolean coming out. $O(1)$.
+Mem Vis (BF): A list growing infinitely with every single log event.
+Mem Vis (Opt): A Hash Map. Draw a table. Note: $O(\text{Unique Messages})$ space. In production, you'd add a cleanup mechanism.

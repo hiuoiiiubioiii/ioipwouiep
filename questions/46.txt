@@ -1,0 +1,13 @@
+ID: 46
+Problem Title: Permutations
+Brute Force Method: Array Copying DFS Build permutations by creating new arrays at every step, passing the remaining numbers down to the next recursive call.
+BF Complexity Visuals: The Exploding Conveyor Belt
+How to Draw BF: Draw an initial array. Draw lines branching down where every branch creates a brand new physical copy of the array minus one element. $O(N \cdot N!)$ time due to heavy copying.
+Optimised Pattern: Backtracking (In-Place Swap)
+Opt Vis. Technique: The Swapping Tree
+Dry Run (Opt): Iterate through the array. Swap the current element with the `start` index, recursively call the function for the next index, and then backtrack by swapping them back.
+How to Draw (Opt): Draw an array `[1, 2, 3]`. Point at index 0. Swap `1` with itself, branch down. Swap `1` with `2`, branch down. Swap `1` with `3`, branch down. Always draw a curved arrow swapping them back when moving up.
+Opt Complexity Visuals: Factorial Splitting Node
+How to Draw Opt Complexity: Draw a root node splitting into N branches. Each of those splits into N-1 branches. The total leaves exactly equal N!. Time is exactly $O(N \cdot N!)$.
+Mem Vis (BF): Draw N! separate arrays scattered across memory. Space is easily $O(N \cdot N!)$.
+Mem Vis (Opt): Draw exactly ONE array. Emphasize that all branches of the tree just modify this single array in place. Space is $O(N)$ for the recursion stack!

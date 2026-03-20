@@ -1,0 +1,13 @@
+ID: 727
+Problem Title: Minimum Window Subsequence
+Brute Force Method: Generate every possible substring of S and check if T is a subsequence within it using two pointers.
+BF Complexity Visuals: Exhaustive Window Search
+How to Draw BF: Draw S. Draw brackets for every single possible `start` and `end` point. $O(N^3)$ check.
+Optimised Pattern: Dynamic Programming (2D) or Two-Pointer Slide
+Opt Vis. Technique: Synchronized Sliding Cogs
+Dry Run (Opt): Find a valid end-point for T in S. Then, work backwards from that end-point to find the best (rightmost) start-point. Compare lengths and slide forward.
+How to Draw (Opt): Draw two strings S and T. Draw a forward-moving arrow for S. When T is completed, draw a backward-moving arrow from the current S-position to minimize the window.
+Opt Complexity Visuals: Zig-Zag Scan
+How to Draw Opt Complexity: Draw a line representing S. Draw "Z" shaped arrows moving forward then slightly back, showing $O(N \cdot T)$ total coverage.
+Mem Vis (BF): List of thousands of substring candidates.
+Mem Vis (Opt): A 2D DP table (O(N*T)) or two 1D rows for space optimization (O(N)).

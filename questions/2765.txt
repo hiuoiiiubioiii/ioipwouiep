@@ -1,0 +1,13 @@
+ID: 2765
+Problem Title: Longest Alternating Subarray
+Brute Force Method: Check every possible subarray [i, j] (O(N²)). For each, verify if s[k+1] - s[k] alternates between 1 and -1, starting with 1. Total $O(N³)$.
+BF Complexity Visuals: N³ Brute Force Validation
+How to Draw BF: Draw a sequence of numbers. Use two brackets to isolate every segment. For each segment, check the differences between neighbors. Area is $O(N³)$.
+Optimised Pattern: Subarray Buffer (Visualizing the heap filling with transient slices of the input array).
+Opt Vis. Technique: Sliding Window with Restart Logic
+Dry Run (Opt): State-Driven Pointer Jump
+How to Draw (Opt): Iterate through the array. If a pair (i, i+1) has a difference of 1, start a window. Expand as long as the difference alternates. When it breaks, if the current difference is 1, restart from the previous element; otherwise, look for the next 1.
+Opt Complexity Visuals: Draw the array. Draw a zigzag line above it representing +1, -1, +1. When the zigzag breaks, jump the pointer and start a new zigzag.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow. Note that each element is visited at most twice. Label it $O(N)$.
+Mem Vis (Opt): $O(1)$ Pointers (Draw two variables: maxLen and currentLen).

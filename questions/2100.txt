@@ -1,0 +1,13 @@
+ID: 2100
+Problem Title: Find Good Days to Rob the Bank
+Brute Force Method: For every day `i`, check if the previous `time` days are non-increasing and the next `time` days are non-decreasing by scanning.
+BF Complexity Visuals: Nested Sliding Windows
+How to Draw BF: Draw the array. At each index, draw two arrows (left and right) of length `time`. Perform $O(\text{time})$ checks per index. $O(N \\text{cdot time})$.
+Optimised Pattern: Precomputed Prefix/Suffix Counts (DP)
+Opt Vis. Technique: Dual Flow Chart
+Dry Run (Opt): Precompute `left[i]` (count of non-increasing days ending at `i`) and `right[i]` (count of non-decreasing days starting at `i`). Valid if `min(left[i], right[i]) &gt;= time`.
+How to Draw (Opt): Draw two helper rows. `Row 1`: count how long the price has been falling. `Row 2`: count how long the price will stay rising. Highlight indices where both rows have values &gt;= `time`.
+Opt Complexity Visuals: Three Linear Sweeps
+How to Draw Opt Complexity: Draw three parallel horizontal lines (left pass, right pass, final check). Total time $O(N)$.
+Mem Vis (BF): Redundant loops and local counters inside the main loop.
+Mem Vis (Opt): Two integer arrays of size N. Space $O(N)$.

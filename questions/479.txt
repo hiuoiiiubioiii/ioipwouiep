@@ -1,0 +1,13 @@
+ID: 479
+Problem Title: Largest Palindrome Product
+Brute Force Method: Exhaustive Search Multiply every n-digit number by every other n-digit number. Check if the product is a palindrome.
+BF Complexity Visuals: Quadratic Explosion
+How to Draw BF: Draw a multiplication table of size 10^n \times 10^n. Huge search space. $O(10^{2n})$.
+Optimised Pattern: Greedy Palindrome Generation Start from the largest possible palindrome (e.g., 999999) and work downwards. For each, check if it has two n-digit factors.
+Opt Vis. Technique: Descending Mirror
+Dry Run (Opt): Imagine a countdown. Create a palindrome by mirroring 999 \to 999999. Then 998 \to 998899. Stop as soon as you find valid factors.
+How to Draw (Opt): Write 999, 998, 997 \dots in a column. Next to each, draw its "mirror." For each mirror, show a short trial-division loop.
+Opt Complexity Visuals: Bounded Search
+How to Draw Opt Complexity: Draw a downward arrow. The search space is significantly reduced. $O(10^n)$ average.
+Mem Vis (BF): None Product variables.
+Mem Vis (Opt): None Constant space. $O(1)$.

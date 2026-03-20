@@ -1,0 +1,13 @@
+ID: 2033
+Problem Title: Minimum Operations to Make a Uni-Value Grid
+Brute Force Method: Try setting the target uni-value to every single element in the grid, calculate operations for all other elements, take the minimum. $O((M\cdot N)$^2).
+BF Complexity Visuals: Grid-to-Grid Delta Matrices
+How to Draw BF: Draw the grid. Then draw another full grid next to it representing the "cost" to turn everything into the top-left element. Repeat for every element.
+Optimised Pattern: Math (Median Finding) + Divisibility Check
+Opt Vis. Technique: Flattening &amp; Center of Mass
+Dry Run (Opt): Flatten grid to 1D, sort it. The optimal target is always the median element. Also check if `abs(num - median) % x == 0` for all elements; if not, return -1.
+How to Draw (Opt): Draw the 2D grid melting into a sorted 1D line. Put a star on the exact middle element (median). Draw arcs from all other numbers to the median, verifying step sizes.
+Opt Complexity Visuals: Funnel to Linear Median Sweep
+How to Draw Opt Complexity: Draw the grid funneling into a sorted array (O(MN log MN)). Then draw a single pass over the array calculating distance to the center (O(MN)).
+Mem Vis (BF): Variables storing running minimums inside deeply nested 4-level loops.
+Mem Vis (Opt): A single 1D array of size M*N to facilitate fast sorting. Space $O(M\cdot N)$.

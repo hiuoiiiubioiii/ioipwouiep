@@ -1,0 +1,13 @@
+ID: 2442
+Problem Title: Count Number of Distinct Integers After Reverse Operations
+Brute Force Method: For each number, convert to string, reverse, convert back, and add both original and reversed to a list. Finally, sort the list and count unique.
+BF Complexity Visuals: String-Conversion Pipeline
+How to Draw BF: Draw a number -&gt; String -&gt; Reversed String -&gt; number flow for every element. Label $O(N \cdot \log10(\text{val})$).
+Optimised Pattern: Digit Manipulation + Hash Set
+Opt Vis. Technique: Numerical Mirroring Set
+Dry Run (Opt): Use modulo/division to reverse the integer mathematically. Add the original and the mirror directly into a Hash Set. The Set size is the answer.
+How to Draw (Opt): Draw a set (circle). Point to a number '123'. Write '123' in the set. Mentally flip it to '321' and write it in the set. Move to next.
+Opt Complexity Visuals: Single Pass with $O(1)$ Reverse
+How to Draw Opt Complexity: Draw a line through N elements. Each element has a small constant-time math block. Label $O(N)$.
+Mem Vis (BF): Draw a large temporary list of 2N strings. $O(N)$.
+Mem Vis (Opt): Draw a Hash Set storing up to 2N integers. $O(N)$ Space.

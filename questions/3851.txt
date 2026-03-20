@@ -1,0 +1,13 @@
+ID: 3851
+Problem Title: Maximum Requests Without Violating the Limit (Med.)
+Brute Force Method: Bitmask Brute Force: Try every subset of requests (2^N combinations). For each subset, verify if the net change in every building is zero (in-flow equals out-flow).
+BF Complexity Visuals: An exponential decision tree where each level represents a request being "Accepted" or "Rejected."
+How to Draw BF: Draw 2^N paths. For each path, draw a "Net Change" array. If all elements are 0, count the "Accepted" bits. Write $O(2^N \cdot B)$.
+Optimised Pattern: Backtracking with Pruning / Network Flow.
+Opt Vis. Technique: A recursive depth-first search that "undoes" changes (backtracks) to keep memory usage minimal while searching the state space.
+Dry Run (Opt): `dfs(index, count)`: Add current request (from, to), recurse, then subtract (from, to) to return to original state. Track the maximum `count` where all building balances are zero.
+How to Draw (Opt): Draw a circle of buildings. Draw arrows for requests. Show the "Balance" array (+1 for in, -1 for out). If the array is all 0s at a leaf, it's a valid max.
+Opt Complexity Visuals: Exponential but pruned search.
+How to Draw Opt Complexity: Draw a tree. Cross out branches where the number of remaining requests + current count cannot beat the current max. Write $O(2^N)$.
+Mem Vis (BF): Storing all 2^N combination result arrays in memory.
+Mem Vis (Opt): $O(B + N)$ space: one balance array for B buildings and the recursion stack of depth N.

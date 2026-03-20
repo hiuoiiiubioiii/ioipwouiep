@@ -1,0 +1,13 @@
+ID: 3691
+Problem Title: Maximum Total Subarray Value II (Hard)
+Brute Force Method: Exhaustively check every subarray and calculate value using a complex function (e.g., XORed sum * length). $O(N^3)$.
+BF Complexity Visuals: Subarray Triple-Loop Chaos.
+How to Draw BF: Draw an array. Draw all N^2 brackets. For each, perform a bitwise XOR reduction. For N=10^5, the number of steps is 10^15. Total TLE.
+Optimised Pattern: Divide and Conquer or Segment Tree with "Monotonic Property" optimization. Focus on boundaries where the XOR value changes (at most 32 times).
+Opt Vis. Technique: The "Sparse Bit-Change" Window.
+Dry Run (Opt): A bitwise XOR/OR sum of a subarray only changes when a new bit is flipped. For any fixed start i, there are only approx 30 unique XOR values as you move j. Jump between these "change points."
+How to Draw (Opt): Draw an array. For index i, draw arrows pointing to the next indices where the XOR sum *actually* changes. Skip the redundant indices in between.
+Opt Complexity Visuals: Logarithmic Jump Scan.
+How to Draw Opt Complexity: Write $O(N \cdot \log(\text{Max}_\text{Val})$). Draw a timeline where we only "stop" at bit-flip checkpoints.
+Mem Vis (BF): Storing full XOR results for every single possible index pair.
+Mem Vis (Opt): A 2D sparse table or a list of "change-point" pairs. Space $O(N \log N)$.

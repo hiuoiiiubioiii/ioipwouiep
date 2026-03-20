@@ -1,0 +1,13 @@
+ID: 2311
+Problem Title: Longest Binary Subsequence Less Than or Equal to K
+Brute Force Method: Generate all possible subsequences (2^N), convert each to decimal, check if &lt;= K, and track the maximum length.
+BF Complexity Visuals: Exponential Subset Tree (O(2^N))
+How to Draw BF: Draw a massive binary tree branching out at every character: left branch means "include char", right branch means "skip char".
+Optimised Pattern: Greedy (Right-to-Left)
+Opt Vis. Technique: Reverse Accumulator Timeline
+Dry Run (Opt): Scan the string backwards. Always pick '0's (they add length but no value). Pick '1's only if adding their decimal value (2^position) keeps the total sum &lt;= K.
+How to Draw (Opt): Draw the string as an array. Draw an arrow starting from the far right moving left. Underneath, draw two boxes: `current_val` and `length`. Update them as the arrow moves.
+Opt Complexity Visuals: Single Reverse Line (O(N))
+How to Draw Opt Complexity: Draw a straight, unbranching timeline moving from right to left.
+Mem Vis (BF): Draw a deep Call Stack for the recursive state to track combinations.
+Mem Vis (Opt): Draw three simple integer variables (`val`, `len`, `power_of_two`) that just overwrite themselves.

@@ -1,0 +1,13 @@
+ID: 665
+Problem Title: Non-decreasing Array
+Brute Force Method: For every element, try changing it to every possible integer and check if the resulting array is non-decreasing.
+BF Complexity Visuals: Brute Force Mutation.
+How to Draw BF: Draw an array. Change one number to -infinity, then -infinity+1... until it works. Repeat for all indices. $O(N^2 \\text{cdot Range})$.
+Optimised Pattern: Greedy Local Correction.
+Opt Vis. Technique: Valley Correction / Peak Smoothing.
+Dry Run (Opt): Scan for `arr[i] &gt; arr[i+1]`. You can only fix it ONCE. To fix, either lower `arr[i]` or raise `arr[i+1]`. Check which one keeps the non-decreasing property for the rest of the array.
+How to Draw (Opt): Draw a line graph. Identify a "dip". Try pushing the previous peak down or the current valley up. See which one makes the line stay flat or climb.
+Opt Complexity Visuals: Single pass through the array.
+How to Draw Opt Complexity: Draw a straight arrow through the array. Write $O(N)$.
+Mem Vis (BF): Draw hundreds of modified array copies.
+Mem Vis (Opt): Draw zero extra space, just one "modified" boolean flag. $O(1)$ space.

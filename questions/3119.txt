@@ -1,0 +1,13 @@
+ID: 3119
+Problem Title: Maximum Number of Potholes That Can Be Fixed
+Brute Force Method: Try repairing every possible contiguous subset of potholes and checking if it fits the budget. $O(2^N)$
+BF Complexity Visuals: Trying to fit a single Tetris block into thousands of random gaps to see what fits best.
+How to Draw BF: Draw the road. Randomly shade different groups of potholes, subtract budget, realize you ran out, erase, and start over.
+Optimised Pattern: Greedy + Counting / Bucket Sort
+Opt Vis. Technique: Histogram Leveling / Top-Down Chopping
+Dry Run (Opt): Count lengths of contiguous potholes. Sort lengths descending. Buy the longest blocks first (best cost-per-pothole ratio) until budget runs out.
+How to Draw (Opt): Draw horizontal bars for each group of potholes. Stack them tallest to shortest. Use a highlighter to color from the top down until budget is 0.
+Opt Complexity Visuals: Linear Scan + Sorting phase.
+How to Draw Opt Complexity: Draw an $O(N)$ straight line to count, followed by an $O(N \log N)$ sorting funnel, followed by a final linear timeline.
+Mem Vis (BF): Call stack mapping thousands of combinations of budget allocations.
+Mem Vis (Opt): A frequency map or array of size N storing pothole counts.

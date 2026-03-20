@@ -1,0 +1,13 @@
+ID: 914
+Problem Title: X of a Kind in a Deck of Cards
+Brute Force Method: Try all possible group sizes X from 2 up to N. For each X, iterate through card frequencies to see if they are perfectly divisible.
+BF Complexity Visuals: $O(N^2)$. Testing every possible group size against every unique card type.
+How to Draw BF: Draw bars representing card counts. Draw horizontal cut lines at height 2, then 3, then 4, checking if every bar can be cut perfectly without remainders.
+Optimised Pattern: Greatest Common Divisor (GCD)
+Opt Vis. Technique: Finding the largest "measuring stick" that can perfectly divide all the frequency bars without leaving any leftover pieces.
+Dry Run (Opt): Count the frequency of each card. Apply the GCD algorithm to the frequencies sequentially: `result = gcd(result, freq[i])`. If `result &gt;= 2`, return true.
+How to Draw (Opt): Draw two unequal bars. Subtract the shorter from the longer until they match in size (Euclidean algorithm). That matching size is the GCD.
+Opt Complexity Visuals: $O(N \log(\text{min}(\text{frequencies})$)). A funnel rapidly shrinking the compared numbers.
+How to Draw Opt Complexity: Draw a timeline of elements, with a single variable accumulating the GCD. The GCD "eats" each frequency in logarithmic time.
+Mem Vis (BF): Minimal space, but repetitive math operations.
+Mem Vis (Opt): $O(N)$ HashMap. Draw a two-column table mapping [Card Number -&gt; Frequency].

@@ -1,0 +1,13 @@
+ID: 2484
+Problem Title: Count Palindromic Subsequences
+Brute Force Method: Generate all 5-length subsequences and check if they are palindromes. $O(N^5)$.
+BF Complexity Visuals: Quintic Expansion Grid
+How to Draw BF: Draw 5 nested loops represented by 5 overlapping brackets. Practically unrunnable.
+Optimised Pattern: Prefix/Suffix DP (Length 5)
+Opt Vis. Technique: The Pivot Expansion
+Dry Run (Opt): A 5-palindrome looks like `xy_yx`. Iterate through every index as the center `_`. Count how many times the prefix has the sequence `xy` and the suffix has the sequence `yx`. Multiply them.
+How to Draw (Opt): Draw the string. Pick a middle letter. Look Left: Count occurrences of "12", "13", etc. Look Right: Count occurrences of "21", "31". Multiply the matches.
+Opt Complexity Visuals: Linear Scan with 100-State Check $O(N \cdot 100)$
+How to Draw Opt Complexity: Draw a timeline. At each step, update a fixed 10x10 grid of 2-digit combinations.
+Mem Vis (BF): Full subset generation arrays. $O(N^5)$.
+Mem Vis (Opt): Prefix and Suffix 3D arrays tracking 2-digit counts. $O(N \cdot 100)$ -&gt; $O(N)$ space.

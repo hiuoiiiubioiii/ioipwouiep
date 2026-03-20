@@ -1,0 +1,13 @@
+ID: 3871
+Problem Title: Count Commas in Range II (Med.)
+Brute Force Method: Brute Force: Iterate from L to R, formatting each number as a string with commas and counting the total number of ',' characters.
+BF Complexity Visuals: A massive loop performing string formatting millions of times.
+How to Draw BF: Draw a number line from L to R. For each number, write it out (e.g., "1,234,567") and count the commas. Write $O((R-L)$ log R).
+Optimised Pattern: Mathematical Offset Calculation (f(R) - f(L-1)).
+Opt Vis. Technique: A geometric summation of "comma-regions" using powers of 1000.
+Dry Run (Opt): Define f(X) as total commas from 1 to X. For each k &gt; 0, the k-th comma appears in all numbers >= 10^3k. The number of times the k-th comma appears is max(0, X - 10^3k + 1). Total = sum f(k). Result = f(R) - f(L-1).
+How to Draw (Opt): Draw a number line. Mark 10^3, 10^6, 10^9. Shade the regions where 1, 2, or 3 commas exist. Calculate the area of these shaded blocks mathematically.
+Opt Complexity Visuals: Logarithmic time based on powers of 10.
+How to Draw Opt Complexity: Draw 5-6 "Comma Threshold" boxes. Write "O(1) Math" per box. Total: $O(\log_1000 R)$.
+Mem Vis (BF): High memory overhead from string allocations.
+Mem Vis (Opt): $O(1)$ memory. Only uses a few `long long` variables for the summation.

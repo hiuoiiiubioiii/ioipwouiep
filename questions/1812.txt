@@ -1,0 +1,13 @@
+ID: 1812
+Problem Title: Determine Color of a Chessboard Square
+Brute Force Method: Initialize an 8x8 matrix simulating the board with true/false, then parse the string to look up the matrix.
+BF Complexity Visuals: 2D Matrix Allocation block.
+How to Draw BF: Draw an 8x8 grid. Shade alternating squares. Map coordinates to a specific cell.
+Optimised Pattern: Math (Parity check): Sum of ASCII value of letter and integer value of number.
+Opt Vis. Technique: Modular arithmetic scale.
+Dry Run (Opt): Convert 'a' to 1. Add it to the row number. If the sum is even, it's black (false). If odd, it's white (true).
+How to Draw (Opt): Write (col_value + row_value). Write "% 2". Draw a decision split: 0 -&gt; Black, 1 -&gt; White.
+Opt Complexity Visuals: Single CPU cycle operation block.
+How to Draw Opt Complexity: Draw a simple mathematical formula box. Mark as $O(1)$ time complexity.
+Mem Vis (BF): 8x8 Array/Matrix taking up memory space.
+Mem Vis (Opt): No data structures. Just $O(1)$ stack variables.

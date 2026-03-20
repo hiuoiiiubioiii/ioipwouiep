@@ -1,0 +1,13 @@
+ID: 325
+Problem Title: Max Size Subarray Sum Equals k
+Brute Force Method: Use two nested loops to check every possible subarray (start i, end j), calculate the sum, and check if it equals k.
+BF Complexity Visuals: Triangular Matrix Scan
+How to Draw BF: Draw an array. Draw a bracket that starts small [i, i] and expands to [i, n]. Then move i and repeat. $O(n^2)$.
+Optimised Pattern: Prefix Sum + Hash Map (Two-Sum Variation)
+Opt Vis. Technique: Reverse Complement Lookup
+Dry Run (Opt): Keep a running `prefix_sum`. At each index i, we want a `prev_sum` such that `prefix_sum - prev_sum = k`. This means `prev_sum = prefix_sum - k`. Check if this value is in the Map. If so, `max_len = max(max_len, i - map[prev_sum])`.
+How to Draw (Opt): Draw a running total variable. Draw a Hash Map beside it. For each step, draw an arrow to the Map asking "Have you seen (Current - k)?" If yes, draw a bracket between that index and the current one.
+Opt Complexity Visuals: Single-Pass Hash Mapping
+How to Draw Opt Complexity: Draw a single straight arrow moving through the array. Above it, draw a "Hash Map" box being populated. $O(n)$.
+Mem Vis (BF): $O(1)$ space, just the result variable.
+Mem Vis (Opt): Hash Map Block: Draw a table with two columns (Sum, Index). Show n entries being added. $O(n)$ space.

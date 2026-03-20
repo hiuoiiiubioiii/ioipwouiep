@@ -1,0 +1,13 @@
+ID: 1981
+Problem Title: Minimize the Difference Between Target and Chosen Elements
+Brute Force Method: Recursive backtracking: pick one element from each row and compute every possible sum.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a row. Branch C times (columns). From each branch, branch another C times. Total C^R leaf nodes.
+Optimised Pattern: DP with Bitset Optimization
+Opt Vis. Technique: Bitset Left-Shift Propagation
+Dry Run (Opt): Represent reachable sums in a bitset. For each row, create a new bitset by OR-ing current reachable sums shifted by each value in the row.
+How to Draw (Opt): Draw a long horizontal ribbon of 1s and 0s. For each element x in a row, shift the entire ribbon left by x and overlay (OR) it.
+Opt Complexity Visuals: Row-Linear State Pass
+How to Draw Opt Complexity: Draw R rows. For each, show a bitwise shift/OR operation. $O(R \cdot \\text{text}{\text{max}\_\text{sum}} / 64)$.
+Mem Vis (BF): Deep recursion stack storing R choices per path.
+Mem Vis (Opt): A single Bitset/Boolean array of length 4901. $O(\\text{text}{\text{target}\_\text{sum}})$ space.

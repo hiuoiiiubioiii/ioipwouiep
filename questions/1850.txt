@@ -1,0 +1,13 @@
+ID: 1850
+Problem Title: Minimum Adjacent Swaps to Reach the Kth Smallest Number
+Brute Force Method: Find the k-th permutation, then use a standard swap-counting algorithm (like inversion count).
+BF Complexity Visuals: Permutation generation + swap tracking.
+How to Draw BF: Draw the string. Show k steps of finding the next permutation. Then show a bubble-sort style swap count. $O(k \cdot N + N^2)$.
+Optimised Pattern: Next Permutation (K times) + Greedy Swap Alignment.
+Opt Vis. Technique: Index mapping and element displacement.
+Dry Run (Opt): Run `next_permutation` k times to get target string. Then, for each character in original, find its position in target and "bubble" it to its correct index, counting swaps.
+How to Draw (Opt): Draw the original string and the target string. Pick the first char of original. Find where it is in target. Draw "hops" (swaps) to move it there. Tally hops.
+Opt Complexity Visuals: $O(k \cdot N + N^2)$.
+How to Draw Opt Complexity: Draw k horizontal lines (permutations) and then an $O(N^2)$ swap grid.
+Mem Vis (BF): Staging all k permutations in memory.
+Mem Vis (Opt): Two character arrays (Original and Target).

@@ -1,0 +1,13 @@
+ID: 3031
+Problem Title: Minimum Time to Revert Word to Initial State II
+Brute Force Method: (Identical logic to 3029, but N is 10^5, making slicing $O(N^2)$ and causing TLE).
+BF Complexity Visuals: Explosion Graphic
+How to Draw BF: Draw a clock on fire. $O(N^2)$ for 10^5 is 10 billion operations.
+Optimised Pattern: Z-Algorithm / KMP Prefix Function
+Opt Vis. Technique: Z-Box Alignment
+Dry Run (Opt): Use the Z-algorithm to find the length of the longest common prefix between S and S[i:] for all i that are multiples of k.
+How to Draw (Opt): Draw the string. Below it, draw "Z-boxes" representing segments that match the beginning of the string.
+Opt Complexity Visuals: Linear $O(N)$ Scan
+How to Draw Opt Complexity: Draw a single pass across the string. Label as $O(N)$ for Z-array construction.
+Mem Vis (BF): Memory fragmentation from high-frequency string slicing.
+Mem Vis (Opt): A Z-array or LPS array of size N in a single contiguous memory block.

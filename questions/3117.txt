@@ -1,0 +1,13 @@
+ID: 3117
+Problem Title: Minimum Sum of Values by Dividing Array
+Brute Force Method: Generate all 2^N-1 possible array partitions using bars/dividers, calculate the Bitwise AND for every segment. $O(2^N x N)$
+BF Complexity Visuals: A massive, exponentially exploding fractal tree of array splits.
+How to Draw BF: Write the array. Draw random vertical lines (dividers). Manually perform Bitwise AND for the elements between every single line.
+Optimised Pattern: DP + Memoization + Bitwise AND
+Opt Vis. Technique: Decision Tree with Dead-End Pruning
+Dry Run (Opt): Move index by index. Current state: AND value so far. Two choices: 1) Absorb into current subarray. 2) End subarray (only if AND matches target).
+How to Draw (Opt): Draw array. Move finger right, updating a running AND value. Draw a split path: one continuing, one breaking off with a "fresh start" box.
+Opt Complexity Visuals: 3D State Space Grid
+How to Draw Opt Complexity: Draw a grid of `index` x `subarray_count` x `current_AND`. Shade in boxes to represent $O(N x M x \log(\text{Max})$) visited states.
+Mem Vis (BF): Deep recursive call stack with redundant paths filling up memory exponentially.
+Mem Vis (Opt): A 3D Memoization table/dictionary tracking visited states.

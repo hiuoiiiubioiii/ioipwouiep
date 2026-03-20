@@ -1,0 +1,13 @@
+ID: 3450
+Problem Title: Maximum Students on a Single Bench
+Brute Force Method: Iterate through all student-bench pairs. For each bench, create a list of students and manually check for duplicates by comparing every new student with existing ones. $O(N²)$
+BF Complexity Visuals: Nested Loop Verification.
+How to Draw BF: Draw benches as rows. For each student entering a row, draw arrows pointing back to every student already sitting there to check for a name match.
+Optimised Pattern: Hash Map of Hash Sets. $O(N)$
+Opt Vis. Technique: Grouped Bucket Sets.
+Dry Run (Opt): Read student data. Use bench_id as a key in a map. Add student_id to a set (duplicates auto-removed). Finally, find the max set size.
+How to Draw (Opt): Draw 100 numbered boxes. Drop "student IDs" into the boxes. If a student is already in a box, just leave them as one entry. Circle the box with the most IDs.
+Opt Complexity Visuals: Single Linear Pass.
+How to Draw Opt Complexity: Draw one straight horizontal arrow scanning the input array once.
+Mem Vis (BF): Large temporary lists for each bench, potentially storing redundant student IDs.
+Mem Vis (Opt): A Map where each key points to a unique Set, utilizing efficient internal hashing for $O(1)$ average lookups.

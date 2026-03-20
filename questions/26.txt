@@ -1,0 +1,13 @@
+ID: 26
+Problem Title: Remove Duplicates from Sorted Array
+Brute Force Method: New Array / Hash Set Iterate through the array, add unique elements to a new array or Hash Set, then copy them back.
+BF Complexity Visuals: The Extra Bucket
+How to Draw BF: Draw the original array. Draw a separate empty array below it. Draw arrows moving only unique numbers into the bottom array, highlighting the $O(N)$ extra space.
+Optimised Pattern: Two Pointers (Reader/Writer)
+Opt Vis. Technique: The Overwriter
+Dry Run (Opt): Keep a 'Slow' pointer for where the next unique element should go, and a 'Fast' pointer to scan for new unique elements. When Fast finds a new number, Slow writes it and moves up.
+How to Draw (Opt): Draw an array. Place `S` (Slow) and `F` (Fast) at index 1. Slide `F` right until `arr[F] != arr[F-1]`. Draw a curved arrow from `F` overwriting the value at `S`, then step `S` forward.
+Opt Complexity Visuals: Single Parallel Track
+How to Draw Opt Complexity: Draw a line from 0 to N representing the Fast pointer. Draw a shorter, segmented line beneath it for the Slow pointer. Total time is strictly $O(N)$.
+Mem Vis (BF): Draw a separate array of size N taking up extra memory.
+Mem Vis (Opt): Draw only two variables (`Slow` and `Fast`) operating within the confines of the original array block. Perfectly $O(1)$ space.

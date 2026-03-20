@@ -1,0 +1,13 @@
+ID: 2591
+Problem Title: Distribute Money to Maximum Children
+Brute Force Method: Try every possible combination of distributing money to children such that each gets at least 1 and no one gets 4, then count the 8s. $O(\text{Money}^\text{Children})$.
+BF Complexity Visuals: A massive recursion tree exploring all possible partitions of an integer.
+How to Draw BF: Write 20 money, 3 children. Try (8, 8, 4) - invalid. Try (8, 9, 3). Count the 8s. Repeat for all combinations.
+Optimised Pattern: Greedy Case-Based Logic.
+Opt Vis. Technique: A "Bucket Filling" visual where we give everyone 1 first, then fill as many buckets with 7 more as possible, handling leftovers at the end.
+Dry Run (Opt): 1. Give each child 1. If money &lt; children, return -1. 2. Remaining money = money - children. 3. Count how many 7 chunks fit in remaining money (max children). 4. Adjust for edge cases: If 1 child left with 3 (total 4), decrement count. If 0 children left and money &gt; 0, decrement count.
+How to Draw (Opt): Draw 5 circles. Put 1 in each. You have X left. Put 7 in the first circle, then the second... Stop if you have 3 left for the last person or if you run out of money.
+Opt Complexity Visuals: $O(1)$ - Constant time logic based on a few conditional checks.
+How to Draw Opt Complexity: Draw a single decision tree with 3-4 branches representing the edge cases (Money=4, All-8s-with-leftover, etc.).
+Mem Vis (BF): Exponential recursion stack.
+Mem Vis (Opt): $O(1)$ - Constant space.

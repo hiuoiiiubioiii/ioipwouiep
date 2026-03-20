@@ -1,0 +1,13 @@
+ID: 196
+Problem Title: Delete Duplicate Emails
+Brute Force Method: Select all distinct emails into a temporary table, drop the original table, and rename the temporary table to the original.
+BF Complexity Visuals: A "Copy and Replace" diagram showing double the storage requirement during the operation.
+How to Draw BF: Draw Table A. Draw an empty Table B. Copy only unique rows from A to B. Erase Table A.
+Optimised Pattern: Self-Join Delete.
+Opt Vis. Technique: "The Elimination Row." Two copies of the same table are compared; for every pair of identical emails, the one with the larger ID is "struck through."
+Dry Run (Opt): Use DELETE p1 FROM Person p1, Person p2 WHERE p1.Email = p2.Email AND p1.Id &gt; p2.Id.
+How to Draw (Opt): Draw two identical lists. Connect identical emails. For each connection, put an 'X' over the row with the bigger number.
+Opt Complexity Visuals: $O(N^2)$ conceptual comparisons, but optimized by the DB engine to $O(N \log N)$ or $O(N)$ with indexing.
+How to Draw Opt Complexity: Draw a single pass through the index tree. Mark the duplicate leaves that are pruned.
+Mem Vis (BF): Full duplication of the dataset in permanent disk/memory space.
+Mem Vis (Opt): Visualize in-place deletion using a single set of row pointers in the database buffer.

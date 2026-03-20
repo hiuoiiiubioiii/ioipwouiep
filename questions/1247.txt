@@ -1,0 +1,13 @@
+ID: 1247
+Problem Title: Minimum Swaps to Make Strings Equal
+Brute Force Method: Use backtracking to try all possible swaps of characters between strings `s1` and `s2` at every index to find the minimum path to equality.
+BF Complexity Visuals: Backtracking Decision Tree
+How to Draw BF: Draw two strings. Draw branches for every possible swap (s1[i] with s2[j]). Show the tree getting deeper until strings match. Write $O(2^N)$.
+Optimised Pattern: Greedy / Parity Counting
+Opt Vis. Technique: Mismatch Pair Bucketing
+Dry Run (Opt): Ignore matching characters. Count pairs of "x-y" (s1 has x, s2 has y) and "y-x". Two "x-y" pairs take 1 swap. Two "y-x" pairs take 1 swap. One of each takes 2 swaps. If total mismatches are odd, return -1.
+How to Draw (Opt): Draw two columns: "s1" and "s2". Circle indices where they differ. Tally these as "x-y" or "y-x". Group them into pairs. Write "+1" for same-type pairs and "+2" for mixed pairs.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw two arrays. Draw a single arrow scanning both simultaneously. Write $O(N)$.
+Mem Vis (BF): Draw a deep recursion stack storing many string state variations.
+Mem Vis (Opt): Draw exactly two integer counters: `xy_count` and `yx_count`. Space: $O(1)$.

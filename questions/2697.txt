@@ -1,0 +1,13 @@
+ID: 2697
+Problem Title: Lexicographically Smallest Palindrome
+Brute Force Method: Generate all possible palindromes of length N and pick the lexicographically smallest one.
+BF Complexity Visuals: Exponential Palindrome Generation
+How to Draw BF: Draw a branching tree where each leaf is a potential palindrome. $O(26^(N/2)$).
+Optimised Pattern: Two-Pointer Greedy Replacement
+Opt Vis. Technique: Symmetric Comparison
+Dry Run (Opt): Use two pointers (left at start, right at end). Compare `s[left]` and `s[right]`. Replace the larger character with the smaller one to maintain the smallest lexicographical value.
+How to Draw (Opt): Draw the string. Place fingers at both ends. Move them toward the center. At each step, change the "bigger" letter to match the "smaller" letter.
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw two arrows meeting in the middle of the string. $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(N)$ for the character array if the string is immutable.

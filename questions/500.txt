@@ -1,0 +1,13 @@
+ID: 500
+Problem Title: Keyboard Row
+Brute Force Method: Triple Set Check For every character of every word, iterate through three sets of row characters.
+BF Complexity Visuals: Nested Scans
+How to Draw BF: Draw words on top. Draw 3 rows of keyboard below. Draw many overlapping arrows. $O(\text{WordLength} \cdot 3)$.
+Optimised Pattern: Pre-mapped Char-to-Row Create a Map or Array of size 26 where `row[char]` is 1, 2, or 3. Check if all chars in a word return the same row ID.
+Opt Vis. Technique: Pigeonhole Check
+Dry Run (Opt): Imagine 3 boxes (Row 1, 2, 3). For a word, every letter must "belong" to the exact same box. If you see a letter from a different box, throw the word out.
+How to Draw (Opt): Draw 3 buckets. For word "Hello", check 'H' (Row 2), 'e' (Row 1). Since they land in different buckets, mark as "Failed."
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw one arrow through the words. Each char is an $O(1)$ lookup. Total $O(\\text{text}{\text{Total Chars}})$.
+Mem Vis (BF): Sets Three sets of keyboard characters.
+Mem Vis (Opt): Fixed Array Draw a small 26-slot integer array. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2117
+Problem Title: Abbreviating the Product of a Range
+Brute Force Method: Multiply all numbers in the range into a BigInteger, then stringify and extract characters.
+BF Complexity Visuals: A number expanding massively in size, causing overflow or heavy arbitrary-precision math.
+How to Draw BF: Draw a tiny box multiplying by another box, ballooning into an enormous screen-filling box.
+Optimised Pattern: Math (Trailing Zeros + Modulo/Logarithms).
+Opt Vis. Technique: Isolating the front and back of a massive number while throwing away the middle.
+Dry Run (Opt): Factor out 2s and 5s for trailing zeros. Maintain the last 5 digits using modulo 10^5. Maintain the first 5 digits using floating-point logarithms.
+How to Draw (Opt): Draw a long rectangle. Shade the left 5 blocks (Prefix) and right 5 blocks (Suffix). Cross out the middle and draw an ellipsis (...). Add a bucket for trailing zeros.
+Opt Complexity Visuals: $O(N)$ arithmetic operations.
+How to Draw Opt Complexity: Straight line through the numbers `left` to `right`, feeding into a modulo gear and a log gear.
+Mem Vis (BF): Massive BigInteger string allocation (O(N log(Max))).
+Mem Vis (Opt): A few $O(1)$ primitive types (long/double) to hold prefix/suffix/zero counts.

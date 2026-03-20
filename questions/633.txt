@@ -1,0 +1,13 @@
+ID: 633
+Problem Title: Sum of Square Numbers
+Brute Force Method: Two nested loops checking all combinations of `a` and `b` from 0 to `sqrt(c)` such that `a^2 + b^2 = c`.
+BF Complexity Visuals: 2D Coordinate Grid Search.
+How to Draw BF: Draw a square of dots. Check every dot to see if it lands on a circle of radius `sqrt(c)`. $O(C)$.
+Optimised Pattern: Two Pointers or Fermat's Theorem.
+Opt Vis. Technique: Binary Search Range Squeeze.
+Dry Run (Opt): Set `left = 0`, `right = sqrt(c)`. If `left^2 + right^2 &lt; c`, increment left. If `&gt; c`, decrement right. If `== c`, return true.
+How to Draw (Opt): Draw a horizontal line from 0 to `sqrt(c)`. Place fingers at both ends. Move them toward each other based on the sum of their squares.
+Opt Complexity Visuals: $O(\text{sqrt}(C)$) time.
+How to Draw Opt Complexity: Draw a single line of length sqrt(C) with two pointers meeting in the middle. Write $O(\text{sqrt}(C)$).
+Mem Vis (BF): Draw a 2D table of all squares pre-calculated.
+Mem Vis (Opt): Draw zero extra data structures. $O(1)$ space.

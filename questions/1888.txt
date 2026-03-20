@@ -1,0 +1,13 @@
+ID: 1888
+Problem Title: Minimum Number of Flips to Make the Binary String Alternating
+Brute Force Method: For every possible cyclic shift of the string, check how many flips are needed to match patterns "0101..." or "1010...".
+BF Complexity Visuals: Circular permutation search matrix.
+How to Draw BF: Draw a circle of bits. For every starting point, draw the string and count mismatches against a target. Mark $O(N^2)$.
+Optimised Pattern: Sliding Window on concatenated string (s + s).
+Opt Vis. Technique: Fixed-size window on a double-length tape.
+Dry Run (Opt): Create patterns "0101..." of length 2N. Slide a window of size N over (s+s). Maintain counts of mismatches. Min mismatches is the result.
+How to Draw (Opt): Draw s+s on a tape. Below it, draw a "0101..." template. Slide a box of length N. Update mismatch count as bits enter/leave the box.
+Opt Complexity Visuals: Single pass linear window movement.
+How to Draw Opt Complexity: Draw an arrow from 0 \to 2N. Mark as $O(N)$.
+Mem Vis (BF): Storing N separate strings (O(N^2) space).
+Mem Vis (Opt): $O(N)$ for the doubled string or $O(1)$ if simulated via modulo.

@@ -1,0 +1,13 @@
+ID: 2292
+Problem Title: Products With Three or More Orders in Two Consecutive Years
+Brute Force Method: Massive self-joins checking Year 1 against Year 2, filtering counts in both simultaneously.
+BF Complexity Visuals: Tangled Self-Join Web
+How to Draw BF: Draw Year 2020 pointing to 2021, and 2021 pointing to 2022, doing separate aggregations for each link.
+Optimised Pattern: CTE Aggregation + Window Function (LEAD)
+Opt Vis. Technique: The Year-Over-Year Filter
+Dry Run (Opt): 1. CTE to group by Product and Year, keeping only rows where `COUNT &gt;= 3`. 2. Use `LEAD(year)` on this filtered list to check if the next valid year is exactly `current_year + 1`.
+How to Draw (Opt): Draw a timeline. Put gold stars on years with 3+ orders. Erase other years. Look at the gold stars. If two stars are right next to each other (Year gap = 1), keep the product.
+Opt Complexity Visuals: Hash Aggregation + Sort $O(N \log N)$
+How to Draw Opt Complexity: Draw the aggregation pipeline, a filter, and a final sort/window scan.
+Mem Vis (BF): Massive intermediate join tables.
+Mem Vis (Opt): Internal DB window buffer. $O(P)$ space.

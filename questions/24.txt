@@ -1,0 +1,13 @@
+ID: 24
+Problem Title: Swap Nodes in Pairs
+Brute Force Method: Value Swapping Traverse the list and simply swap the integer values inside the nodes (e.g., node.val = next.val).
+BF Complexity Visuals: The Shell Game
+How to Draw BF: Draw nodes. Physically erase the numbers inside the boxes and swap them. Note that this is generally considered a bad practice in interview settings.
+Optimised Pattern: Pointer Manipulation + Dummy Node
+Opt Vis. Technique: The Leapfrog
+Dry Run (Opt): Use a dummy node pointing to the head. Grab a pair of nodes (A and B). Make Dummy point to B, B point to A, and A point to whatever comes after B.
+How to Draw (Opt): Draw `prev -&gt; A -&gt; B -&gt; next`. Draw curved arrows overriding the straight ones: `prev` arcs to `B`, `B` arcs backward to `A`, `A` arcs to `next`.
+Opt Complexity Visuals: Segmented Line
+How to Draw Opt Complexity: Draw a line. Chop it into segments of 2. Draw a quick rotation arrow over each segment. We touch every node exactly once. $O(N)$ time.
+Mem Vis (BF): $O(1)$ space, but alters data instead of structure.
+Mem Vis (Opt): Draw three pointers (`prev`, `curr`, `next_pair`). We only manipulate existing links in memory, so space is strictly $O(1)$.

@@ -1,0 +1,13 @@
+ID: 749
+Problem Title: Contain Virus
+Brute Force Method: Simulate the virus spread day by day. Check every region, identify the most dangerous, and wall it off.
+BF Complexity Visuals: Iterative Simulation Grids
+How to Draw BF: Draw a series of grids (Day 1, Day 2...). For each, scan every cell to find connected components. $O((R\cdot C)$^2).
+Optimised Pattern: Greedy Simulation with BFS/DFS
+Opt Vis. Technique: Priority Infection Containment
+Dry Run (Opt): Use BFS to find all disconnected virus regions. For each, calculate "walls needed" and "uninfected neighbors". Contain the one with most neighbors. Repeat.
+How to Draw (Opt): Draw a grid with clusters of 'V'. Draw a thick boundary around the most "aggressive" cluster. Draw arrows showing other clusters expanding.
+Opt Complexity Visuals: Simulation Complexity Curve
+How to Draw Opt Complexity: Draw a grid being filled. Each "Day" loop touches the grid multiple times. $O(\text{Days} \cdot R \cdot C)$.
+Mem Vis (BF): Multiple copies of the grid for each simulation step.
+Mem Vis (Opt): Visited sets and queue for BFS (O(R*C)).

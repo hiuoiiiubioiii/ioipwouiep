@@ -1,0 +1,13 @@
+ID: 1668
+Problem Title: Maximum Repeating Substring
+Brute Force Method: Check every possible count k by building a string of `word` repeated k times and checking if it exists in `sequence`.
+BF Complexity Visuals: String Concatenation Loop
+How to Draw BF: Draw a string growing longer and longer (k, 2k, 3k...) and sliding across the sequence each time. $O(N^2)$.
+Optimised Pattern: Dynamic Programming (Suffix-based)
+Opt Vis. Technique: Match Accumulator Scan
+Dry Run (Opt): If `sequence[i:i+len(word)] == word`, then `dp[i] = 1 + dp[i+len(word)]`. Track the max value in the DP array.
+How to Draw (Opt): Draw the sequence. Below it, draw an array. When a word matches, draw a "link" to the next possible match point and add 1.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw a single horizontal arrow moving right-to-left (or left-to-right) across the sequence. $O(N)$.
+Mem Vis (BF): Multiple Temp Strings: Draw numerous floating horizontal bars in memory.
+Mem Vis (Opt): 1D DP Array: Draw a single horizontal array of integers of size N.

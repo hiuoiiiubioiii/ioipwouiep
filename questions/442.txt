@@ -1,0 +1,13 @@
+ID: 442
+Problem Title: Find All Duplicates in an Array
+Brute Force Method: Nested Loops / Sort Check every pair or sort and check neighbors.
+BF Complexity Visuals: Comparison Grid
+How to Draw BF: Draw an N \times N grid. Show checking every element against every other. $O(N^2)$.
+Optimised Pattern: In-place Marking For each number x, go to index |x|-1 and flip the value to negative. If already negative, it's a duplicate.
+Opt Vis. Technique: Index-Value Mirror
+Dry Run (Opt): Imagine the array values are "addresses." Visit each address and leave a "seen" flag (the negative sign).
+How to Draw (Opt): Draw an array. For index 0, look at its value (say 4). Go to index 4. Draw a circle around it and add a minus sign.
+Opt Complexity Visuals: Linear Pipeline
+How to Draw Opt Complexity: Draw a single arrow moving left to right once. Each visit is $O(1)$. Total $O(N)$.
+Mem Vis (BF): HashSet Draw a "Bucket" taking up $O(N)$ extra space.
+Mem Vis (Opt): None No extra space beyond result list. $O(1)$ (in-place).

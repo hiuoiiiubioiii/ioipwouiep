@@ -1,0 +1,13 @@
+ID: 106
+Problem Title: Construct Binary Tree from Inorder and Postorder Traversal
+Brute Force Method: Linearly scan the inorder array for every popped element from the postorder array to find the root index and split subtrees.
+BF Complexity Visuals: An $O(N^2)$ grid showing a linear array search triggered for every single node creation step.
+How to Draw BF: Write the inorder array. Pick the last element of postorder. Draw a long arrow scanning the inorder array from left to right until you find it. Repeat.
+Optimised Pattern: Hash Map for $O(1)$ inorder index lookup + Recursive DFS (Process postorder backwards: Root, Right, Left).
+Opt Vis. Technique: Postorder array acts as a reverse drill. Hash Map acts as an instant cleaver, splitting the inorder array immediately into right and left partitions.
+Dry Run (Opt): Map inorder values to indices. Pop from the end of postorder to get the root. Lookup its index instantly. Crucially, recurse RIGHT first, then LEFT.
+How to Draw (Opt): Draw the Hash Map. Cross off postorder elements from right-to-left. Draw the tree building downwards, strictly branching right before left.
+Opt Complexity Visuals: $O(N)$ linear mapping phase, followed by a single $O(N)$ recursive tree-building phase.
+How to Draw Opt Complexity: Draw arrays. Draw instantaneous lines from the end of the postorder array directly to the mapped index in the inorder array, demonstrating $O(1)$ lookups.
+Mem Vis (BF): Show $O(N)$ call stack depth, with redundant linear scans consuming time but not extra memory.
+Mem Vis (Opt): Visualize an $O(N)$ Hash Map in heap memory stabilizing the lookup time alongside the $O(H)$ recursive call stack.

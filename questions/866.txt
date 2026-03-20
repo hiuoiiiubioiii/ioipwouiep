@@ -1,0 +1,13 @@
+ID: 866
+Problem Title: Prime Palindrome
+Brute Force Method: Iterate numbers starting from N, one by one. For each, check if it's a palindrome, then check if it's prime.
+BF Complexity Visuals: Linear Scan with Heavy Checks. $O(N √N)$.
+How to Draw BF: Draw a number line starting at N. For every single tick, draw two "validation boxes" (Prime? Palindrome?). Note how many numbers fail early.
+Optimised Pattern: Palindrome Generation + Primality Test.
+Opt Vis. Technique: Constructing from the "Mirror Center."
+Dry Run (Opt): Instead of checking all numbers, generate palindromes directly (1, 2, 3... mirror them). For each generated palindrome >= N, check if it's prime. Also, even-length palindromes (except 11) are divisible by 11, so skip them!
+How to Draw (Opt): Draw a small set of root numbers (e.g., 12). Draw a mirror line to create 121. Only run the "Prime Sieve" on these specific mirrored outputs.
+Opt Complexity Visuals: Square Root Palindrome Scan. $O(√10^8)$.
+How to Draw Opt Complexity: Draw a timeline that skips huge chunks of numbers, only "pausing" at sparse points where palindromes exist.
+Mem Vis (BF): $O(1)$ excluding string conversions.
+Mem Vis (Opt): $O(1)$ Space: Draw a few integer variables for the generator and the prime tester.

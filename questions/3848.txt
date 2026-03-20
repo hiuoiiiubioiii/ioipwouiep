@@ -1,0 +1,13 @@
+ID: 3848
+Problem Title: Check Digitorial Permutation (Med.)
+Brute Force Method: Generate all N! permutations of the digit string and check if any of them satisfy the "Digitorial" (digit-factorial) property.
+BF Complexity Visuals: A combinatorial explosion of strings being checked one by one.
+How to Draw BF: Draw a string "123". Draw branches for "132", "213", "231", "312", "321". Write $O(N! \cdot N)$.
+Optimised Pattern: Frequency Counting + Permutation Invariance.
+Opt Vis. Technique: Two "Frequency Buckets" that must match exactly, regardless of the order of digits.
+Dry Run (Opt): Count the frequency of digits 0-9 in String A. Count them in String B. If all 10 counts match, one is a permutation of the other.
+How to Draw (Opt): Draw two strings. Below each, draw 10 boxes (0-9). Put tally marks in the boxes. If the boxes look identical at the end, return True.
+Opt Complexity Visuals: Two independent linear scans.
+How to Draw Opt Complexity: Draw two lines of length N. Write $O(N)$ + $O(N)$ = $O(N)$.
+Mem Vis (BF): $O(N!)$ space to store all generated strings.
+Mem Vis (Opt): $O(1)$ memory. Two arrays of size 10 are constant space, regardless of string length.

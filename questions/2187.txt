@@ -1,0 +1,13 @@
+ID: 2187
+Problem Title: Minimum Time to Complete Trips
+Brute Force Method: Iterate through every possible second (1, 2, 3...) and calculate the total trips done by all buses.
+BF Complexity Visuals: A clock ticking upwards until the trip goal is met.
+How to Draw BF: Draw a timeline. At t=1, check trips. At t=2, check trips. Repeat until total &gt;= totalTrips. $O(\text{totalTrips} \\text{cdot maxTime})$.
+Optimised Pattern: Binary Search on Answer.
+Opt Vis. Technique: A horizontal laser scanning up and down to find the minimum threshold.
+Dry Run (Opt): Choose `mid` time. Calculate `TotalTrips = sum(mid / time[i])`. If &gt;= target, search left; else search right.
+How to Draw (Opt): Draw a number line for time. Pick the middle. For each bus, calculate how many times it "fits" into that middle. Sum them up and compare to the goal.
+Opt Complexity Visuals: $O(N \log(\text{MaxTime})$).
+How to Draw Opt Complexity: A binary search tree narrowing down on a single horizontal time value.
+Mem Vis (BF): Massive loop variables and deep stacks if recursive.
+Mem Vis (Opt): $O(1)$ auxiliary space (just bounds and sum variables).

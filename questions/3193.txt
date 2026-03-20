@@ -1,0 +1,13 @@
+ID: 3193
+Problem Title: Find the Number of Inversions in Permutation
+Brute Force Method: Generate all N! permutations and count inversions for each. $O(N \cdot N!)$.
+BF Complexity Visuals: Factorial Path Explosion
+How to Draw BF: Draw all permutations of [0, 1, 2]. Count pairs where i &lt; j but P[i] &gt; P[j].
+Optimised Pattern: Dynamic Programming (Prefix Sum Opt)
+Opt Vis. Technique: Layered Staircase Accumulation
+Dry Run (Opt): `dp[i][j]` is ways to have `j` inversions using first `i` numbers. `dp[i][j] = sum(dp[i-1][j-k])` for 0 <= k &lt; i.
+How to Draw (Opt): Draw an N x MaxInv grid. For each cell, draw a bracket covering a range of the previous row. Use prefix sums for $O(1)$ range sum.
+Opt Complexity Visuals: $O(N x \text{MaxInv})$ Matrix Scan
+How to Draw Opt Complexity: Draw a grid and shade it row by row. Total $O(N x \text{MaxInv})$.
+Mem Vis (BF): Storing millions of permutation strings.
+Mem Vis (Opt): 2D DP table (can be space-optimized to 1D). $O(\text{MaxInv})$.

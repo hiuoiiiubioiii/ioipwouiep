@@ -1,0 +1,13 @@
+ID: 2824
+Problem Title: Count Pairs Whose Sum is Less than Target
+Brute Force Method: Use two nested loops: for i from 0 to n-1 and for j from i+1 to n-1. Check if nums[i] + nums[j] &lt; target and increment a counter.
+BF Complexity Visuals: $O(N2)$ Pairwise Matrix
+How to Draw BF: Draw a square grid of size N x N. Shade the upper triangle above the diagonal. Each shaded cell represents a comparison. Area = N^2/2.
+Optimised Pattern: Sorting + Two Pointers
+Opt Vis. Technique: Shrinking Search Space
+Dry Run (Opt): Sort the array. Place left at start and right at end. If sum &lt; target, then every element between left and right paired with left is also valid. Add right - left to count and move left.
+How to Draw (Opt): Draw a sorted number line. Mark L and R. Draw a bracket from L+1 to R to represent the "freebie" pairs counted instantly when nums[L] + nums[R] &lt; target.
+Opt Complexity Visuals: N log N Sort + N Scan
+How to Draw Opt Complexity: Draw a box for Sorting (O(N log N)) followed by a single pass of the Two Pointers (O(N)). The sort is the bottleneck.
+Mem Vis (BF): Visualize $O(1)$ extra space but $O(N^2)$ time wastage.
+Mem Vis (Opt): Visualize $O(1)$ or $O(\log N)$ space depending on the sorting algorithm used.

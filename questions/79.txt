@@ -1,0 +1,13 @@
+ID: 79
+Problem Title: Word Search
+Brute Force Method: BFS from Every Cell From every cell `(r, c)`, start a Breadth-First Search to find the word. (Harder to track "visited" cells across paths).
+BF Complexity Visuals: The Exploding Ripple
+How to Draw BF: Draw a grid. From one cell, draw ripples spreading in all 4 directions. Show how keeping track of visited cells per path becomes a memory nightmare.
+Optimised Pattern: Backtracking (DFS + In-Place Mark)
+Opt Vis. Technique: The Ant on a Grid
+Dry Run (Opt): For each cell, start a DFS. If the char matches, mark the cell as "#" (visited), recurse to neighbors, then change it back (backtrack).
+How to Draw (Opt): Draw a 2D grid. Trace a path A to B to C. At C, if there's no match, "undo" the path C to B to A to try a different direction from B.
+Opt Complexity Visuals: Bounded 4-ary Tree
+How to Draw Opt Complexity: Draw a tree where each node has 3 branches (can't go back). Depth is L (word length). Total time: $O(N x M x 3^L)$.
+Mem Vis (BF): $O(N x M)$ "visited" arrays for every single path explored.
+Mem Vis (Opt): Draw the grid. Highlight that no extra matrix is used—only the recursion stack of depth L. Space: $O(L)$.

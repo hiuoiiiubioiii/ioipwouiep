@@ -1,0 +1,13 @@
+ID: 1893
+Problem Title: Check if All the Integers in a Range Are Covered
+Brute Force Method: For every integer x in [left, right], iterate through every range in `ranges` to see if x is contained.
+BF Complexity Visuals: N \times R scan matrix.
+How to Draw BF: Draw a number line. For each point, draw arrows checking every given range. Mark $O(N \\text{times} \\text{text}{\text{length}})$.
+Optimised Pattern: Difference Array / Prefix Sum (Line Sweep).
+Opt Vis. Technique: Cumulative coverage tracker.
+Dry Run (Opt): Create array of 52 zeros. For each [start, end], add 1 at `start`, subtract 1 at `end + 1`. Calculate prefix sums to see coverage \ge 1.
+How to Draw (Opt): Draw a number line 1-50. Mark '+' at start and '-' after end. Walk the line, if count stays above 0 for the whole target range, return true.
+Opt Complexity Visuals: Linear passes (Fixed range 50).
+How to Draw Opt Complexity: Draw an arrow passing through the 50-slot array once. Mark $O(N + 50)$.
+Mem Vis (BF): List of boolean flags for every point.
+Mem Vis (Opt): Difference array of size 52 in memory.

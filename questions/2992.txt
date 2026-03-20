@@ -1,0 +1,13 @@
+ID: 2992
+Problem Title: Number of Self-Divisible Permutations
+Brute Force Method: Generate all N! permutations and check if each index i satisfies i % perm[i] == 0 or perm[i] % i == 0.
+BF Complexity Visuals: Factorial Decision Tree
+How to Draw BF: Draw a root branching N times, then N-1... Depth N. $O(N!)$.
+Optimised Pattern: Backtracking with State Pruning (Bitmask)
+Opt Vis. Technique: Pruned Recursion Tree
+Dry Run (Opt): Pick a number for the first position. Only proceed if it satisfies the divisibility condition. Use a bitmask to track used numbers.
+How to Draw (Opt): Draw a tree. For each branch, write the divisibility check. If it fails, draw a "stop" sign and don't branch further.
+Opt Complexity Visuals: Exponential Search with Early Exit
+How to Draw Opt Complexity: Draw a tree where most branches are cut short. T ll $O(N!)$, closer to $O(2^N)$ in practice.
+Mem Vis (BF): Storing all valid permutations in a list.
+Mem Vis (Opt): Recursion stack and a single integer mask. Space $O(N)$.

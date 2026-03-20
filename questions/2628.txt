@@ -1,0 +1,13 @@
+ID: 2628
+Problem Title: JSON Deep Equal (JS)
+Brute Force Method: `JSON.stringify(o1) === JSON.stringify(o2)` (Fails on object key order).
+BF Complexity Visuals: Rigid String Comparison
+How to Draw BF: Draw two JSON strings. Show how `{a:1, b:2}` and `{b:2, a:1}` mismatch strictly due to character position.
+Optimised Pattern: Recursive DFS Type Checking
+Opt Vis. Technique: Parallel Tree Traversal
+Dry Run (Opt): Check types. If primitive, `===`. If Array, check length, then recursively compare `arr1[i]` to `arr2[i]`. If Object, check key count, then recursively check values for every key.
+How to Draw (Opt): Draw two Trees (Objects). Put a finger on the root of both. Move down to child nodes simultaneously. If fingers point to different types/values, return false.
+Opt Complexity Visuals: Linear Node Visit Block
+How to Draw Opt Complexity: Draw a block representing $O(N)$ where N is total nested keys/values visited once.
+Mem Vis (BF): Massive String allocations
+Mem Vis (Opt): Call stack depth $O(D)$ where D is object nesting depth.

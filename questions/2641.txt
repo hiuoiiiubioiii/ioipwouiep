@@ -1,0 +1,13 @@
+ID: 2641
+Problem Title: Cousins in Binary Tree II
+Brute Force Method: For every node, perform a full BFS/DFS to find its depth, find its parent, and then sum all other nodes at that depth.
+BF Complexity Visuals: Recursive Redundant Traversal
+How to Draw BF: Draw a tree. For every single node, draw a new scan of the entire level. Label $O(N^2)$.
+Optimised Pattern: Two-Pass BFS (Level Sums)
+Opt Vis. Technique: Level-by-Level Bucket Sums
+Dry Run (Opt): Pass 1: BFS to calculate the total sum of each level. Pass 2: BFS where each node's value = (Total Level Sum) - (Sum of Sibling values).
+How to Draw (Opt): Draw a tree. Next to each level, write the "Total Sum". At each node, look at its children; subtract their combined sum from the NEXT level's total sum.
+Opt Complexity Visuals: Linear BFS Flow
+How to Draw Opt Complexity: Draw two sequential $O(N)$ blocks (Pass 1 and Pass 2).
+Mem Vis (BF): Deep recursion stack for every node
+Mem Vis (Opt): Queue for BFS + Array to store Level Sums.

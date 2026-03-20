@@ -1,0 +1,13 @@
+ID: 1934
+Problem Title: Confirmation Rate (SQL)
+Brute Force Method: Correlated subqueries for every user: one to count 'confirmed' and another to count total, then divide.
+BF Complexity Visuals: Row-by-Row Nested Scans
+How to Draw BF: Draw the `Signups` table. For every row, draw two separate magnifying glasses scanning the entire `Confirmations` table. $O(S \cdot C)$.
+Optimised Pattern: LEFT JOIN with Conditional Aggregation
+Opt Vis. Technique: Join-Aggregate Funnel
+Dry Run (Opt): Left Join `Signups` with `Confirmations`. Use `AVG(IF(action='confirmed', 1, 0))` grouped by `user_id`. `COALESCE` nulls to 0.
+How to Draw (Opt): Draw two tables side-by-side. Draw horizontal join lines. Group the results into boxes. Inside each box, calculate confirmed/total.
+Opt Complexity Visuals: Hash Join + Hash Aggregate Pipeline
+How to Draw Opt Complexity: Draw the two tables feeding into a Join gear, then a Group-By gear. $O(S + C)$ time.
+Mem Vis (BF): Temporary tables generated for every single user in the system.
+Mem Vis (Opt): In-memory hash buckets created by the SQL optimizer for the Group-By operation.

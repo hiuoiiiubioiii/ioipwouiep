@@ -1,0 +1,13 @@
+ID: 2314
+Problem Title: The First Day of the Maximum Recorded Degree in Each City
+Brute Force Method: Find max degree per city. Join back to the main table. If there are ties, group again and find the minimum date.
+BF Complexity Visuals: Multi-Join Tie-Breaker
+How to Draw BF: Draw the table. Extract maxes. Glue them back. Find dates. Extract min date. Glue back again.
+Optimised Pattern: Window Function (ROW_NUMBER)
+Opt Vis. Technique: The Ultimate Tie-Breaking Ranker
+Dry Run (Opt): Use `ROW_NUMBER() OVER (PARTITION BY city_id ORDER BY degree DESC, day ASC)`. Filter for `row_num = 1`. This handles the max degree AND the earliest date tie-breaker simultaneously.
+How to Draw (Opt): Draw buckets for cities. Inside, sort temperatures high-to-low. If tied, sort by date old-to-new. Hand a "#1" trophy to the top row in each bucket.
+Opt Complexity Visuals: Partitioned Sort $O(N \log N)$
+How to Draw Opt Complexity: Draw a single pass that partitions, sorts by two keys, and filters the top rank.
+Mem Vis (BF): Temporary tables for tie-breaking joins.
+Mem Vis (Opt): DB internal sort buffer. $O(N)$ space.

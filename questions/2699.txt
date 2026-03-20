@@ -1,0 +1,13 @@
+ID: 2699
+Problem Title: Modify Graph Edge Weights
+Brute Force Method: Try every combination of values (1 to 2*10^9) for the "-1" weight edges.
+BF Complexity Visuals: Impossible Infinite Search
+How to Draw BF: Draw a graph with edges labeled -1. Show them changing to every possible integer. Complexity is unbound.
+Optimised Pattern: Dual-Pass Dijkstra (Target Distance Matching)
+Opt Vis. Technique: Dijkstra Boundary Adjustment
+Dry Run (Opt): 1. Run Dijkstra ignoring -1 edges. If shortest path &lt; target, return impossible. 2. Run Dijkstra again, treating -1 edges as 1. If shortest path &gt; target, return impossible. 3. Adjust -1 weights dynamically during a second Dijkstra pass to "hit" the target exactly.
+How to Draw (Opt): Draw the graph. Path A is fixed. Path B has "stretchy" edges (-1). Stretch the -1 edges until the total length of Path B matches the target distance exactly.
+Opt Complexity Visuals: $O(E \log V)$ Dijkstra
+How to Draw Opt Complexity: Draw two sequential Dijkstra execution blocks. $O(E \log V)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(V+E)$ for adjacency list and distance arrays.

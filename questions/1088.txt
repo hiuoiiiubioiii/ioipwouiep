@@ -1,0 +1,13 @@
+ID: 1088
+Problem Title: Confusing Number II
+Brute Force Method: Iterate from 1 up to N. For each number, check if it's "confusing" (valid rotated digits and rotated value != original).
+BF Complexity Visuals: A linear scan checking billions of numbers, most of which have invalid digits.
+How to Draw BF: N=100. Check 1, 2 (invalid), 3 (invalid)... Check 6. Check 9. Check 10. Write $O(N \log N)$.
+Optimised Pattern: Digit-based DFS / Backtracking.
+Opt Vis. Technique: A "Valid-Digit Only" Tree. We only ever look at numbers made of [0, 1, 6, 8, 9].
+Dry Run (Opt): Start DFS from [1, 6, 8, 9]. For each valid number, append another digit from [0, 1, 6, 8, 9] as long as `newNumber &lt;= N`. For each number generated, check if `rotate(num) != num`.
+How to Draw (Opt): Draw a tree starting at root. Branches: 1, 6, 8, 9. From '1', branches: 10, 11, 16, 18, 19. If a node &gt; N, stop that branch.
+Opt Complexity Visuals: Exploring only 5^digits states instead of N states.
+How to Draw Opt Complexity: Draw a 5-ary tree with a depth of log10(N). Write Time: $O(5^\log10(N)$).
+Mem Vis (BF): No extra memory besides the loop.
+Mem Vis (Opt): $O(\log N)$ recursion stack.

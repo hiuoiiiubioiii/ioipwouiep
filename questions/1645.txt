@@ -1,0 +1,13 @@
+ID: 1645
+Problem Title: Hopper Company Queries II (SQL)
+Brute Force Method: Join Drivers and Rides for every month separately using subqueries to calculate active drivers and ride counts.
+BF Complexity Visuals: Nested Loop Aggregates
+How to Draw BF: Draw 12 monthly boxes, each triggering a full scan of the Drivers and Rides tables.
+Optimised Pattern: Recursive CTE + LEFT JOIN + SUM/COUNT Window Functions
+Opt Vis. Technique: Ratio Overlay Timeline
+Dry Run (Opt): Generate 12 months. Join Drivers (cumulative active) and Rides (unique monthly drivers with rides). Calculate (Drivers with Rides / Total Active) * 100.
+How to Draw (Opt): Draw a 12-row table. Column 1: Months. Column 2: Total Drivers (running sum). Column 3: Drivers with Rides. Column 4: Percentage calculation.
+Opt Complexity Visuals: Sequential Table Scan
+How to Draw Opt Complexity: Draw a single pass through the database tables to populate the monthly buckets. $O(D + R)$.
+Mem Vis (BF): Temp Table Sprawl: Multiple redundant data slices for monthly averages.
+Mem Vis (Opt): Hash Aggregate Buffer: Draw a single clean table in RAM being filled as data streams from disk.

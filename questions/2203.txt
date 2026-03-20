@@ -1,0 +1,13 @@
+ID: 2203
+Problem Title: Minimum Weighted Subgraph With the Required Paths
+Brute Force Method: DFS all pathsFind all paths from src1 to dest and src2 to dest. Combine every possible pair of paths to find the minimum subgraph.
+BF Complexity Visuals: Combinatorial Graph Paths
+How to Draw BF: Draw a graph with paths branching everywhere. Highlight path 1 in red, path 2 in blue, and show the overlap. Write out permutations to show $O(V!)$ or $O(2^E)$ explosion.
+Optimised Pattern: 3-Way Dijkstra's Algorithm
+Opt Vis. Technique: Intersection Point / Convergence Map
+Dry Run (Opt): Run Dijkstra from src1, src2, and dest (on reversed graph). For every node, calculate distance from src1 + src2 + dest. The node with the minimum sum is the intersection.
+How to Draw (Opt): Draw the graph. Shade `src1`, `src2`, and `dest`. Draw radiating "distance waves" from all 3 points. Where the three waves intersect with the lowest sum, draw a star.
+Opt Complexity Visuals: Priority Queue Timeline
+How to Draw Opt Complexity: Draw 3 separate Priority Queues being processed. Write $O(E \log V)$ above each, showing they are sequential additions, not multiplicative.
+Mem Vis (BF): Adjacency List with massive path-history arrays carrying over per recursive step.
+Mem Vis (Opt): Min-Heap Structure (showing node objects with current min-distance) alongside 3 static distance arrays.

@@ -1,0 +1,13 @@
+ID: 2766
+Problem Title: Relocate Marbles
+Brute Force Method: Maintain an array of all marble positions. For each move from old to new, iterate through the array, find all marbles at old, and change their value to new. $O(\text{Moves} \\text{cdot Marbles})$.
+BF Complexity Visuals: Massive Array Search/Replace
+How to Draw BF: Draw a list of marble positions. For every move, scan the whole list and erase/rewrite numbers. Work scales as the product of moves and marbles.
+Optimised Pattern: Linear Memory Scan (Visualizing the CPU reading the entire marbles array for every single instruction).
+Opt Vis. Technique: HashSet Position Tracking
+Dry Run (Opt): Dynamic Set Transformation
+How to Draw (Opt): Store initial positions in a Set. For each move, remove the from position and add the to position. The Set handles the "all marbles at this position" rule automatically. Sort the final Set keys.
+Opt Complexity Visuals: Draw a coordinate line with marbles on it. When a move happens, "pick up" the dot at from and "drop" it at to. The number of dots stays constant or decreases.
+How to Draw Opt Complexity: $O(N \log N)$ Sorting
+Mem Vis (BF): Draw an $O(M)$ move block followed by an $O(N \log N)$ sort block. Label the bottleneck as $O(N \log N)$.
+Mem Vis (Opt): HashSet / Sorted Array (Draw a hash set in memory storing only the unique occupied coordinates).

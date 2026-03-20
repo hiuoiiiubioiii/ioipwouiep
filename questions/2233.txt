@@ -1,0 +1,13 @@
+ID: 2233
+Problem Title: Maximum Product After K Increments
+Brute Force Method: Repeated Linear ScanLinearly scan the entire array to find the absolute minimum value. Increment it by 1. Repeat this entire linear search K times, then multiply everything.
+BF Complexity Visuals: Endless Array Scans
+How to Draw BF: Draw the array. Draw a magnifying glass finding the smallest number. Erase the number, write the +1 value. Redraw the magnifying glass scanning the whole array from scratch. Show $O(K \cdot N)$.
+Optimised Pattern: Min Heap (Priority Queue)
+Opt Vis. Technique: Self-Balancing Tree Sink
+Dry Run (Opt): Heapify the array into a Min-Heap. Pop the root (minimum element), increment it by 1, and push it back. The heap self-balances. Repeat K times. Multiply all elements modulo 10^9 + 7.
+How to Draw (Opt): Draw a binary tree with the smallest number at the top. Circle the top node, extract it, add 1, and drop it back at the top. Draw arrows showing it "sinking" down to its correct sorted level.
+Opt Complexity Visuals: Heap Cycle Timeline
+How to Draw Opt Complexity: Draw an initial $O(N)$ box for building the heap. Draw a circular loop for K iterations. Inside the loop, write $O(\log N)$ for the pop/push operations. Show $O(N + K \log N)$ total time.
+Mem Vis (BF): Mutating the original flat array in place, suffering from slow $O(N)$ searches.
+Mem Vis (Opt): A balanced binary tree array structure holding the Min Heap elements (O(N) space).

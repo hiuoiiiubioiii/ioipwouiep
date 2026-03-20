@@ -1,0 +1,13 @@
+ID: 2659
+Problem Title: Make Array Empty
+Brute Force Method: Simulate the rotation: if not min, move to end. If min, remove.
+BF Complexity Visuals: Queue Simulation
+How to Draw BF: Draw a circular queue. Show elements jumping from front to back. In worst case (sorted descending), this is $O(N^2)$.
+Optimised Pattern: Sorting + Fenwick Tree (Binary Indexed Tree)
+Opt Vis. Technique: Indexed Gap Counting
+Dry Run (Opt): Sort elements with original indices. Use a BIT to track how many elements have been removed. The "jumps" between sorted elements' original indices (accounting for removals) tell you the rotation count.
+How to Draw (Opt): Draw the array with indices. Sort them. Draw arrows jumping between the original indices. Use a BIT to "subtract" the spots where elements were already removed.
+Opt Complexity Visuals: $O(N \log N)$ BIT Operations
+How to Draw Opt Complexity: Draw a sorting block $O(N \log N)$ and N operations on a Fenwick Tree $O(\log N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(N)$ for the BIT and sorted index mapping.

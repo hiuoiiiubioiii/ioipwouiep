@@ -1,0 +1,13 @@
+ID: 2674
+Problem Title: Split a Circular Linked List
+Brute Force Method: Traverse the circular list to find the total length, then traverse again to find the midpoint and break the links.
+BF Complexity Visuals: Two-Pass Length Scan
+How to Draw BF: Draw a circle. Draw a pointer going around once to count N, then again to N/2. $O(N)$.
+Optimised Pattern: Fast and Slow Pointers (Tortoise and Hare)
+Opt Vis. Technique: Midpoint Intersection
+Dry Run (Opt): Use `slow` and `fast` pointers. When `fast` (or `fast.next`) reaches the end (back to head), `slow` is at the midpoint. Break the circle into two smaller circles.
+How to Draw (Opt): Draw a circle. Draw a 'Slow' turtle and a 'Fast' rabbit. When rabbit finishes the loop, the turtle is halfway. Draw new lines to close two smaller loops.
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw the pointers moving in tandem. Total steps are $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ constant space (pointer references).

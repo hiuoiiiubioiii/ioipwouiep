@@ -1,0 +1,13 @@
+ID: 950
+Problem Title: Reveal Cards In Increasing Order
+Brute Force Method: Try every possible starting permutation of the deck and run the "reveal/move to bottom" simulation to see if it results in [1, 2, 3...].
+BF Complexity Visuals: $O(N! \cdot N)$. Factorial search for the correct starting order.
+How to Draw BF: Draw a tree of deck permutations. For each, draw a series of "Revealed" vs "Moved to Bottom" arrows. Most end in a red 'X'.
+Optimised Pattern: Simulation with Queue (Work Backwards/Index Mapping)
+Opt Vis. Technique: "Filling the Empty Slots." Sort the cards. Use a queue of indices [0, 1, 2...]. For each card, pick the front index (reveal) and move the next front index to the back (skip).
+Dry Run (Opt): 1. Sort cards. 2. Create queue of indices 0 to N-1. 3. While cards remain: `res[q.pop()] = cards[i]`. If queue not empty, `q.push(q.pop())`.
+How to Draw (Opt): Draw N empty boxes. Below them, a queue of indices. Draw an arrow from the smallest card to the box whose index is at the front of the queue.
+Opt Complexity Visuals: $O(N \log N)$ for sort, $O(N)$ for queue simulation.
+How to Draw Opt Complexity: Draw a sorting machine followed by a circular pipe (queue) where indices are recycled until all boxes are filled.
+Mem Vis (BF): $O(N!)$ to store all permutations.
+Mem Vis (Opt): $O(N)$ for the queue and the result array. Draw a horizontal pipe and a row of N result boxes.

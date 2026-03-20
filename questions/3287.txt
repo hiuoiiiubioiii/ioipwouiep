@@ -1,0 +1,13 @@
+ID: 3287
+Problem Title: Find the Maximum Sequence Value
+Brute Force Method: Try every possible split point p. For each p, generate all subsequences of length k from the left and right, calculate their OR-sums, and XOR them. $O(2^N)$.
+BF Complexity Visuals: Bifurcating XOR Subgraph
+How to Draw BF: Draw the array. Split it in the middle. From both sides, branch out into all possible k-length combinations. Show the XOR operation at the bottom.
+Optimised Pattern: DP with Bitset (Prefix/Suffix ORs)
+Opt Vis. Technique: Bitset Reachability Matrix
+Dry Run (Opt): dp[i][j][v] is true if a subsequence of length j using first i elements can have OR-sum v. Since v &lt; 128, use bitsets to store reachable OR-sums. Compute prefix and suffix DPs, then find the max XOR.
+How to Draw (Opt): Draw a table where rows = length j and columns = bitsets of reachable values. Move through the array, updating the bitset by OR-ing the current value with all previous reachable values. Repeat from the end (suffix).
+Opt Complexity Visuals: Bounded DP Cube
+How to Draw Opt Complexity: Draw a 3D block representing N elements, K length, and 128 possible OR-sums. Label as $O(N \cdot K \cdot 128)$.
+Mem Vis (BF): Exponential storage of all k-length OR results.
+Mem Vis (Opt): Two 3D DP tables of size N x K x 128 (O(N * K * 128) space).

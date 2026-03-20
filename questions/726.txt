@@ -1,0 +1,13 @@
+ID: 726
+Problem Title: Number of Atoms
+Brute Force Method: String expansion: Replace `(H2O)2` with `H2OH2O` literally in the string, then count characters.
+BF Complexity Visuals: Exploding String Balloons
+How to Draw BF: Draw a small string expanding into a massive, repetitive string. $O(\text{Exponential})$ for nested brackets.
+Optimised Pattern: Recursion / Stack with HashMaps
+Opt Vis. Technique: Nested Russian Dolls
+Dry Run (Opt): Use a stack of HashMaps. When `(` is met, push a new map. When `)` is met, pop current map, multiply all counts by the following number, and merge into the previous map.
+How to Draw (Opt): Draw vertical boxes (Stack). Inside each box, write a mini-table (Map). Use arrows to show "bubbling up" and multiplying counts when a box is removed.
+Opt Complexity Visuals: Parser Progression
+How to Draw Opt Complexity: Draw a line through the formula string. Each character is processed once. $O(N^2)$ worst-case due to map merging.
+Mem Vis (BF): Massive expanded string (unbounded).
+Mem Vis (Opt): Stack of Map objects proportional to nesting depth (O(N)).

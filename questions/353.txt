@@ -1,0 +1,13 @@
+ID: 353
+Problem Title: Design Snake Game
+Brute Force Method: Store the snake's body in a list. For every move, shift all elements in the list. Check the entire list to see if the head hit the body.
+BF Complexity Visuals: List-based Body Simulation
+How to Draw BF: Draw a grid. Draw the snake as a list of coordinates. For a move, "erase" the whole list and redraw it one step forward. $O(\text{Body Length})$.
+Optimised Pattern: Deque + HashSet (Constant-Time Movement and Collision)
+Opt Vis. Technique: Sliding Window Body Queue
+Dry Run (Opt): Use a `Deque` to store body coordinates (add to front, remove from back). Use a `HashSet` to store the same coordinates for $O(1)$ collision checking. Note: handle the "tail moving out" logic specifically during the collision check.
+How to Draw (Opt): Draw a grid with a snake. Beside it, draw a Deque (horizontal tape) and a HashSet (scattered box). Show the tail "leaving" the HashSet at the same time the head "enters" it.
+Opt Complexity Visuals: Constant Time per Move
+How to Draw Opt Complexity: Draw a single box for the move operation. No loops over the snake's body. $O(1)$.
+Mem Vis (BF): A grid representation or a full array copy of the snake.
+Mem Vis (Opt): Deque + HashSet of size N (max snake length). Draw two parallel data structures of size N. $O(N)$.

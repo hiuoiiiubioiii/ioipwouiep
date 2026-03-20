@@ -1,0 +1,13 @@
+ID: 1219
+Problem Title: Path with Maximum Gold
+Brute Force Method: Run a pure BFS/DFS from every single cell without marking cells as visited properly, leading to infinite loops back and forth between two adjacent gold cells.
+BF Complexity Visuals: Unconstrained Random Walk
+How to Draw BF: Draw a grid. Pick a cell. Draw squiggly lines crossing over themselves repeatedly back and forth between two adjacent cells. Write $O(∞)$ due to lack of constraints.
+Optimised Pattern: DFS with Backtracking
+Opt Vis. Technique: Backtracking Exploration Tree on a Grid
+Dry Run (Opt): Start DFS from every cell containing gold. "Mine" the gold (temporarily set to 0 to mark visited). Move to a valid neighbor. When stuck, "un-mine" (restore the value) and step back to try another path. Track the global maximum.
+How to Draw (Opt): Draw a grid with numbers. Trace a path with a solid line, crossing out numbers as you go. When you hit a dead end, draw a dotted line retracing your steps backward and un-cross the numbers to try a new route.
+Opt Complexity Visuals: Bounded Path Tree
+How to Draw Opt Complexity: Write $O(K \cdot 4^K)$ where K is the number of cells with gold (max 25). Draw a grid highlighting only the K cells, showing limited, bounded branching.
+Mem Vis (BF): Draw a massive, overflowing stack memory block resulting from infinite recursion.
+Mem Vis (Opt): Draw a Call Stack block of maximum depth 'K' (at most 25 frames). The grid itself is modified in-place, resulting in $O(K)$ auxiliary space.

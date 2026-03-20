@@ -1,0 +1,13 @@
+ID: 3353
+Problem Title: Minimum Total Operations
+Brute Force Method: Simulate adding/subtracting 1 to subarrays iteratively until the target is reached. $O(N \\text{cdot Max}_\text{Diff})$.
+BF Complexity Visuals: Iterative Subarray Sculpting
+How to Draw BF: Draw the array. Draw a block over a mismatched section and shift it up by 1. Check target. Repeat hundreds of times.
+Optimised Pattern: Difference Array / Greedy
+Opt Vis. Technique: The Step-Delta Tracker
+Dry Run (Opt): Create a difference array `diff[i] = target[i] - nums[i]`. Iterate through `diff`. An operation is required whenever the current difference changes magnitude or sign compared to the previous difference.
+How to Draw (Opt): Draw a bar chart of the differences. You only pay a "cost" when a bar is taller than the bar to its left (in the same direction). Add up these positive vertical step-ups.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line reading the differences, updating a total sum in $O(1)$.
+Mem Vis (BF): Constantly mutating array states.
+Mem Vis (Opt): A single `diff` tracking variable. $O(1)$ space.

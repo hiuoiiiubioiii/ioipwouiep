@@ -1,0 +1,13 @@
+ID: 166
+Problem Title: Fraction to Recurring Decimal
+Brute Force Method: Perform long division. If it doesn't terminate quickly, keep adding digits until a limit is reached or a pattern is manually spotted.
+BF Complexity Visuals: A "Linear Progression" that might extend infinitely if the fraction is irrational (not possible here) or very long.
+How to Draw BF: Draw a long division bar. Keep writing digits until you run out of paper, showing the lack of a stop condition.
+Optimised Pattern: Long Division + Hash Map (Remainder Tracking).
+Opt Vis. Technique: A "Cycle Detector." As you divide, you store the remainder in a map. If you see the same remainder twice, a loop has been found.
+Dry Run (Opt): Perform Numerator / Denominator. Store `remainder -&gt; stringIndex` in a Map. If current remainder exists in Map, insert brackets `()` at the stored index.
+How to Draw (Opt): Draw the long division. Beside it, keep a "Remainder Log." When you write a remainder, check if it's already in the log. If yes, draw a loop arrow back to its first occurrence.
+Opt Complexity Visuals: $O(\text{Denominator})$ complexity. The number of unique remainders is limited by the value of the divisor.
+How to Draw Opt Complexity: Draw a circle with D slots. Show that you must eventually land on a slot you've visited before, proving the bound.
+Mem Vis (BF): Unbounded string growth without memory of state.
+Mem Vis (Opt): Visualize a Hash Map storing at most D integers (O(D) space).

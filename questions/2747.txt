@@ -1,0 +1,13 @@
+ID: 2747
+Problem Title: Count Zero Request Servers
+Brute Force Method: For every query time, iterate through the entire logs array. Check if time - queries[i] &lt;= log_time &lt;= queries[i]. Count unique servers. $O(Q \cdot L)$.
+BF Complexity Visuals: Query-by-Log Comparison Matrix
+How to Draw BF: Draw a timeline of logs. For each query, draw a "window" box on the timeline and manually count the distinct server IDs inside it.
+Optimised Pattern: Linear Search Pointers (Drawing the search range for every individual query).
+Opt Vis. Technique: Sliding Window + Sorting (Offline Queries)
+Dry Run (Opt): Moving Timeline Window
+How to Draw (Opt): Sort logs by time and queries by time. Use two pointers (left and right) to maintain a window of logs within [queries[i]-x, queries[i]]. Use a frequency map to track the number of active servers in the window.
+Opt Complexity Visuals: Draw a timeline. Slide a fixed-width "Window" to the right. As it passes log entries, they "enter" the frequency map. As it leaves them, they "exit".
+How to Draw Opt Complexity: $O((L + Q)$ log (L + Q)) Sorting Bottleneck
+Mem Vis (BF): Draw a sort block followed by a single sweep line. Label the sweep $O(L + Q)$.
+Mem Vis (Opt): Frequency Map &amp; Active Count (Visualize a hash map tracking server IDs and a single integer activeServers).

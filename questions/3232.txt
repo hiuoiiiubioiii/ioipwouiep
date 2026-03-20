@@ -1,0 +1,13 @@
+ID: 3232
+Problem Title: Find if Digit Game Can Be Won
+Brute Force Method: Recursively simulate every possible subset Alice could pick, check if the sum beats the remaining elements. $O(2^N)$.
+BF Complexity Visuals: Full Binary Subset Tree
+How to Draw BF: Draw a tree where each node branches into "Include" or "Exclude". Calculate the sum at every single leaf node.
+Optimised Pattern: Greedy Summation / Math
+Opt Vis. Technique: Balance Scale Comparison
+Dry Run (Opt): Alice can simply choose *all* single-digit numbers or *all* double-digit numbers. Calculate `sum(single)` and `sum(double)`. If they are not exactly equal, Alice wins.
+How to Draw (Opt): Draw two buckets: "Singles" (&lt;10) and "Doubles" (&gt;=10). Tally the sum into each. Write `sum1 != sum2 -&gt; Alice Wins`.
+Opt Complexity Visuals: Constant Time Decision Node
+How to Draw Opt Complexity: Draw a single sweeping line to sum the array $O(N)$. Point to a single `!=` comparison box labeled $O(1)$.
+Mem Vis (BF): Recursion call stack of depth N.
+Mem Vis (Opt): Two scalar integer variables for the sums (O(1) space).

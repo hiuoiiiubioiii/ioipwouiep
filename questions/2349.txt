@@ -1,0 +1,13 @@
+ID: 2349
+Problem Title: Design a Number Container System
+Brute Force Method: Store numbers in a simple Array. For `find(number)`, scan the entire array from index 0 to find the first occurrence of that number.
+BF Complexity Visuals: Linear Search per Query (O(Q * N))
+How to Draw BF: Draw a massive array. For every query, draw an arrow starting at index 0 and moving right until it finds a specific value.
+Optimised Pattern: Two Hash Maps + Min-Heap (Sorted Set)
+Opt Vis. Technique: Bidirectional Indexed Lookup
+Dry Run (Opt): Map 1: `index -&gt; number`. Map 2: `number -&gt; Min-Heap of indices`. When updating an index, update Map 1 and push the new index to Map 2's heap. `find` just returns the top of the heap.
+How to Draw (Opt): Draw a dictionary for "What's at this index?" and a row of "Sorted Folders" for each number. When a number is assigned to an index, drop a sticky note with that index into the number's folder. The smallest index is always at the front.
+Opt Complexity Visuals: Logarithmic Update/Query (O(log N))
+How to Draw Opt Complexity: Draw a Hash Map pointing to a small Tree (Heap). The search only travels down the height of the tree.
+Mem Vis (BF): Draw an immense amount of duplicate index pointers in memory.
+Mem Vis (Opt): Draw two Hash Maps: one mapping Integers to Integers, and one mapping Integers to Min-Heaps (or Sorted Sets).

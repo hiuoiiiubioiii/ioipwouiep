@@ -1,0 +1,13 @@
+ID: 3201
+Problem Title: Find the Maximum Length of Valid Subsequence I
+Brute Force Method: Generate all subsequences (O(2^N)), filter to check if parity of elements strictly alternates.
+BF Complexity Visuals: Binary Recursion Tree
+How to Draw BF: Draw a root node branching into two (Include/Exclude). Continue branching N times. Count the bottom leaves to prove $O(2^N)$ time.
+Optimised Pattern: State Machine / 1D Dynamic Programming
+Opt Vis. Technique: State Transition Diagram
+Dry Run (Opt): Set up a 2-column table tracking 'max alternating ending in Even' and 'max alternating ending in Odd'. Update counts sequentially.
+How to Draw (Opt): Draw two variables (Even, Odd). Cross them out and update their scalar values as your finger moves left-to-right across the array.
+Opt Complexity Visuals: Linear Timeline Pipeline
+How to Draw Opt Complexity: Draw a single straight horizontal line mapping N elements. Add a small box at each node stating "O(1) update", proving $O(N)$ total time.
+Mem Vis (BF): Deep Call Stack Diagram (depth N).
+Mem Vis (Opt): Two independent scalar boxes (O(1) space).

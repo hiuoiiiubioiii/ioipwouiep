@@ -1,0 +1,13 @@
+ID: 1419
+Problem Title: Minimum Number of Frogs Croaking
+Brute Force Method: String Mutation / Subsequence Extraction. Search for "c", then "r", etc., deleting them or replacing them with spaces. Repeat until the string is empty or invalid.
+BF Complexity Visuals: Multi-Pass String Reallocation
+How to Draw BF: Draw the string. Draw a highlighter finding "c-r-o-a-k" and erasing it. Draw a second highlighter doing it again. Label $O(N^2)$ due to repeated scans and string shifts.
+Optimised Pattern: State Machine / Concurrent Counters
+Opt Vis. Technique: Waterfall Pipeline / Watermark Tracking
+Dry Run (Opt): Keep 5 counters for c,r,o,a,k. Increment current char, decrement previous char (e.g., 'r' increments r, decrements c). If any counter goes negative, invalid. Max concurrent 'c's is the answer.
+How to Draw (Opt): Draw 5 buckets (c,r,o,a,k). Water flows sequentially from c -&gt; r -&gt; o -&gt; a -&gt; k. Track the maximum water level ever recorded in bucket 'c' before it flows out to 'k' (which acts as a drain).
+Opt Complexity Visuals: Single Pass State Machine
+How to Draw Opt Complexity: Draw an array with a single pointer sliding left to right. Label $O(N)$ time.
+Mem Vis (BF): Multiple Large Strings in Heap
+Mem Vis (Opt): Draw an array of 5 integers representing the state machine counters, plus a `max_frogs` integer. Space $O(1)$.

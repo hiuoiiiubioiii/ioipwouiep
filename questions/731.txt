@@ -1,0 +1,13 @@
+ID: 731
+Problem Title: My Calendar II
+Brute Force Method: Maintain a list of all bookings. For a new booking, check if it triple-overlaps by comparing against every pair of existing overlaps.
+BF Complexity Visuals: Nested Pairwise Comparison
+How to Draw BF: Draw a timeline with segments. Draw arcs connecting every pair of overlapping segments to the new entry. $O(N^2)$.
+Optimised Pattern: Sweep Line Algorithm (TreeMap)
+Opt Vis. Technique: Time-Point Delta Mapping
+Dry Run (Opt): Mark `start` as +1 and `end` as -1 in a sorted map. Iterate through the map, maintaining a `running_sum`. If it ever exceeds 2, the booking is invalid.
+How to Draw (Opt): Draw a horizontal line. Mark points with +1 and -1. Draw a "water level" line that rises and falls as you move right.
+Opt Complexity Visuals: Linear Scan of Sorted Map
+How to Draw Opt Complexity: Draw a sorted set of X-coordinates. Show a single pass through these coordinates. $O(N)$.
+Mem Vis (BF): List of interval pairs.
+Mem Vis (Opt): Balanced BST / TreeMap storing discrete time points (O(N)).

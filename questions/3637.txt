@@ -1,0 +1,13 @@
+ID: 3637
+Problem Title: Trionic Array I (Easy)
+Brute Force Method: Triple nested loops to check every possible triplet (i, j, k) to see if they satisfy the "Trionic" sum/property. $O(N^3)$.
+BF Complexity Visuals: 3D Iteration Cube.
+How to Draw BF: Draw a cube. Each axis represents an index (i, j, k). Shade the whole volume of the cube. It’s too dense to compute for N &gt; 500.
+Optimised Pattern: Two-pointer approach or Hash Map tracking based on the property target - (arr[i] + arr[j]).
+Opt Vis. Technique: Running Sum Balance Beam.
+Dry Run (Opt): Fix one element i. Now you just need to find two other elements j, k that sum to a specific remainder. This is just the "Two Sum" problem repeated N times.
+How to Draw (Opt): Draw an array. Point to index i. For the rest of the array, place pointers L and R at the ends and move them inward based on the sum.
+Opt Complexity Visuals: Nested Linear Block.
+How to Draw Opt Complexity: Draw an outer loop (O(N)). Inside it, draw a two-pointer scan (O(N)). Write $O(N^2)$.
+Mem Vis (BF): A massive list of all 3-tuples generated before checking.
+Mem Vis (Opt): In-place pointer arithmetic. Space $O(1)$.

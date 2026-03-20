@@ -1,0 +1,13 @@
+ID: 2918
+Problem Title: Minimum Equal Sum of Two Arrays After Replacing Zeros
+Brute Force Method: Try substituting every '0' with 1, then 2, then 3... recursively until sums match.
+BF Complexity Visuals: Infinite Recursion Tree
+How to Draw BF: Draw a tree node for a '0'. Draw infinite branches coming out of it for choices 1, 2, 3, ∞.
+Optimised Pattern: Greedy Sum Matching
+Opt Vis. Technique: Balance Scales with Minimum Weights
+Dry Run (Opt): Calculate sum1 and sum2 assuming all 0s are 1s. Count 0s. If one sum is strictly less than the other but has NO zeros to grow, it's impossible (-1). Else, return max(sum1, sum2).
+How to Draw (Opt): Draw a balance scale. Put base sums on each side. Add '1' blocks for every zero. If the lighter side has no '0' slots left to add weight, draw an 'X'.
+Opt Complexity Visuals: Two Parallel Linear Sweeps
+How to Draw Opt Complexity: Draw two parallel straight lines of length N and M. No overlapping loops. Time $O(N + M)$.
+Mem Vis (BF): Call stack exploring exponential combinations.
+Mem Vis (Opt): Four scalar variables: `sum1`, `sum2`, `zero1`, `zero2`. Space $O(1)$.

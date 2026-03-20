@@ -1,0 +1,13 @@
+ID: 1779
+Problem Title: Find Nearest Point That Has the Same X or Y Coordinate
+Brute Force Method: Loop through all points. Check if it's valid (same X or Y), calculate Manhattan distance for all valid points, sort them by distance and index.
+BF Complexity Visuals: List-then-Sort Filter.
+How to Draw BF: Draw all points. Draw lines to target. Filter lines. Sort. $O(N \log N)$.
+Optimised Pattern: Single Pass Minimum Tracking.
+Opt Vis. Technique: The "Streaming Winner".
+Dry Run (Opt): Iterate through points once. If x == x1 or y == y1, calculate dist. If dist &lt; min\_dist, update min\_dist and min\_idx.
+How to Draw (Opt): Draw a list. Hold a "Winner" card. As you scan, if a point is closer, swap the card.
+Opt Complexity Visuals: Linear Sweep.
+How to Draw Opt Complexity: Draw one arrow passing over the points. Label $O(N)$.
+Mem Vis (BF): $O(N)$ list to store distances.
+Mem Vis (Opt): Three integer variables. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 863
+Problem Title: All Nodes Distance K in Binary Tree
+Brute Force Method: For every node in the tree, run a full DFS/BFS to find nodes at distance K. Check if the target node is among them.
+BF Complexity Visuals: Multiple Global Traversals. $O(N^2)$.
+How to Draw BF: Draw a tree. For every node, draw a "ripple" that spreads out. Note how often the same edges are traversed.
+Optimised Pattern: Graph Conversion (Parent Pointers) + BFS.
+Opt Vis. Technique: Tree-to-Network Morph.
+Dry Run (Opt): First, do a DFS to map every node to its parent. Now the tree is a generic graph. Start a BFS from the 'Target' node, moving to Left, Right, and Parent. Stop when the BFS level reaches K.
+How to Draw (Opt): Draw a tree. Draw extra arrows pointing UP from children to parents. Highlight the target node and draw a circle (BFS wave) that expands outward 1 level at a time.
+Opt Complexity Visuals: Two-Pass Traversal. $O(N)$.
+How to Draw Opt Complexity: Draw the tree. Trace one pass for parents (green), and one pass for BFS (blue). Every edge is visited a constant number of times.
+Mem Vis (BF): Recursion Stack: Draw a stack H levels deep for every node.
+Mem Vis (Opt): Hash Map (Parents) + Queue (BFS): Draw a mapping table and a 1D queue.

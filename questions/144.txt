@@ -1,0 +1,13 @@
+ID: 144
+Problem Title: Binary Tree Preorder Traversal
+Brute Force Method: Recursive DFS (Root, Left, Right).
+BF Complexity Visuals: A recursion tree showing the call stack depth $O(H)$.
+How to Draw BF: Draw the tree. Draw a "Stack" box. For every node, write its value, then "call" its left, then its right. Show the frames stacking up.
+Optimised Pattern: Iterative Traversal with a Stack.
+Opt Vis. Technique: A "To-Do" list. You process the current node immediately, but you write down the "Right" child to remember for later before moving "Left."
+Dry Run (Opt): Push Root to Stack. While stack not empty: Pop node, add to result, Push Right child (if exists), then Push Left child (if exists).
+How to Draw (Opt): Draw the tree. Draw a vertical stack box. Put 'Root' in. Take it out, put its 'Right' then 'Left' in. Repeat. Order in result: 1, 2, 3...
+Opt Complexity Visuals: $O(N)$ time as every node is pushed and popped exactly once. Space is $O(H)$ for the stack.
+How to Draw Opt Complexity: Draw the tree and cross out each node with one slash. The work is perfectly proportional to the number of nodes.
+Mem Vis (BF): Implicit system call stack memory used by recursion.
+Mem Vis (Opt): Explicit stack in heap/stack memory, making the memory usage visible and manageable.

@@ -1,0 +1,13 @@
+ID: 1216
+Problem Title: Valid Palindrome III
+Brute Force Method: Try deleting 'k' characters in all possible combinations. For each resulting string, use a standard two-pointer approach to check if it forms a valid palindrome.
+BF Complexity Visuals: Combinatorial Explosion Tree
+How to Draw BF: Draw the original string. Draw branches branching down for deleting index 0, then index 1, etc. Repeat this branching 'k' levels deep. Write $O(N^k)$ to show the explosive combinations.
+Optimised Pattern: Dynamic Programming (Longest Palindromic Subsequence)
+Opt Vis. Technique: 2D DP Matrix Expansion (Subproblems)
+Dry Run (Opt): Find the Longest Palindromic Subsequence (LPS) of the string. If the characters match, inner LPS + 2. If not, max of (left LPS, right LPS). Finally, check if (String Length - LPS Length) &lt;= k.
+How to Draw (Opt): Draw a grid with the string characters on both the X and Y axes. Shade the main diagonal with 1s. Draw arrows pointing from (i+1, j-1) to (i, j) for matches, and from left/bottom cells for mismatches.
+Opt Complexity Visuals: Half-Filled Grid Matrix
+How to Draw Opt Complexity: Draw a square matrix. Shade only the top-right triangular half, leaving the bottom-left blank. Write $O(N^2)$ representing the number of unique subproblems solved.
+Mem Vis (BF): Draw a deep recursive call stack with massive, redundant string slice allocations in memory.
+Mem Vis (Opt): Draw a 2D integer array `dp[N][N]` or, perfectly optimized, just two 1D integer arrays `curr[]` and `prev[]` representing $O(N)$ space.

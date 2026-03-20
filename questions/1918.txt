@@ -1,0 +1,13 @@
+ID: 1918
+Problem Title: Kth Smallest Subarray Sum
+Brute Force Method: Generate all possible subarrays, calculate their sums, store them in a list, sort the list, and pick the Kth element.
+BF Complexity Visuals: Array Slicing &amp; Giant Sorting Funnel
+How to Draw BF: Draw overlapping brackets generating $O(N^2)$ subarrays. List all their sums, funnel them into a sorting box, and point to the K-th item. $O(N^2 \log(N^2)$).
+Optimised Pattern: Binary Search on Answer + Sliding Window
+Opt Vis. Technique: Threshold Counting Number Line
+Dry Run (Opt): Pick a target sum 'mid'. Use a sliding window to count how many subarrays have a sum ≤ 'mid'. If count ≥ K, shrink right; else, shrink left.
+How to Draw (Opt): Draw a number line for the sum. Pick 'mid'. Below it, draw the array with an expanding/contracting sliding window (caterpillar) counting valid subarrays.
+Opt Complexity Visuals: Logarithmic Number Line Search
+How to Draw Opt Complexity: Draw a number line shrinking by half log(Sum) times. At each step, draw a linear $O(N)$ caterpillar scan. Total $O(N \log M)$.
+Mem Vis (BF): A massive dynamic array holding $O(N^2)$ integer sums before sorting.
+Mem Vis (Opt): A few simple integer pointers (`left`, `right`, `count`, `current_sum`) for the sliding window taking strictly $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2127
+Problem Title: Maximum Employees to Be Invited to a Meeting
+Brute Force Method: Generate all N! permutations of employees, seating them at a table and validating the "favorite" rules.
+BF Complexity Visuals: A massive factorial decision tree mapping out every possible seating arrangement.
+How to Draw BF: Draw a circular table. Try placing Person 1, then Person 2. Backtrack and erase if the rule breaks. Write $O(N!)$.
+Optimised Pattern: Graph (Functional Graph / Cycle Detection + Topological Sort).
+Opt Vis. Technique: Isolated circular islands (cycles) with rivers (chains) flowing into them.
+Dry Run (Opt): Identify cycles. Case 1: Max cycle length &gt; 2 (can only invite this one cycle). Case 2: Sum of all (cycles of length 2 + longest chain flowing into node A + longest chain flowing into node B). Return max of Case 1 and 2.
+How to Draw (Opt): Draw nodes as circles, with single arrows pointing to their favorite. Find closed loops. For 2-node loops, draw the longest "tail" of nodes pointing into each half of the pair.
+Opt Complexity Visuals: $O(N)$ graph traversal.
+How to Draw Opt Complexity: A single sweep highlighting edges, grouping them into distinct components.
+Mem Vis (BF): $O(N!)$ space holding recursive permutations.
+Mem Vis (Opt): $O(N)$ arrays for `in_degree`, `depth`, and `visited` status.

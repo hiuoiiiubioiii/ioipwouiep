@@ -1,0 +1,13 @@
+ID: 3058
+Problem Title: Friends With No Common Friends (SQL)
+Brute Force Method: For every pair of friends (A, B), generate the full set of friends for A and the full set for B. Compare the intersection. If empty, keep the pair.
+BF Complexity Visuals: Set Intersection Grid
+How to Draw BF: Draw a matrix of friend pairs. For each cell, draw two Venn diagrams and check if they overlap.
+Optimised Pattern: CTEs + Not In / Except (Set Difference)
+Opt Vis. Technique: Friendship Network Filter
+Dry Run (Opt): Create a CTE of all friend pairs. Join to find "common" pairs where A and B both have a third friend C. Use NOT EXISTS or EXCEPT to remove these common pairs from the total list.
+How to Draw (Opt): Draw a graph of nodes and edges. Pick an edge (A-B). Look at their neighbors. If no neighbor is shared, color the edge green. If a neighbor is shared, color it red.
+Opt Complexity Visuals: $O(N² / \log N)$ using Indexes
+How to Draw Opt Complexity: Draw two separate passes: "Neighbor Discovery" and "Set Comparison".
+Mem Vis (BF): Massive lists of ID sets for every possible user pair.
+Mem Vis (Opt): B-Tree Indexes on the user_id columns and a Hash Set for set comparison during the join.

@@ -1,0 +1,13 @@
+ID: 2922
+Problem Title: Market Analysis III (SQL)
+Brute Force Method: Multiple nested subqueries or massive self-joins counting seller items, grouping, and filtering highest.
+BF Complexity Visuals: Cartesian Product Web
+How to Draw BF: Draw two tables. Draw a line from EVERY row in Table A to EVERY row in Table B to show the explosive row counts of bad joins.
+Optimised Pattern: SQL Window Functions (`RANK()` or `DENSE_RANK()`)
+Opt Vis. Technique: Segmented Data Frames
+Dry Run (Opt): Group by seller to get counts. Apply `RANK() OVER (ORDER BY count DESC)`. Filter for `RANK = 1` in the outer query to get top sellers instantly.
+How to Draw (Opt): Draw a single table. Draw thick horizontal lines grouping rows by seller ID. Write a small 'Rank' number next to each block based on their count size.
+Opt Complexity Visuals: Single Sequential Sort &amp; Filter Pipeline
+How to Draw Opt Complexity: Draw 3 blocks in sequence: [Aggregate] -&gt; [Sort/Rank: $O(N \log N)$] -&gt; [Filter]. Time mostly dominated by sorting.
+Mem Vis (BF): Massive temporary tables filling up disk/memory. $O(N^2)$ space.
+Mem Vis (Opt): One clean sorted temporary table in memory holding aggregated metrics. Space $O(\text{Unique Sellers})$.

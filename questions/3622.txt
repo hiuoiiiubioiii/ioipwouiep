@@ -1,0 +1,13 @@
+ID: 3622
+Problem Title: Check Divisibility by Digit Sum and Product (Easy)
+Brute Force Method: Modulo loop to extract digits, sum them, multiply them, then perform two modulo checks at the very end.
+BF Complexity Visuals: Sequential Extraction Boxes.
+How to Draw BF: Write the number N. Draw arrows extracting each digit one by one into two separate accumulator boxes (Sum and Product). Do division at the end.
+Optimised Pattern: Early Short-Circuit Simulation. If any digit is '0', the product becomes 0 instantly (cannot divide by zero), so return false immediately.
+Opt Vis. Technique: Short-Circuit Logic Gate.
+Dry Run (Opt): Scan the digits. The moment you hit a '0', pull an emergency brake lever. Stop all math, return false. Otherwise, calculate sum/product normally.
+How to Draw (Opt): Draw an array of digits. Sweep left to right. If you hit a 0, draw a massive red 'X' and stop. If you finish, draw a green check.
+Opt Complexity Visuals: Single Linear Scan Line.
+How to Draw Opt Complexity: Draw an array representing the digits. Draw a single arrow going left to right. Write $O(\log10 N)$ which equals the number of digits.
+Mem Vis (BF): Converting the integer to a String and allocating a new character array in memory.
+Mem Vis (Opt): In-place integer modulo operations (N % 10, N / 10). Strict $O(1)$ space usage.

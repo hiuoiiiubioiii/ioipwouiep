@@ -1,0 +1,13 @@
+ID: 1693
+Problem Title: Daily Leads and Partners (SQL)
+Brute Force Method: Fetch all records to application memory, iterate through, and use nested sets to count unique pairs per day.
+BF Complexity Visuals: Row-by-Row Comparison
+How to Draw BF: Draw a table. Draw a loop scanning the entire table for every unique date/brand. $O(N^2)$.
+Optimised Pattern: Group By + Aggregate COUNT(DISTINCT)
+Opt Vis. Technique: Bucket Partitioning
+Dry Run (Opt): Partition the table by `date_id` and `make_name`. Inside each bucket, count unique `lead_id` and `partner_id`.
+How to Draw (Opt): Draw a table split into distinct color-coded boxes. In each box, list the IDs and circle only the unique ones.
+Opt Complexity Visuals: Single Table Pass
+How to Draw Opt Complexity: Draw a straight arrow moving top-to-bottom through the table once. $O(N)$.
+Mem Vis (BF): Application Map: Draw a massive nested Hash Map structure in RAM.
+Mem Vis (Opt): Hash Aggregate Buffer: Draw small buckets in memory that increment as the DB scans.

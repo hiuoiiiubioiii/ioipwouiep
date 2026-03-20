@@ -1,0 +1,13 @@
+ID: 1202
+Problem Title: Smallest String With Swaps
+Brute Force Method: Backtracking to generate all valid permutations of the string by performing every allowed swap recursively. Find the lexicographically smallest resulting string.
+BF Complexity Visuals: Massive Exponential State-Space Tree
+How to Draw BF: Draw a root node with the initial string. Draw lines radiating downwards for every possible single swap. From those strings, branch out again. Write $O(V!)$ at the bottom to show the factorial branching explosion.
+Optimised Pattern: Disjoint Set Union (DSU) / Connected Components + Sorting
+Opt Vis. Technique: Graph Visualization (Forest of Trees) to Grouping Buckets
+Dry Run (Opt): Treat each string index as a node. Draw edges for allowed swaps. Notice they form connected "islands". Put all characters from one island into a bucket. Sort the bucket alphabetically. Place the sorted characters back into the original empty slots of that island.
+How to Draw (Opt): Draw circles representing the indices 0 to N-1. Draw lines connecting indices given in the 'pairs' array. Circle the connected groups. Next to each group, write down the characters at those indices, draw a down-arrow to a sorted list of those chars, and draw arrows mapping them back to the original index circles.
+Opt Complexity Visuals: Near-Linear Graph Traversal + Sorting Blocks
+How to Draw Opt Complexity: Write $O(E \cdot α(V)$) for Union Find. Draw an array divided into chunks. Above each chunk, draw a sorting tree (Merge/Quick sort) labeled $O(K \log K)$ where K is the component size.
+Mem Vis (BF): Draw a deep, cascading Call Stack memory diagram representing recursive permutation generation, storing massive temporary string states.
+Mem Vis (Opt): Draw two arrays for DSU: 'parent[]' and 'rank[]'. Below that, draw a Hash Map where keys are Root Nodes (integers) and values are Min-Heaps (Priority Queues) of characters.

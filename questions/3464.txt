@@ -1,0 +1,13 @@
+ID: 3464
+Problem Title: Maximize the Distance Between Points on a Square
+Brute Force Method: Generate all (N Choose k) combinations of points and calculate the minimum Manhattan distance for each. $O(N^k)$
+BF Complexity Visuals: Combinatorial Explosion Tree.
+How to Draw BF: Draw the square. Branch into picking point 1, then point 2... the tree becomes a dense fog.
+Optimised Pattern: Perimeter Unwrapping + Binary Search on Answer + Greedy. $O(N \log N + N \\text{log side})$
+Opt Vis. Technique: 1D Line Circular Greedy Scan.
+Dry Run (Opt): Unwrap square boundary to a 1D line of length 4 * side. BS for distance D. Greedily pick points at distance >= D.
+How to Draw (Opt): Draw a circle/loop. Place points. Pick a starting point. "Jump" clockwise by at least D to pick the next point. Repeat k times.
+Opt Complexity Visuals: Sort Timeline + BS Binary Tree.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort step, followed by a Binary Search tree where each node is an $O(N)$ greedy check.
+Mem Vis (BF): Storing all possible k-sized subsets of points.
+Mem Vis (Opt): Sorted 1D array of points along the perimeter (size N).

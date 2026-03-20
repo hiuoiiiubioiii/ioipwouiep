@@ -1,0 +1,13 @@
+ID: 677
+Problem Title: Map Sum Pairs
+Brute Force Method: Store key-value pairs in a Hash Map. For `sum(prefix)`, iterate through the entire map and check if each key starts with the prefix; if so, add the value.
+BF Complexity Visuals: Full Map Scan per Query.
+How to Draw BF: Draw a Hash Map. For every "sum" query, draw a scanner that visits every single entry. Write $O(N \cdot L)$.
+Optimised Pattern: Trie with Weight Accumulation.
+Opt Vis. Technique: Prefix-Based Aggregation.
+Dry Run (Opt): Each node in the Trie stores the current sum of all words passing through it. When inserting/updating, adjust the `delta` (new value - old value) for all nodes along the path.
+How to Draw (Opt): Draw a Trie. Inside each node, write a "Sum" number. When adding "apple:3", add +3 to every node from 'a' to 'e'. `sum("ap")` just reads the value at 'p'.
+Opt Complexity Visuals: $O(L)$ for both insert and sum.
+How to Draw Opt Complexity: Draw a single straight path down a tree. Write $O(L)$.
+Mem Vis (BF): Draw a standard Hash Map.
+Mem Vis (Opt): Draw a Trie where nodes store integers. $O(\text{Total characters})$.

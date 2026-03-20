@@ -1,0 +1,13 @@
+ID: 2744
+Problem Title: Find Maximum Number of String Pairs
+Brute Force Method: Double loop $O(N^2)$: For each string words[i], look at all words[j] to see if words[i] == reverse(words[j]).
+BF Complexity Visuals: N x N Comparison Grid
+How to Draw BF: Draw strings in a column and the same strings reversed in a row. Mark the intersections that match.
+Optimised Pattern: Temporary Reversed String Buffers (Creating a reversed copy for every comparison).
+Opt Vis. Technique: HashMap / Frequency Counting
+Dry Run (Opt): Symmetric Complement Search
+How to Draw (Opt): Iterate through words. For each word, check if its reverse is already in a seen Set. If yes, increment count and remove from Set. Else, add the word to the Set.
+Opt Complexity Visuals: Draw a "Mirror" (the Set). As words walk past, they look into the mirror to see if their "reverse self" is already inside.
+How to Draw Opt Complexity: Linear Pass $O(N \cdot L)$
+Mem Vis (BF): Draw a single arrow passing through N words. Label it $O(N)$ (assuming constant word length).
+Mem Vis (Opt): Unique String Set (Draw a hash set in the heap storing current unmatched strings).

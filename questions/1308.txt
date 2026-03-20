@@ -1,0 +1,13 @@
+ID: 1308
+Problem Title: Running Total for Different Genders (SQL)
+Brute Force Method: Correlated Subquery: For every single row, run a separate query to sum all previous dates. $O(N^2)$.
+BF Complexity Visuals: Nested Scanning Grid
+How to Draw BF: Draw a table. For row 10, draw an arrow scanning rows 1-9. For row 11, scan 1-10. The arrows form a dense triangle.
+Optimised Pattern: Window Functions (SUM OVER)
+Opt Vis. Technique: The Ordered Accumulator
+Dry Run (Opt): Partition the data by gender, sort by date. Maintain a running sum that updates as the "window" slides down.
+How to Draw (Opt): Draw two boxes (Male/Female). List dates vertically. Draw an arrow moving down once, updating a cumulative tally.
+Opt Complexity Visuals: Sort + Single Pass $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting tree followed by a single straight line representing the $O(N)$ accumulation pass.
+Mem Vis (BF): Multiple temporary result sets in memory.
+Mem Vis (Opt): A single buffer holding current_sum. $O(1)$ space.

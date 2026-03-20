@@ -1,0 +1,13 @@
+ID: 1898
+Problem Title: Maximum Number of Removable Characters
+Brute Force Method: Linear Search: Remove 1 char, check subsequence. Remove 2, check... continue until p is no longer a subsequence of s.
+BF Complexity Visuals: K \times (N+M) search timeline.
+How to Draw BF: Draw a line 1 to K. For each step, redraw the string and run two-pointer subsequence check. Mark $O(K \cdot N)$.
+Optimised Pattern: Binary Search on Answer (k) + Two Pointers.
+Opt Vis. Technique: Success/Failure range halving.
+Dry Run (Opt): Pick mid. Mark first mid indices in `removable` as "deleted". Run two pointers on s and p. If p is a subsequence, search higher.
+How to Draw (Opt): Draw a line 0 to K. Mark `mid`. Cross out characters in s. Draw two arrows (pointers) scanning s and p. If they finish, search the right half.
+Opt Complexity Visuals: Logarithmic search height.
+How to Draw Opt Complexity: Draw a binary tree of height \log K. Each node takes $O(N)$. Mark $O(N \log K)$.
+Mem Vis (BF): Multiple copies of strings for each k.
+Mem Vis (Opt): A single boolean array or bitset of size N to track "removed" indices.

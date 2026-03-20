@@ -1,0 +1,13 @@
+ID: 1922
+Problem Title: Count Good Numbers
+Brute Force Method: Iterate from index 0 to n-1, checking for each index whether the digit fits the "good" criteria and multiplying results.
+BF Complexity Visuals: Iterative Multiplication Chain
+How to Draw BF: Draw a long chain of N nodes. Label even nodes with "5 options" and odd nodes with "4 options". $O(N)$.
+Optimised Pattern: Binary Exponentiation (Fast Power)
+Opt Vis. Technique: Divide and Conquer Multiplication Tree
+Dry Run (Opt): Use the property `(a^n = (a^(n/2))^2)`. Calculate 5^{\lceil n/2 \rceil} and 4^{\lfloor n/2 \rfloor} using modular exponentiation.
+How to Draw (Opt): Draw a tree starting at power N, branching into N/2, then N/4. Highlight only one side of the branch being computed.
+Opt Complexity Visuals: Logarithmic Depth Tree
+How to Draw Opt Complexity: Draw a tree of height log(N). Each level represents one multiplication. $O(\log N)$ time.
+Mem Vis (BF): $O(1)$ iterative variables, but slow $O(N)$ execution time.
+Mem Vis (Opt): Recursive function stack with depth $O(\log N)$.

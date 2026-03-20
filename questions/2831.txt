@@ -1,0 +1,13 @@
+ID: 2831
+Problem Title: Find the Longest Equal Subarray
+Brute Force Method: For every unique number in the array, find all subarrays where that number can be made "equal" by deleting at most k other elements. Compare lengths.
+BF Complexity Visuals: Multi-pass Sliding Window
+How to Draw BF: Draw the array once for every unique element. For "1s", draw a sliding window. For "2s", draw another. Show massive redundant scanning.
+Optimised Pattern: Hash Map of Indices + Sliding Window
+Opt Vis. Technique: Index Compression Windowing
+Dry Run (Opt): Map each number to a list of its indices. For each list, use a sliding window: the number of deletions needed for a window [L, R] is (indices[R] - indices[L]) - (R - L). If deletions &gt; k, shrink L.
+How to Draw (Opt): Pick a number (e.g., '1'). Write down its positions: [0, 2, 5]. Sliding window on these indices: (5-0) - (2-0) = 3 deletions. Compare 3 against k.
+Opt Complexity Visuals: Single Pass with Map Update
+How to Draw Opt Complexity: Draw an array scan. For each element, update its specific window in the map. This is $O(n)$ because each index is processed by a window exactly once.
+Mem Vis (BF): Visualize repeated array slices or sub-arrays being created in memory for every check.
+Mem Vis (Opt): Visualize a HashMap&lt;Integer, List&lt;Integer&gt;&gt;. Total elements across all lists is N. Space is $O(N)$.

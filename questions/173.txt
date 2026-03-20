@@ -1,0 +1,13 @@
+ID: 173
+Problem Title: Binary Search Tree Iterator
+Brute Force Method: Perform a full In-order traversal (DFS) at initialization and store all node values in an $O(N)$ array/list.
+BF Complexity Visuals: A "Pre-loaded Magazine." You load all bullets (nodes) into the clip at once before firing a single one.
+How to Draw BF: Draw the BST. Below it, draw a long horizontal array. Draw arrows from the tree into the array in sorted order.
+Optimised Pattern: Controlled Stack-based DFS (Lazy Loading).
+Opt Vis. Technique: A "Partial Path." Only the nodes along the current leftmost path are stored, mimicking a manual DFS walk.
+Dry Run (Opt): On next(): pop top node from stack. If it has a right child, "push all its left descendants" onto the stack.
+How to Draw (Opt): Draw the BST and a vertical stack. Draw an arrow down the left spine. As you pop a node, draw a small arrow to its right child and then down *that* node's left spine.
+Opt Complexity Visuals: Average $O(1)$ time per operation. $O(H)$ space, where H is the height of the tree.
+How to Draw Opt Complexity: Draw a full traversal path. Note that each node is pushed and popped exactly once across N calls to next().
+Mem Vis (BF): $O(N)$ heap space to store the flattened tree.
+Mem Vis (Opt): Visualize a Stack in memory with a maximum height of $O(H)$. In a balanced tree, this is only $O(\log N)$.

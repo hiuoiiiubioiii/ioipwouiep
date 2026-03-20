@@ -1,0 +1,13 @@
+ID: 1674
+Problem Title: Minimum Moves to Make Array Complementary
+Brute Force Method: Try every possible target sum S from 2 to 2 \times \text{limit}, and for each, count moves needed for all pairs.
+BF Complexity Visuals: Target-Sum Sweep Grid
+How to Draw BF: Draw a range 2 to 2 \times \text{limit}. For each number, draw N/2 arrows checking pairs. $O(\\text{text}{\text{limit}} \\text{times} N)$.
+Optimised Pattern: Difference Array (Line Sweep)
+Opt Vis. Technique: Range Impact Overlay
+Dry Run (Opt): For each pair (a, b), identify move boundaries: [2 moves], [1 move], [0 moves]. Use a Difference Array to add +1 or +2 to these ranges in $O(1)$.
+How to Draw (Opt): Draw a long number line (2 to 2 \times \text{limit}). For each pair, draw "brackets" showing where moves increase or decrease. Sum the overlaps.
+Opt Complexity Visuals: Linear Range Scan
+How to Draw Opt Complexity: Draw two arrows: one to build the difference array $O(N)$, one to prefix-sum it $O(\\text{text}{\text{limit}})$. Total $O(N + \\text{text}{\text{limit}})$.
+Mem Vis (BF): Nested Loop Counts: Constant recalculation without storage.
+Mem Vis (Opt): 1D Difference Array: Draw an array of size 2 \times \text{limit} where only the "boundary" changes are stored.

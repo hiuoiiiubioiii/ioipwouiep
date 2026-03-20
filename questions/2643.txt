@@ -1,0 +1,13 @@
+ID: 2643
+Problem Title: Row With Maximum Ones
+Brute Force Method: Nested loops scanning every cell in the matrix to count 1s.
+BF Complexity Visuals: Full Grid Scan
+How to Draw BF: Draw a grid. Draw a pointer hitting every single cell (0s and 1s) one by one. $O(R \cdot C)$.
+Optimised Pattern: Linear Row Scan + Tracker
+Opt Vis. Technique: Horizontal Progress Bars
+Dry Run (Opt): Iterate row by row. Maintain `maxCount` and `maxRowIndex`. If current row's count is strictly greater, update both.
+How to Draw (Opt): Draw a matrix of 0s and 1s. To the right of each row, write the count of 1s. Circle the largest number and its row index.
+Opt Complexity Visuals: $O(R \cdot C)$ Linear Scan
+How to Draw Opt Complexity: Draw a block representing R * C visits. Note: This is theoretically optimal for an unsorted binary matrix.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ space (two integer variables).

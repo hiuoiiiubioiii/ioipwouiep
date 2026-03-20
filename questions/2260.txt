@@ -1,0 +1,13 @@
+ID: 2260
+Problem Title: Minimum Consecutive Cards to Pick Up
+Brute Force Method: Nested Loop ComparisonFor every card at index `i`, run an inner loop `j` to find the next occurrence of the same card and calculate the distance `j - i + 1`.
+BF Complexity Visuals: Quadratic Pair Search
+How to Draw BF: Draw the cards. Pick card 1. Scan the rest of the array for a match. Pick card 2. Scan the rest of the array. Highlight the $O(N^2)$ search lines.
+Optimised Pattern: Sliding Window / Hash Map
+Opt Vis. Technique: Last-Seen Index Tracking
+Dry Run (Opt): Iterate through the array once. Use a Hash Map to store the `card_value -&gt; last_seen_index`. If a card is seen again, calculate the distance from its `last_seen_index`.
+How to Draw (Opt): Draw the array. Keep a "History Book" (HashMap) on the side. When you see a card, look it up in the book. If it's there, draw a bracket between the current and old position. Update the book with the new index.
+Opt Complexity Visuals: Single Pass Registry
+How to Draw Opt Complexity: Draw an $O(N)$ timeline. Show the Hash Map being updated in $O(1)$ at each step. Total time is strictly linear.
+Mem Vis (BF): No extra space, but $O(N^2)$ time creates a massive execution bottleneck.
+Mem Vis (Opt): A Hash Map storing unique card values and their most recent integer index (O(N) space).

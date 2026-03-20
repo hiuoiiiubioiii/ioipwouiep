@@ -1,0 +1,13 @@
+ID: 3558
+Problem Title: Number of Ways to Assign Edge Weights I (Med)
+Brute Force Method: Backtracking DFS to try every possible weight (1 to K) for every edge and check path constraints.
+BF Complexity Visuals: Weight Permutation Tree.
+How to Draw BF: Draw a graph. Each edge has a slot `[ ]`. Branch for every possible number you can put in the slot. K^E total.
+Optimised Pattern: Dynamic Programming on Trees (Tree DP).
+Opt Vis. Technique: Subtree State Accumulation.
+Dry Run (Opt): At each node, store the number of ways to weight its subtree given the weight of the edge to its parent.
+How to Draw (Opt): Draw a tree. At each node, write a small table of "Ways to sum to X". Pass values upward from leaves to root.
+Opt Complexity Visuals: $O(N \cdot K)$.
+How to Draw Opt Complexity: Draw a tree. At each of the N nodes, show a loop of size K combining child results.
+Mem Vis (BF): Exhaustive Permutation Lists: Draw huge arrays storing every single valid weight configuration.
+Mem Vis (Opt): 2D DP Table: Draw an N x K grid where `DP[node][current_sum]` stores the count.

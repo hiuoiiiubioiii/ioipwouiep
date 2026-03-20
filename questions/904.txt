@@ -1,0 +1,13 @@
+ID: 904
+Problem Title: Fruit Into Baskets
+Brute Force Method: For every possible starting tree i, scan forward until you encounter a third type of fruit. Keep track of the maximum length found.
+BF Complexity Visuals: All-Subarrays Scan. $O(N^2)$.
+How to Draw BF: Draw a row of fruits. Draw a bracket starting at index 0. Expand until 3 types are seen. Reset bracket to index 1 and repeat. The bracket scans the same trees over and over.
+Optimised Pattern: Sliding Window (Two Pointers) with Hash Map.
+Opt Vis. Technique: The "Flexible Caterpillar" Walk.
+Dry Run (Opt): Maintain a window [L, R] and a map of fruit counts. Expand R. If map size &gt; 2, increment L and decrease counts until map size is 2 again. Max window size is the answer.
+How to Draw (Opt): Draw a row of fruits. Draw a window (bracket). As the right side moves, fruit goes into a "Basket" (Map). If you have 3 types, move the left side of the window until a fruit type is completely removed from the baskets.
+Opt Complexity Visuals: Single Pass Scan. $O(N)$.
+How to Draw Opt Complexity: Draw a single horizontal timeline. L and R pointers only ever move to the right.
+Mem Vis (BF): $O(1)$ extra space but visualized as extremely slow redundant loops.
+Mem Vis (Opt): Hash Map (Size 2): Draw two small boxes representing the two fruit baskets.

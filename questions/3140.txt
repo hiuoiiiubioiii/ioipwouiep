@@ -1,0 +1,13 @@
+ID: 3140
+Problem Title: Consecutive Available Seats II
+Brute Force Method: Try flipping every possible 3-element window randomly using backtracking to find the shortest path to all 1s. $O(2^N)$.
+BF Complexity Visuals: Exploding Flip Tree
+How to Draw BF: Draw the array. Branch out into every possible 3-window flip combination. State space grows exponentially.
+Optimised Pattern: Greedy Sliding Window
+Opt Vis. Technique: The Forced-Hand Flipper
+Dry Run (Opt): Iterate left to right. If `nums[i] == 0`, you *must* flip the window starting at `i`. If you don't, `nums[i]` will forever remain 0. Flip `i, i+1, i+2`. If you reach the end and the last two aren't 1s, it's impossible.
+How to Draw (Opt): Draw the array. Slide a 3-block bracket left-to-right. If the first number in the bracket is a 0, flip all 3. If it's a 1, just slide forward.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw a straight timeline. At each step, perform max 3 bit flips.
+Mem Vis (BF): Recursive state history.
+Mem Vis (Opt): Modified array in-place. $O(1)$ space.

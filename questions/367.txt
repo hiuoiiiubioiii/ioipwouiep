@@ -1,0 +1,13 @@
+ID: 367
+Problem Title: Valid Perfect Square
+Brute Force Method: Check every integer i from 1 up to num by calculating i \times i.
+BF Complexity Visuals: Linear Square Search
+How to Draw BF: Draw a number line. Below it, write 1^2, 2^2, 3^2 \dots until you hit or pass the target. $O(N)$.
+Optimised Pattern: Binary Search (Range [1, num])
+Opt Vis. Technique: Logarithmic Range Halving
+Dry Run (Opt): Set low=1, high=num. Check mid \times mid. If it's too high, move high; if too low, move low.
+How to Draw (Opt): Draw a bar from 1 to N. Draw a line in the middle. Show an arrow discarding the half that doesn't contain the root. Repeat.
+Opt Complexity Visuals: Step-wise Search Space Reduction
+How to Draw Opt Complexity: Draw a decreasing sequence of bars: N, N/2, N/4 \dots Label it $O(\log N)$.
+Mem Vis (BF): Constant time variable.
+Mem Vis (Opt): Single variable boxes for low, mid, high. $O(1)$.

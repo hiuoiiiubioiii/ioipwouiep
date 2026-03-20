@@ -1,0 +1,13 @@
+ID: 940
+Problem Title: Distinct Subsequences II
+Brute Force Method: Generate every possible subsequence of the string, store them in a HashSet to handle duplicates, and return the set size.
+BF Complexity Visuals: $O(2^N)$. For a string of length 30, this is over 1 billion operations.
+How to Draw BF: Draw a string. From each character, draw two branches: "Include" and "Exclude." Highlight the duplicate strings formed at the leaf nodes.
+Optimised Pattern: Dynamic Programming (Ending-character Tally)
+Opt Vis. Technique: "Occupying Letter Slots." Keep track of how many distinct subsequences end with each of the 26 letters. When you see a new letter, it can append to *all* existing subsequences.
+Dry Run (Opt): `dp[26]` stores counts for 'a'-'z'. For each char `c`: `newCount = sum(dp) + 1`. Update `dp[c] = newCount`. Final answer is `sum(dp)`.
+How to Draw (Opt): Draw 26 boxes labeled A-Z. As you read 'A-B-A', show the 'A' box getting a '1', the 'B' box getting '2', then the 'A' box being updated based on the total.
+Opt Complexity Visuals: $O(N)$. A single pass through the string with a constant-time sum of 26 integers.
+How to Draw Opt Complexity: Draw a horizontal timeline. At each step, show a single update to a small 26-slot array.
+Mem Vis (BF): $O(2^N)$ to store all unique subsequences in memory.
+Mem Vis (Opt): $O(1)$ extra space (fixed-size array of 26). Draw one small row of 26 boxes.

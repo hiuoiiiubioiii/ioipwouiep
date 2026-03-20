@@ -1,0 +1,13 @@
+ID: 2666
+Problem Title: Allow One Function Call
+Brute Force Method: Using a global counter and checking if count &gt; 0 before every execution.
+BF Complexity Visuals: Global State Dependency
+How to Draw BF: Draw a function and a global "Called" flag. Show how other functions might accidentally reset the flag. $O(1)$.
+Optimised Pattern: Closure / Higher-Order Function
+Opt Vis. Technique: One-Way Gate Pattern
+Dry Run (Opt): Return a new function. Inside the closure, keep a boolean `hasBeenCalled`. If false, flip to true and execute the original function. If true, return undefined.
+How to Draw (Opt): Draw a gate with a latch. The first person (call) trips the latch and passes through. The latch stays locked for everyone else.
+Opt Complexity Visuals: $O(1)$ Execution
+How to Draw Opt Complexity: Draw a single logic branch: `if(!called)`. Total $O(1)$.
+Mem Vis (BF): Global variable pollution
+Mem Vis (Opt): Private boolean flag stored in the function's lexical environment.

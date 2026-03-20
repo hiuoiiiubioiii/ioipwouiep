@@ -1,0 +1,13 @@
+ID: 2486
+Problem Title: Append Characters to String to Make Subsequence
+Brute Force Method: Generate all possible suffixes of the target string `t` and check if each is a subsequence of `s`.
+BF Complexity Visuals: Exponential Subsequence Check
+How to Draw BF: Draw string `t`. Branch out into all possible character choices. Label $O(2^T)$.
+Optimised Pattern: Two-Pointer Greedy Matching
+Opt Vis. Technique: Parallel Character Snapping
+Dry Run (Opt): Iterate through `s`. If `s[i] == t[j]`, increment `j`. The number of characters to append is `t.length - j`.
+How to Draw (Opt): Draw strings `s` and `t`. Draw arrows from characters in `s` to their matching partners in `t`. See where the arrows stop in `t`.
+Opt Complexity Visuals: Single Pass Stream
+How to Draw Opt Complexity: Draw one line for `s`. Label $O(S)$ Time.
+Mem Vis (BF): Draw a list of suffixes.
+Mem Vis (Opt): Draw two index pointers. $O(1)$ Space.

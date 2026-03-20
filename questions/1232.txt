@@ -1,0 +1,13 @@
+ID: 1232
+Problem Title: Check If It Is a Straight Line
+Brute Force Method: Calculate the slope between every possible pair of points. If all slopes are identical, they are on a straight line.
+BF Complexity Visuals: All-Pairs Slope Comparison
+How to Draw BF: Draw 5 points. Draw lines connecting 1-2, 1-3, 1-4, 1-5, then 2-3, 2-4... Write $O(N^2)$ to represent the nested comparisons.
+Optimised Pattern: Cross-Multiplication (Slope Equality)
+Opt Vis. Technique: Reference Vector Alignment
+Dry Run (Opt): Take the first two points to define the "reference slope". For every subsequent point, check if the slope it forms with the first point matches the reference. Use dx_1 * dy_2 = dx_2 * dy_1 to avoid division by zero.
+How to Draw (Opt): Draw an (x, y) coordinate plane. Draw the first two points and a dashed line through them. For each new point, draw a small triangle to show its dx/dy relative to Point 0. Check the cross-product math.
+Opt Complexity Visuals: Single-Pass Validation
+How to Draw Opt Complexity: Draw a sequence of points. Draw one continuous arrow connecting Point 0 to 1, then 0 to 2, then 0 to 3. Write $O(N)$.
+Mem Vis (BF): Draw a list of all calculated slope values (floats) in a temporary array.
+Mem Vis (Opt): Draw four integer variables to store dx_1, dy_1, dx_i, dy_i. Space: $O(1)$.

@@ -1,0 +1,13 @@
+ID: 846
+Problem Title: Hand of Straights
+Brute Force Method: Sort the array. For every card, search the rest of the array for the next (groupSize - 1) consecutive numbers and remove them. Repeat until empty.
+BF Complexity Visuals: Sorted Search and Erase. $O(N^2)$.
+How to Draw BF: Draw a list of numbers. Pick the smallest. Scan the entire list to find the next number, erase it, and start over. Every erasure requires a full scan.
+Optimised Pattern: TreeMap / Frequency Map + Smallest Element Processing.
+Opt Vis. Technique: Deck Tally and Subtraction.
+Dry Run (Opt): Count all cards. Start with the smallest card X. It *must* be part of a group [X, X+1, ... X+W-1]. Subtract the count of X from all cards in that range. If any count goes below zero, return false.
+How to Draw (Opt): Draw a bar chart of card counts. Pick the first non-zero bar. Draw a "Group Box" that covers W bars and lowers their heights by the height of the first bar.
+Opt Complexity Visuals: Sorting + Linear Map Scan. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a Sorting Funnel, then a single pass through the sorted keys of the Map.
+Mem Vis (BF): $O(1)$ extra space but visualized as a "Swiss Cheese" array with holes (nulls) everywhere.
+Mem Vis (Opt): Frequency Map: Draw a table of Card Value -&gt; Count. $O(N)$ space.

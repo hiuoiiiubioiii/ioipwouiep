@@ -1,0 +1,13 @@
+ID: 1642
+Problem Title: Furthest Building You Can Reach
+Brute Force Method: Try every combination of using bricks or ladders at every height jump using recursion/backtracking.
+BF Complexity Visuals: Exponential Choice Tree
+How to Draw BF: Draw a tree where each node has two branches: "Use Bricks" or "Use Ladder". $O(2^N)$.
+Optimised Pattern: Greedy + Min-Heap (Priority Queue)
+Opt Vis. Technique: Ladder Allocation Strategy
+Dry Run (Opt): Use ladders for the largest jumps seen so far. If you run out of ladders, replace the smallest ladder jump with bricks from your stash.
+How to Draw (Opt): Draw building heights as bars. Mark jumps with arrows. Use a "Top-K" box (Min-Heap) to store the L largest jumps where you used ladders.
+Opt Complexity Visuals: Heap-Sorted Stream
+How to Draw Opt Complexity: Draw a line of n elements passing through a funnel of size L (ladders). $O(N \log L)$.
+Mem Vis (BF): Call Stack: Deep stack for every height choice.
+Mem Vis (Opt): Min-Heap: Draw a small binary tree (heap) that stores up to L integers.

@@ -1,0 +1,13 @@
+ID: 3807
+Problem Title: Minimum Cost to Repair Edges to Traverse a Graph (Med.)
+Brute Force Method: Generate all subsets of broken edges, check if graph is traversable (via BFS/DFS), and find the minimum cost among valid subsets.
+BF Complexity Visuals: Power Set Tree of edges, with a full graph traversal calculated at every leaf node.
+How to Draw BF: Draw 2^E branches. At the bottom of each branch, draw a V+E graph traversal. Write $O(2^E \cdot (V+E)$).
+Optimised Pattern: Modified Dijkstra's Algorithm (Shortest Path on weighted states).
+Opt Vis. Technique: Graph with varying edge weights (0 for intact edges, cost C for broken edges).
+Dry Run (Opt): Start at node 0. Push neighbors to Min-Heap based on cumulative repair cost. Always expand the cheapest accumulated path until destination is reached.
+How to Draw (Opt): Draw nodes and edges. Label edges with 0 or Cost. Draw a "Priority Queue" bucket tracking the cheapest paths updating as you move node to node.
+Opt Complexity Visuals: Heap operations mapped to edges.
+How to Draw Opt Complexity: Draw E edges. Beside them, draw a log(V) tree insertion diagram. Result: $O(E \log V)$.
+Mem Vis (BF): $O(2^E)$ massive memory overhead storing every possible edge configuration state.
+Mem Vis (Opt): Adjacency list and a Min-Heap/Priority Queue taking $O(V + E)$ space.

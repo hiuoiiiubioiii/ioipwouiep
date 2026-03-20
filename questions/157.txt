@@ -1,0 +1,13 @@
+ID: 157
+Problem Title: Read N Characters Given Read4
+Brute Force Method: Repeatedly call read4 and copy characters one-by-one into the destination buffer without checking if n is exceeded mid-chunk.
+BF Complexity Visuals: A "Leaky Bucket" visualization showing characters overflowing the destination array.
+How to Draw BF: Draw a box of size N. Draw a sequence of boxes of size 4. Show the 4th box partially spilling outside the N-sized box.
+Optimised Pattern: Buffered Chunk Processing with Bound Checking.
+Opt Vis. Technique: A "Sieve." 4-character blocks are poured in, but only the characters that "fit" the remaining count are allowed through to the target.
+Dry Run (Opt): While total read &lt; n and last read == 4: read into internal buffer. Use min(remaining, charsRead) to copy into destination.
+How to Draw (Opt): Draw a target array and a 4-slot internal buffer. Draw arrows moving characters from buffer to array, stopping precisely at index N-1.
+Opt Complexity Visuals: $O(N)$ time where N is the number of characters requested to be read.
+How to Draw Opt Complexity: Draw a single arrow moving linearly across the destination buffer indices.
+Mem Vis (BF): Copying every chunk into an intermediate large array before final output.
+Mem Vis (Opt): Visualize a small, fixed-size 4-byte buffer in stack memory, reused for every cycle.

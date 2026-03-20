@@ -1,0 +1,13 @@
+ID: 934
+Problem Title: Shortest Bridge
+Brute Force Method: For every water cell (0), calculate the distance to the nearest land cell (1) of Island A and Island B. Find the min.
+BF Complexity Visuals: $O(N^4)$. For every grid cell, you might scan the entire grid again.
+How to Draw BF: Draw a grid. Pick a '0'. Draw arrows to every '1' in the grid. Repeat for every '0'. The paper is covered in overlapping lines.
+Optimised Pattern: Multi-Source BFS
+Opt Vis. Technique: "Expanding Ripples." Color Island A. Then, Island A acts as a single heat source that starts "melting" the surrounding water layer by layer until it hits Island B.
+Dry Run (Opt): 1. DFS to find and mark all cells of Island A. Push them into a Queue. 2. BFS from that Queue. Each "step" increments distance. 3. First '1' (Island B) encountered is the shortest bridge.
+How to Draw (Opt): Draw two blobs. Shade one blob completely. Draw a "halo" around it (Distance 1), then a second halo (Distance 2), until the halo touches the second blob.
+Opt Complexity Visuals: $O(N^2)$. Each cell is visited at most a few times (once for DFS, once for BFS).
+How to Draw Opt Complexity: Draw the grid. Shade the first island, then use a marker to draw concentric rings around it until they collide with the second island.
+Mem Vis (BF): $O(1)$ extra space but $O(N^4)$ time makes it unusable.
+Mem Vis (Opt): $O(N^2)$ for the queue and visited set. Draw a large circular buffer (Queue) and a shadow grid (Visited).

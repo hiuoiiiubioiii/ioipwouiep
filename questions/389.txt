@@ -1,0 +1,13 @@
+ID: 389
+Problem Title: Find the Difference
+Brute Force Method: For every character in string t, search for it in string s. If found, remove it from s. The remaining character in t is the result.
+BF Complexity Visuals: Nested Search with Deletion
+How to Draw BF: Draw two strings s and t. Pick a char in t, draw an arrow to its match in s, and cross both out. The one left in t is the winner. $O(N^2)$.
+Optimised Pattern: Bit Manipulation (XOR) or Character Summation
+Opt Vis. Technique: Bitwise Cancellation / Mathematical Residue
+Dry Run (Opt): XOR all characters in s and t. Since XOR is commutative and x \oplus x = 0, all duplicate characters will cancel out, leaving only the extra character. Alternatively, subtract the sum of s from the sum of t.
+How to Draw (Opt): Draw two strings. Draw one large XOR gate. Show all characters from both strings going into the gate. Show the single resulting character coming out.
+Opt Complexity Visuals: Linear Stream Accumulation
+How to Draw Opt Complexity: Draw a single straight line representing a single pass over both strings combined. $O(N)$.
+Mem Vis (BF): A copy of string s for mutation. $O(N)$.
+Mem Vis (Opt): A single integer variable for the XOR result or sum. Draw one small box. $O(1)$.

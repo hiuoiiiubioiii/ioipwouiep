@@ -1,0 +1,13 @@
+ID: 1568
+Problem Title: Minimum Number of Days to Disconnect Island
+Brute Force Method: Try removing every combination of 1, 2, 3... pixels and run BFS/DFS each time to check if the island is disconnected. $O(2^N)$.
+BF Complexity Visuals: Exponential Removal Tree
+How to Draw BF: Draw the grid. Branch out for every single pixel: "Remove" or "Keep." The tree depth is the number of '1's in the grid.
+Optimised Pattern: Graph Theory (Articulation Points / 2-Day Rule)
+Opt Vis. Technique: The Critical Bridge Identifier
+Dry Run (Opt): Fact: You never need more than 2 days (isolate a corner). 1. Check if already disconnected (0 days). 2. Use Tarjan’s or check every single '1' removal (1 day). 3. Otherwise, 2 days.
+How to Draw (Opt): Draw the grid. Run a BFS to count islands. Then, circle every '1' and pretend it's a '0' one by one, re-running BFS. If any single "circle" splits the island, answer is 1.
+Opt Complexity Visuals: Grid-Iterative DFS $O((R \cdot C)$^2)
+How to Draw Opt Complexity: Draw a square. For every pixel in the square, draw a full "scan" arrow representing the connectivity check.
+Mem Vis (BF): Queue/Stack for all combinations.
+Mem Vis (Opt): Standard DFS recursion stack and a visited matrix. $O(R \cdot C)$ space.

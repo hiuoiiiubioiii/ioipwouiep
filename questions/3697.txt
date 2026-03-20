@@ -1,0 +1,13 @@
+ID: 3697
+Problem Title: Compute Decimal Representation (Easy)
+Brute Force Method: Converting a large non-decimal string to a decimal using high-level language functions like parseInt or int() without handling precision.
+BF Complexity Visuals: Black-Box Conversion.
+How to Draw BF: Write the number "1011". Feed it into a magic box labeled "Conversion". If the number is 1,000 digits long, the magic box crashes or loses precision.
+Optimised Pattern: Horner's Method for Polynomial Evaluation. Process the string character by character, multiplying the current result by the base and adding the new digit.
+Opt Vis. Technique: The "Rolling Multiplier" snowball.
+Dry Run (Opt): Think of it like building a number: ((FirstDigit x Base) + NextDigit) x Base... This keeps the math local and allows for BigInt handling.
+How to Draw (Opt): Start with res = 0. For each char c: res = res * base + digit(c). This handles any string length linearly.
+Opt Complexity Visuals: Linear Digit-by-Digit Pass.
+How to Draw Opt Complexity: Draw one arrow scanning the string once. $O(N)$.
+Mem Vis (BF): Creating massive temporary strings or recursion for base conversion.
+Mem Vis (Opt): A single BigInt or integer variable. Space $O(N)$ for the result storage.

@@ -1,0 +1,13 @@
+ID: 1427
+Problem Title: Perform String Shifts
+Brute Force Method: Literal Simulation. For every shift operation, physically cut the string and re-attach it. Repeat for all elements in the `shift` array.
+BF Complexity Visuals: Repeated String Reallocation
+How to Draw BF: Draw a string. Show it being cut and the end being moved to the front. Repeat this for every command in the shift array. Label $O(S \cdot N)$ where S is number of shifts.
+Optimised Pattern: Net Shift Calculation + Slicing
+Opt Vis. Technique: Vector Resultant Sum
+Dry Run (Opt): Calculate the "Net Shift" by summing all left shifts (negative) and right shifts (positive). Apply `net_shift % length` exactly once at the end using a single slice.
+How to Draw (Opt): Draw a dial with numbers 0 to Length-1. Draw arrows jumping forward and backward on the dial. Mark the final resting position. Perform one single string cut at that mark.
+Opt Complexity Visuals: Linear Command Processing
+How to Draw Opt Complexity: Draw a list of shift commands. Draw a single summation box $O(S)$ -&gt; one string slice $O(N)$. Label $O(S + N)$.
+Mem Vis (BF): Multiple String Objects
+Mem Vis (Opt): Draw a single integer variable "TotalShift". $O(1)$ extra space (excluding result string).

@@ -1,0 +1,13 @@
+ID: 3194
+Problem Title: Minimum Average of Smallest and Largest Elements
+Brute Force Method: Randomly pick pairs, calculate averages, and try every combination to find the minimum. $O(N!)$.
+BF Complexity Visuals: Stochastic Matching Web
+How to Draw BF: Draw dots. Connect them in every possible pairing. Tally the averages for each.
+Optimised Pattern: Sorting + Two Pointers
+Opt Vis. Technique: Inward Pincer Movement
+Dry Run (Opt): Sort array. Pair `nums[left]` with `nums[right]`. Calculate average. Increment `left`, decrement `right`.
+How to Draw (Opt): Draw sorted bars. Put fingers on the tallest and shortest. Move fingers inward, recording averages.
+Opt Complexity Visuals: Sort Funnel + Linear Pass
+How to Draw Opt Complexity: Draw $O(N \log N)$ sort tree, then a line with N/2 steps. $O(N \log N)$.
+Mem Vis (BF): Exhaustive list of all pairing combinations.
+Mem Vis (Opt): A list of N/2 averages. $O(N)$.

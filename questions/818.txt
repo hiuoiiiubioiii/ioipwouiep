@@ -1,0 +1,13 @@
+ID: 818
+Problem Title: Race Car
+Brute Force Method: Pure BFS. Queue holds (position, speed). Every step explores Accelerate (pos+speed, speed*2) and Reverse (pos, speed&gt;0?-1:1).
+BF Complexity Visuals: Infinite Binary Tree. $O(2^\text{Depth})$ time.
+How to Draw BF: Draw a car. Draw two branches (A and R). From each, draw two more. Some branches shoot off into negative infinity, creating an unbound, infinite tree.
+Optimised Pattern: Dynamic Programming / BFS with Memoization &amp; Pruning.
+Opt Vis. Technique: Bouncing past the target and turning back.
+Dry Run (Opt): You want to hit target T. You accelerate A times until you cross T. Option 1: You stop, Reverse, and go back to T. Option 2: You stop right *before* T, Reverse, back up a bit, Reverse again, and go forward to T.
+How to Draw (Opt): Draw a number line. Draw long jumps forward past the target. Draw a U-turn arrow bouncing back. Draw another path stopping just short, backing up slightly, then jumping forward again.
+Opt Complexity Visuals: Capped State Space. $O(T \log T)$ time.
+How to Draw Opt Complexity: Draw an array up to T. Draw recursive backward arrows that quickly hit pre-calculated base cases.
+Mem Vis (BF): Exploding Queue: Draw a horizontal tube getting endlessly stuffed with (pos, speed) tuples that never resolve.
+Mem Vis (Opt): 1D DP Array: Draw a simple array of size T+1 holding the minimum instructions to reach exactly that distance. $O(T)$ space.

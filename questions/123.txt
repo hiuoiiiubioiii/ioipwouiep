@@ -1,0 +1,13 @@
+ID: 123
+Problem Title: Best Time to Buy and Sell Stock III
+Brute Force Method: Split the array at every index i. Solve Q121 for the left side and Q121 for the right side. Return the max sum of both.
+BF Complexity Visuals: $O(N²)$ complexity: an $O(N)$ split-loop calling two $O(N)$ sub-operations.
+How to Draw BF: Draw an array. Draw a vertical line moving through it. Show how for every position of the line, you re-scan the entire left and right halves.
+Optimised Pattern: Dynamic Programming (4-state variables) or Prefix/Suffix Profit Arrays.
+Opt Vis. Technique: Two waves meeting in the middle. One wave calculates max profit from the left, another from the right.
+Dry Run (Opt): Track four variables: buy1, sell1, buy2, sell2. Update them sequentially to find the max profit with at most 2 trades.
+How to Draw (Opt): Draw a 2xN grid or two 1D arrays (Left-to-Right max profit and Right-to-Left max profit). Sum them up to find the peak.
+Opt Complexity Visuals: Two separate $O(N)$ linear passes.
+How to Draw Opt Complexity: Draw two horizontal arrows: one starting from index 0, one from index N-1. They pass each other once. $O(N)$ total.
+Mem Vis (BF): Standard $O(N)$ temporary space for prefix/suffix profit arrays.
+Mem Vis (Opt): Visualize 4 static registers in heap/stack memory if using the 4-variable state approach (O(1) space optimization).

@@ -1,0 +1,13 @@
+ID: 653
+Problem Title: Two Sum IV - Input is a BST
+Brute Force Method: In-order traversal to convert BST to a sorted array, then use Two Pointers. Or search the BST for `(k - node.val)` for every node.
+BF Complexity Visuals: BST Search per Node / Linear Expansion.
+How to Draw BF: Draw a tree. For every node, draw a new "Search" arrow diving back into the tree. $O(N \log N)$ or $O(N)$.
+Optimised Pattern: DFS + Hash Set.
+Opt Vis. Technique: Single-Pass Neighborhood Check.
+Dry Run (Opt): Traverse the tree. For each node, check if `(k - val)` is in the Set. If yes, return True. If no, add `val` to Set and continue.
+How to Draw (Opt): Draw a tree. Next to it, draw a "Bag" (Set). As you touch a node, check the bag for the partner number. Then drop the node into the bag.
+Opt Complexity Visuals: Linear scan of tree nodes.
+How to Draw Opt Complexity: Draw a single line passing through all nodes once. Write $O(N)$.
+Mem Vis (BF): Draw a full array copy of the tree (O(N)).
+Mem Vis (Opt): Draw a Hash Set that grows up to $O(N)$.

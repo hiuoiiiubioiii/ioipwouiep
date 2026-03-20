@@ -1,0 +1,13 @@
+ID: 1110
+Problem Title: Delete Nodes And Return Forest
+Brute Force Method: Find node, delete it, re-root children, repeat. Requires multiple passes over the tree to find new targets.
+BF Complexity Visuals: Disconnecting/Reconnecting Graph
+How to Draw BF: Draw a tree. Erase a node. Draw new roots for orphaned children. Re-traverse the newly severed branches to find next targets.
+Optimised Pattern: Post-order DFS Traversal + Hash Set
+Opt Vis. Technique: Bottom-Up Tree Pruning
+Dry Run (Opt): Convert 'to_delete' to a HashSet. DFS down to leaves. Process a node: if it needs deletion, add its non-null children to the result list, then return null to its parent.
+How to Draw (Opt): Draw tree. Circle nodes to delete. Draw arrows coming *up* from leaves. When hitting a circled node, cross it out, draw a box around its children, pass 'NULL' up.
+Opt Complexity Visuals: Single Tree Traversal Path
+How to Draw Opt Complexity: Trace the outline of the tree exactly once. $O(N)$ time complexity.
+Mem Vis (BF): Multiple disconnected tree fragments
+Mem Vis (Opt): Hash Set (for $O(1)$ lookups) + List of Root Pointers.

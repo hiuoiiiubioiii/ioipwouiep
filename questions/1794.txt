@@ -1,0 +1,13 @@
+ID: 1794
+Problem Title: Count Pairs of Equal Substrings With Minimum Difference
+Brute Force Method: Find all pairs of equal characters in s1 and s2. For each pair at indices (i, j), calculate i - j. Find the minimum difference and count occurrences.
+BF Complexity Visuals: All-Pairs Character Intersection.
+How to Draw BF: Draw s1 and s2. Draw lines connecting every 'a' in s1 to every 'a' in s2. Repeat for all letters. $O(N \cdot M)$.
+Optimised Pattern: First/Last Occurrence Hash Map.
+Opt Vis. Technique: The "Global Extremes" Comparison.
+Dry Run (Opt): To minimize i - j, we need the *smallest* i (first occurrence in s1) and the *largest* j (last occurrence in s2). Store these in two maps of size 26. Calculate i - j for each character.
+How to Draw (Opt): Draw two alphabet lists (A-Z). Mark the first index for s1 and last for s2. Subtract them. Find the smallest result.
+Opt Complexity Visuals: Alphabet-Constrained Scan.
+How to Draw Opt Complexity: Draw one sweep through s1 and s2, then a 26-step loop. Label $O(N + M)$.
+Mem Vis (BF): List of all index pairs.
+Mem Vis (Opt): Two arrays of size 26. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 3520
+Problem Title: Minimum Threshold for Inversion Pairs Count (Med)
+Brute Force Method: Test all possible thresholds linearly, apply to array, count inversions via nested loops.
+BF Complexity Visuals: Nested Loop Matrix Scan.
+How to Draw BF: Draw a master loop for thresholds. For each threshold, draw an N x N matrix counting crossing lines.
+Optimised Pattern: Binary Search on Answer + Fenwick Tree (BIT) / Merge Sort for Inversions.
+Opt Vis. Technique: Binary Search Over Merge Sort.
+Dry Run (Opt): Pick threshold M. Transform array. Count inversions using Merge Sort logic. If count &lt;= K, try a smaller threshold (search left).
+How to Draw (Opt): Draw a number line for thresholds. Pick Mid. Below it, draw an array splitting and merging, counting crisscrossing elements.
+Opt Complexity Visuals: Log(Max) * N log N.
+How to Draw Opt Complexity: Draw a binary search tree of depth log(Max). Inside each node, draw an N log N merge sort operation.
+Mem Vis (BF): Continuous Array Duplication: Draw endless copies of the original array being mutated for threshold testing.
+Mem Vis (Opt): Fenwick Tree / Temp Arrays: Draw a single size N BIT array reused and zeroed out for each binary search step.

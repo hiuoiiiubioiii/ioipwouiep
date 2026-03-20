@@ -1,0 +1,13 @@
+ID: 2838
+Problem Title: Maximum Coins Heroes Can Collect
+Brute Force Method: For each hero, iterate through all monsters. If the hero's power is ≥ monster's power, add the monster's coins to that hero's total.
+BF Complexity Visuals: $O(H \cdot M)$ Nested Loop Matrix
+How to Draw BF: Draw a grid with Heroes as rows and Monsters as columns. Shade a cell if the hero can beat the monster. Total operations = H x M checks.
+Optimised Pattern: Sorting + Prefix Sums + Binary Search
+Opt Vis. Technique: Cumulative Reward Mapping
+Dry Run (Opt): Sort monsters by power. Create a prefix sum array of their coins. For each hero, use binary search (upper bound) to find the strongest monster they can defeat and retrieve the total coins in $O(1)$ from the prefix sum.
+How to Draw (Opt): Draw a sorted monster list. Below it, draw a "Treasure Bar" (Prefix Sums). For a hero with power P, draw an arrow pointing into the monster list, then drop a vertical line to the corresponding treasure value.
+Opt Complexity Visuals: $O(M \log M + H \log M)$
+How to Draw Opt Complexity: Draw a box for Monster Sorting $O(M \log M)$. Draw H small ticks representing Binary Search $O(\log M)$. Total time is log-linear.
+Mem Vis (BF): Visualize $O(1)$ auxiliary space but massive time waste leading to TLE.
+Mem Vis (Opt): Visualize two arrays: one for sorted monsters/powers (O(M)) and one for coin prefix sums (O(M)). Total space $O(M)$.

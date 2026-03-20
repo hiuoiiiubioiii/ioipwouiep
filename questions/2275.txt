@@ -1,0 +1,13 @@
+ID: 2275
+Problem Title: Largest Combination With Bitwise AND Greater Than Zero
+Brute Force Method: Power Set CombinationsGenerate every possible subset of the numbers. For each subset, calculate the bitwise AND. Find the largest subset where the result &gt; 0.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw 3 numbers. Draw a tree branching into every combination: {1}, {1,2}, {1,3}, {1,2,3}... Show the $O(2^N)$ explosion.
+Optimised Pattern: Bit-Position Counting
+Opt Vis. Technique: Vertical Bit-Column Sum
+Dry Run (Opt): A bitwise AND is &gt; 0 if there is at least one bit position where *all* numbers in the combination have a '1'. Check each of the 32 bit positions and count how many numbers have a '1' there. The max count is the answer.
+How to Draw (Opt): Draw the numbers in binary, stacked vertically. Draw a vertical box around "Column 0", "Column 1", etc. Count the 1s in each column. The tallest column is your largest combination.
+Opt Complexity Visuals: Constant Bit-Width Scan
+How to Draw Opt Complexity: Draw a loop from 0 to 31. Inside, draw an $O(N)$ pass over the array. Total complexity: $O(32 \cdot N)$, which is effectively linear $O(N)$.
+Mem Vis (BF): Massive recursion stack and memory for storing all subset results.
+Mem Vis (Opt): A single integer `max_count` and a loop index (O(1) auxiliary space).

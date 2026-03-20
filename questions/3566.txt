@@ -1,0 +1,13 @@
+ID: 3566
+Problem Title: Partition Array into Two Equal Product Subsets (Med)
+Brute Force Method: Generate all 2^N subsets, calculate the product for each, and check if it equals the product of the remaining elements.
+BF Complexity Visuals: Exponential Subset Tree.
+How to Draw BF: Draw a binary tree of height N. Each path represents a subset. Calculate total product at each of the 2^N leaf nodes.
+Optimised Pattern: Dynamic Programming (Knapsack on Log-Sums) / Prime Factorization.
+Opt Vis. Technique: Logarithmic Scaling.
+Dry Run (Opt): Since products grow too fast, convert to sums using log(a * b) = log(a) + log(b). Solve as an Equal Sum Partition problem.
+How to Draw (Opt): Draw a table of prime factor counts for each number. The goal is to split the counts of each prime (2s, 3s, 5s) exactly in half.
+Opt Complexity Visuals: $O(N \\text{cdot TargetSum})$.
+How to Draw Opt Complexity: Draw a 2D grid. Rows = Array elements, Columns = Possible log-sums. Shade cells from left to right.
+Mem Vis (BF): Subset Product Lists: Draw massive lists of extremely large integers (potentially causing overflow) in memory.
+Mem Vis (Opt): 1D Boolean DP Array: Draw a single array of size (TotalLogSum/2) tracking reachable sums.

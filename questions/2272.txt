@@ -1,0 +1,13 @@
+ID: 2272
+Problem Title: Substring With Largest Variance
+Brute Force Method: All Substrings + Freq MapGenerate every possible substring (O(N^2)). For each, count the frequency of all characters and find `max_freq - min_freq`.
+BF Complexity Visuals: Nested Window Variance
+How to Draw BF: Draw the string. Draw every possible window. For each window, draw a tally chart of all 26 letters. Calculate variance. Show the $O(N^2 \cdot 26)$ complexity.
+Optimised Pattern: Kadane’s Algorithm Variation
+Opt Vis. Technique: Binary Character-Pair Filter
+Dry Run (Opt): Variance only depends on two characters (a, b). For every pair of characters in the alphabet (26x25), treat 'a' as +1 and 'b' as -1. Run a modified Kadane’s to find the max subarray sum that includes at least one -1.
+How to Draw (Opt): Pick 'a' and 'b'. Draw the string as a sequence of +1, -1, and 0s. Run the "Max Subarray Sum" logic, but keep a flag that you've seen at least one 'b'. Repeat for all 650 possible pairs.
+Opt Complexity Visuals: Fixed-Pair Linear Pass
+How to Draw Opt Complexity: Draw a block labeled "26 x 25 pairs". Inside, draw an $O(N)$ Kadane's pass. Total: $O(26^2 \cdot N)$. Show why this is faster than $O(N^2)$ when N is large.
+Mem Vis (BF): Storing frequency maps or sets for every single substring in memory.
+Mem Vis (Opt): A few integer variables (`current_sum`, `max_variance`) per character pair pass (O(1) auxiliary space).

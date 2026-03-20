@@ -1,0 +1,13 @@
+ID: 3798
+Problem Title: Largest Even Number (Easy)
+Brute Force Method: Generate all permutations of the given digits, convert them to integers, and find the largest one that ends in an even digit. $O(D!)$.
+BF Complexity Visuals: Permutation List Filtering.
+How to Draw BF: Write digits [1, 2, 3]. List: 123, 132, 213, 231, 312, 321. Filter evens: 132, 312. Largest: 312.
+Optimised Pattern: Greedy Sorting + Last Digit Swap
+Opt Vis. Technique: Sorted Digit Re-alignment
+Dry Run (Opt): Sort digits descending to get the largest possible number. If the last digit is odd, find the smallest even digit in the number and swap it to the last position to satisfy the "even" requirement.
+How to Draw (Opt): Draw the digits. Sort them: 9, 8, 5, 3, 1. Look for an even number. Found '8'. Move '8' to the very end: 9, 5, 3, 1, 8.
+Opt Complexity Visuals: $O(D \log D)$ for sorting digits.
+How to Draw Opt Complexity: Draw a sorting pass followed by a single linear scan for the even digit.
+Mem Vis (BF): $O(D!)$ combinations in memory.
+Mem Vis (Opt): $O(D)$ character array for digits.

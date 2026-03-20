@@ -1,0 +1,13 @@
+ID: 3648
+Problem Title: Minimum Sensors to Cover Grid (Med)
+Brute Force Method: Exhaustive Search / Backtracking: Try placing a sensor in every possible cell combination to see if the whole grid is covered. $O(2^(R\cdot C)$).
+BF Complexity Visuals: Grid Permutation Explosion.
+How to Draw BF: Draw a grid. Pick a few cells for sensors. Check coverage. Erase and try a different combination. There are billions of combinations for a 10x10 grid.
+Optimised Pattern: Greedy with Set Cover or Bitmask DP (if dimensions are small). Focus on covering the "bottleneck" (uncovered cells with the fewest neighbors).
+Opt Vis. Technique: Light-Bulb Illumination Map.
+Dry Run (Opt): Treat sensors like light bulbs with a specific radius. At each step, identify the "darkest" (uncovered) cell and place a sensor at the location that illuminates the most dark cells.
+How to Draw (Opt): Draw a grid. Shade cells that need coverage. Pick a sensor location, draw its "light" area. Subtract those from the "dark" total. Repeat until no shaded cells remain.
+Opt Complexity Visuals: State-Space Reduction Line.
+How to Draw Opt Complexity: Write $O(R \cdot C \cdot (\text{Number of Sensors})$). Draw a grid where each sensor "removes" a chunk of work in one go.
+Mem Vis (BF): Massive recursive tree of grid states being stored in a list.
+Mem Vis (Opt): A bitmask (integer) representing covered vs uncovered cells. Space $O(1)$ per state.

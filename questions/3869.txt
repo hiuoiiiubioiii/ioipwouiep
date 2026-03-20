@@ -1,0 +1,13 @@
+ID: 3869
+Problem Title: Count Fancy Numbers in a Range (Hard)
+Brute Force Method: Linear Check: Iterate from L to R, check if each number is "Fancy" (e.g., has specific digit properties), and increment a counter.
+BF Complexity Visuals: A massive loop that visits billions of numbers.
+How to Draw BF: Draw a number line. Check 1, 2, 3... up to 10^12. Write $O(R-L)$ and mark as "impossible."
+Optimised Pattern: Digit Dynamic Programming.
+Opt Vis. Technique: A "Digit-by-Digit" construction that counts valid numbers by filling slots from left to right.
+Dry Run (Opt): `dfs(index, isLess, isStarted, currentFancyState)`: Count how many ways to finish a number of length N given the current constraints. Use memoization to avoid redundant sub-problems. Result: `count(R) - count(L-1)`.
+How to Draw (Opt): Draw empty slots `_ _ _ _`. For the first slot, pick 0-9. If you pick a number equal to the range limit, the next slot is restricted. Show the recursion tree for filling these slots.
+Opt Complexity Visuals: Logarithmic time (based on the number of digits).
+How to Draw Opt Complexity: Draw 12 slots for 10^12. Write "12 x States". Total: $O(\text{Digits} x \text{States})$.
+Mem Vis (BF): $O(1)$.
+Mem Vis (Opt): A 3D or 4D memoization table, usually around $O(18 x 2 x 2 x 10)$, which is very small constant space.

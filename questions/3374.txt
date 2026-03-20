@@ -1,0 +1,13 @@
+ID: 3374
+Problem Title: First Letter Capitalization II (SQL)
+Brute Force Method: (Imperative) Split every word by spaces AND hyphens, capitalize the first letter, and rejoin.
+BF Complexity Visuals: Regex/Split Pattern Matcher
+How to Draw BF: Draw a messy string with hyphens like "pro-grade". Circle the 'p' and the 'g'. Draw arrows showing the "Upper Case" shift. $O(N x L)$.
+Optimised Pattern: SQL REGEXP_REPLACE / Nested String Functions
+Opt Vis. Technique: Multi-Delimiter Funnel
+Dry Run (Opt): Use string transformations that recognize both ' ' and '-' as word boundaries. Capitalize the char following either delimiter.
+How to Draw (Opt): Draw a text block. Draw a "Delimiter Mask" that highlights characters after spaces or dashes. Those highlighted bits pass through an "UPPER" filter.
+Opt Complexity Visuals: Streamed Transformation
+How to Draw Opt Complexity: Draw an $O(N)$ single-pass arrow. The SQL engine processes the string buffer linearly.
+Mem Vis (BF): Repeated temporary string allocations and concatenations.
+Mem Vis (Opt): $O(1)$ auxiliary space (handled internally by DB string buffers).

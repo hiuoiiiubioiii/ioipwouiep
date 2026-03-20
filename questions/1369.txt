@@ -1,0 +1,13 @@
+ID: 1369
+Problem Title: Get the Second Most Recent Activity (SQL)
+Brute Force Method: For every user, find the most recent activity, remove it, then find the most recent in the remaining set. If only one exists, return it.
+BF Complexity Visuals: $O(N²)$ Correlated Delete-Search
+How to Draw BF: Draw a user's timeline. Erase the top dot. Find the new top dot. If there's no new dot, bring back the erased one. Repeat for every user.
+Optimised Pattern: Window Function (ROW_NUMBER + COUNT)
+Opt Vis. Technique: Ranked Timeline Indexing
+Dry Run (Opt): Use `ROW_NUMBER() OVER (PARTITION BY username ORDER BY startDate DESC)` and `COUNT(*) OVER (PARTITION BY username)`. Filter where `rank = 2` OR `(count = 1 AND rank = 1)`.
+How to Draw (Opt): Draw a timeline for a user. Label dots 1, 2, 3 starting from the latest. Pick dot #2. If only one dot exists, pick #1.
+Opt Complexity Visuals: $O(N \log N)$ Partitioned Sort
+How to Draw Opt Complexity: Draw the table divided into user-colored blocks. Inside each block, show the rows being numbered from 1 to N based on date.
+Mem Vis (BF): Intermediate Result Sets: Cloning the table multiple times to perform "Not In" exclusions.
+Mem Vis (Opt): Row-Indexed Cursor: Draw a single pass through the table that attaches an index to each row within its group.

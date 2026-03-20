@@ -1,0 +1,13 @@
+ID: 946
+Problem Title: Validate Stack Sequences
+Brute Force Method: Generate all possible valid stack permutation sequences from the `pushed` array and check if `popped` matches any of them.
+BF Complexity Visuals: $O(2^N)$ or $O(N!)$. Exploring a massive tree of "Push vs Pop" decisions.
+How to Draw BF: Draw a root. Branch 1: Push. Branch 2: Pop. Follow every branch to the end. It creates a fractal-like pattern on the paper.
+Optimised Pattern: Simulation with Real Stack
+Opt Vis. Technique: "The Mirror Test." Actually perform the push operations. Every time the top of your stack matches the current element in the `popped` array, you MUST pop it.
+Dry Run (Opt): For each `x` in `pushed`: push `x` to a stack. While `stack` is not empty and `stack.top == popped[j]`, pop and `j++`. Return `stack.isEmpty()`.
+How to Draw (Opt): Draw a vertical bucket. Put numbers in. Draw a 'checker' finger pointing at the `popped` array. If bucket-top == finger-target, draw an 'X' over the number and move the finger.
+Opt Complexity Visuals: $O(N)$. Every element is pushed once and popped once.
+How to Draw Opt Complexity: Draw a timeline. Below it, write '+' for every push and '-' for every pop. Total operations = 2N.
+Mem Vis (BF): Exponential memory to store all possible valid stack permutations.
+Mem Vis (Opt): $O(N)$ for the simulation stack. Draw a single vertical column.

@@ -1,0 +1,13 @@
+ID: 3814
+Problem Title: Maximum Capacity Within Budget (Med.)
+Brute Force Method: Linear Search: Start capacity at 1, calculate total cost. Increment capacity by 1, recalculate cost. Stop when budget is exceeded.
+BF Complexity Visuals: Long horizontal timeline checking every integer up to the maximum possible capacity.
+How to Draw BF: Draw a number line from 1 to 10,000. Under each tick mark, draw a loop representing the $O(N)$ cost check. Total $O(N \\text{cdot Max}_\text{Cap})$.
+Optimised Pattern: Binary Search on Answer.
+Opt Vis. Technique: A number line where half the possibilities are sliced off at every step.
+Dry Run (Opt): Set L=1, R=Max. Find Mid. Calculate cost for Mid capacity. If cost &lt;= budget, record Mid as valid and search higher (L=Mid+1). Else, search lower (R=Mid-1).
+How to Draw (Opt): Draw number line. Mark L, R, Mid. Calculate cost. Cross out the right half with an X. Move R to Mid-1. Repeat.
+Opt Complexity Visuals: Logarithmic halving steps layered over a linear scan.
+How to Draw Opt Complexity: Draw a binary search tree of ranges. At each node, write "O(N)". Height is log(Max). Total: $O(N \cdot \log(\text{Max})$).
+Mem Vis (BF): Variables running locally, $O(1)$.
+Mem Vis (Opt): Variables running locally (L, R, Mid, Result), $O(1)$ space.

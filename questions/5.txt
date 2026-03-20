@@ -1,0 +1,13 @@
+ID: 5
+Problem Title: Longest Palindromic Substring
+Brute Force Method: Check All Substrings Generate $O(N²)$ substrings and spend $O(N)$ checking if each is a palindrome.
+BF Complexity Visuals: Brute Force Grid + Scanner
+How to Draw BF: Draw the string. Bracket every possible substring. Draw a bidirectional scanner line moving outside-in for each bracketed section to show $O(N³)$.
+Optimised Pattern: Expand Around Center
+Opt Vis. Technique: Water Ripples
+Dry Run (Opt): Pick a letter (or space between letters) and drop a "pebble". Watch the pointers ripple outward in both directions as long as the letters match.
+How to Draw (Opt): Draw the string. Place an "X" on one character. Draw outward-facing arrows `&lt;--` and `--&gt;` originating from the "X" moving step-by-step.
+Opt Complexity Visuals: N Centers * N Expansions
+How to Draw Opt Complexity: Draw N dots (centers). Draw expanding circles around each dot. Maximum circle size is N. N centers * N max expansion = $O(N²)$.
+Mem Vis (BF): Draw hundreds of separate string blocks allocated in memory for each substring check.
+Mem Vis (Opt): Draw the single original string, and track memory using just two integer variables (Start Index, Max Length) to show $O(1)$ space.

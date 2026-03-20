@@ -1,0 +1,13 @@
+ID: 2253
+Problem Title: Dynamic Unpivoting of a Table
+Brute Force Method: Manually write `SELECT id, 'col1', col1 UNION ALL SELECT id, 'col2', col2`. Hardcoded and inflexible.
+BF Complexity Visuals: Hardcoded Union Stacks
+How to Draw BF: Draw multiple separate `SELECT` blocks glued together manually.
+Optimised Pattern: Dynamic SQL / Information Schema
+Opt Vis. Technique: The Column Exploder
+Dry Run (Opt): Query the `information_schema` to dynamically find all columns for the table, construct a massive `UNION ALL` string dynamically, and execute it.
+How to Draw (Opt): Draw a wide row. Drop it into an "Exploder" that shatters it into vertical rows of keys and values based on the schema blueprint.
+Opt Complexity Visuals: Dynamic Execution Overhead
+How to Draw Opt Complexity: Draw a linear scan where each row undergoes a dictionary-to-row transformation.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Temporary memory for string concatenation.

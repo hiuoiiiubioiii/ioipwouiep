@@ -1,0 +1,13 @@
+ID: 3153
+Problem Title: Sum of Digit Differences of All Pairs
+Brute Force Method: Compare every pair of numbers (i, j) and count different digits at each position. $O(N^2 x \text{digits})$
+BF Complexity Visuals: A massive N x N matrix where each cell performs a digit-by-digit comparison.
+How to Draw BF: Draw N numbers. Draw a line connecting every number to every other number. On each line, tally the digit differences.
+Optimised Pattern: Contribution Technique (Position-wise Counting)
+Opt Vis. Technique: Vertical Digit Buckets
+Dry Run (Opt): For each digit position (e.g., units, tens), count how many times 0-9 appear. Contribution to total = sum (count x (N - count)) / 2.
+How to Draw (Opt): Write numbers in a column. Look only at the 1st digit. Count how many 5s, how many 3s. Multiply (count of 5) x (count of non-5s) and add to total. Repeat for all positions.
+Opt Complexity Visuals: Multi-pass fixed-column scan.
+How to Draw Opt Complexity: Draw a grid of size N x 10. Mark D (digit length) horizontal passes. $O(N x D)$.
+Mem Vis (BF): A huge list of all compared pairs.
+Mem Vis (Opt): A D x 10 frequency grid. $O(D x 10)$ approx $O(1)$ since digits are fixed.

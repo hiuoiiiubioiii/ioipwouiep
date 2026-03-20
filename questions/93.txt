@@ -1,0 +1,13 @@
+ID: 93
+Problem Title: Restore IP Addresses
+Brute Force Method: 3-Way Nested Loops Use three nested loops to place three dots in all possible positions. For each combination, check if all 4 resulting segments are valid (0-255, no leading zeros).
+BF Complexity Visuals: The Dot Slicer
+How to Draw BF: Draw a string of 12 digits. Draw three vertical lines (dots) at every possible gap. Note that the number of checks is constant but logically $O(N^3)$.
+Optimised Pattern: Backtracking with Pruning
+Opt Vis. Technique: The 4-Level Decision Tree
+Dry Run (Opt): Recursively place a dot after 1, 2, or 3 digits. If a segment is invalid or you run out of string before placing 4 segments, backtrack immediately.
+How to Draw (Opt): Draw a tree with a maximum depth of 4. From the root, branch 1, 2, or 3 digits. If you branch "300", put a red "X" through it because it's &gt; 255.
+Opt Complexity Visuals: Finite Branching Tree
+How to Draw Opt Complexity: Draw a tree with 4 levels. Each node has max 3 branches. The total number of nodes is strictly limited. $O(1)$ time in practice, or $O(3^4)$.
+Mem Vis (BF): Storing every possible (even invalid) dot combination as strings.
+Mem Vis (Opt): Draw the recursion stack (depth 4) and a list for the current segments. Space: $O(1)$ (bounded by IP rules).

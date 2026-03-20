@@ -1,0 +1,13 @@
+ID: 1153
+Problem Title: String Transformation Into Another String
+Brute Force Method: Try every possible character replacement one by one and check if the target string can be reached.
+BF Complexity Visuals: Recursive Permutation Search
+How to Draw BF: Draw the starting string. Draw branches for every possible char swap. $O(26^N)$.
+Optimised Pattern: Graph Theory (Out-degree &amp; Cycles)
+Opt Vis. Technique: Character Mapping Forest
+Dry Run (Opt): Map `S1[i] \rightarrow S2[i]`. Each char can map to only one other. If any char maps to two different chars, impossible. If a cycle exists, you need one free character (temp) to break it.
+How to Draw (Opt): Draw letters a-z as nodes. Draw arrows from S1 to S2. Check if any node has two outgoing arrows. Check if the graph is a full "26-node cycle" with no spare letters.
+Opt Complexity Visuals: Linear Map Construction $O(N)$
+How to Draw Opt Complexity: Draw a single scan of both strings once, then a 26-node graph check.
+Mem Vis (BF): Multiple intermediate string copies
+Mem Vis (Opt): Hash Map of size 26. Draw a small 2D table of char mappings.

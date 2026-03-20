@@ -1,0 +1,13 @@
+ID: 746
+Problem Title: Min Cost Climbing Stairs
+Brute Force Method: Recursively explore every possible combination of 1-step and 2-step jumps to reach the top.
+BF Complexity Visuals: Exponential Binary Tree
+How to Draw BF: Draw a tree starting at step 0, branching into (1, 2). Each node branches again. $O(2^N)$.
+Optimised Pattern: Dynamic Programming (Space Optimized)
+Opt Vis. Technique: Step-by-Step Accumulation
+Dry Run (Opt): Maintain two variables: `prev1` and `prev2`. For each new step, `curr = cost[i] + min(prev1, prev2)`. Slide the values forward.
+How to Draw (Opt): Draw a staircase. Write the cost on each step. Draw two arrows from the two previous steps to the current one, choosing the smaller number.
+Opt Complexity Visuals: Linear Accumulation Line
+How to Draw Opt Complexity: Draw a straight line through the steps. Each step is visited once. $O(N)$.
+Mem Vis (BF): Deep recursion stack (O(N)).
+Mem Vis (Opt): Two integer variable boxes (O(1)).

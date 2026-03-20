@@ -1,0 +1,13 @@
+ID: 1786
+Problem Title: Number of Restricted Paths From First to Last Node
+Brute Force Method: DFS to find all paths from 1 to n. For each edge (u, v) in a path, check if distance(u, n) &gt; distance(v, n) by recalculating Dijkstra for every step.
+BF Complexity Visuals: Exponential Path Tree with Redundant Dijkstra.
+How to Draw BF: Draw node 1. Branch into all neighbors. For every branch, draw a full Dijkstra table. $O(2^N \cdot E \log V)$.
+Optimised Pattern: Dijkstra (from Node N) + DAG DP (Topological Sort/Memoization).
+Opt Vis. Technique: Gradient Descent on a Graph.
+Dry Run (Opt): 1. Run Dijkstra starting from node N to get distances to all nodes. 2. Treat the graph as a Directed Acyclic Graph (DAG) where edges only go from high distance to low distance. 3. Count paths using DP.
+How to Draw (Opt): Draw nodes. Next to each, write its distance to N. Draw arrows only from large numbers to small numbers. Use a DP tally at each node starting from N=1.
+Opt Complexity Visuals: Single Source Shortest Path + Linear DAG Scan.
+How to Draw Opt Complexity: Draw Dijkstra $O(E \log V)$ + DFS with memoization $O(E)$. Total $O(E \log V)$.
+Mem Vis (BF): Massive recursion stack without memoization.
+Mem Vis (Opt): Distance array + Memoization array + Priority Queue. $O(V + E)$ space visual.

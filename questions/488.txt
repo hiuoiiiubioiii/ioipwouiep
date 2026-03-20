@@ -1,0 +1,13 @@
+ID: 488
+Problem Title: Zuma Game
+Brute Force Method: Brute Force DFS Try placing every available color at every possible index in the string.
+BF Complexity Visuals: Factorial Branching
+How to Draw BF: Draw a string. From each gap, draw arrows for every hand-color. Show $O(P!)$ where P is positions.
+Optimised Pattern: DFS + Memoization + Pruning Use string compression (remove 3+ matches) and a Map to store "State: MinBalls". Skip redundant placements.
+Opt Vis. Technique: State Reduction Tree
+Dry Run (Opt): Visualize the board as a string that "collapses" whenever a match is made. Each state is a `(board, hand)` pair.
+How to Draw (Opt): Draw the string. When placing a ball makes 3, scratch them out. Show the "vacuum" pulling remaining chars together.
+Opt Complexity Visuals: Pruned Graph Search
+How to Draw Opt Complexity: Draw nodes for unique string/hand states. Complexity remains high but searchable.
+Mem Vis (BF): Call Stack Massive recursive depth.
+Mem Vis (Opt): State Cache Map storing visited string configurations. $O(\text{States})$.

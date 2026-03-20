@@ -1,0 +1,13 @@
+ID: 1930
+Problem Title: Unique Length-3 Palindromic Subsequences
+Brute Force Method: Check every combination of 3 indices `(i, j, k)` to see if `s[i] == s[k]` and the subsequence is unique.
+BF Complexity Visuals: Triple Nested Index Scan
+How to Draw BF: Draw three pointers `i`, `j`, `k`. Show them sliding in nested loops. $O(N^3)$.
+Optimised Pattern: First/Last Index Pre-computation
+Opt Vis. Technique: Character "Range Sandwiches"
+Dry Run (Opt): For each char (a-z), find its first and last occurrence. Count how many unique characters exist between these two indices.
+How to Draw (Opt): Draw the string. For 'a', circle the first 'a' and last 'a'. Highlight the middle section and count unique letters inside it using a Set.
+Opt Complexity Visuals: Constant-Factor Linear Scan
+How to Draw Opt Complexity: Draw 26 horizontal lines (one per letter). For each line, draw one scan between the first/last markers. $O(26 \cdot N)$.
+Mem Vis (BF): A Hash Set of all possible 3-character strings generated during the N^3 scan.
+Mem Vis (Opt): 26-size arrays for `first_occurrence` and `last_occurrence`, and a temporary Set for middle-character counting.

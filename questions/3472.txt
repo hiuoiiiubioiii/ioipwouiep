@@ -1,0 +1,13 @@
+ID: 3472
+Problem Title: Longest Palindromic Subsequence After at Most K Operations
+Brute Force Method: Try every possible subsequence (2^n) and for each, calculate the minimum circular operations to make it a palindrome. $O(n \cdot 2^n)$
+BF Complexity Visuals: Recursive Subsequence Tree with Operation Branches.
+How to Draw BF: Draw a tree where each character branches into "Keep" or "Discard." From "Keep," branch again for every possible letter change.
+Optimised Pattern: 3D Dynamic Programming (State: i, j, kRemain). $O(n^2 \cdot k)$
+Opt Vis. Technique: Layered 2D DP Grids.
+Dry Run (Opt): Imagine a stack of k grids. If you match s[i] and s[j] at cost c, move to a grid c layers below. Otherwise, stay in the same layer.
+How to Draw (Opt): Draw a 2D table (i vs j). Inside each cell, draw a small stack of 3-4 boxes (for k values). Draw arrows jumping between the boxes.
+Opt Complexity Visuals: 3D Block Traversal.
+How to Draw Opt Complexity: Draw a cube with dimensions n x n x k. Shade it layer by layer to show polynomial complexity.
+Mem Vis (BF): Trillions of recomputed states in a deep recursive stack.
+Mem Vis (Opt): A 3D DP table or memoization map of size [n][n][k].

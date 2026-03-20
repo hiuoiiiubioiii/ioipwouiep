@@ -1,0 +1,13 @@
+ID: 2730
+Problem Title: Find the Longest Semi-Repetitive Substring
+Brute Force Method: Generate all possible substrings $O(N²)$. For each substring, count adjacent equal characters. If count ≤ 1, update max length. Total $O(N³)$.
+BF Complexity Visuals: N³ Substring Enumeration
+How to Draw BF: Draw a string. Use two brackets to mark a substring. Count duplicates inside. Shift brackets, repeat. Visual area is a massive pyramid of checks.
+Optimised Pattern: String Slice Memory (Draw many temporary substring copies being created in the heap).
+Opt Vis. Technique: Sliding Window (Two Pointers)
+Dry Run (Opt): Flexible Elastic Window
+How to Draw (Opt): Expand `right` pointer. If `s[right] == s[right-1]`, increment a `duplicates` counter. While `duplicates &gt; 1`, move `left` pointer forward; if `s[left] == s[left+1]`, decrement `duplicates`. Track max `right - left + 1`.
+Opt Complexity Visuals: Draw the string. Draw a "window" box. When a duplicate enters, the box turns red. Slide the left edge until the box turns green again.
+How to Draw Opt Complexity: Linear $O(N)$ Sweep
+Mem Vis (BF): Draw a single horizontal line with two pointers (L, R) moving only right. Label it $O(N)$.
+Mem Vis (Opt): $O(1)$ Window Variables (Draw exactly four variables: `left`, `right`, `duplicates`, `max_len`).

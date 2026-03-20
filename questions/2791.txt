@@ -1,0 +1,13 @@
+ID: 2791
+Problem Title: Count Paths That Can Form a Palindrome in a Tree
+Brute Force Method: For every pair of nodes (u, v), find the path between them. Count character frequencies. If at most one character has an odd frequency, it's a palindrome path. $O(N³)$.
+BF Complexity Visuals: N² Path Frequency Analysis
+How to Draw BF: Draw a tree. Pick two nodes, highlight the path. Write down every letter and check for parity. Repeat for all pairs. Massive $O(N³)$ work.
+Optimised Pattern: Path Frequency Maps (Visualizing thousands of HashMaps created to check character counts for every path).
+Opt Vis. Technique: Bitmasking + DFS + HashMap (Two-Sum Pattern)
+Dry Run (Opt): XOR Mask Tree Traversal
+How to Draw (Opt): Represent characters 'a'-'z' as bits in a 26-bit integer. Perform DFS to calculate the cumulative XOR mask from root to each node. A path between u and v is palindromic if mask(u) ^ mask(v) has 0 or 1 bits set. Use a HashMap to count mask frequencies.
+Opt Complexity Visuals: Draw a tree. At each node, write its 26-bit XOR mask. Use a "Frequency Table" on the side to count how many nodes share a mask or differ by exactly one bit.
+How to Draw Opt Complexity: $O(N \cdot 26)$ Linear Bound
+Mem Vis (BF): Draw a DFS pass $O(N)$ followed by a map lookup cycle (26 iterations). Label it $O(N \cdot 26)$.
+Mem Vis (Opt): Mask Frequency Map (Draw a HashMap in memory storing int masks and their frequency counts).

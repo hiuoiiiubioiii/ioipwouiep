@@ -1,0 +1,13 @@
+ID: 789
+Problem Title: Escape The Ghosts
+Brute Force Method: Use BFS to simulate the player and all ghosts moving step-by-step to see if a ghost can intercept.
+BF Complexity Visuals: Multi-Agent Grid Chase
+How to Draw BF: Draw a grid. Move player 1 step, then move all ghosts 1 step. $O(\\text{text}{\text{Grid Area}})$.
+Optimised Pattern: Manhattan Distance Comparison
+Opt Vis. Technique: Radial Reachability Circles
+Dry Run (Opt): The ghosts move optimally. If any ghost is closer (or equally close) to the target than the player, the player can be caught. Distance = |x1-x2| + |y1-y2|.
+How to Draw (Opt): Draw the player, target, and ghosts. Draw a straight dashed line representing the steps to the target for each. Compare the step counts.
+Opt Complexity Visuals: Single Linear Scan of Ghosts
+How to Draw Opt Complexity: Draw a list of ghosts. Calculate distance for each. $O(\\text{text}{\text{Ghosts}})$.
+Mem Vis (BF): Large grid state representation.
+Mem Vis (Opt): $O(1)$ extra space.

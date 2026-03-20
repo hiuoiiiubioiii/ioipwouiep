@@ -1,0 +1,13 @@
+ID: 2054
+Problem Title: Two Best Non-Overlapping Events
+Brute Force Method: Nested loops comparing every event `i` with every event `j`. If they don't overlap, sum their values and track the max.
+BF Complexity Visuals: N x N Compatibility Matrix
+How to Draw BF: Draw the events as intervals on a timeline. For event 1, check every other interval for overlap. $O(N^2)$.
+Optimised Pattern: Sorting + Binary Search + Suffix Max
+Opt Vis. Technique: Sorted Timeline with Future-Peak Lookup
+Dry Run (Opt): Sort events by start time. Create a `suffix_max` array to store the highest value from index `i` to the end. For each event, binary search for the first event that starts after it ends, and add its `suffix_max`.
+How to Draw (Opt): Draw a timeline. Above it, sorted intervals. Below it, a `suffix_max` line. For an interval, draw an arrow to the right, jumping over its end time to find the highest value waiting there.
+Opt Complexity Visuals: Sorting Funnel to Binary Search Arcs
+How to Draw Opt Complexity: Draw a funnel (O(N log N) sort). Then draw N arcs, each representing an $O(\log N)$ binary search. Total Time $O(N \log N)$.
+Mem Vis (BF): $O(1)$ space if just using nested loops, but $O(N^2)$ time.
+Mem Vis (Opt): Two arrays of size N: one for sorted events and one for suffix maximums. Space $O(N)$.

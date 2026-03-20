@@ -1,0 +1,13 @@
+ID: 381
+Problem Title: Insert Delete GetRandom $O(1)$ - Duplicates allowed
+Brute Force Method: Store all elements in a simple list. For removal, search the entire list for the value and remove it, shifting all subsequent elements.
+BF Complexity Visuals: Linear List Search &amp; Shift
+How to Draw BF: Draw an array containing [1, 2, 2, 3]. To remove a '2', draw arrows showing the '3' moving left into the '2's spot. Label $O(N)$.
+Optimised Pattern: HashMap of Sets + Dynamic Array
+Opt Vis. Technique: Multi-Index Map with Tail-Swap Removal
+Dry Run (Opt): Use a List to store values. Use a HashMap where the key is the value and the value is a **Set of indices** where that value appears in the list. To remove, pick any index from the Set, swap with the tail, and update the set for the moved tail element.
+How to Draw (Opt): Draw a List and a Map. If deleting '2', show the Map pointing to indices 1, 2. Pick index 1. Swap List[1] with the last element. Update the Map to show the last element's new index.
+Opt Complexity Visuals: Amortized Constant Logic
+How to Draw Opt Complexity: Draw three discrete steps: 1. Set lookup/pop, 2. Array swap, 3. Tail pop. Label it $O(1)$.
+Mem Vis (BF): A raw list with potential fragmentation.
+Mem Vis (Opt): Dynamic Array + Hash Map of Hash Sets. Draw a tape and a complex table where values point to small scattered boxes (Sets). $O(N)$.

@@ -1,0 +1,13 @@
+ID: 3439
+Problem Title: Reschedule Meetings for Maximum Free Time I
+Brute Force Method: Try moving every meeting to every possible start/end time and calculate the resulting gaps. $O(N^2)$
+BF Complexity Visuals: Exhaustive Interval Shifting.
+How to Draw BF: Draw a timeline. Pick a block (meeting). Draw dotted arrows moving it to 10 different spots. Repeat for all blocks.
+Optimised Pattern: Sliding Window over Gap Arrays. $O(N)$
+Opt Vis. Technique: Gap Sum Window.
+Dry Run (Opt): Convert meetings into a list of "Gap" sizes between them. If you can move k meetings, you can merge k+1 adjacent gaps. Use a sliding window to find the max sum of k+1 gaps.
+How to Draw (Opt): Draw the gaps as numbers in an array. Draw a bracket of size k+1. Slide the bracket right and write the sum above each position.
+Opt Complexity Visuals: Sliding Window Timeline.
+How to Draw Opt Complexity: Draw a timeline of N gaps. Draw one bracket moving from left to right to show it visits each gap exactly twice (entry/exit).
+Mem Vis (BF): N/A - Mostly high time complexity from nested loops.
+Mem Vis (Opt): A single 1D array of size N+1 to store the gap lengths.

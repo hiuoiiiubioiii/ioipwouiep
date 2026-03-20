@@ -1,0 +1,13 @@
+ID: 2075
+Problem Title: Decode the Slanted Ciphertext
+Brute Force Method: Construct the full 2D grid from the string using `rows` and `cols`. Then, manually traverse the diagonals to collect characters.
+BF Complexity Visuals: Grid Reconstruction and Diagonal Scan
+How to Draw BF: Draw an empty grid of size `rows x cols`. Fill it row by row with the input string. Then draw slanted arrows starting from each top-row cell. $O(N)$.
+Optimised Pattern: Direct Index Mapping (One-Pass)
+Opt Vis. Technique: Diagonal Jump Calculation
+Dry Run (Opt): The character at `(r, c)` in the grid is at `index = r * cols + c` in the string. For a diagonal starting at `c0`, the next character is at `(r+1, c0+r+1)`. Just calculate these indices directly.
+How to Draw (Opt): Write the string. Calculate the `cols` value. For the first diagonal, circle index 0, then `cols + 1`, then `2*(cols + 1)`. For the second diagonal, start at 1, then `cols + 2`.
+Opt Complexity Visuals: Single-Pass Jump String
+How to Draw Opt Complexity: Draw a horizontal line of the input. Draw "hopping" arrows jumping over `cols` characters at a time to pick the message. Total Time $O(N)$.
+Mem Vis (BF): A full 2D character array (matrix) representing the grid. Space $O(N)$.
+Mem Vis (Opt): A single StringBuilder to collect the decoded characters. Space $O(N)$.

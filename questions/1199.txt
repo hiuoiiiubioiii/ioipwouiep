@@ -1,0 +1,13 @@
+ID: 1199
+Problem Title: Minimum Time to Build Blocks
+Brute Force Method: Recursion with memoization trying every possible split/work combination.
+BF Complexity Visuals: Decision Tree Explosion
+How to Draw BF: Draw a block. Branch: "Worker splits" or "Worker builds". $O(2^N)$ tree.
+Optimised Pattern: Greedy (Huffman Coding / Min-Heap)
+Opt Vis. Technique: Bottom-Up Tree Merging
+Dry Run (Opt): Use a Min-Heap. Pop the two smallest times a, b. The time to build these is `max(a, b) + split_cost`. Push this back. Repeat until one value remains.
+How to Draw (Opt): Draw a forest of nodes (blocks). Pick the two smallest. Connect them to a parent node with value `max(small1, small2) + split`. Repeat until one root exists.
+Opt Complexity Visuals: Heap Operations $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting timeline followed by a log N rebalancing tree.
+Mem Vis (BF): Exponential recursion stack
+Mem Vis (Opt): Min-Heap (Priority Queue). Draw a binary tree structure.

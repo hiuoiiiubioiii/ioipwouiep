@@ -1,0 +1,13 @@
+ID: 2330
+Problem Title: Valid Palindrome IV (Premium)
+Brute Force Method: Generate every possible string by making 1 or 2 character changes, then run a standard $O(N)$ palindrome check on every generated string.
+BF Complexity Visuals: Branching String Permutations (O(N * 26^2))
+How to Draw BF: Draw a word. Draw branches turning one letter into every other letter, then branching again, checking the whole word each time.
+Optimised Pattern: Two Pointers (Inward Convergence)
+Opt Vis. Technique: Mismatch Counter Allowance
+Dry Run (Opt): Place `left` pointer at 0, `right` at end. Move inward. If `s[left] != s[right]`, increment a `mismatch` counter. If `mismatch &gt; 2`, return false. If pointers cross and `mismatch &lt;= 2`, return true.
+How to Draw (Opt): Draw a word. Put an arrow at the start and end. Move them inward. If letters don't match, cross them out and draw a strike on a tally counter. Stop early if the tally hits 3.
+Opt Complexity Visuals: Single Half-Pass (O(N))
+How to Draw Opt Complexity: Draw a line. Draw two arrows starting at the ends and meeting in the exact middle, never crossing.
+Mem Vis (BF): Draw massive Memory Allocation for creating new string copies to test.
+Mem Vis (Opt): Draw two Integer pointers (`left`, `right`) and one Integer variable (`mismatches`) using $O(1)$ space.

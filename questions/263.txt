@@ -1,0 +1,13 @@
+ID: 263
+Problem Title: Ugly Number
+Brute Force Method: Attempt to find all prime factors of the number and check if any are &gt; 5.
+BF Complexity Visuals: Factorization Tree: $O(\\text{sqrt}{N})$.
+How to Draw BF: Draw N at top. Draw branches for every divisor. The tree depth/width represents the square root scan.
+Optimised Pattern: Iterative Division (Prime Squeezing)
+Opt Vis. Technique: Division Funnel
+Dry Run (Opt): Repeatedly divide N by 2, then 3, then 5 as long as the remainder is 0. If the final value is 1, it's ugly.
+How to Draw (Opt): Draw the number N inside a funnel. Mark "2, 3, 5" as the exit holes. If N can pass through completely to become "1", it succeeds.
+Opt Complexity Visuals: Logarithmic Reduction: $O(\log N)$.
+How to Draw Opt Complexity: Draw N shrinking rapidly. Each step is a division, showing the "Height" of the operations is \log N.
+Mem Vis (BF): Factor list storage.
+Mem Vis (Opt): Zero Extra Space: Just the input variable modified in-place.

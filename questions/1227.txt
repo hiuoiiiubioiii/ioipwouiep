@@ -1,0 +1,13 @@
+ID: 1227
+Problem Title: Airplane Seat Assignment Probability
+Brute Force Method: Simulate the entire process using recursion: f(n) = frac1n(1 + sum_i=2^n-1 f(i)). This computes the probability for every possible seat the first person might take.
+BF Complexity Visuals: Recursive Branching Probability Tree
+How to Draw BF: Draw a root (Person 1). Draw N branches for seats 1 to N. For the "wrong" seats, branch again. The tree grows massively deep. Write $O(N!)$ or $O(N^2)$ with memoization.
+Optimised Pattern: Mathematical Induction / Constant Observation
+Opt Vis. Technique: The Coin Flip Simplification
+Dry Run (Opt): Realize that for any n &gt; 1, the first person's choice eventually boils down to whether they (or someone they displaced) takes seat 1 or seat n. It is a symmetric 50/50 chance.
+How to Draw (Opt): Write n=1 rightarrow 1.0. Write n=2 rightarrow 0.5. Write n=3 rightarrow 0.5. Draw a big arrow pointing to 0.5 for all n &gt; 1.
+Opt Complexity Visuals: Constant Time Result
+How to Draw Opt Complexity: Draw a single dot. Write $O(1)$. The calculation doesn't depend on the size of n.
+Mem Vis (BF): Draw a huge memoization table or recursion stack of size N.
+Mem Vis (Opt): Draw a single return statement. Space is $O(1)$.

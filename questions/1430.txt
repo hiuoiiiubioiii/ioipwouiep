@@ -1,0 +1,13 @@
+ID: 1430
+Problem Title: Check If a String Is a Valid Sequence from Root to Leaves in a Binary Tree
+Brute Force Method: All Path Generation. Find all root-to-leaf paths in the tree. Convert them to arrays/strings and compare each with the target array.
+BF Complexity Visuals: Full Tree DFS Traversal
+How to Draw BF: Draw a tree. Draw arrows tracing every single path to every single leaf. Label $O(2^N)$ in worst case (though technically limited by nodes).
+Optimised Pattern: Pruned DFS (Early Exit)
+Opt Vis. Technique: Targeted Path Tracing
+Dry Run (Opt): Run DFS. If current node value != `arr[index]`, return false (Prune). If at a leaf and `index == arr.length - 1`, return true. Else, recurse left/right for `index + 1`.
+How to Draw (Opt): Draw the tree and the target array. Place a finger on the tree root and a finger on the array's first index. Move both. If the node doesn't match the finger on the array, stop immediately.
+Opt Complexity Visuals: Bounded Node Visit
+How to Draw Opt Complexity: Draw a tree where only one path is highlighted. Label $O(N)$ where N is nodes in tree.
+Mem Vis (BF): List of Lists (All paths)
+Mem Vis (Opt): Draw the recursion stack. Depth is H (height of tree). Space $O(H)$.

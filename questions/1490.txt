@@ -1,0 +1,13 @@
+ID: 1490
+Problem Title: Clone N-ary Tree
+Brute Force Method: Manual Copy. Traverse the tree. For each node, manually create a new node and append all its children by looking them up.
+BF Complexity Visuals: Structure-First Mirroring
+How to Draw BF: Draw the original tree. Create a new root. For each child in the old root, create a new child in the new root. Label $O(n)$.
+Optimised Pattern: DFS Recursion (Post-Order)
+Opt Vis. Technique: Recursive Component Assembly
+Dry Run (Opt): Create a `new_node` using `old_node.val`. For every `child` in `old_node.children`, recursively call `clone(child)` and add the result to `new_node.children`.
+How to Draw (Opt): Draw a node. It "shouts" to its children to clone themselves. The children send back their clones, and the parent "glues" them into its own list of children.
+Opt Complexity Visuals: Single Pass Traversal
+How to Draw Opt Complexity: Draw a DFS arrow visiting every node once. Label $O(n)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Recursion stack (height of tree). Space $O(h)$.

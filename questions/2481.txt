@@ -1,0 +1,13 @@
+ID: 2481
+Problem Title: Minimum Cuts to Divide a Circle
+Brute Force Method: Simulate drawing lines and counting pieces manually for various cases.
+BF Complexity Visuals: Manual Geometric Case Study
+How to Draw BF: Draw circles and lines. Count the resulting pie slices. Label $O(1)$.
+Optimised Pattern: Parity-Based Math (Even/Odd Geometry)
+Opt Vis. Technique: Radial Symmetry Check
+Dry Run (Opt): If `n=1`, cuts=0. If `n` is even, cuts = `n/2` (lines cross the center). If `n` is odd, cuts = `n` (lines go from center to edge).
+How to Draw (Opt): Draw a circle. Draw 4 lines (8 pieces). Draw a circle. Draw 3 lines (3 pieces, center-to-edge).
+Opt Complexity Visuals: Constant Time Decision
+How to Draw Opt Complexity: Draw a single decision diamond. Label $O(1)$.
+Mem Vis (BF): Draw a variable for n.
+Mem Vis (Opt): Draw one integer result. $O(1)$ Space.

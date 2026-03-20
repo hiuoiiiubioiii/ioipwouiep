@@ -1,0 +1,13 @@
+ID: 1563
+Problem Title: Stone Game V
+Brute Force Method: Recursive minimax. Try splitting the array at every possible index i, following the rule that the smaller sum is kept. $O(2^N)$.
+BF Complexity Visuals: Exponential Splitting Tree
+How to Draw BF: Draw a block. Split it at pos 1, 2, 3... For each split, draw a new tree. The branching factor is N and the depth is N.
+Optimised Pattern: Dynamic Programming + Prefix Sums
+Opt Vis. Technique: The Range-Interval Matrix
+Dry Run (Opt): Use dp[i][j] to store the max score for stones from index i to j. Use prefix sums to calculate the sum of any range in $O(1)$. Optimize the split search by observing sum properties.
+How to Draw (Opt): Draw a 2D N \times N grid. To fill a cell (i, j), draw a vertical line representing a scan through all possible split points k. Use a prefix sum array on the side to quickly "weigh" the left and right halves.
+Opt Complexity Visuals: Cubic DP $O(N^3)$
+How to Draw Opt Complexity: Draw a triangular matrix. Each cell's complexity is $O(\\text{text}{\text{length of interval}})$. The volume of the total "work" is a pyramid.
+Mem Vis (BF): Massive recursive call stack with redundant string/array slices.
+Mem Vis (Opt): A 2D N \times N integer table. $O(N^2)$ space.

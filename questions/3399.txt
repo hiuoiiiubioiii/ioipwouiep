@@ -1,0 +1,13 @@
+ID: 3399
+Problem Title: Smallest Substring With Identical Characters II
+Brute Force Method: Same as above, but with 10^5 constraints, standard backtracking instantly hits Time Limit Exceeded.
+BF Complexity Visuals: Memory-Crashing Recursion
+How to Draw BF: The call stack overflows trying to mutate 10^5 characters.
+Optimised Pattern: Binary Search on Answer + Edge Cases
+Opt Vis. Technique: The Optimized Tolerance Slicer
+Dry Run (Opt): Identical to 3398, but you must carefully handle the edge case where L=1 (which requires the string to be perfectly alternating like '0101' or '1010'). Check L=1 manually in $O(N)$, then binary search for L >= 2.
+How to Draw (Opt): For L=1, compare the string against "0101..." and "1010..." to count mismatched characters. For L >= 2, use the exact same slicing math: X / (L+1).
+Opt Complexity Visuals: Log Search + Edge Check $O(N \log N)$
+How to Draw Opt Complexity: Draw the alternating string check, followed by the binary search timeline.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Pointers and accumulators. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1038
+Problem Title: Binary Search Tree to Greater Sum Tree
+Brute Force Method: For every node, traverse the entire tree to find all nodes with values greater than itself and sum them up.
+BF Complexity Visuals: N separate tree scans; every node triggers its own global search.
+How to Draw BF: Draw a BST. Pick '5'. Scan every other node and add those &gt; 5. Repeat for every node. Write $O(N^2)$.
+Optimised Pattern: Reverse In-order Traversal (Right -&gt; Root -&gt; Left).
+Opt Vis. Technique: A "Greedy Accumulator" walking backward through the sorted sequence.
+Dry Run (Opt): Keep a global `running_sum`. Visit the furthest Right node (largest), add its value to `running_sum`, update node, then move to Root, then Left.
+How to Draw (Opt): Draw a BST. Write a number `0` on the side. Go to the max node, add its value to your side number, update the node with that sum. Follow the path Right-Root-Left.
+Opt Complexity Visuals: A single snaking path through the tree.
+How to Draw Opt Complexity: Draw a tree with a single arrow going Right-Root-Left. Write $O(N)$ Time.
+Mem Vis (BF): $O(N^2)$ total nodes visited conceptually.
+Mem Vis (Opt): $O(H)$ recursion stack where H is the height of the tree.

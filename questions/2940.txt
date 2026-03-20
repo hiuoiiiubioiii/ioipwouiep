@@ -1,0 +1,13 @@
+ID: 2940
+Problem Title: Find Building Where Alice and Bob Can Meet
+Brute Force Method: For each query, scan the buildings to the right of max(Alice, Bob) to find the first height &gt; both.
+BF Complexity Visuals: N Queries x N Scan Matrix
+How to Draw BF: Draw a grid of Q x N. Shade it to show worst case scanning N buildings for every query. $O(Q \cdot N)$.
+Optimised Pattern: Offline Queries + Monotonic Stack / Priority Queue
+Opt Vis. Technique: Sweeping Building Skyline
+Dry Run (Opt): Sort queries by their rightmost index. Sweep through buildings. Keep a min-heap of active queries. When current building height &gt; query height, answer it.
+How to Draw (Opt): Draw building heights as a bar chart. Draw query "pointers" sitting on bars. As you move right, "pop" queries that are satisfied by the current tall bar.
+Opt Complexity Visuals: Sorted Processing Timeline
+How to Draw Opt Complexity: Draw a timeline for N buildings and a timeline for Q queries. Total Time $O((N+Q)$ log Q).
+Mem Vis (BF): $O(Q \cdot N)$ traversal states.
+Mem Vis (Opt): A Priority Queue of size Q and an answer array of size Q. Space $O(Q)$.

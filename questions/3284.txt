@@ -1,0 +1,13 @@
+ID: 3284
+Problem Title: Sum of Consecutive Subarrays
+Brute Force Method: Find all subsequences, check if they are consecutive (difference of 1), sum them. $O(2^N)$.
+BF Complexity Visuals: Exponential Subsequence Tree
+How to Draw BF: Draw the array. Branch out to pick elements. Verify if they form a step-by-step sequence.
+Optimised Pattern: Dynamic Programming (State: Value &amp; Direction)
+Opt Vis. Technique: The Ascending/Descending Chains
+Dry Run (Opt): Use DP Maps: `inc[val]` (sum of increasing sequences ending at `val`) and `dec[val]` (decreasing). When you see `val`, `inc[val] = inc[val-1] + count[val-1] * val + val`. Update a global sum.
+How to Draw (Opt): Draw numbers. For '5', look at the "Increasing Chain" bucket for '4'. Attach '5' to all those chains. Add the new sum to the total. Do the same for decreasing (look at '6').
+Opt Complexity Visuals: Linear Scan + Map Update $O(N)$
+How to Draw Opt Complexity: Draw a straight timeline. $O(1)$ map lookups and math at each step.
+Mem Vis (BF): Storing lists of sequences.
+Mem Vis (Opt): Two Hash Maps. $O(N)$ space.

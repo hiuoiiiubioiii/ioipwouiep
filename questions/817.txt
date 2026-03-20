@@ -1,0 +1,13 @@
+ID: 817
+Problem Title: Linked List Components
+Brute Force Method: For every node in subset G, traverse the entire linked list from the head to find it, then check if its neighbors are also in G.
+BF Complexity Visuals: Repeated Linear Scans. $O(N \cdot M)$ time.
+How to Draw BF: Draw the linked list. Pick a number in G. Draw an arrow sliding all the way from the head to find it. Repeat for every number in G.
+Optimised Pattern: Hash Set Lookup + Single Pass Traversal.
+Opt Vis. Technique: Islands and Water.
+Dry Run (Opt): Put G into a Set. Walk down the linked list exactly once. If a node is in the Set, you are on "Land". If it's not, you hit "Water". Every time you transition from Land to Water, count 1 island.
+How to Draw (Opt): Draw a linked list. Color the nodes that exist in G green. Color the rest blue. Group the connected green nodes with a highlighter. Count the distinct highlighted groups.
+Opt Complexity Visuals: Single Straight Line + $O(1)$ checks. $O(N)$ time.
+How to Draw Opt Complexity: Draw the linked list. Draw one straight arrow sweeping left to right, with tiny tick marks checking a Set box instantly.
+Mem Vis (BF): $O(1)$ extra space, but visualized as sluggish pointer movement overlapping constantly.
+Mem Vis (Opt): Hash Set: Draw a bucket containing the elements of G. $O(M)$ space.

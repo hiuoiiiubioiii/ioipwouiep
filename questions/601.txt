@@ -1,0 +1,13 @@
+ID: 601
+Problem Title: Human Traffic of Stadium (SQL)
+Brute Force Method: Cartesian Product / Multiple Self Joins checking all row combinations.
+BF Complexity Visuals: 3D Volume Grid (N x N x N intersections).
+How to Draw BF: Draw three overlapping circles (Venn diagram style) representing the table joined to itself thrice. Shade the tiny intersection in the middle representing valid matches. Write $O(N^3)$ next to it.
+Optimised Pattern: Window Functions (id - ROW_NUMBER() grouping).
+Opt Vis. Technique: Linear grouping timeline / Partition boxes.
+Dry Run (Opt): Scan rows. Only look at rows with people &gt;= 100. Calculate (id - sequential_row_number). Rows with the same result belong to the same consecutive streak. Box streaks with count &gt;= 3.
+How to Draw (Opt): Draw the table with a new column 'Diff'. Bracket rows sharing the same 'Diff' value together. Highlight brackets containing 3 or more rows.
+Opt Complexity Visuals: Single horizontal line representing a table scan with a sorting node.
+How to Draw Opt Complexity: Draw a straight arrow spanning across N boxes. Add a small gear icon above it for 'Sort/Window', marking it $O(N \log N)$ for the window sorting step.
+Mem Vis (BF): Draw a massive grid representing a temporary table that holds all possible row combinations (Cartesian explosion).
+Mem Vis (Opt): Draw small fixed-width boxes representing the 'current row' and 'previous row' pointers used by the SQL engine during the window function scan.

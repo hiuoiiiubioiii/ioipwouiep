@@ -1,0 +1,13 @@
+ID: 2378
+Problem Title: Choose Edges to Maximize Score in a Tree (Premium)
+Brute Force Method: Generate all possible subsets of edges. For each subset, check if any node has more than one chosen edge. If valid, calculate the total weight and find the max.
+BF Complexity Visuals: Exponential Edge Subsets (O(2^E))
+How to Draw BF: Draw a tree. Draw branches for "Pick Edge A" and "Don't Pick Edge A". Repeat for every edge. Cross out paths where a node gets two edges.
+Optimised Pattern: Tree Dynamic Programming (House Robber Style)
+Opt Vis. Technique: State-Based Parent Selection
+Dry Run (Opt): For each node, compute two values: `dp[u][0]` (max weight in subtree where no edge connects u to a child) and `dp[u][1]` (max weight where one edge connects u to a child).
+How to Draw (Opt): Draw a tree. Next to each node, write two numbers in a box. The numbers are calculated by looking at the boxes of the children and deciding whether to "link" to one child or remain "free."
+Opt Complexity Visuals: Single Tree Traversal (O(N))
+How to Draw Opt Complexity: Draw a single line tracing the perimeter of the tree (DFS), performing a small math check at each node.
+Mem Vis (BF): Draw a massive checklist for every possible combination of edges.
+Mem Vis (Opt): Draw the Tree nodes, each containing a small size-2 array.

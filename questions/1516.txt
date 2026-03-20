@@ -1,0 +1,13 @@
+ID: 1516
+Problem Title: Move Sub-Tree of N-Ary Tree
+Brute Force Method: Physically tear the tree apart without tracking parents, potentially creating infinite cycles if moving a node into its own subtree.
+BF Complexity Visuals: Cycle-Creation Web
+How to Draw BF: Draw a tree. Rip node A, attach to node B (which is under A). Draw an infinite loop arrow.
+Optimised Pattern: DFS (Parent Tracking) + Pointer Manipulation
+Opt Vis. Technique: The Safe Relocation Map
+Dry Run (Opt): 1. DFS to find Node P, Node Q, and their parents. 2. Check if P is an ancestor of Q. If yes, you must carefully detach Q and attach it to P's old parent before moving P under Q.
+How to Draw (Opt): Draw the tree. Highlight P and Q. Draw a dotted line "up" from Q to see if it hits P. If it does, draw the complex "swap" arrows. Otherwise, simply cut P's top string and tie it under Q.
+Opt Complexity Visuals: Single Tree Trace $O(N)$
+How to Draw Opt Complexity: Draw a single line down the tree to locate targets and check ancestry.
+Mem Vis (BF): Massive deep copies.
+Mem Vis (Opt): Recursion stack. $O(H)$ space.

@@ -1,0 +1,13 @@
+ID: 3046
+Problem Title: Split the Array
+Brute Force Method: Backtracking to try every combination of splitting elements into two groups and checking if each group contains unique elements.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a root branching 2^N times for "Group A" or "Group B".
+Optimised Pattern: Pigeonhole Principle (Frequency Counting)
+Opt Vis. Technique: Frequency Tally
+Dry Run (Opt): Count how many times each number appears. If any number appears more than twice, you cannot split it into two unique sets. Return false immediately.
+How to Draw (Opt): List the numbers. Write a tally mark below each. If any number gets 3 tallies, draw a big red "X".
+Opt Complexity Visuals: Linear $O(N)$ Pass
+How to Draw Opt Complexity: Draw one straight arrow across the input array.
+Mem Vis (BF): Massive recursion stack holding partial sets.
+Mem Vis (Opt): A simple frequency array of size 101.

@@ -1,0 +1,13 @@
+ID: 3293
+Problem Title: Calculate Product Final Cost (SQL)
+Brute Force Method: Use multiple correlated subqueries to calculate discounts for each product one by one. $O(N^2)$.
+BF Complexity Visuals: Nested Table Aggregations
+How to Draw BF: Draw the product table. For row 1, draw a box representing a full scan of the discounts table. Repeat for every row.
+Optimised Pattern: LEFT JOIN + COALESCE (Conditional Logic)
+Opt Vis. Technique: Relational Mapping Stream
+Dry Run (Opt): Join the product table with the discounts table on category. Use `COALESCE(price * (1 - discount), price)` to handle products with no applicable discounts.
+How to Draw (Opt): Draw two tables. Draw a line from a Product row to its matching Category in the Discount table. Write the math result in a new "Final Cost" column.
+Opt Complexity Visuals: Single-Pass Hash Join
+How to Draw Opt Complexity: Draw a single horizontal pass through the joined data. Label it $O(N + M)$ for the join and $O(N)$ for the calculation.
+Mem Vis (BF): Redundant temporary tables for subqueries.
+Mem Vis (Opt): Standard SQL join buffer (O(M) space for the smaller table).

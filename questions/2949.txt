@@ -1,0 +1,13 @@
+ID: 2949
+Problem Title: Count Beautiful Substrings II
+Brute Force Method: Same as 2947 (Nested loops). TLE due to N=5 * 10^4.
+BF Complexity Visuals: Massive Quadratic Grid
+How to Draw BF: Draw a 50,000 x 50,000 grid. Label "RED/TLE".
+Optimised Pattern: Math Optimization + Prefix Map (Advanced)
+Opt Vis. Technique: Modular State Space
+Dry Run (Opt): Solve for v in v^2 equiv 0 modL where L is derived from k. Use a Map to store `(v - c, v % L)` states to find matches in $O(1)$.
+How to Draw (Opt): Draw a state-transition diagram where each index updates its (diff, mod) pair.
+Opt Complexity Visuals: Linear Pass with Math Precomputation
+How to Draw Opt Complexity: Draw a line of length N. T = $O(N + √k)$.
+Mem Vis (BF): Quadratic storage.
+Mem Vis (Opt): A Hash Map of prefix states. Space $O(N)$.

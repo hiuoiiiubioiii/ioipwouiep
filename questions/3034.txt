@@ -1,0 +1,13 @@
+ID: 3034
+Problem Title: Number of Subarrays That Match a Pattern I
+Brute Force Method: Iterate through every possible subarray of length m+1. For each, compare the relative order of elements against the pattern.
+BF Complexity Visuals: Sliding Window Matrix
+How to Draw BF: Draw the main array. Below it, draw N-M overlapping boxes, each doing M internal comparisons. Label as $O(N \cdot M)$.
+Optimised Pattern: Pattern Conversion + KMP Algorithm
+Opt Vis. Technique: Trend Sequence Matching
+Dry Run (Opt): Convert the nums array into a "trend" array of 1, 0, -1. Treat this as a string matching problem. Use KMP to find the pattern in the trend array.
+How to Draw (Opt): Draw nums. Below it, write the trends (up arrow, flat line, down arrow). Draw the pattern as a separate trend line. Slide the pattern trend across the main trend.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw one straight arrow across the trend array. Label it $O(N+M)$.
+Mem Vis (BF): Creating new temporary subarray objects for every comparison.
+Mem Vis (Opt): A 1D "trend" array of integers and an LPS (Longest Prefix Suffix) array for the pattern.

@@ -1,0 +1,13 @@
+ID: 2348
+Problem Title: Number of Zero-Filled Subarrays
+Brute Force Method: Generate every possible subarray `(i, j)`. For each, check if every single element in it is zero. Count the ones that are.
+BF Complexity Visuals: Cubic Scanning (O(N^3))
+How to Draw BF: Draw an array. Draw brackets for every segment. For each segment, draw a tiny internal arrow scanning it to confirm all are '0'.
+Optimised Pattern: Linear Strike Counting (Math)
+Opt Vis. Technique: Consecutive Zero Streaks
+Dry Run (Opt): Iterate once. Keep a `current_streak` counter. If you see a '0', increment `streak` and add `streak` to the `total`. If you see a non-zero, reset `streak` to 0.
+How to Draw (Opt): Draw an array. Every time you hit a '0', draw a vertical tally mark that grows longer (1, 2, 3). Add the height of the current tally to your total sum. When you hit a '1', erase the tally.
+Opt Complexity Visuals: Single Linear Pass (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. A single "streak" variable pulses up and down like a heart monitor as it moves.
+Mem Vis (BF): Draw a massive 2D matrix storing boolean "isZero" flags for every subarray.
+Mem Vis (Opt): Draw two Integer variables: `streak` and `total_count`.

@@ -1,0 +1,14 @@
+ID: 1826
+Problem Title: Faulty Sensor (Premium)
+Brute Force Method: Nested loops to compare all possible sub-arrays of both sensors to find which one dropped a value.
+BF Complexity Visuals: Sliding window comparison grid.
+How to Draw BF: Draw two rows. Try sliding the second row right by 1 and check if the remaining elements match the first row. Repeat for the other row.
+Optimised Pattern: Two Pointers / Linear Comparison (Shift checking).
+Opt Vis. Technique: Pointer alignment tape.
+Dry Run (Opt): Find first index i where s1[i] 
+eq s2[i]. Check if s1[i...n-2] matches s2[i+1...n-1] and vice versa.
+How to Draw (Opt): Draw two arrays. Mark the first mismatch. Draw arrows from s1[i] to s2[i+1] to check for a shift. If only one matches, that sensor is faulty.
+Opt Complexity Visuals: Single-pass comparison segments.
+How to Draw Opt Complexity: Draw a line of length N. Mark the mismatch point. Show two short $O(N)$ scans from that point forward.
+Mem Vis (BF): Multiple sub-array copies (O(N) space).
+Mem Vis (Opt): Two static arrays (Input) + 2 integer pointers (O(1) extra space).

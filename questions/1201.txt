@@ -1,0 +1,13 @@
+ID: 1201
+Problem Title: Ugly Number III
+Brute Force Method: Iterate incrementally from 1. Check every number modulo a, b, and c. Keep a counter and stop when the counter reaches n.
+BF Complexity Visuals: 1D Infinite Number Line Progression
+How to Draw BF: Draw a long straight horizontal line. Mark tick points 1, 2, 3... N. Draw a small circle over every number divisible by a, b, or c. Write $O(N \\text{cdot min}(a,b,c)$) indicating the length of the line drawn.
+Optimised Pattern: Binary Search on Answer Range + Inclusion-Exclusion Principle
+Opt Vis. Technique: Venn Diagram (Sets) combined with a Binary Search Decision Tree
+Dry Run (Opt): Visualize 3 overlapping circles (sets a, b, c). Pick a 'mid' number. Count how many numbers fall inside the circles up to 'mid' by adding the circles, subtracting the 2-way overlaps, and adding the 3-way overlap back. If count &lt; n, shift your binary search window right.
+How to Draw (Opt): Draw a horizontal line with 'low' and 'high' pointers. Below it, draw a classic 3-circle Venn diagram. Label the 3 circles a, b, c. Label the overlaps LCM(a,b), LCM(b,c), LCM(a,c). Label the center LCM(a,b,c). Shift 'mid' on the line based on math formulas derived from the circles.
+Opt Complexity Visuals: Logarithmic Halving Block Diagram
+How to Draw Opt Complexity: Draw a massive rectangular block representing 2 * 10^9. Divide it strictly in half. Cross out one half. Divide the remaining half again. Repeat this visually to represent $O(\log(\text{MAX}_\text{ANS})$). Next to it, draw a constant size $O(1)$ box for the LCM math.
+Mem Vis (BF): Draw a single, changing variable box labeled "Counter". Next to it, draw a "Current Number" box that increments endlessly.
+Mem Vis (Opt): Draw exactly 4 static variable boxes representing $O(1)$ space: 'low', 'high', 'mid', and 'ans'. No arrays or dynamic structures needed.

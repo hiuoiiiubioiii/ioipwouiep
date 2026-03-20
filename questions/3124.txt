@@ -1,0 +1,13 @@
+ID: 3124
+Problem Title: Find Longest Calls (SQL)
+Brute Force Method: Perform a full cross-join of the tables without filtering, load everything into memory, and manually sort.
+BF Complexity Visuals: A massive Cartesian product matrix ballooning horizontally and vertically.
+How to Draw BF: Draw lines connecting every single call row to every single contact row. Manually cross out the ones that don't match IDs.
+Optimised Pattern: JOIN + Window Function (RANK)
+Opt Vis. Technique: Data Partitioning Funnel
+Dry Run (Opt): `JOIN` tables on ID. Use `RANK() OVER (PARTITION BY type ORDER BY duration DESC)`. This splits data into 'incoming' and 'outgoing' buckets and sorts them internally. Filter `rank &lt;= 3`.
+How to Draw (Opt): Draw a big funnel. Split it into two buckets (incoming/outgoing). Inside the buckets, stack rows highest to lowest. Draw a line cutting off anything below the 3rd row.
+Opt Complexity Visuals: Pipeline / Directed Acyclic Graph (DAG)
+How to Draw Opt Complexity: Draw two parallel data streams merging into one node, partitioning into two, then hitting a filter node.
+Mem Vis (BF): Unindexed Cartesian explosion in memory holding $O(A x B)$ rows.
+Mem Vis (Opt): Temporary memory holding the partitioned and ranked sets.

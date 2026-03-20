@@ -1,0 +1,13 @@
+ID: 99
+Problem Title: Recover Binary Search Tree
+Brute Force Method: Extract, Sort, Replace Perform an inorder traversal to get all values. Sort the values. Perform a second traversal and replace node values with the sorted ones.
+BF Complexity Visuals: The Sort-and-Swap Funnel
+How to Draw BF: Draw a tree. Draw an arrow extracting values into an array. Draw a sorting machine. Draw arrows putting sorted values back into the tree. $O(N \log N)$.
+Optimised Pattern: Morris Inorder Traversal
+Opt Vis. Technique: The Temporary Thread
+Dry Run (Opt): Traverse the tree without a stack/recursion. If you find a spot where `prev.val &gt; curr.val`, record the violation. After the full traversal, swap the two "violation" nodes.
+How to Draw (Opt): Draw a tree. Draw a "thread" (dashed line) from the right-most node of a left subtree back to the current root. Use this thread to return without a stack.
+Opt Complexity Visuals: Constant-Space Walk
+How to Draw Opt Complexity: Draw a tree and trace the perimeter. Show that every node is visited at most twice. Time: $O(N)$.
+Mem Vis (BF): An array of size N to store node values. Space: $O(N)$.
+Mem Vis (Opt): Draw the tree. Highlight that only 3 pointer variables (`first`, `second`, `prev`) are used. Space: $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1592
+Problem Title: Rearrange Spaces Between Words
+Brute Force Method: Extract words and count spaces. Iterate through all possible spacing combinations until the total space count matches the original. $O(\\text{text}{\text{Exponential}})$.
+BF Complexity Visuals: Space-Partitioning Brute Force
+How to Draw BF: Draw the words. Try placing 1 space, then 2, then 3 between each until you find a balance.
+Optimised Pattern: String Manipulation / Math
+Opt Vis. Technique: The Even Distribution Buckets
+Dry Run (Opt): Count total spaces and total words. Divide spaces by (words - 1) to get the gap size. Use the remainder for the trailing spaces. Concatenate with a join operation.
+How to Draw (Opt): Write words as blocks. Count total empty spaces. Draw "bins" between words. Distribute spaces like cards: 1 for you, 1 for you... The "leftovers" go to a separate bin at the end.
+Opt Complexity Visuals: Two-Pass Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Pass 1: count spaces/words. Pass 2: Reconstruct string. Total work is 2N.
+Mem Vis (BF): Multiple substring allocations and intermediate strings.
+Mem Vis (Opt): A StringBuilder or character list of length N. $O(N)$ space.

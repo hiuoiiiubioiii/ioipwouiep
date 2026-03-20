@@ -1,0 +1,13 @@
+ID: 1749
+Problem Title: Maximum Absolute Sum of Any Subarray
+Brute Force Method: Generate all subarrays, calculate their sums, take absolute values, and find the maximum.
+BF Complexity Visuals: Nested Subarray Matrix.
+How to Draw BF: Draw array. Draw brackets for every possible start and end. Calculate sums. $O(N^2)$.
+Optimised Pattern: Prefix Sum Range (Max - Min).
+Opt Vis. Technique: Vertical Oscillation (Altitude Swing).
+Dry Run (Opt): The max absolute subarray sum is simply the difference between the maximum prefix sum and the minimum prefix sum (including 0).
+How to Draw (Opt): Draw a line graph of prefix sums. Find the highest peak and the lowest valley. The vertical distance between them is your answer.
+Opt Complexity Visuals: Single Pass Min-Max Tracking.
+How to Draw Opt Complexity: Draw one arrow sweeping the array, updating `max_pre` and `min_pre`. Label $O(N)$.
+Mem Vis (BF): None, just sum variables.
+Mem Vis (Opt): Two integer variables: `min_sum` and `max_sum`. $O(1)$ space.

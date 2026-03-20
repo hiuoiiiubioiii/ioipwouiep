@@ -1,0 +1,13 @@
+ID: 548
+Problem Title: Split Array with Equal Sum
+Brute Force Method: Four nested loops to pick three indices (i, j, k) and manually sum the four resulting subarrays to check equality.
+BF Complexity Visuals: N x N x N x N nested grid. $O(N^4)$.
+How to Draw BF: Draw an array. Draw 3 vertical lines moving through every possible position combination.
+Optimised Pattern: Prefix Sum + Hash Set for Mid-Point Optimization.
+Opt Vis. Technique: A balance scale with two arms. You find all possible "left-half" equal splits, store them, then check if the "right-half" can match them.
+Dry Run (Opt): Calculate Prefix Sums. Fix middle index `j`. Check for `i` such that `sum(0,i-1) == sum(i+1,j-1)`. Store these sums in a Set. Then check for `k` such that `sum(j+1,k-1) == sum(k+1,n-1)` and exists in Set.
+How to Draw (Opt): Draw the array with a fixed center line (j). Draw two moving sliders (i and k) on either side. Check if the "weights" in the 4 created sections match.
+Opt Complexity Visuals: Nested loops optimized by the Hash Set. $O(N^2)$.
+How to Draw Opt Complexity: Draw two separate $O(N^2)$ loops that do not nest fully, showing a much smaller search space.
+Mem Vis (BF): $O(1)$ extra space but massive time overhead.
+Mem Vis (Opt): A Hash Set to store intermediate sums and the Prefix Sum array. $O(N)$.

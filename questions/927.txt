@@ -1,0 +1,13 @@
+ID: 927
+Problem Title: Three Equal Parts
+Brute Force Method: Try all possible ways to place two dividers in the array, then convert each of the three segments from binary to decimal and compare.
+BF Complexity Visuals: $O(N^2)$. Checking every combination of two split points.
+How to Draw BF: Draw an array. Draw two vertical lines 'i' and 'j'. Show them sliding in nested loops, creating a quadratic number of segments.
+Optimised Pattern: Counting 1s + Suffix Matching
+Opt Vis. Technique: "Slicing a Pie." Since each part must have the same value, they must have the same number of '1's and identical trailing zeros.
+Dry Run (Opt): 1. Count total '1's (must be div by 3). 2. Find indices of the 1st, (k+1)th, and (2k+1)th '1'. 3. Slide all three pointers together to check if the patterns match until the end.
+How to Draw (Opt): Draw the binary array. Circle three groups of '1's. Draw a "stencil" over the first group and slide it over the other two to see if it fits perfectly.
+Opt Complexity Visuals: $O(N)$. One pass to count, one pass to match.
+How to Draw Opt Complexity: Draw three parallel arrows starting at different points in the array, moving at the exact same speed toward the end.
+Mem Vis (BF): $O(N)$ to store decimal values of huge binary segments (might overflow).
+Mem Vis (Opt): $O(1)$. Only three pointer variables. Draw three small post-it notes with indices.

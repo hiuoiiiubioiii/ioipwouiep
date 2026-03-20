@@ -1,0 +1,13 @@
+ID: 1478
+Problem Title: Allocate Mailboxes
+Brute Force Method: Backtracking / Exhaustive Search. Try placing K mailboxes in every possible combination of integer coordinates between houses. For each, calculate total distance.
+BF Complexity Visuals: Combinatorial Coordinate Search
+How to Draw BF: Draw a number line. Try placing 3 dots (mailboxes) in every possible set of gaps between houses. Label $O(N \text{choose} K)$.
+Optimised Pattern: DP + Median Distance Pre-computation
+Opt Vis. Technique: Clustered Median Minimization
+Dry Run (Opt): Cost of 1 mailbox for houses `[i...j]` is minimized at their median. Pre-compute a 2D `cost[i][j]`. Then use DP: `dp[k][i]` is min cost for `i` houses with `k` mailboxes.
+How to Draw (Opt): Draw houses as dots on a line. Group them into K circles. Inside each circle, the mailbox is at the middle dot. DP decides where the circle boundaries go to minimize total distance.
+Opt Complexity Visuals: Nested Interval Partitioning
+How to Draw Opt Complexity: Draw 3 nested loops: K (mailboxes), N (houses), and a split point. Label $O(K \cdot N²)$.
+Mem Vis (BF): Deep Recursion Tree
+Mem Vis (Opt): A 2D `cost` matrix $O(N²)$ and a 2D `dp` table $O(K \cdot N)$. Space $O(N²)$.

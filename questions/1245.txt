@@ -1,0 +1,13 @@
+ID: 1245
+Problem Title: Tree Diameter
+Brute Force Method: For every single node in the tree, start a BFS/DFS to find the farthest node from it. The diameter is the maximum distance found across all starts.
+BF Complexity Visuals: All-Pairs Shortest Path Scan
+How to Draw BF: Draw a tree. Pick Node 1, color all reachable paths. Pick Node 2, color all paths again. Repeat for N nodes. Write $O(N^2)$.
+Optimised Pattern: Double BFS (or DFS with Height Tracking)
+Opt Vis. Technique: The "Elastic String" Stretch
+Dry Run (Opt): 1. Pick a random node. 2. Find the farthest node from it (let's call it 'A'). 3. Find the farthest node from 'A' (let's call it 'B'). The distance between A and B is the diameter.
+How to Draw (Opt): Draw a tree. Start at any node, draw an arrow to the leaf furthest away. From that leaf, draw a long bold arrow across the tree to the opposite leaf. Label the bold arrow "Diameter".
+Opt Complexity Visuals: Linear Edge Traversal
+How to Draw Opt Complexity: Draw a tree. Show two distinct colored sweeps across all nodes. Write $O(N)$.
+Mem Vis (BF): Draw a massive matrix of distances for all node pairs.
+Mem Vis (Opt): Draw an Adjacency List and a Queue for BFS or a recursion stack for DFS. Space: $O(N)$.

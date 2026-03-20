@@ -1,0 +1,13 @@
+ID: 1851
+Problem Title: Minimum Interval to Include Each Query
+Brute Force Method: For each query q, iterate through all intervals [l, r], check if l \le q \le r, and track the minimum (r - l + 1).
+BF Complexity Visuals: Query \times Interval matrix.
+How to Draw BF: Draw Q vertical query lines and I horizontal interval bars. For each vertical line, check every horizontal bar it intersects. Mark $O(Q \\text{times} I)$.
+Optimised Pattern: Offline Queries + Sorting + Min-Priority Queue (Heap).
+Opt Vis. Technique: Sweep-line with a size-ordered Heap.
+Dry Run (Opt): Sort queries and intervals. Move a sweep-line across. Add intervals starting before query to a Min-Heap (ordered by size). Pop intervals ending before query. Top of heap is the answer.
+How to Draw (Opt): Draw a timeline. Plot queries as dots and intervals as segments. As you move left-to-right, "pick up" intervals into a triangle (Heap) and "drop" them when they expire.
+Opt Complexity Visuals: $O(I \log I + Q \log Q)$.
+How to Draw Opt Complexity: Draw two sorting trees and a series of $O(\log I)$ heap operations along a single timeline.
+Mem Vis (BF): $O(1)$ extra besides input/output.
+Mem Vis (Opt): Min-Heap array structure and a sorted query-index mapping array.

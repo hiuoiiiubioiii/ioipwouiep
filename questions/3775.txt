@@ -1,0 +1,13 @@
+ID: 3775
+Problem Title: Reverse Words With Same Vowel Count (Med)
+Brute Force Method: For every pair of words, count their vowels. If they match, swap them. Repeat this until no more swaps can be made or try all permutations. $O(N!)$.
+BF Complexity Visuals: Permutation Word Scrambling.
+How to Draw BF: List words. Draw lines between words with the same vowel count. Try swapping them in different orders to see which ones are "allowed".
+Optimised Pattern: Grouping by Vowel Count + Reverse Pointers
+Opt Vis. Technique: Bucket-Based Reversal
+Dry Run (Opt): Group the *indices* of words by their vowel counts. For each group, reverse the words found at those indices while keeping other words in place.
+How to Draw (Opt): Draw the sentence. Above each word, write its vowel count. Circle all words with "2" vowels. Draw arrows swapping the first circled word with the last, second with second-to-last, etc.
+Opt Complexity Visuals: $O(N \\text{cdot WordLength})$.
+How to Draw Opt Complexity: Draw a flat timeline with "Color-coded" buckets for vowel counts, then show reversal within each color.
+Mem Vis (BF): Massive string permutations.
+Mem Vis (Opt): Hash Map [VowelCount -&gt; List of Indices] + Array of Words.

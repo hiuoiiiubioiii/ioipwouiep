@@ -1,0 +1,13 @@
+ID: 948
+Problem Title: Bag of Tokens
+Brute Force Method: Exhaustive recursion: at every step, try playing every available token either "face up" (gain score) or "face down" (gain power).
+BF Complexity Visuals: $O(2^N)$. A binary choice for every single token at every step.
+How to Draw BF: Draw a tree. Each node splits into "Face Up" and "Face Down" branches for every token. Show the branches hitting "out of power" or "out of score" blocks.
+Optimised Pattern: Sort + Two Pointers (Greedy)
+Opt Vis. Technique: "Buy Low, Sell High." Use your power to buy the cheapest tokens (score up). Use your score to "sell" the most expensive tokens (power up).
+Dry Run (Opt): Sort tokens. While `low &lt;= high`: if `power &gt;= tokens[low]`, buy `tokens[low]`, `score++`, `low++`. Else if `score &gt; 0`, "sell" `tokens[high]`, `score--`, `high--`. Track max score.
+How to Draw (Opt): Draw a sorted list of prices. Place 'L' at the cheap end and 'R' at the expensive end. Use L to gain points and R to recharge your wallet.
+Opt Complexity Visuals: $O(N \log N)$ for sort, $O(N)$ for the scan.
+How to Draw Opt Complexity: Draw a horizontal array. Draw two arrows pointing inward, meeting in the middle.
+Mem Vis (BF): Exponential memory in the recursion tree.
+Mem Vis (Opt): $O(1)$ extra space (excluding sort). Draw three small boxes: `power`, `score`, and `max_score`.

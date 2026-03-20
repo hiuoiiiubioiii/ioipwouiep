@@ -1,0 +1,13 @@
+ID: 3836
+Problem Title: Maximum Score Using Exactly K Pairs (Hard)
+Brute Force Method: Backtracking: Generate all possible combinations of choosing exactly K pairs from the array, sum their scores, and find the maximum.
+BF Complexity Visuals: A massive branching tree picking 2 elements at every level until K pairs are formed.
+How to Draw BF: Draw an array. Draw branches for choosing pair (0,1), (0,2), etc. Write $O(N^(2K)$) to show the combinatorial explosion.
+Optimised Pattern: Sorting + 2D Dynamic Programming (or Max-Heap Greedy).
+Opt Vis. Technique: A 2D grid filling up systematically, balancing the cost of picking a pair vs. skipping an element.
+Dry Run (Opt): Sort the array. Let `dp[i][j]` be the max score using `j` pairs from the first `i` elements. Transition: `dp[i][j] = max(dp[i-1][j], dp[i-2][j-1] + score(i, i-1))`.
+How to Draw (Opt): Draw a 2D table (N rows, K columns). Fill cell (i, j) by drawing arrows from the cell directly above it (skip) and the cell diagonally up-left (pick pair).
+Opt Complexity Visuals: A steady sweep across a 2D grid.
+How to Draw Opt Complexity: Draw a rectangle representing the DP table. Write dimensions N and K. Write $O(N \cdot K)$ or $O(N \log N)$ if using sorting + greedy.
+Mem Vis (BF): Call stack depths of K, with huge overhead for tracking used indices.
+Mem Vis (Opt): A 2D DP array taking $O(N \cdot K)$ space, which can be optimized to two 1D rows taking $O(K)$ space.

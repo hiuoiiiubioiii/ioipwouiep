@@ -1,0 +1,13 @@
+ID: 2164
+Problem Title: Sort Even and Odd Indices Independently
+Brute Force Method: Extract even indices into one list and odd into another. Sort each. Interleave them back into the original array.
+BF Complexity Visuals: Splitting a braid into two strands, smoothing them, and braiding them back.
+How to Draw BF: Draw an array. Pull out elements at 0, 2, 4... into a box. Pull out 1, 3, 5... into another. Sort. Re-plug them. $O(N \log N)$.
+Optimised Pattern: In-Place Extraction + Sorting.
+Opt Vis. Technique: Two separate parallel sorted lists.
+Dry Run (Opt): Sort even-index elements in non-decreasing order. Sort odd-index elements in non-increasing order. Use custom comparators.
+How to Draw (Opt): Draw the array. Put a square around even indices and a circle around odd. List the squares and sort them. List the circles and sort them (reversed). Map them back.
+Opt Complexity Visuals: $O(N \log N)$ due to sorting.
+How to Draw Opt Complexity: Two funnels (sorting) feeding back into a single array structure.
+Mem Vis (BF): $O(N)$ to store extracted lists.
+Mem Vis (Opt): $O(N)$ for intermediate storage (standard sorting memory).

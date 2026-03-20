@@ -1,0 +1,13 @@
+ID: 2672
+Problem Title: Number of Adjacent Elements With the Same Color
+Brute Force Method: For every query, iterate through the whole array and count how many pairs `(i, i+1)` have the same non-zero color.
+BF Complexity Visuals: Full Array Pair Scan
+How to Draw BF: Draw an array. For every single update, draw a pointer scanning all adjacent pairs. $O(Q \cdot N)$.
+Optimised Pattern: Local Incremental Update
+Opt Vis. Technique: Neighborhood Change Tracking
+Dry Run (Opt): Before coloring `arr[i]`, check if it already matches `arr[i-1]` or `arr[i+1]` (decrement total if so). Change color. Check again if the new color matches neighbors (increment total).
+How to Draw (Opt): Draw three cells: [i-1, i, i+1]. Only look at these three. If i matches a neighbor, add 1 to a running counter. If it stops matching after a change, subtract 1.
+Opt Complexity Visuals: $O(1)$ per Query
+How to Draw Opt Complexity: Draw a small logic box checking index `i-1` and `i+1`. $O(1)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(N)$ for the color array + $O(1)$ for the running total.

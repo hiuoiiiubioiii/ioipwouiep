@@ -1,0 +1,13 @@
+ID: 3715
+Problem Title: Sum of Perfect Square Ancestors (Hard)
+Brute Force Method: For every node, traverse back up to the root, checking if each ancestor is a perfect square.
+BF Complexity Visuals: Upward Tree Tracing $O(N \\text{cdot Depth})$.
+How to Draw BF: Draw a tree. Pick a leaf, draw a line up to the root, circling perfect squares. Repeat for EVERY node.
+Optimised Pattern: DFS with Running Sum/State
+Opt Vis. Technique: Downward Passed State
+Dry Run (Opt): Do DFS. Maintain a running sum of perfect squares in the current path. Pass this sum down to children.
+How to Draw (Opt): Draw a tree. As you draw arrows DOWN to children, carry a "backpack" number (the sum). Update the backpack if current node is a square.
+Opt Complexity Visuals: $O(N)$ single tree traversal.
+How to Draw Opt Complexity: Draw a single line tracing the contour of the whole tree (Euler tour).
+Mem Vis (BF): Parent pointer lookups or N^2 paths.
+Mem Vis (Opt): Call stack containing current running sum integer.

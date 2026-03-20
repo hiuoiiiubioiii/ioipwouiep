@@ -1,0 +1,13 @@
+ID: 2277
+Problem Title: Closest Node to Path in Tree
+Brute Force Method: Full Path Search + BFSFor each query `(start, end, node)`, find the unique path between `start` and `end` using DFS. Then, for every node on that path, run a BFS to find the distance to the target `node`.
+BF Complexity Visuals: Multi-Search Tree Traversal
+How to Draw BF: Draw a tree. Highlight the path from A to B. For every node on that path, draw a "Search Wave" looking for node C. Repeat for every query. Show $O(Q \cdot N)$.
+Optimised Pattern: LCA + Distance Formula
+Opt Vis. Technique: Triple LCA Intersection
+Dry Run (Opt): The closest node on the path `(u, v)` to node `p` is one of the three LCAs: `LCA(u, v)`, `LCA(u, p)`, or `LCA(v, p)`. Specifically, it's the one with the maximum depth.
+How to Draw (Opt): Draw nodes U, V, and P. Draw the path U-V. Draw the LCA of (U,V), (U,P), and (V,P). Notice that one of these three points *must* be the entry point to the path from P.
+Opt Complexity Visuals: Precomputed Binary Lifting
+How to Draw Opt Complexity: Draw an $O(N \log N)$ precomputation block for LCA. Draw an $O(1)$ or $O(\log N)$ block for each query. Total time: $O(N \log N + Q \log N)$.
+Mem Vis (BF): Storing all nodes of every path found in memory for every query.
+Mem Vis (Opt): A 2D `parent[N][log N]` table for binary lifting (O(N log N) space).

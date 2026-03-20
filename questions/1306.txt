@@ -1,0 +1,13 @@
+ID: 1306
+Problem Title: Jump Game III
+Brute Force Method: Blindly branch into `i + arr[i]` and `i - arr[i]` recursively without marking indices as visited, resulting in infinite loops.
+BF Complexity Visuals: Cyclic Infinite Binary Recursion Tree
+How to Draw BF: Draw root 'start' index. Branch left and right based on math. Draw red circular looping arrows pointing back to upper levels to show an infinite cycle trap.
+Optimised Pattern: Graph BFS / DFS with Visited Array
+Opt Vis. Technique: Directed Graph State Traversal
+Dry Run (Opt): Draw the array indices as circles. Draw an edge from index 'i' to 'i + arr[i]' and 'i - arr[i]'. Start at the given node. Paint circles grey once visited. Stop when hitting '0'.
+How to Draw (Opt): Draw array elements. Put your pen on the start index. Draw an arc to the next calculated index. Put an 'X' over the current index so you don't return. Continue to '0'.
+Opt Complexity Visuals: Graph Node-Edge Visitation Tracking
+How to Draw Opt Complexity: Draw N unshaded nodes. Show exactly 2 outgoing edges per node. Shade nodes one-by-one. Prove that no node is shaded twice, yielding exactly $O(N)$ time complexity.
+Mem Vis (BF): Unbounded Call Stack: Draw stacked memory frames that pile up infinitely due to cycle repetition until a StackOverflow exception occurs.
+Mem Vis (Opt): Array-based Hash Set &amp; Queue: Draw a fixed size boolean array (Visited checks) sitting next to a dynamically sizing FIFO Queue.

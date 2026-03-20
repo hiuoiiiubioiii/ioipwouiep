@@ -1,0 +1,13 @@
+ID: 2131
+Problem Title: Longest Palindrome by Concatenating Two Letter Words
+Brute Force Method: Generate all possible permutations of the words, check each string to see if it is a palindrome.
+BF Complexity Visuals: Massive branching factorial tree mapping out word combinations.
+How to Draw BF: Draw word blocks. Draw lines linking every block to every other block in a massive web. Write $O(N!)$.
+Optimised Pattern: Frequency Hash Map + Greedy Matching.
+Opt Vis. Technique: Matching puzzle pieces.
+Dry Run (Opt): Count frequencies of all words. If you see "ab", look for "ba". If found, add 4 to length, decrement both counts. Track double-letter words (e.g., "cc") separately for a possible center piece.
+How to Draw (Opt): Draw 2-letter blocks. Find a block's reverse, draw a line connecting them, and cross both out. If a block has identical letters (e.g., "zz"), leave one uncrossed for the absolute middle.
+Opt Complexity Visuals: $O(N)$ linear time frequency counting.
+How to Draw Opt Complexity: Single pass through the array, funneling into a tally board, then a single pass through the tally board.
+Mem Vis (BF): $O(N!)$ recursive stack frames and massive string allocations.
+Mem Vis (Opt): Hash Map mapping String (length 2) to Integer count. Max 26x26 entries (O(1) space technically).

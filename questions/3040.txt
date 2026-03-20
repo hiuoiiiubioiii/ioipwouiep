@@ -1,0 +1,13 @@
+ID: 3040
+Problem Title: Maximum Number of Operations With the Same Score II
+Brute Force Method: Use simple recursion to try all three options (first two, last two, or first and last) at every step to see which path yields the longest chain.
+BF Complexity Visuals: Ternary Decision Tree
+How to Draw BF: Draw the root array. Branch out into 3 child nodes for each possible operation. Label as $O(3^N)$.
+Optimised Pattern: Interval DP (Top-Down Memoization)
+Opt Vis. Technique: Recursive Cache Matrix
+Dry Run (Opt): Fix the score based on the first operation (only 3 possible scores). For each score, use dp(i, j) to find the max operations in the range [i, j].
+How to Draw (Opt): Draw a 2D grid where axes are start_index and end_index. Color cells as they are calculated to show overlapping subproblems being solved once.
+Opt Complexity Visuals: $O(N^2)$ State Space
+How to Draw Opt Complexity: Draw a triangle (half-matrix). Label the axes and show that we visit at most N^2 states for each of the 3 possible scores.
+Mem Vis (BF): Deep recursive stack with redundant recalculations of the same array segments.
+Mem Vis (Opt): A 2D memo[N][N] table storing the max operations for each range.

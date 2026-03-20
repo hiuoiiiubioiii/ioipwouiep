@@ -1,0 +1,13 @@
+ID: 1102
+Problem Title: Path With Maximum Minimum Value
+Brute Force Method: Use DFS to find all possible paths from (0,0) to (R-1, C-1). For each path, find the minimum value. Return the maximum of these minimums.
+BF Complexity Visuals: A blind explorer trying every path, recording the "scariest" point of each.
+How to Draw BF: Grid: [[5,4,5], [1,2,6]]. Paths: (5-4-5-6, min=4), (5-1-2-6, min=1). Max min is 4. Write $O(4^(R\cdot C)$).
+Optimised Pattern: Greedy (Priority Queue / BFS) or Binary Search + DFS.
+Opt Vis. Technique: A "Dijkstra-style" Flood. We always expand the neighbor with the highest value to keep our minimum as high as possible.
+Dry Run (Opt): Use a Max-Heap. Push (value, r, c). Pop the largest value. Its value is the "bottleneck" so far. Update global min. Add unvisited neighbors to heap. Stop when target is reached.
+How to Draw (Opt): Draw the grid. Use a side-list called "Options (Heap)". Pick the largest number from the list, mark it on the grid, add its neighbors to the list. Keep track of the lowest number you've picked.
+Opt Complexity Visuals: Best-first search covering each cell once.
+How to Draw Opt Complexity: Draw a grid with a path being built by picking the "best" available cell. Write Time: $O(R\cdot C \log(R\cdot C)$).
+Mem Vis (BF): Exponential recursion stack.
+Mem Vis (Opt): A Max-Heap and a visited matrix. $O(R\cdot C)$ space.

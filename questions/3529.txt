@@ -1,0 +1,13 @@
+ID: 3529
+Problem Title: Count Cells in Overlapping Horizontal and Vertical Substrings (Med)
+Brute Force Method: Check every single cell in the grid against all horizontal and vertical constraints.
+BF Complexity Visuals: Grid Cell-by-Cell Scanning.
+How to Draw BF: Draw an N x M grid. For every cell, draw a horizontal line and a vertical line checking boundary conditions. $O(N \cdot M \cdot K)$.
+Optimised Pattern: Line Sweep / Prefix Sums / 2D Difference Arrays.
+Opt Vis. Technique: Orthogonal Shadow Intersections.
+Dry Run (Opt): Find valid horizontal ranges, project them as vertical bands. Find valid vertical ranges, project as horizontal bands.
+How to Draw (Opt): Draw a grid. Lightly shade valid horizontal rows blue. Lightly shade valid vertical columns yellow. Count the green overlapping squares.
+Opt Complexity Visuals: Independent 1D Array Scans.
+How to Draw Opt Complexity: Draw an array of size N and an array of size M. $O(N + M)$ logic instead of nested $O(N \cdot M)$.
+Mem Vis (BF): Multiple Boolean Grids: Draw several N x M grids overlaid, wasting memory on binary states.
+Mem Vis (Opt): Two 1D Prefix Arrays: Draw just two single-row arrays (Row bounds, Col bounds) tracking coordinate limits.

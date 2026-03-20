@@ -1,0 +1,13 @@
+ID: 3569
+Problem Title: Maximize Count of Distinct Primes After Split (Hard)
+Brute Force Method: Try every possible split point in the array. For each split, find all prime factors for both halves and count the total distinct ones.
+BF Complexity Visuals: Full Sub-array Factorization.
+How to Draw BF: Draw the array. Draw a vertical line at every gap. For each gap, redraw the left/right parts and list all their prime factors. $O(N^2 \cdot √V)$.
+Optimised Pattern: Sieve of Eratosthenes + Prefix Prime Frequencies.
+Opt Vis. Technique: Prime Contribution Tracker.
+Dry Run (Opt): Precompute prime factors for each number. Build a prefix sum array for the counts of each distinct prime. Calculate "split" counts in $O(1)$.
+How to Draw (Opt): Draw a table where columns are primes and rows are array indices. Fill with prefix counts. At any split, subtract Pref[i] from Pref[N].
+Opt Complexity Visuals: $O(N \\text{cdot omega}(V)$) where omega is max prime factors.
+How to Draw Opt Complexity: Draw a single scan of the array. Highlight the constant-time difference calculation at each split point.
+Mem Vis (BF): Prime Factor Sets: Draw memory-intensive sets for every possible sub-array slice.
+Mem Vis (Opt): Prefix Count Matrix: Draw a compact 2D array (Size N x UniquePrimes) storing frequency trends.

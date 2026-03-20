@@ -1,0 +1,13 @@
+ID: 1179
+Problem Title: Reformat Department Table
+Brute Force Method: Use 12 separate `SELECT` statements with `UNION` or manual loops in the application layer to pivot the data.
+BF Complexity Visuals: Vertical-to-Horizontal Splice
+How to Draw BF: Draw a long vertical list of rows. Show the difficulty in manual reorganization into columns.
+Optimised Pattern: Conditional Aggregation (SUM + CASE)
+Opt Vis. Technique: Pivot Matrix Projection
+Dry Run (Opt): `GROUP BY id`. For each month column, use `SUM(CASE WHEN month = 'Jan' THEN revenue ELSE NULL END)`. The grouping collapses the rows into one.
+How to Draw (Opt): Draw a vertical table. Draw 12 funnels labeled by Month. Rows drop into the funnels. If a row is "Jan", it goes to the Jan column, otherwise it drops through as NULL.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass through the table. Each row is assigned to its horizontal slot instantly.
+Mem Vis (BF): Application list processing
+Mem Vis (Opt): Database Hash Aggregation.

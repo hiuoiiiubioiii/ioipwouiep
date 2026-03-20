@@ -1,0 +1,13 @@
+ID: 3462
+Problem Title: Maximum Sum With at Most K Elements
+Brute Force Method: Sort the entire grid of N x M elements and pick the top K, ignoring row limits. $O(\text{NM} \\text{log NM})$
+BF Complexity Visuals: Global Sorting Block.
+How to Draw BF: Draw all matrix elements in a single long list. Draw a giant "Sort" funnel that outputs them in descending order.
+Optimised Pattern: Row Sorting + Global Priority Queue. $O(N \cdot M \log M + \text{NM} \log K)$
+Opt Vis. Technique: Bucket Filter followed by Min-Heap.
+Dry Run (Opt): Sort each row (M log M). Take the largest `limits[i]` from each row. Push all these candidates into a Max-Heap and pop K times.
+How to Draw (Opt): Draw each row. Circle the largest elements (up to limit). Draw an arrow from each circled number into a central "K-Bucket."
+Opt Complexity Visuals: N sorting trees + 1 Heap tree.
+How to Draw Opt Complexity: Draw N small sort boxes (each M log M) feeding into a single heap structure of size K.
+Mem Vis (BF): Large auxiliary array to store and sort NM elements.
+Mem Vis (Opt): Fixed-size priority queue of size K and in-place row sorting.

@@ -1,0 +1,13 @@
+ID: 2332
+Problem Title: The Latest Time to Catch a Bus
+Brute Force Method: Simulate every single possible minute from 1 up to the last bus departure, running a boarding simulation for every minute to see if you successfully get on.
+BF Complexity Visuals: Massive Timeline Iteration (O(Max_Time * N))
+How to Draw BF: Draw a massive number line starting at 0 and ending at millions. Tick every single number to check if it's a valid arrival time.
+Optimised Pattern: Sorting + Two Pointers + Backtracking
+Opt Vis. Technique: Zipped Boarding &amp; Step-Back
+Dry Run (Opt): Sort buses and passengers. Use pointers to load passengers onto buses up to capacity. Find the arrival time of the last boarded passenger (or the bus departure time if not full). Step backward by 1 minute until you find a time no other passenger arrived.
+How to Draw (Opt): Draw a timeline. Draw square boxes (buses) at specific times. Draw dots (passengers) at their times. Draw arrows putting dots into boxes until full. Find the last dot/box, and draw an arrow stepping leftwards finding the first empty space.
+Opt Complexity Visuals: Sorting Funnel + Two Scans (O(N log N + M log M))
+How to Draw Opt Complexity: Draw two wide funnels (sorting), then a straight timeline where two arrows advance together, stopping at the end to make one small jump backwards.
+Mem Vis (BF): Draw a large redundant Array keeping track of every simulated minute.
+Mem Vis (Opt): Draw two sorted 1D Arrays in place, plus a few Integer pointers (`bus_idx`, `pass_idx`, `capacity_left`).

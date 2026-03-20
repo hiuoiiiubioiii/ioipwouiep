@@ -1,0 +1,13 @@
+ID: 246
+Problem Title: Strobogrammatic Number
+Brute Force Method: Reverse the string, replace characters manually with their rotated versions, and compare with original.
+BF Complexity Visuals: String Copy &amp; Flip: $O(N)$.
+How to Draw BF: Draw the string. Below it, draw its reverse. Shade the memory block used to store the second string.
+Optimised Pattern: Two Pointers + Mirror Map
+Opt Vis. Technique: Symmetry Check Mirror
+Dry Run (Opt): Place pointers at both ends. Check if the pair (left, right) exists in a valid "rotation map" (e.g., 6-9, 8-8). Move inward.
+How to Draw (Opt): Draw the number. Draw two arrows pointing at opposite ends. Connect them with a line if they "match" rotated, then move arrows in.
+Opt Complexity Visuals: Single Linear Pass: $O(N)$.
+How to Draw Opt Complexity: Draw one straight line above the number string, showing only half the string needs to be traversed (N/2).
+Mem Vis (BF): Full String Reversal: $O(N)$ extra space.
+Mem Vis (Opt): Static Map + Pointers: $O(1)$ extra space beyond input. Draw a tiny 5-entry table (0,1,6,8,9).

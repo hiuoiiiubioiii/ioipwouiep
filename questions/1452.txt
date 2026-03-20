@@ -1,0 +1,13 @@
+ID: 1452
+Problem Title: People Whose List of Favorite Companies Is Not a Subset of Another List
+Brute Force Method: For every person `i`, compare their list with every other person `j`. Check if `list[i]` is a subset of `list[j]` by nested looping through elements.
+BF Complexity Visuals: Quadratic Subset Intersection
+How to Draw BF: Draw N nodes. For each pair, draw an intersection diagram. Label $O(N² \cdot M)$ where M is avg list size.
+Optimised Pattern: Bitmasking / Set Hashing
+Opt Vis. Technique: ID-Based Set Containment
+Dry Run (Opt): Map every unique company name to an ID. Convert each person's list into a Set of IDs. For person `i`, only compare with people who have a larger list. Use `set.containsAll()`.
+How to Draw (Opt): Draw a Master Index of company names. For each person, draw a "Punch Card" with holes at the company IDs. Stack one card over another; if all holes are covered, it's a subset.
+Opt Complexity Visuals: Pruned Comparisons
+How to Draw Opt Complexity: Draw a loop of N. Inside, a comparison of Sets. Total $O(N² \cdot M)$ but with high constant-factor improvement.
+Mem Vis (BF): Repeated String Re-parsing
+Mem Vis (Opt): A List of HashSets (Integer IDs). Space $O(\text{Unique Companies} + N\cdot M)$.

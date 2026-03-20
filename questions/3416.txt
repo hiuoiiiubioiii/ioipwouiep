@@ -1,0 +1,13 @@
+ID: 3416
+Problem Title: Subsequences with a Unique Middle Mode II
+Brute Force Method: Same as 3395 but with larger constraints. $O(N^5)$ is mathematically impossible to run.
+BF Complexity Visuals: Combinatorial Nightmare
+How to Draw BF: (See 3395)
+Optimised Pattern: Advanced Combinatorics + Inclusion-Exclusion
+Opt Vis. Technique: The Math-Driven Pivot
+Dry Run (Opt): Instead of checking all pairs, calculate the *total* possible valid prefixes/suffixes for a locked middle element, and strictly subtract the exact invalid patterns (where another number appears 2 or 3 times in the subsequence of 5) using precomputed frequency maps.
+How to Draw (Opt): Lock the middle element. Calculate total ways to pick 2 from the left and 2 from the right. Subtract the specific subsets where a competing number out-frequencies your locked middle.
+Opt Complexity Visuals: Linear Scan with Constant Math $O(N)$
+How to Draw Opt Complexity: Draw a timeline. The math calculations inside the loop are $O(1)$ combinations based on tracked frequencies.
+Mem Vis (BF): Memory crash.
+Mem Vis (Opt): Frequency tracking maps. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 3870
+Problem Title: Count Commas in Range (Easy)
+Brute Force Method: Iteration: For every number from 1 to N, convert it to a string, find how many commas it would have (every 3 digits), and sum them.
+BF Complexity Visuals: A loop converting millions of integers to strings.
+How to Draw BF: Check 1 (0), 1000 (1), 1000000 (2). Sum them up one by one. Write $O(N \cdot \log  N)$.
+Optimised Pattern: Mathematical Range Summation.
+Opt Vis. Technique: A "Block-Counting" approach that calculates how many numbers fall into 4-6 digits, 7-9 digits, etc.
+Dry Run (Opt): 1. Numbers 1-999 have 0 commas. 2. Numbers 1,000-999,999 have 1 comma. 3. Count numbers in each power-of-1000 range: `total = sum(count_in_range * commas_for_range)`.
+How to Draw (Opt): Draw a number line with markers at 1,000, 1,000,000, and 1,000,000,000. Calculate the "width" of the segments between markers. Multiply width by the number of commas for that segment.
+Opt Complexity Visuals: Constant time or $O(\log  N)$.
+How to Draw Opt Complexity: Draw 5 power-of-10 boxes. Write "O(1) Math" for each. Total: $O(1)$.
+Mem Vis (BF): $O(N \cdot \log  N)$ space for string conversions.
+Mem Vis (Opt): $O(1)$ memory. Just a few `long long` variables.

@@ -1,0 +1,13 @@
+ID: 1955
+Problem Title: Count Number of Special Subsequences
+Brute Force Method: Generate every possible subsequence (2^N) and check if it follows the pattern 0...01...12...2.
+BF Complexity Visuals: Exponential Subsequence Tree
+How to Draw BF: Draw an array. Branch out "Pick/Don't Pick" for every element. Filter the 2^N results. $O(2^N)$.
+Optimised Pattern: Dynamic Programming (3-State Machine)
+Opt Vis. Technique: State Transition Flowchart
+Dry Run (Opt): Maintain three counts: `dp[0]` (subsequences ending in 0), `dp[1]` (ending in 1), `dp[2]` (ending in 2). Update based on the current number.
+How to Draw (Opt): Draw three boxes: [0], [1], [2]. If current is '1', draw arrows showing it can append to a [0] or another [1], doubling the ways.
+Opt Complexity Visuals: Linear Scan DP
+How to Draw Opt Complexity: Draw an arrow moving across the array. Below each step, update the 3 DP variables. $O(N)$ time.
+Mem Vis (BF): Storing every subsequence string to validate the pattern.
+Mem Vis (Opt): An array of 3 integers (or 3 variables) to store the counts. $O(1)$ extra space.

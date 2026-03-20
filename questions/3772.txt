@@ -1,0 +1,13 @@
+ID: 3772
+Problem Title: Maximum Subgraph Score in a Tree (Hard)
+Brute Force Method: Try every possible subset of nodes. Check if they form a connected component (subgraph). If yes, calculate the sum and find the max. $O(2^N \cdot N)$.
+BF Complexity Visuals: Connected Component Power Set.
+How to Draw BF: Draw a tree. Circle every possible connected group of nodes. Sum the values in each circle and find the highest number.
+Optimised Pattern: Tree Dynamic Programming (Kadane's on Trees)
+Opt Vis. Technique: Subtree Sum Propagation
+Dry Run (Opt): For each node, calculate the maximum score of a subtree rooted at that node that *must* include the node. dp[u] = val[u] + sum(max(0, dp[v])) for all children v.
+How to Draw (Opt): Draw a tree. Start at the leaves. If a leaf is positive, "send" its value up to its parent. If negative, send 0. The parent adds its own value to the incoming sums.
+Opt Complexity Visuals: $O(N)$ single DFS traversal.
+How to Draw Opt Complexity: Draw a tree with upward-pointing arrows from children to parents, showing values aggregating at each node.
+Mem Vis (BF): $O(2^N)$ state storage.
+Mem Vis (Opt): Recursive stack (Depth of tree) + 1D DP array.

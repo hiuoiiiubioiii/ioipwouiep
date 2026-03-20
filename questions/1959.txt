@@ -1,0 +1,13 @@
+ID: 1959
+Problem Title: Minimum Total Space Wasted With K Resizing Operations
+Brute Force Method: Try resizing at every possible index and for every possible count up to K using recursion.
+BF Complexity Visuals: Recursive Branching (Partitioning)
+How to Draw BF: Draw an array. Branch into "Resize here" or "Don't resize". Tree depth = N, K limits branches. $O(N^K)$.
+Optimised Pattern: DP with Interval Precomputation
+Opt Vis. Technique: Partitioning State Matrix
+Dry Run (Opt): `dp[i][k]` is min waste for first `i` elements with `k` resizes. Precompute max element in any range `[j, i]` to find waste.
+How to Draw (Opt): Draw a 2D table (Index i vs. Resizes k). For a cell, look at all previous indices `j` and calculate waste based on the max value in range `[j, i]`.
+Opt Complexity Visuals: $O(N^2 \cdot K)$ DP Table
+How to Draw Opt Complexity: Draw a 2D grid of size N x K. Indicate each cell takes $O(N)$ time to compute by scanning previous row.
+Mem Vis (BF): Exponential recursion stack tracking every partition combination.
+Mem Vis (Opt): A 2D array `dp[N][K]` and potentially a precomputed 2D `max_range[N][N]` table. $O(N^2)$ space.

@@ -1,0 +1,13 @@
+ID: 1021
+Problem Title: Remove Outermost Parentheses
+Brute Force Method: Find matching pairs by keeping a counter. Slice the string into valid primitive substrings. Then loop through each substring, remove the first and last character, and concatenate them.
+BF Complexity Visuals: Slicing a string into physical blocks, surgically removing the ends of each block, and gluing them back together.
+How to Draw BF: Write the string. Draw vertical lines separating valid blocks `()()`. Cross out the first and last char of each block. Rewrite the remaining chars. Write $O(N^2)$ for string slicing.
+Optimised Pattern: State Tracking (Depth Counter).
+Opt Vis. Technique: An elevation map. We only keep parentheses that are strictly "above sea level" (depth &gt; 0). The ones at sea level (depth 0) are stripped away.
+Dry Run (Opt): Keep a depth counter. If you see '(', check if depth &gt; 0. If yes, it's inner, so keep it. Then increase depth. If you see ')', decrease depth first. If depth &gt; 0, keep it.
+How to Draw (Opt): Write the string. Under each bracket, write the 'depth' count before processing for '(', and after processing for ')'. Circle any number &gt; 0. These are the characters you keep.
+Opt Complexity Visuals: A single left-to-right pass building a new string.
+How to Draw Opt Complexity: Draw a string with a single arrow sweeping right. Write Time: $O(N)$.
+Mem Vis (BF): Multiple substring arrays being created and destroyed. $O(N)$ temporary space footprint.
+Mem Vis (Opt): A single array/StringBuilder growing exactly to the final size. $O(N)$ space.

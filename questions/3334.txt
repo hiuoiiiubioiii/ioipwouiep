@@ -1,0 +1,13 @@
+ID: 3334
+Problem Title: Find the Maximum Factor Score of Array
+Brute Force Method: For every element, remove it, loop through the rest to find the GCD, loop again for LCM. $O(N^2)$.
+BF Complexity Visuals: Quadratic GCD/LCM Scanning
+How to Draw BF: Draw the array. Remove index 0, scan the rest. Remove index 1, scan the rest.
+Optimised Pattern: Prefix &amp; Suffix Arrays
+Opt Vis. Technique: The Precomputed Bounds
+Dry Run (Opt): Precompute Prefix GCD/LCM and Suffix GCD/LCM arrays. To find the score without `nums[i]`, just combine `Prefix[i-1]` and `Suffix[i+1]` in $O(1)$ time.
+How to Draw (Opt): Draw the array. Draw a row above it accumulating GCD left-to-right. Draw a row below accumulating right-to-left. To "delete" index 2, just combine the box at top-index 1 and bottom-index 3.
+Opt Complexity Visuals: Three Linear Passes $O(N)$
+How to Draw Opt Complexity: Draw three parallel horizontal lines. Two for precomputation, one for the final check.
+Mem Vis (BF): Recalculating math functions infinitely.
+Mem Vis (Opt): Four arrays of size N (Pref/Suff for GCD/LCM). $O(N)$ space.

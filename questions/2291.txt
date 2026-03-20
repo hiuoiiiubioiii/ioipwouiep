@@ -1,0 +1,13 @@
+ID: 2291
+Problem Title: Maximum Profit From Trading Stocks
+Brute Force Method: Backtracking / SubsetsFor every stock, try either buying it or skipping it. Check all combinations that fit within the `budget` and calculate the total profit.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a root node. For Stock 1, branch into "Buy" and "Skip". Repeat for Stock 2. Note the $O(2^N)$ paths. Show how many branches are pruned when the budget is exceeded.
+Optimised Pattern: 1D Dynamic Programming (Knapsack)
+Opt Vis. Technique: Budget-Space Optimization
+Dry Run (Opt): This is a 0/1 Knapsack problem. Create a `dp` array where `dp[i]` is the max profit for budget `i`. For each stock, iterate the budget *backwards* from `maxBudget` to `cost` to update the profit.
+How to Draw (Opt): Draw a 1D array representing budget levels. For a stock with cost 5 and profit 10, show the values in the array from index 5 to Max shifting upwards as the new profit is added.
+Opt Complexity Visuals: DP Matrix Fill Pass
+How to Draw Opt Complexity: Draw an $O(N)$ loop for stocks and an $O(B)$ loop for budget. Label it $O(N \cdot B)$. Show how the 1D array allows us to save space compared to a 2D table.
+Mem Vis (BF): Massive recursion stack and memory for every valid purchase combination.
+Mem Vis (Opt): A 1D integer array of size `budget + 1` (O(B) space).

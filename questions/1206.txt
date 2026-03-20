@@ -1,0 +1,13 @@
+ID: 1206
+Problem Title: Design Skiplist
+Brute Force Method: Use a standard singly Linked List. To search, insert, or delete, traverse the list from the very head node one-by-one until you find the target or insertion point.
+BF Complexity Visuals: Endless Train Cars
+How to Draw BF: Draw a long row of square boxes connected by single arrows pointing right. Trace a path from the first box all the way to the middle, writing $O(N)$ to show the linear distance traveled.
+Optimised Pattern: Probabilistic Multi-Level Linked List
+Opt Vis. Technique: Express Lanes on a Highway
+Dry Run (Opt): Imagine a highway. Level 0 is local traffic (all nodes). Level 1 is an express lane skipping some nodes. Level 2 skips even more. To find a number, start at the highest express lane. Drive until you overshoot, then drop down a level. Repeat until you reach Level 0.
+How to Draw (Opt): Draw 3-4 horizontal lines representing levels. Draw circles on the bottom line (Level 0). Flip a coin for each circle to see if it grows a circle directly above it on Level 1. Draw horizontal arrows between circles on the same level, and vertical drop-down arrows. Trace a "staircase" path down and right.
+Opt Complexity Visuals: Logarithmic Depth Grid
+How to Draw Opt Complexity: Draw a pyramid of nodes where each layer has roughly half the nodes of the layer below it. Draw a path snaking down. Write $O(\log N)$ representing the height of the level-stack.
+Mem Vis (BF): Draw a single array of pointers: `Node next`.
+Mem Vis (Opt): Draw a single Node object containing an array or vector of pointers: `Node* forward[]`. The length of this array varies randomly per node, representing $O(N)$ total space distributed log-normally.

@@ -1,0 +1,13 @@
+ID: 3554
+Problem Title: Find Category Recommendation Pairs (Hard)
+Brute Force Method: Double loop through all users and categories to find shared interests and calculate correlation scores.
+BF Complexity Visuals: User-Category Matrix Scan.
+How to Draw BF: Draw a Users x Categories table. For every pair of categories, scan all users to count commonalities. $O(C^2 \cdot U)$.
+Optimised Pattern: Inverted Index + Bitsets / Matrix Multiplication.
+Opt Vis. Technique: Bitwise Overlap (AND operation).
+Dry Run (Opt): Represent each category as a bitmask where the i-th bit is 1 if User i likes it. The common count for Cat A and B is `popcount(BitmaskA &amp; BitmaskB)`.
+How to Draw (Opt): Draw two long binary strings (0101...). Draw a vertical line matching the 1s. Count how many times both strings have a 1 at the same position.
+Opt Complexity Visuals: $O(C^2 \cdot U / \text{WordSize})$.
+How to Draw Opt Complexity: Draw a grid of category pairs. Highlight a single bitwise AND operation (very fast) for each cell.
+Mem Vis (BF): Nested Maps/Lists: Draw hundreds of user-interest objects scattered across heap memory.
+Mem Vis (Opt): Compressed Bitsets: Draw a small number of long, dense bitset blocks (64 bits per word).

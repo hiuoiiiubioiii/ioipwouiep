@@ -1,0 +1,13 @@
+ID: 1115
+Problem Title: Print FooBar Alternately
+Brute Force Method: `Thread.sleep()` guesswork or busy waiting with a single `isFooTurn` variable. Leads to race conditions or CPU burning.
+BF Complexity Visuals: Ping-Pong with Dropped Balls
+How to Draw BF: Draw two loops constantly checking `if (turn == 1)`. Show execution overlapping chaotically.
+Optimised Pattern: Concurrency: Two Alternating Semaphores
+Opt Vis. Technique: Alternating Traffic Lights
+Dry Run (Opt): Initialize `fooSem = 1`, `barSem = 0`. Foo thread acquires `fooSem`, prints, releases `barSem`. Bar thread acquires `barSem`, prints, releases `fooSem`.
+How to Draw (Opt): Draw two columns (Foo and Bar). Draw an arrow zigzagging between them, passing a single "token" back and forth N times.
+Opt Complexity Visuals: Cyclic Graph
+How to Draw Opt Complexity: Draw a circle with two states (Foo State rightarrow Bar State rightarrow Foo State). $O(N)$ total time.
+Mem Vis (BF): Memory Contention / Cache Bouncing
+Mem Vis (Opt): Two Semaphore objects with distinct signal wait lists.

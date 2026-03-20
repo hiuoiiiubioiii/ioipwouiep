@@ -1,0 +1,13 @@
+ID: 1524
+Problem Title: Number of Sub-arrays With Odd Sum
+Brute Force Method: Nested loops to generate every subarray, computing the sum for each and checking if it's odd. $O(N^2)$ or $O(N^3)$.
+BF Complexity Visuals: Redundant Summation Brackets
+How to Draw BF: Draw an array. Draw overlapping brackets. Inside each bracket, draw a mini-calculator constantly re-adding the same numbers together.
+Optimised Pattern: Prefix Sum + Math (Parity)
+Opt Vis. Technique: Even/Odd State Toggling
+Dry Run (Opt): Keep a running total (Prefix Sum). If the current sum is Even, you can form an odd subarray by subtracting a previous Odd prefix. If the current sum is Odd, subtract a previous Even prefix. Track the counts of Even and Odd prefixes seen so far.
+How to Draw (Opt): Draw an array. Below it, draw two buckets labeled "Even Prefixes" and "Odd Prefixes" (Even starts at 1). As you scan the array, add the current number to your total. If the total is odd, pour the "Even" bucket into your answer, then add a tally to the "Odd" bucket.
+Opt Complexity Visuals: Linear Parity Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line crossing the array. Above the line, draw a toggle switch flipping between "E" and "O" as the sum grows.
+Mem Vis (BF): Allocated arrays to hold every subarray sum. $O(N^2)$.
+Mem Vis (Opt): Two integer variables: `even_count` and `odd_count`. $O(1)$ space.

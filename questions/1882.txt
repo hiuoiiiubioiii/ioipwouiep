@@ -1,0 +1,13 @@
+ID: 1882
+Problem Title: Process Tasks Using Servers
+Brute Force Method: For every second, iterate through all servers to find the best available one and update busy servers' timers.
+BF Complexity Visuals: Timeline with nested $O(S)$ server scan.
+How to Draw BF: Draw a timeline. At each t, draw a loop scanning a box of S servers. Mark $O(T \\text{times} S)$.
+Optimised Pattern: Two Priority Queues (Available Heap, Busy Heap).
+Opt Vis. Technique: Dual-Heap state transfer.
+Dry Run (Opt): 1. Move servers from Busy to Available if `time &gt;= finishTime`. 2. Pick top of Available. 3. Push to Busy with updated `finishTime`.
+How to Draw (Opt): Draw two triangles. Label one "Free" (sorted by weight/ID) and one "Busy" (sorted by time). Draw arrows showing servers "jumping" between triangles as time moves.
+Opt Complexity Visuals: $O((T + S)$ \log S).
+How to Draw Opt Complexity: Draw $O(\log S)$ paths for heap operations along a timeline of T tasks.
+Mem Vis (BF): List/Array of all server states refreshed every second.
+Mem Vis (Opt): Two array-backed binary heaps in memory.

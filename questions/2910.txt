@@ -1,0 +1,13 @@
+ID: 2910
+Problem Title: Minimum Number of Groups to Create a Valid Assignment
+Brute Force Method: Try dividing the array into group sizes 1, then 2, then 3... up to N, validating frequencies each time.
+BF Complexity Visuals: Iterative Division Blocks
+How to Draw BF: Draw the whole array. Under it, draw it split into 1s, then 2s, etc., representing N iterations over N items (O(N^2)).
+Optimised Pattern: Hash Map Frequencies + Greedy Math Downward Search
+Opt Vis. Technique: Histogram Frequency Buckets
+Dry Run (Opt): Count frequencies. Find the smallest frequency `min_f`. Try group sizes `s` from `min_f` down to 1. Use division/modulo to verify valid groupings.
+How to Draw (Opt): Draw a bar chart of frequencies. Draw a horizontal line `s` moving down from the shortest bar. Calculate splits above the line.
+Opt Complexity Visuals: Shrinking Range Search
+How to Draw Opt Complexity: Draw a line of length N (counting). Then a short line of length min_freq. T(N) = $O(N)$ + $O(\text{min}_\text{freq} \\text{cdot unique}_\text{nums})$ ≈ $O(N)$.
+Mem Vis (BF): Multiple temporary arrays to hold partitioned elements. Space $O(N)$.
+Mem Vis (Opt): Key-Value Map visual: Draw a two-column table (Number -&gt; Frequency). Space $O(\text{Unique Numbers})$.

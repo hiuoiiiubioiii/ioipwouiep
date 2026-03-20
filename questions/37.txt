@@ -1,0 +1,13 @@
+ID: 37
+Problem Title: Sudoku Solver
+Brute Force Method: Generate All Grids Fill every empty cell with every possible combination of numbers 1-9, generating 9^(empty cells) boards, then check which one is valid.
+BF Complexity Visuals: The Universe Exploder
+How to Draw BF: Draw a blank Sudoku board. Draw 9 arrows splitting off the first empty cell, then 9 off each of those. The visual should look like an impossibly massive, chaotic web.
+Optimised Pattern: Backtracking (DFS)
+Opt Vis. Technique: The Dead-End Reverser
+Dry Run (Opt): Find an empty cell. Try placing 1-9. If a number is valid (using Valid Sudoku logic), place it and recursively call the solver for the next cell. If you hit a wall, erase the number (backtrack) and try the next one.
+How to Draw (Opt): Draw a mini 3x3 grid. Write a '2'. Draw an arrow to the next cell, write '5'. Hit a wall. Erase '5', write '6'. Erase '6', write '7'. Draw the "erase and rewrite" motion heavily.
+Opt Complexity Visuals: Pruned Decision Tree
+How to Draw Opt Complexity: Draw a tree branching out 9 ways. But heavily cross out branches almost immediately as they break Sudoku rules. Time is $O(9^M)$ where M is empty cells, but vastly smaller in practice.
+Mem Vis (BF): Millions of full 9x9 boards held in memory simultaneously.
+Mem Vis (Opt): Draw the original 9x9 board modifying in-place, plus a recursion stack depth of up to 81. Space is $O(1)$ (or $O(81)$ stack frames).

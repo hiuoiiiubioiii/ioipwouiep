@@ -1,0 +1,13 @@
+ID: 2655
+Problem Title: Find Maximal Uncovered Ranges
+Brute Force Method: Create a boolean array of size N, mark all intervals, then scan for False values.
+BF Complexity Visuals: Boolean Coverage Map
+How to Draw BF: Draw a giant array of bits. Color segments based on intervals. Scan for white gaps. $O(N + \text{Intervals})$. Fail if N is very large.
+Optimised Pattern: Sorting + Merging Intervals
+Opt Vis. Technique: Timeline Gap Analysis
+Dry Run (Opt): Sort ranges by start time. Merge overlapping ranges. The gaps between the merged ranges (and at the boundaries 0 and N-1) are your uncovered ranges.
+How to Draw (Opt): Draw a line 0 to N. Draw intervals as bars above the line. "Squash" overlapping bars together. Draw circles in the empty spaces on the line.
+Opt Complexity Visuals: $O(M \log M)$ Sort and Merge
+How to Draw Opt Complexity: Draw a sorting block $O(M \log M)$ for M intervals, followed by a single $O(M)$ pass to find gaps.
+Mem Vis (BF): $O(N)$ Boolean array
+Mem Vis (Opt): $O(M)$ space to store the intervals and the result list.

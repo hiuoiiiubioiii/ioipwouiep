@@ -1,0 +1,13 @@
+ID: 153
+Problem Title: Find Minimum in Rotated Sorted Array
+Brute Force Method: Linear scan through the array to find the point where the value decreases, or simply finding the overall minimum.
+BF Complexity Visuals: A single $O(N)$ line scanning every element from left to right.
+How to Draw BF: Draw the rotated array. Draw a finger moving through every box until it hits the smallest number.
+Optimised Pattern: Binary Search (O(log N)).
+Opt Vis. Technique: A "Mountain Peak" detection. In a rotated array, you are looking for the "inflection point" where the sorted order breaks.
+Dry Run (Opt): Set low, high. If nums[mid] &gt; nums[high], the min is in the right half. Otherwise, it's in the left (including mid).
+How to Draw (Opt): Draw two sorted lines shifted. Mark 'L', 'M', 'H'. Show how comparing 'M' to 'H' tells you which "slope" the minimum is on.
+Opt Complexity Visuals: Logarithmic $O(\log N)$ tree depth. The search space is halved at every step.
+How to Draw Opt Complexity: Draw a binary tree structure. Shade only one path from the root to a leaf, showing that only log N elements are touched.
+Mem Vis (BF): N/A (Constant space for iteration).
+Mem Vis (Opt): Visualize two pointers (low, high) moving towards each other in $O(1)$ stack space.

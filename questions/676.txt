@@ -1,0 +1,13 @@
+ID: 676
+Problem Title: Implement Magic Dictionary
+Brute Force Method: Store all words in a list. For a search word, iterate through the list and compare character-by-character, checking if exactly one character differs.
+BF Complexity Visuals: Exhaustive String Comparison.
+How to Draw BF: Draw a word "hello". Draw a list of 100 words. Draw a line from "hello" to every word, checking every letter. Write $O(N \cdot L)$.
+Optimised Pattern: Trie with DFS / Generalized Neighbors.
+Opt Vis. Technique: Branching Search with "One-Mistake" tolerance.
+Dry Run (Opt): Build a Trie. For a search, traverse the Trie. At each level, you have a "magic coupon." You can use it to jump to a wrong character once. If you reach a leaf after using the coupon, return true.
+How to Draw (Opt): Draw a Trie. Trace a path. At one node, branch out to a "wrong" letter and continue. If the new path ends in a terminal node, it's a match.
+Opt Complexity Visuals: $O(L^2)$ per search or Trie traversal.
+How to Draw Opt Complexity: Draw a Trie path with one "detour" arrow. Write $O(L^2)$ or $O(\text{Alphabet} \cdot L)$.
+Mem Vis (BF): Draw a flat list of strings.
+Mem Vis (Opt): Draw a Trie where common prefixes share memory. $O(\text{Total Characters})$.

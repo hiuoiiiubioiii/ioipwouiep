@@ -1,0 +1,13 @@
+ID: 334
+Problem Title: Increasing Triplet Subsequence
+Brute Force Method: Triple nested loop: `for i, for j &gt; i, for k &gt; j`. Check if `nums[i] &lt; nums[j] &lt; nums[k]`.
+BF Complexity Visuals: Triangular Cubic Volume
+How to Draw BF: Draw an array. Draw three pointers i, j, k. Show k moving across the whole array for every j, and j moving for every i. $O(N^3)$.
+Optimised Pattern: Greedy Candidate Maintenance (Two-Variable Sweep)
+Opt Vis. Technique: Low-Water Mark Tracking
+Dry Run (Opt): Keep two variables: `first` (the smallest seen) and `second` (the smallest number &gt; `first`). If you find a number `third` &gt; `second`, you found your triplet.
+How to Draw (Opt): Draw two boxes labeled `Small` and `Mid`. Write \infty in both. As you scan the array, update the boxes. If you hit a number that fits nowhere, "winner" flag is raised.
+Opt Complexity Visuals: Linear Progression Line
+How to Draw Opt Complexity: Draw a horizontal line with a single pointer moving from left to right. Label it $O(N)$.
+Mem Vis (BF): Zero memory; constant variables.
+Mem Vis (Opt): Two integer boxes. Draw them side-by-side. $O(1)$.

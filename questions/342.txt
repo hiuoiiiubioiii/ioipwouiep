@@ -1,0 +1,13 @@
+ID: 342
+Problem Title: Power of Four
+Brute Force Method: Repeatedly divide the number by 4 as long as the remainder is 0. If you reach 1, it's a power of four.
+BF Complexity Visuals: Iterative Reduction Tape
+How to Draw BF: Draw a box with n. Draw a loop arrow dividing by 4 until it hits 1 or fails. $O(\log₄ N)$.
+Optimised Pattern: Bit Manipulation + Masking
+Opt Vis. Technique: Bitwise Position Filter
+Dry Run (Opt): A power of four must: 1. Be a power of two (n \&amp; (n-1) == 0). 2. The only set bit must be at an even position (use mask `0x55555555`).
+How to Draw (Opt): Draw a 32-bit binary string. Highlight positions 0, 2, 4, etc. Draw an AND operation with the input bit to show if the "1" falls in a valid slot.
+Opt Complexity Visuals: Constant-Time Bit Logic
+How to Draw Opt Complexity: Draw three logic gates (AND, NOT, comparison) connected in series. No loops. $O(1)$.
+Mem Vis (BF): A single integer variable box.
+Mem Vis (Opt): Zero extra memory. Draw one input box n. $O(1)$.

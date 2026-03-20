@@ -1,0 +1,13 @@
+ID: 2193
+Problem Title: Minimum Number of Moves to Make Palindrome
+Brute Force Method: Generate all permutations of the string and find the one that is a palindrome with the minimum swap distance.
+BF Complexity Visuals: Factorial search space of character arrangements.
+How to Draw BF: Draw 'aabb'. List all 24 permutations. Calculate swap distance to 'abba', 'baab'. $O(N!)$.
+Optimised Pattern: Greedy (Two Pointers).
+Opt Vis. Technique: A pair of bookends moving toward the center, fixing one letter at a time.
+Dry Run (Opt): Place pointer `L` at start, `R` at end. For `s[L]`, find the rightmost match `s[k]`. Swap `s[k]` to position `R`. Move `L++`, `R--`. Handle middle char specifically.
+How to Draw (Opt): Write the string. Point to the first letter. Find its twin near the end. Draw an arrow "hopping" the twin to the very last position. Count the hops. Shrink the window.
+Opt Complexity Visuals: $O(N^2)$ due to searching and swapping.
+How to Draw Opt Complexity: A shrinking box where each step involves a linear scan inside the box.
+Mem Vis (BF): $O(N!)$ storage for permutations.
+Mem Vis (Opt): $O(N)$ for string manipulation/character array.

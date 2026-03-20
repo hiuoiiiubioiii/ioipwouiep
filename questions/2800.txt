@@ -1,0 +1,13 @@
+ID: 2800
+Problem Title: Shortest String That Contains Three Strings
+Brute Force Method: Concatenate the three strings in all 6 possible permutations (A+B+C, A+C+B, etc.). For each, just stick them together without checking for overlaps. Compare the lengths.
+BF Complexity Visuals: Permutation Stick-Joining
+How to Draw BF: Draw three colored blocks. Show 6 different ways to stack them horizontally. Note the total length is always the sum of individual lengths.
+Optimised Pattern: String Concatenation Buffer (Visualizing the creation of 6 massive new strings in the heap).
+Opt Vis. Technique: Greedy Overlap Merging
+Dry Run (Opt): Suffix-Prefix Intersection
+How to Draw (Opt): For each of the 6 permutations, merge strings by checking if one is a substring of the other, or by finding the maximum overlap between the suffix of the first and prefix of the second. Track the smallest resulting string lexicographically.
+Opt Complexity Visuals: Draw two overlapping rectangles. Shade the intersection area where characters match. The "Merged" block is the total width minus the shaded overlap.
+How to Draw Opt Complexity: Constant $O(1)$ Permutations * $O(L^2)$ Merge
+Mem Vis (BF): Draw a small flow chart for 6 paths. Each path has 2 merge nodes. Label it $O(L²)$ where L is string length.
+Mem Vis (Opt): Temporary Merge Strings (Draw a few string buffers in memory used during the comparison phase).

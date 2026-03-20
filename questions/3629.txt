@@ -1,0 +1,13 @@
+ID: 3629
+Problem Title: Minimum Jumps to Reach End via Prime Teleportation (Med)
+Brute Force Method: Standard BFS trying every single valid prime jump distance from every single index. Re-checks the same jumps constantly. $O(N \\text{cdot Primes}_\text{in}_\text{Range})$.
+BF Complexity Visuals: Tangled Spaghetti Graph.
+How to Draw BF: Draw nodes 1 to N. From node 2, draw arcs of length 2, 3, 5... From node 3, draw overlapping arcs of length 2, 3, 5. Visually chaotic and slow.
+Optimised Pattern: Sieve of Eratosthenes + BFS with a "furthest reached" pointer to strictly avoid re-scanning identical prime gaps.
+Opt Vis. Technique: Frog Jumping over Lily Pads.
+Dry Run (Opt): Precompute primes. The frog sits at index `i`. It looks at primes to jump forward. Crucially, it drags a "checked boundary" line behind it so it never evaluates a landing pad twice.
+How to Draw (Opt): Draw an array. Keep a variable max_reach. When jumping from i, only consider landing on j if j &gt; max_reach. Update max_reach as you jump.
+Opt Complexity Visuals: Bounded Reach Timeline.
+How to Draw Opt Complexity: Draw the Sieve $O(N \log \log N)$. Draw the BFS timeline. Because of max_reach, each index is queued at most once. Write BFS $O(N)$.
+Mem Vis (BF): A queue inflating infinitely because the same target indices are pushed from different starting points.
+Mem Vis (Opt): A boolean isPrime[] array and a standard BFS Queue. Space $O(N)$.

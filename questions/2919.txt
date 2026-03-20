@@ -1,0 +1,13 @@
+ID: 2919
+Problem Title: Minimum Increment Operations to Make Array Beautiful
+Brute Force Method: Backtracking to try incrementing different combinations of elements to satisfy the size 3 window rule.
+BF Complexity Visuals: Exploding N-ary Tree
+How to Draw BF: Draw a tree where each depth is an array index, branching out by adding +0, +1, +2... up to K.
+Optimised Pattern: 1D Dynamic Programming
+Opt Vis. Technique: 3-Element Sliding Lookback Window
+Dry Run (Opt): State: `dp[i]` is min cost to fix array up to `i`, strictly assuming we increment `nums[i]`. `dp[i] = max(0, k - nums[i]) + min(dp[i-1], dp[i-2], dp[i-3])`.
+How to Draw (Opt): Draw the `nums` array. Below it, the `dp` array. For a cell `i`, draw three arrows pointing backward to `i-1`, `i-2`, `i-3` to find the minimum previous state.
+Opt Complexity Visuals: Linear Sweep with $O(1)$ Lookback
+How to Draw Opt Complexity: Draw a single line of length N. At each tick, write "x3" to represent checking the previous 3 states. Time $O(N)$.
+Mem Vis (BF): Recursion stack tracking array states. Space $O(N)$.
+Mem Vis (Opt): Three scalar variables rotating (dp1, dp2, dp3) to save space, or a 1D DP array. Space $O(1)$ optimized.

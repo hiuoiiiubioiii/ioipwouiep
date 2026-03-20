@@ -1,0 +1,13 @@
+ID: 2160
+Problem Title: Minimum Sum of Four Digit Number After Splitting Digits
+Brute Force Method: Generate all possible permutations of the 4 digits and all possible ways to split them into two numbers.
+BF Complexity Visuals: A small exhaustive search tree.
+How to Draw BF: Draw 4 digits. Branch into all 24 permutations. For each, try split (1,3) and (2,2). $O(4!)$.
+Optimised Pattern: Greedy (Sorting).
+Opt Vis. Technique: Pairing the smallest available values with the highest available decimal places.
+Dry Run (Opt): Sort the 4 digits: `d1, d2, d3, d4`. The minimum sum is always `(d1 * 10 + d3) + (d2 * 10 + d4)`.
+How to Draw (Opt): Write the 4 digits. Sort them. Take the two smallest and put them in the "Tens" column. Take the two largest and put them in the "Ones" column. Add.
+Opt Complexity Visuals: $O(1)$ (since N is always 4).
+How to Draw Opt Complexity: A single dot representing a constant time operation.
+Mem Vis (BF): Array of 24 permutation strings.
+Mem Vis (Opt): $O(1)$ array of size 4.

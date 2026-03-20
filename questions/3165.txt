@@ -1,0 +1,13 @@
+ID: 3165
+Problem Title: Max Sum of Subsequence With Non-adjacent Elements
+Brute Force Method: For every update, run DP on the whole array. $O(Q x N)$.
+BF Complexity Visuals: A wave of DP recalculations washing over the array Q times.
+How to Draw BF: Draw the array. Run "House Robber" DP logic. Update one number. Re-run "House Robber" from scratch. Repeat Q times.
+Optimised Pattern: Segment Tree (DP State Merging)
+Opt Vis. Technique: The 4-State Merge Node
+Dry Run (Opt): Each Segment Tree node stores 4 values: max sum including/excluding its left/right boundary. Merging two nodes is $O(1)$ based on these states.
+How to Draw (Opt): Draw a Segment Tree node. Inside it, draw 4 checkboxes: [0,0], [0,1], [1,0], [1,1] representing the boundary inclusion states.
+Opt Complexity Visuals: Logarithmic point updates.
+How to Draw Opt Complexity: Draw a Binary Tree. Mark a path from leaf to root. $O(Q \log N)$.
+Mem Vis (BF): $O(Q x N)$ state space from repeated DP.
+Mem Vis (Opt): A Segment Tree array storing 4 states per node. $O(N)$.

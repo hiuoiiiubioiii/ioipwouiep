@@ -1,0 +1,13 @@
+ID: 1884
+Problem Title: Egg Drop With 2 Eggs and N Floors
+Brute Force Method: Try dropping an egg from every floor i. If it breaks, linearly test 1 \dots i-1. If not, recurse on i+1 \dots N.
+BF Complexity Visuals: Minimax recursion tree.
+How to Draw BF: Draw a root floor. Branch into "Breaks" and "Safe". For each, list the next floors to test.
+Optimised Pattern: Math (Triangular Numbers) or DP.
+Opt Vis. Technique: Staircase reduction.
+Dry Run (Opt): With x moves, you can cover x + (x-1) + \dots + 1 = \frac{x(x+1)}{2} floors. Find smallest x such that \text{sum} \ge N.
+How to Draw (Opt): Draw a staircase. The first step is x floors high, next is x-1, etc. Total height is N. Find how many steps are in the staircase.
+Opt Complexity Visuals: $O(\\text{sqrt}{N})$ for math or $O(N)$ for DP.
+How to Draw Opt Complexity: Draw a single line showing the jump sizes decreasing. Mark $O(\\text{sqrt}{N})$.
+Mem Vis (BF): Exponential call stack.
+Mem Vis (Opt): $O(1)$ if using the quadratic formula; $O(N)$ for DP array.

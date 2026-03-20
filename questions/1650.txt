@@ -1,0 +1,13 @@
+ID: 1650
+Problem Title: Lowest Common Ancestor of a Binary Tree III
+Brute Force Method: Start from node p, traverse all the way to the root and store the path in a Set. Then traverse from q until a node is found in the Set.
+BF Complexity Visuals: Path Hash Mapping
+How to Draw BF: Draw two paths from p and q to the root. Circle the path from p and drop it into a "Used" bucket. $O(h)$ space.
+Optimised Pattern: Two Pointers (Linked List Intersection Style)
+Opt Vis. Technique: Cycle Synchronization
+Dry Run (Opt): Pointer `a` starts at p, `b` at q. When `a` hits the root, jump to q. When `b` hits the root, jump to p. They will meet at the LCA.
+How to Draw (Opt): Draw two paths of different lengths. Show the pointers "switching" tracks to equalize the travel distance, meeting exactly at the junction.
+Opt Complexity Visuals: Linear Simultaneous Scan
+How to Draw Opt Complexity: Draw two parallel arrows moving up the parent pointers. No extra structures. $O(h)$.
+Mem Vis (BF): Hash Set: A bucket storing node references from the first path.
+Mem Vis (Opt): Two Pointers: Two small boxes holding the current node reference. $O(1)$ auxiliary space.

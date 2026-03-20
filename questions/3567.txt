@@ -1,0 +1,13 @@
+ID: 3567
+Problem Title: Minimum Absolute Difference in Sliding Submatrix (Med)
+Brute Force Method: For every possible K x K submatrix, iterate through all pairs of elements to find the minimum absolute difference.
+BF Complexity Visuals: Nested Window-Pair Scan.
+How to Draw BF: Draw a grid. Move a square window. For each position, draw arrows connecting every pair of cells inside the window. $O(N \cdot M \cdot K^4)$.
+Optimised Pattern: Sliding Window + 2D Data Structure (Segment Tree/Fenwick Tree) or Sorted Set.
+Opt Vis. Technique: Rolling sorted window.
+Dry Run (Opt): Slide the window. As it moves, remove the left-column elements and add the new right-column elements into a sorted container (BST). Find the closest neighbors.
+How to Draw (Opt): Draw the submatrix. Use a side-list (sorted). For a new element X, draw arrows to the elements immediately above and below X in the sorted list.
+Opt Complexity Visuals: $O(N \cdot M \cdot K \log K)$.
+How to Draw Opt Complexity: Draw the grid scan. For each step, show K insertions/deletions into a tree of size K^2.
+Mem Vis (BF): Matrix Slices: Draw thousands of K x K integer arrays being created during simulation.
+Mem Vis (Opt): Sorted Container (Treap/AVL): Draw a single binary search tree that updates its nodes as the window slides.

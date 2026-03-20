@@ -1,0 +1,13 @@
+ID: 3106
+Problem Title: Lexicographically Smallest String After Ops
+Brute Force Method: Backtracking to generate all valid string mutations within distance K, then sorting. **O(26^N)**
+BF Complexity Visuals: Massive 26-ary decision tree expanding at each character index.
+How to Draw BF: Draw root string. Draw 26 branches for the first char, subtracting K. Repeat for all permutations.
+Optimised Pattern: Greedy Left-to-Right / Math
+Opt Vis. Technique: Fuel Gauge / Budget Bar
+Dry Run (Opt): Move left to right. If distance to 'a' ≤ K, change to 'a' and deduct from K. If &gt; K, shift char backward by K, set K=0, stop.
+How to Draw (Opt): Write string. Under each char, write circular distance to 'a'. Draw a running K "budget" box above and deduct as you mutate.
+Opt Complexity Visuals: Single horizontal timeline.
+How to Draw Opt Complexity: Draw a straight 1D line of length N. Mark an early exit point if K hits 0. **O(N)** runtime.
+Mem Vis (BF): Deep call stack memory holding thousands of string combinations.
+Mem Vis (Opt): In-place modification: Single character array and one integer variable for K. **O(1)** aux space.

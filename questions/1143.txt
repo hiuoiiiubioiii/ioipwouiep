@@ -1,0 +1,13 @@
+ID: 1143
+Problem Title: Longest Common Subsequence
+Brute Force Method: Recursion with all possibilities. At each character, either include it (if they match) or skip one character from either string.
+BF Complexity Visuals: Binary Decision Tree Explosion
+How to Draw BF: Draw two strings. Branch out: "Skip left char", "Skip right char". Show the 2^(N+M) combinations.
+Optimised Pattern: 2D Dynamic Programming (Bottom-Up)
+Opt Vis. Technique: Grid-Based Dependency Map
+Dry Run (Opt): Build an (N+1) x (M+1) table. If `S1[i] == S2[j]`, `dp[i][j] = 1 + dp[i-1][j-1]`. Else, `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`.
+How to Draw (Opt): Draw a grid. Label rows with String 1 and columns with String 2. Fill cells. Draw a diagonal arrow for matches and horizontal/vertical arrows for skips.
+Opt Complexity Visuals: Quadratic Grid Filling $O(N x M)$
+How to Draw Opt Complexity: Draw a rectangle of size N x M and shade it completely to show every cell is visited once.
+Mem Vis (BF): Exponential Recursion Stack
+Mem Vis (Opt): 2D Matrix (can be optimized to 1D Row). Draw a grid or a single line of boxes being updated.

@@ -1,0 +1,13 @@
+ID: 1061
+Problem Title: Lexicographically Smallest Equivalent String
+Brute Force Method: For every character equivalence, build a full adjacency list graph. For each character in the target string, run BFS/DFS to find the smallest char in its component.
+BF Complexity Visuals: A sprawling social network where you visit every friend of a friend to find the one with the "smallest name."
+How to Draw BF: "parker"=="morris". Draw nodes P-M, A-O, R-R, etc. For 'p', follow all lines to find the smallest reachable letter. Write $O(T \cdot (S+E)$).
+Optimised Pattern: Union-Find (DSU) with Path Compression.
+Opt Vis. Technique: A "Family Tree" where the "Head" of the family is always the lexicographically smallest character.
+Dry Run (Opt): For each pair (s1[i], s2[i]), union their sets. When unioning, always make the smaller character the parent. To translate the target string, just call `find(char)`.
+How to Draw (Opt): Draw 26 dots. Draw lines between equivalent letters. For each group, circle the smallest letter and point all other letters in that group to it.
+Opt Complexity Visuals: Near-constant time set operations.
+How to Draw Opt Complexity: Draw 26 nodes with flat parent pointers. Write Time: $O((S + T)$α(26)), where α is Inverse Ackermann (basically $O(1)$).
+Mem Vis (BF): Storing full adjacency lists for 26 characters.
+Mem Vis (Opt): A single integer array of size 26 (parent pointers). $O(1)$ space.

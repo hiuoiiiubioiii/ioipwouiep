@@ -1,0 +1,13 @@
+ID: 121
+Problem Title: Best Time to Buy and Sell Stock
+Brute Force Method: Nested loops comparing every single pair of days (i, j) where j &gt; i to find the maximum price difference.
+BF Complexity Visuals: A 2D upper-triangular coordinate grid showing $O(N²)$ comparisons.
+How to Draw BF: Draw a timeline. For day 1, draw arrows to all subsequent days. For day 2, do the same. Show the density of arrows increasing.
+Optimised Pattern: One-pass Greedy / Kadane’s-like Sliding Window.
+Opt Vis. Technique: A moving "low-water mark" tracking the deepest valley while a scanner looks for the highest peak relative to that valley.
+Dry Run (Opt): Initialize min_price as infinity and max_profit as 0. Traverse once: update min_price, then update max_profit based on current - min_price.
+How to Draw (Opt): Draw a line graph of prices. As you move left to right, keep a dotted horizontal line at the lowest point seen so far. Measure the vertical gap to the current point.
+Opt Complexity Visuals: A single linear horizontal scan line crossing through the price graph.
+How to Draw Opt Complexity: Draw the array. Draw a single arrow moving from index 0 to N-1, never looking back, proving $O(N)$.
+Mem Vis (BF): Minimal memory, but the $O(N²)$ time complexity is the primary bottleneck visualized by redundant operations.
+Mem Vis (Opt): Visualize two tiny registers in memory: min_p and max_p, updating in-place. $O(1)$ space.

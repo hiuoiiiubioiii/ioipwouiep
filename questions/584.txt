@@ -1,0 +1,13 @@
+ID: 584
+Problem Title: Find Customer Referee (SQL)
+Brute Force Method: Scan every row and check if the `referee_id` is not equal to 2. (Common trap: missing NULL values).
+BF Complexity Visuals: Linear scan $O(N)$.
+How to Draw BF: Draw a list. Look at the referee column. If you see a '2', cross it out. (Wait, what about the empty ones?)
+Optimised Pattern: Filtered Select with Null Handling.
+Opt Vis. Technique: A filter with three holes: one for "not 2", one for "is 2", and a "trapdoor" for NULL. You must explicitly tell the trapdoor to let the NULLs through.
+Dry Run (Opt): `SELECT name FROM customer WHERE referee_id &lt;&gt; 2 OR referee_id IS NULL`.
+How to Draw (Opt): Draw a table. Circle every row where the referee ID is blank or any number that isn't 2.
+Opt Complexity Visuals: Single pass over the table. $O(N)$.
+How to Draw Opt Complexity: Draw a table flowing into a single filter box with two exit conditions.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): $O(1)$ auxiliary space.

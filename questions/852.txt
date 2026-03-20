@@ -1,0 +1,13 @@
+ID: 852
+Problem Title: Peak Index in a Mountain Array
+Brute Force Method: Linear scan the array from index 0 until you find an element that is larger than the next one (A[i] &gt; A[i+1]).
+BF Complexity Visuals: Linear Search. $O(N)$.
+How to Draw BF: Draw a line graph. Draw an arrow sliding from left to right, stopping only when the line starts to dip.
+Optimised Pattern: Binary Search on Slope Direction.
+Opt Vis. Technique: High-Low Hot/Cold game.
+Dry Run (Opt): Pick the middle element. Is the slope going up (mid &lt; mid+1)? Then the peak is to the right. Is the slope going down? Then the peak is to the left or is the current index.
+How to Draw (Opt): Draw a mountain. Draw two pointers (L, R) at the bases. Draw a mid point. Draw a small tangent line at mid to see if it points up or down, then move L or R.
+Opt Complexity Visuals: Logarithmic Reduction. $O(\log N)$.
+How to Draw Opt Complexity: Draw the array length. Cut it in half, then half again, showing only 3-4 steps for a huge array.
+Mem Vis (BF): $O(1)$ pointer: Draw one arrow index.
+Mem Vis (Opt): $O(1)$ pointers: Draw L, R, mid arrow indices.

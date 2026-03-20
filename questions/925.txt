@@ -1,0 +1,13 @@
+ID: 925
+Problem Title: Long Pressed Name
+Brute Force Method: Generate all possible "long-pressed" variations of the 'name' string by duplicating characters and check if 'typed' matches any of them.
+BF Complexity Visuals: $O(2^N)$ Exponential. A branching tree where every character can be repeated many times.
+How to Draw BF: Draw the word 'ALEX'. From 'A', draw branches for 'A', 'AA', 'AAA'. From 'L', draw more branches. It becomes an unmanageable forest.
+Optimised Pattern: Two Pointers (Sequential Match)
+Opt Vis. Technique: Two fingers pointing at 'name' and 'typed'. If they match, both move. If they don't, the 'typed' finger only moves if it's pointing at a "stuck" (repeated) key.
+Dry Run (Opt): `i=0, j=0`. While `j &lt; typed.length`: if `name[i] == typed[j]`, increment both. Else if `j &gt; 0` and `typed[j] == typed[j-1]`, increment only `j`. Otherwise, return false.
+How to Draw (Opt): Draw 'A L E X' and 'A A L E E X X'. Draw arrows connecting the first A to the first A. Then show the 'typed' arrow skipping the second 'A' because it matches the previous.
+Opt Complexity Visuals: $O(T)$ where T is length of 'typed'. A single forward pass.
+How to Draw Opt Complexity: Draw a single horizontal line. Draw two arrows moving left-to-right. The 'name' arrow never moves faster than the 'typed' arrow.
+Mem Vis (BF): $O(2^N)$ memory to store generated permutations.
+Mem Vis (Opt): $O(1)$. Only two integer index variables. Draw two small boxes for `i` and `j`.

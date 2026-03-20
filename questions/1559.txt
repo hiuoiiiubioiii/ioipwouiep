@@ -1,0 +1,13 @@
+ID: 1559
+Problem Title: Detect Cycles in 2D Grid
+Brute Force Method: Run BFS/DFS from every cell. If you ever hit a "visited" cell that isn't your direct parent, a cycle exists. $O(R \cdot C)$ with potential high constant factor.
+BF Complexity Visuals: Grid-based Ripple Expansion
+How to Draw BF: Draw a 2D grid. Color a path of same characters. If the path "bites its own tail" (connects to a non-parent visited cell), highlight the cycle.
+Optimised Pattern: DFS + Backtracking (Parent Tracking)
+Opt Vis. Technique: The Breadcrumb Trail
+Dry Run (Opt): Standard DFS but pass the `(prev_r, prev_c)` coordinates to the next call. This prevents you from immediately moving back to where you just came from and incorrectly calling it a "cycle."
+How to Draw (Opt): Draw the grid. Draw a line moving through cells of 'A'. Mark each cell with a 'V'. If your next step hits a 'V' that isn't the cell you just left, draw a circle around the connection.
+Opt Complexity Visuals: Single Grid Pass $O(R \cdot C)$
+How to Draw Opt Complexity: Draw a rectangle. A single snake-like arrow moves through it, visiting each cell at most once.
+Mem Vis (BF): Massive `visited` matrix and deep recursion stack.
+Mem Vis (Opt): A 2D boolean `visited` array. $O(R \cdot C)$ space.

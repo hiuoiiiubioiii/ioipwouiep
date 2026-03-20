@@ -1,0 +1,13 @@
+ID: 3279
+Problem Title: Maximum Total Area Occupied by Pistons
+Brute Force Method: Generate all possible rectangles in the grid, check if they contain all 1s. $O((R \cdot C)$^2).
+BF Complexity Visuals: Expanding Bounding Boxes
+How to Draw BF: Draw the grid. Draw thousands of random rectangles hoping to perfectly enclose the 1s.
+Optimised Pattern: Linear Scan (Min/Max Tracking)
+Opt Vis. Technique: The 4-Wall Shrink
+Dry Run (Opt): Initialize `min_row`, `max_row`, `min_col`, `max_col`. Iterate the grid once. Whenever you see a 1, update these boundaries. Area = `(max_r - min_r + 1) * (max_c - min_c + 1)`.
+How to Draw (Opt): Draw the grid. Push 4 walls (Top, Bottom, Left, Right) inward from the edges. Stop each wall the exact moment it touches a '1'. The remaining box is your answer.
+Opt Complexity Visuals: Single Matrix Pass $O(R \cdot C)$
+How to Draw Opt Complexity: Draw a single sweeping arrow across the 2D grid updating 4 variables.
+Mem Vis (BF): Storing subgrids.
+Mem Vis (Opt): Four integer variables. $O(1)$ space.

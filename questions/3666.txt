@@ -1,0 +1,13 @@
+ID: 3666
+Problem Title: Minimum Operations to Equalize Binary String (Hard)
+Brute Force Method: Trying every possible bit-flip combination using BFS/Recursion to reach a target string. $O(2^N)$.
+BF Complexity Visuals: Exponential Bit-Flip Tree.
+How to Draw BF: Draw a binary string. Branch out by flipping index 0, then 1, etc. For a string of length 20, the tree has 1 million leaves. $O(2^N)$ is unusable.
+Optimised Pattern: Greedy "Flip-and-Carry" or Difference Array. Start from the left; if the current bit doesn't match the target, flip the remainder of the string.
+Opt Vis. Technique: The "Wavefront" Flip.
+Dry Run (Opt): Imagine a light switch. Flipping it affects everything to the right. Instead of actually flipping bits, keep a flip_count. Current state = (original + flip_count) % 2.
+How to Draw (Opt): Draw the string. Sweep left to right. When you hit a mismatch, increment a "Flip Counter" and move on. The counter tells you the "current" reality of the remaining bits.
+Opt Complexity Visuals: Linear Scan with State Variable.
+How to Draw Opt Complexity: Draw one arrow scanning the string once. $O(N)$.
+Mem Vis (BF): Generating N new string copies, one for each flip operation.
+Mem Vis (Opt): A single integer total_flips and current_bit_state. Space $O(1)$.

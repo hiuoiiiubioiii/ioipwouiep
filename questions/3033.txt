@@ -1,0 +1,13 @@
+ID: 3033
+Problem Title: Modify the Matrix
+Brute Force Method: Iterate through the matrix to find -1s. For each -1, launch a separate loop to find the max of that specific column, then replace it.
+BF Complexity Visuals: Nested Column Scanning
+How to Draw BF: Draw the matrix. Draw a vertical line for every -1 found, scanning the same column multiple times.
+Optimised Pattern: Column-Wise Max Pre-calculation
+Opt Vis. Technique: Vertical Maximum Strip
+Dry Run (Opt): First, scan each column once to find its maximum value and store it in an array. Then, iterate through the matrix and replace all -1s with the pre-calculated max of that column.
+How to Draw (Opt): Draw the matrix. Below each column, write the MAX value. Then, rewrite the matrix replacing -1 with the number written below it.
+Opt Complexity Visuals: $O(M \cdot N)$ Linear Pass
+How to Draw Opt Complexity: Draw a grid. Show two distinct arrows: one scanning down columns, one scanning row-by-row.
+Mem Vis (BF): Multiple redundant scans of the same column elements.
+Mem Vis (Opt): A 1D array of size N (number of columns) to store max values.

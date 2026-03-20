@@ -1,0 +1,13 @@
+ID: 2258
+Problem Title: Escape the Spreading Fire
+Brute Force Method: BFS with Time SimulationFor every possible starting delay `t`, simulate the fire spreading and the person moving simultaneously to see if they can reach the safehouse.
+BF Complexity Visuals: Binary Search over Simulation
+How to Draw BF: Draw a timeline of delays: 1 min, 2 mins, 3 mins... For each, draw a sequence of grid states showing the fire and person moving. Show $O(\log(R\cdot C)$ * (R*C)) complexity.
+Optimised Pattern: Multi-Source BFS + Arrival Time Comparison
+Opt Vis. Technique: Time-to-Burn Heatmap
+Dry Run (Opt): Run one Multi-Source BFS to find the `fire_arrival_time` for every cell. Run a second BFS for the person's `earliest_arrival_time`. Use the difference to find the max delay.
+How to Draw (Opt): Draw two grids side-by-side. Grid A: Fire's arrival time at each cell. Grid B: Person's arrival time. Subtract A - B for each cell to find the "Safety Margin" at the exit.
+Opt Complexity Visuals: Parallel BFS Timelines
+How to Draw Opt Complexity: Draw two sequential $O(R\cdot C)$ blocks. The first populates the fire heatmap; the second finds the path. This avoids the overhead of repeated simulations.
+Mem Vis (BF): Storing thousands of grid states for every different time-delay simulation attempt.
+Mem Vis (Opt): Two 2D integer arrays (O(R*C) space) for storing the fire and person arrival times.

@@ -1,0 +1,13 @@
+ID: 1613
+Problem Title: Find the Missing IDs (SQL)
+Brute Force Method: Load all DB records into application memory, loop 1 to Max, check if missing.
+BF Complexity Visuals: Memory Overload
+How to Draw BF: Draw a database cylinder dumping millions of records into a cramped RAM box. $O(N)$ space.
+Optimised Pattern: SQL Recursive CTE + Anti-Join
+Opt Vis. Technique: Number Line Generator Belt
+Dry Run (Opt): Recursively generate sequence 1 to Max(ID). Filter out (NOT IN) IDs that exist in the original table.
+How to Draw (Opt): Draw a factory belt generating numbers 1, 2, 3... and a trapdoor that drops numbers if they match the Customer table.
+Opt Complexity Visuals: Indexed Lookup
+How to Draw Opt Complexity: Draw a straight arrow from the generated sequence bypassing an index filter $O(N)$.
+Mem Vis (BF): App Memory Hash Set: Draw a chaotic blob holding disorganized IDs.
+Mem Vis (Opt): DB Engine Buffer: Draw a clean, tabular temporary memory space managed natively by the DB.

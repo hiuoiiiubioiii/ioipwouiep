@@ -1,0 +1,13 @@
+ID: 3652
+Problem Title: Best Time to Buy and Sell Stock using Strategy (Med)
+Brute Force Method: Recursive backtracking: For every day, try "Buy", "Sell", or "Skip". $O(2^N)$.
+BF Complexity Visuals: Binary Decision Tree.
+How to Draw BF: Day 1: Buy or Skip. Day 2: (if bought) Sell or Skip. The tree branches exponentially. Write "Stack Overflow" for N &gt; 30.
+Optimised Pattern: Dynamic Programming / State Machine. State = `(Day, HasStock)`. Use a simple greedy one-pass if unlimited trades are allowed.
+Opt Vis. Technique: Mountain Range Valley-Peak.
+Dry Run (Opt): Visualize the stock prices as a mountain range. Every time the price goes up from yesterday to today, "capture" that slope. Ignore the dips.
+How to Draw (Opt): Draw a line graph. Whenever the line goes up, draw a vertical green arrow representing profit. Total profit = sum of all green arrows.
+Opt Complexity Visuals: Single Linear Pass.
+How to Draw Opt Complexity: Draw one arrow sweeping across the price array from left to right. $O(N)$.
+Mem Vis (BF): Storing every possible profit path in a list to find the max.
+Mem Vis (Opt): Two variables: `max_profit` and `min_price_so_far`. Space $O(1)$.

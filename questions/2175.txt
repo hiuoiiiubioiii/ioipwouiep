@@ -1,0 +1,13 @@
+ID: 2175
+Problem Title: The Change in Global Rankings (SQL)
+Brute Force Method: Calculate rank for every player. Update points. Re-calculate rank for every player. Compare.
+BF Complexity Visuals: Two full table scans and two full sorting passes.
+How to Draw BF: Draw a leaderboard. Sort. Change one value. Sort again. Compare old index to new index. $O(N \log N)$.
+Optimised Pattern: Window Functions (`RANK()` or `ROW_NUMBER()`).
+Opt Vis. Technique: Two static snapshots of a leaderboard joined by Player ID.
+Dry Run (Opt): `RANK() OVER(ORDER BY points)` for initial. `RANK() OVER(ORDER BY (points + change))` for final. Join on `player_id` and subtract.
+How to Draw (Opt): Draw two parallel lists. Draw lines from "Player A" in List 1 to "Player A" in List 2. Calculate the vertical distance moved.
+Opt Complexity Visuals: $O(N \log N)$ due to sorting requirements for Ranking.
+How to Draw Opt Complexity: Two sorting funnels feeding into a single hash join.
+Mem Vis (BF): Temporary tables for snapshot storage.
+Mem Vis (Opt): $O(N)$ sort buffers.

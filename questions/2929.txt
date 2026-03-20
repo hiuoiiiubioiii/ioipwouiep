@@ -1,0 +1,13 @@
+ID: 2929
+Problem Title: Distribute Candies Among Children III
+Brute Force Method: Nested loops (TLE due to N=10^12 constraint).
+BF Complexity Visuals: Massive 3D Space (Red)
+How to Draw BF: Draw a cube with side 10^12. Label it "IMPOSSIBLE TO LOOP" in red.
+Optimised Pattern: Inclusion-Exclusion (Math)
+Opt Vis. Technique: Stars and Bars Formula Visualization
+Dry Run (Opt): Same as 2927. The logic for 10^12 is identical to 10^5, requiring only long long math.
+How to Draw (Opt): Draw "n" stars and 2 "bars" to divide them into 3 children. Formula: (n+2 choose 2).
+Opt Complexity Visuals: $O(1)$ Math Logic
+How to Draw Opt Complexity: Draw a single calculation box. Note that complexity does not depend on N.
+Mem Vis (BF): Counters.
+Mem Vis (Opt): A few long long variables. Space $O(1)$.

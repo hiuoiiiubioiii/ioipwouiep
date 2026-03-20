@@ -1,0 +1,13 @@
+ID: 1679
+Problem Title: Max Number of K-Sum Pairs
+Brute Force Method: Nested loops to find every pair (i, j) that sums to k. When a pair is found, "remove" both and restart search.
+BF Complexity Visuals: Quadratic Pair Search
+How to Draw BF: Draw an array. Draw a line from the first number checking every other number. Repeat. $O(N^2)$.
+Optimised Pattern: Two Pointers (Sorted) or Hash Map (Frequency)
+Opt Vis. Technique: Symmetric Squeeze / Bucket Matching
+Dry Run (Opt): Sort array. Pointer `left` at start, `right` at end. If sum &gt; k, move `right` in. If sum &lt; k, move `left` in. If equal, count and move both.
+How to Draw (Opt): Draw a sorted line of numbers. Draw two arrows at the ends pointing inward. When they point to a pair that sums to k, circle them and move the arrows.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw a funnel (O(N log N)) leading to a linear scan (O(N)). Total $O(N \log N)$.
+Mem Vis (BF): Nested Loop Markers: Simple loop indices.
+Mem Vis (Opt): Frequency Map: Draw a 2-column table (Num | Count) or a single sorted array. $O(N)$ space.

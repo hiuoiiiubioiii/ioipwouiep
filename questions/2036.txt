@@ -1,0 +1,13 @@
+ID: 2036
+Problem Title: Maximum Alternating Subarray Sum
+Brute Force Method: Generate every single subarray. For each, loop through its elements applying the alternating +/- sign and keep track of the max sum. $O(N^3)$.
+BF Complexity Visuals: Overlapping Triangle Grids
+How to Draw BF: Draw the array. Draw brackets for every possible start and end point. Inside every bracket, draw alternating + and - signs. Highly redundant recalculations.
+Optimised Pattern: Dynamic Programming (Kadane's Algorithm Variant)
+Opt Vis. Technique: Two Parallel State Tracks
+Dry Run (Opt): Maintain two running maximums: one ending on a positive addition, one ending on a negative subtraction. Update both at each step using the previous step's states.
+How to Draw (Opt): Draw two horizontal timelines: "Max Even Length" and "Max Odd Length". Walk through the array, drawing crossing arrows between the two lines to show state transitions.
+Opt Complexity Visuals: Double Linear Sweep
+How to Draw Opt Complexity: Draw a single straight line sweeping across the array, updating two variables (O(1) work) at each step. Total time $O(N)$.
+Mem Vis (BF): Variables inside deeply nested loops constantly resetting and accumulating sums from scratch.
+Mem Vis (Opt): Two simple integer registers tracking `odd_sum` and `even_sum` states. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 3109
+Problem Title: Find the Index of Permutation
+Brute Force Method: Generate permutations in lexicographical order sequentially until matching the input array. **O(N!)**
+BF Complexity Visuals: Odometer spinning through all factorials.
+How to Draw BF: Write the numbers 1 to N. Swap them systematically in dictionary order, tallying a massive count.
+Optimised Pattern: Combinatorics + Fenwick Tree (BIT)
+Opt Vis. Technique: Factorial Weight Scales
+Dry Run (Opt): For each number at index `i`, count available unused smaller numbers. Multiply by `(N-1-i)!`. Mark number used. Add to total.
+How to Draw (Opt): Write the array. Below it, list available digits. Draw an arrow from array element to smaller available digits, cross them out, and write `count * factorial`.
+Opt Complexity Visuals: Array iteration + logarithmic updates.
+How to Draw Opt Complexity: Draw a linear pass of length N. At each step, draw a small binary tree representing a log N Fenwick update. **O(N \log N)**.
+Mem Vis (BF): Massive array storing millions of permutation lists.
+Mem Vis (Opt): A `fenwick[]` array of size N and a precomputed `factorial[]` array of size N.

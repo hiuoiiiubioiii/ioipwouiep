@@ -1,0 +1,13 @@
+ID: 3809
+Problem Title: Best Reachable Tower (Med.)
+Brute Force Method: From every empty cell, run a full BFS to find distances to all towers, then pick the best starting coordinate.
+BF Complexity Visuals: N*M grids overlapping, showing redundant BFS spread from every single empty point.
+How to Draw BF: Draw a grid. Pick a cell. Draw ripples. Pick next cell. Draw ripples again. Total $O((N\cdot M)$^2).
+Optimised Pattern: Multi-source Breadth-First Search (BFS).
+Opt Vis. Technique: Simultaneous water-ripple effect starting from all towers at time T=0.
+Dry Run (Opt): Push all towers into queue with dist 0. Pop layer by layer. The first time a cell is reached, it gets the minimum distance.
+How to Draw (Opt): Draw grid. Mark towers 'T'. Draw expanding rings (1, 2, 3) outwards from all 'T's simultaneously until they collide.
+Opt Complexity Visuals: Single pass over the grid cells.
+How to Draw Opt Complexity: Draw grid of size V. Write $O(V)$ = $O(N\cdot M)$ as each cell is enqueued and dequeued exactly once.
+Mem Vis (BF): Queue re-initialized N*M times, wasting massive memory cycles.
+Mem Vis (Opt): A single Queue holding at most the perimeter of the expanding BFS fronts, plus a Visited matrix $O(N\cdot M)$.

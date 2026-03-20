@@ -1,0 +1,13 @@
+ID: 11
+Problem Title: Container With Most Water
+Brute Force Method: All Pairs (Nested Loops) Check every possible pair of left and right lines to calculate the area.
+BF Complexity Visuals: 2D Matrix of Combinations
+How to Draw BF: Draw the array of heights. Point 'i' at the first line, and let 'j' iterate through all lines to its right. Tally N+(N-1)+... to show $O(N²)$.
+Optimised Pattern: Two Pointers (Greedy Squeeze)
+Opt Vis. Technique: Collapsing Walls
+Dry Run (Opt): Place pointers at the extreme ends. The width is maximized, so to find a bigger area, we MUST find a taller line. Always move the shorter line inward.
+How to Draw (Opt): Draw the array. Place an 'L' arrow at index 0 and 'R' at N-1. Draw a water block between them. Cross out the shorter line and draw its arrow stepping inward.
+Opt Complexity Visuals: Squeezing Timeline
+How to Draw Opt Complexity: Draw a horizontal line of length N. Draw arrows from both ends moving strictly inward until they collide. Exactly N steps = $O(N)$ time.
+Mem Vis (BF): Draw a maxArea variable. $O(1)$ space.
+Mem Vis (Opt): Draw three variables: L, R, and maxArea. Emphasize that no new arrays are built (O(1) space).

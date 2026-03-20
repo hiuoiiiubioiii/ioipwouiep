@@ -1,0 +1,13 @@
+ID: 1792
+Problem Title: Maximum Average Pass Ratio
+Brute Force Method: Try adding each extra student to every possible class and see which one increases the total average the most. Repeat for every extra student.
+BF Complexity Visuals: Nested Greedy Simulation.
+How to Draw BF: Draw extra students as blocks. For each block, calculate the new average for every class. $O(\\text{text}{\text{extraStudents}} \\text{times} \\text{text}{\text{classes}})$.
+Optimised Pattern: Max-Heap (Priority Queue) of "Potential Gain".
+Opt Vis. Technique: The "Marginal Benefit" Funnel.
+Dry Run (Opt): Calculate the gain if one student is added: gain = \frac{pass+1}{total+1} - \frac{pass}{total}. Store classes in a Max-Heap based on this gain. Always pick the top class, update its pass/total, recalculate gain, and push back.
+How to Draw (Opt): Draw a heap (tree). Root is the class that benefits MOST from one student. Take the root, add a student, re-insert. Repeat for all extra students.
+Opt Complexity Visuals: Logarithmic Selection.
+How to Draw Opt Complexity: Draw a heap update cycle. Label $O(\\text{text}{\text{extraStudents}} \cdot \log(\\text{text}{\text{classes}})$).
+Mem Vis (BF): None, just sum variables.
+Mem Vis (Opt): A Max-Heap storing N classes. $O(N)$ space.

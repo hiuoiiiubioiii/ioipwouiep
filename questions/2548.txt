@@ -1,0 +1,13 @@
+ID: 2548
+Problem Title: Maximum Price to Fill a Bag (Premium)
+Brute Force Method: Try all combinations of items (fractions included) to fill the bag, similar to the 0/1 Knapsack but with floating-point complexity.
+BF Complexity Visuals: A complex search space of continuous variables (fractions).
+How to Draw BF: List items. Try taking 10% of one, 50% of another. This is impossible to draw manually for many items.
+Optimised Pattern: Greedy Algorithm (Price-per-Weight Ratio).
+Opt Vis. Technique: An "Efficiency Sort" where items are ranked by their value density and consumed from most to least dense.
+Dry Run (Opt): Calculate price/weight for each item. Sort items by this ratio descending. Fill the bag with full items as long as capacity &gt; weight. For the last item, take a fraction remaining_capacity / weight * price.
+How to Draw (Opt): Write items as fractions: Price / Weight. Sort them. Pick the biggest fraction, subtract its weight from your bag's capacity. If it doesn't fit, multiply the fraction by your remaining capacity.
+Opt Complexity Visuals: $O(N \log N)$ for sorting the items by ratio.
+How to Draw Opt Complexity: Draw a bar chart of ratios. Draw a "Bag" container. Fill the bag with the tallest bars first until it's full.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N)$ to store the items and their calculated ratios.

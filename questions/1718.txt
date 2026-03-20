@@ -1,0 +1,13 @@
+ID: 1718
+Problem Title: Construct the Lexicographically Largest Valid Sequence
+Brute Force Method: Generate all possible permutations of the required numbers. Filter them against the distance rules. Pick the lexicographically largest valid one.
+BF Complexity Visuals: Factorial Permutation Generator.
+How to Draw BF: Draw a massive list of arrays. Cross out 99% of them that break the distance rule. $O(N!)$.
+Optimised Pattern: Backtracking + Greedy (Place largest available number first).
+Opt Vis. Technique: Puzzle Board with Fixed Constraints.
+Dry Run (Opt): Create empty array size `2n-1`. Try placing numbers `n` down to `1` in the first empty spot. If `k&gt;1`, check if `index + k` is empty. Place both, recurse. If dead end, backtrack (undo).
+How to Draw (Opt): Draw blank slots. Hold the number 5. Drop it in slot 0. Count 5 steps right, drop the second 5. If blocked later, erase them and try 4.
+Opt Complexity Visuals: Pruned Decision Tree.
+How to Draw Opt Complexity: Draw a tree, but heavily cross out branches very early. Worst case $O(N!)$, but practically much faster due to tight pruning.
+Mem Vis (BF): Holding thousands of permutations in memory.
+Mem Vis (Opt): Array of size `2n-1` + boolean `used` array. $O(N)$ space.

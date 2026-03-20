@@ -1,0 +1,13 @@
+ID: 1186
+Problem Title: Maximum Subarray Sum with One Deletion
+Brute Force Method: Iterate through all subarrays. For each, try deleting every single element one by one to find the max.
+BF Complexity Visuals: Triple Nested Loop $O(N^3)$
+How to Draw BF: Draw an array. Draw all possible brackets. Inside a bracket, draw an 'X' over each number sequentially. Massive redundancy.
+Optimised Pattern: Dynamic Programming (Bi-directional Kadane's)
+Opt Vis. Technique: Two-Way Maximum Gradient
+Dry Run (Opt): Compute `max_left[i]` (max subarray sum ending at i) and `max_right[i]` (max subarray sum starting at i). The max with one deletion at i is `max_left[i-1] + max_right[i+1]`.
+How to Draw (Opt): Draw the array. Below it, draw two rows. Row 1: Kadane from Left. Row 2: Kadane from Right. To "delete" an index, sum the values from the neighbors in both rows.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw two separate arrows: one moving L rightarrow R and one R rightarrow L. $O(N)$.
+Mem Vis (BF): Storage of every possible deletion variation
+Mem Vis (Opt): Two 1D arrays of size N. Draw two parallel horizontal boxes.

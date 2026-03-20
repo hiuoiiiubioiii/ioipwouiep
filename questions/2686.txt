@@ -1,0 +1,13 @@
+ID: 2686
+Problem Title: Immediate Food Delivery III (SQL)
+Brute Force Method: Using multiple nested subqueries to calculate percentages for every single day individually.
+BF Complexity Visuals: Correlated Subquery Scan
+How to Draw BF: Draw a table. For every row, draw a lookup into the entire table to count total vs. immediate orders. $O(N^2)$.
+Optimised Pattern: Group By + CASE WHEN + ROUND
+Opt Vis. Technique: Aggregated Ratio Calculation
+Dry Run (Opt): Group by `order_date`. Use `SUM(CASE WHEN order_date = customer_pref_delivery_date THEN 1 ELSE 0 END)` divided by `COUNT(*)` to get the ratio per day.
+How to Draw (Opt): Draw a table. Group rows by date. For each group, highlight rows where the two dates match. Divide highlighted count by total count in that group.
+Opt Complexity Visuals: $O(N \log N)$ Grouping
+How to Draw Opt Complexity: Draw a grouping block $O(N)$ followed by a single aggregation pass $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Hash-map based grouping in SQL engine memory.

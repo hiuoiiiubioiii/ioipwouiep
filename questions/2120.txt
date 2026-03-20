@@ -1,0 +1,13 @@
+ID: 2120
+Problem Title: Execution of All Suffix Instructions Staying in a Grid
+Brute Force Method: (This *is* the standard optimal approach) For every suffix start position, simulate movement.
+BF Complexity Visuals: Nested loops iterating over the instruction string.
+How to Draw BF: Draw an N x N grid. For each character in the string, draw a tiny robot attempting to follow the path from the start point.
+Optimised Pattern: $O(M^2)$ Simulation (M = instruction length).
+Opt Vis. Technique: A timeline dropping the first event repeatedly to simulate "suffixes".
+Dry Run (Opt): Loop `i` from 0 to M. Set `curr_pos = start_pos`, `count = 0`. Loop `j` from `i` to M. Move `curr_pos`. If out of bounds, break. Else `count++`.
+How to Draw (Opt): Draw a 3x3 grid. Draw an 'X' at start. Trace the path `R, R, L, U`. Count steps. Erase the path. Start again from the second instruction `R, L, U`.
+Opt Complexity Visuals: $O(M^2)$ quadratic simulation.
+How to Draw Opt Complexity: Draw an M x M triangle shape (like an upper-triangular matrix) showing the shrinking suffix lengths being processed.
+Mem Vis (BF): Creating substrings for every suffix (O(M^2) space).
+Mem Vis (Opt): Two pointers on the original string, tracking row/col integers (O(1) auxiliary space).

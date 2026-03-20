@@ -1,0 +1,13 @@
+ID: 2565
+Problem Title: Subsequence With the Minimum Score
+Brute Force Method: Try deleting every possible substring from t. For each remaining part, check if it's a subsequence of s. $O(M^3)$.
+BF Complexity Visuals: A brute-force check of all M^2 substrings being validated against string s.
+How to Draw BF: Write string t. Delete "abc". Is the rest in s? No. Delete "bc". Is the rest in s? Yes. Keep track of the shortest deletion.
+Optimised Pattern: Two-Pass Prefix/Suffix Matching + Sliding Window.
+Opt Vis. Technique: A "Match-from-Ends" visual: finding how far `t` can match `s` from the left and how far from the right, then finding the smallest gap.
+Dry Run (Opt): Precompute left[i]: the furthest index in s that matches t[0...i]. Precompute right[j]: the furthest index in s that matches t[j...M-1]. Use a sliding window to find indices i and j such that left[i] &lt; right[j], minimizing j - i - 1.
+How to Draw (Opt): Draw strings s and t. Match t from the left as far as possible. Match t from the right as far as possible. Find where the "left-match" and "right-match" can meet or overlap.
+Opt Complexity Visuals: $O(N + M)$. One pass for prefix matching, one for suffix, and one to find the minimum score.
+How to Draw Opt Complexity: Draw string s in the middle. Draw t matching from the left above it and t matching from the right below it. Show the gap between them shrinking.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(M)$ to store the prefix and suffix match indices.

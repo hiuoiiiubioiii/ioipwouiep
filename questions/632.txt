@@ -1,0 +1,13 @@
+ID: 632
+Problem Title: Smallest Range Covering Elements from K Lists
+Brute Force Method: Generate every possible range [min, max] using all numbers in all lists and check if it contains at least one number from each list.
+BF Complexity Visuals: N x N Matrix of possible range boundaries.
+How to Draw BF: Draw a massive number line. Draw a bracket for every single possible pair of numbers. Check each bracket. $O(N^3)$.
+Optimised Pattern: Sliding Window with Min-Heap.
+Opt Vis. Technique: K-Way Pointer Convergence.
+Dry Run (Opt): Put the first element of each list into a Min-Heap. The range is [heap.min, max_of_elements_in_heap]. Pop the min, add the next element from that specific list, and update the range.
+How to Draw (Opt): Draw K parallel tracks. Put a "runner" (pointer) on each. Draw a box spanning from the furthest left runner to the furthest right. Move the slowest runner forward.
+Opt Complexity Visuals: $O(N \log K)$ where N is total elements.
+How to Draw Opt Complexity: Draw a funnel (Heap) processing elements from K sources. Write $O(N \log K)$.
+Mem Vis (BF): Draw a list of all possible ranges being stored before sorting.
+Mem Vis (Opt): Draw a Heap of size K and a few variables for `minRange`. $O(K)$ space.

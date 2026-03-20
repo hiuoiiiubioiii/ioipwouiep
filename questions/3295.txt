@@ -1,0 +1,13 @@
+ID: 3295
+Problem Title: Report Spam Message
+Brute Force Method: For every word in the message, iterate through the entire `bannedWords` array to see if it matches. Count the matches. $O(M x B)$.
+BF Complexity Visuals: Nested Comparison Grid
+How to Draw BF: Draw the `message` words as rows and `bannedWords` as columns. Shade the intersections where words match. Label as $O(M x B)$.
+Optimised Pattern: HashSet Lookup
+Opt Vis. Technique: Set-Filtered Stream
+Dry Run (Opt): Convert `bannedWords` into a HashSet. Iterate through the `message` once. If a word is in the set, increment a counter. If the counter reaches 2, return true.
+How to Draw (Opt): Draw a "Filter Box" representing the HashSet. Throw each word from the message into the box. If it hits a "banned" slot, increment a tally on the side. Stop when the tally hits 2.
+Opt Complexity Visuals: Linear Hashing Pipeline
+How to Draw Opt Complexity: Draw an $O(B)$ block for Set construction and an $O(M)$ block for the scan. Total: $O(M + B)$.
+Mem Vis (BF): Multiple string comparison buffers.
+Mem Vis (Opt): A HashSet containing B unique strings (O(B) space).

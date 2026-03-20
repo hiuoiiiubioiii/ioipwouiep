@@ -1,0 +1,13 @@
+ID: 1778
+Problem Title: Shortest Path in a Hidden Grid
+Brute Force Method: Blindly move in random directions using the Master object until you happen to find the target, without mapping visited cells.
+BF Complexity Visuals: Random Walk / Infinite Graph Search.
+How to Draw BF: Draw a line wandering randomly. It might loop or visit the same cell 1000 times. No bound.
+Optimised Pattern: DFS (to Map) + BFS (to Find Shortest Path).
+Opt Vis. Technique: The "Cartographer" Search.
+Dry Run (Opt): 1. Use DFS to explore the entire hidden grid and build an internal map (`visited` set). 2. Use BFS on your internal map to find the shortest path from (0,0) to target.
+How to Draw (Opt): Draw a dark grid. Draw a pencil tracing all reachable cells (DFS). Then, draw a water ripple (BFS) on the paper you just drew to find the path.
+Opt Complexity Visuals: Grid-Size Traversal.
+How to Draw Opt Complexity: Draw an R \times C grid. Show one DFS pass and one BFS pass. Label $O(R \cdot C)$.
+Mem Vis (BF): None, just current state.
+Mem Vis (Opt): A Hash Map/Set of coordinates + BFS queue. $O(R \cdot C)$ space.

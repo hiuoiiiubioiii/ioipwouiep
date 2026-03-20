@@ -1,0 +1,13 @@
+ID: 1572
+Problem Title: Matrix Diagonal Sum
+Brute Force Method: Nested loops iterating over the entire N \times N matrix. Check if `i == j` or `i + j == n - 1` and add to sum. $O(N^2)$.
+BF Complexity Visuals: Full Grid Scan $O(N^2)$
+How to Draw BF: Draw a square grid. Draw a horizontal arrow for every row. Highlight only the diagonal elements inside each scan.
+Optimised Pattern: Single Pass / Linear Indexing
+Opt Vis. Technique: The X-Symmetry Trace
+Dry Run (Opt): Iterate once from `i = 0` to `n-1`. Add `mat[i][i]` and `mat[i][n-1-i]`. If `n` is odd, subtract the middle element once (as it's added twice).
+How to Draw (Opt): Draw the square. Draw a giant "X" across it. Number the "X" nodes from 1 to N. Note how each "i" maps to exactly two spots on the "X".
+Opt Complexity Visuals: Linear Diagonal Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line of length N. Each step represents one jump directly to the diagonal indices.
+Mem Vis (BF): Storing a copy of the diagonals in a list. $O(N)$.
+Mem Vis (Opt): A single `total_sum` integer variable. $O(1)$ space.

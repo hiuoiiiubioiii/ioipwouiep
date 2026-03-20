@@ -1,0 +1,13 @@
+ID: 2633
+Problem Title: Convert Object to JSON String (JS)
+Brute Force Method: Using string concatenation manually without handling escaping or nested types.
+BF Complexity Visuals: Flat String Append
+How to Draw BF: Draw a string growing character by character, failing to account for nested structures.
+Optimised Pattern: Recursive DFS Serialization
+Opt Vis. Technique: Tree-to-String Transformation
+Dry Run (Opt): Check type. If null/string/num, return formatted value. If Array/Object, recursively call for each element/key and wrap in brackets.
+How to Draw (Opt): Draw a Tree. At each node, write its JSON representation. Combine strings as you bubble back up the tree.
+Opt Complexity Visuals: $O(N)$ Node Traversal
+How to Draw Opt Complexity: Draw a block representing every key and value being visited exactly once. $O(N)$.
+Mem Vis (BF): Large intermediate string buffers
+Mem Vis (Opt): Call stack depth $O(D)$ + efficient string builder patterns.

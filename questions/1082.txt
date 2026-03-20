@@ -1,0 +1,13 @@
+ID: 1082
+Problem Title: Sales Analysis I
+Brute Force Method: (SQL) Group by seller, sum prices, sort descending, and take the top. Use another query to find all sellers matching that max sum.
+BF Complexity Visuals: Multiple independent sorting and aggregation passes.
+How to Draw BF: Seller 1: 100, Seller 2: 100, Seller 3: 50. Max is 100. Find all with 100. Write $O(N \log N)$.
+Optimised Pattern: Group By + Having (Subquery Max).
+Opt Vis. Technique: A "Leaderboard Sweep". Sum everyone's sales and keep only those who tied for first place.
+Dry Run (Opt): `SELECT seller_id FROM Sales GROUP BY seller_id HAVING SUM(price) = (SELECT SUM(price) FROM Sales GROUP BY seller_id ORDER BY SUM(price) DESC LIMIT 1)`.
+How to Draw (Opt): Draw the Sales table. Group by Seller. Write total  next to each. Find the highest , then list all Sellers with that .
+Opt Complexity Visuals: Two-pass aggregation.
+How to Draw Opt Complexity: Draw a table collapsing into sums, then a filter gate. Write Time: $O(N)$.
+Mem Vis (BF): Redundant temporary result sets.
+Mem Vis (Opt): An internal hash map for grouping. $O(\text{UniqueSellers})$ space.

@@ -1,0 +1,13 @@
+ID: 3389
+Problem Title: Minimum Operations to Make Character Frequencies Equal
+Brute Force Method: Try every possible target frequency f in [0, N]. For each f, try all ways to shift, add, or delete characters.
+BF Complexity Visuals: Exhaustive State Search
+How to Draw BF: Draw 26 buckets. For a target f, draw arrows moving tallies between any two buckets. $O(N \cdot 3^26)$.
+Optimised Pattern: Dynamic Programming (Frequency Transitions)
+Opt Vis. Technique: Linear Frequency Waterfall
+Dry Run (Opt): `dp[i]` is the min cost for the first i characters. At step i, you can either handle char i independently or "bridge" it with char i-1 (moving excess from i-1 to i).
+How to Draw (Opt): Draw 26 boxes. Below them, draw a DP array. For box i, draw an arrow from `dp[i-1]` and a "combo" arrow from `dp[i-2]` if you are moving excess characters.
+Opt Complexity Visuals: Linear 26-Step Sweep
+How to Draw Opt Complexity: Draw a line of 26 dots. For each target f (up to N), sweep through the 26 dots. Total $O(26 \cdot N)$.
+Mem Vis (BF): Massive state-space tree for all possible tally shifts.
+Mem Vis (Opt): A 1D DP array of size 26 and a frequency map. $O(1)$ relative to N.

@@ -1,0 +1,13 @@
+ID: 2466
+Problem Title: Count Ways To Build Good Strings
+Brute Force Method: Recursive backtracking: starting from length 0, branch out by adding 'zero' ones or 'one' ones until length reaches 'high'. Count valid paths.
+BF Complexity Visuals: Binary String Growth Tree
+How to Draw BF: Draw a root 0. Branch 'zero' and 'one'. Repeat until height reaches 'high'. Label $O(2^(\text{high})$).
+Optimised Pattern: 1D Dynamic Programming (Climbing Stairs Variant)
+Opt Vis. Technique: Incremental Length Accumulator
+Dry Run (Opt): `dp[i]` = number of ways to reach length `i`. `dp[i] = dp[i - zero] + dp[i - one]`. Sum values of `dp[low...high]`.
+How to Draw (Opt): Draw a line from 0 to 'high'. For a point 'i', draw two backward "jump" arrows of lengths 'zero' and 'one'. Add the values at the landing spots.
+Opt Complexity Visuals: Linear Iteration Line
+How to Draw Opt Complexity: Draw a single straight line 0 to 'high'. Label $O(\text{high})$.
+Mem Vis (BF): Draw a recursion stack of depth 'high'.
+Mem Vis (Opt): Draw a 1D array of size 'high'. $O(\text{high})$ Space.

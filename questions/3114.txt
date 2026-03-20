@@ -1,0 +1,13 @@
+ID: 3114
+Problem Title: Latest Time You Can Obtain After Replacing Characters
+Brute Force Method: Generate all possible time combinations (up to 1440 minutes), filter by the '?' pattern, and take the maximum. **O(N)**
+BF Complexity Visuals: A branching tree of digits 0-9 filtering out invalid time formats.
+How to Draw BF: Write `??:??`. Draw arrows down creating all 1440 minutes, cross out non-matching ones sequentially.
+Optimised Pattern: Greedy Constraint Matching
+Opt Vis. Technique: Left-to-Right Slot Machine
+Dry Run (Opt): Evaluate digits independently. If `s[0] == '?'`, make it '1' if `s[1]` is '0' or '1', else '0'. `s[3]` is '5', `s[4]` is '9'.
+How to Draw (Opt): Draw 4 empty boxes. Fill them left to right based on immediate local max rules (max 11 hours, max 59 mins). No backtracking needed.
+Opt Complexity Visuals: Constant time execution, 4 discrete steps.
+How to Draw Opt Complexity: Draw exactly 4 dots connected by 4 straight lines. Label it **O(1)**.
+Mem Vis (BF): An array of 1,440 generated string variables.
+Mem Vis (Opt): Modifying the 5-character string in-place. **O(1)** space.

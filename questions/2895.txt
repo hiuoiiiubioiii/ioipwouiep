@@ -1,0 +1,13 @@
+ID: 2895
+Problem Title: Minimum Processing Time
+Brute Force Method: Try all possible assignments of tasks to processors using recursion/backtracking to find the one that minimizes the finish time.
+BF Complexity Visuals: $O(N!)$ Permutation Tree
+How to Draw BF: Draw 4 processors and 16 tasks. Draw branches showing every possible way to give 4 tasks to each processor.
+Optimised Pattern: Greedy (Dual Sorting)
+Opt Vis. Technique: Opposite Sorting Alignment
+Dry Run (Opt): Sort processors in ascending order. Sort tasks in descending order. Pair the earliest processor with the 4 longest tasks. The finish time is max(processor[i] + task[i*4]).
+How to Draw (Opt): Draw a list of small numbers (Processors) and a list of large numbers (Tasks). Pair the smallest P with the largest T to "level out" the workload.
+Opt Complexity Visuals: $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting-slope. The time taken is dominated by the initial sort of both arrays.
+Mem Vis (BF): $O(N!)$ - Storing every permutation in memory.
+Mem Vis (Opt): $O(N)$ - Storing only the sorted arrays.

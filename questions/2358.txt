@@ -1,0 +1,13 @@
+ID: 2358
+Problem Title: Maximum Number of Groups Entering a Competition
+Brute Force Method: Try all possible ways to group students into groups with increasing sizes and increasing sums of grades using a backtracking or greedy approach.
+BF Complexity Visuals: Exponential Grouping Tree
+How to Draw BF: Draw a list of students. Branch out by picking 1 student, then 2 students, then 3, checking if the sum of grades also increases at each step.
+Optimised Pattern: Greedy Math (Arithmetic Progression)
+Opt Vis. Technique: Quadratic Growth Approximation
+Dry Run (Opt): Since we can sort students by grade, the sum condition will always be met if we just pick groups of sizes 1, 2, 3... until we run out of students. Solve x(x+1)/2 \le n for x.
+How to Draw (Opt): Draw n dots. Circle 1 dot, then circle the next 2 dots, then the next 3. Count how many full circles you can draw before you run out of dots.
+Opt Complexity Visuals: Constant Time Math (O(1))
+How to Draw Opt Complexity: Draw a single mathematical formula or a very short loop that increments a counter until it exceeds n.
+Mem Vis (BF): Draw a deep recursion stack for every possible student grouping.
+Mem Vis (Opt): Draw zero extra memory (just one or two Integer variables for the math).

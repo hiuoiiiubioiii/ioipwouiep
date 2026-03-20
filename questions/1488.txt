@@ -1,0 +1,13 @@
+ID: 1488
+Problem Title: Avoid Flood in The City
+Brute Force Method: Backtracking. For every dry day (0), try drying every possible full lake. If a flood occurs later, go back and change which lake was dried.
+BF Complexity Visuals: Decision Tree Explosion
+How to Draw BF: Draw a tree where each '0' day is a branch for every lake. Label $O(L^\text{dry}_\text{days})$.
+Optimised Pattern: Greedy + Greedy with Binary Search (TreeSet)
+Opt Vis. Technique: Just-In-Time Disaster Prevention
+Dry Run (Opt): Store indices of dry days in a sorted set. Use a map to track `lake -&gt; last_rained_day`. If it rains on a full lake, find the first dry day available *after* the last rain on that lake using `set.higher()`.
+How to Draw (Opt): Draw a timeline. Mark "Rain" days and "Sun" days. When a lake rains twice, look at the "Sun" days between the two rains. Pick the earliest one to "use up" and dry that lake.
+Opt Complexity Visuals: Logarithmic Set Lookups
+How to Draw Opt Complexity: Draw an arrow through the days $O(n)$. Inside, a binary search in the dry-day set $O(\log n)$. Label $O(n \log n)$.
+Mem Vis (BF): Full path history stack
+Mem Vis (Opt): A Hash Map (lake history) and a TreeSet (available dry days). Space $O(n)$.

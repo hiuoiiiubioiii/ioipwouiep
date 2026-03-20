@@ -1,0 +1,13 @@
+ID: 2625
+Problem Title: Flatten Deeply Nested Array (JS)
+Brute Force Method: Convert entire array to string, strip brackets via regex, parse back to array (fails on string inputs).
+BF Complexity Visuals: String Manipulation Block
+How to Draw BF: Draw the array as a giant string, cross out all `[` and `]`. Slow, error-prone, and destroys data types.
+Optimised Pattern: Recursive DFS with Depth Tracking
+Opt Vis. Technique: Tree Pruning by Depth
+Dry Run (Opt): Loop items. If item is an array AND current depth &lt; n, recursively call flatten on it with depth+1. Otherwise, push item to result array.
+How to Draw (Opt): Draw a nested array as a Tree. Top level is depth 0. Draw a horizontal line at depth `n`. Anything above the line gets its brackets removed. Anything below stays intact.
+Opt Complexity Visuals: Linear Node Traversal Block
+How to Draw Opt Complexity: Draw a linear block representing N elements visited exactly once, $O(N)$.
+Mem Vis (BF): Huge intermediate strings
+Mem Vis (Opt): Call stack memory proportional to max depth `n` + Result Array.

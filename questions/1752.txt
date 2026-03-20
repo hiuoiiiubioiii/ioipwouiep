@@ -1,0 +1,13 @@
+ID: 1752
+Problem Title: Check if Array Is Sorted and Rotated
+Brute Force Method: Try all N possible rotations of the array. For each rotation, check if it is sorted in non-decreasing order.
+BF Complexity Visuals: Rotating Ring Inspection.
+How to Draw BF: Draw the array on a circular wheel. Rotate the wheel N times. For each stop, check if it's a straight line. $O(N^2)$.
+Optimised Pattern: Single Pass Contraction Check.
+Opt Vis. Technique: The "Drop" Counter.
+Dry Run (Opt): Count how many times `arr[i] &gt; arr[i+1]`. In a sorted/rotated array, this "drop" can happen at most once (including the wrap-around from last to first).
+How to Draw (Opt): Draw the array as a line graph. It should go up, drop once, and go up again. If it drops twice, it's invalid.
+Opt Complexity Visuals: Linear Scan.
+How to Draw Opt Complexity: Draw a single arrow passing through the array once. Label $O(N)$.
+Mem Vis (BF): $O(N)$ to store each rotation.
+Mem Vis (Opt): One integer variable: `count`. $O(1)$ space.

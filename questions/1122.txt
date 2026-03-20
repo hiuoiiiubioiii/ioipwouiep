@@ -1,0 +1,13 @@
+ID: 1122
+Problem Title: Relative Sort Array
+Brute Force Method: Custom Comparator. For every pair of elements, check their indices in `arr2` using `.indexOf()`.
+BF Complexity Visuals: Nested Search Comparison
+How to Draw BF: Draw two elements being compared. For each, draw an arrow scanning through `arr2` to find their priority. $O(N^2 \log N)$.
+Optimised Pattern: Counting Sort (Frequency Map)
+Opt Vis. Technique: Bucket Transfer Visualization
+Dry Run (Opt): Count frequencies of all numbers in `arr1`. Iterate through `arr2`, appending the number to the result count times and zeroing it in the map. Append remaining keys in sorted order.
+How to Draw (Opt): Draw a frequency map (buckets). Draw `arr2` below it. Cross out buckets as you move values from Map to Result. Finally, sort the remaining buckets.
+Opt Complexity Visuals: Linear + Sorting Remainder
+How to Draw Opt Complexity: Draw a line for frequency counting, a line for `arr2` processing, and a small log-curve for sorting the leftover items.
+Mem Vis (BF): Temporary Index Lists
+Mem Vis (Opt): Frequency Array (size 1001) or Hash Map. Draw a fixed-size 1D array.

@@ -1,0 +1,13 @@
+ID: 3791
+Problem Title: Number of Balanced Integers in a Range (Hard)
+Brute Force Method: Iterate through every integer from low to high. For each, calculate the sum of digits at even positions and odd positions. Increment count if they match. $O((\text{High}-\text{Low})$ * log N).
+BF Complexity Visuals: Linear Range Enumeration.
+How to Draw BF: Write out 100 to 200. For "121": Odd(1+1)=2, Even(2)=2. Match! Circle it. For "122": Odd(1+2)=3, Even(2)=2. No. Repeat for every number.
+Optimised Pattern: Digit Dynamic Programming (Digit DP)
+Opt Vis. Technique: Constraint-Based State Tree
+Dry Run (Opt): Build the number digit by digit. State: dp(index, diff, isLess, isStarted), where diff is the running difference between odd and even position sums. Result is count(high) - count(low-1).
+How to Draw (Opt): Draw a tree where each level is a digit position. The nodes store the current "balance" (OddSum - EvenSum). Only follow paths where the final balance can realistically reach 0.
+Opt Complexity Visuals: $O(\text{Digits} \\text{cdot MaxSum} \cdot 2)$ states.
+How to Draw Opt Complexity: Draw a 1D timeline of length 18 (max digits), with a small 2D matrix (Sum x Diff) being filled at each step.
+Mem Vis (BF): Massive CPU time; time limit exceeded.
+Mem Vis (Opt): Memoization table (4D/5D array) of small dimensions.

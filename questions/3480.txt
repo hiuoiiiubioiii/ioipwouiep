@@ -1,0 +1,13 @@
+ID: 3480
+Problem Title: Maximize Subarrays After Removing One Conflicting Pair
+Brute Force Method: For each pair, remove it and count all valid subarrays by checking every i,j against all remaining M-1 pairs. $O(M \cdot N^2)$
+BF Complexity Visuals: Nested Loop Cuboid.
+How to Draw BF: Draw an array. Draw brackets for every possible subarray. For each bracket, draw a list of conflict rules it must pass.
+Optimised Pattern: Two-Pointer / Boundary Tracking (Min and Second Min). $O(N + M)$
+Opt Vis. Technique: Dual Conflict Boundary Lines.
+Dry Run (Opt): Scan right-to-left. Track b1 (closest conflict index) and b2 (second closest). Benefit of removing the rule at b1 is b2 - b1.
+How to Draw (Opt): Draw a horizontal array. For index i, draw two vertical dashed lines (b1, b2). The gap between them is the "potential gain."
+Opt Complexity Visuals: Single Linear Sweep.
+How to Draw Opt Complexity: Draw one straight arrow traversing the array once, with a small "boundary box" updating at each step.
+Mem Vis (BF): Massive list of valid subarray coordinates.
+Mem Vis (Opt): Two 1D arrays (`limit1`, `limit2`) of size N to store conflict boundaries.

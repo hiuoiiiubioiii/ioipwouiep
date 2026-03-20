@@ -1,0 +1,13 @@
+ID: 3736
+Problem Title: Minimum Moves to Equal Array Elements III (Easy)
+Brute Force Method: Try targeting every single number between the min and max of the array, calculate the absolute sum of differences for each. $O(N \\text{cdot Range})$.
+BF Complexity Visuals: Multiple parallel distance checks.
+How to Draw BF: Draw a number line. Pick an arbitrary target dot. Draw lines from every array element to that dot. Sum the lengths. Repeat for next dot.
+Optimised Pattern: Sorting &amp; Median Finding
+Opt Vis. Technique: Median Target Pull
+Dry Run (Opt): Sort the array. The optimal target to minimize absolute differences is ALWAYS the median element. Find the median, sum the distances from all other elements to it.
+How to Draw (Opt): Draw sorted array. Circle the exact middle number (the median). Draw arrows from all other numbers pointing inward to the circled median. Tally the distances.
+Opt Complexity Visuals: $O(N \log N)$ Sorting.
+How to Draw Opt Complexity: Draw a sweeping upward curve representing the sort, followed by a flat horizontal line for the $O(N)$ summation pass.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): $O(\log N)$ stack space for sorting algorithm.

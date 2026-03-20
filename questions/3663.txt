@@ -1,0 +1,13 @@
+ID: 3663
+Problem Title: Find The Least Frequent Digit (Easy)
+Brute Force Method: Convert the number to a string, then perform nested loops to count each digit 0-9.
+BF Complexity Visuals: Digit-by-Digit Comparator.
+How to Draw BF: Write the number. For digit '0', count how many appear. For digit '1', count how many. Compare the 10 totals to find the minimum.
+Optimised Pattern: Modulo-based Frequency Array. Use `n % 10` to strip digits and an array of size 10 to store counts.
+Opt Vis. Technique: The "10-Slot Tally Board".
+Dry Run (Opt): Visualize a board with slots 0 to 9. Strip the last digit of the number, put a tally in its slot, and discard it. Repeat until the number is gone.
+How to Draw (Opt): Draw 10 slots. Take `1223`. `3` goes to Slot 3. `2` to Slot 2. `2` to Slot 2. `1` to Slot 1. Slot 1 and 3 are tied for least frequent.
+Opt Complexity Visuals: Digit-Logarithmic Pass.
+How to Draw Opt Complexity: Draw one arrow representing the number of digits. $O(\log_10 N)$.
+Mem Vis (BF): Allocating a large string object for a very large integer.
+Mem Vis (Opt): An array of 10 integers. Space $O(1)$.

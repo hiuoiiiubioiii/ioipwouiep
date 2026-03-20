@@ -1,0 +1,13 @@
+ID: 2002
+Problem Title: Maximum Product of the Length of Two Palindromic Subsequences
+Brute Force Method: Recursively generate all disjoint subsequence pairs, check if palindrome, multiply lengths.
+BF Complexity Visuals: Binary Recursion Tree (Exponential Expansion)
+How to Draw BF: Draw a tree where each node branches into 3 choices for each character: skip, add to sub1, add to sub2. Notice the massive $O(3^N)$ fan-out.
+Optimised Pattern: Bitmask Enumeration + Precomputed Palindromes
+Opt Vis. Technique: Bitwise Mask Overlays
+Dry Run (Opt): Write the string out. Use binary numbers (0s and 1s) directly underneath to visualize which characters are "turned on" for a subsequence.
+How to Draw (Opt): Draw the string horizontally. Below it, list bitmasks. Use bitwise AND `(&amp;)` logic gates on paper to show disjoint sets (mask1 &amp; mask2 == 0).
+Opt Complexity Visuals: Set Space Partitioning Venn Diagram
+How to Draw Opt Complexity: Draw a universal set of 2^N masks. Show the iteration filtering down to valid palindromes, bounded by $O(3^N)$ subset traversal.
+Mem Vis (BF): Deep recursive stack frames showing passing of strings and current index.
+Mem Vis (Opt): 1D Array of size 2^N representing bitmasks, storing boolean `true/false` for palindromes.

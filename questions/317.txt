@@ -1,0 +1,13 @@
+ID: 317
+Problem Title: Shortest Distance from All Buildings
+Brute Force Method: From every empty land cell '0', run a BFS to find the distance to all buildings '1'. Total the distances.
+BF Complexity Visuals: Exhaustive Grid Search (Multiple BFS Starts)
+How to Draw BF: Draw a grid. For every single '0' cell, draw expanding concentric squares. Repeat for every '0'. Label $O((M\cdot N)$^2).
+Optimised Pattern: BFS from Buildings (Multi-Source Distance Accumulation)
+Opt Vis. Technique: Heatmap Overlay (Sum of Distances)
+Dry Run (Opt): Reverse the logic: Run BFS from each building ('1') only. For each '0' it reaches, add the distance to a `total_dist` grid and increment a `reach_count` grid. Finally, find the '0' that reached all buildings with the min distance.
+How to Draw (Opt): Draw a grid. Use different colored arrows originating from each '1'. In each '0' cell, write the sum of the colors. Shade the cell with the smallest sum.
+Opt Complexity Visuals: Grid-Bound Linear Traversal per Source
+How to Draw Opt Complexity: Draw a grid with K buildings. Draw a circle around each building. Show K separate BFS passes. $O(K \cdot M \cdot N)$.
+Mem Vis (BF): A distance grid for every single empty cell. $O((M\cdot N)$^2) if not careful.
+Mem Vis (Opt): Two grids of size M*N (Distance Sum and Reach Count). Draw two side-by-side grids. $O(M\cdot N)$.

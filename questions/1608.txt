@@ -1,0 +1,13 @@
+ID: 1608
+Problem Title: Special Array With X Elements...
+Brute Force Method: For every integer x from 0 to N, iterate through the whole array to count elements &gt;= x.
+BF Complexity Visuals: Double Iteration Matrix
+How to Draw BF: Draw an N x N matrix representing an outer loop (x) and an inner loop checking all array values. $O(N^2)$.
+Optimised Pattern: Counting Sort / Frequency Array
+Opt Vis. Technique: Reverse Histogram Cumulative Sum
+Dry Run (Opt): Count frequencies. Iterate from N down to 0, keeping a running sum of counts. If sum == x, return x.
+How to Draw (Opt): Draw a bar chart of frequencies. Draw a cumulative wave moving from right to left, stopping when wave height equals the index.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw a single straight arrow pointing across a frequency array. $O(N)$.
+Mem Vis (BF): Two Variables: Simple outer and inner loop counters.
+Mem Vis (Opt): Frequency Array: Draw an array of size N+1 with tallies (hash marks) inside the boxes.

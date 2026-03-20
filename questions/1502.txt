@@ -1,0 +1,13 @@
+ID: 1502
+Problem Title: Can Make Arithmetic Progression From Sequence
+Brute Force Method: Sort the array, then iterate to check if the difference between adjacent elements is constant.
+BF Complexity Visuals: Sorting Tree Visualization (O(N log N))
+How to Draw BF: Draw a wide triangle narrowing down to a single line representing the merge/quicksort depth, followed by a straight linear line (N) for the difference check.
+Optimised Pattern: Math / Hash Set (Min/Max finding)
+Opt Vis. Technique: Number Line Boundary Check
+Dry Run (Opt): Find global min/max. Calculate expected step `(max-min)/(n-1)`. Jump along the number line by `step`, checking if each expected value exists in a Set.
+How to Draw (Opt): Draw a straight horizontal line (number line). Mark the min and max dots. Draw evenly spaced arcs between them representing the calculated 'step'. Tick off nodes as you find them.
+Opt Complexity Visuals: Linear Scan Visualization $O(N)$
+How to Draw Opt Complexity: Draw three parallel horizontal lines of length N representing the 3 passes: 1 to find min/max, 1 to populate Set, 1 to verify expected steps.
+Mem Vis (BF): Array blocks shifting/rearranging in place.
+Mem Vis (Opt): A Hash Set bucket grid. Draw items being dropped into distinct buckets in $O(1)$ space (if tracking seen) or purely variables (O(1)).

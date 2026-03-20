@@ -1,0 +1,13 @@
+ID: 1544
+Problem Title: Make The String Great
+Brute Force Method: Repeatedly scan the string from the beginning. If you find a pair like 'aA', remove it and start the scan again from index 0. $O(N^2)$.
+BF Complexity Visuals: Recursive String Shrinking $O(N^2)$
+How to Draw BF: Draw a string. Circle a pair, erase it, and draw a long arrow pointing back to the start of the string to begin again.
+Optimised Pattern: Stack (Greedy Elimination)
+Opt Vis. Technique: The Collision Buffer
+Dry Run (Opt): Iterate through the string once. For each character, check the top of the stack. If they are the same letter but different case (absolute difference of 32 in ASCII), pop the stack. Otherwise, push the char.
+How to Draw (Opt): Draw a vertical tube (the stack). Drop 'a' in. Next is 'A'. Since they "react," they both vanish. Drop 'b' in. Next is 'c'. They stay. The contents of the tube at the end is the "Great" string.
+Opt Complexity Visuals: One-Pass Linear $O(N)$
+How to Draw Opt Complexity: Draw a single horizontal line. Each character is looked at exactly once and either added to or removed from the stack.
+Mem Vis (BF): New string allocations for every single deletion. $O(N^2)$.
+Mem Vis (Opt): A stack or character array. $O(N)$ space.

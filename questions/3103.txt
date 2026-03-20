@@ -1,0 +1,13 @@
+ID: 3103
+Problem Title: Find Trending Hashtags II (SQL)
+Brute Force Method: Use a nested subquery to split every tweet into words, filter for '#' prefix, and then perform a GROUP BY on the entire mess.
+BF Complexity Visuals: Recursive Text Splitting
+How to Draw BF: Draw a tweet bubble. Show it shattering into words. Draw a "Hashtag Magnet" pulling only the # terms.
+Optimised Pattern: REGEXP_SUBSTR + Window Aggregation
+Opt Vis. Technique: Frequency Ranking Funnel
+Dry Run (Opt): Use REGEXP_SUBSTR(text, '#[[:alnum:]]+', 1, occurrence) to pull hashtags. Group by tag, count, and use RANK() or ORDER BY to find the top 3 in a specific month.
+How to Draw (Opt): Draw a table. Draw an arrow "extracting" the tags. Group identical tags. Draw a pedestal for the top 3 tallest groups.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Pass
+How to Draw Opt Complexity: Draw a single pass through the tweets $O(N)$, followed by a sorting block for the hashtag frequencies.
+Mem Vis (BF): Massive temporary table containing every word from every tweet.
+Mem Vis (Opt): The database's internal Hash Map used for the GROUP BY operation.

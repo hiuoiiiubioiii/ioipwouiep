@@ -1,0 +1,13 @@
+ID: 331
+Problem Title: Verify Preorder Serialization of a Binary Tree
+Brute Force Method: Explicitly reconstruct the binary tree from the string. Use null nodes for '#' and throw an error or check if nodes remain at the end.
+BF Complexity Visuals: Explicit Tree Growth (N-ary expansion)
+How to Draw BF: Draw a root. Branch out left/right. If you run out of string before filling the tree, or have leftovers, it's $O(N)$ but with high overhead.
+Optimised Pattern: Graph Degree Logic (Out-degree vs In-degree) / Slot Counting
+Opt Vis. Technique: Resource Slot Depletion
+Dry Run (Opt): Start with 1 slot. For every non-'#' node, it consumes 1 slot but creates 2 new ones (total +1). For every '#', it consumes 1 slot and creates 0 (total -1). If slots ever drop to 0 before the end, or aren't 0 at the finish, return false.
+How to Draw (Opt): Draw a box labeled "Slots". Put the number 1 in it. As you read the string, erase and update the number. Use arrows pointing from the string to the box.
+Opt Complexity Visuals: Net-Flow Balance Analysis
+How to Draw Opt Complexity: Draw a balance scale. On one side, write "Out-degrees", on the other "In-degrees". Show them balancing to zero by the end of the scan. $O(N)$.
+Mem Vis (BF): Full Node objects and Tree pointers in memory. $O(N)$.
+Mem Vis (Opt): A single integer variable 'slots'. Draw one small box. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1604
+Problem Title: Alert Using Same Key-Card Three or More Times...
+Brute Force Method: For every swipe, check all other swipes for the same user within 60 mins.
+BF Complexity Visuals: N-to-N Connection Graph
+How to Draw BF: Draw N dots. Draw lines connecting every dot to every other dot. $O(N^2)$ complexity.
+Optimised Pattern: Hash Map of Lists + Sorting + Sliding Window (Size 3)
+Opt Vis. Technique: Timeline Sliding Window
+Dry Run (Opt): Group times by user. Sort lists. Frame a 3-element box and slide it across the timeline.
+How to Draw (Opt): Draw a horizontal number line of minutes. Draw a bracket spanning exactly 3 points. If distance &lt;= 60, alert.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw a funnel (sorting $O(N \log N)$) leading to a straight pipe (linear scan $O(N)$).
+Mem Vis (BF): Nested Loops: Draw a 2D grid matrix of size N x N.
+Mem Vis (Opt): Map of Arrays: Draw a 2-column table where column 2 contains sorted horizontal arrays.

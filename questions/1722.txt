@@ -1,0 +1,13 @@
+ID: 1722
+Problem Title: Minimize Hamming Distance After Swap
+Brute Force Method: Generate all possible permutations of the source array using the allowed swaps. Compare each to target to find minimum distance.
+BF Complexity Visuals: Exponential Permutation Tree.
+How to Draw BF: Draw source array. Draw branching paths for every single valid swap combo. Tree explodes in size. $O(N!)$.
+Optimised Pattern: Disjoint Set Union (DSU) / Connected Components + Hash Maps.
+Opt Vis. Technique: Islands of Paint Buckets.
+Dry Run (Opt): Treat allowed swaps as edges. Group connected indices into 'islands'. For each island, dump source numbers into a frequency map. Check if target numbers at those indices exist in the map.
+How to Draw (Opt): Draw indices as dots. Draw lines connecting allowed swaps. Circle the connected blobs. Next to each blob, tally available numbers. Cross them off as target uses them.
+Opt Complexity Visuals: Graph Grouping &amp; Hash Lookup.
+How to Draw Opt Complexity: Draw V nodes, E edges merging (O(N+E)). Draw linear scan checking Maps $O(N)$. Total $O(N + E)$.
+Mem Vis (BF): Holding factorial string/array permutations in memory.
+Mem Vis (Opt): Parent array for DSU + Array of Hash Maps for frequencies. $O(N)$ space.

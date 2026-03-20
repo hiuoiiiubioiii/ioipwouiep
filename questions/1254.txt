@@ -1,0 +1,13 @@
+ID: 1254
+Problem Title: Number of Closed Islands
+Brute Force Method: For every 0 (land), check every possible path to see if it reaches the boundary of the grid. If all paths are blocked by 1s (water), it's closed.
+BF Complexity Visuals: Unbounded Path Exploration
+How to Draw BF: Draw a grid. Pick a 0. Draw lines radiating in every direction until they hit water or the edge. Repeat for every land cell. Write $O((M\cdot N)$^2).
+Optimised Pattern: Flood Fill (DFS/BFS) + Edge Trimming
+Opt Vis. Technique: Boundary Drainage Simulation
+Dry Run (Opt): First, run Flood Fill on all land (0) connected to the edges and turn them into water (1). These can never be closed. Then, count how many separate land "islands" are left in the middle.
+How to Draw (Opt): Draw a grid. Take a "bucket of water" and pour it on all four edges. Let it flow into any connected land (0s) and turn them blue (1s). Then, find the remaining dry land pockets and circle each island one by one.
+Opt Complexity Visuals: Linear Grid Traversal
+How to Draw Opt Complexity: Draw a grid. Show a single sweep turning edge-islands into water, then a second sweep counting the rest. Write $O(M \cdot N)$.
+Mem Vis (BF): Draw a massive list of all possible paths from every cell.
+Mem Vis (Opt): Draw a recursion stack for DFS of max depth M x N. Space: $O(M \cdot N)$.

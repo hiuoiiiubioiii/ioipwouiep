@@ -1,0 +1,13 @@
+ID: 3543
+Problem Title: Maximum Weighted K-Edge Path (Med)
+Brute Force Method: Find all possible paths of length K using DFS and track the maximum weight.
+BF Complexity Visuals: Recursive Path Explosion.
+How to Draw BF: Draw a node. Branch out to neighbors. From each neighbor, branch again K times. $O(V^K)$.
+Optimised Pattern: Dynamic Programming (Bellman-Ford variant).
+Opt Vis. Technique: Layered Wavefront.
+Dry Run (Opt): Define `DP[k][u]` as the max weight path of length `k` ending at node `u`. Update `DP[k]` using results from `DP[k-1]`.
+How to Draw (Opt): Draw K columns of nodes. Draw arrows between column `i` and `i+1`. Label each node with the max weight found so far.
+Opt Complexity Visuals: Iterative Edge Relaxation.
+How to Draw Opt Complexity: Draw K boxes. Each box represents $O(E)$ work (looping over all edges). Total: $O(K \cdot E)$.
+Mem Vis (BF): Recursion Stack: Draw deep stack frames for every possible path branch up to depth K.
+Mem Vis (Opt): 2 x V DP Array: Draw two 1D arrays of size V (current layer and previous layer) representing current maxes.

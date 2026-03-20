@@ -1,0 +1,13 @@
+ID: 829
+Problem Title: Consecutive Numbers Sum
+Brute Force Method: For every starting number i, keep adding i+(i+1)+(i+2)... until you hit N (match) or exceed N (fail).
+BF Complexity Visuals: Arithmetic Expansion Search. $O(N^2)$.
+How to Draw BF: Draw a number line. Draw a bracket of length 2, then length 3, sliding them across the whole line until you reach N.
+Optimised Pattern: Algebraic Factorization (N = kx + \frac{k(k-1)}{2}).
+Opt Vis. Technique: Triangular Number Offset.
+Dry Run (Opt): For a sequence of length k, the sum is k numbers plus the k-th triangular number. Subtract the triangular number from N; if the remainder is divisible by k, a sequence exists.
+How to Draw (Opt): Draw N as a pile of blocks. Remove a triangle of blocks from the top. Can the remaining blocks be divided into k equal columns?
+Opt Complexity Visuals: Square Root Math. $O(\\text{sqrt}{N})$.
+How to Draw Opt Complexity: Draw a timeline that stops very early (at \sqrt{2N}), showing the loop terminates much before N.
+Mem Vis (BF): Accumulator variables: Draw a "Sum" box that gets reset millions of times.
+Mem Vis (Opt): $O(1)$ Space: Draw 2-3 integer variables doing simple arithmetic.

@@ -1,0 +1,13 @@
+ID: 261
+Problem Title: Graph Valid Tree
+Brute Force Method: Check all possible paths to ensure no cycles and every node is reachable.
+BF Complexity Visuals: Adjacency Matrix Scan: $O(V^2)$.
+How to Draw BF: Draw a grid V \times V. Shade every cell to represent checking every possible edge connection.
+Optimised Pattern: Union Find with Path Compression
+Opt Vis. Technique: Forest Disjoint-Set Clusters
+Dry Run (Opt): For each edge (u, v), check if find(u) == find(v). If yes, cycle detected. Otherwise, union them. Finally, check if total edges == n-1.
+How to Draw (Opt): Draw nodes. For each edge, draw a circle around the nodes to "group" them. If an edge connects nodes already in the same circle, draw a "Lightning Bolt" for cycle.
+Opt Complexity Visuals: Inverse Ackermann Curve: $O(E \cdot \\text{alpha}(V)$).
+How to Draw Opt Complexity: Draw a line that is almost perfectly flat (near constant). Label it \alpha(N) to show it's basically $O(1)$ per operation.
+Mem Vis (BF): Full Adjacency Matrix: $O(V^2)$ storage.
+Mem Vis (Opt): Parent Array: Draw a single 1D array where each index points to its representative. $O(V)$ space.

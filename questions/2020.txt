@@ -1,0 +1,13 @@
+ID: 2020
+Problem Title: Number of Accounts That Did Not Stream (SQL)
+Brute Force Method: Correlated subqueries for every single subscription record checking against the stream table row by row.
+BF Complexity Visuals: Nested Loop Join Grid
+How to Draw BF: Draw the Subscriptions table. For each row, draw a loop scanning the *entire* Streams table. Very slow.
+Optimised Pattern: LEFT JOIN with NULL check / EXCEPT operator
+Opt Vis. Technique: Venn Diagram (Set Difference)
+Dry Run (Opt): Filter Subscriptions to 2021. Filter Streams to 2021. Do a LEFT JOIN from Sub to Streams. Count where the Stream ID is NULL.
+How to Draw (Opt): Draw two overlapping circles. Left is "2021 Subscriptions", Right is "2021 Streams". Shade ONLY the left crescent moon part.
+Opt Complexity Visuals: Two Parallel Filtered Streams merging
+How to Draw Opt Complexity: Draw two tables filtering down rows in $O(N)$, then feeding into a Hash Join box $O(N)$. Total Time $O(N)$.
+Mem Vis (BF): Temporary tables created repeatedly for each correlated subquery execution.
+Mem Vis (Opt): Two highly filtered intermediate subsets residing in RAM before a single efficient Hash Join.

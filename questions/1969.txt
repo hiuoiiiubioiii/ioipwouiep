@@ -1,0 +1,13 @@
+ID: 1969
+Problem Title: Minimum Non-Zero Product of the Array Elements
+Brute Force Method: Calculate all numbers in the range [1, 2^p - 1], then try swapping bits between all pairs to find the min product.
+BF Complexity Visuals: Exponential Bit-Swap Matrix
+How to Draw BF: Draw all numbers. Show arrows for every possible bit exchange between every pair. $O(2^p!)$.
+Optimised Pattern: Greedy Pairing + Modular Exponentiation
+Opt Vis. Technique: Extremes Coupling (1 and 2^p-2)
+Dry Run (Opt): Observe that pairing x and y to make them 1 and x+y-1 minimizes their product. We can form 2^{p-1}-1 such pairs of (2^p-2).
+How to Draw (Opt): Draw a line of numbers. Connect the 1st with the 2nd-to-last, 2nd with 3rd-to-last, etc. Result is (2^p-2)^{(2^{p-1}-1)} \times (2^p-1) \pmod{10^9+7}.
+Opt Complexity Visuals: Logarithmic Math Calculation
+How to Draw Opt Complexity: Draw a single calculation box representing the modular exponentiation formula. $O(p)$.
+Mem Vis (BF): An exhaustive list of all 2^p integers.
+Mem Vis (Opt): $O(1)$ extra space; just a few long integer variables for the formula.

@@ -1,0 +1,13 @@
+ID: 3488
+Problem Title: Closest Equal Element Queries
+Brute Force Method: For each query i, scan left and right from nums[i] until you find another instance of the same value. $O(Q \cdot N)$
+BF Complexity Visuals: Nested Scanning Loop Forest.
+How to Draw BF: Draw the array. For each query dot, draw two search arrows radiating outwards until they hit a match.
+Optimised Pattern: Bi-directional Linear Scan with Last-Seen Map. $O(N + Q)$
+Opt Vis. Technique: Two-Pass Distance Projection.
+Dry Run (Opt): Scan left-to-right to find nearest identical elements on the left. Scan right-to-left for the nearest on the right. Store the minimum of both for each index.
+How to Draw (Opt): Draw the array. Above it, draw arrows pointing left to previous occurrences. Below it, draw arrows pointing right to next occurrences. Record the shorter arrow length.
+Opt Complexity Visuals: Two Linear Pass Timelines.
+How to Draw Opt Complexity: Draw two parallel horizontal lines representing the two passes over the array.
+Mem Vis (BF): Negligible, but extremely high CPU time for large Q.
+Mem Vis (Opt): A single distance array and a small Hash Map for "Last Index."

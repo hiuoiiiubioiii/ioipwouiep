@@ -1,0 +1,13 @@
+ID: 1910
+Problem Title: Remove All Occurrences of a Substring
+Brute Force Method: Repeatedly call built-in string replacement, scanning the whole string from scratch every time a match is removed.
+BF Complexity Visuals: Repeated String Shifting
+How to Draw BF: Draw a string. Cross out a substring. Redraw the collapsed, shorter string below it. Repeat until clean. $O(N^2)$.
+Optimised Pattern: Stack-based Pattern Matching
+Opt Vis. Technique: Stack Push-and-Pop Deletion
+Dry Run (Opt): Push characters onto a stack one by one. Check the top elements. If they form the target substring, pop them off.
+How to Draw (Opt): Draw a vertical bucket. Drop letters in. When the top letters spell the target, draw an eraser wiping them out, then continue dropping.
+Opt Complexity Visuals: Linear Stack Traversal
+How to Draw Opt Complexity: Draw an arrow moving forward (push), with occasional short backwards hops (pop). Bound by $O(N)$.
+Mem Vis (BF): High garbage collection overhead from creating completely new intermediate strings on the heap.
+Mem Vis (Opt): A contiguous character array or string builder pre-allocated to size N acting as a stack. $O(N)$ space.

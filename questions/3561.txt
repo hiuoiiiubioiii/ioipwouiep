@@ -1,0 +1,13 @@
+ID: 3561
+Problem Title: Resulting String After Adjacent Removals (Med)
+Brute Force Method: Repeatedly scan the string and remove any adjacent identical characters until no more removals are possible.
+BF Complexity Visuals: Iterative String Shrinking.
+How to Draw BF: Draw a string. Circle 'aa', redraw string without 'aa'. Repeat. $O(N^2)$ total scans.
+Optimised Pattern: Stack-based Single Pass.
+Opt Vis. Technique: Character Plate Stacking.
+Dry Run (Opt): Iterate through characters. If current char matches top of stack, pop stack. Else, push char.
+How to Draw (Opt): Draw a vertical bin. For "abba", push 'a', push 'b', 'b' matches top so pop 'b', 'a' matches top so pop 'a'.
+Opt Complexity Visuals: Linear Scan.
+How to Draw Opt Complexity: Draw a single straight arrow passing over the string. $O(N)$.
+Mem Vis (BF): String Buffer Reallocation: Draw multiple copies of slightly shorter strings being created in memory.
+Mem Vis (Opt): Stack Structure: Draw a single 1D array/list acting as a stack of characters.

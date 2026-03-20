@@ -1,0 +1,13 @@
+ID: 514
+Problem Title: Freedom Trail
+Brute Force Method: Pure recursion. Try both clockwise and counter-clockwise rotations to match the next character.
+BF Complexity Visuals: Rapidly branching binary tree of choices exploding in size. $O(2^K)$.
+How to Draw BF: Draw the ring. Draw branching paths of +1 and -1 steps. Calculate total steps at the bottom of a massive tree.
+Optimised Pattern: Dynamic Programming (Top-Down Memoization or 2D Bottom-Up).
+Opt Vis. Technique: A 2D grid that collapses redundant recursive branches into single, mathematically evaluated cells.
+Dry Run (Opt): State is (ring_idx, key_idx). For current key char, find all its positions in ring. Calculate min steps to get there + DP of next state.
+How to Draw (Opt): Draw a 2D matrix (Ring Indices x Key Characters). Fill cells right-to-left tracking minimum rotation costs.
+Opt Complexity Visuals: Filling a tightly bounded rectangle. $O(R^2 \cdot K)$ where R is ring length, K is key length.
+How to Draw Opt Complexity: Draw a grid of R rows by K columns, shading squares one by one linearly.
+Mem Vis (BF): Massive call stack space of depth K, branching out exponentially.
+Mem Vis (Opt): A static 2D Array/Matrix table of size R x K taking up predictable memory.

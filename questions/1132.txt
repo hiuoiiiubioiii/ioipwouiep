@@ -1,0 +1,13 @@
+ID: 1132
+Problem Title: Reported Posts II (SQL)
+Brute Force Method: Correlated subqueries or nested loops in Python to calculate percentages per day and then averaging them manually.
+BF Complexity Visuals: Nested Calculation Waterfall
+How to Draw BF: Draw a table. For each date, draw a mini-table of unique posts, then another mini-table of removals, then a division.
+Optimised Pattern: GROUP BY + COUNT(DISTINCT) + AVG
+Opt Vis. Technique: Aggregation Pipe with Multi-Stage Filter
+Dry Run (Opt): Join `Actions` with `Removals`. Group by `action_date`. Calculate the ratio of `count(distinct removal_id)` to `count(distinct post_id)`. Wrap in an outer query for `AVG`.
+How to Draw (Opt): Draw a "Join" bridge. Then draw buckets by date. Show percentages being written on each bucket. Finally, draw one giant funnel averaging those percentages.
+Opt Complexity Visuals: Hash/Sort Aggregation $O(N \log N)$
+How to Draw Opt Complexity: Draw a flow from table to groups, then a single line for the final average.
+Mem Vis (BF): Massive temporary rowsets
+Mem Vis (Opt): Hash Map for date-wise counts and distinct sets.

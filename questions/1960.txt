@@ -1,0 +1,13 @@
+ID: 1960
+Problem Title: Maximum Product of the Length of Two Palindromic Substrings
+Brute Force Method: Find every palindrome. For every pair, check if they overlap. Multiply lengths. $O(N^3)$.
+BF Complexity Visuals: Quadratic Pair Checking
+How to Draw BF: Draw the string. Bracket every palindrome. Draw lines connecting every bracket to every other bracket.
+Optimised Pattern: Manacher's Algorithm + Prefix/Suffix Max
+Opt Vis. Technique: The Dual Max-Span Tracker
+Dry Run (Opt): 1. Use Manacher's to find max palindrome radius at every center in $O(N)$. 2. Build `left_max` array (max palindrome ending before i) and `right_max`. 3. Iterate i to maximize `left_max[i] * right_max[i+1]`.
+How to Draw (Opt): Draw the string. Draw an array above it tracking the biggest palindrome seen so far from the left. Draw one below for the right. Pick the index i where Top \times Bottom is largest.
+Opt Complexity Visuals: Three Linear Passes $O(N)$
+How to Draw Opt Complexity: Draw 3 parallel lines. Pass 1: Manacher's. Pass 2/3: Prefix/Suffix filling.
+Mem Vis (BF): Storing all palindromes.
+Mem Vis (Opt): Arrays for radii, left, and right. $O(N)$ space.

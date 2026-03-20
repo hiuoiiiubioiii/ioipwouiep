@@ -1,0 +1,13 @@
+ID: 1350
+Problem Title: Students with Invalid Departments (SQL)
+Brute Force Method: Use a nested `NOT IN (SELECT id FROM Departments)` which often forces the DB to scan the subquery for every row in the outer query.
+BF Complexity Visuals: $O(S \cdot D)$ Nested Subquery Scan
+How to Draw BF: Draw a Student row. Draw an arrow checking the entire Department table to see if the ID *doesn't* exist. Repeat for every student.
+Optimised Pattern: LEFT JOIN + NULL Filtering
+Opt Vis. Technique: Set Difference Visualization
+Dry Run (Opt): `SELECT name FROM Students LEFT JOIN Departments ON d_id = id WHERE Departments.id IS NULL`. This allows the optimizer to use hash joins.
+How to Draw (Opt): Draw the Student table and Department table. Draw lines connecting matching IDs. Circle the students on the left who have no line connecting to the right.
+Opt Complexity Visuals: $O(S + D)$ Hash Join
+How to Draw Opt Complexity: Draw a hash table of Departments. Scan Students once, checking if their ID is in the hash. Proves linear efficiency.
+Mem Vis (BF): $O(S\cdot D)$ Intermediate Sets: Wasted work comparing every ID to every other ID.
+Mem Vis (Opt): Hash Set: Draw an in-memory Hash Set of department IDs for $O(1)$ lookups.

@@ -1,0 +1,13 @@
+ID: 2165
+Problem Title: Smallest Value of the Rearranged Number
+Brute Force Method: Generate all permutations of digits, convert to long, check for leading zeros, find minimum.
+BF Complexity Visuals: Factorial explosion of digit combinations.
+How to Draw BF: Draw "310". List: 013, 031, 103, 130, 301, 310. Pick 103. $O(D!)$.
+Optimised Pattern: Greedy Sorting.
+Opt Vis. Technique: A numeric keypad sorting logic.
+Dry Run (Opt): If positive: Sort digits ascending. If smallest is '0', swap it with the first non-zero digit. If negative: Sort digits descending and keep the '-' sign.
+How to Draw (Opt): Write the digits. If positive, sort them: 0, 1, 3. Find the first non-zero (1), move it to the front: 1, 0, 3. If negative, sort 3, 1, 0: -310.
+Opt Complexity Visuals: $O(D \log D)$ where D is number of digits (Max 15).
+How to Draw Opt Complexity: A single sorting funnel followed by a constant-time swap.
+Mem Vis (BF): $O(D!)$ list of strings.
+Mem Vis (Opt): $O(D)$ char array/frequency array.

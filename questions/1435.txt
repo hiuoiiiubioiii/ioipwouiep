@@ -1,0 +1,13 @@
+ID: 1435
+Problem Title: Create a Session Bar Chart (SQL)
+Brute Force Method: Filtered Counts. Run 5 separate SELECT statements with hardcoded WHERE clauses for each duration range and UNION them together.
+BF Complexity Visuals: Multi-Scan Union Pipeline
+How to Draw BF: Draw the Sessions table. Draw 5 separate arrows, each scanning the table once for a specific range. Label $O(5 \cdot N)$.
+Optimised Pattern: CASE WHEN + CROSS JOIN (Static Ranges)
+Opt Vis. Technique: Categorical Bucket Aggregation
+Dry Run (Opt): Create a CTE with all 4 bin names. LEFT JOIN it with a subquery that groups the Sessions table into bins using `CASE WHEN`. Use `COUNT(session_id)` to ensure 0s show up.
+How to Draw (Opt): Draw a static "Bin Template" table. Draw the Sessions table passing through a "Categorizer" funnel. Match the categorized results to the template and fill in the counts.
+Opt Complexity Visuals: Single Scan + Join Pipeline
+How to Draw Opt Complexity: Draw one scan $O(N)$ -&gt; Grouping $O(N)$ -&gt; Join $O(\text{Bins})$. Total $O(N)$.
+Mem Vis (BF): N/A (Database Level)
+Mem Vis (Opt): Small Hash Map for grouping categories in memory. Space $O(\text{Bins})$.

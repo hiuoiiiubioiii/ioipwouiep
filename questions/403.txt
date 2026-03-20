@@ -1,0 +1,13 @@
+ID: 403
+Problem Title: Frog Jump
+Brute Force Method: DFS Recursion At each stone, try jumping k-1, k, and k+1.
+BF Complexity Visuals: Trinary Tree
+How to Draw BF: Draw a root node. Draw 3 branches (k-1, k, k+1) from EVERY node. Show exponential $O(3^N)$ growth.
+Optimised Pattern: DP (Hash Map of Sets) Map each stone to a Set of jump lengths that reached it.
+Opt Vis. Technique: Directed Graph
+Dry Run (Opt): Draw stones as nodes. Draw arrows between them labeled with the jump distance. Accumulate sets of distances at each node.
+How to Draw (Opt): Draw circles in a line for stones. Above each circle, draw a small box (the Set). Write incoming jump sizes into the box.
+Opt Complexity Visuals: Bounded Graph
+How to Draw Opt Complexity: Draw nodes, but show that max edges between nodes is limited to N. Overall complexity $O(N^2)$.
+Mem Vis (BF): Call Stack Draw an infinitely deep stack of recursive calls.
+Mem Vis (Opt): Map of Sets Draw a 2D table where Row = Stone, Column = possible jump sizes stored. $O(N^2)$ space.

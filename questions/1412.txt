@@ -1,0 +1,13 @@
+ID: 1412
+Problem Title: Find the Quiet Students in All Exams (SQL)
+Brute Force Method: Correlated Subqueries. For every student, run a subquery to find their exams, and for each exam, run another subquery to find the absolute max and min scores of that specific exam.
+BF Complexity Visuals: Triple Nested Loop Join
+How to Draw BF: Draw the Student table pointing to the Exam table, which then points to two separate full-table scans of the Exam table for MAX() and MIN(). Label $O(S \cdot E^2)$.
+Optimised Pattern: Window Functions (RANK / MAX OVER)
+Opt Vis. Technique: Partitioned Data Frame
+Dry Run (Opt): Use `MAX(score) OVER(PARTITION BY exam_id)` to tag the top/bottom scores inline. Flag students who hit these extremes. Group by student and filter out flagged ones.
+How to Draw (Opt): Draw the Exam table chopped into blocks by `exam_id`. Add a virtual column beside it instantly showing the max/min for that block. Cross out students matching those virtual numbers.
+Opt Complexity Visuals: Partition &amp; Filter Pipeline
+How to Draw Opt Complexity: Draw a Database symbol -&gt; Partition/Sort $O(E \log E)$ -&gt; Filter $O(E)$ -&gt; Join $O(S)$.
+Mem Vis (BF): Massive Temp Tables
+Mem Vis (Opt): Draw a single, partitioned dataset held in memory during the Window Function execution.

@@ -1,0 +1,13 @@
+ID: 2325
+Problem Title: Decode the Message
+Brute Force Method: For every character in the message, scan the `key` string from the beginning to find its first appearance index to determine its alphabetical substitute.
+BF Complexity Visuals: Nested Scanning Lines (O(M * K))
+How to Draw BF: Draw the message string. From each character, draw a long arrow sweeping across the entire key string until it finds a match.
+Optimised Pattern: Hash Map / Array Substitution Cipher
+Opt Vis. Technique: Dictionary Lookup Frame
+Dry Run (Opt): Iterate the `key` once. If a letter hasn't been seen, assign it the next alphabetical character ('a', then 'b', etc.) in a Hash Map. Then iterate `message` and instantly swap using the Map.
+How to Draw (Opt): Draw a 2-column translation table. Read the `key` left-to-right, filling out the table. Then look at the `message` and draw lines pointing straight to the table and out to the final decoded string.
+Opt Complexity Visuals: Two Independent Scans (O(M + K))
+How to Draw Opt Complexity: Draw a short line representing the key processing, followed completely separately by a longer line representing the message translation.
+Mem Vis (BF): Draw no extra memory, just index pointers darting back and forth.
+Mem Vis (Opt): Draw a 26-element Array (or a Hash Map) storing character-to-character mappings.

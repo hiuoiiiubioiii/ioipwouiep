@@ -1,0 +1,13 @@
+ID: 2885
+Problem Title: Rename Columns
+Brute Force Method: Create a brand new DataFrame. While copying data, manually assign the new names to the header of the new structure.
+BF Complexity Visuals: Structure Reconstruction
+How to Draw BF: Draw an old table and a new table. Draw arrows moving data from "id" to "student_id", "first" to "first_name", etc.
+Optimised Pattern: df.rename(columns={...})
+Opt Vis. Technique: Metadata Relabeling
+Dry Run (Opt): Visualize the underlying data staying exactly where it is. Only the "Label" attached to the top of the column is swapped out.
+How to Draw (Opt): Draw a column. Erase the name "A" at the top and write "B" over it. The data below doesn't move.
+Opt Complexity Visuals: $O(M)$ where M is the number of columns renamed.
+How to Draw Opt Complexity: Draw a few dots (one per column name). It doesn't matter how many rows exist (N); only columns (M) matter.
+Mem Vis (BF): $O(N\cdot M)$ - Creating a full copy of the data.
+Mem Vis (Opt): $O(1)$ - If done in-place, or $O(M)$ for the label mapping.

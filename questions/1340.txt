@@ -1,0 +1,13 @@
+ID: 1340
+Problem Title: Jump Game V
+Brute Force Method: Recursively explore every jump from every index without memoization, leading to the same index being calculated thousands of times.
+BF Complexity Visuals: $O(N \cdot d^N)$ Overlapping Search Tree
+How to Draw BF: Draw an array. From index i, draw arrows to all i pm d valid jumps. For each jump, repeat. The tree branches explode and overlap constantly.
+Optimised Pattern: DP + Memoization or Monotonic Stack Sort
+Opt Vis. Technique: Directed Acyclic Graph (DAG) Layers
+Dry Run (Opt): Sort indices by value. Start DP from the smallest value. For each index, `dp[i] = 1 + max(dp[j])` for all reachable `j`. Alternatively, use Top-Down DFS + Memo.
+How to Draw (Opt): Draw an array. For each index, draw arrows to reachable lower-valued neighbors. Fill the values from lowest to highest. Each arrow adds +1 to the source's max jump.
+Opt Complexity Visuals: $O(N \cdot d)$
+How to Draw Opt Complexity: Draw a grid: Index vs. MaxJumps. Show arrows only moving from lower heights to higher heights, proving it's a DAG.
+Mem Vis (BF): Exponential Call Stack: Thousands of identical recursive frames.
+Mem Vis (Opt): $O(N)$ DP Array: Draw a single 1D array `memo[]` storing the results for each index.

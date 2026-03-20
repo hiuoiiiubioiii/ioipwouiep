@@ -1,0 +1,13 @@
+ID: 1100
+Problem Title: Find K-Length Substrings With No Repeated Characters
+Brute Force Method: Extract every substring of length K. For each substring, use a Set to check if all characters are unique.
+BF Complexity Visuals: A sliding "Snapshot" taking N-K pictures and running a lab test on each.
+How to Draw BF: String: "havefunonleetcode", K=5. Draw brackets for "havef", then "avefu"... For each, check if count of unique == K. Write $O(N \cdot K)$.
+Optimised Pattern: Sliding Window + Frequency Array/Set.
+Opt Vis. Technique: A "Conveyor Belt with a Counter". As characters enter/exit the window, update a single tally.
+Dry Run (Opt): Maintain a window of size K. Use a frequency array of size 26. Count how many characters have frequency &gt; 1. If that count is 0, the window is valid.
+How to Draw (Opt): Draw the string. Put 'L' and 'R' pointers at distance K. Slide them together. Write the 26-box frequency array below. Cross out/increment numbers as letters pass.
+Opt Complexity Visuals: Single pass through the string.
+How to Draw Opt Complexity: Draw the string with one arrow and a fixed window box. Write Time: $O(N)$.
+Mem Vis (BF): Creating N-K unique substring objects in memory.
+Mem Vis (Opt): A single fixed-size array of 26 integers. $O(1)$ space.

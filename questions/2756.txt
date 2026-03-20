@@ -1,0 +1,13 @@
+ID: 2756
+Problem Title: Query Batching (JS)
+Brute Force Method: Every call to getValue immediately triggers an API request. This results in N network calls for N requests within the same millisecond.
+BF Complexity Visuals: Congested Network Timeline
+How to Draw BF: Draw a timeline. For every function call, draw a separate arrow firing toward a "Server" box. The server is overwhelmed by simultaneous requests.
+Optimised Pattern: Network Socket Overload (Visualizing multiple open connections consuming system file descriptors).
+Opt Vis. Technique: Microtask/Tick-based Accumulator
+Dry Run (Opt): Batch Funneling Timeline
+How to Draw (Opt): When a call comes in, push it to a pending queue. Use a Promise.resolve().then() or setTimeout(0) to schedule a single flush that processes all accumulated queries in one batch call.
+Opt Complexity Visuals: Draw a funnel. Multiple "Request" balls drop in. At the bottom, a "Gate" opens only once per tick, letting all balls pass through as a single "Batch" block.
+How to Draw Opt Complexity: $O(1)$ amortized Scheduling
+Mem Vis (BF): Draw a single event loop cycle. Highlight the "Microtask" phase where the batch is processed. Label it $O(1)$ scheduling overhead.
+Mem Vis (Opt): Pending Queue Buffer (Draw an array in memory that grows linearly with calls but is cleared completely after each tick).

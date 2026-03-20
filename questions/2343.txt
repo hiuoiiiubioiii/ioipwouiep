@@ -1,0 +1,13 @@
+ID: 2343
+Problem Title: Query Kth Smallest Trimmed Number
+Brute Force Method: For every query, manually trim every string in the array, sort the newly created trimmed strings, and pick the Kth one.
+BF Complexity Visuals: Repeated Full Sorting (O(Q * N * L log N))
+How to Draw BF: Draw a query list. For each query, draw a copy of the entire string array being sliced and then rearranged by a sorting algorithm.
+Optimised Pattern: Radix Sort Logic / Precomputed Sorted States
+Opt Vis. Technique: Incremental Character Sorting
+Dry Run (Opt): Since trimming always starts from the right, the order of `trim=1` helps determine the order of `trim=2`. Use a stable sort (like Radix Sort) or sort based on suffixes.
+How to Draw (Opt): Draw strings as vertical columns. Start at the rightmost column. Sort based on that digit. Move one column left. Sort again, keeping the relative order of the previous step.
+Opt Complexity Visuals: Linear Suffix Scan (O(L * N + Q))
+How to Draw Opt Complexity: Draw a grid of N x L. Draw a vertical line moving from right to left, with the rows shifting positions slightly at each step.
+Mem Vis (BF): Draw thousands of temporary "trimmed" string objects being created and garbage collected.
+Mem Vis (Opt): Draw an Array of Indices `[0, 1, 2...]` being reordered, avoiding string copies.

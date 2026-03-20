@@ -1,0 +1,13 @@
+ID: 3082
+Problem Title: Find the Sum of the Power of All Subsequences
+Brute Force Method: Generate every possible subsequence. For each, find all sub-subsequences that sum to k.
+BF Complexity Visuals: Nested Power Set Fractal
+How to Draw BF: Draw a Power Set Tree. From each leaf node, draw another Power Set Tree. Label as $O(3^N)$ or higher.
+Optimised Pattern: 3D Dynamic Programming (Knapsack Variant)
+Opt Vis. Technique: State Transition Cube
+Dry Run (Opt): Let dp[i][j][len] be the number of subsequences of length len that sum to j using first i elements. Result is Sum(dp[n][k][len] * 2^(n-len)).
+How to Draw (Opt): Draw a 2D grid (Sum vs. Length). For a new number x, show how it shifts values diagonally (adding 1 to length and x to sum).
+Opt Complexity Visuals: $O(N^2 \cdot K)$ DP Grid
+How to Draw Opt Complexity: Draw a grid of size N x K. Each cell represents a constant-time update. Label total as $O(N^2 \cdot K)$.
+Mem Vis (BF): Exponential recursion stack tracking every possible subsequence combination.
+Mem Vis (Opt): A 2D DP table dp[sum][length] (space-optimized from 3D).

@@ -1,0 +1,13 @@
+ID: 531
+Problem Title: Lonely Pixel I
+Brute Force Method: For every 'B' found in the matrix, scan its entire row and its entire column to see if any other 'B' exists.
+BF Complexity Visuals: Grid scanning with repeated cross-hairs. $O(M \cdot N \cdot (M + N)$).
+How to Draw BF: Draw a grid. Circle a 'B', then draw a full horizontal and vertical line from it, counting overlaps.
+Optimised Pattern: Row/Column Tally Arrays.
+Opt Vis. Technique: Two separate buckets: One for rows, one for columns. As you scan, drop a "count" into the corresponding bucket index.
+Dry Run (Opt): Pass 1: Traverse grid, `row[r]++` and `col[c]++` for every 'B'. Pass 2: Traverse grid, check if `grid[r][c] == 'B'` and `row[r] == 1` and `col[c] == 1`.
+How to Draw (Opt): Draw the matrix. Outside the right edge, draw an array (Rows). Below the bottom edge, draw an array (Cols). Tally the 'B's in these margins.
+Opt Complexity Visuals: Two linear passes over the matrix. $O(M \cdot N)$.
+How to Draw Opt Complexity: Draw a matrix with a single arrow weaving through every cell once, then a second arrow doing the same.
+Mem Vis (BF): $O(1)$ extra space but very slow time complexity.
+Mem Vis (Opt): Two linear auxiliary arrays of size M and N. $O(M + N)$ space.

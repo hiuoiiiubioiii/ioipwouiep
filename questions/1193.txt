@@ -1,0 +1,13 @@
+ID: 1193
+Problem Title: Monthly Transactions I (SQL)
+Brute Force Method: Fetch all rows, iterate in the app layer, group by month and country, and calculate counts/sums manually.
+BF Complexity Visuals: Procedural Grouping List
+How to Draw BF: Draw the table. For each row, write its Month and Country on a sticky note. Put sticky notes in folders and count them.
+Optimised Pattern: GROUP BY + DATE_FORMAT
+Opt Vis. Technique: Bucket Aggregation Funnel
+Dry Run (Opt): Group by `DATE_FORMAT(trans_date, '%Y-%m')` and `country`. Use `SUM(IF(state = 'approved', amount, 0))` to get approved totals in one pass.
+How to Draw (Opt): Draw a "Folder Machine" where each folder is a `Month-Country` pair. Drop transaction rows into folders. Write the sums and counts on the folder labels.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single arrow through the table. Each row is assigned and summed instantly.
+Mem Vis (BF): Map of lists in memory
+Mem Vis (Opt): Database Hash Aggregation.

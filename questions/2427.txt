@@ -1,0 +1,13 @@
+ID: 2427
+Problem Title: Number of Common Factors
+Brute Force Method: Iterate from 1 up to the smaller of 'a' and 'b'. For each number, check if both 'a' and 'b' are divisible by it.
+BF Complexity Visuals: Linear Search Line
+How to Draw BF: Draw a line from 1 to Min(a, b). Draw a "Check" box at every integer. Label $O(\text{Min}(a, b)$).
+Optimised Pattern: GCD + Factor Counting
+Opt Vis. Technique: Greatest Common Divisor Reduction
+Dry Run (Opt): Find G = GCD(a, b). Any common factor of a and b is simply a factor of G. Find G, then find all its factors up to sqrt(G).
+How to Draw (Opt): Draw 'a' and 'b' as overlapping circles. Draw their intersection as 'G'. Draw a tree of factors for 'G'.
+Opt Complexity Visuals: Logarithmic GCD + Square Root Scan
+How to Draw Opt Complexity: Draw a small box for GCD (Log N) and a short line for factors (sqrt(G)). Label $O(\log(\text{min}(a,b)$) + sqrt(G)).
+Mem Vis (BF): Draw one counter variable. $O(1)$.
+Mem Vis (Opt): Draw one GCD variable and a loop counter. $O(1)$ Space.

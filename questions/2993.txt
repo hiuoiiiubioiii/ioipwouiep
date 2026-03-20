@@ -1,0 +1,13 @@
+ID: 2993
+Problem Title: Friday Purchases I
+Brute Force Method: Scan the entire `Purchases` table and use a subquery for every row to check if the date is a Friday in November 2023.
+BF Complexity Visuals: Linear Scan with Row-wise Check
+How to Draw BF: Draw a table. Point to every row and calculate `DAYOFWEEK`. $O(N)$.
+Optimised Pattern: Date Filtering + Grouping
+Opt Vis. Technique: Calendar Highlighting
+Dry Run (Opt): Filter rows where `DATE_FORMAT` is Friday and month is November. Group by week of month and sum the amounts.
+How to Draw (Opt): Draw a calendar for November 2023. Circle the Fridays. Sum the amounts for each circled date.
+Opt Complexity Visuals: Single Filtered Pass
+How to Draw Opt Complexity: Draw a straight line of length N. T = $O(N)$.
+Mem Vis (BF): Temporary strings for every date conversion.
+Mem Vis (Opt): One aggregated result table. Space $O(1)$ (only 4-5 Fridays).

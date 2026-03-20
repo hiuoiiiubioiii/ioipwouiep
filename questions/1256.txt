@@ -1,0 +1,13 @@
+ID: 1256
+Problem Title: Encode Number
+Brute Force Method: Convert numbers to binary strings manually, padding them and trying to map them one-by-one to the pattern: ""-&gt;0, "0"-&gt;1, "1"-&gt;2, "00"-&gt;3...
+BF Complexity Visuals: Pattern Matching Table
+How to Draw BF: Draw a table with 0, 1, 2, 3 and try to manually find a formula by staring at the binary representations. Write $O(N)$ lookups.
+Optimised Pattern: Binary Offset Mapping
+Opt Vis. Technique: The "Binary Mirror" Increment
+Dry Run (Opt): Observation: The encoding of N is simply the binary representation of N+1 with the leading '1' removed. For example, N=3 rightarrow 3+1=4 rightarrow bin(4) = "100" rightarrow remove first '1' rightarrow "00".
+How to Draw (Opt): Write the number N. Add 1. Write the binary form of N+1. Draw a pair of scissors cutting off the very first bit. The remainder is your answer.
+Opt Complexity Visuals: Constant-Time Math / Bit-shifter
+How to Draw Opt Complexity: Draw a single box taking input N and performing a single bitwise/string operation. Write $O(\log N)$ (the number of bits).
+Mem Vis (BF): Draw a hardcoded mapping table.
+Mem Vis (Opt): Draw a single string variable for the result. Space: $O(\log N)$.

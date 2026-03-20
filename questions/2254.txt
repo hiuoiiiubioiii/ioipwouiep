@@ -1,0 +1,13 @@
+ID: 2254
+Problem Title: Design Video Sharing Platform
+Brute Force Method: Linear List StorageStore all videos in a simple list. For every `search` or `delete` operation, iterate through the list until the specific video ID is found.
+BF Complexity Visuals: Sequential Array Scan
+How to Draw BF: Draw a long list of video boxes. To delete ID 500, check box 1, then 2, then 3... all the way to 500. Show how the platform slows down as more videos are added.
+Optimised Pattern: Hash Map + Min-Heap (for ID reuse)
+Opt Vis. Technique: Indexed Registry + ID Generator
+Dry Run (Opt): Use a Hash Map `ID -&gt; VideoObject` for $O(1)$ access. Use a Min-Heap to track deleted IDs so they can be reused in $O(\log N)$ for the next upload.
+How to Draw (Opt): Draw a central "Registry" (HashMap). When a video is deleted, drop its ID into a "Recycle Bin" (Min-Heap). When a new video arrives, check the Bin first.
+Opt Complexity Visuals: Logarithmic/Constant Pipeline
+How to Draw Opt Complexity: Draw the Upload $O(\log N)$, Delete $O(1)$, and Search $O(1)$ blocks. Show how this maintains performance at scale.
+Mem Vis (BF): Searching and shifting elements in an array for every deletion (O(N) time).
+Mem Vis (Opt): A Hash Map of video objects and a Min-Heap of available integer IDs (O(N) space).

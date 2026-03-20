@@ -1,0 +1,13 @@
+ID: 1721
+Problem Title: Swapping Nodes in a Linked List
+Brute Force Method: Traverse list to count length N. Traverse again to find node at K. Traverse again to find node at N-K. Swap their values.
+BF Complexity Visuals: Multi-Pass Array Extraction.
+How to Draw BF: Draw Linked List. Draw three separate full-length arrows passing over it one after another. $O(N)$.
+Optimised Pattern: Two Pointers (Fast &amp; Slow Ruler Slide).
+Opt Vis. Technique: Sliding a Rigid Measuring Stick.
+Dry Run (Opt): Pointer 1 moves K steps. Mark this as Node A. Pointer 2 starts at head, Pointer 3 starts at Node A. Move 2 and 3 together. When 3 hits the end, 2 is at N-K. Swap values.
+How to Draw (Opt): Draw nodes. Drop an anchor at K. Connect a stick between head and K. Slide the stick right until the right end falls off. The left end is your target. Swap.
+Opt Complexity Visuals: Overlapping Single Sweep.
+How to Draw Opt Complexity: Draw nodes. Arrow A goes partway. Parallel Arrows B and C slide to the end. Total nodes touched = N. $O(N)$.
+Mem Vis (BF): Creating a temporary array of size N to access indices directly.
+Mem Vis (Opt): Three floating pointer tags attached to existing nodes. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1808
+Problem Title: Maximize Number of Nice Divisors
+Brute Force Method: Backtracking to find all prime factorizations and calculating divisors.
+BF Complexity Visuals: Exponential tree of prime factor splits.
+How to Draw BF: Draw a root node, branch out all possible integer partitions, calculate product for each. Mark $O(2^N)$.
+Optimised Pattern: Greedy Math (Integer Break logic) + Fast Modular Exponentiation.
+Opt Vis. Technique: Number line divided into blocks of 3.
+Dry Run (Opt): Check base cases. Maximize 3s. If remainder is 1, swap a 3 for two 2s. Use fast power for 3^k mod M.
+How to Draw (Opt): Draw a block of length N. Chop it into 3s. If a 1 is left, group it with the last 3 to make two 2s.
+Opt Complexity Visuals: Logarithmic halving steps.
+How to Draw Opt Complexity: Draw $O(\log N)$ exponentiation by squaring steps as a collapsing binary tree for the math calculation.
+Mem Vis (BF): Massive call stack for exponential recursion.
+Mem Vis (Opt): $O(1)$ space with simple modulo variables and bitwise shift registers.

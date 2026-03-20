@@ -1,0 +1,13 @@
+ID: 1130
+Problem Title: Minimum Cost Tree From Leaf Values
+Brute Force Method: Recursion with Memoization. Try every possible split point to partition the array into left and right subtrees.
+BF Complexity Visuals: Catalan Number Tree Explosion
+How to Draw BF: Draw an array. Draw splits at every possible index. For each split, draw further sub-splits. $O(N^3)$ or $O(N^4)$ complexity.
+Optimised Pattern: Monotonic Stack / Greedy
+Opt Vis. Technique: Neighbor Merging (Pop-and-Calculate)
+Dry Run (Opt): Maintain a monotonic decreasing stack. When a new value is larger than the top, the top is a local minimum. Multiply it by the smaller of its two neighbors (top-1 or current).
+How to Draw (Opt): Draw a stack vertically. Push numbers. When a "valley" forms (small number between two larger ones), "crush" the valley, multiply the values, and keep the larger one.
+Opt Complexity Visuals: Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single arrow with numbers entering and leaving a stack. Each number enters and leaves exactly once.
+Mem Vis (BF): Massive DP table $O(N^2)$
+Mem Vis (Opt): Single 1D Stack $O(N)$.

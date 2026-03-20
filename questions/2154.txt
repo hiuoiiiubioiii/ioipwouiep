@@ -1,0 +1,13 @@
+ID: 2154
+Problem Title: Keep Multiplying Found Values by Two
+Brute Force Method: For each multiplication, scan the entire array to see if the new value exists. Repeat until not found.
+BF Complexity Visuals: Repeated linear searches over the same data.
+How to Draw BF: Draw the `original` value. Draw an arrow scanning every element. If found, double it. Draw another arrow scanning the whole array again. $O(N \cdot \log(\text{Max}/\text{Original})$).
+Optimised Pattern: Hash Set / Sorting + Binary Search.
+Opt Vis. Technique: A direct-lookup bucket.
+Dry Run (Opt): Put all numbers into a Hash Set. While `original` exists in set, `original *= 2`. Return `original`.
+How to Draw (Opt): Draw a box labeled "Set" containing all array numbers. Write the `original`. Check the box. If inside, erase `original`, write `original * 2`, and check the box again.
+Opt Complexity Visuals: $O(N)$ to build set + $O(\log N)$ lookups.
+How to Draw Opt Complexity: A single pass to fill the set, then a vertical drop through a "doubling loop."
+Mem Vis (BF): $O(1)$ extra space but $O(N^2)$ time with nested loops.
+Mem Vis (Opt): $O(N)$ space for the Hash Set.

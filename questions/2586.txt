@@ -1,0 +1,13 @@
+ID: 2586
+Problem Title: Count the Number of Vowel Strings in Range
+Brute Force Method: Iterate through every string in the array. For each string, check if its first and last characters are vowels. $O(N x L)$.
+BF Complexity Visuals: A linear scan with a magnifying glass over the start and end of every word.
+How to Draw BF: Draw words in a list. Put a circle around the first and last letters. If both are in {a, e, i, o, u}, tally it.
+Optimised Pattern: Direct Linear Scan with Set Lookup.
+Opt Vis. Technique: A "Vowel Filter" visual where each string passes through a gate that only checks two specific points (index 0 and length-1).
+Dry Run (Opt): Iterate from index left to right. Extract s[0] and s[-1]. Check if both exist in the constant set {'a', 'e', 'i', 'o', 'u'}. Increment counter if true.
+How to Draw (Opt): Write down the indices from left to right. Under each, write the string. Mark the first and last character. Tick the ones that match.
+Opt Complexity Visuals: $O(N)$ where N is the length of the range. Constant time $O(1)$ per string check.
+How to Draw Opt Complexity: Draw a horizontal array. Draw a single arrow spanning only the segment from left to right.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ - No extra data structures besides a small constant set.

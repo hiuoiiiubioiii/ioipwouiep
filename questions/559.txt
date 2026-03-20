@@ -1,0 +1,13 @@
+ID: 559
+Problem Title: Maximum Depth of N-ary Tree
+Brute Force Method: Perform a BFS level-order traversal, storing every single node in a list for each level, then counting the number of lists.
+BF Complexity Visuals: Redundant storage of node values level by level. $O(N)$.
+How to Draw BF: Draw a tree. Draw horizontal boxes for Level 1, Level 2, etc. Fill boxes with node values.
+Optimised Pattern: Simple DFS Recursion.
+Opt Vis. Technique: A "depth-finder" probe. Each node asks its children "How deep are you?", takes the maximum answer, and adds 1 for itself.
+Dry Run (Opt): `if root is None: return 0`. `max_child_depth = max([maxDepth(c) for c in root.children] or [0])`. `return 1 + max_child_depth`.
+How to Draw (Opt): Draw the N-ary tree. Starting from leaves (height 1), write the height next to each parent as (1 + max height of children).
+Opt Complexity Visuals: Single visit to every node. $O(N)$.
+How to Draw Opt Complexity: Draw a single arrow tracing a path down to every leaf and back up.
+Mem Vis (BF): Queue or List holding all N nodes during the level-order scan.
+Mem Vis (Opt): Recursion stack proportional to the height of the tree. $O(H)$.

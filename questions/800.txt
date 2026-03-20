@@ -1,0 +1,13 @@
+ID: 800
+Problem Title: Similar RGB Color
+Brute Force Method: Check all 16 \times 16 \times 16 = 4096 shorthand colors and find the one with the minimum squared distance.
+BF Complexity Visuals: Exhaustive Color Scan
+How to Draw BF: Draw the RGB space. Check every possible "double-digit" hex combination like #112233. $O(16^3)$.
+Optimised Pattern: Greedy Component Rounding
+Opt Vis. Technique: Nearest Neighbor Shorthand
+Dry Run (Opt): Each color component (RR, GG, BB) is independent. For each, find the shorthand value (like `0xAA`, `0xBB`) that is closest to its actual value.
+How to Draw (Opt): Draw a hex number line: 00, 11, 22... Find the target value (e.g., 0x24) and circle the nearest multiple of 0x11 (0x22).
+Opt Complexity Visuals: Constant Component Check
+How to Draw Opt Complexity: Draw three boxes (R, G, B). For each, perform a simple math check. $O(1)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ extra space.

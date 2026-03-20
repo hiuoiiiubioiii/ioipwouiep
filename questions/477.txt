@@ -1,0 +1,13 @@
+ID: 477
+Problem Title: Total Hamming Distance
+Brute Force Method: Nested Loops Compare every pair of numbers (i, j), calculate their Hamming Distance, and sum them up.
+BF Complexity Visuals: Comparison Grid
+How to Draw BF: Draw an N \times N grid. Each cell is a 32-bit XOR comparison. $O(N^2 \cdot 32)$.
+Optimised Pattern: Bit-by-Bit Counting For each bit position (0-31), count how many numbers have a '1' (k) and how many have a '0' (n-k). Distance contribution is k \times (n-k).
+Opt Vis. Technique: Column-wise Scan
+Dry Run (Opt): Stack all numbers vertically in binary. Scan column-by-column rather than row-by-row.
+How to Draw (Opt): Draw 3-4 numbers as 8-bit binary rows. For the first column, count total 1s and 0s. Multiply them. Repeat for all 8 columns.
+Opt Complexity Visuals: Linear-to-32
+How to Draw Opt Complexity: Draw a rectangle where Width = 32 and Height = N. Complexity $O(32 \cdot N)$.
+Mem Vis (BF): Register Sum variable.
+Mem Vis (Opt): None Constant extra space. $O(1)$.

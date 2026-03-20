@@ -1,0 +1,13 @@
+ID: 2974
+Problem Title: Minimum Number Game
+Brute Force Method: Repeatedly scan the array to find the two smallest elements, swap them, and add to the result.
+BF Complexity Visuals: Sequential Min-Search
+How to Draw BF: Draw an array. Draw an arrow searching the whole thing. Repeat N/2 times. $O(N^2)$.
+Optimised Pattern: Sorting + Adjacent Swaps
+Opt Vis. Technique: Paired Leap-frog
+Dry Run (Opt): Sort the array. For every pair (i, i+1), append nums[i+1] then nums[i] to the result list.
+How to Draw (Opt): Draw a sorted list. Draw a bracket over the first two. "Flip" them into a new list. Move to the next pair.
+Opt Complexity Visuals: Sorting + Linear Sweep
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ for sort + $O(N)$ for swap-move.
+Mem Vis (BF): Temporary arrays for each game round.
+Mem Vis (Opt): A single result array. Space $O(N)$.

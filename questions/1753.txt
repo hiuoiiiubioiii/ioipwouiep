@@ -1,0 +1,13 @@
+ID: 1753
+Problem Title: Maximum Score From Removing Stones
+Brute Force Method: Simulate the process: in each step, try all 3 pairs of piles. Recursively find the one that leads to the maximum score.
+BF Complexity Visuals: 3-Way Game Tree.
+How to Draw BF: Draw 3 branches from every state. Calculate score at each leaf. $O(3^\text{Sum})$.
+Optimised Pattern: Greedy (Always pick two largest) or Math.
+Opt Vis. Technique: Pile Leveling.
+Dry Run (Opt): Sort piles `a, b, c`. If `a + b &lt;= c`, the max score is just `a + b`. Otherwise, the piles are "balanced" enough to use almost all stones: `(a + b + c) // 2`.
+How to Draw (Opt): Draw three vertical bar charts. Take one block from each of the two tallest. Repeat until only one (or zero) pile remains.
+Opt Complexity Visuals: Constant Time Formula.
+How to Draw Opt Complexity: Write the `min` formula. Label $O(1)$ if math, or $O(\\text{log MaxValue})$ if simulating with a Max-Heap.
+Mem Vis (BF): Recursion stack.
+Mem Vis (Opt): Three integer variables. $O(1)$ space.

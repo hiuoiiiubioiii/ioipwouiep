@@ -1,0 +1,13 @@
+ID: 103
+Problem Title: Binary Tree Zigzag Level Order Traversal
+Brute Force Method: Standard BFS traversal, followed by a manual loop over the result array to reverse every alternate level's list at the end.
+BF Complexity Visuals: Standard BFS linear graph, followed by a block showing the extra array reversal operations adding overhead.
+How to Draw BF: Draw a standard level order output table, then explicitly draw looping flip-arrows over alternate rows to show the extra work.
+Optimised Pattern: BFS with a Double-ended Queue (Deque) and a boolean direction flag.
+Opt Vis. Technique: A snake-like traversal path wrapping left-to-right, then right-to-left down the tree.
+Dry Run (Opt): Track a leftToRight boolean. Based on the flag, either append or prepend the popped node's value to the current level's list.
+How to Draw (Opt): Draw the tree. Draw solid arrows moving left-to-right on row 1, right-to-left on row 2, alternating down.
+Opt Complexity Visuals: Single-pass linear processing (O(N)), identical to standard BFS but with a constant time conditional check.
+How to Draw Opt Complexity: Same as Q102, cross off nodes linearly, but draw small directional arrows next to the crossed nodes to show insertion direction.
+Mem Vis (BF): Standard Queue memory + additional temporary array memory allocated specifically for the reversing step.
+Mem Vis (Opt): Visualize a Deque structure showing rapid insertions occurring at both the head and the tail dynamically.

@@ -1,0 +1,13 @@
+ID: 1659
+Problem Title: Maximize Grid Happiness
+Brute Force Method: Exhaustive search placing introverts and extroverts in every cell and calculating the resulting score.
+BF Complexity Visuals: Grid Permutation Map
+How to Draw BF: Draw a grid and branch for every possible assignment (Empty, Intro, Extro) per cell. $O(3^{M \\text{times} N})$.
+Optimised Pattern: DP + Ternary Bitmask (State Compression)
+Opt Vis. Technique: Layered Row Slices
+Dry Run (Opt): DP state: `(index, intro_count, extro_count, prev_row_mask)`. Use a base-3 mask to represent the configuration of the previous row.
+How to Draw (Opt): Draw a grid. Shade the current cell and the N cells preceding it (the "frontier"). Write the state as a base-3 number (e.g., 012).
+Opt Complexity Visuals: Memoized Grid Fill
+How to Draw Opt Complexity: Draw a massive table of states. $O(M \\text{times} N \\text{times} I \\text{times} E \\text{times} 3^N)$.
+Mem Vis (BF): Infinite Recursion: A stack of grids representing every partial assignment.
+Mem Vis (Opt): 4D/5D DP Table: Draw a high-dimensional matrix block in memory.

@@ -1,0 +1,13 @@
+ID: 3317
+Problem Title: Find the Number of Possible Ways for an Event
+Brute Force Method: Try every possible assignment of N people to X events, then assign Y possible scores to every used event.
+BF Complexity Visuals: Bipartite Spaghetti Mapping
+How to Draw BF: Draw N dots (people) and X dots (events). Draw chaotic crossing lines assigning every person to an event, visualizing $O(X^N)$.
+Optimised Pattern: Math / Combinatorics (Stirling Numbers of the Second Kind)
+Opt Vis. Technique: Bucket Grouping Pipelines
+Dry Run (Opt): Iterate `k` (number of active events from 1 to X). Ways = (Stirling2(N, k)) * (Permutations(X, k)) * Y^k.
+How to Draw (Opt): Draw N stick figures. Draw `k` empty buckets. Draw an arrow dropping figures into buckets (Stirling). Multiply by how you label the buckets (Permutation), multiply by a score multiplier box (Y).
+Opt Complexity Visuals: 1D Iteration Bar
+How to Draw Opt Complexity: Draw a single straight line from 1 to X. Since the combinatorial math takes constant or linear time per step, the line proves $O(X)$ or $O(N\cdot X)$ time.
+Mem Vis (BF): Massive recursive tree tracking who is assigned to which event in $O(N)$ depth.
+Mem Vis (Opt): A 2D DP table to precompute Stirling numbers taking $O(N^2)$ space, plus a few $O(1)$ integer variables.

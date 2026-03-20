@@ -1,0 +1,13 @@
+ID: 2030
+Problem Title: Smallest K-Length Subsequence With Occurrences of a Letter
+Brute Force Method: Generate all subsequences of length `k`. Filter for the target letter count. Sort them lexicographically and pick the first.
+BF Complexity Visuals: Combinatorial Explosion Grid
+How to Draw BF: Draw an array of all combinations "N choose K". Beside it, draw a filter, then a massive sorting funnel. $O(2^N)$ space and time.
+Optimised Pattern: Monotonic Stack with Budget Constraints
+Opt Vis. Technique: Greedy Stack with Lifelines
+Dry Run (Opt): Iterate string. Pop from stack if current char is smaller, but ONLY if we have enough total chars left to reach `k`, and enough target letters left to hit `repetition`.
+How to Draw (Opt): Draw a string. Maintain two counters: total chars left, target chars left. Draw a stack (array). When a smaller char comes, erase the top of the stack if counters allow it.
+Opt Complexity Visuals: Single Pass with Stack Adjustments
+How to Draw Opt Complexity: Draw a straight line. Underneath, draw a stack growing and occasionally shrinking. Every element is pushed/popped at most once. Time $O(N)$.
+Mem Vis (BF): Gigantic lists holding all valid string subsequences in memory.
+Mem Vis (Opt): A Char Array (Stack) of max size `k`, plus a few integer counters. Space $O(N)$ or $O(K)$.

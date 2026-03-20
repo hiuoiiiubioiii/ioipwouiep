@@ -1,0 +1,13 @@
+ID: 1109
+Problem Title: Corporate Flight Bookings
+Brute Force Method: Nested loops. For each booking [i, j, k], loop from index i to j in the result array and add k to each seat.
+BF Complexity Visuals: Overlapping Bar Charts
+How to Draw BF: Draw an array 1 to N. Draw a horizontal bar for each booking stretching from i to j. Sum the overlapping heights. $O(N \cdot M)$ time.
+Optimised Pattern: Difference Array / Prefix Sum
+Opt Vis. Technique: Delta Boundary Markers
+Dry Run (Opt): At index i, add k. At index j+1, subtract k. After processing all bookings, sweep left to right once, accumulating the running sum.
+How to Draw (Opt): Draw an array of zeros. Write +k at start index, -k after end index. Draw a second array below it sweeping right, adding the previous value.
+Opt Complexity Visuals: Two Disjoint Flat Lines
+How to Draw Opt Complexity: Draw one line processing bookings $O(M)$, and a second separate line sweeping the final array $O(N)$. Total $O(M + N)$.
+Mem Vis (BF): Simple 1D array continuously mutating
+Mem Vis (Opt): Two 1D arrays (Difference array acting as instructions -&gt; Prefix sum array).

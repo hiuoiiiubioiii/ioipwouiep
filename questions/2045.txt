@@ -1,0 +1,13 @@
+ID: 2045
+Problem Title: Second Minimum Time to Reach Destination
+Brute Force Method: Standard DFS tracking every single possible path from node 1 to N, allowing cycles, and trying to sort the resulting path times. $O(N!)$.
+BF Complexity Visuals: Infinite Cyclic Graph Web
+How to Draw BF: Draw a graph. Trace a path going forward, then looping back and forth between two nodes forever to generate different times. Infinite loop.
+Optimised Pattern: Modified BFS (Dijkstra-like) with Top-2 Tracking + Traffic Light Math
+Opt Vis. Technique: Two-Lane BFS Expansion
+Dry Run (Opt): Standard BFS finds shortest path. We need the *second* shortest. Keep an array storing `dist1` (shortest) and `dist2` (second shortest) for every node. Allow a node to be added to the queue twice. Calculate wait times dynamically using `time % (2 * change)`.
+How to Draw (Opt): Draw the graph. Next to each node, draw two empty slots: `[ t1, t2 ]`. As BFS waves hit the node, fill t1. The next wave (or cyclic wave) fills t2. Stop when destination's t2 is filled.
+Opt Complexity Visuals: BFS Level Waves with Wait Buffers
+How to Draw Opt Complexity: Draw a queue processing nodes $O(V+E)$. Show mathematical delays (red lights) calculated in $O(1)$ time before pushing to the queue. Total time $O(V+E)$.
+Mem Vis (BF): Deep recursive stack holding cyclic graph paths, causing stack overflow.
+Mem Vis (Opt): A BFS Queue and two arrays (`dist1`, `dist2`) of size V initialized to infinity. Space $O(V+E)$.

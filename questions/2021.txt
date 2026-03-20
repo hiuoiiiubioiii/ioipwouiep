@@ -1,0 +1,13 @@
+ID: 2021
+Problem Title: Brightest Position on Street
+Brute Force Method: Iterate through every single integer coordinate on the number line covered by the lights and calculate overlaps.
+BF Complexity Visuals: Dense Number Line Shading
+How to Draw BF: Draw a massive number line. Physically draw overlapping lines for every light's radius. Count the stacked lines at every point. Time limit exceeded for large radii.
+Optimised Pattern: Line Sweep Algorithm + TreeMap (Difference Array)
+Opt Vis. Technique: Event Flags (+1 / -1)
+Dry Run (Opt): Record `start = position - radius` (+1) and `end = position + radius + 1` (-1). Sort events. Sweep left to right, maintaining a running sum of brightness.
+How to Draw (Opt): Draw a number line. Mark start points with a green '+1' arrow pointing up, and end points with a red '-1' arrow pointing down. Tally the running total as you walk the line.
+Opt Complexity Visuals: Sorting Funnel to Timeline
+How to Draw Opt Complexity: Draw a funnel representing $O(N \log N)$ sorting of event points, flowing into a straight horizontal line for the $O(N)$ sweep.
+Mem Vis (BF): A colossal array attempting to map coordinates from -10^8 to 10^8. (Memory Limit Exceeded).
+Mem Vis (Opt): A balanced Binary Search Tree (TreeMap in Java/C++) storing at most 2N unique event coordinates. Space $O(N)$.

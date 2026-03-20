@@ -1,0 +1,13 @@
+ID: 1025
+Problem Title: Divisor Game
+Brute Force Method: Recursively try every possible divisor 'x' for the current N, and for each, check if the other player can win from (N - x).
+BF Complexity Visuals: A massive, bushy game tree where each node branches into multiple 'x' options.
+How to Draw BF: Draw N at top. Draw arrows to N-x1, N-x2... Repeat for each level. Label levels 'Alice' and 'Bob'. Write $O(2^N)$.
+Optimised Pattern: Brain Teaser / Math (Parity).
+Opt Vis. Technique: A seesaw. If Alice starts with an even number, she can always keep Bob on odd numbers until he hits 1 and loses.
+Dry Run (Opt): If N is even, Alice chooses x=1, giving Bob an odd N. Any divisor of an odd N is odd, so Bob must give Alice (Odd-Odd) = Even N back.
+How to Draw (Opt): Write "Even = Win", "Odd = Lose". Check `N % 2 == 0`. One simple comparison line.
+Opt Complexity Visuals: A single comparison gate.
+How to Draw Opt Complexity: Draw a single bit check `(N &amp; 1) == 0`. Write $O(1)$.
+Mem Vis (BF): A deep recursion stack frame for every possible move path.
+Mem Vis (Opt): Zero extra space. Just the CPU register evaluating a parity bit. $O(1)$.

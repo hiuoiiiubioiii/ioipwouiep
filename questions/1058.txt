@@ -1,0 +1,13 @@
+ID: 1058
+Problem Title: Minimize Rounding Error to Meet Target
+Brute Force Method: For each number, try both floor and ceil. Check all 2^N combinations of rounding to see which sum equals target. Return min error.
+BF Complexity Visuals: A binary tree of "floor vs ceil" decisions at every index.
+How to Draw BF: [0.7, 2.3]. Try (0+2), (0+3), (1+2), (1+3). Check sums. Pick min error for target. Write $O(2^N)$.
+Optimised Pattern: Greedy (Sorting by Fractional Part).
+Opt Vis. Technique: A "Rounding Budget". Everyone floors first, then we "spend" our remaining target points on numbers that have the lowest cost to ceil.
+Dry Run (Opt): Floor all numbers and find the `lowerSum`. The number of ceils needed is `Target - lowerSum`. Sort numbers by their fractional parts `(val - floor(val))` in descending order. Ceil the top `k` numbers.
+How to Draw (Opt): Draw a table: [Original, Floor, Ceil, Diff]. Sort by Diff. Fill 'Floor' for everyone. Change 'Floor' to 'Ceil' for the top `k` rows. Sum the differences.
+Opt Complexity Visuals: A sort followed by a single pass.
+How to Draw Opt Complexity: Draw a sort box $O(N \log N)$ and a linear sum $O(N)$. Write Time: $O(N \log N)$.
+Mem Vis (BF): Deep recursion stack for all rounding combinations.
+Mem Vis (Opt): $O(N)$ space to store the fractional differences for sorting.

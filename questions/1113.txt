@@ -1,0 +1,13 @@
+ID: 1113
+Problem Title: Reported Posts (SQL)
+Brute Force Method: Fetch all rows to the application layer, loop through them, filter by date/action, and manually count unique posts.
+BF Complexity Visuals: Linear Scan and Map
+How to Draw BF: Check each row manually. Keep a running tally on a separate piece of paper, crossing out duplicates.
+Optimised Pattern: COUNT(DISTINCT) with GROUP BY
+Opt Vis. Technique: Hash Aggregation Pipeline
+Dry Run (Opt): Filter out irrelevant dates and non-report actions first. Push remaining rows into buckets based on `extra` (reason). Count unique `post_id`s in each bucket.
+How to Draw (Opt): Draw a "Filter Gate". Draw buckets for 'spam', 'racism', etc. Drop post IDs into buckets. Cross out duplicate IDs within each bucket.
+Opt Complexity Visuals: Linear Hash Grouping
+How to Draw Opt Complexity: Draw a single-pass flowchart mapping inputs directly to their respective buckets. $O(N)$ time.
+Mem Vis (BF): Unbounded List of Objects
+Mem Vis (Opt): Hash Sets (for uniqueness) inside a Hash Map (for categories).

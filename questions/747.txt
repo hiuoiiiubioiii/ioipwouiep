@@ -1,0 +1,13 @@
+ID: 747
+Problem Title: Largest Number At Least Twice of Others
+Brute Force Method: Sort the array, check if the last element is at least double the second to last.
+BF Complexity Visuals: Sorting Funnel
+How to Draw BF: Draw an unsorted array being poured into a "Sort" box. $O(N \log N)$.
+Optimised Pattern: Single Pass Max Tracking
+Opt Vis. Technique: King of the Hill
+Dry Run (Opt): Keep track of the `largest` and `secondLargest` numbers found so far in one loop. Finally, check if `largest &gt;= 2 * secondLargest`.
+How to Draw (Opt): Draw a leaderboard with two slots. As you scan the array, update the slots. Draw a final "comparison" scale at the end.
+Opt Complexity Visuals: Single Linear Sweep
+How to Draw Opt Complexity: Draw an array with a single arrow moving left to right. $O(N)$.
+Mem Vis (BF): Full copy of the array for sorting (O(N)).
+Mem Vis (Opt): Two integer variables for indices/values (O(1)).

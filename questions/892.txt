@@ -1,0 +1,13 @@
+ID: 892
+Problem Title: Surface Area of 3D Shapes
+Brute Force Method: Build a 3D grid and check every face of every 1 x 1 x 1 cube to see if it's exposed to air.
+BF Complexity Visuals: Voxel Face Counting. $O(N^2 x \text{max}(H)$).
+How to Draw BF: Draw a stack of cubes. For every single cube, count Top, Bottom, and 4 sides. Subtract faces that touch other cubes.
+Optimised Pattern: Geometry Math (Column-based Calculation).
+Opt Vis. Technique: "Total Potential - Hidden Area".
+Dry Run (Opt): Each stack of v cubes has 4v + 2 surface area. Subtract the overlapping area with neighbors: 2 x min(currentHeight, neighborHeight).
+How to Draw (Opt): Draw a 2D grid of numbers. For each cell, add (4 x height + 2) if height &gt; 0. Then subtract the "contact walls" with the neighbor to the right and neighbor below.
+Opt Complexity Visuals: Single Grid Pass. $O(N^2)$.
+How to Draw Opt Complexity: Draw a grid being scanned once. Every cell is visited once to check its 4 neighbors.
+Mem Vis (BF): 3D Grid model: Draw a cubic memory block.
+Mem Vis (Opt): $O(1)$ Space: Draw a single "Total Area" integer variable.

@@ -1,0 +1,13 @@
+ID: 3670
+Problem Title: Maximum Product of Two Integers With No Common Bits (Med)
+Brute Force Method: Nested loops comparing every pair (i, j) and using (arr[i] &amp; arr[j]) == 0 to check for common bits. $O(N^2)$.
+BF Complexity Visuals: Double-Pass Bitwise Grid.
+How to Draw BF: Draw an array of N numbers. For each number, bitwise AND it with every other number. If N=10^5, this is 10 billion checks.
+Optimised Pattern: Hash Map of Bitmasks. For each unique bitmask, store the maximum integer found. Then compare all pairs of bitmasks.
+Opt Vis. Technique: The "Bitmask Bucket" Compare.
+Dry Run (Opt): Group numbers by their "bit pattern" (e.g., all numbers that have bits 1 and 3 set). Since there are only 2^32 (or fewer in practice) possible masks, we only compare the best representative of each mask.
+How to Draw (Opt): Draw 32 bins. Drop numbers into bins based on their binary pattern. Compare Bin A and Bin B. If (BinA_mask &amp; BinB_mask) == 0, multiply their max values.
+Opt Complexity Visuals: Mask-Space Interaction Chart.
+How to Draw Opt Complexity: Write $O(N + M^2)$ where M is the number of *unique* bitmasks. Usually M ll N.
+Mem Vis (BF): A full N x N matrix of bitwise results.
+Mem Vis (Opt): A Hash Map where Keys are bitmask and Values are max_val. Space $O(2^\text{bits})$.

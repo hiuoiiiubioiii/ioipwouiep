@@ -1,0 +1,13 @@
+ID: 1198
+Problem Title: Find Smallest Common Element in All Rows
+Brute Force Method: For every element in the first row, scan every other row to see if it exists there. $O(M \cdot N \cdot N)$.
+BF Complexity Visuals: Row-by-Row Linear Scan
+How to Draw BF: Draw 3 rows. Pick the first number. Draw arrows to every number in Row 2, then Row 3. Repeat for all numbers in Row 1.
+Optimised Pattern: Frequency Array / Counting (Rows are Sorted)
+Opt Vis. Technique: Bucket Frequency Waterfall
+Dry Run (Opt): Count the occurrences of every number across all rows using a frequency array. Since rows have unique elements, the first number with `count == total_rows` is the answer.
+How to Draw (Opt): Draw a 1D frequency array (indices 1-10000). For each number in the grid, increment its index. The first index to hit the "Total Rows" mark wins.
+Opt Complexity Visuals: Linear Matrix Pass $O(M \cdot N)$
+How to Draw Opt Complexity: Draw a single pass through the entire grid. Every element is touched exactly once.
+Mem Vis (BF): Matrix duplication
+Mem Vis (Opt): Fixed-size array `int[10001]`. Draw one row of boxes.

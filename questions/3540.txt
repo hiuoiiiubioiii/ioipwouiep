@@ -1,0 +1,13 @@
+ID: 3540
+Problem Title: Minimum Time to Visit All Houses (Med)
+Brute Force Method: Permutation generator to try every possible order of visiting houses, checking distance.
+BF Complexity Visuals: Factorial Pathing.
+How to Draw BF: Draw N dots. Draw every possible tangled web of lines connecting all dots. Calculate total length for N! paths.
+Optimised Pattern: Sorting / 1D Greedy Sweep (Assuming 1D coordinate plane).
+Opt Vis. Technique: Bounding Box / Extremes First.
+Dry Run (Opt): If houses are on a line, sort them. The minimum time is simply traversing from the smallest coordinate to the largest.
+How to Draw (Opt): Draw dots on a number line. Draw one large arc from the leftmost dot directly to the rightmost dot. No zigzagging required.
+Opt Complexity Visuals: Sorting Bottleneck.
+How to Draw Opt Complexity: Draw an array of points. Show an $O(N \log N)$ sorting step, followed by an $O(1)$ math check `Max - Min`.
+Mem Vis (BF): Path Permutation Arrays: Draw arrays holding every valid sequence of house indices.
+Mem Vis (Opt): In-Place Sort: Draw the original array being reordered, requiring $O(1)$ or $O(\log N)$ stack space.

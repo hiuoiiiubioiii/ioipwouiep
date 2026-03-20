@@ -1,0 +1,13 @@
+ID: 3765
+Problem Title: Complete Prime Number (Med)
+Brute Force Method: Check if the number is prime. Then, convert it to a string and check if every individual digit is also a prime number (2, 3, 5, 7). $O(\text{sqrt}(N)$ + log N).
+BF Complexity Visuals: Sequential Boolean Logic.
+How to Draw BF: Write the number. Step 1: Divide by 2, 3, 5... to check primality. Step 2: Circle each digit and check against {2,3,5,7}.
+Optimised Pattern: Sieve of Eratosthenes + Digit Mask
+Opt Vis. Technique: Precomputed Prime Filter
+Dry Run (Opt): Precompute primes up to a limit using a Sieve. For the digit check, use a bitmask or a boolean array [F, F, T, T, F, T, F, T, F, F] for digits 0-9.
+How to Draw (Opt): Draw a Sieve grid (1-100). Cross out non-primes. For a target number, check the grid, then check each digit against the "Prime Digit" list.
+Opt Complexity Visuals: $O(1)$ after precomputation or $O(\text{sqrt}(N)$).
+How to Draw Opt Complexity: Draw a short checklist with two boxes: "Is Prime?" and "Digits Prime?".
+Mem Vis (BF): No specific memory structure.
+Mem Vis (Opt): Boolean array for digits; Sieve array for range queries.

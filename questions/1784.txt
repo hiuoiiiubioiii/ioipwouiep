@@ -1,0 +1,13 @@
+ID: 1784
+Problem Title: Check if Binary String Has at Most One Segment of Ones
+Brute Force Method: Count all segments of "1"s in the string. If count &gt; 1, return false.
+BF Complexity Visuals: Segment Counting Sweep.
+How to Draw BF: Draw a string. Circle every cluster of 1s. Count circles. $O(N)$.
+Optimised Pattern: Pattern Searching (Presence of "01").
+Opt Vis. Technique: The "Gap Detector".
+Dry Run (Opt): Since the string always starts with '1', a second segment can only exist if there is a '0' followed by a '1'. Simply return `'01' not in s`.
+How to Draw (Opt): Draw a string starting with 1. If you ever see a "0" then a "1", draw a red 'X'.
+Opt Complexity Visuals: Single Scan Pattern Match.
+How to Draw Opt Complexity: Draw one arrow passing over the string. Label $O(N)$.
+Mem Vis (BF): List of segments.
+Mem Vis (Opt): No extra space. $O(1)$ space.

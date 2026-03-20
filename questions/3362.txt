@@ -1,0 +1,13 @@
+ID: 3362
+Problem Title: Zero Array Transformation III
+Brute Force Method: Try every possible subset of queries and for each, check if the array can be zeroed.
+BF Complexity Visuals: Subset Power Set Tree
+How to Draw BF: Draw a root. For Query 1, branch "Use" or "Skip". Repeat for Q queries. Leaf count 2^Q is the complexity wall.
+Optimised Pattern: Greedy + Max-Heap + Difference Array
+Opt Vis. Technique: Query Reservoir Management
+Dry Run (Opt): Iterate array. Collect all available queries starting at i into a Max-Heap (sorted by end-index). If nums[i] &gt; 0, pick queries that end furthest.
+How to Draw (Opt): Draw the array. Above it, draw "Water Buckets" (queries) at their start points. When a number is positive, "reach" into the bucket and pull out the longest query. Mark the decrease using a Difference Array.
+Opt Complexity Visuals: Log-Linear Sweep
+How to Draw Opt Complexity: Draw one line for N and one for Q. Mark "Heap Pop" points. Proves $O((N+Q)$ log Q).
+Mem Vis (BF): Storing 2^Q state combinations in memory.
+Mem Vis (Opt): A Max-Heap storing up to Q query end-times and one Difference Array of size N.

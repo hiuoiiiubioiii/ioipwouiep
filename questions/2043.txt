@@ -1,0 +1,13 @@
+ID: 2043
+Problem Title: Simple Bank System
+Brute Force Method: Store accounts in a complex list of objects. For every transaction, iterate through the list to find matching account IDs and validate balances.
+BF Complexity Visuals: Unordered Ledger Search
+How to Draw BF: Draw a list of bank accounts. For every transfer, draw a magnifying glass starting at the top and scanning down to find Account A, then scanning again for Account B.
+Optimised Pattern: 1D Array Direct Indexing (1-based to 0-based mapping)
+Opt Vis. Technique: Direct Memory Addressing
+Dry Run (Opt): Store balances in a standard array. `account 1` is `balance[0]`. To transfer, instantly check `if (acc1 &lt;= n &amp;&amp; acc2 &lt;= n)` and `if (balance[acc1-1] &gt;= money)`. Apply math.
+How to Draw (Opt): Draw an array of boxes. Label boxes 0 to N-1. When given Account 5, draw a lightning bolt directly to box 4. Instantly perform the +/- math.
+Opt Complexity Visuals: $O(1)$ Direct Access Points
+How to Draw Opt Complexity: Draw a timeline of transactions. Above each transaction, draw a quick, direct downward arrow hitting an array. Strict $O(1)$ time per operation.
+Mem Vis (BF): Complex objects or dynamically resizing Hash Maps adding overhead to simple queries.
+Mem Vis (Opt): A single fixed-size 1D `long[]` array allocated exactly once during instantiation. Space $O(N)$.

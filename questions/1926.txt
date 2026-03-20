@@ -1,0 +1,13 @@
+ID: 1926
+Problem Title: Nearest Exit from Entrance in Maze
+Brute Force Method: DFS to explore every path from entrance to every boundary, tracking the shortest.
+BF Complexity Visuals: Exhaustive Path Branching Tree
+How to Draw BF: Draw a maze. From entrance, draw multiple winding lines that hit dead ends or circle back. $O(4^(M\cdot N)$) exponential exploration.
+Optimised Pattern: Breadth-First Search (BFS)
+Opt Vis. Technique: Expanding Concentric Ripples
+Dry Run (Opt): Add entrance to a Queue. Expand 1 step in all directions simultaneously. The first "exit" reached is the shortest.
+How to Draw (Opt): Draw the grid. Color the entrance. Draw Layer 1 (adjacent cells), then Layer 2, like a growing wave until a border cell is hit.
+Opt Complexity Visuals: Grid Visitation Map
+How to Draw Opt Complexity: Draw an M x N grid. Cross out each cell once as it enters the queue. $O(M\cdot N)$ time.
+Mem Vis (BF): Deep recursive stack frames for every possible path branch, leading to StackOverflow on large mazes.
+Mem Vis (Opt): A First-In-First-Out (FIFO) Queue box and a 2D boolean 'visited' array (or in-place grid modification).

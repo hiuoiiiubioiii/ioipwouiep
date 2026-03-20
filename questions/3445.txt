@@ -1,0 +1,13 @@
+ID: 3445
+Problem Title: Max Difference Between Even and Odd Frequency II
+Brute Force Method: Iterate all substrings of length ≥ k, calculate frequencies of all digits 0-4, and find max diff. $O(N^2)$
+BF Complexity Visuals: Triangular Subarray Grid.
+How to Draw BF: Draw a triangle where each row i has i cells representing all substrings ending at i, each requiring a full count scan.
+Optimised Pattern: Prefix Parity State + Sliding Window on Pair Combinations (20 pairs). $O(20 \cdot N)$
+Opt Vis. Technique: 2x2 Parity Transition Matrix.
+Dry Run (Opt): For a pair (a, b), track counts. Maintain min prefix difference for each of the 4 parity states (Even-Even, Even-Odd, etc.).
+How to Draw (Opt): Draw a 2x2 grid. Move a marker between quadrants as you scan. Record the minimum value seen in each quadrant to subtract.
+Opt Complexity Visuals: 20 Parallel Linear Tracks.
+How to Draw Opt Complexity: Draw 20 horizontal lines of length N. Shade each once to show the constant-multiplier linear time.
+Mem Vis (BF): N² frequency maps or massive list of substring stats.
+Mem Vis (Opt): Five integer counters and a 4-element "min-prefix" array per pair.

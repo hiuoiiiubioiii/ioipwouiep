@@ -1,0 +1,13 @@
+ID: 3546
+Problem Title: Equal Sum Grid Partition I (Med)
+Brute Force Method: Iterate through every possible horizontal or vertical split line and sum both sides.
+BF Complexity Visuals: Grid Scanning per Split.
+How to Draw BF: Draw a grid. Draw a dashed line after column 1, then scan and sum. Redraw dashed line after column 2, rescan. $O(N \cdot M \cdot (N+M)$).
+Optimised Pattern: 2D Prefix Sums (Inclusion-Exclusion).
+Opt Vis. Technique: Integral Image Grid.
+Dry Run (Opt): Calculate cumulative sum from top-left. To get the sum of any partition, use the formula: `S(x,y) = Pref[x][y]`. Compare against `TotalSum / 2`.
+How to Draw (Opt): Draw a grid with cumulative totals. Draw a single cut line. Subtract the sum of the left/top block from the total instantly.
+Opt Complexity Visuals: $O(N \cdot M)$ Precompute, $O(1)$ Query.
+How to Draw Opt Complexity: Draw a grid filled with arrows pointing top-left (precompute). Then draw a single line splitting the grid (O(1)).
+Mem Vis (BF): Repeated Sub-grid Copies: Draw multiple smaller grids being created in memory for every split attempt.
+Mem Vis (Opt): Prefix Matrix: Draw one 2D array of the same size as the grid, storing running totals.

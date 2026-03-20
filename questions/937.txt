@@ -1,0 +1,13 @@
+ID: 937
+Problem Title: Reorder Data in Log Files
+Brute Force Method: Use a basic sorting algorithm and, for every comparison, re-parse the entire string to determine if it's a "Letter-log" or "Digit-log."
+BF Complexity Visuals: $O(N^2 \cdot L)$ if using an inefficient sort. Repeatedly parsing the same strings.
+How to Draw BF: Draw two log strings. Draw a magnifying glass over both, highlighting the manual logic used to split 'identifier' from 'content' over and over.
+Optimised Pattern: Custom Comparator / Partitioning
+Opt Vis. Technique: "Two Separate Folders." First, separate the logs into a Letter-list and a Digit-list. Sort the Letter-list using a specific rule; leave the Digit-list in its original order.
+Dry Run (Opt): Split logs into two lists. For letter-logs, sort by (content, then identifier). Return `letter_logs + digit_logs`.
+How to Draw (Opt): Draw a conveyor belt. A "sorter" box sends letter-logs to an "Alphabetical" bin and digit-logs to a "FIFO" (First-In-First-Out) bin.
+Opt Complexity Visuals: $O(N \log N \cdot L)$. Sorting N logs where each comparison takes time proportional to string length L.
+How to Draw Opt Complexity: Draw a standard sorting "funnel" that splits into two paths at the very beginning.
+Mem Vis (BF): $O(1)$ if sorting in place, but very slow due to re-parsing.
+Mem Vis (Opt): $O(N \cdot L)$ to store the partitioned lists. Draw two separate array blocks side-by-side.

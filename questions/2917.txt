@@ -1,0 +1,13 @@
+ID: 2917
+Problem Title: Find the K-or of an Array
+Brute Force Method: Check every bit position for every single number. Count numbers with the bit set.
+BF Complexity Visuals: 2D Bit Matrix Traversal
+How to Draw BF: Draw an N x 32 grid. Write 1 or 0 in each cell. Tally up every single column sequentially.
+Optimised Pattern: Bit Manipulation (Column-wise Bit Counting)
+Opt Vis. Technique: Vertical Column Summing
+Dry Run (Opt): Iterate bits 0 to 31. For each bit, loop the array `if ((num &gt;&gt; bit) &amp; 1)`. If total count &gt;= K, set that bit in the final answer using `ans |= (1 &lt;&lt; bit)`.
+How to Draw (Opt): Write 3 numbers in binary, stacked vertically. Draw a vertical box around one bit column. Sum the 1s inside the box. Compare to K.
+Opt Complexity Visuals: Fixed Grid (N x 32)
+How to Draw Opt Complexity: Draw a rectangle representing 32 columns and N rows. Time is strictly 32 * N, which simplifies to $O(N)$.
+Mem Vis (BF): Array of 32-character binary strings. $O(N \cdot 32)$ space.
+Mem Vis (Opt): Two integer boxes: `ans` and `count`. Space strictly $O(1)$.

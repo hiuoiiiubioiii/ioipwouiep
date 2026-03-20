@@ -1,0 +1,13 @@
+ID: 3575
+Problem Title: Maximum Good Subtree Score (Hard)
+Brute Force Method: Iteratively check every possible subtree by removing edges, and calculate the "goodness" score for each.
+BF Complexity Visuals: Edge-Removal Permutations.
+How to Draw BF: Draw a tree. Try removing edge 1, then edge 2... For each resulting forest, calculate all subtree scores. $O(2^E \cdot N)$.
+Optimised Pattern: Tree Dynamic Programming (Bottom-Up).
+Opt Vis. Technique: Subtree Contribution Waves.
+Dry Run (Opt): Define DP[u] as the max score of a subtree rooted at u. Combine child scores into the parent based on the "goodness" criteria.
+How to Draw (Opt): Draw a tree. Start at the leaves. Pass scores up to parents. At each node, draw a "Decision Box" choosing the best child branches to keep.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single DFS traversal path (curved arrow) through the tree, visiting each node exactly once.
+Mem Vis (BF): Forest Snapshots: Draw dozens of whole-tree copies representing different edge-removal states.
+Mem Vis (Opt): 1D DP Array: Draw a single array of size N storing the calculated score for each node's subtree.

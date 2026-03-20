@@ -1,0 +1,13 @@
+ID: 3704
+Problem Title: Count No-Zero Pairs That Sum to N (Hard)
+Brute Force Method: Nested loops iterating all possible (i, j) pairs up to N to check sum and string representation.
+BF Complexity Visuals: 2D Grid $O(N^2)$.
+How to Draw BF: Draw an N x N matrix. Shade the diagonal where i+j = N. Cross out rows/cols containing '0'.
+Optimised Pattern: Two Pointers / Single-Pass String Check
+Opt Vis. Technique: Symmetrical Number Line
+Dry Run (Opt): Start i at 1, j at N-1. Check if both strings lack '0'. Increment i, decrement j up to N/2.
+How to Draw (Opt): Draw a number line 1 to N. Draw arched lines connecting 1 &amp; N-1, 2 &amp; N-2. Cross out arcs with '0'.
+Opt Complexity Visuals: Linear scan $O(N)$.
+How to Draw Opt Complexity: Draw a horizontal line segment from 1 to N/2. Write $O(N)$ above it.
+Mem Vis (BF): Massive 2D Grid allocation (if storing pairs).
+Mem Vis (Opt): Two pointer variables in registers, small string buffer for digit checking.

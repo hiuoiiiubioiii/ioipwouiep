@@ -1,0 +1,13 @@
+ID: 217
+Problem Title: Contains Duplicate
+Brute Force Method: Nested loops comparing every single element with every other element.
+BF Complexity Visuals: N x N Matrix Grid: $O(N^2)$ Time.
+How to Draw BF: Draw a grid with array elements on both axes. Shade in the upper triangle to represent the inner loop checking pairs.
+Optimised Pattern: Hash Set (Seen Filter)
+Opt Vis. Technique: Filter Funnel / Bouncer List
+Dry Run (Opt): Read left to right. Throw each number into a bucket. If the bucket already has that number, blow a whistle (return true).
+How to Draw (Opt): Draw a circle representing a Set. Read numbers one by one. Draw an arrow pointing into the circle. If the number is already inside, draw a collision spark.
+Opt Complexity Visuals: Flat Line: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a single straight arrow over an array to represent one continuous pass.
+Mem Vis (BF): Just loop index pointers, no extra space.
+Mem Vis (Opt): Expanding Hash Set Table: Draw a box that grows, inserting unique numbers one by one.

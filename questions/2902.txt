@@ -1,0 +1,13 @@
+ID: 2902
+Problem Title: Count of Sub-Multisets With Bounded Sum
+Brute Force Method: Generate every possible sub-multiset (combination of elements considering frequencies) and calculate their sums. Count those within [L, R].
+BF Complexity Visuals: $O(2^N)$ Combinatorial Scan
+How to Draw BF: Draw a tree of choices where branches represent taking 0, 1, 2... F copies of a number.
+Optimised Pattern: DP with Frequency Map + Sliding Window Optimization
+Opt Vis. Technique: Generating Functions / Knapsack with Optimization
+Dry Run (Opt): This is a bounded knapsack problem. Use a frequency map. For each unique value, update the DP table using a sliding window to keep the complexity to $O(\text{Sum})$.
+How to Draw (Opt): Draw a DP array representing possible sums. For each unique number, use a "Sliding Window Sum" to update the counts without re-calculating from scratch.
+Opt Complexity Visuals: $O(\text{Sum} \\text{cdot sqrt}(N)$) or $O(\text{Unique} \\text{cdot Sum})$
+How to Draw Opt Complexity: Draw a grid representing (Unique Elements) by (Total Sum). Shaded area represents the DP updates.
+Mem Vis (BF): $O(2^N)$ - Infeasible.
+Mem Vis (Opt): $O(\text{Sum})$ - Using a rolling 1D DP array.

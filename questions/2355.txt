@@ -1,0 +1,13 @@
+ID: 2355
+Problem Title: Maximum Number of Books You Can Take (Premium)
+Brute Force Method: For every index `i`, try all possible ways to take books from `i, i-1, ... 0` such that the number of books strictly decreases, and track the maximum sum.
+BF Complexity Visuals: Exponential Backtracking (O(2^N))
+How to Draw BF: Draw a row of shelves. From each shelf, draw branches representing different choices of how many books to take from the previous shelf.
+Optimised Pattern: Monotonic Stack + Dynamic Programming
+Opt Vis. Technique: Sliding Trapezoid Sums
+Dry Run (Opt): Define `dp[i]` as the max books ending at shelf `i`. Use a monotonic stack to find the first shelf `j` to the left where `books[j] &lt; books[i] - (i - j)`. The books between `j` and `i` form an arithmetic progression (trapezoid). `dp[i] = trapezoid_sum + dp[j]`.
+How to Draw (Opt): Draw a bar chart. Pick a bar. Draw a diagonal "limit line" slanting down to the left. The books you take are the area under the bars but below the limit line. The stack helps you find where your "limit line" hits a bar that is already shorter than the line.
+Opt Complexity Visuals: Linear Stack Pass (O(N))
+How to Draw Opt Complexity: Draw an array. Draw a stack that only grows when a bar is "tall enough" and shrinks when a bar is "too short," passing over the data once.
+Mem Vis (BF): Draw a massive recursion tree for every shelf.
+Mem Vis (Opt): Draw a 1D `dp` Array and a Monotonic Stack storing indices.

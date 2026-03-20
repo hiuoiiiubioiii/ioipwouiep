@@ -1,0 +1,13 @@
+ID: 692
+Problem Title: Top K Frequent Words
+Brute Force Method: Count frequencies in a map, convert map to a list of pairs, and perform a full sort based on count (descending) and alphabetical order (ascending).
+BF Complexity Visuals: Full-Array Sorting Overhead.
+How to Draw BF: Draw a list of 1000 words. Count them. Sort the entire 1000-word list even if you only need the top 2. Write $O(N \log N)$.
+Optimised Pattern: Hash Map + Min-Heap (size K).
+Opt Vis. Technique: Competitive Extraction / Bucket Sort.
+Dry Run (Opt): Use a Map for counts. Maintain a Min-Heap of size K. If a word's count &gt; heap.top, pop and push the new word. Sorting only happens for K elements.
+How to Draw (Opt): Draw a Map. Draw a small "Bucket" (Heap) with only K slots. Only let the strongest words stay in the bucket as you scan.
+Opt Complexity Visuals: $O(N \log K)$ time.
+How to Draw Opt Complexity: Draw a funnel (Heap) processing a stream of N items. Write $O(N \log K)$.
+Mem Vis (BF): Draw a full list of all unique words being sorted in memory.
+Mem Vis (Opt): Draw a Map $O(N)$ and a small Heap $O(K)$.

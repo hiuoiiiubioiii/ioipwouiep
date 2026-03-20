@@ -1,0 +1,13 @@
+ID: 1133
+Problem Title: Largest Unique Number
+Brute Force Method: Sort the array and then iterate through it, checking if the current number is the same as the neighbors.
+BF Complexity Visuals: Sorted Strip Search
+How to Draw BF: Draw a sorted list. Use three fingers (prev, curr, next) to find the largest value where prev != curr and curr != next. $O(N \log N)$.
+Optimised Pattern: Frequency Map / Bucket Sort
+Opt Vis. Technique: Histogram Frequency Buckets
+Dry Run (Opt): Create a frequency array (since numbers are 0-1000). Fill counts. Iterate from index 1000 down to 0. Return the first index with count == 1.
+How to Draw (Opt): Draw a row of 1001 boxes. Drop numbers into their boxes. Start at the rightmost box and move left until you find a box with exactly one item.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass for counting and a second pass for searching. Linear $O(N + K)$.
+Mem Vis (BF): Sorted In-place array
+Mem Vis (Opt): Fixed-size array `int[1001]`. Draw a single static memory block.

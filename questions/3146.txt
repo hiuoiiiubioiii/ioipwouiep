@@ -1,0 +1,13 @@
+ID: 3146
+Problem Title: Permutation Difference between Two Strings
+Brute Force Method: For each char in s, search for its index in t using a nested loop. $O(N^2)$
+BF Complexity Visuals: A web of lines connecting characters in s to distant positions in t.
+How to Draw BF: Write s and t. For each char in s, draw an arc to its match in t. Tally the "length" of the arc.
+Optimised Pattern: Hash Map / Frequency Indexing
+Opt Vis. Technique: Dual-Address Directory
+Dry Run (Opt): Map chars of s to their indices in a fixed array. Then iterate through t, looking up the stored index to calculate the diff.
+How to Draw (Opt): Draw an array of 26 boxes. Fill them with the indices from s. Then read t and subtract the value in the box from the current index.
+Opt Complexity Visuals: Linear one-pass timeline.
+How to Draw Opt Complexity: Draw a straight line 0 rightarrow N. Label it $O(N)$.
+Mem Vis (BF): None (re-scanning the string).
+Mem Vis (Opt): A fixed array of size 26. $O(1)$ auxiliary.

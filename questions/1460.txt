@@ -1,0 +1,13 @@
+ID: 1460
+Problem Title: Make Two Arrays Equal by Reversing Sub-arrays
+Brute Force Method: Simulate reversals. Find the first mismatch, then search for the correct element in the rest of the array and reverse the segment to bring it forward.
+BF Complexity Visuals: Selection Sort Simulation
+How to Draw BF: Draw an array. Find the wrong number. Draw a reversal bracket. Repeat until sorted. Label $O(N²)$.
+Optimised Pattern: Frequency Counting (Hash Map)
+Opt Vis. Technique: Multiset Equality Check
+Dry Run (Opt): If two arrays have the same elements with the same frequencies, they can always be made equal by reversing sub-arrays (property of bubble sort/reversals).
+How to Draw (Opt): Draw two grocery bags. Take an item from Bag A and put it in a "Counter" box. Take an item from Bag B and remove it from the "Counter". If the box is empty at the end, they match.
+Opt Complexity Visuals: Linear Pass or Sorting
+How to Draw Opt Complexity: Draw $O(N \log N)$ Sort or $O(N)$ Hash Map count. Label $O(N)$.
+Mem Vis (BF): N/A (In-place reversal)
+Mem Vis (Opt): A Hash Map (Frequency) of size 1000. Space $O(1)$ or $O(N)$.

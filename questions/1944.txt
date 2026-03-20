@@ -1,0 +1,13 @@
+ID: 1944
+Problem Title: Number of Visible People in a Queue
+Brute Force Method: For each person, look at every subsequent person to count how many are visible until a taller person blocks the view.
+BF Complexity Visuals: Forward Raycasting
+How to Draw BF: Draw a series of sticks of varying heights. For each stick, draw arrows to every stick it can "see." $O(N^2)$.
+Optimised Pattern: Monotonic Stack (Decreasing)
+Opt Vis. Technique: Horizon Line Pruning
+Dry Run (Opt): Iterate from right to left. Use a stack to keep track of people who could be seen. Pop people who are shorter than the current person (they are visible).
+How to Draw (Opt): Draw a stack bucket. As you move left, "drop" people into the bucket. If the new person is taller than the top, "eject" the top and count the visibility.
+Opt Complexity Visuals: Linear Amortized Scan
+How to Draw Opt Complexity: Draw a line across the queue. Note that each person is pushed and popped exactly once. $O(N)$ time.
+Mem Vis (BF): Nested loops scanning forward with no auxiliary storage.
+Mem Vis (Opt): A Stack (Array or Linked List) storing heights of potential visible people. $O(N)$ space.

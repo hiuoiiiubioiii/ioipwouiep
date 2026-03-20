@@ -1,0 +1,13 @@
+ID: 3129
+Problem Title: Find All Possible Stable Binary Arrays I
+Brute Force Method: Recursive backtracking to generate all permutations of `zero` and `one`, checking the `limit` constraint at each step. $O(2^Z+O)$
+BF Complexity Visuals: Binary tree with depth Z+O.
+How to Draw BF: Draw a tree starting at an empty array. Branch '0' and '1'. Cross out any branch that has more than `limit` consecutive same digits.
+Optimised Pattern: DP + Memoization (State: zeros, ones, last_bit)
+Opt Vis. Technique: 3D DP Grid Transition
+Dry Run (Opt): `dp[i][j][k]` = ways with i zeros, j ones, ending in bit k. To get dp[i][j][0], sum dp[i-1][j][0] + dp[i-1][j][1] and subtract cases that exceed the limit.
+How to Draw (Opt): Draw a grid with Z rows and O columns. Each cell has two numbers (ending in 0 or 1). Draw arrows showing how values flow from previous counts.
+Opt Complexity Visuals: State-space traversal of a Z x O x 2 grid.
+How to Draw Opt Complexity: Draw a Z x O table. Mark $O(Z x O)$ operations.
+Mem Vis (BF): Deep recursion stack with millions of active branches.
+Mem Vis (Opt): A 3D array of size Z x O x 2. $O(Z x O)$.

@@ -1,0 +1,13 @@
+ID: 2608
+Problem Title: Shortest Cycle in a Graph
+Brute Force Method: DFS starting from every node, exploring all paths to find loops.
+BF Complexity Visuals: Massive Backtracking Tree
+How to Draw BF: Draw a deeply nested, sprawling tree showing paths revisiting nodes, labeling $O(2^V)$.
+Optimised Pattern: BFS from every node (or Edge Removal)
+Opt Vis. Technique: Radial Expansion Layers
+Dry Run (Opt): Start BFS from a node. Treat it as dropping a stone in a pond. When two "ripples" (paths) hit the same unvisited node, a cycle is found.
+How to Draw (Opt): Draw the start node at the center. Draw concentric circles for distances 1, 2, 3. Stop and sum distances when two nodes on the active edge connect.
+Opt Complexity Visuals: V * BFS Iterations Box
+How to Draw Opt Complexity: Draw V boxes representing iterations. Inside each, write $O(V+E)$, concluding with $O(V \cdot (V+E)$).
+Mem Vis (BF): Deep Call Stack
+Mem Vis (Opt): Queue representation (horizontal tube) and a Distance Array tracking shortest path lengths.

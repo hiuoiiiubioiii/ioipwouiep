@@ -1,0 +1,13 @@
+ID: 1472
+Problem Title: Design Browser History
+Brute Force Method: Use a List to store history. For `visit`, append the URL and delete all subsequent URLs. For `back`/`forward`, move an index pointer across the list.
+BF Complexity Visuals: Array Reallocation / Truncation
+How to Draw BF: Draw a list of URLs. When visiting a new page from the middle, draw a giant "X" over the right side of the list and draw new boxes. Label $O(N)$ per visit.
+Optimised Pattern: Two Stacks or Doubly Linked List
+Opt Vis. Technique: Dual-Container Navigation
+Dry Run (Opt): Use two stacks: `history` and `future`. `visit`: clear `future`, push to `history`. `back`: pop from `history` and push to `future`. `forward`: vice versa. (Or use a fixed array with a boundary pointer for $O(1)$).
+How to Draw (Opt): Draw two vertical tubes. One is "Past", one is "Future". As you move back, a ball drops from Past into Future. As you visit, the Future tube is emptied into a trash can.
+Opt Complexity Visuals: Constant Time Operations
+How to Draw Opt Complexity: Draw a single box for each method. Label each $O(1)$.
+Mem Vis (BF): Repeated List Slicing
+Mem Vis (Opt): A single contiguous array with a current pointer and a "max-reachable" pointer. Space $O(N)$.

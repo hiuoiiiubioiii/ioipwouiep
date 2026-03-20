@@ -1,0 +1,13 @@
+ID: 2490
+Problem Title: Circular Sentence
+Brute Force Method: Split the sentence into an array of words. Loop through the array and compare the last character of `word[i]` with the first character of `word[i+1]`.
+BF Complexity Visuals: Linear Word Matching
+How to Draw BF: Draw a circle of boxes. Draw arrows between adjacent boxes. Label $O(N)$.
+Optimised Pattern: Single Pass (Space Detection)
+Opt Vis. Technique: Boundary Check Pulse
+Dry Run (Opt): Iterate through the string. If a space is found, check if the character before and after the space are the same. Check string[0] and string[last] at the end.
+How to Draw (Opt): Write the sentence. Draw vertical bars at every space. Put an '=' sign above the space if the letters on the left and right match.
+Opt Complexity Visuals: Constant Constant Pass
+How to Draw Opt Complexity: Draw one straight horizontal line. Label $O(N)$ Time.
+Mem Vis (BF): Draw an array of words (extra space). $O(N)$.
+Mem Vis (Opt): Draw only the original string pointer. $O(1)$ extra Space.

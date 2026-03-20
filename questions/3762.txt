@@ -1,0 +1,13 @@
+ID: 3762
+Problem Title: Minimum Operations to Equalize Subarrays (Hard)
+Brute Force Method: Try every possible target value (from min to max of array). For each target, calculate the operations needed for every possible subarray partition. $O(N^3)$.
+BF Complexity Visuals: Brute force search over value range and partition space.
+How to Draw BF: Draw the array. Pick a target number. Draw different ways to cut the array into subarrays. Calculate "cost to reach target" for each slice.
+Optimised Pattern: DP + Median Properties / Slopes
+Opt Vis. Technique: Slope Trick / Cost Surface Visualization
+Dry Run (Opt): The cost to equalize elements to a value x is minimized when x is the median. Use DP where dp[i] is the min cost for prefix i. Optimize the transition using a sliding window median or slope trick.
+How to Draw (Opt): Draw dp array. For dp[i], look back at dp[j]. Draw a "median-finding" box for the range [j, i] and add that cost to dp[j].
+Opt Complexity Visuals: $O(N^2)$ or $O(N \log N)$ with data structures.
+How to Draw Opt Complexity: Draw a DP table being filled with a sliding "Median-Cost" window.
+Mem Vis (BF): Exponential state space.
+Mem Vis (Opt): $O(N)$ for DP array + Heaps for median tracking.

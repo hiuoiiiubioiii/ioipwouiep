@@ -1,0 +1,13 @@
+ID: 2595
+Problem Title: Number of Even and Odd Bits
+Brute Force Method: Convert the number to a binary string. Loop through the string, check the index parity, and count 1s.
+BF Complexity Visuals: A string-based transformation (Int -&gt; Binary String -&gt; Array).
+How to Draw BF: 17 rightarrow "10001". Index 0: '1' (even). Index 4: '1' (even). Result: [2, 0].
+Optimised Pattern: Bitwise Shift and Masking.
+Opt Vis. Technique: A "Bit Peeler" visual where we examine the last bit, record its parity, and shift the number right until it's zero.
+Dry Run (Opt): Initialize even = 0, odd = 0, index = 0. While n &gt; 0: if (n &amp; 1) == 1, increment even if index % 2 == 0, else increment odd. Right-shift n by 1 and increment index.
+How to Draw (Opt): Write the number. Look at the last digit. Is it 1? If yes, tally it (count if you've moved an even or odd number of times). Cross out the last digit. Repeat.
+Opt Complexity Visuals: $O(\log N)$ - Proportional to the number of bits in the integer.
+How to Draw Opt Complexity: Draw a binary number. Draw a single arrow moving from right to left, with two "Scoreboard" boxes (Even/Odd) updating as it moves.
+Mem Vis (BF): $O(\log N)$ for string storage.
+Mem Vis (Opt): $O(1)$ - Constant memory.

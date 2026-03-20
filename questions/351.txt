@@ -1,0 +1,13 @@
+ID: 351
+Problem Title: Android Unlock Patterns
+Brute Force Method: Generate all possible permutations of lengths m to n from the numbers 1-9. Check if each jump is valid (no "jumping over" an unvisited node).
+BF Complexity Visuals: N-ary Recursion Tree (Combinatorial)
+How to Draw BF: Draw a 3 \times 3 grid. From the center (5), draw arrows to all 8 neighbors. From a corner (1), draw arrows and highlight the "illegal" jump to 3 if 2 isn't visited. $O(9!)$.
+Optimised Pattern: Backtracking with Pre-calculated Jump Table
+Opt Vis. Technique: Skip-Table State Space
+Dry Run (Opt): Use a 2D array `skip[10][10]` to store which number is "jumped over" between two keys. Run DFS. If `skip[i][j]` is not 0, only allow the jump if `visited[skip[i][j]]` is true. Multiply symmetric starts (1, 2, 5) to save time.
+How to Draw (Opt): Draw the 3 \times 3 grid. Write the number of patterns starting at '1' and multiply by 4. Do the same for '2' (multiply by 4) and '5' (multiply by 1).
+Opt Complexity Visuals: Pruned Backtracking Tree
+How to Draw Opt Complexity: Draw a tree where many branches are terminated early with a red "X" because the jump is invalid. $O(9!)$.
+Mem Vis (BF): Recursive stack depth of 9. Draw a tall vertical box.
+Mem Vis (Opt): A 1D boolean array for `visited` and a 2D `skip` table. Draw a 9 \times 9 grid and a 9-slot tape. $O(1)$ constant auxiliary space.

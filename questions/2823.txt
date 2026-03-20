@@ -1,0 +1,13 @@
+ID: 2823
+Problem Title: Deep Object Filter
+Brute Force Method: Recursively traverse every key in the object. For every value found, apply the filter. If a value is another object, start a brand new recursive branch without managing empty parents.
+BF Complexity Visuals: Recursive Depth-First Search (DFS) Tree
+How to Draw BF: Draw a tree where each node is a key. Show branches growing for every nested object. Mark nodes "Keep" or "Discard". Show the $O(N)$ traversal where N is the total number of keys.
+Optimised Pattern: Post-Order Recursive Reconstruction
+Opt Vis. Technique: Bottom-Up Filtering
+Dry Run (Opt): Traverse to the deepest leaf first. Apply the filter. As recursion "bubbles up," only include keys whose values are either valid primitive data OR non-empty objects returned from child calls.
+How to Draw (Opt): Draw an object tree. Start at the leaves. Cross out invalid leaves. For parent nodes, if all children are crossed out, cross out the parent too. Circle only the remaining connected paths.
+Opt Complexity Visuals: Single Pass Tree Traversal
+How to Draw Opt Complexity: Draw a single line that touches every node exactly once (the Euler tour). Total time is $O(N)$.
+Mem Vis (BF): Visualize a deep call stack for highly nested objects, potentially causing "Maximum call stack size exceeded."
+Mem Vis (Opt): Visualize a clean, reconstructed object in the heap that only contains references to the "surviving" data.

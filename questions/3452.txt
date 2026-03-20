@@ -1,0 +1,13 @@
+ID: 3452
+Problem Title: Sum of Good Numbers
+Brute Force Method: For every element at index i, check all elements at index j to see if they are k distance away, then verify if nums[i] is greater. $O(N²)$ if done with nested search.
+BF Complexity Visuals: Redundant Distance Checks.
+How to Draw BF: Draw the array. For index i, draw a search arrow that scans the entire array looking for indices i-k and i+k.
+Optimised Pattern: Single Pass Bound Check. $O(N)$
+Opt Vis. Technique: Lookback/Lookahead Pointers.
+Dry Run (Opt): Traverse the array once. For current index i, check strictly if nums[i] &gt; nums[i-k] (if i-k exists) and nums[i] &gt; nums[i+k] (if i+k exists).
+How to Draw (Opt): Draw the array. Put your finger on index i. Look left exactly k units, then right exactly k units. If i is the "king," add it to the sum.
+Opt Complexity Visuals: Linear Scan Timeline.
+How to Draw Opt Complexity: Draw one straight line across the array to represent the $O(N)$ single-loop traversal.
+Mem Vis (BF): N/A - Mostly wasted time complexity.
+Mem Vis (Opt): $O(1)$ space using one single "sum" variable.

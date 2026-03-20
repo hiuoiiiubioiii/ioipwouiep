@@ -1,0 +1,13 @@
+ID: 1940
+Problem Title: Longest Common Subsequence Between Sorted Arrays
+Brute Force Method: Use standard LCS DP for multiple arrays, or find common elements between the first two, then that result with the third, etc.
+BF Complexity Visuals: Multi-Way DP Intersection
+How to Draw BF: Draw three 2D grids (LCS tables). Each table is $O(N^2)$. Very slow for many arrays.
+Optimised Pattern: Frequency Counting (Since arrays are sorted &amp; distinct)
+Opt Vis. Technique: Histogram Frequency Filtering
+Dry Run (Opt): Count the occurrence of every number across all arrays. If a number's count equals the total number of arrays, it is in the LCS.
+How to Draw (Opt): Draw all arrays stacked. Draw a vertical line. If the line hits a number in every single row, circle it.
+Opt Complexity Visuals: Linear Multi-Scan
+How to Draw Opt Complexity: Draw M arrays of size N. Draw one scan line through each. $O(M \cdot N)$ time.
+Mem Vis (BF): Large 2D DP matrices on the heap.
+Mem Vis (Opt): A single integer Hash Map or array of size 100 (range of values) to store counts. $O(1)$ or $O(\text{Range})$.

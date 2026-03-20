@@ -1,0 +1,13 @@
+ID: 3861
+Problem Title: Minimum Capacity Box (Easy)
+Brute Force Method: Simulation: Try boxes one by one in the order they are given, or try every combination of boxes to see which can fit the total items.
+BF Complexity Visuals: A greedy or combinatorial search that might re-scan the item list for every box choice.
+How to Draw BF: Draw 5 items. Try Box A (size 2) - doesn't fit. Try Box B (size 6) - fits. Write $O(N)$ or $O(2^N)$.
+Optimised Pattern: Sorting + Greedy Accumulation.
+Opt Vis. Technique: A "Largest First" strategy where we fill the biggest containers first to minimize the number of containers used.
+Dry Run (Opt): 1. Calculate total items S. 2. Sort box capacities in descending order. 3. Subtract box capacities from S until S <= 0. Count how many boxes were used.
+How to Draw (Opt): Draw a pile of items. Draw boxes from biggest to smallest. Throw items into the biggest box first. Keep track of the "Remaining Items" counter.
+Opt Complexity Visuals: Log-linear sorting followed by a linear count.
+How to Draw Opt Complexity: Draw a funnel for "Sort $O(N \log N)$". Draw a line for "Scan $O(N)$". Total: $O(N \log N)$.
+Mem Vis (BF): $O(1)$ if sorting in-place, else $O(N)$.
+Mem Vis (Opt): $O(1)$ extra space if the box array is sorted in-place.

@@ -1,0 +1,13 @@
+ID: 3607
+Problem Title: Power Grid Maintenance (Med)
+Brute Force Method: Try removing/modifying every node/edge one by one and running a full DFS/BFS to check grid connectivity each time. $O(E \cdot (V+E)$).
+BF Complexity Visuals: Flipbook of Redundant Graphs.
+How to Draw BF: Draw the full graph. Erase one edge. Trace a path through all nodes to see if it's connected. Redraw the full graph. Repeat.
+Optimised Pattern: Kruskal's Algorithm with Disjoint Set Union (DSU) or Tarjan's Bridge Finding Algorithm.
+Opt Vis. Technique: Expanding Connected Components (Blobs).
+Dry Run (Opt): Sort edges by cost. Try adding them one by one. If an edge connects two separate "blobs" (grids), keep it and merge the blobs. If they are already in the same blob, discard it.
+How to Draw (Opt): Draw nodes as isolated dots. As edges are processed, draw circles grouping the connected nodes into larger and larger sets.
+Opt Complexity Visuals: Sorting + Tree Path Compression Map.
+How to Draw Opt Complexity: Draw a bar representing $O(E \log E)$ for sorting edges. Next to it, draw a tiny nearly-flat line representing $O(E α(V)$) for DSU operations.
+Mem Vis (BF): Creating full Adjacency Matrix copies for every single iteration/edge removal attempt. $O(V^2)$.
+Mem Vis (Opt): Two 1D arrays: `parent[]` and `rank[]`. Draw them tracking which nodes belong to which "root" power station. Space $O(V)$.

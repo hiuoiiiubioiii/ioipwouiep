@@ -1,0 +1,13 @@
+ID: 3055
+Problem Title: Top Percentile Fraud
+Brute Force Method: Calculate total rows, calculate top 5% threshold manually, then use `LIMIT` or row numbers in a complex subquery.
+BF Complexity Visuals: Manual Threshold Math
+How to Draw BF: Draw a calculator dividing row counts, passing the number back into a second query.
+Optimised Pattern: Window Function (PERCENT_RANK)
+Opt Vis. Technique: The Built-In Percentile Gauge
+Dry Run (Opt): Use `PERCENT_RANK() OVER (PARTITION BY state ORDER BY fraud_score DESC)`. The engine handles the relative ranking (0.0 to 1.0). Filter for `&lt;= 0.05`.
+How to Draw (Opt): Draw data sorted by fraud score. Draw a ruler next to it marked from 0% to 100%. Draw a red line at the top 5% mark and slice the data there.
+Opt Complexity Visuals: Partitioned Sort $O(N \log N)$
+How to Draw Opt Complexity: Draw a pipeline that sorts within partitions and assigns a float rank.
+Mem Vis (BF): Temporary tables for manual counts.
+Mem Vis (Opt): DB sorting buffer. $O(N)$ space.

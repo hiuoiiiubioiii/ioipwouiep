@@ -1,0 +1,13 @@
+ID: 2571
+Problem Title: Minimum Operations to Reduce an Integer to 0
+Brute Force Method: Recursively try adding or subtracting every possible power of 2 (2^x) at each step until the number reaches 0. $O(\text{Exponential})$.
+BF Complexity Visuals: A wide-branching recursion tree where each node represents a number and branches represent pm 2^x.
+How to Draw BF: Write the number 39. Try 39-32=7, 39+32=71. From 7, try 7-8, 7-4, etc. Find the shortest path to 0.
+Optimised Pattern: Greedy Bit Manipulation (Low-bit Analysis).
+Opt Vis. Technique: A "Bitwise Cleanup" visual where we handle clusters of 1-bits by either clearing them one-by-one or jumping past them with an addition.
+Dry Run (Opt): Look at the binary representation. If you see a lone '1', subtract it (1 op). If you see a cluster of two or more '1's (e.g., `...0111`), add 1 to the lowest bit to turn it into `...1000` (1 op), effectively clearing the whole cluster in fewer steps.
+How to Draw (Opt): Write the number in binary. Circle clusters of 1s. If a cluster has length 1, cross it out. If length &gt; 1, add 1 to the end of it and handle the carry. Count each "fix" as one operation.
+Opt Complexity Visuals: $O(\text{Number of Bits})$ - Linear relative to the binary length of the number.
+How to Draw Opt Complexity: Draw the binary string. Draw a single arrow moving right-to-left, making "tally marks" whenever you encounter a 1-bit or start a carry.
+Mem Vis (BF): Massive recursion stack for all power-of-2 combinations.
+Mem Vis (Opt): $O(1)$ - Just a few integer variables to track the number and the count.

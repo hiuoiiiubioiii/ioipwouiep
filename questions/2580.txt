@@ -1,0 +1,13 @@
+ID: 2580
+Problem Title: Count Ways to Group Overlapping Ranges
+Brute Force Method: Check every possible grouping of ranges (2^N) and for each, verify if overlapping ranges are in the same group. $O(2^N \cdot N)$.
+BF Complexity Visuals: A power-set tree of group assignments with a heavy overlap check for each.
+How to Draw BF: Range A, B, C. Try (A, B) in Group 1, C in Group 2. If A and C overlap, this is invalid. Try all combinations.
+Optimised Pattern: Sorting + Merge Intervals + Modular Exponentiation.
+Opt Vis. Technique: A "Range Merging" visual where overlapping intervals collapse into "islands," and each island can independently be in one of two groups.
+Dry Run (Opt): Sort the ranges by their start time. Iterate through and merge all overlapping intervals into distinct groups. If there are G non-overlapping groups, each can be assigned to either group 1 or group 2 independently. The total ways are 2^G mod10^9+7.
+How to Draw (Opt): Draw the intervals as horizontal lines. If two lines overlap, "glue" them together. Count how many separate "glued" segments you have. Calculate 2 to the power of that count.
+Opt Complexity Visuals: $O(N \log N)$ for sorting the ranges, followed by $O(N)$ to merge them.
+How to Draw Opt Complexity: Draw a timeline. Draw the sorted intervals. Draw a single arrow merging them left-to-right. Finally, draw a power function box (2^G).
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ extra space (excluding sorting storage).

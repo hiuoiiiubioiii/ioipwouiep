@@ -1,0 +1,13 @@
+ID: 1417
+Problem Title: Reformat The String
+Brute Force Method: Generate all possible permutations of the string. For each permutation, check if it alternates between letters and digits. Return the first valid one.
+BF Complexity Visuals: Permutation Generation Graph
+How to Draw BF: Draw a root node branching into N factorial paths. Add a filter machine at the bottom that drops all invalid strings. Label $O(N!)$.
+Optimised Pattern: Two-Pointer / Bucket Splitting
+Opt Vis. Technique: Zipping Two Arrays
+Dry Run (Opt): Separate characters into a `letters` list and a `digits` list. If their lengths differ by more than 1, return "". Otherwise, alternate popping from the larger list, then the smaller list.
+How to Draw (Opt): Draw two separate buckets: "Letters" and "Digits". Draw a zipper pulling one item from the heavier bucket, then one from the lighter bucket, linking them into a single chain.
+Opt Complexity Visuals: Two-Pass Linear Traversal
+How to Draw Opt Complexity: Draw one arrow splitting a string into two arrays $O(N)$ -&gt; an arrow merging them back $O(N)$. Total $O(N)$.
+Mem Vis (BF): N! Permutation Strings in Memory
+Mem Vis (Opt): Draw two dynamic arrays (List/Vector) representing the separated buckets, and one StringBuilder for the output.

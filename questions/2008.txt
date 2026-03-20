@@ -1,0 +1,13 @@
+ID: 2008
+Problem Title: Maximum Earnings From Taxi
+Brute Force Method: Pick or skip each passenger trip. Recursively check all valid combinations avoiding overlapping times.
+BF Complexity Visuals: Binary Choice Tree (Knapsack Style)
+How to Draw BF: Draw a root. Branch left ("Take passenger, skip to end time") and right ("Skip passenger, check next"). Tree grows $O(2^N)$.
+Optimised Pattern: Sorting + Dynamic Programming + Binary Search
+Opt Vis. Technique: Timeline Intervals with DP Snapshots
+Dry Run (Opt): Sort trips by end time. At each trip, use binary search to find the latest previous trip that doesn't overlap. DP[i] = max(skip, take + profit).
+How to Draw (Opt): Draw a horizontal timeline. Draw trip intervals as floating blocks above it. Below, write a DP array updating max profit at each end time.
+Opt Complexity Visuals: Array Scan with Backward Search Beams
+How to Draw Opt Complexity: Draw an array representing the DP loop. From each cell, draw a dashed arrow pointing backward representing the $O(\log N)$ binary search. Time: $O(N \log N)$.
+Mem Vis (BF): Recursion stack $O(N)$ deep holding state parameters.
+Mem Vis (Opt): 1D Array of size N tracking max profit up to the `i-th` sorted interval.

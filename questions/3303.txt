@@ -1,0 +1,13 @@
+ID: 3303
+Problem Title: Find the Occurrence of First Almost Equal Substring
+Brute Force Method: Slide a window across `s` and count mismatches against `pattern` at every position. $O(N \cdot M)$.
+BF Complexity Visuals: Sliding Window Mismatch Count
+How to Draw BF: Draw `s`. Align `pattern` under it at index 0. Compare. Shift by 1. Compare. Show the M comparisons for each of the N shifts.
+Optimised Pattern: Z-Algorithm (Prefix &amp; Suffix Matching)
+Opt Vis. Technique: Bi-directional Z-Array Projection
+Dry Run (Opt): Compute Z-array for `pattern + # + s` to find prefix matches. Compute Z-array for `reversed_pattern + # + reversed_s` to find suffix matches. A match exists if `prefix_len + suffix_len &gt;= pattern_len - 1`.
+How to Draw (Opt): Draw the Z-array as a series of bar charts over the string. At index i, look at the prefix bar and the suffix bar for the window. If their combined length covers the pattern (minus one mismatch), you found it.
+Opt Complexity Visuals: Linearized Z-Algorithm Pipeline
+How to Draw Opt Complexity: Draw two blocks for $O(N+M)$ Z-array computations. Draw a final $O(N)$ pass to combine results. Total: $O(N + M)$.
+Mem Vis (BF): Nested loops creating many substring slices.
+Mem Vis (Opt): Two Z-arrays of size N+M (O(N + M) space).

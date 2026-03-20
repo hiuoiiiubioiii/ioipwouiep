@@ -1,0 +1,13 @@
+ID: 90
+Problem Title: Subsets II
+Brute Force Method: Subsets I + Hash Set Generate all 2^N subsets using the standard recursion and put each one into a Hash Set to filter out duplicates.
+BF Complexity Visuals: The Sieve of Power Sets
+How to Draw BF: Draw the binary tree from Q78. At the bottom, show duplicate sets (like `[1, 2]` and `[1, 2]`) hitting a wall that only lets one through. Time: $O(N \cdot 2^N)$.
+Optimised Pattern: Sort + Backtracking (Sibling Skip)
+Opt Vis. Technique: The Pruned Choice Tree
+Dry Run (Opt): Sort the array first. During recursion, if the current element is the same as the previous one at the same level, skip it. This ensures each duplicate is only used once to start a sequence.
+How to Draw (Opt): Draw a tree for `[1, 2, 2]`. From the root, branch to 1 and the *first* 2. Put a red "X" through the branch for the *second* 2, saying "Already picked a 2 here."
+Opt Complexity Visuals: Pruned Exponential Tree
+How to Draw Opt Complexity: Draw a tree where many branches are cut off. The number of nodes is still bounded by 2^N, but much smaller for many duplicates. Time: $O(N \cdot 2^N)$.
+Mem Vis (BF): Storing 2^N subsets in a Hash Set for deduplication.
+Mem Vis (Opt): Draw a single recursion stack (depth N) and one `path` array. No Hash Set needed. Space: $O(N)$.

@@ -1,0 +1,13 @@
+ID: 64
+Problem Title: Minimum Path Sum
+Brute Force Method: Exhaustive Search (Recursion) Explore every possible path from top-left to bottom-right, calculating the total sum for each and tracking the minimum.
+BF Complexity Visuals: The Path Finder Tree
+How to Draw BF: Draw a tree branching at every cell. Label each node with the path sum so far. Show how many branches are explored to find the winner. Time: $O(2^m+n)$.
+Optimised Pattern: Dynamic Programming (In-Place)
+Opt Vis. Technique: The Cost Accumulator
+Dry Run (Opt): Each cell in the DP table should store the minimum cost to reach it: `grid[i][j] += min(grid[i-1][j], grid[i][j-1])`.
+How to Draw (Opt): Draw the grid. For each cell, look at the values above and to the left. Pick the smaller one, add the current cell's value, and write it over the original number.
+Opt Complexity Visuals: Cell-by-Cell Calculation
+How to Draw Opt Complexity: Draw a grid. Show a scanner moving through every cell once. Time: $O(M x N)$.
+Mem Vis (BF): Redundant path calculations filling memory.
+Mem Vis (Opt): Draw the original grid being modified in-place. Space: $O(1)$ (if modifying input) or $O(N)$ for a 1D DP row.

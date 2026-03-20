@@ -1,0 +1,13 @@
+ID: 1952
+Problem Title: Three Divisors
+Brute Force Method: Loop from 1 to n and count how many numbers divide n without a remainder.
+BF Complexity Visuals: Linear Scan Number Line
+How to Draw BF: Draw a line from 1 to n. Put a tick mark on every number that is a factor. Count the ticks. $O(N)$.
+Optimised Pattern: Square of Prime Property
+Opt Vis. Technique: Prime-Factor Geometric Mapping
+Dry Run (Opt): Check if n &gt; 1, if \sqrt{n} is an integer, and if that square root is a prime number. Only such numbers have exactly 3 divisors.
+How to Draw (Opt): Draw the number n as a square area. Label the side length p. Show that the only factors are 1, p, and p^2.
+Opt Complexity Visuals: Constant Time Math Check
+How to Draw Opt Complexity: Draw a single decision box: "Is \sqrt{n} prime?". $O(\text{sqrt}(N)$) or $O(1)$ if using a precomputed sieve.
+Mem Vis (BF): A simple integer counter incrementing in a loop.
+Mem Vis (Opt): A single boolean or integer check after a square root operation. $O(1)$ space.

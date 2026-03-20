@@ -1,0 +1,13 @@
+ID: 1093
+Problem Title: Statistics from a Large Sample
+Brute Force Method: Reconstruct the original sample array by duplicating the numbers based on their frequencies. Run standard statistical functions on the full array.
+BF Complexity Visuals: Memory explosion! A frequency array of size 256 can represent a sample of millions of numbers.
+How to Draw BF: count[5]=1000. Write "5" one thousand times. Write $O(\text{TotalSamples})$.
+Optimised Pattern: Frequency-Based Math.
+Opt Vis. Technique: A "Virtual Array". We don't need the numbers physically; we just need to know their "positions" in an imaginary sorted list.
+Dry Run (Opt): Min/Max: find first/last non-zero index. Mean: `Sum(val * freq) / TotalSamples`. Mode: index with max frequency. Median: Track running count of samples until you hit `TotalSamples/2`.
+How to Draw (Opt): Draw the frequency array. Mark "Total Samples". Draw an arrow moving through the buckets, accumulating the count until it hits the middle point.
+Opt Complexity Visuals: Single pass through the 256-sized frequency array.
+How to Draw Opt Complexity: Draw a small fixed-size bar chart. Write Time: $O(256)$ which is $O(1)$.
+Mem Vis (BF): $O(\text{TotalSamples})$ space.
+Mem Vis (Opt): $O(1)$ space (fixed 256 array).

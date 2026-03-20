@@ -1,0 +1,13 @@
+ID: 2958
+Problem Title: Length of Longest Subarray With at Most K Frequency
+Brute Force Method: Generate all $O(N^2)$ subarrays and check if every element's frequency <= k.
+BF Complexity Visuals: Quadratic Matrix Area
+How to Draw BF: Draw a triangle representing N^2/2 operations. Label "TLE" for N=10^5.
+Optimised Pattern: Sliding Window (Two Pointers)
+Opt Vis. Technique: Expanding/Contracting Accordion
+Dry Run (Opt): Move `right` pointer to include elements. If frequency of `nums[right] &gt; k`, move `left` pointer forward until the frequency is restored to k.
+How to Draw (Opt): Draw an array. Draw a bracket `[ ]`. Show the bracket expanding right, then "shrinking" from the left when a frequency limit is hit.
+Opt Complexity Visuals: Linear Sweep (2N total moves)
+How to Draw Opt Complexity: Draw a line of length N. Both `left` and `right` move only forward. T = $O(N)$.
+Mem Vis (BF): Storing N^2 frequency maps.
+Mem Vis (Opt): A Hash Map tracking frequencies of elements in the current window. Space $O(N)$.

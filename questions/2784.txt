@@ -1,0 +1,13 @@
+ID: 2784
+Problem Title: Check if Array is Good
+Brute Force Method: Sort the array $O(N \log N)$. Check if the first n-1 elements are 1, 2, dots, n-1 and the last element is also n-1. $O(N)$.
+BF Complexity Visuals: Sorted Sequence Scan
+How to Draw BF: Draw the array boxes. Rearrange them in order. Check if they match a perfect 1, 2, 3... n-1, n-1 template.
+Optimised Pattern: Sort Buffer (Visualizing the $O(N)$ or $O(\log N)$ extra space used by the sorting algorithm).
+Opt Vis. Technique: Frequency Counting / Bucket Array
+Dry Run (Opt): Value-to-Index Validation
+How to Draw (Opt): If arr.length != n (where n = max + 1), return false. Use a frequency array. Every number 1 dots n-2 must appear once, and n-1 must appear twice.
+Opt Complexity Visuals: Draw max number of buckets. Drop the array numbers into them. Check if the last bucket has 2 balls and all others have 1.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal line. Label it $O(N)$ to show no sorting is needed.
+Mem Vis (Opt): Frequency Array (Draw a 1D array of size max(nums)).

@@ -1,0 +1,13 @@
+ID: 889
+Problem Title: Construct Binary Tree from Preorder and Postorder Traversal
+Brute Force Method: Generate every possible binary tree with N nodes and for each, generate its preorder and postorder traversals to see if they match the input.
+BF Complexity Visuals: Permutation Tree Matching. $O(\text{Catalan Number})$.
+How to Draw BF: Draw all possible shapes of trees with N nodes. For each, write out the traversal strings. The number of trees grows exponentially.
+Optimised Pattern: Recursive Range Splitting (Divide and Conquer).
+Opt Vis. Technique: The "Sub-problem Scope" Zoom.
+Dry Run (Opt): In Preorder, the first element is the Root. The second element is the Root of the Left Subtree. Find that second element in the Postorder array—this tells you where the Left Subtree ends and the Right Subtree begins.
+How to Draw (Opt): Draw the Preorder and Postorder arrays. Draw a "Cut Line" in Postorder at the index of `pre[1]`. Color the elements to the left Blue (Left Subtree) and right Green (Right Subtree).
+Opt Complexity Visuals: Linear Construction. $O(N)$.
+How to Draw Opt Complexity: Draw the tree being built node-by-node. Each element in the arrays is touched once to create a node.
+Mem Vis (BF): $O(N!)$ storage for all potential tree shapes.
+Mem Vis (Opt): $O(H)$ Recursion Stack: Draw a vertical stack representing the tree's height.

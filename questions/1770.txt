@@ -1,0 +1,13 @@
+ID: 1770
+Problem Title: Maximum Score from Performing Multiplication Operations
+Brute Force Method: Recursion without memoization: For each multiplier, pick from either the left or right of the nums array. Try all 2^M combinations.
+BF Complexity Visuals: Binary Choice Tree.
+How to Draw BF: Draw root. Branch "Left" or "Right" for each multiplier. $O(2^M)$. With M=1000, this is astronomical.
+Optimised Pattern: 2D Dynamic Programming (Memoization).
+Opt Vis. Technique: Shrinking Range Matrix.
+Dry Run (Opt): State: `dp[i][left]` is the max score after `i` operations with `left` elements taken from the start. (Note: `right` can be calculated as `n - 1 - (i - left)`).
+How to Draw (Opt): Draw a grid where rows are "Operations Done" and columns are "Left Side Taken". Each cell depends on the cell above it (left or right choice).
+Opt Complexity Visuals: Iterative State Fill.
+How to Draw Opt Complexity: Draw an M \times M matrix. Highlight the dependency triangle. Label $O(M^2)$.
+Mem Vis (BF): Massive recursion stack.
+Mem Vis (Opt): 2D array of size M \times M. $O(M^2)$ space.

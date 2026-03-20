@@ -1,0 +1,13 @@
+ID: 443
+Problem Title: String Compression
+Brute Force Method: String Builder Iterate and append characters and their counts to a new string/list.
+BF Complexity Visuals: Parallel Buffer
+How to Draw BF: Draw the original array. Below it, draw a second array being filled with characters and digits. $O(N)$.
+Optimised Pattern: Two Pointers (Read/Write) Use `read` and `write` pointers. `read` finds the end of a group; `write` updates the array in-place.
+Opt Vis. Technique: Trailing Shadow
+Dry Run (Opt): The `read` pointer is a scout. The `write` pointer is a builder following behind, overwriting old data.
+How to Draw (Opt): Draw an array. Draw an arrow R moving fast and an arrow W moving slow. Label W as the "New Length" tracker.
+Opt Complexity Visuals: Dual Pointer Scan
+How to Draw Opt Complexity: Draw two arrows moving together. Each index is visited twice. $O(N)$.
+Mem Vis (BF): Result String Draw a second block of memory of size N. $O(N)$.
+Mem Vis (Opt): None Draw two integer pointers in a small box. $O(1)$.

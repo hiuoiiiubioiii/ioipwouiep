@@ -1,0 +1,13 @@
+ID: 2065
+Problem Title: Maximum Path Quality of a Graph
+Brute Force Method: Explore every possible path starting from node 0 using a standard DFS without any time constraints.
+BF Complexity Visuals: Infinite Graph Traversal
+How to Draw BF: Draw a graph. Trace paths. Without the "maxTime" limit, your drawing would loop infinitely because nodes can be revisited. $O(\text{Infinity})$.
+Optimised Pattern: Backtracking (DFS) with Time Pruning
+Opt Vis. Technique: Pruned Exploration Tree
+Dry Run (Opt): Perform DFS starting at node 0. Keep track of current path time. If `currentTime &gt; maxTime`, return. If at node 0, update max quality (use a frequency array to only count a node's quality once).
+How to Draw (Opt): Draw a tree where each node is a graph node. Beside each node, write `remTime`. If `remTime &lt; 0`, cross out the branch. Keep a "Visited Set" for quality tally.
+Opt Complexity Visuals: Exponentially Bounded Search
+How to Draw Opt Complexity: Draw a tree with a branching factor of max 4 (edges per node). Depth is limited by time. Though exponential, the small constraints make $O(4^10)$ feasible.
+Mem Vis (BF): Large path lists stored for every recursive call.
+Mem Vis (Opt): An adjacency list and the recursion stack. Space $O(N + E)$.

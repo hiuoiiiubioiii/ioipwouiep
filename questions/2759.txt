@@ -1,0 +1,13 @@
+ID: 2759
+Problem Title: Convert JSON String to Object
+Brute Force Method: Using `eval()` (security risk) or writing a massive regex engine that fails on nested brackets.
+BF Complexity Visuals: Regex Spaghetti
+How to Draw BF: Draw a massive regular expression trying to capture infinite depths of `{}` and `[]`. It loops back on itself and crashes.
+Optimised Pattern: Recursive Descent Parser / Stack
+Opt Vis. Technique: The Token-Consumer Loop
+Dry Run (Opt): Iterate the string character by character. When you see `{`, recursively parse an object until `}`. When you see `[`, recursively parse an array until `]`. Parse strings, numbers, and booleans sequentially.
+How to Draw (Opt): Draw the string. Draw a "Consumer" pac-man. It eats a `{`, opens a new empty Object box, and calls a mini-pac-man to eat the keys/values until it hits `}`.
+Opt Complexity Visuals: Single Pass Parsing $O(N)$
+How to Draw Opt Complexity: Draw a straight timeline of the string. Above it, draw the call stack growing and shrinking for nested structures.
+Mem Vis (BF): Massive string slicing/substring allocations. $O(N^2)$.
+Mem Vis (Opt): Recursive call stack. $O(\text{Depth})$ space.

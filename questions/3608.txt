@@ -1,0 +1,13 @@
+ID: 3608
+Problem Title: Minimum Time for K Connected Components (Med)
+Brute Force Method: Simulate time step by step. At each second, add active edges and run full BFS to count remaining components. $O(T \cdot (V+E)$).
+BF Complexity Visuals: Time-Step Graph Snapshots.
+How to Draw BF: Draw a clock. For t=1, draw active edges, count blobs. For t=2, draw active edges, count blobs again from scratch.
+Optimised Pattern: Sort edges by time, use Disjoint Set Union (DSU). Start with C=V components. Decrement C for every successful union. Stop when C == K.
+Opt Vis. Technique: Component Countdown Timeline.
+Dry Run (Opt): Start a counter at N. Process edges chronologically. Every time an edge connects two isolated groups, slash the counter and subtract 1. Stop instantly at K.
+How to Draw (Opt): List edges ordered by time. Draw N separate dots. Draw lines for edges. Cross out the current Component Count and write the new one until you hit target K.
+Opt Complexity Visuals: Edge Processing Bottleneck Chart.
+How to Draw Opt Complexity: Write the formula: $O(E \log E)$ to sort the timeline + $O(E \cdot α(V)$) to process unions. The sort is the dominant time factor.
+Mem Vis (BF): Storing full adjacency lists for every discrete second in time.
+Mem Vis (Opt): Just the `parent` array for DSU and a single integer variable for `components_count`. Space $O(V)$.

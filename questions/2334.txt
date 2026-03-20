@@ -1,0 +1,13 @@
+ID: 2334
+Problem Title: Subarray With Elements Greater Than Varying Threshold
+Brute Force Method: Generate all possible subarrays `(O(N^2))`, find the minimum element in each subarray `(O(N))`, and check if that minimum &gt; `threshold / length`.
+BF Complexity Visuals: Cubic Bracket Combinations (O(N^3))
+How to Draw BF: Draw a line. Draw brackets for every possible segment length. Inside each bracket, scan across all numbers to find the smallest one.
+Optimised Pattern: Monotonic Stack (Next Smaller Element)
+Opt Vis. Technique: Maximal Expanding Rectangles
+Dry Run (Opt): For each number, assume it is the absolute minimum of a subarray. Use a monotonic stack to find the nearest smaller element to its left and right. The distance between them gives the max length `L` where this number is the minimum. Check `num &gt; threshold / L`.
+How to Draw (Opt): Draw a bar chart. Pick a bar. Draw horizontal arrows extending left and right from its top until they hit a shorter bar. The width between the shorter bars is `L`. Evaluate the math formula.
+Opt Complexity Visuals: Two Linear Stack Passes (O(N))
+How to Draw Opt Complexity: Draw an array. Draw a stack pointer that only moves forward, occasionally throwing old items away, passing over the array exactly twice (left-to-right, right-to-left).
+Mem Vis (BF): Draw a massive 2D matrix storing the minimums of all possible subarrays.
+Mem Vis (Opt): Draw two 1D Arrays (`left_smaller`, `right_smaller`) and a Stack data structure holding indices.

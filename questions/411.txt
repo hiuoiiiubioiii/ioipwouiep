@@ -1,0 +1,13 @@
+ID: 411
+Problem Title: Minimum Unique Word Abbreviation
+Brute Force Method: Exhaustive Search Generate all 2^M abbreviations for the target word. Check each one against every dictionary word.
+BF Complexity Visuals: Exponential Tree
+How to Draw BF: Draw a branching tree representing string subsets (2^M). From each leaf, draw lines to N dictionary words. $O(N \cdot 2^M)$.
+Optimised Pattern: Bitmask + Backtracking Find character differences as bitmasks. Use DFS to find the shortest abbreviation mask that covers all difference constraints.
+Opt Vis. Technique: Bitwise Filter Mask
+Dry Run (Opt): Stack the target and dict word. If chars differ, place a '1'. If same, '0'. You need an abbreviation mask that shares at least one '1' with every dict mask.
+How to Draw (Opt): Write the target word. Below it, write dict words. Draw vertical lines connecting differing chars. Write binary bits (1s and 0s) next to them to represent conflicts.
+Opt Complexity Visuals: Pruned State Space
+How to Draw Opt Complexity: Draw a binary decision tree but heavily cross out branches with red X's where the mask fails a bitwise AND check early.
+Mem Vis (BF): String Array Pool Giant heap of all string combinations.
+Mem Vis (Opt): Integer Array A small 1D array of bitmasks (integers). $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 1539
+Problem Title: Kth Missing Positive Number
+Brute Force Method: Iterate from 1 upwards, checking if each number exists in the array. Stop when the "missing" counter hits K. $O(N + K)$.
+BF Complexity Visuals: Linear Number Line Check
+How to Draw BF: Draw a number line. Cross out numbers present in the array. Count the gaps until you reach the Kth gap.
+Optimised Pattern: Binary Search (Range-Based)
+Opt Vis. Technique: Missing Count Predicate
+Dry Run (Opt): At any index `i`, the number of missing elements before it is `arr[i] - (i + 1)`. Binary search for the largest index where missing elements are less than K.
+How to Draw (Opt): Draw the array. Below each element, write the result of `arr[i] - (i + 1)`. Use binary search pointers (`L` and `R`) to find the "jump" point where the missing count exceeds K.
+Opt Complexity Visuals: Logarithmic Search $O(\log N)$
+How to Draw Opt Complexity: Draw a line that is cut in half repeatedly. Even if the array has a million elements, you find the spot in 20 steps.
+Mem Vis (BF): Converting the array to a Hash Set for $O(1)$ lookups. $O(N)$ space.
+Mem Vis (Opt): Two pointers `low` and `high`. $O(1)$ space.

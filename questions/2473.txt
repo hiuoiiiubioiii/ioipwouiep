@@ -1,0 +1,13 @@
+ID: 2473
+Problem Title: Minimum Cost to Buy Apples
+Brute Force Method: Run Dijkstra from every single city independently to find the cheapest apple. $O(V \cdot E \log V)$.
+BF Complexity Visuals: Redundant Ripple Grids
+How to Draw BF: Draw the graph. From City 1, draw expanding ripples. Erase. From City 2, draw ripples. Lots of repeated pathing.
+Optimised Pattern: Multi-Source Dijkstra / Graph Reversal
+Opt Vis. Technique: The Apple-Centric Collapse
+Dry Run (Opt): Create a "Super Source" connected to all cities with apples, weight = apple_cost. Run Dijkstra *backwards* from this super source. Or, initialize Dijkstra queue with ALL cities and their `apple_cost`.
+How to Draw (Opt): Draw a giant cloud (Super Source). Draw arrows dropping from the cloud down to every city holding an apple. Run the pathfinding outwards from there.
+Opt Complexity Visuals: Single Dijkstra $O(E \log V)$
+How to Draw Opt Complexity: Draw a standard log-height heap tree above a single scan of the edge list.
+Mem Vis (BF): V separate distance arrays.
+Mem Vis (Opt): One priority queue and one distance array. $O(V)$ space.

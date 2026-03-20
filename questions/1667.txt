@@ -1,0 +1,13 @@
+ID: 1667
+Problem Title: Fix Names in a Table (SQL)
+Brute Force Method: Fetch all names into Python/Java, use string slicing to fix casing, and update the DB row by row.
+BF Complexity Visuals: Network I/O Bottleneck
+How to Draw BF: Draw a database cylinder sending thousands of individual rows to a small computer icon. $O(N)$ network calls.
+Optimised Pattern: String Concatenation + Substring functions
+Opt Vis. Technique: Character-Level Masking
+Dry Run (Opt): Use `CONCAT(UPPER(LEFT(name, 1)), LOWER(SUBSTRING(name, 2)))`. This happens entirely within the DB engine.
+How to Draw (Opt): Draw a single name string. Place a "Magnifier" over the first letter (UPPER) and a "Filter" over the rest (LOWER).
+Opt Complexity Visuals: Single Table Scan
+How to Draw Opt Complexity: Draw a straight arrow through the table. $O(N)$.
+Mem Vis (BF): Application Heap: Draw a massive bubble in RAM holding all table rows.
+Mem Vis (Opt): Database Page Buffer: Draw a clean, localized memory block where the DB processes data in chunks.

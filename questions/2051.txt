@@ -1,0 +1,13 @@
+ID: 2051
+Problem Title: The Category of Each Member in the Store (SQL)
+Brute Force Method: Join all tables (Members, Visits, Purchases). For each member, manually count visits and purchases using nested correlated subqueries.
+BF Complexity Visuals: Nested Loop Join Grid
+How to Draw BF: Draw three tables. For every row in 'Members', draw a loop scanning 'Visits', then another scanning 'Purchases'. Extremely redundant I/O.
+Optimised Pattern: Left Join + CASE Statement + Aggregate Functions
+Opt Vis. Technique: Multi-Level Data Sieve
+Dry Run (Opt): Left Join Members with Visits, then Purchases. Group by Member ID. Calculate `100 * count(purchase_id) / count(visit_id)`. Categorize using a CASE statement.
+How to Draw (Opt): Draw three circles (Venn Diagram). Use a Left Join to keep all Members. Group items into buckets. Apply a formula label to each bucket based on the percentage result.
+Opt Complexity Visuals: Linear Scan with Aggregation
+How to Draw Opt Complexity: Draw three parallel data streams merging into one. The combined stream is grouped once. Total Time $O(N \log N)$ for the join and sort.
+Mem Vis (BF): Multiple intermediate temporary tables created for each subquery.
+Mem Vis (Opt): A single execution plan with memory-efficient Hash Joins or Merge Joins.

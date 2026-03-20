@@ -1,0 +1,13 @@
+ID: 3364
+Problem Title: Minimum Positive Sum Subarray
+Brute Force Method: Generate all subarrays of length [l, r], calculate their sums, and find the minimum positive one.
+BF Complexity Visuals: Triangular Matrix Scan
+How to Draw BF: Draw an N x N grid. Shade the diagonal band where length is between L and R. Count the cells. $O(N \cdot (R-L)$).
+Optimised Pattern: Sliding Window + Prefix Sums
+Opt Vis. Technique: Expanding Rubber Band
+Dry Run (Opt): Use a fixed-size window or prefix sums to calculate range sums in $O(1)$. Slide the window for each valid length k in [l, r].
+How to Draw (Opt): Draw the array. Draw a bracket of length L. Slide it across. Then draw a bracket of length L+1. Keep a "Global Minimum" sticky note on the side.
+Opt Complexity Visuals: Bounded Window Sweep
+How to Draw Opt Complexity: Draw the array line. Show the window moving. Since we check at most N positions for each length in [L, R], complexity is $O(N \cdot (R-L)$).
+Mem Vis (BF): N/A (no heavy data structures).
+Mem Vis (Opt): Exactly one prefix sum array of size N (or $O(1)$ if using sliding window).

@@ -1,0 +1,13 @@
+ID: 3086
+Problem Title: Minimum Moves to Pick K Ones
+Brute Force Method: Try every possible starting position and every possible sequence of "adjacent swaps" and "remote additions" to collect k ones.
+BF Complexity Visuals: Global Search State Space
+How to Draw BF: Draw a grid of positions and current 1s. Show branches for every possible move type. $O(\text{Exponential})$.
+Optimised Pattern: Sliding Window + Median Distance + Prefix Sums
+Opt Vis. Technique: Elastic Band Shrinking
+Dry Run (Opt): Collect all indices of 1s into a list. Use a sliding window of size k' (ones to be moved). The median of these indices minimizes total distance. Use prefix sums to calculate total distance in $O(1)$ per window.
+How to Draw (Opt): Draw a number line with dots (1s). Draw a sliding bracket over k dots. Mark the dot in the middle of the bracket (median). Draw lines from all dots in the bracket to that median.
+Opt Complexity Visuals: $O(N)$ Linear Window
+How to Draw Opt Complexity: Draw one pass to collect indices, followed by one pass of a sliding window. $O(N)$.
+Mem Vis (BF): Deep recursion for move combinations.
+Mem Vis (Opt): A list of indices of 1s and a prefix sum array of those indices.

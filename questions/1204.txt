@@ -1,0 +1,13 @@
+ID: 1204
+Problem Title: Last Person to Fit in the Bus (SQL)
+Brute Force Method: Use a Self-Join or Correlated Subquery. For every person entering the bus, calculate the sum of weights of everyone who entered before or with them. Filter where total &lt;= 1000 and order descending to get the last one.
+BF Complexity Visuals: Triangular Matrix/Nested Loop Expansion
+How to Draw BF: Draw a grid. For row 1, draw 1 block. For row 2, draw 2 blocks. For row N, draw N blocks. This triangle shape visually represents $O(N^2)$ query execution time.
+Optimised Pattern: SQL Window Function (Cumulative Sum)
+Opt Vis. Technique: Rolling Snowball / Single-Pass Accumulation
+Dry Run (Opt): Sort the people in order of their 'turn'. Next to each person, keep a running total. Add current person's weight to the previous running total. Stop exactly when the total exceeds 1000. The person right before the stop is your answer.
+How to Draw (Opt): Draw a vertical table with columns: 'Turn', 'Weight', and 'Running_Total'. Draw a downward arrow from row 1's Running_Total to row 2, writing "+ Weight" next to it. Put a red line under the row where Running_Total breaches 1000.
+Opt Complexity Visuals: Linear Scan Bar
+How to Draw Opt Complexity: Draw a straight array of sorted items. Draw a single arrow scanning from left to right exactly once, representing $O(N \log N)$ (due to the ORDER BY) + $O(N)$ scan.
+Mem Vis (BF): Draw two identical instances of the table side-by-side with many criss-crossing arrows connecting row i to rows 1..i, representing a Cartesian explosion.
+Mem Vis (Opt): Draw a single temporary working column appended to the original table, representing the $O(N)$ memory overhead of the Window Function state.

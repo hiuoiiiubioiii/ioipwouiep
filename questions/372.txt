@@ -1,0 +1,13 @@
+ID: 372
+Problem Title: Super Pow
+Brute Force Method: Calculate a to the power of the huge number represented by the array b using large-integer math libraries.
+BF Complexity Visuals: Direct Exponentiation Scan
+How to Draw BF: Draw a giant number a and a very long list of digits b. Draw an arrow attempting to multiply them. Label it $O(\\text{text}{\text{digits in} } b)$.
+Optimised Pattern: Modular Exponentiation + Recursive Property
+Opt Vis. Technique: Recursive Multi-Stage Power Splitting
+Dry Run (Opt): Use the property: a^{[1,2,3]} = a^3 \cdot (a^{[1,2]})^{10}. This allows you to process the array b digit by digit using $O(\log 10)$ modular exponentiation at each step.
+How to Draw (Opt): Draw a recursion tree where each node processes the last digit of the array and passes the remaining array up. Show the base^{10} and base^{digit} branches.
+Opt Complexity Visuals: Linear Array Traversal with Logarithmic Sub-steps
+How to Draw Opt Complexity: Draw a single pass through the array b. Above each element, write "powMod(10)". Total $O(\\text{text}{\text{len}}(b)$).
+Mem Vis (BF): An enormous string or big-int variable.
+Mem Vis (Opt): Recursion stack of depth proportional to the size of b. Draw a vertical stack of "digit-processing" frames. $O(\\text{text}{\text{len}}(b)$).

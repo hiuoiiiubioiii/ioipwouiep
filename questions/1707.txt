@@ -1,0 +1,13 @@
+ID: 1707
+Problem Title: Maximum XOR With an Element From Array
+Brute Force Method: For every query, loop over all numbers. Filter numbers &lt;= `m`. Calculate XOR for all, track max.
+BF Complexity Visuals: Nested Loop Multiplication.
+How to Draw BF: Draw Q query boxes. From each, draw N arrows pointing to the nums array. Write $O(Q \cdot N)$.
+Optimised Pattern: Offline Queries + Bitwise Trie.
+Opt Vis. Technique: Water Valve into a Filtering Tree.
+Dry Run (Opt): Sort queries by `m`. Sort `nums`. Slide pointer in `nums` up to `m`, adding to Trie. Traverse Trie picking opposite bits for max XOR.
+How to Draw (Opt): Draw sorted nums. Draw an expanding bracket up to `m`. Draw a binary tree (0s left, 1s right). Trace path taking opposite branches.
+Opt Complexity Visuals: Sort + Constant Depth Tree Traversal.
+How to Draw Opt Complexity: Draw sort arrays $O(N \log N + Q \log Q)$. Draw Trie traversal straight down 32 levels: $O(32 \cdot Q)$.
+Mem Vis (BF): Array of results created piecemeal.
+Mem Vis (Opt): A Binary Tree where each node has 2 children (0 and 1) max depth 32. $O(N)$ space.

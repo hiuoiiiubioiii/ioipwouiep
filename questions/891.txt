@@ -1,0 +1,13 @@
+ID: 891
+Problem Title: Sum of Subsequence Widths
+Brute Force Method: Generate all 2^N subsequences. For each, find the max and min, calculate the width, and sum them up.
+BF Complexity Visuals: Power Set Expansion. $O(2^N)$.
+How to Draw BF: Draw an array. Branch "Include/Exclude" for every element. For every leaf node, scan the collected elements for min/max.
+Optimised Pattern: Sorting + Contribution of Each Element.
+Opt Vis. Technique: Weighted Power-of-2 Summation.
+Dry Run (Opt): Sort the array. For element at index i, it is the MAX in 2^i subsequences and the MIN in 2^(N-1-i) subsequences. Total sum = sum (A[i] x (2^i - 2^N-1-i)).
+How to Draw (Opt): Draw a sorted array. Under each element, draw a "Weight" multiplier (2^i from left, 2^j from right). Subtract the right-weight from the left-weight and multiply by the value.
+Opt Complexity Visuals: Sorting Bottleneck. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a Sorting Funnel followed by a single linear pass with precomputed powers of 2.
+Mem Vis (BF): List of Subsequences: Draw 2^N memory blocks.
+Mem Vis (Opt): $O(1)$ extra space (excluding powers array): Draw a single accumulator variable.

@@ -1,0 +1,13 @@
+ID: 1284
+Problem Title: Minimum Number of Flips to Convert Binary Matrix to Zero Matrix
+Brute Force Method: Try every possible subset of cells to flip (2^M x N combinations). For each subset, perform the flips and check if the matrix becomes all zeros.
+BF Complexity Visuals: Flip-Combination Power Set
+How to Draw BF: Draw a small 3x3 grid. Branch out "Flip cell 1" or "Don't flip". Continue for all 9 cells. Write $O(2^{M \cdot N})$.
+Optimised Pattern: BFS on Matrix State (Bitmasking)
+Opt Vis. Technique: State-Space Level Traversal
+Dry Run (Opt): Represent the matrix as an integer bitmask. Start with the initial state in a Queue. In each step, generate all possible "next states" by flipping one cell (and neighbors). Use a Set to avoid cycles. The first time you hit 0 is the min flips.
+How to Draw (Opt): Draw the initial grid. Draw arrows to all possible grids reachable in 1 flip. From those, draw arrows to grids reachable in 2 flips. Circle the first "All Zero" grid you find.
+Opt Complexity Visuals: Bounded State-Graph BFS
+How to Draw Opt Complexity: Draw a graph where nodes are unique matrix configurations. Highlight the BFS layers. Write $O((M \cdot N)$ \cdot 2^{M \cdot N}).
+Mem Vis (BF): Draw a massive recursion stack for backtracking all combinations.
+Mem Vis (Opt): Draw a Queue of integers and a "Visited" HashSet of integers. Space: $O(2^{M \cdot N})$.

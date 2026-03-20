@@ -1,0 +1,13 @@
+ID: 3148
+Problem Title: Maximum Difference Score in a Grid
+Brute Force Method: For every cell (r, c), try moving to every possible cell (r', c') where r' >= r and c' >= c. $O((M x N)$^2)
+BF Complexity Visuals: An explosive grid where every cell points to all cells in its bottom-right quadrant.
+How to Draw BF: Draw a grid. Pick a cell. Draw arrows to every single cell below and to the right of it. Sum the diffs.
+Optimised Pattern: 2D DP (Prefix Minimum)
+Opt Vis. Technique: The Growing Shadow
+Dry Run (Opt): As you move through the grid, track the minimum value seen so far in the current row and column. Score at (r, c) = grid[r][c] - min(prev_row, prev_col).
+How to Draw (Opt): Draw the grid. In each cell, write the minimum of the cell above it and the cell to its left. Use that min to calculate the max score locally.
+Opt Complexity Visuals: Single grid scan.
+How to Draw Opt Complexity: Draw a snake-path through the grid $O(M x N)$.
+Mem Vis (BF): A 2D matrix storing all possible path scores.
+Mem Vis (Opt): Reusing the input grid or a 1D "row" array for min-tracking. $O(1)$ or $O(N)$.

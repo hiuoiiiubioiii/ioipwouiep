@@ -1,0 +1,13 @@
+ID: 781
+Problem Title: Rabbits in Forest
+Brute Force Method: Generate every possible combination of rabbit colors that satisfy the "others said" constraints.
+BF Complexity Visuals: Combinatorial Search
+How to Draw BF: Draw sets of rabbits and try to color them. Show $O(N!)$ or exponential backtracking.
+Optimised Pattern: Greedy Grouping (HashMap)
+Opt Vis. Technique: Color Bucket Filling
+Dry Run (Opt): If a rabbit says x, it belongs to a group of size x+1. If multiple rabbits say x, they can share a group until the group is full (x+1 rabbits).
+How to Draw (Opt): Draw circles for "claims". If three rabbits say "2", put them in one circle of size 3. If a fourth says "2", draw a new circle.
+Opt Complexity Visuals: Linear Scan with Map
+How to Draw Opt Complexity: Draw an array of answers. Show one pass to fill groups. $O(N)$.
+Mem Vis (BF): List of all possible colorings.
+Mem Vis (Opt): HashMap of rabbit claims $O(N)$.

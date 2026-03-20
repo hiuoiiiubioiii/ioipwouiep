@@ -1,0 +1,13 @@
+ID: 869
+Problem Title: Reordered Power of 2
+Brute Force Method: Generate every permutation of the digits of N. For each permutation, check if it's a power of 2.
+BF Complexity Visuals: Permutation Explosion. $O((\text{digits})$!).
+How to Draw BF: Draw the digits of N. Branch out to every possible ordering. For each leaf, check if it's in the list of powers of 2.
+Optimised Pattern: Digit Frequency Counting (Anagram Check).
+Opt Vis. Technique: The "Key-Value" Signature.
+Dry Run (Opt): A number is a reordered power of 2 if its digit counts match the digit counts of ANY power of 2. Pre-calculate the digit counts for all 31 powers of 2. Compare N's digit count to those 31 "signatures."
+How to Draw (Opt): Draw N. Count how many 1s, 2s, 3s... it has. This is its "Fingerprint." Compare this fingerprint to the 31 "Master Fingerprints" of all Powers of 2.
+Opt Complexity Visuals: Constant-time Comparative Scan. $O(\text{digits})$.
+How to Draw Opt Complexity: Draw a tiny list of 31 items. For each, do a 10-step comparison (0-9).
+Mem Vis (BF): Permutation List: Draw a list of thousands of digit combinations.
+Mem Vis (Opt): 1D Array (Size 10): Draw a frequency array [count0, count1, ... count9].

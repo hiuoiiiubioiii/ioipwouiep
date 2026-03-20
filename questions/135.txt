@@ -1,0 +1,13 @@
+ID: 135
+Problem Title: Candy
+Brute Force Method: Start all children with 1 candy. Repeatedly loop through the array and update a child's candy if they have a higher rating than a neighbor but fewer candies. Repeat until stable.
+BF Complexity Visuals: A "bubble-sort" style $O(N^2)$ ripple effect where candy updates slowly propagate across the array.
+How to Draw BF: Draw a row of numbers. Change one, then check neighbors. Change neighbor, check their neighbors. Show how a change at index 10 might eventually force a change at index 1.
+Optimised Pattern: Two-Pass Greedy (Left-to-Right and Right-to-Left).
+Opt Vis. Technique: Two tectonic plates sliding past each other. The first pass ensures everyone is happier than their left neighbor; the second ensures they are happier than their right.
+Dry Run (Opt): Pass 1: if `ratings[i] &gt; ratings[i-1]`, `candy[i] = candy[i-1] + 1`. Pass 2 (backwards): if `ratings[i] &gt; ratings[i+1]`, `candy[i] = max(candy[i], candy[i+1] + 1)`.
+How to Draw (Opt): Draw the ratings. Draw the candy counts after the first pass. Draw a second row of candy counts after the backward pass, taking the max of the two states.
+Opt Complexity Visuals: Exactly 2 x $O(N)$ linear scans.
+How to Draw Opt Complexity: Draw two horizontal arrows: one pointing right, one pointing left. Show that they never overlap or conflict, resulting in $O(N)$.
+Mem Vis (BF): Multiple full-array copies if not careful with the iterative updates.
+Mem Vis (Opt): A single $O(N)$ integer array in heap memory to store the final candy counts.

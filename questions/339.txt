@@ -1,0 +1,13 @@
+ID: 339
+Problem Title: Nested List Weight Sum
+Brute Force Method: Recursive DFS that passes down the current depth level and multiplies the integer values by that depth.
+BF Complexity Visuals: Recursive Nesting Depth Scan
+How to Draw BF: Draw a nested list like `[[1,1],2,[1,1]]`. Draw a tree where levels correspond to nesting. Show the multiplier increasing with depth. $O(N)$.
+Optimised Pattern: Depth-First Search (DFS) or Breadth-First Search (BFS)
+Opt Vis. Technique: Layered Level Traversal
+Dry Run (Opt): Use a Queue for BFS. In each level, sum all integers found. Add that sum to a total, and then add that same sum again for every subsequent deeper layer.
+How to Draw (Opt): Draw the nested list. Draw concentric circles around the deeper brackets. Write the "weight" as a multiplier next to each circle.
+Opt Complexity Visuals: Linear Hierarchical Summation
+How to Draw Opt Complexity: Draw a single pass through the list. Label the "Depth" variable increasing and decreasing. $O(N)$.
+Mem Vis (BF): Deep recursion stack for heavily nested empty lists.
+Mem Vis (Opt): Queue (BFS) or Stack (DFS). Draw a horizontal tape for the Queue. $O(D)$ where D is max depth.

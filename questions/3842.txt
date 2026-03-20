@@ -1,0 +1,13 @@
+ID: 3842
+Problem Title: Toggle Light Bulbs (Easy)
+Brute Force Method: Simulation: For every round 'i', loop through all bulbs and flip the switch for every 'i-th' bulb.
+BF Complexity Visuals: A grid where you walk across and flip switches repeatedly, with the number of flips decreasing per round.
+How to Draw BF: Draw 10 circles. Round 1: Flip all. Round 2: Flip 2, 4, 6... Write $O(N^2)$ for the nested loops.
+Optimised Pattern: Mathematical Property (Perfect Squares).
+Opt Vis. Technique: A simple number line where only the bulbs at "perfect square" positions remain ON.
+Dry Run (Opt): A bulb is toggled once for every factor it has. Only perfect squares have an odd number of factors (leaving them ON). Count how many `i*i &lt;= N` exist.
+How to Draw (Opt): Draw numbers 1 to 10. List factors: 1(1), 2(1,2), 4(1,2,4). Circle 1, 4, 9. Show that only they have 3 factors (odd). Result is `floor(sqrt(N))`.
+Opt Complexity Visuals: Instant calculation.
+How to Draw Opt Complexity: Draw a square root symbol over N. Write $O(1)$.
+Mem Vis (BF): $O(1)$ memory, but $O(N^2)$ time simulation wasted.
+Mem Vis (Opt): $O(1)$ memory. Literally just one integer result from a square root function.

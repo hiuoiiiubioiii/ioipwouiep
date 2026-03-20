@@ -1,0 +1,13 @@
+ID: 493
+Problem Title: Reverse Pairs
+Brute Force Method: Nested Loops Compare every pair (i, j) where i &lt; j. Check if nums[i] &gt; 2 \cdot nums[j].
+BF Complexity Visuals: Comparison Grid
+How to Draw BF: Draw an N \times N matrix. Shade the upper triangle. $O(N^2)$.
+Optimised Pattern: Merge Sort (Divide &amp; Conquer) During the merge step, both halves are sorted. Use two pointers to count reverse pairs before merging.
+Opt Vis. Technique: Split and Count Tree
+Dry Run (Opt): Divide the array into two sorted blocks. For each element in the left, count how many elements in the right satisfy the condition.
+How to Draw (Opt): Draw a Merge Sort tree. At the merge step, draw two sorted arrays. Draw arrows from Left[i] to Right[j] to show the count.
+Opt Complexity Visuals: Recursive Tree depth
+How to Draw Opt Complexity: Draw a tree with \log N levels. At each level, work is $O(N)$. Total $O(N \log N)$.
+Mem Vis (BF): None Constant space.
+Mem Vis (Opt): Temporary Arrays Draw an auxiliary array used for the merge step. $O(N)$.

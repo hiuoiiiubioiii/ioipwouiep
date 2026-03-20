@@ -1,0 +1,13 @@
+ID: 524
+Problem Title: Longest Word in Dictionary through Deleting
+Brute Force Method: Generate all subsequences of string `s`, sort by length/lexicographically, find first that exists in dictionary.
+BF Complexity Visuals: Generating a massive dictionary of permutations before searching. $O(2^N)$.
+How to Draw BF: Draw `s`, draw infinite branches generating every combo, point them at the dictionary.
+Optimised Pattern: Sort Dictionary + Two Pointers.
+Opt Vis. Technique: Sorting the dictionary first, then swiping two fingers across the target string and dictionary word to see if they mesh.
+Dry Run (Opt): Sort dict (desc length, asc lex). Iterate dict. Use pointer `i` for `s` and `j` for dict word. If chars match, `j++`. If `j == word.length`, return it.
+How to Draw (Opt): Write dict words in sorted order. Write string `s`. Draw an arrow under `s` and an arrow under current dict word. Advance arrows on match.
+Opt Complexity Visuals: Sorting the dict, then linear scans. $O(D \log D + D \cdot L)$.
+How to Draw Opt Complexity: Draw a sorting box, then a series of parallel lines representing two-pointer checks.
+Mem Vis (BF): Massive array holding 2^N generated subsequences.
+Mem Vis (Opt): $O(\log D)$ or $O(D)$ memory used entirely for sorting the dictionary.

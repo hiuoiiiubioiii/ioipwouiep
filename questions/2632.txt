@@ -1,0 +1,13 @@
+ID: 2632
+Problem Title: Curry (JS)
+Brute Force Method: Manually returning nested anonymous functions for a fixed number of arguments.
+BF Complexity Visuals: Hardcoded Function Nest
+How to Draw BF: Draw boxes inside boxes, but only to a depth of 3 or 4. Fails if the function expects 10 args.
+Optimised Pattern: Recursive Closure / Function Arity
+Opt Vis. Technique: Argument Collection Reservoir
+Dry Run (Opt): Check `args.length` against `fn.length`. If enough, call `fn`. If not, return a new function that `concat`s new args with old.
+How to Draw (Opt): Draw a tank (the closure). Pour in drops (args). Once the water level hits the "Arity Line" (fn.length), the tank empties (executes).
+Opt Complexity Visuals: $O(N)$ Argument accumulation
+How to Draw Opt Complexity: Draw a timeline of function calls until N arguments are met. $O(N)$ where N is arity.
+Mem Vis (BF): Global variable tracking
+Mem Vis (Opt): Recursive closure stack holding persistent argument arrays.

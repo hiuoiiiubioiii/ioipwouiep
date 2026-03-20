@@ -1,0 +1,13 @@
+ID: 1889
+Problem Title: Minimum Space Wasted From Packaging
+Brute Force Method: For every supplier, check every box and see which packages fit. Sum the waste.
+BF Complexity Visuals: Supplier \times Box \times Package triple-interaction.
+How to Draw BF: Draw boxes and items. For each supplier, draw arrows matching every item to its box. $O(S \cdot B \cdot P)$.
+Optimised Pattern: Sorting + Binary Search (Prefix Sums).
+Opt Vis. Technique: Cumulative Distribution Step Function.
+Dry Run (Opt): Sort packages. For each supplier, sort boxes. Use binary search to find how many packages fit in `box[i]`. Use prefix sums to calculate total package weight in that range in $O(1)$.
+How to Draw (Opt): Draw a sorted package line. Mark "Box 1 capacity", "Box 2 capacity". Use pointers to find segments. Area above packages but below box line is the waste.
+Opt Complexity Visuals: $O(P \log P + \\text{sum} (B \log B + B \log P)$).
+How to Draw Opt Complexity: Draw a sorting tree for packages. For each supplier, draw a sequence of binary search jumps. Mark $O(P \log P + B \log P)$.
+Mem Vis (BF): None (O(1) besides input).
+Mem Vis (Opt): Prefix Sum array of size P in memory.

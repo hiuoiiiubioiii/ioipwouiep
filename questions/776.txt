@@ -1,0 +1,13 @@
+ID: 776
+Problem Title: Split BST
+Brute Force Method: Traverse the tree, copy all nodes \le V into one new tree and all nodes &gt; V into another.
+BF Complexity Visuals: Tree Duplication
+How to Draw BF: Draw a BST. Draw two empty trees next to it. Copy nodes one by one. $O(N)$.
+Optimised Pattern: Recursive Post-Order Split
+Opt Vis. Technique: Subtree Re-wiring
+Dry Run (Opt): Recurse down the tree. If `root.val &lt;= V`, split the right child. Attach the "left" part of that split to `root.right` and return `[root, rightPart]`.
+How to Draw (Opt): Draw a BST. Draw a jagged line (the split). Show arrows being cut and re-pointed to new subtree heads.
+Opt Complexity Visuals: Recursive Depth Path
+How to Draw Opt Complexity: Draw a single path from root to a leaf. Each node on this path is visited once. $O(H)$ where H is height.
+Mem Vis (BF): Full copy of the tree in memory (O(N)).
+Mem Vis (Opt): Recursive stack frames (O(H)). No new nodes created.

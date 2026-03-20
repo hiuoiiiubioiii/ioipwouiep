@@ -1,0 +1,13 @@
+ID: 92
+Problem Title: Reverse Linked List II
+Brute Force Method: Extract, Reverse, Rebuild Traverse to the sub-segment, copy the nodes into an array, reverse the array, and update the node values in the list.
+BF Complexity Visuals: The Array Buffer
+How to Draw BF: Draw a linked list. Circle a middle section. Draw an arrow moving those nodes into a temporary box, flipping them, and shoving them back. $O(N)$ space.
+Optimised Pattern: In-Place "Leapfrog" Reversal
+Opt Vis. Technique: The Needle and Thread
+Dry Run (Opt): Use a `dummy` node and a `pre` pointer to the node before the reversal. Repeatedly move the `curr.next` node to the position right after `pre`.
+How to Draw (Opt): Draw `pre -&gt; curr -&gt; next -&gt; ...`. Draw a "jump" arrow where `curr` skips `next` to point to `next.next`, and `next` is "re-threaded" to point to where `pre.next` was.
+Opt Complexity Visuals: Single Segment Pass
+How to Draw Opt Complexity: Draw a line. Shade the specific segment [left, right]. Show the pointer traversing it once. $O(N)$ time.
+Mem Vis (BF): Draw an array or list of size (right - left) in the heap. Space: $O(N)$.
+Mem Vis (Opt): Draw the list with 4 pointers (`pre`, `curr`, `then`, `dummy`). All work is done by re-linking existing memory. Space: $O(1)$.

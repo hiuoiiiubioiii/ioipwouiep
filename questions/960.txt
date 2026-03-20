@@ -1,0 +1,13 @@
+ID: 960
+Problem Title: Delete Columns to Make Sorted III
+Brute Force Method: Try every possible subset of columns (2^C combinations). For each subset, check if every row in the remaining grid is lexicographically sorted.
+BF Complexity Visuals: $O(2^C \cdot R \cdot C)$. Exponential search across all column combinations.
+How to Draw BF: Draw a grid. Try removing columns {1}, then {2}, then {1,2}, then {1,3}... label each branch with a "Valid/Invalid" status.
+Optimised Pattern: Dynamic Programming (Longest Common Subsequence Variation)
+Opt Vis. Technique: "Finding the Longest Shared Backbone." Instead of counting deletions, find the maximum number of columns you can *keep*. A column `j` can follow column `i` only if `row[i] &lt;= row[j]` for ALL rows.
+Dry Run (Opt): `dp[j]` is max columns kept ending at index `j`. For each `j` from 0 to C: check all `i &lt; j`. If `all(rows[row][i] &lt;= rows[row][j])`, then `dp[j] = max(dp[j], dp[i] + 1)`. Result = `C - max(dp)`.
+How to Draw (Opt): Draw a row of column indices. Draw arrows from index `i` to index `j` only if `j` is a valid "successor" for every single row simultaneously. Find the longest chain of arrows.
+Opt Complexity Visuals: $O(R \cdot C^2)$. A nested loop over columns (C^2) with an inner loop over rows (R).
+How to Draw Opt Complexity: Draw a 1D DP array of size C. Draw "pull" arrows from all valid previous indices into the current cell to show the maximization step.
+Mem Vis (BF): $O(2^C)$ space to track column combinations.
+Mem Vis (Opt): $O(C)$ for the DP array. Draw a single row of C boxes.

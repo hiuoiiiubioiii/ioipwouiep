@@ -1,0 +1,13 @@
+ID: 187
+Problem Title: Repeated DNA Sequences
+Brute Force Method: Extract every possible 10-length substring (O(N)) and use a nested loop to check if it exists elsewhere in the string (O(N)).
+BF Complexity Visuals: An $O(N^2)$ overlapping block comparison diagram.
+How to Draw BF: Draw a long string. Draw a 10-char bracket. For every position, draw a scan line through the rest of the string.
+Optimised Pattern: Sliding Window + Hash Set (or Rolling Hash).
+Opt Vis. Technique: "The DNA Scanner." A window of size 10 slides along the sequence; if the window's content is already in the "Database" (Set), it's a match.
+Dry Run (Opt): Use two Sets: `seen` and `duplicates`. Slide window by 1. If substring is in `seen`, add to `duplicates`. Add to `seen` regardless.
+How to Draw (Opt): Draw the string. Draw a sliding box of width 10. Below it, draw a table. As the box moves, write the content in the table; mark if you write a duplicate.
+Opt Complexity Visuals: $O(N)$ time. Each 10-char slice is hashed and checked in constant time.
+How to Draw Opt Complexity: Draw a single horizontal line. Mark each starting index with a dot once to show a single-pass scan.
+Mem Vis (BF): $O(N^2)$ conceptual memory if results are stored as full strings in the brute force comparison.
+Mem Vis (Opt): Visualize $O(N)$ heap memory for the Hash Set storing string references or 20-bit integers (if bitmasking).

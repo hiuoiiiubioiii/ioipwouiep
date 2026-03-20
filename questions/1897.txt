@@ -1,0 +1,13 @@
+ID: 1897
+Problem Title: Redistribute Characters to Make All Strings Equal
+Brute Force Method: Generate all possible ways to move letters between words and check if all words become identical.
+BF Complexity Visuals: Combinatorial arrangement grid.
+How to Draw BF: Draw strings as buckets of letters. Try moving letters one by one into new arrangements. Mark $O(N!)$.
+Optimised Pattern: Hash Map / Frequency Count (Modulo Arithmetic).
+Opt Vis. Technique: Tally board + Total strings count.
+Dry Run (Opt): Count total occurrences of every character. For each char, if `total_count % number_of_words != 0`, return false.
+How to Draw (Opt): Draw a 26-slot table. Scan all strings and fill with tallies. Divide each tally by the number of words. Look for remainders.
+Opt Complexity Visuals: Single linear pass over all characters.
+How to Draw Opt Complexity: Draw an arrow passing through all strings. Mark $O(\\text{text}{\text{Total Length}})$.
+Mem Vis (BF): Storing all possible word permutations in a list.
+Mem Vis (Opt): Fixed-size integer array of size 26 (O(1) extra space).

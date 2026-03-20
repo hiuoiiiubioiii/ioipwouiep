@@ -1,0 +1,13 @@
+ID: 2941
+Problem Title: Maximum GCD-Sum of a Subarray
+Brute Force Method: Generate all $O(N^2)$ subarrays, compute GCD for each, and multiply by subarray sum.
+BF Complexity Visuals: Quadratic Subarray Grid
+How to Draw BF: Draw an N x N grid. Each cell represents a GCD calculation. Label it $O(N^2 \cdot \log(\text{max}_\text{val})$).
+Optimised Pattern: Sparse Table / GCD Property (Unique Prefix GCDs)
+Opt Vis. Technique: Logarithmic GCD "Steps"
+Dry Run (Opt): At each index i, maintain a list of unique GCD values ending at i. Because GCD only decreases by factors, there are only $O(\log M)$ such values.
+How to Draw (Opt): Draw an array. Below each element, list its GCD with predecessors. Show how the list "collapses" as duplicate values are removed.
+Opt Complexity Visuals: N Linear Steps with Log Factor
+How to Draw Opt Complexity: Draw a horizontal line of N points. Above each point, draw a small vertical stack of height log M. Total Area = $O(N \log M)$.
+Mem Vis (BF): Storing N^2 GCD results.
+Mem Vis (Opt): A small map or list of pairs (GCD, count) at each step. Space $O(N + \log M)$.

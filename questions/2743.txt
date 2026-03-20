@@ -1,0 +1,13 @@
+ID: 2743
+Problem Title: Count Substrings Without Repeating Character
+Brute Force Method: Extract every possible substring $O(N^2)$. For each, check for duplicates using a Set $O(N)$. Total $O(N^3)$.
+BF Complexity Visuals: Nested Sliding Slices
+How to Draw BF: Draw the string. Highlight every possible contiguous segment and check them one by one.
+Optimised Pattern: Heap Fragment Memory (Visualizing thousands of temporary string objects created during slicing).
+Opt Vis. Technique: Sliding Window (Shrinkable)
+Dry Run (Opt): Continuous Range Counter
+How to Draw (Opt): Move right pointer. If s[right] is already in the window, move left until it's removed. For every right, the number of valid substrings ending there is right - left + 1. Sum these.
+Opt Complexity Visuals: Draw a string. Use a "Lasso" that grows to the right. If it catches a duplicate, the back of the lasso pulls forward. Write the current length under the right pointer at each step.
+How to Draw Opt Complexity: Linear Amortized $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow. Note that left and right only ever move forward. $O(N)$.
+Mem Vis (Opt): Frequency Hash/Array (Draw an array of 26 integers tracking the current count of characters in the window).

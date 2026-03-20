@@ -1,0 +1,13 @@
+ID: 3020
+Problem Title: Find the Maximum Number of Elements in Subset
+Brute Force Method: Generate all possible subsets of the array, then validate each subset to see if it perfectly matches the required peak pattern (x, x^2, x^4... x^2, x).
+BF Complexity Visuals: Subset Explosion Tree
+How to Draw BF: Draw the array branching out into 2^N paths representing "Include" or "Exclude" for every single element.
+Optimised Pattern: Hash Map Frequencies + Mathematical Chaining
+Opt Vis. Technique: Directed Graph of Squares
+Dry Run (Opt): Count all frequencies. Start at the smallest keys. If a key has count &gt;= 2, draw an arrow to its square. Keep chaining until the square doesn't exist or count is 1. Special case for `1` (count must be odd).
+How to Draw (Opt): Draw circles for unique numbers. Write their frequencies inside. Draw arrows from `x` to `x^2`. Trace the longest valid path of arrows where intermediate nodes have frequency &gt;= 2.
+Opt Complexity Visuals: Logarithmic Chain Search
+How to Draw Opt Complexity: Draw short sequential chains. Because numbers square rapidly (x, x^2, x^4, x^8...), the max chain length is strictly bound by $O(\log(\log(\text{Max}_\text{Val})$)).
+Mem Vis (BF): Massive recursive call stacks holding arrays of generated subsets.
+Mem Vis (Opt): A Frequency Hash Map mapping `Integer -&gt; Count`.

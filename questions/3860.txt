@@ -1,0 +1,13 @@
+ID: 3860
+Problem Title: Unique Email Groups (Med.)
+Brute Force Method: String Processing: For every email, apply the transformation rules (ignore dots, ignore everything after plus in the local name). Add the results to a list and count unique entries at the end.
+BF Complexity Visuals: A list of strings that is sorted or checked for duplicates using nested loops.
+How to Draw BF: Draw "a.b+c@gmail.com". Manually erase '.' and "+c". Store "ab@gmail.com". Repeat for all. Compare every string to every other. Write $O(N^2 \cdot L)$.
+Optimised Pattern: Hash Set + Pre-processing.
+Opt Vis. Technique: A "Cleaning Station" followed by a "Direct Deposit" into a bucket that automatically ignores duplicates.
+Dry Run (Opt): 1. Split email by '@'. 2. In local part, remove all '.'. 3. In local part, truncate after first '+'. 4. Join back with domain and add to a `HashSet`. Return `set.size()`.
+How to Draw (Opt): Draw a conveyor belt. A messy email enters. A "Cleaner" robot scrubs dots and pluses. The clean email lands in a "Set" box. Identical emails bounce off.
+Opt Complexity Visuals: Single pass over all characters in all emails.
+How to Draw Opt Complexity: Draw N emails of length L. Write "Pass through cleaner: $O(N \cdot L)$". Write "Set lookup: $O(1)$ average". Total: $O(N \cdot L)$.
+Mem Vis (BF): Storing multiple temporary copies of the entire email list.
+Mem Vis (Opt): A Hash Set storing cleaned strings, taking up to $O(N \cdot L)$ space.

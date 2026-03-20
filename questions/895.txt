@@ -1,0 +1,13 @@
+ID: 895
+Problem Title: Maximum Frequency Stack
+Brute Force Method: Store all elements in a single list. For every pop, scan the entire list to find the frequency of every unique element, identify the max frequency, find the most recent occurrence, and remove it.
+BF Complexity Visuals: Full Linear Scan per Pop. $O(N^2)$ for N operations.
+How to Draw BF: Draw a growing horizontal list. For every 'pop' operation, draw a scanner arrow that travels through every single box from right to left, counting occurrences in its head.
+Optimised Pattern: Frequency Map + Map of Stacks (Grouped by Freq).
+Opt Vis. Technique: The "Frequency Skyscraper."
+Dry Run (Opt): 1. Map freq stores val -&gt; count. 2. Map group stores count -&gt; stack of vals. When you push '5', and it's the 3rd time, push '5' onto group[3]. Pop always takes from the highest frequency stack.
+How to Draw (Opt): Draw a set of vertical stacks labeled Freq 1, Freq 2, Freq 3... When '5' is pushed for the 3rd time, drop a block labeled '5' into the 3rd stack. To pop, just take the top block from the tallest stack.
+Opt Complexity Visuals: $O(1)$ Push and Pop.
+How to Draw Opt Complexity: Draw two parallel timelines. Every push or pop is a single, instant dot on the line with no scanning.
+Mem Vis (BF): Single 1D Array: Draw one long line of boxes.
+Mem Vis (Opt): Double-Map Structure: Draw a val -&gt; int table and a int -&gt; list table. $O(N)$ space.

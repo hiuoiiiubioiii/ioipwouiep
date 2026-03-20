@@ -1,0 +1,13 @@
+ID: 2364
+Problem Title: Count Number of Bad Pairs
+Brute Force Method: Nested loops: Check every pair `(i, j)`. If `j - i != nums[j] - nums[i]`, increment the "bad pair" counter.
+BF Complexity Visuals: N-Squared Pair Validation (O(N^2))
+How to Draw BF: Draw an N x N grid. In every cell, perform the subtraction logic for both indices and values and compare them.
+Optimised Pattern: Complement Counting (Total - Good)
+Opt Vis. Technique: Key Normalization (nums[i] - i)
+Dry Run (Opt): Equation rewrite: `nums[j] - nums[i] == j - i` is same as `nums[j] - j == nums[i] - i`. Total pairs is n(n-1)/2. Count occurrences of `nums[i] - i` in a Hash Map to find "good" pairs, then subtract from total.
+How to Draw (Opt): Draw a list. For each number, calculate `val - index`. Draw a "Frequency Table" for these results. If you see a result you've seen before, those are "Good Pairs." Subtract those from the total possible pairs.
+Opt Complexity Visuals: Single Pass Map Build (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Each step updates one entry in a Hash Map and adds to a running "Good Pair" count.
+Mem Vis (BF): Draw an N x N boolean matrix marking every pair as good or bad.
+Mem Vis (Opt): Draw one Hash Map storing Integers (difference) and Longs (counts).

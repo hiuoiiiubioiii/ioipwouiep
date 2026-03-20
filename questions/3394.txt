@@ -1,0 +1,13 @@
+ID: 3394
+Problem Title: Check if Grid can be Cut into Sections
+Brute Force Method: Try every horizontal and vertical line to see if it doesn't intersect any rectangle, splitting the grid into 3+ pieces.
+BF Complexity Visuals: Exhaustive Line-Sweep Grid
+How to Draw BF: Draw the grid with rectangles. Draw a line. Check if it hits any box. Repeat for all possible coordinates. $O(H \cdot N + W \cdot N)$.
+Optimised Pattern: Dimension Reduction + Interval Merging
+Opt Vis. Technique: Flattened Shadow Tracks
+Dry Run (Opt): Project all rectangles onto the X-axis (as intervals) and Y-axis. If the merged intervals have at least 2 gaps, the grid can be cut into 3 sections.
+How to Draw (Opt): Draw the rectangles. Below the grid, draw their "shadows" on the X-axis. Draw a circle around any "white space" between shadows. Count the circles.
+Opt Complexity Visuals: Log-Linear Sort &amp; Merge
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort box for intervals, followed by a linear $O(N)$ merge. Total $O(N \log N)$.
+Mem Vis (BF): 2D occupancy matrix of the entire grid.
+Mem Vis (Opt): Two lists of intervals, size $O(N)$.

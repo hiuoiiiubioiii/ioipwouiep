@@ -1,0 +1,13 @@
+ID: 1676
+Problem Title: Lowest Common Ancestor of a Binary Tree IV
+Brute Force Method: For every pair of nodes in the input array, find their LCA individually, then find the LCA of those results.
+BF Complexity Visuals: Recursive Pairwise Tree
+How to Draw BF: Draw a tree. Draw multiple colored paths meeting at different junctions over and over. $O(\text{Nodes} \\text{times} K)$.
+Optimised Pattern: DFS (Post-order) + Target Set
+Opt Vis. Technique: Simultaneous Node Reporting
+Dry Run (Opt): Throw all target nodes into a Hash Set. Run DFS. A node returns itself if it is in the Set. If a node receives "found" reports from both subtrees, it is an LCA candidate.
+How to Draw (Opt): Draw a tree. Mark target nodes with stars. Draw arrows moving up from stars. The highest node where the number of "star-reports" equals the target list size is the answer.
+Opt Complexity Visuals: Single Depth-First Scan
+How to Draw Opt Complexity: Draw one continuous line weaving through every node exactly once. $O(N)$.
+Mem Vis (BF): Multiple Path Sets: Draw several separate buckets for each individual LCA search.
+Mem Vis (Opt): Hash Set + Call Stack: Draw one small bucket (Set) and a vertical stack for recursion. $O(H + K)$.

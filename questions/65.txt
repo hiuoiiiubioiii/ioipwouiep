@@ -1,0 +1,13 @@
+ID: 65
+Problem Title: Valid Number
+Brute Force Method: Regex or Nested If-Else Try to use a very complex Regular Expression or a giant series of nested boolean checks for signs, dots, and exponents.
+BF Complexity Visuals: The Spaghetti Logic
+How to Draw BF: Draw a flowchart with 20+ decision diamonds. Highlight how easily one edge case (like "0e") can break the entire logic.
+Optimised Pattern: Deterministic Finite Automaton (DFA)
+Opt Vis. Technique: The State Machine Rail
+Dry Run (Opt): Define states (e.g., "Start", "Sign", "Integer", "Dot", "Fraction", "Exponent"). Iterate through the string; each character triggers a transition to a new state. If you end in a "Valid" state, return true.
+How to Draw (Opt): Draw 6-8 circles (States). Draw arrows between them labeled with types (Digit, '.', 'e', '+/-'). Trace the string "3.14e-10" as a marble rolling from circle to circle.
+Opt Complexity Visuals: Finite State Transition
+How to Draw Opt Complexity: Draw a single straight line representing the string length N. At each character, show a single lookup in a "state table." Time: $O(N)$.
+Mem Vis (BF): No significant extra memory, but the logic is extremely prone to human error.
+Mem Vis (Opt): Draw a small 2D table (States x Inputs). The space is $O(1)$ because the table size is fixed regardless of string length.

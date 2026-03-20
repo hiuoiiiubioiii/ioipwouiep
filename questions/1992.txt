@@ -1,0 +1,13 @@
+ID: 1992
+Problem Title: Find All Groups of Farmland
+Brute Force Method: For every '1' encountered, launch a full BFS/DFS to find its boundaries, even if previously visited.
+BF Complexity Visuals: Redundant Area Coverage
+How to Draw BF: Draw a grid with overlapping shaded regions. Show the scanner revisiting the same cells multiple times.
+Optimised Pattern: Greedy Boundary Detection (Top-Left to Bottom-Right)
+Opt Vis. Technique: Rectangle Corner "Snap"
+Dry Run (Opt): Scan the grid linearly. When you find a '1' that hasn't been visited (or is a top-left corner), expand right and down to find the far corner. Mark the area as visited.
+How to Draw (Opt): Draw a grid. Circle the top-left '1'. Draw two perpendicular arrows (Right and Down) to define the rectangle boundary. Shade it and move the scanner past it.
+Opt Complexity Visuals: Total Cell Visitation Map
+How to Draw Opt Complexity: Draw the grid. Show that each cell is visited/marked exactly once. $O(M \\text{times} N)$.
+Mem Vis (BF): Massive recursive stack frames for every cell in an island.
+Mem Vis (Opt): In-place grid modification or a 2D boolean `visited` array. $O(M \\text{times} N)$ space.

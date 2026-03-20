@@ -1,0 +1,13 @@
+ID: 3411
+Problem Title: Maximum Subarray With Equal Products
+Brute Force Method: Nested loops checking all subarrays. Calculate Product, LCM, and GCD from scratch for every single sub-segment. (O(N^3))
+BF Complexity Visuals: Triply Nested Loops.
+How to Draw BF: Draw the array. Bracket indices i to j. Below, draw three separate looping arrows re-calculating Prod, LCM, and GCD from scratch.
+Optimised Pattern: Incremental Accumulation + Upper Bound Pruning (O(N^2)).
+Opt Vis. Technique: Sliding Right Bound with Running Accumulators.
+Dry Run (Opt): Fix left pointer. Slide right pointer. Multiply running prod, update running LCM/GCD with just the new element. Break early if prod exceeds maximum possible LCM.
+How to Draw (Opt): Draw the array. Box i to j. Below the box, keep three variables (Prod, LCM, GCD). As j moves right, cross out the old variable value and write the new one.
+Opt Complexity Visuals: Upper Half Matrix with Pruned Corners.
+How to Draw Opt Complexity: Draw a 2D grid of pairs (i,j). Shade the upper triangle, but cross out large chunks of the grid to show the pruning optimization.
+Mem Vis (BF): Call stack or memory storing intermediate sliced arrays.
+Mem Vis (Opt): Three $O(1)$ integer variables (`prod`, `lcm`, `gcd`).

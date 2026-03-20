@@ -1,0 +1,13 @@
+ID: 778
+Problem Title: Swim in Rising Water
+Brute Force Method: Backtracking to find all paths from (0,0) to (N-1,N-1) and taking the minimum of the maximum height on each path.
+BF Complexity Visuals: Path Exploration Tree
+How to Draw BF: Draw a grid. Branch out every possible path. $O(4^{N^2})$.
+Optimised Pattern: Modified Dijkstra / Min-Heap BFS
+Opt Vis. Technique: Expanding Water Level
+Dry Run (Opt): Use a Min-Heap of `(height, r, c)`. Always expand the cell with the lowest height. The "time" to reach a cell is `max(current_time, grid[r][c])`.
+How to Draw (Opt): Draw a grid with numbers. Start at (0,0). Shade the neighbor with the smallest number. Keep shading the smallest "boundary" cell.
+Opt Complexity Visuals: Frontier Expansion
+How to Draw Opt Complexity: Draw a circle expanding from the corner. Write N^2 \log N for heap operations.
+Mem Vis (BF): Infinite recursion stack.
+Mem Vis (Opt): Min-Heap and Visited Set (O(N^2)).

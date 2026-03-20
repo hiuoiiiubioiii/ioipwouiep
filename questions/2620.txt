@@ -1,0 +1,13 @@
+ID: 2620
+Problem Title: Counter (JS)
+Brute Force Method: Use a global variable to track state across function calls.
+BF Complexity Visuals: Global State Diagram
+How to Draw BF: Draw a big "WINDOW" box and put a variable inside it. Draw multiple functions pointing to it, risking collision.
+Optimised Pattern: Lexical Scope / Closures
+Opt Vis. Technique: Nested Environment Boxes
+Dry Run (Opt): Call the outer function, it creates a "backpack" (closure) with the starting number `n`. Return the inner function. Every time inner is called, it reaches into its specific backpack, increments, and returns the value.
+How to Draw (Opt): Draw a big box (Outer Function). Put variable `n` inside. Draw a smaller box inside (Inner Function). Draw an arrow from Inner reaching out to `n`.
+Opt Complexity Visuals: $O(1)$ Execution Dot
+How to Draw Opt Complexity: Write $O(1)$ for execution. State preservation is the core concept, not time complexity.
+Mem Vis (BF): Global execution context
+Mem Vis (Opt): Heap-allocated Closure maintaining the lexical environment.

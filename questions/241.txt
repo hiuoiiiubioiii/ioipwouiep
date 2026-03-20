@@ -1,0 +1,13 @@
+ID: 241
+Problem Title: Different Ways to Add Parentheses
+Brute Force Method: Recursively split the string at every operator and calculate all combinations without caching.
+BF Complexity Visuals: Catalan Number Tree: $O(C_n)$.
+How to Draw BF: Draw a branching tree where each node splits into two sub-trees. Show the number of leaves growing like the Catalan series.
+Optimised Pattern: Divide and Conquer + Memoization (Top-Down DP)
+Opt Vis. Technique: Recursive Sub-problem Map
+Dry Run (Opt): Identify repeated substrings (e.g., "3+5"). Compute once, store in a map, and reuse whenever that substring reappears in the recursion.
+How to Draw (Opt): Draw a "Memo Table" box. Draw arrows from different branches of the recursion tree pointing to the same result in the table.
+Opt Complexity Visuals: Memoized Recursion Tree: $O(N^3 \cdot 2^N)$ (approximate).
+How to Draw Opt Complexity: Draw the recursion tree but shade out redundant branches to show they are "cut off" by the cache.
+Mem Vis (BF): Recursion Stack: Multiple copies of substrings being passed.
+Mem Vis (Opt): Hash Map Cache: Draw a table with `Key: Substring` and `Value: List of results`.

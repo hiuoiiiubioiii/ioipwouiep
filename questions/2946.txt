@@ -1,0 +1,13 @@
+ID: 2946
+Problem Title: Matrix Similarity After Cyclic Shifts
+Brute Force Method: Perform k cyclic shifts on each row and then compare the entire matrix with the original.
+BF Complexity Visuals: Iterative Matrix Transformation
+How to Draw BF: Draw a grid. Show each row shifting one-by-one k times. $O(k \cdot N \cdot M)$.
+Optimised Pattern: Modulo Arithmetic Indexing
+Opt Vis. Technique: Circular Buffer Mapping
+Dry Run (Opt): Instead of shifting, check if mat[i][j] == mat[i][(j+k) % M]. The actual shift doesn't matter; only the "wrap-around" position does.
+How to Draw (Opt): Draw a single row. Label indices 0 to M-1. Draw an arrow from index j to (j+k) % M to show the expected match.
+Opt Complexity Visuals: Single Matrix Pass
+How to Draw Opt Complexity: Draw a rectangle representing N x M. Each cell is visited exactly once. T = $O(N \cdot M)$.
+Mem Vis (BF): Storing a copy of the entire matrix for each shift.
+Mem Vis (Opt): No extra memory used beyond input. Space $O(1)$.

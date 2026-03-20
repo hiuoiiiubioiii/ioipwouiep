@@ -1,0 +1,13 @@
+ID: 2783
+Problem Title: Flight Occupancy and Waitlist Analysis (SQL)
+Brute Force Method: Join Flights and Bookings. For each flight, count bookings. Then use a complex IF/ELSE logic in application code to separate them into "Booked" and "Waitlisted".
+BF Complexity Visuals: Post-Query Conditional Processing
+How to Draw BF: Draw two tables joined. Manually count rows and compare against a "Capacity" column.
+Optimised Pattern: Large Intermediate Join (Visualizing the DB loading every single booking record into memory before counting).
+Opt Vis. Technique: Left Join + Least/Greatest Scalar Functions
+Dry Run (Opt): Aggregated Capacity Capping
+How to Draw (Opt): LEFT JOIN Bookings to Flights. GROUP BY flight_id. Calculate booked_cnt as LEAST(COUNT(booking_id), capacity) and waitlist_cnt as GREATEST(COUNT(booking_id) - capacity, 0).
+Opt Complexity Visuals: Draw a flight "Container" with a capacity line. Pour "Bookings" in. Anything below the line is booked; the overflow is waitlist.
+How to Draw Opt Complexity: $O(N \log N)$ Sorting/Grouping
+Mem Vis (BF): Draw a grouping block. Label it $O(N \log N)$ based on the database index performance.
+Mem Vis (Opt): Aggregation Hash Table (Draw a small table in memory storing flight_id and its current running count).

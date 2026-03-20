@@ -1,0 +1,13 @@
+ID: 1814
+Problem Title: Count Nice Pairs in an Array
+Brute Force Method: Nested loops checking every pair (i, j) if nums[i] + rev(nums[j]) == nums[j] + rev(nums[i]).
+BF Complexity Visuals: N x N interaction grid.
+How to Draw BF: Draw an array. Draw lines connecting every element to every other element. Mark $O(N^2)$ checks.
+Optimised Pattern: Math Rearrangement + Hash Map: Check nums[i] - rev(nums[i]) == nums[j] - rev(nums[j]).
+Opt Vis. Technique: Frequency Buckets.
+Dry Run (Opt): For each num, calculate difference = num - rev(num). Look up difference in hash map. Add current count to total pairs, then increment map.
+How to Draw (Opt): Draw an array. Under each, write `x - rev(x)`. Draw buckets for each unique difference. Add combinations `n*(n-1)/2` for each bucket.
+Opt Complexity Visuals: Single pass + constant time lookups.
+How to Draw Opt Complexity: Draw a single pass arrow over the array, pointing to a hash map. Mark $O(N)$ time.
+Mem Vis (BF): No extra memory besides loop variables, but $O(N^2)$ time limit exceeded.
+Mem Vis (Opt): Hash Map mapping integer differences to frequency counts.

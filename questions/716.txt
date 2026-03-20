@@ -1,0 +1,13 @@
+ID: 716
+Problem Title: Max Stack
+Brute Force Method: Use two standard arrays/stacks. For `popMax()`, pop elements to a temporary stack until max is found, remove it, then push back.
+BF Complexity Visuals: Pancake Shuffling
+How to Draw BF: Draw a vertical stack of blocks. Draw arrows moving top blocks to a second stack, pulling out the max, and moving blocks back. $O(N)$.
+Optimised Pattern: Doubly Linked List + TreeMap (or Lazy Deletion PQ)
+Opt Vis. Technique: Dual-Indexed Structure
+Dry Run (Opt): Add elements to both a DLL (for strict insertion order) and a TreeMap (value -&gt; list of DLL nodes). `popMax()` gets the max from TreeMap, removes the node from DLL directly in $O(\log N)$.
+How to Draw (Opt): Draw a horizontal DLL. Above it, draw a BST (TreeMap). Draw dashed lines from the BST nodes pointing directly to their corresponding DLL blocks.
+Opt Complexity Visuals: Logarithmic Map Lookup
+How to Draw Opt Complexity: Draw a tree traversal path highlighting $O(\log N)$ time to find and delete the max element.
+Mem Vis (BF): Two standard arrays/stacks (O(N)).
+Mem Vis (Opt): DLL nodes + TreeMap overhead (O(N) space, higher constant).

@@ -1,0 +1,13 @@
+ID: 2471
+Problem Title: Minimum Number of Operations to Sort a Binary Tree by Level
+Brute Force Method: Perform BFS. For each level, extract values, and for every value, search for its correct position and swap manually.
+BF Complexity Visuals: Level-wise Selection Sort
+How to Draw BF: Draw a tree. Extract a level into an array. Show nested swap arrows for each level. Label $O(N^2)$ in worst case per level.
+Optimised Pattern: BFS + Cycle Decomposition (Minimum Swaps)
+Opt Vis. Technique: Permutation Cycle Mapping
+Dry Run (Opt): Extract level values. Sort them to know target positions. Map `value -&gt; target_index`. Count cycles; swaps per cycle = `length - 1`.
+How to Draw (Opt): Draw the level array. Draw an arrow from each element's current index to its sorted index. Group arrows into "closed loops" (cycles).
+Opt Complexity Visuals: Linear-Log BFS + Sort
+How to Draw Opt Complexity: Draw a tree BFS scan (O(N)). Next to it, a sorting block (O(N log N)). Label $O(N \log N)$.
+Mem Vis (BF): Draw a Queue and a temporary array for each level.
+Mem Vis (Opt): Draw a Queue and a Map for cycle detection. $O(N)$ Space.

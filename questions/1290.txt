@@ -1,0 +1,13 @@
+ID: 1290
+Problem Title: Convert Binary Number in a Linked List to Integer
+Brute Force Method: Traverse the list to store all values in an array. Reverse the array. Iterate through the array and for index i, add val * 2^i to the result.
+BF Complexity Visuals: Two-Pass Array Conversion
+How to Draw BF: Draw a linked list. Draw an arrow to an array. Draw another arrow to a reversed array. Draw a final arrow to a summation box. Write $O(N)$ with two passes.
+Optimised Pattern: Bit Manipulation (Left Shifting)
+Opt Vis. Technique: The "Rolling Snowball" Left-Shift
+Dry Run (Opt): Initialize `res = 0`. As you move to each node, shift your current result left by 1 (`res &lt;&lt; 1`) and add the current node's value (`res | node.val`). This builds the number bit-by-bit from the most significant to least significant.
+How to Draw (Opt): Draw a linked list: 1 -&gt; 0 -&gt; 1. Below it, draw a box `res`. Step 1: `res = 1`. Step 2: Shift `res` (becomes 10 in binary) and add 0. Step 3: Shift `res` (becomes 100 in binary) and add 1. Final: 101 (5).
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw a linked list. Draw one single arrow moving purely left-to-right once. Write $O(N)$.
+Mem Vis (BF): Draw an extra array of size N to store the bits.
+Mem Vis (Opt): Draw exactly one integer variable `res`. Space: $O(1)$.

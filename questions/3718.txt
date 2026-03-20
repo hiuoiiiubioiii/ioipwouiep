@@ -1,0 +1,13 @@
+ID: 3718
+Problem Title: Smallest Missing Multiple of K (Easy)
+Brute Force Method: Loop multiples `M = K, 2K, 3K...`. For each `M`, scan the entire array from index 0 to N to see if it exists.
+BF Complexity Visuals: Multiple full-array scans $O(N \cdot (\text{Ans}/K)$).
+How to Draw BF: Draw array. Write `K`, draw a line scanning the whole array. Write `2K`, draw another full scanning line below it.
+Optimised Pattern: Hash Set + While Loop
+Opt Vis. Technique: Direct Lookup Table
+Dry Run (Opt): Put all array numbers into a Hash Set. Then loop `M = K, 2K...` and do $O(1)$ checks against the Set until one is missing.
+How to Draw (Opt): Draw a big circle (Set) with numbers scattered inside. Write a list `K, 2K, 3K`. Put a checkmark next to each if it's in the circle. Stop at the first X.
+Opt Complexity Visuals: $O(N)$ Set build + $O(1)$ lookups.
+How to Draw Opt Complexity: Draw a thick line representing Set creation, followed by a few quick, detached dots representing instant lookups.
+Mem Vis (BF): $O(1)$ auxiliary space, purely in-place checks.
+Mem Vis (Opt): Hash Set memory layout scattered in the heap.

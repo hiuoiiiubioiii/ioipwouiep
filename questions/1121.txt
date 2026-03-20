@@ -1,0 +1,13 @@
+ID: 1121
+Problem Title: Divide Array Into Increasing Sequences
+Brute Force Method: Backtracking/Recursion. Try every possible way to group the numbers into K-length sequences and check validity.
+BF Complexity Visuals: Exponential Branching Tree
+How to Draw BF: Draw the input array. For each number, draw K paths representing different sequences it could join. $O(N^K)$ mess.
+Optimised Pattern: Greedy / Frequency Counting
+Opt Vis. Technique: Frequency Histogram Bar Limit
+Dry Run (Opt): Count the most frequent number (max_freq). Check if the total elements N can support max_freq groups of size K. Formula: N >= max_freq x K.
+How to Draw (Opt): Draw a frequency table. Circle the largest frequency. Draw a box representing N slots. Check if max_freq x K fits inside that box.
+Opt Complexity Visuals: Single Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight line scanning the sorted array to find the max consecutive identical elements.
+Mem Vis (BF): Massive recursion stack
+Mem Vis (Opt): $O(1)$ extra space (if array is sorted) or a Hash Map for frequencies.

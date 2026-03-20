@@ -1,0 +1,13 @@
+ID: 2549
+Problem Title: Count Distinct Numbers on Board
+Brute Force Method: Simulate the board day by day. For every number x on the board, check every i from 1 to n to see if x mod i == 1. Add new numbers and repeat for 10^9 days.
+BF Complexity Visuals: A rapidly expanding set of numbers, with each number triggering N checks every single "day".
+How to Draw BF: Day 1: {n}. Day 2: Find all i where n mod i == 1. Add them to the set. Repeat.
+Optimised Pattern: Mathematical Observation (Cascade Effect).
+Opt Vis. Technique: A "Domino Effect" where n always brings in n-1, which brings in n-2, until every number down to 2 is on the board.
+Dry Run (Opt): If n &gt; 1, n modn-1 = 1 is always true. Therefore, n-1 is added on Day 1. Then (n-1) modn-2 = 1 is true, adding n-2. This continues until 2. The only number never added is 1 (since x mod 1 is always 0). Result: n - 1. If n=1, result is 1.
+How to Draw (Opt): Write n. Note that n-1 always fits the rule. Then n-2 fits for n-1. Draw a line of numbers falling like dominoes.
+Opt Complexity Visuals: $O(1)$ - The answer is simply max(1, n-1).
+How to Draw Opt Complexity: Draw a single box. Write the number n-1 inside. No movement or loops required.
+Mem Vis (BF): $O(N)$ to store all distinct numbers on the board across 10^9 days.
+Mem Vis (Opt): $O(1)$ - No extra storage needed.

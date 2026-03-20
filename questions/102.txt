@@ -1,0 +1,13 @@
+ID: 102
+Problem Title: Binary Tree Level Order Traversal
+Brute Force Method: DFS to find max depth, then loop from depth 0 to max. Do a fresh DFS for each depth iteration to collect nodes at that specific level.
+BF Complexity Visuals: Multiple overlapping paths from the root to the bottom, illustrating redundant $O(N^2)$ traversal paths.
+How to Draw BF: Draw the tree. Draw multiple arrows starting from the root down to depth k for each separate level lookup.
+Optimised Pattern: BFS using a Queue.
+Opt Vis. Technique: A horizontal scanning laser sweeping from the top of the tree to the bottom, highlighting one row at a time.
+Dry Run (Opt): Maintain a queue. Enqueue root. Loop through the current size of the queue, pop nodes, add to level list, and push children.
+How to Draw (Opt): Draw the tree. Draw horizontal dashed lines separating each level. Draw a box beside it representing the queue updating at each dashed line.
+Opt Complexity Visuals: A linear graph showing each node entering and exiting the queue exactly once (O(N)).
+How to Draw Opt Complexity: Cross out each node with a single stroke as it is added to the result array, proving no node is visited twice.
+Mem Vis (BF): Visualize multiple deep call stacks $O(h)$ being created and destroyed for every single depth query.
+Mem Vis (Opt): Visualize a Queue expanding and contracting like an accordion, reaching its maximum width at the tree's widest level $O(W)$.

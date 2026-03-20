@@ -1,0 +1,13 @@
+ID: 3241
+Problem Title: Time Taken to Mark All Nodes
+Brute Force Method: Run DFS from every single node to find the time taken for that node to mark all others. $O(N^2)$.
+BF Complexity Visuals: Radial Wave Propagation (Multiple)
+How to Draw BF: Draw the tree. Pick a node, draw expanding circles representing time. Erase everything, pick the next node, and redraw the circles. Show the $O(N^2)$ redundancy.
+Optimised Pattern: Tree DP (Rerooting / 2-Pass DFS)
+Opt Vis. Technique: Directional Edge Weighting
+Dry Run (Opt): Pass 1 (Bottom-up): Compute time for each subtree. Pass 2 (Top-down): Compute time from the parent's side. The result for a node is the max of these two values.
+How to Draw (Opt): Draw a tree. Draw upward arrows labeling "Subtree Max Time." Then draw downward arrows from parents to children labeling "External Max Time." At any node, result = max(up, down).
+Opt Complexity Visuals: Double Sequential Tree Scan
+How to Draw Opt Complexity: Draw two tree diagrams. Label the first "Bottom-Up $O(N)$" and the second "Top-Down $O(N)$." Result: $O(N)$.
+Mem Vis (BF): High call stack depth (N) repeated N times.
+Mem Vis (Opt): Two DP arrays of size N + Recursion stack depth N (O(N) space).

@@ -1,0 +1,13 @@
+ID: 1813
+Problem Title: Sentence Similarity III
+Brute Force Method: Try inserting all possible substrings into the shorter sentence to see if it matches the longer one.
+BF Complexity Visuals: Combinatorial string matching tree.
+How to Draw BF: Draw the short sentence. Branch out all possible insertions. Compare each with the target. Very high complexity.
+Optimised Pattern: Two Pointers / Deque (Match from front, match from back).
+Opt Vis. Technique: Two shrinking arrays from opposite ends.
+Dry Run (Opt): Split both into word arrays. While front words match, move left pointer. While back words match, move right pointer. Valid if short array is fully crossed out.
+How to Draw (Opt): Draw two arrays of words. Draw L pointer moving right, R pointer moving left. Cross out matched words. Check if L &gt; R on short array.
+Opt Complexity Visuals: Two pointers converging linearly.
+How to Draw Opt Complexity: Draw a line of length N. Draw arrows from both ends meeting in the middle. Annotate $O(N)$.
+Mem Vis (BF): Many intermediate substring allocations.
+Mem Vis (Opt): Two Arrays of string references + 4 integer pointers.

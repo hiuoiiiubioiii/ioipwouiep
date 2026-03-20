@@ -1,0 +1,13 @@
+ID: 373
+Problem Title: Find K Pairs with Smallest Sums
+Brute Force Method: Generate every possible pair (u, v) from the two arrays, calculate their sums, sort the entire list, and take the first k.
+BF Complexity Visuals: Exhaustive Cross-Product Sorting
+How to Draw BF: Draw an N \times M grid. In each cell, write the sum. Highlight all cells and draw them going into a "Sort" funnel. $O(\text{NM} \\text{log NM})$.
+Optimised Pattern: Min-Heap (Priority Queue) with Dijkstra-like Expansion
+Opt Vis. Technique: Multi-Pointer Priority Frontier
+Dry Run (Opt): Push (nums1[0], nums2[0]) into a Min-Heap. When you pop a pair (i, j), the next candidates are (i+1, j) and (i, j+1). Use a set to avoid duplicates or only increment one index to keep the flow one-directional.
+How to Draw (Opt): Draw a grid. Circle the top-left cell. Draw two arrows pointing right and down. Use a "Priority Queue" box to store the tips of these arrows, always picking the smallest.
+Opt Complexity Visuals: Bounded Heap Processing
+How to Draw Opt Complexity: Draw a loop that runs k times. Inside, show one "Pop" and two "Pushes" into a heap of size k. $O(k \log k)$.
+Mem Vis (BF): A massive list of all N \times M pairs.
+Mem Vis (Opt): A Min-Heap of size k. Draw a small binary tree (heap) and a result tape. $O(k)$ space.

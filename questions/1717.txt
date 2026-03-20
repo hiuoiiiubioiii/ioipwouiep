@@ -1,0 +1,13 @@
+ID: 1717
+Problem Title: Maximum Score From Removing Substrings
+Brute Force Method: Recursively search the string for "ab" or "ba", remove them, branch out, and backtrack to find the absolute maximum possible score.
+BF Complexity Visuals: String Permutation Tree.
+How to Draw BF: Write string. Draw branches for every single "ab" or "ba" found. Tree grows exponentially.
+Optimised Pattern: Greedy + Stack (Two Passes).
+Opt Vis. Technique: Spring-Loaded Stack Drops.
+Dry Run (Opt): Identify higher-scoring pair (e.g., "ab"). Push chars to stack. If top of stack + current char == "ab", pop and add score. Do a second pass on remaining stack for the lesser pair ("ba").
+How to Draw (Opt): Draw a vertical bucket (stack). Drop letters in. When "a" lands directly on "b", circle them, POOF them out, and write `+score`.
+Opt Complexity Visuals: Two Sequential Linear Sweeps.
+How to Draw Opt Complexity: Draw array. Arrow sweeping left-to-right, then a second arrow sweeping remaining elements. $O(N)$.
+Mem Vis (BF): Deep call stack and multiple modified string copies. $O(N^2)$.
+Mem Vis (Opt): A Stack array holding up to N characters. $O(N)$ space.

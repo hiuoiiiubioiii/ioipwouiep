@@ -1,0 +1,13 @@
+ID: 3300
+Problem Title: Minimum Element After Replacement With Digit Sum
+Brute Force Method: Convert each integer to a string, iterate characters, sum them, and store in a list. Find the min. $O(N \cdot D)$.
+BF Complexity Visuals: String Transformation Map
+How to Draw BF: Draw the array. For each number, draw a small loop converting it to a string and summing characters. Label as $O(N x \text{Digits})$.
+Optimised Pattern: Arithmetic Digit Summation
+Opt Vis. Technique: Modulo Reduction Stream
+Dry Run (Opt): Use a while loop with `num % 10` and `num /= 10` to sum digits mathematically. Track the minimum sum encountered.
+How to Draw (Opt): Draw a number. Draw a "Whirlpool" arrow showing digits being pulled off the end via `% 10` and added to a "Sum" bucket until the number is 0.
+Opt Complexity Visuals: Single-Pass Constant Operation
+How to Draw Opt Complexity: Draw a line for N elements. Each element has a fixed max number of digits (e.g., 5-10). Label as $O(N)$.
+Mem Vis (BF): Storing all intermediate string objects.
+Mem Vis (Opt): Strictly $O(1)$ auxiliary space (just min_val and current_sum).

@@ -1,0 +1,13 @@
+ID: 2827
+Problem Title: Number of Beautiful Integers in the Range
+Brute Force Method: Iterate through every integer from low to high. For each, check if the number of even digits equals the number of odd digits and if the number is divisible by k.
+BF Complexity Visuals: Exhaustive Range Search
+How to Draw BF: Draw a number line from 1 to 10^9. For every tick, draw a sub-process that splits the number into digits and checks divisibility. Show the $O(10^9)$ scale.
+Optimised Pattern: Digit DP with Remainder State
+Opt Vis. Technique: Multidimensional Cache
+Dry Run (Opt): State: (index, diff_even_odd, remainder, tight, is_leading_zero). Calculate how many numbers satisfy the even/odd balance and end with a remainder of 0 when divided by k.
+How to Draw (Opt): Draw a recursion tree for choosing digits 0-9. At each level, track the balance (e.g., +1 for even, -1 for odd) and the running modulo k. Use a memoization table to skip repeat states.
+Opt Complexity Visuals: Bounded State Volume Viz
+How to Draw Opt Complexity: Draw a 3D block representing the state space: Digits(10) x Balance(20) x K(20). Total operations = 10 x 20 x 20 = 4000 per number length. Very fast.
+Mem Vis (BF): Visualize the CPU hitting 100% for several minutes while trying to iterate a billion numbers.
+Mem Vis (Opt): Visualize a 5D/4D array used for memoization. Though it has many dimensions, the total size is small (e.g., 11 x 21 x 21 x 2 x 2).

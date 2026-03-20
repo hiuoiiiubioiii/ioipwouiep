@@ -1,0 +1,13 @@
+ID: 3064
+Problem Title: Guess the Number Using Bitwise Questions I
+Brute Force Method: Guess every number from 1 to 2^31 sequentially using the interactive API. Time Limit Exceeded instantly.
+BF Complexity Visuals: Linear API Spam $O(N)$
+How to Draw BF: Draw a line of billions of numbers. Draw an arrow pointing to 1, then 2, then 3.
+Optimised Pattern: Interactive Bit Manipulation
+Opt Vis. Technique: The 32-Bit Interrogator
+Dry Run (Opt): A 32-bit integer is just 32 true/false questions. Query the API for the exact bit position using `1 &lt;&lt; i`. Reconstruct the target number bit by bit using bitwise OR (`target |= (1 &lt;&lt; i)`).
+How to Draw (Opt): Draw 32 empty boxes (0 to 31). Ask the API: "Is box 0 a 1?". If yes, write 1. If no, write 0. Move to box 1. Rebuild the number instantly.
+Opt Complexity Visuals: Strictly Constant Time $O(32)$
+How to Draw Opt Complexity: Draw exactly 32 discrete API call boxes. Execution time is fixed regardless of number size.
+Mem Vis (BF): None, purely sequential.
+Mem Vis (Opt): A single `target` integer variable. $O(1)$ space.

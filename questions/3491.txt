@@ -1,0 +1,13 @@
+ID: 3491
+Problem Title: Phone Number Prefix
+Brute Force Method: Compare every pair of phone numbers (i, j) using `startsWith()`. $O(N^2 \cdot L)$
+BF Complexity Visuals: N x N Comparison Matrix.
+How to Draw BF: Draw a grid of all numbers. For cell (i, j), draw an arrow checking if number i is inside number j.
+Optimised Pattern: Sorting + Adjacent Comparison OR Trie Insertion. $O(N \log N \cdot L)$
+Opt Vis. Technique: Prefix Tree (Trie) Branching.
+Dry Run (Opt): Insert numbers into a Trie. If you pass an "End-of-Word" node while inserting, or if you reach the end of your word and children exist, a prefix exists.
+How to Draw (Opt): Draw a tree where each node is a digit (0-9). As you trace a number, circle the nodes. Mark "Word Ends" with a star.
+Opt Complexity Visuals: Logarithmic Tree Height Traversal.
+How to Draw Opt Complexity: Draw one tree. Highlight the path of one word (length L) to show $O(L)$ work per word.
+Mem Vis (BF): Trillions of string comparisons in the CPU stack.
+Mem Vis (Opt): A Trie structure where each node contains an array of 10 pointers.

@@ -1,0 +1,13 @@
+ID: 725
+Problem Title: Split Linked List in Parts
+Brute Force Method: Dump list to an array, mathematically slice the array, and rebuild K brand new linked lists.
+BF Complexity Visuals: Array Chopping Block
+How to Draw BF: Draw nodes mapping to an array, chopping the array into pieces, and drawing new arrows to rebuild. $O(N)$ space.
+Optimised Pattern: Length Counting + Mathematical Chunking
+Opt Vis. Technique: Measuring Tape &amp; Scissors
+Dry Run (Opt): Count length `N`. Base size = `N / k`, Extra nodes = `N % k`. Iterate list. First `Extra` parts get `Base + 1` nodes. Remaining get `Base`. Snip the `next` pointers to `null`.
+How to Draw (Opt): Draw a linked list. Write N and K. Calculate Base and Remainder. Draw scissors cutting the links exactly at the calculated step counts to sever the lists.
+Opt Complexity Visuals: Two-Pass Track
+How to Draw Opt Complexity: Draw the list. Draw one faint arrow traversing all the way (count), and a second bold arrow stopping and cutting (split). $O(N + K)$ time.
+Mem Vis (BF): $O(N)$ array allocation to store intermediate nodes.
+Mem Vis (Opt): $O(K)$ output array holding the new head pointers, $O(1)$ extra auxiliary space.

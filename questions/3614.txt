@@ -1,0 +1,13 @@
+ID: 3614
+Problem Title: Process String with Special Operations II (Hard)
+Brute Force Method: Simulating range updates or deep nested operations character by character, leading to Time Limit Exceeded (TLE).
+BF Complexity Visuals: Nested Loop Matrix.
+How to Draw BF: Draw a string. For a range update [2 to 5000], draw 5000 individual arrows pointing to each character. Write $O(N \cdot Q)$ where Q is operations.
+Optimised Pattern: Difference Array (Sweep Line) or Fenwick Tree (Binary Indexed Tree) to mathematically track shifts.
+Opt Vis. Technique: Delta (+1 / -1) Overlay.
+Dry Run (Opt): Don't touch the string! If range [2, 5] gets shifted, write "+1" at index 2, and "-1" at index 6. After all operations, sweep left to right to apply changes.
+How to Draw (Opt): Draw the string. Below it, draw an array of 0s. Apply a +1 and -1 boundary for an operation. At the end, do a running sum across the array to find final shifts.
+Opt Complexity Visuals: Constant Time Operation Dots.
+How to Draw Opt Complexity: Draw Q dots representing $O(1)$ operations. Then draw one solid line across N representing the final sweep. Write $O(N + Q)$.
+Mem Vis (BF): Draw out-of-memory errors from copying and shifting massive string instances recursively.
+Mem Vis (Opt): A single integer array delta[N+1] holding small mathematical increments. Space $O(N)$.

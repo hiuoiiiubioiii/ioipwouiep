@@ -1,0 +1,13 @@
+ID: 207
+Problem Title: Course Schedule
+Brute Force Method: Pure Backtracking / DFS without memoization to find cycles.
+BF Complexity Visuals: Exploding Tree Diagram: Exponential Time $O(V!)$.
+How to Draw BF: Draw a massive branching tree that duplicates paths. Show the width growing uncontrollably.
+Optimised Pattern: Topological Sort (Kahn's Algorithm / BFS)
+Opt Vis. Technique: Directed Graph with In-Degree Array
+Dry Run (Opt): Cross out courses with 0 prerequisites. Reduce the prerequisite count of dependent courses. Repeat until all crossed out or stuck.
+How to Draw (Opt): Draw circles with directional arrows. Draw a small box next to each circle (in-degree). Erase arrows and decrement boxes to 0.
+Opt Complexity Visuals: Graph Traversal Bar: $O(V + E)$ Time.
+How to Draw Opt Complexity: Draw a bar representing Vertices + Edges. Shade it in one continuous sweep to show linear traversal of the graph.
+Mem Vis (BF): Call Stack Tower: Draw an infinitely growing stack frame for unmemoized paths.
+Mem Vis (Opt): Queue Array + In-Degree Array: Draw a queue sliding window and a fixed array of integers decrementing.

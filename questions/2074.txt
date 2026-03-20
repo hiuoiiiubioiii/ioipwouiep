@@ -1,0 +1,13 @@
+ID: 2074
+Problem Title: Reverse Nodes in Even Length Groups
+Brute Force Method: Convert the entire linked list to an array, group elements, reverse the even groups in the array, then reconstruct the list.
+BF Complexity Visuals: List-to-Array Transformation Funnel
+How to Draw BF: Draw a linked list. Draw an array below it. Draw arrows copying every node. Perform the group reversals in the array, then draw arrows back. $O(N)$.
+Optimised Pattern: In-Place Group Iteration &amp; Re-linking
+Opt Vis. Technique: Segmented Weaving
+Dry Run (Opt): Iterate with a counter for group size (1, 2, 3...). Count how many nodes are actually available. If the actual count is even, reverse that segment in-place. Link it back to the previous and next parts.
+How to Draw (Opt): Draw the list. Use a bracket to mark groups of increasing size. If a bracket has an even number of nodes, draw a "U-turn" arrow inside it and update the `.next` pointers on both ends.
+Opt Complexity Visuals: Two-Pointer Linear Segmenting
+How to Draw Opt Complexity: Draw a horizontal line representing the list. Draw vertical bars separating groups. Each node is visited/reversed a constant number of times. Total Time $O(N)$.
+Mem Vis (BF): An array of size N storing all node references. Space $O(N)$.
+Mem Vis (Opt): Local pointers like `prevGroupEnd`, `curr`, and `next`. Space $O(1)$.

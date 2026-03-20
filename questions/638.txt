@@ -1,0 +1,13 @@
+ID: 638
+Problem Title: Shopping Offers
+Brute Force Method: Recursion without Memoization: Try every possible offer and every possible individual item purchase in a nested fashion.
+BF Complexity Visuals: Deep, redundant decision tree.
+How to Draw BF: Draw the "Needs" vector. Branch out for Offer 1, Offer 2, and Single Items. Each branch creates a new "Needs" vector. $O(\text{Offers}^\text{Items})$.
+Optimised Pattern: Backtracking with Memoization (DFS + Map).
+Opt Vis. Technique: State-Space Pruning with Cached results.
+Dry Run (Opt): Pass the current "Needs" vector to a function. Check if this exact vector has been calculated before in a Map. If not, try all valid offers and cache the minimum cost.
+How to Draw (Opt): Draw a "Needs" box. Draw arrows to sub-boxes. If a sub-box is identical to one seen before, draw a dashed line back to the cached result instead of expanding.
+Opt Complexity Visuals: $O(N \cdot M^N)$ where N is items and M is needs, but heavily pruned.
+How to Draw Opt Complexity: Draw a tree where many branches "snap" back to a central table of results.
+Mem Vis (BF): Draw the entire call stack hitting massive depths without reuse.
+Mem Vis (Opt): Draw a Hash Map storing "Needs String" -&gt; "Min Price".

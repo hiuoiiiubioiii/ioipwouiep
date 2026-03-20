@@ -1,0 +1,13 @@
+ID: 2048
+Problem Title: Next Greater Numerically Balanced Number
+Brute Force Method: Increment N by 1 repeatedly. For each number, count the frequency of its digits and check if each digit `d` appears exactly `d` times.
+BF Complexity Visuals: Brute Force Trial-and-Error Loop
+How to Draw BF: Draw N. Draw an arrow to N+1. Below N+1, draw a frequency tally. If it fails, draw an arrow to N+2. $O(K \\text{cdot digits})$, where K is the distance to the next valid number.
+Optimised Pattern: Precomputation / Backtracking with Pruning
+Opt Vis. Technique: Digit Permutation Tree
+Dry Run (Opt): Generate all numerically balanced numbers up to 7 digits (since N &lt;= 10^6). Sort them. Use binary search to find the first one strictly greater than N.
+How to Draw (Opt): Draw a tree where each branch is a valid digit count (e.g., three 3s). At the bottom, list the generated numbers like 122, 333, etc. Find where N fits in the list.
+Opt Complexity Visuals: Static List Binary Search
+How to Draw Opt Complexity: Draw a sorted list. Draw a binary search "zoom" arrow (O(log M) where M is the count of balanced numbers). Total Time $O(\log M)$.
+Mem Vis (BF): Calculated on-the-fly, high frequency of garbage collection for short-lived tally arrays.
+Mem Vis (Opt): A constant-size sorted list of all valid numerically balanced numbers. Space $O(1)$ relative to input limits.

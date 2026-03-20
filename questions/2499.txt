@@ -1,0 +1,13 @@
+ID: 2499
+Problem Title: Minimum Total Cost to Make Arrays Unequal
+Brute Force Method: Try swapping every possible pair to break equality. $O(N!)$.
+BF Complexity Visuals: Factorial Swapping Web
+How to Draw BF: Draw the arrays. Draw chaotic lines swapping elements randomly.
+Optimised Pattern: Greedy / Majority Element
+Opt Vis. Technique: The Dominant Element Breaker
+Dry Run (Opt): Find indices where `A[i] == B[i]`. If one number is the "majority" (appears more than half the time in these indices), you MUST swap it with elements *outside* this set to break the majority.
+How to Draw (Opt): Draw the bad indices in a box. Find the most common number. If it dominates, look at the rest of the array. Find the smallest indices where `A[j] != B[j]` and neither is the dominant number. Swap them.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass to collect bad indices, and a second pass to fix the majority element if needed.
+Mem Vis (BF): Recursion tracking all array states.
+Mem Vis (Opt): Variables tracking max frequency and cost sums. $O(1)$ space.

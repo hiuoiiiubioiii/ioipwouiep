@@ -1,0 +1,13 @@
+ID: 402
+Problem Title: Remove K Digits
+Brute Force Method: Combinations Generate all possible strings by removing K characters, convert to int, find min.
+BF Complexity Visuals: Exploding Tree
+How to Draw BF: Draw a starting string. Branch out N times (for each removal). Show massive $O(N^K)$ expansion.
+Optimised Pattern: Monotonic Stack Keep digits in increasing order. Pop if current digit &lt; top of stack and K &gt; 0.
+Opt Vis. Technique: Array to Bucket
+Dry Run (Opt): Left: Input Array. Right: A vertical bucket (Stack). Move digits left to right. If right digit is smaller, "kick out" top of bucket.
+How to Draw (Opt): Draw a 'U' shape for the stack. Write numbers vertically. Physically scratch out the top number when popping. Keep a 'K' tally.
+Opt Complexity Visuals: Linear Scan Line
+How to Draw Opt Complexity: Draw the array. Draw a single arrow passing over it left to right. Note max 2 touches per element (1 push, max 1 pop) = $O(N)$.
+Mem Vis (BF): String Pool Draw hundreds of strings floating to represent $O(N^K)$ space.
+Mem Vis (Opt): 1D Array Draw a single 1D array of size N filling up and emptying. $O(N)$ space.

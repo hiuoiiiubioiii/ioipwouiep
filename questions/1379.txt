@@ -1,0 +1,13 @@
+ID: 1379
+Problem Title: Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+Brute Force Method: Traverse the original tree to find the target, record its "path" (e.g., Left-Right-Left), then replay that path on the cloned tree.
+BF Complexity Visuals: Double Tree Traversal
+How to Draw BF: Draw two identical trees. Trace a path in the first, then draw a second identical path in the clone. Note the redundant work of two separate traversals.
+Optimised Pattern: Synchronized DFS / BFS
+Opt Vis. Technique: Dual-Pointer Tree Sweep
+Dry Run (Opt): Traverse both trees simultaneously. If `original_node == target`, return the current `cloned_node`. This avoids needing to store path history.
+How to Draw (Opt): Draw Tree A and Tree B side-by-side. Draw two fingers pointing to the root of both. Move both fingers to the left child, then right, etc., until Finger A hits the target. Finger B is your answer.
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw a single line snaking through both trees in parallel, proving you visit each node position exactly once.
+Mem Vis (BF): Path String/List: Storing a sequence of "L" and "R" directions in memory.
+Mem Vis (Opt): $O(H)$ Call Stack: Draw a single recursion stack where each frame holds two node pointers (Original and Cloned).

@@ -1,0 +1,13 @@
+ID: 3207
+Problem Title: Maximum Points After Enemy Battles
+Brute Force Method: Recursive state exploration: simulate choosing to attack vs. marking every enemy in all combinations.
+BF Complexity Visuals: State-Space Explosion Graph
+How to Draw BF: Draw nodes containing `(current_energy, points, unmarked_enemies)`. Branch every node by the two choices. Show exponential bloom.
+Optimised Pattern: Greedy + Sorting (Two-Pointer logic)
+Opt Vis. Technique: Min-Max Balance Scale
+Dry Run (Opt): Sort the array. Always subtract energy from the absolute minimum element (left) to gain points. Harvest energy from the max element (right).
+How to Draw (Opt): Draw a sorted array. Put a green dot on the 0th index (attack) and a red dot on the last index (harvest). Move the red dot leftwards as you harvest.
+Opt Complexity Visuals: Sorting Bottleneck Pipeline
+How to Draw Opt Complexity: Draw a block labeled "Sort" $O(N \log N)$. Draw a second block labeled "Linear Scan" $O(N)$. Circle the sort block as the dominating factor.
+Mem Vis (BF): Heavy recursive stack and duplicate array states.
+Mem Vis (Opt): In-place sorted array (O(1) or $O(\log N)$ space depending on sort).

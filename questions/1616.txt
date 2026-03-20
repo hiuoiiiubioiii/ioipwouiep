@@ -1,0 +1,13 @@
+ID: 1616
+Problem Title: Split Two Strings to Make Palindrome
+Brute Force Method: Split at every index i, concatenate A_prefix+B_suffix and B_prefix+A_suffix, then check both for palindromes.
+BF Complexity Visuals: Nested Iteration Loop
+How to Draw BF: Draw a string sliced at every single letter. At each slice, draw a magnifying glass iterating over the entire new string. $O(N^2)$.
+Optimised Pattern: Two Pointers (Outside-In) + Middle Checking
+Opt Vis. Technique: Symmetric Pincer Movement
+Dry Run (Opt): Pointer `left` at start of A, `right` at end of B. Move inwards while characters match. If they mismatch, check if the remaining middle of A or middle of B is a palindrome.
+How to Draw (Opt): Write string A on top of B. Draw an arrow pointing right from A[0] and left from B[N-1]. Connect matching outer letters with lines, leaving an isolated box in the center.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw two arrows converging precisely at the center of a string without ever backtracking. $O(N)$.
+Mem Vis (BF): Multiple String Allocations: Draw numerous floating blocks representing newly created concatenated strings.
+Mem Vis (Opt): Two Index Variables: Draw two tiny boxes holding integers (the left and right pointers) with no extra memory allocated. $O(1)$.

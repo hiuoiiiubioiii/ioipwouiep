@@ -1,0 +1,13 @@
+ID: 2435
+Problem Title: Paths in Matrix Whose Sum Is Divisible by K
+Brute Force Method: Use DFS to find every possible path from (0,0) to (m-1, n-1). Calculate sum of each and check `sum % k == 0`.
+BF Complexity Visuals: Recursive Grid Flood
+How to Draw BF: Draw a grid. Draw every possible right/down path as a zig-zag line. Label $O(2^(M+N)$).
+Optimised Pattern: 3D Dynamic Programming (Grid + Modulo State)
+Opt Vis. Technique: Modulo-Layered Grid
+Dry Run (Opt): `dp[r][c][rem]` is the number of paths to `(r,c)` with `sum % k == rem`. The answer is `dp[m-1][n-1][0]`.
+How to Draw (Opt): Draw a grid. In each cell, draw a small array of size `k`. Fill the array using the sums from top and left neighbors (shifted by current cell's value).
+Opt Complexity Visuals: Grid Volume Search
+How to Draw Opt Complexity: Draw a 3D block (M x N x K). Label $O(M \cdot N \cdot K)$. Every cell in the grid takes K work.
+Mem Vis (BF): Draw a recursion stack. $O(M+N)$.
+Mem Vis (Opt): Draw a 3D DP array (or 2D + K if space-optimized). Label $O(M \cdot N \cdot K)$ Space.

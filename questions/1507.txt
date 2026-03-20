@@ -1,0 +1,13 @@
+ID: 1507
+Problem Title: Reformat Date
+Brute Force Method: Complex string parsing with massive nested if/else logic or switch statements to map strings to numerical values.
+BF Complexity Visuals: Messy Flowchart $O(1)$
+How to Draw BF: Draw a string and a spiderweb of erratic arrows pointing from "Oct" to 10, "20th" dropping the "th", etc.
+Optimised Pattern: String Splitting + Hash Map
+Opt Vis. Technique: Dictionary Lookup
+Dry Run (Opt): Split the string by spaces into `[Day, Month, Year]`. Look up the month in a pre-defined Map. Pad the day with a zero if length &lt; 2. Concatenate Year-Month-Day.
+How to Draw (Opt): Draw the split array `["20th", "Oct", "2052"]`. Draw an arrow from "Oct" to a mini 2-column lookup table yielding "10". Reassemble the pieces.
+Opt Complexity Visuals: Constant Time Block $O(1)$
+How to Draw Opt Complexity: Draw a single, solid dot. Since date strings have a fixed max length, the time taken does not scale with any input N.
+Mem Vis (BF): Multiple allocated string copies in memory.
+Mem Vis (Opt): Draw a fixed 12-row table representing the Hash Map of months. $O(1)$ space.

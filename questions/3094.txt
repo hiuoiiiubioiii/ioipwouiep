@@ -1,0 +1,13 @@
+ID: 3094
+Problem Title: Guess the Number Using Bitwise Queries II
+Brute Force Method: Test every possible number from 0 to 2^31-1 using bitwise XOR queries one by one.
+BF Complexity Visuals: Exhaustive Search Timeline
+How to Draw BF: Draw a massive binary number line. Show the query pointer checking every single integer. $O(2^30)$.
+Optimised Pattern: Bit-by-Bit Reconstruction
+Opt Vis. Technique: 32-Bit Toggle Switch
+Dry Run (Opt): For each bit i from 0 to 29, query (1 &lt;&lt; i). Check if the set bit count increases or decreases. If the count decreases, it means the hidden number had that bit set.
+How to Draw (Opt): Draw a row of 30 empty boxes. For each bit, write a '1' or '0' based on the change in the total bit count reported by the query.
+Opt Complexity Visuals: $O(1)$ Constant Queries
+How to Draw Opt Complexity: Draw 30 distinct vertical bars representing the 30 fixed queries. Label as $O(30)$ approx $O(1)$.
+Mem Vis (BF): A massive array of query results stored in memory.
+Mem Vis (Opt): Zero extra structure; just a single integer variable to accumulate the result bitwise.

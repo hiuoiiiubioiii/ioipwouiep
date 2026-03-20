@@ -1,0 +1,13 @@
+ID: 900
+Problem Title: RLE Iterator
+Brute Force Method: Fully decompress the Run-Length Encoding into a massive array (e.g., [8, 8, 8, 5, 5]). Maintain a current index pointer.
+BF Complexity Visuals: Full Array Expansion. $O(\text{Total Count})$.
+How to Draw BF: Draw an encoded list [3, 8, 2, 5]. Draw a huge line of boxes: [8, 8, 8, 5, 5]. If the counts are in the millions, your drawing must go off the page.
+Optimised Pattern: Pointer Simulation on Compressed Pairs.
+Opt Vis. Technique: The "Tank Depletion" Model.
+Dry Run (Opt): Keep the encoded array as is. Maintain an index i for the current pair. When next(n) is called, "consume" n from the current count A[i]. If n &gt; A[i], subtract A[i] from n and move to A[i+2].
+How to Draw (Opt): Draw the array [count1, val1, count2, val2]. Draw a "Bucket" above count1. When next(5) is called, pour 5 out of the bucket. If it empties, move to the next bucket.
+Opt Complexity Visuals: Amortized Constant Time. $O(N)$ total for all calls.
+How to Draw Opt Complexity: Draw a timeline where the pointer only moves forward. Each element of the original array is visited once across all function calls.
+Mem Vis (BF): Decompressed Array: Draw a memory block of size 10^9 (potential sum of counts).
+Mem Vis (Opt): $O(1)$ excluding input: Draw one integer pointer and one "current count" variable.

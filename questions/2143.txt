@@ -1,0 +1,13 @@
+ID: 2143
+Problem Title: Choose Numbers From Two Arrays in Range
+Brute Force Method: Generate every possible combination (2^N) of choosing from array A or B and check if the sums are equal.
+BF Complexity Visuals: A binary decision tree of depth N.
+How to Draw BF: Draw index 0. Branch to A[0] or B[0]. At index 1, branch again. Count paths that sum to 0 at the end. $O(2^N)$.
+Optimised Pattern: Dynamic Programming (Space Optimized HashMap).
+Opt Vis. Technique: A balance scale shifting left or right with each choice.
+Dry Run (Opt): `dp[sum]` stores the number of ways to reach a specific difference. For each pair `(a, b)`, update `new_dp[sum + a]` and `new_dp[sum - b]`.
+How to Draw (Opt): Draw a number line with 0 in the center. At each step, move all existing "counts" to the left by `b` and to the right by `a`. Sum overlapping counts.
+Opt Complexity Visuals: $O(N \\text{cdot Sum})$ where Sum is the range of possible differences.
+How to Draw Opt Complexity: A grid where each row updates based on the previous row's shifted values.
+Mem Vis (BF): $O(2^N)$ recursion stack.
+Mem Vis (Opt): Two HashMaps (Current and Next) or a fixed-size array $O(\text{Sum})$.

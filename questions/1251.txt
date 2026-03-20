@@ -1,0 +1,13 @@
+ID: 1251
+Problem Title: Average Selling Price (SQL)
+Brute Force Method: For every transaction in the `UnitsSold` table, run a subquery against the `Prices` table to find the price valid for that specific date. Then calculate the average.
+BF Complexity Visuals: Row-by-Row Correlated Lookup
+How to Draw BF: Draw the UnitsSold table. For every row, draw a search arrow that scans the entire Prices table. Write $O(U \cdot P)$.
+Optimised Pattern: LEFT JOIN on Interval + GROUP BY
+Opt Vis. Technique: Date-Range Overlap Join
+Dry Run (Opt): Join `Prices` and `UnitsSold` where `product_id` matches AND `purchase_date` falls between `start_date` and `end_date`. Sum up (price * units) and divide by total units for each product.
+How to Draw (Opt): Draw two tables side-by-side. Draw arrows connecting a purchase date to the specific price-row that "contains" that date. Group these connected rows by product ID and show a calculator summing them up.
+Opt Complexity Visuals: Hash/Sort-Merge Join on Ranges
+How to Draw Opt Complexity: Draw a sorted timeline of prices. Show purchases being "dropped" into their respective price buckets. Write $O(U \log U + P \log P)$.
+Mem Vis (BF): Draw multiple temporary result tables for each correlated subquery.
+Mem Vis (Opt): Draw a single intermediate table result from the join, processed in a single grouping pass.

@@ -1,0 +1,13 @@
+ID: 1632
+Problem Title: Rank Transform of a Matrix
+Brute Force Method: Find global minimum, rank it, then find next min, check all row/col constraints manually.
+BF Complexity Visuals: Search and Replace Loop
+How to Draw BF: Draw a matrix. Draw a hand searching through all cells over and over again. $O((M\cdot N)$^2).
+Optimised Pattern: Union-Find + Topological Sort (Indegree)
+Opt Vis. Technique: Dependency Graph Chain
+Dry Run (Opt): Group cells by value. Use Union-Find to link cells in same row/col. Build a DAG of ranks. Use BFS (Topological Sort) to assign final ranks.
+How to Draw (Opt): Draw groups of cells as blobs. Draw arrows from "lower value" blobs to "higher value" blobs. Label blobs with an indegree count.
+Opt Complexity Visuals: Grouped Processing Pipe
+How to Draw Opt Complexity: Draw cells moving through a funnel (sorting) and then through a pipeline (linear graph scan). $O(\text{MN} \\text{log MN})$.
+Mem Vis (BF): Massive Constraint Lists: Draw lists of pairs for every single cell interaction.
+Mem Vis (Opt): Union-Find + Adjacency Map: Draw a Forest of Trees (UF) and a Map linking groups to their neighbors.

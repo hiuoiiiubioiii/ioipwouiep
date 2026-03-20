@@ -1,0 +1,13 @@
+ID: 3288
+Problem Title: Length of the Longest Increasing Path Through Two Points
+Brute Force Method: Find all possible paths from the start of the coordinate plane to the end, filter those that pass through the target indices, and find the longest. $O(2^N)$.
+BF Complexity Visuals: Filtered Coordinate Tree
+How to Draw BF: Plot all points on a graph. Draw all possible "zig-zag" upward paths. Cross out any path that doesn't hit the specific mandatory point.
+Optimised Pattern: Sort + Binary Search LIS
+Opt Vis. Technique: Segmented LIS Filtering
+Dry Run (Opt): 1. Filter points into two sets: those that can come *before* the target point (x &lt; x_t, y &lt; y_t) and those that come *after* (x &gt; x_t, y &gt; y_t). 2. Run $O(N \log N)$ LIS on both sets independently. The result is LIS_before + 1 + LIS_after.
+How to Draw (Opt): Plot the points. Draw a vertical and horizontal line through the target point, creating four quadrants. Only keep points in the bottom-left and top-right quadrants. Run the LIS "staircase" algorithm on each quadrant.
+Opt Complexity Visuals: Sort-Bounded LIS Pipeline
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort block, followed by two $O(N \log N)$ LIS blocks. Total: $O(N \log N)$.
+Mem Vis (BF): Storing every possible valid increasing path.
+Mem Vis (Opt): A tails array for binary search LIS (O(N) space).

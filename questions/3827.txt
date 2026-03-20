@@ -1,0 +1,13 @@
+ID: 3827
+Problem Title: Count Monobit Integers (Easy)
+Brute Force Method: Loop through the specified range [L, R], convert every number to a binary string, and count how many have exactly one '1'.
+BF Complexity Visuals: A long iterative loop scanning thousands of numbers and counting their bits individually.
+How to Draw BF: Draw numbers from L to R. Under each, draw its binary. Circle the ones with a single '1'. Write $O(R - L)$.
+Optimised Pattern: Bitwise Powers of 2 Math.
+Opt Vis. Technique: Jumping directly between powers of 2 (1, 2, 4, 8, 16...) that fall within the given range.
+Dry Run (Opt): A "Monobit" integer is simply a power of 2. Start from the smallest power of 2 &gt;= L, and count up by bit-shifting (val &lt;&lt; 1) until exceeding R.
+How to Draw (Opt): Draw a number line. Mark L and R. Draw big jumping arcs landing exactly on 1, 2, 4, 8, 16. Count the dots inside the [L, R] window.
+Opt Complexity Visuals: Logarithmic scale timeline hopping across powers of 2.
+How to Draw Opt Complexity: Draw 32 binary slots. Write a loop running max 32 times. Write $O(1)$ or $O(\log(\text{Max}_R)$).
+Mem Vis (BF): $O(1)$ memory, just taking excess CPU time.
+Mem Vis (Opt): $O(1)$ Memory. Only a few integer variables (count, current_power) are needed.

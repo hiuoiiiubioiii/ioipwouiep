@@ -1,0 +1,13 @@
+ID: 3778
+Problem Title: Minimum Distance Excluding One Maximum Weighted Edge (Med)
+Brute Force Method: For every edge in the graph, temporarily remove it and run Dijkstra's algorithm to find the shortest path between start and end. $O(E \cdot (E + V \log V)$).
+BF Complexity Visuals: Edge-Removal Iteration.
+How to Draw BF: Draw a graph. Erase one line. Find the shortest path. Put the line back, erase the next one. Compare all results.
+Optimised Pattern: Modified Dijkstra / BFS with State
+Opt Vis. Technique: Layered Graph Traversal
+Dry Run (Opt): Run Dijkstra where the state is (node, has_excluded_edge). Alternatively, find the shortest path normally, then for every edge (u, v) in the graph, consider the path dist[u] + dist_from_end[v] (skipping the weight of (u, v)).
+How to Draw (Opt): Draw two versions of the graph: "Layer 0" (haven't used the skip) and "Layer 1" (have used the skip). Draw directed edges from Layer 0 to Layer 1 representing the "skipped" edge.
+Opt Complexity Visuals: $O(V \log V + E)$.
+How to Draw Opt Complexity: Draw a Dijkstra priority queue progression on a 2-layered graph.
+Mem Vis (BF): E copies of the graph/distance array.
+Mem Vis (Opt): $O(V)$ distance array and $O(E)$ graph storage.

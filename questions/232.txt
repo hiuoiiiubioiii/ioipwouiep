@@ -1,0 +1,13 @@
+ID: 232
+Problem Title: Implement Queue using Stacks
+Brute Force Method: On every `push` operation, move all elements from stack1 to stack2, push new element, and move everything back.
+BF Complexity Visuals: Shuffling Bucket: $O(N)$ per Push.
+How to Draw BF: Draw two vertical buckets. Show N balls being moved one by one to a second bucket just to put one new ball at the bottom.
+Optimised Pattern: Two Stacks (Amortized $O(1)$ - "Lazy Transfer")
+Opt Vis. Technique: Inbound/Outbound Portals
+Dry Run (Opt): Always push to `s1`. Only when `pop` is called and `s2` is empty, pour all of `s1` into `s2`. This reverses the order once and for all.
+How to Draw (Opt): Draw two buckets side-by-side. Label one "Input" and one "Output". Draw an arrow showing a one-way "pour" only when "Output" is dry.
+Opt Complexity Visuals: Amortized Cost Analysis: $O(1)$ per operation.
+How to Draw Opt Complexity: Draw N items. Show that each item is moved from s1 to s2 exactly once in its lifetime. Total moves = 2N, so cost per item = 2 (Constant).
+Mem Vis (BF): Two full stacks being emptied/refilled constantly.
+Mem Vis (Opt): Two stacks where elements sit quietly until needed. Draw them as stable memory segments.

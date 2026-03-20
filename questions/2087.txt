@@ -1,0 +1,13 @@
+ID: 2087
+Problem Title: Minimum Cost Homecoming of a Robot in a Grid
+Brute Force Method: Standard BFS or Dijkstra to find the shortest path from start to home in an M x N grid.
+BF Complexity Visuals: Grid Wavefront Expansion
+How to Draw BF: Draw a grid. Start a ripple. At each cell, branch in 4 directions. $O(M \cdot N \log(\text{MN})$) for Dijkstra.
+Optimised Pattern: Greedy Coordinate Accumulation (Math)
+Opt Vis. Technique: X-Y Axis Projection
+Dry Run (Opt): The robot only needs to move towards the target row and target column. The cost is simply the sum of row costs and column costs along the path, regardless of the sequence.
+How to Draw (Opt): Draw the X-axis and Y-axis costs as bars. Shade all bars between startRow and homeRow, and startCol and homeCol. Sum the shaded areas.
+Opt Complexity Visuals: Two Independent Linear Scans
+How to Draw Opt Complexity: Draw two separate lines (O(M) and $O(N)$). Total Time $O(M + N)$.
+Mem Vis (BF): A massive priority queue and a distance matrix for Dijkstra.
+Mem Vis (Opt): Two cost arrays. Space $O(1)$ if indexing directly.

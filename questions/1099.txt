@@ -1,0 +1,13 @@
+ID: 1099
+Problem Title: Two Sum Less Than K
+Brute Force Method: Use nested loops to check every possible pair (i, j) and calculate their sum. If sum &lt; K, update the maximum.
+BF Complexity Visuals: A complete web of all possible pairs in the array.
+How to Draw BF: Draw the array. From index 0, draw lines to 1, 2, 3... Calculate sums. Write $O(N^2)$.
+Optimised Pattern: Two Pointers (Sort + Shrink).
+Opt Vis. Technique: A "Closing Door". We sort the numbers and use two pointers to find the best pair that doesn't "break" the limit K.
+Dry Run (Opt): Sort the array. Set `i=0`, `j=n-1`. If `nums[i] + nums[j] &lt; K`, update max and move `i++`. Else, move `j--`.
+How to Draw (Opt): Draw a sorted line of numbers. Put an arrow at start and end. If the sum is too high, move the right arrow left. If sum is safe, record it and move the left arrow right.
+Opt Complexity Visuals: Sort followed by a single linear pass.
+How to Draw Opt Complexity: Draw a sort box $O(N \log N)$ followed by a single arrow $O(N)$. Total Time: $O(N \log N)$.
+Mem Vis (BF): No extra memory besides loops.
+Mem Vis (Opt): $O(1)$ extra space (ignoring sort space).

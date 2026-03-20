@@ -1,0 +1,13 @@
+ID: 200
+Problem Title: Number of Islands
+Brute Force Method: Iterate through every cell. If it's land ('1'), start a BFS/DFS to find all connected land and count it as one island. Replace '1's with '0's as you go.
+BF Complexity Visuals: A "Flood Fill" visualization where the scanner stops at every '1' to trigger a ripple effect.
+How to Draw BF: Draw a grid of 1s and 0s. Circle a '1'. Draw arrows to all adjacent '1's. Cross them out. Increment count. Repeat.
+Optimised Pattern: DFS with In-place Sink (or BFS/Union-Find).
+Opt Vis. Technique: "Sinking Islands." Each island is "sunk" (turned to '0') as soon as it is discovered, preventing the scanner from counting the same island twice.
+Dry Run (Opt): Nested loop for (r, c). If grid[r][c] == '1': increment islands, then run dfs(r, c) which turns all reachable land into '0'.
+How to Draw (Opt): Draw the grid. Use a highlighter to color one island at a time. Each time you finish a "color," add 1 to your total island count.
+Opt Complexity Visuals: $O(M \\text{times} N)$ time. Every cell is visited at most twice (once by the loop, once by the DFS).
+How to Draw Opt Complexity: Draw the grid. Shade it in a single pass to show that once a cell is visited, it is never re-processed.
+Mem Vis (BF): Storing a "Visited" boolean array of size M \times N.
+Mem Vis (Opt): Visualize the $O(M \\text{times} N)$ recursion stack in the worst case (all land), or $O(1)$ if the grid itself is used as the visited marker.

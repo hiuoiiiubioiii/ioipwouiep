@@ -1,0 +1,13 @@
+ID: 326
+Problem Title: Power of Three
+Brute Force Method: Repeatedly divide the number by 3. If the remainder is ever non-zero before reaching 1, it's not a power of three.
+BF Complexity Visuals: Iterative Reduction Tape
+How to Draw BF: Draw a number in a box. Draw an arrow dividing it by 3, resulting in a smaller box. Repeat until the box contains 1 or a decimal. $O(\log₃ N)$.
+Optimised Pattern: Mathematical Constant Division (Base-10 Log or Max Int)
+Opt Vis. Technique: Direct Division check against Integer Limit
+Dry Run (Opt): For a prime base like 3, the largest power of 3 that fits in a 32-bit integer is 3^{19} = 1,162,261,467. Simply check if this max power is divisible by n using the modulo operator.
+How to Draw (Opt): Draw one giant "Master" box representing 3^{19}. Draw a smaller box n beside it. Draw a "modulo" symbol between them. If the result is 0, it's a match.
+Opt Complexity Visuals: Constant Step Logic
+How to Draw Opt Complexity: Draw a single dot. No loops, no recursion. $O(1)$.
+Mem Vis (BF): A single 'current_n' variable box being updated.
+Mem Vis (Opt): Zero extra memory. Draw an empty space or a single "n" input box. $O(1)$.

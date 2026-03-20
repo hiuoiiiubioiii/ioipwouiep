@@ -1,0 +1,13 @@
+ID: 3253
+Problem Title: Construct String with Minimum Cost (Easy)
+Brute Force Method: Try every word in the dictionary at the current position, then recurse for the suffix. $O(\text{Exponential})$.
+BF Complexity Visuals: Recursive String Matching Web
+How to Draw BF: Draw the target string. Under index 0, draw branches for every word in the list. Label the branches that match the prefix. Repeat for suffixes.
+Optimised Pattern: Iterative Dynamic Programming (Substring Check)
+Opt Vis. Technique: 1D DP Progression
+Dry Run (Opt): `dp[i]` is the min cost to build the string up to index `i`. At each `i`, look back at all words `w`; if `target.substr(i-len, len) == w`, update `dp[i]`.
+How to Draw (Opt): Draw a 1D array of size N. Under index `i`, draw arrows pointing back to `i - word_length`. If the word matches, update the minimum cost at `i`.
+Opt Complexity Visuals: Nested String Comparison Block
+How to Draw Opt Complexity: Draw an outer loop (N) and an inner loop (Words). Label the inner operation "Substr Compare". Total $O(N \\text{cdot Words} \\text{cdot Length})$.
+Mem Vis (BF): Heavy recursion stack with string slices.
+Mem Vis (Opt): 1D DP array of size N (O(N) space).

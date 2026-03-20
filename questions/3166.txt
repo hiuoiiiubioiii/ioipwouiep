@@ -1,0 +1,13 @@
+ID: 3166
+Problem Title: Calculate Parking Fees and Duration
+Brute Force Method: Using correlated subqueries for every aggregate column, forcing the DB to re-scan for every row. $O(N^2)$
+BF Complexity Visuals: Nested Loop Join Diagram
+How to Draw BF: Draw two tables. For every row in Table A, draw N arrows to Table B to calculate sums. Repeat N times.
+Optimised Pattern: CTE / Window Functions
+Opt Vis. Technique: Data Flow Pipeline
+Dry Run (Opt): Group by `car_id` to get totals. Use `RANK()` over `car_id` ordered by stay duration to find the "most visited lot."
+How to Draw (Opt): Draw three separate "buckets": Totals, Averages, and Rankings. Show them merging into a single final row.
+Opt Complexity Visuals: Linear Execution Plan
+How to Draw Opt Complexity: Draw a single vertical line through the dataset representing one scan + one sort. $O(N \log N)$.
+Mem Vis (BF): Intermediate Cartesian product storage in TEMP DB.
+Mem Vis (Opt): Sorted hash-aggregates in memory. $O(N)$.

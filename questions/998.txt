@@ -1,0 +1,13 @@
+ID: 998
+Problem Title: Maximum Binary Tree II
+Brute Force Method: Convert the existing tree back into its original array, append the new value to the end, and rebuild the entire Maximum Binary Tree from scratch.
+BF Complexity Visuals: $O(N^2)$ in the worst case (rebuilding can be quadratic).
+How to Draw BF: Draw a tree. Flatten it into a line. Add a new number. Build a brand new tree. It’s a lot of erasing and redrawing.
+Optimised Pattern: Right-Spine Insertion
+Opt Vis. Technique: "The Newest Arrival." Since the new value is appended to the *end* of the array, it must either become the new root (if it's the largest) or live somewhere on the right-hand side of the current tree.
+Dry Run (Opt): If `val &gt; root.val`: new node becomes root, old tree becomes its left child. Else: recurse into `root.right`.
+How to Draw (Opt): Draw a tree. Draw a "New Node" hovering to the right. Show it sliding down the right edge of the tree until it finds a node smaller than itself, then "inserting" itself there.
+Opt Complexity Visuals: $O(H)$ where H is the height of the tree. In a balanced tree, this is $O(\log N)$.
+How to Draw Opt Complexity: Draw a tree with a single path highlighted on the far right. Draw an arrow showing where the new node "plugs in."
+Mem Vis (BF): $O(N)$ to store the intermediate array.
+Mem Vis (Opt): $O(H)$ recursion stack. Draw a thin vertical column for the depth of the right spine.

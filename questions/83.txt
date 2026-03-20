@@ -1,0 +1,13 @@
+ID: 83
+Problem Title: Remove Duplicates from Sorted List
+Brute Force Method: Compare and Skip For every node, compare it with its `next`. If the values are the same, link the current node to `next.next`.
+BF Complexity Visuals: The Local Comparison
+How to Draw BF: Draw two adjacent nodes. If they match, erase the link to the second one and draw a link to the third. $O(N)$ time.
+Optimised Pattern: Single Pass (In-Place)
+Opt Vis. Technique: The "Keep the First" Rule
+Dry Run (Opt): Iterate once. While `curr.next` has the same value as `curr`, delete `curr.next`. Only move the `curr` pointer forward when the next value is different.
+How to Draw (Opt): Draw `1-&gt;1-&gt;1-&gt;2`. Pointer stays at the first `1`. It deletes the second `1`, then the third `1`. Finally, it moves to `2`.
+Opt Complexity Visuals: Single Pass Line
+How to Draw Opt Complexity: Draw a straight line. Every node is visited once. $O(N)$ time complexity.
+Mem Vis (BF): N/A - Usually done efficiently.
+Mem Vis (Opt): Draw the list being modified in-place. Space: $O(1)$.

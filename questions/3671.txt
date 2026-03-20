@@ -1,0 +1,13 @@
+ID: 3671
+Problem Title: Sum of Beautiful Subsequences (Hard)
+Brute Force Method: Generate every possible subsequence (2^N) and check if each one is "beautiful" by verifying every pair of elements. $O(N \cdot 2^N)$.
+BF Complexity Visuals: Subsequence Branching Tree.
+How to Draw BF: Draw an array. At each element, branch "Include" or "Exclude". For N=30, you have 1 billion leaves. Paper is completely filled with failed paths.
+Optimised Pattern: Dynamic Programming with Counting (Combinatorics). Group elements by their remainder when divided by the "beauty" difference K, then solve as a "House Robber" variant.
+Opt Vis. Technique: Modulo-Grouped Independent Chains.
+Dry Run (Opt): If beauty depends on the difference K, a number X only affects X+K or X-K. Split the array into chains (e.g., if K=3: [1, 4, 7...], [2, 5, 8...]). Solve each chain independently and multiply.
+How to Draw (Opt): Draw circles for numbers. Draw lines between numbers that "conflict" (e.g., distance K). This creates several separate paths. Calculate valid subsets for each path using DP and multiply results.
+Opt Complexity Visuals: Multi-chain DP Chart.
+How to Draw Opt Complexity: Write $O(N \log N)$ to sort, then $O(N)$ to process the chains. Total $O(N \log N)$.
+Mem Vis (BF): A massive recursive stack attempting to hold all 2^N combinations in memory.
+Mem Vis (Opt): A small DP array `dp[2]` or `dp[i]` for the current chain being processed. Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1028
+Problem Title: Recover a Tree From Preorder Traversal
+Brute Force Method: Parse the string into nodes and their depths. Use a complex recursive function to find the "left" and "right" parts of the string by counting dashes.
+BF Complexity Visuals: Heavy string slicing and substring creation at every recursive step.
+How to Draw BF: Draw the string. Circle "1-2--3--4-5--6--7". Draw lines splitting it into children blocks. Write $O(N^2)$ due to substring search.
+Optimised Pattern: Iterative Stack (Depth Tracking).
+Opt Vis. Technique: A stack representing the current "active" path from the root.
+Dry Run (Opt): Scan string. Count dashes for depth `D`. Parse node value. If `stack.size &gt; D`, pop nodes until stack size equals `D`. Attach new node to `stack.top`. Push new node.
+How to Draw (Opt): Write string. Draw a stack (U-shape). "1" (depth 0) goes in. "-2" (depth 1) is child of 1, goes in. "--3" (depth 2) is child of 2, goes in.
+Opt Complexity Visuals: A single pass through the string with stack adjustments.
+How to Draw Opt Complexity: Draw a straight line through the string. Write $O(S)$ where S is string length.
+Mem Vis (BF): Massive string duplication from repeated slicing.
+Mem Vis (Opt): A stack with maximum size $O(H)$, the height of the tree. $O(N)$ worst case.

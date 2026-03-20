@@ -1,0 +1,13 @@
+ID: 3659
+Problem Title: Partition Array Into K-Distinct Groups (Med)
+Brute Force Method: Backtracking to try every possible way to group elements while maintaining the distinctness property. $O(K^N)$.
+BF Complexity Visuals: Recursive Partition Tree.
+How to Draw BF: Draw the array. Try putting element 1 in Group A. Then element 2 in Group A or B. If A already has element 2, you must pick B. The branches explode.
+Optimised Pattern: Greedy Frequency Distribution. Sort elements by frequency. Place the most frequent elements into different groups first.
+Opt Vis. Technique: The "Card Dealing" Strategy.
+Dry Run (Opt): Imagine you have K hands. If you have four "7"s, you MUST deal them into four different hands. If any number's frequency &gt; K, it's impossible.
+How to Draw (Opt): Draw K boxes. Count frequencies: `3: [7, 7, 7], 2: [5, 5]`. Put one '7' in Box 1, one in Box 2, one in Box 3. Put '5' in Box 1 and Box 2.
+Opt Complexity Visuals: Frequency Mapping Pass.
+How to Draw Opt Complexity: Draw an arrow for counting frequencies $O(N)$. Draw a check for `max(freq) &lt;= K. Write $O(N)$.
+Mem Vis (BF): Storing every failed grouping attempt in a list.
+Mem Vis (Opt): A Hash Map of frequencies and K lists for groups. Space $O(N)$.

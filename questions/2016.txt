@@ -1,0 +1,13 @@
+ID: 2016
+Problem Title: Maximum Difference Between Increasing Elements
+Brute Force Method: Nested loops comparing every single element `i` against every subsequent element `j` where `i &lt; j`.
+BF Complexity Visuals: N x N Upper Triangle Matrix
+How to Draw BF: Draw an array as both rows and columns. Cross out the bottom-left half. Every remaining cell is a calculation you have to do. $O(N^2)$.
+Optimised Pattern: Single Pass with Running Minimum (Prefix Min)
+Opt Vis. Technique: Dynamic Anchor Point Line
+Dry Run (Opt): Sweep right. Constantly update `min_value` seen so far. At each step, subtract `min_value` from the current number to see if it's the max difference.
+How to Draw (Opt): Draw the array. Keep your left finger anchored on the smallest number seen so far. Move your right finger one by one, writing the difference below.
+Opt Complexity Visuals: Single Arrow Sweep
+How to Draw Opt Complexity: Draw one continuous horizontal arrow. Time is strictly $O(N)$ as each element is visited exactly once.
+Mem Vis (BF): Call stack storing two nested loop pointers over and over. Space $O(1)$.
+Mem Vis (Opt): Two simple integer registers: one for `min_val` and one for `max_diff`. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 3043
+Problem Title: Find the Length of the Longest Common Prefix
+Brute Force Method: For every number in arr1, compare it against every number in arr2. Convert to strings and find the common prefix length.
+BF Complexity Visuals: $O(N \cdot M \cdot D)$ Nested Search
+How to Draw BF: Draw two lists of numbers. Draw lines connecting every pair. For each line, show a digit-by-digit comparison.
+Optimised Pattern: Prefix Hash Set / Trie
+Opt Vis. Technique: Prefix Tree (Trie) / Set Search
+Dry Run (Opt): Iterate through arr1 and store every possible prefix of every number in a Hash Set. Then, iterate through arr2 and check if its prefixes exist in the set.
+How to Draw (Opt): Draw a number. Write all its prefixes (e.g., 123 -&gt; "1", "12", "123"). Put them into a "Vault" (Set). For numbers in the second list, check their prefixes against the vault.
+Opt Complexity Visuals: $O((N + M)$ * D) Linear-ish
+How to Draw Opt Complexity: Draw two separate passes. Pass 1: "Insert Prefixes". Pass 2: "Search Prefixes". Each takes $O(\text{total digits})$.
+Mem Vis (BF): Millions of string slices or digit comparisons stored in the call stack.
+Mem Vis (Opt): A Hash Set storing all unique numerical prefixes encountered in the first array.

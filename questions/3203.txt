@@ -1,0 +1,13 @@
+ID: 3203
+Problem Title: Find Minimum Diameter After Merging Two Trees
+Brute Force Method: Run BFS/DFS from every node in Tree 1 and Tree 2, connect all pairs across trees, recalculate diameter each time.
+BF Complexity Visuals: Complete Bipartite Graph
+How to Draw BF: Draw two clusters of nodes. Draw a line connecting every single node in cluster A to every node in cluster B. Label as $O(N^2 \cdot M^2)$.
+Optimised Pattern: Graph Tree Diameter (2-Pass BFS/DFS)
+Opt Vis. Technique: Longest Path / Core Midpoint Highlighting
+Dry Run (Opt): Draw both trees. Trace the longest edge-to-edge path in each. Pick the exact middle nodes. Draw one single connecting line.
+How to Draw (Opt): Sketch Tree 1, highlight its diameter D1. Sketch Tree 2, highlight D2. Mark their centers. Write out max(D1, D2, ceil(D1/2) + ceil(D2/2) + 1).
+Opt Complexity Visuals: Sequential Block Diagram
+How to Draw Opt Complexity: Draw 2 sequential, non-overlapping blocks for Tree 1 passes, and 2 for Tree 2. Sum them linearly: $O(N)$ + $O(M)$ = $O(N + M)$.
+Mem Vis (BF): Heavy Adjacency Matrix representing all cross-connections.
+Mem Vis (Opt): Two compact Adjacency Lists and a single Queue structure.

@@ -1,0 +1,13 @@
+ID: 2935
+Problem Title: Maximum Strong Pair XOR II
+Brute Force Method: Nested loops (TLE due to N=50,000 constraint).
+BF Complexity Visuals: Massive Quadratic Grid
+How to Draw BF: Draw a grid of 50,000 x 50,000. Label it "TIME LIMIT EXCEEDED" in red.
+Optimised Pattern: Sliding Window + Binary Trie
+Opt Vis. Technique: Moving Window over a Trie
+Dry Run (Opt): Sort array. Move a window `[L, R]` such that `nums[R] &lt;= 2 * nums[L]`. Add `nums[R]` to Trie. As `L` moves, remove `nums[L]` from Trie. Query Trie for max XOR.
+How to Draw (Opt): Draw a sorted array. Draw a sliding bracket. To the side, draw a Binary Trie where nodes are added/removed as the bracket slides.
+Opt Complexity Visuals: N log(MaxVal) Operations
+How to Draw Opt Complexity: Draw a line of length N. For each point, draw a path down a tree of height 20 (bits). Total $O(N \cdot 20)$.
+Mem Vis (BF): Quadratic pair storage.
+Mem Vis (Opt): A Binary Trie structure. Space $O(N \cdot 20)$ or $O(N)$ with compression.

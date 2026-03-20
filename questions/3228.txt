@@ -1,0 +1,13 @@
+ID: 3228
+Problem Title: Maximum Number of Operations to Move Ones to the End
+Brute Force Method: Iteratively find the first "10" pattern, convert it to "01", and repeat from the beginning until no "10" exists. $O(N^2)$.
+BF Complexity Visuals: Shifting Array Timeline
+How to Draw BF: Draw the array. Find "10", erase, write "01". Redraw the entire array. Repeat. Show the cascading redundant work.
+Optimised Pattern: Greedy Counting / Cumulative Sum
+Opt Vis. Technique: Obstacle Jumping Graph
+Dry Run (Opt): Scan left to right. Count the number of '1's seen so far. Every time you encounter a block of '0's (following a '1'), add the current count of '1's to your total operations.
+How to Draw (Opt): Draw the array. Put a box over blocks of '1's and track the running total. Point an arrow from the '1's to the next '0', adding the running total to the final answer.
+Opt Complexity Visuals: Single Sweep Pipeline
+How to Draw Opt Complexity: Draw a straight line moving strictly left to right. Draw a small "O(1) addition" node at every '0'. Total time $O(N)$.
+Mem Vis (BF): Intermediate string creations or heavily mutated char arrays.
+Mem Vis (Opt): Two scalar integers tracking ones count and total operations (O(1) space).

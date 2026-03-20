@@ -1,0 +1,13 @@
+ID: 2136
+Problem Title: Earliest Possible Day of Full Bloom
+Brute Force Method: Try every single permutation of planting orders and calculate the max bloom day for each.
+BF Complexity Visuals: Factorial explosion of timelines.
+How to Draw BF: Draw 3 flowers. Map out 3! (6) different timelines of planting them, picking the one that ends soonest. $O(N!)$.
+Optimised Pattern: Greedy + Sorting.
+Opt Vis. Technique: A Gantt chart with overlapping task bars.
+Dry Run (Opt): Sort by `growTime` descending. Keep a running sum of `plantTime`. For each flower, `bloomDay = currentPlantTime + growTime`. Track the absolute maximum `bloomDay`.
+How to Draw (Opt): Draw horizontal bars. Red for planting (must be sequential), Green for growing (can overlap). Place the longest green bars first to let them grow while you plant the rest.
+Opt Complexity Visuals: $O(N \log N)$ sorting + $O(N)$ scan.
+How to Draw Opt Complexity: A funnel sorting the items, then a single straight horizontal line adding up the days.
+Mem Vis (BF): $O(N!)$ recursive stack frames.
+Mem Vis (Opt): $O(N)$ array of objects/indices to facilitate sorting.

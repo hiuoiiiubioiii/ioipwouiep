@@ -1,0 +1,13 @@
+ID: 257
+Problem Title: Binary Tree Paths
+Brute Force Method: Traverse the tree and for every leaf found, perform a full back-traversal to the root to build the string.
+BF Complexity Visuals: Repeated Path Ascent: $O(N^2)$ (in skewed trees).
+How to Draw BF: Draw a tree. For every leaf, draw an arrow back up to the root. The sum of all arrows represents the quadratic complexity.
+Optimised Pattern: DFS with Backtracking / String Builder
+Opt Vis. Technique: Pre-Order Traversal Ribbon
+Dry Run (Opt): Pass the current path string down to children. When a leaf is reached, add the string to the result list.
+How to Draw (Opt): Draw a tree. Trace a line down the leftmost path. At each node, write the path "1-&gt;2". When moving back up, erase/pop the last node from your mental path list.
+Opt Complexity Visuals: Node-Visit Timeline: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a single line visiting every node once. Mark $O(L)$ for string creation at leaves (L = path length). Total is $O(N)$ nodes.
+Mem Vis (BF): Multiple full string copies in memory.
+Mem Vis (Opt): Recursion Stack + Path List: Draw a vertical stack where each frame holds a reference to the same growing path array.

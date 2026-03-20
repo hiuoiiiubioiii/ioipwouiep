@@ -1,0 +1,13 @@
+ID: 3410
+Problem Title: Maximize Subarray Sum After Removing All Occurrences of One Element
+Brute Force Method: For every unique element, create a copy of the array with that element removed, then run Kadane's algorithm. (O(N x K))
+BF Complexity Visuals: Multi-Array Linear Scans.
+How to Draw BF: Draw the original array. Below it, draw N smaller arrays, each missing a specific number, with an arrow running across each one.
+Optimised Pattern: Segment Tree (Point Updates) tracking Max Subarray Sum or DP Prefix mapping. (O(N log N))
+Opt Vis. Technique: Segment Tree Node bubbling.
+Dry Run (Opt): Group indices by value. For a target value, update its tree leaves to 0. Bubble up the `maxSubarray` state to the root. Check root. Restore leaves.
+How to Draw (Opt): Draw a binary tree. Point to specific leaf nodes (occurrences of 'X'), cross them out, and draw upward arrows updating the parent nodes' max sum.
+Opt Complexity Visuals: Tree Height Traversal.
+How to Draw Opt Complexity: Draw N operations, each traveling up a tree path of height log N, bounding the time cleanly.
+Mem Vis (BF): N separate arrays held in memory for testing permutations.
+Mem Vis (Opt): A 1D array of size 4N representing the Segment Tree structure.

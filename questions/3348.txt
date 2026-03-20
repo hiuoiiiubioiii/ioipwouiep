@@ -1,0 +1,13 @@
+ID: 3348
+Problem Title: Smallest Divisible Digit Product II
+Brute Force Method: Check every string lexicographically larger than num, calculate its digit product, and check divisibility by t.
+BF Complexity Visuals: Lexicographical Tree Path
+How to Draw BF: Draw a tree of all possible numbers. Start from num and follow every right-hand branch. The tree is effectively infinite.
+Optimised Pattern: Greedy + Backtracking + Prime Factorization
+Opt Vis. Technique: Factor-Filling Slots
+Dry Run (Opt): Factorize t into 2s, 3s, 5s, and 7s. Starting from the end of num, try to increment a digit and fill the remaining suffixes with the minimum digits needed to satisfy the remaining factors of t.
+How to Draw (Opt): Write num. At a certain digit, change it to something higher. Calculate the "missing" factors. Draw empty slots and fill them with the smallest digits (like 9s then 8s) that cover those factors.
+Opt Complexity Visuals: Depth-Limited Backtrack
+How to Draw Opt Complexity: Draw a tree with depth N. Show the search "pruning" early when factors cannot be satisfied. $O(N x \text{const})$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): A recursive stack of depth N, plus a small frequency array for prime factors of t.

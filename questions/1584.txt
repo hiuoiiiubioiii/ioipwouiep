@@ -1,0 +1,13 @@
+ID: 1584
+Problem Title: Min Cost to Connect All Points
+Brute Force Method: Generate all possible spanning trees and calculate the total weight of each. $O(\\text{text}{\text{Exponential}})$.
+BF Complexity Visuals: Factorial Tree Growth
+How to Draw BF: Draw all points. Draw every possible line between them. Try to find every possible set of lines that connects all points without cycles. The number of trees is massive.
+Optimised Pattern: Graph (Prim's or Kruskal's MST)
+Opt Vis. Technique: The Greedy Bridge Expansion
+Dry Run (Opt): Use Prim’s: Start with one point. Always pick the closest point that isn't connected yet and add it to the set. Use a Min-Heap to quickly find the next closest edge.
+How to Draw (Opt): Draw the points. Circle the first point. Find the shortest line from that circle to any outside point. Draw the line and extend the circle. Repeat until all points are inside one giant circle.
+Opt Complexity Visuals: Heap-Optimized Prim's $O(E \log V)$ or $O(V^2)$
+How to Draw Opt Complexity: Draw a line of length V. Above each step, draw a tiny tree height \log V (heap operations). Since the graph is dense (E = V^2), $O(V^2)$ Prim's is actually faster.
+Mem Vis (BF): Full edge list or adjacency matrix. $O(V^2)$.
+Mem Vis (Opt): Min-Heap and `dist` array. $O(V)$ or $O(E)$ space.

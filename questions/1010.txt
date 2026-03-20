@@ -1,0 +1,13 @@
+ID: 1010
+Problem Title: Pairs of Songs With Total Durations Divisible by 60
+Brute Force Method: Compare every single song with every other song in a nested loop. Check if `(song1 + song2) % 60 == 0`.
+BF Complexity Visuals: A complete web of lines connecting every item in an array to every other item (N^2 connections).
+How to Draw BF: Draw an N x N matrix grid. Cross out the diagonal. Shade the top right triangle to show unique pairs evaluated. Write $O(N^2)$.
+Optimised Pattern: Hash Map / Frequency Array (Modulo Arithmetic).
+Opt Vis. Technique: 60 distinct buckets (numbered 0 to 59). Items drop in, and specific buckets are "paired" via an invisible wire.
+Dry Run (Opt): Take a song length, modulo 60. Drop it in that bucket. Immediately look at the complementary bucket `(60 - modulo) % 60` and add its count to your total.
+How to Draw (Opt): Draw a row of 60 boxes. Write tally marks in them. Draw connecting arches between box 1 and 59, 2 and 58, etc. Special circles on box 0 and 30.
+Opt Complexity Visuals: A single pass linear scan dropping items into fixed-size bins.
+How to Draw Opt Complexity: Draw an array, with one straight arrow sweeping left to right. Write $O(N)$ Time.
+Mem Vis (BF): Conceptually carrying no extra space, just $O(1)$ pointers.
+Mem Vis (Opt): A rigidly sized 60-element integer array. Visually represents true $O(1)$ space constraint regardless of N.

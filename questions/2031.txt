@@ -1,0 +1,13 @@
+ID: 2031
+Problem Title: Count Subarrays With More Ones Than Zeros
+Brute Force Method: Nested loops generating every possible subarray, counting 1s and 0s from scratch every time. $O(N^3)$ or $O(N^2)$.
+BF Complexity Visuals: Overlapping Subarray Pyramids
+How to Draw BF: Draw the array. Draw brackets for size 1, then size 2 overlapping, etc. Shade the repetitive counting logic happening inside every bracket.
+Optimised Pattern: Prefix Sum + Binary Indexed Tree (Fenwick) / Merge Sort
+Opt Vis. Technique: Prefix Sum Step Chart
+Dry Run (Opt): Convert 0s to -1s. Keep a running sum. The problem becomes finding how many previous prefix sums are strictly less than the current prefix sum. Use a BIT to query this in $O(\log N)$.
+How to Draw (Opt): Draw a line chart of the prefix sum going up and down. For every point, cast a horizontal ray to the left. Count how many points lie strictly below this ray.
+Opt Complexity Visuals: Logarithmic Accumulation Sweep
+How to Draw Opt Complexity: Draw an array sweep (O(N)). At each step, draw a small binary tree traversal upwards to represent the $O(\log N)$ Fenwick Tree update/query. Total $O(N \log N)$.
+Mem Vis (BF): Countless temporary subarray arrays or nested variable states constantly overwriting.
+Mem Vis (Opt): A single Fenwick Tree (1D array of size 2N+1 shifted to handle negative indices). Space $O(N)$.

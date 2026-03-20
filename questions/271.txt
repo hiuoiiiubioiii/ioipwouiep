@@ -1,0 +1,13 @@
+ID: 271
+Problem Title: Encode and Decode Strings
+Brute Force Method: Join strings using a special character (e.g., ",") and split them later. (Fails if strings contain the delimiter).
+BF Complexity Visuals: Flat Scan: $O(N)$.
+How to Draw BF: Draw a series of boxes. Put a "," between them. Show how a box containing a "," breaks the logic.
+Optimised Pattern: Chunked Transfer (Length + Delimiter)
+Opt Vis. Technique: Encoded Frame Ribbon
+Dry Run (Opt): Prepend each string with its length and a '#' (e.g., "5#hello"). When decoding, read the number, skip the '#', and take exactly that many chars.
+How to Draw (Opt): Draw "hello", "hi". Transform into "5#hello2#hi". Draw a sliding window that reads '5', jumps over '#', and grabs 5 characters.
+Opt Complexity Visuals: Single Linear Pass: $O(N)$.
+How to Draw Opt Complexity: Draw a timeline. Show the "Jump" logic where you skip the content and only process headers to find indices.
+Mem Vis (BF): Full String Buffer: $O(N)$.
+Mem Vis (Opt): Zero Extra Structure: Logic resides in the string format itself. Draw a single long string buffer.

@@ -1,0 +1,13 @@
+ID: 406
+Problem Title: Queue Reconstruction by Height
+Brute Force Method: Permutations Generate all N! line arrangements. Check each to see if the 'k' conditions hold true.
+BF Complexity Visuals: Factorial Tree
+How to Draw BF: Draw a root branching to N, then N-1, N-2, showing a massive explosion of branches $O(N!)$.
+Optimised Pattern: Sort + Insert Sort descending by height (h), then ascending by (k). Insert people into a list at index k.
+Opt Vis. Technique: Cutting in Line
+Dry Run (Opt): Line up the tallest people first. Shorter people then "cut in" at their exact 'k' index without blocking the tall people.
+How to Draw (Opt): Draw boxes representing people (h, k). Draw the tallest array first. Draw arrows showing shorter boxes wedging between existing ones.
+Opt Complexity Visuals: Sort + Shift
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block. Beside it, draw a right triangle representing $O(N^2)$ array element shifts during insertion.
+Mem Vis (BF): N! Arrays Massive grid of all possible arrays.
+Mem Vis (Opt): Dynamic Array One single list resizing and shifting. $O(N)$ space.

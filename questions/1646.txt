@@ -1,0 +1,13 @@
+ID: 1646
+Problem Title: Get Maximum in Generated Array
+Brute Force Method: Recursive calculation of each element `nums[i]` on-demand, leading to massive redundant calculations.
+BF Complexity Visuals: Redundant Recursion Tree
+How to Draw BF: Draw a tree where calculating `nums[10]` branches into `nums[5]`, which branches into `nums[2]`, etc., with many repeating nodes.
+Optimised Pattern: Iterative DP / Simulation
+Opt Vis. Technique: Linear Fill Sweep
+Dry Run (Opt): Loop from 1 up to `n/2`. Fill `nums[2i]` and `nums[2i+1]` using existing values. Track a `max_val` variable simultaneously.
+How to Draw (Opt): Draw an array of size n+1. Write the indices above the boxes. Fill them one by one from left to right, circling the largest number found.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a straight arrow pointing across the array from index 0 to n. $O(n)$ time.
+Mem Vis (BF): Call Stack: A deep, heavy stack of pending recursive calls.
+Mem Vis (Opt): 1D Array: A single static horizontal array holding n+1 integers.

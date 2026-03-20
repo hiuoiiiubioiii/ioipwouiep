@@ -1,0 +1,13 @@
+ID: 2224
+Problem Title: Minimum Number of Operations to Convert Time
+Brute Force Method: BFS Shortest PathTreat the start time as a node. Generate neighbors by adding 1, 5, 15, and 60 minutes. Run a Breadth-First Search to find the shortest path to the goal time.
+BF Complexity Visuals: Exploding Time Graph
+How to Draw BF: Draw a starting clock. Branch into 4 new clocks (+1, +5, +15, +60). Branch those again. Highlight the shortest path to the target time.
+Optimised Pattern: Greedy Subtraction
+Opt Vis. Technique: Coin Change / Cascade Subtraction
+Dry Run (Opt): Convert both times to total minutes. Find the difference. Greedily divide by 60, take the remainder. Divide by 15, take remainder, then 5, then 1. Add the quotients together.
+How to Draw (Opt): Draw a bucket of "Total Difference" minutes. Draw 4 sieves of sizes 60, 15, 5, 1. Pour the minutes through the 60 sieve, count what falls through. Pass the remainder to 15, and so on.
+Opt Complexity Visuals: Constant Step Cascade
+How to Draw Opt Complexity: Draw a flow chart with exactly 4 steps: `diff / 60`, `diff / 15`, `diff / 5`, `diff / 1`. Write $O(1)$ overall since the operations are fixed regardless of the input size.
+Mem Vis (BF): A massive BFS Queue storing hundreds of minute states and a visited set.
+Mem Vis (Opt): A single integer representing the `minute_difference`, updated sequentially (O(1) space).

@@ -1,0 +1,13 @@
+ID: 2286
+Problem Title: Booking Concert Tickets in Groups
+Brute Force Method: For every booking, linearly scan rows from 0 to N, summing available seats. $O(N)$ per query rightarrow $O(Q \cdot N)$.
+BF Complexity Visuals: Row-by-Row Search Grid
+How to Draw BF: Draw a theater. For every group, draw an arrow scanning row 1, then row 2, etc., until enough seats are found.
+Optimised Pattern: Segment Tree (Range Sum &amp; Max)
+Opt Vis. Technique: The Hierarchical Theater Sections
+Dry Run (Opt): Use a Segment Tree to track both the `max_available` seats in any row of a range, and the `sum_available` seats in a range. This allows finding a row for `gather` in $O(\log N)$ and allocating `scatter` in $O(\log N)$.
+How to Draw (Opt): Draw the rows at the bottom. Draw a binary tree above them. Each node stores the max and sum of its children. To find 5 seats together, walk down the tree guided by the `max` value.
+Opt Complexity Visuals: Logarithmic Query/Update $O(Q \log N)$
+How to Draw Opt Complexity: Draw a timeline of Q queries. Above each, draw a tree traversal of height log N.
+Mem Vis (BF): Storing full row states with no metadata.
+Mem Vis (Opt): A Segment Tree array of size 4N. $O(N)$ space.

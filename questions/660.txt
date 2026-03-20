@@ -1,0 +1,13 @@
+ID: 660
+Problem Title: Remove 9
+Brute Force Method: Count numbers from 1 upwards, skipping any number that contains the digit '9', until you reach the n-th valid number.
+BF Complexity Visuals: Linear Scan with String Checks.
+How to Draw BF: Draw a counter. Check "1", "2"... "9" (Skip!). "10"... Write $O(N \cdot \log N)$.
+Optimised Pattern: Base-9 Conversion.
+Opt Vis. Technique: Numeral System Mapping.
+Dry Run (Opt): Removing the digit 9 effectively turns the decimal system (Base 10) into a Nonary system (Base 9). The n-th number is simply `n` converted to Base 9.
+How to Draw (Opt): Write the number N. Perform long division by 9 repeatedly. Keep the remainders. Read them bottom-to-top.
+Opt Complexity Visuals: Logarithmic time (number of digits in N).
+How to Draw Opt Complexity: Draw a division ladder. Write $O(\log N)$.
+Mem Vis (BF): Draw a list of all numbers ever scanned.
+Mem Vis (Opt): Draw a small string or list to hold the Base-9 digits. $O(1)$ relative to magnitude.

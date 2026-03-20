@@ -1,0 +1,13 @@
+ID: 16
+Problem Title: 3Sum Closest
+Brute Force Method: Generate All Triplets Use three nested loops to find all sums and track the one with the minimum absolute difference to the target.
+BF Complexity Visuals: 3D Cube + Min Tracker
+How to Draw BF: Draw three nested rotating gears. Draw a side box holding `closest_sum`. Update it every time a new gear combo produces a smaller `abs(target - sum)`.
+Optimised Pattern: Sort + Anchor &amp; Squeeze
+Opt Vis. Technique: The Magnetic Pointers
+Dry Run (Opt): Sort the array. Pin pointer 'i'. Move L and R inward just like 3Sum, but instead of looking for exactly 0, you move L right if sum &lt; target, and R left if sum &gt; target.
+How to Draw (Opt): Draw a sorted array. Pin 'i'. Place L and R. Write the `target`. Draw arrows pulling L or R inward trying to get the sum magnetically closer to the target value.
+Opt Complexity Visuals: N * (Squeezing Line)
+How to Draw Opt Complexity: Draw an outer loop representing 'i' (O(N)). Inside, draw a straight line for the L/R squeeze (O(N)). Total time is $O(N²)$.
+Mem Vis (BF): $O(1)$ space, but $O(N³)$ time makes it unusable.
+Mem Vis (Opt): Draw a single `closest_sum` integer variable. Space is $O(1)$ or $O(N)$ depending purely on the sorting algorithm.

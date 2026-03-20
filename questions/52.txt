@@ -1,0 +1,13 @@
+ID: 52
+Problem Title: N-Queens II
+Brute Force Method: N-Queens I + Result List Use the exact same code as Q51 to generate all full board layouts, then simply return the size of the final list.
+BF Complexity Visuals: The Memory Waster
+How to Draw BF: Draw the solver from Q51. Show it building full 2D string arrays just to count them. Highlight the unnecessary memory allocation for strings.
+Optimised Pattern: Backtracking (Counter Only)
+Opt Vis. Technique: The Invisible Board
+Dry Run (Opt): Same logic as Q51, but instead of building a 2D grid of strings, just increment a single `count` variable whenever a valid placement reaches the last row.
+How to Draw (Opt): Draw a simple "counter" box next to a backtracking tree. Every time a "Leaf" node is reached (success), show the counter incrementing `+1`. No board is drawn.
+Opt Complexity Visuals: Pruned Decision Tree
+How to Draw Opt Complexity: Identical to Q51. Time is $O(N!)$. The visualization shows that the branching factor reduces as queens are placed.
+Mem Vis (BF): $O(N²)$ space to store the full list of N×N boards (strings).
+Mem Vis (Opt): Draw only the recursion stack and the 3 conflict-tracking arrays. Space is $O(N)$, significantly lighter than Q51.

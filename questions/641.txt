@@ -1,0 +1,13 @@
+ID: 641
+Problem Title: Design Circular Deque
+Brute Force Method: Using a dynamic list/array where `insertFront` and `deleteFront` trigger a full `O(N)` shift of all elements.
+BF Complexity Visuals: Repetitive shifting "domino effect."
+How to Draw BF: Draw an array. Add a number at index 0. Draw arrows for every subsequent number moving one spot right. $O(N)$.
+Optimised Pattern: Circular Buffer / Fixed-size Array with Head/Tail Pointers.
+Opt Vis. Technique: Endless Loop / Ring Road.
+Dry Run (Opt): Maintain `front` and `rear` pointers. `front = (front - 1 + k) % k` for inserting at front. `rear = (rear + 1) % k` for inserting at back. Space is always full when `(rear + 1) % k == front`.
+How to Draw (Opt): Draw a circle divided into K segments. Draw 'F' and 'R' arrows. Move 'F' counter-clockwise and 'R' clockwise. Show how they never "cross" unless the buffer is empty.
+Opt Complexity Visuals: Constant time jumps for all operations.
+How to Draw Opt Complexity: Draw a single dot for each action (Insert/Delete). Label it $O(1)$.
+Mem Vis (BF): Draw a memory block that resizes and shifts data constantly.
+Mem Vis (Opt): Draw a static array block of size K. No movement of data, only movement of pointers.

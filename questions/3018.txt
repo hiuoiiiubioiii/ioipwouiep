@@ -1,0 +1,13 @@
+ID: 3018
+Problem Title: Maximum Number of Removal Queries That Can Be Processed I
+Brute Force Method: Recursively try both options: process the query by taking the left element, and branch again by taking the right element.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw the root array. Draw two branches splitting downwards: "Remove Left" and "Remove Right", tracking the query index. Shows $O(2^Q)$ explosion.
+Optimised Pattern: 2D Dynamic Programming (Interval DP)
+Opt Vis. Technique: Shrinking Matrix Table
+Dry Run (Opt): Use a DP table where row `i` and col `j` represent the remaining array `nums[i...j]`. If the left element matches the query, move down. If the right matches, move left. Take the max valid path.
+How to Draw (Opt): Draw a 2D grid. The top-right cell represents the full array `(0, n-1)`. Draw arrows moving strictly Down (picking left) or Left (picking right), filling cells with the max queries matched.
+Opt Complexity Visuals: $O(N^2)$ Matrix Fill
+How to Draw Opt Complexity: Draw a grid highlighting only the upper triangle, showing the $O(N^2)$ state space being filled iteratively.
+Mem Vis (BF): Exponential Call Stack frames holding array indices and query pointers.
+Mem Vis (Opt): A 2D DP Array `dp[left_index][right_index]` caching overlapping subproblems.

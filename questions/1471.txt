@@ -1,0 +1,13 @@
+ID: 1471
+Problem Title: The k Strongest Values in an Array
+Brute Force Method: Sort the array to find the median. Calculate the "strength" of every element (|arr[i] - median|). Sort the entire array again based on these custom strength values and pick the top K.
+BF Complexity Visuals: Double Sorting Pipeline
+How to Draw BF: Draw an array. Sort it. Find the middle element. Draw a second array of the same size with subtracted values. Sort that second array. Label $O(N \log N)$.
+Optimised Pattern: Sorting + Two-Pointer
+Opt Vis. Technique: Outward Distance Convergence
+Dry Run (Opt): Sort to find median. Since the strongest values are those furthest from the median, they must be at the very ends of the sorted array. Use two pointers (left and right) to pick the stronger of the two until K elements are found.
+How to Draw (Opt): Draw a sorted array. Place pointers at the leftmost and rightmost elements. Compare their distances to the median (middle). Pick the winner, move that pointer inward, and repeat K times.
+Opt Complexity Visuals: Sorting Bottleneck + Linear Selection
+How to Draw Opt Complexity: Draw $O(N \log N)$ Sort rightarrow $O(K)$ Two-Pointer selection. Total $O(N \log N)$.
+Mem Vis (BF): Duplicate Strength Array
+Mem Vis (Opt): A single sorted version of the input array. Space $O(\log N)$ or $O(N)$ depending on sort implementation.

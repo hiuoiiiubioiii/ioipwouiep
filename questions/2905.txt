@@ -1,0 +1,13 @@
+ID: 2905
+Problem Title: Find Indices With Index and Value Difference II
+Brute Force Method: Nested for-loops comparing every pair (i, j). (Will TLE here due to constraints).
+BF Complexity Visuals: Upper Triangular Matrix
+How to Draw BF: Draw a massive N x N grid (N=10^5) and shade it red to signify Time Limit Exceeded (N^2 ops).
+Optimised Pattern: Two Pointers + Prefix Min/Max Tracking
+Opt Vis. Technique: Separated Window pointers
+Dry Run (Opt): Identical to 2903, but visually emphasize that prefix min/max are tracked *strictly* at index `i - indexDiff`.
+How to Draw (Opt): Draw array. Circle the element at `i`. Circle elements from `0` to `i-diff`, drawing a funnel combining them into a `min_val` box.
+Opt Complexity Visuals: Single Horizontal Axis Traverse
+How to Draw Opt Complexity: Write T(N) = N. Draw one loop timeline. Show that looking up the max/min of the valid window is $O(1)$.
+Mem Vis (BF): Standard nested loop counters.
+Mem Vis (Opt): Standalone register boxes: `min_val`, `max_val`, `min_id`, `max_id`. Space strictly $O(1)$.

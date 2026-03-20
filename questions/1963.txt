@@ -1,0 +1,13 @@
+ID: 1963
+Problem Title: Minimum Number of Swaps to Make the String Balanced
+Brute Force Method: Generate all permutations of swaps and use recursion to find the shortest path to a balanced state.
+BF Complexity Visuals: State-Space BFS Tree
+How to Draw BF: Draw a tree where each node is a string version and edges are swaps. Tree grows exponentially. $O(N!)$.
+Optimised Pattern: Greedy "Unbalanced" Counter
+Opt Vis. Technique: Stack-Based Cancellation (Logical)
+Dry Run (Opt): Traverse the string. Track "open" brackets. If you see a "close" and `open &gt; 0`, decrement `open`. Otherwise, it's an "imbalance". Result is `(imbalance + 1) / 2`.
+How to Draw (Opt): Draw a "Balance" scale. Add 1 for `[` and subtract 1 for `]`. If scale goes negative, note the "max dip".
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw one straight line across the bracket sequence. $O(N)$ time.
+Mem Vis (BF): A massive queue/set for BFS to track visited string states.
+Mem Vis (Opt): Two integer variables: `open_count` and `swaps`. $O(1)$ extra space.

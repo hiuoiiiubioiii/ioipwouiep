@@ -1,0 +1,13 @@
+ID: 3425
+Problem Title: Longest Special Path
+Brute Force Method: Run DFS from every single node. For each path, check if all node values are unique using a Set. $O(N^2)$
+BF Complexity Visuals: N-rooted DFS Tree Forest.
+How to Draw BF: Draw the graph N times. In each copy, highlight a different node as the root and draw arrows exploring all paths from it.
+Optimised Pattern: DFS with Sliding Window on Tree Paths + Hash Map. $O(N)$
+Opt Vis. Technique: Path Deque with Ancestor Value Mapping.
+Dry Run (Opt): Traverse DFS. Keep a map of "Value -&gt; Last Depth Seen". If current value exists in map at depth D, the special path must start below D.
+How to Draw (Opt): Draw a tree. Draw a vertical line next to the current path. Mark indices on the line and arrows jumping to previous occurrences of values.
+Opt Complexity Visuals: Single Global DFS Traversal.
+How to Draw Opt Complexity: Draw one tree. Shade each edge and node exactly twice (on entry and exit) to show $O(N)$ total work.
+Mem Vis (BF): N separate sets created and destroyed in the heap during exploration.
+Mem Vis (Opt): One global Hash Map and one path array (acting as a manual stack) of size H (height of tree).

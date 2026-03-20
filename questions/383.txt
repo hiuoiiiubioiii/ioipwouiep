@@ -1,0 +1,13 @@
+ID: 383
+Problem Title: Ransom Note
+Brute Force Method: For every character in the ransom note, search the magazine string. If found, remove that character from the magazine so it can't be reused.
+BF Complexity Visuals: Nested Character Search with Deletion
+How to Draw BF: Draw two strings. Draw an arrow from 'a' in Note to 'a' in Magazine. Draw an 'X' over the Magazine 'a'. Repeat. Label $O(N \cdot M)$.
+Optimised Pattern: Frequency Array (Counting Sort Pattern)
+Opt Vis. Technique: Character Inventory Histogram
+Dry Run (Opt): Count the occurrences of each of the 26 characters in the magazine using an integer array. Then, iterate through the ransom note and decrement the counts. If any count drops below zero, return false.
+How to Draw (Opt): Draw a 26-slot array (a-z). Fill it with counts from the magazine. For each letter in the note, show the number in the corresponding slot "dropping" by one.
+Opt Complexity Visuals: Dual Linear Scan
+How to Draw Opt Complexity: Draw two horizontal paths (one for each string) and one small 26-slot box. Label it $O(N+M)$.
+Mem Vis (BF): Creating new strings or lists during deletions.
+Mem Vis (Opt): A fixed-size integer array of size 26. Draw a small horizontal tape with 26 slots. $O(1)$ auxiliary space.

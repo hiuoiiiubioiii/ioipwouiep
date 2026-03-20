@@ -1,0 +1,13 @@
+ID: 1709
+Problem Title: Biggest Window Between Visits (SQL)
+Brute Force Method: Self-join the table to find the immediate next visit for every user, filtering by date &gt; current date.
+BF Complexity Visuals: Cartesian Product Cross-Hatch.
+How to Draw BF: Draw table A and table B. Draw lines connecting every row in A to every row in B. Cross out invalid dates.
+Optimised Pattern: SQL Window Function: `LEAD()` over Partition.
+Opt Vis. Technique: Row-by-Row Peeking (Rolodex).
+Dry Run (Opt): Sort by user, then date. Use `LEAD(date)` to peek at the next row's date. If null, use '2021-01-01'. Subtract current from next.
+How to Draw (Opt): List dates in a column. Draw an arrow from Row 1 curving directly to Row 2 to pull its value up. Calculate diff.
+Opt Complexity Visuals: Sequential Sort and Scan.
+How to Draw Opt Complexity: Draw unsorted table -&gt; sort funnel $O(N \log N)$ -&gt; straight line scan $O(N)$.
+Mem Vis (BF): Massive intermediate joined tables (N^2 row explosions).
+Mem Vis (Opt): One extra temporary column appended next to the original column in memory. $O(N)$ space.

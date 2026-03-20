@@ -1,0 +1,13 @@
+ID: 1117
+Problem Title: Building H2O
+Brute Force Method: Unsynchronized counters. Threads check `h_count == 2` and `o_count == 1`. Highly prone to race conditions, deadlocks, and corrupted states.
+BF Complexity Visuals: Traffic Gridlock
+How to Draw BF: Draw a bottleneck where 'H' and 'O' molecules are crashing into each other, trying to pass through a gate without a traffic light.
+Optimised Pattern: Semaphores + CyclicBarrier / Phasers
+Opt Vis. Technique: Molecular Funneling
+Dry Run (Opt): H-semaphore allows 2 permits, O-semaphore allows 1. A CyclicBarrier waits for exactly 3 threads. When 3 arrive, they bond and release simultaneously.
+How to Draw (Opt): Draw a funnel with 3 slots (2 for H, 1 for O). Drop "tokens" in. Once all 3 slots are full, draw a water droplet falling out the bottom, and reset the slots.
+Opt Complexity Visuals: Batch Processing Timeline
+How to Draw Opt Complexity: Draw groups of 3 blocks aligning perfectly on a timeline before proceeding. $O(N)$ time scaling linearly with molecules.
+Mem Vis (BF): Unbounded thread wait-queues causing memory leaks
+Mem Vis (Opt): Semaphore permits (Int counters) and a Barrier Lock Object.

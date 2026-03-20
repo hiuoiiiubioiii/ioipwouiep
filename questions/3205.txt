@@ -1,0 +1,13 @@
+ID: 3205
+Problem Title: Maximum Array Hopping Score I
+Brute Force Method: DFS/Backtracking to try all possible jump combinations from start to end.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a tree starting at index 0. Branch out to indices 1, 2, ..., N. From each, branch out again. Label leaves to show $O(2^N)$ paths.
+Optimised Pattern: 1D Dynamic Programming / Greedy
+Opt Vis. Technique: Jump Progression Timeline
+Dry Run (Opt): Draw the array. Put a token at index 0. Look ahead to find the max reachable score, draw an arc landing there. Repeat.
+How to Draw (Opt): Draw an array. Point an arrow from a cell to a future cell and write the computed `score + max_future_score` above it.
+Opt Complexity Visuals: Linear Scan / 1D DP Array
+How to Draw Opt Complexity: Draw an array of length N. Draw a finger sweeping strictly left-to-right once, assigning $O(1)$ ops per step. $O(N)$ total.
+Mem Vis (BF): Deep call stack (O(N) depth) storing thousands of recursive frames.
+Mem Vis (Opt): A single DP array of size N (O(N) space) or variable tracking (O(1)).

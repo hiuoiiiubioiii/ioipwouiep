@@ -1,0 +1,13 @@
+ID: 821
+Problem Title: Shortest Distance to a Character
+Brute Force Method: For every index i, loop through the entire string to find all occurrences of character C, calculate distances, and take the minimum.
+BF Complexity Visuals: Radial Scan from every point. $O(N^2)$ time.
+How to Draw BF: Draw a string. At each index, draw arrows pointing to every 'C' in the string. Repeat N times. The arrows overlap so much it becomes a blur.
+Optimised Pattern: Two-Pass Min-Sweep (Left-to-Right + Right-to-Left).
+Opt Vis. Technique: Shadows from Streetlights.
+Dry Run (Opt): Imagine 'C' is a streetlight. Walk Left to Right: record distance from the last light seen. Walk Right to Left: record distance from the next light. For each spot, keep the shorter distance.
+How to Draw (Opt): Draw the string. Sweep a pen left to right, writing distances (0, 1, 2, 0...). Sweep right to left, writing distances (2, 1, 0, 0...). Circle the smaller number in each column.
+Opt Complexity Visuals: Double Linear Pass. $O(N)$ time.
+How to Draw Opt Complexity: Draw two parallel straight lines, one left-facing and one right-facing, spanning the length of the string.
+Mem Vis (BF): Multiple temporary distance lists: Draw overlapping arrays for each independent scan.
+Mem Vis (Opt): One Result Array: Draw a single 1D strip of N boxes being updated in place. $O(1)$ extra space excluding result.

@@ -1,0 +1,13 @@
+ID: 2449
+Problem Title: Minimum Number of Operations to Make Arrays Similar
+Brute Force Method: Recursively try +/- 2 on every element to match the target array. $O(\text{Exponential})$.
+BF Complexity Visuals: Exploding +/- 2 Tree
+How to Draw BF: Draw a number. Branch it up by 2 and down by 2 infinitely until it hits a target.
+Optimised Pattern: Sorting + Parity Segregation
+Opt Vis. Technique: The Odd/Even Parallel Tracks
+Dry Run (Opt): Since you can only add/sub 2, evens stay even, odds stay odd. Split both arrays into Odd and Even lists. Sort all 4 lists. Compare them index by index, summing positive differences and dividing by 2.
+How to Draw (Opt): Draw two funnels: "Evens" and "Odds". Pour nums inside. Sort them. Draw straight horizontal lines connecting `sorted_nums[i]` to `sorted_target[i]`.
+Opt Complexity Visuals: Sorting Bottleneck $O(N \log N)$
+How to Draw Opt Complexity: Draw a merge-sort tree, followed by two parallel linear scans.
+Mem Vis (BF): Deep recursive stack.
+Mem Vis (Opt): Two separate arrays for Odds and Evens. $O(N)$ space.

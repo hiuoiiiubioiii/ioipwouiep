@@ -1,0 +1,13 @@
+ID: 2870
+Problem Title: Minimum Number of Operations to Make Array Empty
+Brute Force Method: Try every combination of removing 2 or 3 identical elements. Use backtracking to find the path that empties the array in the fewest steps.
+BF Complexity Visuals: Greedy vs. Backtracking Tree
+How to Draw BF: For a count of 10, draw branches for -2 and -3. Show the tree searching for the shortest path to 0.
+Optimised Pattern: Frequency Counting + Greedy Math
+Opt Vis. Technique: Remainder Pattern Mapping
+Dry Run (Opt): Count frequencies of all numbers. For each frequency f: if f=1, return -1. Otherwise, the number of operations is ceil(f / 3). This handles cases like 4 (2+2) and 5 (3+2) optimally.
+How to Draw (Opt): List the unique numbers and their counts. For each count, try to divide by 3. If there's a remainder of 1 or 2, you just need one extra step (e.g., 7 is 3+2+2, 3 steps). Total the steps.
+Opt Complexity Visuals: Linear Pass + Hash Map $O(N)$
+How to Draw Opt Complexity: Draw a box for counting frequencies $O(N)$ and a tiny box for the math $O(\text{Unique Elements})$. Total $O(N)$.
+Mem Vis (BF): Visualize an exponential search tree for each unique number's count.
+Mem Vis (Opt): Visualize a Hash Map or Frequency Array. Space $O(N)$.

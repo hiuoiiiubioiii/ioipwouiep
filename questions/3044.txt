@@ -1,0 +1,13 @@
+ID: 3044
+Problem Title: Most Frequent Prime
+Brute Force Method: For every cell, travel in all 8 directions. Build numbers digit by digit, convert to integer, and check primality using a basic loop for every single number formed.
+BF Complexity Visuals: Radial Star Search
+How to Draw BF: Draw an 8-way arrow star from a central cell. Label it $O(M \cdot N \\text{cdot max}(M,N)$ * √Value).
+Optimised Pattern: Directional Ray Casting + Primality Sieve
+Opt Vis. Technique: Vector Ray Tracing
+Dry Run (Opt): Iterate grid. For each direction vector (dr, dc), update num = num * 10 + grid[r][c]. If num &gt; 10, check against a precomputed Sieve or a fast primality test.
+How to Draw (Opt): Draw the grid. From one cell, draw a straight arrow in one direction. Write the growing number next to the arrow. Circle it if it's prime.
+Opt Complexity Visuals: Linear Matrix Scan
+How to Draw Opt Complexity: Draw a nested loop for the grid, an inner loop for direction (constant 8), and a ray length loop. Total $O(M \cdot N \\text{cdot max}(M,N)$).
+Mem Vis (BF): Many temporary string allocations for number building.
+Mem Vis (Opt): A Frequency Hash Map int -&gt; int and a boolean isPrime array (Sieve).

@@ -1,0 +1,13 @@
+ID: 1737
+Problem Title: Change Minimum Characters to Satisfy Condition
+Brute Force Method: Try changing both strings to every possible character 'a'-'z' and check all three conditions for each.
+BF Complexity Visuals: Character Permutation Grid.
+How to Draw BF: Draw a 26x3 matrix. For each cell, simulate the entire string change. $O(26 \cdot (N+M)$).
+Optimised Pattern: Prefix Sums + Frequency Maps.
+Opt Vis. Technique: Histogram Sliding Barrier.
+Dry Run (Opt): Count char frequencies for A and B. Use prefix sums to find how many chars are ≤ 'c'. The cost to make A &lt; B at pivot 'c' is `(A &gt; c) + (B ≤ c)`.
+How to Draw (Opt): Draw two bar charts (A and B). Draw a vertical line between 'c' and 'c+1'. Shifting the line calculates cost in $O(1)$.
+Opt Complexity Visuals: Fixed-Width Alphabet Scan.
+How to Draw Opt Complexity: Draw an arrow over a 26-slot array. Label $O(26 + N + M)$.
+Mem Vis (BF): None, just sum variables.
+Mem Vis (Opt): Two arrays of size 26. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2657
+Problem Title: Find the Prefix Common Array of Two Arrays
+Brute Force Method: For every index `i`, use nested loops to check how many elements in `A[0...i]` exist in `B[0...i]`.
+BF Complexity Visuals: Nested Prefix Intersection
+How to Draw BF: Draw two arrays. For each prefix, draw lines comparing every element. $O(N^3)$ or $O(N^2)$ with sets.
+Optimised Pattern: Frequency Map / Bitset (Single Pass)
+Opt Vis. Technique: Parallel Frequency Counters
+Dry Run (Opt): Iterate through both arrays simultaneously. Use a frequency array to track occurrences. When a number's count hits 2, it's "common." Update a running count.
+How to Draw (Opt): Draw arrays A and B. Below them, draw a frequency array. As you move right, increment counts for `A[i]` and `B[i]`. If a count hits 2, increment your "common" tracker.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a single pass arrow over the length of the arrays. $O(N)$.
+Mem Vis (BF): Nested sub-arrays for intersection
+Mem Vis (Opt): $O(N)$ frequency array or Set.

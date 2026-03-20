@@ -1,0 +1,13 @@
+ID: 453
+Problem Title: Minimum Moves to Equal Array Elements
+Brute Force Method: Simulation Increment n-1 elements in each step until all are equal. (Too slow for large differences).
+BF Complexity Visuals: Incremental Stairs
+How to Draw BF: Draw a bar chart. In each step, n-1 bars grow by 1. Show the slow, linear crawl toward equality. $O(\text{Moves} \\text{times} N)$.
+Optimised Pattern: Mathematical Reduction Incrementing n-1 elements is mathematically equivalent to decrementing 1 element. Sum up the distance of each element from the minimum.
+Opt Vis. Technique: Floor Leveling
+Dry Run (Opt): Imagine several towers. To make them equal, just find the shortest tower and "cut off" the excess from all others.
+How to Draw (Opt): Draw towers of different heights. Draw a dotted line at the height of the shortest tower. Sum the lengths of the "cut off" sections.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw one arrow finding the minimum, then one arrow summing differences. Total $O(N)$.
+Mem Vis (BF): Register One variable for the state.
+Mem Vis (Opt): Registers Two variables: `min` and `sum`. $O(1)$ space.

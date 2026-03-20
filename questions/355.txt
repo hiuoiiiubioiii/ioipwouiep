@@ -1,0 +1,13 @@
+ID: 355
+Problem Title: Design Twitter
+Brute Force Method: When `getNewsFeed()` is called, collect every single tweet from every user the person follows, sort the entire global list by timestamp, and pick the top 10.
+BF Complexity Visuals: Global Sort on Retrieval
+How to Draw BF: Draw 3 users, each with a long list of tweets. Combine them into one giant pile. Draw a "Sorting Machine" and pick 10. $O(\text{Total Tweets})$.
+Optimised Pattern: Max-Heap / K-way Merge (Pull Model)
+Opt Vis. Technique: Multi-stream Timestamp Merge
+Dry Run (Opt): Store tweets in a Map (User \rightarrow List of Tweets). When fetching feed, put the *latest* tweet from each followed user into a Max-Heap. Extract max, and push the next tweet from that specific user's list into the heap. Repeat 10 times.
+How to Draw (Opt): Draw several vertical "stacks" of tweets (most recent on top). Draw a small Max-Heap box. Show one tweet from the top of each stack being "pulled" into the heap.
+Opt Complexity Visuals: Bounded Priority Merge
+How to Draw Opt Complexity: Draw a heap of size F (number of followees). Label the operation $O(10 \cdot \log F)$.
+Mem Vis (BF): Copies of lists for sorting.
+Mem Vis (Opt): HashMap for Users \rightarrow Tweets, HashMap for Users \rightarrow Following. Draw two large tables. $O(U + T)$ where U is users and T is tweets.

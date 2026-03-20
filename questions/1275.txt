@@ -1,0 +1,13 @@
+ID: 1275
+Problem Title: Find Winner on a Tic Tac Toe Game
+Brute Force Method: After every single move, scan all 3 rows, 3 columns, and 2 diagonals from scratch to check if there is a winner.
+BF Complexity Visuals: Repeated Grid Scans
+How to Draw BF: Draw a 3x3 grid. For every move 'X' or 'O' placed, draw 8 lines through the grid to check for winners. Write $O(\text{Moves} \cdot 8)$.
+Optimised Pattern: Row/Column/Diagonal Counters
+Opt Vis. Technique: 8-Directional Vector Tally
+Dry Run (Opt): Maintain two sets of 8 counters (one for Player A, one for Player B). Counters for: 3 rows, 3 columns, and 2 diagonals. When a player moves to (r, c), increment their `rows[r]` and `cols[c]`. If r==c, increment diagonal. If r+c==2, increment anti-diagonal.
+How to Draw (Opt): Draw a grid. Outside the grid, draw 3 boxes on the right (Rows) and 3 boxes at the bottom (Cols). Draw two extra boxes for Diagonals. For each move, put a tally in the corresponding side boxes. If any box hits "3", that player wins.
+Opt Complexity Visuals: Linear Move Processing
+How to Draw Opt Complexity: Draw a list of moves. Draw a single arrow scanning the list once. Write $O(N)$ where N is number of moves.
+Mem Vis (BF): Draw a full 3x3 character matrix being stored and re-scanned.
+Mem Vis (Opt): Draw two integer arrays of size 8 (or separate variables). Space: $O(1)$.

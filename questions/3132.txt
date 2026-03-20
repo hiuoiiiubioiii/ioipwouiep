@@ -1,0 +1,13 @@
+ID: 3132
+Problem Title: Find the Integer Added to Array II
+Brute Force Method: Generate all possible subsets of nums1 with 2 elements removed, then check if they can be transformed into nums2. $O(N^3)$
+BF Complexity Visuals: Combination tree for removing elements paired with comparison loops.
+How to Draw BF: Draw nums1. Cross out two numbers. Compare remaining with nums2. Repeat for every combination of 2 crosses.
+Optimised Pattern: Sorting + Small Constant Search
+Opt Vis. Technique: Candidate Filtering
+Dry Run (Opt): Sort both arrays. Since only 2 elements are removed, the added integer x *must* be nums2[0] - nums1[i] where i in 0, 1, 2. Try only these 3 cases.
+How to Draw (Opt): Draw two sorted arrays. Draw 3 arrows from nums2[0] to the first 3 indices of nums1. Validate each "path" using two pointers.
+Opt Complexity Visuals: Sort funnel followed by 3 linear checks.
+How to Draw Opt Complexity: Draw $O(N \log N)$ sort tree, then 3 straight lines representing $O(N)$ pointer passes.
+Mem Vis (BF): Storing all generated subarrays after removing elements.
+Mem Vis (Opt): In-place sorting or a copy of the array. $O(N)$ or $O(1)$ depending on implementation.

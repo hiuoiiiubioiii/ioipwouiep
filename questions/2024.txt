@@ -1,0 +1,13 @@
+ID: 2024
+Problem Title: Maximize the Confusion of an Exam
+Brute Force Method: Generate every possible substring. Count the 'T's and 'F's in each. Check if the minority character count is &lt;= k. $O(N^3)$.
+BF Complexity Visuals: Nested Triangle Grid
+How to Draw BF: Draw a triangle of all substrings. In each box, draw a mini tally chart for 'T' and 'F'.
+Optimised Pattern: Sliding Window (Two Pointers) Run Twice
+Opt Vis. Technique: Expanding/Contracting Window Frame
+Dry Run (Opt): Run a sliding window to find the longest substring with at most `k` 'F's. Then run it again for at most `k` 'T's. Take the max length.
+How to Draw (Opt): Write the string. Use two fingers (L and R). Move R forward. Keep a tally of the "wrong" answer. If the tally exceeds `k`, drag L forward until it drops back to `k`.
+Opt Complexity Visuals: Two Parallel Sweeps
+How to Draw Opt Complexity: Draw two horizontal lines spanning the string. One represents the 'T' sweep, one represents the 'F' sweep. Both are $O(N)$. Total Time $O(N)$.
+Mem Vis (BF): Heavy recursive frames or redundant substring arrays pushing space to $O(N^2)$.
+Mem Vis (Opt): Two integer pointers (`left`, `right`) and a single integer counter for the target character. Space $O(1)$.

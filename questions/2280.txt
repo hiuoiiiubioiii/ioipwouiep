@@ -1,0 +1,13 @@
+ID: 2280
+Problem Title: Minimum Lines to Represent a Line Chart
+Brute Force Method: All-Pairs Slope ComparisonFor every set of 3 consecutive points, calculate the slope between Point 1 &amp; 2 and Point 2 &amp; 3 using floating-point division. Compare them.
+BF Complexity Visuals: Consecutive Slope Check
+How to Draw BF: Draw three points. Draw a line through P1-P2 and P2-P3. If they look "different", increment the line count. Show why floating-point precision issues lead to wrong answers.
+Optimised Pattern: Sorting + Cross-Multiplication
+Opt Vis. Technique: Precision-Safe Collinearity
+Dry Run (Opt): Sort points by X-coordinate. For three points `(x1,y1), (x2,y2), (x3,y3)`, they are on the same line if `(y2-y1)*(x3-x2) == (y3-y2)*(x2-x1)`. This avoids precision errors.
+How to Draw (Opt): Draw points on a graph. Sort them. Draw a line segment. For the next point, check the "cross-product" equality. If it fails, start a new line. Show the calculation using integers only.
+Opt Complexity Visuals: Sort and Single Pass
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting step. Draw an $O(N)$ pass to check slopes. Label it $O(N \log N)$ total.
+Mem Vis (BF): No extra space, but incorrect results due to `double` or `float` precision loss.
+Mem Vis (Opt): Sorting the input array in place (O(log N) or $O(1)$ extra space).

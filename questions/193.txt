@@ -1,0 +1,13 @@
+ID: 193
+Problem Title: Valid Phone Numbers
+Brute Force Method: Read line by line. For each line, check if length is 10 or 14, then check every character at specific indices for digits or parentheses.
+BF Complexity Visuals: A "Hardcoded Stencil." Every line is measured against multiple static IF statements.
+How to Draw BF: Draw a phone number. Draw a list of 10 checks: "Is char 0 a '('? Is char 4 a ')'?". Show the rigidity.
+Optimised Pattern: Regex Pattern Matching (grep -P or awk).
+Opt Vis. Technique: "The Mold." A single pattern represents the shape of a valid number. Data that doesn't fit the mold is discarded immediately.
+Dry Run (Opt): Apply pattern: ^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}. The engine scans the line in one pass.
+How to Draw (Opt): Draw a stencil with holes in the shape of (xxx) xxx-xxxx. Place it over a list of numbers; only the valid ones show through.
+Opt Complexity Visuals: $O(N \\text{times} L)$ where N is lines and L is length. A single-pass character scan per line.
+How to Draw Opt Complexity: Draw a horizontal arrow through the file. Mark it with a single 'Scan' label to show it never backtracks.
+Mem Vis (BF): Storing all valid numbers in a list before printing.
+Mem Vis (Opt): Visualize "Standard Out" (stdout). Characters are printed as soon as they match, using almost zero permanent memory.

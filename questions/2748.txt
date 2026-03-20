@@ -1,0 +1,13 @@
+ID: 2748
+Problem Title: Number of Beautiful Pairs
+Brute Force Method: Nested loop $O(N²)$: For every pair (i, j), get the first digit of nums[i] and the last digit of nums[j]. Calculate GCD. If 1, increment count.
+BF Complexity Visuals: Full N x N Pairwise Matrix
+How to Draw BF: Draw a grid. Fill cells with the GCD of the first digit of the row and the last digit of the column. Count the '1's.
+Optimised Pattern: Repeated Digit Extraction (Drawing the logic to pull digits from numbers inside the nested loops).
+Opt Vis. Technique: Frequency Array + GCD Pre-calculation
+Dry Run (Opt): Digit Frequency Bucket Sweep
+How to Draw (Opt): Iterate through nums. For the current nums[j], its last digit can pair with the first digits of all nums[i] seen so far. Use a frequency array of size 10 to store counts of "first digits" seen. Check GCD(1..9, last_digit) against the frequency array.
+Opt Complexity Visuals: Draw 10 buckets for first digits (0-9). As you walk the array, check the current number's last digit against all buckets, then put its first digit in its bucket.
+How to Draw Opt Complexity: $O(N \cdot 10)$ Linear Pass
+Mem Vis (BF): Draw a single horizontal arrow. Note that the inner loop is constant (size 10). Write $O(N)$.
+Mem Vis (Opt): Fixed-size Frequency Array (Draw an array of exactly 10 integers tracking first-digit counts).

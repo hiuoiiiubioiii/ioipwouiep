@@ -1,0 +1,13 @@
+ID: 2755
+Problem Title: Deep Merge of Two Objects (JS)
+Brute Force Method: Recursive for...in loop that overwrites properties. If a key exists in both, recursively call merge. Doesn't handle arrays or non-object edge cases properly.
+BF Complexity Visuals: Recursive Branching Trace
+How to Draw BF: Draw two tree structures (Obj A and Obj B). Draw arrows merging nodes at the same path. Show how nested branches trigger new function calls.
+Optimised Pattern: Deep Call Stack (Visualize memory frames for every nested level of the JSON structure).
+Opt Vis. Technique: Recursive DFS with Type Discrimination
+Dry Run (Opt): Graph-Based Tree Union
+How to Draw (Opt): Traverse both objects. If both values are objects (and not arrays), recursively merge. If both are arrays, return obj2. Handle null and primitives as leaf nodes where obj2 always wins.
+Opt Complexity Visuals: Draw two trees. For each shared path, draw a "Merge Gate". If inputs are primitives, the gate outputs Value B. If they are objects, it outputs a new combined node.
+How to Draw Opt Complexity: $O(N + M)$ Total Keys
+Mem Vis (BF): Draw a single tree representing the union of all keys in both objects. Label it $O(\text{Total Nodes})$.
+Mem Vis (Opt): Heap Object Graph (Visualize the creation of a new combined object structure without mutating the originals).

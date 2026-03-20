@@ -1,0 +1,13 @@
+ID: 519
+Problem Title: Random Flip Matrix
+Brute Force Method: Create an actual 2D array of M x N or a list of all coordinates, randomly pick, and mark/remove.
+BF Complexity Visuals: A giant grid of 10^4 x 10^4 elements mapped out completely. $O(M \cdot N)$.
+How to Draw BF: Draw a massive matrix. Throw a dart at it. Cross out the cell.
+Optimised Pattern: Virtual 1D Array + Hash Map mapping (Fisher-Yates Shuffle).
+Opt Vis. Technique: A deck of cards where a drawn card is swapped with the very last card in the deck, shrinking the deck size by 1.
+Dry Run (Opt): Pick random `idx` from 0 to `total - 1`. Read map for mapped value (or use `idx`). Map `idx` to value at `total - 1`. Decrement `total`.
+How to Draw (Opt): Draw a 1D array. Pick a random index. Swap it with the last element. Move the "end" boundary left by 1. Keep a Map to track swaps.
+Opt Complexity Visuals: Instant $O(1)$ operations pulling from a shrinking virtual range.
+How to Draw Opt Complexity: Draw a single box representing a fast hash map lookup. $O(1)$ time per flip.
+Mem Vis (BF): Memory limit exceeded! A giant Matrix/Array holding up to 10^8 elements.
+Mem Vis (Opt): A Hash Map holding only the exact coordinates that have been flipped. $O(K)$ where K is number of flips.

@@ -1,0 +1,13 @@
+ID: 549
+Problem Title: Binary Tree Longest Consecutive Sequence II
+Brute Force Method: For every single node in the tree, start two separate DFS searches: one for increasing paths and one for decreasing paths.
+BF Complexity Visuals: N nodes each performing a full tree search. $O(N^2)$.
+How to Draw BF: Draw a tree. From every node, draw two diverging paths looking for consecutive numbers.
+Optimised Pattern: Bottom-Up DFS (returning pairs).
+Opt Vis. Technique: Two relay runners passing batons. One baton tracks "longest increasing" and the other "longest decreasing" as they move up the tree.
+Dry Run (Opt): DFS returns `[inc, dec]`. If `child.val + 1 == parent.val`, `parent.inc = child.inc + 1`. If `child.val - 1 == parent.val`, `parent.dec = child.dec + 1`. `maxLen = max(maxLen, inc + dec - 1)`.
+How to Draw (Opt): Draw a tree. Next to each node, write two numbers: (UpCount, DownCount). Use these to calculate the total path length crossing through that node.
+Opt Complexity Visuals: Single post-order traversal. $O(N)$.
+How to Draw Opt Complexity: Draw the tree and trace a single path that visits every node once from the bottom up.
+Mem Vis (BF): Heavy recursion stack from $O(N^2)$ repeated traversals.
+Mem Vis (Opt): Recursion stack proportional to tree height. $O(H)$.

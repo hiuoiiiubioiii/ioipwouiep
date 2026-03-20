@@ -1,0 +1,13 @@
+ID: 3198
+Problem Title: Find Cities in Each State (SQL)
+Brute Force Method: Iterate through states, then for each state, run a separate query to find and join all city names.
+BF Complexity Visuals: Nested Loop Query Pattern
+How to Draw BF: Draw a State table. For each row, draw N lines to the City table. Manually string them together.
+Optimised Pattern: String Aggregation (GROUP_CONCAT)
+Opt Vis. Technique: The Data Sieve
+Dry Run (Opt): `GROUP BY state` and use `GROUP_CONCAT(city ORDER BY city SEPARATOR ', ')` to aggregate names into a single cell.
+How to Draw (Opt): Draw a table with States. Next to each state, draw a "collector" bucket where city names are dropped and sorted.
+Opt Complexity Visuals: Linear Aggregate Pipeline
+How to Draw Opt Complexity: Draw a single pass through the sorted city data. $O(N \log N)$ (due to sort).
+Mem Vis (BF): Temporary buffers for every string concatenation.
+Mem Vis (Opt): In-memory hash-aggregates or sorted string buffers. $O(N)$.

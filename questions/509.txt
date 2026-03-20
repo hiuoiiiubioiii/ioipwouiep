@@ -1,0 +1,13 @@
+ID: 509
+Problem Title: Fibonacci Number
+Brute Force Method: Pure Recursion: `fib(N-1) + fib(N-2)`. Re-calculates the same values endlessly. $O(2^N)$.
+BF Complexity Visuals: Exponentially exploding binary tree.
+How to Draw BF: Draw fib(5) splitting to fib(4) and fib(3). Split those down to 1s. Circle the multiple identical fib(2)s to show waste.
+Optimised Pattern: Iterative Bottom-Up Dynamic Programming (State variables).
+Opt Vis. Technique: Two physical sliders leap-frogging each other along a number line.
+Dry Run (Opt): Set a=0, b=1. Loop N-1 times: temp = a+b. a = b. b = temp. Return b.
+How to Draw (Opt): Draw three boxes: `a`, `b`, and `temp`. Erase and update them sequentially, moving left to right.
+Opt Complexity Visuals: A simple, flat, linear timeline. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line broken into N uniform segments.
+Mem Vis (BF): Deep vertical recursion stack of $O(N)$ depth taking up hidden memory.
+Mem Vis (Opt): Two tiny, static boxes holding integers. $O(1)$ space.

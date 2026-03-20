@@ -1,0 +1,13 @@
+ID: 2899
+Problem Title: Last Visited Integers
+Brute Force Method: For every "prev" string encountered, manually iterate backwards through the entire history array to find the k-th integer, ignoring previous "prev" strings.
+BF Complexity Visuals: $O(N^2)$ Backward Search
+How to Draw BF: Draw a sequence of inputs. For every "prev", draw an arrow scanning backwards through all preceding boxes.
+Optimised Pattern: List Maintenance + Pointer Tracking
+Opt Vis. Technique: Two-Pointer History Buffer
+Dry Run (Opt): Keep a separate list of integers seen so far. Track a variable `k` that resets when a number is seen and increments when "prev" is seen. Access `seen_list[len - k]`.
+How to Draw (Opt): Draw a "Seen" box. When a number arrives, put it in the box and set k=0. When "prev" arrives, increment k and point to the k-th item from the end of the box.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a straight line. Each input is processed in constant time using index math.
+Mem Vis (BF): $O(N)$ - Storing history.
+Mem Vis (Opt): $O(N)$ - Storing the list of integers.

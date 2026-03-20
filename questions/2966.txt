@@ -1,0 +1,13 @@
+ID: 2966
+Problem Title: Divide Array Into Arrays With Max Difference
+Brute Force Method: Try all permutations of the array to find groups of 3 that satisfy the difference condition.
+BF Complexity Visuals: Factorial Permutation Tree
+How to Draw BF: Draw a root node branching N times, then N-1 times... $O(N!)$. Impossible for large N.
+Optimised Pattern: Greedy (Sorting + Linear Grouping)
+Opt Vis. Technique: Sequential Triplet Buckets
+Dry Run (Opt): Sort the array. Check every consecutive triplet `(i, i+1, i+2)`. If `nums[i+2] - nums[i] &gt; k`, return an empty list. Else, add to results.
+How to Draw (Opt): Draw a sorted line of numbers. Draw vertical dividers every 3 elements. Measure the distance between the first and third in each box.
+Opt Complexity Visuals: Sorting + Single Pass
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ for sort + $O(N)$ for sweep.
+Mem Vis (BF): Recursive stack for permutations.
+Mem Vis (Opt): A result list to store triplets. Space $O(N)$.

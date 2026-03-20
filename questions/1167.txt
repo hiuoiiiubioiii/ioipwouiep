@@ -1,0 +1,13 @@
+ID: 1167
+Problem Title: Minimum Cost to Connect Sticks
+Brute Force Method: Sort the sticks. Pick the two smallest, combine them, add to total, re-sort the entire list. Repeat until one stick remains.
+BF Complexity Visuals: Repeated Sort Waterfall
+How to Draw BF: Draw a list of sticks. Combine two. Redraw the whole list sorted. Repeat. Visually show $O(N^2 \log N)$ redundancy.
+Optimised Pattern: Min-Heap (Priority Queue)
+Opt Vis. Technique: Greedy Merging Funnel
+Dry Run (Opt): Add all sticks to a Min-Heap. Pop two smallest, add their sum to `total_cost`, and push the sum back into the heap. Repeat until heap size is 1.
+How to Draw (Opt): Draw a binary heap (tree). Circle the two bottom-most nodes. Remove them, draw a new node with their sum, and show it "bubbling up" to its correct spot.
+Opt Complexity Visuals: Heap Operations $O(N \log N)$
+How to Draw Opt Complexity: Draw a N log N curve. Each of the N-1 merges takes log N to re-balance the heap.
+Mem Vis (BF): Creating new arrays after each merge
+Mem Vis (Opt): In-place Min-Heap. Draw a single array representing the heap structure.

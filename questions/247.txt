@@ -1,0 +1,13 @@
+ID: 247
+Problem Title: Strobogrammatic Number II
+Brute Force Method: Generate all numbers of length N using recursion and check each one for strobogrammatic properties.
+BF Complexity Visuals: Full Permutation Tree: $O(10^N)$.
+How to Draw BF: Draw a tree starting with 10 branches at the first level, 10 at the next. It explodes exponentially.
+Optimised Pattern: Recursive Backtracking (Inside-Out Construction)
+Opt Vis. Technique: Expanding Core Bubbles
+Dry Run (Opt): Start with base cases (length 0 or 1). Recursively wrap the results with valid pairs (e.g., "6" + result + "9").
+How to Draw (Opt): Draw an empty center. Draw layers around it like an onion, adding "1-1", "6-9", etc., at each step until length N.
+Opt Complexity Visuals: Pruned Recursive Tree: $O(5 \cdot 5^{(N/2-1)$}).
+How to Draw Opt Complexity: Draw a tree that branches by 5 at each level. Show the depth is fixed at N/2.
+Mem Vis (BF): Massive List of all N-digit numbers.
+Mem Vis (Opt): Recursive Call Stack: Draw a stack of height N/2, each frame holding a list of partial strings.

@@ -1,0 +1,13 @@
+ID: 3640
+Problem Title: Trionic Array II (Hard)
+Brute Force Method: Same as Trionic Array I but with much larger constraints and a dynamic update component (queries that change array values).
+BF Complexity Visuals: Repeated $O(N^2)$ Scans.
+How to Draw BF: Draw the N^2 scan from 3637. Now draw it again for every single query. Write $O(Q \cdot N^2)$. Instant failure.
+Optimised Pattern: Segment Tree or Square Root Decomposition where each "node" or "bucket" stores partial Trionic counts.
+Opt Vis. Technique: Partial Sum Blocks.
+Dry Run (Opt): Divide the array into blocks of size √N. When a value changes, only update the counts for its specific block. For queries, combine the precomputed results of all blocks.
+How to Draw (Opt): Draw the array. Group it into 4 large boxes. If an element in Box 1 changes, only redraw Box 1. To get the total, just sum the 4 boxes.
+Opt Complexity Visuals: Square Root Balancing.
+How to Draw Opt Complexity: Write $O(Q \cdot √N)$. Draw the array as N, then draw the √N blocks. Show that we only visit a few blocks per query.
+Mem Vis (BF): Total recalculation of all triplet counts on every single update.
+Mem Vis (Opt): 1D array for the original data and a 2D or 3D structure for block-level summaries. Space $O(N)$.

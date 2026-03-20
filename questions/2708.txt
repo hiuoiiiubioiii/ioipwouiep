@@ -1,0 +1,13 @@
+ID: 2708
+Problem Title: Maximum Strength of a Group
+Brute Force Method: Generate all possible subsets (2^N - 1 subsets). Multiply the elements of each non-empty subset. Keep track of the absolute maximum value.
+BF Complexity Visuals: Binary Choice Subset Tree
+How to Draw BF: Draw nodes representing array elements. Branch left for "Include", right for "Exclude". Leaves calculate the product. Highlight the max. Width is $O(2^N)$.
+Optimised Pattern: Exponential State Tracking (Visualizing memory holding all subsets simultaneously or deep recursion tree).
+Opt Vis. Technique: Greedy Array Partitioning (Math rules)
+Dry Run (Opt): Bucket Sorting &amp; Pruning
+How to Draw (Opt): Separate numbers into Positives, Negatives, and Zeros. Multiply all positives. Sort negatives; multiply them in pairs. If an odd number of negatives exists, discard the one closest to zero. Ignore zeros (unless all zeros/one negative).
+Opt Complexity Visuals: Draw three distinct buckets: `+`, `-`, `0`. Cross out the `0` bucket. Pair up elements in the `-` bucket with a lasso. If one is left over, cross it out. Multiply remaining.
+How to Draw Opt Complexity: Linear Pipeline Filter
+Mem Vis (BF): Draw a single straight arrow passing through the numbers once. Label it $O(N)$ (or $O(N \log N)$ if sorting the negatives bucket).
+Mem Vis (Opt): $O(1)$ Accumulator Registers (Draw a few single-cell variables: `max_product`, `min_product`, or just standard accumulators updating in place).

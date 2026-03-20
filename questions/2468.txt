@@ -1,0 +1,13 @@
+ID: 2468
+Problem Title: Split Message Based on Limit
+Brute Force Method: Try every possible number of total parts `k` from 1 to 10,000. For each `k`, simulate the message split and check if it fits within the limit.
+BF Complexity Visuals: Search by Simulation
+How to Draw BF: Draw a search range for 'k'. For each k, draw a split message. Label $O(K \\text{cdot Message}_\text{Length})$.
+Optimised Pattern: Math (Suffix Length Precalculation)
+Opt Vis. Technique: Suffix Suffix Metadata Fit
+Dry Run (Opt): The length of suffix `` changes at powers of 10. Calculate total suffix overhead for a given `k` mathematically. Find the smallest `k` where `Length(Message) + TotalSuffixLength &lt;= Limit * k`.
+How to Draw (Opt): Write the equation: `k * limit - overhead &gt;= len(msg)`. Draw a table of overheads for ranges (1-9, 10-99, etc.).
+Opt Complexity Visuals: Logarithmic/Linear Search for K
+How to Draw Opt Complexity: Draw a search line for `k`. Label $O(k_\text{limit})$. Total $O(N + K)$.
+Mem Vis (BF): Draw multiple string builder buffers.
+Mem Vis (Opt): Draw 1D result string list. $O(N)$ Space.

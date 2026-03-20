@@ -1,0 +1,13 @@
+ID: 1046
+Problem Title: Last Stone Weight
+Brute Force Method: Find the two heaviest stones by scanning the entire list. Smash them. Add the remainder back to the list. Repeat until one or no stones remain.
+BF Complexity Visuals: A repetitive "search-and-destroy" loop where the list is scanned twice every single iteration.
+How to Draw BF: Draw the array. Circle the 2 largest. Cross them out. Write the difference. Re-write the whole array. Write $O(N^2)$.
+Optimised Pattern: Max-Heap (Priority Queue).
+Opt Vis. Technique: A "Weight-Sorted Volcano". The heaviest stones always float to the top automatically.
+Dry Run (Opt): Push all weights into a Max-Heap. Extract the top two (largest). If different, push the result back. Repeat until the heap size is 1 or 0.
+How to Draw (Opt): Draw a Max-Heap (Binary Tree). Show the two heaviest stones at the top being removed. Show the remainder bubbling down or up.
+Opt Complexity Visuals: Logarithmic extraction repeated N times.
+How to Draw Opt Complexity: Draw a heap tree with N removals. Write $O(N \log N)$ Time.
+Mem Vis (BF): Constant array resizing and allocation for the modified list.
+Mem Vis (Opt): A single heap structure storing N elements. $O(N)$ space.

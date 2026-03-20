@@ -1,0 +1,13 @@
+ID: 1621
+Problem Title: Number of Sets of K Non-Overlapping Line Segments
+Brute Force Method: Backtracking to check every possible combination of starting and ending points for K segments.
+BF Complexity Visuals: Combinatorial Explosion
+How to Draw BF: Draw a massive, dense tree where every node branches into multiple segment choices. $O(N^K)$.
+Optimised Pattern: Dynamic Programming / Combinatorics Math
+Opt Vis. Technique: 3D DP State Transition Grid
+Dry Run (Opt): dp[i][j][is_started] tracks index `i`, segments `j`, and if a segment is open. Or use the pure math formula: (N+K-1) Choose (2K).
+How to Draw (Opt): Draw a 2D grid for N and K. Divide each cell into two triangles (segment started vs. not started). Fill cells sequentially.
+Opt Complexity Visuals: Matrix Fill (DP) or $O(1)$ Math
+How to Draw Opt Complexity: Draw a single arrow filling a grid row-by-row (O(N*K)), or a single formula evaluation box $O(1)$ if using pure math.
+Mem Vis (BF): Deep Recursion Call Stack: Tall, unstable stack of overlapping segment states.
+Mem Vis (Opt): 2D/1D DP Array: Draw a static grid or just two 1D arrays swapping states to save space.

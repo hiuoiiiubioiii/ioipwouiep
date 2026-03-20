@@ -1,0 +1,13 @@
+ID: 1351
+Problem Title: Count Negative Numbers in a Sorted Matrix
+Brute Force Method: Nested loops iterating through every single element of the M x N matrix to count how many are less than zero.
+BF Complexity Visuals: Full M x N Scan
+How to Draw BF: Draw a grid. Draw a single long arrow snaking through every single cell in the matrix. $O(M x N)$.
+Optimised Pattern: Staircase Search (Saddleback)
+Opt Vis. Technique: Boundary Tracking Zig-Zag
+Dry Run (Opt): Start at the bottom-left corner. If current is negative, all elements above it in that column are negative; add `rows - r` and move right. If positive, move up.
+How to Draw (Opt): Draw a matrix. Start at the bottom-left. Draw a "staircase" line. If the number is negative, "step" right. If positive, "step" up. The area below the stairs is your count.
+Opt Complexity Visuals: $O(M + N)$ Linear Trace
+How to Draw Opt Complexity: Draw a matrix. Draw one continuous "L" shaped or zig-zag line from one corner to another, touching at most M+N cells.
+Mem Vis (BF): $O(1)$ Accumulator: No extra memory beyond a single integer counter.
+Mem Vis (Opt): $O(1)$ Pointers: Draw two variables, `row` and `col`, changing as the search moves.

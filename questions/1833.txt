@@ -1,0 +1,13 @@
+ID: 1833
+Problem Title: Maximum Ice Cream Bars
+Brute Force Method: Backtracking: Try every possible combination of ice cream bars to see which one fits the budget with the most items.
+BF Complexity Visuals: Exponential combination tree.
+How to Draw BF: Draw a root. Branch out for every bar (take/not take). Note the $O(2^N)$ complexity.
+Optimised Pattern: Greedy Algorithm + Sorting.
+Opt Vis. Technique: Ascending staircase fill.
+Dry Run (Opt): Sort costs. Buy cheapest first. Subtract from coins until budget is depleted or no more bars left.
+How to Draw (Opt): Sort the numbers. Draw a line (coins). Subtract the smallest number. Subtract next smallest. Stop when line is empty.
+Opt Complexity Visuals: $O(N \log N)$ sorting slope.
+How to Draw Opt Complexity: Draw a sorting merge-tree (log N levels). Below it, draw a single $O(N)$ pass.
+Mem Vis (BF): Call stack depth for recursion (O(N)).
+Mem Vis (Opt): Sorting overhead (O(log N) or $O(N)$ space depending on sort type).

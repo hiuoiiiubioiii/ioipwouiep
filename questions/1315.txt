@@ -1,0 +1,13 @@
+ID: 1315
+Problem Title: Sum of Nodes with Even-Valued Grandparent
+Brute Force Method: For every node, traverse upwards (if parent pointers exist) or do a localized search to confirm its grandparent's value, duplicating tree traversals.
+BF Complexity Visuals: Redundant Up-Down Tree Traversal
+How to Draw BF: Draw a tree. From a leaf, draw an arrow up to the parent, then up to the grandparent. Repeat for every node, showing massive overlap in path tracing.
+Optimised Pattern: Top-Down DFS with State Passing
+Opt Vis. Technique: Generational State Cascade
+Dry Run (Opt): Start DFS at root. Pass `parent_val` and `grandparent_val` as function arguments to children. If `grandparent_val % 2 == 0`, add current node's value to a global sum.
+How to Draw (Opt): Draw a tree. Next to each node, draw a small tag: `[P: x, GP: y]`. As you draw arrows down to children, shift the values: current becomes P, P becomes GP.
+Opt Complexity Visuals: Single Pass $O(N)$ Tree Sweep
+How to Draw Opt Complexity: Draw a single, uninterrupted line winding through every node in the tree exactly once.
+Mem Vis (BF): Heavy Call Stack + Lookups: Deep stack frames querying external maps or parent pointers repeatedly.
+Mem Vis (Opt): $O(H)$ Call Stack Frame: Draw a stack of memory frames of height H (tree height). Each frame holds only exactly 3 integers: `node`, `parent`, `grandparent`.

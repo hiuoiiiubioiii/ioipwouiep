@@ -1,0 +1,13 @@
+ID: 569
+Problem Title: Median Employee Salary (SQL)
+Brute Force Method: Sort the entire table, count the total rows, then manually calculate the middle index and select that row.
+BF Complexity Visuals: Global sorting and manual row-by-row counting. $O(N \log N)$.
+How to Draw BF: Draw a giant list of employees. Sort them. Count to the middle and circle the names.
+Optimised Pattern: Row Numbering / Window Functions.
+Opt Vis. Technique: Two rank lists. One counts from the bottom, one counts from the top. The "Median" is where the ranks are nearly equal.
+Dry Run (Opt): `ROW_NUMBER() OVER(PARTITION BY company ORDER BY salary)` as `rk_asc` and `DESC` as `rk_desc`. Filter where `rk_asc` is in `(total/2, total/2 + 1)`.
+How to Draw (Opt): Draw a table. Add two columns: Rank-Up and Rank-Down. The median rows are those where the difference between these two ranks is 0 or 1.
+Opt Complexity Visuals: Partitioned sorting. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a table split into company-buckets, with a single sort applied to each bucket.
+Mem Vis (BF): Full table scan and multiple temporary tables.
+Mem Vis (Opt): In-memory index pointers for window partitions.

@@ -1,0 +1,13 @@
+ID: 1384
+Problem Title: Total Sales Amount by Year (SQL)
+Brute Force Method: For every sale, calculate the duration, then check every day in the calendar to see which year it belongs to, summing manually.
+BF Complexity Visuals: $O(\text{Sales} \\text{cdot Days})$ Nested Logic
+How to Draw BF: Draw a sale spanning 3 years. Draw an arrow for every single day in that range, checking the year. Massive CPU overhead for date ranges.
+Optimised Pattern: Recursive CTE (Year-Level Pivot)
+Opt Vis. Technique: Yearly Segment Slicing
+Dry Run (Opt): Use a Recursive CTE to generate the years 2018, 2019, 2020. Join with Sales where the year is between `start_date` and `end_date`. Calculate overlap days per year.
+How to Draw (Opt): Draw a sale bar. Place three boxes representing 2018, 2019, and 2020. Cut the sale bar into parts that fit into each box. Multiply each part by the daily price.
+Opt Complexity Visuals: $O(\text{Sales} \cdot 3)$ Linearized Split
+How to Draw Opt Complexity: Draw a sale record entering a machine that splits it into at most 3 rows (one for each valid year).
+Mem Vis (BF): Massive Daily Logs: Creating a row for every single day in a 3-year period in memory.
+Mem Vis (Opt): 3-Row Splitter: Draw a structure where one input row transforms into a maximum of 3 output rows.

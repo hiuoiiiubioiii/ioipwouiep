@@ -1,0 +1,13 @@
+ID: 1235
+Problem Title: Maximum Profit in Job Scheduling
+Brute Force Method: Recursively explore two choices for every job: include it (and skip all overlapping future jobs) or exclude it. Without memoization, this explores every possible subset.
+BF Complexity Visuals: Overlapping Job Subsets Tree
+How to Draw BF: Draw Job A, B, C. Branch from A: "Take A" (points to first non-overlapping job) and "Skip A" (points to Job B). Repeat for all. Write $O(2^N)$.
+Optimised Pattern: DP + Sorting + Binary Search
+Opt Vis. Technique: Weighted Timeline Chain
+Dry Run (Opt): Sort jobs by end time. `dp[i]` is max profit using jobs up to index `i`. For a new job, search (Binary Search) for the last job that ended before this one started. `dp[curr] = max(dp[prev_index] + profit, dp[curr-1])`.
+How to Draw (Opt): Draw a timeline. Plot jobs as horizontal bars. Below, draw an array `dp`. For a job ending at time T, draw a dashed arrow back to the nearest previous job end time, then a plus sign for profit.
+Opt Complexity Visuals: Log-Linear Growth Curve
+How to Draw Opt Complexity: Draw an N log N curve representing the initial sort, followed by a staircase representing N steps of Binary Search. Write $O(N \log N)$.
+Mem Vis (BF): Draw an enormous call stack representing the 2^N recursive paths.
+Mem Vis (Opt): Draw a sorted 2D array of jobs and a 1D DP array of size N. Space: $O(N)$.

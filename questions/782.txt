@@ -1,0 +1,13 @@
+ID: 782
+Problem Title: Transform to Chessboard
+Brute Force Method: Try every possible swap of rows and columns recursively to see if it becomes a chessboard.
+BF Complexity Visuals: State Space Maze
+How to Draw BF: Draw the grid. Branch into all row/column swaps. $O(2^{(N+M)$}) states.
+Optimised Pattern: Invariance &amp; Hamming Distance
+Opt Vis. Technique: Pattern XOR Masking
+Dry Run (Opt): Only two types of rows/columns can exist (opposites). Check if row 1 and row i are same or opposite. Calculate min swaps to make row 1 match "0101..." or "1010...".
+How to Draw (Opt): Draw the grid. Compare the first row to all others. If any row is not identical or exactly opposite, draw a "Big X" (impossible).
+Opt Complexity Visuals: Single Pass Grid Check
+How to Draw Opt Complexity: Draw the grid. Show one horizontal scan and one vertical scan. $O(N^2)$.
+Mem Vis (BF): Recursive call stack of grids.
+Mem Vis (Opt): $O(1)$ extra space (checking row/col patterns).

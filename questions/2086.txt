@@ -1,0 +1,13 @@
+ID: 2086
+Problem Title: Minimum Number of Food Buckets to Feed the Hamsters
+Brute Force Method: Try placing a bucket in every possible empty space and backtrack to find the valid configuration with the fewest buckets. $O(2^N)$.
+BF Complexity Visuals: Bucket Placement Decision Tree
+How to Draw BF: Draw a street. At every empty lot, branch: "Place Bucket" or "Don't Place". Tree width explodes.
+Optimised Pattern: Greedy / Linear Scan
+Opt Vis. Technique: The "Right-First" Coverage
+Dry Run (Opt): Iterate left to right. If a hamster needs food, try to place a bucket to its RIGHT first (index i+1), because that bucket might also feed the *next* hamster. If the right is blocked, place it on the LEFT.
+How to Draw (Opt): Draw the string. When you hit a Hamster ('H'), look right. If it's a '.', draw a Bucket ('B') there. This bucket projects a feeding aura to i and i+2.
+Opt Complexity Visuals: Single Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Make $O(1)$ neighbor checks at each step.
+Mem Vis (BF): Recursion state tracking.
+Mem Vis (Opt): Modified string/array. $O(N)$ space.

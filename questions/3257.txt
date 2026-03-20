@@ -1,0 +1,13 @@
+ID: 3257
+Problem Title: Maximum Value Sum by Placing Three Rooks II
+Brute Force Method: The $O(R x C + R^3)$ candidate approach might still be slow if R is large. Standard brute force is impossible.
+BF Complexity Visuals: State Space Bottleneck
+How to Draw BF: Draw a diagram showing that even with top-3 candidates, checking every combination of rows is $O(R^3)$. For R=500, 500^3 = 125 million.
+Optimised Pattern: 2D Prefix/Suffix Max + Greedy
+Opt Vis. Technique: Spatial Maximum Boundary Map
+Dry Run (Opt): For each row i, consider it the "middle" rook. The other two rooks must come from rows above 0 dots i-1 and rows below i+1 dots R-1. Use prefix/suffix max arrays to find best column values in these regions.
+How to Draw (Opt): Draw the grid. Highlight row 'i'. Draw a "Max-So-Far" box above row 'i' and another "Max-So-Far" box below it. Pick the best from the top box, row 'i', and bottom box.
+Opt Complexity Visuals: Multi-Pass Sequential Block
+How to Draw Opt Complexity: Draw three blocks: "Prefix Max Scan $O(\text{RC})$", "Suffix Max Scan $O(\text{RC})$", and "Middle Row Iteration $O(\text{RC})$". Total $O(\text{RC})$.
+Mem Vis (BF): Exhaustive coordinate searching.
+Mem Vis (Opt): 2D arrays for prefix and suffix column maximums (O(R*C) space).

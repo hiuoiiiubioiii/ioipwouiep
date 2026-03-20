@@ -1,0 +1,13 @@
+ID: 3594
+Problem Title: Minimum Time to Transport All Individuals (Hard)
+Brute Force Method: Simulate every possible transport sequence and timing for every individual from Start to End.
+BF Complexity Visuals: Factorial Schedule Search.
+How to Draw BF: Draw a list of people. Branch for "Person A goes now," "Person B goes now," etc. Calculate total time for each. $O(N!)$.
+Optimised Pattern: Binary Search on Answer + Greedy/Flow.
+Opt Vis. Technique: Threshold Feasibility Check.
+Dry Run (Opt): Guess a total time T. Check if N individuals can be transported within T given capacity constraints using a greedy scan or interval matching.
+How to Draw (Opt): Draw a timeline. For a fixed T, draw "capacity boxes." Try fitting individuals' travel intervals into these boxes greedily.
+Opt Complexity Visuals: $O(N \log N \cdot \log(\text{MaxTime})$).
+How to Draw Opt Complexity: Draw a binary search tree. Inside each node, draw an $O(N \log N)$ sorting and linear check step.
+Mem Vis (BF): Schedule Log: Draw a massive database of every person's movement across every second of simulation.
+Mem Vis (Opt): Priority Queue / Sorted Array: Draw a small array or heap holding current availability intervals.

@@ -1,0 +1,13 @@
+ID: 1406
+Problem Title: Stone Game III
+Brute Force Method: Minimax Recursion. Try taking 1, 2, or 3 stones. Alice maximizes her score minus Bob's; Bob minimizes the difference. Try all paths.
+BF Complexity Visuals: Minimax Decision Tree
+How to Draw BF: Draw a root node branching into 3 paths (take 1, 2, 3). Alternate row labels: "Alice (Max)" and "Bob (Min)". $O(3^N)$ due to 3 branches at every step.
+Optimised Pattern: 1D Dynamic Programming (Bottom-Up)
+Opt Vis. Technique: Backward Induction Array
+Dry Run (Opt): Start from the end of the array. At index `i`, calculate the max of `sum(stones[i..i+k-1]) - dp[i+k]` for k in (1,2,3). Store in `dp[i]`.
+How to Draw (Opt): Draw an array of size N. Start a pointer at the rightmost index. Draw 3 arrows jumping left (sizes 1, 2, 3). Write the max difference formula above the jumps.
+Opt Complexity Visuals: Single Reverse Traversal
+How to Draw Opt Complexity: Draw a straight arrow moving right-to-left across an array. Label it $O(N)$ time.
+Mem Vis (BF): Deep Recursion Call Stack
+Mem Vis (Opt): Draw a 1D DP array of size N+1. (Or optionally, just 3 standalone variables for $O(1)$ space optimization).

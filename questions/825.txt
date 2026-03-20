@@ -1,0 +1,13 @@
+ID: 825
+Problem Title: Friends Of Appropriate Ages
+Brute Force Method: Nested loops comparing every person i with every person j (N^2) to check the three age conditions.
+BF Complexity Visuals: Full All-Pairs Matrix. $O(N^2)$.
+How to Draw BF: Draw a square grid of size N \times N. Shade in every single cell to represent checking every combination.
+Optimised Pattern: Frequency Map + Binary Search or Sliding Window.
+Opt Vis. Technique: Age Bucket Histogram with Range Sums.
+Dry Run (Opt): Group people into 120 age buckets. For each age A, calculate the valid range [0.5A+7, A]. Multiply count of age A by count of people in that range.
+How to Draw (Opt): Draw a bar chart (histogram) of ages 1-120. For one bar, draw a bracket over the other bars it can "friend."
+Opt Complexity Visuals: Linear Bucket Scan. $O(N + 120)$.
+How to Draw Opt Complexity: Draw a short line of 120 ticks. This represents constant time work regardless of how many thousands of people (N) there are.
+Mem Vis (BF): $O(1)$ pointers, but draw two arrows (i, j) scanning a massive array over and over.
+Mem Vis (Opt): 120-size Int Array: Draw a small fixed-size strip of boxes labeled 1 to 120.

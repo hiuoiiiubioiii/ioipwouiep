@@ -1,0 +1,13 @@
+ID: 3706
+Problem Title: Maximum Distance Between Unequal Words in Array II (Med)
+Brute Force Method: Nested loops comparing every word with every other word to find max distance.
+BF Complexity Visuals: N x N Grid (Upper Triangle).
+How to Draw BF: Draw an N-by-N grid. Shade cells where word[i] != word[j], circle the one furthest from diagonal.
+Optimised Pattern: Two Pointers / Hash Map (First &amp; Last Occurrence)
+Opt Vis. Technique: Left/Right Pinching Pointers
+Dry Run (Opt): Point left index at start, right at end. If words differ, that's max. If same, check distance by moving left once, then right once.
+How to Draw (Opt): Draw the array. Draw a large bracket from first to last element. Shrink the bracket bounds if the endpoints are identical.
+Opt Complexity Visuals: Linear Scan Line $O(N)$.
+How to Draw Opt Complexity: Draw one straight horizontal line with an $O(N)$ above it. $O(1)$ space dot.
+Mem Vis (BF): No extra memory, just index variables.
+Mem Vis (Opt): Map or two simple pointer variables.

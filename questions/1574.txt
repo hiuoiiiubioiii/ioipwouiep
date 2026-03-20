@@ -1,0 +1,13 @@
+ID: 1574
+Problem Title: Shortest Subarray to be Removed to Make Array Sorted
+Brute Force Method: Try removing every possible subarray [i, j] and check if the remaining array is non-decreasing. $O(N^3)$.
+BF Complexity Visuals: Subarray Deletion Tree
+How to Draw BF: Draw an array. Cross out a section. Scan the rest. Repeat for every possible "cross-out" section. Massive redundant work.
+Optimised Pattern: Two Pointers (Prefix/Suffix)
+Opt Vis. Technique: The Bridge Connection Viz
+Dry Run (Opt): 1. Find the longest sorted prefix and longest sorted suffix. 2. You must remove everything in between. 3. Try to "bridge" them by moving a pointer at the end of the prefix and a pointer at the start of the suffix to see if they can connect.
+How to Draw (Opt): Draw two sorted segments at the edges. Draw a "gap" in the middle. Move a left finger across the prefix and a right finger across the suffix. Draw a dotted line when `left_val &lt;= right_val`. Record the minimum gap length.
+Opt Complexity Visuals: Two-Pointer Convergence $O(N)$
+How to Draw Opt Complexity: Draw two parallel lines (Prefix/Suffix). Draw a single arrow connecting them that "slides" forward. Total work is just 2N.
+Mem Vis (BF): Storing all valid remaining arrays. $O(N^2)$.
+Mem Vis (Opt): Two pointer variables: `left` and `right`. $O(1)$ space.

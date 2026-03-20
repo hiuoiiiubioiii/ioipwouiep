@@ -1,0 +1,13 @@
+ID: 2578
+Problem Title: Split With Minimum Sum
+Brute Force Method: Generate all possible ways to split the digits into two numbers and find the pair with the smallest sum. $O(\text{Exponential})$.
+BF Complexity Visuals: A combinatorial tree of digit assignments (e.g., digit 1 goes to Num A or Num B).
+How to Draw BF: Write the digits of 4325. Try (4, 325), (43, 25), (42, 35)... Calculate all sums and pick the minimum.
+Optimised Pattern: Sorting + Greedy Alternating Distribution.
+Opt Vis. Technique: A "Digit Alternation" visual where sorted digits are dealt out like cards to two players to keep the leading digits as small as possible.
+Dry Run (Opt): Sort the digits of the number in ascending order. Iterate through the sorted digits and alternate adding them to `num1` and `num2`. For example, digits `[2, 3, 4, 5]` become `num1 = 24` and `num2 = 35`. Sum them up.
+How to Draw (Opt): Write the number 4325. Sort the digits: 2, 3, 4, 5. Write two empty slots: `_ _` and `_ _`. Put the 2 in the first slot of Num A, 3 in the first slot of Num B, 4 in the second of Num A, 5 in the second of Num B. Add 24 + 35.
+Opt Complexity Visuals: $O(D \log D)$ where D is the number of digits. (D is small, so practically $O(1)$).
+How to Draw Opt Complexity: Draw the sorted digits. Draw two arrows pointing to two different buckets, alternating for each digit.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(D)$ to store the digits in a list for sorting.

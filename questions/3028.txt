@@ -1,0 +1,13 @@
+ID: 3028
+Problem Title: Ant on the Boundary
+Brute Force Method: Simulate every single step the ant takes. For every move, update the position and check if it is zero.
+BF Complexity Visuals: Step-by-Step Timeline
+How to Draw BF: Draw a number line. Draw a sequence of arrows representing each move, with a circle around the '0' mark.
+Optimised Pattern: Prefix Sum Simulation
+Opt Vis. Technique: Running Balance Tracker
+Dry Run (Opt): Treat moves as positive/negative integers. Calculate the prefix sum. Every time the prefix sum equals 0 (after a full move), increment the boundary count.
+How to Draw (Opt): Write the numbers in a row. Below them, write the cumulative sum. Circle every '0' that appears in the cumulative sum row.
+Opt Complexity Visuals: Linear $O(N)$ Pass
+How to Draw Opt Complexity: Draw a single horizontal arrow passing through the array once.
+Mem Vis (BF): A full history of the ant's coordinates.
+Mem Vis (Opt): Two integer variables: current_position and boundary_count.

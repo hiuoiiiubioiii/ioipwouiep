@@ -1,0 +1,13 @@
+ID: 3470
+Problem Title: Permutations IV
+Brute Force Method: Generate all n! permutations, filter those with alternating parity, sort them, and pick the k-th. $O(n \cdot n!)$
+BF Complexity Visuals: Factorial Permutation Explosion.
+How to Draw BF: Draw a root node branching into n numbers, then each into n-1, creating a massive unreadable cloud of leaf nodes.
+Optimised Pattern: Combinatorial Counting + Digit-by-Digit Construction. $O(n)$
+Opt Vis. Technique: Decision Tree with Weight Values.
+Dry Run (Opt): For the current position, calculate how many valid alternating suffixes exist starting with an odd vs even number. Subtract from k to pick the digit.
+How to Draw (Opt): Draw a vertical line. For each index, list available numbers. Write the count of valid ways next to the "Odd" and "Even" groups. Draw an arrow to the choice that contains k.
+Opt Complexity Visuals: Linear Digit Selection.
+How to Draw Opt Complexity: Draw a horizontal timeline of length n. Mark it with single dots for each choice to show $O(n)$ total work.
+Mem Vis (BF): Massive list storing trillions of permutations.
+Mem Vis (Opt): A few integer variables and a boolean "visited" array of size n.

@@ -1,0 +1,13 @@
+ID: 3499
+Problem Title: Maximize Active Section with Trade I
+Brute Force Method: For every possible "1-block" to remove and "0-block" to convert, simulate the string and count the 1s. $O(N^3)$
+BF Complexity Visuals: Brute Force Triple Scan.
+How to Draw BF: Draw the binary string. Draw a bracket to remove 1s, then another to add 1s. Count all 1s in the result. Repeat for all pairs of brackets.
+Optimised Pattern: Greedy (Adjacent Zero-Segment Merging). $O(N)$
+Opt Vis. Technique: Bridges over 1-Islands.
+Dry Run (Opt): Identify all contiguous segments of 0s. A "trade" merges two adjacent 0-segments by deleting the 1-segment between them. Max 1s = Original 1s + max(sum of two adjacent 0-segments).
+How to Draw (Opt): Draw segments like `00 | 111 | 0000`. Circle the 0-blocks. Connect any two with a "bridge" (trade). The bridge that covers the most 0s is the winner.
+Opt Complexity Visuals: Two-Pass Linear Scan.
+How to Draw Opt Complexity: Draw one line to identify segments (O(N)), and a second to find the max adjacent pair (O(N)).
+Mem Vis (BF): Storing all possible modified binary strings in memory.
+Mem Vis (Opt): A list of integer segment lengths of size sim N/2.

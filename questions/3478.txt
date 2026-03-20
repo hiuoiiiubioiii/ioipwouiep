@@ -1,0 +1,13 @@
+ID: 3478
+Problem Title: Choose K Elements With Maximum Sum
+Brute Force Method: For each index i, scan the entire array to find all j where nums1[j] &lt; nums1[i], then sort those nums2[j] values. $O(N^2 \log N)$
+BF Complexity Visuals: Sub-problem Sorting Forest.
+How to Draw BF: Draw the array. For one element, circle all "smaller" partners. Draw a sort funnel for the partners' values. Repeat for every element.
+Optimised Pattern: Sorting + Sliding Window with Min-Heap of size K. $O(N \log N + N \log K)$
+Opt Vis. Technique: Threshold-Gated Running Heap.
+Dry Run (Opt): Sort elements by nums1. As you move the "threshold," add nums2 values to a Min-Heap. If size &gt; K, pop the smallest. Current heap sum is the answer for that threshold.
+How to Draw (Opt): Draw a horizontal timeline of sorted nums1. Place a sliding "gate." Values passing the gate go into a "K-Basket." If it's too full, the smallest falls out.
+Opt Complexity Visuals: Sorting Tree + Logarithmic Updates.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort box followed by an arrow passing through a heap structure of height log K.
+Mem Vis (BF): Repeatedly creating and storing partner lists for N indices.
+Mem Vis (Opt): A single Min-Heap of size K and a sorted array of tuples.

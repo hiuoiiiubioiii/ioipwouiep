@@ -1,0 +1,13 @@
+ID: 2551
+Problem Title: Put Marbles in Bags
+Brute Force Method: Generate all possible ways to partition the array into k non-empty subarrays. For each, calculate the score (sum of first and last elements of each bag) and find the max and min difference. $O(\text{Exponential})$.
+BF Complexity Visuals: A combinatorial explosion of "cut" points across the array.
+How to Draw BF: Draw the array. Try placing k-1 dividers in every possible combination of slots. Calculate the score for each.
+Optimised Pattern: Sorting Pair Sums (Boundary Logic).
+Opt Vis. Technique: A "Divider Optimization" visual where we only care about the values adjacent to the cuts.
+Dry Run (Opt): A cut between `nums[i]` and `nums[i+1]` adds `nums[i] + nums[i+1]` to the total score. Collect all N-1 possible adjacent pair sums. Sort them. The max score uses the k-1 largest sums; the min score uses the k-1 smallest. Subtract to get the answer.
+How to Draw (Opt): Write the array. Calculate sums of every two adjacent numbers (1+2, 2+3, etc.). List these sums. Pick the k-1 biggest and the k-1 smallest. Subtract the totals.
+Opt Complexity Visuals: $O(N \log N)$ due to sorting the pair sums.
+How to Draw Opt Complexity: Draw the array with N-1 "plus" signs between elements. Draw a sorting box for these sums, and a subtraction sign between the top k and bottom k results.
+Mem Vis (BF): Exponential recursion stack for partitions.
+Mem Vis (Opt): $O(N)$ to store the N-1 pair sums.

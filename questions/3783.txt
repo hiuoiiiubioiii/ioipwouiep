@@ -1,0 +1,13 @@
+ID: 3783
+Problem Title: Mirror Distance of an Integer (Easy)
+Brute Force Method: Convert the integer to a string, reverse the string, convert it back to an integer, and calculate the absolute difference. $O(\text{Digits})$.
+BF Complexity Visuals: String Transformation Pipeline.
+How to Draw BF: Write "123". Write its reverse "321". Subtract the smaller from the larger: |123 - 321| = 198.
+Optimised Pattern: Mathematical Remainder Reversal
+Opt Vis. Technique: Digit Extraction and Reassembly
+Dry Run (Opt): Use % 10 to get the last digit and * 10 to shift the reversed result. No strings required. Subtract the original from this math-reversed result.
+How to Draw (Opt): Draw a "Number" box and a "Reverse" box. Use a loop to pop digits from the bottom of "Number" and push them into the top of "Reverse".
+Opt Complexity Visuals: $O(\log10(N)$) (Number of digits).
+How to Draw Opt Complexity: Draw a very short horizontal line with $O(\log N)$ above it.
+Mem Vis (BF): Heap allocation for string objects.
+Mem Vis (Opt): $O(1)$ extra space (pure integer arithmetic).

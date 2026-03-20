@@ -1,0 +1,13 @@
+ID: 2617
+Problem Title: Minimum Number of Visited Cells in a Grid
+Brute Force Method: Standard DFS exploring every single reachable cell from every current cell.
+BF Complexity Visuals: Exploding DFS Tree
+How to Draw BF: Draw a grid, and from one cell, draw arrows to all reachable cells in its row/col, leading to $O(M^2 \cdot N^2)$ overlapping paths.
+Optimised Pattern: BFS + Priority Queue / Monotonic Stack
+Opt Vis. Technique: Graph Level-Order Traversal
+Dry Run (Opt): Jump along the grid keeping track of the minimum jumps to reach a row/col. Use a priority queue to skip cells we already found faster paths to.
+How to Draw (Opt): Draw a grid. Label starting cell as '1'. Draw arrows to furthest jumps. Only update a cell's number if the incoming jump count is strictly smaller.
+Opt Complexity Visuals: PQ Operations Timeline
+How to Draw Opt Complexity: Draw an $O(M\cdot N)$ grid traversal loop enclosing $O(\log(M+N)$) heap operations.
+Mem Vis (BF): Deep recursive stack array
+Mem Vis (Opt): Min-Heaps (Priority Queues) maintaining active reachability per row and column.

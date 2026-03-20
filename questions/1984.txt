@@ -1,0 +1,13 @@
+ID: 1984
+Problem Title: Min Diff Between Highest and Lowest of K Scores
+Brute Force Method: Generate all possible subsets of size K, find max/min for each, and track the global minimum.
+BF Complexity Visuals: Combinatorial Subset Search
+How to Draw BF: Draw combinations nCr(n, k). For each group, calculate difference. $O(2^n)$.
+Optimised Pattern: Sorting + Fixed-Size Sliding Window
+Opt Vis. Technique: Sorted Proximity Window
+Dry Run (Opt): Sort the scores. The minimum difference for K scores must occur in a contiguous window of length K. Check `nums[i+k-1] - nums[i]`.
+How to Draw (Opt): Draw sorted dots on a line. Draw a bracket of width K. Slide the bracket across the dots and measure its "span."
+Opt Complexity Visuals: Sorting-Dominated Timeline
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting funnel followed by an $O(N)$ sliding scan.
+Mem Vis (BF): Auxiliary lists to store every generated subset.
+Mem Vis (Opt): In-place sort and two integer pointers for the window. $O(1)$ extra space.

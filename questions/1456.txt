@@ -1,0 +1,13 @@
+ID: 1456
+Problem Title: Max Number of Vowels in a Substring of Given Length
+Brute Force Method: Iterate through all possible substrings of length `k`. For each substring, loop through every character to count vowels.
+BF Complexity Visuals: Fixed-Width Sliding Scan (Redundant)
+How to Draw BF: Draw an array. Draw a box of size K. For every step the box moves, draw arrows re-counting every single item inside. Label $O(N \cdot K)$.
+Optimised Pattern: Sliding Window (Fixed)
+Opt Vis. Technique: Rolling Counter Update
+Dry Run (Opt): Initialize a window of size `k` and count its vowels. Slide the window right: if the character leaving is a vowel, decrement `count`; if the character entering is a vowel, increment `count`.
+How to Draw (Opt): Draw the string. Place a window over the first K chars. Draw a "-" sign at the left edge and a "+" sign at the right edge. Move the window, updating the total count instantly.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw a single arrow left-to-right. Label $O(N)$.
+Mem Vis (BF): $O(N)$ substring storage
+Mem Vis (Opt): A single integer `max_vowels` and `current_vowels`. Space $O(1)$.

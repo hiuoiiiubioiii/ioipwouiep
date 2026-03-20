@@ -1,0 +1,13 @@
+ID: 2677
+Problem Title: Chunk Array
+Brute Force Method: Use `slice` inside a loop but manually calculate start and end indices with complex if-statements.
+BF Complexity Visuals: Manual Index Calculation
+How to Draw BF: Draw an array and show a pointer moving index by index, checking if a new sub-array is needed. $O(N)$.
+Optimised Pattern: Iterative Slicing (Step = Size)
+Opt Vis. Technique: Fixed-Size Block Partitioning
+Dry Run (Opt): Iterate from 0 to array length, incrementing the index by `size` in each step. In each iteration, `slice` from current index to index + size.
+How to Draw (Opt): Draw a long loaf of bread. Draw vertical lines at every 'size' interval. Each piece becomes a sub-array in the result.
+Opt Complexity Visuals: $O(N)$ Total Linear Pass
+How to Draw Opt Complexity: Draw one $O(N)$ arrow representing the single loop that "jumps" by the chunk size.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(N)$ space to store the new chunked 2D array.

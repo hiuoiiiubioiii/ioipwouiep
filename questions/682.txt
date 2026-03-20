@@ -1,0 +1,13 @@
+ID: 682
+Problem Title: Baseball Game
+Brute Force Method: Iterate through the operations. For "C", "D", or "+", search backwards in the original list to find valid previous scores, re-calculating indices every time.
+BF Complexity Visuals: Backwards linear search per operation.
+How to Draw BF: Draw a list. For every "+", draw two long arrows pointing back to find the last two non-"C" numbers. Write $O(N^2)$.
+Optimised Pattern: Stack Data Structure.
+Opt Vis. Technique: LIFO (Last-In, First-Out) Tally.
+Dry Run (Opt): Maintain a stack. If it's a number, push. "C": pop. "D": push(2 * top). "+": push(top + second_top). Finally, sum the stack.
+How to Draw (Opt): Draw a vertical bucket. Drop numbers in. When "C" appears, erase the top number. When "+" appears, peek at the top two and drop their sum in.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight arrow through the operations list. Write $O(N)$.
+Mem Vis (BF): Draw a complex list with many "deleted" flags or holes.
+Mem Vis (Opt): Draw a contiguous stack of integers. $O(N)$ space.

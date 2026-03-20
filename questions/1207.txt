@@ -1,0 +1,13 @@
+ID: 1207
+Problem Title: Unique Number of Occurrences
+Brute Force Method: Use nested loops. For each number, scan the entire array to count its frequency. Store frequencies in a list. Then use another nested loop to check if any two frequencies in the list are identical.
+BF Complexity Visuals: Cartesian Product Grid
+How to Draw BF: Draw an array. For every single element, draw a long arrow sweeping across the entire array again. Write $O(N^2)$ to represent the quadratic counting scans.
+Optimised Pattern: Hash Map (Counting) + Hash Set (Uniqueness)
+Opt Vis. Technique: Frequency Buckets feeding a Unique Filter
+Dry Run (Opt): Toss each number into a bucket labeled with its value. Once done, look at the size of each bucket (the frequency). Try to push each frequency size into a "Set" box. If it bounces back (already exists), return false.
+How to Draw (Opt): Draw an array mapping to a 2-column table (Key -&gt; Count). Draw arrows from the 'Count' column pointing into a circle labeled 'Set'. If two arrows try to point to the same number in the Set, draw a red X.
+Opt Complexity Visuals: Two Sequential Linear Scans
+How to Draw Opt Complexity: Draw an array block of size N. Draw an arrow to a Map block of size M (where M &lt;= N). Draw an arrow to a Set block. Write $O(N)$ as it's a straight-through pipeline with no nesting.
+Mem Vis (BF): Draw a bare array and a single integer variable holding the current count state.
+Mem Vis (Opt): Draw a HashMap (Table of Keys and Values) next to a HashSet (Circle containing only unique Values). Both take up $O(N)$ space.

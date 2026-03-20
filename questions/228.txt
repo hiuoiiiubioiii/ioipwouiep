@@ -1,0 +1,13 @@
+ID: 228
+Problem Title: Summary Ranges
+Brute Force Method: Nested loops: for each element, scan ahead to see where the continuous sequence ends.
+BF Complexity Visuals: Staircase Step Plot: $O(N^2)$ worst case.
+How to Draw BF: Draw an array. Draw an arrow from index 0 checking all others. Then from index 1, etc. Area under the arrows is a triangle.
+Optimised Pattern: Two-Pointer / Sliding Boundary
+Opt Vis. Technique: Elastic Segment Highlighting
+Dry Run (Opt): Keep a `start` pointer. Move a `curr` pointer forward as long as `nums[i] + 1 == nums[i+1]`. When the chain breaks, record `start-&gt;curr`.
+How to Draw (Opt): Draw the array. Draw a bracket `[` at the start. Move the `]` right until the gap is &gt; 1. Write the range. Jump `[` to the next element.
+Opt Complexity Visuals: Linear Skip: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a timeline. Show the pointer moving in one direction only, never backtracking.
+Mem Vis (BF): Array of substrings for every check.
+Mem Vis (Opt): String Builder / Result List: Draw a list filling up with strings like "0-&gt;2" as the pointer completes a segment.

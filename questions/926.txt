@@ -1,0 +1,13 @@
+ID: 926
+Problem Title: Flip String to Monotone Increasing
+Brute Force Method: Try every possible split point `i` where everything before `i` is '0' and everything after is '1'. Count flips for each and find min.
+BF Complexity Visuals: $O(N^2)$. Nested loops calculating flip counts for every possible pivot.
+How to Draw BF: Draw the string. Draw a vertical line moving from left to right. At each stop, manually count all '1's on the left and '0's on the right.
+Optimised Pattern: Dynamic Programming / Prefix Sums
+Opt Vis. Technique: A "Water Pressure" system. As you walk, track how many '1's are "pushing" to be flipped, vs how many '0's would be cheaper to flip instead.
+Dry Run (Opt): Track `onesCount` and `flipCount`. For each char: if '1', `onesCount++`. If '0', `flipCount = min(onesCount, flipCount + 1)`.
+How to Draw (Opt): Draw a line graph. '1' increases a "potential" bar. '0' either increments the actual flip bar or resets it to the current "potential" if that's lower.
+Opt Complexity Visuals: $O(N)$. A single sweep through the string.
+How to Draw Opt Complexity: Draw a horizontal string. Draw one arrow moving left-to-right, updating two small boxes: `ones` and `fips`.
+Mem Vis (BF): $O(N)$ if you pre-calculate prefix sums of ones.
+Mem Vis (Opt): $O(1)$. Only two integer variables. Draw two small square boxes.

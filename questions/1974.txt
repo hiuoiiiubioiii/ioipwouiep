@@ -1,0 +1,13 @@
+ID: 1974
+Problem Title: Minimum Time to Type Word Using Special Typewriter
+Brute Force Method: Simulate the typewriter moving character by character, always moving clockwise.
+BF Complexity Visuals: Linear Circular Sweep
+How to Draw BF: Draw a clock. To go from 'a' to 'z', draw an arrow all the way around the long way. $O(N \cdot 26)$.
+Optimised Pattern: Greedy Modular Distance
+Opt Vis. Technique: Clockwise vs Counter-Clockwise Comparison
+Dry Run (Opt): Calculate the distance between current and target characters. Min(dist, 26-dist) is the movement time. Add 1 for typing.
+How to Draw (Opt): Draw a circular alphabet 'a' through 'z'. Draw two arrows from 'a' to 'c'—one short (right), one long (left). Pick the short one.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a straight line through the target word. Each step takes constant time. $O(\text{WordLength})$.
+Mem Vis (BF): Looping through 26 characters for every movement step.
+Mem Vis (Opt): Zero extra data structures; just an integer variable for current position. $O(1)$ space.

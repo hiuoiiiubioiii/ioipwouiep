@@ -1,0 +1,13 @@
+ID: 3302
+Problem Title: Find the Lexicographically Smallest Valid Sequence
+Brute Force Method: Brute force all possible 1-character replacements in `word1` and check if `word2` is a subsequence. $O(N \cdot M)$.
+BF Complexity Visuals: Nested Validation Grid
+How to Draw BF: Draw the string `word1`. For every index, try changing it to match `word2[j]`. Then run a full $O(M)$ subsequence check. Label as $O(N \cdot M)$.
+Optimised Pattern: Greedy + Suffix Matching Precomputation
+Opt Vis. Technique: Suffix-Matchability Map
+Dry Run (Opt): Precompute a suffix array where `last[i]` is the rightmost index in `word1` that can match `word2[i...]`. Use this to greedily decide whether to use the "one-change" allowance at each index.
+How to Draw (Opt): Draw `word1`. Above it, write the precomputed suffix values. As you build the result, check: "If I skip this character, can the remaining suffix still accommodate the rest of word2?"
+Opt Complexity Visuals: Double Linear Pass
+How to Draw Opt Complexity: Draw one $O(N)$ pass for suffix precomputation and one $O(N)$ pass for the greedy result. Total: $O(N)$.
+Mem Vis (BF): Generating every modified string variation.
+Mem Vis (Opt): A suffix match array of size M (O(M) space).

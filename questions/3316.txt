@@ -1,0 +1,13 @@
+ID: 3316
+Problem Title: Find Maximum Removals From Source String
+Brute Force Method: Generate all 2^M subsets of target removal indices, apply them, and check if the pattern is still a subsequence.
+BF Complexity Visuals: Binary Inclusion/Exclusion Tree
+How to Draw BF: Draw a root node. For every target index, branch left (keep) and right (remove). The bottom row has 2^M leaf nodes.
+Optimised Pattern: 2D Dynamic Programming (Source Idx vs Pattern Idx)
+Opt Vis. Technique: 2D Grid Matrix Transition
+Dry Run (Opt): `dp[i][j]` tracks max removals using `source[i:]` matching `pattern[j:]`. If characters match, take the diagonal. If `i` is a target, try adding 1 to the score and moving right.
+How to Draw (Opt): Draw a grid: Source string on the top (columns), Pattern on the left (rows). Draw diagonal arrows for matches, and horizontal arrows for skips/removals, writing the max score in the box.
+Opt Complexity Visuals: Area of a Rectangle
+How to Draw Opt Complexity: Draw a box with width N (source length) and height M (pattern length). Shading the entire box proves the $O(N \cdot M)$ time complexity.
+Mem Vis (BF): Deep recursive call stack branching exponentially, holding full string copies.
+Mem Vis (Opt): A clean 2D integer array (or two 1D rows for space optimization) taking exactly $O(N \cdot M)$ memory.

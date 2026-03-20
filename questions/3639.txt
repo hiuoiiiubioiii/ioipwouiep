@@ -1,0 +1,13 @@
+ID: 3639
+Problem Title: Minimum Time to Activate String (Med)
+Brute Force Method: Trying every possible activation order of characters and simulating the time taken for each. $O(N!)$.
+BF Complexity Visuals: Factorial Order Explosion.
+How to Draw BF: Write character A. Branch to all others. Write character B. Branch again. The number of paths is astronomical.
+Optimised Pattern: Greedy algorithm with a Queue or Monotonic Stack, focusing on the nearest available character that satisfies the activation rule.
+Opt Vis. Technique: Magnetized Character Attraction.
+Dry Run (Opt): Characters are "activated" based on their distance. Instead of trying all, always pick the "cheapest" next step using a sliding window or a precomputed distance map.
+How to Draw (Opt): Draw the string. For the current active index, draw arrows to the nearest 'target' characters. Pick the shortest arrow, move there, and repeat.
+Opt Complexity Visuals: Linear Greedy Path.
+How to Draw Opt Complexity: Draw a single arrow moving through the string. Even with some "lookback", the total movement is bounded. Write $O(N)$.
+Mem Vis (BF): A massive list of permutations of the string's indices.
+Mem Vis (Opt): A few pointers and a Hash Map/Array of size 26 to store character positions. Space $O(N)$ or $O(1)$.

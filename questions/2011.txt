@@ -1,0 +1,13 @@
+ID: 2011
+Problem Title: Final Value of Variable After Performing Operations
+Brute Force Method: Compare the full string against "++X", "X++", "--X", "X--" using multiple if/else branches.
+BF Complexity Visuals: String Matching Pipeline
+How to Draw BF: Draw out each full string. Draw a magnifying glass looking at all 3 characters one by one. $O(N \cdot 3)$ operations.
+Optimised Pattern: Middle Character Extraction
+Opt Vis. Technique: Targeted Index Lookup
+Dry Run (Opt): Look only at the 1st index (middle char) of each string. If it's '+', add 1. If it's '-', subtract 1.
+How to Draw (Opt): List the array of strings. Circle only the middle character of each. Draw an arrow from the circled char to a running total integer.
+Opt Complexity Visuals: Single Linear Sweep Arrow
+How to Draw Opt Complexity: Draw one straight line across N items. Time complexity $O(N)$.
+Mem Vis (BF): String variables allocating memory to hold copied strings for comparison.
+Mem Vis (Opt): A single $O(1)$ integer register holding the value `X`.

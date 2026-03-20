@@ -1,0 +1,13 @@
+ID: 298
+Problem Title: Binary Tree Longest Consecutive Sequence
+Brute Force Method: For every node, start a new DFS to find the longest consecutive path starting specifically at that node.
+BF Complexity Visuals: Overlapping DFS Scans: $O(N^2)$ (skewed) or $O(N \log N)$.
+How to Draw BF: Draw a tree. From every circle, draw a path down. Shade all the paths to show they overlap significantly.
+Optimised Pattern: Single-Pass Bottom-Up / Top-Down DFS
+Opt Vis. Technique: State Bubbling
+Dry Run (Opt): Pass the current length to the children. If child's value is parent + 1, increment. Else, reset to 1. Track global max.
+How to Draw (Opt): Draw a tree. Next to each node, write its value and its "Current Streak" number. Arrows show the streak number increasing or resetting.
+Opt Complexity Visuals: Linear Visit: $O(N)$.
+How to Draw Opt Complexity: Draw a single snaking line through the tree. Each node is touched once.
+Mem Vis (BF): Multiple sub-traversal stacks.
+Mem Vis (Opt): Implicit Recursion Stack: Draw one vertical stack of max height H. Space: $O(H)$.

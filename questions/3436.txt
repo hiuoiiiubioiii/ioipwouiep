@@ -1,0 +1,13 @@
+ID: 3436
+Problem Title: Find Valid Emails
+Brute Force Method: Manually split string by '@' and '.', check every character in each substring for alphanumeric rules using nested loops. $O(N^2)$
+BF Complexity Visuals: Substring Fragmentation Map.
+How to Draw BF: Draw the email string. Draw several boxes around split segments. Inside each box, draw arrows checking every char index.
+Optimised Pattern: Regular Expression (Regex) Parsing. $O(N)$
+Opt Vis. Technique: Finite Automata (FSM) State Diagram.
+Dry Run (Opt): Start in "User" state. Read chars until '@', move to "Domain" state. Read until '.', move to "TLD" state. If a bad char is met, move to "Reject".
+How to Draw (Opt): Draw 4 circles (Start, User, Domain, TLD). Draw arrows between them labeled with allowed character types (e.g., [a-z], @, .).
+Opt Complexity Visuals: Single Pass Stream.
+How to Draw Opt Complexity: Draw a single conveyor belt with the email string moving through a "Regex Filter" box exactly once.
+Mem Vis (BF): Creating multiple intermediate string objects for each split part.
+Mem Vis (Opt): A single boolean state variable or a pointer to the compiled Regex engine.

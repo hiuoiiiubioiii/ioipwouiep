@@ -1,0 +1,13 @@
+ID: 3542
+Problem Title: Min Ops to Convert All Elements to Zero (Med)
+Brute Force Method: Iteratively subtract 1 from every non-zero element until all are zero.
+BF Complexity Visuals: Gradual Element Decay.
+How to Draw BF: Draw an array. Repeatedly cross out numbers and write (Value-1) below them. Count total operations. $O(N \\text{cdot Max}_\text{Val})$.
+Optimised Pattern: Greedy Selection + Difference Array / Sorting.
+Opt Vis. Technique: Staircase Collapse.
+Dry Run (Opt): Sort unique elements. Instead of -1 repeatedly, subtract the difference between the current smallest and the next. All equal elements drop together.
+How to Draw (Opt): Draw a bar chart. Draw a horizontal line at the lowest non-zero bar. "Cut" the top off and shift it down. Count the distinct bar heights.
+Opt Complexity Visuals: $O(N \log N)$ Sorting.
+How to Draw Opt Complexity: Draw an unsorted array. Draw a sorted version below it. Show $O(N)$ traversal of the unique elements.
+Mem Vis (BF): Operation Logs: Draw a huge list recording every single subtraction operation performed.
+Mem Vis (Opt): Set/Sorted Array: Draw a single 1D array or a Set containing only unique values from the input.

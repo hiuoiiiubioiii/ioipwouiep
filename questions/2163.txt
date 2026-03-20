@@ -1,0 +1,13 @@
+ID: 2163
+Problem Title: Minimum Difference in Sums After Removal of Elements
+Brute Force Method: For every possible split point, calculate the min-sum of the left N elements and max-sum of the right N elements.
+BF Complexity Visuals: $O(N^2)$ total work: sorting subsets at every split point.
+How to Draw BF: Draw an array of size 3N. Place a divider. Sort left and right parts. Move divider. Repeat. $O(N^2 \log N)$.
+Optimised Pattern: Two Heaps (Priority Queues) + Prefix/Suffix Sums.
+Opt Vis. Technique: A balance scale being adjusted by swapping the "heaviest" and "lightest" weights.
+Dry Run (Opt): Build `leftMin[i]` using a Max-Heap to keep the N smallest elements. Build `rightMax[i]` using a Min-Heap for N largest. `Result = min(leftMin[i] - rightMax[i+1])`.
+How to Draw (Opt): Draw two arrays for sums. Use a small triangle (Heap) to track elements. When a new small number arrives, pop the largest from the Max-Heap. Record the sum.
+Opt Complexity Visuals: $O(N \log N)$ heap operations.
+How to Draw Opt Complexity: A linear scan with a "bubble" (Heap) floating above it, processing each element in log(N).
+Mem Vis (BF): Creating sub-arrays for every split $O(N^2)$.
+Mem Vis (Opt): $O(N)$ for two sum arrays and a Priority Queue.

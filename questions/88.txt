@@ -1,0 +1,13 @@
+ID: 88
+Problem Title: Merge Sorted Array
+Brute Force Method: Append and Sort Copy all elements of `nums2` into the empty slots of `nums1`, then call `sort()`.
+BF Complexity Visuals: The Messy Pile Sorter
+How to Draw BF: Draw `nums1` with empty space at the end. Dump `nums2` into that space. Draw a big circle around it labeled "O(N log N) Sort".
+Optimised Pattern: Three Pointers (Backward Fill)
+Opt Vis. Technique: The Reverse Zipper
+Dry Run (Opt): Start three pointers: `p1` at the last actual element of `nums1`, `p2` at the end of `nums2`, and `p` at the very end of `nums1`'s memory. Fill `nums1` from right to left with the larger value.
+How to Draw (Opt): Draw `nums1` and `nums2`. Place `p` at the far right of `nums1`. Compare `p1` and `p2`. Whichever is bigger moves to `p`, then `p` and that pointer move left.
+Opt Complexity Visuals: Single Backward Pass
+How to Draw Opt Complexity: Draw a line representing the total length M+N. Show the `p` pointer moving from right to left exactly once. Time: $O(M+N)$.
+Mem Vis (BF): $O(N \log N)$ or $O(N)$ depending on sorting overhead.
+Mem Vis (Opt): Draw the `nums1` array being filled in place. No extra arrays are created. Space: $O(1)$.

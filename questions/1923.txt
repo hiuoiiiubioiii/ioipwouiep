@@ -1,0 +1,13 @@
+ID: 1923
+Problem Title: Longest Common Subpath
+Brute Force Method: Generate every possible subpath of every path and find the longest one that appears in all lists using a Hash Set.
+BF Complexity Visuals: Subsequence Intersection Overlap
+How to Draw BF: Draw multiple circles representing all subpaths of each path. Find the central intersection of all circles. $O(N^2)$ paths.
+Optimised Pattern: Binary Search on Length + Rolling Hash (Rolling Hash)
+Opt Vis. Technique: Sliding Window Hash Validation
+Dry Run (Opt): Binary search for the length 'L'. For a fixed L, use Rabin-Karp (rolling hash) to find common subpaths across all users.
+How to Draw (Opt): Draw a number line for length. Pick 'L'. For each path, slide a window of size L. Generate a hash value. Compare hashes across paths.
+Opt Complexity Visuals: Logarithmic Search with Linear Check
+How to Draw Opt Complexity: Draw a binary search tree for length (log N) and for each node, draw a linear scan across all paths (sum of lengths). $O(\text{Sum}(L)$ * log N).
+Mem Vis (BF): Massive Hash Set storing every single possible string/subpath from every path.
+Mem Vis (Opt): A set of long integers (hashes) for each path at a specific length L, clearing memory after each binary search step.

@@ -1,0 +1,13 @@
+ID: 873
+Problem Title: Length of Longest Fibonacci Subsequence
+Brute Force Method: Try every possible starting pair (i, j). Use a loop to see how many subsequent Fibonacci numbers exist in the array.
+BF Complexity Visuals: Triple Nested Search. $O(N^3)$.
+How to Draw BF: Draw an array. Pick two numbers. Search the whole array for their sum. If found, search again for the next sum. Repeat for every pair.
+Optimised Pattern: 2D Dynamic Programming + Hash Set.
+Opt Vis. Technique: "Sum-to-Index" Mapping.
+Dry Run (Opt): Store val to index in a Map. Use DP state `dp[i][j]` representing the length of the sequence ending at indices i and j. To find the previous element: target = A[j] - A[i]. If target exists at index k, `dp[i][j] = dp[k][i] + 1`.
+How to Draw (Opt): Draw a 2D grid. The cell (i, j) looks back at a previous cell (k, i) based on a math calculation. Draw arrows connecting these grid cells.
+Opt Complexity Visuals: Squared Iteration. $O(N^2)$.
+How to Draw Opt Complexity: Draw a half-matrix (triangle) representing all pairs (i, j). Each cell is processed in $O(1)$.
+Mem Vis (BF): $O(1)$ excluding input, but massive repetitive re-scanning of the array.
+Mem Vis (Opt): 2D DP Table: Draw an N x N matrix storing integers.

@@ -1,0 +1,13 @@
+ID: 842
+Problem Title: Split Array into Fibonacci Sequence
+Brute Force Method: Use backtracking to try splitting the string at every possible index to form the first number, then every possible second number, then check if the rest follows the rule.
+BF Complexity Visuals: Exponential Partition Tree. $O(10^N)$.
+How to Draw BF: Draw a string. Branch out to try splitting "1", "12", "123". From each, branch again. The tree grows based on string length.
+Optimised Pattern: Backtracking with Fibonacci Pruning &amp; Integer Overflow check.
+Opt Vis. Technique: The "Rule of Two" Dominoes.
+Dry Run (Opt): You only need to pick the first two numbers. Once A and B are picked, the third MUST be A+B. Search the remaining string for exactly A+B. If it's there, continue; if not, backtrack the first two numbers.
+How to Draw (Opt): Draw a string. Draw two brackets for the first two numbers. Use a calculator icon to sum them, and draw a "searchlight" looking for that sum in the remaining string.
+Opt Complexity Visuals: Polynomial Backtracking. $O(N^2)$.
+How to Draw Opt Complexity: Draw a grid where rows are possible lengths of first number and columns are lengths of second number. The work only happens on the valid "edges."
+Mem Vis (BF): Massive recursion stack: Draw a stack N levels deep with hundreds of string fragments.
+Mem Vis (Opt): Result List: Draw a single 1D array of integers that grows and shrinks as you backtrack.

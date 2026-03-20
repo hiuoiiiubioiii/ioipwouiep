@@ -1,0 +1,13 @@
+ID: 990
+Problem Title: Satisfiability of Equality Equations
+Brute Force Method: Generate all possible assignments of values (0-25) to the 26 variables (26! or 10^26 combinations) and check if the equations hold.
+BF Complexity Visuals: $O(26^26)$. An astronomical search space that is impossible to compute.
+How to Draw BF: Draw 26 variables. Try setting a=1, b=1, c=2... then a=1, b=2, c=1... Show a tree of choices that fills the entire universe.
+Optimised Pattern: Union-Find (Consistency Check)
+Opt Vis. Technique: "Connecting the Dots." Process all "==" equations first to group variables into "equality islands." Then, check all "!=" equations; if two variables in a "!=" rule are on the same island, the logic is broken.
+Dry Run (Opt): 1. Initialize Union-Find for 26 letters. 2. For each eq `a==b`, `union(a, b)`. 3. For each eq `a!=b`, if `find(a) == find(b)`, return `false`. 4. Return `true`.
+How to Draw (Opt): Draw letters as nodes. For `a==b`, draw a solid line. For `c!=d`, draw a dashed red line with an 'X'. Logic is valid if no dashed line connects nodes in the same solid cluster.
+Opt Complexity Visuals: $O(N)$. Processing N equations with near-constant time Union-Find operations.
+How to Draw Opt Complexity: Draw a 26-slot array (Parent pointers). Show pointers moving to point to "Group Leaders" as equations are processed.
+Mem Vis (BF): $O(26^26)$ state space.
+Mem Vis (Opt): $O(1)$ extra space (fixed array of 26 integers). Draw one small row of 26 boxes labeled 'Parent'.

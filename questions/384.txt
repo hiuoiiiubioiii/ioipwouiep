@@ -1,0 +1,13 @@
+ID: 384
+Problem Title: Shuffle an Array
+Brute Force Method: Generate all N! permutations of the array, store them in a list, and pick one randomly.
+BF Complexity Visuals: Permutation Factory Expansion
+How to Draw BF: Draw an array [1,2,3]. Draw branches for [1,2,3], [1,3,2], [2,1,3], etc. Label the width $O(N!)$.
+Optimised Pattern: Fisher-Yates Shuffle Algorithm
+Opt Vis. Technique: In-Place Random Swap Boundary
+Dry Run (Opt): Iterate from i=0 to n-1. Pick a random index j between i and n-1. Swap nums[i] and nums[j]. Everything to the left of i is now "shuffled".
+How to Draw (Opt): Draw an array. Draw a vertical dashed line (the boundary). To the left, "Shuffled". Pick a random element from the right, swap it to the boundary, and move the line.
+Opt Complexity Visuals: Linear Swap Sequence
+How to Draw Opt Complexity: Draw an array. Draw a pointer i moving right. At each i, draw a swap arc to a random index to its right. Label $O(N)$.
+Mem Vis (BF): A massive list of N! arrays.
+Mem Vis (Opt): Two arrays: `original` (to reset) and `current` (to shuffle). Draw two horizontal tapes. $O(N)$.

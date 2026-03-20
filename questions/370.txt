@@ -1,0 +1,13 @@
+ID: 370
+Problem Title: Range Addition
+Brute Force Method: For every update (start, end, inc), iterate through the array from start to end and add inc to each element.
+BF Complexity Visuals: Nested Range Iteration
+How to Draw BF: Draw an array. For update 1, draw a bracket and add 2. For update 2, draw a second overlapping bracket and add 3. Label $O(k \cdot N)$.
+Optimised Pattern: Difference Array (Prefix Sum Optimization)
+Opt Vis. Technique: Boundary Impact Accumulation
+Dry Run (Opt): For each update, only modify two points: arr[start] += inc and arr[end+1] -= inc. After all updates, calculate the prefix sum of the array once.
+How to Draw (Opt): Draw an array. For an update [+3] on range [1, 3], put "+3" at index 1 and "-3" at index 4. Then draw a "Summing Wave" moving through the array to produce the final values.
+Opt Complexity Visuals: Linear Boundary Processing
+How to Draw Opt Complexity: Draw k operations on a single array followed by one pass. $O(k + N)$.
+Mem Vis (BF): No extra memory besides the array.
+Mem Vis (Opt): The same array of size N. Draw one horizontal tape. $O(1)$ extra (in-place).

@@ -1,0 +1,13 @@
+ID: 1425
+Problem Title: Constrained Subsequence Sum
+Brute Force Method: 1D DP with Inner Loop. `dp[i]` = max sum ending at `i`. To calculate `dp[i]`, loop backwards `k` steps to find `max(dp[i-k] ... dp[i-1])`. Add `nums[i]`.
+BF Complexity Visuals: Overlapping Lookback Scans
+How to Draw BF: Draw an array. For every element, draw an arrow pointing back exactly K steps. As you move right, these lookback arrows heavily overlap, representing redundant checks. $O(N \cdot K)$.
+Optimised Pattern: DP + Monotonic Deque (Sliding Window Maximum)
+Opt Vis. Technique: Decreasing Deque Tube
+Dry Run (Opt): Maintain a deque storing indices of the DP array in monotonically decreasing order of their DP values. To calculate `dp[i]`, simply look at `deque.front()`. Remove indices from front if they are `&lt; i - k`.
+How to Draw (Opt): Draw the array. Beside it, draw a horizontal pipe (the deque). As you calculate values, drop them in the right side. If a new value is bigger than older ones in the pipe, push the older ones out the back. Only the strongest/freshest survive.
+Opt Complexity Visuals: Amortized Constant Time Operations
+How to Draw Opt Complexity: Draw an array with an arrow moving right $O(N)$. Draw the Deque with a small $O(1)$ label for push/pop. Total $O(N)$.
+Mem Vis (BF): Full DP Array $O(N)$
+Mem Vis (Opt): Draw a Double-Ended Queue (Deque) containing at most K integers. Space $O(N)$ for DP + $O(K)$ for deque.

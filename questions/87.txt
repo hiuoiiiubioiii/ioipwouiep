@@ -1,0 +1,13 @@
+ID: 87
+Problem Title: Scramble String
+Brute Force Method: Pure Recursion For every possible split point i in the string, check if the two halves are scrambled versions of each other (including the case where they are swapped).
+BF Complexity Visuals: The Exponential Tree of Splits
+How to Draw BF: Draw a string. Split it in the middle. From each split, draw two more branches (Stay vs Swap). The tree depth is N. Time: $O(4^N)$ or $O(N!)$ depending on implementation.
+Optimised Pattern: 3D Dynamic Programming / Memoization
+Opt Vis. Technique: The Recursive Pruning Grid
+Dry Run (Opt): Use a Map to store `(s1, s2)` pairs that have already been checked. Before checking a split, verify that both strings have the same character counts (anagram check) to fail early.
+How to Draw (Opt): Draw a 3D grid where `dp[len][i][j]` represents if `s1[i...i+len]` is a scramble of `s2[j...j+len]`. Fill small lengths first and build up to length N.
+Opt Complexity Visuals: Pruned Recursive Depth
+How to Draw Opt Complexity: Draw the recursion tree but draw thick red "X" marks over branches where character counts don't match. Time: $O(N^4)$ for DP.
+Mem Vis (BF): Deep recursive stack without any memory of previous results.
+Mem Vis (Opt): Draw a Hash Map (Memoization table) storing string pairs. Space: $O(N^4)$ for the DP table.

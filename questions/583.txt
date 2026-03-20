@@ -1,0 +1,13 @@
+ID: 583
+Problem Title: Delete Operation for Two Strings
+Brute Force Method: Generate all subsequences of both strings and find the longest one they have in common (LCS), then calculate the remaining characters.
+BF Complexity Visuals: Exponential subsequence generation $O(2^N)$.
+How to Draw BF: Draw `sea` and `eat`. List every combo: `s, e, a, se, sa, ea, sea...` and find the match.
+Optimised Pattern: 2D Dynamic Programming (LCS).
+Opt Vis. Technique: An edit-distance grid. You find the "core" shared string. The number of deletions is simply the total length of both strings minus twice the length of that core.
+Dry Run (Opt): `dp[i][j]` is LCS of `s1[0...i]` and `s2[0...j]`. If `s1[i] == s2[j]`, `dp[i][j] = 1 + dp[i-1][j-1]`. Else, `max(dp[i-1][j], dp[i][j-1])`. Result: `len1 + len2 - 2*LCS`.
+How to Draw (Opt): Draw an N \times M grid. Fill it based on character matches. The bottom-right corner gives the length of the Longest Common Subsequence.
+Opt Complexity Visuals: Filling a bounded N \times M table. $O(N \\text{times} M)$.
+How to Draw Opt Complexity: Draw a rectangle divided into a grid, shading cells one by one as they are computed.
+Mem Vis (BF): Recursion stack for 2^N branches.
+Mem Vis (Opt): $O(N \\text{times} M)$ DP table (can be optimized to $O(\\text{min}(N, M)$)).

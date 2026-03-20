@@ -1,0 +1,13 @@
+ID: 167
+Problem Title: Two Sum II - Input Array Is Sorted
+Brute Force Method: Nested loops (i, j) to check every pair of numbers to see if they sum to the target (O(N^2)).
+BF Complexity Visuals: An $O(N^2)$ upper-triangular coordinate grid showing redundant pairs.
+How to Draw BF: Draw the array. For the 1st number, draw arrows to all others. For the 2nd, do the same. Show the density of arrows.
+Optimised Pattern: Two Pointers (Left and Right).
+Opt Vis. Technique: A "Pincer Movement." One pointer at the start, one at the end. They move inward based on whether the current sum is too low or too high.
+Dry Run (Opt): While L &lt; R: if Sum &lt; Target, move L right. If Sum &gt; Target, move R left. If equal, return [L+1, R+1].
+How to Draw (Opt): Draw the sorted array. Put a finger on the first and last elements. Slide them inward, noting if the sum needs to "grow" or "shrink."
+Opt Complexity Visuals: $O(N)$ linear time. Both pointers together cover exactly N elements.
+How to Draw Opt Complexity: Draw a single horizontal line. Mark each element with one dot as it is passed by a pointer, proving no node is visited twice.
+Mem Vis (BF): N/A (Nested loops only).
+Mem Vis (Opt): Visualize two integer pointers (L, R) in $O(1)$ stack memory. Zero heap allocation.

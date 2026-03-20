@@ -1,0 +1,13 @@
+ID: 44
+Problem Title: Wildcard Matching
+Brute Force Method: Pure Recursion Every time you see a `*`, branch the path: one path where `*` matches 0 characters, one where it matches 1, one where it matches 2, etc.
+BF Complexity Visuals: The Infinite Splinter
+How to Draw BF: Draw a string and a pattern with a `*`. Draw a tree where the `*` node explodes into N branches (matching 0, 1, 2... letters). $O(2^N)$ time.
+Optimised Pattern: Two Pointers + Greedy Backtrack
+Opt Vis. Technique: The Anchor and Rubber Band
+Dry Run (Opt): Scan left-to-right. If you hit a `*`, "anchor" a pointer there. Assume it matches 0 characters and move on. If you hit a mismatch later, rubber-band back to the anchor, assume it matches 1 character, and try again.
+How to Draw (Opt): Draw string S and pattern P. Draw a star icon over the `*` in P. Draw a pointer moving right in S. When a mismatch hits, draw a curved arrow snapping the pointer back to the star icon, shifting it right by one.
+Opt Complexity Visuals: Single Scan Line (Mostly)
+How to Draw Opt Complexity: Draw a line representing S. Draw small, occasional loops snapping back. Emphasize that in the average case, it's $O(N + M)$ time, far faster than DP.
+Mem Vis (BF): Draw a massive call stack or a full M x N DP table.
+Mem Vis (Opt): Draw exactly four pointers (`s_idx`, `p_idx`, `star_idx`, `match_idx`). Extremely memory efficient at $O(1)$ space.

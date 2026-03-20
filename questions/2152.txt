@@ -1,0 +1,13 @@
+ID: 2152
+Problem Title: Minimum Number of Lines to Cover Points
+Brute Force Method: Generate all possible lines between all pairs of points, then try every combination of lines to see which set covers all points.
+BF Complexity Visuals: Power set of all possible lines.
+How to Draw BF: Draw points. Draw every possible connecting line. Try picking subsets of lines. $O(2^(N^2)$).
+Optimised Pattern: Bitmask DP / State Compression.
+Opt Vis. Technique: A grid where rows are "points covered" (bitmasks) and values are "min lines".
+Dry Run (Opt): `dp[mask]` = min lines to cover points in mask. For each mask, pick 2 uncovered points, form a line, find all points on that line, and update `new_mask`.
+How to Draw (Opt): Draw a bitmask (e.g., 1011). Shade the 1st, 3rd, and 4th points. Try adding a line that hits the 2nd point. Update the mask to 1111. Write the +1 line cost.
+Opt Complexity Visuals: $O(N^2 \cdot 2^N)$.
+How to Draw Opt Complexity: A 1D array of size 2^N being filled from left to right, where each cell looks back at previous states.
+Mem Vis (BF): Massive list of line objects and subsets.
+Mem Vis (Opt): $O(2^N)$ 1D array to store DP states.

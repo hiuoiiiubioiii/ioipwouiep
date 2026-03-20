@@ -1,0 +1,13 @@
+ID: 1776
+Problem Title: Car Fleet II
+Brute Force Method: For every car, check all cars in front. Calculate collision times for every pair and simulate fleets merging step-by-step.
+BF Complexity Visuals: Nested Right-Side Simulation.
+How to Draw BF: Draw cars as dots. Draw lines for every potential future collision point. $O(N^2)$.
+Optimised Pattern: Monotonic Stack (Right-to-Left) + Collision Time Comparison.
+Opt Vis. Technique: The "Vanishing Horizon" Stack.
+Dry Run (Opt): Traverse from right to left. Maintain a stack of cars. If a car is faster than the one in front, it will collide. If its collision time is later than the car in front's own collision, pop the front car (it's part of a different fleet already).
+How to Draw (Opt): Draw a vertical stack. Push a car. If the next car "catches" it too late (past its own collision), pop. Use the formula: time = (pos2 - pos1) / (speed1 - speed2).
+Opt Complexity Visuals: Single Pass Stack Maintenance.
+How to Draw Opt Complexity: Draw one arrow moving right-to-left. For each car, show 0-2 pops. Label $O(N)$.
+Mem Vis (BF): Multiple copies of fleet state arrays.
+Mem Vis (Opt): A Stack of indices/floats. $O(N)$ space.

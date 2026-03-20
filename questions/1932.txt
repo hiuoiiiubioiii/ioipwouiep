@@ -1,0 +1,13 @@
+ID: 1932
+Problem Title: Merge BSTs to Create Single BST
+Brute Force Method: Try every possible way to pick a root and attach other trees into its leaves, then check if it's a valid BST.
+BF Complexity Visuals: Factorial Permutation Search
+How to Draw BF: Draw N small trees. Show all N! ways to order them for merging. Cross out invalid BSTs. $O(N! \cdot N)$.
+Optimised Pattern: Hash Map Root Lookup + DFS Validation
+Opt Vis. Technique: Tree Piece Stitching (Puzzle)
+Dry Run (Opt): Map each root's value to its tree object. Identify the global root (appears as root but never as leaf). DFS from global root, "stitching" trees by replacing leaf values with root matches.
+How to Draw (Opt): Draw separate small trees. Draw "bridge" arrows from a leaf in Tree A to the root of Tree B if values match. Finally, perform one in-order traversal.
+Opt Complexity Visuals: Linear Graph Traversal
+How to Draw Opt Complexity: Draw N nodes being visited exactly once in a connected component. $O(N)$ time.
+Mem Vis (BF): Multiple copies of tree structures being built and discarded during search.
+Mem Vis (Opt): A Hash Map of `value -&gt; TreeNode*` and a frequency map for leaf values to find the global root.

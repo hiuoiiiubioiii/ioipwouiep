@@ -1,0 +1,13 @@
+ID: 2028
+Problem Title: Find Missing Observations
+Brute Force Method: Use a recursive backtracking function to try all combinations of 1-6 for the `n` missing dice until the target sum is hit.
+BF Complexity Visuals: Deep 6-ary Search Tree
+How to Draw BF: Draw a root node. Branch out 6 ways for dice rolls 1 through 6. For each, branch 6 ways again. $O(6^N)$ time. Impossible to draw fully.
+Optimised Pattern: Math / Greedy Distribution (Base + Remainder)
+Opt Vis. Technique: Water Pitcher Equalization
+Dry Run (Opt): Find required missing sum. Check bounds (`n` to `6n`). Base value = `sum // n`. Remainder = `sum % n`. Give every die the base value. Distribute remainder +1 to the first few dice.
+How to Draw (Opt): Draw `n` empty boxes. Calculate the base integer and write it in every box. Take the remainder and distribute it as "+1"s starting from the first box.
+Opt Complexity Visuals: $O(1)$ Math to $O(N)$ Fill
+How to Draw Opt Complexity: Draw a calculator symbol (O(1) math) pointing to an array of size `N`. Draw a straight line filling the array. Total Time $O(N + M)$.
+Mem Vis (BF): Massive recursive stack frames generating failed dice combinations.
+Mem Vis (Opt): A simple 1D array of size `n` allocated once and filled instantly. Space $O(N)$.

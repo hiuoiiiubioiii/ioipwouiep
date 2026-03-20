@@ -1,0 +1,13 @@
+ID: 1395
+Problem Title: Count Number of Teams
+Brute Force Method: Generate all possible triplets (i, j, k) with i &lt; j &lt; k and check if they are strictly increasing or decreasing.
+BF Complexity Visuals: $O(N³)$ Triplet Enumeration
+How to Draw BF: Draw an array. Draw every possible triangle connecting three indices. The number of triangles grows cubically.
+Optimised Pattern: DP / Middle-Element Counting
+Opt Vis. Technique: Pivot-Based Combinatorics
+Dry Run (Opt): For each element j, count how many elements to its left are smaller/larger and how many to its right are smaller/larger. Teams = `left_smaller * right_larger + left_larger * right_smaller`.
+How to Draw (Opt): Draw an array. Circle a middle element. Draw arrows to the left for smaller numbers and to the right for larger ones. Multiply the counts to get the number of teams through that pivot.
+Opt Complexity Visuals: $O(N²)$ Linear Pivot Search
+How to Draw Opt Complexity: Draw an arrow moving through the array. For each stop, draw two smaller arrows scanning left and right, proving quadratic time.
+Mem Vis (BF): $O(1)$ Memory: Just three nested loops using index variables.
+Mem Vis (Opt): $O(1)$ Memory: Four integer counters for each pivot element.

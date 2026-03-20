@@ -1,0 +1,13 @@
+ID: 1116
+Problem Title: Print Zero Even Odd
+Brute Force Method: Busy waiting (Spinlocks). Use a single shared state variable (0, 1, 2) and have three threads stuck in infinite `while` loops checking the state.
+BF Complexity Visuals: Overlapping Spin Cycles
+How to Draw BF: Draw three circular arrows spinning rapidly. Draw lightning bolts between them to represent wasted CPU cycles and high contention.
+Optimised Pattern: Concurrency: 3 Semaphores
+Opt Vis. Technique: Token Passing Triangle
+Dry Run (Opt): Initialize semaphores: Zero(1), Even(0), Odd(0). 'Zero' thread runs, prints 0, and signals either Even or Odd. They run, print, and signal Zero back.
+How to Draw (Opt): Draw 3 nodes (Z, E, O). Draw directed arrows: Z to O, O to Z, Z to E, E to Z. Trace a single "token" moving back and forth along these paths.
+Opt Complexity Visuals: Sequential Cyclic Execution Graph
+How to Draw Opt Complexity: Draw a timeline. Plot alternating blocks: [Z][O][Z][E][Z][O]... showing $O(N)$ linear time with zero CPU waste.
+Mem Vis (BF): Shared volatile integer continuously polled
+Mem Vis (Opt): 3 OS-level Semaphore queues (Threads sleep efficiently).

@@ -1,0 +1,13 @@
+ID: 2181
+Problem Title: Merge Nodes in Between Zeros
+Brute Force Method: Extract all non-zero node values into a list, iterate the list to sum segments between imaginary zeros, and create a new Linked List.
+BF Complexity Visuals: Dumping a chain into a bucket, then building a new chain.
+How to Draw BF: Draw a linked list. Draw arrows moving values to a temporary array. Draw a second set of arrows building new nodes. $O(N)$.
+Optimised Pattern: In-Place Two Pointers / Link Manipulation.
+Opt Vis. Technique: A single pointer moving forward and "consuming" the nodes behind it.
+Dry Run (Opt): Use two pointers: `curr` to read and `res` to write. Sum nodes until `curr.val == 0`. Assign sum to `res.next`, move `res`.
+How to Draw (Opt): Draw the list. Circle nodes between two zeros. Draw a heavy arrow from the first zero to a new node containing the sum of the circle. Delete the old nodes.
+Opt Complexity Visuals: $O(N)$ single linear pass.
+How to Draw Opt Complexity: A single horizontal arrow moving through the nodes, stopping at each zero to perform a sum.
+Mem Vis (BF): $O(N)$ extra space for the temporary list and new nodes.
+Mem Vis (Opt): $O(1)$ auxiliary space (modifying the existing list nodes).

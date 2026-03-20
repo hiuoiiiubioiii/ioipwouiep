@@ -1,0 +1,13 @@
+ID: 3173
+Problem Title: Bitwise OR of Adjacent Elements
+Brute Force Method: Creating new temporary objects for every OR pair calculation.
+BF Complexity Visuals: Paired Step Graph
+How to Draw BF: Draw the array. Draw brackets over every two elements. Write the result in a new array below.
+Optimised Pattern: Single-Pass Array Mapping
+Opt Vis. Technique: Adjacent Zipper
+Dry Run (Opt): Iterate 0 rightarrow N-2. Compute `nums[i] | nums[i+1]` and store in index i of the result array.
+How to Draw (Opt): Draw the array. Draw a "zipper" moving across. At each teeth-close, write the OR result.
+Opt Complexity Visuals: Linear Timeline
+How to Draw Opt Complexity: Draw a straight line with N-1 nodes. $O(N)$.
+Mem Vis (BF): Array copies for every intermediate result.
+Mem Vis (Opt): A single output array of size N-1. $O(N)$.

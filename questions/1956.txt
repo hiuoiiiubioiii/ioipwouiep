@@ -1,0 +1,13 @@
+ID: 1956
+Problem Title: Minimum Time For K Virus Variants to Spread
+Brute Force Method: Run BFS from every single point on the massive 2D grid continuously. Time Limit Exceeded instantly.
+BF Complexity Visuals: Infinite Ripple Expansion
+How to Draw BF: Draw a massive grid. Draw thousands of expanding circles from every single node until they overlap.
+Optimised Pattern: Binary Search on Answer + Intersection Checks
+Opt Vis. Technique: The Bounding Box Overlap
+Dry Run (Opt): Binary search the "Days" (D). For a given D, each virus spreads in a diamond shape (Manhattan distance). Check if there is any point in the grid covered by at least K diamonds.
+How to Draw (Opt): Draw the virus starting points. For a guess D, draw a diamond of radius D around each. If K diamonds overlap at any single pixel, the guess is valid.
+Opt Complexity Visuals: Logarithmic Search $O(\log(\\text{text}{\text{Max}})$ \cdot \text{Points}^3)
+How to Draw Opt Complexity: Draw a timeline cut in half. At each step, draw a check matrix for the virus coordinates.
+Mem Vis (BF): Massive 2D grids.
+Mem Vis (Opt): Variables for boundaries. $O(1)$ extra space.

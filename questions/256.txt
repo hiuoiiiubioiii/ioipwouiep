@@ -1,0 +1,13 @@
+ID: 256
+Problem Title: Paint House
+Brute Force Method: Recursive DFS exploring all possible color choices for N houses with no adjacent same colors.
+BF Complexity Visuals: Tertiary Decision Tree: $O(3 \cdot 2^{N-1})$.
+How to Draw BF: Draw a root node splitting into 3 branches (R, G, B). Each subsequent level branches into 2. Show the tree width doubling at each level.
+Optimised Pattern: Dynamic Programming (In-place or 1D)
+Opt Vis. Technique: Cost Accumulation Matrix
+Dry Run (Opt): For house i, the cost to paint it Red is its own cost + min(\text{Green cost house } i-1, \text{Blue cost house } i-1). Repeat for all 3 colors.
+How to Draw (Opt): Draw a table with 3 columns (R, G, B). For row i, draw arrows from the two minimum values in row i-1 to the current cell.
+Opt Complexity Visuals: Linear Matrix Sweep: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a vertical arrow going down the 3-column table. Each step takes 3 comparisons (constant time).
+Mem Vis (BF): Recursion stack: $O(N)$ depth.
+Mem Vis (Opt): Rolling Row: Draw exactly two 1x3 arrays. One for "Previous House Costs" and one for "Current House Costs."

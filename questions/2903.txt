@@ -1,0 +1,13 @@
+ID: 2903
+Problem Title: Find Indices With Index and Value Difference I
+Brute Force Method: Nested for-loops comparing every index pair (i, j).
+BF Complexity Visuals: Upper Triangular Matrix
+How to Draw BF: Draw an N x N grid. Put an 'X' in cells where i &lt; j and distance conditions meet. Shows N^2/2 checks.
+Optimised Pattern: Two Pointers / Tracking Min &amp; Max limits
+Opt Vis. Technique: Variable Line Trackers
+Dry Run (Opt): Move an 'i' pointer forward. Maintain a 'j' pointer (i - indexDifference). Update running min/max of elements up to j.
+How to Draw (Opt): Draw a 1D array. Put a vertical dashed line separating the "eligible past" (indices &lt;= i-diff) from the present 'i'.
+Opt Complexity Visuals: Single Horizontal Axis Traverse
+How to Draw Opt Complexity: Draw a single straight line from 0 to N. Annotate constant $O(1)$ operations at each step. T(N) = N * $O(1)$ = $O(N)$.
+Mem Vis (BF): Two integer boxes for nested loop counters (i, j). $O(1)$ space.
+Mem Vis (Opt): Four integer boxes: `min_val`, `max_val`, `min_idx`, `max_idx` dynamically updating. $O(1)$ space.

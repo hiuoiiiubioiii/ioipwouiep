@@ -1,0 +1,13 @@
+ID: 315
+Problem Title: Count of Smaller Numbers After Self
+Brute Force Method: Double nested for-loop. For every element at index i, iterate from i+1 to the end of the array and count how many are strictly smaller.
+BF Complexity Visuals: Triangular Nested Loop (Rightward Sweep)
+How to Draw BF: Draw an array. Draw pointer i. Draw a second pointer j sweeping from i+1 to the end. Below it, draw tally marks. $O(N^2)$.
+Optimised Pattern: Merge Sort (Divide &amp; Conquer) tracking original indices
+Opt Vis. Technique: Cross-Inversion Counting
+Dry Run (Opt): Store numbers as pairs (value, original_index). Do a Merge Sort descending. When merging left and right halves: if left[L] &gt; right[R], then left[L] is greater than ALL remaining elements in the right half. Add the remaining size of the right half to the result for left[L]'s original index.
+How to Draw (Opt): Draw two sorted arrays being merged (Left and Right). If Left &gt; Right, draw a thick, sweeping arrow from Left jumping over the entire remaining Right array, capturing its length as a count.
+Opt Complexity Visuals: Logarithmic Tree Resolution
+How to Draw Opt Complexity: Draw a standard Merge Sort tree (inverted pyramid splitting the array, then combining). Highlight the $O(N)$ merge step at each $O(\log N)$ level. $O(N \log N)$.
+Mem Vis (BF): A single output array of size N.
+Mem Vis (Opt): Array of Tuples + Temp Array. Draw the main array where each cell is split in two (Value, Original_Index). Draw an identical length Temp array for the merge steps. $O(N)$ space.

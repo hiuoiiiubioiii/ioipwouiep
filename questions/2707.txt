@@ -1,0 +1,13 @@
+ID: 2707
+Problem Title: Extra Characters in a String
+Brute Force Method: Backtracking/Recursion: Try splitting the string at every possible index. If a substring is in the dictionary, branch again. Calculate the minimum extra characters across all exponential paths.
+BF Complexity Visuals: Full Recursion Tree (Exploding)
+How to Draw BF: Draw the string. Draw branching arrows for every valid dictionary word match and every single character skip. The tree grows exponentially $O(2^N)$.
+Optimised Pattern: Deep Call Stack Grid (Showing massive stack frames for $O(N)$ depth and $O(2^N)$ repeated states).
+Opt Vis. Technique: 1D Dynamic Programming (Bottom-Up) with HashSet/Trie lookup
+Dry Run (Opt): 1D Array Forward Jumping
+How to Draw (Opt): Create a DP array of size N+1. Iterate through the string. At each index, either skip 1 char (dp[i+1] = dp[i]+1) or check if a dictionary word matches starting here, and "jump" forward to update that index's minimum cost.
+Opt Complexity Visuals: Draw a row of boxes (the DP array). Write the base case 0. Draw curved arrows jumping forward by word lengths. Write the calculated "extra cost" above each jump.
+How to Draw Opt Complexity: Filled 1D DP Table
+Mem Vis (BF): Draw a single array length N. Label it $O(N^2)$ (or $O(N^3)$ depending on substring extraction cost) showing a loop inside a loop over the string length.
+Mem Vis (Opt): Array State Map (A single 1D array of size N+1 tracking integers, plus a fast-lookup HashSet for the dictionary).

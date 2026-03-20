@@ -1,0 +1,13 @@
+ID: 156
+Problem Title: Binary Tree Upside Down
+Brute Force Method: Recursively traverse to the left-most leaf, then at each step, create new node objects to form the inverted tree structure.
+BF Complexity Visuals: A "Mirror Explosion" diagram where multiple tree fragments are created in heap memory.
+How to Draw BF: Draw the original tree. For every left-child transition, draw a completely new set of circles and arrows to represent the new tree being built.
+Optimised Pattern: Iterative Pointer Manipulation (Bottom-Up Logic).
+Opt Vis. Technique: A "Rotating Pinwheel." As you move down the left spine, the parent and right-sibling are re-linked as children of the current left-child.
+Dry Run (Opt): Keep pointers for curr, next, tempParent, and tempRight. Move down the left side, rotating pointers at each step.
+How to Draw (Opt): Draw the tree. For each node on the left spine, erase its arrows and draw new ones pointing 'up' to the parent and 'left' to the sibling.
+Opt Complexity Visuals: $O(N)$ linear scan of the left spine (strictly proportional to tree height H).
+How to Draw Opt Complexity: Draw a single line down the left edge of a tree. Mark it with a single stroke to show a single-pass visit.
+Mem Vis (BF): Visualise numerous temporary Node objects being allocated and garbage-collected.
+Mem Vis (Opt): Visualize 4 static pointer variables (addresses) in $O(1)$ stack memory; no new nodes created.

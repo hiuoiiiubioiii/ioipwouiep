@@ -1,0 +1,13 @@
+ID: 105
+Problem Title: Construct Binary Tree from Preorder and Inorder Traversal
+Brute Force Method: For every element in the preorder array, do a linear scan through the inorder array to find it and split the subtrees.
+BF Complexity Visuals: An $O(N^2)$ grid where every recursive tree split requires an $O(N)$ array search block.
+How to Draw BF: Write both arrays. Pick the first item from preorder, draw a long arrow traversing the inorder array to find it, split the array, repeat.
+Optimised Pattern: Hash Map for $O(1)$ inorder index lookup + Recursive DFS.
+Opt Vis. Technique: The preorder array acting as a steady drill, while a Hash Map instantly splits the inorder array into left/right blocks like a cleaver.
+Dry Run (Opt): Map inorder values to indices. Keep a pointer for preorder. Root is preorder[ptr]. Instantly get index from map. Recurse left/right.
+How to Draw (Opt): Draw the Hash Map explicitly. Cross off preorder elements sequentially, drawing them immediately as tree nodes.
+Opt Complexity Visuals: $O(N)$ constant mapping combined with a single $O(N)$ recursive pass to build the tree.
+How to Draw Opt Complexity: Draw arrays side-by-side. Draw an instantaneous "lightning bolt" line from the preorder element to its inorder map index to show $O(1)$ lookup.
+Mem Vis (BF): $O(N)$ call stack space scaling with the height, but no extra data structures visualized.
+Mem Vis (Opt): Visualize a Hash Map occupying $O(N)$ space in heap memory sitting right next to the $O(N)$ recursive call stack.

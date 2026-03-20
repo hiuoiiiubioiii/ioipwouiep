@@ -1,0 +1,13 @@
+ID: 3578
+Problem Title: Count Partitions With Max-Min Difference at Most K (Med)
+Brute Force Method: Recursive partitioning: try splitting at every index and check constraints on every resulting sub-segment.
+BF Complexity Visuals: Exponential Split Tree.
+How to Draw BF: Draw an array. Branch into "split here" or "don't split" at every gap. Check Max-Min for every segment.
+Optimised Pattern: DP + Monotonic Deque / Sliding Window.
+Opt Vis. Technique: Constraint-Based Window Sliding.
+Dry Run (Opt): Define DP[i] as ways to partition up to i. Use two deques to find the range [L, i] where Max - Min <= K. DP[i] = sum DP[j] for j in [L, i-1].
+How to Draw (Opt): Draw a window moving right. Use a ruler to mark the furthest left point where the segment is still "good." Update DP sum.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single arrow with two sliding "boundary" lines following it. $O(1)$ deque work per step.
+Mem Vis (BF): Call Stack: Draw deep recursion frames for every possible split combination.
+Mem Vis (Opt): Rolling Prefix Sum DP: Draw one DP array and one Prefix-Sum-of-DP array for $O(1)$ range sums.

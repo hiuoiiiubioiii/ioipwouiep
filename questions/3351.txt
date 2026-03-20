@@ -1,0 +1,13 @@
+ID: 3351
+Problem Title: Sum of Good Subsequences
+Brute Force Method: Generate all 2^N subsequences, check if adjacent elements differ by exactly 1, and sum them.
+BF Complexity Visuals: Power Set Branching
+How to Draw BF: Draw a root. For each element, branch "Include" or "Exclude". Massive tree width $O(2^N)$.
+Optimised Pattern: DP with Frequency &amp; Sum Mapping
+Opt Vis. Technique: Value-based Contribution Buckets
+Dry Run (Opt): Maintain `count[x]` and `sum[x]` for "good" subsequences ending in x. count[x] = count[x-1] + count[x+1] + 1.
+How to Draw (Opt): Draw 3 buckets: (x-1), x, (x+1). Draw arrows showing "Sum" and "Count" flowing from neighbors into the current value bucket.
+Opt Complexity Visuals: Linear Value Sweep
+How to Draw Opt Complexity: Draw a single line of length N. Each element update is $O(1)$ because it only looks at its immediate neighbors in the map.
+Mem Vis (BF): Storing every single valid subsequence string in a list.
+Mem Vis (Opt): Two Hash Maps or flat arrays for `counts` and `sums` up to MaxVal. $O(N)$ space.

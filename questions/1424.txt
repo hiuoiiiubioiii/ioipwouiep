@@ -1,0 +1,13 @@
+ID: 1424
+Problem Title: Diagonal Traverse II
+Brute Force Method: Matrix Padding &amp; Simulation. Find the max width. Pad all rows with nulls to make a perfect rectangle. Run standard top-right to bottom-left matrix diagonal traversal, skipping nulls.
+BF Complexity Visuals: Sparse Matrix Over-Iteration
+How to Draw BF: Draw a jagged grid of numbers. Fill all the empty jagged space with huge 'X's to make a square. Draw diagonal lines through everything, crossing out X's. Very wasteful, $O(R \\text{cdot max}_C)$.
+Optimised Pattern: Hash Map Grouping by `Row + Col`
+Opt Vis. Technique: Coordinate Sum Bucketing
+Dry Run (Opt): Elements on the same bottom-left to top-right diagonal share the same `row + col` sum. Iterate through the jagged array. Place `nums[r][c]` into `map[r+c]`. Flatten the map into a 1D array.
+How to Draw (Opt): Draw the jagged grid. Draw diagonal stripes across it, labeling them "Sum=0", "Sum=1", "Sum=2". Draw buckets below matching these sums. Drop numbers into their respective sum bucket.
+Opt Complexity Visuals: Linear Matrix Traversal
+How to Draw Opt Complexity: Draw a nested loop visiting only the actual elements. Label $O(N)$ where N is total elements.
+Mem Vis (BF): Gigantic Padded 2D Array
+Mem Vis (Opt): Draw an Array of dynamic Lists (or Map of Lists) to hold grouped elements. Space $O(N)$.

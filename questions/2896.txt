@@ -1,0 +1,14 @@
+ID: 2896
+Problem Title: Apply Operations to Make Two Strings Equal
+Brute Force Method: Recursively try flipping every possible pair of indices or every adjacent pair to match the strings, exploring all paths to find the minimum cost.
+BF Complexity Visuals: Recursive Search with Overlap
+How to Draw BF: Draw two strings. Branch out for every possible index pair you could flip. Show how the same string state is reached via different flip orders.
+Optimised Pattern: 1D Dynamic Programming (Memoization)
+Opt Vis. Technique: Cost-Minimization State Table
+Dry Run (Opt): Identify indices where the strings differ. Let dp[i] be the min cost to fix the first i differences. At each step, choose between fixing the current one with the next one (cost: distance) or with a "free" remote pair (cost: x/2).
+How to Draw (Opt): List the indices where s1[i] 
+eq s2[i]. Draw a line of boxes (DP table). For each box, look at the previous box and the one two steps back to decide the cheapest "bridge."
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a straight line. After identifying the D differences, the DP takes $O(D)$ time.
+Mem Vis (BF): $O(2^N)$ - Massive recursion depth.
+Mem Vis (Opt): $O(N)$ - One DP array and a list of mismatch indices.

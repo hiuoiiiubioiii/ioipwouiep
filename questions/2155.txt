@@ -1,0 +1,13 @@
+ID: 2155
+Problem Title: All Divisions With the Highest Score of a Binary Array
+Brute Force Method: For every possible division point `i`, iterate through the left side to count 0s and the right side to count 1s.
+BF Complexity Visuals: Nested loops scanning left and right for every index.
+How to Draw BF: Draw an array. Draw a divider at index 1. Count 0s on left, 1s on right. Move divider to index 2. Recount everything. $O(N^2)$.
+Optimised Pattern: Prefix Sum / Running Count.
+Opt Vis. Technique: A slider that updates two counters as it moves.
+Dry Run (Opt): Calculate total 1s initially. Iterate through array: if current is 0, `leftZeros++`. If current is 1, `rightOnes--`. `Score = leftZeros + rightOnes`. Track max score.
+How to Draw (Opt): Write the array. Above it, write the total count of 1s. Slide a pencil along the array; if you pass a '0', add 1 to your "Left" tally. If you pass a '1', subtract 1 from your "Right" tally. Sum them.
+Opt Complexity Visuals: $O(N)$ single pass.
+How to Draw Opt Complexity: A single horizontal arrow scanning left to right, updating two integer variables in $O(1)$.
+Mem Vis (BF): No extra memory.
+Mem Vis (Opt): $O(1)$ auxiliary space (excluding the result list).

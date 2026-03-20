@@ -1,0 +1,13 @@
+ID: 1791
+Problem Title: Find Center of Star Graph
+Brute Force Method: Iterate through all nodes. For each node, count how many edges it is connected to. The center node will have n-1 connections.
+BF Complexity Visuals: Degree Tally Map.
+How to Draw BF: Draw N nodes. Draw lines for every edge. Build a table and tally connections for every node. $O(N)$.
+Optimised Pattern: Logical Comparison of First Two Edges.
+Opt Vis. Technique: The "Common Link" Snapshot.
+Dry Run (Opt): In a star graph, the center MUST appear in every edge. Just look at the first two edges [u1, v1] and [u2, v2]. The center is the node that appears in both.
+How to Draw (Opt): Draw two pairs of numbers. Circle the number that appears in both pairs. That's the center.
+Opt Complexity Visuals: Constant Time Check.
+How to Draw Opt Complexity: Write down two edges. Label $O(1)$.
+Mem Vis (BF): Adjacency list or degree array of size N. $O(N)$.
+Mem Vis (Opt): Two edge variables. $O(1)$ space.

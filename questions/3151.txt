@@ -1,0 +1,13 @@
+ID: 3151
+Problem Title: Special Array I
+Brute Force Method: Check every adjacent pair in the array using a loop. $O(N)$ time, but the logic is so simple brute force is effectively optimal.
+BF Complexity Visuals: Linear scan line.
+How to Draw BF: Draw an array. Draw small arcs between i and i+1. Tally "even/odd" or "odd/even" pairs.
+Optimised Pattern: Single-Pass Parity Check
+Opt Vis. Technique: Step-by-Step Toggle
+Dry Run (Opt): Iterate from 0 rightarrow N-2. If `nums[i] % 2 == nums[i+1] % 2`, return False immediately.
+How to Draw (Opt): Draw the array. Use a finger to point at two numbers at once. If they both have the same "parity sticker" (E or O), cross the array out.
+Opt Complexity Visuals: Discrete linear progression.
+How to Draw Opt Complexity: Draw a single straight line with N nodes. $O(N)$.
+Mem Vis (BF): None (direct iteration).
+Mem Vis (Opt): Zero auxiliary space. $O(1)$.

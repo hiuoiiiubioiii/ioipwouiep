@@ -1,0 +1,13 @@
+ID: 470
+Problem Title: Implement Rand10() Using Rand7()
+Brute Force Method: Naive Range Map Call `rand7()` twice. If sum &gt; 10, discard and retry. (Doesn't produce uniform distribution).
+BF Complexity Visuals: Skewed Distribution
+How to Draw BF: Draw a bell curve. Show that middle numbers appear more often than edges. Label "INCORRECT."
+Optimised Pattern: Rejection Sampling (7x7 Matrix) Create a range of 1-49 using `7 * (rand7() - 1) + rand7()`. If the result is &gt; 40, reject it. Otherwise, return `result % 10 + 1`.
+Opt Vis. Technique: Grid Mapping
+Dry Run (Opt): Draw a 7 \times 7 grid (49 cells). Color the first 40 cells with 10 different colors (4 cells each). Color the last 9 "Discard."
+How to Draw (Opt): Draw a 7 \times 7 grid on paper. Label cells 1-49. Circle cells 41-49 and write "Reroll."
+Opt Complexity Visuals: Expected Call Value
+How to Draw Opt Complexity: Draw a probability tree. The expected number of calls is 2 \times (49/40) = 2.45. Average $O(1)$.
+Mem Vis (BF): None Constant variables.
+Mem Vis (Opt): None Just two variables for the coordinates. $O(1)$.

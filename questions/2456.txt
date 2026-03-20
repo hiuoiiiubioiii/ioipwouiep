@@ -1,0 +1,13 @@
+ID: 2456
+Problem Title: Most Popular Video Creator
+Brute Force Method: Nested loops: for each creator, sum all their view counts. Then for each creator, scan all their videos to find the one with the highest views (lexicographically smallest title for ties).
+BF Complexity Visuals: Map + Multi-Scan
+How to Draw BF: Draw a list of creators. For each, draw a sub-list of videos. Label $O(N^2)$ if not using maps, or $O(N)$ with maps.
+Optimised Pattern: Hash Map (Aggregate &amp; Track Max)
+Opt Vis. Technique: Leaderboard Tracking Map
+Dry Run (Opt): Use two maps. Map 1: `{creator: total_views}`. Map 2: `{creator: [max_video_views, video_id]}`. Update both in one pass through the input.
+How to Draw (Opt): Draw a table with columns: Creator, TotalViews, BestVideo, BestVideoViews. Update rows as you process each entry. Highlight rows with the highest TotalViews.
+Opt Complexity Visuals: Linear Map Aggregate
+How to Draw Opt Complexity: Draw one straight line over the input list. Label $O(N)$ Time.
+Mem Vis (BF): Draw multiple tracking structures.
+Mem Vis (Opt): Draw two Hash Maps storing up to N entries. Label $O(N)$ Space.

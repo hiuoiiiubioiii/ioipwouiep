@@ -1,0 +1,13 @@
+ID: 3366
+Problem Title: Minimum Array Sum
+Brute Force Method: Try every possible order and combination of applying Operation 1 and Operation 2 to every element in the array.
+BF Complexity Visuals: Recursive Decision Tree
+How to Draw BF: Draw a root. For element i, branch into 4 paths: (None, Op1, Op2, Op1+Op2). Repeat for all N. Height N, branching factor 4. $O(4^N)$.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: State-Space Volume Block
+Dry Run (Opt): `dp[i][op1_left][op2_left]` tracks the minimum sum. At each i, check if you have enough operations left to apply Op1, Op2, or both (considering the order).
+How to Draw (Opt): Draw a grid for each index i. Rows = Op1 counts, Columns = Op2 counts. For a cell (k, j), draw arrows from the previous index's grid showing the best "cost-so-far".
+Opt Complexity Visuals: Iterative Grid Filling
+How to Draw Opt Complexity: Draw a 3D rectangular prism (N x K_1 x K_2). Shading the volume shows $O(N \cdot K_1 \cdot K_2)$.
+Mem Vis (BF): Deep recursive stack with $O(N)$ depth and exponential leaf nodes.
+Mem Vis (Opt): A 3D integer array (or two 2D layers for space optimization). $O(K_1 \cdot K_2)$.

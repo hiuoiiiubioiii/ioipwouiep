@@ -1,0 +1,13 @@
+ID: 107
+Problem Title: Binary Tree Level Order Traversal II
+Brute Force Method: Perform a standard top-down Level Order Traversal (BFS), store results in an array of arrays, and then manually reverse the entire outer array.
+BF Complexity Visuals: A standard BFS linear graph followed by a block representing the $O(N)$ reversal of the output array.
+How to Draw BF: Draw standard level order output. Draw a large curved arrow flipping the entire structure upside down at the very end.
+Optimised Pattern: BFS with a Queue + Prepending to a Deque/Linked List for the result (or standard array reversal, which is practically optimal in many languages).
+Opt Vis. Technique: A horizontal scanning laser moving top-down, but the output blocks are stacked from the bottom up.
+Dry Run (Opt): Maintain a queue. Pop nodes for current level. Instead of appending the level's array to the result, insert it at index 0 (or push to the front of a Deque).
+How to Draw (Opt): Draw the tree. As you process a level, draw its resulting array box underneath the previously processed level's array box, pushing older ones up.
+Opt Complexity Visuals: $O(N)$ node processing + $O(N)$ insertion/reversal overhead, resolving to $O(N)$ total time.
+How to Draw Opt Complexity: Cross out nodes as they leave the queue. Draw arrows pointing to the *front* of the result list for every new level completed.
+Mem Vis (BF): $O(W)$ Queue memory + $O(N)$ Result array memory + temporary reversal memory.
+Mem Vis (Opt): Visualize an $O(W)$ Queue and a Result Linked List/Deque where new nodes are dynamically stitched to the head pointer.

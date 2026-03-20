@@ -1,0 +1,13 @@
+ID: 897
+Problem Title: Increasing Order Search Tree
+Brute Force Method: Traverse the tree, collect all node values in a list, sort the list, then build a completely new right-leaning tree (a linked list shape).
+BF Complexity Visuals: Collect-Sort-Build. $O(N \log N)$.
+How to Draw BF: Draw a messy tree. Extract all nodes into a chaotic pile. Draw a funnel (Sort). Draw a long straight vertical line and attach the nodes one by one.
+Optimised Pattern: In-order Traversal with In-place Re-linking.
+Opt Vis. Technique: The "Threaded Unrolling."
+Dry Run (Opt): Perform a standard in-order traversal (Left-Root-Right). Keep track of the "last processed node." For the current node, set its left child to NULL and make it the right child of the "last processed node."
+How to Draw (Opt): Draw a BST. Follow the standard path (Bottom-Left to Root). As you touch a node, draw a new red arrow pointing from the previous node's right-side to it, and erase its left-side connection.
+Opt Complexity Visuals: Single Pass DFS. $O(N)$.
+How to Draw Opt Complexity: Draw the tree. Trace a single line that visits every node once in numerical order.
+Mem Vis (BF): Full List of Values: Draw an array of size N storing integers.
+Mem Vis (Opt): $O(H)$ Call Stack: Draw a vertical stack representing the recursion depth. $O(H)$ space.

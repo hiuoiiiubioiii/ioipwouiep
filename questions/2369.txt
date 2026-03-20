@@ -1,0 +1,13 @@
+ID: 2369
+Problem Title: Check if There is a Valid Partition For The Array
+Brute Force Method: Backtracking: Try every possible partition (size 2 or 3) from the start. If one path fails, backtrack and try a different partition length.
+BF Complexity Visuals: Exponential Partition Tree (O(2^N))
+How to Draw BF: Draw an array. Branch into "Cut at 2" and "Cut at 3". From each, branch again into "Cut at 2" and "Cut at 3". Go N levels deep.
+Optimised Pattern: 1D Dynamic Programming (Boolean State)
+Opt Vis. Technique: Three-Step Validity Buffer
+Dry Run (Opt): `dp[i]` is true if the prefix `nums[0...i-1]` has a valid partition. `dp[i]` depends only on `dp[i-2]` (if last 2 are equal) or `dp[i-3]` (if last 3 are equal/consecutive).
+How to Draw (Opt): Draw a timeline. For each index, look back 2 or 3 steps. If a previous step was "Safe" AND the current segment (2 or 3 items) is "Valid," mark the current step as "Safe."
+Opt Complexity Visuals: Linear DP Pass (O(N))
+How to Draw Opt Complexity: Draw a straight line. Each node only looks back at its 2nd and 3rd neighbors. No branching forward.
+Mem Vis (BF): Draw a deep recursion stack representing the exploration of all partition combinations.
+Mem Vis (Opt): Draw a 1D Boolean Array of size N (or just 4 boolean variables for space optimization).

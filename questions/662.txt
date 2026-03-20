@@ -1,0 +1,13 @@
+ID: 662
+Problem Title: Maximum Width of Binary Tree
+Brute Force Method: Perform a Level Order Traversal (BFS) and store every node, including NULLs, until the last non-null node in each level. Count the total elements.
+BF Complexity Visuals: Sparse Array Level Filling.
+How to Draw BF: Draw a tree with one branch at depth 10. Draw a row with 1024 slots, most of which are empty. $O(2^H)$.
+Optimised Pattern: BFS / DFS with Positional Indexing.
+Opt Vis. Technique: Binary Heap Index Mapping.
+Dry Run (Opt): Assign an index to each node. Root is 1. Left child is `2*i`, right is `2*i + 1`. In each level, `width = maxIndex - minIndex + 1`.
+How to Draw (Opt): Draw a tree. Label root '1'. Label children '2' and '3'. Note that even if a middle node is missing, the index gap tells you the width.
+Opt Complexity Visuals: Linear scan of tree nodes.
+How to Draw Opt Complexity: Draw a single line passing through all nodes once. Write $O(N)$.
+Mem Vis (BF): Draw a queue containing thousands of NULL markers for deep, sparse trees.
+Mem Vis (Opt): Draw a queue of pairs (node, index). Only stores actual nodes. $O(\text{Width})$.

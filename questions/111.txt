@@ -1,0 +1,13 @@
+ID: 111
+Problem Title: Minimum Depth of Binary Tree
+Brute Force Method: Standard DFS traversing every single root-to-leaf path to find all depths, then taking the minimum at the end.
+BF Complexity Visuals: Highlighting every path to the absolute bottom of a skewed tree, showing wasted $O(N)$ traversal.
+How to Draw BF: Draw a highly unbalanced tree. Trace lines all the way down the longest branches even after finding a short branch.
+Optimised Pattern: BFS (Level Order Traversal) with an early exit on the first leaf node encountered.
+Opt Vis. Technique: A radar sweeping outwards from the root in concentric circles. The sweep instantly stops upon hitting the first leaf.
+Dry Run (Opt): Queue nodes with their depth. Pop node. Is it a leaf (no left/right children)? Return its depth immediately. Else, queue children.
+How to Draw (Opt): Draw horizontal lines for levels. Stop drawing and circle the very first node you see that lacks children. Cross out the rest of the tree below it.
+Opt Complexity Visuals: A graph showing time complexity strictly bounded by the level of the shallowest leaf, practically $O(1)$ in highly skewed favorable cases, worst $O(N)$.
+How to Draw Opt Complexity: Draw a line slicing horizontally through the tree at the minimum depth, proving all nodes below that line remain unvisited.
+Mem Vis (BF): $O(H)$ call stack frames blindly stacking up for every deep branch.
+Mem Vis (Opt): Queue in heap memory expanding only as wide as the shallowest leaf's level before terminating, saving massive memory on deep trees.

@@ -1,0 +1,13 @@
+ID: 2577
+Problem Title: Minimum Time to Visit a Cell In a Grid
+Brute Force Method: Use Breadth-First Search (BFS) to explore all paths, but since time depends on the cell value, the number of states can explode if you wait in place. $O(\text{Exponential})$.
+BF Complexity Visuals: A grid expansion where every cell creates "wait" cycles, making the search tree infinitely deep.
+How to Draw BF: Start at (0,0). Move to (0,1) at time 1. If (0,2) requires time 10, try moving back and forth between (0,0) and (0,1) until it's time 10.
+Optimised Pattern: Dijkstra's Algorithm + Parity Waiting Logic.
+Opt Vis. Technique: A "Weighted Pathfinding" visual where the time spent at each cell is calculated based on the distance and the parity of the waiting time.
+Dry Run (Opt): If `grid[0][1] &gt; 1` and `grid[1][0] &gt; 1`, you can never leave the start; return -1. Otherwise, use a Priority Queue to store `(time, r, c)`. When moving to a neighbor, if `time + 1 &gt;= grid[nr][nc]`, the arrival time is `time + 1`. If not, you must wait: the arrival time is `grid[nr][nc]` plus a parity offset (either 0 or 1).
+How to Draw (Opt): Draw the grid. In each cell, write the earliest time you can reach it. Use a priority queue to always expand the cell with the smallest time. If you hit a wall too early, "ping-pong" between your current and previous cell to waste time.
+Opt Complexity Visuals: $O(M \cdot N \cdot \log(M \cdot N)$) due to Dijkstra's priority queue operations on the grid.
+How to Draw Opt Complexity: Draw a grid. Draw "wavefronts" of time values expanding from the top-left, with specific time jumps annotated on cells with high threshold values.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(M \cdot N)$ for the Priority Queue and the visited/dist matrix.

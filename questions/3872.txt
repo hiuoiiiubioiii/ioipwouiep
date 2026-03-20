@@ -1,0 +1,13 @@
+ID: 3872
+Problem Title: Longest Arithmetic Sequence After Changing At Most One Element (Med.)
+Brute Force Method: Brute Force: For every possible pair of indices (i, j) as the start of the sequence, and for every possible value change at every index k, check the length of the sequence.
+BF Complexity Visuals: A massive nested search space involving (N^2) pairs and N possible changes.
+How to Draw BF: Draw an array. Pick two numbers to define the difference d. Try changing every other number one by one to see if it fits the a + n * d pattern. Write $O(N^3)$.
+Optimised Pattern: Dynamic Programming with State (Changed vs. Unchanged).
+Opt Vis. Technique: A 2D DP table where the second dimension tracks a "Boolean" state (Has an element been modified yet?).
+Dry Run (Opt): dp[i][diff][0] = longest seq ending at i with difference diff (no changes). dp[i][diff][1] = longest seq ending at i with diff (one change already used).
+How to Draw (Opt): Draw a grid: Rows = Indices, Cols = Differences. In each cell, store two numbers (Used-Change vs. Clean). When moving to a new cell, you can "spend" your change to connect two numbers that don't match the difference.
+Opt Complexity Visuals: Quadratic scan of pairs with constant state transitions.
+How to Draw Opt Complexity: Draw a nested loop N x N. Inside, write "O(1) Map Update". Total: $O(N^2)$.
+Mem Vis (BF): Storing $O(N^3)$ sequence combinations.
+Mem Vis (Opt): A Hash Map of Hash Maps: `Map&gt;` to store differences per index. Space $O(N^2)$.

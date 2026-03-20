@@ -1,0 +1,13 @@
+ID: 610
+Problem Title: Triangle Judgement (SQL)
+Brute Force Method: Heavy procedural looping or self-joins (though not practical in SQL, a conceptual brute force would be creating temporary tables for side combinations).
+BF Complexity Visuals: Tangled logical flowchart with excessive branches.
+How to Draw BF: Draw a row. Draw three separate branching paths checking one condition each, merging back slowly.
+Optimised Pattern: Simple conditional logic: IF or CASE WHEN.
+Opt Vis. Technique: Single-pass logical gate check.
+Dry Run (Opt): Read row (x, y, z). Evaluate math condition: x+y&gt;z AND x+z&gt;y AND y+z&gt;x. If true, append 'Yes', else 'No'.
+How to Draw (Opt): Draw a triangle. Label sides x, y, z. Write the triangle inequality theorem formula. Put a big checkmark or X next to the row.
+Opt Complexity Visuals: Straight, unbroken horizontal line (O(N) full table scan).
+How to Draw Opt Complexity: Draw a straight arrow representing a single table scan. Place a tiny lightning bolt above it to represent $O(1)$ math logic per row.
+Mem Vis (BF): Draw unnecessary temporary tables holding partial boolean results.
+Mem Vis (Opt): Draw a single stream of rows with a single new column attached directly in memory. $O(1)$ extra space per row.

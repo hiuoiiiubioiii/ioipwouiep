@@ -1,0 +1,13 @@
+ID: 428
+Problem Title: Serialize/Deserialize N-ary Tree
+Brute Force Method: Parenthesis String Convert tree to string like `A(B,C(D,E),F)`. Hard to parse back with varying children.
+BF Complexity Visuals: Recursive Stringify
+How to Draw BF: Draw a tree being "crushed" into a long string with many brackets. Complexity $O(N)$.
+Optimised Pattern: Pre-order with Child Count Serialize as `Value, ChildCount`. E.g., `1,3,2,0,3,0,4,0` (Node 1 has 3 children...).
+Opt Vis. Technique: Flattened Stream
+Dry Run (Opt): Imagine a tree being fed into a woodchipper and coming out as a perfectly ordered line of labeled blocks.
+How to Draw (Opt): Draw a tree. Next to each node, write the number of its children. Follow the pre-order path and write the pairs (Val, Count).
+Opt Complexity Visuals: Linear Sequence
+How to Draw Opt Complexity: Draw an arrow moving through the tree once, then an arrow moving through the string once. $O(N)$.
+Mem Vis (BF): String Concatenation Many temporary string objects.
+Mem Vis (Opt): String Builder/Queue A single buffer or queue for processing. $O(N)$.

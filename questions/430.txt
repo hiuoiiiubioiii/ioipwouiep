@@ -1,0 +1,13 @@
+ID: 430
+Problem Title: Flatten Multilevel DLL
+Brute Force Method: Recursive Collection DFS through all levels, store all nodes in a list, then rebuild all next/prev pointers.
+BF Complexity Visuals: Two-Pass Build
+How to Draw BF: Draw a 3D-looking list. Below it, draw a single flat line. Show arrows from the 3D nodes to the line.
+Optimised Pattern: Iterative Stack / Pointer Weaving When you hit a `child`, "insert" the child branch between `current` and `current.next`.
+Opt Vis. Technique: Accordion Flattening
+Dry Run (Opt): Imagine the multilevel list is a folded accordion. You are pulling it from both ends until it is one straight line.
+How to Draw (Opt): Draw a list with a "down" branch. Draw an arrow from `current.next` to the end of the `child` branch, and from `current` to the `child` head.
+Opt Complexity Visuals: Edge Weaving
+How to Draw Opt Complexity: Draw a list. Each "child" edge is moved exactly once. Total time $O(N)$.
+Mem Vis (BF): Extra List $O(N)$ space for the intermediate list.
+Mem Vis (Opt): Stack Draw a stack of "return-to" pointers (the `next` nodes you skipped). $O(N)$ worst case.

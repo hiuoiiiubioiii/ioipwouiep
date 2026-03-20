@@ -1,0 +1,13 @@
+ID: 667
+Problem Title: Beautiful Arrangement II
+Brute Force Method: Generate all N! permutations and check if the number of unique absolute differences between adjacent elements equals K.
+BF Complexity Visuals: Permutation Jungle.
+How to Draw BF: Draw 1,2,3. List [1,2,3], [1,3,2], etc. Calculate diffs for each. The branching is overwhelming. $O(N! \cdot N)$.
+Optimised Pattern: Greedy Constructive Construction.
+Opt Vis. Technique: Alternating "Zig-Zag" Pattern.
+Dry Run (Opt): Keep the first `n-k-1` numbers as `1, 2, 3...`. For the remaining `k+1` numbers, alternate between the largest and smallest available to create `k` distinct gaps.
+How to Draw (Opt): Draw two lists: 1,2,3... and ...10,9,8. Draw a line from 1 to 2, then jump to 10, then back to 3, then 9. Count the "gap" distances.
+Opt Complexity Visuals: Single pass linear construction.
+How to Draw Opt Complexity: Draw a straight arrow through the numbers 1 to N. Write $O(N)$.
+Mem Vis (BF): Draw the entire permutation tree in memory.
+Mem Vis (Opt): Draw a single output array of size N. $O(1)$ auxiliary space.

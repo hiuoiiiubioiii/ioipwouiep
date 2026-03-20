@@ -1,0 +1,13 @@
+ID: 2588
+Problem Title: Count the Number of Beautiful Subarrays
+Brute Force Method: Check every possible subarray (i, j). For each, calculate the XOR sum. If the XOR sum is 0, it means all bits can be paired and removed (beautiful). $O(N^3)$.
+BF Complexity Visuals: A dense nested-loop grid where every subarray is re-calculated from scratch.
+How to Draw BF: Draw the array. Pick a start and end. XOR all numbers in between. If 0, it's "beautiful." Repeat for all start/end pairs.
+Optimised Pattern: Prefix XOR + Hash Map (Frequency Counting).
+Opt Vis. Technique: A "Mirror Matching" visual: if the prefix XOR at index i is the same as prefix XOR at index j, the subarray between them must have an XOR of 0.
+Dry Run (Opt): A subarray is "beautiful" if its XOR sum is 0. This is true if prefixXOR[i] == prefixXOR[j]. Maintain a runningXOR and a Hash Map to store the frequency of each XOR value encountered. For every new runningXOR, add its current frequency in the map to the total count, then increment the frequency.
+How to Draw (Opt): Write the array. Calculate a running XOR (e.g., 0, 3, 1, 3...). Use a tally sheet (Map) to count how many times you've seen each result. If you see '3' for the second time, it means one beautiful subarray was just completed.
+Opt Complexity Visuals: $O(N)$ - One pass through the array with $O(1)$ map lookups.
+How to Draw Opt Complexity: Draw the array. Draw one arrow moving forward. Next to it, draw a "Frequency Table" that grows as the arrow moves.
+Mem Vis (BF): $O(N^2)$ for subarray storage.
+Mem Vis (Opt): $O(N)$ for the Hash Map to store prefix XOR frequencies.

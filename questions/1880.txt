@@ -1,0 +1,13 @@
+ID: 1880
+Problem Title: Check if Word Equals Summation of Two Words
+Brute Force Method: Convert each word to a string of digits, parse to a Long, and then check the sum.
+BF Complexity Visuals: String concatenation pipeline.
+How to Draw BF: Draw words 'abc'. Convert to '012'. Then to number 12. Repeat for all words. Mark space for strings.
+Optimised Pattern: Direct Math (Positional Notation).
+Opt Vis. Technique: Polynomial expansion sum.
+Dry Run (Opt): Iterate through characters. num = num \cdot 10 + (char - 'a'). Compare (word1Num + word2Num) == targetNum.
+How to Draw (Opt): Draw each word as a sequence. Under it, draw the running calculation: 0 \cdot 10 + 0 \dots 0 \cdot 10 + 1 \dots 1 \cdot 10 + 2.
+Opt Complexity Visuals: Three linear passes (one per word).
+How to Draw Opt Complexity: Draw three separate arrows for $O(L1)$, $O(L2)$, $O(L3)$. Mark total as $O(N)$.
+Mem Vis (BF): Intermediate string objects for digit conversion.
+Mem Vis (Opt): $O(1)$ extra space using three integer variables.

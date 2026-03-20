@@ -1,0 +1,13 @@
+ID: 202
+Problem Title: Happy Number
+Brute Force Method: Recursive sum of squares, using a Hash Set to detect infinite loops.
+BF Complexity Visuals: Tree Diagram with Recursion Depth: $O(\log N)$ for sum computation step.
+How to Draw BF: Draw nested function calls as descending bubbles. Point an arrow back up if a cycle hits, labeling it "Space: $O(\text{Cycles})$".
+Optimised Pattern: Floyd’s Cycle-Finding Algorithm (Fast &amp; Slow Pointers)
+Opt Vis. Technique: Directed Graph with a Loop (Lasso shape)
+Dry Run (Opt): Draw circles for each generated number with arrows connecting them. Trace one finger 1 step at a time, another 2 steps at a time until they touch.
+How to Draw (Opt): Draw nodes connected by arrows. If it loops to 1, draw a straight path. If it cycles, draw a literal circle of numbers. Put a "Tortoise" and "Hare" marker on the nodes.
+Opt Complexity Visuals: Two-track Timeline: Shows pointer meeting points to prove $O(\log N)$ time.
+How to Draw Opt Complexity: Draw two horizontal tracks. Track A (slow) moves 1 unit. Track B (fast) moves 2 units. Draw a vertical line where Track B catches Track A.
+Mem Vis (BF): Hash Set Hash Table Diagram: Draw an expanding dictionary table appending new keys.
+Mem Vis (Opt): Two Memory Cells: Draw exactly two variables, `slow` and `fast`. Erase and update them without expanding the box.

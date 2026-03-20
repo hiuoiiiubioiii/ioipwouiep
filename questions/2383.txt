@@ -1,0 +1,13 @@
+ID: 2383
+Problem Title: Minimum Hours of Training to Win a Competition
+Brute Force Method: Simulate the competition. If your energy or experience is too low for an opponent, increment a "training" counter and restart the entire simulation from the first opponent.
+BF Complexity Visuals: Repeated Linear Simulation (O(N^2))
+How to Draw BF: Draw a list of opponents. Try to beat the first. If you fail, go back to the start, "train," and try again. Repeat for every opponent you lose to.
+Optimised Pattern: Single Pass Greedy Training
+Opt Vis. Technique: Pre-emptive Stat Boosting
+Dry Run (Opt): Iterate through opponents. If `currentEnergy &lt;= opponentEnergy`, training needed = `opponentEnergy - currentEnergy + 1`. Add to total training and update `currentEnergy`. Do the same for experience.
+How to Draw (Opt): Draw two meters: "Energy" and "Exp." For each opponent, check if your meters are high enough. If not, draw a "plus" sign to fill the gap before you "fight." Move to the next.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Meters are updated and training is tallied in one go.
+Mem Vis (BF): Draw a full log of every failed simulation attempt.
+Mem Vis (Opt): Draw three Integer variables: `total_training`, `current_energy`, `current_exp`.

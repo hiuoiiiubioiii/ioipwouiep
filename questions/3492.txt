@@ -1,0 +1,13 @@
+ID: 3492
+Problem Title: Maximum Containers on a Ship
+Brute Force Method: Simulate adding one container at a time to the n x n deck and checking the total weight against maxWeight. $O(N^2)$
+BF Complexity Visuals: Iterative Filling Grid.
+How to Draw BF: Draw an n x n grid. Color in one cell at a time until you hit the weight limit or run out of cells.
+Optimised Pattern: Direct Math (Division &amp; Min). $O(1)$
+Opt Vis. Technique: Capacity Constraint Threshold.
+Dry Run (Opt): Calculate total cells (n^2). Calculate how many containers the weight allows (maxWeight / w). The answer is the smaller of the two.
+How to Draw (Opt): Draw two boxes: "Space Limit" and "Weight Limit." Take the smallest number between them.
+Opt Complexity Visuals: Single Unit Block (Constant Time).
+How to Draw Opt Complexity: Draw a single dot to represent that the calculation happens instantly regardless of N.
+Mem Vis (BF): An n x n matrix held in memory.
+Mem Vis (Opt): Zero auxiliary space (only input variables).

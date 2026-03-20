@@ -1,0 +1,13 @@
+ID: 1982
+Problem Title: Find Array Given Subset Sums
+Brute Force Method: Try every possible subset sum combination to match the given list of 2^n sums.
+BF Complexity Visuals: Subset Sum Permutation Matrix
+How to Draw BF: Draw a list of 2^n sums. Show arrows attempting to "group" them into original elements. $O(2^n \cdot n)$.
+Optimised Pattern: Recursive Divide and Conquer (Sign Partitioning)
+Opt Vis. Technique: Recursive Binary Split Tree
+Dry Run (Opt): Find the smallest absolute difference d (potential array element). Split the 2^n sums into two halves (one with d, one without). Repeat.
+How to Draw (Opt): Draw a list of numbers. Draw two arrows splitting it into two smaller lists. Color code which list contains the '0' sum.
+Opt Complexity Visuals: Logarithmic Depth Halving
+How to Draw Opt Complexity: Draw a tree of height n. Each level involves a linear scan of current sums. $O(n \cdot 2^n)$.
+Mem Vis (BF): Massive nested loops and hash maps to track subset combinations.
+Mem Vis (Opt): Recursion stack of depth n, with sorted lists at each level.

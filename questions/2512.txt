@@ -1,0 +1,13 @@
+ID: 2512
+Problem Title: Reward Top K Students
+Brute Force Method: Loop over each student's report, split the words, and do a linear search in the positive/negative raw arrays to calculate scores. Sort the final list $O(N \log N)$.
+BF Complexity Visuals: Nested loops mapping report words against raw arrays, followed by a heavy data sorting block.
+How to Draw BF: Draw the report words. Draw lines mapping each word to every single word in the positive and negative lists, creating a tangled mapping web.
+Optimised Pattern: Hash Set for $O(1)$ word lookup + Custom Comparator Sorting (or Min-Heap for top K selection).
+Opt Vis. Technique: Words funneling through a fast Hash Set filter, dropping point values into an array of student tuples, which then pass through a sorting filter.
+Dry Run (Opt): Read a report word by word. Mentally pass it through a "good" filter (+3) or "bad" filter (-1). Keep a tally. Package the (score, id) and rank them descending by score, ascending by ID.
+How to Draw (Opt): Make a T-chart for positive/negative words. Write a student ID. Read their report, marking tally strokes (+3 or -1). Finally, physically re-order the student IDs based on final tallies.
+Opt Complexity Visuals: Array-to-Hash-Set conversion node flowing into an $O(N\cdot M)$ text processing stream, ending in an $O(N \log N)$ sorting block.
+How to Draw Opt Complexity: Draw a box representing the $O(1)$ Hash Set lookups. Show an $O(\text{words})$ text processing loop connecting to it. Finally, draw a sorting step at the end.
+Mem Vis (BF): Keeping all raw duplicate strings in active memory during the loop.
+Mem Vis (Opt): Two Hash Sets (Positive, Negative) and an array of N tuple elements mapping scores to IDs.

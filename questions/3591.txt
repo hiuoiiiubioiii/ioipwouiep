@@ -1,0 +1,13 @@
+ID: 3591
+Problem Title: Check if Any Element Has Prime Frequency (Easy)
+Brute Force Method: Count frequencies of all elements using nested loops, then check primality for each count using a standard loop.
+BF Complexity Visuals: Nested Search &amp; Test.
+How to Draw BF: Draw an array. For each unique element, draw a scan of the whole array to count, then draw a "Primality Machine" loop. $O(N^2)$.
+Optimised Pattern: Hash Map + Sieve of Eratosthenes.
+Opt Vis. Technique: Frequency Binning + Lookup.
+Dry Run (Opt): Scan the array once, dropping elements into a Map. Then, check the counts against a precomputed Boolean prime array (Sieve).
+How to Draw (Opt): Draw a tally table. Write counts. Check these counts against a "Prime List" (2, 3, 5, 7...). Circle any match.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single straight arrow (one pass for counts) followed by a constant-time check. $O(N)$.
+Mem Vis (BF): Manual Count Lists: Draw multiple copies of the array being filtered to find specific elements.
+Mem Vis (Opt): Frequency Map: Draw a single table mapping unique integers to their count values.

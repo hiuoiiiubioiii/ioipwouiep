@@ -1,0 +1,13 @@
+ID: 3843
+Problem Title: First Element with Unique Frequency (Med.)
+Brute Force Method: Nested loops: For every element, loop through the entire array to count its frequency. Then, check if that frequency is unique by looping through all other frequencies.
+BF Complexity Visuals: A double-scan of the array followed by a comparison of every element's count against every other count.
+How to Draw BF: Draw an array. For element 1, count its occurrences. Do the same for all. Then compare count of '1' with count of '2'. Write $O(N^2)$.
+Optimised Pattern: Two Hash Maps / Frequency-of-Frequency Tracking.
+Opt Vis. Technique: A two-stage sorting/filtering pipeline that tallies elements and then tallies the tallies.
+Dry Run (Opt): Map 1: `Element -&gt; Frequency`. Map 2: `Frequency -&gt; Count`. Iterate array. Find first element where `Map2.get(Map1.get(element)) == 1`.
+How to Draw (Opt): Draw array. Map 1: {A:2, B:1, C:2}. Map 2: {2:2, 1:1}. Point to 'B' because its frequency (1) appears only once in Map 2.
+Opt Complexity Visuals: Two independent linear passes.
+How to Draw Opt Complexity: Draw a line "Pass 1: $O(N)$". Draw second line "Pass 2: $O(N)$". Total: $O(N)$.
+Mem Vis (BF): $O(N^2)$ time-wasting loops; memory is $O(N)$ if storing frequencies in a list.
+Mem Vis (Opt): Two Hash Maps taking $O(N)$ space to store unique elements and their frequency counts.

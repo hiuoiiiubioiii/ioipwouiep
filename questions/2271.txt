@@ -1,0 +1,13 @@
+ID: 2271
+Problem Title: Maximum White Tiles Covered by a Carpet
+Brute Force Method: Nested Coverage CheckFor every single starting coordinate of every white tile range, place the carpet and iterate through all ranges to count how many tiles are covered.
+BF Complexity Visuals: Carpet-to-Range Overlap
+How to Draw BF: Draw a number line with white tile segments. For every integer point, draw a "carpet" bar. Manually count the overlap with the tile segments. Show $O(N^2)$ or worse depending on tile density.
+Optimised Pattern: Two Pointers + Prefix Sum
+Opt Vis. Technique: Sliding Window over Intervals
+Dry Run (Opt): Sort the tile ranges. Use a sliding window where the `left` pointer is the start of a range and the `right` pointer is the furthest range the carpet can reach. Use prefix sums to count full ranges in $O(1)$ and handle the partial end-range.
+How to Draw (Opt): Draw sorted segments. Draw a "carpet" bracket covering multiple segments. Slide the bracket to the next segment's start. Show the "Full Segments" being added via prefix sum and the "Partial Segment" calculated via subtraction.
+Opt Complexity Visuals: Linear Window Sweep
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting step, followed by an $O(N)$ sliding window pass. Label it $O(N \log N)$ total. Show each pointer moving strictly forward.
+Mem Vis (BF): Iterating through every individual coordinate unit (can be billions) instead of interval ranges.
+Mem Vis (Opt): A prefix sum array of the tile counts per range and the sorted range list (O(N) space).

@@ -1,0 +1,13 @@
+ID: 420
+Problem Title: Strong Password Checker
+Brute Force Method: BFS / State Search Treat the password as a start state. Each edit (ins, del, rep) is a transition. Find shortest path to "Strong".
+BF Complexity Visuals: Massive State Space
+How to Draw BF: Draw a starting string. Branch into 3 directions for every single character position. Total $O(3^N)$ or worse.
+Optimised Pattern: Greedy + Case Analysis Categorize by length: &lt;6 (Insert), 6-20 (Replace), &gt;20 (Delete then Replace). Priority on deleting from repeating triplets.
+Opt Vis. Technique: Resource Balancing
+Dry Run (Opt): Imagine three "needs": Length, Types (Upper/Lower/Digit), and Repeating Chars. Use Deletions to solve Repeating Chars first.
+How to Draw (Opt): Draw three buckets labeled "Insert", "Delete", "Replace". Put counts in them based on 3 specific math rules for each length category.
+Opt Complexity Visuals: Constant Constraints
+How to Draw Opt Complexity: Draw a logic flowchart. No nested loops. Time is strictly proportional to password length N. $O(N)$.
+Mem Vis (BF): Queue A BFS queue storing thousands of string variations.
+Mem Vis (Opt): Variables Just a few integer counters for edits and repeats. $O(1)$.

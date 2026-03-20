@@ -1,0 +1,13 @@
+ID: 3144
+Problem Title: Min Substring Partition of Equal Character Frequency
+Brute Force Method: Generate all possible partitions of the string and check if each substring is "balanced" (all present chars have same frequency). $O(2^N)$
+BF Complexity Visuals: An exponential recursion tree of "cut" positions.
+How to Draw BF: Write the string. Draw vertical lines (dividers) in every possible position. Check balance for every segment created.
+Optimised Pattern: Dynamic Programming + Freq Counting
+Opt Vis. Technique: Shortest Path in a Partition Graph
+Dry Run (Opt): `dp[i]` is the min partitions for prefix `s[0...i]`. For each i, look back at all j &lt; i. If `s[j...i]` is balanced, `dp[i] = min(dp[i], dp[j] + 1)`.
+How to Draw (Opt): Draw the string. Below it, draw a 1D DP array. For a cell i, draw arrows pointing back to previous valid "balanced" split points.
+Opt Complexity Visuals: $O(N^2)$ grid of transitions.
+How to Draw Opt Complexity: Draw an N x N lower-triangular matrix representing the look-back loops. $O(N^2)$.
+Mem Vis (BF): A list of all possible partition strings.
+Mem Vis (Opt): A 1D DP array of size N and a freq map of size 26. $O(N)$.

@@ -1,0 +1,13 @@
+ID: 280
+Problem Title: Wiggle Sort
+Brute Force Method: Sort the array $O(n \log n)$ and then swap adjacent pairs (e.g., i=1 and i=2, i=3 and i=4).
+BF Complexity Visuals: Sort-and-Swap: $O(n \log n)$.
+How to Draw BF: Draw a messy array. Show it becoming sorted. Then show pairs of elements swapping.
+Optimised Pattern: One-Pass Greedy Swapping
+Opt Vis. Technique: Local Wave Condition
+Dry Run (Opt): Iterate once. If i is odd and nums[i] &lt; nums[i-1], swap. If i is even and nums[i] &gt; nums[i-1], swap.
+How to Draw (Opt): Draw an array. Draw a zigzag line above it. Check if the current number follows the zigzag relative to its neighbor. If not, swap them.
+Opt Complexity Visuals: Single Scan: $O(n)$.
+How to Draw Opt Complexity: Draw a single arrow moving left to right. Each swap is $O(1)$. Total: $O(n)$.
+Mem Vis (BF): Sorted Array Copy: $O(n)$.
+Mem Vis (Opt): In-Place Swap: Draw the original array with no extra structures. Space: $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2262
+Problem Title: Total Appeal of A String
+Brute Force Method: Exhaustive Substring ScoringGenerate all $O(N^2)$ substrings. For each substring, use a Hash Set to count the number of distinct characters (appeal). Sum all these counts.
+BF Complexity Visuals: Quadratic Set Accumulation
+How to Draw BF: Draw the string "abbca". List every substring. Next to each, draw a small set showing distinct letters. Sum the sizes. Highlight the $O(N^3)$ or $O(N^2)$ bottleneck.
+Optimised Pattern: DP / Contribution of Each Character
+Opt Vis. Technique: Last-Occurrence Influence Map
+Dry Run (Opt): The "appeal" of a string can be calculated by summing the contribution of each character. A character at index `i` contributes to all substrings starting at `0 to last_seen[char]` and ending at `i`.
+How to Draw (Opt): Draw the string. For the current char, find its previous identical twin. Every substring ending *after* the twin and including the current char gets +1 appeal. Write a simple formula: `total += (i - prev[char]) * (n - i)`.
+Opt Complexity Visuals: Linear Aggregate Sweep
+How to Draw Opt Complexity: Draw a single $O(N)$ pass. At each step, show a single integer addition to the `total_appeal` using the distance to the last-seen index. Total time: $O(N)$.
+Mem Vis (BF): Creating and storing N^2 substrings or using sets repeatedly in a nested loop.
+Mem Vis (Opt): An integer array of size 26 to store the `last_seen_index` of each character (O(1) space).

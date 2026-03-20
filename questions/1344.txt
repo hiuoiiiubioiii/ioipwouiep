@@ -1,0 +1,13 @@
+ID: 1344
+Problem Title: Angle Between Hands of a Clock
+Brute Force Method: Attempt to simulate the rotation of hands in minute-by-minute increments until they reach the target time.
+BF Complexity Visuals: Simulation Progression
+How to Draw BF: Draw a clock. Move the hand 360 times for an hour. Very inefficient and prone to rounding errors.
+Optimised Pattern: Mathematical Relative Position
+Opt Vis. Technique: Degree Calculation Formula
+Dry Run (Opt): Minute hand: `6° * minutes`. Hour hand: `30° * (hour % 12) + (0.5° * minutes)`. Find the absolute difference and return `min(diff, 360 - diff)`.
+How to Draw (Opt): Draw a clock face. Mark the minute hand position. Mark the hour hand position. Calculate the angle from 12 o'clock for both. Subtract.
+Opt Complexity Visuals: $O(1)$ Constant Formula
+How to Draw Opt Complexity: Draw a calculator icon showing one single mathematical expression, proving $O(1)$ time complexity.
+Mem Vis (BF): Simulation State: Variables tracking ticks and movements.
+Mem Vis (Opt): Constant Math Registers: No extra memory. $O(1)$.

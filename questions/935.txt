@@ -1,0 +1,13 @@
+ID: 935
+Problem Title: Knight Dialer
+Brute Force Method: Recursive DFS starting from every digit (0-9). For each step up to N, explore all valid L-shaped knight moves.
+BF Complexity Visuals: $O(8^N)$ Exponential. A tree where every node has up to 8 children, branching N levels deep.
+How to Draw BF: Draw a phone keypad. Start at '1'. Draw arrows to '6' and '8'. From '6', draw arrows to '1', '7', '0'. The path options explode instantly.
+Optimised Pattern: Dynamic Programming (State Compression)
+Opt Vis. Technique: "A Group Migration." Instead of tracking individual paths, you track how many knights are standing on each digit at timestamp `t` and "hop" them all to their next possible digits at `t+1`.
+Dry Run (Opt): Create a mapping of moves (e.g., 1 -&gt; [6, 8]). Use a 1D array of size 10. In each step, `new_dp[target] += old_dp[source]` for all valid moves.
+How to Draw (Opt): Draw 10 circles (0-9). Draw lines between them based on knight moves. At each step, write a number in each circle representing the count of paths ending there.
+Opt Complexity Visuals: $O(N)$. A sequence of N transformations on a fixed-size (10) array.
+How to Draw Opt Complexity: Draw a horizontal timeline with N points. At each point, draw a small 1x10 grid being filled.
+Mem Vis (BF): Massive call stack due to $O(N)$ depth and exponential branching.
+Mem Vis (Opt): $O(1)$ extra space (only two arrays of size 10). Draw two small rows of 10 boxes each.

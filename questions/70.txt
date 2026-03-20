@@ -1,0 +1,13 @@
+ID: 70
+Problem Title: Climbing Stairs
+Brute Force Method: Recursion (DFS) To reach step n, you could have come from n-1 or n-2. f(n) = f(n-1) + f(n-2).
+BF Complexity Visuals: The Exponential Tree
+How to Draw BF: Draw a root node N. Branch to N-1 and N-2. Each of those branches again. Highlight the massive redundancy (e.g., N-3 is calculated many times). Time: $O(2^N)$.
+Optimised Pattern: Iterative DP (Fibonacci)
+Opt Vis. Technique: The Staircase Build-up
+Dry Run (Opt): The number of ways to reach the current step is the sum of ways to reach the previous two steps. Use two variables to store only the last two results.
+How to Draw (Opt): Draw steps 1, 2, 3, 4, 5. Under step 1, write '1'. Under step 2, write '2'. For step 3, add 1+2=3. For step 4, add 2+3=5.
+Opt Complexity Visuals: Single Forward Arrow
+How to Draw Opt Complexity: Draw a line of length N. Draw a pointer moving from 1 to N once. Time: $O(N)$.
+Mem Vis (BF): A recursion stack of depth N with 2^N total calls.
+Mem Vis (Opt): Draw just two variables: `first` and `second`. No array or recursion used. Space: $O(1)$.

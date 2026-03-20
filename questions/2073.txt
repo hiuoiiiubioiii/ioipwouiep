@@ -1,0 +1,13 @@
+ID: 2073
+Problem Title: Time Needed to Buy Tickets
+Brute Force Method: Simulate the queue. Decrement the first person's ticket count, move them to the back if tickets &gt; 0. Repeat until person k has 0 tickets.
+BF Complexity Visuals: Queue Rotation Spiral
+How to Draw BF: Draw a circle of people. Draw an arrow moving around the circle, erasing a "ticket" from each person. Count the total rotations. $O(N \\text{cdot MaxTickets})$.
+Optimised Pattern: One-Pass Mathematical Summation
+Opt Vis. Technique: Linear Contribution Baseline
+Dry Run (Opt): Everyone before k will buy at most `tickets[k]` tickets. Everyone after k will buy at most `tickets[k] - 1` tickets. Sum these limited values.
+How to Draw (Opt): Write the array. Circle the value at index k. For every element to the left, write `min(val, tickets[k])`. For elements to the right, write `min(val, tickets[k]-1)`. Sum the new numbers.
+Opt Complexity Visuals: Single Horizontal Sweep
+How to Draw Opt Complexity: Draw one continuous line from 0 to N-1. Each element is touched once. Total Time $O(N)$.
+Mem Vis (BF): A Queue data structure repeatedly re-allocating memory for moved elements.
+Mem Vis (Opt): A single integer `totalTime` and a loop counter. Space $O(1)$.

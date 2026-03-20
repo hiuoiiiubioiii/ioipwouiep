@@ -1,0 +1,13 @@
+ID: 3625
+Problem Title: Count Number of Trapezoids II (Hard)
+Brute Force Method: Same as part I, but larger constraints mean $O(N^4)$ or even unoptimized $O(N^2)$ combinatorial grouping fails.
+BF Complexity Visuals: Dense Point Cloud Rendering.
+How to Draw BF: Draw thousands of points, attempting to draw overlapping segment lines between every single one. Visual chaos.
+Optimised Pattern: Inclusion-Exclusion Principle. (Total Trapezoids = All shapes with at least 1 pair of parallel sides MINUS Parallelograms which have 2 pairs).
+Opt Vis. Technique: Inclusion-Exclusion Venn Diagram.
+Dry Run (Opt): Find all parallel segment pairs. Count them. That gives you Trapezoids + Parallelograms. Then strictly identify Parallelograms (same slope AND matching midpoints) and subtract them out.
+How to Draw (Opt): Draw a large circle labeled "At least 1 parallel pair". Draw a smaller inner circle labeled "Exactly 2 parallel pairs (Parallelograms)". Subtract the inner from the outer.
+Opt Complexity Visuals: Sweep Line / Map Lookup Graph.
+How to Draw Opt Complexity: Draw a timeline. Finding segments is $O(N^2)$. Sorting/grouping them by slope is $O(N^2 \log N)$. Subtracting parallelograms is $O(N^2)$. Dominant time is $O(N^2 \log N)$.
+Mem Vis (BF): Exhausted heap space from storing raw coordinate matrices.
+Mem Vis (Opt): Optimized Hash Maps storing structural metadata (slope, distance, midpoint) mapped to integer counts, not full object lists. Space $O(N^2)$.

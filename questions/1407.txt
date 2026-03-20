@@ -1,0 +1,13 @@
+ID: 1407
+Problem Title: Top Travellers (SQL)
+Brute Force Method: Correlated Subquery. For every single user in the Users table, run a separate SELECT sum(distance) query on the Rides table.
+BF Complexity Visuals: Nested Loop Join Plan
+How to Draw BF: Draw a 'Users' table. From every single row, draw an arrow pointing to a full scan of the 'Rides' table. Label $O(N \cdot M)$.
+Optimised Pattern: LEFT JOIN + GROUP BY + COALESCE
+Opt Vis. Technique: Hash Join &amp; Aggregation Pipeline
+Dry Run (Opt): Group the Rides table by user_id to sum distances. LEFT JOIN Users to this aggregated data. Use COALESCE to turn NULLs into 0. Sort by distance DESC, name ASC.
+How to Draw (Opt): Draw two tables. Draw a funnel extracting and summing 'Rides' by user_id. Draw lines matching 'Users.id' to the funnel output. Show NULLs converting to 0.
+Opt Complexity Visuals: Pipeline Bottleneck Graph
+How to Draw Opt Complexity: Draw Hash Map symbol $O(N+M)$ -&gt; Sort symbol $O(N \log N)$.
+Mem Vis (BF): Cartesian Product / Repeated Scans
+Mem Vis (Opt): Draw an intermediate Hash Table storing `user_id -&gt; total_distance` in memory.

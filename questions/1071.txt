@@ -1,0 +1,13 @@
+ID: 1071
+Problem Title: Greatest Common Divisor of Strings
+Brute Force Method: Generate every possible substring of the shorter string. For each, check if it can divide (perfectly repeat to form) both strings.
+BF Complexity Visuals: A "Tile Tester". Trying every possible tile size to see if it covers the whole floor.
+How to Draw BF: S1="ABABAB", S2="ABAB". Try "A", "AB", "ABAB". "ABAB" doesn't fit S1. "AB" fits both. Write $O(\text{min}(L1, L2)$^2).
+Optimised Pattern: Math (Euclidean GCD Logic).
+Opt Vis. Technique: A "String Congruence" check. If two strings have a GCD, their concatenation must be commutative.
+Dry Run (Opt): Check if `str1 + str2 == str2 + str1`. If false, return "". If true, find the GCD of their lengths L = gcd(len1, len2). The answer is `str1.substring(0, L)`.
+How to Draw (Opt): Write S1+S2. Below it, write S2+S1. If they look identical, calculate the GCD of their lengths on the side. Slice the first string at that GCD length.
+Opt Complexity Visuals: GCD calculation and string concatenation.
+How to Draw Opt Complexity: Draw two strings joining, then a single math block `gcd(a, b)`. Write Time: $O(L1 + L2)$.
+Mem Vis (BF): Many temporary substring objects allocated during checks.
+Mem Vis (Opt): One concatenated string for the check. $O(L1 + L2)$ space.

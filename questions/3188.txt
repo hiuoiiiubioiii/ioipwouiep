@@ -1,0 +1,13 @@
+ID: 3188
+Problem Title: Find Top Scoring Students II (SQL)
+Brute Force Method: Nested subqueries for GPA, credits, and grade counts. $O(N^2)$ execution.
+BF Complexity Visuals: Nested Table Loop Join
+How to Draw BF: Draw Students, Enrollments, and Courses. Draw arrows matching all three, calculating counts row-by-row manually.
+Optimised Pattern: Window Functions + CTE Aggregation
+Opt Vis. Technique: Data Pipeline Filtering
+Dry Run (Opt): Calculate GPA and total credits in one CTE. Count 'A' grades in another. Filter for students who meet all criteria (GPA >= 3.75, credits >= 150, etc.).
+How to Draw (Opt): Draw a funnel. Top: All Students. Middle: Those with GPA >= 3.75. Bottom: Those with enough 'A's. Output is the final sieve.
+Opt Complexity Visuals: Relational Execution Plan
+How to Draw Opt Complexity: Draw a linear flow: Join → Aggregate → Multiple Filter Nodes. $O(N \log N)$.
+Mem Vis (BF): Memory-intensive temporary tables for sorting and joining.
+Mem Vis (Opt): Hash-aggregates in memory. $O(N)$.

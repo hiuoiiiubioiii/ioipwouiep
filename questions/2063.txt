@@ -1,0 +1,13 @@
+ID: 2063
+Problem Title: Vowels of All Substrings
+Brute Force Method: Generate every substring, count the vowels in each, and sum the counts.
+BF Complexity Visuals: Substring Summation Matrix
+How to Draw BF: Draw an N x N grid where each cell `(i, j)` contains the number of vowels in `s[i...j]`. Sum every cell. $O(N^2)$.
+Optimised Pattern: Math / Contribution Technique
+Opt Vis. Technique: Contribution Bar Chart
+Dry Run (Opt): For each character at index `i`, if it's a vowel, how many substrings contain it? It must start in `[0...i]` and end in `[i...n-1]`. Count = `(i + 1) * (n - i)`.
+How to Draw (Opt): Write the string. For each vowel, draw an arrow pointing left (start options) and right (end options). Write the math `(i+1)*(n-i)` underneath it. Sum the results.
+Opt Complexity Visuals: Single-Pass Accumulator
+How to Draw Opt Complexity: Draw a single straight line through the string. Each character is visited once. Total time $O(N)$.
+Mem Vis (BF): Storing all counts in a large matrix.
+Mem Vis (Opt): A single `long` variable for the total sum. Space $O(1)$.

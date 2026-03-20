@@ -1,0 +1,13 @@
+ID: 2592
+Problem Title: Maximize Greatness of an Array
+Brute Force Method: Generate all N! permutations of the array. For each, compare it to the original and count how many elements are strictly greater. $O(N! \cdot N)$.
+BF Complexity Visuals: A combinatorial explosion of array re-orderings.
+How to Draw BF: Write [1, 3, 5]. Try [3, 5, 1], [5, 1, 3]... Count matches where perm[i] &gt; original[i].
+Optimised Pattern: Sorting + Greedy Two-Pointer.
+Opt Vis. Technique: A "Race Track" visual where two copies of the sorted array compete; the faster pointer only advances to "beat" the slower pointer.
+Dry Run (Opt): Sort the array. Use two pointers, i and j, both starting at 0. Pointer i represents the original elements, and j represents the permuted candidates. If nums[j] &gt; nums[i], we found a "great" match: increment i (and the total count). Always increment j.
+How to Draw (Opt): Draw two identical sorted rows of numbers. Put left finger on Row 1, right finger on Row 2. If right is bigger than left, move both fingers and tally. If not, only move the right finger.
+Opt Complexity Visuals: $O(N \log N)$ for sorting. The two-pointer scan is linear $O(N)$.
+How to Draw Opt Complexity: Draw two horizontal lines. Draw a single arrow for i and a faster-moving arrow for j, showing j leads the way.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ extra space (excluding sorting overhead).

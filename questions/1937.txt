@@ -1,0 +1,13 @@
+ID: 1937
+Problem Title: Maximum Number of Points with Cost
+Brute Force Method: For every cell in the current row, iterate through every cell in the previous row to find the max points after penalty.
+BF Complexity Visuals: All-to-All Row Connections
+How to Draw BF: Draw two rows of C cells. Draw lines from every cell in Row 1 to every cell in Row 2. Total $O(R \cdot C^2)$.
+Optimised Pattern: DP with Left/Right Prefix Max
+Opt Vis. Technique: Penalty-Decay Waves
+Dry Run (Opt): Run two passes per row: one left-to-right (carrying over values with a -1 penalty) and one right-to-left. Take the max of both.
+How to Draw (Opt): Draw a row. Draw an arrow moving right, decreasing values by 1 each step. Draw another arrow moving left. Pick the peak at each cell.
+Opt Complexity Visuals: Linear Multi-Pass Scan
+How to Draw Opt Complexity: Draw R rows. For each, draw two horizontal arrows (left and right). $O(R \cdot C)$ time.
+Mem Vis (BF): A 2D DP table of size R x C on the heap.
+Mem Vis (Opt): Two 1D arrays (previous row and current row) swapped iteratively. $O(C)$ space.

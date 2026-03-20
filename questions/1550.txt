@@ -1,0 +1,13 @@
+ID: 1550
+Problem Title: Three Consecutive Odds
+Brute Force Method: Generate all subarrays of length 3 and check if each element is odd. $O(N)$.
+BF Complexity Visuals: Sliding Window Triplets
+How to Draw BF: Draw the array. Draw a box covering 3 elements. Slide it one by one, checking if the numbers inside are all odd.
+Optimised Pattern: Linear Scan / Counter
+Opt Vis. Technique: The Odd-Streak Counter
+Dry Run (Opt): Iterate once. If the number is odd, increment a `count`. If even, reset `count` to 0. If `count == 3`, return true.
+How to Draw (Opt): Draw the array. Below it, write a 0. Every time you see an odd number, erase and write a +1. If you see an even number, slam it back to 0. If it hits 3, you win.
+Opt Complexity Visuals: Pure Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Each element is checked exactly once.
+Mem Vis (BF): Creating a list of booleans for every number. $O(N)$.
+Mem Vis (Opt): A single integer variable `count`. $O(1)$ space.

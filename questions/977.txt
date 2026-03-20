@@ -1,0 +1,13 @@
+ID: 977
+Problem Title: Squares of a Sorted Array
+Brute Force Method: Square every number in the array, then run a standard sorting algorithm on the resulting list.
+BF Complexity Visuals: $O(N \log N)$. Squaring preserves some order, but sorting the whole thing from scratch ignores the original "sorted" property.
+How to Draw BF: Draw a U-shaped graph (parabola). Show the negative points moving up. Then show a sorting machine re-ordering everything.
+Optimised Pattern: Two Pointers (Inward Meeting)
+Opt Vis. Technique: "The Tug-of-War." Since the array is sorted, the largest squares MUST come from either the far left (most negative) or the far right (most positive). Compare the ends and fill a new array from back to front.
+Dry Run (Opt): `L = 0, R = N-1`. `pos = N-1`. While `L &lt;= R`: if `abs(A[L]) &gt; abs(A[R])`, `res[pos] = A[L]^2, L++`. Else `res[pos] = A[R]^2, R--`. `pos--`.
+How to Draw (Opt): Draw the array with negative and positive numbers. Place 'L' at the left and 'R' at the right. Draw a third array below it. Show the larger square "dropping" into the last empty slot of the bottom array.
+Opt Complexity Visuals: $O(N)$. A single linear pass through the input.
+How to Draw Opt Complexity: Draw a horizontal line. Draw two arrows pointing inward from the ends, meeting in the middle.
+Mem Vis (BF): $O(1)$ extra space (if squaring in place) but $O(N \log N)$ time.
+Mem Vis (Opt): $O(N)$ for the result array. Draw two parallel array blocks.

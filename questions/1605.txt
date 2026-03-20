@@ -1,0 +1,13 @@
+ID: 1605
+Problem Title: Find Valid Matrix Given Row and Column Sums
+Brute Force Method: Backtracking every possible integer combination in a 2D grid until sums match.
+BF Complexity Visuals: Combinatorial Explosion
+How to Draw BF: Draw a massive branching tree where each node has branches equal to the row/col sum limit.
+Optimised Pattern: Greedy Matrix Allocation
+Opt Vis. Technique: Water Flow/Drainage Simulation
+Dry Run (Opt): Cell (i,j) = min(rowSum[i], colSum[j]). Subtract this from both. Move to next cell.
+How to Draw (Opt): Draw a grid. Put remaining row sums on the right, col sums on the bottom. Fill cell, cross out sums, write new remaining sums.
+Opt Complexity Visuals: Linear Matrix Traversal
+How to Draw Opt Complexity: Draw a grid and a single snake-like line visiting each cell exactly once for $O(R \cdot C)$.
+Mem Vis (BF): Recursive Stack + 2D Matrix: Deep stack of matrices.
+Mem Vis (Opt): 2D Array + 2 1D Arrays: Draw a grid flanked by one vertical array (rows) and one horizontal array (cols).

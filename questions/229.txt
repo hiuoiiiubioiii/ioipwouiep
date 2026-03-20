@@ -1,0 +1,13 @@
+ID: 229
+Problem Title: Majority Element II
+Brute Force Method: Use a Hash Map to count frequencies of all elements, then filter those &gt; N/3.
+BF Complexity Visuals: Frequency Histogram: $O(N)$ Time, $O(N)$ Space.
+How to Draw BF: Draw a table. List every unique number and a tally mark for each occurrence. Table size grows with unique elements.
+Optimised Pattern: Boyer-Moore Voting Algorithm (Extended)
+Opt Vis. Technique: Duel Elimination (2 Candidates)
+Dry Run (Opt): Keep two candidates and two counters. If match, increment. If no match and counter is 0, replace. If no match and counters &gt; 0, decrement both.
+How to Draw (Opt): Draw two boxes (Candidate A, Candidate B). For each new number, show it "attacking" the boxes if it doesn't match, or "reinforcing" if it does.
+Opt Complexity Visuals: Two-Pass Linear Scan: $O(N)$ Time.
+How to Draw Opt Complexity: Draw two lines across the array. Pass 1 finds candidates. Pass 2 verifies them. 2N total operations = $O(N)$.
+Mem Vis (BF): Expanding Hash Table: Draw a grid that grows vertically as more unique numbers are seen.
+Mem Vis (Opt): Fixed Variable Cells: Draw exactly 4 variables (`c1, v1, c2, v2`). No extra space regardless of N.

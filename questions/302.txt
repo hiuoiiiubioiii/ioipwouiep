@@ -1,0 +1,13 @@
+ID: 302
+Problem Title: Smallest Rectangle Enclosing Black Pixels
+Brute Force Method: Iterate through every single cell in the 2D grid. If it's black ('1'), update the min/max X and Y coordinates.
+BF Complexity Visuals: 2D Grid Traversal Array (Linear Search)
+How to Draw BF: Draw a matrix grid. Draw an arrow pointing to (0,0), then tracing through every single square row by row until the end.
+Optimised Pattern: Binary Search (on 1D projections of the 2D grid)
+Opt Vis. Technique: Orthogonal Projection / Shadow Casting
+Dry Run (Opt): Project the 2D grid onto the X-axis (array of booleans: does this column have a black pixel?) and Y-axis. Perform binary search on these 1D arrays to find the first and last 'true'.
+How to Draw (Opt): Draw the 2D grid. Below it, draw a 1D array representing the columns collapsed. Beside it, a 1D array for rows collapsed. Draw standard Binary Search L/R pointers on the 1D arrays.
+Opt Complexity Visuals: Logarithmic Search Space Halving
+How to Draw Opt Complexity: Draw a wide bar. Underneath, draw a bar half the size. Underneath, half again. Do this for both horizontal (width) and vertical (height) searches. $O(M \log N + N \log M)$.
+Mem Vis (BF): A simple box holding 4 integer variables (min_row, max_row, min_col, max_col). $O(1)$ space.
+Mem Vis (Opt): Same as brute force—just 4 integer boxes. No extra data structures are required for Binary Search. $O(1)$ space.

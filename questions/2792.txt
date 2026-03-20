@@ -1,0 +1,13 @@
+ID: 2792
+Problem Title: Count Nodes That Are Great Ancestors
+Brute Force Method: For every node, perform a full DFS/BFS on its subtree to count how many descendants have a value strictly less than the node's value. $O(N²)$.
+BF Complexity Visuals: Recursive Subtree Scans
+How to Draw BF: Draw a tree. Pick a node, circle its entire subtree. Manually count smaller nodes. Repeat for every node in the tree.
+Optimised Pattern: Redundant Traversal Stack (Visualizing the CPU re-visiting the same bottom nodes for every ancestor).
+Opt Vis. Technique: DFS with Fenwick Tree / Segment Tree
+Dry Run (Opt): Temporal Value Range Tracking
+How to Draw (Opt): Perform a DFS. When entering a node, query a Fenwick Tree for the count of values already present that are smaller than node.val. Add node.val to the Fenwick Tree. Recurse. When leaving, subtract the entry count from the current count to get the subtree-specific total.
+Opt Complexity Visuals: Draw a DFS path. Maintain a "Live Value Count" board (the Fenwick Tree). As you go down, add the current value. As you go up, erase it. Use the delta between entry and exit to find subtree results.
+How to Draw Opt Complexity: $O(N \log M)$ where M is Max Value
+Mem Vis (BF): Draw a tree with a Fenwick Tree box on the side. Label it $O(N \log M)$.
+Mem Vis (Opt): Fenwick Tree Array (Draw an array of size Max_Value used for logarithmic range sums).

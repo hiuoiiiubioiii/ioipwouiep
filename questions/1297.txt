@@ -1,0 +1,13 @@
+ID: 1297
+Problem Title: Maximum Number of Occurrences of a Substring
+Brute Force Method: Generate every possible substring of length between `minSize` and `maxSize`. For each, check if the number of unique characters <= `maxLetters` and count occurrences.
+BF Complexity Visuals: All-Substring Exhaustion
+How to Draw BF: Draw a string. Draw brackets for every possible length between min/max. For each, scan for unique chars. Write $O(N^2)$.
+Optimised Pattern: Sliding Window (Observation: minSize only)
+Opt Vis. Technique: Fixed-Width Frequency Map
+Dry Run (Opt): Key Insight: If a string of length `maxSize` satisfies the condition, its prefix of length `minSize` *also* satisfies it. Thus, you only need to check substrings of length `minSize`. Use a sliding window to count occurrences in a Map.
+How to Draw (Opt): Draw a string. Draw a fixed-width window of `minSize`. Slide it one character at a time. For each position, check unique letters (using another tiny map) and store the substring in a "Global Frequency" Map.
+Opt Complexity Visuals: Linear Rolling Window
+How to Draw Opt Complexity: Draw a string. Draw a sliding box of size `minSize`. Write $O(N)$.
+Mem Vis (BF): Draw a massive list of all possible substrings of various lengths.
+Mem Vis (Opt): Draw a single HashMap: `Substring -&gt; Frequency`. Space: $O(N \\text{cdot minSize})$.

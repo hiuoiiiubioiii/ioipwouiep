@@ -1,0 +1,13 @@
+ID: 2502
+Problem Title: Design Memory Allocator
+Brute Force Method: Linear scan through a memory array of size N to find consecutive 0s for allocation, and full array scan to clear mID for freeing.
+BF Complexity Visuals: Sliding window highlighting contiguous segments moving across a static array structure.
+How to Draw BF: Draw a grid of boxes. Slide a bracket of length size across the boxes, stopping when all enclosed boxes are empty (0).
+Optimised Pattern: 1D Array tracking with consecutive free-block counting and slice assignment.
+Opt Vis. Technique: 1D grid with color-coded segments representing allocated blocks and blank/white segments for free spaces.
+Dry Run (Opt): Color size number of contiguous white boxes with a specific color representing the mID. To free, locate all boxes of that specific color and erase them back to white.
+How to Draw (Opt): Draw a contiguous row of squares. Fill squares with mID values. To allocate, scan left-to-right with a tally of empty squares, resetting the tally if a filled square is hit.
+Opt Complexity Visuals: Worst-case linear traversal line graph showing $O(N)$ scanning for both the allocate and free methods.
+How to Draw Opt Complexity: Draw an array of size N. Draw a straight arrow from left to right representing the pointer scanning the array for each query, showing $O(N)$ operations per call.
+Mem Vis (BF): Flat integer array.
+Mem Vis (Opt): Flat integer array.

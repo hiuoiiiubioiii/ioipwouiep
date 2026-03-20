@@ -1,0 +1,13 @@
+ID: 1319
+Problem Title: Number of Operations to Make Network Connected
+Brute Force Method: Build a full adjacency list, run standard DFS multiple times to count components, and use a massive Set to track all redundant edges individually.
+BF Complexity Visuals: Redundant Edge Spaghetti Graph
+How to Draw BF: Draw computers as nodes and cables as edges. Use a red marker to circle cables that form cycles. Erase them and manually draw them to isolated nodes. Shows chaotic $O(V + E)$ overhead.
+Optimised Pattern: Union-Find (Disjoint Set)
+Opt Vis. Technique: Forest Component Clustering
+Dry Run (Opt): Start with N isolated nodes. For each cable, union the two nodes. If they are already in the same set, increment `extra_cables`. At the end, count total root nodes. Result is `roots - 1` (if `extra &gt;= roots - 1`).
+How to Draw (Opt): Draw N dots. As you read edges, draw lines grouping them into blobs. Count the disconnected blobs. Count edges that try to connect two dots inside the same blob.
+Opt Complexity Visuals: Flat Tree Array Collapses
+How to Draw Opt Complexity: Draw an array mapping `i` to `parent[i]`. Show long chains of arrows collapsing into a single direct pointer to a root, visualizing $O(α(N)$) Inverse Ackermann time.
+Mem Vis (BF): Fat Adjacency List: Draw an array of `std::vector` that allocates heavily on the heap for every single edge.
+Mem Vis (Opt): 1D Parent Array: Draw a single flat contiguous `std::vector` array. Extremely cache-friendly and strictly $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 787
+Problem Title: Cheapest Flights Within K Stops
+Brute Force Method: DFS to find all paths from `src` to `dst` and filter those with \le K stops.
+BF Complexity Visuals: Exhaustive Path Tree
+How to Draw BF: Draw nodes. Branch out all possible flights. Most paths go in circles or get too long. $O(V^K)$.
+Optimised Pattern: Bellman-Ford / BFS (Level-based)
+Opt Vis. Technique: Limited Layer Relaxation
+Dry Run (Opt): Run Bellman-Ford for exactly K+1 iterations. Each iteration i represents finding the cheapest path using exactly i flights.
+How to Draw (Opt): Draw nodes. Label each with "min cost". In each step, look at all flight edges and update the cost of the "destination" node. Stop after K+1 steps.
+Opt Complexity Visuals: Layered Edge Relaxation
+How to Draw Opt Complexity: Draw K parallel layers of the graph. Show edges only going from layer i to i+1. $O(K \\text{times} E)$.
+Mem Vis (BF): Recursive stack frames.
+Mem Vis (Opt): Two arrays of size V to store current and previous costs $O(V)$.

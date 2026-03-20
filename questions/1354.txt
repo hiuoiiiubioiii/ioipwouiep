@@ -1,0 +1,13 @@
+ID: 1354
+Problem Title: Construct Target Array with Multiple Sums
+Brute Force Method: Start with an array of 1s and try adding elements in all permutations to reach the target.
+BF Complexity Visuals: Forward Search Explosion
+How to Draw BF: Draw [1, 1, 1]. Branch into [3, 1, 1], [1, 3, 1], etc. Show how the values grow, making it impossible to know which path leads to the target.
+Optimised Pattern: Reverse Simulation with Max-Heap
+Opt Vis. Technique: Backward Value Reduction
+Dry Run (Opt): Work backward from the target. Replace the largest element with `max_val % (sum - max_val)`. If the max becomes 1, return true. Use a Max-Heap to always find the largest.
+How to Draw (Opt): Draw the target array. Circle the biggest number. Subtract the sum of others from it. Write the new smaller number. Repeat until all numbers are 1.
+Opt Complexity Visuals: $O(N \log N \cdot \log(\text{max}_\text{val})$)
+How to Draw Opt Complexity: Draw a Max-Heap. Show the largest element being popped, reduced by a modulo operation, and pushed back, proving logarithmic reduction.
+Mem Vis (BF): Search Tree Nodes: Billions of possible array states in memory.
+Mem Vis (Opt): Max-Priority Queue: Draw a heap of target values. Memory is strictly $O(N)$.

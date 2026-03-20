@@ -1,0 +1,13 @@
+ID: 1990
+Problem Title: Count the Number of Experiments (SQL)
+Brute Force Method: Group the table by platform and experiment name to count successes, but missing combinations won't appear.
+BF Complexity Visuals: Group-By with Missing Keys
+How to Draw BF: Draw the original table. Circle blocks of data. Notice that "Web - Experiment 3" might be totally missing from the circles.
+Optimised Pattern: Cross Join (Master Template) + Left Join
+Opt Vis. Technique: Cartesian Template Overlay
+Dry Run (Opt): Create a "Master Table" by Cross Joining all Platforms and all Experiments. Left Join the real data to this template to get counts.
+How to Draw (Opt): Draw a grid of all possible (Platform, Exp) pairs. Draw the actual data as "stamps" on this grid. Count the stamps per cell.
+Opt Complexity Visuals: Fixed-Size Grid Mapping
+How to Draw Opt Complexity: Draw a small 3 \times 3 grid. Show that the template creation is constant $O(1)$ and the data join is $O(N)$.
+Mem Vis (BF): Missing data rows lead to incomplete reports.
+Mem Vis (Opt): A small in-memory constant table created by the Cross Join.

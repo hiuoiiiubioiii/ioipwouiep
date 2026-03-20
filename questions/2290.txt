@@ -1,0 +1,13 @@
+ID: 2290
+Problem Title: Minimum Obstacle Removal to Reach Corner
+Brute Force Method: Standard BFS (All Paths)Run a BFS where each state is `(row, col, obstacles_removed)`. Explore all paths and find the one with the minimum obstacles.
+BF Complexity Visuals: Layered Wavefront BFS
+How to Draw BF: Draw a grid. Draw a wave starting at (0,0). For each obstacle, the "cost" increases. Show how the queue grows exponentially as it tracks different removal counts.
+Optimised Pattern: 0-1 BFS (Deque)
+Opt Vis. Technique: Weighted Shortest Path
+Dry Run (Opt): Treat empty cells as weight 0 and obstacles as weight 1. Use a `Deque`. If moving to an empty cell, `push_front` (higher priority). If moving to an obstacle, `push_back`. This finds the shortest path in $O(V+E)$.
+How to Draw (Opt): Draw the grid. Use a Deque to manage the "frontier." When you hit an empty cell, jump it to the front of the line. When you hit a wall, send it to the back. This ensures you always explore the "cheapest" paths first.
+Opt Complexity Visuals: Graph Traversal Flow
+How to Draw Opt Complexity: Draw a grid and show the "search wave" prioritizing empty paths. Label it $O(R\cdot C)$ since each cell is visited optimally once.
+Mem Vis (BF): A massive priority queue or multiple state arrays for every possible obstacle count.
+Mem Vis (Opt): A 2D `dist` array and a Deque of coordinates (O(R*C) space).

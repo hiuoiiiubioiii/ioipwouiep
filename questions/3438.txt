@@ -1,0 +1,13 @@
+ID: 3438
+Problem Title: Find Valid Pair of Adjacent Digits in String
+Brute Force Method: For every index i, check if s[i] == s[i+1]. If true, run another loop over the entire string to count frequencies of that digit. $O(N^2)$
+BF Complexity Visuals: Nested Scanning Loop.
+How to Draw BF: Draw the string. Circle index i and i+1. Then draw a giant looping arrow that circles back to index 0 and scans everything to count.
+Optimised Pattern: Precomputed Frequency Map + Single Pass. $O(N)$
+Opt Vis. Technique: Frequency Tally + Sliding Pointer.
+Dry Run (Opt): First, tally all digits into a 0-9 array. Then, slide through the string once. If s[i] == s[i+1] AND both counts equal the digit value, stop.
+How to Draw (Opt): Draw 10 buckets (0-9). Fill them. Then draw an arrow sliding under the string checking two digits at a time against the buckets.
+Opt Complexity Visuals: Double-Pass Timeline.
+How to Draw Opt Complexity: Draw one $O(N)$ line for tallying, followed by a second $O(N)$ line for finding the pair. Total 2N steps.
+Mem Vis (BF): Potentially N temporary frequency maps if created inside the loop.
+Mem Vis (Opt): A fixed-size array of 10 integers (counts for digits 0-9).

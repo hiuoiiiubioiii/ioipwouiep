@@ -1,0 +1,13 @@
+ID: 2445
+Problem Title: Number of Nodes With Value One
+Brute Force Method: For every query, run a DFS to flip the value of the node and all its descendants. $O(Q \cdot N)$.
+BF Complexity Visuals: Overlapping Triangle Flips
+How to Draw BF: Draw a tree. For each query, shade a massive triangle under a node. Massive overlapping shades.
+Optimised Pattern: Prefix Sum on Trees (Parity)
+Opt Vis. Technique: The Falling Tally
+Dry Run (Opt): Count how many times each node is queried (flipped). Run one DFS from the root, passing down the total flips. Node value is (flips % 2).
+How to Draw (Opt): Draw the tree. Write query counts next to nodes. Draw an arrow dropping from root to leaves, accumulating the sum. If sum is odd, write '1'.
+Opt Complexity Visuals: Single DFS Pass $O(N + Q)$
+How to Draw Opt Complexity: Draw a timeline for recording queries, then a single line tracing the tree top-to-bottom.
+Mem Vis (BF): Multiple full-tree traversals.
+Mem Vis (Opt): Array of query frequencies. $O(N)$ space.

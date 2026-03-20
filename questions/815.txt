@@ -1,0 +1,13 @@
+ID: 815
+Problem Title: Bus Routes
+Brute Force Method: BFS treating every single bus STOP as a node. Edges connect every stop on a route to every other stop on that same route.
+BF Complexity Visuals: Massive Dense Web (Clique Graph). $O(N^2 \cdot M)$ time.
+How to Draw BF: Draw a circle of dots (stops on a route). Draw a line from every single dot to every other dot. The graph instantly becomes a black smudge of overlapping lines.
+Optimised Pattern: BFS on Busses/Routes (Bipartite-like Graph).
+Opt Vis. Technique: Transfer Stations / Colored Train Lines.
+Dry Run (Opt): Instead of jumping stop-to-stop, you jump bus-to-bus. You get on the Red line. Does the Red line go to the target? No. What other lines intersect the Red line? Green and Blue. Jump to those.
+How to Draw (Opt): Draw big colored circles representing whole Bus Routes. Draw intersecting areas (transfer stops) linking two big circles. Count the number of circles you step into.
+Opt Complexity Visuals: Layered BFS Rings. $O(R \cdot S)$ time.
+How to Draw Opt Complexity: Draw concentric ripples spreading out from a starting bus route, tracking the 'depth' or number of transfers.
+Mem Vis (BF): Adjacency Matrix / Gigantic Queue: Draw a massive grid tracking every single individual stop.
+Mem Vis (Opt): Hash Map of Stop-to-Routes &amp; Visited Set: Draw a mapping where a stop number points to a short list of bus IDs.

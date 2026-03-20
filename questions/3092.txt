@@ -1,0 +1,13 @@
+ID: 3092
+Problem Title: Most Frequent IDs
+Brute Force Method: For every update, iterate through the entire frequency map of IDs to find which one has the highest current frequency.
+BF Complexity Visuals: $O(N \cdot U)$ Linear Search
+How to Draw BF: Draw the frequency table. For every update, show a magnifying glass scanning the entire table.
+Optimised Pattern: Hash Map + Max-Priority Queue (Lazy Removal)
+Opt Vis. Technique: Dynamic Tally Scale
+Dry Run (Opt): Update the frequency in a HashMap. Push the new (frequency, id) to the Max-Heap. If the top of the heap's frequency doesn't match the Map, pop it (it's stale).
+How to Draw (Opt): Draw a Tally Table and a Max-Heap (Tree). Update the table. Add the new pair to the Heap. Cross out the top node if its value is "old."
+Opt Complexity Visuals: $O(N \log N)$ Heap Ops
+How to Draw Opt Complexity: Draw N spikes representing heap push/pop operations.
+Mem Vis (BF): Creating a full copy of the ID list for every max check.
+Mem Vis (Opt): A HashMap for frequencies and a PriorityQueue for the rolling maximum.

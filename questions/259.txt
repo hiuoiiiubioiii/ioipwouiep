@@ -1,0 +1,13 @@
+ID: 259
+Problem Title: 3Sum Smaller
+Brute Force Method: Triple nested loops: for every i, j, k, check if nums[i] + nums[j] + nums[k] &lt; target.
+BF Complexity Visuals: Cubic Volume: $O(N^3)$.
+How to Draw BF: Draw a 3D cube. Shade the volume. Each cell in the cube represents one triplet check.
+Optimised Pattern: Sort + Two Pointers (Left/Right)
+Opt Vis. Technique: Scanning Boundary Pointers
+Dry Run (Opt): Sort the array. For each i, set left=i+1, right=N-1. If sum &lt; target, all elements between left and right also satisfy the condition (count += right - left).
+How to Draw (Opt): Draw a sorted array. Circle index i. Place two arrows (L and R). If sum is small, draw a bracket covering everyone between L and R to show they are all counted instantly.
+Opt Complexity Visuals: Quadratic Scan: $O(N^2)$ Time.
+How to Draw Opt Complexity: Draw a sorted array. Show the outer loop N times and the inner pointer move N times. Area = Triangle (N^2/2).
+Mem Vis (BF): No extra memory.
+Mem Vis (Opt): Sorting Space: $O(\log N)$ or $O(1)$. Draw the Quicksort recursion stack.

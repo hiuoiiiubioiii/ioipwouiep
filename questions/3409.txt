@@ -1,0 +1,13 @@
+ID: 3409
+Problem Title: Longest Subsequence With Decreasing Adjacent Difference
+Brute Force Method: Generate all 2^N subsequences. For each, check if absolute differences between adjacent elements are non-increasing. (O(N * 2^N))
+BF Complexity Visuals: Binary Subsequence Inclusion/Exclusion Tree.
+How to Draw BF: Draw an array. From each element, branch into "include" or "exclude", calculating differences for every valid path to create a massive tree.
+Optimised Pattern: 2D Dynamic Programming with Suffix Max Optimization (State: dp[num][diff]). (O(N * M))
+Opt Vis. Technique: 2D DP Table with Suffix Max Collapsing.
+Dry Run (Opt): Iterate array. For current num, calculate diffs with previous values. Update cell based on prev state. Run a reverse loop to maintain suffix maximums for valid diffs.
+How to Draw (Opt): Draw a 2D grid (rows=nums, cols=diffs). Fill a cell by looking at the previous row, then draw a sweeping arrow right-to-left updating suffix maxes.
+Opt Complexity Visuals: 2D Grid Traversal.
+How to Draw Opt Complexity: Draw an outer N loop enclosing an inner max_val loop, represented as a bounded rectangle matrix being shaded cell by cell.
+Mem Vis (BF): Call stack depth N storing current subsequence elements and their difference constraints.
+Mem Vis (Opt): A fixed-size 2D matrix of dimensions max_val by max_val (e.g., 301 x 301).

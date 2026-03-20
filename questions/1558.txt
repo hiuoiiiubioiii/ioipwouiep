@@ -1,0 +1,13 @@
+ID: 1558
+Problem Title: Minimum Numbers of Function Calls to Make Target Array
+Brute Force Method: Reverse simulation: repeatedly subtract 1 from elements until they are even, then divide everything by 2. $O(N \\text{cdot Max}_\text{Val})$.
+BF Complexity Visuals: Iterative Step-by-Step Drain
+How to Draw BF: Draw the target array. Draw arrows showing every single decrement operation until you can finally draw one "divide by 2" arrow for the whole group. Slow and tedious.
+Optimised Pattern: Greedy / Bit Manipulation
+Opt Vis. Technique: Bit-Level Deconstruction
+Dry Run (Opt): Every "1" in the binary representation of a number represents an "add 1" operation. The number of "multiply by 2" operations is determined by the most significant bit (MSB) of the largest number in the array.
+How to Draw (Opt): Draw the largest number in binary. Count the '1's (increments). Count the total number of bits minus 1 (doubles). Do this for all numbers, but only count the "doubles" once for the whole array.
+Opt Complexity Visuals: Linear Bit-Check $O(N \cdot \log(\text{Max}_\text{Val})$)
+How to Draw Opt Complexity: Draw a line of length N. For each number, draw a small tree of height 32 (bits).
+Mem Vis (BF): Multiple copies of the array during simulation.
+Mem Vis (Opt): Standard integer variables for `max_doubles` and `total_increments`. $O(1)$ space.

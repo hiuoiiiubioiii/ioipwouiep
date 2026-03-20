@@ -1,0 +1,13 @@
+ID: 2357
+Problem Title: Make Array Zero by Subtracting Equal Amounts
+Brute Force Method: Find the smallest non-zero element, subtract it from all non-zero elements, and repeat this process until all elements are zero. Count the number of steps.
+BF Complexity Visuals: Repeated Linear Subtraction (O(N^2))
+How to Draw BF: Draw an array. Find the smallest number, subtract it from everyone. Redraw the array. Repeat until the array is all zeros.
+Optimised Pattern: Unique Positive Integers (Hash Set)
+Opt Vis. Technique: Distinct Value Counting
+Dry Run (Opt): The number of operations is exactly equal to the number of distinct positive integers in the array. Each operation removes one unique value level.
+How to Draw (Opt): Draw an array. Count how many different numbers (greater than 0) are in it. Each unique number represents one "floor" in a building; you are counting the number of floors.
+Opt Complexity Visuals: Single Pass Set Fill (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Each unique number encountered adds one tick to a counter.
+Mem Vis (BF): Draw multiple copies of the array as it is modified in each step.
+Mem Vis (Opt): Draw a Hash Set or a 101-element Boolean Array to track seen numbers.

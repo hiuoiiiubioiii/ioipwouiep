@@ -1,0 +1,13 @@
+ID: 2840
+Problem Title: Check if Strings Can be Made Equal With Operations II
+Brute Force Method: Similar to 2839, but for strings of length N. Use recursion or BFS to explore all possible swap states until the strings match.
+BF Complexity Visuals: State Space Explosion Tree
+How to Draw BF: Draw a starting string. Branch out for every possible index i and i+2 swap. Show the number of states growing exponentially.
+Optimised Pattern: Frequency Mapping by Index Parity
+Opt Vis. Technique: Frequency Histograms by Parity
+Dry Run (Opt): Separate characters of both strings into "Even-indexed" and "Odd-indexed" groups. Use a frequency map (or sorted array) to compare the even group of string 1 with the even group of string 2. Repeat for odd groups.
+How to Draw (Opt): Draw two buckets for each string: "Even" and "Odd". Sort characters into these buckets. Compare the contents of the "Even" buckets and "Odd" buckets between the two strings.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single line for the string scan. Each character is dropped into a parity bucket. Total time $O(N)$.
+Mem Vis (BF): Visualize a massive memory footprint from a BFS queue storing unique string permutations.
+Mem Vis (Opt): Visualize four frequency arrays (size 26) or two sorted arrays (O(N)). Auxiliary space $O(N)$ or $O(1)$ (if character set is limited).

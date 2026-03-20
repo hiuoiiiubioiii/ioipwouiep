@@ -1,0 +1,13 @@
+ID: 555
+Problem Title: Split Concatenated Strings
+Brute Force Method: For every string in the list, generate all 2^N combinations of normal/reversed versions, concatenate them, and check every possible split point.
+BF Complexity Visuals: Exponential combinations x linear split points. $O(2^N \cdot L^2)$.
+How to Draw BF: Draw N strings. Branch each into (normal, reverse). Concatenate. Cut at index 0, 1, 2... repeat for all 2^N.
+Optimised Pattern: Greedy Pre-reversal + Optimized Split Scan.
+Opt Vis. Technique: A cycle of "best faces." First, flip all strings to their lexicographically larger version. Then, for each string, try it as the "split point" using both its normal and reversed form.
+Dry Run (Opt): 1. Flip each `s[i]` to `max(s[i], reverse(s[i]))`. 2. For each `s[i]`, try both versions as the start/end string. Combine with the pre-flipped versions of others. Find the global max.
+How to Draw (Opt): Draw the list of strings in a circle. Highlight the pre-flipped versions. Pick one string, rotate the circle so it's the start, and test its split points.
+Opt Complexity Visuals: Linear scan of split points over N strings. $O(L^2)$ where L is total length.
+How to Draw Opt Complexity: Draw a circular loop of strings with a sliding cut-point.
+Mem Vis (BF): Storing all 2^N concatenated combinations.
+Mem Vis (Opt): String buffer for the current best result. $O(L)$.

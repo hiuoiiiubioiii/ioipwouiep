@@ -1,0 +1,13 @@
+ID: 3498
+Problem Title: Reverse Degree of a String
+Brute Force Method: Nested loop: for each character, map its letter to a reversed alphabet list and then multiply by its index. $O(N \cdot 26)$
+BF Complexity Visuals: Double-Loop Processing.
+How to Draw BF: Draw the string. For each character, draw a secondary search scan across a 26-letter "reversed" alphabet.
+Optimised Pattern: Single-Pass Simulation with ASCII Math. $O(N)$
+Opt Vis. Technique: Linear Product Accumulator.
+Dry Run (Opt): Calculate value V = 26 - (char - 'a') and multiply by index i+1. Sum these directly in one loop.
+How to Draw (Opt): Draw the string in boxes. Below each, write its string position. Below that, write its reverse-alpha value. Multiply and add.
+Opt Complexity Visuals: Linear Timeline.
+How to Draw Opt Complexity: Draw one straight arrow moving once from index 0 to N-1.
+Mem Vis (BF): N/A - Primarily wasted CPU time.
+Mem Vis (Opt): $O(1)$ extra space using a single "total_sum" variable.

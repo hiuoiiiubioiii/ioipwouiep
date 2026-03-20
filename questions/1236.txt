@@ -1,0 +1,13 @@
+ID: 1236
+Problem Title: Web Crawler
+Brute Force Method: A standard DFS/BFS that explores every single link it finds, regardless of the hostname, potentially trying to crawl the entire internet.
+BF Complexity Visuals: Global Web Graph Expansion
+How to Draw BF: Draw a central node. Draw hundreds of lines out to "other" sites. Show no boundary. Write $O(V + E)$ where V is the entire web.
+Optimised Pattern: BFS/DFS with Hostname Filtering
+Opt Vis. Technique: Bounded Domain Bubble
+Dry Run (Opt): Start at the seed URL. Extract its hostname. Use a queue/stack to visit neighbors. Before adding a neighbor to the queue, check: "Is its hostname the same?". If no, discard immediately. Use a Set to avoid cycles.
+How to Draw (Opt): Draw a large circle labeled "Hostname". Place the start URL inside. Draw arrows to links. If an arrow points outside the circle, draw a red "X" through the link. Use a "Seen" checklist box.
+Opt Complexity Visuals: Subgraph Traversal
+How to Draw Opt Complexity: Draw a small connected cluster of nodes. Highlight that only nodes inside this specific cluster are touched. Write $O(N)$ where N is links within the same domain.
+Mem Vis (BF): Draw a memory block that grows indefinitely as it discovers new domains.
+Mem Vis (Opt): Draw a FIFO Queue and a HashSet of "Seen" strings. Memory is proportional only to valid URLs found. Space: $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1836
+Problem Title: Remove Duplicates From an Unsorted Linked List (Premium)
+Brute Force Method: Nested loops: For each node, scan the rest of the list to see if its value appears again. Delete duplicates.
+BF Complexity Visuals: Nodes with N \times N link-traversal arrows.
+How to Draw BF: Draw a linked list. From each node, draw long loops checking every subsequent node. Mark $O(N^2)$.
+Optimised Pattern: Hash Map Count + Sentinel Node.
+Opt Vis. Technique: Two-pass nodal filtering.
+Dry Run (Opt): Pass 1: Count frequencies in a Map. Pass 2: Use a `dummy` node. If `curr.next.val` count &gt; 1, skip it; else move `curr`.
+How to Draw (Opt): Draw a list. Above it, draw a Map with counts. Draw a 'Skip' arrow jumping over nodes with count &gt; 1.
+Opt Complexity Visuals: Two separate linear scans.
+How to Draw Opt Complexity: Draw two parallel horizontal arrows representing $O(N)$ + $O(N)$.
+Mem Vis (BF): Constant space but extreme time overhead (recursive deletion).
+Mem Vis (Opt): Hash Map buckets storing integer counts (O(N) space).

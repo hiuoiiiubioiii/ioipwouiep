@@ -1,0 +1,13 @@
+ID: 1029
+Problem Title: Two City Scheduling
+Brute Force Method: Try all combinations of sending N people to City A and N people to City B (NCr) and find the minimum total cost.
+BF Complexity Visuals: A massive combination tree (2N choose N).
+How to Draw BF: Draw 2N slots. Branch into 'City A' or 'City B'. Stop when one city has N people. Write $O(2^2N)$.
+Optimised Pattern: Greedy (Sorting by Opportunity Cost).
+Opt Vis. Technique: A ranking list based on "How much will I regret NOT sending this person to City A?"
+Dry Run (Opt): Assume everyone goes to City A initially. Calculate the "refund" or "penalty" for switching to City B: `costB - costA`. Sort by this difference. Send the N people with the lowest difference to City B.
+How to Draw (Opt): Draw a table: [CostA, CostB, Diff (B-A)]. Sort rows by Diff. Circle the first N rows for City B, the rest for City A. Sum costs.
+Opt Complexity Visuals: A sort followed by a single split pass.
+How to Draw Opt Complexity: Draw a sort box $O(N \log N)$ followed by a line $O(N)$. Total Time: $O(N \log N)$.
+Mem Vis (BF): Large memory to store all possible combinations.
+Mem Vis (Opt): $O(N)$ space for the sorted array or the difference list.

@@ -1,0 +1,13 @@
+ID: 680
+Problem Title: Valid Palindrome II
+Brute Force Method: Try deleting every character one by one. For each resulting string, check if it is a palindrome.
+BF Complexity Visuals: N-fold Palindrome Checks.
+How to Draw BF: Draw a string. Delete char at index 0, check. Delete char at index 1, check. Write $O(N^2)$.
+Optimised Pattern: Two Pointers with One-Time Divergence.
+Opt Vis. Technique: Symmetrical Squeeze with a "Safety Valve."
+Dry Run (Opt): Use `left` and `right` pointers. If characters match, move inward. If they don't, you have one chance: check if `string[left+1...right]` OR `string[left...right-1]` is a palindrome.
+How to Draw (Opt): Draw a string. Move fingers from ends to middle. When they hit a mismatch, draw two "Sub-scans" from that point. If either finishes, it's valid.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight line that forks once and immediately merges/ends. Write $O(N)$.
+Mem Vis (BF): Draw hundreds of string copies.
+Mem Vis (Opt): Draw zero extra space, just pointer logic. $O(1)$ space.

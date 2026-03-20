@@ -1,0 +1,13 @@
+ID: 3296
+Problem Title: Minimum Number of Seconds to Make Mountain Height Zero
+Brute Force Method: Simulate every worker's progress second-by-second, checking if the total height reduction has reached H. $O(\text{TotalTime} x N)$.
+BF Complexity Visuals: Time-Step Simulation
+How to Draw BF: Draw a vertical "Mountain" and N clocks. For every tick, calculate the height reduction for each worker. Show the massive waste of time for large H.
+Optimised Pattern: Binary Search on Answer / Priority Queue
+Opt Vis. Technique: Work-Rate Feasibility Curve
+Dry Run (Opt): Binary search for the minimum time T. For a fixed T, calculate the maximum height reduction each worker can achieve in T seconds using the quadratic formula t >= fracx(x+1)2 x factor. Sum these and check if total reduction >= H.
+How to Draw (Opt): Draw a timeline. Pick a middle time. For each worker, draw a block showing how much "Mountain" they can eat. If the blocks together cover the mountain, try a smaller time.
+Opt Complexity Visuals: Logarithmic Search Block
+How to Draw Opt Complexity: Draw a Binary Search tree for time. At each node, draw an $O(N)$ loop for the math check. Total: $O(N \log(\text{MaxTime})$).
+Mem Vis (BF): Detailed per-second state of every worker.
+Mem Vis (Opt): $O(1)$ space for the math check (using the quadratic formula).

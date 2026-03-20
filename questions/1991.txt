@@ -1,0 +1,13 @@
+ID: 1991
+Problem Title: Find the Middle Index in Array
+Brute Force Method: For every index i, iterate left to sum 0 \dots i-1 and iterate right to sum i+1 \dots n-1.
+BF Complexity Visuals: Nested Scanning (O(N^2))
+How to Draw BF: Draw an array. For each cell, draw two arrows: one moving left to the start and one moving right to the end.
+Optimised Pattern: Prefix Sum (Total Sum Balance)
+Opt Vis. Technique: Running Total Scale
+Dry Run (Opt): Calculate total sum. Iterate once, maintaining a `leftSum`. The `rightSum` is simply `totalSum - leftSum - currentElement`.
+How to Draw (Opt): Draw a "Total Sum" bar. Draw a slider moving across it. The part to the left of the slider is `leftSum`, the part to the right is `rightSum`.
+Opt Complexity Visuals: Single-Pass Linear Timeline
+How to Draw Opt Complexity: Draw one straight line across the array box. Mark two constant-time operations per cell. $O(N)$.
+Mem Vis (BF): No extra storage besides simple sum variables.
+Mem Vis (Opt): A single `totalSum` integer and a `leftSum` integer. $O(1)$ space.

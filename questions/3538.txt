@@ -1,0 +1,13 @@
+ID: 3538
+Problem Title: Merge Operations for Minimum Travel Time (Hard)
+Brute Force Method: Simulate all possible edge merging sequences using factorial/exponential DFS paths.
+BF Complexity Visuals: Explosive State Graph.
+How to Draw BF: Draw a network. Branch off by picking edge A to merge, then branch again. Creates a massive web of overlapping simulation states.
+Optimised Pattern: Disjoint Set Union (DSU) / Kruskal's Variant with DP.
+Opt Vis. Technique: Component Gravity.
+Dry Run (Opt): Sort edges by travel time. Greedily merge closest nodes into expanding component "bubbles", carrying a minimum time state within each bubble.
+How to Draw (Opt): Draw nodes. Draw circles expanding and eating other nodes based on edge weights. Write a running "min time" counter inside each expanding bubble.
+Opt Complexity Visuals: Sorted Edge Processing.
+How to Draw Opt Complexity: Draw an array of edges being sorted $O(E \log E)$, then a linear scan $O(E)$ feeding into a DSU.
+Mem Vis (BF): Deep Simulation States: Draw heavy memory blocks storing entire modified adjacency lists for every recursion step.
+Mem Vis (Opt): DSU Parent Array: Draw a simple 1D array representing tree roots, using near-zero extra space.

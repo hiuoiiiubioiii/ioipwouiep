@@ -1,0 +1,13 @@
+ID: 1509
+Problem Title: Minimum Difference Between Largest and Smallest Value in Three Moves
+Brute Force Method: Recursively try changing 3 elements to literally any other number. Infinite search space.
+BF Complexity Visuals: Infinite Explosion Tree
+How to Draw BF: Draw an array. Pick one element, draw an infinite number of arrows replacing it with every other possible integer.
+Optimised Pattern: Sorting + Greedy (Sliding Window)
+Opt Vis. Technique: The 4-Scenario Window
+Dry Run (Opt): Recognize that changing an element to match another means "removing" it from the difference calculation. Sort the array. We just need to drop 3 items from the edges. Try 4 scenarios: Drop 3 left, 2 left 1 right, 1 left 2 right, 3 right.
+How to Draw (Opt): Draw the sorted array. Draw a bracket covering `N-3` elements. Slide this bracket exactly 4 times (touching left edge, moving right by 1, 2, and 3 steps). Note the difference between the ends of the bracket each time.
+Opt Complexity Visuals: Sorting Bottleneck $O(N \log N)$
+How to Draw Opt Complexity: Draw a classic merge-sort tree structure, followed by 4 short horizontal lines representing the constant $O(1)$ window checks at the end.
+Mem Vis (BF): Stack Overflow / Giant Recursion Tree $O(N)$.
+Mem Vis (Opt): Array rearranging itself in place. $O(1)$ extra space or $O(\log N)$ for sorting overhead.

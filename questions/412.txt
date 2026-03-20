@@ -1,0 +1,13 @@
+ID: 412
+Problem Title: Fizz Buzz
+Brute Force Method: If-Else Chain Iterate 1 to N. Check modulo 15, then 3, then 5, else stringify the number.
+BF Complexity Visuals: Loop Flowchart
+How to Draw BF: Draw a simple loop box from 1 to N with a constant $O(1)$ decision diamond inside. $O(N)$.
+Optimised Pattern: String Concatenation (Better for scale/many conditions). Append "Fizz" if mod 3, append "Buzz" if mod 5. Output if empty.
+Opt Vis. Technique: Assembly Line
+Dry Run (Opt): An empty string moves down a conveyor belt. Station 3 stamps "Fizz". Station 5 stamps "Buzz". If it reaches the end blank, stamp the number.
+How to Draw (Opt): Draw a horizontal line (belt). Draw downward arrows labeled '3' and '5'. Write the resulting word building up block-by-block left to right.
+Opt Complexity Visuals: Linear Pipeline
+How to Draw Opt Complexity: Draw a straight line for N iterations. $O(N)$ time.
+Mem Vis (BF): N Strings Draw N independent string blocks.
+Mem Vis (Opt): Result Array Exact same, return structure requires $O(N)$ space.

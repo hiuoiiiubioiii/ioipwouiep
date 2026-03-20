@@ -1,0 +1,13 @@
+ID: 2404
+Problem Title: Most Frequent Even Element
+Brute Force Method: Nested loops to count frequency of every even element by scanning the whole array for each element.
+BF Complexity Visuals: Cross-Referencing Arrows
+How to Draw BF: Draw curved arrows from every element to every other element in the array. Label $O(N^2)$ total comparisons.
+Optimised Pattern: Hash Map / Dictionary Counting
+Opt Vis. Technique: Frequency Bucketing
+Dry Run (Opt): Pass through array once. If even, throw into a labeled bucket. Keep track of the bucket with the highest count and lowest label.
+How to Draw (Opt): Draw an array. Draw a table below it (Key/Value). As you point to array elements, update tally marks in the table.
+Opt Complexity Visuals: Linear Scan Line
+How to Draw Opt Complexity: Draw a single straight line from index 0 to N. Label: 1 Pass = $O(N)$ time.
+Mem Vis (BF): Draw a single variable tracking max, showing $O(1)$ space but redundant time.
+Mem Vis (Opt): Draw a 2-column table (Hash Map) dynamically expanding. Label $O(K)$ space where K is unique even numbers.

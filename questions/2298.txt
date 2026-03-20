@@ -1,0 +1,13 @@
+ID: 2298
+Problem Title: Tasks Count in the Weekend
+Brute Force Method: Iterative Date ParsingIterate through every task in the database. Use a programming language function or SQL logic to determine the "Day of Week" for each date. Count if it's Saturday or Sunday.
+BF Complexity Visuals: Row-by-Row Calendar Check
+How to Draw BF: Draw a table of dates. For each row, pull out a calendar and check if that date falls on a weekend. Tally it. Show $O(N)$ full table scan.
+Optimised Pattern: Weekday Function (SQL CASE/WEEKDAY)
+Opt Vis. Technique: Logical Boolean Summation
+Dry Run (Opt): Use `WEEKDAY(date)` or `TO_CHAR(date, 'D')`. If the result is 5/6 (or 1/7 depending on DB), treat it as a weekend. Use a `SUM(CASE ...)` or `COUNTIF` for efficiency.
+How to Draw (Opt): Draw a flow chart. Data enters, passes through a "Weekend Filter" (Saturday/Sunday), and increments a counter. Everything else passes into a "Weekday Counter."
+Opt Complexity Visuals: Indexed Date Filter
+How to Draw Opt Complexity: Draw an $O(N)$ scan. Note that if the `date` column is indexed, the database can optimize the retrieval and counting process significantly.
+Mem Vis (BF): Creating temporary lists of all weekend dates before counting them.
+Mem Vis (Opt): A few integer registers in the DB engine to store the counts (O(1) auxiliary space).

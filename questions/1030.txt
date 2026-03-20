@@ -1,0 +1,13 @@
+ID: 1030
+Problem Title: All Cells in Distance Order in a Grid
+Brute Force Method: Put every cell coordinate (r, c) into a list. Sort the entire list using a custom comparator that calculates Manhattan distance from (rCenter, cCenter).
+BF Complexity Visuals: A big pile of coordinates tossed into a sorting machine that reorders them one by one.
+How to Draw BF: Draw a grid. List all (r, c). For each, write |r-r0| + |c-c0|. Draw arrows rearranging them. Write $O(R\cdot C \log(R\cdot C)$).
+Optimised Pattern: BFS (Level-Order Expansion) or Bucket Sort.
+Opt Vis. Technique: A ripple in a pond. The center cell is the pebble, and waves move outward cell by cell.
+Dry Run (Opt): Start BFS at (rCenter, cCenter). Add neighbors to a Queue. Since each step moves exactly 1 distance unit, the Queue naturally stays sorted by distance.
+How to Draw (Opt): Draw a grid. Mark center '0'. Mark its 4 neighbors '1'. Mark their neighbors '2'. Follow the numbers to write your answer list.
+Opt Complexity Visuals: An expanding diamond shape covering every cell once.
+How to Draw Opt Complexity: Draw a grid with concentric diamond outlines centered on (r0, c0). Write Time: $O(R \cdot C)$.
+Mem Vis (BF): $O(R\cdot C)$ space to store the list of all coordinates.
+Mem Vis (Opt): A Queue structure peaking at $O(R+C)$ size, plus the result list. $O(R\cdot C)$ space.

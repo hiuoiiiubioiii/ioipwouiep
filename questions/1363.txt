@@ -1,0 +1,13 @@
+ID: 1363
+Problem Title: Largest Multiple of Three
+Brute Force Method: Generate all possible subsequences of the digits (2^N), sort each to form the largest number, and check if the sum of digits is divisible by 3.
+BF Complexity Visuals: $O(2^N)$ Subset Sorting
+How to Draw BF: Draw a digits array. Branch into every possible subset. For each subset, show a sorting process and a division check.
+Optimised Pattern: Greedy Tally + Remainder Math
+Opt Vis. Technique: Modulo-Based Sieve
+Dry Run (Opt): Count digits 0-9. Calculate total sum % 3. If remainder is 1, remove the smallest digit with %3==1 (or two with %3==2). If remainder is 2, remove smallest %3==2 (or two with %3==1). Sort descending.
+How to Draw (Opt): Draw buckets for remainders 0, 1, and 2. Put digits in buckets. Based on total sum, "discard" one or two digits from the 1 or 2 buckets. Concatenate the rest from 9 down to 0.
+Opt Complexity Visuals: $O(N)$ Counting Sort
+How to Draw Opt Complexity: Draw a 10-slot frequency array. Show a single pass to fill it and a constant-time math check for deletions.
+Mem Vis (BF): Subsequence Pool: Millions of strings competing for the "max" title.
+Mem Vis (Opt): 10-Slot Tally Array: Draw an array of size 10 storing frequencies. $O(1)$ space relative to input size.

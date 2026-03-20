@@ -1,0 +1,13 @@
+ID: 3725
+Problem Title: Count Ways to Choose Coprime Integers from Rows (Hard)
+Brute Force Method: Nested loops picking one element from each row, calculating the GCD for every single pair to ensure they are coprime. $O(M^N)$.
+BF Complexity Visuals: Multi-dimensional Grid Selection.
+How to Draw BF: Draw rows. Draw lines connecting one number from row 1, to row 2, etc. Cross out paths where GCD != 1.
+Optimised Pattern: DP + Prime Factor Bitmasking
+Opt Vis. Technique: Bitmask State DP Table
+Dry Run (Opt): Map numbers to their prime factors. Use a bitmask to represent "primes used so far". Add a number to the path only if `(current_state &amp; new_prime_mask) == 0`.
+How to Draw (Opt): Write available primes. Next to rows, write prime-masks for numbers. Draw a DP table mapping [RowIndex][PrimeMask]. Fill counts.
+Opt Complexity Visuals: $O(\text{Rows} \cdot 2^(\text{MaxPrimes})$).
+How to Draw Opt Complexity: Draw a DP grid where Y is Rows, X is the fixed 2^10 possible prime states. Shade it top to bottom.
+Mem Vis (BF): Deep recursive call stack tracking full paths.
+Mem Vis (Opt): 2D DP Array Memory (Rows x 2^P).

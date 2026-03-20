@@ -1,0 +1,13 @@
+ID: 1380
+Problem Title: Lucky Numbers in a Matrix
+Brute Force Method: For every cell (i, j), check if it's the minimum in its row $O(C)$ and then check if it's the maximum in its column $O(R)$.
+BF Complexity Visuals: $O(R\cdot C \cdot (R+C)$) Nested Checks
+How to Draw BF: Draw a matrix. Pick a cell. Draw a horizontal line across its row and a vertical line through its column. Repeat for every single cell in the grid.
+Optimised Pattern: Precomputed Row-Mins and Col-Maxes
+Opt Vis. Technique: Intersection of Two Sets
+Dry Run (Opt): Calculate an array `min_rows` (size R) and `max_cols` (size C). A number is "lucky" if `matrix[i][j] == min_rows[i]` AND `matrix[i][j] == max_cols[j]`.
+How to Draw (Opt): Draw the matrix. Write the minimum of each row to the right. Write the maximum of each column at the bottom. Circle any number that matches both its row-minimum and column-maximum.
+Opt Complexity Visuals: $O(R \cdot C)$ Linear Grid Scan
+How to Draw Opt Complexity: Draw two passes: one sweeping horizontally to find row mins, one sweeping vertically to find col maxes.
+Mem Vis (BF): Redundant Scan Buffers: Thousands of temporary lists created for min/max checks.
+Mem Vis (Opt): Two 1D Arrays: Draw a vertical array (Row Mins) and a horizontal array (Col Maxes). Memory is $O(R + C)$.

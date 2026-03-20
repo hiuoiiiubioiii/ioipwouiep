@@ -1,0 +1,13 @@
+ID: 3204
+Problem Title: Bitwise User Permissions Analysis (SQL)
+Brute Force Method: Cartesian product / Multiple subqueries checking bit flags iteratively.
+BF Complexity Visuals: Relational Algebra Tree
+How to Draw BF: Draw massive tables duplicating rows for every bitwise check. Show exponential row growth before filtering.
+Optimised Pattern: Bitwise AND (&amp;) Operator in SELECT/WHERE
+Opt Vis. Technique: Bitmask Alignment Grid
+Dry Run (Opt): Write the integer permissions in binary form stacked vertically. Draw a vertical line performing logical AND to filter matching permissions.
+How to Draw (Opt): Draw a column of integers. Next to it, draw their binary equivalents. Circle the specific bit index being tested.
+Opt Complexity Visuals: Single-Pass Table Scan
+How to Draw Opt Complexity: Draw one large rectangular block (Table). Draw a single horizontal arrow passing through it, signifying an $O(N)$ sequential read.
+Mem Vis (BF): Temporary memory tables stacking up.
+Mem Vis (Opt): Single execution memory buffer (O(1) extra space).

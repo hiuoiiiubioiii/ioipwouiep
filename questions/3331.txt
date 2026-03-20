@@ -1,0 +1,13 @@
+ID: 3331
+Problem Title: Find Subtree Sizes After Changes
+Brute Force Method: For every node, physically rebuild the tree by scanning upwards for the closest matching character, then run a size calculation. $O(N^2)$.
+BF Complexity Visuals: Dynamic Re-linking Web
+How to Draw BF: Draw a tree. Rip a node off, scan up to the root to find a match, and glue it back. Repeat for all nodes.
+Optimised Pattern: DFS + Ancestor Hash Map
+Opt Vis. Technique: The Virtual Re-Parenting Trace
+Dry Run (Opt): Do a single DFS. Keep an array/map of the "last seen node" for each of the 26 characters. When visiting a node, check the map for its character. That is its *new* parent. Add the current node's size to the new parent's size upon return.
+How to Draw (Opt): Draw the tree. As you walk down, drop colored breadcrumbs (one for each letter). When a node looks up, it grabs the most recent breadcrumb of its own color.
+Opt Complexity Visuals: Single Tree Traversal $O(N)$
+How to Draw Opt Complexity: Draw a single trace down and up the tree. Updating the 26-size map is $O(1)$.
+Mem Vis (BF): Deep recursive stack building physical new tree nodes.
+Mem Vis (Opt): A map/array of size 26 and a sizes array. $O(N)$ space.

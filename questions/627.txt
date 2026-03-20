@@ -1,0 +1,13 @@
+ID: 627
+Problem Title: Swap Sex of Employees
+Brute Force Method: Pulling all data into the app layer, iterating with an if/else, and running individual UPDATE statements for every row.
+BF Complexity Visuals: Sequential Update Loop $O(N)$
+How to Draw BF: Draw the table. For every row, draw a round-trip arrow to the database running a separate UPDATE query.
+Optimised Pattern: SQL UPDATE + CASE WHEN
+Opt Vis. Technique: The Inline Switcher
+Dry Run (Opt): Use `UPDATE table SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END`. The DB engine applies this to all rows internally.
+How to Draw (Opt): Draw the table column. Draw a "Flipper" mechanism that runs down the column, toggling M to F and F to M in a single continuous motion.
+Opt Complexity Visuals: Single Internal Pass $O(N)$
+How to Draw Opt Complexity: Draw a single, solid arrow moving through the table.
+Mem Vis (BF): App-side memory overhead.
+Mem Vis (Opt): DB internal transaction buffer. $O(1)$ auxiliary space.

@@ -1,0 +1,13 @@
+ID: 1091
+Problem Title: Shortest Path in Binary Matrix
+Brute Force Method: Use DFS to find all possible paths from (0,0) to (n-1, n-1). Keep track of the minimum length among valid paths.
+BF Complexity Visuals: A "Labyrinth" where a single runner tries every possible turn, often hitting dead ends or loops.
+How to Draw BF: Draw a grid. Mark '0's. Draw a path from start. When you hit a wall, backtrack. Write $O(8^(N^2)$).
+Optimised Pattern: BFS (Level-Order Traversal).
+Opt Vis. Technique: An "Expanding Ripple". Every valid step outward covers all cells reachable in k moves before checking k+1.
+Dry Run (Opt): Start at (0,0) and put in Queue. While Queue is not empty, pop current, check all 8 neighbors. If neighbor is 0 and not visited, mark visited and push to Queue with `dist + 1`.
+How to Draw (Opt): Draw the grid. Write '1' in (0,0). Write '2' in all its neighbors. Write '3' in all their neighbors. The number at target is your shortest path.
+Opt Complexity Visuals: A single outward-expanding wave covering the grid.
+How to Draw Opt Complexity: Draw a grid with concentric squares expanding from top-left. Write Time: $O(N^2)$.
+Mem Vis (BF): Exponential recursion stack.
+Mem Vis (Opt): A Queue and a visited matrix. $O(N^2)$ space.

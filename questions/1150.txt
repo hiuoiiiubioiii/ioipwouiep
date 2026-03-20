@@ -1,0 +1,13 @@
+ID: 1150
+Problem Title: Check If a Number Is Majority Element in a Sorted Array
+Brute Force Method: Linear Scan $O(N)$. Count the frequency of the target number and check if it's &gt; N/2.
+BF Complexity Visuals: Linear Progress Bar
+How to Draw BF: Draw an array. Draw an arrow moving from index 0 to N-1, tallying the target number.
+Optimised Pattern: Binary Search (Two Bounds)
+Opt Vis. Technique: Target Range Squeeze
+Dry Run (Opt): Since it's sorted, find the first occurrence (`left`) and last occurrence (`right`) using `bisect_left` and `bisect_right`. If `right - left &gt; N/2`, return true.
+How to Draw (Opt): Draw a sorted array. Use two pointers to "find" the start and end of the target number block. Measure the distance between them.
+Opt Complexity Visuals: Logarithmic $O(\log N)$
+How to Draw Opt Complexity: Draw two log curves on the array to locate the boundaries.
+Mem Vis (BF): None
+Mem Vis (Opt): Constant $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1498
+Problem Title: Number of Subsequences That Satisfy the Given Sum Condition
+Brute Force Method: Generate all 2^N subsequences. For each, find the min and max. If `min + max &lt;= target`, increment the answer.
+BF Complexity Visuals: Exponential Power Set Scan
+How to Draw BF: Draw a tree branching into every possible subsequence. At each leaf, find Min/Max. Label $O(2^N \cdot N)$.
+Optimised Pattern: Sorting + Two Pointers
+Opt Vis. Technique: Binary Subsequence Counting
+Dry Run (Opt): Sort the array. Use two pointers L and R. If `arr[L] + arr[R] &lt;= target`, then all subsequences starting with `arr[L]` and ending with any element up to `arr[R]` are valid. Add 2^(R-L) to result.
+How to Draw (Opt): Draw a sorted array. Place pointers at ends. If sum is okay, you can keep the left element and pick any combination of the (R-L) elements in between. Use a precomputed "Powers of 2" array.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw $O(N \log N)$ Sort -&gt; $O(N)$ Two-pointer scan. Total $O(N \log N)$.
+Mem Vis (BF): List of all subsequences
+Mem Vis (Opt): Sorted array and Powers of 2 array. Space $O(N)$.

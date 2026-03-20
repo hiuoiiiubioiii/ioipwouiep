@@ -1,0 +1,13 @@
+ID: 1695
+Problem Title: Maximum Erasure Value
+Brute Force Method: Check every possible subarray, use a Set to verify uniqueness, and calculate the sum for each.
+BF Complexity Visuals: Quadratic Subarray Scan
+How to Draw BF: Draw an array. Draw N start pointers, each with N end pointers scanning. $O(N^3)$ or $O(N^2)$.
+Optimised Pattern: Sliding Window + Hash Set
+Opt Vis. Technique: Elastic Frame with Duplicate Alert
+Dry Run (Opt): Expand `right` and add to sum. If `nums[right]` is in Set, shrink `left` and subtract from sum until the duplicate is gone. Track max sum.
+How to Draw (Opt): Draw an array. Draw a rectangular "frame". If a number enters the frame that's already there, move the left side of the frame forward like a rubber band snapping.
+Opt Complexity Visuals: Two-Pointer Linear Scan
+How to Draw Opt Complexity: Draw two arrows (`left`, `right`) moving left to right across the array. $O(N)$.
+Mem Vis (BF): Nested Loop Sums: Redundant variable calculations.
+Mem Vis (Opt): Hash Set + Variables: Draw a bucket (Set) and two boxes (`currSum`, `maxSum`). $O(\text{min}(N, K)$) space.

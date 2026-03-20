@@ -1,0 +1,13 @@
+ID: 394
+Problem Title: Decode String
+Brute Force Method: Use recursive regex or search-and-replace to find the innermost brackets, decode them, and replace the substring. Repeat until no brackets remain.
+BF Complexity Visuals: Multi-pass String Substitution
+How to Draw BF: Draw a string like `3[a2[c]]`. Circle `2[c]`, replace with `cc`. Redraw the whole string. Repeat. $O(N^2)$.
+Optimised Pattern: Two Stacks (Count Stack &amp; String Stack)
+Opt Vis. Technique: Nested Frame Context Stacking
+Dry Run (Opt): Iterate through the string. When you hit a number, build the count. When `[`: push current string and count to their stacks and reset. When `]`: pop count and prev_string, repeat current string count times and append to prev_string.
+How to Draw (Opt): Draw a vertical stack. As you hit `[`, show a "snapshot" of the current string being pushed. As you hit `]`, show the current working string being multiplied and "glued" to the one below it.
+Opt Complexity Visuals: Single-Pass Iterative Parsing
+How to Draw Opt Complexity: Draw a single arrow through the string. Above it, show two stacks growing and shrinking. $O(\\text{text}{\text{Output Length}})$.
+Mem Vis (BF): Multiple intermediate string copies.
+Mem Vis (Opt): Two stacks. Draw a "Count Stack" and a "String Stack" side-by-side. $O(N)$.

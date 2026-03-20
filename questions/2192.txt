@@ -1,0 +1,13 @@
+ID: 2192
+Problem Title: All Ancestors of a Node in a DAG
+Brute Force Method: For each node, perform a full DFS/BFS to find all nodes that can reach it.
+BF Complexity Visuals: N separate traversals of the entire graph.
+How to Draw BF: Draw a graph. For Node 1, color all reachable nodes. Clear. For Node 2, repeat. $O(N \cdot (V + E)$).
+Optimised Pattern: Reverse Graph Traversal or Topological Sort.
+Opt Vis. Technique: "Spreading a signal" backwards through a network.
+Dry Run (Opt): Reverse all edges. For each node `i`, perform one DFS to find all reachable nodes—these are ancestors. Use a boolean array to avoid cycles/duplicates.
+How to Draw (Opt): Draw the graph with arrows flipped. Start at Node 0. Follow all paths out. Any node you touch, write "0" in its ancestor list. Move to Node 1. Repeat.
+Opt Complexity Visuals: $O(N \cdot (V + E)$). (The complexity remains same but constant factor/efficiency improves with sorted set merging).
+How to Draw Opt Complexity: A series of N wave-expansions from each source node.
+Mem Vis (BF): Massive redundant path storage.
+Mem Vis (Opt): $O(N^2)$ for the result adjacency list (ancestors).

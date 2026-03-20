@@ -1,0 +1,13 @@
+ID: 245
+Problem Title: Shortest Word Distance III
+Brute Force Method: Nested loops, adding logic to handle cases where word1 and word2 are the same.
+BF Complexity Visuals: Pairwise Matrix: $O(N^2)$.
+How to Draw BF: Draw a grid. If words are same, skip the diagonal. Complexity remains quadratic.
+Optimised Pattern: One-Pass with Toggle/Previous Tracking
+Opt Vis. Technique: Sequential State Tracker
+Dry Run (Opt): Traverse once. If words are different, use the Q243 logic. If same, update `idx1` with the previous `idx2` before updating `idx2` with the current.
+How to Draw (Opt): Draw the array. If word1 == word2, show the "Lead" pointer moving to "Follow" and the "Lead" taking the new index. Measure the gap.
+Opt Complexity Visuals: Single Linear Pass: $O(N)$.
+How to Draw Opt Complexity: Draw a single pass arrow. Mark the distance calculation at each hit.
+Mem Vis (BF): Minimal storage.
+Mem Vis (Opt): Two Index Variables: Draw `prev` and `curr` updating as the scan finds occurrences.

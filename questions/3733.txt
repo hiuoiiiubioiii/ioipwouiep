@@ -1,0 +1,13 @@
+ID: 3733
+Problem Title: Minimum Time to Complete All Deliveries (Med)
+Brute Force Method: Generate all possible permutations of delivery orders and calculate the total time for every single sequence. $O(N!)$.
+BF Complexity Visuals: Exploding Factorial Pathways.
+How to Draw BF: Draw map nodes. Trace every possible path connecting all nodes, tallying up the time for each route.
+Optimised Pattern: Binary Search on Answer + Validation (Greedy/Bipartite)
+Opt Vis. Technique: Shrinking Window on a Timeline
+Dry Run (Opt): Guess a maximum time `T`. Run a validation check to see if all deliveries can be completed within `T`. If yes, guess lower. If no, guess higher.
+How to Draw (Opt): Draw a number line of possible times. Pick the middle value. Do a quick test. Cross out the half of the line that is no longer possible. Repeat until narrowed to one point.
+Opt Complexity Visuals: $O(\log(\text{MaxTime})$ * Validation Time).
+How to Draw Opt Complexity: Draw a horizontal line with brackets `[  |  ]` continuously shrinking towards the center.
+Mem Vis (BF): Massive N! path tracking structures.
+Mem Vis (Opt): $O(N)$ data structures for the validation step.

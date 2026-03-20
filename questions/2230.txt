@@ -1,0 +1,13 @@
+ID: 2230
+Problem Title: The Users That Are Eligible for Discount
+Brute Force Method: Full Table Scan &amp; GroupingScan every single transaction in the database. Group them all by user. For each group, loop through to see if any transaction fits the date and amount criteria.
+BF Complexity Visuals: Funnel with Heavy Processing
+How to Draw BF: Draw a massive pile of transactions. Draw them all funneling into "User Buckets". Draw a magnifying glass painstakingly checking every item inside every bucket.
+Optimised Pattern: Targeted Filter + Distinct (SQL)
+Opt Vis. Technique: Multi-Stage Sieve
+Dry Run (Opt): Filter rows immediately where `amount &gt;= minAmount` AND `date BETWEEN start AND end`. Take the `DISTINCT user_id` from whatever makes it through the filter.
+How to Draw (Opt): Draw two sieves. Pour transactions through the "Date Sieve". Pour the survivors through the "Amount Sieve". Whatever user IDs remain, drop them into a set to remove duplicates.
+Opt Complexity Visuals: Pipeline Elimination Chart
+How to Draw Opt Complexity: Draw a wide block of data narrowing instantly based on the `WHERE` clause (using database indexes if available), followed by a simple $O(N)$ distinct hash pass.
+Mem Vis (BF): Large hash tables storing lists of all transactions per user in memory.
+Mem Vis (Opt): A single Hash Set filtering out duplicate valid user IDs as they stream through.

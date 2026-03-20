@@ -1,0 +1,13 @@
+ID: 3014
+Problem Title: Minimum Number of Pushes to Type Word I
+Brute Force Method: Generate all mathematical permutations of 26 letters assigned to 8 keys and calculate the typing cost for each combination.
+BF Complexity Visuals: Permutation Tree
+How to Draw BF: Draw a root node branching out 8 ways, representing the first letter assignment. From each branch, draw 8 more branches. Label it as $O(8^N)$.
+Optimised Pattern: Greedy Chunking (Math)
+Opt Vis. Technique: 8-Bin Overflow Array
+Dry Run (Opt): Letters are distinct. Fill the 8 available keys (cost 1 push). The next 8 overflow to the second position on the keys (cost 2 pushes), and so on.
+How to Draw (Opt): Draw 8 empty buckets. Write the string letters sequentially into the buckets one by one. Count the vertical depth of each letter to get its push cost.
+Opt Complexity Visuals: Constant Math Block
+How to Draw Opt Complexity: Draw a single box labeled $O(N)$. Inside, write the formula: `cost += (index / 8) + 1`.
+Mem Vis (BF): A massive recursive call stack holding partial string permutations.
+Mem Vis (Opt): No extra structures. A single integer variable `total_pushes` accumulating cost.

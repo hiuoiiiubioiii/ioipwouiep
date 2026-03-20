@@ -1,0 +1,13 @@
+ID: 2295
+Problem Title: Replace Elements in an Array
+Brute Force Method: Nested Search and ReplaceFor every operation `[old, new]`, iterate through the entire array to find the `old` value and replace it with the `new` one.
+BF Complexity Visuals: Repeated Linear Scanning
+How to Draw BF: Draw an array. For Operation 1, draw a magnifying glass scanning the whole array to find "3". Replace it. For Operation 2, scan again. Show $O(\text{Ops} \cdot N)$.
+Optimised Pattern: Inverted Index (Hash Map)
+Opt Vis. Technique: Value-to-Index Map
+Dry Run (Opt): Create a Hash Map where `Value -&gt; Index`. For each operation `[old, new]`, look up the index of `old` in $O(1)$, update the array at that index, and update the Map to point `new` to that index.
+How to Draw (Opt): Draw the Array and a Map side-by-side. For an operation, point to the Map. It gives you the index immediately. Jump to that index in the Array, swap the value, and update the Map entry.
+Opt Complexity Visuals: Linear Operation Stream
+How to Draw Opt Complexity: Draw an $O(N)$ pass to build the map, followed by an $O(M)$ pass for M operations. Total time: $O(N + M)$.
+Mem Vis (BF): No extra space, but $O(N\cdot M)$ time is too slow for large inputs.
+Mem Vis (Opt): A Hash Map containing N entries for mapping values to indices (O(N) space).

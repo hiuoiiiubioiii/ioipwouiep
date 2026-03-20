@@ -1,0 +1,13 @@
+ID: 877
+Problem Title: Stone Game
+Brute Force Method: Recursive Minimax: Simulate every possible move for Alice and Bob (taking from either end) to see who can get the max score.
+BF Complexity Visuals: Binary Decision Tree. $O(2^N)$.
+How to Draw BF: Draw the pile array. Branch left (take A[0]) or right (take A[n-1]). Repeat for every turn. The tree is huge.
+Optimised Pattern: Mathematical Observation (Parity) OR 2D DP.
+Opt Vis. Technique: The "Fixed Advantage" Logic.
+Dry Run (Opt): Because the sum of stones is odd and the number of piles is even, Alice can ALWAYS choose to take either all even-indexed piles or all odd-indexed piles. One of those sums MUST be greater. Thus, Alice always wins.
+How to Draw (Opt): Draw the array. Color even indices Blue and odd indices Green. Alice just sums them up in her head and picks the bigger color before the game starts.
+Opt Complexity Visuals: Constant Time Logic. $O(1)$.
+How to Draw Opt Complexity: Draw a giant "TRUE" stamp. No calculation needed.
+Mem Vis (BF): Recursion Stack: Draw a stack N levels deep.
+Mem Vis (Opt): $O(1)$ Space: Simply return true.

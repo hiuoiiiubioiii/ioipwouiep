@@ -1,0 +1,13 @@
+ID: 161
+Problem Title: One Edit Distance
+Brute Force Method: Generate all possible strings that are one edit away from S and check if any equal T.
+BF Complexity Visuals: An $O(N^2)$ branching tree of string transformations.
+How to Draw BF: Draw string S. Draw arrows for every possible char deletion, replacement, and insertion. It creates a massive web of strings.
+Optimised Pattern: One-Pass String Comparison.
+Opt Vis. Technique: A "Synchronization Scan." Two pointers scan both strings until they hit a mismatch, then they "jump" and check if the rest aligns perfectly.
+Dry Run (Opt): Iterate through shorter string. If `s[i] != t[i]`, if lengths equal: check `s[i+1:] == t[i+1:]`. If lengths differ: check `s[i:] == t[i+1:]`.
+How to Draw (Opt): Draw S and T parallel. Draw a vertical line through matching chars. At the mismatch, draw a box around the remaining parts and link them with an '=' sign.
+Opt Complexity Visuals: $O(N)$ linear time. The strings are traversed at most once.
+How to Draw Opt Complexity: Draw a single straight arrow moving through both strings simultaneously, proving $O(N)$.
+Mem Vis (BF): Visualise $O(N^2)$ memory occupied by all potential edited string candidates.
+Mem Vis (Opt): Visualize $O(1)$ space if using pointers, or $O(N)$ for a single substring slice.

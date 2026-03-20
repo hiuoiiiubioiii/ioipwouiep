@@ -1,0 +1,13 @@
+ID: 857
+Problem Title: Minimum Cost to Hire K Workers
+Brute Force Method: For every worker i, assume they are the "wage captain" (the one whose ratio is used). Calculate wages for everyone else and pick the K cheapest.
+BF Complexity Visuals: Nested Comparative Wage Scan. $O(N^2)$.
+How to Draw BF: Draw a list of workers. Pick the first. Draw lines to all others to calculate their price based on worker 1. Repeat for every worker.
+Optimised Pattern: Sorting (by Ratio) + Max-Heap (for Quality).
+Opt Vis. Technique: The "Value-to-Bulk" Sieve.
+Dry Run (Opt): Sort workers by "Expectation Ratio" (Wage / Quality). Slide a window of K workers. Use a Max-Heap to keep the K workers with the *lowest* total quality. As Ratio increases, total cost = CurrentRatio \times Sum(K\_Lowest\_Qualities).
+How to Draw (Opt): Draw workers sorted by their "Greediness" (Ratio). As you move right, you must pay everyone more. To keep cost low, use a "Quality Bucket" (Heap) to kick out the "bulkiest" (highest quality) worker.
+Opt Complexity Visuals: Sorting + Heap Traversal. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a Sorting Funnel followed by a window sliding over a list, with a Heap "pop/push" happening at each step.
+Mem Vis (BF): Repeated Sorting: Draw multiple temporary sorted arrays being generated.
+Mem Vis (Opt): Max-Heap of Size K: Draw a small tree structure that only ever holds K elements.

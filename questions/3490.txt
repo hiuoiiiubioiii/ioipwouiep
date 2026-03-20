@@ -1,0 +1,13 @@
+ID: 3490
+Problem Title: Count Beautiful Numbers
+Brute Force Method: Iterate through every integer from L to R. For each, compute the product and sum of digits, then check divisibility. $O(R)$
+BF Complexity Visuals: Linear Search Timeline.
+How to Draw BF: Draw a long horizontal line. Mark points L, L+1... R. Draw a "Check" box above every single point.
+Optimised Pattern: Digit Dynamic Programming (State: index, tight, productMod, sum). $O(\text{digits} \\text{cdot sum} \\text{cdot prod})$
+Opt Vis. Technique: Decision Tree with Memoized Pruning.
+Dry Run (Opt): Build the number digit-by-digit. Use a DP table to cache results for the same (index, currentSum, currentProductMod) state.
+How to Draw (Opt): Draw a grid where rows are digit positions and columns are current sums. Draw arrows for each digit (0-9) transitioning to a new sum.
+Opt Complexity Visuals: Multi-Dimensional State Cube.
+How to Draw Opt Complexity: Draw a small box representing the 10 x 162 x 162 state space to show it is independent of R.
+Mem Vis (BF): Minimal extra memory but astronomical CPU cycles.
+Mem Vis (Opt): A 4D or 5D DP array (Memoization table) of fixed size.

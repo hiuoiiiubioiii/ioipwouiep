@@ -1,0 +1,13 @@
+ID: 2668
+Problem Title: Find Latest Salaries (SQL)
+Brute Force Method: Using a self-join to compare every row with every other row to find the maximum date per employee.
+BF Complexity Visuals: Quadratic Join Scan
+How to Draw BF: Draw a table joined to itself. For N rows, show N^2 comparisons to find the max date. $O(N^2)$.
+Optimised Pattern: Window Functions (`RANK()` or `MAX() OVER`)
+Opt Vis. Technique: Partitioned Sorting
+Dry Run (Opt): Use `RANK() OVER (PARTITION BY emp_id ORDER BY salary_date DESC)`. Then filter for rows where rank = 1. This groups and sorts within groups efficiently.
+How to Draw (Opt): Draw the table. Draw brackets around rows with the same Employee ID. Within each bracket, sort by date. Pick the top row from each bracket.
+Opt Complexity Visuals: $O(N \log N)$ Sorting
+How to Draw Opt Complexity: Draw a block representing the partitioned sort. The database engine optimizes this as a single pass after sorting.
+Mem Vis (BF): Temporary Join Tables
+Mem Vis (Opt): Memory used by the SQL engine for the internal sort and windowing partition.

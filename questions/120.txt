@@ -1,0 +1,13 @@
+ID: 120
+Problem Title: Triangle
+Brute Force Method: Top-Down DFS recursion to explicitly explore every possible path from the top point to the bottom base, summing along the way.
+BF Complexity Visuals: A sprawling $O(2^N)$ binary decision tree where middle paths overlap and duplicate calculations catastrophically.
+How to Draw BF: Draw the triangle. Trace a path down. Trace another. Show how the middle nodes are crossed out multiple times by different recursive branches.
+Optimised Pattern: Bottom-Up Dynamic Programming (In-place or rolling 1D array).
+Opt Vis. Technique: Water flowing uphill. Starting at the wide base, the minimum path values merge and flow upwards until they pool at the single top point.
+Dry Run (Opt): Start at the second-to-last row. For each cell `(i, j)`, add the minimum of its two children `(i+1, j)` and `(i+1, j+1)`. Propagate up to `(0, 0)`.
+How to Draw (Opt): Draw the triangle. Start at the bottom row. Move up one row. For each cell, look at the two cells directly below it, pick the smaller, and add it to the current cell. Cross out the bottom row.
+Opt Complexity Visuals: $O(N^2)$ time processing exactly matching the number of cells in the grid.
+How to Draw Opt Complexity: Draw the triangle. Draw upwards-pointing V's merging the optimal choices layer by layer, squeezing the $O(N^2)$ state space up to a single $O(1)$ answer.
+Mem Vis (BF): $O(2^N)$ deep, redundant recursive call stacks dominating memory alongside the triangle data.
+Mem Vis (Opt): $O(1)$ auxiliary space if mutating the input triangle in-place, or $O(N)$ heap space using a rolling 1D DP array for the base.

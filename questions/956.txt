@@ -1,0 +1,13 @@
+ID: 956
+Problem Title: Tallest Billboard
+Brute Force Method: For every rod, try three choices: 1. Add to Left Pile, 2. Add to Right Pile, 3. Don't use. Check if Left == Right at the end.
+BF Complexity Visuals: $O(3^N)$. A ternary tree branching N levels deep (3^20 approx 3.4 billion).
+How to Draw BF: Draw a rod. Draw 3 branches. For each child, draw 3 more. Label the total height of each pile at the leaf nodes.
+Optimised Pattern: DP (Difference as State)
+Opt Vis. Technique: "The Balancing Scale." Instead of tracking two separate heights, track the *difference* between them. The goal is to reach a difference of 0 with the maximum height.
+Dry Run (Opt): `dp[diff]` = max height of the shorter pile. For each rod: `dp[diff + rod]`, `dp[abs(diff - rod)]`, and `dp[diff]` are updated based on the rod's placement.
+How to Draw (Opt): Draw a 1D array where indices represent the "Weight Difference" between two scales. Store the "Total Steel Used" in each index.
+Opt Complexity Visuals: $O(N \\text{cdot Sum})$. A grid where Sum is the total length of all rods.
+How to Draw Opt Complexity: Draw a grid where rows are rods and columns are "Possible Differences." Shade cells as you reach new possible balances.
+Mem Vis (BF): $O(N)$ recursion depth but $O(3^N)$ state space.
+Mem Vis (Opt): $O(\text{Sum})$ space for the DP array. Draw one long horizontal row of boxes representing every possible weight difference.

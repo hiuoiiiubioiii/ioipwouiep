@@ -1,0 +1,13 @@
+ID: 3105
+Problem Title: Longest Strictly Inc. or Dec. Subarray
+Brute Force Method: Check every possible subarray from start to finish for strict monotonicity. $O(N^2)$
+BF Complexity Visuals: Overlapping sub-segments dropping off midway when conditions fail.
+How to Draw BF: Start at i, draw line right until monotonicity breaks. Move to i+1, repeat. See nested overlap.
+Optimised Pattern: Greedy / One-Pass State Machine
+Opt Vis. Technique: Directional State Arrows
+Dry Run (Opt): Read left to right. If up, increment `inc`, reset `dec`. If down, increment `dec`, reset `inc`. Track `max`.
+How to Draw (Opt): Draw numbers. Draw upward or downward arrows between them. Count the longest unbroken chain of same arrows.
+Opt Complexity Visuals: Single vector traversal graph.
+How to Draw Opt Complexity: Draw a single straight line moving index 0 rightarrow N. No backwards steps.
+Mem Vis (BF): Call stack visualization or array of saved subarray arrays.
+Mem Vis (Opt): Three literal boxes: `max_len`, `inc`, `dec`. Show them overwriting in place.

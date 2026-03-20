@@ -1,0 +1,13 @@
+ID: 1528
+Problem Title: Shuffle String
+Brute Force Method: Search the `indices` array for 0, append the matching char. Search for 1, append matching char. Nested loops resulting in $O(N^2)$.
+BF Complexity Visuals: Redundant Searching Lines $O(N^2)$
+How to Draw BF: Draw the character array. Draw a massive tangle of lines repeatedly scanning left-to-right looking for the number 0, then again for 1, then again for 2.
+Optimised Pattern: Direct Array Placement / Cyclic Sort
+Opt Vis. Technique: The Mailbox Sorter
+Dry Run (Opt): Create a new character array of the same length. Iterate the original string. Place the character `s[i]` directly into the new array at index `indices[i]`.
+How to Draw (Opt): Draw the original string and the `indices` array on top of each other. Below them, draw a blank array of boxes. Draw a straight, single-shot arrow from `s[i]` directly into the blank box labeled `indices[i]`.
+Opt Complexity Visuals: Parallel Assignment $O(N)$
+How to Draw Opt Complexity: Draw a single horizontal line representing the `for` loop. At each tick, draw an arrow pointing to a random bucket. Exact linear time.
+Mem Vis (BF): Immutable string concatenations causing massive garbage collection $O(N^2)$.
+Mem Vis (Opt): A single character array of length N to hold the result before converting to a string. $O(N)$ space.

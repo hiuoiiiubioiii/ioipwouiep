@@ -1,0 +1,13 @@
+ID: 3496
+Problem Title: Maximize Score After Pair Deletions
+Brute Force Method: Try all combinations of removing two from front, two from back, or one from each using recursion/backtracking. $O(3^N/2)$
+BF Complexity Visuals: Tri-Branching Decision Tree.
+How to Draw BF: Draw a root node. Branch it into "Front", "Back", and "Both" options. Each branch explodes into 3 more until the array is empty.
+Optimised Pattern: Greedy (Complementary Minimum Tracking). $O(N)$
+Opt Vis. Technique: Survival of the Smallest.
+Dry Run (Opt): Each operation removes exactly 2 elements. For odd N, 1 stays; for even N, a consecutive pair stays. Max score = Total Sum - min(possible leftovers).
+How to Draw (Opt): Draw the array. If N is odd, circle the smallest element. If N is even, circle the smallest adjacent pair sum. Everything else is "eaten" (summed).
+Opt Complexity Visuals: Single Pass Scan.
+How to Draw Opt Complexity: Draw one straight horizontal arrow scanning the array once.
+Mem Vis (BF): Massive recursion stack depth N/2.
+Mem Vis (Opt): $O(1)$ extra space using a single "min_seen" variable.

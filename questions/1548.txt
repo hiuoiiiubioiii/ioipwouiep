@@ -1,0 +1,13 @@
+ID: 1548
+Problem Title: The Most Similar Path in a Graph (Premium)
+Brute Force Method: Explore every possible path of length L in the graph using DFS. $O(V^L)$.
+BF Complexity Visuals: Exponential Path Web
+How to Draw BF: Draw a graph. From a starting node, draw every possible path of length 1, 2, 3... The number of paths grows exponentially with the length of the target string.
+Optimised Pattern: Dynamic Programming (Viterbi-like)
+Opt Vis. Technique: The Multi-Stage State Grid
+Dry Run (Opt): Define `dp[i][v]` as the minimum edit distance for a path of length `i` ending at node `v`. To calculate `dp[i][v]`, look at all neighbors `u` of `v` from the previous step `dp[i-1][u]`.
+How to Draw (Opt): Draw the target path as a sequence of stages. For each stage, draw all graph nodes. Draw arrows from nodes in stage 1 to their neighbors in stage 2. Each arrow carries a "cost" (0 if name matches, 1 if not).
+Opt Complexity Visuals: Graph-Breadth DP $O(L \cdot E)$
+How to Draw Opt Complexity: Draw a 2D grid (Nodes x Path Length). For each column, you only look at the edges (E) of the graph.
+Mem Vis (BF): Storing every path in a list of lists.
+Mem Vis (Opt): A 2D DP table (L x V) and a "parent" table to reconstruct the path. $O(L \cdot V)$ space.

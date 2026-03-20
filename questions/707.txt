@@ -1,0 +1,13 @@
+ID: 707
+Problem Title: Design Linked List
+Brute Force Method: Use a standard dynamic array. Inserting/deleting requires shifting all elements.
+BF Complexity Visuals: Shifting Blocks
+How to Draw BF: Draw array boxes. Show arrows shifting all elements one space to the right to make room at the head. $O(N)$ time.
+Optimised Pattern: Doubly Linked List w/ Dummy Nodes
+Opt Vis. Technique: Node Chaining with Prev/Next
+Dry Run (Opt): Place pointers at dummy head/tail. To insert at index `k`, step forward `k` times. Rewire `prev` and `next` of surrounding nodes.
+How to Draw (Opt): Draw boxes with 3 compartments (prev, val, next). Draw arrows connecting them forward and backward. Cross out old arrows to rewire.
+Opt Complexity Visuals: Node Hopping Traversal
+How to Draw Opt Complexity: Draw N nodes. Loop an arrow over `k` nodes to visually represent $O(k)$ traversal time to reach the index.
+Mem Vis (BF): Contiguous block with potentially unused capacity.
+Mem Vis (Opt): Scattered individual heap blocks connected by reference lines (O(N)).

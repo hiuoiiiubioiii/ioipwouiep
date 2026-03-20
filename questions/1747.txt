@@ -1,0 +1,13 @@
+ID: 1747
+Problem Title: Leetflex Banned Accounts (SQL)
+Brute Force Method: Self-join the table on `account_id` and check every possible pair of login sessions for overlap using multiple nested loops in code.
+BF Complexity Visuals: Pairwise Time Overlap Matrix.
+How to Draw BF: Draw a list of login sessions. Draw lines connecting every session of the same account. Check if time ranges intersect. $O(N^2)$.
+Optimised Pattern: SQL Self-Join with Inequality Constraints.
+Opt Vis. Technique: Gantt Chart Conflict Detector.
+Dry Run (Opt): Join Table T1 and T2 where `T1.account_id = T2.account_id` and `T1.ip_address != T2.ip_address`. Check overlap using: `T1.login &lt; T2.logout` and `T2.login &lt; T1.logout`.
+How to Draw (Opt): Draw two horizontal bars for the same user but different IPs. If they overlap vertically at any point, circle the conflict.
+Opt Complexity Visuals: Sorted Interval Intersection.
+How to Draw Opt Complexity: Draw sorted login events. One pass to find overlaps. $O(N \log N)$ for the join/sort.
+Mem Vis (BF): N^2 joined rows in memory.
+Mem Vis (Opt): In-memory hash join/sort. $O(N)$ space.

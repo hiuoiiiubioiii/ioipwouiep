@@ -1,0 +1,13 @@
+ID: 1697
+Problem Title: Checking Existence of Edge Length Limited Paths
+Brute Force Method: For every query (u, v, limit), run a BFS/DFS only using edges with weight &lt; limit.
+BF Complexity Visuals: Repetitive Graph Traversal
+How to Draw BF: Draw a graph. For each of the Q queries, draw a magnifying glass scanning the whole edge list. $O(Q \\text{times} E)$.
+Optimised Pattern: Offline Queries + Union-Find (DSU)
+Opt Vis. Technique: Sorted Edge Injection
+Dry Run (Opt): Sort both edges and queries by weight. Iterate through sorted queries; for each, add all edges with weight &lt; query limit into the DSU. Check `find(u) == find(v)`.
+How to Draw (Opt): Draw a set of disconnected dots. Draw edges sorted by thickness. "Inject" thin edges first, then query connections, then inject medium edges.
+Opt Complexity Visuals: Sorting + DSU Path Compression
+How to Draw Opt Complexity: Draw two funnels (Sort E, Sort Q) leading into a single DSU "Tree of Trees". $O(E \log E + Q \log Q)$.
+Mem Vis (BF): Adjacency List: A standard web of linked nodes.
+Mem Vis (Opt): DSU Parent Array: Draw an array where indices point to their root "Parent". $O(V + Q)$.

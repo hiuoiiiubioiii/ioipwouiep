@@ -1,0 +1,13 @@
+ID: 1587
+Problem Title: Bank Account Summary II (SQL)
+Brute Force Method: Fetch all users. For each user, run a nested scan of the transactions table to calculate their sum. $O(U \cdot T)$.
+BF Complexity Visuals: Nested Multi-Scanner
+How to Draw BF: Draw a User list. For every single entry, draw a loop that iterates through the entire Transactions table. Redundancy is highlighted by the repeated scans.
+Optimised Pattern: Hash Aggregation / Index Join
+Opt Vis. Technique: The Partitioned Accumulator
+Dry Run (Opt): Join the tables on Account ID. Use a Hash Map to accumulate sums for each unique account in one pass. Filter results where Sum &gt; 10,000.
+How to Draw (Opt): Draw two tables. Draw a "Join Pipe" that merges them. At the end of the pipe, draw several "Buckets" (Accounts). As data flows, it drops into the matching bucket and increments the total.
+Opt Complexity Visuals: Linear Scan $O(U + T)$
+How to Draw Opt Complexity: Draw two parallel lines representing the tables. Show them feeding into a single processing node that outputs the final filtered list.
+Mem Vis (BF): Application-side memory for storing all intermediate join results.
+Mem Vis (Opt): Database internal aggregation buffer. $O(U)$ space.

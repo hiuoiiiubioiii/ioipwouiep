@@ -1,0 +1,13 @@
+ID: 2171
+Problem Title: Removing Minimum Number of Magic Beans
+Brute Force Method: Try making every possible number of beans (from 0 to max) the "target level" for all bags.
+BF Complexity Visuals: A scanning horizontal line moving up through a bar chart, recalculating all areas.
+How to Draw BF: Draw a bar chart. Draw a horizontal line. Shade everything above it and cross out everything below it. Repeat for every height. $O(N \\text{cdot MaxValue})$.
+Optimised Pattern: Sorting + Math (Prefix Sum Logic).
+Opt Vis. Technique: A single horizontal "cut" that maximizes the remaining rectangle.
+Dry Run (Opt): Sort bags. If we pick bag `i` as the minimum level, the total remaining beans will be `beans[i] * (n - i)`. Cost = `Total - Remaining`.
+How to Draw (Opt): Draw bars in increasing order. For each bar, draw the largest rectangle that fits under it and to the right. The "beans to remove" is the white space outside that rectangle.
+Opt Complexity Visuals: $O(N \log N)$ sorting.
+How to Draw Opt Complexity: A sorting funnel followed by a single straight line scanning for the maximum product.
+Mem Vis (BF): Deep iteration through value ranges.
+Mem Vis (Opt): $O(1)$ auxiliary space (if sorted in place).

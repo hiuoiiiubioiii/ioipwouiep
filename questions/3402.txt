@@ -1,0 +1,13 @@
+ID: 3402
+Problem Title: Minimum Operations to Make Columns Strictly Increasing
+Brute Force Method: Iterate row by row per column; if `val &lt;= prev`, add 1 in a `while` loop until it's strictly greater.
+BF Complexity Visuals: Step-by-step Matrix State Changes.
+How to Draw BF: Draw the matrix. Cross out an invalid number, write the `+1` increment, cross it out again, repeat until valid.
+Optimised Pattern: Greedy Prefix Maximum Tracking (O(N x M)).
+Opt Vis. Technique: Column-by-column Downward Sweep.
+Dry Run (Opt): Sweep down a column carrying a `max_so_far + 1` value. Apply difference directly to cell.
+How to Draw (Opt): Draw straight arrows pointing down each column, with a box at the tip holding the `running_max` variable.
+Opt Complexity Visuals: Single Pass Shading (Matrix Coloring).
+How to Draw Opt Complexity: Shade each grid cell once as you visit it, proving constant $O(1)$ work per cell.
+Mem Vis (BF): In-place matrix modification visually overwriting previous states heavily.
+Mem Vis (Opt): A single small box labeled `prev_max` drawn above each column (representing $O(1)$ extra space).

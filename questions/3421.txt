@@ -1,0 +1,13 @@
+ID: 3421
+Problem Title: Find Students Who Improved
+Brute Force Method: For every student record, scan the entire dataset again to find earlier dates and compare scores. $O(N^2)$
+BF Complexity Visuals: N x N Cross-Referencing Matrix.
+How to Draw BF: Draw a list of students. For the first student, draw looping arrows pointing to every other row to check for date/score matches.
+Optimised Pattern: Group By / Sort by ID &amp; Date + Linear Scan. $O(N \log N)$
+Opt Vis. Technique: Grouped &amp; Chronological Timelines.
+Dry Run (Opt): Sort data by Student ID, then by Date. Read top to bottom. If the ID matches the previous row, compare the current score to the stored "first score".
+How to Draw (Opt): Draw the table rows. Group identical IDs into color-coded blocks. Draw a straight downward arrow tracking the first and last score in each block.
+Opt Complexity Visuals: Sorting Tree + Linear Scan Array.
+How to Draw Opt Complexity: Draw a Merge Sort tree (O(N log N)), pointing to a flat array that gets scanned exactly once (O(N)).
+Mem Vis (BF): Massive call stack or memory holding N^2 cross-joined table rows.
+Mem Vis (Opt): In-place sorting space or a single Hash Map tracking the "first_score" for each student ID.

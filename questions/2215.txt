@@ -1,0 +1,13 @@
+ID: 2215
+Problem Title: Find the Difference of Two Arrays
+Brute Force Method: Nested LoopsFor every element in `nums1`, iterate through the entirety of `nums2` to see if it exists. Repeat the reverse process for `nums2`.
+BF Complexity Visuals: Bipartite Crossing Lines
+How to Draw BF: Draw `nums1` on the left, `nums2` on the right. Draw a line from the first element of `nums1` pointing to every single element in `nums2` one by one.
+Optimised Pattern: Hash Sets / Set Difference
+Opt Vis. Technique: Venn Diagram
+Dry Run (Opt): Convert both arrays to Sets. `answer[0]` is all elements in Set 1 that aren't in Set 2. `answer[1]` is all elements in Set 2 that aren't in Set 1.
+How to Draw (Opt): Draw two overlapping circles. Put unique `nums1` elements in the left crescent, unique `nums2` elements in the right crescent, and common elements in the intersection.
+Opt Complexity Visuals: Set Membership Lookups
+How to Draw Opt Complexity: Draw array elements dropping into Hash Sets (O(N)). Then draw elements passing through a filter representing $O(1)$ Set lookups, avoiding nested iteration.
+Mem Vis (BF): No extra space technically required, but execution call stack suffers from $O(N\cdot M)$ time.
+Mem Vis (Opt): Two Hash Sets in memory storing only the unique integer values from both arrays.

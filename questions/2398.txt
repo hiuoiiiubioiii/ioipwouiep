@@ -1,0 +1,13 @@
+ID: 2398
+Problem Title: Maximum Number of Robots Within Budget
+Brute Force Method: Nested loops: For every possible subarray (i, j), find the max `chargeTime` in that range and the sum of `runningCosts`, calculate the formula, and check against `budget`.
+BF Complexity Visuals: Cubic Window Calculation (O(N^3))
+How to Draw BF: Draw two arrays. Draw a bracket for every possible segment. Inside each bracket, scan for the max value and calculate the sum.
+Optimised Pattern: Sliding Window + Monotonic Deque
+Opt Vis. Technique: Amortized "Max-Sum" Window
+Dry Run (Opt): Use a sliding window with `left` and `right` pointers. Use a Monotonic Deque to track the maximum `chargeTime` in the current window in $O(1)$. If the cost exceeds budget, shrink the window from the left.
+How to Draw (Opt): Draw two arrays. Draw a sliding box. Inside the box, keep a running total of the sum. Use a small "side-queue" (Deque) to keep track of the biggest number currently inside the box as it slides.
+Opt Complexity Visuals: Linear Two-Pointer Pass (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Two arrows move forward, and a small Deque updates at each step without re-scanning the whole window.
+Mem Vis (BF): Draw a massive 2D matrix storing max values and sums for all subarrays.
+Mem Vis (Opt): Draw one Deque (Double-Ended Queue) and one Long variable for the running sum.

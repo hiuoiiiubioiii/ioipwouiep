@@ -1,0 +1,13 @@
+ID: 2115
+Problem Title: Find All Possible Recipes from Given Supplies
+Brute Force Method: DFS for every recipe. Recursively check if missing ingredients can be made. May infinite loop.
+BF Complexity Visuals: Messy recursive trees with potential cycles.
+How to Draw BF: Draw recipe as root, ingredients as branches. If an ingredient is a recipe, branch again.
+Optimised Pattern: Topological Sort (Kahn's Algorithm) / BFS.
+Opt Vis. Technique: Directed Acyclic Graph (DAG) with Dependency Resolution.
+Dry Run (Opt): Supplies have in-degree 0 (queue them). Process queue: "create" ingredient, reduce in-degree of recipes depending on it. If recipe in-degree == 0, queue it.
+How to Draw (Opt): Draw circles for supplies (green) and recipes (white). Draw arrows from ingredients to recipes. Erase arrow when ingredient is available. Color recipe green when 0 arrows remain.
+Opt Complexity Visuals: $O(V + E)$ graph traversal.
+How to Draw Opt Complexity: Draw a queue processing nodes, one edge removal at a time.
+Mem Vis (BF): Deep recursion stack, vulnerable to StackOverflow.
+Mem Vis (Opt): `inDegree` Map + Adjacency List `graph` + BFS Queue.

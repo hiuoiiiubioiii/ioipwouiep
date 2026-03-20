@@ -1,0 +1,13 @@
+ID: 2443
+Problem Title: Sum of Number and Its Reverse
+Brute Force Method: For a given number `n`, iterate `i` from 0 to `n`. Reverse `i` and check if `i + reverse(i) == n`.
+BF Complexity Visuals: Full Range Search
+How to Draw BF: Draw a number line from 0 to `num`. At each point, perform a reversal math check. Label $O(N)$.
+Optimised Pattern: Math (Direct Search is already efficient given N &lt;= 10^5)
+Opt Vis. Technique: Mirror Sum Scanner
+Dry Run (Opt): Since N is small, a simple loop is optimal. For each `i`, calculate its reverse mathematically. Check the sum condition and exit early if found.
+How to Draw (Opt): Draw a number `i` and its mirror `i'`. Draw a '+' sign between them and an '==' sign pointing to `num`. Repeat for `i+1`.
+Opt Complexity Visuals: Linear Iteration Block
+How to Draw Opt Complexity: Draw one straight line across the search space. Label $O(N)$.
+Mem Vis (BF): Draw a variable for current `i`.
+Mem Vis (Opt): Draw integer variables: `i`, `rev_i`, `temp`. $O(1)$ Space.

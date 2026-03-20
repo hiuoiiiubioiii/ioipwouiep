@@ -1,0 +1,13 @@
+ID: 1497
+Problem Title: Check If Array Pairs Are Divisible by k
+Brute Force Method: Backtracking. Try all possible pairings of the numbers in the array. For each pairing, check if the sum of every pair is divisible by k.
+BF Complexity Visuals: Exponential Pairing Tree
+How to Draw BF: Draw N numbers. Branch into every possible way to pair them up. Check validity at the leaves. Label $O(N!!)$ (Double Factorial).
+Optimised Pattern: Remainder Frequency Counting
+Opt Vis. Technique: Complementary Remainder Matching
+Dry Run (Opt): Calculate `(num % k + k) % k` for all numbers. Store frequencies in a map. A remainder `r` must be paired with `k - r`. If `count[r] == count[k-r]` (and special rules for `r=0` or `r=k/2`), return true.
+How to Draw (Opt): Draw k buckets labeled 0 to k-1. Toss numbers into buckets based on their remainder. Check if bucket r and bucket k-r have the same number of items. They "cancel" each other out.
+Opt Complexity Visuals: Linear Remainder Pass
+How to Draw Opt Complexity: Draw one arrow across the array $O(N)$ -&gt; then a loop through k buckets $O(k)$. Total $O(N + k)$.
+Mem Vis (BF): Full recursion stack
+Mem Vis (Opt): An array of size k for frequencies. Space $O(k)$.

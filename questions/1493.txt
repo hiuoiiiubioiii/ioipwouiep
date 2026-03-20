@@ -1,0 +1,13 @@
+ID: 1493
+Problem Title: Longest Subarray of 1's After Deleting One Element
+Brute Force Method: Generate all possible subarrays after deleting exactly one element at each possible index i. Find the longest one consisting only of 1s.
+BF Complexity Visuals: Quadratic Subarray Generation
+How to Draw BF: Draw an array. "Hide" index 0, find longest 1s. "Hide" index 1, find longest 1s. Repeat. Label $O(n^2)$.
+Optimised Pattern: Sliding Window (Flexible)
+Opt Vis. Technique: Zero-Budget Constraint Window
+Dry Run (Opt): Maintain a window with at most one '0'. If the number of '0's exceeds 1, shrink the window from the left. The answer is `max(right - left)`. (Subtract 1 because one element must be deleted).
+How to Draw (Opt): Draw a sliding box. If a 0 enters the box, it's okay. If a second 0 enters, slide the left side until the first 0 is pushed out. The window "breathes" as it encounters 0s.
+Opt Complexity Visuals: Two-Pointer Linear Scan
+How to Draw Opt Complexity: Draw an arrow for 'Right' and a trailing arrow for 'Left'. Label $O(n)$.
+Mem Vis (BF): All subarray strings
+Mem Vis (Opt): A few integer pointers. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 3854
+Problem Title: Minimum Operations to Make Array Parity Alternating (Med.)
+Brute Force Method: Try every possible value for even positions and every possible value for odd positions, counting how many changes are needed for each combination.
+BF Complexity Visuals: An infinite search space (if values aren't bounded) or $O(\text{Max}_\text{Val}^2)$.
+How to Draw BF: Draw array. Try making all evens '1' and odds '2'. Count diffs. Try evens '1' and odds '3'. Count diffs. Write $O(V^2 \cdot N)$.
+Optimised Pattern: Frequency Counting of Top 2 Elements (Even/Odd).
+Opt Vis. Technique: A "Best vs. Second Best" strategy for two independent sets (Even indices and Odd indices).
+Dry Run (Opt): Count frequencies of numbers at even indices and odd indices separately. Find the top 2 most frequent numbers for both. If `TopEven != TopOdd`, answer is `N - FreqEven1 - FreqOdd1`. Else, try the two best cross-combinations.
+How to Draw (Opt): Draw two frequency tables. List "Most Common" for both. If they are different, keep them. If they are the same, pick the next best one from either table that minimizes total changes.
+Opt Complexity Visuals: Two linear passes to count and a constant time comparison.
+How to Draw Opt Complexity: Draw two lines of length N/2. Under each, write "O(N)". Write "Compare Top 2: $O(1)$". Total: $O(N)$.
+Mem Vis (BF): $O(N)$ to store counts if many unique values exist.
+Mem Vis (Opt): $O(N)$ space for the frequency maps, which can be optimized to $O(\text{Unique})$ elements.

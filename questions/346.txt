@@ -1,0 +1,13 @@
+ID: 346
+Problem Title: Moving Average from Data Stream
+Brute Force Method: Store every single incoming number in a list. Every time `next()` is called, iterate through the last size elements and calculate their sum.
+BF Complexity Visuals: Sliding Window Summation (Naive)
+How to Draw BF: Draw a long tape of numbers. Draw a bracket covering the last 3. For the next number, move the bracket and redraw the addition symbols. $O(W)$ where W is window size.
+Optimised Pattern: Double-Ended Queue (Deque) + Running Sum
+Opt Vis. Technique: Circular Buffer / Floating Window
+Dry Run (Opt): Maintain a `sum` variable. When a new number arrives, add it to `sum`. If the queue exceeds `size`, pop the oldest number and subtract it from `sum`. The average is `sum / queue.size()`.
+How to Draw (Opt): Draw a fixed-size circular track with 3 slots. Show a number entering one side and another "falling out" the other side. Update a central "Sum" box.
+Opt Complexity Visuals: Constant-Time Update Logic
+How to Draw Opt Complexity: Draw a single box for `Sum` and a small Deque. Label the operation $O(1)$.
+Mem Vis (BF): An ever-growing list of all numbers ever received. $O(N)$.
+Mem Vis (Opt): A Deque of max size W. Draw a small fixed-length box. $O(W)$.

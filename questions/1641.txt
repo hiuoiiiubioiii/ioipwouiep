@@ -1,0 +1,13 @@
+ID: 1641
+Problem Title: Count Sorted Vowel Strings
+Brute Force Method: Recursive backtracking: generating all combinations of length N using vowels [a, e, i, o, u] in non-decreasing order.
+BF Complexity Visuals: Standard Decision Tree
+How to Draw BF: Draw a tree starting with 5 branches. Each branch splits into 5 more, but pruned to stay sorted. $O(N^5)$.
+Optimised Pattern: Math (Stars and Bars) / DP
+Opt Vis. Technique: Combinatorial Grid / Formula
+Dry Run (Opt): The problem is equivalent to choosing n items from 5 types with repetition: \binom{n + 5 - 1}{5 - 1}. Or a 1D DP array update.
+How to Draw (Opt): Draw 5 buckets (a, e, i, o, u). Draw n stars being distributed into these buckets. Use the formula \binom{n+4}{4}.
+Opt Complexity Visuals: Constant or Linear Time
+How to Draw Opt Complexity: Draw a single calculation box for $O(1)$ math, or a 5-element array being updated n times for $O(n)$.
+Mem Vis (BF): Recursive Stack: Draw a stack of depth n.
+Mem Vis (Opt): 1D Array / Math: Draw a small 5-slot array or a single line of algebra.

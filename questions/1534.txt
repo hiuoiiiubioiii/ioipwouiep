@@ -1,0 +1,13 @@
+ID: 1534
+Problem Title: Count Good Triplets
+Brute Force Method: The only way: Three nested loops `i, j, k` checking all 3 absolute difference conditions. $O(N^3)$.
+BF Complexity Visuals: Triple Nested Loop Cube $O(N^3)$
+How to Draw BF: Draw a 3D cube made of tiny dots. Each dot represents one `(i, j, k)` combination. You must touch every single dot in the cube to finish.
+Optimised Pattern: Brute Force / Constraint Optimization
+Opt Vis. Technique: Early Exit Pruning
+Dry Run (Opt): While still $O(N^3)$, you can stop the `k` loop from even starting if the `abs(arr[i] - arr[j])` condition isn't met first.
+How to Draw (Opt): Draw the three loops. Draw a "Gate" between the 2nd and 3rd loop. If the first condition fails, the gate slams shut, preventing the inner-most loop from running.
+Opt Complexity Visuals: Pruned Cubic $O(N^3)$
+How to Draw Opt Complexity: Draw a cubic volume, but shade parts of it red to show they are "skipped" by the early exit conditions.
+Mem Vis (BF): Three pointer variables in registers. $O(1)$.
+Mem Vis (Opt): No extra data structures. $O(1)$ space.

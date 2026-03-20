@@ -1,0 +1,13 @@
+ID: 2963
+Problem Title: Count the Number of Good Partitions
+Brute Force Method: Try all 2^N-1 ways to partition the array and check if each value stays in one partition.
+BF Complexity Visuals: Exponential Partition Tree
+How to Draw BF: Draw a tree of depth N branching into "cut" or "don't cut". $O(2^N)$.
+Optimised Pattern: Merge Intervals + Combinatorics
+Opt Vis. Technique: Connecting Identical Element Spans
+Dry Run (Opt): Find the first and last occurrence of every number. These form "must-stay-together" intervals. Merge all overlapping intervals. If there are G groups, answer is 2^G-1.
+How to Draw (Opt): Draw dots for elements. Draw a physical arc from the first '5' to the last '5'. Merge overlapping arcs into single blocks.
+Opt Complexity Visuals: Sorting + Linear Sweep
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ or $O(N)$ with a Hash Map.
+Mem Vis (BF): Storing all partition results.
+Mem Vis (Opt): A Hash Map for first/last indices. Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 882
+Problem Title: Reachable Nodes In Subdivided Graph
+Brute Force Method: BFS through the graph. For every edge with M new nodes, treat them as M individual nodes and run a standard BFS.
+BF Complexity Visuals: Full Graph Expansion. $O(M x E)$.
+How to Draw BF: Draw two nodes with 1000 dots between them. Draw a ripple BFS that touches every single one of those 1000 dots. Do this for every edge.
+Optimised Pattern: Dijkstra’s Algorithm + Edge Coverage Math.
+Opt Vis. Technique: Shortest Path with "Remaining Fuel."
+Dry Run (Opt): 1. Run Dijkstra to find the min distance to all original nodes. 2. For each node, calculate "remaining moves" after reaching it. 3. For each edge (u, v), the number of sub-nodes reached is min(total sub-nodes, moves left at  u + moves left at  v).
+How to Draw (Opt): Draw the graph. Label nodes with their "Reach Time." For each edge, draw two shaded areas creeping toward each other from the ends. The total coverage is the sum of these shaded parts.
+Opt Complexity Visuals: Priority Queue Traversal. $O(E \log V)$.
+How to Draw Opt Complexity: Draw the graph. Draw a Heap icon next to the traversal to show the $O(\log V)$ cost of picking the next node.
+Mem Vis (BF): Gigantic Adjacency List: Draw a list with millions of sub-node entries.
+Mem Vis (Opt): Distance Array + Map: Draw an N-sized strip for distances and a map to store edge-usage counts.

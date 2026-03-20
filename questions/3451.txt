@@ -1,0 +1,13 @@
+ID: 3451
+Problem Title: Find Invalid IP Addresses
+Brute Force Method: Loop through strings, split by the '.' character. For each part, check length, leading zeros, and range (0-255) using multiple nested if-statements. $O(N × L)$
+BF Complexity Visuals: Character-by-Character Octet Parsing.
+How to Draw BF: Draw the IP string. Draw brackets around each segment. For each segment, draw arrows checking every digit for a '0' or a value &gt; 255.
+Optimised Pattern: Regex (Regular Expressions) or SQL Pattern Matching. $O(N)$
+Opt Vis. Technique: Pattern Mask Overlay.
+Dry Run (Opt): Apply a Regex pattern that enforces the 4-octet rule and range constraints. Any string that doesn't "fit" the mask is invalid.
+How to Draw (Opt): Draw the IP address. Below it, draw a "Filter Plate" with 4 holes. If the IP fits through the holes (segments), it’s valid.
+Opt Complexity Visuals: State Machine Progression.
+How to Draw Opt Complexity: Draw a 4-state diagram. One pass through the string moves the pointer through states 1, 2, 3, and 4. Failure at any point kills the process.
+Mem Vis (BF): Creating multiple intermediate string objects for every IP segment.
+Mem Vis (Opt): $O(1)$ extra space if using a streaming Regex engine or simple integer pointers.

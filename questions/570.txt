@@ -1,0 +1,13 @@
+ID: 570
+Problem Title: Managers with at Least 5 Direct Reports (SQL)
+Brute Force Method: For every employee, scan the entire table to count how many other employees have them listed as their manager.
+BF Complexity Visuals: Nested loop table scan. $O(N^2)$.
+How to Draw BF: Draw a table. Point to person A. Scan every other row to see if "Manager = A". Repeat for everyone.
+Optimised Pattern: Group By + Having Clause.
+Opt Vis. Technique: A sorting facility. All employees are sorted into bins based on who their manager is. You then only look at bins with 5 or more items.
+Dry Run (Opt): `SELECT name FROM Employee WHERE id IN (SELECT managerId FROM Employee GROUP BY managerId HAVING COUNT(*) &gt;= 5)`.
+How to Draw (Opt): Draw a pile of folders (employees). Sort them into stacks based on manager ID. Count the size of each stack. Circle the managers of the big stacks.
+Opt Complexity Visuals: Hash-based grouping. $O(N)$.
+How to Draw Opt Complexity: Draw a table flowing into a Hash Map (ManagerID : Count).
+Mem Vis (BF): $O(1)$ extra space but very high time.
+Mem Vis (Opt): A Hash Map to store counts per manager. $O(\text{Unique Managers})$.

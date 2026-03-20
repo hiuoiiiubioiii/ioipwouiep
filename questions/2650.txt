@@ -1,0 +1,13 @@
+ID: 2650
+Problem Title: Design Cancellable Function
+Brute Force Method: Use global state variables to track if a function should stop, requiring manual checks inside every loop of the generator.
+BF Complexity Visuals: Messy Global Flags
+How to Draw BF: Draw a function box connected to a giant red "STOP" button that constantly has to be polled.
+Optimised Pattern: JavaScript Generators &amp; Promises
+Opt Vis. Technique: The Yield Interceptor
+Dry Run (Opt): Wrap the generator in a Promise. Create a `cancel` function that forces the generator to throw an error (`generator.throw()`). Handle the yields recursively, passing resolved values back via `generator.next()`.
+How to Draw (Opt): Draw a conveyer belt (Generator) yielding boxes (Promises). An overseer resolves the box and feeds the result back. If the "Cancel" lever is pulled, the overseer throws a wrench into the belt.
+Opt Complexity Visuals: Asynchronous Resolution $O(N)$
+How to Draw Opt Complexity: Draw a timeline of yielded promises resolving sequentially.
+Mem Vis (BF): Callback hell and memory leaks.
+Mem Vis (Opt): Closure scopes storing the generator state. $O(1)$ auxiliary space.

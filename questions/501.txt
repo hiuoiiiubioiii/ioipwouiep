@@ -1,0 +1,13 @@
+ID: 501
+Problem Title: Find Mode in Binary Search Tree
+Brute Force Method: Traverse the tree, store counts of every node in a Hash Map, then iterate the map to find max frequency.
+BF Complexity Visuals: Tree mapping into an expanding Hash Map table. $O(N)$ Time / $O(N)$ Space.
+How to Draw BF: Draw tree nodes funneling into a 2-column table (Key|Value), writing N rows.
+Optimised Pattern: Inorder Traversal (Morris Traversal) with State Tracking variables.
+Opt Vis. Technique: Number line with a sliding window counting consecutive identical values.
+Dry Run (Opt): Trace inorder path left-to-right. Update `curr_count`, `max_count`, and `modes` list when node values change.
+How to Draw (Opt): Draw the BST. Draw a colored line tracing the inorder path. Keep a side-box for 3 state variables updating sequentially.
+Opt Complexity Visuals: Flat sequence of nodes evaluated in a single pass. $O(N)$ Time / $O(1)$ Space.
+How to Draw Opt Complexity: Draw N blocks in a line. Draw a single fixed-size box below it labeled $O(1)$ space.
+Mem Vis (BF): Large rectangle labeled "Hash Map" growing vertically as N increases.
+Mem Vis (Opt): Three tiny, fixed-size squares (curr, max, previous) remaining static in size.

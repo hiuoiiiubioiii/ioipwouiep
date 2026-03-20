@@ -1,0 +1,13 @@
+ID: 3233
+Problem Title: Find the Count of Numbers Which Are Not Special
+Brute Force Method: Iterate from L to R. For each number, iterate from 1 to sqrt(N) to count its exact divisors. $O((R-L)$ * sqrt(R)).
+BF Complexity Visuals: Nested Divisor Loop
+How to Draw BF: Draw a number line from L to R. For every number, draw an inner loop checking all possible divisors. Show massive redundant calculations.
+Optimised Pattern: Number Theory / Sieve of Eratosthenes
+Opt Vis. Technique: Prime Square Projection
+Dry Run (Opt): A number has exactly 3 divisors ONLY if it is the square of a prime number. Generate primes up to `sqrt(R)` using a Sieve, square them, and count how many fall between L and R. Subtract from total range.
+How to Draw (Opt): Draw a number line of integers up to `sqrt(R)`. Cross out non-primes. Take the remaining circled primes, draw arrows squaring them to land in the [L, R] boundary.
+Opt Complexity Visuals: Sieve Bottleneck Block
+How to Draw Opt Complexity: Draw a block representing Sieve generation `O(sqrt(R) log log sqrt(R))`. Draw a second fast block counting the squared primes `O(Primes)`.
+Mem Vis (BF): Variables constantly overwritten in the inner loop.
+Mem Vis (Opt): A boolean array of size `sqrt(R)` (O(sqrt(R)) space).

@@ -1,0 +1,13 @@
+ID: 1883
+Problem Title: Minimum Skips to Arrive at Meeting on Time
+Brute Force Method: Recursion with backtracking: At each road, decide to skip the rest period or not. Check all 2^N paths.
+BF Complexity Visuals: Exponential Decision Tree.
+How to Draw BF: Draw a root. Branch "Skip" and "No Skip" for every road. Note the $O(2^N)$ leaf nodes.
+Optimised Pattern: Dynamic Programming (State: [roads][skips]).
+Opt Vis. Technique: DP Grid with ceiling math.
+Dry Run (Opt): dp[i][j] is min time for first i roads with j skips. Use long/epsilon to handle floating-point precision when calculating `ceil(time/speed)`.
+How to Draw (Opt): Draw a grid. Rows = roads, Cols = skips. In each cell, write the min time. Draw arrows from dp[i-1][j] (no skip) and dp[i-1][j-1] (skip).
+Opt Complexity Visuals: $O(N^2)$ state traversal.
+How to Draw Opt Complexity: Draw a square grid of size N \times N. Shade it to show all states are calculated. Mark $O(N^2)$.
+Mem Vis (BF): Deep recursion stack.
+Mem Vis (Opt): 2D DP table (can be 1D space optimized).

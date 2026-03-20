@@ -1,0 +1,13 @@
+ID: 1741
+Problem Title: Find Total Time Spent by Each Employee (SQL)
+Brute Force Method: Select all records. In your application code, loop through every row and maintain a manual dictionary to sum the time per employee per day.
+BF Complexity Visuals: Data Row Accumulation.
+How to Draw BF: Draw a raw data table. Draw arrows from rows to a blank "result table" where you manually add values for matching IDs. $O(N)$.
+Optimised Pattern: SQL Aggregation: `GROUP BY` on multiple columns.
+Opt Vis. Technique: Bucket Sort with Summing.
+Dry Run (Opt): Calculate `(out_time - in_time)` for each row. Group rows by `event_day` AND `emp_id`. Use `SUM()` on the calculated time.
+How to Draw (Opt): Draw table. Draw bins labeled by both `Day` and `ID`. Toss calculated time into bins. Tally the final amounts in each bin.
+Opt Complexity Visuals: Hash-based Multi-Key Grouping.
+How to Draw Opt Complexity: Draw data flowing into a 2D grid of buckets. One pass: $O(N)$. Final sort: $O(N \log N)$.
+Mem Vis (BF): Huge dictionary in app memory.
+Mem Vis (Opt): SQL temporary result set. $O(\text{Unique Groups})$ space.

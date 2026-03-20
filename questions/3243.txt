@@ -1,0 +1,13 @@
+ID: 3243
+Problem Title: Shortest Distance After Road Addition Queries I
+Brute Force Method: After every road addition, run a full BFS or Dijkstra from node 0 to node N-1. $O(Q \cdot (N + E)$).
+BF Complexity Visuals: Repeated Graph Traversal
+How to Draw BF: Draw a graph. Add an edge. Draw a BFS wave from 0 to N-1. Add another edge. Draw the whole wave again. Show the repetitive nature across Q queries.
+Optimised Pattern: Dynamic BFS / Incremental DP
+Opt Vis. Technique: Shortest Path Propagation
+Dry Run (Opt): Since all edges are weight 1, use BFS for each query. Because N is small (500), running a BFS $O(N+E)$ after each of the Q queries is efficient enough.
+How to Draw (Opt): Draw nodes in a line. Draw a new shortcut edge. Start at the target of the new edge and update its distance if it's shorter. Propagate this update forward to neighbors.
+Opt Complexity Visuals: Query-Bounded Iteration
+How to Draw Opt Complexity: Draw a timeline with Q segments. Inside each, draw an $O(N+E)$ block. Result: $O(Q \cdot (N+E)$).
+Mem Vis (BF): Adjacency list being rebuilt or multiple BFS queues.
+Mem Vis (Opt): Adjacency list (O(N+E)) and a distance array (O(N)).

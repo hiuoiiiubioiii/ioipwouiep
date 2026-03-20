@@ -1,0 +1,13 @@
+ID: 2567
+Problem Title: Minimum Score by Changing Two Elements
+Brute Force Method: Try changing every possible pair of elements to every other possible value and calculate the score (High-Low + MaxDiff). $O(N^2 \cdot V^2)$.
+BF Complexity Visuals: A massive combinatorial grid of "what if" scenarios for changing two values.
+How to Draw BF: Write 5 numbers. Change the first and second to 10. Check score. Change first and third to 10. Check score. This is impossible for large N.
+Optimised Pattern: Boundary Analysis (Sorting).
+Opt Vis. Technique: A "Targeting the Extremes" visual: since only the max and min affect the score, we only ever care about changing the 2 smallest or 2 largest elements.
+Dry Run (Opt): Sort the array. You have three choices to minimize the range: 1) Change the two smallest elements. 2) Change the two largest elements. 3) Change the smallest and the largest element. The answer is the minimum of: nums[n-1] - nums[2], nums[n-3] - nums[0], and nums[n-2] - nums[1].
+How to Draw (Opt): Draw a sorted line of numbers. Pick the 3 smallest and 3 largest. Draw brackets for the three scenarios above and measure the width of the remaining "active" numbers.
+Opt Complexity Visuals: $O(N \log N)$ for sorting the array.
+How to Draw Opt Complexity: Draw a sorted array. Draw three different brackets over the elements, showing we only check three specific configurations of the endpoints.
+Mem Vis (BF): Exponential space for all combinations.
+Mem Vis (Opt): $O(1)$ extra space (or sorting overhead).

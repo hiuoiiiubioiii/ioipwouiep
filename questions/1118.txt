@@ -1,0 +1,13 @@
+ID: 1118
+Problem Title: Number of Days in a Month
+Brute Force Method: Massive `switch-case` statement with 12 branches, including custom nested `if` logic for leap years inside February.
+BF Complexity Visuals: Branching Flowchart
+How to Draw BF: Draw a starting point splitting into 12 different paths. Draw the February path splitting again. Shows $O(1)$ but high code complexity.
+Optimised Pattern: Pre-computed Array + Leap Year Math
+Opt Vis. Technique: Indexed Array Lookup
+Dry Run (Opt): Create array `days = [31, 28, 31, ...]`. Check if month is 2. If so, apply leap year logic: `(Y % 4 == 0 &amp;&amp; Y % 100 != 0) || Y % 400 == 0`. Add 1 if true.
+How to Draw (Opt): Draw a 12-slot array. Draw a pointer pointing directly to index `M-1`. Draw a side box that adds +1 conditionally.
+Opt Complexity Visuals: Direct Mapping Arrow
+How to Draw Opt Complexity: Draw a single straight line from the Input (Year, Month) directly to the Output (Days). $O(1)$ Time.
+Mem Vis (BF): Switch statement bytecode / instruction overhead
+Mem Vis (Opt): Constant size 12-element static integer array $O(1)$.

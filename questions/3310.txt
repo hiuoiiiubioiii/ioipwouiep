@@ -1,0 +1,13 @@
+ID: 3310
+Problem Title: Remove Methods From Project
+Brute Force Method: Start at the suspicious method, recursively find all calls. Check if ANY external method calls ANY suspicious method by looping blindly.
+BF Complexity Visuals: Exhaustive Spaghetti Traversal
+How to Draw BF: Draw circles (methods). Draw arrows (calls). For every non-suspicious circle, trace its entire path to see if it ever hits a suspicious one.
+Optimised Pattern: Graph Traversal (DFS/BFS) + Reachability
+Opt Vis. Technique: Graph Coloring / Flood Fill
+Dry Run (Opt): Run DFS from the target method. Color all reachable nodes "Red". Iterate over all given edges: if a "White" node points to a "Red" node, removal is invalid.
+How to Draw (Opt): Draw a directed graph. Take a red pen and shade the connected component from the target. Then, scan arrows. If an uncolored node points into the red blob, draw a big X.
+Opt Complexity Visuals: Edge List Linear Scan
+How to Draw Opt Complexity: Draw the Adjacency List. Draw one single line through the graph for DFS $O(V+E)$. Draw one line through the edge list $O(E)$.
+Mem Vis (BF): Unbounded recursive call stack without a visited set, leading to stack overflow.
+Mem Vis (Opt): A `visited` Boolean Array of size V, neatly storing state in exactly $O(V)$ space.

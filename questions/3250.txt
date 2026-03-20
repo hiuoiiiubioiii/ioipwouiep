@@ -1,0 +1,13 @@
+ID: 3250
+Problem Title: Find the Count of Monotonic Pairs I
+Brute Force Method: Recursive backtracking trying all possible values for arr1[i] and arr2[i] that satisfy the sum and monotonic constraints. $O(\text{Max}_\text{val}^N)$.
+BF Complexity Visuals: Exponential Value Decision Tree
+How to Draw BF: Draw a root. Branch out for every valid value of arr1[0] (0 to nums[0]). From each, branch for arr1[1]. Show the tree width exploding.
+Optimised Pattern: 2D Dynamic Programming (State: Index, Last Value)
+Opt Vis. Technique: 2D DP Grid Filling
+Dry Run (Opt): Create `dp[i][v]` as the count of pairs up to index `i` where `arr1[i] = v`. Transition by summing `dp[i-1][prev_v]` where `prev_v` satisfies monotonicity.
+How to Draw (Opt): Draw a grid: Rows = Indices, Cols = Values (0-1000). For cell (i, j), draw arrows from all valid cells in row (i-1). Tally the counts.
+Opt Complexity Visuals: Nested Loop Complexity Block
+How to Draw Opt Complexity: Draw a block with two loops: one for N and one for Max_val. Label the inner work as another loop for prev_v. Result: $O(N \\text{cdot Max}_\text{val}²)$.
+Mem Vis (BF): Deep recursion stack storing state tuples.
+Mem Vis (Opt): 2D DP table (O(N * Max_val) space) or 1D rolling array.

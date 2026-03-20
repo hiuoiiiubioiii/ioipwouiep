@@ -1,0 +1,13 @@
+ID: 1180
+Problem Title: Count Substrings with Only One Distinct Character
+Brute Force Method: Generate all possible substrings $O(N^2)$ and for each, check if all characters are the same $O(N)$. Total $O(N^3)$.
+BF Complexity Visuals: Substring Matrix Expansion
+How to Draw BF: Draw a string. Highlight every possible contiguous block. For each, draw an arrow checking for character equality.
+Optimised Pattern: Two Pointers / Math (Sum of N)
+Opt Vis. Technique: Consecutive Block Counting
+Dry Run (Opt): Iterate and find lengths of consecutive identical characters (e.g., "aaa" rightarrow length 3). The number of substrings is sum fracL(L+1)2.
+How to Draw (Opt): Draw a string. Draw brackets around blocks of same characters. For a block of size L, write the formula fracL(L+1)2 below it. Sum these values.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single arrow sweeping through the string.
+Mem Vis (BF): Massive substring storage
+Mem Vis (Opt): Constant $O(1)$ space using a running counter and a length variable.

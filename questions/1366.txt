@@ -1,0 +1,13 @@
+ID: 1366
+Problem Title: Rank Teams by Votes
+Brute Force Method: For every team, calculate all possible permutations of rankings and use a nested loop to compare each team against every other team.
+BF Complexity Visuals: $O(T! \cdot V)$ Combinatorial Comparison
+How to Draw BF: Draw 26 teams. Show a web of lines connecting every team to every other team. Inside each connection, draw a sub-graph of votes.
+Optimised Pattern: Multi-Level Sorting (Frequency Matrix)
+Opt Vis. Technique: 2D Scoreboard Heatmap
+Dry Run (Opt): Create a 26x26 matrix. `matrix[team][rank]` stores the vote count. Sort teams based on the entire row of the matrix as a key.
+How to Draw (Opt): Draw a grid: Teams (rows) vs. Ranks (columns). Fill with vote counts. To compare Team A and B, scan columns left-to-right. The first column where counts differ decides the winner.
+Opt Complexity Visuals: $O(V \cdot T + T^2 \log T)$
+How to Draw Opt Complexity: Draw a sorting funnel where each "Comparison" involves a linear scan of a fixed-size row (size 26), proving stability.
+Mem Vis (BF): Permutation List: Storing massive strings of team orders to find the "best" one.
+Mem Vis (Opt): Fixed 2D Matrix: Draw a 26x26 integer array. Space is $O(1)$ since the number of teams is capped at 26.

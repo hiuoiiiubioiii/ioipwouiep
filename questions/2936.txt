@@ -1,0 +1,13 @@
+ID: 2936
+Problem Title: Number of Equal Numbers Blocks
+Brute Force Method: Linear scan checking every single element to count consecutive identical number blocks.
+BF Complexity Visuals: Single Horizontal Line Sweep
+How to Draw BF: Draw a line of length N. Mark every single point with a tick. T(N) = $O(N)$.
+Optimised Pattern: Binary Search / Jump Search
+Opt Vis. Technique: Skipping Stones on Water
+Dry Run (Opt): Start at index `i`. Use binary search to find the *last* index `j` that has the same value as `i`. Jump directly to `j+1`. Repeat.
+How to Draw (Opt): Draw a long array. Draw a large arc "jumping" over 10 elements. Inside the arc, write "Binary Search". Repeat for the next block.
+Opt Complexity Visuals: Step-ladder Logarithmic Decline
+How to Draw Opt Complexity: Write T(N) = K * log(N), where K is the number of blocks. Draw K small arcs.
+Mem Vis (BF): Standard index counter.
+Mem Vis (Opt): Binary search recursion stack (Log N). Space $O(\log N)$.

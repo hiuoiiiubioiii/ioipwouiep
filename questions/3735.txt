@@ -1,0 +1,13 @@
+ID: 3735
+Problem Title: Lexicographically Smallest String After Reverse II (Hard)
+Brute Force Method: BFS/DFS exploring every valid sub-string reversal operation sequentially to see which paths lead to the smallest string. $O(N^\text{Depth})$.
+BF Complexity Visuals: Branching web of full strings.
+How to Draw BF: Write the string. Draw branches to 5 new strings representing possible valid reversals. Branch again from each of those.
+Optimised Pattern: Greedy Left-to-Right Minimization / Two Pointers
+Opt Vis. Technique: Anomaly Targeting and Swapping
+Dry Run (Opt): Scan left to right. Find the earliest character that is suboptimal. Find the absolute smallest allowed character further right that can legally be reversed into that spot, and execute the flip.
+How to Draw (Opt): Move your finger left to right along the string. Stop at a "bad" letter. Scan ahead for the best replacement. Draw a sweeping arc connecting them and physically rewrite the reversed chunk.
+Opt Complexity Visuals: Linear Scan $O(N)$ or $O(N \log N)$.
+How to Draw Opt Complexity: Draw a straight rightward arrow with one or two localized "flip" loops drawn above it.
+Mem Vis (BF): Massive queue of string states stored in memory.
+Mem Vis (Opt): In-place string mutation, $O(1)$ or $O(N)$ space.

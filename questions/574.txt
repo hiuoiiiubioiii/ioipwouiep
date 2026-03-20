@@ -1,0 +1,13 @@
+ID: 574
+Problem Title: Winning Candidate (SQL)
+Brute Force Method: For every candidate, scan the entire Vote table to count their votes, then sort the counts.
+BF Complexity Visuals: Nested loop or full table scan with multiple passes. $O(N^2)$.
+How to Draw BF: Draw a table of candidates. For each, count lines in the Vote table.
+Optimised Pattern: Join + Group By + Limit.
+Opt Vis. Technique: A ballot box. Dump all votes into bins labeled with Candidate IDs. Pick the tallest bin.
+Dry Run (Opt): `SELECT Name FROM Candidate JOIN (SELECT CandidateId FROM Vote GROUP BY CandidateId ORDER BY COUNT(*) DESC LIMIT 1) AS Winner ON id = CandidateId`.
+How to Draw (Opt): Draw two tables. Group the Vote table into stacks. Sort the stacks by height. Use the top stack's ID to look up the Name in the Candidate table.
+Opt Complexity Visuals: Hash-based grouping. $O(N)$.
+How to Draw Opt Complexity: Draw a Vote table flowing into a "Count Map," then a single lookup to the Candidate table.
+Mem Vis (BF): $O(1)$ extra space but very slow execution.
+Mem Vis (Opt): A Hash Map for vote counts. $O(\\text{text}{\text{Unique Candidates}})$.

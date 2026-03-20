@@ -1,0 +1,13 @@
+ID: 2235
+Problem Title: Add Two Integers
+Brute Force Method: Simulation by LoopingStart with `num1`. Use a `while` loop to increment `num1` by 1 and decrement `num2` by 1 until `num2` hits 0.
+BF Complexity Visuals: Tally Mark Transfer
+How to Draw BF: Draw two buckets. Move one tally mark from bucket 2 to bucket 1. Repeat until bucket 2 is empty. Show how this takes $O(\text{num}2)$ steps.
+Optimised Pattern: Direct Math Operations / ALU
+Opt Vis. Technique: ALU Hardware Addition
+Dry Run (Opt): Return `num1 + num2`. The underlying hardware/ALU performs this in a single clock cycle using bitwise adders natively.
+How to Draw (Opt): Draw two integer boxes feeding into an "ALU Addition" funnel, which immediately spits out a single combined number box.
+Opt Complexity Visuals: $O(1)$ Instant Box
+How to Draw Opt Complexity: Draw a single box labeled $O(1)$. No loops, no iterations. It is a fundamental hardware-level instruction.
+Mem Vis (BF): Iterative counter variables looping repeatedly in the call stack.
+Mem Vis (Opt): Two register loads into the CPU resulting in a single integer return (O(1) space).

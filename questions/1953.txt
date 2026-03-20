@@ -1,0 +1,13 @@
+ID: 1953
+Problem Title: Maximum Number of Weeks for Which You Can Work
+Brute Force Method: Use backtracking to simulate every possible sequence of projects, ensuring no two consecutive weeks are the same project.
+BF Complexity Visuals: Recursive Permutation Tree
+How to Draw BF: Draw a tree where each level is a week. Branches represent choosing a project. Prune if project[i] == project[i-1]. $O(2^N)$.
+Optimised Pattern: Greedy Gap Filling / Pigeonhole Principle
+Opt Vis. Technique: Seesaw / Balance Scale
+Dry Run (Opt): Find the max project count M and the sum of all other projects S. If M &gt; S + 1, result is 2S + 1. Else, result is M + S.
+How to Draw (Opt): Draw one giant block (Max Project). Draw many small blocks (Others). Show the small blocks acting as "buffers" between segments of the giant block.
+Opt Complexity Visuals: Single-Pass Accumulator
+How to Draw Opt Complexity: Draw a single arrow across the input array to find Sum and Max. $O(N)$ time.
+Mem Vis (BF): Call stack for recursion and lists to track remaining project counts.
+Mem Vis (Opt): Two long integer variables: `max_val` and `total_sum`. $O(1)$ space.

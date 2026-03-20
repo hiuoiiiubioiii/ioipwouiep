@@ -1,0 +1,13 @@
+ID: 3782
+Problem Title: Last Remaining Integer After Alternating Deletion Operations (Hard)
+Brute Force Method: Actually perform the deletions: remove every 2nd element from left to right, then every 2nd from right to left, until one remains. $O(N^2)$ or $O(N \log N)$ with list slicing.
+BF Complexity Visuals: Step-by-Step List Shrinking.
+How to Draw BF: Write 1 to N. Cross out 2, 4, 6... Now go backwards and cross out every other remaining number. Repeat until only one is left.
+Optimised Pattern: Mathematical Simulation (Step &amp; Head Tracking)
+Opt Vis. Technique: Arithmetic Progression Refinement
+Dry Run (Opt): Track the head of the remaining sequence, the step size (starts at 1), and the number of elements remaining. After each pass, double the step and update the head if the deletion removes the current head.
+How to Draw (Opt): Draw a line representing 1..N. Write "Head = 1, Step = 1". Show the "Head" jumping as numbers are deleted. Every round, the "Head" moves by the current "Step" size under specific conditions.
+Opt Complexity Visuals: Logarithmic Time $O(\log N)$.
+How to Draw Opt Complexity: Draw a line halving repeatedly with a "Head" dot jumping larger and larger gaps.
+Mem Vis (BF): Multiple copies of the array during slicing.
+Mem Vis (Opt): $O(1)$ extra space (just 3-4 integer variables).

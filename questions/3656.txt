@@ -1,0 +1,13 @@
+ID: 3656
+Problem Title: Determine if a Simple Graph Exists (Med)
+Brute Force Method: Backtracking to try and draw every possible edge combination to see if you can satisfy the given degree sequence. $O(2^{V^2})$.
+BF Complexity Visuals: Adjacency Matrix Permutations.
+How to Draw BF: Draw V dots. Try connecting them in every possible way while counting the lines attached to each dot. The combinations for just 10 dots are astronomical.
+Optimised Pattern: Havel-Hakimi Algorithm. Sort the degree sequence, then repeatedly "consume" the highest degree by connecting it to the next highest degrees.
+Opt Vis. Technique: The Greedy "Haircut" Technique.
+Dry Run (Opt): Take the highest number D from the list. Remove it, and subtract 1 from the next D numbers in the list. If any number becomes negative, the graph is impossible.
+How to Draw (Opt): List degrees: [3, 3, 2, 2]. Remove 3, subtract 1 from next 3: becomes [2, 1, 1]. Repeat until the list is all zeros (Success) or impossible (Fail).
+Opt Complexity Visuals: Sorting-Based Reduction Chart.
+How to Draw Opt Complexity: Write $O(V^2 \log V)$ or $O(V^2)$ with bucket sort. Each step reduces the sum of degrees linearly.
+Mem Vis (BF): A massive recursion tree storing partial adjacency matrices.
+Mem Vis (Opt): A single 1D array of integers representing the degree sequence. Space $O(V)$.

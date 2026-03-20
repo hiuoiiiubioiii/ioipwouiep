@@ -1,0 +1,13 @@
+ID: 2544
+Problem Title: Alternating Digit Sum
+Brute Force Method: Convert the integer to a string. Loop through characters, convert to int, and multiply by (-1)^i.
+BF Complexity Visuals: Data-type transformation pipeline (Int -&gt; String -&gt; Chars).
+How to Draw BF: Write "521". First digit: +5. Second: -2. Third: +1. Sum = 4.
+Optimised Pattern: Math-based digit extraction (Modulo/Division).
+Opt Vis. Technique: A stack-like extraction where signs are toggled, with a final correction if the total number of digits is even.
+Dry Run (Opt): Extract digits using n % 10 and store in a list (or use a recursive approach). Alternate signs starting from the *first* digit. If extracting from right-to-left, the sign of the last digit extracted depends on the total count of digits.
+How to Draw (Opt): Write the number. Peel off the last digit. Write it with a minus. Peel next, write with a plus. If you end on a minus but it was the first digit, flip all signs in your head.
+Opt Complexity Visuals: $O(\log10 N)$ - Linear relative to the number of digits.
+How to Draw Opt Complexity: Draw a single horizontal line representing the digits. Show an arrow jumping between '+' and '-' for each digit.
+Mem Vis (BF): $O(D)$ where D is number of digits (if string converted).
+Mem Vis (Opt): $O(1)$ if using math-based extraction.

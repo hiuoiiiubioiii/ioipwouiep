@@ -1,0 +1,13 @@
+ID: 2516
+Problem Title: Take K of Each Character From Left and Right
+Brute Force Method: Recursive backtracking: at each step, branch into two realities—taking the leftmost character or the rightmost character—until constraints are met. $O(2^N)$ time.
+BF Complexity Visuals: Massive, exponentially expanding binary decision tree branching left and right at every level.
+How to Draw BF: Write the string. Draw two diverging arrows from it: one crossing out the left char, one crossing out the right char. Repeat this for every new string state.
+Optimised Pattern: Inverse Sliding Window (Two Pointers) seeking the maximum middle subarray to *leave behind*.
+Opt Vis. Technique: A highlighted sliding window expanding and contracting over the middle of the array, leaving unhighlighted "taken" margins on the edges.
+Dry Run (Opt): First, count all 'a', 'b', and 'c' in the string. If any count is less than K, return -1. Then, use two pointers (left and right) to create a window. If the window contains too many of any character (meaning the edges don't have enough), shrink the window from the left. Track the maximum window size.
+How to Draw (Opt): Draw the string. Place two brackets `[ ]` representing the window. Keep a tally of characters *outside* the brackets. Move the right bracket right. If outside tallies drop below K, move the left bracket right until valid again.
+Opt Complexity Visuals: Two pointers moving in a single forward direction across the array, bounded by 2N steps.
+How to Draw Opt Complexity: Draw an array. Draw one arrow for the right pointer and one for the left. Show both moving strictly left-to-right without ever resetting, proving $O(N)$ complexity.
+Mem Vis (BF): Deep recursive call stack proportional to string length.
+Mem Vis (Opt): Constant $O(1)$ space for a 3-element frequency map/array.

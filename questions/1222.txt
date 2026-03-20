@@ -1,0 +1,13 @@
+ID: 1222
+Problem Title: Queens That Can Attack the King
+Brute Force Method: For every single queen on the board, run an 8-directional search outward to see if it eventually hits the King's coordinate.
+BF Complexity Visuals: Many-to-One Search Rays
+How to Draw BF: Draw an 8x8 grid. Mark the King and multiple Queens. From every Queen, draw 8 arrows shooting outward. Show them overlapping and repeating paths. Write $O(Q \cdot 64)$.
+Optimised Pattern: Reverse Search (King outward to Queens)
+Opt Vis. Technique: Radial Radar Sweep
+Dry Run (Opt): Stand on the King's square. Shoot 8 laser beams outward (N, S, E, W, NE, NW, SE, SW). As soon as a laser hits a Queen, record it and stop that specific beam.
+How to Draw (Opt): Draw an 8x8 grid. Mark the King. Draw 8 arrows extending outwards from the King. Put a dot on the first Queen each arrow hits, and draw a block immediately behind the Queen to show the arrow stops.
+Opt Complexity Visuals: Constant Time Bounded Rays
+How to Draw Opt Complexity: Draw a small 8x8 box. Draw 8 short rays. Write $O(8 \cdot 8)$ = $O(1)$ maximum steps, regardless of the number of Queens.
+Mem Vis (BF): Draw an array storing the coordinates of all Queens, actively iterated repeatedly.
+Mem Vis (Opt): Draw a 2D boolean grid `board[8][8]` to instantly check for Queen presence in $O(1)$ space.

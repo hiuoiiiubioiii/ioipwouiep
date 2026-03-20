@@ -1,0 +1,13 @@
+ID: 2757
+Problem Title: Generate Circular Array Values
+Brute Force Method: Simulate the rotation by actually slicing and concatenating the array or moving an index one-by-one in a while loop. $O(\text{Steps})$.
+BF Complexity Visuals: Step-by-Step Index Hopping
+How to Draw BF: Draw a circle of boxes. Draw an arrow moving one box at a time for 1,000,000 steps. Very inefficient visual.
+Optimised Pattern: Iterative Pointer Mutation (Visualizing the CPU cycle overhead for millions of small increments).
+Opt Vis. Technique: Modular Arithmetic Indexing
+Dry Run (Opt): Coordinate Wrap-Around
+How to Draw (Opt): Calculate the new index directly using (current + steps % n + n) % n. This handles large positive and negative steps instantly in one operation.
+Opt Complexity Visuals: Draw a linear array and a "Wrap" arrow connecting the end back to the start. Show the math equation jumping from any index to another.
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single "Modulus" operator box. Write $O(1)$ as the calculation time doesn't depend on the number of steps.
+Mem Vis (Opt): Zero Extra Space (Draw a single integer index variable).

@@ -1,0 +1,13 @@
+ID: 3036
+Problem Title: Number of Subarrays That Match a Pattern II
+Brute Force Method: (Identical to 3034, but with N=10^6. Brute force $O(N \cdot M)$ will result in TLE).
+BF Complexity Visuals: Explosion Graphic
+How to Draw BF: Draw a clock on fire. A 10^6 x 10^5 operation is mathematically impossible for a 1-second limit.
+Optimised Pattern: KMP / Z-Algorithm on Trend Array
+Opt Vis. Technique: State Transition Automaton
+Dry Run (Opt): Convert nums to a trend array. Run KMP. If j (pattern pointer) reaches pattern.length, increment count and fallback using the LPS array.
+How to Draw (Opt): Draw the trend array. Below it, draw the LPS array. Trace the pointer j jumping back and forth as you scan the trend array.
+Opt Complexity Visuals: Linear Monotonic Pass
+How to Draw Opt Complexity: Draw a single pass across the 10^6 array. Label it $O(N)$.
+Mem Vis (BF): Memory fragmentation from creating N * M small slices.
+Mem Vis (Opt): One large integer array for trends and one for LPS, allocated once to maximize cache locality.

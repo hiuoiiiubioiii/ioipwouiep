@@ -1,0 +1,13 @@
+ID: 3581
+Problem Title: Count Odd Letters from Number (Easy)
+Brute Force Method: Convert the number to a string, then loop through each character and count the frequency of odd digits.
+BF Complexity Visuals: String Conversion Scan.
+How to Draw BF: Draw a number. Draw a box representing the string version. Draw an arrow hopping through each digit. $O(\log_10 N)$.
+Optimised Pattern: Mathematical Digit Extraction.
+Opt Vis. Technique: Modulo &amp; Division Loop.
+Dry Run (Opt): Use `n % 10` to get the last digit and check if it's odd. Use `n / 10` to strip it. Repeat until `n` is 0.
+How to Draw (Opt): Write the number. Circle the last digit. Check parity. Scratch it out and write the remaining number below. Repeat.
+Opt Complexity Visuals: $O(\log_10 N)$.
+How to Draw Opt Complexity: Draw a shrinking number line. Each step removes one digit from the right. Constant time per digit.
+Mem Vis (BF): String Heap Allocation: Draw a string object in memory taking up space proportional to the number of digits.
+Mem Vis (Opt): Register Variables: Draw two small integer boxes (`digit`, `count`) that reuse the same memory.

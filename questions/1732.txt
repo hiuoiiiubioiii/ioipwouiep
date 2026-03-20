@@ -1,0 +1,13 @@
+ID: 1732
+Problem Title: Find the Highest Altitude
+Brute Force Method: For every index `i`, calculate the altitude by summing all elements from `0` to `i`. Track the max sum.
+BF Complexity Visuals: Nested Accumulation (Quadratic).
+How to Draw BF: Draw a list. For element 1, sum 1 item. For element 2, sum 2 items. For element 3, sum 3 items. $O(N^2)$.
+Optimised Pattern: Prefix Sum (Running Total).
+Opt Vis. Technique: Hiking Elevation Map.
+Dry Run (Opt): Start at 0. Add current `gain[i]` to `current_altitude`. Update `max_altitude = max(max_altitude, current_altitude)`.
+How to Draw (Opt): Draw a mountain profile. Write the 'gain' on the slopes (+5, -3). Label each peak with the current sum. Highlight the highest point.
+Opt Complexity Visuals: Single Linear Path.
+How to Draw Opt Complexity: Draw a straight line arrow over the array. Label $O(N)$.
+Mem Vis (BF): None, just sum variables. $O(1)$ space.
+Mem Vis (Opt): Two integer variables: `current` and `max`. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 608
+Problem Title: Tree Node (SQL)
+Brute Force Method: Multiple self-joins or correlated subqueries running a COUNT() on children for every single node to determine its type.
+BF Complexity Visuals: N separate tree-traversals happening simultaneously.
+How to Draw BF: Draw an array of nodes. From every single node, draw an arrow scanning the entire array again to count its children. Write $O(N^2)$.
+Optimised Pattern: CASE WHEN with IN clause (Subquery).
+Opt Vis. Technique: Decision Tree / Logic Gates applied per row.
+Dry Run (Opt): Look at a row. Is p_id NULL? It's 'Root'. Is its id present in a list of all p_ids? It's 'Inner'. Otherwise, it's 'Leaf'.
+How to Draw (Opt): Draw a row entering a sorting machine. Gate 1: No parent? -&gt; Root bin. Gate 2: Has kids (check hashset)? -&gt; Inner bin. Gate 3: Neither? -&gt; Leaf bin.
+Opt Complexity Visuals: Single pass scan against a hashed look-up table.
+How to Draw Opt Complexity: Draw a straight line for the table scan $O(N)$, intersecting with a tiny circle representing an $O(1)$ hash lookup for the `IN` clause.
+Mem Vis (BF): Draw multiple temporary tables spawned for each correlated subquery per row.
+Mem Vis (Opt): Draw a single Hash Set holding all unique `p_id` values. Takes $O(N)$ space and enables instant lookups.

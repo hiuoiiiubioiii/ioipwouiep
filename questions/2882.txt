@@ -1,0 +1,13 @@
+ID: 2882
+Problem Title: Drop Duplicate Rows
+Brute Force Method: Keep a set of "seen" IDs. Loop through the data; if an ID is in the set, delete that row; otherwise, add it to the set.
+BF Complexity Visuals: Hash Set Comparison
+How to Draw BF: Draw a table and a separate "trash bin". For each row, check the set, and move duplicates to the bin.
+Optimised Pattern: df.drop_duplicates(subset=['id'])
+Opt Vis. Technique: Unique Mapping
+Dry Run (Opt): Visualize a "sieve" that only allows the first occurrence of a unique key to fall through to the final table.
+How to Draw (Opt): Draw several duplicate items. Draw a "Filter" box. Show only one of each item coming out the other side.
+Opt Complexity Visuals: $O(N)$ using Hash-based detection.
+How to Draw Opt Complexity: Draw a sorting-then-scanning line or a hash-building line.
+Mem Vis (BF): $O(N)$ for storing the Hash Set.
+Mem Vis (Opt): $O(N)$ Optimized in-place or new buffer.

@@ -1,0 +1,13 @@
+ID: 449
+Problem Title: Serialize and Deserialize BST
+Brute Force Method: Standard Tree Traversal Convert to string with markers for nulls (e.g., Pre-order + "#" for null).
+BF Complexity Visuals: Marked Stream
+How to Draw BF: Draw a tree and a string with many extra special characters. $O(N)$.
+Optimised Pattern: Pre-order + Bounds Use Pre-order without null markers. Rebuild using BST property (current value must be within [min, max]).
+Opt Vis. Technique: Flattened BST Stream
+Dry Run (Opt): Draw the tree being squashed into a compact string of numbers.
+How to Draw (Opt): Draw a BST. Write its pre-order sequence. Reconstruct by drawing nodes only if they fit between the parent's limits.
+Opt Complexity Visuals: Linear Pass
+How to Draw Opt Complexity: One pass to stringify, one to parse. $O(N)$ time.
+Mem Vis (BF): String Pool Extra memory for null markers.
+Mem Vis (Opt): String Builder / Queue Compact string representation. $O(N)$ space.

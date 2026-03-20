@@ -1,0 +1,13 @@
+ID: 2148
+Problem Title: Count Elements With Strictly Smaller and Greater Elements
+Brute Force Method: Nested loops: For each element, scan the entire array twice to see if a smaller and a larger value exist.
+BF Complexity Visuals: Every element shooting two rays (left/right) to scan the whole array.
+How to Draw BF: Draw an array. Circle an element. Draw arrows to every other element to check size. Repeat N times. $O(N^2)$.
+Optimised Pattern: Min/Max Tracking.
+Opt Vis. Technique: Isolating the two "boundary walls" of the dataset.
+Dry Run (Opt): Find the global `min` and global `max` of the array in one pass. Count how many elements `x` satisfy `min &lt; x &lt; max`.
+How to Draw (Opt): Draw a number line. Mark the absolute leftmost (Min) and rightmost (Max) points. Count all dots that fall strictly between these two lines.
+Opt Complexity Visuals: $O(N)$ single pass.
+How to Draw Opt Complexity: Two scanners finding the edges, then one scanner counting the middle.
+Mem Vis (BF): No extra memory.
+Mem Vis (Opt): $O(1)$ auxiliary space (storing `min`, `max`, and `count`).

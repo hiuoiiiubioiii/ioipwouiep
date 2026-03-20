@@ -1,0 +1,13 @@
+ID: 1765
+Problem Title: Map of Highest Peak
+Brute Force Method: For every land cell, calculate the Manhattan distance to every single water cell. Pick the minimum distance.
+BF Complexity Visuals: Point-to-Point Manhattan Grid.
+How to Draw BF: Draw a grid. Pick a land cell. Draw arrows to all water cells. Repeat for every land cell. $O((R \cdot C)$^2).
+Optimised Pattern: Multi-Source BFS.
+Opt Vis. Technique: Water Ripple Expansion.
+Dry Run (Opt): Initialize a height grid. Put all water cells (height 0) into a queue. Expand outward layer-by-layer. For each neighbor, height = current\_height + 1.
+How to Draw (Opt): Draw a grid. Mark all water sources with '0'. Draw concentric squares (ripples) moving outward. Each new square increases the number by 1.
+Opt Complexity Visuals: Level-Order Grid Traversal.
+How to Draw Opt Complexity: Draw an R \times C grid. Color cells as they are visited. Label $O(R \cdot C)$.
+Mem Vis (BF): None, just distance calculations.
+Mem Vis (Opt): Queue for BFS + Height Matrix. $O(R \cdot C)$ space.

@@ -1,0 +1,13 @@
+ID: 3372
+Problem Title: Maximize the Number of Target Nodes After Connecting Trees I
+Brute Force Method: Try connecting every node i in Tree 1 to every node j in Tree 2. For each pair, run BFS to count reachable nodes within distance K.
+BF Complexity Visuals: All-Pairs BFS Traversal
+How to Draw BF: Draw two trees. Draw a line between every possible pair of nodes (N x M). For each line, draw expanding ripples. $O(N \cdot M \cdot (N+M)$).
+Optimised Pattern: Independent Precomputed BFS
+Opt Vis. Technique: Concentric Distance Rings
+Dry Run (Opt): Precompute the count of nodes within distance K for all nodes in Tree 1, and nodes within K-1 for Tree 2. The result for node i is Count1(i, K) + max(Count2(j, K-1)).
+How to Draw (Opt): Draw Tree 1 and Tree 2. For each node, draw rings at distance 1, 2, ... up to K. Write the "inside-ring" count next to each node. Pick the highest count from Tree 2 to add to every node in Tree 1.
+Opt Complexity Visuals: Dual-Pass Linear Scan
+How to Draw Opt Complexity: Draw a line for Tree 1 and a line for Tree 2. Each node is visited once per BFS. $O(N^2 + M^2)$ (or $O(N+M)$ with Re-rooting).
+Mem Vis (BF): Storing millions of path combinations in a 2D adjacency matrix.
+Mem Vis (Opt): Two 1D arrays of size N and M to store the reachable counts.

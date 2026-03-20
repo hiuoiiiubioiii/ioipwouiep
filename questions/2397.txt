@@ -1,0 +1,13 @@
+ID: 2397
+Problem Title: Maximum Rows Covered by Columns
+Brute Force Method: Generate all possible combinations of picking `numSelect` columns (^C_k). For each combination, check every row to see if all its '1's are within the selected columns.
+BF Complexity Visuals: Combinatorial Column Selection (O(2^C * R))
+How to Draw BF: Draw a grid. Branch out by picking every possible subset of columns. For each leaf, scan every row to see if it's "covered."
+Optimised Pattern: Bitmasking + Gosper's Hack
+Opt Vis. Technique: Bitwise Row-Column Masking
+Dry Run (Opt): Represent each row as a bitmask. Iterate through all bitmasks of length C that have exactly `numSelect` bits set. For each mask, count how many rows satisfy `(rowMask &amp; mask) == rowMask`.
+How to Draw (Opt): Draw the grid as a vertical stack of binary numbers. Create a "Selection Mask" (a horizontal binary number). If a "row number" ANDed with the "mask" equals the original "row number," that row is covered.
+Opt Complexity Visuals: Bitwise Iteration (O(comb(C, k) * R))
+How to Draw Opt Complexity: Draw a list of column combinations. Each step is a fast bitwise comparison against all rows.
+Mem Vis (BF): Draw a massive recursion tree for all column combinations.
+Mem Vis (Opt): Draw a 1D Integer Array `rowMasks` and one Integer variable for the current `selectionMask`.

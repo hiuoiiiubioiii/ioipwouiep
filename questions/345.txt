@@ -1,0 +1,13 @@
+ID: 345
+Problem Title: Reverse Vowels of a String
+Brute Force Method: Find all vowels in the string, store them in a list, reverse the list, then traverse the string again replacing original vowels with the reversed list.
+BF Complexity Visuals: Two-Pass Buffer Extraction
+How to Draw BF: Draw the string. Below it, draw a "Vowel List". Show a second pass where values are "poured" back in. $O(N)$.
+Optimised Pattern: Two Pointers (Vowel-Selective Swap)
+Opt Vis. Technique: Selective Boundary Convergence
+Dry Run (Opt): Same as Q344, but only perform the swap if both `left` and `right` point to vowels. If not, move the non-vowel pointer inward.
+How to Draw (Opt): Draw an array. Draw arrows at the ends. If an arrow points to 'b', move it. If both point to 'a' and 'e', draw a swap arc.
+Opt Complexity Visuals: Linear Selective Scan
+How to Draw Opt Complexity: Draw a horizontal line. Draw two pointers skipping over non-vowel segments to meet at vowels. $O(N)$.
+Mem Vis (BF): A list/vector to store all vowels. $O(N)$.
+Mem Vis (Opt): Constant pointers and in-place swaps. Draw the string buffer and 2 pointer boxes. $O(1)$ extra space.

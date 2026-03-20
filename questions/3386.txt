@@ -1,0 +1,13 @@
+ID: 3386
+Problem Title: Button with Longest Push Time
+Brute Force Method: For every event, iterate through all previous events to find the time difference, store in a list, then sort to find the max.
+BF Complexity Visuals: Nested Event Comparison
+How to Draw BF: Draw a timeline. For every dot, draw a line back to every other dot. $O(N^2)$.
+Optimised Pattern: Single-Pass Linear Scan
+Opt Vis. Technique: Interval Gap Measuring
+Dry Run (Opt): Track `currentTime` and `lastTime`. Calculate `gap = currentTime - lastTime`. Update `maxGap` and `buttonId` if the current gap is larger or equal with a smaller ID.
+How to Draw (Opt): Draw a horizontal line with timestamps. Draw brackets between stamps. Write the gap value inside each bracket. Circle the widest bracket.
+Opt Complexity Visuals: Single Linear Arrow
+How to Draw Opt Complexity: Draw a straight line N. Each step is one $O(1)$ calculation. Total $O(N)$.
+Mem Vis (BF): A list of all N calculated time intervals.
+Mem Vis (Opt): Exactly three variables: `maxTime`, `resultId`, and `prevTime`. $O(1)$.

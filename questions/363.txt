@@ -1,0 +1,13 @@
+ID: 363
+Problem Title: Max Sum of Rectangle No Larger Than K
+Brute Force Method: Check every possible sub-rectangle (r1, c1) to (r2, c2), calculate the sum, and see if it's \le k.
+BF Complexity Visuals: 4D Nested Coordinate Sweep
+How to Draw BF: Draw a grid. Draw an outer rectangle, then a slightly smaller one. Label the complexity $O(M^2 N^2)$.
+Optimised Pattern: 2D Prefix Sum + 1D TreeSet Range Search
+Opt Vis. Technique: Dimension Reduction with Binary Search
+Dry Run (Opt): Fix the left and right column boundaries. Sum the rows between them to create a 1D array. Find the max subarray sum \le k in this 1D array using a `TreeSet` to find the smallest `prefix_sum >= (current_sum - k)`.
+How to Draw (Opt): Draw a grid with two vertical boundary lines. Show the rows between them collapsing into a single vertical 1D column. Beside it, draw a BST (TreeSet) storing cumulative sums.
+Opt Complexity Visuals: Log-Linear Row-Column Partition
+How to Draw Opt Complexity: Draw a sorting/tree operation inside a triple loop. Label $O(N^2 \cdot M \log M)$.
+Mem Vis (BF): Constant-time variable if just storing the max.
+Mem Vis (Opt): 1D array for row sums + TreeSet. Draw a horizontal tape and a small tree. $O(M)$.

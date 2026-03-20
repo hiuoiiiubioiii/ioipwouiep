@@ -1,0 +1,13 @@
+ID: 495
+Problem Title: Teemo Attacking
+Brute Force Method: Simulation (Second by Second) Create a massive boolean array for time. Mark seconds as "poisoned". Count true values.
+BF Complexity Visuals: Dense Timeline
+How to Draw BF: Draw a long timeline. Color in seconds 1 to N. Huge $O(\\text{text}{\text{MaxTime}})$.
+Optimised Pattern: One-Pass Greedy Iterate through attacks. If the gap between attacks &lt; duration, add the gap. Else, add the full duration.
+Opt Vis. Technique: Interval Overlap Strike
+Dry Run (Opt): Imagine a bar (poison duration). If a second bar starts before the first ends, the first bar is "cut short."
+How to Draw (Opt): Draw a timeline with rectangles for durations. If two rectangles overlap, draw a vertical line "clipping" the first one.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw a single arrow passing through the attack array. $O(N)$.
+Mem Vis (BF): Time Array Memory of size `MaxTime`.
+Mem Vis (Opt): None Just two integer variables. $O(1)$.

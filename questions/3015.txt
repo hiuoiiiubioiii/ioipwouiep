@@ -1,0 +1,13 @@
+ID: 3015
+Problem Title: Count the Number of Houses at a Certain Distance I
+Brute Force Method: Run a standard Breadth-First Search (BFS) starting from every single house to find the shortest path to all other houses.
+BF Complexity Visuals: N-Layered BFS Trees
+How to Draw BF: Draw a straight line of nodes (houses). Below it, draw N separate radial expanding circle graphs, showing BFS exploring outward from every single node.
+Optimised Pattern: Floyd-Warshall Algorithm (All-Pairs Shortest Path)
+Opt Vis. Technique: 3D State Matrix Update
+Dry Run (Opt): Initialize a distance matrix. For every intermediate node 'k', check if the path from 'i' to 'j' through 'k' is shorter than the direct path. If yes, update the cell `(i, j)`.
+How to Draw (Opt): Draw a grid. Pick an intermediate column/row. Draw arrows from cell `(i, k)` and `(k, j)` pointing to `(i, j)` to see if their sum is smaller than the current value.
+Opt Complexity Visuals: $O(N^3)$ Cubed Loop Box
+How to Draw Opt Complexity: Draw a 3D cube. Label the axes `i`, `j`, and `k` to represent the three nested loops traversing the nodes.
+Mem Vis (BF): N separate `Queue` structures and `Visited` sets instantiated repeatedly.
+Mem Vis (Opt): A 2D integer array `dist[N][N]` dynamically updating in-place.

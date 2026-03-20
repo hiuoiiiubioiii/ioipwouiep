@@ -1,0 +1,13 @@
+ID: 1489
+Problem Title: Find Critical and Pseudo-Critical Edges in MST
+Brute Force Method: Generate all possible Minimum Spanning Trees (MSTs) and see which edges appear in all of them (critical) or only some of them (pseudo-critical).
+BF Complexity Visuals: Combinatorial Tree Search
+How to Draw BF: Draw a graph. List every single spanning tree. Compare all edge sets. Label $O(2^E \cdot V)$.
+Optimised Pattern: Kruskal’s + Edge Exclusion/Inclusion
+Opt Vis. Technique: Weight-Consistent Connectivity Test
+Dry Run (Opt): 1. Find MST weight W. 2. For each edge: exclude it and find MST; if weight &gt; W or disconnected, it's **Critical**. 3. If not critical, force-include it and find MST; if weight == W, it's **Pseudo-Critical**.
+How to Draw (Opt): Draw the graph. Run Kruskal's. Now, "delete" one edge and re-run. If the bridge collapses (weight goes up), that edge was Critical. If you can force it in without breaking the bank, it's Pseudo.
+Opt Complexity Visuals: Multi-Pass MST Execution
+How to Draw Opt Complexity: Draw a loop over E edges. Inside, run Kruskal's $O(E \log E)$. Label $O(E^2 \log E)$.
+Mem Vis (BF): Recursive tree lists
+Mem Vis (Opt): Union-Find structure and sorted edge list. Space $O(V + E)$.

@@ -1,0 +1,13 @@
+ID: 1625
+Problem Title: Lexicographically Smallest String After Applying Operations
+Brute Force Method: Apply the "add" and "rotate" operations randomly without keeping track of what strings have already been checked.
+BF Complexity Visuals: Infinite Loop Graph
+How to Draw BF: Draw a circle of nodes where operations just loop back onto themselves forever, crashing the program.
+Optimised Pattern: BFS / DFS with Visited State Set
+Opt Vis. Technique: Exhaustive State Space Search
+Dry Run (Opt): Push original string to queue. Pop string, apply both operations. If the resulting strings are not in the "Visited" set, push them to the queue. Track the minimum string seen.
+How to Draw (Opt): Draw a starting node (string). Draw two branching arrows ("Add" and "Rotate"). If a branch leads to a string already drawn, draw a big red X.
+Opt Complexity Visuals: Bounded Graph Traversal
+How to Draw Opt Complexity: Draw a tree that gets wider but eventually stops growing because all finite possible combinations have been visited.
+Mem Vis (BF): Infinite Call Stack: Stack overflowing with repetitive data.
+Mem Vis (Opt): Queue + Hash Set: Draw a horizontal pipe (Queue) feeding into a bag (Hash Set) that filters out duplicates.

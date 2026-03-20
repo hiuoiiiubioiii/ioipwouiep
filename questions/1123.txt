@@ -1,0 +1,13 @@
+ID: 1123
+Problem Title: Lowest Common Ancestor of Deepest Leaves
+Brute Force Method: Two-pass DFS. Pass 1: Find the depth of all leaves. Pass 2: Find the LCA of all leaves that hit the maximum depth.
+BF Complexity Visuals: Double-Scan Perimeter Trace
+How to Draw BF: Draw a tree. Mark depths on all nodes. Then draw a second path searching for the intersection of the deepest paths.
+Optimised Pattern: Post-order DFS (Depth-Pair Return)
+Opt Vis. Technique: Recursive Depth-Balanced Scale
+Dry Run (Opt): Each node returns `(LCA_Candidate, Max_Depth)`. If `left_depth == right_depth`, the current node is the LCA candidate for that subtree.
+How to Draw (Opt): Draw tree. Start at bottom. Pass up `depth` and `node_pointer`. At each parent, if depths from left/right match, update the pointer to 'self'.
+Opt Complexity Visuals: Single Traversal $O(N)$
+How to Draw Opt Complexity: Draw a single continuous line tracing the tree once. $O(H)$ stack depth.
+Mem Vis (BF): Multiple lists of leaf paths
+Mem Vis (Opt): Standard Call Stack. Draw the stack depth proportional to tree height.

@@ -1,0 +1,13 @@
+ID: 1454
+Problem Title: Active Users (SQL)
+Brute Force Method: Self-Join on dates. Join the table with itself 4 times to check for `date + 1`, `date + 2`, etc., for every user.
+BF Complexity Visuals: Multi-Way Cross Join
+How to Draw BF: Draw a table. Draw 5 lines from one row to 5 different other rows to find a sequence. Label $O(N^5)$.
+Optimised Pattern: Window Functions (LEAD / DENSE_RANK)
+Opt Vis. Technique: Gaps and Islands (Grouping)
+Dry Run (Opt): Use `DENSE_RANK()` over (User ID, Date). Subtract the rank from the date. Consecutive dates will result in the same "Difference Date" (the Island). Count these groups.
+How to Draw (Opt): Draw a calendar. Circle active days for a user. Assign each day a rank (1, 2, 3). Subtract: (Jan 5 - 1 = Jan 4), (Jan 6 - 2 = Jan 4). Same result = Consecutive!
+Opt Complexity Visuals: Single-Pass Ranking
+How to Draw Opt Complexity: Draw a Sort/Partition $O(N \log N)$ -&gt; Ranking $O(N)$ -&gt; Grouping $O(N)$. Total $O(N \log N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A temporary sorted partition in memory. Space $O(N)$.

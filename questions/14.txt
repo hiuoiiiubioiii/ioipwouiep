@@ -1,0 +1,13 @@
+ID: 14
+Problem Title: Longest Common Prefix
+Brute Force Method: Vertical Character Matching Check index 0 of all strings, then index 1 of all strings, until a mismatch occurs.
+BF Complexity Visuals: Vertical Scanner
+How to Draw BF: Stack the strings vertically. Draw a tall, narrow box highlighting column 0, then column 1. Stop and draw an X when letters don't match.
+Optimised Pattern: Horizontal Shrinking
+Opt Vis. Technique: The Chopping Block
+Dry Run (Opt): Assume the first string is the prefix. Compare it to the next string. If it doesn't match, chop the last letter off the prefix and try again.
+How to Draw (Opt): Draw a `prefix` box initially holding String[0]. Draw scissors chopping off the rightmost letter of the `prefix` box until `String[i].startsWith(prefix)` is true.
+Opt Complexity Visuals: Total Character Count Line
+How to Draw Opt Complexity: Draw a line representing S (total number of characters in all strings combined). In the worst case, every character is checked once. $O(S)$ time.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw a single string variable shrinking in place. No massive arrays are allocated (O(1) auxiliary space).

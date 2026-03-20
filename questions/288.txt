@@ -1,0 +1,13 @@
+ID: 288
+Problem Title: Unique Word Abbreviation
+Brute Force Method: For every `isUnique` call, iterate through the entire dictionary and compute abbreviations for every word on the fly.
+BF Complexity Visuals: Repeated Linear Scans: $O(Q \\text{times} N)$.
+How to Draw BF: Draw a query word. Draw a long dictionary list. Show an arrow checking every word in the list for every single query.
+Optimised Pattern: Hash Map Pre-processing
+Opt Vis. Technique: Dictionary Mapping
+Dry Run (Opt): Pre-calculate abbreviations (e.g., "internationalization" \to "i18n"). Store in a map: `Map&gt;`.
+How to Draw (Opt): Draw a Map table. Left column is abbreviations like "d3r", right column is a list of matching words like ["door", "dear"].
+Opt Complexity Visuals: Constant Lookup: $O(1)$ per query.
+How to Draw Opt Complexity: Draw a single arrow pointing directly to a specific row in your map table. T = 1 step.
+Mem Vis (BF): N/A (Calculated on the fly).
+Mem Vis (Opt): Abbreviation Map: Draw a hash table structure. Space: $O(N)$ where N is total words in dictionary.

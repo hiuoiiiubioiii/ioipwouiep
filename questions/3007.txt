@@ -1,0 +1,13 @@
+ID: 3007
+Problem Title: Maximum Number That Sum of Prices Is Less Than or Equal to K
+Brute Force Method: Iterate num from 1 upwards. For each number, convert to binary, check bits at `x`, `2x`, `3x`... Add to total price until limit `K` is hit.
+BF Complexity Visuals: Binary Accumulation Table
+How to Draw BF: Draw a table with columns: Number, Binary, Bits at x, Total Price. Fill row by row until Total &gt; K.
+Optimised Pattern: Binary Search on Answer + Bit Digit DP (Math)
+Opt Vis. Technique: Binary Column Cycle Counting
+Dry Run (Opt): Binary search a massive mid. To get the price of mid, look at bit columns vertically. Each column i flips exactly every 2^i numbers. Calculate the math formula for 1s in valid columns.
+How to Draw (Opt): Draw a grid of binary numbers. Highlight vertical columns `x`, `2x`. Bracket the repeating 0-1 blocks (size 2^i). Write the cycle formula.
+Opt Complexity Visuals: Logarithmic Search Tree
+How to Draw Opt Complexity: Draw a wide horizontal line from 1 to 10^15. Draw binary search jumps halving the space, with $O(\log N)$ math calculations per jump.
+Mem Vis (BF): A single accumulator integer variable total_price incrementing indefinitely.
+Mem Vis (Opt): Variables `low`, `mid`, `high` shifting across a massive 64-bit integer address space.

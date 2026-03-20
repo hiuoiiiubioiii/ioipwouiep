@@ -1,0 +1,13 @@
+ID: 1012
+Problem Title: Numbers With Repeated Digits
+Brute Force Method: Loop from 1 to N. Convert every integer to a string, toss characters into a Set, and check if Set size &lt; string length.
+BF Complexity Visuals: A massive factory line converting numbers to strings and tossing them into a shredder to check uniqueness.
+How to Draw BF: Draw numbers 1 to N. Under each, draw a miniature Set bucket catching its digits. Write $O(N \log N)$ (due to string conversion).
+Optimised Pattern: Digit DP / Combinatorics.
+Opt Vis. Technique: A branching decision tree placing digits into slots `_ _ _ _`, pruning branches where a digit is already used.
+Dry Run (Opt): Calculate Total Numbers (N). Calculate numbers WITHOUT repeated digits using Permutations (P(9, k)). Subtract the two. Total - Unique = Repeated.
+How to Draw (Opt): Draw blanks for digits `_ _ _`. Write available choices under the first blank (e.g., 9). Under the next, write 9, then 8. Multiply them.
+Opt Complexity Visuals: A shallow tree matching the number of digits in N.
+How to Draw Opt Complexity: Draw a tree with depth equal to the number of digits of N (which is log10(N)). Write Time: $O(\log N)$.
+Mem Vis (BF): High memory churn from millions of string allocations. $O(\log N)$ space per number, GC overload.
+Mem Vis (Opt): An array of digits or a small Memoization table of size ~10x1024. Represents $O(\log N)$ space.

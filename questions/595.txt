@@ -1,0 +1,13 @@
+ID: 595
+Problem Title: Big Countries (SQL)
+Brute Force Method: Use a subquery for each condition (area and population) and then use a `UNION` or a `JOIN` to combine the results.
+BF Complexity Visuals: Redundant scanning of the table. $O(N)$.
+How to Draw BF: Draw the table. Filter for Area &gt; 3M. Then filter for Pop &gt; 25M. Then merge the lists.
+Optimised Pattern: Simple WHERE clause with OR.
+Opt Vis. Technique: A "Dual Filter." As each row passes through the gate, it only needs to trigger one of the two sensors to be allowed through.
+Dry Run (Opt): `SELECT name, population, area FROM World WHERE area &gt;= 3000000 OR population &gt;= 25000000`.
+How to Draw (Opt): Draw the World table. Put a checkmark next to rows where the Area is huge OR the Population is huge. List only those checked rows.
+Opt Complexity Visuals: Single pass over the table. $O(N)$.
+How to Draw Opt Complexity: Draw a table flowing into a single box with two parallel logical checks.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): $O(1)$ auxiliary space beyond the result set.

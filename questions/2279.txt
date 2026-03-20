@@ -1,0 +1,13 @@
+ID: 2279
+Problem Title: Maximum Bags With Full Capacity of Rocks
+Brute Force Method: Backtracking / CombinationsTry distributing the `additionalRocks` in every possible way among the bags to see which combination results in the most full bags.
+BF Complexity Visuals: Recursive Distribution Tree
+How to Draw BF: Draw 3 bags. Branch into: "Put 1 rock in bag A", "Put 2 rocks in bag A", etc. Show the branching factor exploding based on the number of rocks.
+Optimised Pattern: Greedy + Sorting
+Opt Vis. Technique: Shortest-Gap-First Filling
+Dry Run (Opt): Calculate the `remaining_capacity` for each bag (`capacity[i] - rocks[i]`). Sort these gaps from smallest to largest. Fill the bags with the smallest gaps first until you run out of rocks.
+How to Draw (Opt): Draw a series of "partially full" glasses. Sort them by how much empty space is at the top. Pour water into the one that needs the least first. Count how many you filled completely.
+Opt Complexity Visuals: Sort and Linear Fill
+How to Draw Opt Complexity: Draw an $O(N)$ pass to find gaps, an $O(N \log N)$ sort, and an $O(N)$ fill pass. Total: $O(N \log N)$.
+Mem Vis (BF): Storing recursion states and partial distributions of rocks across N bags.
+Mem Vis (Opt): A single integer array of size N to store the gaps (O(N) space).

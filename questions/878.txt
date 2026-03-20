@@ -1,0 +1,13 @@
+ID: 878
+Problem Title: Nth Magical Number
+Brute Force Method: Iterate from 1 upwards. For every number, check if it's divisible by A or B. Count until you reach N.
+BF Complexity Visuals: Linear Scanning. $O(N x \text{min}(A, B)$).
+How to Draw BF: Draw a number line. Put a mark on every multiple of A and every multiple of B. Count them 1, 2, 3... until you hit N.
+Optimised Pattern: Binary Search on Answer + Inclusion-Exclusion Principle.
+Opt Vis. Technique: The "Overlap Correction" Filter.
+Dry Run (Opt): Count of magical numbers = N. Use LCM = (A x B) / GCD(A, B).
+How to Draw (Opt): Draw two circles (Multiples of A, Multiples of B). Shaded area in the middle is Multiples of LCM. Count is AreaA + AreaB - Overlap. Binary search adjusts the size of the circles.
+Opt Complexity Visuals: Binary Search on 10^15. $O(\log(N x \text{min}(A, B)$)).
+How to Draw Opt Complexity: Draw a logarithmic curve. Very few steps (~60) needed to find a massive number.
+Mem Vis (BF): $O(1)$ extra space but visualized as billions of CPU cycles.
+Mem Vis (Opt): $O(1)$ Space: Draw four integer variables (A, B, LCM, target).

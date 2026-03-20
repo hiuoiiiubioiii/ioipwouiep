@@ -1,0 +1,13 @@
+ID: 361
+Problem Title: Bomb Enemy
+Brute Force Method: For every empty cell '0', scan all four directions (Up, Down, Left, Right) until you hit a wall 'W', counting enemies 'E' along the way.
+BF Complexity Visuals: 2D Grid Ray-Casting Sweep
+How to Draw BF: Draw a grid. For one '0', draw four arrows extending to the grid boundaries or walls. Repeat for every '0'. Label it $O(M \cdot N \cdot (M+N)$).
+Optimised Pattern: Dynamic Programming (Row &amp; Column Pre-computation)
+Opt Vis. Technique: Incremental Row/Col "Heat" Buffers
+Dry Run (Opt): Iterate through the grid. Only re-calculate the "row-enemy-count" when you hit the start of a row or a wall. Do the same for each column. Store these in a `rowCache` and a `colCache` array.
+How to Draw (Opt): Draw a grid. Next to it, draw a single variable `rowCount`. Above each column, draw a small box for `colCount[j]`. Show these numbers updating only when a 'W' is passed.
+Opt Complexity Visuals: Linear Scan with Buffered Lookups
+How to Draw Opt Complexity: Draw a single arrow moving through the grid once. Label it $O(\text{MN})$.
+Mem Vis (BF): No extra memory; just local counters per cell.
+Mem Vis (Opt): One 1D array for column caches. Draw a horizontal tape of size N. $O(N)$ space.

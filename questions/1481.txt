@@ -1,0 +1,13 @@
+ID: 1481
+Problem Title: Least Number of Unique Integers after K Removals
+Brute Force Method: Generate all subsets of the array of size `N-K`. For each subset, count unique elements. Return the minimum count found.
+BF Complexity Visuals: Exponential Subset Selection
+How to Draw BF: Draw a tree branching into every way to pick N-K elements. Count unique items at each leaf. Label $O(N \text{choose} K)$.
+Optimised Pattern: Greedy Frequency Sorting
+Opt Vis. Technique: Elimination of Smallest Buckets
+Dry Run (Opt): Count frequencies of all numbers. Sort the frequencies in ascending order. Remove frequencies one by one using `K` until `K` is exhausted. Remaining unique counts is the answer.
+How to Draw (Opt): Draw buckets for each unique number. Sort them from shortest to tallest. Start "deleting" buckets from the left (shortest) using your total K budget until you can't afford the next one.
+Opt Complexity Visuals: Sorting Frequency Bottleneck
+How to Draw Opt Complexity: Draw $O(N)$ Frequency Map -&gt; $O(U \log U)$ Sort (where U is unique count) -&gt; $O(U)$ Scan. Total $O(N \log N)$.
+Mem Vis (BF): All possible subsets list
+Mem Vis (Opt): A Hash Map for counts and a sorted list of frequencies. Space $O(N)$.

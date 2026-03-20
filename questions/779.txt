@@ -1,0 +1,13 @@
+ID: 779
+Problem Title: K-th Symbol in Grammar
+Brute Force Method: Physically generate each row: `0` -&gt; `01`, `1` -&gt; `10` until reaching row N.
+BF Complexity Visuals: Exponential String Growth
+How to Draw BF: Draw row 1: 0. Row 2: 01. Row 3: 0110. Show the length doubling each time. $O(2^N)$.
+Optimised Pattern: Binary Tree Symmetry / Recursion
+Opt Vis. Technique: Parent-Child Relationship
+Dry Run (Opt): The first half of row N is row N-1. The second half is the flip of row N-1. If K is in the second half, it depends on K - (\text{half\_length}).
+How to Draw (Opt): Draw a tree of 0s and 1s. For any K, trace up to its parent in the previous row. Use the rule: `val = parent == K_is_even ? 1 : 0`.
+Opt Complexity Visuals: Logarithmic Traceback
+How to Draw Opt Complexity: Draw a tree height N. Show a single path from row N up to row 1. $O(N)$.
+Mem Vis (BF): Massive strings of size 2^N.
+Mem Vis (Opt): Recursive stack frames (O(N)).

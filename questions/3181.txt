@@ -1,0 +1,13 @@
+ID: 3181
+Problem Title: Maximum Total Reward Using Operations II
+Brute Force Method: Recursive backtracking trying every subset of rewards where current reward is less than the candidate. $O(2^N)$
+BF Complexity Visuals: Branching Decision Tree
+How to Draw BF: Draw root '0'. Branch for every valid reward choice. Show exponential growth as paths split.
+Optimised Pattern: DP + Bitset (Bit-Level Parallelism)
+Opt Vis. Technique: Sliding Binary Bitmask
+Dry Run (Opt): Sort rewards. Maintain a `std::bitset` where `b[i] = 1` if reward `i` is reachable. For each `v`, update `b |= (b &lt;&lt; (50000-v) &gt;&gt; (50000-v)) &lt;&lt; v`.
+How to Draw (Opt): Draw a long 1D tape of 0s and 1s. For reward `v`, copy the tape, shift it by `v` positions, and OR it back into the original.
+Opt Complexity Visuals: Linear Scan with Bitwise Chunking
+How to Draw Opt Complexity: Draw an $O(N)$ timeline. Above each node, draw a small block representing 64-bit parallel operations. $O(N \cdot M / 64)$.
+Mem Vis (BF): Exhaustive recursion stack for all subsets.
+Mem Vis (Opt): A single fixed-size bitset of 50,000 bits. $O(M)$ space.

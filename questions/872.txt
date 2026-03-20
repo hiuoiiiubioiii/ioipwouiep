@@ -1,0 +1,13 @@
+ID: 872
+Problem Title: Leaf-Similar Trees
+Brute Force Method: Do a full traversal of Tree 1 and Tree 2. Store all nodes in two arrays. Compare the arrays.
+BF Complexity Visuals: Full Node Comparison. $O(N_1 + N_2)$.
+How to Draw BF: Draw two trees. Circle every single node. Write them all down in two long lists and check every element.
+Optimised Pattern: DFS (Leaf-only Extraction).
+Opt Vis. Technique: The "Terminal Node" Filter.
+Dry Run (Opt): Perform a DFS on both trees. Only when a node has no children (leaf), add it to a list. Compare the two leaf-lists at the end.
+How to Draw (Opt): Draw two trees. Trace a path only to the tips of the branches. Write down the sequence of tips from left to right for both and see if they match.
+Opt Complexity Visuals: Single Pass Traversal. $O(N)$.
+How to Draw Opt Complexity: Draw two trees with one continuous "string" connecting all their leaves.
+Mem Vis (BF): Full Tree Storage: Draw memory for every single node's value.
+Mem Vis (Opt): Leaf List: Draw a small array that only holds the bottom-most values. $O(L)$ where L is # of leaves.

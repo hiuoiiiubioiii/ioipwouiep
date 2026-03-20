@@ -1,0 +1,13 @@
+ID: 2309
+Problem Title: Greatest English Letter in Upper and Lower Case
+Brute Force Method: Iterate from 'Z' down to 'A'. For each letter, scan the entire string to check if its uppercase exists, then scan again for its lowercase.
+BF Complexity Visuals: 26 Linear Scans (O(26 * N))
+How to Draw BF: Draw a timeline. Draw 26 separate loops looping over the timeline one after another.
+Optimised Pattern: Hash Set / Bitmasking
+Opt Vis. Technique: 52-Slot Toggle Switchboard
+Dry Run (Opt): Do one pass over the string. Flip the switch (boolean) for the character seen. Then loop from 'Z' to 'A' checking if both the upper and lower switches for that letter are ON.
+How to Draw (Opt): Draw a row of 52 checkboxes. Tick them as you read the string. Then look at pairs of (Upper, Lower) checkboxes starting from the end of the alphabet.
+Opt Complexity Visuals: Two Independent Lines (O(N) + $O(26)$)
+How to Draw Opt Complexity: Draw one long horizontal line (string length N), followed by a very short fixed line (length 26).
+Mem Vis (BF): Draw memory as empty, heavily utilizing the CPU stack for repeated loops.
+Mem Vis (Opt): Draw a 52-element Boolean Array (or a single 64-bit integer Bitmask with 1s and 0s).

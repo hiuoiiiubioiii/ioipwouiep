@@ -1,0 +1,13 @@
+ID: 879
+Problem Title: Profitable Schemes
+Brute Force Method: Generate every possible subset of "crimes" (schemes). For each subset, check if the total people required = P.
+BF Complexity Visuals: Subset Power Set. $O(2^\text{crimes})$.
+How to Draw BF: Draw a list of crimes. Branch "Commit" or "Skip" for each. The bottom level of the tree has 2^100 leaves (impossible).
+Optimised Pattern: 3D Dynamic Programming (Knapsack variant).
+Opt Vis. Technique: The "Profit vs. Personnel" Grid.
+Dry Run (Opt): State `dp[i][j][k]` is the number of ways using first `i` crimes, with `j` people, and `k` profit. As you iterate crimes, update the grid: `dp[people + currentP][min(P, profit + currentProfit)] += old_dp`.
+How to Draw (Opt): Draw a 2D grid where X-axis is "Profit" (capped at P) and Y-axis is "Group Size." Each cell stores "Number of Schemes." As you add a crime, "shift" and "add" the grid values.
+Opt Complexity Visuals: Pseudo-Polynomial DP. $O(\text{Crimes} x G x P)$.
+How to Draw Opt Complexity: Draw a 3D block representing the state space. Each cell is filled exactly once.
+Mem Vis (BF): Recursive Memory: Draw an exponentially large stack.
+Mem Vis (Opt): 2D DP Table (Space Optimized): Draw a G x P grid that is updated N times.

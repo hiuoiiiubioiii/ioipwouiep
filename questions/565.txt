@@ -1,0 +1,13 @@
+ID: 565
+Problem Title: Array Nesting
+Brute Force Method: For every index `i`, follow the path `nums[i], nums[nums[i]], ...` until a cycle is formed, without tracking visited indices.
+BF Complexity Visuals: N nodes each potentially traversing the same long cycle. $O(N^2)$.
+How to Draw BF: Draw an array. Draw arrows from each index to its value. Trace the path from every single starting point.
+Optimised Pattern: Visited Set / In-Place Marking.
+Opt Vis. Technique: A scavenger hunt where you mark each "clue" as found. Once you've been to a location, you never need to start a new search from there.
+Dry Run (Opt): Iterate through `nums`. If `nums[i]` is not marked, follow the cycle and mark each element as visited. Track the max cycle length.
+How to Draw (Opt): Draw the array. Pick an index, follow the arrow, and "cross out" the number. Count the steps. Move to the next "non-crossed" number.
+Opt Complexity Visuals: Each element is visited exactly once. $O(N)$.
+How to Draw Opt Complexity: Draw a series of isolated circles (cycles), with a single arrow visiting each element once.
+Mem Vis (BF): $O(1)$ auxiliary space but $O(N^2)$ time.
+Mem Vis (Opt): A boolean "visited" array or in-place modification of `nums`. $O(N)$ or $O(1)$.

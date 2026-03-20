@@ -1,0 +1,13 @@
+ID: 2503
+Problem Title: Maximum Number of Points From Grid Queries
+Brute Force Method: Run a standard Breadth-First Search (BFS) starting from [0,0] independently for every single query.
+BF Complexity Visuals: Multiple overlapping BFS expansion trees expanding outward from the root node.
+How to Draw BF: Draw the matrix repeatedly for each query. Shade the cells that can be reached from the top left without exceeding the specific query value.
+Optimised Pattern: Offline Queries (Sort Queries) + Min-Heap (Priority Queue) + BFS to prevent re-processing nodes.
+Opt Vis. Technique: Min-Heap tree structure alongside an incrementally expanding grid boundary frontier.
+Dry Run (Opt): Sort queries in ascending order. Simulate a rising water level on the grid. Min-heap stores boundary cells. Pop boundary cells strictly less than the water level and flood them.
+How to Draw (Opt): Draw the grid. Circle the cells currently added to the min-heap. Cross out a cell when it is popped and tallied, then circle its unvisited valid neighbors.
+Opt Complexity Visuals: Heap insertion/extraction operations visualizer bounded strictly by the matrix size M*N.
+How to Draw Opt Complexity: Draw a binary tree (heap) bounded to size M*N. Show elements entering and leaving sequentially, annotating the $O(\log(M\cdot N)$) cost per node to prove overall efficiency.
+Mem Vis (BF): Multiple queue instances duplicating memory footprints for each independent query.
+Mem Vis (Opt): Single boolean visited matrix and a single Min-Heap data array.

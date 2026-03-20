@@ -1,0 +1,13 @@
+ID: 3252
+Problem Title: Premier League Table Ranking II (SQL)
+Brute Force Method: Complex subqueries to find the percentage rank for every team individually, recalculating totals for each.
+BF Complexity Visuals: Nested Table Aggregations
+How to Draw BF: Draw the team table. For row 1, run a query on the whole table. For row 2, run it again. Show the $O(N²)$ row reads.
+Optimised Pattern: Window Functions (RANK, COUNT, CEIL)
+Opt Vis. Technique: Tiered Bucket Partitioning
+Dry Run (Opt): Calculate `RANK()` for positions. Calculate `total_teams` using `COUNT() OVER()`. Use `CASE` logic with `CEIL(N * 0.33)` to assign Tiers 1, 2, and 3.
+How to Draw (Opt): Draw the table sorted by points. Mark the boundaries at 33% and 66% with horizontal lines. Label the sections Tier 1, 2, and 3.
+Opt Complexity Visuals: Sort-Based Ranking Pipeline
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block. Follow it with a single $O(N)$ pass where RANK and TIER are assigned.
+Mem Vis (BF): Temporary memory buffers for nested subqueries.
+Mem Vis (Opt): Single in-memory sorting buffer + result set storage.

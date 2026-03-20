@@ -1,0 +1,13 @@
+ID: 551
+Problem Title: Student Attendance Record I
+Brute Force Method: Using complex regular expressions or multiple passes to count 'A's and look for "LLL" substrings.
+BF Complexity Visuals: Multiple overlapping scans of the same string. $O(N)$.
+How to Draw BF: Draw the string three times. Scan 1: Count A's. Scan 2: Search for 'LLL'.
+Optimised Pattern: Single Pass State Tracking.
+Opt Vis. Technique: A security guard watching a gate: keeping a tally for 'A' and a consecutive counter for 'L' that resets on 'P' or 'A'.
+Dry Run (Opt): Loop through string. If 'A', `absent++`. If `absent &gt;= 2`, return False. If 'L', `late++`; if `late &gt;= 3`, return False. If not 'L', `late = 0`.
+How to Draw (Opt): Write the string. Below it, draw two boxes: "Total A" and "Current L". Update them as you point to each letter; if "Current L" hits 3, draw a big X.
+Opt Complexity Visuals: One smooth, linear scan. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line with N segments, evaluated in one direction.
+Mem Vis (BF): Creating substring copies for "LLL" checks.
+Mem Vis (Opt): Two integer variables. $O(1)$ space.

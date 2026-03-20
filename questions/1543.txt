@@ -1,0 +1,13 @@
+ID: 1543
+Problem Title: Fix Product Name Format (SQL)
+Brute Force Method: Pull all data into Python/Java, use `.trim()` and `.toLowerCase()` on every string, then group and count in code. $O(N)$.
+BF Complexity Visuals: Application-Side Processing
+How to Draw BF: Draw a database. Draw an arrow pulling every row into a separate "Cleaning Station" outside the DB before sending it back.
+Optimised Pattern: String Functions + Aggregation
+Opt Vis. Technique: The Clean-Pipe Grouping
+Dry Run (Opt): Use `TRIM(LOWER(product_name))` and `DATE_FORMAT(sale_date, '%Y-%m')` directly in the `SELECT` and `GROUP BY` clauses. The database engine cleans and aggregates in a single internal pass.
+How to Draw (Opt): Draw a table with messy data ("  AppLe ", "2026-03-15"). Draw it passing through a "Squeegee" (TRIM) and a "Filter" (LOWER). The output is a clean "apple". Group these clean outputs.
+Opt Complexity Visuals: Internal Sort/Hash Grouping $O(N \log N)$
+How to Draw Opt Complexity: Draw a single flow line. The work happens inside the DB engine's memory buffer as a single scan and group operation.
+Mem Vis (BF): Storing thousands of unrefined string objects in application RAM.
+Mem Vis (Opt): Zero extra application memory. The DB uses its internal temporary buffer. $O(N)$ space for grouping.

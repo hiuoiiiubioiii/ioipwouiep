@@ -1,0 +1,13 @@
+ID: 463
+Problem Title: Island Perimeter
+Brute Force Method: Naive Neighbor Count For every '1' (land) cell, check all 4 neighbors. If neighbor is water or off-board, add 1.
+BF Complexity Visuals: Scanning Laser
+How to Draw BF: Draw a grid. Pick a cell. Draw 4 radiating arrows. Total $O(M \\text{times} N \\text{times} 4)$.
+Optimised Pattern: Single Pass (Shared Edge) Count land cells \times 4. Subtract 2 for every shared edge (horizontal or vertical neighbor).
+Opt Vis. Technique: Jigsaw Mapping
+Dry Run (Opt): Every land cell starts with 4 edges. When you snap two "tiles" together, two edges disappear.
+How to Draw (Opt): Draw two adjacent boxes. Write "4" in each. Draw a thick line where they touch and write "-2". Total = 6.
+Opt Complexity Visuals: Grid Pass
+How to Draw Opt Complexity: Draw a single horizontal scan line over the grid. $O(M \\text{times} N)$.
+Mem Vis (BF): None Zero extra storage.
+Mem Vis (Opt): None Just one integer counter. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 316
+Problem Title: Remove Duplicate Letters
+Brute Force Method: Generate every possible subsequence that contains all unique characters, then sort them lexicographically to find the smallest.
+BF Complexity Visuals: Permutation Tree with Character Set Constraints
+How to Draw BF: Draw a tree where each level chooses one of the available unique characters. Cross out paths that don't use all unique letters. Label $O(2^N)$.
+Optimised Pattern: Monotonic Stack + Greedy + Frequency Map
+Opt Vis. Technique: Stack Pressure &amp; Character Counter
+Dry Run (Opt): Use a stack. For each char, if it's smaller than the stack top and the stack top appears again later (check frequency map), pop the stack. Otherwise, push if not already in stack.
+How to Draw (Opt): Draw a horizontal stack. Write a frequency map below it. As you process a char, draw an arrow to the map. If frequency &gt; 0 and char &lt; stack_top, draw a "pop" arrow ejecting the top char.
+Opt Complexity Visuals: Linear Scan with Constant-Time Set Check
+How to Draw Opt Complexity: Draw a single straight line through the string. Above it, draw a "Visited" set box and a "Stack" box. Show one pass. $O(N)$.
+Mem Vis (BF): Massive recursion depth boxes + array of all possible subsequences.
+Mem Vis (Opt): A small stack (max size 26) + a frequency array (size 26) + a boolean 'seen' array (size 26). Draw three tiny fixed-size boxes. $O(1)$ extra space (ignoring output).

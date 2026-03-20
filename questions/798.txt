@@ -1,0 +1,13 @@
+ID: 798
+Problem Title: Smallest Rotation with Highest Score
+Brute Force Method: For every possible rotation K from 0 to N-1, calculate the total score by iterating through the array.
+BF Complexity Visuals: Nested Score Re-calculation
+How to Draw BF: Draw the array. For each K, draw a loop that counts how many nums[i] \le i. $O(N^2)$.
+Optimised Pattern: Difference Array / Sweep Line
+Opt Vis. Technique: Score Interval Overlap
+Dry Run (Opt): For each number, calculate the range of K values for which it earns a point. Use a difference array `bad[N]` to mark where points are lost. Find the K with minimum losses.
+How to Draw (Opt): Draw a timeline from 0 to N. For each element, draw a horizontal bar representing the "win" interval. Find the vertical slice with the most bars.
+Opt Complexity Visuals: Single Pass Sweep
+How to Draw Opt Complexity: Draw an array. Show one pass to calculate "bad" intervals and one prefix-sum pass. $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): A single difference array of size N (O(N)).

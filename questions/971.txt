@@ -1,0 +1,13 @@
+ID: 971
+Problem Title: Flip Binary Tree To Match Preorder Traversal
+Brute Force Method: Try flipping every possible subset of nodes (2^N combinations). For each flipped version, perform a preorder traversal and check if it matches the target array.
+BF Complexity Visuals: $O(2^N \cdot N)$. Exponential search through all possible tree structures.
+How to Draw BF: Draw a tree. Draw a branch for "Flip Root," another for "Don't Flip." Repeat for every node. Show a massive forest of tree variants.
+Optimised Pattern: Greedy Preorder Simulation
+Opt Vis. Technique: "The Guided Path." Walk through the tree in preorder. If the next node in the array doesn't match the current left child, flip the children and see if it works then.
+Dry Run (Opt): Maintain a global index `i`. If `root.val != voyage[i]`, return [-1]. If `root.left` exists and `root.left.val != voyage[i+1]`, record flip, swap calls to left/right.
+How to Draw (Opt): Draw a tree and a target list. Use a finger to point at the current tree node and a finger to point at the list. If they don't match the "plan," draw a "Switch" arrow between left and right children.
+Opt Complexity Visuals: $O(N)$. Every node is visited exactly once in the guided traversal.
+How to Draw Opt Complexity: Draw a single "Preorder" arrow winding through the tree, with an index counter increasing at each step.
+Mem Vis (BF): $O(2^N)$ space for permutations.
+Mem Vis (Opt): $O(H)$ recursion stack + $O(N)$ for the flip list. Draw a vertical call stack and a small list of flipped node values.

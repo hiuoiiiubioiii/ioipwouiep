@@ -1,0 +1,13 @@
+ID: 2494
+Problem Title: Merge Overlapping Events in the Same Hall
+Brute Force Method: For every event, compare it with every other event. If they overlap and are in the same hall, merge them. Repeat until no more merges are possible.
+BF Complexity Visuals: Recursive Collision Web
+How to Draw BF: Draw events as lines. Draw arrows between every pair of lines. Label $O(N^2)$ or $O(N^3)$ depending on merge restarts.
+Optimised Pattern: Sorting + Linear Interval Merge
+Opt Vis. Technique: Horizontal Segment Consolidation
+Dry Run (Opt): Group by Hall. Sort events by start time. Maintain a `current_end`. If the next event's start &lt;= `current_end`, extend `current_end` to `max(current_end, next_end)`.
+How to Draw (Opt): Draw a timeline. Plot intervals for one hall. If two bars overlap horizontally, draw a single thick bar spanning the total start-to-end range.
+Opt Complexity Visuals: Sort Block + Linear Scan
+How to Draw Opt Complexity: Draw a sorting block for Hall ID and Start Time. Label $O(N \log N)$. Draw a single sweep line. Label $O(N)$.
+Mem Vis (BF): Draw a list of lists tracking potential merge sets.
+Mem Vis (Opt): Draw one `prev_event` object per hall. $O(N)$ for sorting space.

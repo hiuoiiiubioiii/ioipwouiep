@@ -1,0 +1,13 @@
+ID: 3008
+Problem Title: Find Beautiful Indices in the Given Array II
+Brute Force Method: (Same as 3006, but constraints are 10^5, so Brute Force will result in Time Limit Exceeded).
+BF Complexity Visuals: Explosion Graphic
+How to Draw BF: Draw a clock on fire. The $O(N^2)$ string matching will mathematically fail the 1-second execution limit.
+Optimised Pattern: KMP Prefix Function (LPS) + Monotonic Two Pointers
+Opt Vis. Technique: KMP State Machine Automaton
+Dry Run (Opt): Draw the LPS (Longest Prefix Suffix) array as backward arrows. As you scan `s`, if characters match, move right. On mismatch, follow the backward arrow to avoid re-evaluating characters.
+How to Draw (Opt): Write the pattern string in square boxes. Draw curved fallback arrows pointing leftwards from each box to its LPS index.
+Opt Complexity Visuals: Linear Monotonic Arrows
+How to Draw Opt Complexity: Draw two arrays. Draw pointers `i` and `j` that only point to the right, signifying strictly $O(N)$ traversal.
+Mem Vis (BF): Call stack overflow or massive garbage collection from native `.indexOf()` string slicing.
+Mem Vis (Opt): An LPS Array (Longest Prefix Suffix), drawn as an integer array mapping character indices back to their prefix fallback indices.

@@ -1,0 +1,13 @@
+ID: 1728
+Problem Title: Cat and Mouse II
+Brute Force Method: Standard DFS/BFS simulating every move for Mouse, then Cat. Extremely deep recursion leading to TLE due to cycles.
+BF Complexity Visuals: Infinite Ping-Pong Recursion.
+How to Draw BF: Draw Cat and Mouse nodes. Draw lines branching to valid moves. Lines loop back on themselves creating an infinite graph.
+Optimised Pattern: Game Theory (Minimax) + 3D Memoization (Topological Sort from End States).
+Opt Vis. Technique: Backwards Win-State Propagation.
+Dry Run (Opt): Identify absolute win/loss states (Cat catches Mouse, Mouse gets Food, Cat gets Food, Turn limit reached). Propagate these results backwards to the start state using Minimax logic.
+How to Draw (Opt): Draw Food, Cat, Mouse on a grid. Circle the food (Mouse Win). Draw arrows *backwards* from the food to spaces the mouse could have come from. Color code winning/losing nodes.
+Opt Complexity Visuals: 3D State Space Graph Completion.
+How to Draw Opt Complexity: Draw a cube representing `[MousePos][CatPos][Turn]`. Fill it block by block. Label $O(\text{Rows}^2 \\text{cdot Cols}^2 \\text{cdot MaxTurns})$.
+Mem Vis (BF): Stack overflow / unbounded queue.
+Mem Vis (Opt): A 3D Memoization table of size `[R*C][R*C][Limit]`. $O(\text{Rows}^2 \\text{cdot Cols}^2 \\text{cdot MaxTurns})$ space.

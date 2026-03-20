@@ -1,0 +1,13 @@
+ID: 2492
+Problem Title: Minimum Score of a Path Between Two Cities
+Brute Force Method: Use BFS/DFS to find all possible paths between city 1 and city n. Track every edge in every path and find the overall minimum weight.
+BF Complexity Visuals: Exhaustive Path Search
+How to Draw BF: Draw a graph. Highlight every possible route. Label $O(E \cdot P)$ where P is the number of paths.
+Optimised Pattern: Graph Connectivity (BFS/DFS or Union-Find)
+Opt Vis. Technique: Component Edge Sieve
+Dry Run (Opt): The "minimum score" is just the minimum weight edge in the entire connected component containing city 1 and city n. Simply traverse the component once.
+How to Draw (Opt): Draw a graph. Color all nodes reachable from city 1. Look at every edge connected to a colored node. Pick the one with the smallest number.
+Opt Complexity Visuals: Linear Graph Traversal
+How to Draw Opt Complexity: Draw a traversal arrow visiting nodes and edges. Label $O(V + E)$ Time.
+Mem Vis (BF): Draw recursion frames for all paths.
+Mem Vis (Opt): Draw the adjacency list and a "visited" array. $O(V + E)$ Space.

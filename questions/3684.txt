@@ -1,0 +1,13 @@
+ID: 3684
+Problem Title: Maximize Sum of At Most K Distinct Elements (Easy)
+Brute Force Method: Generate all subsets with at most K distinct elements and find the one with the maximum sum. $O(2^N)$.
+BF Complexity Visuals: Subset Combinatorial Search.
+How to Draw BF: Draw the array. Branch every which way. For N=50, this is trillions of branches.
+Optimised Pattern: Greedy Sorting. Sort the array descending and pick the largest values until you hit the K distinct limit.
+Opt Vis. Technique: The "High-Value" Buffet.
+Dry Run (Opt): You are at a buffet but can only try K different types of food. To maximize your "value", pick the most expensive food items first, even if you take multiple servings of the same kind.
+How to Draw (Opt): Sort the whole array largest to smallest. Walk down the list. Add to sum and keep a count of how many unique numbers you've seen. Stop when unique == K.
+Opt Complexity Visuals: Sorting-Bounded Pass.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block and an $O(N)$ scan. Total $O(N \log N)$.
+Mem Vis (BF): Storing all 2^N subsets in a nested list.
+Mem Vis (Opt): In-place sorted array or a frequency map. Space $O(N)$.

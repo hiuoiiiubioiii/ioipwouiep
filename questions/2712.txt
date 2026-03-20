@@ -1,0 +1,13 @@
+ID: 2712
+Problem Title: Minimum Cost to Make All Characters Equal
+Brute Force Method: Backtracking: At every differing character, branch into two universes: flip the left prefix, or flip the right suffix. Explore all 2^N states to find the minimum cost.
+BF Complexity Visuals: Binary Decision Tree Explosion
+How to Draw BF: Draw the initial string at the root. Branch left for "Flip Prefix", right for "Flip Suffix". The tree grows exponentially wide.
+Optimised Pattern: Deep Recursion Stack (Visualizing maximum stack depth $O(N)$ but an exploding number of string copies across states).
+Opt Vis. Technique: Greedy Boundary Fixing
+Dry Run (Opt): Distance-to-Edge Penalty comparison
+How to Draw (Opt): Scan left to right. When s[i] != s[i-1], you MUST flip something to unify them. You greedily choose the cheaper flip: either flip everything to the left (cost i) or everything to the right (cost n-i). Add min(i, n-i) to total cost.
+Opt Complexity Visuals: Draw the string. Put a vertical line where characters differ. Write distance to the left edge, and distance to the right edge. Circle the smaller number and add it to your tally.
+How to Draw Opt Complexity: Single Linear Pass
+Mem Vis (BF): Draw a single horizontal arrow across the string. Label it $O(N)$.
+Mem Vis (Opt): $O(1)$ Accumulator Registers (Draw a single variable ans tallying the integer costs. No string modification required in memory).

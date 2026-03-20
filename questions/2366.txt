@@ -1,0 +1,13 @@
+ID: 2366
+Problem Title: Minimum Replacements to Sort the Array
+Brute Force Method: Try every possible way to split each number into smaller parts such that the entire array becomes non-decreasing, using recursion or backtracking.
+BF Complexity Visuals: Exponential Splitting Tree (O(2^N))
+How to Draw BF: Draw a number. Branch out into every possible pair of numbers that sum up to it (e.g., 10 becomes 1+9, 2+8, etc.). Repeat for each new number.
+Optimised Pattern: Greedy (Right-to-Left) + Math Division
+Opt Vis. Technique: Reverse Limit Propagation
+Dry Run (Opt): Start from the end. Keep a `last` limit. For the current `num`, if `num &gt; last`, calculate `parts = ceil(num / last)`. The new `last` becomes `floor(num / parts)`. Add `parts - 1` to total operations.
+How to Draw (Opt): Draw the array. Start at the far right. Move left. If a bar is taller than the one to its right, draw "cut lines" through it to slice it into equal pieces just small enough to fit. Write the new height.
+Opt Complexity Visuals: Single Reverse Pass (O(N))
+How to Draw Opt Complexity: Draw a straight timeline from right to left. No branching. Only one variable `last` is updated at each step.
+Mem Vis (BF): Draw a deep recursion stack storing thousands of split-number combinations.
+Mem Vis (Opt): Draw one Long/Integer variable (`total_operations`) and one Integer (`last_limit`).

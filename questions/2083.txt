@@ -1,0 +1,13 @@
+ID: 2083
+Problem Title: Substrings That Begin and End With the Same Letter
+Brute Force Method: Generate all N^2 substrings, check the first and last character of each. $O(N^2)$.
+BF Complexity Visuals: Nested Scanning Grid
+How to Draw BF: Draw the string. Draw overlapping brackets for every substring length. Check edges of every bracket.
+Optimised Pattern: Combinatorics / Hash Map
+Opt Vis. Technique: The Frequency Multiplier
+Dry Run (Opt): Iterate once. Keep a running count of each character's frequency. Every time you see a character 'a', it can form a valid substring with *every* previous 'a', plus itself. Add its current frequency to the total.
+How to Draw (Opt): Draw the string. Draw buckets for A-Z. Read 'a'. Add 1 to 'a' bucket. Add bucket's value to Total. Read 'b'. Add 1 to 'b' bucket. Add to Total.
+Opt Complexity Visuals: Single Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. $O(1)$ map lookup and addition at each step.
+Mem Vis (BF): Lists of all generated substrings.
+Mem Vis (Opt): An integer array of size 26. $O(1)$ space.

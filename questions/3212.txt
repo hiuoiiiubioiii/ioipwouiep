@@ -1,0 +1,13 @@
+ID: 3212
+Problem Title: Count Submatrices With Equal Frequency of X and Y
+Brute Force Method: Generate all submatrices starting at (0,0) and manually count X and Y in each. $O(N^3)$.
+BF Complexity Visuals: Overlapping Rectangles
+How to Draw BF: Draw a grid. Draw a small 1x1 box at the top left. Then 1x2, 2x1, 2x2. Show that you are repeatedly recounting the top-left cell.
+Optimised Pattern: 2D Prefix Sum Matrix
+Opt Vis. Technique: Matrix Expansion Strategy
+Dry Run (Opt): Create a prefix sum matrix for X counts and Y counts. To get counts for a submatrix ending at (i,j), look at the prefix sum cell (i,j).
+How to Draw (Opt): Draw a grid. For cell (i,j), draw an arrow from (i-1,j), an arrow from (i,j-1), subtract (i-1,j-1), and add the current cell's value.
+Opt Complexity Visuals: Single Matrix Pass
+How to Draw Opt Complexity: Draw an N x M grid. Draw a single sweeping line starting top-left and ending bottom-right. Label $O(N \cdot M)$ time.
+Mem Vis (BF): Recounting local variables (O(1) extra space).
+Mem Vis (Opt): Two N x M integer matrices storing cumulative frequencies (O(N * M) space).

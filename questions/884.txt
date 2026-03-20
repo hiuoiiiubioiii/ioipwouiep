@@ -1,0 +1,13 @@
+ID: 884
+Problem Title: Uncommon Words from Two Sentences
+Brute Force Method: Split sentences into words. For every word in Sentence 1, check every word in Sentence 2 (and its own sentence) to see if it appears exactly once.
+BF Complexity Visuals: Nested String Comparison. $O(N^2 x L)$.
+How to Draw BF: Draw two lists of words. Draw lines from every word in List A to every word in List B. Note the redundant comparisons.
+Optimised Pattern: Unified Hash Map (Frequency Counting).
+Opt Vis. Technique: The "One-and-Only" Filter.
+Dry Run (Opt): Combine both sentences into one stream of words. Count the frequency of every word in a single Hash Map. A word is "uncommon" if its total frequency across both sentences is exactly 1.
+How to Draw (Opt): Draw a funnel. Pour both sentences in. Below, draw a "Frequency Table." Cross out any word where the count &gt; 1. The remaining words are the answer.
+Opt Complexity Visuals: Linear Scan. $O(N x L)$.
+How to Draw Opt Complexity: Draw a single straight timeline. Each word is processed once to increment a map, then once to filter.
+Mem Vis (BF): $O(1)$ extra space but visualized as extremely slow, repetitive scanning.
+Mem Vis (Opt): Hash Map: Draw a table with `Word -&gt; Count`. $O(\text{Total Words})$ space.

@@ -1,0 +1,13 @@
+ID: 3556
+Problem Title: Sum of Largest Prime Substrings (Med)
+Brute Force Method: Extract all possible substrings, convert to numbers, check primality for each, and keep max.
+BF Complexity Visuals: Substring Explosion + Primality Testing.
+How to Draw BF: Draw an N x N matrix of substrings. For each cell, draw a "Primality Machine" doing $O(√\text{Value})$ work.
+Optimised Pattern: Sieve of Eratosthenes + Rolling Hash / DP.
+Opt Vis. Technique: Prime Filtering Mask.
+Dry Run (Opt): Precompute primes up to max value. For the string, use DP: `DP[i]` is max sum of prime substrings ending at `i`.
+How to Draw (Opt): Draw a number line. Below it, draw a "Sieve" grid with crossed-out composites. Use arrows to jump between prime-substring indices.
+Opt Complexity Visuals: $O(N^2)$ or $O(N \\text{cdot MaxDigitLength})$.
+How to Draw Opt Complexity: Draw an array of length N. From each index, draw a lookback arrow of max length 10 (max integer digits).
+Mem Vis (BF): Massive Substring Set: Draw thousands of string objects being converted to BigInts in memory.
+Mem Vis (Opt): Sieve Boolean Array: Draw a single 1D boolean array (size MaxValue) for instant prime lookups.

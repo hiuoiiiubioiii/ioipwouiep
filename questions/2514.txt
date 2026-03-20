@@ -1,0 +1,19 @@
+ID: 2514
+Problem Title: Count Anagrams
+Brute Force Method: Generate all actual permutations for every word in the string, store them in a set to filter duplicates, and multiply the sizes. $O(N!)$ Time.
+BF Complexity Visuals: Explosive recursive permutation tree for each word generating millions of branches.
+How to Draw BF: Take a word like "too". Physically write all literal combinations: "too", "oto", "oot". Count unique strings. Multiply the word counts together.
+Optimised Pattern: Combinatorics (Permutations with Repetition) + Modular Multiplicative Inverse.
+Opt Vis. Technique: Mathematical formula pipeline: Word length mapped to a factorial numerator, and character frequencies mapped to factorial denominators.
+Dry Run (Opt): For the word "too": Length = 3. Numerator = 3!. Frequencies: t=1, o=2. Denominator = 1! * 2!. Result = 6 / 2 = 3 distinct anagrams. Multiply word results modulo 10^9+7.
+How to Draw (Opt): Write the combinatorics formula fracn!c_1! c_2! dots under each word. Calculate each fraction. Multiply all the results together.
+
+
+
+
+
+[Image of Permutations with Repetition formula]
+Opt Complexity Visuals: Character frequency histogram feeding directly into $O(1)$ array lookups for precomputed factorials.
+How to Draw Opt Complexity: Draw a string. Show one sweep to count characters (O(N)), one pass over frequencies (max $O(26)$), and an $O(1)$ block for the final math formula.
+Mem Vis (BF): Massive RAM consumption storing exponentially many explicit string permutations.
+Mem Vis (Opt): Precomputed Factorial/Inverse arrays (size N) and a 26-element character frequency array.

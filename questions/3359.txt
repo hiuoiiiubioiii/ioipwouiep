@@ -1,0 +1,13 @@
+ID: 3359
+Problem Title: Find Sorted Submatrices With Maximum Element at Most K
+Brute Force Method: (SQL Context) Complex self-joins attempting to simulate window functions across categories and bounds.
+BF Complexity Visuals: Nested Subquery Matrix
+How to Draw BF: Draw multiple tables joined together with confusing `MAX()` and `GROUP BY` logic that drops rows.
+Optimised Pattern: CASE WHEN / Aggregate Filtering
+Opt Vis. Technique: The Conditional Category Sorter
+Dry Run (Opt): Use `CASE WHEN element &lt;= K THEN 1 ELSE 0 END` to flag items, then aggregate or filter based on these specific conditional rules.
+How to Draw (Opt): Draw the rows. Stick a green label on items <= K and a red label on others. Group them into buckets and only keep the buckets with all green labels.
+Opt Complexity Visuals: Linear Scan / Hash Agg $O(N)$
+How to Draw Opt Complexity: Draw a single pass applying a logical switch and grouping.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Internal DB buffer. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 284
+Problem Title: Peeking Iterator
+Brute Force Method: Convert the entire iterator into a list/array in the constructor.
+BF Complexity Visuals: Linear Buffer: $O(N)$ Space.
+How to Draw BF: Draw an iterator box. Draw an arrow pouring every element into a new array. Label it "Space: $O(N)$."
+Optimised Pattern: Look-Ahead (Caching)
+Opt Vis. Technique: Staging Area / Lobby
+Dry Run (Opt): Store the `next` value in a private variable `nextElement`. `peek()` returns this variable. `next()` returns it and then refreshes it from the actual iterator.
+How to Draw (Opt): Draw the Iterator as a pipe. Draw a small "Shelf" next to the exit. Put the first item on the shelf. `peek` looks at the shelf; `next` takes from the shelf and pulls a new one from the pipe.
+Opt Complexity Visuals: Buffered Access: $O(1)$ for all operations.
+How to Draw Opt Complexity: Draw a single dot for each call. No loops involved.
+Mem Vis (BF): Full Array Copy: Draw an N-slot array.
+Mem Vis (Opt): Single Cache Variable: Draw one small box labeled `nextElement`. Space: $O(1)$.

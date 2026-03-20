@@ -1,0 +1,13 @@
+ID: 3085
+Problem Title: Minimum Deletions to Make String K-Frequency Special
+Brute Force Method: Try every possible subset of characters to delete and check if the remaining frequencies satisfy the |f1 - f2| <= k condition.
+BF Complexity Visuals: Power Set Decision Tree
+How to Draw BF: Draw a tree for each character occurrence (delete/keep). Label the exponential growth of states.
+Optimised Pattern: Frequency Sorting + Sliding Threshold
+Opt Vis. Technique: Histogram Leveling
+Dry Run (Opt): Get character frequencies and sort them. For each unique frequency f as a potential "minimum," calculate the cost to bring all higher frequencies down to f+k and remove all lower frequencies.
+How to Draw (Opt): Draw a bar chart of frequencies in ascending order. Pick a "base" bar. Draw a line k units above it. Everything below the base and above the line must be "erased" (shaded).
+Opt Complexity Visuals: $O(26 \log 26 + N)$
+How to Draw Opt Complexity: Draw an $O(N)$ frequency pass followed by a small $O(26^2)$ nested loop for the thresholds.
+Mem Vis (BF): Massive recursive tree tracking deleted character counts.
+Mem Vis (Opt): An integer array of size 26 for frequencies.

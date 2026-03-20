@@ -1,0 +1,13 @@
+ID: 894
+Problem Title: All Possible Full Binary Trees
+Brute Force Method: Recursively generate all binary trees and filter out those that aren't "Full" (nodes with 0 or 2 children).
+BF Complexity Visuals: Exhaustive Tree Generation. $O(2^N)$.
+How to Draw BF: Draw all combinations of N nodes. For each, check the "Full" property. The number of trees is massive.
+Optimised Pattern: Recursion with Memoization (Divide and Conquer).
+Opt Vis. Technique: The "Split N" Combinations.
+Dry Run (Opt): To make a full tree of N nodes, the root uses 1. Left subtree uses i nodes and Right uses N-1-i nodes. i must be odd. Recursively get all trees for i and N-1-i, and combine every left tree with every right tree.
+How to Draw (Opt): Draw N=7. Root takes 1. Options: (Left 1, Right 5), (Left 3, Right 3), (Left 5, Right 1). For (3, 3), draw all possible 3-node trees and pair them up.
+Opt Complexity Visuals: Catalan Complexity. $O(2^N/N^1.5)$.
+How to Draw Opt Complexity: Draw a recursive tree where each node represents a number of nodes, branching into sub-problems that are cached.
+Mem Vis (BF): Recursive stack with redundant tree creation.
+Mem Vis (Opt): Memoization Map: Draw a table storing `nodeCount -&gt; List of Trees`.

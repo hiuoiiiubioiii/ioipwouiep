@@ -1,0 +1,13 @@
+ID: 1938
+Problem Title: Maximum Genetic Difference Query
+Brute Force Method: For each query, traverse from the node up to the root, calculating the XOR with `val` for every ancestor.
+BF Complexity Visuals: Vertical Path Scanning
+How to Draw BF: Draw a tree. For each query, draw a line from the target node back to the root. Total $O(Q \\text{cdot Depth})$.
+Optimised Pattern: Offline Queries + DFS + Binary Trie
+Opt Vis. Technique: Trie-Based Bitwise Path Tracking
+Dry Run (Opt): Store queries in an adjacency list. DFS through the tree; as you enter a node, add its value to a Binary Trie. Answer queries at that node using Trie's max-XOR logic. Remove value on exit.
+How to Draw (Opt): Draw a tree and a separate Binary Trie. As the DFS "pointer" moves down, bits are added to the Trie. At the query node, show a "search path" through the Trie bits.
+Opt Complexity Visuals: Trie-Augmented DFS
+How to Draw Opt Complexity: Draw N nodes (DFS) and Q queries (Trie search). $O((N + Q)$ * log(MaxVal)).
+Mem Vis (BF): Storing lists of paths or large query results naively.
+Mem Vis (Opt): A Binary Trie (Tree of bit-nodes) and an offline query mapping. $O(N + Q)$ space.

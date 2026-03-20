@@ -1,0 +1,13 @@
+ID: 2374
+Problem Title: Node With Highest Edge Score
+Brute Force Method: For every node, scan the entire `edges` array to find all nodes that point to it, sum their indices, and then compare all sums.
+BF Complexity Visuals: N-Squared Edge Scanning (O(V^2))
+How to Draw BF: Draw a graph. For node 0, scan every edge to see if it points to 0. For node 1, scan every edge again. Repeat for all nodes.
+Optimised Pattern: In-Degree Accumulator (Array)
+Opt Vis. Technique: Bucket Score Tally
+Dry Run (Opt): Initialize a `scores` array of size N. Iterate through the `edges` array once: for `edges[i] = j`, add `i` to `scores[j]`. Then find the index of the maximum value in `scores`.
+How to Draw (Opt): Draw N buckets labeled 0 to N-1. Walk through the `edges` array. If index `i` points to `j`, throw a "weight" equal to `i` into bucket `j`. At the end, find the heaviest bucket.
+Opt Complexity Visuals: Single Pass Scan (O(V))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Each step adds a value to one of N buckets. A final short scan finds the max bucket.
+Mem Vis (BF): Draw a 2D adjacency matrix just to calculate scores.
+Mem Vis (Opt): Draw one 1D Long Array `scores` of size N.

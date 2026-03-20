@@ -1,0 +1,13 @@
+ID: 318
+Problem Title: Maximum Product of Word Lengths
+Brute Force Method: Compare every pair of words (O(N^2)). For each pair, compare every character in word1 with every character in word2 (O(L1*L2)) to see if they share letters.
+BF Complexity Visuals: Nested Loop with Character Set Intersection
+How to Draw BF: Draw word1 and word2. Draw a line from every letter in word1 to every letter in word2. Label $O(N^2 \cdot L^2)$.
+Optimised Pattern: Bitmasking (Bitwise AND Comparison)
+Opt Vis. Technique: Binary Signature Alignment
+Dry Run (Opt): Represent each word as a 26-bit integer (bit 0 is 'a', bit 1 is 'b'). To check if two words share letters, simply do `(mask1 &amp; mask2) == 0`. It’s an $O(1)$ check.
+How to Draw (Opt): Draw a 26-bit binary string for "abc" (11100...). Draw another for "def" (000111...). Draw an 'AND' gate showing the result is 0.
+Opt Complexity Visuals: Quadratic Pairwise Check (Optimized Inner Loop)
+How to Draw Opt Complexity: Draw an N x N matrix. Inside each cell, just write "AND". No internal loops. $O(N^2 + N\cdot L)$.
+Mem Vis (BF): Lists of character sets or hash sets for every word.
+Mem Vis (Opt): 1D Array of integers (Masks). Draw a single horizontal tape where each cell is a 32-bit integer box. $O(N)$.

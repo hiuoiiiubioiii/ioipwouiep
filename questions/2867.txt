@@ -1,0 +1,13 @@
+ID: 2867
+Problem Title: Count Valid Paths in a Tree
+Brute Force Method: Generate all possible paths between every pair of nodes (u, v) in the tree. For each path, check if it contains exactly one prime number.
+BF Complexity Visuals: $O(N2)$ Path Validation
+How to Draw BF: Draw a tree. Draw a path between every pair of nodes. For each path, check every node against a prime list. Total $O(N^2 \\text{cdot pathLength})$.
+Optimised Pattern: Sieve of Eratosthenes + Disjoint Set Union (DSU) or DFS
+Opt Vis. Technique: Prime Node Isolation
+Dry Run (Opt): 1. Sieve to find primes. 2. Remove all prime nodes to find "Islands" of non-prime nodes. 3. For each prime node, find the sizes of its adjacent non-prime islands. 4. Use combinatorics: A valid path either stays in one island + prime, or connects two islands via the prime.
+How to Draw (Opt): Draw a tree. Color prime nodes red and non-primes blue. Circle the "blue islands." For each red node, count the blue nodes in each connected neighbor. Multiply and sum the counts to get path totals.
+Opt Complexity Visuals: Linear Tree Traversal $O(N \\text{cdot small factor})$
+How to Draw Opt Complexity: Draw a box for the Sieve (O(N log log N)) and a box for the DFS/DSU (O(N)). Total time is essentially linear.
+Mem Vis (BF): Visualize a massive list of all N^2 paths being stored in the heap.
+Mem Vis (Opt): Visualize a Sieve array, a visited array, and island size counters. Space $O(N)$.

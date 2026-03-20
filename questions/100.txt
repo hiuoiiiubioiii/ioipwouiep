@@ -1,0 +1,13 @@
+ID: 100
+Problem Title: Same Tree
+Brute Force Method: String Serialization Convert both trees into strings (e.g., "1,2,#,3") and compare the strings for equality.
+BF Complexity Visuals: The String Converter
+How to Draw BF: Draw two trees. Draw an arrow from each to a text box. Compare the text boxes character-by-character. $O(N)$ time but high constant factor.
+Optimised Pattern: Recursive DFS (Structural Comparison)
+Opt Vis. Technique: The Parallel Mirror
+Dry Run (Opt): Base cases: if both null, true; if one null, false; if values differ, false. Recurse: `isSame(p.left, q.left) &amp;&amp; isSame(p.right, q.right)`.
+How to Draw (Opt): Draw two identical trees side-by-side. Point to the root of both simultaneously. Move both "fingers" to the left child, then right child, checking for a match at every stop.
+Opt Complexity Visuals: Simultaneous Traversal
+How to Draw Opt Complexity: Draw two trees. Shade nodes in both trees in the same order. Time: $O(N)$ (where N is the smaller tree's size).
+Mem Vis (BF): Storing full string representations in the heap. Space: $O(N)$.
+Mem Vis (Opt): Draw the recursion stack for one tree. Max depth is tree height H. Space: $O(H)$.

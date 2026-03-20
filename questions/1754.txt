@@ -1,0 +1,13 @@
+ID: 1754
+Problem Title: Largest Merge Of Two Strings
+Brute Force Method: Generate all possible merges (similar to interleave strings) and find the lexicographically largest one.
+BF Complexity Visuals: Interleaving Permutation Tree.
+How to Draw BF: Draw two strings. Branch left or branch right for every character choice. $O(2^(N+M)$).
+Optimised Pattern: Greedy with Suffix Comparison.
+Opt Vis. Technique: Pointer "Look-Ahead".
+Dry Run (Opt): At each step, compare `s1` and `s2`. Pick the character from the string that is lexicographically larger *as a whole*.
+How to Draw (Opt): Draw two pointers. If `s1[i] &gt; s2[j]`, pick `s1[i]`. If equal, look ahead until they differ to decide which "path" is better.
+Opt Complexity Visuals: String Slicing Comparison.
+How to Draw Opt Complexity: Draw two arrows. For each step, draw a "sub-scan" comparison. Label $O((N+M)$^2).
+Mem Vis (BF): List of all merged strings.
+Mem Vis (Opt): One result string. $O(N+M)$ space.

@@ -1,0 +1,13 @@
+ID: 2229
+Problem Title: Check if an Array Is Consecutive
+Brute Force Method: Sort and ScanSort the array. Iterate from index 0 to N-1, checking if `nums[i] + 1 == nums[i+1]`. If it fails anywhere, return false.
+BF Complexity Visuals: Sorting Bottleneck Pipeline
+How to Draw BF: Draw a messy array. Draw a funnel pushing it into a sorted array. Draw loops connecting adjacent numbers verifying the +1 difference. Note the $O(N \log N)$ sort time.
+Optimised Pattern: Math Bounds + Hash Set
+Opt Vis. Technique: Bounding Box &amp; Unique Check
+Dry Run (Opt): Find the Min and Max in $O(N)$. If `Max - Min + 1 != length`, it's not consecutive. If true, put everything in a Hash Set to verify there are exactly `length` unique numbers (no duplicates).
+How to Draw (Opt): Draw a box representing the expected range `[Min, Max]`. Drop array elements into the box. If an element tries to drop into an occupied spot, circle it as a failure (duplicate).
+Opt Complexity Visuals: Three Parallel Timelines
+How to Draw Opt Complexity: Draw three $O(N)$ actions happening independently: Find Max, Find Min, Fill Hash Set. Show that $O(N)$ + $O(N)$ + $O(N)$ is strictly linear time $O(N)$.
+Mem Vis (BF): Space for the sorting algorithm's implementation (often $O(\log N)$ or $O(N)$).
+Mem Vis (Opt): A Hash Set containing N elements to check for uniqueness in $O(N)$ space.

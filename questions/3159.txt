@@ -1,0 +1,13 @@
+ID: 3159
+Problem Title: Find Occurrences of an Element in an Array
+Brute Force Method: For every query, scan the entire array from start to find the k-th occurrence of x. $O(Q x N)$
+BF Complexity Visuals: Multiple overlapping scanners traversing the same array repeatedly.
+How to Draw BF: Draw the array. For each query "3rd occurrence of 5", count 1, 2, 3 fives starting from the beginning.
+Optimised Pattern: Pre-processing (Index Collection)
+Opt Vis. Technique: The Address Book
+Dry Run (Opt): One pass: store the indices of all occurrences of x in a new list. For queries, just do a direct index lookup in the new list.
+How to Draw (Opt): Draw the array. Below it, draw a small list called `pos`. Every time you see x, write its index in `pos`. Queries just point to `pos[k-1]`.
+Opt Complexity Visuals: $O(N)$ pre-processing + $O(Q)$ constant lookups.
+How to Draw Opt Complexity: Draw one horizontal $O(N)$ line, followed by Q discrete dots. $O(N+Q)$.
+Mem Vis (BF): None (re-scanning).
+Mem Vis (Opt): One array to store indices of x. $O(N)$.

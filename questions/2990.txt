@@ -1,0 +1,13 @@
+ID: 2990
+Problem Title: Loan Types
+Brute Force Method: Self-join the `Loans` table to find users who have both 'Mortgage' and 'Refinance' entries.
+BF Complexity Visuals: Self-Join Intersection
+How to Draw BF: Draw two identical tables. Draw lines connecting matching `user_id`s that have different `loan_type`s. $O(N^2)$.
+Optimised Pattern: Grouping + `COUNT(DISTINCT)` with `HAVING`
+Opt Vis. Technique: Subset Filtering Diagram
+Dry Run (Opt): Group by `user_id`. Filter where specific loan types exist using a `CASE` statement or `IN` clause within a `HAVING` count condition.
+How to Draw (Opt): Draw circles for users. Inside each circle, list their loan types. Circle the user only if 'Mortgage' AND 'Refinance' are both inside.
+Opt Complexity Visuals: Single Grouped Sweep
+How to Draw Opt Complexity: Draw a line of N loan records. T = $O(N)$. Sorting for grouping takes $O(N \log N)$.
+Mem Vis (BF): Quadratic row growth during the self-join.
+Mem Vis (Opt): A single bit-map or hash set per user. Space $O(\text{Users})$.

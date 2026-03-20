@@ -1,0 +1,13 @@
+ID: 3573
+Problem Title: Best Time to Buy and Sell Stock V (Med)
+Brute Force Method: Try every possible pair of buy and sell days for multiple transactions using deep recursion.
+BF Complexity Visuals: Explosive Transaction Tree.
+How to Draw BF: Draw a decision tree: "Buy", "Sell", "Wait". Each level is a day. For N days, paths grow exponentially.
+Optimised Pattern: One-Pass Greedy (Peak-Valley).
+Opt Vis. Technique: Ascending Slope Accumulation.
+Dry Run (Opt): Iterate through prices. Whenever today's price is higher than yesterday's, add the difference to the total profit.
+How to Draw (Opt): Draw a line graph of prices. Draw vertical arrows between every point where the line goes "up". Sum the lengths of these arrows.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single straight arrow passing over the prices. $O(1)$ math per step.
+Mem Vis (BF): Recursion Stack: Draw deep stack frames tracking every transaction state and balance.
+Mem Vis (Opt): Constant State: Draw just one integer variable `total_profit` updating as you sweep.

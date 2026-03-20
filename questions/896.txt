@@ -1,0 +1,13 @@
+ID: 896
+Problem Title: Monotonic Array
+Brute Force Method: Generate all possible pairs (i, j) and check if A[i] = A[j].
+BF Complexity Visuals: All-Pairs Inversion Check. $O(N^2)$.
+How to Draw BF: Draw an array. Draw a web of lines connecting every element to every other element to its right. Check the slope of every single line.
+Optimised Pattern: Single Pass Boolean Flag Scan.
+Opt Vis. Technique: The "Directional Toggle."
+Dry Run (Opt): Assume the array is BOTH increasing and decreasing. As you walk through, if you see an increase, flip the "decreasing" flag to false. If you see a decrease, flip the "increasing" flag to false. At the end, return `increasing OR decreasing`.
+How to Draw (Opt): Draw two switches labeled "INC" and "DEC", both ON. Walk the array. If the path goes up, hit the DEC switch. If it goes down, hit the INC switch. If both are OFF, you're not monotonic.
+Opt Complexity Visuals: Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw one straight horizontal line passing through the array once.
+Mem Vis (BF): $O(1)$ extra space, but visualized as redundant, slow nested loops.
+Mem Vis (Opt): Two Boolean Variables: Draw two small lightbulb icons representing the flags.

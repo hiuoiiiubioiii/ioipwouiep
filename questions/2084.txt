@@ -1,0 +1,13 @@
+ID: 2084
+Problem Title: Drop Type 1 Orders for Customers With Type 0 Orders (SQL)
+Brute Force Method: For every customer, check if they have a type 0. If they do, delete all their type 1 orders row by row.
+BF Complexity Visuals: Correlated Row-by-Row Deletion
+How to Draw BF: Draw the table. For each row, look up the customer's other orders. If you find a '0', mark the current '1' for deletion. $O(N^2)$.
+Optimised Pattern: Window Function (MIN) or Grouped Filtering
+Opt Vis. Technique: Customer Priority Filter
+Dry Run (Opt): For each customer, find the minimum `order_type`. If min is 0, filter for `order_type = 0`. If min is 1, keep `order_type = 1`.
+How to Draw (Opt): Draw groups of orders. For a group containing both 0 and 1, draw a cross over the 1s. For a group with only 1s, keep them.
+Opt Complexity Visuals: Grouped Parallel Scan
+How to Draw Opt Complexity: Draw data streams entering a "Group By Customer" block. Out of the block comes the filtered rows. Time $O(N \log N)$ for grouping/sorting.
+Mem Vis (BF): Huge overhead for individual row existence checks.
+Mem Vis (Opt): Efficient set-based processing in the DB buffer.

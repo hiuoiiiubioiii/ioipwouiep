@@ -1,0 +1,13 @@
+ID: 995
+Problem Title: Minimum Number of K Consecutive Bit Flips
+Brute Force Method: Iterate through the array. If you find a 0, flip the next K elements manually. Repeat until the end.
+BF Complexity Visuals: $O(N \cdot K)$. In the worst case (K = N/2), you perform N/2 flips on N/2 elements.
+How to Draw BF: Draw a binary array. Below it, draw a "Flip" bar of length K. Every time the bar lands on a 0, redraw the array with inverted numbers.
+Optimised Pattern: Greedy with Difference Array / Sliding Window
+Opt Vis. Technique: "The Flip History." Instead of actually flipping elements, keep track of how many active flips are currently affecting the current index. A number is flipped only if the current active count is odd.
+Dry Run (Opt): Maintain `activeFlips`. If `(A[i] + activeFlips) % 2 == 0`, we MUST flip at `i`. Increment `activeFlips` and mark that this flip ends at `i + K`. At `i + K`, decrement `activeFlips`.
+How to Draw (Opt): Draw a horizontal timeline. Below it, draw "Effect Bars" of length K. Instead of changing the numbers above, just count how many bars are "overlapping" the current point.
+Opt Complexity Visuals: $O(N)$. A single linear sweep where each element is processed once.
+How to Draw Opt Complexity: Draw an array. Above it, draw a "Flip-Counter" line that goes up when a flip starts and down when it expires.
+Mem Vis (BF): $O(1)$ if flipping in-place, but $O(N \cdot K)$ time is the bottleneck.
+Mem Vis (Opt): $O(N)$ or $O(K)$ depending on implementation (to track flip expiry). Draw a small "Expiry Queue" or a second bit-array.

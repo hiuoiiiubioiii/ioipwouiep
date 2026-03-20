@@ -1,0 +1,13 @@
+ID: 1264
+Problem Title: Page Recommendations (SQL)
+Brute Force Method: For user 1, find all friends. For each friend, find all their liked pages. Then check if user 1 already likes those pages. Filter and distinct.
+BF Complexity Visuals: Nested Loop Friend Scan
+How to Draw BF: Draw User 1. Draw arrows to Friends A, B, C. From each, draw arrows to their liked pages. Then draw arrows back to User 1's likes to compare. Write $O(N^2)$.
+Optimised Pattern: CTE / UNION for Bidirectional Friends + JOIN
+Opt Vis. Technique: Three-Step Filtering Funnel
+Dry Run (Opt): 1. Create a unified `Friends` list for User 1 (handling both `user1_id` and `user2_id` columns). 2. Join this list with `Likes` to get friends' pages. 3. Filter out pages User 1 already likes using `NOT IN` or `EXCEPT`.
+How to Draw (Opt): Draw a list of User 1's friends. Next to it, draw the `Likes` table. Draw arrows connecting friends to pages. Draw a "Blacklist" containing User 1's own liked pages. If a page is in the blacklist, erase the arrow.
+Opt Complexity Visuals: Relational Set Operations
+How to Draw Opt Complexity: Draw a circle of "Friends' Pages" and subtract a circle of "My Pages". Write $O(N \log N)$.
+Mem Vis (BF): Draw multiple intermediate temporary tables for each friend's lookup.
+Mem Vis (Opt): Draw a single Hash Set for User 1's pages to perform $O(1)$ exclusion checks.

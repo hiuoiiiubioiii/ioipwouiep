@@ -1,0 +1,13 @@
+ID: 3617
+Problem Title: Find Students with Study Spiral Pattern (Hard)
+Brute Force Method: Picking every possible cell as a center point, and manually running a `while` loop tracing a spiral outward to check constraints. $O(N^3)$ or worse.
+BF Complexity Visuals: Overlapping Spaghetti Loops.
+How to Draw BF: Draw a grid. Pick a cell and draw a spiral. Pick the immediate next cell and draw another spiral that completely overwrites the first one's ink.
+Optimised Pattern: 2D Prefix Sums + Binary Search for Radius, treating the "spiral rings" as concentric square boundaries.
+Opt Vis. Technique: Expanding Concentric Boundaries.
+Dry Run (Opt): Instead of walking in a spiral, treat it as rings. Ring 1 is radius 1. Ring 2 is radius 2. Use 2D Prefix Sums to calculate the total values inside the outer boundary, minus the inner boundary, in $O(1)$ time.
+How to Draw (Opt): Draw a grid. Draw a thick red square boundary. To find its sum, point to the bottom-right corner of the outer square, and subtract the inner square's prefix sum.
+Opt Complexity Visuals: Matrix Lookup Target Practice.
+How to Draw Opt Complexity: Draw an arrow from your target center directly to 4 specific corners in a Prefix Sum matrix. Write $O(1)$ lookup, making the total algorithm $O(N^2 \log N)$.
+Mem Vis (BF): Thousands of temporary coordinate pairs pushed to the call stack during manual spiral tracing.
+Mem Vis (Opt): A single prefix_sum[R+1][C+1] 2D matrix storing pre-calculated block sums. Space $O(R\cdot C)$.

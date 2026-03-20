@@ -1,0 +1,13 @@
+ID: 3060
+Problem Title: User Activities Queries (SQL)
+Brute Force Method: Join all activity tables and use multiple nested SUM(CASE...) statements to find users who performed specific sequences of actions.
+BF Complexity Visuals: Cartesian Sequence Grid
+How to Draw BF: Draw a matrix where rows are users and columns are activity types. Show the engine checking every cell for every user.
+Optimised Pattern: Common Table Expressions (CTE) + Aggregation
+Opt Vis. Technique: Activity Funnel
+Dry Run (Opt): Create a CTE to filter for "Valid Sessions." Then, use GROUP BY user_id and HAVING COUNT(DISTINCT activity_type) &gt;= threshold to find high-activity users.
+How to Draw (Opt): Draw a funnel. Dump all activity rows in. At the bottom, show "User Filters" that only let through IDs with the correct count of unique action tags.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Pass
+How to Draw Opt Complexity: Draw an $O(N)$ filtering block followed by an $O(N \log N)$ grouping block (usually performed via sorting or hashing).
+Mem Vis (BF): Large temporary join results stored in the TempDB.
+Mem Vis (Opt): Filtered index scan; only relevant activity rows are pulled into memory.

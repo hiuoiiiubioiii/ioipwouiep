@@ -1,0 +1,13 @@
+ID: 3767
+Problem Title: Maximize Points After Choosing K Tasks (Med)
+Brute Force Method: Generate all combinations of K tasks out of N, and for each combination, check the constraints and calculate the total points. $O(N \text{choose} K)$.
+BF Complexity Visuals: Combinatorial Selection Tree.
+How to Draw BF: Draw N tasks. Draw branches showing every way to pick exactly K tasks. Calculate point totals at the end of each path.
+Optimised Pattern: Greedy with Priority Queue (Max-Heap)
+Opt Vis. Technique: Top-K Filtering
+Dry Run (Opt): If tasks are independent, simply sort by points and take the top K. If they have dependencies or time constraints, use a Max-Heap to always pick the highest available point task that satisfies current constraints.
+How to Draw (Opt): Draw a "Pool" of tasks. Draw a "Bucket" for your K choices. Pick the largest task from the pool, drop it in the bucket, and repeat K times.
+Opt Complexity Visuals: $O(N \log N)$ or $O(N \log K)$.
+How to Draw Opt Complexity: Draw an N-length array being processed by a Log K depth Heap.
+Mem Vis (BF): Storage for all combinations in memory.
+Mem Vis (Opt): Heap structure of size K.

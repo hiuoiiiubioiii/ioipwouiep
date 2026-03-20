@@ -1,0 +1,13 @@
+ID: 1229
+Problem Title: Meeting Scheduler
+Brute Force Method: Compare every single time slot in Person 1's list with every single time slot in Person 2's list to check for an overlap of at least length `duration`.
+BF Complexity Visuals: Cartesian Product Overlap Check
+How to Draw BF: Draw two rows of intervals. Draw a line from the first interval of Row 1 to every interval of Row 2. Repeat for all. Write $O(N \cdot M)$.
+Optimised Pattern: Two Pointers on Sorted Intervals
+Opt Vis. Technique: Parallel Scanning Sliders
+Dry Run (Opt): Sort both lists. Place a pointer at the start of both. Check the intersection: `max(start1, start2)` to `min(end1, end2)`. If the intersection >= duration, you're done. Otherwise, move the pointer that ends earlier.
+How to Draw (Opt): Draw two horizontal timelines with shaded intervals. Place an arrow under the first interval of each. If they don't overlap enough, move the arrow that points to the interval ending first. Trace the "overlap window".
+Opt Complexity Visuals: Linear Scan of Sorted Data
+How to Draw Opt Complexity: Draw two timelines. Draw two arrows moving strictly left-to-right. Write $O(N \log N + M \log M)$ due to the initial sort.
+Mem Vis (BF): Draw a massive list of all possible overlapping pairs.
+Mem Vis (Opt): Draw two sorted arrays and two integer pointers. Space is $O(1)$ (or $O(N+M)$ depending on sort implementation).

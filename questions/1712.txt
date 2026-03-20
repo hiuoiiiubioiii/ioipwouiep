@@ -1,0 +1,13 @@
+ID: 1712
+Problem Title: Ways to Split Array Into Three Subarrays
+Brute Force Method: Two nested loops placing two dividers `i` and `j` to generate all valid `left`, `mid`, `right` subarrays. Sum and compare.
+BF Complexity Visuals: Double Guillotine Search.
+How to Draw BF: Draw array. Draw two slicing lines shifting right iteratively. $O(N^2)$ checks.
+Optimised Pattern: Prefix Sums + Binary Search (or Two Pointers).
+Opt Vis. Technique: Sliding Valid Zone on a Number Line.
+Dry Run (Opt): Compute prefix sums. Iterate first divider `i`. The second divider `j` must fall within a specific range to satisfy the inequalities. Find `j_min` and `j_max` via Binary Search.
+How to Draw (Opt): Draw Prefix array. Pin index `i`. Draw a bracket representing the valid window `[j_min, j_max]` further down the array.
+Opt Complexity Visuals: Loop Wrapping a Tree Search.
+How to Draw Opt Complexity: Draw N iterations. Inside each, draw a Binary Search tree of depth Log N. Total $O(N \log N)$.
+Mem Vis (BF): Multiple temporary subarray accumulations.
+Mem Vis (Opt): One continuous Prefix Sum array parallel to the input. $O(N)$ space.

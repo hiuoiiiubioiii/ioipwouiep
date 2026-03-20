@@ -1,0 +1,13 @@
+ID: 2402
+Problem Title: Meeting Rooms III
+Brute Force Method: Iterate time second-by-second. For each second, check all meetings and all rooms to assign the lowest available index.
+BF Complexity Visuals: Time-Series Matrix
+How to Draw BF: Draw a matrix where rows = time, cols = rooms. Fill cells one by one. Write $O(\text{Time} \\text{cdot Rooms})$ indicating massive wasted iterations.
+Optimised Pattern: Two Min-Heaps (Priority Queues): One for unused rooms, one for engaged rooms (endTime, roomIdx).
+Opt Vis. Technique: Dual Bucket Sifting
+Dry Run (Opt): Draw two funnels (Heaps). Meetings drop in based on start time. If meeting ends, move room from "Engaged Funnel" to "Unused Funnel". Assign lowest room from Unused.
+How to Draw (Opt): Draw an array sorted by start time. Draw two inverted trees (heaps) below. Erase and rewrite root nodes as meetings start/end.
+Opt Complexity Visuals: Event-Driven Flowchart
+How to Draw Opt Complexity: Draw N meetings. From each, draw arrows to Heap operations (Log R). Total arrows = N, weight = Log R. Label: $O(M \log M + M \log R)$.
+Mem Vis (BF): Draw a massive boolean array [Rooms][MaxTime] to show room occupancy status over time.
+Mem Vis (Opt): Draw two tree structures (Heaps) and a frequency array `count[n]` tracking meetings per room.

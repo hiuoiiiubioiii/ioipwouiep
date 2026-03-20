@@ -1,0 +1,13 @@
+ID: 1537
+Problem Title: Get the Maximum Score
+Brute Force Method: Use DFS to explore every single path starting from the beginning of both arrays, following "teleport" junctions (equal values) whenever they appear. $O(2^N)$.
+BF Complexity Visuals: Junction Branching Tree
+How to Draw BF: Draw two parallel lines with occasional bridges connecting them. At every bridge, the path splits into two. The number of paths doubles at every junction.
+Optimised Pattern: Two Pointers / Greedy Prefix Sum
+Opt Vis. Technique: Parallel Track Accumulation
+Dry Run (Opt): Iterate through both sorted arrays simultaneously. Accumulate sums for both independently. When you hit a "junction" (common element), take the `max(sum1, sum2)` plus the junction value, reset sums, and continue.
+How to Draw (Opt): Draw two parallel horizontal paths. Draw "sum buckets" for each path. When the paths meet at a common number, compare the buckets, empty the lighter one into the trash, and put the heavier one's total into a "Global Max" box.
+Opt Complexity Visuals: Synchronized Linear Scan $O(N + M)$
+How to Draw Opt Complexity: Draw two parallel lines. Draw a single vertical "scanning bar" that moves across both simultaneously, pausing only to sync up at junctions.
+Mem Vis (BF): Recursive stack for all path combinations. $O(N+M)$.
+Mem Vis (Opt): Two sum variables (`s1`, `s2`) and two pointers (`i`, `j`). $O(1)$ space.

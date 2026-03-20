@@ -1,0 +1,13 @@
+ID: 194
+Problem Title: Transpose File
+Brute Force Method: Read the entire file into a 2D matrix in memory, then iterate through columns and rows in reverse order to print.
+BF Complexity Visuals: A "Data Cube" taking up massive M \times N space in memory.
+How to Draw BF: Draw a grid. Draw arrows representing the "Read" phase. Then draw new arrows representing the "Print" phase (top-to-bottom).
+Optimised Pattern: AWK Column Accumulation.
+Opt Vis. Technique: "The Vertical Builder." As you read row 1, you start building N separate strings (one for each column).
+Dry Run (Opt): For each row: append field 1 to `res[1]`, field 2 to `res[2]`, etc. After the file is finished, print all `res[i]`.
+How to Draw (Opt): Draw 3 buckets labeled Col 1, Col 2, Col 3. Read a row (A B C). Drop A in bucket 1, B in 2, C in 3. Repeat. Then empty the buckets.
+Opt Complexity Visuals: $O(\\text{text}{\text{Total Chars}})$ time. Every character is touched exactly once during the read and once during the print.
+How to Draw Opt Complexity: Draw a single pass through the file. Shade the result area to show it matches the input size.
+Mem Vis (BF): Full M \times N matrix overhead plus string object fragmentation.
+Mem Vis (Opt): Visualize N string buffers in heap memory, where N is the number of columns.

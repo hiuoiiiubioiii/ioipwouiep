@@ -1,0 +1,13 @@
+ID: 1410
+Problem Title: HTML Entity Parser
+Brute Force Method: Multi-pass replace. Use `string.replace()` 6 separate times for the 6 different HTML entities, scanning the string from start to finish each time.
+BF Complexity Visuals: Multi-Pass String Reallocation
+How to Draw BF: Draw the input string. Draw 6 separate horizontal arrows over it (one for each entity type), each generating a brand new string below it. Label $O(K \cdot N)$.
+Optimised Pattern: Single-Pass Two-Pointer / StringBuilder
+Opt Vis. Technique: Finite State Machine / Buffer Append
+Dry Run (Opt): Read characters into a StringBuilder. If '&amp;' is seen, buffer chars until ';'. If the buffered string matches a Hash Map key, append decoded char. Else, append literal buffer.
+How to Draw (Opt): Draw an input tape and an output tape. A read head moves right. When it hits '&amp;', characters divert into a small "entity buffer" box. If valid, drop 1 char to output; if invalid, drop whole buffer to output.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw a single straight arrow moving left to right across the string. Label $O(N)$ time.
+Mem Vis (BF): Multiple Large Strings in Heap
+Mem Vis (Opt): Draw a single dynamically growing StringBuilder (char array) and a small, static HashMap of size 6.

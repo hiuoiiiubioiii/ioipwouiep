@@ -1,0 +1,13 @@
+ID: 1242
+Problem Title: Web Crawler Multithreaded
+Brute Force Method: A sequential BFS crawler that visits one URL at a time, waiting for each network request to complete before moving to the next.
+BF Complexity Visuals: Single-File Queue Progression
+How to Draw BF: Draw a horizontal queue. Draw a single person picking one URL, walking to a "Server" box, and coming back. Write $O(N \\text{cdot Latency})$.
+Optimised Pattern: Thread Pool + Thread-Safe Queue/Set
+Opt Vis. Technique: Parallel Worker Pipelines
+Dry Run (Opt): Use a shared Thread-Safe Queue and a Concurrent Set (Seen URLs). Multiple "Workers" grab URLs from the queue, fetch links, and push them back if they match the hostname and haven't been seen.
+How to Draw (Opt): Draw a large "Work Queue" in the center. Draw 4-8 "Worker" circles around it. Draw arrows of workers taking tasks from the queue and pushing new tasks back. Use a central "Seen" checklist.
+Opt Complexity Visuals: Concurrent Overlapping Latency
+How to Draw Opt Complexity: Draw several parallel bars representing time. Show the "Network Latency" blocks overlapping across different threads. Write $O(N \\text{cdot Latency} / \text{Threads})$.
+Mem Vis (BF): Draw a single queue and a single set.
+Mem Vis (Opt): Draw a BlockingQueue, a ConcurrentSet, and a FixedThreadPool structure. Space: $O(N)$.

@@ -1,0 +1,13 @@
+ID: 48
+Problem Title: Rotate Image
+Brute Force Method: New Matrix Map Create a brand new N x N matrix. Loop through the original matrix and place `matrix[i][j]` directly into `new_matrix[j][n - 1 - i]`.
+BF Complexity Visuals: The Carbon Copy
+How to Draw BF: Draw the original grid. Draw an empty grid next to it. Draw arrows pulling cells from the first grid and dropping them into their new rotated homes in the second grid.
+Optimised Pattern: Transpose + Reverse Rows
+Opt Vis. Technique: The Flip and Fold
+Dry Run (Opt): Rotate 90 degrees in-place by doing two simple operations: 1) Transpose the matrix (swap `matrix[i][j]` with `matrix[j][i]`). 2) Reverse every row horizontally.
+How to Draw (Opt): Draw a square grid. Draw a diagonal line from top-left to bottom-right. Fold the numbers across the diagonal (Transpose). Then, draw a vertical line down the middle and flip the left and right sides (Reverse).
+Opt Complexity Visuals: Two Pass Matrix
+How to Draw Opt Complexity: Draw a grid representing N x N. Shade the upper triangle (Transpose = $O(N²)$). Shade it row by row (Reverse = $O(N²)$). Total time = strictly $O(N²)$.
+Mem Vis (BF): Draw a completely separate N x N 2D array taking up memory. $O(N²)$ space.
+Mem Vis (Opt): Draw a single temp variable used for swapping cells within the original matrix bounds. $O(1)$ extra space.

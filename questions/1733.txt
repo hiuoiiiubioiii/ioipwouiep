@@ -1,0 +1,13 @@
+ID: 1733
+Problem Title: Minimum Number of People to Teach
+Brute Force Method: Try teaching every possible language to every person. For each language, check if it allows everyone in every friendship to communicate.
+BF Complexity Visuals: Language Matrix Intersection.
+How to Draw BF: Draw Languages vs Friendships. Try Language 1, count learners. Try Language 2, count learners. $O(L \cdot (P + F)$).
+Optimised Pattern: Greedy + Set Intersection (Filtering Friendships).
+Opt Vis. Technique: Venn Diagram Filters.
+Dry Run (Opt): Identify friendships that *cannot* communicate. For these broken friendships, find the language most common among them. Teach that language to those who don't know it.
+How to Draw (Opt): Draw two circles per friendship representing languages. If circles don't overlap, mark as 'Broken'. In a side tally, count how many broken-friendship-people know Language X.
+Opt Complexity Visuals: Set Membership Scan.
+How to Draw Opt Complexity: Draw F friendships (linear) + L languages (linear). $O(F + P \cdot L)$.
+Mem Vis (BF): None, just tally variables.
+Mem Vis (Opt): A set of sets (languages per person) for $O(1)$ communication checks. $O(P \cdot L)$ space.

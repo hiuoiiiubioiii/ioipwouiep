@@ -1,0 +1,13 @@
+ID: 208
+Problem Title: Implement Trie (Prefix Tree)
+Brute Force Method: Store all words in a standard Hash Set or List. Check prefixes by iterating through all words.
+BF Complexity Visuals: Linear Scan / String Compare Matrix: $O(N \cdot M)$.
+How to Draw BF: Draw a list of words. Draw a line scanning every character of every word to match a prefix. Area = N words * M length.
+Optimised Pattern: Trie (Prefix Tree) Node Structure
+Opt Vis. Technique: N-ary Tree Diagram
+Dry Run (Opt): Start at root. For each letter, travel down the corresponding branch. If branch is missing, word/prefix doesn't exist.
+How to Draw (Opt): Draw a root circle. Draw branching lines labeled with letters. Mark end-of-word nodes with a double circle or a star.
+Opt Complexity Visuals: Depth Bar / Pointer Drop: $O(M)$ Time where M is word length.
+How to Draw Opt Complexity: Draw a vertical line descending exactly M steps. Show that time depends strictly on word length, not total words in dictionary.
+Mem Vis (BF): Hash Set Table: Draw a massive expanding table of full strings.
+Mem Vis (Opt): Nested Array/Map Nodes: Draw a node as a box with 26 slots, some filled with pointers to other identical 26-slot boxes.

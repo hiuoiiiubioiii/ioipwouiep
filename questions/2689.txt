@@ -1,0 +1,13 @@
+ID: 2689
+Problem Title: Extract Kth Character From The Rope Tree
+Brute Force Method: Recursively concatenate all leaf strings until the full "rope" is built, then access index K.
+BF Complexity Visuals: Full String Concatenation
+How to Draw BF: Draw a tree of strings. Show them merging into one giant string $O(N)$. If K is small, you've wasted 99% of the work.
+Optimised Pattern: Recursive Length-Based Search
+Opt Vis. Technique: Tree-Based Index Routing
+Dry Run (Opt): At each internal node, check the length of the left child. If `K &lt;= left_length`, go left. Else, `K = K - left_length` and go right. Only access the leaf that contains K.
+How to Draw (Opt): Draw a tree where nodes have numbers (lengths). Start at the root. If K is smaller than the left number, follow the left branch. If larger, subtract the left number and go right.
+Opt Complexity Visuals: $O(H)$ where H is tree height
+How to Draw Opt Complexity: Draw a single path from root to leaf. $O(\log N)$ for a balanced tree.
+Mem Vis (BF): $O(N)$ for the concatenated string
+Mem Vis (Opt): $O(H)$ for the recursive call stack.

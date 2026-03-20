@@ -1,0 +1,13 @@
+ID: 1660
+Problem Title: Correct a Binary Tree
+Brute Force Method: Traverse the tree and for every node, manually check all other nodes to see if any have a faulty right pointer.
+BF Complexity Visuals: N-to-N Node Check
+How to Draw BF: Draw a tree where every node "looks" at every other node in the tree. $O(N^2)$.
+Optimised Pattern: BFS (Reverse Level Order) + Hash Set
+Opt Vis. Technique: Level-by-Level Boundary Check
+Dry Run (Opt): Traverse the tree from right to left using BFS. Store visited nodes in a Set. If a node's right child is already in the Set, it's a "back-edge". Delete it.
+How to Draw (Opt): Draw the tree levels. Draw an arrow on each level going Right-to-Left. If an arrow "jumps" to a node you've already seen on that same level, cut that branch.
+Opt Complexity Visuals: Single BFS Sweep
+How to Draw Opt Complexity: Draw a line weaving through levels exactly once. $O(N)$.
+Mem Vis (BF): Full Tree Copy: Redundant storage for nodes during re-evaluation.
+Mem Vis (Opt): Queue + Hash Set: Draw a horizontal pipe (Queue) and a bucket (Set) holding node references. $O(W)$ where W is width.

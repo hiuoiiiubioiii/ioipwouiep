@@ -1,0 +1,13 @@
+ID: 1111
+Problem Title: Maximum Nesting Depth of Two Valid Parentheses Strings
+Brute Force Method: Backtracking. Try assigning every bracket to either string A or string B and check which combination minimizes the maximum depth.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw the string. For every bracket, draw two branching paths (Group 0 or Group 1). $O(2^N)$ explosion.
+Optimised Pattern: Greedy / Parity based on Depth
+Opt Vis. Technique: Alternating Color Wave
+Dry Run (Opt): Keep a running `depth` counter. When seeing '(', increment depth. Assign to group `depth % 2`. When seeing ')', assign to `depth % 2`, then decrement depth.
+How to Draw (Opt): Write the string horizontally. Below each character, write the current depth number. Below that, write the modulo (0 or 1). Circle the 0s and 1s.
+Opt Complexity Visuals: Flat Line $O(N)$
+How to Draw Opt Complexity: Draw a single straight arrow sweeping from left to right under the string.
+Mem Vis (BF): Massive Call Stack Tower
+Mem Vis (Opt): Single Output Array of size N filled with 0s and 1s.

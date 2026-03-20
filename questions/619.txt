@@ -1,0 +1,13 @@
+ID: 619
+Problem Title: Biggest Single Number (SQL)
+Brute Force Method: Select all numbers, sort them descending, then loop through to check if `count == 1`.
+BF Complexity Visuals: Full sort followed by a conditional scan.
+How to Draw BF: Draw a long list of numbers. Sort them. Scan with a pointer, looking back and forward to see if the neighbor is the same.
+Optimised Pattern: Subquery Grouping with HAVING count = 1.
+Opt Vis. Technique: Bucket Filter &amp; Max.
+Dry Run (Opt): Group all numbers. Throw away any bucket with more than one item. From the remaining buckets, pick the one with the highest label.
+How to Draw (Opt): Draw several buckets with numbers. Cross out any bucket containing &gt;1 ball. Look at the remaining buckets and circle the largest number.
+Opt Complexity Visuals: Hash aggregation followed by a Scalar Max.
+How to Draw Opt Complexity: Draw a parallel set of buckets (Hash Map). Mark it $O(N)$. Draw one final arrow to the MAX value.
+Mem Vis (BF): Draw a fully sorted copy of the table in memory.
+Mem Vis (Opt): Draw a Hash Table (Number -&gt; Count). If using an index, space is $O(1)$ extra beyond the result.

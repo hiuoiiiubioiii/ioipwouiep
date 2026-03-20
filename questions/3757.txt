@@ -1,0 +1,13 @@
+ID: 3757
+Problem Title: Number of Effective Subsequences (Hard)
+Brute Force Method: Generate all 2^N subsequences. For each, check if the "effectiveness" condition is met. $O(2^N)$.
+BF Complexity Visuals: Binary Decision Tree.
+How to Draw BF: Draw a tree branching at every element: "Take" or "Leave". Tally validity at the 2^N leaves.
+Optimised Pattern: Sorting + Dynamic Programming / Two Pointers
+Opt Vis. Technique: Subsequence Contribution States
+Dry Run (Opt): Sort the array. For each element, use DP to count how many subsequences ending at this element meet the condition, potentially using a Fenwick tree for range sums.
+How to Draw (Opt): Draw sorted array. For current element, draw arrows looking back to valid previous elements. Sum their DP values and write in the current box.
+Opt Complexity Visuals: $O(N \log N)$ or $O(N^2)$.
+How to Draw Opt Complexity: Draw an upward curve for sorting, then a dense web of "look-back" arrows over the array.
+Mem Vis (BF): Stack frames for recursion.
+Mem Vis (Opt): 1D DP Array + Segment Tree/Fenwick Tree layout.

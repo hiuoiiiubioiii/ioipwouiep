@@ -1,0 +1,13 @@
+ID: 2789
+Problem Title: Largest Element in an Array after Merge Operations
+Brute Force Method: Iterate from left to right. If nums[i] &lt;= nums[i+1], merge them. Repeat this multiple times until no more merges are possible. $O(N²)$.
+BF Complexity Visuals: Repeated Array Contraction
+How to Draw BF: Draw the array. Merge a pair, redraw a shorter array. Merge another, redraw. The total area of redrawing is quadratic.
+Optimised Pattern: Intermediate Array Reallocations (Visualizing the heap creating new arrays for every merge pass).
+Opt Vis. Technique: Reverse Greedy Accumulation
+Dry Run (Opt): Right-to-Left Snowball
+How to Draw (Opt): Start from the last element. Move left. If nums[i] &lt;= current_sum, add nums[i] to current_sum (snowball effect). If not, current_sum resets to nums[i]. The answer is the max current_sum found.
+Opt Complexity Visuals: Draw a snowball rolling from right to left. As it hits smaller numbers, it absorbs them and gets bigger. If it hits a giant number it can't absorb, it shatters and starts as a new snowball from that giant number.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single arrow moving from right to left. Label it $O(N)$ to show one pass is sufficient.
+Mem Vis (Opt): $O(1)$ Accumulator (Draw a single 64-bit variable currentSum).

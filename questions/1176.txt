@@ -1,0 +1,13 @@
+ID: 1176
+Problem Title: Diet Plan Performance
+Brute Force Method: Nested loops $O(N \cdot K)$. For every day i, sum the calories for the next k days and compare with limits.
+BF Complexity Visuals: Overlapping Segment Scan
+How to Draw BF: Draw an array. Draw a bracket of size k starting at every index. Show the redundant additions in the overlap. $O(N \cdot K)$.
+Optimised Pattern: Sliding Window (Fixed Size)
+Opt Vis. Technique: Rolling Sum Ribbon
+Dry Run (Opt): Calculate the sum of the first k days. For each subsequent day, subtract the calorie count of the day that just left the window and add the new day's count.
+How to Draw (Opt): Draw an array. Draw a box over the first k elements. Write the sum. Slide the box right: cross out the leftmost number, circle the new rightmost number, update the sum.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight arrow moving left to right. Each element is added once and subtracted once.
+Mem Vis (BF): Multiple sub-array slices
+Mem Vis (Opt): Constant $O(1)$ space using a `current_sum` variable.

@@ -1,0 +1,13 @@
+ID: 1954
+Problem Title: Minimum Garden Perimeter to Collect Enough Apples
+Brute Force Method: Start with a side length of 2 and iteratively expand the square perimeter, calculating the total apples in the grid until the limit is reached.
+BF Complexity Visuals: Concentric Expansion Layers
+How to Draw BF: Draw a small square. Draw a larger square around it. Calculate apple sum for the new border. Repeat until sum ≥ target. $O(N)$.
+Optimised Pattern: Binary Search on Cubic Formula
+Opt Vis. Technique: Monotonic Function Search
+Dry Run (Opt): The total apples in a square of half-side n is 2n(n+1)(2n+1). Binary search for the smallest n that satisfies the condition.
+How to Draw (Opt): Draw a graph of f(n) = \text{Apples}. Draw a horizontal line for the target. Use binary search (left, right, mid) to find the intersection.
+Opt Complexity Visuals: Logarithmic Range Halving
+How to Draw Opt Complexity: Draw a number line. Repeatedly cut it in half log(Max) times. $O(\log N)$ time.
+Mem Vis (BF): Variables to store running totals of apples per layer.
+Mem Vis (Opt): Three integer pointers for Binary Search: `low`, `high`, `mid`. $O(1)$ space.

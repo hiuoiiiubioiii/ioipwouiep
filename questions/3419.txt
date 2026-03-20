@@ -1,0 +1,13 @@
+ID: 3419
+Problem Title: Minimize the Maximum Edge Weight of Graph
+Brute Force Method: Try every possible weight threshold from 1 to Max_W. For each, run DFS from all N nodes to see if they can reach node 0. $O(W \cdot V \cdot E)$
+BF Complexity Visuals: Repeated Global DFS Scans.
+How to Draw BF: Draw the graph. Below it, write threshold 1, 2, 3... For each number, draw N separate search trees trying to reach node 0.
+Optimised Pattern: Binary Search on Answer + Reversed Graph Traversal. $O(E \log W)$
+Opt Vis. Technique: Reversed Flow with Binary Search Pruning.
+Dry Run (Opt): Reverse all directed edges. Binary search a weight W. Start BFS/DFS only from node 0. Ignore edges &gt; W. If you visit all nodes, W is valid.
+How to Draw (Opt): Draw the graph with arrows pointing BACKWARDS from 0. Erase any arrow heavier than threshold W. Check if all nodes are colored.
+Opt Complexity Visuals: Log W Number of BFS Trees.
+How to Draw Opt Complexity: Draw a binary search timeline. At a few points, drop an arrow down to a single V+E graph traversal box.
+Mem Vis (BF): Standard adjacency list, but memory thrashes heavily on the recursive stack.
+Mem Vis (Opt): A single reversed Adjacency List `g[destination].append(source)` and a Boolean Visited Array.

@@ -1,0 +1,13 @@
+ID: 3065
+Problem Title: Minimum Operations to Exceed Threshold Value I
+Brute Force Method: Sort the array first, then iterate from the start to count how many elements are strictly less than the threshold k.
+BF Complexity Visuals: Sorted Array Scan
+How to Draw BF: Draw the unsorted array. Below it, draw the sorted array. Show an arrow stopping at the first number >= k. $O(N \log N)$ total.
+Optimised Pattern: Single-Pass Filtering
+Opt Vis. Technique: Linear Threshold Barrier
+Dry Run (Opt): Traverse the array once. For every element, check if (num &lt; k) count++. The order doesn't matter, so sorting is unnecessary overhead.
+How to Draw (Opt): Write the numbers in a row. Draw a tall vertical "Wall" labeled k. Every number that falls to the left of the wall is counted.
+Opt Complexity Visuals: $O(N)$ Linear Arrow
+How to Draw Opt Complexity: Draw one straight arrow passing through the input array once. Label as $O(N)$.
+Mem Vis (BF): A newly allocated sorted copy of the array (if not sorting in-place).
+Mem Vis (Opt): A single integer counter ops taking $O(1)$ extra space.

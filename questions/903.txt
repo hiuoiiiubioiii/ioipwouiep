@@ -1,0 +1,13 @@
+ID: 903
+Problem Title: Valid Permutations for DI Sequence
+Brute Force Method: Generate all N! permutations of numbers [0, N]. For each, check if it satisfies the Increase/Decrease (D/I) conditions.
+BF Complexity Visuals: Permutation Factorial. $O(N! x N)$.
+How to Draw BF: Draw the sequence "ID". Branch out to [0,1,2], [0,2,1], [1,0,2]... For each branch, check if the numbers go Up then Down.
+Optimised Pattern: 2D Dynamic Programming.
+Opt Vis. Technique: The "Relative Rank" Offset.
+Dry Run (Opt): dp[i][j] is the number of valid permutations of length i ending with relative rank j. If 'D', dp[i][j] is sum of dp[i-1][k] for k >= j. If 'I', sum of dp[i-1][k] for k &lt; j.
+How to Draw (Opt): Draw a grid where rows are the length of the sequence and columns are the possible ending values. Use prefix sums to fill the next row in $O(1)$ per cell.
+Opt Complexity Visuals: Squared DP. $O(N^2)$.
+How to Draw Opt Complexity: Draw an N x N matrix. Each cell is updated once using the row above it.
+Mem Vis (BF): List of Permutations: Draw N! memory blocks.
+Mem Vis (Opt): 2D (or 1D) DP Table: Draw a single strip of size N being updated N times.

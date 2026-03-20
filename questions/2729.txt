@@ -1,0 +1,13 @@
+ID: 2729
+Problem Title: Check if The Number is Fascinating
+Brute Force Method: Calculate 2n and 3n. Convert all to strings. Use a nested loop to check if each digit 1-9 appears exactly once.
+BF Complexity Visuals: String Manipulation and Nested Search
+How to Draw BF: Draw n, 2n, and 3n. For each number 1, 2, 3... search through the combined string. $O(D^2)$ where D is number of digits.
+Optimised Pattern: Temporary String Buffers (Visualizing multiple string concatenations and copies).
+Opt Vis. Technique: Frequency Array / Boolean Bucket (O(1) Time/Space)
+Dry Run (Opt): Digit Bucket Sort
+How to Draw (Opt): Concatenate n, 2n, and 3n into one string. If length isn't 9, return false. Use a boolean array of size 10 to mark seen digits. If a digit is '0' or seen twice, return false.
+Opt Complexity Visuals: Draw 9 empty buckets labeled 1-9. Take the digits from the concatenated string and drop them into the buckets. If a bucket is already full or a digit is 0, the check fails.
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single box. Since n is limited to 3 digits, the total digits are always $O(1)$.
+Mem Vis (Opt): Fixed size 10-bit Mask (Visualize a single integer being used as a bitmask to track seen digits).

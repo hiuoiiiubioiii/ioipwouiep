@@ -1,0 +1,13 @@
+ID: 702
+Problem Title: Search in a Sorted Array of Unknown Size
+Brute Force Method: Linear scan reading index 0, 1, 2... until hitting out of bounds or the target.
+BF Complexity Visuals: Linear Timeline/Ruler
+How to Draw BF: Draw an open-ended array. Map an arrow jumping 1 box at a time. Write $O(T)$ where T is target index.
+Optimised Pattern: Exponential Expansion + Binary Search
+Opt Vis. Technique: Expanding Bounds window
+Dry Run (Opt): Draw an array. Start `left=0`, `right=1`. Double `right` until `arr[right] &gt; target`. Then Binary Search between `left` and `right`.
+How to Draw (Opt): Draw a number line. Draw arcs expanding: 0-&gt;1, 1-&gt;2, 2-&gt;4, 4-&gt;8. Then draw a converging bracket [L, R] inside the final range.
+Opt Complexity Visuals: Logarithmic Convergence Funnel
+How to Draw Opt Complexity: Draw a wide bracket that halves in width iteratively. Write $O(\log T)$ next to the halving steps.
+Mem Vis (BF): Single index counter variable box (O(1)).
+Mem Vis (Opt): Two boxes for `Left` and `Right` pointers (O(1)).

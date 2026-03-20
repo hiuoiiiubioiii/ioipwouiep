@@ -1,0 +1,13 @@
+ID: 1684
+Problem Title: Count the Number of Consistent Strings
+Brute Force Method: For each string in the array, loop through every character and check if it exists in the 'allowed' string using `allowed.contains()`.
+BF Complexity Visuals: Nested Character Scan
+How to Draw BF: Draw N strings. For each, draw an arrow scanning every character and checking a separate "allowed" list. $O(N \\text{times} \\text{text}{\text{WordsLength}} \\text{times} \\text{text}{\text{AllowedLength}})$.
+Optimised Pattern: Boolean Frequency Array / Hash Set
+Opt Vis. Technique: Stencil Filter Overlay
+Dry Run (Opt): Convert 'allowed' into a boolean array of size 26. For each word, check if every char maps to `true` in the array.
+How to Draw (Opt): Draw a 26-slot checklist. Check the "allowed" letters. Slide each word through a "stencil" with holes for those letters. If it fits, count it.
+Opt Complexity Visuals: Linear Aggregate Scan
+How to Draw Opt Complexity: Draw a straight arrow through all words. $O(\text{Total Characters})$.
+Mem Vis (BF): Variable Counters: Simple loop indices.
+Mem Vis (Opt): Size-26 Boolean Array: Draw a small 26-box grid. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2808
+Problem Title: Minimum Seconds to Equalize a Circular Array
+Brute Force Method: For every unique element, simulate the second-by-second spreading process throughout the entire array, keeping track of the minimum seconds it takes for the whole array to match that element.
+BF Complexity Visuals: Multi-Grid Simulation Map
+How to Draw BF: Draw the array repeatedly as rows. Shade elements as they "spread" left and right per second. Do this entirely for each unique number, showing $O(N^2)$ redundant work.
+Optimised Pattern: Hash Map Grouping + Circular Maximum Gap Calculation
+Opt Vis. Technique: Circular Gap Measurement
+Dry Run (Opt): Group all indices of the same number using a Map. For each number, calculate the distance (gap) between adjacent indices, including the wrap-around from the last index to the first. The time to fill the largest gap is floor(max_gap / 2).
+How to Draw (Opt): Draw a circle. Mark positions (dots) where a specific number exists. Draw arcs along the perimeter between adjacent dots. Identify the longest arc and cut it in half.
+Opt Complexity Visuals: Two-Pass Linear Scan Chart
+How to Draw Opt Complexity: Draw two parallel bars representing length N. Pass 1: Build Hash Map $O(N)$. Pass 2: Calculate Gaps $O(N)$. Time complexity: $O(N)$.
+Mem Vis (BF): Visualize a massive 2D matrix or repeated array cloning, taking $O(N^2)$ space to model the simulation state.
+Mem Vis (Opt): Visualize a single HashMap&lt;Integer, List&lt;Integer&gt;&gt;. Keys are unique values; values are dynamic arrays of indices. Total memory strictly bounded by $O(N)$.

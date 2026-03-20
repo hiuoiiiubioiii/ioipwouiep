@@ -1,0 +1,13 @@
+ID: 2403
+Problem Title: Minimum Time to Kill All Monsters
+Brute Force Method: Try every possible permutation of which monster to kill first, second, third, etc. $O(N!)$.
+BF Complexity Visuals: Factorial Permutation Combat
+How to Draw BF: Draw N monsters. Branch out N ways for the first attack, N-1 for the second. The tree is too wide to map.
+Optimised Pattern: Bitmask DP
+Opt Vis. Technique: The State-Dependent Mana Pool
+Dry Run (Opt): Use a bitmask to represent which monsters are dead. `dp[mask]` is the minimum days to reach this state. The mana gained depends on the number of set bits in the mask.
+How to Draw (Opt): Draw a row of lightbulbs (monsters). When a bulb is off (dead), you gain a passive mana multiplier. Try turning off remaining bulbs one by one, recording the cheapest path to each light configuration.
+Opt Complexity Visuals: Exponential State Grid $O(N \cdot 2^N)$
+How to Draw Opt Complexity: Draw a table of 2^N rows. Each row has at most N transitions to compute the next state.
+Mem Vis (BF): Recursive tracking of all permutations.
+Mem Vis (Opt): A DP array of size 2^N. $O(2^N)$ space.

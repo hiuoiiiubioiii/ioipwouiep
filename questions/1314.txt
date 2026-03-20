@@ -1,0 +1,13 @@
+ID: 1314
+Problem Title: Matrix Block Sum
+Brute Force Method: For every single cell (i, j), run a nested 2D loop iterating from `i-k` to `i+k` and `j-k` to `j+k` to sum the block.
+BF Complexity Visuals: Overlapping Iteration Grids
+How to Draw BF: Draw a matrix. For cell A, draw a bounding box. For adjacent cell B, draw a nearly identical bounding box. Shade the heavily overlapping redundant cells darkly.
+Optimised Pattern: 2D Prefix Sum Array
+Opt Vis. Technique: Area Subtraction Geometry
+Dry Run (Opt): Compute `prefix[i][j]` as the sum from (0,0) to (i,j). For any block, calculate: Total Area - Top Area - Left Area + Top-Left Overlap (Inclusion-Exclusion Principle).
+How to Draw (Opt): Draw the prefix matrix. To find a block sum, circle the bottom-right corner. Draw lines subtracting the top and left boundaries, then add back the doubly-subtracted top-left corner.
+Opt Complexity Visuals: Four-Point $O(1)$ Lookup
+How to Draw Opt Complexity: Draw a matrix. Draw exactly 4 dots at the corners of a target block. Connect them with +/- operators, proving $O(1)$ time per query.
+Mem Vis (BF): Accumulator Variables: Transient integers recalculating overlapping data inside $O(M\cdot N\cdot K^2)$ loops.
+Mem Vis (Opt): 2D Matrix Cache: Draw a `std::vector&gt;` padded with an extra top row and left column (1-indexed) to avoid out-of-bounds checks.

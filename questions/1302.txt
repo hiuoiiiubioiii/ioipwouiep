@@ -1,0 +1,13 @@
+ID: 1302
+Problem Title: Deepest Leaves Sum
+Brute Force Method: Traverse the tree once to find the maximum depth. Traverse a second time to find all leaves at that depth and sum their values.
+BF Complexity Visuals: Two-Pass DFS
+How to Draw BF: Draw a tree. Draw a full sweep coloring all nodes to find height. Draw another sweep coloring only the bottom-most nodes. Write $O(N)$.
+Optimised Pattern: BFS (Level-Order Traversal)
+Opt Vis. Technique: Level-by-Level Sum Reset
+Dry Run (Opt): Use a Queue for BFS. For each level, calculate the sum of its nodes. Every time you start a new level, reset the sum. The sum remaining after the last level is processed is the result.
+How to Draw (Opt): Draw a tree. Draw horizontal "clouds" circling each level. Next to each cloud, write the sum of the nodes inside it. Cross out the previous sum as the next cloud is calculated.
+Opt Complexity Visuals: Single-Pass Breadth Scan
+How to Draw Opt Complexity: Draw a tree. Draw an arrow snaking through levels from top to bottom. Write $O(N)$.
+Mem Vis (BF): Draw a recursion stack of height H.
+Mem Vis (Opt): Draw a Queue that stores at most one level of the tree (max width W). Space: $O(W)$.

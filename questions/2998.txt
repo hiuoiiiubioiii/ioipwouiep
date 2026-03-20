@@ -1,0 +1,13 @@
+ID: 2998
+Problem Title: Minimum Number of Operations to Make X and Y Equal
+Brute Force Method: Explore every sequence of the 4 operations (increment, decrement, divide by 5, divide by 11) without memoization.
+BF Complexity Visuals: Exploding 4-ary Search Tree
+How to Draw BF: Draw a root branching 4 times. Each child branches 4 more. Size grows as 4^steps.
+Optimised Pattern: Breadth-First Search (BFS) / Shortest Path
+Opt Vis. Technique: Graph Layer Expansion
+Dry Run (Opt): Treat each number as a node in a graph. Operations are edges with weight 1. Run BFS starting from x until you hit y.
+How to Draw (Opt): Draw circles for numbers. Draw 4 arrows from x to new numbers. Put new numbers in a "Queue" box. Keep track of "Visited" nodes in another box.
+Opt Complexity Visuals: State Space Search (Linear with respect to X)
+How to Draw Opt Complexity: Draw a circle representing numbers from 0 to X+11. Each node is visited once. T = $O(X)$.
+Mem Vis (BF): Infinite recursion stack.
+Mem Vis (Opt): A Queue and a "Visited" Set/Array. Space $O(X)$.

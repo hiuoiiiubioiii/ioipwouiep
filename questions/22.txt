@@ -1,0 +1,13 @@
+ID: 22
+Problem Title: Generate Parentheses
+Brute Force Method: Generate All &amp; Validate Create every possible string of '(' and ')' of length 2N (which is 2^(2N) strings), then check if each string is valid.
+BF Complexity Visuals: Massive Explosion Tree
+How to Draw BF: Draw a giant binary tree of height 2N where every node splits into '(' and ')'. At the bottom, draw a slow scanner checking every single leaf node for validity.
+Optimised Pattern: Backtracking (Constrained DFS)
+Opt Vis. Technique: The Guarded Gates
+Dry Run (Opt): Build the string recursively. You can only add '(' if `open &lt; N`. You can only add ')' if `close &lt; open`. If length is 2N, record the string.
+How to Draw (Opt): Draw a root node. Branch left for '(' and right for ')'. Put a lock icon on the right branch if `open == close` (meaning you can't add a closing bracket yet).
+Opt Complexity Visuals: Pruned Tree Counter
+How to Draw Opt Complexity: Draw a tree but physically cross out entire branches early on. The time complexity is bounded by the Nth Catalan number, roughly $O(4^N / \text{sqrt}(N)$).
+Mem Vis (BF): Draw 2^(2N) strings taking up enormous memory space.
+Mem Vis (Opt): Draw the recursion stack (max depth 2N) and a single string builder modifying in place. Space is $O(N)$.

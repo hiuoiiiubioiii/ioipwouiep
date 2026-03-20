@@ -1,0 +1,13 @@
+ID: 1294
+Problem Title: Weather Type in Each Country (SQL)
+Brute Force Method: For every country, run a correlated subquery for the month of November 2019 to calculate the average weather state.
+BF Complexity Visuals: Row-by-Row Country Scan
+How to Draw BF: Draw the Countries table. For every row, draw a search arrow that scans the entire Weather table. Write $O(\text{Countries} \\text{cdot Weather})$.
+Optimised Pattern: JOIN + GROUP BY + CASE/IF logic
+Opt Vis. Technique: Aggregate Filtering Funnel
+Dry Run (Opt): Join `Countries` and `Weather` on `country_id`. Filter specifically for `day` in November 2019. Group by `country_name` and calculate `AVG(weather_state)`. Use `CASE` to categorize the average into 'Cold', 'Warm', or 'Hot'.
+How to Draw (Opt): Draw two tables. Join them. Draw a filter box that only lets "2019-11" rows through. Group those by country. Show a calculator finding the average and a "Branching Logic" box deciding the category.
+Opt Complexity Visuals: Linear Scan &amp; Sort
+How to Draw Opt Complexity: Draw a filtered table. Draw a single arrow scanning to aggregate. Write $O(\text{Weather} \\text{log Weather})$ (due to sorting/grouping).
+Mem Vis (BF): Draw multiple temporary result tables for each country's sub-query.
+Mem Vis (Opt): Draw a single intermediate joined table result, processed in one grouping pass.

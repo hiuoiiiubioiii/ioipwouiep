@@ -1,0 +1,13 @@
+ID: 2669
+Problem Title: Count Artist Occurrences On Spotify (SQL)
+Brute Force Method: Iterating through rows and using `LIKE` or substring matches for every single entry.
+BF Complexity Visuals: String Pattern Scan
+How to Draw BF: Draw a table. For every row, draw a "Search" operation scanning the text for an artist name. $O(N \cdot M)$.
+Optimised Pattern: GROUP BY + COUNT
+Opt Vis. Technique: Categorical Aggregation
+Dry Run (Opt): Group the table by the `artist` column and use the `COUNT(*)` aggregate function. Order the results by the count in descending order.
+How to Draw (Opt): Draw a pile of records. Sort them into stacks by artist name. Count the height of each stack. Arrange stacks from tallest to shortest.
+Opt Complexity Visuals: $O(N \log N)$ (due to sorting)
+How to Draw Opt Complexity: Draw a grouping block $O(N)$ and a final sorting block $O(N \log N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Hash-map based grouping in the SQL engine memory.

@@ -1,0 +1,13 @@
+ID: 137
+Problem Title: Single Number II
+Brute Force Method: Use a Hash Map to store the frequency of every number, then iterate through the map to find the key with value 1.
+BF Complexity Visuals: A dual-structure map showing N keys and N values, illustrating $O(N)$ space overhead.
+How to Draw BF: Draw the array and a T-account table (Key | Count). Fill it row by row until the table is as long as the array.
+Optimised Pattern: Bit Manipulation (Modulo 3 Summing).
+Opt Vis. Technique: A vertical 32-slot sorter. Each slot counts how many times a '1' appears at that bit position across all numbers.
+Dry Run (Opt): For each bit position (0 to 31): sum the bits of all numbers at that position. sum % 3 gives the bit of the result.
+How to Draw (Opt): Draw a 32-row vertical stack. For each number, put a mark in the rows corresponding to its '1' bits. Write the total count next to each row.
+Opt Complexity Visuals: $O(32 \cdot N)$ which simplifies to $O(N)$. A grid of constant height (32) and width N.
+How to Draw Opt Complexity: Draw a rectangle with a fixed height of 32 and a width of N. Color the interior to show total operations.
+Mem Vis (BF): A Hash Map ballooning in heap memory to hold every unique number.
+Mem Vis (Opt): 32 integer counters (or 2 bit-masks for the "Two-bit counter" approach) in $O(1)$ space.

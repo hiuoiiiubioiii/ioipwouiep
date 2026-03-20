@@ -1,0 +1,13 @@
+ID: 596
+Problem Title: Classes More Than 5 Students (SQL)
+Brute Force Method: For every unique class, scan the entire table to count how many students are enrolled.
+BF Complexity Visuals: Nested loop table scan. $O(N^2)$.
+How to Draw BF: Draw the Courses table. For 'Math', scan every row and tally. Repeat for 'English'.
+Optimised Pattern: Group By + Having Clause.
+Opt Vis. Technique: A "Classroom Counter." You sort all students into their respective rooms (classes) and only keep the rooms that have at least 5 people inside.
+Dry Run (Opt): `SELECT class FROM Courses GROUP BY class HAVING COUNT(student) &gt;= 5`.
+How to Draw (Opt): Draw a set of buckets labeled by class name. Drop a "student" marble into each bucket. Count the marbles and circle the buckets with 5 or more.
+Opt Complexity Visuals: Hash-based grouping. $O(N)$.
+How to Draw Opt Complexity: Draw the table flowing into a Hash Map (Class : Count) followed by a simple filter.
+Mem Vis (BF): $O(1)$ extra space but very inefficient.
+Mem Vis (Opt): A Hash Map to store student counts per class. $O(\\text{text}{\text{Unique Classes}})$.

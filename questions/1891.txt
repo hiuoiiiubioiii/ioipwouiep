@@ -1,0 +1,13 @@
+ID: 1891
+Problem Title: Cutting Ribbons (Premium)
+Brute Force Method: Linear search: Try ribbon length L from max(ribbons) down to 1. Check if total ribbons \ge k.
+BF Complexity Visuals: Linear Search decrement line.
+How to Draw BF: Draw a line from Max to 1. Draw an arrow stepping through every single integer. Mark $O(N \\text{times} \\text{text}{\text{MaxLen}})$.
+Optimised Pattern: Binary Search on Answer.
+Opt Vis. Technique: Monotonic Range Halving.
+Dry Run (Opt): Define L=0, R=10^5. Test mid. If \sum (\text{ribbon} / mid) \ge k, search higher (L=mid); else search lower (R=mid-1).
+How to Draw (Opt): Draw a horizontal line for the length range. Mark the middle. Cross out the half that cannot satisfy the ribbon count k.
+Opt Complexity Visuals: Logarithmic search height.
+How to Draw Opt Complexity: Draw a binary tree of height \log(\text{MaxLen}). Each node takes $O(N)$. Mark $O(N \log \\text{text}{\text{MaxLen}})$.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): $O(1)$ stack variables (L, R, mid, sum).

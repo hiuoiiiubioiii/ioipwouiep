@@ -1,0 +1,13 @@
+ID: 375
+Problem Title: Guess Number Higher or Lower II
+Brute Force Method: Use recursion to try every possible guess x in range [1, n]. For each guess, recursively find the cost of the left and right halves and pick the maximum (worst case).
+BF Complexity Visuals: Recursive Minimax Explosion
+How to Draw BF: Draw a root [1, n]. Draw n branches for every possible guess. Label it $O(n!)$.
+Optimised Pattern: Interval Dynamic Programming (Minimax)
+Opt Vis. Technique: Optimal Substructure Heatmap
+Dry Run (Opt): dp[i][j] is the minimum cost to guarantee a win for range [i, j]. To find dp[i][j], iterate through every k \in [i, j] and calculate k + \max(dp[i][k-1], dp[k+1][j]). Pick the k that minimizes this.
+How to Draw (Opt): Draw a 2D matrix where the axes are i and j. Show the diagonal (length 1) being 0, then compute length 2, then length 3, filling the upper triangle.
+Opt Complexity Visuals: Quadratic State Matrix with Linear Inner Loop
+How to Draw Opt Complexity: Draw a 2D grid. Highlight one cell and show it checking a row and column of other cells. $O(n^3)$.
+Mem Vis (BF): Massive recursion stack with redundant interval calls.
+Mem Vis (Opt): 2D DP Matrix. Draw a n \times n grid. Shade the upper-right triangle. $O(n^2)$.

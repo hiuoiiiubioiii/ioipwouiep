@@ -1,0 +1,13 @@
+ID: 1325
+Problem Title: Delete Leaves With a Given Value
+Brute Force Method: Repeated Pre-Order scans. Traverse the entire tree to find target leaves. Delete them. If the tree changed, start a completely new traversal from the root.
+BF Complexity Visuals: $O(N²)$ Redundant Tree Sweeps
+How to Draw BF: Draw a tree. Sweep top-to-bottom and cross out leaves. Because a parent is now a leaf, you must draw a completely new top-to-bottom sweep again.
+Optimised Pattern: Bottom-Up Post-Order DFS
+Opt Vis. Technique: Recursive Pruning from Leaves
+Dry Run (Opt): Process children first. `node.left = dfs(node.left)`, `node.right = dfs(node.right)`. AFTER children are resolved, check if the current node is now a leaf with the target value. If so, return `null`.
+How to Draw (Opt): Draw a tree. Start strictly at the bottom leaves. If a leaf matches, erase it. Move up to the parent. The parent realizes it has no children left. If it matches, erase it too.
+Opt Complexity Visuals: Single-Pass Tree Rollup
+How to Draw Opt Complexity: Draw a single line tracing the outside edge of the tree, starting at the root, going left, bottom, right, and returning up. It never retraces paths.
+Mem Vis (BF): Unpredictable Stack Depth + Tree Mutations: Memory states getting messy with repeated disconnected node handling.
+Mem Vis (Opt): $O(H)$ Call Stack Frame: Standard recursion stack of maximum depth H (Height of Tree). Modifies pointers perfectly in-place as it unwinds.

@@ -1,0 +1,13 @@
+ID: 1155
+Problem Title: Number of Dice Rolls With Target Sum
+Brute Force Method: Brute Force Recursion. Try every face (1 to K) for every die (1 to N).
+BF Complexity Visuals: K-ary Tree Explosion
+How to Draw BF: Draw a die. Branch into K paths. From each, branch into K more. For N dice, show K^N leaves.
+Optimised Pattern: 2D Dynamic Programming (Space Optimized)
+Opt Vis. Technique: Rolling Sum Probability Grid
+Dry Run (Opt): `dp[i][j]` = number of ways to get sum `j` with `i` dice. `dp[i][j] = \sum_{face=1}^{K} dp[i-1][j-face]`. Optimize to 1D array to save space.
+How to Draw (Opt): Draw a grid: Rows = Dice, Cols = Sum. For a cell, sum the previous K values in the row above it. Draw a "sliding sum" window to illustrate.
+Opt Complexity Visuals: Quadratic $O(N \cdot K \\text{cdot Target})$
+How to Draw Opt Complexity: Draw a grid N x Target. Shading shows each cell is computed once.
+Mem Vis (BF): Exponential Call Stack
+Mem Vis (Opt): 1D DP Array of size Target.

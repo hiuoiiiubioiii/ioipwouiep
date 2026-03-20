@@ -1,0 +1,13 @@
+ID: 3545
+Problem Title: Min Deletions for At Most K Distinct Characters (Easy)
+Brute Force Method: Generate all substrings, check if distinct chars &lt;= K, pick longest, deletions = Total - Longest.
+BF Complexity Visuals: All-Pairs Substring Matrix.
+How to Draw BF: Draw an N x N grid of substrings. Check each one for distinct characters. $O(N^3)$.
+Optimised Pattern: Sliding Window (Two Pointers).
+Opt Vis. Technique: Expanding/Shrinking Frame.
+Dry Run (Opt): Move Right pointer to add characters. If distinct count &gt; K, move Left pointer until distinct count &lt;= K. Track max width.
+How to Draw (Opt): Draw the string. Place a transparent "window" (two brackets). Slide it right, expanding and shrinking while keeping a tally in a map.
+Opt Complexity Visuals: Linear Scan.
+How to Draw Opt Complexity: Draw a string with two arrows (L and R) moving only forward. $O(2N)$ -&gt; $O(N)$.
+Mem Vis (BF): Substring List: Draw a list of every valid substring stored in memory.
+Mem Vis (Opt): Char Frequency Map: Draw a small hash map (max size 26) tracking characters in the current window.

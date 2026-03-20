@@ -1,0 +1,13 @@
+ID: 438
+Problem Title: Find All Anagrams in a String
+Brute Force Method: Substring Sort Extract every substring of length P. Sort it. Sort P itself. Compare.
+BF Complexity Visuals: Nested Sorted Slices
+How to Draw BF: Draw a string. Draw many overlapping brackets. For each bracket, draw a mini sorting process $O(N \cdot P \log P)$.
+Optimised Pattern: Sliding Window + Frequency Map Use an array of size 26. As the window moves, increment the "entering" char and decrement the "leaving" char.
+Opt Vis. Technique: Balancing Scales
+Dry Run (Opt): Imagine two frequency "scales." One is fixed (Target P). The other shifts. If the scales match exactly, you found an anagram.
+How to Draw (Opt): Draw two 26-slot boxes. Write the target counts. Draw a sliding window over the string, updating the counts and checking for a match.
+Opt Complexity Visuals: Continuous Scan
+How to Draw Opt Complexity: Draw one single scan line. Each step is $O(1)$. Total $O(N)$.
+Mem Vis (BF): String Pool Massive memory for extracted substrings.
+Mem Vis (Opt): Two Fixed Arrays Draw two 26-slot integer arrays. $O(1)$ extra space.

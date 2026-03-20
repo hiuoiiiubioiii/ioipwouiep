@@ -1,0 +1,13 @@
+ID: 150
+Problem Title: Evaluate Reverse Polish Notation
+Brute Force Method: Scan the array for an operator. Once found, look backward to find the two nearest numbers, evaluate, and replace the three elements with the result. Repeat.
+BF Complexity Visuals: A shrinking array where each operation triggers a "search and shift" $O(N^2)$ process.
+How to Draw BF: Write: ["2", "1", "+", "3", "*"]. Circle "2", "1", "+". Replace with "3". Shift everything over.
+Optimised Pattern: Stack-based Evaluation.
+Opt Vis. Technique: A "LIFO" processing plant. Numbers are stored in a silo (stack) until an operator arrives to consume the top two.
+Dry Run (Opt): If token is a number, push to Stack. If token is operator, pop B, pop A, calculate A [op] B, and push the result back.
+How to Draw (Opt): Draw a vertical bin. Drop numbers into it. When you see "+", take the top two out, add them, and drop the result back in.
+Opt Complexity Visuals: $O(N)$ linear pass. Every token is visited once and pushed/popped once.
+How to Draw Opt Complexity: Draw a single horizontal arrow through the tokens. Mark each with a 'v' for visit, proving $O(N)$.
+Mem Vis (BF): Large strings and array-shifting overhead in heap memory.
+Mem Vis (Opt): Visualize a single Stack in memory growing to a maximum height of N (or less, depending on operators).

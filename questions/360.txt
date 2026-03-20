@@ -1,0 +1,13 @@
+ID: 360
+Problem Title: Sort Transformed Array
+Brute Force Method: Apply the function f(x) = ax^2 + bx + c to every element, then use a standard sorting algorithm to sort the results.
+BF Complexity Visuals: Transform then Global Sort
+How to Draw BF: Draw the original sorted array. Below it, draw the transformed (unsorted) array. Draw a "Sorting Machine" box. $O(N \log N)$.
+Optimised Pattern: Two Pointers (Parabolic Extremity)
+Opt Vis. Technique: Monotonic Concavity Merge
+Dry Run (Opt): Recognize that a parabola is monotonic starting from its vertex. If a &gt; 0, the largest values are at the ends of the sorted input. If a &lt; 0, the smallest values are at the ends. Use two pointers at the start and end to fill the result array.
+How to Draw (Opt): Draw a U-shaped parabola. Place points on the curve. Draw two pointers at the furthest left and right points. Show them "moving down" the curve to the center as you pick values.
+Opt Complexity Visuals: Linear Convergence Fill
+How to Draw Opt Complexity: Draw an array. Draw two arrows at the ends. Show them moving toward each other as they fill a "Result" tape. $O(N)$.
+Mem Vis (BF): An intermediate array and sorting overhead.
+Mem Vis (Opt): A single output array of size N. Draw one horizontal tape. $O(N)$ or $O(1)$ if ignoring output.

@@ -1,0 +1,13 @@
+ID: 909
+Problem Title: Snakes and Ladders
+Brute Force Method: Recursive Depth-First Search (DFS) exploring all 6 dice rolls from every square without tracking visited states.
+BF Complexity Visuals: $O(6^N)$ or infinite loops. A sprawling tree that loops back on itself when hitting snakes.
+How to Draw BF: Draw nodes with 6 branches each. Draw long "snake" arrows pointing from deep in the tree back up to the root, demonstrating endless cycles.
+Optimised Pattern: Breadth-First Search (BFS)
+Opt Vis. Technique: Concentric ripples expanding in a pond from square 1. Each ripple represents one dice roll. The first ripple to touch the final square wins.
+Dry Run (Opt): Queue pairs of [square, moves]. Pop front, roll 1-6. If snake/ladder, take it immediately. If unvisited, mark visited and push to back of queue.
+How to Draw (Opt): Flatten the 2D board into a 1D timeline (1 to N^2). Draw short forward arcs for dice rolls (+1 to +6) and long specific arcs for snakes/ladders. Color them by "depth".
+Opt Complexity Visuals: $O(N^2)$ where N^2 is total squares. A grid where each cell is shaded exactly once.
+How to Draw Opt Complexity: Draw the N x N grid. Lightly cross out each cell the moment it is pushed to the queue to prove no cell is processed twice.
+Mem Vis (BF): A massively deep call stack (DFS) that crashes with a StackOverflow due to cycles.
+Mem Vis (Opt): A horizontal pipe (Queue) and a 1D boolean array (Visited). Draw elements entering the back of the pipe and leaving the front.

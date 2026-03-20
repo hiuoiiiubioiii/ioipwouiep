@@ -1,0 +1,13 @@
+ID: 2868
+Problem Title: The Wording Game
+Brute Force Method: Recursively simulate every possible move for Alice and Bob, exploring all branches of the word lists to find if a winning strategy exists.
+BF Complexity Visuals: Minimax Game Tree
+How to Draw BF: Draw a tree starting with Alice's first word. Each level alternates players. Show branches for every legal next word. The tree depth could be N, leading to exponential paths.
+Optimised Pattern: Greedy Game State Simulation (Two Pointers)
+Opt Vis. Technique: Linear Turn Simulation
+Dry Run (Opt): Since words are sorted and players must pick a word that is lexicographically larger with specific starting char rules, simply track the current "best" word and the current player. Iteratively pick the first valid word from the next player's list.
+How to Draw (Opt): Write the two lists side-by-side. Use a "token" to represent the current word. Move the token to the other list by finding the first word that satisfies the "next-char" or "same-char-larger" rule. Stop when no move is possible.
+Opt Complexity Visuals: Linear Scan $O(N + M)$
+How to Draw Opt Complexity: Draw a single line passing through both word lists once. Each word is considered once. Total $O(N+M)$.
+Mem Vis (BF): Visualize a massive recursion stack storing string copies of the game state.
+Mem Vis (Opt): Visualize two pointers (indices) moving through the arrays. Space $O(1)$.

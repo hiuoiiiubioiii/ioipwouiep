@@ -1,0 +1,14 @@
+ID: 3852
+Problem Title: Smallest Pair With Different Frequencies (Easy)
+Brute Force Method: Nested Loops: Generate all pairs (a, b) from the array. Calculate frequencies of all elements. Check if freq(a) 
+eq freq(b). Find the minimum sum a+b.
+BF Complexity Visuals: A dense grid of comparisons (N x N) with a frequency calculation (O(N)) inside each comparison.
+How to Draw BF: Draw an array. Pair index 0 with 1, 2, 3... For each pair, scan the whole array to count how often those numbers appear. Write $O(N^3)$.
+Optimised Pattern: Frequency Map + Sorted Unique Elements.
+Opt Vis. Technique: A sorted list of unique values being checked against each other via a frequency lookup table.
+Dry Run (Opt): 1. Build frequency map. 2. Get unique elements and sort them. 3. Use two pointers or nested loops on unique elements: if `map[u1] != map[u2]`, update min sum.
+How to Draw (Opt): Draw array. Map: {1:3, 2:1, 3:3}. Unique sorted: [1, 2, 3]. Check (1,2): freq 3!=1 (valid). Check (1,3): freq 3==3 (invalid).
+Opt Complexity Visuals: Linear map build followed by a small quadratic unique-element check.
+How to Draw Opt Complexity: Draw a line for $O(N)$. Draw a small U x U grid for unique elements. Write $O(N + U^2)$.
+Mem Vis (BF): $O(1)$ if not counting frequency map; else $O(N)$.
+Mem Vis (Opt): $O(U)$ space where U is the number of unique elements (max N).

@@ -1,0 +1,13 @@
+ID: 1311
+Problem Title: Get Watched Videos by Your Friends
+Brute Force Method: Run DFS from the start, find all possible paths, filter nodes that are exactly distance K, then aggregate and sort their videos.
+BF Complexity Visuals: Unbounded Graph Traversal
+How to Draw BF: Draw a graph. Trace multiple twisting, looping paths from start, crossing out paths exceeding distance K, highlighting redundant node visits.
+Optimised Pattern: Level-Order BFS + Frequency Map Sort
+Opt Vis. Technique: Concentric Ripples / Graph Layers
+Dry Run (Opt): Put start in Queue. Pop, push unvisited neighbors. Repeat exactly K times (like pond ripples). Dump Level-K node videos into a frequency map, then sort.
+How to Draw (Opt): Draw start node. Draw a circle around it (Level 1), then a wider circle (Level 2). Stop at K. Dump videos from circle K into a bucket and tally.
+Opt Complexity Visuals: Breadth-First Expansion Wave
+How to Draw Opt Complexity: Draw an expanding funnel. The traversal hits a hard barrier (Level K). Draw an arrow pointing to a sorting funnel (O(V log V) for V videos).
+Mem Vis (BF): Massive Call Stack: Thousands of overlapping path histories and visited states.
+Mem Vis (Opt): Queue, Visited Set, Map: Draw a `std::queue` for expansion, a `std::vector` visited array, and a `std::unordered_map` for frequency.

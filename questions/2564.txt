@@ -1,0 +1,13 @@
+ID: 2564
+Problem Title: Substring XOR Queries
+Brute Force Method: For every query [val, target], calculate xor_sum = val ^ target. Convert xor_sum to binary, then search for that binary string in the main string using s.find(). $O(Q \cdot N)$.
+BF Complexity Visuals: A repeated text search where the "search term" changes for every single query.
+How to Draw BF: Query: 5 XOR 2 = 7 (111). Look through "10110111..." for "111". Found it? Note the indices. Repeat for next query.
+Optimised Pattern: Precomputation of All Substrings (up to 30 bits) + Hash Map.
+Opt Vis. Technique: A "Binary Dictionary" where every possible numerical value found in the string is indexed by its first occurrence.
+Dry Run (Opt): Since values are 10^9, they fit in 30 bits. Iterate through the string and for every index i, look at substrings of length 1 to 30. Convert to integer and store {value: [start, end]} in a map (only if not already present). Answer queries in $O(1)$ by calculating val ^ target and looking it up.
+How to Draw (Opt): Draw the string. Write down every number formed by 1-3 digits. Index them: "1" at 0, "10" at 0, "101" at 0, "0" at 1.... To answer a query, just check your index list.
+Opt Complexity Visuals: $O(N \cdot 30 + Q)$. Linear scan to build the map (max 30 look-ahead), then constant time queries.
+How to Draw Opt Complexity: Draw the string. Draw a "sliding window" of max length 30 moving across. Show the values being stored in a central "Map" box.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N \cdot 30)$ to store the starting and ending indices in the map.

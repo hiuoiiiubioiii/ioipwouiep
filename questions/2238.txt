@@ -1,0 +1,13 @@
+ID: 2238
+Problem Title: Number of Times a Driver Was a Passenger
+Brute Force Method: Nested SQL SubqueriesFor every unique driver ID in the table, run a separate subquery to count how many times that ID appears in the 'passenger_id' column.
+BF Complexity Visuals: Row-by-Row Lookup
+How to Draw BF: Draw two copies of the table. For the first row in Table A, scan all rows in Table B. Repeat for every row. Show the quadratic $O(N^2)$ search pattern.
+Optimised Pattern: Left Join + Group By (SQL)
+Opt Vis. Technique: Relational Mapping / Hash Join
+Dry Run (Opt): Create a frequency table of passenger counts. Join this to the unique list of driver IDs using a LEFT JOIN to ensure drivers with 0 passenger trips are included.
+How to Draw (Opt): Draw two lists: "Drivers" and "Passenger Counts". Draw lines connecting IDs. If a Driver has no match in the count list, draw a line to a "0" bucket.
+Opt Complexity Visuals: Hash Table Build/Probe Pipeline
+How to Draw Opt Complexity: Draw an $O(N)$ step to build a hash map of passenger frequencies. Draw an $O(M)$ step to probe that map for each driver. Total complexity $O(N+M)$.
+Mem Vis (BF): Heavy temporary result sets stored in memory for each nested subquery call.
+Mem Vis (Opt): A single Hash Map (Frequency Table) storing ID-Count pairs (O(Unique_IDs) space).

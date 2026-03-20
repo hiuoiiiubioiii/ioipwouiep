@@ -1,0 +1,13 @@
+ID: 837
+Problem Title: New 21 Game
+Brute Force Method: Recursion with Memoization: For every state (current points), calculate the probability by summing probabilities of all possible next draws (1 to W).
+BF Complexity Visuals: Wide Probability Tree. $O(N \\text{times} W)$.
+How to Draw BF: Draw a root (0). Branch out W times. From each child, branch out W times again. Show the repetitive states overlapping.
+Optimised Pattern: Sliding Window DP.
+Opt Vis. Technique: Running Water Reservoir.
+Dry Run (Opt): Keep a "window sum" of the previous W probabilities. As you move to the next point, subtract the probability that fell out of the window and add the new one. This calculates the average in $O(1)$.
+How to Draw (Opt): Draw a 1D DP array. Draw a sliding bracket of width W. As the bracket slides right, the value in the next cell is `windowSum / W`.
+Opt Complexity Visuals: Linear Probability Pass. $O(N)$.
+How to Draw Opt Complexity: Draw a single horizontal line. Each point is calculated using a sliding window that moves forward exactly once.
+Mem Vis (BF): Memoization Table: Draw a large N-sized array.
+Mem Vis (Opt): DP Array + Window Sum: Draw a single N-sized strip of floats and one "Sum" variable.

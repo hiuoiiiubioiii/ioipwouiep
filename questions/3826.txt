@@ -1,0 +1,13 @@
+ID: 3826
+Problem Title: Minimum Partition Score (Hard)
+Brute Force Method: Backtracking: Try every possible way to partition the array into contiguous subarrays, calculate the score for each partition, and find the minimum.
+BF Complexity Visuals: Exponential recursion tree showing every index deciding whether to split or continue the current subarray.
+How to Draw BF: Draw an array. Between every element, draw a dashed line representing a "cut" choice. Branch out 2^N paths. Write $O(2^N)$.
+Optimised Pattern: Dynamic Programming + Monotonic Queue/Segment Tree.
+Opt Vis. Technique: 1D DP array updating sequentially, using a sliding window or tree structure to fetch the minimum previous valid state instantly.
+Dry Run (Opt): Calculate DP[i] by finding the best DP[j] where the subarray [j+1...i] is valid. Use a Monotonic Queue to keep only the most optimal DP[j] candidates as 'i' moves forward.
+How to Draw (Opt): Draw the array. Below it, draw a DP array. Draw a "window" sliding right. Inside the window, cross out larger DP values to show the Monotonic Queue filtering for the minimum.
+Opt Complexity Visuals: Linear or Logarithmic timeline scanning past states.
+How to Draw Opt Complexity: Draw a line of N states. Under each, write an $O(\log N)$ tree lookup or $O(1)$ queue peek. Total: $O(N \log N)$ or $O(N)$.
+Mem Vis (BF): Deep call stack holding state for 2^N recursion branches.
+Mem Vis (Opt): A 1D DP array of size N, plus a Deque (Double-Ended Queue) storing indices, taking $O(N)$ space.

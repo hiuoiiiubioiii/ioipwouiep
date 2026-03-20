@@ -1,0 +1,13 @@
+ID: 2112
+Problem Title: The Airport With the Most Traffic
+Brute Force Method: Iterate all flights, maintain a hash map of arrivals and departures per airport, scan map for max.
+BF Complexity Visuals: Linear scan adding to a disorganized map.
+How to Draw BF: Draw flights as arrows. Draw a massive tally board where you add marks one by one. $O(E)$.
+Optimised Pattern: Graph Degree Counting (Array-based Frequency Map).
+Opt Vis. Technique: Nodes with incoming and outgoing edges summing up.
+Dry Run (Opt): Read `[src, dst]`. Increment `count[src]`, increment `count[dst]`. Track `max_traffic` on the fly.
+How to Draw (Opt): Draw airports as nodes. Every flight is an edge. Write a number inside the node that goes up by 1 for every touching edge.
+Opt Complexity Visuals: $O(V + E)$ single linear pass.
+How to Draw Opt Complexity: Straight arrow through the edge list, then a straight arrow through the vertex array.
+Mem Vis (BF): Dynamically resizing Hash Map causing memory overhead.
+Mem Vis (Opt): Fixed-size integer array indexed by airport ID (O(V)).

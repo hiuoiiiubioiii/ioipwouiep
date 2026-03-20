@@ -1,0 +1,13 @@
+ID: 1260
+Problem Title: Shift 2D Grid
+Brute Force Method: Perform the shift 'k' times. In each shift, move every element (i, j) to the right, and move the last element of a row to the first element of the next row.
+BF Complexity Visuals: Nested Loop Cycle
+How to Draw BF: Draw a grid. Draw an arrow from every cell to its neighbor. Draw a big circular arrow from the bottom-right back to the top-left. Repeat this drawing 'k' times. Write $O(k \cdot m \cdot n)$.
+Optimised Pattern: 1D Index Mapping (Modulo Arithmetic)
+Opt Vis. Technique: Flattened Array Ring
+Dry Run (Opt): Treat the 2D grid as a single long 1D array of length m x n. The new position of an element at 1D index i is (i + k) modm x n. Convert back to 2D indices.
+How to Draw (Opt): Draw a grid. Label cells 0, 1, 2... up to mn-1. Draw a straight line below it with the same numbers. Show a shift of k on the line. Map the new line numbers back into a fresh grid.
+Opt Complexity Visuals: Single Linear Transformation
+How to Draw Opt Complexity: Draw a 1D block representing the grid. Draw a single set of arrows shifting all elements simultaneously. Write $O(m \cdot n)$.
+Mem Vis (BF): Draw multiple intermediate 2D grid copies for each shift.
+Mem Vis (Opt): Draw a single new 2D grid of size m x n. Space: $O(m \cdot n)$ for the result.

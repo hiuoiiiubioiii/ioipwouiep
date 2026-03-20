@@ -1,0 +1,13 @@
+ID: 19
+Problem Title: Remove Nth Node From End of List
+Brute Force Method: Two Passes Traverse the entire linked list to find its length L. Do a second traversal to stop at node (L - N) and remove the next node.
+BF Complexity Visuals: Double Finish Line
+How to Draw BF: Draw a linked list. Draw an arrow running all the way to the end (Pass 1). Draw a second arrow stopping just before the target (Pass 2).
+Optimised Pattern: Fast &amp; Slow Pointers (One Pass)
+Opt Vis. Technique: The Fixed-Gap Runners
+Dry Run (Opt): Send a 'Fast' pointer exactly N steps ahead. Then, move both 'Fast' and 'Slow' at the same speed. When 'Fast' hits the end, 'Slow' is right before the target node.
+How to Draw (Opt): Draw a linked list. Place 'Fast' 2 nodes ahead of 'Slow'. Draw a rigid stick connecting them. Slide both right until 'Fast' falls off the end. 'Slow' bypasses the next node.
+Opt Complexity Visuals: Single Segmented Line
+How to Draw Opt Complexity: Draw a line of length L. Show the Fast pointer covering it in one go. Time is strictly $O(L)$ with only one traversal.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw exactly two pointer variables (Fast, Slow). No new nodes or data structures are created (O(1) space).

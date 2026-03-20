@@ -1,0 +1,13 @@
+ID: 2835
+Problem Title: Minimum Operations to Form Subsequence with Target Sum
+Brute Force Method: Generate all possible subsequence sums from the given powers of 2. If the target isn't found, try splitting larger powers and repeat.
+BF Complexity Visuals: Recursive Subset Sum Tree
+How to Draw BF: Draw a tree of all subset sums. When target is missed, draw a branch where an element is split (2^x rightarrow 2^x-1, 2^x-1). Show exponential state growth.
+Optimised Pattern: Greedy Bit Manipulation + Min-Priority Queue (or Frequency Array)
+Opt Vis. Technique: Bitwise Greedy Filling
+Dry Run (Opt): Sort powers. Use smaller powers to fill bits of target. If a bit cannot be filled, find the next available larger power and "split" it repeatedly until it fits the required bit, counting operations.
+How to Draw (Opt): Write target in binary. List available powers. Draw arrows "filling" the binary 1s from smallest to largest. If a gap exists, draw a "Split" arrow from a larger number.
+Opt Complexity Visuals: Logarithmic Bit Scan
+How to Draw Opt Complexity: Draw a bar with 31 slots (for 2^0 to 2^30). Each slot is processed once. Total $O(n + \log(\text{target})$).
+Mem Vis (BF): Visualize $O(2^n)$ combinations stored in memory.
+Mem Vis (Opt): Visualize an array of size 31 to store counts of each power of 2. $O(1)$ auxiliary space.

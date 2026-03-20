@@ -1,0 +1,13 @@
+ID: 1657
+Problem Title: Determine if Two Strings Are Close
+Brute Force Method: Generate every possible string transformation using the two allowed operations (swap, transform) and check for equality.
+BF Complexity Visuals: Exponential State Space
+How to Draw BF: Draw a starting string. Branch into thousands of possible transformed strings. $O(2^N)$ or worse.
+Optimised Pattern: Frequency Maps + Character Set Comparison
+Opt Vis. Technique: Histogram Signature Matching
+Dry Run (Opt): Two strings are "close" if: 1. They have the same unique characters. 2. The *sorted* frequency counts of those characters are identical.
+How to Draw (Opt): Draw two bar charts (histograms) of character frequencies. Sort the bars by height. If the shapes of the two bar charts are identical, they are close.
+Opt Complexity Visuals: Linear Scan + Fixed Sort
+How to Draw Opt Complexity: Draw a straight arrow through the strings, then a small funnel for 26 characters. $O(N + 26 \log 26)$.
+Mem Vis (BF): Recursion State Set: Draw a massive bucket storing all generated string permutations.
+Mem Vis (Opt): Two Arrays of size 26: Draw two fixed 26-slot grids. $O(1)$ auxiliary space.

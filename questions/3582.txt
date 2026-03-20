@@ -1,0 +1,13 @@
+ID: 3582
+Problem Title: Generate Tag for Video Caption (Easy)
+Brute Force Method: Manually search through the caption for specific keywords using nested loops for string matching.
+BF Complexity Visuals: Nested String Search.
+How to Draw BF: Draw the caption. Draw a list of keywords. For each keyword, draw an arrow sliding it across the entire caption. $O(C \cdot K)$.
+Optimised Pattern: Hash Set Lookup / Single Pass Tokenization.
+Opt Vis. Technique: Keyword Filtering Bin.
+Dry Run (Opt): Split the caption by spaces. Put all words into a frequency map. If a word matches a predefined "tag" list, include it.
+How to Draw (Opt): Draw the sentence. Draw a circle around "important" words. Transfer the circled words into a sorted "Tags" box.
+Opt Complexity Visuals: $O(C + K)$.
+How to Draw Opt Complexity: Draw an arrow scanning the caption once. Draw another arrow scanning the tags. $O(N)$ linear time.
+Mem Vis (BF): Multiple Substring Objects: Draw many small string slices being created during manual indexing.
+Mem Vis (Opt): Hash Set &amp; Result List: Draw one Set of "Target Keywords" and one List for the generated tags.

@@ -1,0 +1,13 @@
+ID: 1670
+Problem Title: Design Front Middle Back Queue
+Brute Force Method: Use a single Array/List. For every "Middle" operation, use `list.add(index, val)` which shifts all subsequent elements.
+BF Complexity Visuals: Array Shifting Cascade
+How to Draw BF: Draw an array. For an insertion, draw 50 arrows showing every element moving one slot to the right. $O(N)$.
+Optimised Pattern: Two Deques (Balanced Halves)
+Opt Vis. Technique: Balanced Scales
+Dry Run (Opt): Maintain two Deques: `left` and `right`. Keep their sizes equal (or `right` having one extra). Insert/Pop from either end or the "middle" (junction of the two).
+How to Draw (Opt): Draw two horizontal tubes meeting in the center. Mark the center point as the "Middle". Elements flow in/out of the ends or the center junction.
+Opt Complexity Visuals: Constant Time Operations
+How to Draw Opt Complexity: Draw a dot (O(1)) for every operation, regardless of where the insertion happens.
+Mem Vis (BF): Continuous Memory Block: Draw one giant box that must resize and shift.
+Mem Vis (Opt): Two Segmented Blocks: Draw two separate tubes. Rebalancing just moves one element between them. $O(N)$ total space.

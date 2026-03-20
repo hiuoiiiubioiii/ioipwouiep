@@ -1,0 +1,13 @@
+ID: 898
+Problem Title: Bitwise ORs of Subarrays
+Brute Force Method: Generate every possible subarray (N^2), calculate the bitwise OR for each, and store unique results in a Set.
+BF Complexity Visuals: All-Subarrays Bitwise Scan. $O(N^3)$.
+How to Draw BF: Draw an array. Draw brackets of all sizes. For each bracket, run a loop to calculate the OR of every number inside. Store results in a growing list.
+Optimised Pattern: DP with Pruning (Capped Set size).
+Opt Vis. Technique: The "Rolling Bit-Accumulator."
+Dry Run (Opt): At each index i, the possible OR values of subarrays ending at i are `{A[i] OR x}` for all `x` in the set of OR values ending at i-1. Because bitwise OR only adds '1's, there are at most 32 unique values in each step.
+How to Draw (Opt): Draw a sequence. Above each number, draw a small bubble containing a few bit-results. To get the next bubble, OR the current number with every result in the previous bubble. Merge into a "Global Set."
+Opt Complexity Visuals: Linear-ish Scan. $O(32N)$.
+How to Draw Opt Complexity: Draw a timeline. At each step, show a constant amount of work (max 32 operations) being performed.
+Mem Vis (BF): Full N^2 result list: Draw a massive memory block for all results.
+Mem Vis (Opt): Three Sets (Current, Prev, Result): Draw three small buckets that cycle their contents. $O(32N)$ space.

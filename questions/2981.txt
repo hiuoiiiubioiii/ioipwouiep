@@ -1,0 +1,13 @@
+ID: 2981
+Problem Title: Find Longest Special Substring That Occurs Thrice I
+Brute Force Method: Generate all $O(N^2)$ substrings, check if they are "special" (one char), and count frequencies in a map.
+BF Complexity Visuals: Subarray Frequency Grid
+How to Draw BF: Draw an N x N triangle. Shade cells where all characters are identical. $O(N^3)$.
+Optimised Pattern: Sliding Window + Frequency Map
+Opt Vis. Technique: Grouped Character Tally
+Dry Run (Opt): Identify consecutive blocks of the same character (e.g., "aaaa"). A block of length L contributes to counts for lengths L, L-1, dots, 1. Find the max length with count >= 3.
+How to Draw (Opt): Write "aaaaabbb". Under "a", list lengths: 5, 4, 3. Under "b", list: 3, 2, 1. See which length across all letters has at least 3 occurrences.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a straight line of length N. One sweep to find blocks. T = $O(N)$.
+Mem Vis (BF): Storing all N^2 string slices in a map.
+Mem Vis (Opt): A 2D array or map `count[26][N]`. Space $O(26N)$.

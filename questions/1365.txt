@@ -1,0 +1,13 @@
+ID: 1365
+Problem Title: How Many Numbers Are Smaller Than the Current Number
+Brute Force Method: Nested loops: for each element `i`, iterate through all other elements `j` and count how many are smaller.
+BF Complexity Visuals: $O(N^2)$ Comparison Matrix
+How to Draw BF: Draw an array. For each item, draw an arrow to every other item. Shows a dense web of redundant checks.
+Optimised Pattern: Bucket Sort / Prefix Sum
+Opt Vis. Technique: Frequency Accumulation
+Dry Run (Opt): Count occurrences of each number (0-100) in a frequency array. Calculate prefix sums of the frequency array. `prefix[i-1]` gives the count of numbers smaller than `i`.
+How to Draw (Opt): Draw a frequency histogram. For any bar, the sum of all bars to its LEFT is the answer. Use a running total to pre-calculate these sums.
+Opt Complexity Visuals: $O(N + \text{MaxValue})$
+How to Draw Opt Complexity: Draw a linear scan to count, then a single 100-step pass to sum frequencies, proving linear performance.
+Mem Vis (BF): $O(1)$ Counter: A single variable reset for every outer loop.
+Mem Vis (Opt): 101-Slot Frequency Array: Draw a fixed-size array mapping values to counts.

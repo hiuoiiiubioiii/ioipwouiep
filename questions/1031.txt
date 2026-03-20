@@ -1,0 +1,13 @@
+ID: 1031
+Problem Title: Maximum Sum of Two Non-Overlapping Subarrays
+Brute Force Method: Use 4 nested loops to pick start/end of the first subarray and start/end of the second. Check if they overlap. If not, sum them.
+BF Complexity Visuals: Two separate spotlights scanning the array independently, constantly colliding and resetting.
+How to Draw BF: Draw an array. Draw a bracket for Sub1. Under it, draw a bracket for Sub2 and move it across. Then move Sub1. Write $O(N^4)$.
+Optimised Pattern: Dynamic Programming / Prefix Sums.
+Opt Vis. Technique: A "high-water mark" tracking the best left-side window while a right-side window scans ahead.
+Dry Run (Opt): Fix the right window of length `M`. As you slide it, keep track of the maximum sum of a window of length `L` seen so far to its left. Max sum = MaxL + CurrentM. Reverse L and M and repeat.
+How to Draw (Opt): Draw a Prefix Sum array. Slide two windows `[L]` and `[M]`. Mark `MaxL` as you go. Total = `MaxL + current M`. Keep a running `globalMax`.
+Opt Complexity Visuals: Two linear passes across the array.
+How to Draw Opt Complexity: Draw an array with two windows sliding from left to right. Write Time: $O(N)$.
+Mem Vis (BF): No extra memory besides the array itself.
+Mem Vis (Opt): $O(N)$ for a Prefix Sum array, or $O(1)$ if you calculate window sums on the fly.

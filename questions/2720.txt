@@ -1,0 +1,13 @@
+ID: 2720
+Problem Title: Popularity Percentage
+Brute Force Method: Two separate massive queries counting user1 and user2 occurrences, followed by a slow full outer join and manual math.
+BF Complexity Visuals: Disjointed Tally Tables
+How to Draw BF: Draw two separate tables. Count friends on the left. Count friends on the right. Try to manually merge the lists.
+Optimised Pattern: UNION CTE + Window/Aggregate
+Opt Vis. Technique: The Undirected Graph Flattener
+Dry Run (Opt): Friendships are bidirectional. Create a CTE that `UNION`s `(user1, user2)` and `(user2, user1)`. This creates a flat list of ALL friends for every user. Then group by user, count distinct friends, and divide by the total distinct users in the network.
+How to Draw (Opt): Draw a directed graph. Flip it so arrows go both ways. List every user and simply count the arrows touching them. Divide by total nodes.
+Opt Complexity Visuals: Linear Scan &amp; Group $O(N)$
+How to Draw Opt Complexity: Draw a single pipeline: UNION rightarrow Hash Aggregate rightarrow Math calculation.
+Mem Vis (BF): Massive temporary tables for outer joins.
+Mem Vis (Opt): SQL internal hash map for distinct counts. $O(U)$ space.

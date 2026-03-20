@@ -1,0 +1,13 @@
+ID: 3598
+Problem Title: Longest Common Prefix Between Adjacent Strings After Removals (Med)
+Brute Force Method: Try every combination of string removals, then for the remaining list, find the LCP of every adjacent pair.
+BF Complexity Visuals: Combinatorial Subsequence Search.
+How to Draw BF: Draw the list of strings. Branch for "Remove string i" or "Keep string i". Calculate min(LCP) for each 2^N list.
+Optimised Pattern: Dynamic Programming / Monotonic Stack.
+Opt Vis. Technique: Prefix Slope Analysis.
+Dry Run (Opt): The LCP between any two strings is the minimum value in a Range LCP Query. Use DP to find the best selection to maximize this minimum.
+How to Draw (Opt): Draw a bar chart where heights are LCPs between adjacent strings. Your goal is to remove "dips" (low bars) to keep the highest "floor" possible.
+Opt Complexity Visuals: $O(N \cdot L)$ where L is string length.
+How to Draw Opt Complexity: Draw a 1D DP array. Each index i shows the best score ending at string i. $O(N)$ linear scan.
+Mem Vis (BF): Massive Sub-list Combinations: Draw arrays of string pointers for every 2^N possibility.
+Mem Vis (Opt): 1D DP Array: Draw one array of integers storing the max length possible for each position.

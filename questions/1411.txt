@@ -1,0 +1,13 @@
+ID: 1411
+Problem Title: Number of Ways to Paint N × 3 Grid
+Brute Force Method: Backtracking to color each cell row by row. Try all 3 colors for each cell, recursively validating against the left and top adjacent cells.
+BF Complexity Visuals: Exponential Branching Tree
+How to Draw BF: Draw an N-depth tree where each row attempts up to 27 combinations. Cross out invalid adjacent colors with red Xs. Label $O(27^N)$.
+Optimised Pattern: State Machine DP / Math
+Opt Vis. Technique: 2-State Transition Graph
+Dry Run (Opt): A row has 2 valid patterns: 3-colors (Type 1) or 2-colors (Type 2). T1 generates 2 new T1s and 2 T2s. T2 generates 2 T1s and 3 T2s. Iterate N times updating counts.
+How to Draw (Opt): Draw two nodes labeled "Type 1" and "Type 2". Draw directed arrows looping back to themselves and to each other, labeled with multipliers (2 and 3).
+Opt Complexity Visuals: Constant Time Loop
+How to Draw Opt Complexity: Draw a circular loop running N times. Inside the loop, write $O(1)$ basic arithmetic operations. Total $O(N)$.
+Mem Vis (BF): Deep Recursion Call Stack
+Mem Vis (Opt): Draw just two floating integer variables `T1` and `T2` updating their values simultaneously. Space is $O(1)$.

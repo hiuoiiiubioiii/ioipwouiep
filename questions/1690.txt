@@ -1,0 +1,13 @@
+ID: 1690
+Problem Title: Stone Game VII
+Brute Force Method: Recursion with all possible choices (remove left or remove right) for each turn to find max score difference.
+BF Complexity Visuals: Minimax Recursion Tree
+How to Draw BF: Draw a tree where each node splits into "Left" and "Right". Height of tree is N. $O(2^N)$.
+Optimised Pattern: 2D Interval Dynamic Programming
+Opt Vis. Technique: Triangular DP Matrix
+Dry Run (Opt): DP[i][j] stores the max score difference for the range [i, j]. Use prefix sums to calculate range sums in $O(1)$.
+How to Draw (Opt): Draw an N \times N matrix. Fill the diagonals first (length 1), then length 2, then 3, until you reach the top-right corner.
+Opt Complexity Visuals: Matrix Fill Area
+How to Draw Opt Complexity: Draw a 2D square. Shade the upper-right triangle representing the states being calculated. $O(N^2)$.
+Mem Vis (BF): Deep Recursion Stack: Stack of depth N storing range indices.
+Mem Vis (Opt): 2D DP Array: Draw a square grid of size N \times N. $O(N^2)$ space.

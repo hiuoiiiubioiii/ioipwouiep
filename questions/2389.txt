@@ -1,0 +1,13 @@
+ID: 2389
+Problem Title: Longest Subsequence With Limited Sum
+Brute Force Method: For every query Q, generate all subsequences of `nums`, find those with sum <= Q, and track the max length.
+BF Complexity Visuals: Exponential Subsequence Search (O(Q \times 2^N))
+How to Draw BF: Draw a query value. Below it, draw a massive branching tree of all possible number combinations from the array.
+Optimised Pattern: Sorting + Prefix Sum + Binary Search
+Opt Vis. Technique: Accumulated Growth Threshold
+Dry Run (Opt): Sort `nums` ascending. Calculate the prefix sum array. For each query, use `binary search` (upper bound) on the prefix sums to find the largest index where the sum is <= query.
+How to Draw (Opt): Draw the array from smallest to largest. Stack the numbers on top of each other to create a "staircase" (prefix sums). For a query, draw a horizontal line at that height; the number of steps below the line is your answer.
+Opt Complexity Visuals: Sorting + Query Binary Search (O(N \log N + Q \log N))
+How to Draw Opt Complexity: Draw a sorting funnel, a single linear prefix-sum line, and then Q quick binary search "pokes" into the line.
+Mem Vis (BF): Draw a 2D matrix of all subsequences for every query.
+Mem Vis (Opt): Draw one 1D Array (Prefix Sums) of size N.

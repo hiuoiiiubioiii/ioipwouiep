@@ -1,0 +1,13 @@
+ID: 147
+Problem Title: Insertion Sort List
+Brute Force Method: For every node, scan the entire sorted portion of the list from the very beginning to find the correct insertion spot.
+BF Complexity Visuals: A nested loop visualization where the "inner" search length grows linearly with the outer loop (O(N^2)).
+How to Draw BF: Draw the list. For the 4th node, draw 3 separate arrows back to nodes 1, 2, and 3 to find its place. Repeat for the 5th node.
+Optimised Pattern: Insertion Sort with Dummy Head and Predecessor Pointers.
+Opt Vis. Technique: A "Sorting Rail." A dummy node acts as the start of the rail where nodes are slotted in one by one.
+Dry Run (Opt): Keep a sorted tail pointer. If the next node is smaller, search from the dummy head to find the insertion point and rewire pointers.
+How to Draw (Opt): Draw a 'Sorted' section and an 'Unsorted' section. Use a dashed line. Move nodes one by one across the line, drawing the new 'next' arrows.
+Opt Complexity Visuals: $O(N^2)$ time but $O(1)$ space. The area of a triangle (1+2+3...+N).
+How to Draw Opt Complexity: Draw a lower-triangular matrix. Each filled cell represents a comparison made during the sorting process.
+Mem Vis (BF): An auxiliary array used to sort values before rebuilding the list (O(N) space).
+Mem Vis (Opt): In-place pointer manipulation. Visualize the same nodes simply changing their "next" addresses in stack/heap.

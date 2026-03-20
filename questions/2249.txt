@@ -1,0 +1,13 @@
+ID: 2249
+Problem Title: Count Lattice Points Inside Circles
+Brute Force Method: Circle-to-Circle SearchFor every circle, iterate through every point in its bounding box and add it to a Set if it satisfies the circle equation `(x-x1)^2 + (y-y1)^2 &lt;= r^2`.
+BF Complexity Visuals: Overlapping Grid Checks
+How to Draw BF: Draw three overlapping circles. For each, draw a square around it and check every dot inside. Show the same points being checked multiple times.
+Optimised Pattern: Global Bounding Box Scan
+Opt Vis. Technique: Universal Grid Sweep
+Dry Run (Opt): Find the global min/max X and Y across all circles. Iterate through every `(x, y)` in this single large grid once. For each point, check if it lies inside *any* circle and break early if it does.
+How to Draw (Opt): Draw one large rectangle that contains all the circles. Draw a grid of dots inside. Move a pointer dot-by-dot. At each dot, ask: "Am I inside Circle 1? No. Circle 2? Yes!" and move to the next dot immediately.
+Opt Complexity Visuals: 2D Grid Area Pass
+How to Draw Opt Complexity: Draw a grid of size `W x H`. Label the total complexity $O(W \cdot H \cdot N)$ where N is the number of circles. Show that N is reduced by the "early break" logic.
+Mem Vis (BF): Large Hash Set storing thousands of coordinate tuples to handle duplicates.
+Mem Vis (Opt): A simple nested loop with a few integer variables; no extra data structures needed beyond the input (O(1) extra space).

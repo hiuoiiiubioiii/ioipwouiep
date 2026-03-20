@@ -1,0 +1,13 @@
+ID: 899
+Problem Title: Orderly Queue
+Brute Force Method: Simulate the process using a BFS or DFS: try moving any of the first K characters to the end. Find the lexicographically smallest string reached.
+BF Complexity Visuals: Permutation Graph Search. $O(N!)$.
+How to Draw BF: Draw a string. Branch out K times (move char 1, move char 2...). From each result, branch again. It becomes an unmanageable tree of string permutations.
+Optimised Pattern: Math Observation (Bubblesort Property).
+Opt Vis. Technique: The "Sorting Flip" Logic.
+Dry Run (Opt): Case 1 (K=1): You can only rotate the string. Try all N rotations and pick the best. Case 2 (K &gt; 1): You can eventually swap any two adjacent characters (like bubblesort). This means you can reach ANY permutation. The best permutation is simply the sorted string.
+How to Draw (Opt): Check K. If K=1, draw a circle and rotate the string like a wheel. If K &gt; 1, draw a "Sort Machine" icon—the string goes in messy and comes out alphabetically sorted.
+Opt Complexity Visuals: Sorting or Rotation Scan. $O(N \log N)$ or $O(N^2)$.
+How to Draw Opt Complexity: Draw a simple Sorting Funnel for K&gt;1, or a small loop for K=1.
+Mem Vis (BF): Visited Set of Strings: Draw an exponentially large storage block for all permutations.
+Mem Vis (Opt): Temporary Rotation String: Draw one extra string copy for comparisons. $O(N)$ space.

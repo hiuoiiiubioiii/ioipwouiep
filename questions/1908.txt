@@ -1,0 +1,13 @@
+ID: 1908
+Problem Title: Game of Nim
+Brute Force Method: Backtracking / Minimax to simulate every single possible move from every pile to find a winning branch.
+BF Complexity Visuals: Massive Game State Tree
+How to Draw BF: Draw a root node branching out into dozens of child states, exploding exponentially downward $O(2^N)$.
+Optimised Pattern: Sprague-Grundy Theorem (Bitwise XOR / Nim-Sum)
+Opt Vis. Technique: Bitwise XOR Stacking
+Dry Run (Opt): Write all pile sizes in binary. Compute the XOR sum. If the final sum is not 0, the first player wins.
+How to Draw (Opt): Write the binary numbers stacked vertically. Draw a line underneath. Do column-wise XOR (if count of 1s is odd, write 1; if even, write 0).
+Opt Complexity Visuals: $O(N)$ Funnel Gate
+How to Draw Opt Complexity: Draw N input numbers funneling into a single XOR logic gate to produce one boolean output.
+Mem Vis (BF): A massive call stack for DFS with a large Hash Map to memoize visited states.
+Mem Vis (Opt): A single integer `xor_sum` accumulator variable acting in-place. $O(1)$ space.

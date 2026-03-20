@@ -1,0 +1,13 @@
+ID: 1370
+Problem Title: Increasing Decreasing String
+Brute Force Method: Find the lexicographical smallest char, append it, then search the remaining string for the next smallest, and so on.
+BF Complexity Visuals: $O(N^2)$ Repeated Searching
+How to Draw BF: Draw a string. Draw a magnifying glass scanning the whole string for 'a', then 'b', etc. Show the glass moving back and forth across the entire tape.
+Optimised Pattern: Bucket Sort / Counting Tally
+Opt Vis. Technique: Pendulum Scan
+Dry Run (Opt): Count all characters into a 26-slot frequency array. Loop 1: Scan 0 to 25, taking 1 of each char. Loop 2: Scan 25 down to 0, taking 1 of each char. Repeat.
+How to Draw (Opt): Draw 26 buckets labeled 'a' to 'z'. Fill them with letters. Draw a pointer moving left-to-right (up the alphabet), then right-to-left (down), picking one letter per bucket.
+Opt Complexity Visuals: $O(N)$ Bucket Pass
+How to Draw Opt Complexity: Draw a 26-slot array. Show an arrow sweeping back and forth like a windshield wiper until all slots are empty.
+Mem Vis (BF): Temporary String Subsets: Creating new strings repeatedly after "deleting" used characters.
+Mem Vis (Opt): 26-Slot Integer Array: Draw a simple frequency array. $O(1)$ space relative to alphabet.

@@ -1,0 +1,13 @@
+ID: 3191
+Problem Title: Minimum Operations to Make Binary Array Elements Equal to One I
+Brute Force Method: Recursively try flipping every possible 3-element window. $O(2^N)$.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a root. Branch "flip" or "no flip" for index 0, then 1... Tally 1s at leaves.
+Optimised Pattern: Greedy / Fixed Window Flip
+Opt Vis. Technique: The Window Sliding Light Switch
+Dry Run (Opt): Scan 0 to N-3. If `nums[i] == 0`, you *must* flip [i, i+1, i+2]. It's the only way to fix i.
+How to Draw (Opt): Draw bits. Place a 3-cell bracket. If left-most is 0, flip all 3. Move bracket 1 step right.
+Opt Complexity Visuals: Linear Sequential Timeline
+How to Draw Opt Complexity: Draw a straight line 0 to N. Each node is $O(3)$ = $O(1)$. Total $O(N)$.
+Mem Vis (BF): Deep recursive stack of 2^N states.
+Mem Vis (Opt): In-place modification or single integer `ans`. $O(1)$.

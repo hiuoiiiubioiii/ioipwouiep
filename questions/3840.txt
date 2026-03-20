@@ -1,0 +1,13 @@
+ID: 3840
+Problem Title: House Robber V (Med.)
+Brute Force Method: Recursive Backtracking: At every house, fork reality into two paths: "Rob this house" or "Skip this house," ensuring adjacent constraints are met.
+BF Complexity Visuals: A binary decision tree that grows exponentially with every house evaluated.
+How to Draw BF: Draw an array of houses. From house 1, draw two branches: Rob (jump to house 3), Skip (jump to house 2). Branch again. Write $O(2^N)$.
+Optimised Pattern: 1D Dynamic Programming (State Machine).
+Opt Vis. Technique: A single timeline accumulating optimal loot, looking back at the best possible past states.
+Dry Run (Opt): Maintain a DP array where `dp[i]` is the max loot up to house `i`. Formula: `dp[i] = max(dp[i-1], dp[i-step] + loot[i])`. (Adjust `step` based on problem's specific gap rules).
+How to Draw (Opt): Draw an array of house values. Below it, draw an empty array. Fill the first few cells. For cell 4, point back to cell 3 and cell 2 to visually pick the max.
+Opt Complexity Visuals: A single left-to-right sweep.
+How to Draw Opt Complexity: Draw an array of N cells. Draw one continuous arrow scanning left-to-right. Write $O(N)$.
+Mem Vis (BF): Deep call stacks leading to Stack Overflow errors on large neighborhoods, $O(N)$ space overhead.
+Mem Vis (Opt): A 1D DP array taking $O(N)$ space, which can often be optimized to just 2 or 3 rolling integer variables for $O(1)$ space.

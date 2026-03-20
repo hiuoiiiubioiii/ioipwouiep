@@ -1,0 +1,13 @@
+ID: 2122
+Problem Title: Recover the Original Array
+Brute Force Method: Try every possible subset to form 'lower' and 'higher' arrays, validating if they have a constant difference 2k.
+BF Complexity Visuals: Massive decision tree of choosing whether each element is in 'lower' or 'higher'.
+How to Draw BF: Draw a binary tree branching into 2^N combinations, crossing out invalid leaves.
+Optimised Pattern: Sorting + Greedy Candidate Validation.
+Opt Vis. Technique: A sorted number line sliding a fixed measuring stick `2k`.
+Dry Run (Opt): Sort array. The smallest element *must* be `lower[0]`. Iterate through rest to guess `higher[0]`, yielding candidate `2k`. Greedily try to pair up all remaining elements using a frequency map.
+How to Draw (Opt): Draw sorted array. Draw an arrow from index 0 to index `i`. Calculate `diff`. Go through the rest of the array crossing off numbers that are exactly `diff` apart.
+Opt Complexity Visuals: $O(N^2)$ worst case, nested looping over candidates.
+How to Draw Opt Complexity: An N x N grid where you pick a candidate from the top row and scan the array below it.
+Mem Vis (BF): Creating thousands of intermediate subset arrays (O(2^N)).
+Mem Vis (Opt): A Frequency Array or Hash Map of size N, dynamically tracking unused numbers.

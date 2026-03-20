@@ -1,0 +1,13 @@
+ID: 3340
+Problem Title: Check Balanced String
+Brute Force Method: Split the string into two separate lists (even/odd indices), sum each list, and compare.
+BF Complexity Visuals: Two-Pass List Splitting
+How to Draw BF: Write the string. Below it, write two new strings. Sum both. Proves $O(N)$ but with extra $O(N)$ space.
+Optimised Pattern: One-Pass Parity Tally
+Opt Vis. Technique: Alternating Balance Scale
+Dry Run (Opt): Initialize `balance = 0`. Iterate through the string. If index is even, add digit; if odd, subtract. Check if `balance == 0`.
+How to Draw (Opt): Draw a balance scale. For every number you read, draw a weight on the left (even) or right (odd) side. See if the scale stays level at the end.
+Opt Complexity Visuals: Single-Pass Linear Arrow
+How to Draw Opt Complexity: Draw a single straight line through the string length N. No branching, no jumping. Strict $O(N)$.
+Mem Vis (BF): Two newly allocated list objects taking $O(N)$ space.
+Mem Vis (Opt): Exactly two integer variables (or one) in the stack. $O(1)$ space.

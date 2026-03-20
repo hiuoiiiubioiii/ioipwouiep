@@ -1,0 +1,13 @@
+ID: 2853
+Problem Title: Highest Salary Difference (SQL)
+Brute Force Method: Write multiple subqueries to find the max salary for Department A, then a separate subquery for Department B, then manually subtract them in a final select.
+BF Complexity Visuals: Nested Selection Tree
+How to Draw BF: Draw two separate tables. Draw an arrow finding the max in Table 1, another for Table 2, and a third arrow joining them at a "Subtraction Node."
+Optimised Pattern: MAX() with Conditional Aggregation (CASE/IF)
+Opt Vis. Technique: Pivot-style Aggregation
+Dry Run (Opt): Group the entire table. Use MAX(CASE WHEN dept='A' THEN salary ELSE 0 END) and subtract it from the same logic for Dept 'B'. Use ABS() for the final difference.
+How to Draw (Opt): Draw one table. Color Dept A rows blue and Dept B rows red. Circle the largest blue number and the largest red number. Draw a minus sign between them.
+Opt Complexity Visuals: Single Pass Scan
+How to Draw Opt Complexity: Draw a single straight line through the table $O(N)$. Since we only need two values (max A, max B), a single scan suffices.
+Mem Vis (BF): Visualize temporary result tables being cached in memory for each subquery.
+Mem Vis (Opt): Visualize two registers (variables) in memory holding maxA and maxB as the DB engine scans.

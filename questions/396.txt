@@ -1,0 +1,13 @@
+ID: 396
+Problem Title: Rotate Function
+Brute Force Method: For every possible rotation k \in [0, n-1], manually shift the array and calculate the sum \sum_{i=0}^{n-1} i \cdot A[i].
+BF Complexity Visuals: 2D Matrix of Indexed Multiplications
+How to Draw BF: Draw n rows. Each row shows the array shifted by one position. Draw n arrows per row representing the index-value multiplication. Label $O(n^2)$.
+Optimised Pattern: Mathematical DP (Linear Recurrence)
+Opt Vis. Technique: Arithmetic Progression Displacement
+Dry Run (Opt): Observe the relationship: F(k) - F(k-1) = \text{Sum}(A) - n \cdot A[n-k]. This allows you to compute the next rotation sum in $O(1)$ based on the previous one.
+How to Draw (Opt): Write the full formula for F(0) and F(1). Subtract them on paper to reveal that the entire array sum is added, while the last element is subtracted n times.
+Opt Complexity Visuals: Linear Incremental Update
+How to Draw Opt Complexity: Draw a single horizontal line representing a one-pass loop from 0 to n. Label it $O(n)$.
+Mem Vis (BF): Temporary array copies for each rotation. Draw n parallel horizontal tapes. $O(n^2)$.
+Mem Vis (Opt): Two variables: `totalSum` and `currentF`. Draw two small integer boxes. $O(1)$ extra space.

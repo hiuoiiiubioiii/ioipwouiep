@@ -1,0 +1,13 @@
+ID: 664
+Problem Title: Strange Printer
+Brute Force Method: Recursion without memoization: try every possible range and every possible character to "print" over that range.
+BF Complexity Visuals: High-branching Range Decision Tree.
+How to Draw BF: Draw a string "aba". Branch into "print a", "print b", "print over". The combinations are staggering. $O(3^N)$.
+Optimised Pattern: Dynamic Programming (Range DP).
+Opt Vis. Technique: Interval Compression / Multi-layer Painting.
+Dry Run (Opt): `dp[i][j]` is the min turns to print `s[i...j]`. If `s[i] == s[k]`, we might save a turn. Iterate through all sub-intervals.
+How to Draw (Opt): Draw the string. Draw a bracket for each sub-segment. Show how overlapping segments can be "merged" if the endpoints match.
+Opt Complexity Visuals: Three nested loops over string length.
+How to Draw Opt Complexity: Draw an N x N grid. Write $O(N^3)$.
+Mem Vis (BF): Draw a recursive stack with massive overlapping subproblems.
+Mem Vis (Opt): Draw a 2D matrix of size N x N. $O(N^2)$.

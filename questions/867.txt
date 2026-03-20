@@ -1,0 +1,14 @@
+ID: 867
+Problem Title: Transpose Matrix
+Brute Force Method: Iterate through the matrix and for every element at (r, c), find the new position and swap. (Difficult if R 
+eq C).
+BF Complexity Visuals: In-place Swap Logic. $O(R x C)$.
+How to Draw BF: Draw a non-square grid. Try to move a corner element to its new spot. Notice the grid shape must change, making in-place swaps almost impossible.
+Optimised Pattern: New Grid Mapping.
+Opt Vis. Technique: The "Row-to-Column" Pour.
+Dry Run (Opt): Create a new matrix with dimensions C x R. For every (r, c) in the original, set `newMatrix[c][r] = oldMatrix[r][c]`.
+How to Draw (Opt): Draw Matrix A (3 x 2). Draw Matrix B (2 x 3). Draw an arrow taking the first row of A and standing it up as the first column of B.
+Opt Complexity Visuals: Single Pass Grid Scan. $O(R x C)$.
+How to Draw Opt Complexity: Draw the grid being scanned once, cell by cell, without any re-visits.
+Mem Vis (BF): $O(1)$ space attempt: Draw a messy diagram of index-shifting math.
+Mem Vis (Opt): Full Matrix Allocation: Draw the C x R memory block as the destination.

@@ -1,0 +1,13 @@
+ID: 3517
+Problem Title: Smallest Palindromic Rearrangement I (Med)
+Brute Force Method: Generate all string permutations, check if palindrome, sort lexicographically, pick first.
+BF Complexity Visuals: Factorial Permutation Tree.
+How to Draw BF: Draw a massive branching tree where each level adds the next character. N! leaves at the bottom.
+Optimised Pattern: Character Frequency Counting + Greedy Symmetric Placement.
+Opt Vis. Technique: Mirror &amp; Bucket Fill.
+Dry Run (Opt): Count char frequencies. If valid (at most 1 odd count), place half of each char alphabetically. Mirror it. Insert odd char in middle.
+How to Draw (Opt): Draw 26 buckets for a-z. Draw a blank template `[ _ _ (mid) _ _ ]`. Fill left side from bucket 'a' upwards. Mirror to right side.
+Opt Complexity Visuals: Linear Scan &amp; Build.
+How to Draw Opt Complexity: Draw an array of length N scanned once to build a map, then a loop of N/2 to build the string. $O(N)$.
+Mem Vis (BF): Permutation Array: Draw millions of string variations flooding the heap memory.
+Mem Vis (Opt): Frequency Map + StringBuilder: Draw a fixed size-26 integer array, and one character array.

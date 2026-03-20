@@ -1,0 +1,13 @@
+ID: 2950
+Problem Title: Number of Divisible Substrings
+Brute Force Method: Generate all $O(N^2)$ substrings, map characters to digits, and check if the sum is divisible by length.
+BF Complexity Visuals: Double Loop Substring Sums
+How to Draw BF: Draw a triangle representing N^2/2 operations. $O(N^2)$.
+Optimised Pattern: Prefix Sums (Brute Force is expected for N=1000)
+Opt Vis. Technique: Running Average Tracker
+Dry Run (Opt): Use a mapping table for 'a'-'z'. Calculate the prefix sum of mapped values. For each i, j, check if (pref[j] - pref[i]) % (j-i) == 0.
+How to Draw (Opt): Draw the string. Below it, draw its numeric mapped values. Draw a sliding window and calculate its average.
+Opt Complexity Visuals: Quadratic Timeline
+How to Draw Opt Complexity: Draw a line of length N, with N checks at each point. T = $O(N^2)$.
+Mem Vis (BF): Storing all numeric mapping lists.
+Mem Vis (Opt): Prefix sum array of size N. Space $O(N)$.

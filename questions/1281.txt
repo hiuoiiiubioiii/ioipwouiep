@@ -1,0 +1,13 @@
+ID: 1281
+Problem Title: Subtract the Product and Sum of Digits of an Integer
+Brute Force Method: Convert the integer to a string. Iterate through the string, converting each character back to an integer, and maintain two running totals (product and sum).
+BF Complexity Visuals: Character-by-Character Mapping
+How to Draw BF: Draw the number as a string of characters. Draw two boxes below. For each character, drop it into both boxes. Write $O(\log₁₀N)$.
+Optimised Pattern: Iterative Modulo (%) and Division (/)
+Opt Vis. Technique: Digit Extraction Loop
+Dry Run (Opt): While the number is greater than 0, use `n % 10` to peel off the last digit. Update the sum and product. Use `n / 10` to discard the last digit and repeat.
+How to Draw (Opt): Draw a number. Draw a "Peeler" (% 10) taking the last digit and a "Discarder" (/ 10) shortening the number. Show the peeled digit feeding into a "Sum" and a "Product" accumulator.
+Opt Complexity Visuals: Logarithmic Step-down
+How to Draw Opt Complexity: Draw a number getting shorter by one digit in each step. Write $O(\log₁₀N)$.
+Mem Vis (BF): Draw a character array or string buffer.
+Mem Vis (Opt): Draw exactly two integer variables for sum and product. Space: $O(1)$.

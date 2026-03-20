@@ -1,0 +1,13 @@
+ID: 1004
+Problem Title: Max Consecutive Ones III
+Brute Force Method: Try every possible subarray (i, j). For each, count the number of zeros. If zeros <= K, calculate the length and track the max.
+BF Complexity Visuals: $O(N^2)$. Checking a quadratic number of ranges.
+How to Draw BF: Draw an array. Draw overlapping brackets for every range. Inside each bracket, manually count the '0's.
+Optimised Pattern: Sliding Window (Expand/Contract)
+Opt Vis. Technique: "The Rubber Band." Stretch the right side of the window to include more numbers. If the count of '0's inside the window exceeds K, shrink the left side until the count is back to K.
+Dry Run (Opt): `i = 0`. For `j` in 0..N-1: if `A[j] == 0`, `K--`. If `K &lt; 0`: if `A[i] == 0`, `K++`, then `i++`. Max length is `j - i + 1`.
+How to Draw (Opt): Draw an array. Draw a sliding frame `[ ... ]`. Show the frame expanding right. When it hits a 0 and has no "budget" left, show the left side of the frame snapping forward.
+Opt Complexity Visuals: $O(N)$. Two pointers moving strictly from left to right.
+How to Draw Opt Complexity: Draw a horizontal line. Draw two arrows (Left and Right) moving right. The gap between them is the "Window."
+Mem Vis (BF): $O(1)$ extra space but unusable time.
+Mem Vis (Opt): $O(1)$. Only variables for the pointers and the current zero-count. Draw three small boxes.

@@ -1,0 +1,13 @@
+ID: 1364
+Problem Title: Number of Trusted Contacts of a Customer (SQL)
+Brute Force Method: Iterate through every invoice, then for each invoice, search the Contacts table, and for each contact, search the Customers table to see if they are "trusted."
+BF Complexity Visuals: $O(I \cdot C \\text{cdot Cust})$ Triple Nested Scan
+How to Draw BF: Draw three tables. For one Invoice, draw arrows to Contacts, then nested arrows to Customers. The "web" of connections becomes unreadable.
+Optimised Pattern: Multi-Level LEFT JOIN with Grouping
+Opt Vis. Technique: Relational Join Pipeline
+Dry Run (Opt): `JOIN` Invoices with Customers. `LEFT JOIN` with Contacts. `LEFT JOIN` with Customers again (to verify if contact is a customer). Group by Invoice ID.
+How to Draw (Opt): Draw an Invoice. Draw lines to its contacts. If a contact has a matching ID in the "Main Customer" list, color it green (trusted). Count total lines and green lines.
+Opt Complexity Visuals: $O(N \log N)$ Hash Joins
+How to Draw Opt Complexity: Draw a pipeline where Invoices flow through multiple "Checkpoints" (Join nodes), emerging as a single row with aggregated counts.
+Mem Vis (BF): Cartesian Bloat: Attempting to join all contacts to all invoices without specific ID mapping.
+Mem Vis (Opt): Hash Join Index: Draw an in-memory Hash Table for the Customer list to make "Trust" checks $O(1)$.

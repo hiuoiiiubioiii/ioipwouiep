@@ -1,0 +1,13 @@
+ID: 2475
+Problem Title: Number of Unequal Triplets in Array
+Brute Force Method: Triple nested loops (i, j, k) to check every combination of three indices to see if all three values are different.
+BF Complexity Visuals: Cubic Selection Cube
+How to Draw BF: Draw a 3D grid or a nested tree with 3 levels. Label $O(N^3)$.
+Optimised Pattern: Frequency Counting + Combinatorics
+Opt Vis. Technique: Weighted Triple Segment Split
+Dry Run (Opt): Count frequencies of each number. For a specific number with count `curr`, triplets = `(elements_before) * (curr) * (elements_after)`.
+How to Draw (Opt): Draw a frequency table. Draw three boxes: "Past", "Current", "Future". As you iterate through the table, slide frequencies between boxes and multiply.
+Opt Complexity Visuals: Linear Frequency Scan
+How to Draw Opt Complexity: Draw a line through the unique elements of the array. Label $O(N)$ or $O(\text{Unique Elements})$.
+Mem Vis (BF): Draw three index variables.
+Mem Vis (Opt): Draw a Hash Map or Frequency Array. $O(N)$ Space.

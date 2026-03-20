@@ -1,0 +1,13 @@
+ID: 1462
+Problem Title: Course Schedule IV
+Brute Force Method: For every query (u, v), run a separate BFS or DFS starting from u to see if v is reachable.
+BF Complexity Visuals: Repeated Graph Traversal
+How to Draw BF: Draw a graph. For every query, draw an expanding "ripple" starting from the first course. Label $O(Q \cdot (V + E)$).
+Optimised Pattern: Floyd-Warshall (Transitive Closure)
+Opt Vis. Technique: All-Pairs Reachability Matrix
+Dry Run (Opt): Create a 2D boolean matrix `isPrereq[V][V]`. For every intermediate course `k`, if `i` is a prereq of `k` and `k` is a prereq of `j`, then `i` is a prereq of `j`.
+How to Draw (Opt): Draw a square grid. Pick a "bridge" course K. Update all cells (i, j) if there's a path through K. Show the matrix filling up with "True" values.
+Opt Complexity Visuals: Triple Nested Loop
+How to Draw Opt Complexity: Draw three nested `for` loops. Label $O(V^3)$. Queries then become $O(1)$.
+Mem Vis (BF): Recursive Call Stack per Query
+Mem Vis (Opt): A 2D boolean adjacency matrix of size V x V. Space $O(V^2)$.

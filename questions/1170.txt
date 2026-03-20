@@ -1,0 +1,13 @@
+ID: 1170
+Problem Title: Compare Strings by Frequency of the Smallest Character
+Brute Force Method: For every query, calculate f(s). Then for every word in the dictionary, calculate f(w) and compare. $O(Q x W x L)$.
+BF Complexity Visuals: Nested String Scans
+How to Draw BF: Draw a query string. Count 'a's. Scan the whole dictionary. For each word, count its smallest char and compare. Massive redundant work.
+Optimised Pattern: Pre-computation + Binary Search/Suffix Sum
+Opt Vis. Technique: Frequency Distribution Map
+Dry Run (Opt): Step 1: Calculate f(w) for all dictionary words and store frequencies in an array of size 12. Step 2: Use a Suffix Sum on this array so `count[i]` = words with f(w) >= i.
+How to Draw (Opt): Draw a frequency array [0...11]. Put counts of words in each. Create a second array (Suffix Sum) where each cell is the sum of everything to its right. Instant lookup.
+Opt Complexity Visuals: Pre-compute $O(W + Q)$
+How to Draw Opt Complexity: Draw a single pass for words, a single pass for Suffix Sum, and a single pass for queries. $O(W + Q)$.
+Mem Vis (BF): Repeatedly calculating word frequencies
+Mem Vis (Opt): Fixed-size array `int[12]` for frequencies.

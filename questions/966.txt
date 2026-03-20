@@ -1,0 +1,13 @@
+ID: 966
+Problem Title: Vowel Spellchecker
+Brute Force Method: For every query, iterate through the entire wordlist and perform three manual checks: exact match, case-insensitive match, and vowel-blind match.
+BF Complexity Visuals: $O(\text{Queries} \\text{cdot Wordlist} \cdot L)$. A massive search for every single input query.
+How to Draw BF: Draw a list of queries and a list of words. Draw lines from every query to every word in the list, representing the repeated checks.
+Optimised Pattern: Precomputed HashMaps (Priority Tiering)
+Opt Vis. Technique: "Three Filter Bins." Pre-process the wordlist into three separate dictionaries: 1. Exact, 2. Lowercase (keeping first occurrence), 3. Vowel-masked (e.g., "apple" -&gt; "p-pl-").
+Dry Run (Opt): 1. Check `ExactMap`. 2. If not found, check `LowerMap`. 3. If not found, check `VowelMap`. 4. Else, return "".
+How to Draw (Opt): Draw a word "Apple". Show it being transformed into three different forms and dropped into three different labeled boxes.
+Opt Complexity Visuals: $O(\text{Wordlist} + \text{Queries})$. Linear time to build the maps and constant time to look up each query.
+How to Draw Opt Complexity: Draw a timeline of queries. Above each, draw a "Lookup" arrow that jumps directly to the correct map result in one step.
+Mem Vis (BF): $O(1)$ extra space but unusable time.
+Mem Vis (Opt): $O(\text{Wordlist} \cdot L)$ to store the dictionaries. Draw three large rectangular boxes labeled "Level 1", "Level 2", and "Level 3".

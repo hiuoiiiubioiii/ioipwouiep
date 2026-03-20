@@ -1,0 +1,13 @@
+ID: 1603
+Problem Title: Design Parking System
+Brute Force Method: If-else chains checking type and decrementing 3 separate variables
+BF Complexity Visuals: Decision Flowchart
+How to Draw BF: Draw a diamond shape with 3 outgoing arrows leading to decrement operations. Constant time $O(1)$.
+Optimised Pattern: Array Indexing (Direct Access)
+Opt Vis. Technique: Index-Mapped State Array
+Dry Run (Opt): Map carType (1,2,3) to index (0,1,2). Decrement value at index. If &gt; 0, return true.
+How to Draw (Opt): Draw an array of 3 boxes labeled [Big, Med, Small]. Cross out a number and write the lower number inside.
+Opt Complexity Visuals: Constant Time Lookup
+How to Draw Opt Complexity: Draw a single dot or a direct arrow to a box, highlighting $O(1)$ instant access.
+Mem Vis (BF): Variables: Draw three isolated named buckets.
+Mem Vis (Opt): Array: Draw a single contiguous block divided into 3 segments.

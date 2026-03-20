@@ -1,0 +1,13 @@
+ID: 1823
+Problem Title: Find the Winner of the Circular Game
+Brute Force Method: Simulate with an Array or List. Physically remove the element at `(current + k - 1) % len` repeatedly.
+BF Complexity Visuals: Circle shrinking with $O(N)$ shifts per deletion.
+How to Draw BF: Draw a circle of numbers. Count k steps, cross out the number. Redraw the entire circle smaller. Repeat. $O(N^2)$.
+Optimised Pattern: Math (The Josephus Problem) / Bottom-Up DP.
+Opt Vis. Technique: Recursive mapping of zero-indexed positions.
+Dry Run (Opt): Base case: 1 person, winner is index 0. For `i` from 2 to N, new winner = `(old_winner + k) % i`. Return ans + 1 (to 1-index it).
+How to Draw (Opt): Write DP states: i=1 -&gt; win=0. i=2 -&gt; win=(0+k)%2. Compute iteratively bottom-up without tracking the actual array.
+Opt Complexity Visuals: Simple $O(N)$ loop iteration.
+How to Draw Opt Complexity: Draw a loop going from 1 to N, updating a single variable. Mark $O(N)$ time.
+Mem Vis (BF): Dynamic array resizing (shifting elements takes $O(N)$ memory/time).
+Mem Vis (Opt): $O(1)$ space holding the current winner index variable.

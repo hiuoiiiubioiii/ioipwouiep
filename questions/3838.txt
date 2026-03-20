@@ -1,0 +1,13 @@
+ID: 3838
+Problem Title: Weighted Word Mapping (Easy)
+Brute Force Method: For every character in the word, search through an array of key-value pairs or run a massive `if-else` block to find its numerical weight.
+BF Complexity Visuals: A character bouncing down a long list of options trying to find its matching rule.
+How to Draw BF: Write a word. Under the first letter, write out 26 lines of check: "Is it a? Is it b?..." Write $O(N \cdot 26)$.
+Optimised Pattern: Direct Hash Map / ASCII Array Indexing.
+Opt Vis. Technique: A straight pipe where a letter goes in, and its weight instantly comes out without searching.
+Dry Run (Opt): Pre-fill an array of size 26 with the given weights. Iterate through the word. Convert the char to an index (e.g., `char - 'a'`), fetch the value instantly, and sum it.
+How to Draw (Opt): Draw a word. Below each letter, draw a single vertical arrow pointing directly to a number. Put plus signs between the numbers.
+Opt Complexity Visuals: A single, uninterrupted linear scan.
+How to Draw Opt Complexity: Draw a box representing the string length N. Write a single arrow going through it. Write $O(N)$.
+Mem Vis (BF): $O(1)$ Memory.
+Mem Vis (Opt): An array of 26 integers taking strictly $O(1)$ space regardless of the input word length.

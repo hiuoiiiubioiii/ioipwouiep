@@ -1,0 +1,13 @@
+ID: 2933
+Problem Title: High-Access Employees
+Brute Force Method: For each employee, check every subset of 3 access times to see if they fall within 60 mins.
+BF Complexity Visuals: Combinatorial Time Slices
+How to Draw BF: Draw a clock. Mark points for every access time. Draw segments to find triplets within 60 mins. $O(E \cdot T^3)$.
+Optimised Pattern: Sorting + Sliding Window (Fixed Size 3)
+Opt Vis. Technique: Sorted Timeline per Employee
+Dry Run (Opt): Group access times by employee. Sort times (HHMM -&gt; minutes). For each employee, check if `time[i] - time[i-2] &lt; 60`.
+How to Draw (Opt): Draw a timeline for "Alice". Mark points at 0800, 0820, 0850. Draw a 60-min bracket. See if 3 points fit inside.
+Opt Complexity Visuals: Grouped Sorting Cost
+How to Draw Opt Complexity: T = $O(N \log N)$ to sort all access times. $O(N)$ to sweep. Draw a sorted array being scanned by a 3-element wide box.
+Mem Vis (BF): Nested lists of access strings.
+Mem Vis (Opt): A Hash Map (Name -&gt; List of Integers). Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 458
+Problem Title: Poor Pigs
+Brute Force Method: Simulation Try different combinations of pigs and buckets. Hard to simulate because it's a math/information limit.
+BF Complexity Visuals: Search Space Tree
+How to Draw BF: Draw a tree of pigs drinking from buckets. Very confusing and non-linear.
+Optimised Pattern: Information Theory (N-Dimensional Hypercube) Each pig represents a dimension. The number of states a pig can have is (Tests + 1). Solve (States)^{Pigs} \ge Buckets.
+Opt Vis. Technique: Hypercube Coordinates
+Dry Run (Opt): Imagine a 3D cube. Each axis is a "round." A pig drinking from a "plane" of the cube identifies one coordinate of the poison bucket.
+How to Draw (Opt): Draw a 2D grid for 2 pigs. Label rows for Pig 1 and columns for Pig 2. Each cell is a bucket. Pig 1 drinks row 1 in round 1, etc.
+Opt Complexity Visuals: Constant Math
+How to Draw Opt Complexity: Draw a simple log calculation: \lceil \log_{states}(Buckets) \rceil. $O(1)$ or $O(\log N)$ for the math.
+Mem Vis (BF): None Constant variables.
+Mem Vis (Opt): Registers Just a few math variables. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2991
+Problem Title: Top Three Wineries
+Brute Force Method: Use multiple self-joins and `DISTINCT` counts to find the top three wineries per country.
+BF Complexity Visuals: Nested Loop Join Web
+How to Draw BF: Draw three identical tables. Connect rows from A to B to C to find ranking. $O(N^3)$.
+Optimised Pattern: Window Function (`RANK()`) + Pivoting
+Opt Vis. Technique: Ranked List Transformation
+Dry Run (Opt): Rank wineries by points within each country. Use `CASE` statements with `MAX()` to pivot the top 3 into columns.
+How to Draw (Opt): Draw a table. Group by Country. Write "1", "2", "3" next to wineries. Then "rotate" the top 3 into one row.
+Opt Complexity Visuals: Single Sorted Sweep
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ for ranking + $O(N)$ for pivoting.
+Mem Vis (BF): Massive temporary tables for multiple self-joins.
+Mem Vis (Opt): One grouped result set in memory. Space $O(\text{Countries})$.

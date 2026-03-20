@@ -1,0 +1,13 @@
+ID: 357
+Problem Title: Count Numbers with Unique Digits
+Brute Force Method: Iterate through every integer from 0 to 10^n and check if each digit is unique by using a boolean array of size 10.
+BF Complexity Visuals: Linear Scan with Digit Extraction
+How to Draw BF: Draw a long tape from 0 to 1000. Below it, draw a "Digit Checker" box that ticks every time it sees a number like 123 and crosses out 122. $O(10^N)$.
+Optimised Pattern: Combinatorics (Permutations)
+Opt Vis. Technique: Decision Slot Tree (Product Rule)
+Dry Run (Opt): For n=1, 10 unique digits. For n=2, it's (Previous) + 9 (first digit choice 1-9) * 9 (second digit choice 0-9 excluding first). For n=3, add 9 * 9 * 8. Sum these up for the given n.
+How to Draw (Opt): Draw n empty slots. Write the number of choices above each: 9, 9, 8, 7... Draw multiplication symbols between them. Underneath, draw a Plus sign to show you are adding results from previous n.
+Opt Complexity Visuals: Constant-Time Formulaic Iteration
+How to Draw Opt Complexity: Draw a small loop from 1 to n. Inside, show a single multiplication step. Label it $O(N)$ where n \le 10.
+Mem Vis (BF): Boolean array or Hash Set for every single number processed.
+Mem Vis (Opt): Zero extra memory. Draw one "result" variable box. $O(1)$ space.

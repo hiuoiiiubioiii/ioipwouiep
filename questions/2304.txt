@@ -1,0 +1,13 @@
+ID: 2304
+Problem Title: Minimum Path Cost in a Grid
+Brute Force Method: DFS / Backtracking: Explore every possible path from the first row to the last row, summing costs.
+BF Complexity Visuals: Exponential Recursion Tree
+How to Draw BF: Draw a root node branching out `cols` times. Each of those branches out `cols` times, repeating for `rows` levels.
+Optimised Pattern: Dynamic Programming (Bottom-Up)
+Opt Vis. Technique: Directed Acyclic Graph (DAG) Shortest Path
+Dry Run (Opt): Initialize a DP array with the first row. For the next row, calculate the min cost to reach each cell by looking at all cells in the previous row + transition cost.
+How to Draw (Opt): Draw a 2D grid. In each cell, write the minimum cost to get there. Draw multiple arrows from the row above to the current cell, circling the one with the lowest total.
+Opt Complexity Visuals: 3D Nested Loop Block (O(M * N^2))
+How to Draw Opt Complexity: Draw a 3D rectangular prism where dimensions are M (rows), N (cols), and N (prev cols).
+Mem Vis (BF): Draw a deep vertical Call Stack representing the recursion depth (O(M)).
+Mem Vis (Opt): Draw two 1D arrays representing `prev_row_dp` and `curr_row_dp`, showing how one overwrites the other.

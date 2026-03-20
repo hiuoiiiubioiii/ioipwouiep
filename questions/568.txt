@@ -1,0 +1,13 @@
+ID: 568
+Problem Title: Maximum Vacation Days
+Brute Force Method: Exhaustively try every possible flight combination for every week to find the path that yields the most vacation days.
+BF Complexity Visuals: Exponential branching $O(N^K)$ where N is cities and K is weeks.
+How to Draw BF: Draw a city. Draw N arrows to other cities for Week 1. From each of those, draw N more arrows for Week 2.
+Optimised Pattern: 2D Dynamic Programming (Bottom-Up).
+Opt Vis. Technique: A "reverse itinerary" planner. You start at the last week and calculate the max vacation possible from each city, then move backward to the start.
+Dry Run (Opt): `dp[week][city]` is max days from this city/week. `dp[i][j] = max(vacation[j][i] + dp[i+1][next_city])` for all cities reachable from j.
+How to Draw (Opt): Draw a grid: Weeks (columns) by Cities (rows). Start at the last column. For each cell, look at the next column's reachable cities and take the max.
+Opt Complexity Visuals: Bounded grid filling. $O(K \\text{times} N^2)$.
+How to Draw Opt Complexity: Draw a rectangle of K \times N and show each cell performing N checks.
+Mem Vis (BF): Massive recursion stack without memoization.
+Mem Vis (Opt): A 2D DP table (or two 1D arrays for space optimization). $O(N \\text{times} K)$ or $O(N)$.

@@ -1,0 +1,13 @@
+ID: 3850
+Problem Title: Count Sequences to K (Hard)
+Brute Force Method: Recursive Backtracking: Generate all possible sequences that sum/multiply to K, checking every valid integer combination.
+BF Complexity Visuals: A highly branched tree where the depth is the sequence length and branches are possible integers.
+How to Draw BF: Draw a root. Branch for 1, 2, 3... until the sum hits K. Write $O(2^K)$ or worse.
+Optimised Pattern: Dynamic Programming (Partition DP) / Generating Functions.
+Opt Vis. Technique: A "Staircase" DP where each step is built by looking back at all possible previous "jumps" that lead to the current sum.
+Dry Run (Opt): Let `dp[i]` be the number of ways to form sum `i`. `dp[i] = sum(dp[i - j])` for all valid `j`. Use a prefix sum to optimize the inner loop to $O(1)$.
+How to Draw (Opt): Draw a 1D array of size K. For cell 10, draw arrows from cells 1 through 9. Show how a "Running Total" variable avoids re-summing 1-9.
+Opt Complexity Visuals: Linear fill of a 1D state array.
+How to Draw Opt Complexity: Draw a line of K units. Write "O(1) with Prefix Sum". Total: $O(K)$.
+Mem Vis (BF): Recursive stack overflow on large K.
+Mem Vis (Opt): A 1D DP array of size K. Space $O(K)$.

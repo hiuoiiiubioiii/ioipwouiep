@@ -1,0 +1,13 @@
+ID: 2191
+Problem Title: Sort the Jumbled Numbers
+Brute Force Method: For every comparison in a sort, re-calculate the mapped value of both numbers by iterating through their digits.
+BF Complexity Visuals: A sorting algorithm where the "Comparison" step is an expensive $O(\text{Digits})$ function.
+How to Draw BF: Draw a sorting network. At every cross-over, draw a converter box that turns 345 -&gt; 891. $O(N \log N \cdot D)$.
+Optimised Pattern: Pre-calculation + Stable Sorting.
+Opt Vis. Technique: A two-column lookup table (Original Value | Mapped Value).
+Dry Run (Opt): Iterate through `nums` once. Convert each to its jumbled form and store as a pair `(mappedValue, originalIndex)`. Sort the list of pairs.
+How to Draw (Opt): Draw a T-chart. On the left, write the input number. On the right, replace each digit using the mapping array. Sort the T-chart based on the right column.
+Opt Complexity Visuals: $O(N \log N)$ sorting + $O(N \cdot D)$ pre-calc.
+How to Draw Opt Complexity: A single pass through a "Translator" funnel, followed by a standard sorting track.
+Mem Vis (BF): Repeated string/digit conversions in the middle of sorting.
+Mem Vis (Opt): $O(N)$ to store the pre-calculated mapped values and original indices.

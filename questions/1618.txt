@@ -1,0 +1,13 @@
+ID: 1618
+Problem Title: Maximum Font to Fit a Sentence in a Screen
+Brute Force Method: Linear search from the smallest font up to the largest, checking width and height formulas every time until it fails.
+BF Complexity Visuals: Linear Stepping
+How to Draw BF: Draw a staircase. Draw a character climbing one step at a time until they hit a ceiling (the screen height/width). $O(N)$.
+Optimised Pattern: Binary Search on Monotonic Property
+Opt Vis. Technique: Search Space Halving
+Dry Run (Opt): Set Low=0, High=len(fonts)-1. Check Mid. Does height and width fit? If yes, Low=Mid+1 (try bigger). If no, High=Mid-1.
+How to Draw (Opt): Draw an array of fonts. Put brackets at the ends. Point an arrow at the middle. Cross out the left half if it fits, cross out the right half if it doesn't.
+Opt Complexity Visuals: Logarithmic Search Tree
+How to Draw Opt Complexity: Draw an array sliced in half, then that half sliced in half, reaching a single box in $O(\log N)$ steps.
+Mem Vis (BF): $O(1)$ Variables: An index pointer stepping through.
+Mem Vis (Opt): Three Pointers (Low, Mid, High): Draw three small indicator arrows sliding across a static array. $O(1)$.

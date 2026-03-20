@@ -1,0 +1,13 @@
+ID: 1177
+Problem Title: Can Make Palindrome from Substring
+Brute Force Method: For every query (L, R, k), extract the substring, count character frequencies, and check if half the odd-count characters <= k.
+BF Complexity Visuals: Query-by-Query Extraction
+How to Draw BF: Draw the string. For each query, draw a box around the range. Draw a 26-row tally table for each box. $O(Q \cdot N)$.
+Optimised Pattern: Prefix Sums + Bitmasking
+Opt Vis. Technique: XOR Cumulative State
+Dry Run (Opt): Pre-compute a `prefix_xor` array where each bit i represents whether the i-th letter has appeared an odd number of times. The XOR of `pref[R]` and `pref[L-1]` gives the odd-count characters in $O(1)$.
+How to Draw (Opt): Draw a 1D array of binary numbers (bitmasks). To check a range, draw two masks being XORed. Count the "1" bits in the result (population count) and divide by 2.
+Opt Complexity Visuals: Linear Pre-compute + Constant Query $O(N + Q)$
+How to Draw Opt Complexity: Draw a single pass for the whole string, then a series of direct vertical arrows for each query.
+Mem Vis (BF): $O(Q \cdot N)$ for string slices
+Mem Vis (Opt): $O(N)$ for the bitmask array. Draw a single row of integers.

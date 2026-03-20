@@ -1,0 +1,13 @@
+ID: 1385
+Problem Title: Find the Distance Value Between Two Arrays
+Brute Force Method: For every element in `arr1`, loop through every element in `arr2` to check if the absolute difference is less than or equal to `d`.
+BF Complexity Visuals: $O(N \cdot M)$ Quadratic Search
+How to Draw BF: Draw two arrays. From the first element of `arr1`, draw arrows to every element of `arr2`. Repeat for all elements. Total N x M checks.
+Optimised Pattern: Sorting + Binary Search (Range Check)
+Opt Vis. Technique: Targeted Gap Detection
+Dry Run (Opt): Sort `arr2`. For each `x` in `arr1`, binary search for any value in `arr2` within the range `[x - d, x + d]`. If none exist, increment count.
+How to Draw (Opt): Draw a sorted number line for `arr2`. For an element from `arr1`, draw a "danger zone" of size d around it. If no dots from `arr2` fall in the danger zone, the element is "safe."
+Opt Complexity Visuals: $O(N \log M + M \log M)$
+How to Draw Opt Complexity: Draw a sorting funnel for one array, then a series of $O(\log M)$ jumps for each element in the other array.
+Mem Vis (BF): Nested Loop Accumulators: Constant re-scans of the second array.
+Mem Vis (Opt): $O(M)$ Sorted Array: Draw a single sorted `std::vector` for the second array. Memory is $O(M)$.

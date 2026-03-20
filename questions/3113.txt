@@ -1,0 +1,13 @@
+ID: 3113
+Problem Title: Find the Number of Subarrays Where Boundary Elements Are Maximum
+Brute Force Method: Generate all possible subarrays, then linearly scan each one to find the maximum element. **O(N^3)**
+BF Complexity Visuals: A dense triangle of all subarrays, calculating the max for every single bracket iteratively.
+How to Draw BF: Write the array. Draw overarching brackets for every combination. Physically scan inside every bracket to find the max and check both ends.
+Optimised Pattern: Monotonic Stack
+Opt Vis. Technique: Histogram Bars Flattening Smaller Elements
+Dry Run (Opt): Iterate right. If current element is taller than stack top, pop stack (smaller elements are "blocked"). If equal, increment count. Push current.
+How to Draw (Opt): Draw a bar chart. As you move right, if a bar is taller, physically erase all shorter bars to its left. Tally up matching heights that "see" each other.
+Opt Complexity Visuals: Elements entering and leaving a vertical tube at most once.
+How to Draw Opt Complexity: Draw an array. Draw exactly one arrow going into a stack box and one arrow leaving it per element. **O(N)**.
+Mem Vis (BF): A massive array storing every generated subarray sequence.
+Mem Vis (Opt): A stack structure of maximum size N storing `[value, count]` pairs. **O(N)** space.

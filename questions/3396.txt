@@ -1,0 +1,13 @@
+ID: 3396
+Problem Title: Minimum Number of Operations to Make Elements in Array Distinct
+Brute Force Method: Try deleting elements from the front in batches of 3. After each batch, check if all remaining elements are distinct.
+BF Complexity Visuals: Iterative Sub-list Scanning
+How to Draw BF: Draw the array. Cross out the first 3. Scan the rest for duplicates. Repeat. $O(N^2 / 3)$.
+Optimised Pattern: Hash Set (Backward Scan)
+Opt Vis. Technique: Suffix Distinct Window
+Dry Run (Opt): Scan the array from right to left. Stop at the first element that is already in your Hash Set. Everything to the left of this point (plus its batch-of-3 rounding) must be deleted.
+How to Draw (Opt): Draw the array. Start at the end and move a "Clearance Pointer" left. If you hit a duplicate, stop. Draw boxes of size 3 from the start until you cover the duplicate's index.
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw a single arrow moving from right to left once. Total work $O(N)$.
+Mem Vis (BF): Repeated creation of new sub-arrays or frequency maps.
+Mem Vis (Opt): A single Hash Set storing at most N elements. $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1499
+Problem Title: MaxValue of Equation
+Brute Force Method: Nested Loops. For every pair (i, j) where j &gt; i and |x_i - x_j| <= k, calculate y_i + y_j + |x_i - x_j| and track the maximum.
+BF Complexity Visuals: Quadratic Window Search
+How to Draw BF: Draw a set of points. For point i, draw a window of width k. Scan all points inside and compute the formula. Label $O(N^2)$.
+Optimised Pattern: Monotonic Deque (Sliding Window Max)
+Opt Vis. Technique: Variable Decomposition Optimization
+Dry Run (Opt): Maximize (y_j + x_j) + (y_i - x_i). As you iterate j, you need the max (y_i - x_i) for previous points within x-distance k. Use a deque to store indices i in decreasing order of (y_i - x_i).
+How to Draw (Opt): Draw a sliding window. Inside, keep a "Leaderboard" (Deque). When a new point arrives, it calculates its (y-x) and replaces anyone on the board who is "weaker" and "older".
+Opt Complexity Visuals: Amortized Linear Scan
+How to Draw Opt Complexity: Draw an arrow moving right. Each element enters and leaves the deque once. Label $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A Deque of point indices. Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 3407
+Problem Title: Substring Matching Pattern
+Brute Force Method: Test all possible replacements of the '*' wildcard with strings of length 0 to N, checking if it matches the text. (O(2^N))
+BF Complexity Visuals: Wildcard Expansion Tree.
+How to Draw BF: Draw the pattern. From the '*', draw branches replacing it with nothing, 1 char, 2 chars, etc., running full string matches on each.
+Optimised Pattern: Greedy String Matching (Split by wildcard, search Prefix then Suffix). (O(N))
+Opt Vis. Technique: Two-Phase Linear Search Block Matching.
+Dry Run (Opt): Split pattern into pref and suff. Slide pref over string s until it matches. Mark the end index. Then slide suff over s starting strictly after that index.
+How to Draw (Opt): Draw s as a long rectangle. Draw pref and suff as two smaller colored blocks. Slide pref to snap it onto s. Then slide suff to snap onto the remainder.
+Opt Complexity Visuals: Sequential String Scanning.
+How to Draw Opt Complexity: Draw two non-overlapping sliding windows moving strictly left-to-right across the string s, showing no backward backtracking.
+Mem Vis (BF): Generating and holding countless string permutations in memory.
+Mem Vis (Opt): Two short string variables (prefix, suffix) and a single integer index pointer.

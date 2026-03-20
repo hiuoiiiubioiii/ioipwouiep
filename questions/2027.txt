@@ -1,0 +1,13 @@
+ID: 2027
+Problem Title: Minimum Moves to Convert String
+Brute Force Method: Try converting every combination of 'X' substrings using backtracking to find the absolute minimum steps.
+BF Complexity Visuals: Explosive Decision Tree
+How to Draw BF: Draw a string. From the first 'X', draw branches for "flip 1 char", "flip 2 chars", "flip 3 chars". Tree explodes to $O(3^N)$.
+Optimised Pattern: Greedy Algorithm (Pointer Jumping)
+Opt Vis. Technique: Jumping Frog on Lilypads
+Dry Run (Opt): Scan left to right. When you hit an 'X', increment your move count and jump your pointer forward by 3 indices.
+How to Draw (Opt): Write out the string. Put your finger at index 0. If it's 'O', move 1 step. If it's 'X', draw an arc jumping over the next 3 letters, and add a tally mark.
+Opt Complexity Visuals: Segmented Line Hops
+How to Draw Opt Complexity: Draw a horizontal line. Draw arrows jumping rightwards. Some are size 1, some are size 3. It reaches the end in one pass. Time $O(N)$.
+Mem Vis (BF): Recursion stack holding string states. Space $O(N)$.
+Mem Vis (Opt): A single integer pointer `i` and an integer `moves`. Space $O(1)$.

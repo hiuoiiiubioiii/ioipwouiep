@@ -1,0 +1,13 @@
+ID: 3261
+Problem Title: Count Substrings That Satisfy K-Constraint II
+Brute Force Method: For each query [L, R], run the $O(N)$ sliding window from 3258. Total $O(Q \cdot N)$.
+BF Complexity Visuals: Repeated Linear Window Scan
+How to Draw BF: Draw a long array. For query 1, show a window sliding from L to R. For query 2, redo the whole slide. Highlight the $O(Q\cdot N)$ overlap.
+Optimised Pattern: Sliding Window + Prefix Sums
+Opt Vis. Technique: Area Under the Validity Curve
+Dry Run (Opt): Precompute the "leftmost valid index" `L[i]` for every `i` using a sliding window. For a query, find the "pivot" where the window is no longer restricted by the query boundary. Use prefix sums to calculate the counts for both sides of the pivot in $O(1)$.
+How to Draw (Opt): Draw the array. Plot a line graph showing the distance `i - L[i] + 1` for each index. A query is a "slice" of this graph. Use prefix sums to find the "area" under the line in that slice.
+Opt Complexity Visuals: Precomputed Area Query Block
+How to Draw Opt Complexity: Draw a block for "Precomputing L[i] and Prefix Sums $O(N)$". Draw a small $O(1)$ box for "Query Mathematical Calculation". Total $O(N + Q)$.
+Mem Vis (BF): Recalculating counters for every query.
+Mem Vis (Opt): Two prefix sum arrays of size N (O(N) space).

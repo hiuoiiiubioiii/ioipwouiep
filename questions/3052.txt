@@ -1,0 +1,13 @@
+ID: 3052
+Problem Title: Maximize Items in Partitions (SQL)
+Brute Force Method: Simulate filling every combination of partitions with items to find the maximum possible count.
+BF Complexity Visuals: Greedy Fill Simulation
+How to Draw BF: Draw different sized bins. Show items being placed one by one into random bins until full.
+Optimised Pattern: Window Functions + Floor Math
+Opt Vis. Technique: Volume Fill Chart
+Dry Run (Opt): Calculate total square footage for 'prime' items. Divide available space by this total to find 'prime' batches. Use the remaining space to fill 'non-prime' items.
+How to Draw (Opt): Draw a giant container representing 500k sqft. Slice off a block for Prime. Divide it by Prime size. Take the leftover "empty" space and fill it with Non-Prime blocks.
+Opt Complexity Visuals: $O(N)$ Aggregation
+How to Draw Opt Complexity: Draw two separate arrows: "Prime Analysis" and "Non-Prime Analysis". Each scans its portion of the table once.
+Mem Vis (BF): Recursive calculation of space for every item type.
+Mem Vis (Opt): CTE (Common Table Expressions) storing intermediate area totals and remaining space values.

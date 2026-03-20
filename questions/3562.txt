@@ -1,0 +1,13 @@
+ID: 3562
+Problem Title: Max Profit from Trading Stocks with Discounts (Hard)
+Brute Force Method: Try every possible combination of buy/sell days and every possible way to apply limited discounts.
+BF Complexity Visuals: Exponential Decision Tree.
+How to Draw BF: Draw a tree where each node splits into "Buy", "Sell", "Apply Discount", or "Do Nothing". 2^N branches.
+Optimised Pattern: 3D Dynamic Programming.
+Opt Vis. Technique: State Transition Grid (Days x Inventory x Discounts).
+Dry Run (Opt): Define `DP[i][j][k]` as max profit on day `i` with `j` stocks and `k` discounts left. Transition based on current day's price.
+How to Draw (Opt): Draw a grid where rows are days and columns represent (stocks held, discounts left). Draw arrows showing profit flow.
+Opt Complexity Visuals: $O(N \cdot S \cdot D)$.
+How to Draw Opt Complexity: Draw a 3D block representing the state space. Each cell takes $O(1)$ to fill.
+Mem Vis (BF): Deep Recursion: Draw a massive stack of function calls holding intermediate profit totals.
+Mem Vis (Opt): Rolling DP Matrix: Draw two 2D layers (today vs yesterday) to save space.

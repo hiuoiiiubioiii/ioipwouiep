@@ -1,0 +1,13 @@
+ID: 254
+Problem Title: Factor Combinations
+Brute Force Method: Trial division for all numbers up to N, then recursively find all combinations of those factors.
+BF Complexity Visuals: Explosive Decision Tree: $O(2^N)$.
+How to Draw BF: Draw a tree where each node is a division. Branching factor is the number of divisors.
+Optimised Pattern: Backtracking with Path Tracking
+Opt Vis. Technique: Recursive Divisor Tree
+Dry Run (Opt): Start from i=2. If n \% i == 0, add i to path and recursively solve for n/i, starting the next loop from i to avoid duplicates.
+How to Draw (Opt): Draw N at the top. Branch out to its factors. For each factor, branch out again. Highlight paths that end in a "1" or prime factor.
+Opt Complexity Visuals: Pruned Search Space.
+How to Draw Opt Complexity: Draw a tree that gets significantly narrower as you go deeper (because the target number N shrinks rapidly).
+Mem Vis (BF): Recursion stack of all paths.
+Mem Vis (Opt): Mutable Path List: Draw a single array. Add factor, recurse, remove factor (pop). $O(\log N)$ space.

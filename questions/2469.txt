@@ -1,0 +1,13 @@
+ID: 2469
+Problem Title: Convert the Temperature
+Brute Force Method: Directly apply the conversion formulas given in the problem description.
+BF Complexity Visuals: Formula Application
+How to Draw BF: Draw an input 'C' and two output arrows to 'K' and 'F'. Label $O(1)$.
+Optimised Pattern: Arithmetic Computation
+Opt Vis. Technique: Static Flow Diagram
+Dry Run (Opt): Simply take the input float, add 273.15 for Kelvin, and multiply/add for Fahrenheit. Return as an array.
+How to Draw (Opt): Draw a box with 'Celsius' entering and an array `[K, F]` exiting. Write the formulas inside the box.
+Opt Complexity Visuals: Constant Time Box
+How to Draw Opt Complexity: Draw a single box. Label $O(1)$.
+Mem Vis (BF): Draw two float variables.
+Mem Vis (Opt): Draw an array of size 2. $O(1)$ Space.

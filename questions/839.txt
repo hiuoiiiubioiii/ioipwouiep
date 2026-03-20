@@ -1,0 +1,13 @@
+ID: 839
+Problem Title: Similar String Groups
+Brute Force Method: For every string, compare it with every other string (N^2). For each comparison, check similarity by counting character mismatches (L). Use BFS to find groups.
+BF Complexity Visuals: All-Pairs Similarity Matrix. $O(N^2 \\text{times} L)$.
+How to Draw BF: Draw a column of strings. Draw lines between all pairs. For every line, draw a sub-timeline comparing letters one-by-one.
+Optimised Pattern: Union-Find with Optimized Similarity Check.
+Opt Vis. Technique: Bubble Merging.
+Dry Run (Opt): Treat each string as a node. If two strings are "similar" (mismatch count 0 or 2), Union them. The answer is the number of disjoint sets (roots) remaining.
+How to Draw (Opt): Draw strings as floating bubbles. When a similarity is found, draw a string connecting the bubbles. Use a "Master Parent" pointer for each cluster.
+Opt Complexity Visuals: Amortized Graph Clustering. $O(N^2 \\text{times} L)$.
+How to Draw Opt Complexity: Draw a grid where you only fill cells if a similarity test is needed, with "Path Compression" shortcutting the lookups.
+Mem Vis (BF): Adjacency List + Queue: Draw a massive graph and a growing BFS queue.
+Mem Vis (Opt): Parent Array (DSU): Draw a single N-sized array storing integer indices.

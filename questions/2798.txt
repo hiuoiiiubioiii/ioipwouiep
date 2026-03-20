@@ -1,0 +1,13 @@
+ID: 2798
+Problem Title: Number of Employees Who Met the Target
+Brute Force Method: Sort the array of hours. Use binary search to find the first index where hours[i] &gt;= target. Return n - index. $O(N \log N)$.
+BF Complexity Visuals: Sorted Search Path
+How to Draw BF: Draw the list. Sort it. Draw a "Cut Line" at the target value. Count everyone to the right of the line. Overkill for a simple count.
+Optimised Pattern: Sort Buffer (Visualizing the $O(N)$ memory used to rearrange the array).
+Opt Vis. Technique: Single Pass Filter/Count
+Dry Run (Opt): Linear Threshold Sweep
+How to Draw (Opt): Iterate through the array once. Maintain a counter. If hours[i] &gt;= target, increment the counter. Return count.
+Opt Complexity Visuals: Draw the array. Move an arrow from left to right. Every time the number in the box is >= Target, put a checkmark in a "Success" bucket.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow. Label it $O(N)$ to show a single pass with no sorting.
+Mem Vis (Opt): Register Accumulator (Draw a single integer count variable in the stack).

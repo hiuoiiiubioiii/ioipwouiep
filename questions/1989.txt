@@ -1,0 +1,13 @@
+ID: 1989
+Problem Title: Maximum Number of People That Can Be Caught in Tag
+Brute Force Method: For every 'catcher', search the surrounding indices (within distance k) for an 'uncaught' player.
+BF Complexity Visuals: Nested Range Scanning
+How to Draw BF: Draw the array. For every '1' (catcher), draw a bracket of width 2k. Check every cell inside. $O(N \\text{times} k)$.
+Optimised Pattern: Two Pointers (Greedy)
+Opt Vis. Technique: Linear Synchronized Pointers
+Dry Run (Opt): Move one pointer for catchers and another for players. If a player is too far left, move them. If within range, catch and move both. Else move catcher.
+How to Draw (Opt): Draw the array. Place pointer i on the first catcher and pointer j on the first player. Draw "catch" arrows and slide pointers right.
+Opt Complexity Visuals: Double Linear Scan
+How to Draw Opt Complexity: Draw two parallel arrows moving across the array at different speeds. Both finish in $O(N)$.
+Mem Vis (BF): A list of indices for players and catchers if separated first.
+Mem Vis (Opt): Exactly two integer variables used as indices on the original array. $O(1)$ space.

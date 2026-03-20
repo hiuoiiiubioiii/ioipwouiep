@@ -1,0 +1,13 @@
+ID: 3127
+Problem Title: Make a Square with the Same Color
+Brute Force Method: Try changing every single cell (9 cells) and then for each change, check every 2x2 square (4 squares). $O(9 x 4)$
+BF Complexity Visuals: A small decision tree with 10 branches (no change + 9 possible changes).
+How to Draw BF: Draw the 3x3 grid 10 times. For each, circle the four 2x2 areas and check if all colors match.
+Optimised Pattern: Sliding Window (Fixed 2x2) / Counting
+Opt Vis. Technique: Quadrant Inspection
+Dry Run (Opt): Check each of the four 2x2 squares. If any square has >= 3 Black or >= 3 White cells, return True.
+How to Draw (Opt): Draw the 3x3 grid. Use a 2x2 "viewfinder" (cut out of paper or traced) to frame the 4 corners. Tally 'B' and 'W' inside.
+Opt Complexity Visuals: Constant-time check of 4 fixed zones.
+How to Draw Opt Complexity: Draw four discrete boxes. Label each as $O(1)$. Total $O(4)$ = $O(1)$.
+Mem Vis (BF): 10 separate copies of the 3x3 grid in the recursion stack.
+Mem Vis (Opt): Two integer counters (`black`, `white`) reused for each quadrant. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 414
+Problem Title: Third Maximum Number
+Brute Force Method: Sort &amp; Scan Sort the array descending $O(N \log N)$. Iterate to find the 3rd distinct element.
+BF Complexity Visuals: Sorting Funnel
+How to Draw BF: Draw an unsorted array tunneling through a wide $O(N \log N)$ sorting block, emerging ordered.
+Optimised Pattern: Top-3 Variables Keep `first`, `second`, `third` initialized to -Infinity. Update them sequentially as you iterate $O(N)$.
+Opt Vis. Technique: Podium Displacement
+Dry Run (Opt): Imagine a 3-step podium. A new high score comes in. 1st place steps down to 2nd, 2nd steps down to 3rd, 3rd gets kicked off.
+How to Draw (Opt): Draw 3 vertically stacked boxes. When a new number arrives, physically cross out the values and draw arrows pushing the old values down one box.
+Opt Complexity Visuals: Single Pass Stream
+How to Draw Opt Complexity: Draw a stream of numbers hitting a 3-slot filter exactly once. $O(N)$ time.
+Mem Vis (BF): Array Copy Duplicated array of size N for sorting.
+Mem Vis (Opt): 3 Pointers Draw exactly three integer boxes. $O(1)$ space.

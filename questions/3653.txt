@@ -1,0 +1,13 @@
+ID: 3653
+Problem Title: XOR After Range Multiplication Queries I (Med)
+Brute Force Method: For every query `(L, R, factor)`, loop from L to R, multiply each element, then loop again to calculate the total XOR. $O(Q \\text{times} N)$.
+BF Complexity Visuals: Redundant Subarray Scans.
+How to Draw BF: Draw an array. Draw a bracket for each query. Inside, draw arrows hitting every element to multiply, then again to XOR. Write $O(10^5 \\text{times} 10^5)$ = 10^{10} ops.
+Optimised Pattern: Segment Tree or Fenwick Tree with Lazy Propagation. Store XOR values in nodes and apply multiplications as "Lazy" updates.
+Opt Vis. Technique: Segment Tree Node Splitting.
+Dry Run (Opt): Visualize a tree where the root covers the whole array. To multiply a range, find the largest "blocks" that fit and update them once. The change "trickles down" only when needed.
+How to Draw (Opt): Draw a binary tree over an array. Circle the nodes that cover range [L, R]. Write "\times K" next to them. If a node is XOR of its children, update it in $O(1)$.
+Opt Complexity Visuals: Tree Depth Bounding.
+How to Draw Opt Complexity: Draw a height-balanced tree. Show that any range query only touches 2 \times \log N nodes. Total $O(Q \log N)$.
+Mem Vis (BF): Creating new modified copies of the array for every query.
+Mem Vis (Opt): A 1D array of size 4N for the Segment Tree and another 4N for the Lazy array. Space $O(N)$.

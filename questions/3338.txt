@@ -1,0 +1,13 @@
+ID: 3338
+Problem Title: Second Highest Salary II (SQL)
+Brute Force Method: For each department, select distinct salaries, sort them, and pick the second one via nested subqueries.
+BF Complexity Visuals: Nested Loop Scanning
+How to Draw BF: Draw the table. For Row 1, scan the whole table to find higher salaries. Repeat for all rows. $O(N^2)$.
+Optimised Pattern: Window Functions (DENSE_RANK)
+Opt Vis. Technique: Partitioned Ranking Buckets
+Dry Run (Opt): Group by Department. Sort salaries DESC. Assign `DENSE_RANK()`. Filter where rank is 2.
+How to Draw (Opt): Draw horizontal "Buckets" for each Dept. Write salaries inside. Draw a number next to each (1, 2, 2, 3) based on the rank. Circle all the '2's.
+Opt Complexity Visuals: Hash + Sort Pipeline
+How to Draw Opt Complexity: Draw an $O(N)$ grouping arrow into buckets, followed by an $O(K \log K)$ sort line inside each bucket.
+Mem Vis (BF): Temporary tables containing Cartesian products of departments and salaries.
+Mem Vis (Opt): $O(N)$ memory used for the sorting window buffer by the database engine.

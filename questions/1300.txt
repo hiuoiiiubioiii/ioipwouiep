@@ -1,0 +1,13 @@
+ID: 1300
+Problem Title: Sum of Mutated Array Closest to Target
+Brute Force Method: Iterate through every possible integer value for 'value' from 0 to the maximum element in the array. For each, calculate the mutated sum and track the one closest to target.
+BF Complexity Visuals: Linear Value Scan
+How to Draw BF: Draw a horizontal line from 0 to Max. For every integer point, draw a vertical line representing a full array scan. Write $O(\text{Max} \cdot N)$.
+Optimised Pattern: Binary Search on Value Range
+Opt Vis. Technique: Sum-Monotonicity Curve
+Dry Run (Opt): As 'value' increases, the mutated sum increases monotonically. Use binary search between 0 and Max. At each 'mid', calculate the mutated sum. Move left or right depending on whether you are over or under the target.
+How to Draw (Opt): Draw a range [0, Max]. Pick 'mid'. Show the array: elements &gt; mid are capped at mid. Calculate sum. If sum &lt; target, shift L to mid + 1. Note: Check both 'ans' and 'ans-1' at the end for "closest".
+Opt Complexity Visuals: Logarithmic Search with Linear Check
+How to Draw Opt Complexity: Draw a block being halved repeatedly. Inside each, a single array scan arrow. Write $O(N \log(\text{Max})$).
+Mem Vis (BF): Draw no extra data structures but highlight the high CPU usage of the loop.
+Mem Vis (Opt): Draw 3-4 integer variables (low, high, mid, best_val). Space: $O(1)$.

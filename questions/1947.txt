@@ -1,0 +1,13 @@
+ID: 1947
+Problem Title: Max Compatibility Score Sum
+Brute Force Method: Generate all M! permutations of students and match them with mentors to calculate all possible total scores.
+BF Complexity Visuals: Factorial Decision Tree
+How to Draw BF: Draw a root. Branch out M times, then M-1, then M-2. Total leaf nodes = M!.
+Optimised Pattern: DP with Bitmask
+Opt Vis. Technique: Bitmask State Grid
+Dry Run (Opt): Maintain a DP table where `dp[mask]` is the max score for students represented by the "on" bits in the mask matched with the first `count_bits(mask)` mentors.
+How to Draw (Opt): Draw a 1D array of size 2^M. Shade bits in the mask (e.g., 1011) to show which students are "assigned."
+Opt Complexity Visuals: $O(M \cdot 2^M)$ State Transition Graph
+How to Draw Opt Complexity: Draw 2^M nodes. For each node, draw M outgoing arrows to the next state.
+Mem Vis (BF): A massive list of all permutation arrays.
+Mem Vis (Opt): A memoization table/array of size 2^M. $O(2^M)$ space.

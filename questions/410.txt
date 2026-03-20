@@ -1,0 +1,13 @@
+ID: 410
+Problem Title: Split Array Largest Sum
+Brute Force Method: Backtracking (DFS) Try inserting `k-1` dividers into the array in every possible position. Find max sum of each configuration, keep the global minimum.
+BF Complexity Visuals: Partition Tree
+How to Draw BF: Draw an array. Draw moving vertical walls. Branch the tree for every possible wall placement configuration. Combinatorial explosion.
+Optimised Pattern: Binary Search on Answer Binary search the "max sum" (Low: max(arr), High: sum(arr)). Greedily count chunks needed for each guess.
+Opt Vis. Technique: Capacity Buckets
+Dry Run (Opt): Guess a bucket size. Walk through the array pouring numbers into a bucket. If a bucket overflows the guess, grab a new bucket. If you need &gt; k buckets, guess was too small.
+How to Draw (Opt): Draw a number line for Binary Search. Pick a Mid. Draw an array. Draw 'U' shaped buckets. Fill buckets with numbers up to Mid. Count buckets.
+Opt Complexity Visuals: Search inside Scan
+How to Draw Opt Complexity: Draw a Binary Search tree (representing Log(Sum)). Inside each node, draw a linear array scan $O(N)$. Total $O(N \\text{cdot Log}(\text{Sum})$).
+Mem Vis (BF): Recursion Depth Stack frames K levels deep.
+Mem Vis (Opt): Pointers Draw 4 integer boxes: low, high, mid, current_sum. $O(1)$ space.

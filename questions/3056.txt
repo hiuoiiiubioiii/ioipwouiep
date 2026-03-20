@@ -1,0 +1,13 @@
+ID: 3056
+Problem Title: Snaps Analysis (SQL)
+Brute Force Method: Perform a full join between Age, Activities, and Snaps tables. Then, use nested loops to sum 'open' and 'send' times for each age group.
+BF Complexity Visuals: Cartesian Product Matrix
+How to Draw BF: Draw a grid representing Age x Activity x Snaps. Highlight the massive number of redundant combinations.
+Optimised Pattern: Join + Group By with Filtered Aggregation
+Opt Vis. Technique: Activity Flow Pipeline
+Dry Run (Opt): Join Age to Activities on user_id. Group by age bucket. Calculate SUM(case when type='open'...) and SUM(case when type='send'...). Divide by total time.
+How to Draw (Opt): Draw three buckets labeled with age groups. Funnel all 'open' and 'send' activity rows into these buckets. Write the percentage formula on the side of the bucket.
+Opt Complexity Visuals: $O(N)$ Hash Join Pass
+How to Draw Opt Complexity: Draw a Hash Map creation for User IDs followed by a single linear scan through Activities.
+Mem Vis (BF): A massive joined table residing in temporary disk storage.
+Mem Vis (Opt): Internal Hash Tables for age grouping and a single pass through the activity log.

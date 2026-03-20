@@ -1,0 +1,13 @@
+ID: 589
+Problem Title: N-ary Tree Preorder Traversal
+Brute Force Method: Convert the tree into an adjacency list first, then perform a recursive traversal.
+BF Complexity Visuals: Two-pass process with unnecessary intermediate storage. $O(N)$.
+How to Draw BF: Draw a tree. Write it as a list of lists. Then traverse that list.
+Optimised Pattern: Recursive DFS or Iterative Stack.
+Opt Vis. Technique: A "Deep Dive." You visit the parent, then immediately plunge into the first child, then its first child, until you hit a leaf, then move to the next sibling.
+Dry Run (Opt): Recursive: `Visit(root)`. For each `child` in `root.children`, `DFS(child)`. Iterative: Push root to stack. While stack not empty, pop, add to result, and push all children to stack in **reverse** order.
+How to Draw (Opt): Draw an N-ary tree. Trace a line starting from the root, going to the leftmost child, then its children, then back up slightly to the next sibling.
+Opt Complexity Visuals: Single visit to every node. $O(N)$.
+How to Draw Opt Complexity: Draw a tree and follow a single arrow that hugs the "left side" of every branch.
+Mem Vis (BF): Storing the adjacency list explicitly.
+Mem Vis (Opt): Recursion stack or Iterative stack. $O(H)$ or $O(N)$ in worst case.

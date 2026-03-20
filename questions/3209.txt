@@ -1,0 +1,13 @@
+ID: 3209
+Problem Title: Number of Subarrays With AND Value of K
+Brute Force Method: Nested loops generating every subarray, calculating Bitwise AND. $O(N^2)$.
+BF Complexity Visuals: Expanding Triangle Grid
+How to Draw BF: Draw an N x N half-matrix. Shade cells representing subarray bounds (i, j). Point out that calculating each cell takes redundant time.
+Optimised Pattern: LogTrick / Hash Map (Monotonic Bitwise AND)
+Opt Vis. Technique: Shrinking Bitmask Set
+Dry Run (Opt): At each step, maintain a map of valid AND results ending at the current index. Bitwise AND only strictly decreases, meaning at most 32 unique values exist per index.
+How to Draw (Opt): Draw an array. Under index `i`, list a small set of numbers (max 32). Draw arrows to index `i+1`, performing AND with the new element and merging duplicates.
+Opt Complexity Visuals: Linear Scan with Bounded Inner Loop
+How to Draw Opt Complexity: Draw a long horizontal line (N elements). Attach a small, fixed-size box (height 32) at each node. Write $O(32 \cdot N)$ -&gt; $O(N)$.
+Mem Vis (BF): No extra space, just nested pointers (O(1)).
+Mem Vis (Opt): Two Hash Maps of max size 32 ping-ponging data (O(1) effective space).

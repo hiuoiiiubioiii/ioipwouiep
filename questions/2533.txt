@@ -1,0 +1,13 @@
+ID: 2533
+Problem Title: Number of Good Binary Strings
+Brute Force Method: Recursively generate all possible binary strings by adding '0' (zero times) or '1' (one times) until the length is between minLen and maxLen. $O(2^N)$.
+BF Complexity Visuals: A binary tree that branches exponentially, though branches are restricted to specific "chunk" sizes of 0s and 1s.
+How to Draw BF: Start with an empty string. Draw two branches: add zero zeros or one ones. Repeat for every new string until you hit the length limit.
+Optimised Pattern: Linear Dynamic Programming (DP) - Staircase variation.
+Opt Vis. Technique: A 1D array where each index i represents the number of ways to form a string of length i.
+Dry Run (Opt): For a length i, the number of ways is dp[i - zero] + dp[i - one]. Fill the array from 1 to maxLen. Sum the values in the range [minLen, maxLen].
+How to Draw (Opt): Draw a row of boxes from 0 to maxLen. Box 0 = 1. For each box i, look back zero steps and one steps. Add those two numbers and write the result in box i.
+Opt Complexity Visuals: $O(\text{maxLen})$ linear traversal.
+How to Draw Opt Complexity: Draw an array of size maxLen. Draw a single arrow moving left to right. At each step, show two "look-back" arrows pointing to previous results.
+Mem Vis (BF): Massive recursion stack and memory for billions of generated strings.
+Mem Vis (Opt): A single 1D array of size maxLen + 1.

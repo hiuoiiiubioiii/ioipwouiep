@@ -1,0 +1,13 @@
+ID: 2660
+Problem Title: Determine the Winner of a Bowling Game
+Brute Force Method: Complex simulation with nested lookbacks to check if previous strikes occurred.
+BF Complexity Visuals: Simulation with Lookback
+How to Draw BF: Draw the score sequence. For each score, draw arrows looking back at the last two indices. $O(N)$.
+Optimised Pattern: Linear Scan with State Tracker
+Opt Vis. Technique: State-Based Scoring
+Dry Run (Opt): Iterate through the pins. Keep a "multiplier" state. If either of the last two scores was 10, double the current score. Reset or maintain state as you move.
+How to Draw (Opt): Draw two rows of scores. For each score, check the previous two. If a 10 exists, write "x2" below the current score. Sum them up and compare.
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw two parallel $O(N)$ arrows, one for each player.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ space to store player scores and the lookback state.

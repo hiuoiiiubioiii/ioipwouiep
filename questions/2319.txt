@@ -1,0 +1,13 @@
+ID: 2319
+Problem Title: Check if Matrix Is X-Matrix
+Brute Force Method: Iterate through all cells. If a cell is on a diagonal, verify it's not zero. If it's not on a diagonal, verify it is zero.
+BF Complexity Visuals: 2D Grid Scan (O(N^2))
+How to Draw BF: Draw an N x N grid. Trace a line going row by row, checking every single square.
+Optimised Pattern: Single Pass Matrix Traversal
+Opt Vis. Technique: 'X' Pattern Masking
+Dry Run (Opt): Iterate `i` (rows) and `j` (cols). A cell is on a diagonal if `i == j` (main) or `i + j == N - 1` (anti). Apply the condition based on the coordinates instantly.
+How to Draw (Opt): Draw a square grid. Highlight the main and anti-diagonals in yellow to form an 'X'. Put checkmarks inside the 'X' (must be &gt;0) and crosses outside (must be 0).
+Opt Complexity Visuals: Flat Grid Scan (O(N^2))
+How to Draw Opt Complexity: Draw a standard 2D grid filled linearly. The visual complexity matches the brute force because we must read every element once.
+Mem Vis (BF): Draw the 2D matrix structure.
+Mem Vis (Opt): Draw the same 2D matrix structure. Only $O(1)$ auxiliary space (just `i` and `j` variables) is used.

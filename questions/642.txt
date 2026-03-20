@@ -1,0 +1,13 @@
+ID: 642
+Problem Title: Design Search Autocomplete System
+Brute Force Method: Store all sentences in a list. Every time a user types a character, search the entire list using `startsWith()`, sort the matches by frequency, and return top 3.
+BF Complexity Visuals: Full-text search on every keystroke.
+How to Draw BF: Draw a massive stack of papers. For every letter typed, flip through every page. Write $O(\text{Keystrokes} \cdot N \\text{cdot WordLen})$.
+Optimised Pattern: Trie (Prefix Tree) + Min-Heap/Caching.
+Opt Vis. Technique: Branching Path / Predictive Pathing.
+Dry Run (Opt): Traverse the Trie based on the prefix. Each node in the Trie can store a map of "Top 3 sentences" starting from this node. Update frequencies in the Trie when a sentence is finished.
+How to Draw (Opt): Draw a tree where each node is a letter. At each node, draw a small "sticky note" with the top 3 most frequent words under that branch.
+Opt Complexity Visuals: $O(\text{Keystrokes} \\text{cdot MaxWordLen})$.
+How to Draw Opt Complexity: Draw a single path down a tree. Write $O(L)$ where L is length of prefix.
+Mem Vis (BF): Draw a flat list containing millions of redundant strings.
+Mem Vis (Opt): Draw a Trie structure. Common prefixes share nodes. Space is $O(\text{Total unique characters in all sentences})$.

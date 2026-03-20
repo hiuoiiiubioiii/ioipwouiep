@@ -1,0 +1,13 @@
+ID: 1194
+Problem Title: Tournament Winners (SQL)
+Brute Force Method: Loop through every match, update player scores in a map, sort the map, and pick the top player per group.
+BF Complexity Visuals: Step-by-Step Tally Scan
+How to Draw BF: Draw a match list. For each match, draw arrows to Player 1 and Player 2, adding points. Then manually sort every group.
+Optimised Pattern: UNION ALL + Window Functions
+Opt Vis. Technique: Consolidated Scoreboard Projection
+Dry Run (Opt): UNION the scores of first players and second players. Group by player, sum scores. Use `RANK() OVER(PARTITION BY group_id ORDER BY score DESC, player_id ASC)` to find winners.
+How to Draw (Opt): Draw two score sheets being merged into one master sheet. Draw buckets for Group IDs. Inside each bucket, draw a sorted list of players. Point to row #1.
+Opt Complexity Visuals: $O(N \log N)$ Sort/Group
+How to Draw Opt Complexity: Draw a hash join (mapping match to players) followed by a sorting funnel.
+Mem Vis (BF): Unbounded scoreboard objects
+Mem Vis (Opt): Partitioned sorting buffers.

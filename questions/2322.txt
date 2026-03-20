@@ -1,0 +1,13 @@
+ID: 2322
+Problem Title: Minimum Score After Removals on a Tree
+Brute Force Method: Iterate through all pairs of edges to remove. For each pair, run a full DFS to find the XOR sum of the three resulting disconnected components.
+BF Complexity Visuals: N-Cubed Graph Shattering (O(N^3))
+How to Draw BF: Draw a tree. Erase two edges. Draw three separate scanlines traversing the newly formed distinct islands, repeating for every pair of edges.
+Optimised Pattern: DFS Subtree Precomputation + Ancestor Check
+Opt Vis. Technique: 3-Piece Subtree Pruning
+Dry Run (Opt): Run one DFS to compute the XOR sum of every subtree and record entry/exit times. Then iterate pairs of edges. Use entry/exit times to instantly know if one cut subtree is nested inside the other, allowing $O(1)$ XOR calculation for the 3 parts.
+How to Draw (Opt): Draw a tree with a bounding box around every subtree. Write the XOR sum inside the box. Make two cuts. Use the pre-written box values and total XOR to calculate the 3 remaining pieces instantly.
+Opt Complexity Visuals: N-Squared Grid of Pairs (O(N^2))
+How to Draw Opt Complexity: Draw an N x N grid. Inside each cell, draw a tiny $O(1)$ mathematical operation rather than a full graph traversal.
+Mem Vis (BF): Draw a massive Call Stack repeating the same graph traversals over and over.
+Mem Vis (Opt): Draw three 1D Arrays: `xor_sums[]`, `entry_time[]`, and `exit_time[]`.

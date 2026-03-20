@@ -1,0 +1,13 @@
+ID: 2139
+Problem Title: Minimum Moves to Reach Target Score
+Brute Force Method: Start at 1, BFS/DFS branching into (+1) and (*2) at every step until hitting the target.
+BF Complexity Visuals: A massive, exponentially expanding binary tree originating from 1.
+How to Draw BF: Draw root node '1'. Branch to '2' and '2'. Branch those to '3','4' and '3','4'. Stop at target. $O(2^\text{Target})$.
+Optimised Pattern: Greedy (Work Backwards from Target).
+Opt Vis. Technique: Starting at the top of a mountain and taking the biggest possible jumps down.
+Dry Run (Opt): Start at `target`. If `target` is even and `maxDoubles &gt; 0`, divide by 2, decrement `maxDoubles`. If odd, subtract 1. If `maxDoubles == 0`, just add `target - 1` to moves and finish.
+How to Draw (Opt): Write the target number. If it's even, draw a long arrow dividing it by 2. If it's odd, draw a tiny arrow subtracting 1. Stop when you hit 1.
+Opt Complexity Visuals: $O(\\text{log Target})$ max divisions.
+How to Draw Opt Complexity: A steep curve dropping rapidly down to 1, followed by a straight line if doubles run out.
+Mem Vis (BF): Huge BFS Queue holding $O(2^\text{Target})$ nodes (will Time Out/Memory Out).
+Mem Vis (Opt): $O(1)$ auxiliary space. Just modifying the integer directly.

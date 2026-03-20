@@ -1,0 +1,13 @@
+ID: 1455
+Problem Title: Check If a Word Occurs As a Prefix of Any Word in a Sentence
+Brute Force Method: Standard String Search. Use `sentence.indexOf(prefix)`. If result &gt; -1, check if the character before the match is a space.
+BF Complexity Visuals: Substring Scanning with Post-Filter
+How to Draw BF: Draw a long sentence. Highlight all occurrences of the prefix. Check the "boundary" of each highlight. Label $O(N \cdot M)$.
+Optimised Pattern: Tokenization + `startsWith`
+Opt Vis. Technique: Word-by-Word Matching
+Dry Run (Opt): Split the sentence by spaces. For each word, check if it starts with the `searchWord` using `word.startsWith(prefix)`. Return the 1-based index of the first match.
+How to Draw (Opt): Draw a sentence broken into separate boxes (words). Place the prefix under each box. Compare character by character from the start of the box only.
+Opt Complexity Visuals: Linear Word Scan
+How to Draw Opt Complexity: Draw an arrow skipping word by word. Label $O(N)$.
+Mem Vis (BF): Full Sentence Copy
+Mem Vis (Opt): A list of strings after splitting. Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 2826
+Problem Title: Sorting Three Groups
+Brute Force Method: Try all possible "valid" non-decreasing configurations of the array (e.g., all 1s, then all 2s, then all 3s) and calculate the number of changes needed for each.
+BF Complexity Visuals: Brute Force Partition Testing
+How to Draw BF: Draw the array. Draw two dividers that can be placed anywhere. Everything before divider 1 becomes '1', between dividers becomes '2', after becomes '3'. There are $O(N^2)$ ways to place dividers.
+Optimised Pattern: Dynamic Programming (LIS Variation)
+Opt Vis. Technique: State Transition Table
+Dry Run (Opt): Let dp[i][j] be the min changes to make the first i elements non-decreasing ending with value j (1, 2, or 3). Alternatively, subtract the Longest Non-Decreasing Subsequence length from the total length.
+How to Draw (Opt): Draw a 3 x N table. Each cell (j, i) stores the min cost to end the i-th element with value j. Draw arrows from dp[j][i-1] to valid dp[k][i] (where k >= j).
+Opt Complexity Visuals: Flat DP Row Scan
+How to Draw Opt Complexity: Draw a grid of size 3 x N. Since 3 is constant, this is effectively a linear $O(N)$ scan.
+Mem Vis (BF): Visualize $O(N^2)$ combinations being recalculated.
+Mem Vis (Opt): Visualize a 1D DP array of size 3 (or 4) that is updated N times. $O(1)$ auxiliary space (since 3 is constant).

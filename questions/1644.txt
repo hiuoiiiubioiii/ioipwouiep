@@ -1,0 +1,13 @@
+ID: 1644
+Problem Title: Lowest Common Ancestor of a Binary Tree II
+Brute Force Method: Standard LCA but without checking if nodes exist; then doing a second pass to verify both nodes are in the tree.
+BF Complexity Visuals: Two-Pass Traversal
+How to Draw BF: Draw a tree. Draw one arrow traversing for LCA, then two more arrows searching for existence. $O(N)$.
+Optimised Pattern: DFS (Post-order Traversal) with Existence Flags
+Opt Vis. Technique: Bubble-up Search
+Dry Run (Opt): Traverse the whole tree. A node returns itself if it matches p or q. Parent nodes return p/q if found in subtrees. Use a global counter to ensure both are found.
+How to Draw (Opt): Draw a tree. Color nodes p and q red. Draw arrows "reporting" the find upwards. LCA is where the two red reports first meet.
+Opt Complexity Visuals: Single Linear Depth-First Scan
+How to Draw Opt Complexity: Draw one continuous line weaving through every node exactly once. $O(N)$.
+Mem Vis (BF): Call Stack + Full Tree Copy: Redundant memory for tracking presence.
+Mem Vis (Opt): Recursive Call Stack: Draw a vertical stack representing the current path depth. $O(H)$.

@@ -1,0 +1,13 @@
+ID: 697
+Problem Title: Degree of an Array
+Brute Force Method: For every possible subarray, calculate its degree (frequency of most common element) and compare it to the original array's degree.
+BF Complexity Visuals: Nested subarray frequency scans.
+How to Draw BF: Draw an array. Draw all brackets. For each, build a frequency map. Write $O(N^3)$.
+Optimised Pattern: Hash Map (First/Last/Count).
+Opt Vis. Technique: Span Measurement.
+Dry Run (Opt): Store three things in a map for each number: its frequency, its first appearance index, and its last appearance index. The min length is `last - first + 1` for all numbers with max frequency.
+How to Draw (Opt): Draw a table: [Num | Freq | First | Last]. Fill it as you scan. Highlight rows with the highest Freq. Find the smallest (Last-First).
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight scan line. Write $O(N)$.
+Mem Vis (BF): Draw millions of temporary HashMaps.
+Mem Vis (Opt): Draw one HashMap of unique elements. $O(N)$.

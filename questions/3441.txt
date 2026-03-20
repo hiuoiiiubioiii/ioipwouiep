@@ -1,0 +1,13 @@
+ID: 3441
+Problem Title: Minimum Cost Good Caption
+Brute Force Method: Try all 26^N strings where every character appears in groups of at least 3. $O(26^N)$
+BF Complexity Visuals: Exponential Character Decision Tree.
+How to Draw BF: Draw a root. Branch 26 times. At depth 2, branch 26 times again. It becomes an unreadable cloud.
+Optimised Pattern: DP with Lexicographical Greedy Path. $O(26 x N)$
+Opt Vis. Technique: 2D Grid (Chars x Indices) with Backpointers.
+Dry Run (Opt): Fill a grid where `dp[i][char]` is min cost. For each cell, look at the min cost of previous cells that allow a group of 3+.
+How to Draw (Opt): Draw a 26 x N grid. In cell (c, i), draw arrows back to indices i-3, i-4, i-5 of the same character.
+Opt Complexity Visuals: Bounded Search Space (26 x N).
+How to Draw Opt Complexity: Draw a rectangle representing the 26 x N DP table. Shade it row-by-row to show total operations.
+Mem Vis (BF): Recursive stack depth N storing 26^N possible states.
+Mem Vis (Opt): A 26 x N 2D array of integers, or a rolling 1D array if only the current cost is needed.

@@ -1,0 +1,13 @@
+ID: 1007
+Problem Title: Min Domino Rotations For Equal Row
+Brute Force Method: Check numbers 1 through 6. For each number, scan the entire array of dominoes to see if a full row can be formed. Count swaps for both top and bottom.
+BF Complexity Visuals: 6 separate horizontal timelines, one for each face value on a die.
+How to Draw BF: Draw the dominoes as a 2xN grid. Write numbers 1-6. Pick '1', scan the whole grid to count tops and bottoms. Repeat for 2, 3, etc. Write $O(6 \cdot N)$.
+Optimised Pattern: Greedy (Target Candidates).
+Opt Vis. Technique: Two master keyholes (Target A and Target B) checking all subsequent locks.
+Dry Run (Opt): The only possible valid numbers MUST be either tops[0] or bottoms[0]. Check if target A exists in every domino. If yes, count swaps. Do the same for target B.
+How to Draw (Opt): Draw the 2xN grid. Circle the first top and first bottom. Draw two parallel arrows moving right, tallying missing tops/bottoms for Candidate 1 and Candidate 2.
+Opt Complexity Visuals: A single dual-track timeline.
+How to Draw Opt Complexity: Draw the arrays with one straight arrow sweeping left to right. Write $O(N)$ above it.
+Mem Vis (BF): Just tracking counters, so conceptually a few boxes for $O(1)$ space.
+Mem Vis (Opt): Only 4 small boxes (counters for top/bottom swaps for two candidates). Rigid $O(1)$ space.

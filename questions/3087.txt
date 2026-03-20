@@ -1,0 +1,13 @@
+ID: 3087
+Problem Title: Find Trending Hashtags (SQL)
+Brute Force Method: Extract all hashtags from the tweet text for every row, then join the results to a temporary table and count occurrences.
+BF Complexity Visuals: Row-by-Row String Splitting
+How to Draw BF: Draw a tweet. Show it exploding into a list of words. Draw a filter for words starting with '#'.
+Optimised Pattern: Regex Extraction + Group By + Order By
+Opt Vis. Technique: Frequency Aggregation Funnel
+Dry Run (Opt): Use REGEXP_SUBSTR or SUBSTRING_INDEX to extract the first hashtag. Group by the hashtag, count, and sort by count descending. Limit to top 3.
+How to Draw (Opt): Draw a table with Tweet and Hashtag columns. Use an arrow to "extract" tags. Group identical tags into buckets and count the height of the buckets.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Pass
+How to Draw Opt Complexity: Draw a single pass to extract tags $O(N)$, followed by a sorting block for the counts.
+Mem Vis (BF): Temporary tables containing every word from every tweet.
+Mem Vis (Opt): Index-assisted grouping; the engine uses a Hash Map internally to tally hashtags.

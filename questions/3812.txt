@@ -1,0 +1,13 @@
+ID: 3812
+Problem Title: Minimum Edge Toggles on a Tree (Hard)
+Brute Force Method: Try every possible node as the root. For each, run a full BFS/DFS to count how many directed edges need to be reversed to point away from the root.
+BF Complexity Visuals: N separate tree traversals, where N nodes each trigger a full graph scan.
+How to Draw BF: Draw a tree. Pick node 1, draw a full DFS. Pick node 2, draw a full DFS. Write $O(N^2)$ to show the repeated work.
+Optimised Pattern: Tree DP (Re-rooting Technique).
+Opt Vis. Technique: Two-pass DFS: A bottom-up accumulation followed by a top-down transfer of state.
+Dry Run (Opt): Pass 1: Root at 0, count toggles for all subtrees. Pass 2: Move root to a child. If edge points child-&gt;parent, toggles -1. If parent-&gt;child, toggles +1.
+How to Draw (Opt): Draw tree. Pass 1: Draw arrows pointing UP to root 0, summing costs. Pass 2: Draw arrows shifting DOWN to children, adjusting the sum by +/- 1.
+Opt Complexity Visuals: Two sequential tree scans, independent of graph complexity.
+How to Draw Opt Complexity: Draw tree. Write "DFS 1 = $O(N)$". Next to it, "DFS 2 = $O(N)$". Sum = $O(N)$.
+Mem Vis (BF): Call stack for N separate DFS runs, plus overhead for tracking visited nodes repeatedly.
+Mem Vis (Opt): Two 1D arrays of size N: one for subtree toggle counts, one for the final answer after re-rooting.

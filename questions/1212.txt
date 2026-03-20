@@ -1,0 +1,13 @@
+ID: 1212
+Problem Title: Team Scores in Football Tournament (SQL)
+Brute Force Method: Perform an exhaustive Cartesian product or nested loop joining Teams with Matches on both home_team and away_team conditions separately, then using complex subqueries to map points.
+BF Complexity Visuals: Matrix Cross-Join
+How to Draw BF: Draw a Grid where rows are Teams and columns are Matches. Shade in every cell to show the database attempting to match every team against every single match record. Write $O(\text{Teams} \\text{cdot Matches})$.
+Optimised Pattern: UNION ALL for Event Splitting + GROUP BY
+Opt Vis. Technique: Event Duplication &amp; Scoreboard Funneling
+Dry Run (Opt): Take every match and split it into two independent "point-awarding events": one for the home team, one for the away team. Stack all these events together (UNION ALL). Group by team and sum the points.
+How to Draw (Opt): Draw a 'Match' row: [Team A vs Team B, Score 2-1]. Draw two arrows splitting out of it: Arrow 1 says "Team A gets 3 points". Arrow 2 says "Team B gets 0 points". Route all these arrows into a final 'Scoreboard' table.
+Opt Complexity Visuals: Map-Reduce Pipeline
+How to Draw Opt Complexity: Draw a linear list of matches mapped to exactly 2X events, funneling into a sorted hash-aggregation phase: $O(M + T \log T)$.
+Mem Vis (BF): Draw a massive intermediate Cartesian-joined table taking up excessive disk space.
+Mem Vis (Opt): Draw a single, streamlined derived table (CTE) feeding directly into a memory-efficient grouping hash table.

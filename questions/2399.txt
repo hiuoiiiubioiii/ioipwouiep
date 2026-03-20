@@ -1,0 +1,13 @@
+ID: 2399
+Problem Title: Check Distances Between Same Letters
+Brute Force Method: For every letter in the alphabet, scan the entire string to find its two occurrences, calculate the distance between them, and compare it to the `distance` array.
+BF Complexity Visuals: Multi-Pass Alphabet Scanning (O(26 * N))
+How to Draw BF: Draw the string. For 'a', scan for two 'a's. For 'b', scan for two 'b's. Repeat 26 times, checking the subtraction result against the provided array.
+Optimised Pattern: Single Pass First-Occurrence Map
+Opt Vis. Technique: Index Difference Validation
+Dry Run (Opt): Iterate through the string once. Store the index of the first time you see a character in a Hash Map (or Array). When you see it a second time, check if `curr_idx - prev_idx - 1 == distance[char]`.
+How to Draw (Opt): Draw the string. As you walk, write the index above each letter. If you see 'a' at index 3, and then 'a' again at index 7, check if 7 - 3 - 1 matches the number in the 'a' slot of the distance table.
+Opt Complexity Visuals: Single Linear Pass (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. One pass updates a "First Seen" table and validates distances on the fly.
+Mem Vis (BF): Draw 26 separate timelines for each letter's search.
+Mem Vis (Opt): Draw one 26-element Integer Array to store the first occurrence of each character.

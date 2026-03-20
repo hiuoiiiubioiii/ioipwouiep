@@ -1,0 +1,13 @@
+ID: 3236
+Problem Title: CEO Subordinate Hierarchy (SQL)
+Brute Force Method: Repeated self-joins for every possible level of hierarchy (Join Table 1 to 2, 2 to 3, etc.).
+BF Complexity Visuals: Staircase Table Joins
+How to Draw BF: Draw Table A. Join it to Table B. Join that to Table C. Show that for depth D, you need D manual joins.
+Optimised Pattern: Recursive CTE (WITH RECURSIVE)
+Opt Vis. Technique: Tree Traversal Pipeline
+Dry Run (Opt): Start with the CEO (manager_id IS NULL). Recursively find employees whose manager is in the previous result set. Track "Level" as you go.
+How to Draw (Opt): Draw the CEO at the top. Draw arrows to direct reports (Level 1), then arrows to their reports (Level 2). Label the Salary Delta at each node.
+Opt Complexity Visuals: Depth-First Table Scan
+How to Draw Opt Complexity: Draw a tree growing downwards. Label the scan as $O(N)$ because each employee is visited exactly once via their manager ID link.
+Mem Vis (BF): Dozens of intermediate temporary join tables.
+Mem Vis (Opt): Single execution stack for the recursion (O(Depth) space).

@@ -1,0 +1,13 @@
+ID: 2961
+Problem Title: Double Modular Exponentiation
+Brute Force Method: Calculate (a^b mod10)^c modm using standard loops for exponentiation.
+BF Complexity Visuals: Linear Power Chains
+How to Draw BF: Draw a chain of multiplications: a x a x dots x a (b times). Repeat for c. $O(b+c)$.
+Optimised Pattern: Binary Exponentiation (Modular Pow)
+Opt Vis. Technique: Logarithmic Successive Squaring
+Dry Run (Opt): Break exponent b into binary bits. For each bit, either square the result or square and multiply by base.
+How to Draw (Opt): Draw a base number. Draw arrows showing it squaring at each step. If the bit is 1, draw an extra multiplication node.
+Opt Complexity Visuals: N Steps x Log(Exponent)
+How to Draw Opt Complexity: Draw a line of N tasks. Above each, a tree of height log(exponent). Total T = $O(N \log(\text{max}_\text{exp})$).
+Mem Vis (BF): Large intermediate integers before modulo.
+Mem Vis (Opt): Constant number of variables for modular results. Space $O(1)$.

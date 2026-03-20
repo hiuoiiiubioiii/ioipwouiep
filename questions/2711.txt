@@ -1,0 +1,13 @@
+ID: 2711
+Problem Title: Difference of Number of Distinct Values on Diagonals
+Brute Force Method: For every single cell (i, j), run a while loop upwards-left and another downwards-right, inserting elements into two Sets, then subtract their sizes. $O(M\cdot N\\text{cdot min}(M,N)$).
+BF Complexity Visuals: Starburst Traversal Overlap
+How to Draw BF: Draw a grid. For one cell, draw arrows shooting top-left and bottom-right. Repeat for every cell. The lines will heavily overlap, visually demonstrating redundant work.
+Optimised Pattern: Disposable HashSets (Draw hundreds of temporary Sets being created and garbage-collected for every individual cell).
+Opt Vis. Technique: Diagonal Sweepline with Two-Pass Prefix/Suffix Sets
+Dry Run (Opt): Isolated Diagonal Processing
+How to Draw (Opt): Isolate each diagonal line. Run down the diagonal keeping a "running Set" of seen values (prefix). Then run back up keeping a running Set of the other side (suffix). Update answers in place.
+Opt Complexity Visuals: Draw a single isolated diagonal of boxes. Slide an "accumulator bucket" down the line, dropping unique values in. Slide another bucket back up.
+How to Draw Opt Complexity: Parallel Independent Lines
+Mem Vis (BF): Draw diagonal parallel lines across the entire grid. Label the total area $O(M\cdot N)$ to show every cell is processed a constant number of times.
+Mem Vis (Opt): Reusable HashSet State (Draw exactly two Set structures being cleared and reused per diagonal, saving massive memory overhead).

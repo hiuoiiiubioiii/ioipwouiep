@@ -1,0 +1,13 @@
+ID: 2256
+Problem Title: Minimum Average Difference
+Brute Force Method: Nested Subarray SumsFor every index `i`, run an inner loop from 0 to `i` to calculate the left average, and another inner loop from `i+1` to N-1 for the right average.
+BF Complexity Visuals: Repeated Window Summation
+How to Draw BF: Draw an array. At each index, draw two large brackets: one covering the left side and one covering the right. Show the $O(N^2)$ total additions.
+Optimised Pattern: Prefix Sum / Running Total
+Opt Vis. Technique: Total Sum Balancing Act
+Dry Run (Opt): Calculate the total sum of the array first. Traverse once. Maintain a `left_sum`. The `right_sum` is simply `total_sum - left_sum`. Calculate averages in $O(1)$ at each step.
+How to Draw (Opt): Draw a horizontal bar representing the `total_sum`. Draw a divider sliding from left to right. As it slides, show the `left_sum` growing and the `right_sum` shrinking instantly.
+Opt Complexity Visuals: Single Linear Timeline
+How to Draw Opt Complexity: Draw one $O(N)$ pass to get the total sum, followed by one $O(N)$ pass to calculate the differences. Total time: $O(N)$.
+Mem Vis (BF): Re-calculating sums in temporary variables inside an $O(N^2)$ loop.
+Mem Vis (Opt): Two 64-bit integer variables (`total_sum`, `left_sum`) taking $O(1)$ auxiliary space.

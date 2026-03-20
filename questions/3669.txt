@@ -1,0 +1,13 @@
+ID: 3669
+Problem Title: Balanced K-Factor Decomposition (Med)
+Brute Force Method: Trial division: Iterate from 1 to N to find all factors, then try all combinations of K factors to see if they are "balanced". $O(N)$.
+BF Complexity Visuals: Linear Factor Search.
+How to Draw BF: Start at 1, divide N by 1, 2, 3... all the way to N. If N = 10^9, this is 1 billion operations.
+Optimised Pattern: Square Root Factorization + Dynamic Programming. Only check up to √N to find all factors, then use DP to find balanced subsets.
+Opt Vis. Technique: The "Factor Pairs" Mirror.
+Dry Run (Opt): If 2 is a factor of 100, then 100/2 = 50 is also a factor. Every factor has a partner on the other side of √N.
+How to Draw (Opt): Draw a line. Put √N in the middle. Find factors on the left. For each, draw an arc to its "partner" on the right. This finds all factors in $O(√N)$.
+Opt Complexity Visuals: Sub-linear Factorization.
+How to Draw Opt Complexity: Draw an arrow that stops at the halfway point √N. Write $O(√N + \text{DP}_\text{time})$.
+Mem Vis (BF): Storing every single number from 1 to N to check if they are factors.
+Mem Vis (Opt): A list of factors found. Since the number of factors is small (relative to N), space is $O(\text{factors})$.

@@ -1,0 +1,13 @@
+ID: 3373
+Problem Title: Maximize the Number of Target Nodes After Connecting Trees II
+Brute Force Method: Similar to 3372, but distance K is infinite and the constraint is on parity (even/odd) rather than a fixed limit.
+BF Complexity Visuals: Global Connectivity Tree
+How to Draw BF: Draw the same connection spaghetti as 3372. Count even-distance nodes for every connection pair. $O(N \cdot M \cdot (N+M)$).
+Optimised Pattern: Bipartite Coloring (Parity Counting)
+Opt Vis. Technique: Red-Blue Node Coloring
+Dry Run (Opt): Trees are bipartite. In Tree 2, the max nodes you can add is max(count of even nodes, count of odd nodes). In Tree 1, every node's "even" neighbors are its same-color buddies.
+How to Draw (Opt): Color Tree 1 like a checkerboard (Red/Blue). Do the same for Tree 2. For any node in Tree 1, the answer is (Count of same-colored nodes in T1) + (Max color count in T2).
+Opt Complexity Visuals: Single-Pass Tree Coloring
+How to Draw Opt Complexity: Draw two trees. Trace one DFS pass through each to assign colors. Proves $O(N+M)$.
+Mem Vis (BF): Huge recursive stack depth combined with N x M pair storage.
+Mem Vis (Opt): Four integer variables: Count of Red1, Blue1, Red2, Blue2. $O(N+M)$ for the adjacency lists.

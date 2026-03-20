@@ -1,0 +1,13 @@
+ID: 1669
+Problem Title: Merge In Between Linked Lists
+Brute Force Method: Traverse list1 to find node a, store its reference. Traverse to find node b. Traverse list2 to find its tail, then link them all.
+BF Complexity Visuals: Disconnected Segment Scan
+How to Draw BF: Draw three separate arrows scanning different parts of the two lists at different times. $O(N + M)$.
+Optimised Pattern: Two Pointers (Marker Placement)
+Opt Vis. Technique: Bridge Connection
+Dry Run (Opt): Pointer `prevA` stops at a-1. Pointer `afterB` stops at b+1. Link `prevA.next` to `list2.head` and `list2.tail.next` to `afterB`.
+How to Draw (Opt): Draw list1. Draw a "cut" before a and after b. Draw list2 dropping into the gap. Draw two "welding" lines (links) connecting the pieces.
+Opt Complexity Visuals: Linear Simultaneous Scan
+How to Draw Opt Complexity: Draw two parallel arrows moving through list1 and one through list2. $O(N + M)$.
+Mem Vis (BF): Dummy Nodes / Lists: Draw extra nodes being created for temporary storage.
+Mem Vis (Opt): Pointer Variables: Draw four small boxes: `curr`, `prevA`, `afterB`, and `tail2`. $O(1)$ space.

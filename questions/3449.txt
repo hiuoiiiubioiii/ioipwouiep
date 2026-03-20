@@ -1,0 +1,13 @@
+ID: 3449
+Problem Title: Maximize the Minimum Game Score
+Brute Force Method: Backtracking simulation of every possible move sequence (up/down) up to m moves. $O(2^m)$
+BF Complexity Visuals: Exponential Move Tree.
+How to Draw BF: Draw a root node branching to "Left" or "Right" moves. At depth m, you have 2^m leaf nodes to evaluate.
+Optimised Pattern: Binary Search on Answer + Greedy Traversal. $O(N \log(\text{Max}_\text{Score})$)
+Opt Vis. Technique: Score Threshold Waterline.
+Dry Run (Opt): Pick a target score X. Greedily calculate moves needed to bring every gameScore[i] to ≥ X. Check if total moves ≤ m.
+How to Draw (Opt): Draw the points array. Draw a horizontal line at height X. For each point, calculate X/points[i] to find the required "visits."
+Opt Complexity Visuals: Binary Search Tree + Linear Scan.
+How to Draw Opt Complexity: Draw a BS tree of height log(Score). In each node, draw a simple $O(N)$ progress line.
+Mem Vis (BF): Deep recursion stack with state snapshots per move.
+Mem Vis (Opt): $O(1)$ auxiliary space using a few variables to track current moves and positions.

@@ -1,0 +1,13 @@
+ID: 2121
+Problem Title: Intervals Between Identical Elements
+Brute Force Method: Nested loops. For each item, scan the whole array to find matches and sum the index differences.
+BF Complexity Visuals: Spaghetti web of lines connecting matching numbers.
+How to Draw BF: Draw an array. For every '2', draw a separate arched line connecting it to every other '2', summing lengths. $O(N^2)$.
+Optimised Pattern: Prefix and Suffix Sums / Hash Map of Lists.
+Opt Vis. Technique: Two sweeping accumulators (left-to-right, right-to-left).
+Dry Run (Opt): Group indices by value. For each group, calculate prefix sum of indices. Current element's total diff relies on count of items before it and their sum, plus items after it.
+How to Draw (Opt): Draw out a sub-array of indices for a specific number. Draw a left-facing arrow calculating left-side pull, and a right-facing arrow for right-side pull. Add them.
+Opt Complexity Visuals: $O(N)$ linear sweep across grouped indices.
+How to Draw Opt Complexity: Two parallel straight horizontal arrows scanning an array.
+Mem Vis (BF): No extra memory, just $O(1)$ variables holding sums.
+Mem Vis (Opt): Hash Map mapping Integer -&gt; List of Integers (indices). Memory is $O(N)$.

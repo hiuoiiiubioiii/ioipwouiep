@@ -1,0 +1,13 @@
+ID: 3061
+Problem Title: Calculate Trapping Rain Water (SQL)
+Brute Force Method: (Custom SQL implementation) For each bar, find the max height to its left and right using correlated subqueries for every row.
+BF Complexity Visuals: Nested Scanning Pillars
+How to Draw BF: Draw the bars. From each bar, draw a scan line left and a scan line right. Total $O(N^2)$ complexity.
+Optimised Pattern: Window Functions (Max Over Partition)
+Opt Vis. Technique: Boundary Level Overlay
+Dry Run (Opt): Use MAX(height) OVER(ORDER BY id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) for left and UNBOUNDED FOLLOWING for right. Water = min(L, R) - height.
+How to Draw (Opt): Draw the bar chart. Draw a "blue" horizontal line representing the lower of the two max boundaries. Color the gap between the blue line and the bar.
+Opt Complexity Visuals: $O(N)$ Analytical Scan
+How to Draw Opt Complexity: Draw two parallel arrows: one scanning from start-to-end and one from end-to-start. $O(2N)$ rightarrow $O(N)$.
+Mem Vis (BF): $O(N^2)$ temporary results for nested subqueries.
+Mem Vis (Opt): Memory-efficient frame buffer used by the analytical engine to keep running maxes.

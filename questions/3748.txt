@@ -1,0 +1,13 @@
+ID: 3748
+Problem Title: Count Stable Subarrays (Hard)
+Brute Force Method: Generate every possible subarray (O(N^2)). For each, do a full scan to verify if it meets the "stable" criteria (e.g., difference bounds). $O(N^3)$.
+BF Complexity Visuals: Dense Subarray Bracket Web.
+How to Draw BF: Write the array. Draw a bracket for every conceivable chunk. Do math for every single bracketed chunk and tally the valid ones.
+Optimised Pattern: Sliding Window + Monotonic Deques (Min/Max Tracking)
+Opt Vis. Technique: Elastic Expanding Window
+Dry Run (Opt): Expand window Right. Track the min and max of the current window using two Deques. If the stability condition breaks, shrink the window from the Left until it's valid again. Add `Right - Left + 1` to total.
+How to Draw (Opt): Draw the array. Draw an expanding bracket `[ ]`. Below it, maintain a "Max" box and a "Min" box. When the difference breaks the rule, drag the left side of the bracket forward.
+Opt Complexity Visuals: Amortized $O(N)$.
+How to Draw Opt Complexity: Draw a timeline moving right. Draw two simultaneous waves tracking the min/max bounds seamlessly.
+Mem Vis (BF): $O(1)$ extra space but massive repetitive computation.
+Mem Vis (Opt): Two Double-Ended Queues (Deques) holding indices.

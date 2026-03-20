@@ -1,0 +1,13 @@
+ID: 3197
+Problem Title: Find the Minimum Area to Cover All 1s II
+Brute Force Method: Try every combination of 3 non-overlapping rectangles across all possible grid coordinates. $O((M x N)$^6).
+BF Complexity Visuals: Chaotic Coordinate Explosion
+How to Draw BF: Draw a grid. Try sketching three random boxes. Re-draw if they overlap. Tally the area. $O(N^6)$.
+Optimised Pattern: Grid Partitioning + Bounding Box
+Opt Vis. Technique: The Butcher's Slice
+Dry Run (Opt): Divide the grid into 3 regions using horizontal and vertical "cuts." There are 6 fixed layouts (e.g., all 3 horizontal, T-shaped, etc.). Find min area for each.
+How to Draw (Opt): Draw 6 small grids. In each, draw lines to cut them into 3 non-overlapping zones. For each zone, find the min/max 1s coordinates.
+Opt Complexity Visuals: Nested Multi-pass Scans
+How to Draw Opt Complexity: Draw a snake path through the grid $O(M x N)$ to find bounding boxes for each of the 6 layout partitions.
+Mem Vis (BF): Gigantic list of all possible rectangle triples.
+Mem Vis (Opt): Variables for min/max coordinates in each sub-region. $O(1)$ aux.

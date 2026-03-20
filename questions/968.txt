@@ -1,0 +1,13 @@
+ID: 968
+Problem Title: Binary Tree Cameras
+Brute Force Method: Try placing a camera at every possible subset of nodes (2^N combinations) and for each, check if the whole tree is covered.
+BF Complexity Visuals: $O(2^N \cdot N)$. Exponential search for the minimum set.
+How to Draw BF: Draw a tree. Shade node A, see if it covers B and C. Undo. Shade B, see if it covers A. The paper is covered in "what-if" shading.
+Optimised Pattern: Greedy / Post-Order DP (State Signaling)
+Opt Vis. Technique: "Bottom-Up Responsibility." Leaves refuse to have cameras; they force their parents to take a camera instead. Parents then signal to grandparents that they are "covered."
+Dry Run (Opt): State: 0 (Leaf/Needs cover), 1 (Has camera), 2 (Covered). If a child is 0, parent must be 1 (camera++). If a child is 1, parent is 2. Else parent is 0.
+How to Draw (Opt): Draw a tree. Use colored stickers: Red (Needs help), Green (Has Camera), Blue (Safe). Start at the bottom and let the Red stickers "demand" a Green sticker above them.
+Opt Complexity Visuals: $O(N)$. A single post-order traversal (bottom-up).
+How to Draw Opt Complexity: Draw a tree with arrows pointing UP from leaves to root. Write a state number (0, 1, or 2) next to each node as the arrows move.
+Mem Vis (BF): $O(2^N)$ memory for combinations.
+Mem Vis (Opt): $O(H)$ recursion stack space. Draw a vertical call stack column.

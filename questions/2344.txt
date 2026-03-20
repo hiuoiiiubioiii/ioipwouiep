@@ -1,0 +1,13 @@
+ID: 2344
+Problem Title: Minimum Deletions to Make Array Divisible
+Brute Force Method: Sort `nums`. For each number in `nums`, check if it divides every single element in `numsDivide`. If not, delete it and move to the next.
+BF Complexity Visuals: Nested Divisibility Checks (O(N * M))
+How to Draw BF: Draw two arrays. Point to the first element of Array A. Draw arrows from it to every element of Array B. If any arrow "breaks" (doesn't divide), move to the next in A.
+Optimised Pattern: GCD + Sorting
+Opt Vis. Technique: Greatest Common Target
+Dry Run (Opt): Find the GCD of all numbers in `numsDivide`. Sort `nums`. The first number in the sorted `nums` that divides the `GCD` is your winner. All numbers before it must be deleted.
+How to Draw (Opt): Draw a "Master Key" (the GCD). Line up your "Potential Keys" (sorted `nums`) in a row. Test each key against the Master Key. The first one that fits determines how many keys you discard.
+Opt Complexity Visuals: Logarithmic GCD + Sorting (O(M log M + N log N))
+How to Draw Opt Complexity: Draw a funnel for `numsDivide` that outputs one single number (GCD). Draw a sorted line for `nums` that hits that GCD.
+Mem Vis (BF): Draw a massive checklist for every element in `numsDivide` for every `num`.
+Mem Vis (Opt): Draw one Integer (`targetGCD`) and a sorted version of the `nums` Array.

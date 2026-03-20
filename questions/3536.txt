@@ -1,0 +1,13 @@
+ID: 3536
+Problem Title: Maximum Product of Two Digits (Easy)
+Brute Force Method: Extract all digits, use a double loop to multiply every possible pair.
+BF Complexity Visuals: Handshake Matrix.
+How to Draw BF: Draw an N x N grid of all extracted digits. Shade the lower triangle and calculate products for each cell. $O(N^2)$.
+Optimised Pattern: Single Pass Max/Min Tracker (Greedy).
+Opt Vis. Technique: Podium Ranking.
+Dry Run (Opt): Scan digits once. Maintain a 1st Place and 2nd Place slot for the largest digits (and smallest if negatives are allowed). Multiply them at the end.
+How to Draw (Opt): Draw two boxes labeled 'Max1' and 'Max2'. Draw an arrow sweeping across the digits, bumping values down the podium if a larger one is found.
+Opt Complexity Visuals: Linear Scan to $O(1)$ Math.
+How to Draw Opt Complexity: Draw a single straight line through N digits. Draw a single multiplication sign at the end. $O(N)$.
+Mem Vis (BF): Digit Arrays: Draw an array storing every single extracted digit, wasting space for a simple max-find.
+Mem Vis (Opt): Two Integer Variables: Draw just two independent boxes holding the top values, overwriting in place.

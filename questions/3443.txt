@@ -1,0 +1,13 @@
+ID: 3443
+Problem Title: Max Manhattan Distance After K Changes
+Brute Force Method: Try every possible combination of K character flips in the string. $O((N \text{Choose} K)$)
+BF Complexity Visuals: Combinatorial Choice Tree.
+How to Draw BF: Draw the string. Circle K characters to flip. Repeat for every possible set of K circles.
+Optimised Pattern: Greedy Quadrant Invariance. $O(N)$
+Opt Vis. Technique: Quadrant Force Vectors.
+Dry Run (Opt): Assume the goal is NE (North-East). Any S or W move is "bad". Use K to flip as many bad moves to good as possible. Repeat for 4 quadrants.
+How to Draw (Opt): Draw a compass (N, S, E, W). Pick a quadrant (e.g., top-right). Cross out "S" and "W" and draw them as "N" and "E" instead.
+Opt Complexity Visuals: Four Linear Scans.
+How to Draw Opt Complexity: Draw 4 parallel lines, each representing one $O(N)$ pass for a specific quadrant direction.
+Mem Vis (BF): Massive list of all possible resulting coordinate paths.
+Mem Vis (Opt): $O(1)$ space using simple integer counters (N, S, E, W).

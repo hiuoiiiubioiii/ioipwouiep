@@ -1,0 +1,13 @@
+ID: 2356
+Problem Title: Number of Unique Subjects Taught by Each Teacher (SQL Premium)
+Brute Force Method: (Conceptual) For every teacher, scan the entire teaching table to find all subjects, put them in a set to find unique ones, and count them.
+BF Complexity Visuals: Teacher-by-Teacher Scanning
+How to Draw BF: Draw a table of teachers and subjects. For each unique teacher ID, draw a circle around all their subjects, then cross out the duplicates within that circle.
+Optimised Pattern: GROUP BY + COUNT(DISTINCT)
+Opt Vis. Technique: Relational Data Bucketing
+Dry Run (Opt): Group the table by `teacher_id`. For each group, use the `COUNT(DISTINCT subject_id)` function to find the number of unique subjects.
+How to Draw (Opt): Draw a table. Draw horizontal lines grouping rows by `teacher_id`. In each group, count the unique subject names and write the total in a new "count" column.
+Opt Complexity Visuals: Single Pass Aggregation
+How to Draw Opt Complexity: Draw a stream of data entering a hash map where keys are teacher IDs and values are sets of subjects.
+Mem Vis (BF): Draw multiple temporary result sets for each teacher-to-subject scan.
+Mem Vis (Opt): Draw one Result Set stream with `teacher_id` and `cnt` columns.

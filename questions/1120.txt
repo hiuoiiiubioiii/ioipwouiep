@@ -1,0 +1,13 @@
+ID: 1120
+Problem Title: Maximum Average Subtree
+Brute Force Method: Pre-order Traversal. For *every* node, launch a brand new DFS to sum its subtree and count nodes. Calculates average, tracks max.
+BF Complexity Visuals: Nested Subtree Bubbles
+How to Draw BF: Draw a tree. For every node, draw a bubble wrapping its entire subtree. The massive overlap visually shows the $O(N^2)$ redundant work.
+Optimised Pattern: Post-order DFS (Bottom-Up)
+Opt Vis. Technique: Bubbling Up State Tuples
+Dry Run (Opt): DFS down to leaves. A node waits for Left and Right children to return an array: `[sum, count]`. Node calculates `[L_sum + R_sum + val, L_count + R_count + 1]`.
+How to Draw (Opt): Draw a tree. Start at leaves. Write `[val, 1]` next to them. Draw arrows moving UP to parents. Combine the arrays at the parent, cross out the old ones.
+Opt Complexity Visuals: Single Traversal Path $O(N)$
+How to Draw Opt Complexity: Trace the edges of the tree exactly once, following the perimeter from bottom to top.
+Mem Vis (BF): Massive Call Stack $O(N)$ for every $O(N)$ traversal
+Mem Vis (Opt): Max Depth Call Stack $O(H)$ passing 2-element arrays.

@@ -1,0 +1,13 @@
+ID: 319
+Problem Title: Bulb Switcher
+Brute Force Method: Simulate all n rounds. In round i, toggle every i-th bulb. Count how many are on at the end.
+BF Complexity Visuals: Nested Simulation Loop
+How to Draw BF: Draw n bulbs. Draw a line for round 1 toggling all. Draw a line for round 2 toggling every 2nd. Label $O(N^2)$.
+Optimised Pattern: Mathematical Pattern (Square Root)
+Opt Vis. Technique: Factor Parity Observation
+Dry Run (Opt): A bulb ends up 'ON' only if it is toggled an odd number of times. Only perfect squares have an odd number of divisors (e.g., 36 has 1, 2, 3, 4, 6, 9, 12, 18, 36). The answer is simply \lfloor\sqrt{n}\rfloor.
+How to Draw (Opt): Draw the numbers 1 to 10. Circle 1, 4, 9. Underneath, write "Divisors: 1, 3, 3". Explain that squares have a middle divisor that isn't paired.
+Opt Complexity Visuals: Constant Time Math Operation
+How to Draw Opt Complexity: Draw a single box with the formula \sqrt{n}. $O(1)$.
+Mem Vis (BF): A boolean array of size n to track bulb states. $O(N)$.
+Mem Vis (Opt): No memory required. Draw a single variable box 'res'. $O(1)$.

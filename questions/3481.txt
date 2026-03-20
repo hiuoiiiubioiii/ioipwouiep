@@ -1,0 +1,13 @@
+ID: 3481
+Problem Title: Apply Substitutions
+Brute Force Method: Repeatedly scan the entire string for '%' symbols, replace the first one found, and start over until no '%' remain. $O(L^\text{depth})$
+BF Complexity Visuals: Exponential Recursive Expansion.
+How to Draw BF: Draw a short string. Replace one word with three words. Replace one of those with five words. The string line grows until it goes off the page.
+Optimised Pattern: DFS with Memoization / Dependency Graph Resolve. $O(\text{Final Length})$
+Opt Vis. Technique: Directed Acyclic Graph (DAG) Traversal.
+Dry Run (Opt): Treat each placeholder as a node. Recursively resolve leaf-nodes (static text) and cache the result. Combine strings during backtracking.
+How to Draw (Opt): Draw bubble nodes for variables. Draw arrows to other variables they contain. Cross out bubbles as you "cache" their final string.
+Opt Complexity Visuals: Linear String Construction.
+How to Draw Opt Complexity: Draw a timeline representing the final string. Each character is written exactly once.
+Mem Vis (BF): Deep recursion stack with millions of intermediate string fragments.
+Mem Vis (Opt): A Hash Map for the dictionary and a memo-table for resolved placeholders.

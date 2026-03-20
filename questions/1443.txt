@@ -1,0 +1,13 @@
+ID: 1443
+Problem Title: Minimum Time to Collect All Apples in a Tree
+Brute Force Method: Generate all possible paths from root to every apple. Calculate the union of all these edges and count them twice (down and up).
+BF Complexity Visuals: Full Path Enumeration
+How to Draw BF: Draw a tree with apples on leaves. Highlight every path from root to an apple separately. Label $O(\text{Apples} \\text{cdot Depth})$.
+Optimised Pattern: Post-Order DFS (Bottom-Up)
+Opt Vis. Technique: Pruned Recursive Bubbling
+Dry Run (Opt): Recursively check children. A node "needs" to be visited if it has an apple OR any of its children returned "true" (contains apples). Only add +2 to time if a child branch is fruitful.
+How to Draw (Opt): Draw a tree. Starting at the leaves, if an apple exists, "light up" the edge to the parent. Parent lights up its own parent. Finally, count all "lit" edges and multiply by 2.
+Opt Complexity Visuals: Single DFS Traversal
+How to Draw Opt Complexity: Draw a tree with a single DFS path visiting each node once. Label $O(N)$.
+Mem Vis (BF): Adjacency List $O(N)$
+Mem Vis (Opt): Recursion stack (Height of tree) + Adjacency List. Space $O(N)$.

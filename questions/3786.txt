@@ -1,0 +1,13 @@
+ID: 3786
+Problem Title: Total Sum of Interaction Cost in Tree Groups (Hard)
+Brute Force Method: Partition the tree into all possible group combinations. For each partition, calculate the distance between all pairs of nodes within the same group and sum them up. $O(\text{Partitions} \cdot N^2)$.
+BF Complexity Visuals: Brute Force Partitioning and Pathfinding.
+How to Draw BF: Draw a tree. Cut it into two random groups. For every node in group A, measure the distance to every other node in group A. Repeat for group B. Tally all distances.
+Optimised Pattern: Tree DP + Centroid Decomposition / Contribution of Edges
+Opt Vis. Technique: Edge Contribution Multiplier
+Dry Run (Opt): Instead of summing pairs, count how many times each edge is crossed. An edge (u, v) with weight w is crossed by S_u x (Total - S_u) pairs, where S_u is the size of the subtree. Sum these contributions across the tree.
+How to Draw (Opt): Draw a tree. On each edge, write a number: (Nodes on the left) x (Nodes on the right). Multiply that by the edge weight. Sum all the results on the edges.
+Opt Complexity Visuals: $O(N)$ single DFS traversal.
+How to Draw Opt Complexity: Draw a tree with "Weight" values assigned to edges based on subtree sizes.
+Mem Vis (BF): Massive list of all partitions and pairs.
+Mem Vis (Opt): $O(N)$ for subtree size array and recursion stack.

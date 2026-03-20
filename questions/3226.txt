@@ -1,0 +1,13 @@
+ID: 3226
+Problem Title: Number of Bit Changes to Make Two Integers Equal
+Brute Force Method: Convert integers to binary strings. Pad with leading zeros. Compare strings character by character.
+BF Complexity Visuals: String Character Alignment
+How to Draw BF: Write the binary strings of n and k stacked. Draw vertical lines connecting each character to compare them manually.
+Optimised Pattern: Bit Manipulation (XOR, AND)
+Opt Vis. Technique: Bitwise Logical Pipeline
+Dry Run (Opt): Check if `(n &amp; k) == k`. If true, there are no invalid 0-to-1 changes required. The answer is simply the number of set bits in `n ^ k`.
+How to Draw (Opt): Write n and k in binary. Draw an '&amp;' gate underneath to check validity. Then draw an XOR '^' gate, producing a final binary number. Count its '1's.
+Opt Complexity Visuals: Constant Time $O(1)$ Block
+How to Draw Opt Complexity: Draw a single, small square box labeled "CPU Register Math". No loops. Strictly $O(1)$.
+Mem Vis (BF): Two new string allocations in memory.
+Mem Vis (Opt): A few processor registers (Strictly $O(1)$ space).

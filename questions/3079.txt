@@ -1,0 +1,13 @@
+ID: 3079
+Problem Title: Find the Sum of Encrypted Integers
+Brute Force Method: Convert each number to a string, find the maximum character, replace all characters with that max character, and convert back to an integer.
+BF Complexity Visuals: String Transformation Tape
+How to Draw BF: Draw an integer. Show it splitting into a sequence of characters, a loop finding the max, and a "stamp" tool overwriting all slots.
+Optimised Pattern: Mathematical Digit Decomposition
+Opt Vis. Technique: Digital Register Shift
+Dry Run (Opt): Iteratively use num % 10 and num / 10 to find the max digit and the digit count. Reconstruct the number as maxDigit * (111...1).
+How to Draw (Opt): Write the number. Below it, list each digit. Circle the largest. Draw a "Reconstruction formula": Max * ((10^len - 1)/9).
+Opt Complexity Visuals: $O(N \\text{cdot Digits})$ Linear Pass
+How to Draw Opt Complexity: Draw a single pass through the array. For each element, draw a tiny sub-loop of max 4-10 steps. Label as $O(N \cdot D)$.
+Mem Vis (BF): String buffers and temporary char arrays allocated for every single number in the list.
+Mem Vis (Opt): $O(1)$ extra space; only three integer variables: max_d, temp_sum, and len.

@@ -1,0 +1,13 @@
+ID: 377
+Problem Title: Combination Sum IV
+Brute Force Method: Recursively try every number in the array to see how many ways you can reach the target sum.
+BF Complexity Visuals: N-ary Recursion Tree (Unbounded)
+How to Draw BF: Draw a root with 'Target'. Draw N branches (one for each number). Continue until leaves are 0. Show the massive width: $O(N^{\text{Target}})$.
+Optimised Pattern: Dynamic Programming (Bottom-Up 1D)
+Opt Vis. Technique: Cumulative Combination Tape
+Dry Run (Opt): `dp[i]` is the number of ways to reach sum `i`. For each sum i from 1 to target, `dp[i] = sum(dp[i - num])` for all numbers in the array.
+How to Draw (Opt): Draw a 1D array from 0 to Target. For index 4, draw arrows pointing back to (4-1), (4-2), etc., and sum their values into the current cell.
+Opt Complexity Visuals: Linear DP Fill with Inner Array Loop
+How to Draw Opt Complexity: Draw an array. Draw a single loop arrow above it. Label it $O(\\text{text}{\text{Target}} \\text{times} N)$.
+Mem Vis (BF): Explosive call stack height.
+Mem Vis (Opt): 1D DP Array Block: Draw a contiguous memory block of size `Target + 1`. $O(\\text{text}{\text{Target}})$.

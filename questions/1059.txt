@@ -1,0 +1,13 @@
+ID: 1059
+Problem Title: All Paths from Source Lead to Destination
+Brute Force Method: Generate every possible path starting from source using DFS. If any path ends at a node that isn't `destination` or contains a cycle, return false.
+BF Complexity Visuals: Infinite exploration if a cycle exists, or checking an exponential number of paths.
+How to Draw BF: Draw a graph with a loop. Trace path. If you hit the loop, you never stop. Write $O(\text{Exponential}/\text{Infinite})$.
+Optimised Pattern: DFS with State Marking (3-Coloring).
+Opt Vis. Technique: A "Dead-End Check". Every path must eventually hit the specific destination node and nowhere else.
+Dry Run (Opt): Use DFS with states: 0=Unvisited, 1=Visiting, 2=Processed. If you hit a node in state 1, there's a cycle. If a node has no out-edges, it MUST be the destination.
+How to Draw (Opt): Draw the graph. Start DFS. Color node gray while searching. If you hit a gray node, draw a cycle symbol. If you hit a node with no arrows out, check if it's the target.
+Opt Complexity Visuals: Single pass graph traversal.
+How to Draw Opt Complexity: Draw the graph with a single DFS path. Write Time: $O(V + E)$.
+Mem Vis (BF): Stack overflow or infinite loops.
+Mem Vis (Opt): $O(V)$ for the state array and $O(H)$ for the recursion stack.

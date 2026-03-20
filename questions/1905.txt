@@ -1,0 +1,13 @@
+ID: 1905
+Problem Title: Count Sub Islands
+Brute Force Method: DFS to find all islands in Grid 2. For each island, iterate through its cells again and check if Grid 1 has a 1.
+BF Complexity Visuals: Dual Grid Overlay (Redundant checks)
+How to Draw BF: Draw Grid 2, circle an island. Draw an arrow to Grid 1, circle the same cells. Show two separate loops running sequentially.
+Optimised Pattern: Graph / DFS with Simultaneous Verification
+Opt Vis. Technique: Simultaneous Mask Overlay
+Dry Run (Opt): Run DFS on Grid 2. As you visit a cell, immediately verify if Grid 1 has a 1 at the same coordinate. If not, mark a boolean flag false.
+How to Draw (Opt): Draw Grid 1 on top of Grid 2. As the DFS snake moves through Grid 2, draw an immediate "X" or "Check" based on the layer above it.
+Opt Complexity Visuals: Recursive Call Tree Size
+How to Draw Opt Complexity: Draw an m*n grid. Shade visited cells, proving each cell is visited only once. $O(m\cdot n)$ time.
+Mem Vis (BF): Call stack mapping separate arrays storing coordinates of islands before validation.
+Mem Vis (Opt): Recursive DFS call stack frames storing just `(r, c)` and a passed boolean reference, no extra array memory required.

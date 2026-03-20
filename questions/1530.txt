@@ -1,0 +1,13 @@
+ID: 1530
+Problem Title: Number of Good Leaf Nodes Pairs
+Brute Force Method: Find all leaf nodes. For every pair of leaves, find their Lowest Common Ancestor (LCA) and calculate the path distance. Check if it's &lt;= limit. $O(L^2 \cdot N)$.
+BF Complexity Visuals: Exploding Path Tracer $O(L^2)$
+How to Draw BF: Draw a tree. Highlight the leaves. Draw a massive, chaotic spiderweb of lines connecting every single leaf to every other leaf, tracing up and down the tree branches.
+Optimised Pattern: Post-Order DFS (Tree DP)
+Opt Vis. Technique: Distance Buckets Bubbling Up
+Dry Run (Opt): From each node, return an array (or list) of distances to all leaves in its subtree. The parent receives left and right distance lists. It compares every left leaf with every right leaf. If `left_dist + right_dist &lt;= limit`, count it. Then, increment all distances by 1 and return to the grandparent.
+How to Draw (Opt): Draw a small subtree. The left child passes up `[1]`. The right passes up `[1, 2]`. The parent draws connecting lines between the left list and right list, checking sums. Then it adds 1 to all numbers, creating `[2, 2, 3]`, and pushes that box up.
+Opt Complexity Visuals: Bounded Double Loop per Node $O(N \\text{cdot Limit}^2)$
+How to Draw Opt Complexity: Draw a tree traversal line. At each node, draw a small, bounded grid representing the cross-comparison of left and right distances (capped by the small limit size).
+Mem Vis (BF): Storing full paths or massive distance matrices for all leaves. $O(N^2)$.
+Mem Vis (Opt): Each recursive call returns a small array/list bounded by the `limit` size (max 10). Space is $O(H \\text{cdot limit})$ -&gt; effectively $O(H)$.

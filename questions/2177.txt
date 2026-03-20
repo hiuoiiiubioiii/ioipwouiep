@@ -1,0 +1,13 @@
+ID: 2177
+Problem Title: Find Three Consecutive Integers That Sum to a Number
+Brute Force Method: Iterate from 1 to N/3, checking every triplet (x, x+1, x+2) to see if they sum to N.
+BF Complexity Visuals: A sliding window of size 3 scanning a massive range.
+How to Draw BF: Draw a long number line. Slide a small 3-cell box and check the sum in each position. Write $O(N)$.
+Optimised Pattern: Math (Algebraic Equation).
+Opt Vis. Technique: A balance scale with three equal parts and a remainder.
+Dry Run (Opt): Equation: x + (x+1) + (x+2) = N -&gt; 3x + 3 = N -&gt; 3x = N - 3. If (N-3) % 3 == 0, result is [x, x+1, x+2].
+How to Draw (Opt): Write the number N. Subtract 3. Check if the remaining number can be divided into 3 equal blocks. If yes, those blocks are your answer.
+Opt Complexity Visuals: $O(1)$ constant time.
+How to Draw Opt Complexity: A single dot representing an instant mathematical formula.
+Mem Vis (BF): Looping through potentially billions of integers.
+Mem Vis (Opt): $O(1)$ auxiliary space (just 3 long variables).

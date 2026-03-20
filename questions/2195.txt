@@ -1,0 +1,13 @@
+ID: 2195
+Problem Title: Append K Integers With Minimal Sum
+Brute Force Method: Iterate from 1 upwards. If a number is not in `nums`, add it to the sum and decrement K. Repeat until K=0.
+BF Complexity Visuals: A linear search starting from 1 that could go up to 10^9.
+How to Draw BF: Draw a number line. If a number is in the array, skip it. If not, circle it. Keep circling until you have K circles. $O(K \cdot N)$.
+Optimised Pattern: Sorting + Arithmetic Progression.
+Opt Vis. Technique: A mathematical formula that "fills the gaps" between sorted numbers.
+Dry Run (Opt): Sort and de-duplicate `nums`. Calculate sum of first K integers `K*(K+1)/2`. For each `x` in `nums`, if `x &lt;= K`, subtract `x`, increment `K`, and add the new `K` to the sum.
+How to Draw (Opt): Draw a number line with gaps. Calculate the sum of 1 to K. If you find a number `x` in your array that is \le K, it "steals" a spot. Cross it out and take the next available number (K+1).
+Opt Complexity Visuals: $O(N \log N)$ for sorting.
+How to Draw Opt Complexity: A sorting track followed by a single linear "Gap filler" pass.
+Mem Vis (BF): $O(N)$ for a HashSet to check existence in the brute force.
+Mem Vis (Opt): $O(1)$ auxiliary space (after sorting).

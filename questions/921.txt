@@ -1,0 +1,13 @@
+ID: 921
+Problem Title: Minimum Add to Make Parentheses Valid
+Brute Force Method: Try inserting '(' or ')' at every possible index and check for validity. Repeat until valid.
+BF Complexity Visuals: $O(N^2)$ or higher. Multiple passes and string re-constructions.
+How to Draw BF: Draw a string. Draw multiple "ghost" characters being inserted and deleted in a chaotic loop.
+Optimised Pattern: Balance Counter (Greedy)
+Opt Vis. Technique: A "Tug-of-War" or "Bank Balance." '(' increases the balance, ')' decreases it. If balance goes negative, you've overdrawn and need a '(' fix.
+Dry Run (Opt): Iterate through the string. Track `balance`. If `char == '('`, `balance++`. If `char == ')'`, if `balance &gt; 0`, `balance--`, else `additions++`. Total = `additions + balance`.
+How to Draw (Opt): Draw a line chart that goes up for '(' and down for ')'. Whenever the line tries to go below the 0-axis, mark a "fix." Any height remaining at the end is also a "fix."
+Opt Complexity Visuals: $O(N)$. A single linear sweep.
+How to Draw Opt Complexity: Draw a straight horizontal line. Draw one arrow moving left-to-right with two counter boxes: `OpenNeeded` and `CloseNeeded`.
+Mem Vis (BF): $O(N)$ to store numerous modified string copies.
+Mem Vis (Opt): $O(1)$. Only two integer variables. Draw two small square boxes.

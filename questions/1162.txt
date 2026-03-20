@@ -1,0 +1,13 @@
+ID: 1162
+Problem Title: As Far from Land as Possible
+Brute Force Method: For every water cell (i, j), run a BFS to find the nearest land cell (x, y). Calculate Manhattan distance. Return the maximum.
+BF Complexity Visuals: Explosion from Every Pixel
+How to Draw BF: Draw a grid with land (1) and water (0). For every 0, draw concentric circles expanding until they hit a 1. $O((N^2)$^2) complexity.
+Optimised Pattern: Multi-Source BFS
+Opt Vis. Technique: Simultaneous Flood Fill
+Dry Run (Opt): Put all land cells (1s) into the queue at once. Start BFS from all of them. The "last" water cell reached by the expansion wave is the furthest.
+How to Draw (Opt): Draw the grid. Color all 1s red. Draw a single "wavefront" expanding from all red cells into the zeros at the same time. The last zero to be colored is the answer.
+Opt Complexity Visuals: Linear Grid Scan $O(N^2)$
+How to Draw Opt Complexity: Draw a single pass through the grid for the queue, and then each cell is visited once by the wave.
+Mem Vis (BF): N/A (Recomputing distance)
+Mem Vis (Opt): Queue + In-place distance update in grid. Draw a grid where numbers represent "Steps from Land".

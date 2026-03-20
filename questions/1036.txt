@@ -1,0 +1,13 @@
+ID: 1036
+Problem Title: Escape a Large Maze
+Brute Force Method: Run a standard BFS or DFS in a 1,000,000 x 1,000,000 grid to find a path from source to target.
+BF Complexity Visuals: A tiny ant trying to explore an entire continent's worth of grid cells.
+How to Draw BF: Draw a massive square. Mark 'S' and 'T'. Draw a path that hits a wall and resets. Write $O(10^12)$ - impossible.
+Optimised Pattern: Bounded BFS / Geometric Limitation.
+Opt Vis. Technique: A "Bubble Test". If you can move far enough away from the starting point without being blocked, you aren't trapped.
+Dry Run (Opt): Since there are only ~200 blocked cells, they can only enclose a limited area. Run BFS. If you visit &gt; (B*(B-1))/2 cells, you've "escaped" the enclosure. Do this for both Source and Target.
+How to Draw (Opt): Draw a cluster of 5 blocks. Draw a circle around 'S' that expands until it either touches 'T' or grows larger than the enclosure capacity.
+Opt Complexity Visuals: Two small, localized "localized explosions" of search.
+How to Draw Opt Complexity: Draw two small circles in a huge empty space. Write $O(B^2)$ where B is number of blocks.
+Mem Vis (BF): A Hashset or Boolean grid with 10^12 entries (OOM error).
+Mem Vis (Opt): A Hashset storing only the visited blocked cells and a few thousand visited coordinates. $O(B^2)$ space.

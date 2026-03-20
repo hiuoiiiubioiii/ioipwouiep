@@ -1,0 +1,13 @@
+ID: 2875
+Problem Title: Minimum Size Subarray in Infinite Array
+Brute Force Method: Concatenate the array with itself many times to simulate the "infinite" nature, then use a sliding window to find the target sum.
+BF Complexity Visuals: $O(\text{Target} × N)$ Multi-Array Scan
+How to Draw BF: Draw the array repeating forever. Draw a window trying to find the target. Show the window potentially crossing thousands of array copies.
+Optimised Pattern: Modulo Math + Sliding Window on Doubled Array
+Opt Vis. Technique: Infinite Expansion Logic
+Dry Run (Opt): 1. Calculate totalSum of the array. The number of full arrays needed is target / totalSum. 2. The remaining target % totalSum must be found as a subarray in nums + nums (to handle wrap-around). 3. Use standard sliding window/HashMap.
+How to Draw (Opt): Draw the array twice: `[A, B, C, A, B, C]`. Calculate how many "Whole Cycles" of the array fit in the target. Then, use two pointers to find the shortest "Fragment" that sums to the remainder.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a box for the sum $O(N)$ and a pass for the sliding window $O(2N)$. Total $O(N)$.
+Mem Vis (BF): Visualize the heap exploding if you actually try to create an "infinite" array in memory.
+Mem Vis (Opt): Visualize a single doubled array (size 2N) or just use modulo indexing. Space $O(1)$ or $O(N)$.

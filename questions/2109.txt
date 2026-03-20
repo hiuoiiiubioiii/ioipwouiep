@@ -1,0 +1,13 @@
+ID: 2109
+Problem Title: Adding Spaces to a String
+Brute Force Method: String concatenation in a loop (immutable strings result in copying).
+BF Complexity Visuals: Repeatedly allocating larger and larger string buffers.
+How to Draw BF: Draw a small box, a bigger box, and an even bigger box being created sequentially. $O(N^2)$.
+Optimised Pattern: Two Pointers + Pre-allocated Array/StringBuilder.
+Opt Vis. Technique: Reading from original string and writing to a new larger array simultaneously.
+Dry Run (Opt): Pointer `i` on string, `j` on space indices. If `i == spaces[j]`, append space, `j++`. Else append `s[i]`, `i++`.
+How to Draw (Opt): Old string at top, new longer blank array at bottom. Draw lines mapping old letters to new slots, inserting ' ' where indices match.
+Opt Complexity Visuals: $O(N + M)$ single linear sweep.
+How to Draw Opt Complexity: Two parallel linear tracks being consumed at constant speed from left to right.
+Mem Vis (BF): $O(N^2)$ garbage collection of intermediate strings.
+Mem Vis (Opt): Exact sized char array or StringBuilder $O(N + M)$.

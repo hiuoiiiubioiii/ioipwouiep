@@ -1,0 +1,13 @@
+ID: 2847
+Problem Title: Smallest Number with Given Product of Digits
+Brute Force Method: Starting from 1, check every integer sequentially. Calculate the product of its digits and stop when the product equals N.
+BF Complexity Visuals: Exhaustive Integer Search
+How to Draw BF: Draw a number line starting at 1. For every number, draw a "Product" calculation box. Show the search potentially reaching astronomical numbers for large N.
+Optimised Pattern: Greedy Prime Factorization (Reverse Digits)
+Opt Vis. Technique: Reverse Factor Breakdown
+Dry Run (Opt): Since we want the smallest number, we want the *fewest* digits, which means using the *largest* single-digit factors (9, 8, 7...). Divide N by 9 until impossible, then by 8, then 7, etc. Store these digits and sort them in ascending order.
+How to Draw (Opt): Write N. Draw arrows branching off for divisions by 9, then 8... down to 2. Collect the divisors at the bottom. Arrange the collected divisors from smallest to largest to form the result.
+Opt Complexity Visuals: Logarithmic Factorization $O(\log N)$
+How to Draw Opt Complexity: Draw a division ladder. Each step reduces N significantly. The number of steps is proportional to the number of digits in N.
+Mem Vis (BF): Visualize $O(1)$ auxiliary space but massive time wastage leading to TLE.
+Mem Vis (Opt): Visualize a small List or String to store the resulting digits. Space $O(\log N)$.

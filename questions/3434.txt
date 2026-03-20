@@ -1,0 +1,13 @@
+ID: 3434
+Problem Title: Maximum Frequency After Subarray Operation
+Brute Force Method: Try every possible subarray [i, j] and every possible value to add, then re-count the frequency of K. $O(N^3 \\text{cdot Val})$
+BF Complexity Visuals: Subarray Shifting Brackets.
+How to Draw BF: Draw the array. Shade a subarray. Write "+X" inside it. Count all 'K's in the whole array again. Repeat for every possible subarray and X.
+Optimised Pattern: Modified Kadane's Algorithm for each distinct value T. $O(50 \cdot N)$
+Opt Vis. Technique: Gain/Loss Waveform.
+Dry Run (Opt): For a target value T, treat T as +1 and K as -1. Use Kadane's to find the max subarray sum (the "Gain"). Result = Total K count + Max Gain.
+How to Draw (Opt): Draw a bar graph for value T. T nodes go UP, K nodes go DOWN. Circle the highest mountain (subarray) in the graph.
+Opt Complexity Visuals: Constant-Factor Linear Passes.
+How to Draw Opt Complexity: Draw 50 parallel lines, each representing an $O(N)$ Kadane's scan, showing the total $O(50N)$ complexity.
+Mem Vis (BF): Massive 3D matrix storing all frequency outcomes of subarray operations.
+Mem Vis (Opt): A small fixed-size frequency map and two 1D arrays for current/max sums.

@@ -1,0 +1,13 @@
+ID: 138
+Problem Title: Copy List with Random Pointer
+Brute Force Method: Two passes: First pass creates a Map of (Old Node rightarrow New Node). Second pass sets next and random pointers using the Map.
+BF Complexity Visuals: A bridging diagram showing N pointers connecting the "Old" world to the "New" world via a Map.
+How to Draw BF: Draw the original list. Draw a Map table. Draw the new list. Draw arrows going from Old rightarrow Map rightarrow New.
+Optimised Pattern: Interweaving Nodes (In-place).
+Opt Vis. Technique: A DNA double-helix being replicated. Each "base" (original node) creates a copy of itself and attaches to it locally.
+Dry Run (Opt): 1. Insert copies between original nodes. 2. Copy random pointers: curr.next.random = curr.random.next. 3. Separate the lists.
+How to Draw (Opt): Draw the list. Draw a new node right next to each old node. Draw a "jump" arrow from an old node's random to the target's *adjacent* copy.
+Opt Complexity Visuals: Three sequential $O(N)$ passes over the modified list structure.
+How to Draw Opt Complexity: Draw a single long list. Draw three horizontal arrows, each covering the whole length once, showing $O(N)$ time.
+Mem Vis (BF): $O(N)$ auxiliary space consumed by the Hash Map entries.
+Mem Vis (Opt): Visualize $O(1)$ extra space (excluding the output list) because pointers are manipulated locally.

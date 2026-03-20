@@ -1,0 +1,13 @@
+ID: 3667
+Problem Title: Sort Array By Absolute Value (Easy)
+Brute Force Method: Implementing a manual sorting algorithm like Selection Sort that compares absolute values. $O(N^2)$.
+BF Complexity Visuals: Nested Comparison Grid.
+How to Draw BF: Draw an array. Compare abs(arr[0]) with everyone else. Repeat for abs(arr[1]). Write $O(N^2)$.
+Optimised Pattern: Language-native sort with a Custom Key/Comparator.
+Opt Vis. Technique: The "Magnetized" Number Line.
+Dry Run (Opt): Visualize a number line with a magnet at zero. All numbers (positive and negative) are pulled toward the center. Their distance from zero determines their order.
+How to Draw (Opt): Draw 0 in the center. Place -5 and 3. Since 3 is closer to 0 than -5 is, it comes first in the sorted absolute list. Order: [3, -5].
+Opt Complexity Visuals: N log N Sorting Block.
+How to Draw Opt Complexity: Draw a standard $O(N \log N)$ sorting flowchart with a custom key abs(x).
+Mem Vis (BF): Allocating a completely new array of absolute values just to sort them.
+Mem Vis (Opt): In-place sorting using the original array. Space $O(1)$ (ignoring recursion stack).

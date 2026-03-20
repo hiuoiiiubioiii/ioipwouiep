@@ -1,0 +1,13 @@
+ID: 3256
+Problem Title: Maximum Value Sum by Placing Three Rooks I
+Brute Force Method: Triple nested loops over all cells (r1, c1), (r2, c2), (r3, c3) to find the max sum where rows and columns are distinct. $O((R x C)$^3).
+BF Complexity Visuals: Hexagonal Loop Explosion
+How to Draw BF: Draw a small 3x3 grid. Try to pick 3 cells. Show that even for 9 cells, the combinations are (9 Choose 3) = 84. Scale this to show why 100^3 fails.
+Optimised Pattern: Top-3 Row Candidates + Backtracking
+Opt Vis. Technique: Candidate Pruning Map
+Dry Run (Opt): For each row, keep only the top 3 maximum values (and their column indices). This reduces the grid to R x 3. Use DFS/Backtracking on these 3R candidates to pick 3 with distinct rows/cols.
+How to Draw (Opt): Draw the grid. For each row, circle the 3 largest numbers and cross out the rest. Now, pick 3 circled numbers such that no two are in the same column.
+Opt Complexity Visuals: Pruned Search Tree
+How to Draw Opt Complexity: Draw a tree where each level is a row. Level 1 has 3 choices. Level 2 has 3 choices. Level 3 has 3 choices. Total complexity: $O(R x C + R^3 x 3^3)$.
+Mem Vis (BF): Massive recursive stack with grid state copies.
+Mem Vis (Opt): A 2D array of size R x 3 to store top candidates (O(R) space).

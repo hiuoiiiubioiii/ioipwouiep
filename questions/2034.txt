@@ -1,0 +1,13 @@
+ID: 2034
+Problem Title: Stock Price Fluctuation
+Brute Force Method: Keep an unsorted list of records. Scan the entire list every time you need the max, min, or current price. $O(N)$ per query.
+BF Complexity Visuals: Unordered Ledger Search
+How to Draw BF: Draw a long receipt. When asked for "max", draw a magnifying glass starting from the top and looking at every single line down to the bottom.
+Optimised Pattern: Hash Map (Timestamp -&gt; Price) + Two Heaps (or TreeMap)
+Opt Vis. Technique: Synchronized Double-Ended Queue/Tree
+Dry Run (Opt): Map tracks exact price at exact time. A Max-Heap and Min-Heap track all prices. When popping from a heap, check the map. If `heap_price != map[heap_timestamp]`, it's stale—discard it.
+How to Draw (Opt): Draw a Hash Map on the left for direct time lookups. On the right, draw a Min-Heap and a Max-Heap. Draw "trash cans" next to the heaps for lazy-deleting outdated prices.
+Opt Complexity Visuals: $O(1)$ Map Lookups + $O(\log N)$ Heap Bubbles
+How to Draw Opt Complexity: Draw a timeline. `current()` is a straight arrow (O(1)). `max()`/`min()` point to the top of a triangle (Heap), pulling values and occasionally sinking them (O(log N)).
+Mem Vis (BF): A dynamically resizing array taking full $O(N)$ sweeps per API call.
+Mem Vis (Opt): A Hash Map and two Priority Queues (Heaps) containing custom timestamp-price objects. Space $O(N)$.

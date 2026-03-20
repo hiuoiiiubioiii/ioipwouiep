@@ -1,0 +1,13 @@
+ID: 3824
+Problem Title: Minimum K to Reduce Array Within Limit (Med.)
+Brute Force Method: Try K=1, run a full simulation. Try K=2, run full simulation. Continue until the reduction limit is satisfied.
+BF Complexity Visuals: A nested loop structure running a full $O(N)$ verification for every possible value of K.
+How to Draw BF: Draw an array. Try K=1, draw $O(N)$ operations. Try K=2, draw $O(N)$ operations. Write $O(\text{Max}_K \cdot N)$.
+Optimised Pattern: Binary Search on Answer + Sliding Window / Greedy Check.
+Opt Vis. Technique: A number line of K values being chopped in half, with a fast linear scanner checking validity.
+Dry Run (Opt): Set Low=1, High=Max_K. Mid = (Low+High)/2. Run $O(N)$ sliding window to see if Mid works. If yes, search lower half (High=Mid-1). If no, search upper (Low=Mid+1).
+How to Draw (Opt): Draw number line 1 to 100. Pick 50. Run a fast linear array check. It works. Cross out 51-100. Pick 25. Check again.
+Opt Complexity Visuals: Logarithmic guesses multiplied by a linear check.
+How to Draw Opt Complexity: Draw a binary search tree. At each node, write "O(N)". Height is log(Max_K). Total: $O(N \log(\text{Max}_K)$).
+Mem Vis (BF): Call stacks and duplicated array states during simulation, $O(N)$.
+Mem Vis (Opt): $O(1)$ space for pointers (L, R, Mid) and a single $O(N)$ sliding window or accumulator variable for the validity check.

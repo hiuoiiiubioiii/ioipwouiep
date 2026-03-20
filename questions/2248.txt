@@ -1,0 +1,13 @@
+ID: 2248
+Problem Title: Intersection of Multiple Arrays
+Brute Force Method: Nested Contains ChecksTake the first array. For every element in it, check if it exists in the second array, then the third, and so on using linear scans.
+BF Complexity Visuals: Linear Scan Pipeline
+How to Draw BF: Draw Array 1. Point to the first element. Draw an arrow checking every element in Array 2, then Array 3. Repeat for every element in Array 1.
+Optimised Pattern: Frequency Map / Counting Sort
+Opt Vis. Technique: Tally Marks Filter
+Dry Run (Opt): Iterate through all elements in all arrays and count their occurrences in a frequency map. Only the elements whose count equals the number of arrays are in the intersection.
+How to Draw (Opt): Draw a set of empty buckets numbered 1 to 1000. For every number seen in any array, drop a coin in its bucket. At the end, only keep buckets containing exactly N coins (where N is total arrays).
+Opt Complexity Visuals: Total Elements Timeline
+How to Draw Opt Complexity: Draw a single line representing the total number of elements across all arrays. Label it $O(\text{Sum of all lengths})$. Show a final $O(1000)$ scan of the buckets.
+Mem Vis (BF): Allocating new intermediate result arrays after every intersection check.
+Mem Vis (Opt): A single frequency array of size 1001 (O(1) auxiliary space beyond the output).

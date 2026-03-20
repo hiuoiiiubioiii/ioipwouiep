@@ -1,0 +1,13 @@
+ID: 71
+Problem Title: Simplify Path
+Brute Force Method: Regex Substitution Use complex regular expressions to repeatedly replace "/./" with "/" and multiple "///" with "/", while trying to manually handle ".." via string searches.
+BF Complexity Visuals: The Multi-Pass Filter
+How to Draw BF: Draw a string. Draw three separate machines it must pass through. Show how ".." requires the string to be "re-scanned" from the beginning multiple times. $O(N^2)$.
+Optimised Pattern: Stack (Push/Pop on Chunks)
+Opt Vis. Technique: The Directory Breadcrumb
+Dry Run (Opt): Split the string by "/". Iterate through the components. If it's a folder name, push to stack. If it's "..", pop from stack. If it's "." or empty, ignore it. Join at the end.
+How to Draw (Opt): Draw a vertical stack. For "/home/user/../docs/./", push "home", push "user". Encounter "..", pop "user". Encounter "docs", push "docs". Result: "/home/docs".
+Opt Complexity Visuals: Linear Token Scan
+How to Draw Opt Complexity: Draw a line representing the path length N. Show a pointer moving through it exactly once. Time: $O(N)$.
+Mem Vis (BF): Creating multiple intermediate string copies for every ".." found.
+Mem Vis (Opt): Draw a single stack containing only the final valid folder names. Space: $O(N)$.

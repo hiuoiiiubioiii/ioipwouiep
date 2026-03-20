@@ -1,0 +1,14 @@
+ID: 1887
+Problem Title: Reduction Operations to Make the Array Elements Equal
+Brute Force Method: Find the largest element, find the next largest, and reduce the largest to that value repeatedly.
+BF Complexity Visuals: Staircase descending simulation.
+How to Draw BF: Draw a bar chart with different heights. Pick the tallest bar and "cut" it to match the height of the second tallest. Count cuts. $O(N^2)$.
+Optimised Pattern: Sorting + Greedy Counting.
+Opt Vis. Technique: Frequency-weighted step chart.
+Dry Run (Opt): Sort the array. Iterate from right to left. When nums[i] 
+eq nums[i-1], all elements from i to end must be reduced. Add (n-i) to total.
+How to Draw (Opt): Draw a sorted bar chart. Draw a vertical line where heights change. Every element to the right of a "step" represents one extra operation.
+Opt Complexity Visuals: $O(N \log N)$ sorting + $O(N)$ scan.
+How to Draw Opt Complexity: Draw a merge-sort tree and a single horizontal scan line. Mark $O(N \log N)$.
+Mem Vis (BF): $O(1)$ if modifying input, but high computational time.
+Mem Vis (Opt): $O(1)$ or $O(N)$ for the sorted copy.

@@ -1,0 +1,13 @@
+ID: 134
+Problem Title: Gas Station
+Brute Force Method: Start at every single station i and simulate the full circle. If you run out of gas at any point, reset and try station i+1.
+BF Complexity Visuals: $O(N^2)$ simulation. For every station, you potentially visit every other station.
+How to Draw BF: Draw a circle of stations. Start at 1, draw an arrow to 2, 3... then an 'X'. Start at 2, draw to 3, 4... then an 'X'. Repeat N times.
+Optimised Pattern: Greedy One-Pass (The Total Net Gain Rule).
+Opt Vis. Technique: A mountain range of fuel levels. If the total height at the end is >= 0, a solution exists. The starting point is the station immediately after the deepest valley.
+Dry Run (Opt): Track `total_surplus` and `current_surplus`. If `current_surplus` &lt; 0, reset start point to `i + 1` and reset `current_surplus = 0`. If `total_surplus` &lt; 0 at end, return -1.
+How to Draw (Opt): Draw a line graph of the running fuel balance. Identify the lowest point (the "trough"). Draw a flag on the very next station to show the optimal start.
+Opt Complexity Visuals: A single $O(N)$ linear pass through the array.
+How to Draw Opt Complexity: Draw the array. Draw a single arrow moving left to right once, never resetting to a previous index.
+Mem Vis (BF): Redundant state variables being re-initialized N times in the $O(N^2)$ loop.
+Mem Vis (Opt): Three single integer variables in $O(1)$ stack space: `total`, `current`, and `start_index`.

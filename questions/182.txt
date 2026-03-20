@@ -1,0 +1,13 @@
+ID: 182
+Problem Title: Duplicate Emails
+Brute Force Method: For every email in the table, scan the rest of the table to see if it appears again (O(N^2)).
+BF Complexity Visuals: A "Cross-check Grid" showing every email being compared to every other email.
+How to Draw BF: Draw a list of emails. Draw arrows from the first email to all others below it. Show the increasing density.
+Optimised Pattern: GROUP BY with HAVING COUNT(*) &gt; 1.
+Opt Vis. Technique: A "Bucket Sort" visualization. Emails are tossed into buckets based on their name; buckets with more than one item are highlighted.
+Dry Run (Opt): Group all identical emails together. Count the size of each group. Only select groups where size &gt; 1.
+How to Draw (Opt): Draw several buckets labeled with emails. Place dots in buckets. Circle buckets containing more than one dot.
+Opt Complexity Visuals: $O(N \log N)$ (sorting) or $O(N)$ (hashing). Linear scan of groups.
+How to Draw Opt Complexity: Draw a single horizontal line. Group segments together and mark those longer than a unit length.
+Mem Vis (BF): Redundant storage of N comparison results in temp space.
+Mem Vis (Opt): Visualize a Hash Map in memory where keys are emails and values are integers (counts).

@@ -1,0 +1,13 @@
+ID: 672
+Problem Title: Bulb Switcher II
+Brute Force Method: Simulate every possible combination of 4 button presses over M rounds for N bulbs.
+BF Complexity Visuals: State-Space Explosion.
+How to Draw BF: Draw N bulbs. Branch for each button press. After M presses, count unique configurations. Write $O(2^M)$.
+Optimised Pattern: Mathematical Pattern Reduction.
+Opt Vis. Technique: Cycle Observation / Constraint Satisfaction.
+Dry Run (Opt): Observe that bulbs repeat every 6 units. With 4 buttons and M &gt; 2, the number of states is strictly limited regardless of how large N is. Use a set to track combinations of the 4 button states.
+How to Draw (Opt): Draw a small truth table for 4 buttons. Note how N=1, N=2, and N&gt;=3 behave. For large N, the answer is always capped (e.g., 8).
+Opt Complexity Visuals: Constant time logic.
+How to Draw Opt Complexity: Draw a single decision point (Logic Gate). Write $O(1)$.
+Mem Vis (BF): Draw a massive matrix of all bulb states over time.
+Mem Vis (Opt): Draw a small set of bitmasks (size 8 max). $O(1)$ space.

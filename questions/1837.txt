@@ -1,0 +1,13 @@
+ID: 1837
+Problem Title: Sum of Digits in Base K
+Brute Force Method: Convert number to a base-K string, split into characters, and sum them up.
+BF Complexity Visuals: String conversion pipeline.
+How to Draw BF: Draw the number. Draw a box converting it to a long string. Sum the digits. Mark space overhead for the string.
+Optimised Pattern: Iterative Modulo and Division.
+Opt Vis. Technique: Successive stripping scale.
+Dry Run (Opt): While n &gt; 0, add n \% k to sum, then n = n / k.
+How to Draw (Opt): Write n. Draw a vertical line. Repeatedly divide by k. Circle the remainders and sum them.
+Opt Complexity Visuals: Logarithmic reduction steps.
+How to Draw Opt Complexity: Draw a value N shrinking by k each time until it hits 0. Mark $O(\log_k N)$.
+Mem Vis (BF): Temporary string buffer in memory.
+Mem Vis (Opt): Single integer 'sum' register (O(1) space).

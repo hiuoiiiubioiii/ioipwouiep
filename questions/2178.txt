@@ -1,0 +1,13 @@
+ID: 2178
+Problem Title: Maximum Split of Positive Even Integers
+Brute Force Method: Recursively try every combination of even integers to see which set sums to N.
+BF Complexity Visuals: A subset-sum style decision tree.
+How to Draw BF: Draw N. Branch into 2, 4, 6, 8... For each, branch again. $O(2^N)$.
+Optimised Pattern: Greedy (Smallest Even Strategy).
+Opt Vis. Technique: Filling a container with the smallest possible even blocks first.
+Dry Run (Opt): If N is odd, return empty. Otherwise, take 2, 4, 6... until the remaining sum is less than the next even number. Add that remainder to the last number in the list.
+How to Draw (Opt): Draw a bar of length N. Cut a piece of length 2. Cut a piece of length 4. Keep cutting until you can't cut a piece larger than the previous. Take the "scrap" and weld it onto the last piece.
+Opt Complexity Visuals: $O(\text{sqrt}(N)$) because the sum of 2+4+...+2k grows quadratically.
+How to Draw Opt Complexity: A staircase that grows until its height matches the target.
+Mem Vis (BF): Massive recursion stack for backtracking.
+Mem Vis (Opt): $O(\text{sqrt}(N)$) to store the resulting list.

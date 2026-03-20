@@ -1,0 +1,13 @@
+ID: 2762
+Problem Title: Continuous Subarrays
+Brute Force Method: Check every subarray $O(N²)$. For each, find the min and max element. If max - min &lt;= 2, increment the count. Total $O(N³)$.
+BF Complexity Visuals: N³ Brute Force Search
+How to Draw BF: Draw the array. For every pair of indices, scan the interior to find the range. Very repetitive.
+Optimised Pattern: Redundant Min/Max Scans (Drawing a search arrow within every window).
+Opt Vis. Technique: Sliding Window + Monotonic Deque / TreeMap
+Dry Run (Opt): Shrinkable Min-Max Window
+How to Draw (Opt): Use a sliding window. Maintain a data structure (like two Deques or a TreeMap) to keep track of the current min and max in $O(1)$ or $O(\log K)$. If max - min &gt; 2, shrink the window from the left.
+Opt Complexity Visuals: Draw the array. Draw a "Range Bracket". As it moves right, keep a "Min" and "Max" label above it. If the difference &gt; 2, the left bracket snaps forward.
+How to Draw Opt Complexity: Linear Amortized $O(N)$
+Mem Vis (BF): Draw a single horizontal line with two pointers. Label it $O(N)$ (using Deque) or $O(N \log K)$ (using TreeMap).
+Mem Vis (Opt): Monotonic Deques (Draw two double-ended queues storing indices of elements in increasing/decreasing order).

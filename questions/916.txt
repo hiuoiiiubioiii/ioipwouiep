@@ -1,0 +1,13 @@
+ID: 916
+Problem Title: Word Subsets
+Brute Force Method: For every word in A, check if every word in B is a subset. This involves frequency counting for every pair.
+BF Complexity Visuals: $O(A \cdot B \cdot L)$ where L is word length. A massive cross-product of comparisons.
+How to Draw BF: Draw two columns (A and B). Draw lines connecting every word in A to every word in B. It becomes a tangled, solid block of lines.
+Optimised Pattern: Frequency Map Compression (Maximum Requirements)
+Opt Vis. Technique: A "Recipe Book." Combine all words in B into a single "master recipe" that contains the maximum count of each letter required.
+Dry Run (Opt): Create a 26-slot array `maxB`. For each word in B, update `maxB[char] = max(maxB[char], current_word_freq[char])`. Then check each word in A against this single `maxB`.
+How to Draw (Opt): Draw a single "Master Filter" box with 26 slots. Pour all words from B into it. Then pass words from A through it; only those with enough "ink" pass through.
+Opt Complexity Visuals: $O(A\cdot L + B\cdot L)$. Two independent linear scans.
+How to Draw Opt Complexity: Draw a timeline for B, then a separate timeline for A. No connections between them; they process sequentially.
+Mem Vis (BF): $O(A + B)$ frequency counts stored temporarily during thousands of comparisons.
+Mem Vis (Opt): $O(1)$ extra space (fixed 26-size arrays). Draw one fixed-size grid of 26 boxes.

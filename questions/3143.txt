@@ -1,0 +1,13 @@
+ID: 3143
+Problem Title: Maximum Points Inside Square
+Brute Force Method: Try every possible square side length S. For each S, check all points to see if they fit and if tags are unique. $O(\text{Range} x N)$
+BF Complexity Visuals: A pulsating square growing and shrinking, counting points inside.
+How to Draw BF: Draw points on a graph. Draw a square of size 1. Count points. Draw size 2. Count... until you see a duplicate tag.
+Optimised Pattern: Sorting / Binary Search on Answer
+Opt Vis. Technique: The Expanding Bounding Box
+Dry Run (Opt): For each point, calculate its "critical size": max(|x|, |y|). Sort points by this size. Add points to a set one by one; stop before the size that introduces a duplicate tag.
+How to Draw (Opt): Draw points. Next to each, write its distance d = max(|x|, |y|). List points in a table sorted by d. Sweep down the table until a tag repeats.
+Opt Complexity Visuals: Sort funnel + Linear scan.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting tree followed by a single line of length N.
+Mem Vis (BF): A dictionary for every possible square size tested.
+Mem Vis (Opt): A Frequency Map/Set of size 26 (alphabet). $O(1)$ auxiliary.

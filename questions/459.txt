@@ -1,0 +1,13 @@
+ID: 459
+Problem Title: Repeated Substring Pattern
+Brute Force Method: Prefix Testing Try every possible substring length L from 1 to N/2. See if it can be repeated to form S.
+BF Complexity Visuals: Shrinking Substring Grid
+How to Draw BF: Draw the string. Below it, draw it broken into 2 pieces, then 3, then 4... $O(N^2)$.
+Optimised Pattern: String Doubling Trick Concatenate S+S. Remove the first and last characters. If S is still a substring of the result, it has a repeated pattern.
+Opt Vis. Technique: Telescopic Shift
+Dry Run (Opt): Imagine two identical rulers side-by-side. If you shift one ruler and the markings still line up perfectly, the pattern is repeating.
+How to Draw (Opt): Write the string S twice. Shift the second S by one character. If the internal sequence matches the original S, return true.
+Opt Complexity Visuals: String Search
+How to Draw Opt Complexity: Draw two strings being compared. $O(N)$ using optimized string search (like KMP).
+Mem Vis (BF): String Buffer Storing many substring variations.
+Mem Vis (Opt): Doubled String Draw one string of size 2N. $O(N)$ space.

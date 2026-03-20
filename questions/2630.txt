@@ -1,0 +1,13 @@
+ID: 2630
+Problem Title: Memoize II (JS)
+Brute Force Method: `JSON.stringify(args)` as a cache key. (Fails on un-stringifyable objects or Object References).
+BF Complexity Visuals: String Builder Bottleneck
+How to Draw BF: Draw a complex object failing to serialize, or two different objects serializing to the same string `"[object Object]"`.
+Optimised Pattern: Nested Maps / Prefix Tree (Trie)
+Opt Vis. Technique: Deep Map Tree (Trie) Node Hopping
+Dry Run (Opt): Arg 1 is a Map key pointing to another Map. Arg 2 is a key in *that* Map. The final Map holds the `result`. `Map` allows object references as keys!
+How to Draw (Opt): Draw a Tree. Root is an empty Map. Edge to child is `arg1`. Edge from child to grandchild is `arg2`. The leaf node contains the cached result. Follow the path.
+Opt Complexity Visuals: $O(1)$ Map Lookups Sequence
+How to Draw Opt Complexity: Draw an $O(K)$ timeline, where K is the number of arguments (depth of the Map tree).
+Mem Vis (BF): Massive redundant string keys
+Mem Vis (Opt): Trie / Nested Maps utilizing Javascript Heap object references.

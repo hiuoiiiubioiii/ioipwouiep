@@ -1,0 +1,13 @@
+ID: 2049
+Problem Title: Count Nodes With the Highest Score
+Brute Force Method: For every node, physically remove its edges to split the tree into components. Use BFS/DFS to count the nodes in each resulting component and multiply the sizes.
+BF Complexity Visuals: Edge Deletion Ripple Effect
+How to Draw BF: Draw a tree. Pick a node and erase its connections. Count the remaining pieces. Repeat this entire process N times. $O(N^2)$.
+Optimised Pattern: DFS with Subtree Size Precomputation
+Opt Vis. Technique: Bottom-Up Subtree Accumulation
+Dry Run (Opt): Perform one DFS to find the size of every subtree. At each node `i`, the scores are: `size(left_child)`, `size(right_child)`, and `(TotalNodes - size(i))`. Multiply these.
+How to Draw (Opt): Draw the tree. Write the size of the subtree inside each node starting from the leaves up. At each node, multiply its children's sizes and the remaining outer nodes.
+Opt Complexity Visuals: Post-Order Traversal (One Pass)
+How to Draw Opt Complexity: Draw a tree with a single arrow path going down and back up once. Total Time $O(N)$.
+Mem Vis (BF): Multiple temporary adjacency lists or component sets created for every node removal.
+Mem Vis (Opt): A single `sizes` array of length N and the recursion stack. Space $O(N)$.

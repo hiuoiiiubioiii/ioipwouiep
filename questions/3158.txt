@@ -1,0 +1,13 @@
+ID: 3158
+Problem Title: Find the XOR Sum of All Numbers Appears Twice
+Brute Force Method: Nested loops: for each number, count occurrences by scanning the whole array, then XOR if count is 2. $O(N^2)$
+BF Complexity Visuals: A grid of N x N comparisons with a toggle bit at the end.
+How to Draw BF: Draw an array. Point to 1st number, scan the rest. If found again, write it down. Repeat for all. XOR the final list.
+Optimised Pattern: Hash Set / Frequency Counting
+Opt Vis. Technique: The Sieve / Filter
+Dry Run (Opt): One pass with a Set. If number exists in Set, it's the second appearance—XOR it into the result. If not, add to Set.
+How to Draw (Opt): Draw an array and an empty "Set" box. Move through the array; if number is in the box, circle it. XOR all circled numbers.
+Opt Complexity Visuals: Linear one-pass timeline.
+How to Draw Opt Complexity: Draw a straight line 0 rightarrow N with a single constant check per node. $O(N)$.
+Mem Vis (BF): A list of every number's occurrence count.
+Mem Vis (Opt): A single Hash Set or a frequency array (if numbers are small). $O(N)$ or $O(1)$.

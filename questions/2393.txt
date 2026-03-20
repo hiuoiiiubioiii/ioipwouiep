@@ -1,0 +1,13 @@
+ID: 2393
+Problem Title: Count Strictly Increasing Subarrays (Premium)
+Brute Force Method: Generate every possible subarray (i, j). For each, scan it to see if every element is strictly greater than the previous one. Count valid ones.
+BF Complexity Visuals: Cubic Subarray Scanning (O(N^3))
+How to Draw BF: Draw an array. Draw brackets for every segment. Inside each bracket, draw a tiny arrow checking the "greater than" condition between neighbors.
+Optimised Pattern: Dynamic Programming / Linear Counting
+Opt Vis. Technique: Continuous Growth Streaks
+Dry Run (Opt): Iterate through the array. Maintain a `length` of the current increasing streak. At each step, if `nums[i] &gt; nums[i-1]`, `length++`. Add `length` to the total count. Else, reset `length = 1`.
+How to Draw (Opt): Draw an array. Underneath, draw a bar that grows as long as numbers increase (1, 2, 3...). Every time the bar grows, add its current height to your total score. When numbers drop, reset the bar.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. A single "streak" variable pulses up and resets as it moves across the data.
+Mem Vis (BF): Draw a massive 2D matrix storing validity flags for every subarray.
+Mem Vis (Opt): Draw two Integer variables: `current_streak` and `total_count`.

@@ -1,0 +1,13 @@
+ID: 43
+Problem Title: Multiply Strings
+Brute Force Method: Language Defaults (BigInt) Just parse the strings into native big integers, multiply them, and turn them back into strings (which defeats the whole purpose of the problem).
+BF Complexity Visuals: The Cheater's Box
+How to Draw BF: Draw a black box labeled "BigInt()". Put two strings in, get a string out. Draw a red "X" through it because interviewers hate this.
+Optimised Pattern: Array Math (Grade School Multiplication)
+Opt Vis. Technique: The Shifting Grid
+Dry Run (Opt): Multiply digit by digit from right to left. The product of `num1[i]` and `num2[j]` is placed at indices `[i + j, i + j + 1]` in a result array.
+How to Draw (Opt): Draw standard elementary school vertical multiplication. Draw arrows linking the top digit `i` and bottom digit `j` directly into a pre-sized array box at position `i+j+1` (holding the digit) and `i+j` (holding the carry).
+Opt Complexity Visuals: Matrix Area
+How to Draw Opt Complexity: Draw a grid of M rows and N columns. Shade in every cell to show that every digit of `num1` must multiply with every digit of `num2`. $O(M \cdot N)$ time.
+Mem Vis (BF): Draw giant, memory-heavy BigInt objects being instantiated.
+Mem Vis (Opt): Draw a single integer array of size `M + N` (the maximum possible length of the product). Space is $O(M + N)$.

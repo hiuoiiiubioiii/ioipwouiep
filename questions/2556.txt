@@ -1,0 +1,13 @@
+ID: 2556
+Problem Title: Disconnect Path in a Binary Matrix by at Most One Flip
+Brute Force Method: Generate every possible path from top-left to bottom-right. For every cell in the grid, try flipping it to 0 and re-check if any path still exists. $O(M x N x 2^M+N)$.
+BF Complexity Visuals: A massive recursion tree where each leaf represents a grid state being searched for paths.
+How to Draw BF: Draw a grid. Pick a cell, cross it out. Try to find a path using only Right and Down moves. Repeat this for every single cell in the grid.
+Optimised Pattern: Double DFS / Max Flow Min Cut (Path Neutralization).
+Opt Vis. Technique: A "Path Erosion" visual: finding a path, removing it from the grid entirely, and seeing if a second path can still survive.
+Dry Run (Opt): Run a DFS to find any path from (0,0) to (M-1,N-1). If no path exists, return True (already disconnected). If a path exists, "burn" the path by setting all its cells (except start and end) to 0. Run a second DFS. If no second path exists, return True.
+How to Draw (Opt): Draw a grid. Trace a path with a pencil. Erase that pencil line so those cells are now "walls." Try to draw a new path with a pen. If you can't reach the end, one flip is enough.
+Opt Complexity Visuals: $O(M \cdot N)$ - Two passes of DFS.
+How to Draw Opt Complexity: Draw two grid diagrams. Draw a single arrow path in the first. Draw an "X" over that path in the second. Draw a second arrow attempting to bypass the "X"s.
+Mem Vis (BF): Exponential recursion stack for all grid states.
+Mem Vis (Opt): $O(M \cdot N)$ for the recursion stack and visited matrix.

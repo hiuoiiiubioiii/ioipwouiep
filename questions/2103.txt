@@ -1,0 +1,13 @@
+ID: 2103
+Problem Title: Rings and Rods
+Brute Force Method: Array of 10 Sets. Iterate string, add char to Set at index.
+BF Complexity Visuals: Linear scan with hashing overhead.
+How to Draw BF: Draw string of chars, draw arrows pointing to 10 buckets containing unique letters.
+Optimised Pattern: Bitmasking + Array.
+Opt Vis. Technique: 10-element array of 3-bit binary numbers.
+Dry Run (Opt): Iterate string, use bitwise OR to flip 1st, 2nd, or 3rd bit of the rod's index integer.
+How to Draw (Opt): Draw 10 slots. In each slot write 000. Cross out 0s and write 1s based on RGB colors seen.
+Opt Complexity Visuals: $O(N)$ linear time with $O(1)$ bitwise operations.
+How to Draw Opt Complexity: Straight horizontal line (string length N) passing through a bitwise OR gate.
+Mem Vis (BF): Array of pointers to heap-allocated Set objects.
+Mem Vis (Opt): Contiguous integer array of size 10 (Fits in CPU Cache).

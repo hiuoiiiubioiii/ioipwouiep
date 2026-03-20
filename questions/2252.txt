@@ -1,0 +1,13 @@
+ID: 2252
+Problem Title: Dynamic Pivoting of a Table
+Brute Force Method: Manually write `CASE WHEN` statements for every known column. Fails when new dynamic categories are added.
+BF Complexity Visuals: Hardcoded Query Walls
+How to Draw BF: Draw a massive SQL query with hardcoded `CASE WHEN` lines for every possible value.
+Optimised Pattern: Prepared Statements / Dynamic SQL
+Opt Vis. Technique: The Code-Generating Query
+Dry Run (Opt): Use `GROUP_CONCAT` to dynamically build a string of `SUM(CASE WHEN...)` statements based on distinct values. Then `PREPARE` and `EXECUTE` that dynamically generated string.
+How to Draw (Opt): Draw a machine building a blueprint. The DB scans for unique names, writes the SQL code as a string, feeds that string back into its own compiler, and runs it.
+Opt Complexity Visuals: Two-Phase Execution
+How to Draw Opt Complexity: Draw a preliminary scan for distinct values, followed by the execution of the generated pivoted query.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Internal string buffers for query generation.

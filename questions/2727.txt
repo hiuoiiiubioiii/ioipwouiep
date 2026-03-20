@@ -1,0 +1,13 @@
+ID: 2727
+Problem Title: Is Object Empty
+Brute Force Method: Use Object.keys(obj).length === 0. This is $O(N)$ because it must iterate through and create an array of all keys before checking the length.
+BF Complexity Visuals: Full Key Extraction Scan
+How to Draw BF: Draw an object with 1,000 keys. Watch as Object.keys painstakingly writes every key into a brand-new array just to see if it's empty.
+Optimised Pattern: Intermediate Array Allocation (Visualize a potentially massive array of strings being created in memory just for a boolean check).
+Opt Vis. Technique: for...in Loop Short-circuit
+Dry Run (Opt): Early Exit Sentinel
+How to Draw (Opt): Start a for...in loop. If the loop executes even once, return false immediately. If the loop finishes without executing, return true.
+Opt Complexity Visuals: Draw a door. Peek inside. If you see even one item, close the door and say "Not Empty". You don't need to count the rest.
+How to Draw Opt Complexity: $O(1)$ Average Time
+Mem Vis (BF): Draw a single dot for the first property check. Label it $O(1)$.
+Mem Vis (Opt): Zero Allocation Logic (Draw the execution pointer entering the object and immediately exiting; no new memory structures created).

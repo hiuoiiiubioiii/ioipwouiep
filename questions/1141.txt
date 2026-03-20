@@ -1,0 +1,13 @@
+ID: 1141
+Problem Title: User Activity for the Past 30 Days I
+Brute Force Method: Fetch all rows, iterate through each, check if within date range, and manually add to a dictionary of sets per day.
+BF Complexity Visuals: Nested Loop Data Scan
+How to Draw BF: Draw a massive table of logs. For each log, draw an arrow to a calendar. If it fits the 30-day window, write the User ID in that calendar square.
+Optimised Pattern: GROUP BY + DATEDIFF / BETWEEN
+Opt Vis. Technique: Time-Window Filtering Pipe
+Dry Run (Opt): Filter the dataset where `activity_date` is between '2019-06-28' and '2019-07-27'. Group by `activity_date` and `COUNT(DISTINCT user_id)`.
+How to Draw (Opt): Draw a funnel labeled "Date Filter". Draw buckets labeled by Date. Drop unique User IDs into buckets. Count the contents of each bucket.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line scanning the table. Each row is either kept or discarded in one step.
+Mem Vis (BF): Unordered List of Log Objects
+Mem Vis (Opt): Hash-based Grouping table. Draw a simple 2-column table: Date | Unique Count.

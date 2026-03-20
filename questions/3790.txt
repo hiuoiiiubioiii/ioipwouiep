@@ -1,0 +1,13 @@
+ID: 3790
+Problem Title: Smallest All-Ones Multiple (Med)
+Brute Force Method: Test numbers 1, 11, 111, 1111... one by one by dividing them by N until the remainder is zero. $O(N)$ or more depending on digit count.
+BF Complexity Visuals: Sequential Modulo Testing.
+How to Draw BF: Write "1". Is 1/N remainder 0? No. Write "11". Is 11/N remainder 0? No. Repeat, adding a '1' each time until it works.
+Optimised Pattern: Pigeonhole Principle + Iterative Modulo
+Opt Vis. Technique: Modular Orbit Tracker
+Dry Run (Opt): Maintain a running remainder: rem = (rem * 10 + 1) % N. If you see the same remainder twice before hitting 0, it may cycle, but for coprime N and 10, you'll always hit 0 within N steps.
+How to Draw (Opt): Draw a "Remainder" bucket. Start with 1. Multiply by 10, add 1, then take the remainder of N and put it back in the bucket. Count how many times you do this until the bucket is 0.
+Opt Complexity Visuals: Linear Scan $O(N)$.
+How to Draw Opt Complexity: Draw a loop that runs up to N times with a single modulo operation inside.
+Mem Vis (BF): Storing massive strings of "1"s in memory.
+Mem Vis (Opt): $O(1)$ auxiliary space (just 2-3 integer variables).

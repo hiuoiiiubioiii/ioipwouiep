@@ -1,0 +1,13 @@
+ID: 1575
+Problem Title: Count All Possible Routes
+Brute Force Method: DFS starting from `start` to all other locations, subtracting fuel based on distance. If you reach `finish`, count it and *keep going* if fuel remains. $O(N^{\text{Fuel}})$.
+BF Complexity Visuals: Exploding Fuel-Decision Tree
+How to Draw BF: Draw a location. Branch out N-1 times (one for each other city). The fuel decreases. Each node repeats this. The tree depth is huge.
+Optimised Pattern: Dynamic Programming (State: City x Fuel)
+Opt Vis. Technique: The Fuel-Depletion Matrix
+Dry Run (Opt): Define `dp[city][fuel]` as the number of ways to reach `finish` from `city` with `fuel` remaining. Since fuel only decreases, this is a Directed Acyclic Graph (DAG) state space.
+How to Draw (Opt): Draw a grid where rows are Cities and columns are Fuel levels. To fill a cell (C, F), draw arrows from all other cities C' where F + dist(C, C') was the previous state.
+Opt Complexity Visuals: State-Space Product $O(N^2 \cdot \\text{text}{\text{Fuel}})$
+How to Draw Opt Complexity: Draw a 2D table of size N \times \text{Fuel}. For each of the N \cdot \text{Fuel} cells, you perform N additions.
+Mem Vis (BF): Massive recursive call stack with redundant state paths.
+Mem Vis (Opt): A 2D DP table/Memoization map. $O(N \cdot \\text{text}{\text{Fuel}})$ space.

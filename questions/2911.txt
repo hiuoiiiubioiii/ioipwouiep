@@ -1,0 +1,13 @@
+ID: 2911
+Problem Title: Minimum Changes to Make K Semi-palindromes
+Brute Force Method: Generate all combinations of k partitions. For each, test all divisors to find minimum changes.
+BF Complexity Visuals: Exploding N-ary Recursion Tree
+How to Draw BF: Draw a massive tree where each node represents a string split, branching $O(N)$ times to a depth of K, causing combinatorial explosion.
+Optimised Pattern: Precomputation + 2D Partition Dynamic Programming
+Opt Vis. Technique: 2D DP Grid mapping String Index to Partitions
+Dry Run (Opt): Precompute costs for all substrings. On a 2D grid, compute min cost to partition first 'i' characters into 'j' parts by looking at costs of part(m, i) + dp[m][j-1].
+How to Draw (Opt): Draw a grid. X-axis: Parts (1 to K). Y-axis: String length (1 to N). Draw arrows from previous column's rows to the current cell adding precomputed transition costs.
+Opt Complexity Visuals: Cubic Cost Grid Traversal
+How to Draw Opt Complexity: Write T(N) = N^3 (precomputation) + N^2 * K (DP). Draw three nested squares representing N^3. Space is N^2.
+Mem Vis (BF): Huge Call Stack: Stacked vertical boxes up to N deep holding massive string slices. Space $O(N^2)$.
+Mem Vis (Opt): Two 2D Matrices: Draw one matrix for precomputed costs and another for DP states. Space $O(N^2)$.

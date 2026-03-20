@@ -1,0 +1,13 @@
+ID: 2538
+Problem Title: Difference Between Maximum and Minimum Price Sum
+Brute Force Method: For every node, treat it as the root. Run a DFS to find the longest path to a leaf and subtract the price of that leaf. $O(N^2)$.
+BF Complexity Visuals: A forest of search trees, one for every node, recalculating overlapping paths repeatedly.
+How to Draw BF: Pick a node. Trace all paths to leaves. Pick the longest. Repeat for every single node in the tree.
+Optimised Pattern: Tree Dynamic Programming (Rerooting or Diameters).
+Opt Vis. Technique: A dual-value propagation where each node knows the "longest path with a leaf" and "longest path without a leaf" from its subtrees.
+Dry Run (Opt): Run DFS to calculate two values per node: maxSumWithLeaf and maxSumWithoutLeaf. The answer for a node is the max of current.price + child.maxSumWithoutLeaf and current.price + child.maxSumWithLeaf (cross-referencing with other children).
+How to Draw (Opt): Draw a tree. At each node, write two numbers. The first is the max price-sum including a leaf, the second is excluding a leaf. Combine these as you bubble up from children to parent.
+Opt Complexity Visuals: $O(N)$ - Two DFS passes (one to collect, one to distribute/reroot).
+How to Draw Opt Complexity: Draw a tree with a downward arrow (first pass) and an upward/sideways arrow (second pass), showing each edge is traversed a constant number of times.
+Mem Vis (BF): $O(N)$ recursion stack per root (N times).
+Mem Vis (Opt): $O(N)$ to store the adjacency list and the DP state values.

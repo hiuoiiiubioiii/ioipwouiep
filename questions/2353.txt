@@ -1,0 +1,13 @@
+ID: 2353
+Problem Title: Design a Food Rating System
+Brute Force Method: Store food in a List. For `changeRating`, find the food in the list and update it. For `highestRated`, scan the entire list to find the food with the max rating for that cuisine.
+BF Complexity Visuals: Linear Search per Query (O(Q * N))
+How to Draw BF: Draw a long list of food items. For every "Highest" request, draw an arrow scanning every single item from top to bottom.
+Optimised Pattern: Two Hash Maps + Priority Queues (Sorted Sets)
+Opt Vis. Technique: Cuisine-Scoped Max Heaps
+Dry Run (Opt): Map 1: `food -&gt; [cuisine, rating]`. Map 2: `cuisine -&gt; Max-Heap of [rating, food_name]`. To handle updates, push the new rating to the heap. When querying, "lazy delete" by popping the top of the heap until the rating matches Map 1.
+How to Draw (Opt): Draw a master directory (Map). Draw "Kitchen Cabinets" for each cuisine. Inside each cabinet, keep a "Leaderboard" (Heap). When a rating changes, put a new sticky note on the board. When asking for the best, look at the top; if the note is old, throw it away and look at the next one.
+Opt Complexity Visuals: Logarithmic Update/Query (O(log N))
+How to Draw Opt Complexity: Draw a Hash Map pointing to a Balanced BST or Heap. The search path is a short zigzag down the tree.
+Mem Vis (BF): Draw a massive redundant list of food objects in a flat array.
+Mem Vis (Opt): Draw a Hash Map for metadata and a Map of Max-Heaps/Trees for each cuisine category.

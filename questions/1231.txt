@@ -1,0 +1,13 @@
+ID: 1231
+Problem Title: Divide Chocolate
+Brute Force Method: Try every possible way to cut the chocolate into K+1 pieces using recursion/backtracking. Find the maximum of the minimum sweetness among all combinations.
+BF Complexity Visuals: Combinatorial Partitioning Tree
+How to Draw BF: Draw a bar of chocolate. Draw lines representing cuts at every possible index. Show the recursive branching for K cuts. Write $O(N^K)$.
+Optimised Pattern: Binary Search on Answer (Range)
+Opt Vis. Technique: The "Greedy Satiety" Threshold
+Dry Run (Opt): Guess a sweetness value X. Walk through the chocolate and cut a piece as soon as its sweetness >= X. If you can make >= K+1 pieces, X might be too small. If not, X is too large.
+How to Draw (Opt): Draw a horizontal line for the range [min_sweetness, total_sweetness]. Pick a 'Mid'. Below it, draw the chocolate array and group elements into chunks that sum to 'Mid'. If chunks >= K+1, shift 'Low' to 'Mid'.
+Opt Complexity Visuals: Logarithmic Search + Linear Scan
+How to Draw Opt Complexity: Draw a shrinking range [L, R] alongside a single horizontal scan arrow. Write $O(N \log(\text{Total}_\text{Sweetness})$).
+Mem Vis (BF): Draw a deep recursion stack representing the search for all cut combinations.
+Mem Vis (Opt): Draw 4 integer variables: `low`, `high`, `mid`, `current_sum`, and `count`. Space: $O(1)$.

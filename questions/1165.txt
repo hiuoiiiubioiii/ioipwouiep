@@ -1,0 +1,13 @@
+ID: 1165
+Problem Title: Single-Row Keyboard
+Brute Force Method: For every character in the target word, use `.indexOf()` on the keyboard string to find its position.
+BF Complexity Visuals: Repeated Linear Search
+How to Draw BF: Draw a keyboard string. For every letter in "apple", draw an arrow starting from the beginning of the keyboard to find the letter. $O(\text{Word} x \text{Keyboard})$.
+Optimised Pattern: Frequency Map / Index Array
+Opt Vis. Technique: Instant Location Lookup
+Dry Run (Opt): Create an array of size 26 where `index[char]` stores its position on the keyboard. Calculate `abs(current_pos - next_pos)` and update `current_pos`.
+How to Draw (Opt): Draw the keyboard. Above it, write the indices 0-25. Create a small table mapping 'a' rightarrow pos, 'b' rightarrow pos. Draw the distance calculation as a subtraction.
+Opt Complexity Visuals: Linear Word Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass to build the map, and a single pass through the word to sum distances.
+Mem Vis (BF): None
+Mem Vis (Opt): Fixed-size array `int[26]`.

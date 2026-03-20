@@ -1,0 +1,13 @@
+ID: 3006
+Problem Title: Find Beautiful Indices in the Given Array I
+Brute Force Method: Using built-in string searches, find an index `i` matching string `a`, then scan the whole string to find all indices `j` matching `b`, checking `|i-j| &lt;= k`.
+BF Complexity Visuals: Two-Pointer Sliding Window Overlap
+How to Draw BF: Draw string `s`. Underline `a` matches in red, `b` in blue. Draw lines connecting every red line to every blue line, crossing out distances &gt; `k`.
+Optimised Pattern: KMP String Matching + Binary Search / Two Pointers
+Opt Vis. Technique: Parallel Number Lines (Sorted Arrays)
+Dry Run (Opt): Find all indices of `a` (list A) and `b` (list B). Place pointers `p1` on A and `p2` on B. Move `p2` monotonically to catch up to `p1 - k`. Check if `p2` is within `p1 + k`.
+How to Draw (Opt): Draw two horizontal number lines. Place dots for indices A and B. Draw a bracket [ -k, +k ] centered on a dot on line A to see if line B's dots fall inside.
+Opt Complexity Visuals: 3-Phase Timeline
+How to Draw Opt Complexity: Draw three blocks: "KMP(A) $O(N)$", "KMP(B) $O(N)$", "Two Pointers $O(A+B)$".
+Mem Vis (BF): Variables mapping `s.substring(i, i+len)` creating heavy temporary string allocations in memory.
+Mem Vis (Opt): Two distinct, sorted integer arrays indicesA and indicesB loaded sequentially in memory.

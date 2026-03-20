@@ -1,0 +1,13 @@
+ID: 2839
+Problem Title: Check if Strings Can be Made Equal With Operations I
+Brute Force Method: Try every possible swap of characters at indices i and i+2 in the 4-character string to see if it eventually matches the target string.
+BF Complexity Visuals: Permutation State Space
+How to Draw BF: Draw the string "abcd". Show arrows for valid swaps (a↔c, b↔d). List all possible 4 results. Compare each to the target.
+Optimised Pattern: Parity-Based Character Comparison
+Opt Vis. Technique: Index Parity Check
+Dry Run (Opt): Recognize that characters at even indices (0, 2) can only swap with each other, and odd indices (1, 3) can only swap with each other. Group chars by index parity and check if the sets match.
+How to Draw (Opt): Write the string. Circle indices 0 and 2 in blue; circle 1 and 3 in red. Do the same for string 2. If the blue sets match and red sets match, the answer is "Yes".
+Opt Complexity Visuals: Constant Time $O(1)$
+How to Draw Opt Complexity: Draw a single comparison block. Since the input size is fixed at 4, the operation count is constant.
+Mem Vis (BF): Visualize a small recursion stack or a set of generated strings.
+Mem Vis (Opt): Visualize two small sets or arrays of size 2. Pure $O(1)$ space.

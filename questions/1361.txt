@@ -1,0 +1,13 @@
+ID: 1361
+Problem Title: Validate Binary Tree Nodes
+Brute Force Method: Perform a random walk from any node and check if you can reach all nodes without hitting a cycle.
+BF Complexity Visuals: $O(N^2)$ Unstructured DFS
+How to Draw BF: Draw nodes. Draw an arrow from one. It might loop or miss nodes. Repeat from every node to "be sure."
+Optimised Pattern: Graph In-Degree Count + BFS/DFS
+Opt Vis. Technique: Directional Flow Validation
+Dry Run (Opt): 1. Every node except root must have in-degree 1. 2. Root must have in-degree 0. 3. Exactly one root must exist. 4. BFS from root must visit exactly N nodes.
+How to Draw (Opt): Draw nodes with arrows. Write the 'In-Degree' count next to each. If any number &gt; 1 or more than one node has 0, cross it out. Then trace from the '0' node to see if you hit everything.
+Opt Complexity Visuals: $O(N)$ Single Sweep
+How to Draw Opt Complexity: Draw an array for in-degrees (Linear Scan) followed by a BFS wave (O(V+E)).
+Mem Vis (BF): Visited Set per Path: Keeping track of path history to detect cycles manually.
+Mem Vis (Opt): $O(N)$ In-Degree Array: Draw a simple array of size N tracking counts.

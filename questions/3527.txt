@@ -1,0 +1,13 @@
+ID: 3527
+Problem Title: Find the Most Common Response (Med)
+Brute Force Method: Iterate through all responses, use nested loops to count occurrences, keep track of maximum.
+BF Complexity Visuals: Nested Loop Tallying.
+How to Draw BF: Write down the list. Pick word 1, scan the whole list counting it. Pick word 2, scan whole list. $O(N^2)$.
+Optimised Pattern: Hash Map Counting + Single-Pass Max Tracking.
+Opt Vis. Technique: Key-Value Bins with a High-Water Mark.
+Dry Run (Opt): Drop each word into its designated bin. If a bin's height exceeds the current "max height" marker, update the winner.
+How to Draw (Opt): Draw squares labeled with words. Add a tally mark inside each time you see the word. Keep a separate "Winner" box updated.
+Opt Complexity Visuals: Linear Scan to $O(1)$ Lookup.
+How to Draw Opt Complexity: Draw a straight timeline of N inputs pointing directly into a Hash Map (O(1) operation per step). Total $O(N)$.
+Mem Vis (BF): Unstructured String Lists: Draw raw, unsorted arrays holding heavy string data over and over.
+Mem Vis (Opt): Hash Table Structure: Draw a 2-column table mapping unique strings to integer frequencies.

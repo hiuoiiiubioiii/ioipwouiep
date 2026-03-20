@@ -1,0 +1,13 @@
+ID: 3003
+Problem Title: Maximize the Number of Partitions After Operations
+Brute Force Method: Modify each of the N characters to all 26 lowercase letters one by one, then run the greedy partition algorithm for all 26*N resulting strings.
+BF Complexity Visuals: Modification Array + Simulation Timeline
+How to Draw BF: Draw N main branches (one for each character index). From each, draw 26 sub-branches. Draw a linear array next to each leaf to represent the $O(N)$ evaluation.
+Optimised Pattern: Dynamic Programming with Bitmasking (State Compression)
+Opt Vis. Technique: State Transition Graph
+Dry Run (Opt): Track current index, a boolean changed flag, and a bitmask of current partition characters. When changing a letter or exceeding 'k' unique chars, visually jump to the new updated state block.
+How to Draw (Opt): Create a DP table with columns: Index, Changed (T/F), Bitmask (binary). Draw directed arrows showing how adding a new character updates the bitmask or forces a partition reset.
+Opt Complexity Visuals: 3D Memoization Bounds
+How to Draw Opt Complexity: Draw a 3D grid cube. Label the axes: Length N, Changed (0/1), and Bitmask State Space.
+Mem Vis (BF): A massive list of strings, drawn as 26*N separate full string arrays stacked on top of each other.
+Mem Vis (Opt): A Key-Value HashMap table mapping the tuple (index, changed, bitmask) to the integer max_partitions.

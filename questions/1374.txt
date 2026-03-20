@@ -1,0 +1,13 @@
+ID: 1374
+Problem Title: Generate a String With Characters...
+Brute Force Method: Use a random generator to build strings and a complex frequency map to check if all counts are odd.
+BF Complexity Visuals: $O(N!)$ Randomized Search
+How to Draw BF: Draw a cloud of random strings. Draw a filter checking each one. Wasted CPU cycles on a simple parity problem.
+Optimised Pattern: Greedy Parity Construction
+Opt Vis. Technique: Odd-Even Split Logic
+Dry Run (Opt): If N is odd, return "aaa..." (N times). If N is even, return "aaa..." (N-1 times) + "b". Both ensure all character counts are odd.
+How to Draw (Opt): Draw a line of 'a's. If the line is even, cross out the last 'a' and write 'b'. Count them: N-1 (odd) and 1 (odd).
+Opt Complexity Visuals: $O(N)$ Linear String Build
+How to Draw Opt Complexity: Draw a single line of length N being filled character by character in one pass.
+Mem Vis (BF): Temporary String Buffer Pool: Storing many candidate strings in the heap.
+Mem Vis (Opt): Single String Builder: Draw one contiguous memory block of size N.

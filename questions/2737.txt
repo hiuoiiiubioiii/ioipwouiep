@@ -1,0 +1,13 @@
+ID: 2737
+Problem Title: Find the Closest Marked Node
+Brute Force Method: Run Dijkstra's algorithm from the source node to find distances to all other nodes. Then, iterate through the list of marked nodes and pick the minimum distance.
+BF Complexity Visuals: Single-Source Shortest Path (SSSP) Trace
+How to Draw BF: Draw the graph. Shade it in waves starting from the source until all marked nodes are reached.
+Optimised Pattern: Distance Array + Priority Queue (Drawing the standard Dijkstra memory footprint).
+Opt Vis. Technique: Reverse Multi-Source Dijkstra (or Simple Dijkstra)
+Dry Run (Opt): Shortest Path Tree Pruning
+How to Draw (Opt): Since we only need the closest marked node, standard Dijkstra from the source is already quite efficient. To optimize for multiple starts, one could run a single Dijkstra starting with all marked nodes in the PQ (if the edges were reversed).
+Opt Complexity Visuals: Draw the source node. Draw expanding circles of distance. Stop the moment a marked node is "touched" by an expanding circle.
+How to Draw Opt Complexity: $O(E \log V)$
+Mem Vis (BF): Draw the Dijkstra complexity: $O((E+V)$ log V) using a Min-Heap.
+Mem Vis (Opt): Priority Queue &amp; Dist Map (Visualize the heap-sorting nodes by their current shortest distance from the source).

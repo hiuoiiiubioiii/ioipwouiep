@@ -1,0 +1,13 @@
+ID: 3866
+Problem Title: First Unique Even Element (Easy)
+Brute Force Method: Nested Loops: For every even element in the array, scan the rest of the array to count its occurrences. Return the first one with a count of 1.
+BF Complexity Visuals: A repeating scan pattern where even numbers trigger a full array traversal.
+How to Draw BF: Draw an array. Point to '2'. Scan all other cells to see if '2' appears again. Repeat for '4'. Write $O(N^2)$.
+Optimised Pattern: Hash Map (Frequency Counting).
+Opt Vis. Technique: A "Tally Board" where you count everyone first, then check the board in the original order.
+Dry Run (Opt): 1. Iterate once to fill a Frequency Map for all elements. 2. Iterate the original array a second time. 3. For each element, if it is even AND `map.get(element) == 1`, return it.
+How to Draw (Opt): Draw an array. Below it, draw a "Frequency Table". Fill the table. Then, move a finger across the array; when the finger hits an even number, look at the table to see if the count is 1.
+Opt Complexity Visuals: Two independent linear passes.
+How to Draw Opt Complexity: Draw two horizontal lines. Write $O(N)$ + $O(N)$ = $O(N)$.
+Mem Vis (BF): $O(1)$ if counting in-place (impossible without sorting); otherwise $O(N^2)$ time waste.
+Mem Vis (Opt): $O(N)$ space to store the frequency counts of unique elements in the map.

@@ -1,0 +1,13 @@
+ID: 273
+Problem Title: Integer to English Words
+Brute Force Method: Massive `if-else` or `switch` block for every number from 1 to 2 Billion.
+BF Complexity Visuals: Infinite Tree: $O(\\text{text}{\text{Impossible}})$.
+How to Draw BF: Draw a decision tree that never ends. Label it "The Hardcoded Nightmare."
+Optimised Pattern: Recursive Triplet Grouping (Base 1000)
+Opt Vis. Technique: Chunk Processing Pipeline
+Dry Run (Opt): Process the number in groups of three (Thousands, Millions, Billions). Solve for a 3-digit number once and apply the scale word.
+How to Draw (Opt): Draw "1,234,567,891". Draw brackets around each 3-digit group. Solve "891", then add nothing. Solve "567", add "Thousand", etc.
+Opt Complexity Visuals: Logarithmic Digit Pass: $O(\log_{10} N)$.
+How to Draw Opt Complexity: Draw a line with 10 slots (max digits in 2B). Show the recursion depth is max 4 (for Billions, Millions, Thousands, Units).
+Mem Vis (BF): Manual Mapping Table.
+Mem Vis (Opt): Recursive Stack: Draw 4 frames. Each frame holds the string result of a 3-digit segment.

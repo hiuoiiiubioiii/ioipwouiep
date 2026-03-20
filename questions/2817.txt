@@ -1,0 +1,13 @@
+ID: 2817
+Problem Title: Minimum Absolute Difference Between Elements With Constraint
+Brute Force Method: Nested loops. For every element at index `i`, loop through all elements from `i + x` to the end of the array, calculating the absolute difference and tracking the minimum.
+BF Complexity Visuals: Segmented Sliding Window
+How to Draw BF: Draw the array. Place pointer `i`. Place pointer `j` exactly `x` steps away and drag it to the end. Repeat for every `i`, showing a shrinking $O(N2)$ triangle of operations.
+Optimised Pattern: Balanced Binary Search Tree (TreeSet) + Sliding Pointer
+Opt Vis. Technique: Dynamic BST Insertion
+Dry Run (Opt): Iterate `i` from `x` to the end. Maintain a Balanced BST of "valid" elements (inserting `nums[i - x]` at each step). For `nums[i]`, query the BST for the closest values (floor and ceiling) and update the min difference.
+How to Draw (Opt): Draw the array. Draw a box spanning from index 0 to `i - x` labeled "Active BST". As `i` moves right, add the left-trailing element to the box. Draw an arrow from `nums[i]` into the box to find the nearest match.
+Opt Complexity Visuals: Loop surrounding a Logarithmic Query
+How to Draw Opt Complexity: Draw an outer loop representing $O(N)$ elements. Inside, draw a smaller block labeled $O(\log N)$ representing the tree search and insertion. Total is $O(N \log N)$.
+Mem Vis (BF): Visualize $O(1)$ extra space, but terrible time complexity due to exhaustive scanning.
+Mem Vis (Opt): Visualize an $O(N)$ dynamic Balanced Binary Tree (like a Red-Black Tree) existing in the heap alongside the original array.

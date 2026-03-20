@@ -1,0 +1,13 @@
+ID: 1976
+Problem Title: Number of Ways to Arrive at Destination
+Brute Force Method: DFS to find every possible path from 0 to n-1, filtering by the shortest total weight found.
+BF Complexity Visuals: Path Explosion Tree
+How to Draw BF: Draw node 0 branching into all neighbors, branching further. Show the number of paths growing exponentially. $O(V!)$.
+Optimised Pattern: Dijkstra + DP (Counting)
+Opt Vis. Technique: Weighted Shortest-Path Relaxation
+Dry Run (Opt): Use a Min-Heap for Dijkstra. When relaxing an edge, if a new shortest distance is found, reset path count; if equal, add to path count.
+How to Draw (Opt): Draw nodes with labels: `(minDist, ways)`. As you "relax" an edge, update the label. Use different colors for updated paths.
+Opt Complexity Visuals: Priority-Queue Driven Scan
+How to Draw Opt Complexity: Draw E edges being processed. For each, show a log(V) heap operation. $O(E \log V)$.
+Mem Vis (BF): A list of all path sequences (high memory cost).
+Mem Vis (Opt): A Min-Heap and two 1D arrays: `dist[N]` and `ways[N]`. $O(V)$ space.

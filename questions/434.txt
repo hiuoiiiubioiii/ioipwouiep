@@ -1,0 +1,13 @@
+ID: 434
+Problem Title: Number of Segments in a String
+Brute Force Method: String Split Use built-in `.split("s+")` and count the resulting array length.
+BF Complexity Visuals: Temporary Array
+How to Draw BF: Draw a string being cut into 5-10 small boxes. Total $O(N)$ time and $O(N)$ space.
+Optimised Pattern: Single Pass Count Iterate through characters. Count a segment whenever you see a non-space character that follows a space (or is at index 0).
+Opt Vis. Technique: Flag Sensor
+Dry Run (Opt): Imagine a sensor that "beeps" every time it transitions from "Empty Space" to "Solid Character."
+How to Draw (Opt): Draw a string. Draw a dot above every character that is NOT a space but HAS a space (or nothing) to its left.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw one arrow passing over the string. $O(N)$.
+Mem Vis (BF): Array Storage $O(N)$ for the split string array.
+Mem Vis (Opt): None Just one integer counter. $O(1)$.

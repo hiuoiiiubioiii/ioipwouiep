@@ -1,0 +1,13 @@
+ID: 3145
+Problem Title: Find Products of Elements of Big Array
+Brute Force Method: Generate the "Big Array" by concatenating binary powers of every number, then calculate the product of the range. $O(\text{Exponential})$
+BF Complexity Visuals: An unrolling tape of numbers that grows too large for memory.
+How to Draw BF: Write 1, 2, 3... in binary. List their powers of 2. 1 rightarrow [2^0], 2 rightarrow [2^1], 3 rightarrow [2^0, 2^1]. Concatenate these into one long array.
+Optimised Pattern: Binary Search + Bit Counting Math
+Opt Vis. Technique: The Bit-Waterfall (Digit DP Style)
+Dry Run (Opt): Use binary search to find which integer the `from` and `to` indices land in. Use combinatorial math to count how many 2^0, 2^1... exist up to that integer.
+How to Draw (Opt): Draw a table of bit positions (2^0, 2^1, 2^2). Use a "Digit DP" logic to calculate how many times each bit flips in a range. Use modular exponentiation for the product.
+Opt Complexity Visuals: Logarithmic search space with constant bitwise math.
+How to Draw Opt Complexity: Draw a Binary Search tree (O(log (total bits))). At each node, draw 64 small boxes representing the bit positions. $O(\log^2(\text{Value})$).
+Mem Vis (BF): The entire concatenated Big Array.
+Mem Vis (Opt): $O(1)$ auxiliary space (just math variables).

@@ -1,0 +1,13 @@
+ID: 3471
+Problem Title: Find the Largest Almost Missing Integer
+Brute Force Method: Iterate through every subarray of size k, count occurrences of every integer in each, and find the largest occurring once globally. $O(n^2)$
+BF Complexity Visuals: Sliding Window Matrix.
+How to Draw BF: Draw the array. Below it, draw all overlapping boxes of size k. For each box, list its elements and tally them in a giant table.
+Optimised Pattern: Case-Based Boundary Analysis. $O(n)$
+Opt Vis. Technique: Case-Logic Flowchart.
+Dry Run (Opt): If k=1, find unique max. If k=n, find max of all. If 1 &lt; k &lt; n, only the first or last elements can be almost missing; check if they appear elsewhere.
+How to Draw (Opt): Draw a flowchart with three diamonds (If k=1, If k=n, Else). For the "Else" branch, circle the first and last elements and cross out all middle elements.
+Opt Complexity Visuals: Constant Number of Global Scans.
+How to Draw Opt Complexity: Draw two parallel horizontal lines representing at most 2-3 passes over the array to show $O(n)$ time.
+Mem Vis (BF): A Hash Map storing frequency counts for every possible subarray.
+Mem Vis (Opt): A single 51-element frequency array or Hash Map for global counts.

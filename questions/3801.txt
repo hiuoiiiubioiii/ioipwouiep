@@ -1,0 +1,13 @@
+ID: 3801
+Problem Title: Minimum Cost to Merge Sorted Lists (Hard)
+Brute Force Method: Recursive Backtracking: Try merging all possible pairs (i, j) at every step and calculate the minimum cost path.
+BF Complexity Visuals: Recursion Tree Diagram highlighting massive overlapping subproblems.
+How to Draw BF: Draw a root node representing N lists. Branch out for every NC2 pair. Below each, draw N-1 lists. Show the factorial $O(N!)$ explosion.
+Optimised Pattern: Bitmask Dynamic Programming (DP on Subsets).
+Opt Vis. Technique: State Space Directed Acyclic Graph (DAG) using bit strings.
+Dry Run (Opt): Represent array presence as bits (011 = lists 0 and 1 active). Track cost transitions from 111...1 down to 000...0.
+How to Draw (Opt): Draw binary states in circles (e.g., 111). Draw directed edges to states with one fewer '1'. Label edges with the merge cost formula.
+Opt Complexity Visuals: DAG Node/Edge count grid.
+How to Draw Opt Complexity: Write DP states: 2^N. Next to it, write transition loops: $O(N^2)$. Draw a multiplication sign between them: $O(2^N \cdot N^2)$.
+Mem Vis (BF): Call Stack Frames stacked high, showing the deep recursion depth and cloned arrays.
+Mem Vis (Opt): A 1D Array of size 2^N. Visualize the bitmask index converting to a memory slot storing the 'long long' minimum cost.

@@ -1,0 +1,13 @@
+ID: 3404
+Problem Title: Count Special Subsequences
+Brute Force Method: 4-level nested loops to pick indices `(p, q, r, s)` and mathematically validate the condition (O(N^4)).
+BF Complexity Visuals: Nested Loops Tree.
+How to Draw BF: Draw 4 concentric circles or nested curly braces, listing the permutations multiplier effect at each depth.
+Optimised Pattern: Hash Map with Math Ratio (GCD) and Middle-element Fixing (O(N^2)).
+Opt Vis. Technique: Split Array Ratio Mapping.
+Dry Run (Opt): Fix `q` and `r`. Map left ratios `(p, q)` to a frequency dictionary. Query right ratios `(r, s)` against the dictionary.
+How to Draw (Opt): Draw the array. Draw a vertical line between `q` and `r`. Left side maps into a table, right side reads from it.
+Opt Complexity Visuals: Area Bounding Box.
+How to Draw Opt Complexity: Draw a 2D grid representing pairs. Show that we only iterate half the grid, proving $O(N^2)$ instead of $O(N^4)$.
+Mem Vis (BF): Gigantic list of combinations held in memory / deeply nested stack trace.
+Mem Vis (Opt): A Hash Map Key-Value table (fraction -&gt; count) drawn separately beside the 1D Array.

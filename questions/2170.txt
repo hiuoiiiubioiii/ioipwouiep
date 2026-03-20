@@ -1,0 +1,13 @@
+ID: 2170
+Problem Title: Minimum Operations to Make the Array Alternating
+Brute Force Method: Try every possible combination of two numbers for even and odd positions.
+BF Complexity Visuals: $O(U^2)$ where U is the number of unique elements.
+How to Draw BF: Draw two lists: "Possible Evens" and "Possible Odds". Draw lines connecting every item in List A to List B. $O(N^2)$.
+Optimised Pattern: Frequency Counting + Top 2 Candidates.
+Opt Vis. Technique: A podium for the two most popular numbers.
+Dry Run (Opt): Find the two most frequent numbers for even indices and the two most frequent for odd indices. If the top ones differ, use them. If they match, pick the next best pairing.
+How to Draw (Opt): Draw two tally boards (Even indices vs Odd indices). Pick the winner and runner-up for both. Write them in a 2x2 grid to find the best pair that isn't the same number.
+Opt Complexity Visuals: $O(N)$ frequency count + $O(1)$ top-2 comparison.
+How to Draw Opt Complexity: A single pass to fill the buckets, then a constant-time 4-way comparison.
+Mem Vis (BF): $O(N)$ for intermediate pair arrays.
+Mem Vis (Opt): Two Frequency Maps (size $O(N)$).

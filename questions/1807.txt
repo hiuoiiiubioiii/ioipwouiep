@@ -1,0 +1,13 @@
+ID: 1807
+Problem Title: Evaluate the Bracket Pairs of a String
+Brute Force Method: Extract each key, linearly search the knowledge array for a match, and use string concatenation.
+BF Complexity Visuals: String builder with nested linear scan arrows.
+How to Draw BF: Draw the string. Circle a bracketed word. Draw an arrow to the list of pairs, scanning down to find a match. $O(N \cdot M)$.
+Optimised Pattern: Hash Map for lookups + Single Pass StringBuilder.
+Opt Vis. Technique: Hash table lookup pipeline.
+Dry Run (Opt): Store knowledge in map. Read string. If '(', collect key. Lookup key in map, append value (or '?') to result string.
+How to Draw (Opt): Draw a map with keys/values. Draw the string as a tape. Below it, draw the output tape filling up via $O(1)$ map lookups.
+Opt Complexity Visuals: Parallel tracks (Map creation + String traversal).
+How to Draw Opt Complexity: Draw one track for $O(E)$ hash map creation, and a second track for $O(N)$ string traversal.
+Mem Vis (BF): Immutable string objects causing memory fragmentation.
+Mem Vis (Opt): Hash Map buckets and a contiguous mutable StringBuilder array.

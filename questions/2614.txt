@@ -1,0 +1,13 @@
+ID: 2614
+Problem Title: Prime In Diagonal
+Brute Force Method: Iterate all elements, check primality in $O(X)$ time.
+BF Complexity Visuals: Iterative Division Array
+How to Draw BF: Draw the matrix. Next to each diagonal element, draw a long list of divisions up to X. $O(N \\text{cdot Max}_\text{Val})$.
+Optimised Pattern: Matrix Traversal + $O(√N)$ Prime Check
+Opt Vis. Technique: Matrix Cross (X) Pattern
+Dry Run (Opt): Traverse `i` from 0 to N-1. Check `nums[i][i]` and `nums[i][n-1-i]`. Run a square-root prime check loop. Keep the max prime.
+How to Draw (Opt): Draw a square grid. Draw a big 'X' through it highlighting the diagonals. Next to each highlighted cell, write checks up to √Val.
+Opt Complexity Visuals: Linear * Sqrt Block
+How to Draw Opt Complexity: Draw an $O(N)$ loop box. Inside it, draw two smaller $O(√\text{Max}_\text{Val})$ calculation boxes.
+Mem Vis (BF): Matrix copy in memory
+Mem Vis (Opt): $O(1)$ Constant Space variables (maxPrime tracker).

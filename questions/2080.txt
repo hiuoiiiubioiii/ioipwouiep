@@ -1,0 +1,13 @@
+ID: 2080
+Problem Title: Range Frequency Queries
+Brute Force Method: For every query `(left, right, value)`, iterate through the array from `left` to `right` and count the occurrences of `value`.
+BF Complexity Visuals: Nested Query Scan
+How to Draw BF: Draw the array. For every query bracket, draw a loop counting only the specific value. $O(\text{Queries} \cdot N)$.
+Optimised Pattern: Hash Map of Sorted Indices + Binary Search
+Opt Vis. Technique: Value-Indexed Frequency Map
+Dry Run (Opt): In constructor, store indices of each value in a sorted list: `Map&gt;`. For a query, binary search for the first index &gt;= `left` and the last index &lt;= `right` in the list for that specific value.
+How to Draw (Opt): Draw a Hash Map where keys are values. Next to each key, draw a sorted row of indices. For a query, use two "binary search" arrows to find the range within that row. Result is `end_idx - start_idx + 1`.
+Opt Complexity Visuals: $O(N)$ Precompute + $O(\log N)$ Query
+How to Draw Opt Complexity: Draw a funnel (O(N) building the map). Then draw Q arcs representing the $O(\log N)$ binary searches. Total Time $O(N + Q \log N)$.
+Mem Vis (BF): $O(1)$ space but slow query time.
+Mem Vis (Opt): A Hash Map of Lists storing all N indices once. Space $O(N)$.

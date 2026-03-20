@@ -1,0 +1,13 @@
+ID: 2797
+Problem Title: Partial Function with Placeholders (JS)
+Brute Force Method: Create a wrapper that uses arguments. Use a nested loop to find "_" placeholders and replace them one-by-one with incoming arguments. $O(N \cdot M)$.
+BF Complexity Visuals: N * M Placeholder Replacement
+How to Draw BF: Draw a function template with holes. Take a bucket of "Values". Pick a value, search the template for the first hole, and plug it. Repeat.
+Optimised Pattern: Argument Object Cloning (Visualizing the memory used to copy the arguments list for every call).
+Opt Vis. Technique: Single Pass Injection with Pointer
+Dry Run (Opt): Index-Linked Arg Injection
+How to Draw (Opt): Return a function that merges args (fixed) and restArgs (dynamic). Iterate through args; if it's the placeholder, take the next element from restArgs and increment a pointer. Use ...rest to catch extras.
+Opt Complexity Visuals: Draw a row with some holes. Draw a second row of values. Draw an arrow pointing to the first value. As you fill a hole, move the arrow to the next value.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal pass through the arguments list. Label it $O(N)$.
+Mem Vis (Opt): Closure Closure Context (Draw a memory bubble holding the original function, the template, and the placeholder symbol).

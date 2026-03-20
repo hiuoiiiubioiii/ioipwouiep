@@ -1,0 +1,13 @@
+ID: 773
+Problem Title: Sliding Puzzle
+Brute Force Method: Try every possible swap of the '0' tile recursively to find the configuration `[[1,2,3],[4,5,0]]`.
+BF Complexity Visuals: State Space Explosion
+How to Draw BF: Draw the 2x3 grid. Branch into all possible moves. $O(N!)$.
+Optimised Pattern: Breadth-First Search (BFS)
+Opt Vis. Technique: State Transition Graph
+Dry Run (Opt): Represent the board as a string. Use BFS to explore all reachable board states. The first time the target string is reached is the min steps.
+How to Draw (Opt): Draw the start board as a node. Draw lines to boards reachable by one move. Shade the "wavefront" of moves until the solved board appears.
+Opt Complexity Visuals: BFS Level-Order Expansion
+How to Draw Opt Complexity: Draw concentric circles representing moves 1, 2, 3... until target. $O(V+E)$ where V=6!.
+Mem Vis (BF): Recursive call stack (risks cycles).
+Mem Vis (Opt): Queue for BFS + HashSet for visited states (O(N!) but 6! is small).

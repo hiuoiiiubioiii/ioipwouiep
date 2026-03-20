@@ -1,0 +1,13 @@
+ID: 461
+Problem Title: Hamming Distance
+Brute Force Method: String Conversion Convert both integers to 32-bit binary strings and compare character by character.
+BF Complexity Visuals: Parallel Scan
+How to Draw BF: Draw two 32-box arrays. Draw arrows comparing each pair. Label $O(1)$ (fixed size).
+Optimised Pattern: Bitwise XOR + Bit Counting XOR the two numbers (x \oplus y). Count the set bits using Brian Kernighan’s algorithm.
+Opt Vis. Technique: Difference Filter
+Dry Run (Opt): XOR highlights only bits that are different. Counting them gives the distance directly.
+How to Draw (Opt): Draw two binary rows. Draw a third row (XOR) where 1 marks a difference. Circle the 1s and tally.
+Opt Complexity Visuals: Bitwise Jump
+How to Draw Opt Complexity: Draw a bit sequence. Show arrows "jumping" only over the 1-bits. $O(\\text{text}{\text{set bits}})$ which is \le 32.
+Mem Vis (BF): String Pool Extra memory for binary string representation.
+Mem Vis (Opt): Registers Single integer register. $O(1)$.

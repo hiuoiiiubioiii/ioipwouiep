@@ -1,0 +1,13 @@
+ID: 2900
+Problem Title: Longest Unequal Adjacent Groups Subsequence I
+Brute Force Method: Generate all possible subsequences of the strings, and for each, check if adjacent group IDs are unequal. Track the longest.
+BF Complexity Visuals: $O(2^N)$ Subsequence Tree
+How to Draw BF: Draw a binary tree of choices (include/exclude) for each string. Mark paths that satisfy the unequal condition.
+Optimised Pattern: Greedy Alternation
+Opt Vis. Technique: One-Pass Toggle Match
+Dry Run (Opt): Iterate through the array. Keep a "last_group" variable. If the current group ID is different from "last_group", add the string to the result and update "last_group".
+How to Draw (Opt): Draw the list of IDs. Whenever the number changes (0 to 1 or 1 to 0), circle the corresponding string.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a single horizontal line. Every element is checked exactly once.
+Mem Vis (BF): $O(N)$ - Storing subsequences.
+Mem Vis (Opt): $O(N)$ - Only storing the result strings.

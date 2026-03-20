@@ -1,0 +1,13 @@
+ID: 3683
+Problem Title: Earliest Time to Finish One Task (Easy)
+Brute Force Method: For every task, simulate the time it takes to finish given its requirements, then find the minimum. $O(N \\text{cdot Steps})$.
+BF Complexity Visuals: Task-by-Task Simulation.
+How to Draw BF: Pick Task 1. Count minutes until finished. Pick Task 2. Repeat. If a task takes 1 million minutes, this is slow.
+Optimised Pattern: Precompute dependencies and apply a Greedy "Earliest Start" calculation.
+Opt Vis. Technique: The "Fastest Lane" Race.
+Dry Run (Opt): Imagine N sprinters. You only care about the one who crosses the line first. Calculate their "arrival time" based on their speed and starting position without running the whole race.
+How to Draw (Opt): Calculate StartTime + Duration for every task. Store them in an array and use a simple min() function.
+Opt Complexity Visuals: Single-Pass Comparison.
+How to Draw Opt Complexity: Draw one arrow scanning all tasks once. $O(N)$.
+Mem Vis (BF): Allocating large timelines or simulation arrays for every task.
+Mem Vis (Opt): Two or three integer variables. Space $O(1)$.

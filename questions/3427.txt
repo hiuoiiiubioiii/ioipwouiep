@@ -1,0 +1,13 @@
+ID: 3427
+Problem Title: Sum of Variable Length Subarrays
+Brute Force Method: For each index i, determine the start index. Then, use a loop to sum all elements from start to i. $O(N^2)$
+BF Complexity Visuals: Dynamic Width Subarray Brackets.
+How to Draw BF: Draw the array. For index 0, box it. For index 1, box 0-1. For index 2, box it according to the rule, and manually sum values in each box.
+Optimised Pattern: Prefix Sum Array. $O(N)$
+Opt Vis. Technique: Sub-segment Subtraction.
+Dry Run (Opt): Pre-calculate the running sum. For any range [start, i], the sum is simply `prefix[i] - prefix[start-1]`.
+How to Draw (Opt): Draw the array and a "Prefix Sum" row below it. Draw two vertical lines on the prefix row; the difference between them is the subarray sum.
+Opt Complexity Visuals: Two Sequential Linear Passes.
+How to Draw Opt Complexity: Draw one arrow for building the prefix sum (O(N)), then another arrow for calculating the final total (O(N)).
+Mem Vis (BF): No extra memory, but redundant CPU cycles re-summing overlapping ranges.
+Mem Vis (Opt): A single 1D array of size N to store the prefix sums.

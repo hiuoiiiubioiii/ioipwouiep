@@ -1,0 +1,13 @@
+ID: 2000
+Problem Title: Reverse Prefix of Word
+Brute Force Method: Iterate through the string, find the character, slice the prefix, reverse it, and concatenate it back.
+BF Complexity Visuals: String Slicing/Re-allocation
+How to Draw BF: Draw a string. Box the prefix. Draw it reversed in a separate box. Draw the remainder. Glue them. $O(N)$.
+Optimised Pattern: Two-Pointer In-Place Swap
+Opt Vis. Technique: Dual-Pointer Mirroring
+Dry Run (Opt): Find the first occurrence of `ch`. Use two pointers (start, end) to swap characters in place within that prefix.
+How to Draw (Opt): Draw the string. Point `L` at index 0 and `R` at the index of `ch`. Draw arrows swapping the letters until they meet.
+Opt Complexity Visuals: Linear Single-Pass $O(N)$
+How to Draw Opt Complexity: Draw a line to the first occurrence, then a backward sweep for the swap. Total $O(N)$.
+Mem Vis (BF): Creating multiple new string objects on the heap.
+Mem Vis (Opt): A single character array modified in-place. $O(1)$ extra space (excluding result).

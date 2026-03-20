@@ -1,0 +1,13 @@
+ID: 2685
+Problem Title: Count the Number of Complete Components
+Brute Force Method: DFS/BFS to find components and then manually check every pair in the component for an edge.
+BF Complexity Visuals: Brute Force Edge Validation
+How to Draw BF: Draw a graph. Find a component. For a component of size M, draw M² checks for edges. $O(V²)$.
+Optimised Pattern: DFS + Degree Counting
+Opt Vis. Technique: Node/Edge Symmetry Check
+Dry Run (Opt): During DFS/BFS for a component, count the total number of nodes `V_c` and the total number of edges `E_c`. A component is "complete" if `E_c == V_c * (V_c - 1)`.
+How to Draw (Opt): Draw a graph. Highlight a cluster. Count nodes (V) and lines (E). If E = fracV(V-1)2 (undirected), it's a complete component.
+Opt Complexity Visuals: $O(V + E)$ Linear Traversal
+How to Draw Opt Complexity: Draw a single DFS traversal of the graph. $O(V + E)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(V)$ for the visited array and adjacency list.

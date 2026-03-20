@@ -1,0 +1,13 @@
+ID: 2515
+Problem Title: Shortest Distance to Target String in a Circular Array
+Brute Force Method: Run a Breadth-First Search (BFS) stepping +1 and -1 simultaneously from the starting index until the target is found.
+BF Complexity Visuals: Two overlapping wavefronts expanding outwards in opposite directions around a circle.
+How to Draw BF: Draw a circle of words. Put a pin on startIndex. Physically hop +1 and -1 step-by-step in alternating directions until you land on the target.
+Optimised Pattern: Linear Array Scan with Modulo Arithmetic (comparing absolute distance vs circular wrap-around distance).
+Opt Vis. Technique: Circular clock face showing both the direct clockwise chord distance and the counter-clockwise chord distance.
+Dry Run (Opt): Loop the array once. When you find the target at index i, calculate direct distance |i - start| and wrap-around distance N - |i - start|. Record the minimum.
+How to Draw (Opt): Draw the array as a straight line. Draw a curved arrow from start to target (direct distance). Draw another curved arrow going out one end and wrapping back into the other (wrap-around distance). Keep the smaller number.
+Opt Complexity Visuals: Linear timeline scanning the array exactly once, calculating two constant-time $O(1)$ math equations per match.
+How to Draw Opt Complexity: Draw an array of size N. Draw a straight, unbroken arrow from left to right representing one $O(N)$ sweep to find the absolute shortest path.
+Mem Vis (BF): Queue for BFS traversal, holding state variables and expanding step distances.
+Mem Vis (Opt): Constant $O(1)$ space holding just a min_distance tracking integer.

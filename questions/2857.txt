@@ -1,0 +1,13 @@
+ID: 2857
+Problem Title: Count Pairs of Points With Distance k
+Brute Force Method: Nested loops to check every pair of points (i, j) and calculate (x1 XOR x2) + (y1 XOR y2) == k.
+BF Complexity Visuals: $O(N2)$ Exhaustive Pair Scan
+How to Draw BF: Draw points on a 2D plane. Draw lines connecting every point to every other point. Total lines = N(N-1)/2.
+Optimised Pattern: Hash Map + Target XOR Decomposition
+Opt Vis. Technique: XOR Target Distribution
+Dry Run (Opt): If (x1 XOR x2) = i, then (y1 XOR y2) = k - i. For each point (x1, y1), iterate i from 0 to k. Calculate required x2 = x1 XOR i and y2 = y1 XOR (k - i). Look up (x2, y2) in a Hash Map.
+How to Draw (Opt): Draw a Hash Map of seen points. For a new point, write a list of k+1 "Target Points" by XORing the x and y with values that sum to k. Check the Map for these targets.
+Opt Complexity Visuals: Linear Scan with Constant K-factor $O(N \cdot K)$
+How to Draw Opt Complexity: Draw an outer loop $O(N)$. Inside, draw a small fixed loop of size K. Since K is small (max 100), this is very efficient.
+Mem Vis (BF): Visualize $O(1)$ extra space but $O(N^2)$ time timeout.
+Mem Vis (Opt): Visualize a Hash Map storing coordinate pairs. Space $O(N)$.

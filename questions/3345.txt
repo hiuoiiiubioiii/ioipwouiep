@@ -1,0 +1,13 @@
+ID: 3345
+Problem Title: Smallest Divisible Digit Product I
+Brute Force Method: Check every number starting from n upwards. Calculate its digit product and check divisibility by t.
+BF Complexity Visuals: Linear Search Sequence
+How to Draw BF: Write n, n+1, n+2 dots. For each, draw a bubble and calculate d_1 x d_2 dots. Stop when you find a multiple of t.
+Optimised Pattern: Brute Force with Early Exit (Small Constraints)
+Opt Vis. Technique: Incremental Checker
+Dry Run (Opt): Since n is small (up to 100), the gap to the next valid number is very small. A simple loop is sufficient and efficient.
+How to Draw (Opt): Draw a number line. At each integer, draw a small calculator box. Show the check failing until one "ticks" green.
+Opt Complexity Visuals: Small Constant Step Line
+How to Draw Opt Complexity: Draw a short line of length approx 10 (since digit products change rapidly). Total complexity $O(\text{dist} x \text{digits})$.
+Mem Vis (BF): N/A (no heavy data structures).
+Mem Vis (Opt): $O(1)$ auxiliary space (just a few integer variables for calculation).

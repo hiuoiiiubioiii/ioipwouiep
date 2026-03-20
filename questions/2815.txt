@@ -1,0 +1,13 @@
+ID: 2815
+Problem Title: Max Pair Sum in an Array
+Brute Force Method: Use nested loops. Check every possible pair (i, j). Extract the maximum digit of both numbers; if they match, update the global maximum sum.
+BF Complexity Visuals: $O(N2)$ Pairwise Connection Graph
+How to Draw BF: Draw the array elements in a circle. Draw a straight line connecting every single number to every other number, creating a dense web of redundant checks.
+Optimised Pattern: Hash Map / Array Grouping by Max Digit
+Opt Vis. Technique: 10-Bucket Sorting Diagram
+Dry Run (Opt): Maintain an array of size 10 (representing digits 0-9) to store the maximum number seen so far for each max-digit. Iterate the array: update the max sum using the current number and its corresponding bucket, then update the bucket.
+How to Draw (Opt): Draw 10 buckets numbered 0 to 9. Read the array left to right. Find the max digit of the number, check the bucket for a pair, calculate sum, and drop the highest number into the bucket.
+Opt Complexity Visuals: Single Flat Timeline
+How to Draw Opt Complexity: Draw a single, straight horizontal arrow representing the array traversal. Since finding a max digit and checking a bucket takes $O(1)$, the total is strictly $O(N)$.
+Mem Vis (BF): Visualize $O(1)$ space, but with a highly inefficient CPU utilization due to the nested loops.
+Mem Vis (Opt): Visualize exactly one static integer array of size 10. Perfect $O(1)$ auxiliary space footprint.

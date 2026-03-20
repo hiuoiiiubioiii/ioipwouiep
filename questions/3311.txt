@@ -1,0 +1,13 @@
+ID: 3311
+Problem Title: Construct 2D Grid Matching Graph Layout
+Brute Force Method: Backtracking to test every possible permutation of nodes into a 2D matrix until adjacencies match edges.
+BF Complexity Visuals: Permutation Tree
+How to Draw BF: Draw a root node splitting into N branches, which split into N-1 branches. The massive width visualizes the $O(N!)$ time complexity.
+Optimised Pattern: Graph Degree Analysis + BFS
+Opt Vis. Technique: Node-Degree Puzzle Pieces
+Dry Run (Opt): Count edges per node. Corners have degree 2, edges 3, inner nodes 4. Place a corner at (0,0), then use BFS to place its neighbors, filling row by row.
+How to Draw (Opt): Draw nodes as jigsaw puzzle pieces with 2, 3, or 4 pegs. Physically align the 2-peg pieces in the corners and fill inward using the connections.
+Opt Complexity Visuals: Linear Graph Traversal Line
+How to Draw Opt Complexity: Draw the V nodes and E edges. Trace a single highlighter line through them exactly once to prove $O(V + E)$ complexity.
+Mem Vis (BF): A very deep recursive call stack holding grid state arrays, eating massive memory.
+Mem Vis (Opt): A standard Queue for BFS and a flat 1D "visited" array (O(V) space).

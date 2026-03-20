@@ -1,0 +1,13 @@
+ID: 1376
+Problem Title: Time Needed to Inform All Employees
+Brute Force Method: For every employee, trace the path back to the head of the company and sum the time, then find the global maximum.
+BF Complexity Visuals: $O(N \cdot H)$ Path Tracing
+How to Draw BF: Draw an organizational chart. For every leaf, draw a line up to the CEO. Note the overlapping paths near the top of the tree.
+Optimised Pattern: Top-Down DFS (Tree Path Sum)
+Opt Vis. Technique: Weighted Depth Traversal
+Dry Run (Opt): Standard DFS starting from the CEO. Each call passes the `currentTime` accumulated from the parent. Global max of `currentTime` is the answer.
+How to Draw (Opt): Draw the hierarchy. On each edge, write the "inform time." Trace down every path, adding the weights. Write the total time next to each leaf.
+Opt Complexity Visuals: $O(N)$ Graph Traversal
+How to Draw Opt Complexity: Draw a single wave of information flowing from the top to the bottom of the tree. Each employee is reached once.
+Mem Vis (BF): Parent Pointers Map: Storing every relationship in a way that requires constant back-tracing.
+Mem Vis (Opt): Adjacency List + Recursion: Draw a CEO node pointing to subordinates. Memory is $O(N)$.

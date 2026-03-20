@@ -1,0 +1,13 @@
+ID: 512
+Problem Title: Game Play Analysis II (SQL)
+Brute Force Method: Use a subquery to find the min date per player, then join that result back to the main table to get `device_id`.
+BF Complexity Visuals: Two separate tables connected by string lines (join operation) scanning multiple times.
+How to Draw BF: Draw main table, draw subquery table. Draw arrows linking matching (player_id, min_date) pairs.
+Optimised Pattern: Window Function `ROW_NUMBER() OVER(PARTITION BY player_id ORDER BY event_date)`.
+Opt Vis. Technique: A conveyor belt sorting items into lanes and immediately stamping them 1, 2, 3 based on date.
+Dry Run (Opt): Group by player -&gt; Sort partition by date -&gt; Assign row numbers -&gt; Filter out everything except row number 1.
+How to Draw (Opt): Draw a table. Draw thick lines partitioning it by player. Number the rows 1, 2, 3 in each section. Highlight all the 1s.
+Opt Complexity Visuals: Sorting phase within bounded partitions. $O(N \log N)$.
+How to Draw Opt Complexity: Draw N blocks breaking into smaller chunks, followed by sorting trees for each chunk.
+Mem Vis (BF): Extra temporary table allocation in database memory for subquery results.
+Mem Vis (Opt): In-memory pointers sliding over sorted data blocks.

@@ -1,0 +1,13 @@
+ID: 84
+Problem Title: Largest Rectangle in Histogram
+Brute Force Method: All Pairs (Nested Loops) For every pair of bars (i, j), find the minimum height between them and calculate the area.
+BF Complexity Visuals: The Quadratic Area Checker
+How to Draw BF: Draw a histogram. Draw brackets between every possible start and end bar. For each bracket, draw a dashed line at the lowest bar height. $O(N^2)$ time.
+Optimised Pattern: Monotonic Stack
+Opt Vis. Technique: The Ascending Staircase
+Dry Run (Opt): Keep a stack of indices with increasing heights. When you see a bar shorter than the top, "pop" the top and calculate the area using the popped height as the minimum.
+How to Draw (Opt): Draw a stack. Push heights: `[2, 1, 5, 6]`. When `2` comes, it's smaller than the previous height? No. When `1` comes, it pops the taller ones, calculates area, and takes their place.
+Opt Complexity Visuals: Linear Stack Pass
+How to Draw Opt Complexity: Draw a line of length N. Every element is pushed once and popped once. 2N operations = $O(N)$ time.
+Mem Vis (BF): Storing min-heights in a 2D matrix or nested loop values.
+Mem Vis (Opt): Draw a vertical stack growing and shrinking. Max space is the number of bars. Space: $O(N)$.

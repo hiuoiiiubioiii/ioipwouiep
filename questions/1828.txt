@@ -1,0 +1,13 @@
+ID: 1828
+Problem Title: Queries on Number of Points Inside a Circle
+Brute Force Method: Nested loops: For every circle, iterate through every point and check the distance formula.
+BF Complexity Visuals: Full cartesian product grid.
+How to Draw BF: Draw circles and points. Draw a line from every circle center to every single point. Mark $O(Q \cdot P)$ checks.
+Optimised Pattern: Math (Distance Squared Comparison).
+Opt Vis. Technique: Radial expansion zones.
+Dry Run (Opt): For each query (x, y, r), check if (px-x)^2 + (py-y)^2 \le r^2. Avoid `sqrt` to save precision and time.
+How to Draw (Opt): Draw a point and a circle. Write the formula d^2 \le r^2. Use a coordinate grid to show which points fall inside the boundary.
+Opt Complexity Visuals: Linear Query \times Linear Points.
+How to Draw Opt Complexity: Draw Q boxes, each containing a scan of P points. Annotate as $O(Q \\text{times} P)$.
+Mem Vis (BF): Large list of calculated floating-point distances.
+Mem Vis (Opt): Input points/queries + a simple output integer array.

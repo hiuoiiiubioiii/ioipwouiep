@@ -1,0 +1,13 @@
+ID: 139
+Problem Title: Word Break
+Brute Force Method: Recursion with backtracking: Try every possible prefix of the string; if it's in the dictionary, recurse on the remainder.
+BF Complexity Visuals: An $O(2^N)$ recursion tree where strings are repeatedly sliced, showing massive overlapping subproblems.
+How to Draw BF: Draw the string. Branch out for every word match found at the start. Show branches overlapping on the same substrings.
+Optimised Pattern: 1D Dynamic Programming (Tabulation).
+Opt Vis. Technique: A bridge-building simulation. Each index in the string is a gap; a word is a plank. You can cross if a plank connects to a previous "reachable" spot.
+Dry Run (Opt): dp[i] is true if s[0:i] can be broken. For each i, check all j &lt; i. If dp[j] is true and s[j:i] is in the dictionary, dp[i] = true.
+How to Draw (Opt): Draw the string and a boolean array below it. For a cell dp[i], draw arrows "looking back" to previous 'True' indices to find matching words.
+Opt Complexity Visuals: $O(N^2)$ grid filling where each of N indices checks up to N previous indices.
+How to Draw Opt Complexity: Draw an N x N triangle. Shade it in to show the quadratic work performed during look-backs.
+Mem Vis (BF): Exploding call stack and multiple temporary string slices in heap memory.
+Mem Vis (Opt): A single boolean array of size N+1 in $O(N)$ space.

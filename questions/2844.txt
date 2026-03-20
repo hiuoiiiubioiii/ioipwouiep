@@ -1,0 +1,13 @@
+ID: 2844
+Problem Title: Minimum Operations to Make a Special Number
+Brute Force Method: Generate all possible subsequences of the string by deleting digits and check if the resulting number is divisible by 25. Find the shortest string.
+BF Complexity Visuals: Power Set Subsequence Tree
+How to Draw BF: Draw a tree where each node is "Keep" or "Delete" a digit. For a 100-digit string, show the tree exploding to 2^100 states.
+Optimised Pattern: Suffix Greedy Search (Targeting "00", "25", "50", "75")
+Opt Vis. Technique: Reverse Scan Matching
+Dry Run (Opt): A number is divisible by 25 if it ends in 00, 25, 50, or 75. Scan the string from right to left. Find the first occurrence of '0' or '5'. Once found, keep scanning left for the corresponding required partner (e.g., if you found '5', look for '2' or '7').
+How to Draw (Opt): Write the string. Highlight the 4 target patterns (00, 25, 50, 75). Draw an arrow starting from the end of the string moving left, stopping once a valid pair is formed. Count the "skipped" digits.
+Opt Complexity Visuals: Single Pass Scan $O(N)$
+How to Draw Opt Complexity: Draw a line representing the string length N. Each digit is visited at most once for each of the 4 conditions. Total $O(N)$.
+Mem Vis (BF): Visualize an exponential number of temporary string objects being created in the heap.
+Mem Vis (Opt): Visualize $O(1)$ space using just two pointers and a few boolean flags.

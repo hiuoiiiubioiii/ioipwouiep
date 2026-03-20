@@ -1,0 +1,13 @@
+ID: 1798
+Problem Title: Maximum Number of Consecutive Values You Can Make
+Brute Force Method: Generate all 2^N possible subset sums. Sort the resulting sums and find the length of the longest consecutive sequence starting from 0.
+BF Complexity Visuals: Exponential Sum Tree.
+How to Draw BF: Draw N nodes. Each branches into "include" or "exclude". Total 2^N leaves. For N=20, $O(1,048,576)$.
+Optimised Pattern: Greedy (Sort and Gap-Check).
+Opt Vis. Technique: The "Expanding Reach" Number Line.
+Dry Run (Opt): Sort coins. Maintain `res = 1` (we can make 0 initially). For each coin `c`, if `c &lt;= res`, we can now make everything up to `res + c`. If `c &gt; res`, there is a gap.
+How to Draw (Opt): Draw a number line shaded from 0 to `res`. If the new coin `c` is smaller than the shaded length, extend the shade by `c`.
+Opt Complexity Visuals: Sorting + Linear Sweep.
+How to Draw Opt Complexity: Draw the sorting $O(N \log N)$ funnel followed by a single arrow $O(N)$. Label $O(N \log N)$.
+Mem Vis (BF): List of 2^N sums. $O(2^N)$.
+Mem Vis (Opt): None, just a `res` variable. $O(1)$ extra space.

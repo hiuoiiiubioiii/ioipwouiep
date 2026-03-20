@@ -1,0 +1,13 @@
+ID: 2675
+Problem Title: Array of Objects to Matrix
+Brute Force Method: Iteratively scan every object to find all possible keys, then scan again to fill rows, handling nesting via string manipulation.
+BF Complexity Visuals: Flattening with Re-scanning
+How to Draw BF: Draw a list of complex objects. For every object, draw a recursive search for keys. Then for every key, search every object again. $O(N \cdot K)$.
+Optimised Pattern: Recursive DFS Flattening + Sorted Key Set
+Opt Vis. Technique: Key-Value Tree Flattening
+Dry Run (Opt): 1. Recursively flatten each object into a `key_path: value` map. 2. Collect all unique `key_paths` into a sorted list (headers). 3. Iterate objects again to build matrix rows based on the sorted headers.
+How to Draw (Opt): Draw a nested object. Flatten it: `a: {b: 1}` becomes `a.b: 1`. Collect all unique "a.b" style names, sort them as column headers, and fill the rows.
+Opt Complexity Visuals: $O(\text{Total Elements})$
+How to Draw Opt Complexity: Draw a DFS traversal for each object $O(N)$ plus a sorting step for headers $O(K \log K)$.
+Mem Vis (BF): String concatenation overhead
+Mem Vis (Opt): Map of flattened paths + Result matrix.

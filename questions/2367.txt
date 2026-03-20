@@ -1,0 +1,13 @@
+ID: 2367
+Problem Title: Number of Arithmetic Triplets
+Brute Force Method: Triple nested loops: Check every combination of `(i, j, k)` to see if `nums[j] - nums[i] == diff` and `nums[k] - nums[j] == diff`.
+BF Complexity Visuals: Cubic Triplet Scan (O(N^3))
+How to Draw BF: Draw an array. Draw three pointers (i, j, k) moving in all possible combinations, checking the subtraction result for each.
+Optimised Pattern: Hash Set / Boolean Lookahead
+Opt Vis. Technique: Direct Difference Indexing
+Dry Run (Opt): Iterate through the array. For each `num`, check if `num - diff` and `num - 2*diff` both exist in a Hash Set of the array elements.
+How to Draw (Opt): Draw the array and a "Checklist" (Hash Set). For every number you see, look back exactly `diff` steps and `2*diff` steps in your checklist. If both boxes are ticked, you've found a triplet.
+Opt Complexity Visuals: Single Pass + Constant Lookup (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Each step performs two "teleport" checks to previous values in the Hash Set.
+Mem Vis (BF): Draw a 3D matrix representing all potential triplet states.
+Mem Vis (Opt): Draw one Hash Set (or a 201-element Boolean Array) to store seen numbers.

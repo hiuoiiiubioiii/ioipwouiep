@@ -1,0 +1,13 @@
+ID: 2524
+Problem Title: Maximum Frequency Score of a Subarray
+Brute Force Method: For every possible starting index i and ending index j, build a brand new Hash Map to count frequencies, then calculate the score. $O(N^2)$.
+BF Complexity Visuals: Constantly recreating and destroying Hash Maps from scratch for overlapping array segments.
+How to Draw BF: Draw the array. Bracket the first 3 elements. Tally them. Erase your tallies. Bracket elements 2 to 4. Tally them. Erase. Repeat.
+Optimised Pattern: Fixed Sliding Window + Persistent Hash Map (or Array Cache) for $O(1)$ incremental score updates.
+Opt Vis. Technique: A highlighted moving window over the array that dynamically updates a single persistent frequency counter (adding the front element, removing the back element).
+Dry Run (Opt): Initialize a Hash Map for the first K elements. Slide the window 1 step right: add the new right element to the Map (and increase the score variable), and remove the left-most element from the Map (and decrease the score variable). Keep track of the maximum score seen.
+How to Draw (Opt): Draw the array. Put a physical, bounded box over K elements. Keep a tally sheet beside it. Slide the box right by 1 index. Add a tally for the new number, erase a tally for the old left number.
+Opt Complexity Visuals: $O(N)$ single linear pass with $O(1)$ map updates.
+How to Draw Opt Complexity: Draw the array. Draw a bracket of size K. Draw an arrow sliding the bracket smoothly from left to right without ever resetting or jumping backwards.
+Mem Vis (BF): $O(K)$ temporary map structures duplicated N^2 times in memory over time.
+Mem Vis (Opt): $O(U)$ space where U is the number of unique elements inside the window (strictly bounded by K).

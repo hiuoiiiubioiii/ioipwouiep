@@ -1,0 +1,13 @@
+ID: 3262
+Problem Title: Find Overlapping Shifts
+Brute Force Method: Iterate from L to R. For each number, calculate its divisors to check if it has exactly 3. $O((R-L)$ * √R).
+BF Complexity Visuals: Brute Force Divisor Search
+How to Draw BF: Draw the range. For every single number, draw a loop factoring it. Too slow.
+Optimised Pattern: Sieve of Eratosthenes + Math
+Opt Vis. Technique: The Prime-Square Identifier
+Dry Run (Opt): A number has exactly 3 divisors *only* if it is the square of a prime number (e.g., 4, 9, 25). Find all primes up to √R. Count how many prime squares fall between L and R. Subtract this from total numbers in range.
+How to Draw (Opt): Draw a number line of primes. Square them. Drop these "Special" tokens onto the main range line [L, R]. Count the tokens. Subtract from the total length.
+Opt Complexity Visuals: Sieve Precomputation $O(√R \log \log √R)$
+How to Draw Opt Complexity: Draw a quick crossing-out grid up to √R, then a simple counting pass.
+Mem Vis (BF): Tracking all divisors.
+Mem Vis (Opt): Boolean array up to √R. $O(√R)$ space.

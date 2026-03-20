@@ -1,0 +1,13 @@
+ID: 497
+Problem Title: Random Point in Non-overlapping Rectangles
+Brute Force Method: Uniform Rect Selection Pick a rectangle at random (1/N chance), then pick a point inside. (Fails: larger rectangles should be picked more often).
+BF Complexity Visuals: Skewed Distribution
+How to Draw BF: Draw a tiny square and a giant rectangle. Show they have the same 1/2 chance. Label "INCORRECT".
+Optimised Pattern: Prefix Sum + Binary Search Calculate areas of all rectangles. Create a prefix sum array. Randomly pick a "total area" value and binary search for the rect.
+Opt Vis. Technique: Weighted Segment Line
+Dry Run (Opt): Imagine a long stick where each segment length is a rectangle's area. Throw a dart at the stick. The segment it hits is the rectangle to use.
+How to Draw (Opt): Draw a line divided into segments. Label each with its area. Draw a "random dart" hitting a segment. Show binary search to find that segment.
+Opt Complexity Visuals: Search Tree
+How to Draw Opt Complexity: Draw a Binary Search tree of height \log N. Total $O(\log N)$ per pick.
+Mem Vis (BF): None Only the input.
+Mem Vis (Opt): Prefix Sum Array Draw a 1D array of increasing sums. $O(N)$.

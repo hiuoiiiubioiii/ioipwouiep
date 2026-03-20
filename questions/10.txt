@@ -1,0 +1,13 @@
+ID: 10
+Problem Title: Regular Expression Matching
+Brute Force Method: Pure Recursion For every '*' character, branch into two paths: one where '*' matches zero characters, one where it matches one or more.
+BF Complexity Visuals: Exploding Decision Tree
+How to Draw BF: Draw a root node. Draw two branches coming down. Draw two more from each of those. Keep splitting until it forms a massive tree. $O(2^N)$ time.
+Optimised Pattern: Dynamic Programming (2D Table)
+Opt Vis. Technique: Grid Filling
+Dry Run (Opt): Create a 2D matrix where dp[i][j] answers "does s[0..i] match p[0..j]?". Fill top-to-bottom, left-to-right based on previous cell answers.
+How to Draw (Opt): Draw a grid. String `s` on the left (Y axis), pattern `p` on top (X axis). Draw arrows showing that the current cell's True/False value is pulled from the cell above, left, or top-left.
+Opt Complexity Visuals: Matrix Area
+How to Draw Opt Complexity: Draw a rectangle representing M x N dimensions. Shade it in row by row to show strict $O(M \cdot N)$ time boundaries (no exponential explosion).
+Mem Vis (BF): Draw a massive stack of recursive function calls eating up memory.
+Mem Vis (Opt): Draw a fixed M x N grid representing the DP table (O(M * N) space).

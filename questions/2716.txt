@@ -1,0 +1,13 @@
+ID: 2716
+Problem Title: Minimize String Length
+Brute Force Method: Simulate the operations: find duplicates `c` at indices `i &lt; j`, delete one, shift the rest of the string over to fill the gap. Repeat until no duplicates exist. $O(N^2)$.
+BF Complexity Visuals: Repeated Array Shifting
+How to Draw BF: Draw the string in boxes. Find two 'a's. Cross one out. Redraw the entire slightly shorter string below it. Visual area represents $O(N^2)$ shifting work.
+Optimised Pattern: Massive String Reallocations (Immutable strings mean creating a brand new string in memory for every deletion).
+Opt Vis. Technique: HashSet Unique Character Extraction
+Dry Run (Opt): Set Insertion Filter
+How to Draw (Opt): Realize the problem effectively just asks for the number of unique characters in the string, since any duplicates can be targeted and destroyed. Dump characters into a Set and return its size.
+Opt Complexity Visuals: Draw the string as a block. Draw an arrow pointing into a circle labeled "Set". Inside the set, write only the unique letters.
+How to Draw Opt Complexity: Linear Set Insertion
+Mem Vis (BF): Draw a single straight line passing through N characters. Label it $O(N)$ time.
+Mem Vis (Opt): Fixed Size HashSet (Draw an array of exactly 26 buckets. Space complexity is $O(1)$ since the alphabet size is constant).

@@ -1,0 +1,13 @@
+ID: 771
+Problem Title: Jewels and Stones
+Brute Force Method: For every stone, iterate through the entire "jewels" string to check if it's a match.
+BF Complexity Visuals: Nested Loop Grid
+How to Draw BF: Draw "Stones" as rows and "Jewels" as columns. Put an 'X' at every intersection. $O(J \\text{times} S)$.
+Optimised Pattern: Hash Set Lookup
+Opt Vis. Technique: Filter Sieve
+Dry Run (Opt): Dump all characters of "Jewels" into a HashSet. Iterate "Stones" once; if a stone is in the Set, increment count.
+How to Draw (Opt): Draw a bucket labeled "Jewels Set". Draw stones falling toward it. If they match a shape in the bucket, they go to the "Count" pile.
+Opt Complexity Visuals: Parallel Linear Scan
+How to Draw Opt Complexity: Draw two lines. One pass to fill the set, one pass to check stones. $O(J + S)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): HashSet of size up to 52 (O(1) constant relative to alphabet).

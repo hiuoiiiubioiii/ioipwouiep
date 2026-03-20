@@ -1,0 +1,13 @@
+ID: 3600
+Problem Title: Maximize Spanning Tree Stability with Upgrades (Hard)
+Brute Force Method: Generate every possible spanning tree and try every possible combination of edge upgrades within budget.
+BF Complexity Visuals: Double Exponential Explosion.
+How to Draw BF: Draw the graph. Branch into all Spanning Trees. For EACH tree, branch into all budget permutations. $O(\text{Trees} \cdot 2^\text{Budget})$.
+Optimised Pattern: Prim's/Kruskal's + Greedy / DP with Knapsack.
+Opt Vis. Technique: Weighted Connectivity Expansion.
+Dry Run (Opt): Find the MST first. Then, prioritize upgrading edges in the MST that provide the highest "stability" per unit cost using a Knapsack DP.
+How to Draw (Opt): Draw a "skeleton" (MST) of the graph. Draw "Price Tags" on each edge. Use your "Budget Wallet" to buy the best tags greedily or via DP.
+Opt Complexity Visuals: $O(E \log V + \text{Edges} \\text{cdot Budget})$.
+How to Draw Opt Complexity: Draw a Kruskal's sorting pass followed by a Knapsack grid (Edges x Budget).
+Mem Vis (BF): Graph State Permutations: Draw billions of graph variations with different edge weights in RAM.
+Mem Vis (Opt): DSU + DP Array: Draw a parent array (for MST) and a 1D/2D DP array for the budget optimization.

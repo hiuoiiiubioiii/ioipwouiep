@@ -1,0 +1,13 @@
+ID: 262
+Problem Title: Trips and Users (Algo Equivalent)
+Brute Force Method: Nested loops: For each trip, search the Users table to check if Client/Driver are banned.
+BF Complexity Visuals: Nested Loop Join: $O(T \cdot U)$.
+How to Draw BF: Draw two lists (Trips and Users). Draw an arrow from every trip to every user. The "density" of arrows shows the $O(T \cdot U)$ complexity.
+Optimised Pattern: Hash Join / Hash Map Filtering
+Opt Vis. Technique: Filter-Map Pipeline
+Dry Run (Opt): Pre-process Users into a Set of "Banned IDs". Iterate through Trips once, filtering out any row where the Client or Driver ID exists in the Banned Set.
+How to Draw (Opt): Draw a small "Banned" box. Draw a "Trip" conveyor belt. As trips pass, a "Gatekeeper" checks IDs against the box and tosses out matches.
+Opt Complexity Visuals: Linear Split: $O(T + U)$ Time.
+How to Draw Opt Complexity: Draw a timeline for U (building the hash set) and a separate timeline for T (streaming data). Total = sum of parts.
+Mem Vis (BF): None (In-memory scan).
+Mem Vis (Opt): Hash Set: Draw a small hash table containing only Banned IDs. Space: $O(U)$.

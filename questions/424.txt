@@ -1,0 +1,13 @@
+ID: 424
+Problem Title: Longest Repeating Char Replacement
+Brute Force Method: All Substrings Check every substring (i, j). Find most frequent char, see if (length - freq) \le k.
+BF Complexity Visuals: Nested Substring Grid
+How to Draw BF: Draw a matrix where each cell is a substring. Show $O(N^2)$ cells, each taking $O(N)$ to check. $O(N^3)$.
+Optimised Pattern: Sliding Window (Expand/Contract) Use two pointers. Keep track of `maxFreq` in current window. If `windowSize - maxFreq &gt; k`, shrink left.
+Opt Vis. Technique: Inchworm Movement
+Dry Run (Opt): The "head" (right) stretches forward. The "tail" (left) only pulls forward when the "stomach" (k) can't handle the variety of characters.
+How to Draw (Opt): Draw a string. Draw a bracket [ \dots ] over a section. Below, write a tally of chars. If (total - max) &gt; k, shift the left bracket.
+Opt Complexity Visuals: Two-Pointer Scan
+How to Draw Opt Complexity: Draw an array with two arrows moving left-to-right. Neither arrow ever moves back. $O(N)$.
+Mem Vis (BF): Substring Copies Massive memory for N^2 string slices.
+Mem Vis (Opt): Frequency Map Draw a 26-slot array for current window counts. $O(1)$ space.

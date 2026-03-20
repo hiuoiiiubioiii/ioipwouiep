@@ -1,0 +1,13 @@
+ID: 671
+Problem Title: Second Minimum Node In a Binary Tree
+Brute Force Method: Traverse the entire tree and store all unique values in a Set. Sort the set and return the second smallest value.
+BF Complexity Visuals: Exhaustive Collection &amp; Sorting.
+How to Draw BF: Draw a tree. Draw a "Bucket" (Set) next to it. For every node, throw its value into the bucket. Sort the bucket. Write $O(N \log N)$.
+Optimised Pattern: Recursive Branch Pruning.
+Opt Vis. Technique: Tournament Elimination.
+Dry Run (Opt): The root is the minimum. If a child's value is greater than the root, that child is a candidate for the second minimum; don't search deeper. If equal, search deeper to find a value &gt; root.
+How to Draw (Opt): Draw a tree. If a node value &gt; Root, circle it and stop. If equal, keep diving. Compare all circled values at the end.
+Opt Complexity Visuals: Linear traversal with early exits.
+How to Draw Opt Complexity: Draw a line passing through nodes, "bouncing off" nodes that are already greater than the root. Write $O(N)$.
+Mem Vis (BF): Draw a Hash Set containing N unique elements.
+Mem Vis (Opt): Draw the recursion stack. Space is $O(\text{Height})$.

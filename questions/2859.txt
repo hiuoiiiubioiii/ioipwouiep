@@ -1,0 +1,13 @@
+ID: 2859
+Problem Title: Sum of Values at Indices With K Set Bits
+Brute Force Method: Iterate from i = 0 to n-1. For each i, convert to binary or use a loop to count set bits. If count equals k, add nums[i] to sum.
+BF Complexity Visuals: Bit-Count Extraction Scan
+How to Draw BF: Draw an array. Above each index, draw a "Bit Counter" box that performs $O(\log N)$ work per index.
+Optimised Pattern: Built-in Bit Manipulation (popcount)
+Opt Vis. Technique: Parallel Bit Processing
+Dry Run (Opt): Use the language's optimized bit-counting function (like Integer.bitCount(i) in Java). This typically uses a hardware instruction or a precomputed table to find the set bits in $O(1)$ effectively.
+How to Draw (Opt): Draw the array. For each index, write the binary version. Circle the ones. If the number of circles equals k, draw an arrow from the array value to a "Sum" bucket.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single line for the array traversal. Since bit-counting for 32-bit integers is constant time, total time is $O(N)$.
+Mem Vis (BF): Visualize $O(1)$ extra space but slower execution due to manual bit-looping.
+Mem Vis (Opt): Visualize zero extra data structures. Pure $O(1)$ auxiliary space.

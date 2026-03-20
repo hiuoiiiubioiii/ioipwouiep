@@ -1,0 +1,13 @@
+ID: 2284
+Problem Title: Sender With Largest Word Count
+Brute Force Method: Sort by Message LengthCombine all messages for each sender into one giant string, split by spaces, count the words, and then sort the senders by count.
+BF Complexity Visuals: Full String Concatenation
+How to Draw BF: Draw a box for Sender A. Append all their messages. Split the massive string into a list. Count. Repeat for all senders. Note the $O(\text{Total}_\text{Chars})$ space.
+Optimised Pattern: Hash Map + Word Split
+Opt Vis. Technique: Accumulative Word Tally
+Dry Run (Opt): Iterate through the messages. For each message, count the spaces to get the word count. Add this to the sender's total in a Hash Map. Keep track of the sender with the max count (and lexicographical tie-breaker).
+How to Draw (Opt): Draw a Hash Map. For each message, count the words (don't concatenate!) and add to the sender's score. Use a "Leaderboard" variable to track the winner in real-time.
+Opt Complexity Visuals: Linear Message Scan
+How to Draw Opt Complexity: Draw a single $O(\text{Total}_\text{Words})$ timeline. Show the Hash Map updating in $O(1)$ for each message. Total time: $O(N)$.
+Mem Vis (BF): Storing massive concatenated strings in memory for every sender.
+Mem Vis (Opt): A Hash Map storing `SenderName -&gt; IntegerCount` (O(Unique_Senders) space).

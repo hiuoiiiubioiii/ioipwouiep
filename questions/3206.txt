@@ -1,0 +1,13 @@
+ID: 3206
+Problem Title: Alternating Groups I
+Brute Force Method: Iterate through every index and manually check if the 3-element window strictly alternates.
+BF Complexity Visuals: Fixed-Size Moving Box
+How to Draw BF: Draw the array. Draw a box around elements 0,1,2. Check. Draw a new box around 1,2,3. Check.
+Optimised Pattern: Modulo Sliding Window (Size 3)
+Opt Vis. Technique: Circular Array Mapping
+Dry Run (Opt): Draw the array in a circle. Place a transparent 3-slot window over it. Rotate the window one slot clockwise per step.
+How to Draw (Opt): Draw the array elements in a ring. Draw lines connecting 3 adjacent nodes. Move your pen one node clockwise and repeat.
+Opt Complexity Visuals: Overlapping Subproblem Line
+How to Draw Opt Complexity: Draw a straight array. Show the window moving linearly $O(N)$, with modulo math wrapping the pointer at the end.
+Mem Vis (BF): Multiple copies of small arrays in memory.
+Mem Vis (Opt): Three scalar variables representing the window (O(1) space).

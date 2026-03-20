@@ -1,0 +1,13 @@
+ID: 2071
+Problem Title: Maximum Number of Tasks You Can Assign
+Brute Force Method: Try every possible subset of tasks and workers. For each subset, check if workers can complete tasks using a pills. $O(2^N \cdot 2^M)$.
+BF Complexity Visuals: Exponential Subset Power Set
+How to Draw BF: Draw two circles (Tasks, Workers). Draw lines for every possible combination of task-worker pairs. The search space is massive.
+Optimised Pattern: Binary Search on Answer + Greedy with Monotonic Queue (Deque)
+Opt Vis. Technique: Sorted Matchmaker with a Booster
+Dry Run (Opt): Binary search the number of tasks k. For a given k, pick the k easiest tasks and k strongest workers. Use a Deque to greedily assign the hardest task to the weakest worker (with a pill if needed).
+How to Draw (Opt): Draw two sorted arrays. Pick the k smallest tasks and k largest workers. Draw arrows from workers to tasks. If a worker needs a pill, draw a '+' sign and jump to the hardest possible task they can now handle.
+Opt Complexity Visuals: Log-Linear Sorting &amp; Matching
+How to Draw Opt Complexity: Draw a funnel (O(N log N) sort). Then draw $O(\log N)$ binary search iterations, each doing an $O(N)$ sweep. Total Time $O(N \log^2 N)$.
+Mem Vis (BF): Recursive stack frames storing thousands of subset combinations.
+Mem Vis (Opt): A Deque or Balanced BST to store worker strengths during the greedy check. Space $O(N)$.

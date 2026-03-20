@@ -1,0 +1,13 @@
+ID: 654
+Problem Title: Maximum Binary Tree
+Brute Force Method: Recursively find the max element in the current range to create a root, then split the array into two halves and repeat.
+BF Complexity Visuals: Recursive partitioning (like Quicksort).
+How to Draw BF: Draw an array. Find max. Split. Draw two arrows. Find max again. Write $O(N^2)$ in worst case (sorted array).
+Optimised Pattern: Monotonic Stack.
+Opt Vis. Technique: $O(N)$ Tree Construction / Structural Shadowing.
+Dry Run (Opt): Iterate through the array. Keep a stack of nodes in decreasing order. If current &gt; stack.top, stack.top becomes the left child of current. Otherwise, current becomes the right child of stack.top.
+How to Draw (Opt): Draw numbers. Place a "Cap" on the highest number. For new numbers, see if they "Slide" under previous numbers or "Carry" them.
+Opt Complexity Visuals: Single pass through the array.
+How to Draw Opt Complexity: Draw a straight arrow through the array. Write $O(N)$.
+Mem Vis (BF): Draw a recursion stack that can hit depth N.
+Mem Vis (Opt): Draw a Stack that at most holds N elements. $O(N)$.

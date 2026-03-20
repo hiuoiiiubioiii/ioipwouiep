@@ -1,0 +1,13 @@
+ID: 2434
+Problem Title: Using a Robot to Print the Lexicographically Smallest String
+Brute Force Method: Try every possible sequence of "Push to Stack" and "Pop from Stack" to generate all permutations, then pick the smallest.
+BF Complexity Visuals: Catalan-Number Branching Tree
+How to Draw BF: Draw a stack 'S'. Branch out for every Push/Pop decision. Label $O(2^N)$.
+Optimised Pattern: Greedy + Stack + Suffix Minimums
+Opt Vis. Technique: Three-Stage Conveyor Belt
+Dry Run (Opt): Pre-calculate the smallest character remaining in the string (suffix min). If the top of the stack is ≤ current suffix min, pop it (it's the best we'll get). Otherwise, push current char.
+How to Draw (Opt): Draw three boxes: Input, Stack (vertical), Output. Write suffix mins below Input. Move letters from Input -&gt; Stack -&gt; Output using the rule.
+Opt Complexity Visuals: Linear Pass with Suffix Table
+How to Draw Opt Complexity: Draw one line for suffix precomputation and one for robot simulation. Label $O(N)$ Time.
+Mem Vis (BF): Draw deep recursion frames for all states. $O(N)$.
+Mem Vis (Opt): Draw a Stack structure and a Suffix Min array. Label $O(N)$ Space.

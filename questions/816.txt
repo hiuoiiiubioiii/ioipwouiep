@@ -1,0 +1,13 @@
+ID: 816
+Problem Title: Ambiguous Coordinates
+Brute Force Method: Nested loops to split the string into X and Y. Then nested loops to place a decimal everywhere in X, and everywhere in Y. Validate all generated strings.
+BF Complexity Visuals: Combinatorial Explosion Forest. $O(N^4)$ time.
+How to Draw BF: Draw a string. Cut it in half. Under each half, draw every possible decimal variation. Then draw lines connecting every left variation to every right variation.
+Optimised Pattern: String Parsing with Strict Validation Pruning.
+Opt Vis. Technique: Filter Gates (Leading/Trailing Zero Rules).
+Dry Run (Opt): Split into X and Y. Pass X through a filter: If it has leading zeros, the decimal MUST go after the first zero. If it has trailing zeros, it CANNOT have a decimal. Generate only valid variants, then combine.
+How to Draw (Opt): Draw a string entering a fork (split point). Each half goes through a physical "Gate" marked with Zero-Rules. Only valid pieces come out the other side to be zipped together.
+Opt Complexity Visuals: Restricted Permutation. $O(N^3)$ time.
+How to Draw Opt Complexity: Draw a small grid. The rows are valid X strings, the columns are valid Y strings. Fill the intersecting boxes.
+Mem Vis (BF): Massive Array of Strings: Draw huge blocks of memory holding thousands of invalid coordinate combinations before filtering.
+Mem Vis (Opt): Small Temporary Lists: Draw two small boxes (List X, List Y) that hold a few valid strings, flushed clean on the next loop.

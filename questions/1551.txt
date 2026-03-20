@@ -1,0 +1,13 @@
+ID: 1551
+Problem Title: Minimum Operations to Make Array Equal
+Brute Force Method: Generate the array of size N where `arr[i] = (2 * i) + 1`. Calculate the target value (average). Then, loop through the first half of the array and sum the differences. $O(N)$.
+BF Complexity Visuals: Arithmetic Series Summation $O(N)$
+How to Draw BF: Draw an array of odd numbers. Draw a horizontal line through the middle (average). Draw vertical arrows showing how much each number must "move" to hit the line.
+Optimised Pattern: Math (Arithmetic Progression)
+Opt Vis. Technique: The Symmetrical Balance
+Dry Run (Opt): Recognize that for an array of size N, the operations needed are the sum of an arithmetic progression. For even N, it's 1+3+5...+(N-1). For odd N, it's 2+4+6...+(N-1). Formula: n^2 / 4.
+How to Draw (Opt): Draw a staircase of blocks. Draw a horizontal line cutting through the middle of the staircase. The "extra" blocks above the line perfectly fill the "gaps" below the line.
+Opt Complexity Visuals: Constant Time Calculation $O(1)$
+How to Draw Opt Complexity: Draw a single point. The solution is a single mathematical expression evaluated instantly.
+Mem Vis (BF): A physical array of size N in memory. $O(N)$.
+Mem Vis (Opt): Pure variables. $O(1)$ space.

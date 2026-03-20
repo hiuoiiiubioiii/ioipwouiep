@@ -1,0 +1,13 @@
+ID: 1845
+Problem Title: Seat Reservation Manager
+Brute Force Method: Use a boolean array. `reserve()` scans for the first `false`. `unreserve()` sets the index to `false`.
+BF Complexity Visuals: Linear scan timeline per request.
+How to Draw BF: Draw an array of boxes. For every reservation, draw an arrow starting from index 0 until it finds a blank box. $O(N² \text{total})$.
+Optimised Pattern: Min-Priority Queue (Min-Heap).
+Opt Vis. Technique: Triangle/Pyramid of available seats.
+Dry Run (Opt): `reserve()`: Pop the min from the heap. `unreserve()`: Push the seat back into the heap.
+How to Draw (Opt): Draw a Triangle (Heap) with small numbers at the top. Pop the top number for a reservation. Write a seat number and "toss" it back into the triangle for unreservation.
+Opt Complexity Visuals: Logarithmic tree path height.
+How to Draw Opt Complexity: Draw a binary tree. Mark a path from root to leaf as $O(\log N)$.
+Mem Vis (BF): Boolean array of size N.
+Mem Vis (Opt): Heap structure (Array-based binary tree) in memory holding up to N integers.

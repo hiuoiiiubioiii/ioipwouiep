@@ -1,0 +1,13 @@
+ID: 2605
+Problem Title: Form Smallest Number From Two Digit Arrays
+Brute Force Method: Nested loops comparing all pairs to find minimum common or minimum combination.
+BF Complexity Visuals: Cartesian Product Grid
+How to Draw BF: Draw an N x M grid checking every cell for minimum formed number.
+Optimised Pattern: Hash Set / Bitmask + Math.min
+Opt Vis. Technique: Set Intersection Venn Diagram
+Dry Run (Opt): Check for intersection. If none, take minimum from Array 1 and Array 2, sort them, combine them.
+How to Draw (Opt): Draw two circles (Sets). Find min in overlap. If empty, pick smallest from circle A and circle B and concatenate.
+Opt Complexity Visuals: Constant Time Block Diagram
+How to Draw Opt Complexity: Write $O(N)$ for Set creation, $O(1)$ for lookups. Draw linear $O(N+M)$ bar.
+Mem Vis (BF): 2D array matrix representation
+Mem Vis (Opt): Hash map / Bit-array memory footprint.

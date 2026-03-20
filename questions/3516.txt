@@ -1,0 +1,13 @@
+ID: 3516
+Problem Title: Find Closest Person (Easy)
+Brute Force Method: Iterate through all coordinates, calculate absolute distance to target, find minimum.
+BF Complexity Visuals: Linear Scan / Measuring Tape.
+How to Draw BF: Draw the target as a star. Draw N people. Draw lines from the star to every single person, labeling the distance.
+Optimised Pattern: Binary Search (if sorted) or Single Pass Min-Tracker.
+Opt Vis. Technique: Bisection / Pincer Search.
+Dry Run (Opt): Place L and R pointers at the ends of the array. Find Mid. Compare distance. Move L or R to halve the search space.
+How to Draw (Opt): Draw a sorted array. Draw brackets [L, R]. Draw an arrow at Mid. Cross out the half of the array that is further away.
+Opt Complexity Visuals: Logarithmic Halving.
+How to Draw Opt Complexity: Draw a block of length N. Below it, a block of N/2, then N/4, down to 1. $O(\log N)$.
+Mem Vis (BF): Full Array Scan: No extra memory, but mentally visualizing checking every index holding data.
+Mem Vis (Opt): Two Pointers: Draw two distinct variables (L, R) jumping across indices.

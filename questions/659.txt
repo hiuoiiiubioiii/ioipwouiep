@@ -1,0 +1,13 @@
+ID: 659
+Problem Title: Split Array into Consecutive Subsequences
+Brute Force Method: Try every possible way to group the numbers into subsequences, using backtracking to ensure each group has length &gt;= 3.
+BF Complexity Visuals: Exponential Grouping Tree.
+How to Draw BF: Draw numbers. Try picking 1,2,3. Then try 1,2,3,4. The number of combinations of groups is massive. Write $O(2^N)$.
+Optimised Pattern: Greedy with Frequency &amp; Vacancy Maps.
+Opt Vis. Technique: Chain Building / Need-vs-Supply.
+Dry Run (Opt): Track frequencies of numbers. Also track "Vacancy" (how many active chains end at `n-1`). If a chain exists, append `n`. If not, try starting a new chain of 3.
+How to Draw (Opt): Draw "Open Slots" for numbers. If you see a 4, check if a chain 1-2-3 is looking for a 4. If not, see if you can grab 5 and 6 to start a new chain.
+Opt Complexity Visuals: Two linear passes through the frequencies.
+How to Draw Opt Complexity: Draw a frequency bar chart. "Eat" the bars from left to right in chunks of 3. Write $O(N)$.
+Mem Vis (BF): Draw all possible subset combinations in memory.
+Mem Vis (Opt): Draw two Hash Maps (Count and Tail). $O(N)$ space.

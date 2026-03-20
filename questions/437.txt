@@ -1,0 +1,13 @@
+ID: 437
+Problem Title: Path Sum III
+Brute Force Method: Double DFS For every node in the tree, start a new DFS to find all downward paths that sum to target.
+BF Complexity Visuals: Radial Exploding Tree
+How to Draw BF: Draw a tree. From every single node, draw a secondary "mini-tree" of path explorations. $O(N^2)$ (skewed) or $O(N \log N)$ (balanced).
+Optimised Pattern: Prefix Sum + DFS Use a Hash Map to store "Prefix Sum -&gt; Frequency". If (CurrentSum - Target) exists in the map, a path is found.
+Opt Vis. Technique: Backtracking Shadow
+Dry Run (Opt): Imagine a light shining from the root. The "shadow" is the sum accumulated so far. The Map keeps track of all shadows seen in the current branch.
+How to Draw (Opt): Draw a tree path. Next to each node, write the running sum. Maintain a small "Tally Table" (the Map) on the side. Strike out entries when you backtrack.
+Opt Complexity Visuals: Linear Depth Pass
+How to Draw Opt Complexity: Draw one continuous line visiting every node once. $O(N)$.
+Mem Vis (BF): Call Stack $O(H)$ recursion depth.
+Mem Vis (Opt): Hash Map + Stack Draw the Map and the Call Stack growing together. $O(H)$ space.

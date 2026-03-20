@@ -1,0 +1,13 @@
+ID: 2520
+Problem Title: Count the Digits That Divide a Number
+Brute Force Method: Convert the integer to a String. Loop through the characters, parse each back to an integer, and check if the original number modulo the parsed digit is 0.
+BF Complexity Visuals: Data-type coercion sequence (Int -&gt; String -&gt; Char -&gt; Int).
+How to Draw BF: Write the number. Draw a box around each digit to pretend it's text. Pull out the text, convert it to a number, do the division.
+Optimised Pattern: Mathematical Modulo-10 Digit Extraction.
+Opt Vis. Technique: A while-loop peeling off the rightmost digit mathematically using `% 10` and `/ 10`.
+Dry Run (Opt): Store the original `num`. Create a temporary copy `temp = num`. While `temp &gt; 0`, extract `digit = temp % 10`. Check if `num % digit == 0`. Then chop off the digit with `temp = temp / 10`.
+How to Draw (Opt): Write `num = 124`. Write `temp = 124`. Look at the last digit (4). Does 124 % 4 == 0? Yes, tally 1. Cross out the 4. Now `temp = 12`. Repeat.
+Opt Complexity Visuals: Logarithmic (base 10) decomposition of the integer. $O(\log10(N)$) time.
+How to Draw Opt Complexity: Draw a long number. Draw an arrow slashing through the last digit one by one, shrinking the number. Since it shrinks by a factor of 10 each time, it takes very few steps.
+Mem Vis (BF): $O(D)$ string character array allocation where D is number of digits.
+Mem Vis (Opt): $O(1)$ constant space using primitive integers.

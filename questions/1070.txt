@@ -1,0 +1,13 @@
+ID: 1070
+Problem Title: Product Sales Analysis III
+Brute Force Method: (SQL) For every product, find the minimum year in the Sales table, then join that back to the original table to get the full record.
+BF Complexity Visuals: A nested lookup: for every product row, a secondary search for its "earliest self."
+How to Draw BF: Sales: [P1, 2010], [P1, 2011]. Search P1's min year (2010). Select all rows matching (P1, 2010). Write $O(\text{Sales} \\text{cdot Products})$.
+Optimised Pattern: Subquery with In-Clause or Window Functions.
+Opt Vis. Technique: A "First-Strike Filter". We find the chronological start point for each product and discard everything else in one go.
+Dry Run (Opt): `SELECT ... FROM Sales WHERE (product_id, year) IN (SELECT product_id, MIN(year) FROM Sales GROUP BY product_id)`.
+How to Draw (Opt): Draw the Sales table. Group by PID. For each group, underline the row with the smallest Year. Draw a new table containing only underlined rows.
+Opt Complexity Visuals: Two-pass scan (one to group, one to filter).
+How to Draw Opt Complexity: Draw an aggregation box leading into a filter gate. Write Time: $O(\text{Sales})$.
+Mem Vis (BF): Redundant scans for every row in the Sales table.
+Mem Vis (Opt): An internal hash table for the grouped minimums. $O(\text{UniqueProducts})$ space.

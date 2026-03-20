@@ -1,0 +1,13 @@
+ID: 612
+Problem Title: Shortest Distance in a Plane (SQL)
+Brute Force Method: Unrestricted Cartesian Join (Cross Join) calculating the distance formula between every single point and every other point twice.
+BF Complexity Visuals: Fully connected web (Every node connects to every node).
+How to Draw BF: Draw 5 dots scattered on paper. Draw a line from every single dot to every other dot, including lines bouncing back to themselves. Write $O(N^2)$.
+Optimised Pattern: Cross Join with Duplicate Filtering (Upper Triangular Check).
+Opt Vis. Technique: Directed Acyclic Graph / Triangle Matrix.
+Dry Run (Opt): Join table p1 and p2. Filter: `p1.x &lt; p2.x OR (p1.x = p2.x AND p1.y &lt; p2.y)`. This ensures we compare Point A to Point B, but strictly skip comparing Point B to Point A. Apply distance math, find MIN.
+How to Draw (Opt): Draw points on a grid. Only draw arrows going from left to right (or bottom to top for ties). Never draw an arrow going backward.
+Opt Complexity Visuals: $O(N^2 / 2)$ which simplifies to $O(N^2)$ but with half the constant factor.
+How to Draw Opt Complexity: Draw an N x N grid. Cross out the bottom-left diagonal half completely, leaving only the top-right triangle of pairs to evaluate.
+Mem Vis (BF): Draw a massive temporary table of size N * N held in memory.
+Mem Vis (Opt): Draw a half-sized temporary table, though practically SQL handles this via streaming row evaluations $O(1)$ space.

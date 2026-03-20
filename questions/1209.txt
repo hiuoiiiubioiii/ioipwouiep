@@ -1,0 +1,13 @@
+ID: 1209
+Problem Title: Remove All Adjacent Duplicates in String II
+Brute Force Method: Scan the string from left to right. If you find `k` identical adjacent characters, use string slicing to remove them. Restart the scan from the very beginning of the string. Repeat until no more removals can be made.
+BF Complexity Visuals: Rewinding Tape
+How to Draw BF: Draw a string. Cross out a chunk of 'k' characters. Draw a massive curved arrow pointing all the way back to index 0. Write $O(N^2 / K)$ to represent the repeated forward scans.
+Optimised Pattern: Stack with Frequency Pairs
+Opt Vis. Technique: Tetris Blocks (Line Clear)
+Dry Run (Opt): Push characters into a vertical tube. If the character matches the one on top, don't add a new block, just increase the top block's "weight/count". If a block's count reaches 'k', it evaporates (POPs) like a cleared line in Tetris.
+How to Draw (Opt): Draw a vertical open-top box (a stack). Inside, draw small paired boxes like `['a', 1]`. When reading the next 'a', erase the `1` and write `2`. If it hits `k`, completely erase that pair from the box.
+Opt Complexity Visuals: Single Pass Linear Scan
+How to Draw Opt Complexity: Draw a single string. Draw one straight arrow moving purely left-to-right exactly once. Write $O(N)$.
+Mem Vis (BF): Draw multiple completely new String arrays being created in memory every time a deletion occurs (due to string immutability in many languages).
+Mem Vis (Opt): Draw a 2D Array or an Array of Objects representing the Stack, where each element explicitly holds `(character, integer_count)`. Space is $O(N)$.

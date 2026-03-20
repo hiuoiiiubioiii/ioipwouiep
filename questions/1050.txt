@@ -1,0 +1,13 @@
+ID: 1050
+Problem Title: Actors and Directors Who Cooperated At Least Three Times
+Brute Force Method: (SQL) Self-join the table on actor_id and director_id multiple times to find rows where they appear together thrice.
+BF Complexity Visuals: A massive Cartesian product where you look for triplets of the same pair.
+How to Draw BF: Draw the table. For each row, scan all other rows looking for the same actor-director pair. Count them. Write $O(N^2)$.
+Optimised Pattern: Group By + Having.
+Opt Vis. Technique: A "Pairing Bin". All matching (Actor, Director) pairs are tossed into the same bucket; we only keep buckets with 3+ items.
+Dry Run (Opt): Group the rows by `actor_id` and `director_id`. Use `COUNT(*)` to tally the occurrences in each group. Filter the groups where count &gt;= 3.
+How to Draw (Opt): Draw a table with 3 columns: Actor, Director, Count. Every time you see a pair, increment its Count. Circle rows where Count &gt;= 3.
+Opt Complexity Visuals: Single pass hashing/sorting aggregation.
+How to Draw Opt Complexity: Draw the table with a grouping bracket. Write $O(N)$ where N is number of rows.
+Mem Vis (BF): Temporary tables for every self-join.
+Mem Vis (Opt): A small internal hash table for group counts. $O(U)$ where U is number of unique pairs.

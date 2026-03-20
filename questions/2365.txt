@@ -1,0 +1,13 @@
+ID: 2365
+Problem Title: Task Scheduler II
+Brute Force Method: Simulate every single day. If a task can't be done yet, skip the day. Check every task against a "last completed" log for its type.
+BF Complexity Visuals: Day-by-Day Simulation (O(Total_Days))
+How to Draw BF: Draw a calendar. Write the task on the day it's done. If a "break" is needed, leave the calendar square blank and move to the next.
+Optimised Pattern: Greedy Time Calculation (Hash Map)
+Opt Vis. Technique: Cooldown Jump Logic
+Dry Run (Opt): Iterate through tasks. `currentTime++`. If task T was last done at `lastTime`, and `currentTime - lastTime &lt;= space`, jump `currentTime` to `lastTime + space + 1`. Update `lastTime` map.
+How to Draw (Opt): Draw a timeline. For each task, check your "Last Done" log. If too soon, draw a long arrow skipping forward to the next valid day. Mark the new day in the log.
+Opt Complexity Visuals: Linear Task Pass (O(N))
+How to Draw Opt Complexity: Draw a timeline that "warps" forward. It only has N steps, but the "value" of each step can jump significantly.
+Mem Vis (BF): Draw a massive "Calendar" array that grows with the number of idle days.
+Mem Vis (Opt): Draw one Hash Map storing `Task_Type -&gt; Last_Day_Completed` (Integer).

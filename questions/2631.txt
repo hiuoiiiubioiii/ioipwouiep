@@ -1,0 +1,13 @@
+ID: 2631
+Problem Title: Group By (JS)
+Brute Force Method: Nested loops: For each element, check all existing groups in an array of objects; if not found, create new.
+BF Complexity Visuals: Linear Scan Grouping
+How to Draw BF: Draw an array of items and an array of buckets. For every item, draw an arrow checking every bucket. $O(N^2)$.
+Optimised Pattern: Hash Map (Object Literal) Accumulator
+Opt Vis. Technique: Categorical Bucketing
+Dry Run (Opt): Iterate array. Apply `fn` to get key. If key exists in Map, push item to its array. Else, create new array with item.
+How to Draw (Opt): Draw a set of items. Draw a "Black Box" (the function). Items pass through and fall into labeled buckets (the Map keys).
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw one long arrow through the input array, labeling $O(N)$ total time complexity.
+Mem Vis (BF): Intermediate temporary arrays
+Mem Vis (Opt): Single Map object containing multiple array references in Heap.

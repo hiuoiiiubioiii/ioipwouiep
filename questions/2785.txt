@@ -1,0 +1,13 @@
+ID: 2785
+Problem Title: Sort Vowels in a String
+Brute Force Method: Find all vowels and their indices. For every vowel found, compare it with every other vowel and swap them in the string if they are out of order. $O(N²)$.
+BF Complexity Visuals: In-place Bubble Sort for Vowels
+How to Draw BF: Draw a string. Circle the vowels. Draw arrows swapping vowels repeatedly until they are sorted alphabetically, while consonants stay put.
+Optimised Pattern: String Mutation Buffer (Visualizing repeated string recreations for each swap in languages with immutable strings).
+Opt Vis. Technique: Extraction + Sort + Reconstruction
+Dry Run (Opt): Two-Pass Vowel Re-injection
+How to Draw (Opt): Iterate through the string to extract all vowels into a list. Sort the list of vowels. Iterate through the original string again; whenever you hit a vowel position, replace it with the next vowel from the sorted list.
+Opt Complexity Visuals: Draw a string. Draw a "Side Bucket" where all vowels fall into. Sort the bucket. Draw arrows pouring the sorted vowels back into the empty "vowel slots" in the original string.
+How to Draw Opt Complexity: $O(N \log N)$ Sorting
+Mem Vis (BF): Draw a linear scan $O(N)$, a sort block $O(N \log N)$, and another linear scan $O(N)$. Bottleneck is $O(N \log N)$.
+Mem Vis (Opt): Vowel List / Character Array (Draw a temporary array to store vowels and a char array for the final string reconstruction).

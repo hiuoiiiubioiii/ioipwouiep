@@ -1,0 +1,13 @@
+ID: 2222
+Problem Title: Number of Ways to Select Buildings
+Brute Force Method: Nested Triple LoopsUse three nested loops to select indices `i &lt; j &lt; k`. Check if the characters form either "010" or "101" and increment a counter.
+BF Complexity Visuals: 3-Pointer Combinatorial Sweep
+How to Draw BF: Draw the string. Place pointer `i`. Run pointer `j` from `i+1` to end. Run pointer `k` from `j+1` to end. Draw curved lines connecting valid triplets.
+Optimised Pattern: Prefix/Suffix Counts
+Opt Vis. Technique: Pivot &amp; Multiply
+Dry Run (Opt): Count total '0's and '1's. Iterate through the string treating each char as the middle building. If '1', add `(left '0's) * (right '0's)` to total. If '0', do the same for '1's.
+How to Draw (Opt): Draw the string. Circle a '1' in the middle as the pivot. Count '0's to the left, count '0's to the right. Multiply those two numbers and draw an arrow to the `total_ways` bucket.
+Opt Complexity Visuals: Parallel Aggregate Timeline
+How to Draw Opt Complexity: Draw an $O(N)$ line for the initial total count pass. Draw a second $O(N)$ line for the pivot pass. Show that left/right counts update in $O(1)$ time at each step. Total time $O(N)$.
+Mem Vis (BF): Call stack holding states for recursive subset generation or deep nested loops.
+Mem Vis (Opt): Four running counters (`left_0`, `left_1`, `right_0`, `right_1`) taking strictly $O(1)$ space.

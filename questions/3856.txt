@@ -1,0 +1,13 @@
+ID: 3856
+Problem Title: Trim Trailing Vowels (Easy)
+Brute Force Method: Linear scan from the end of the string. Check if the last character is a vowel; if yes, remove it and repeat. Stop when the last character is a consonant.
+BF Complexity Visuals: A string being repeatedly "sliced" or "resized," causing memory reallocations at every step.
+How to Draw BF: Draw the word "APPLEEE". Cross out 'E'. Rewrite "APPLE E". Cross out 'E'. Rewrite "APPLE". Write $O(N^2)$ if creating new strings repeatedly.
+Optimised Pattern: Backward Pointer Scan.
+Opt Vis. Technique: A single "Back-to-Front" pointer that identifies the first non-vowel index and truncates everything after it.
+Dry Run (Opt): Start pointer `i` at `N-1`. While `i &gt;= 0` and `isVowel(s[i])`, decrement `i`. The final string is the substring from `0` to `i+1`.
+How to Draw (Opt): Draw the word "BANANA". Start at the last 'A'. Jump over it. Move to 'N'. Stop. Circle the part of the word from the start to 'N'.
+Opt Complexity Visuals: A single backward timeline vector.
+How to Draw Opt Complexity: Draw a line of N characters. Draw one arrow starting at the right and moving left. Write $O(N)$.
+Mem Vis (BF): Generating multiple string objects in memory, $O(N^2)$.
+Mem Vis (Opt): $O(1)$ extra space. Just one integer pointer to track the new end of the string.

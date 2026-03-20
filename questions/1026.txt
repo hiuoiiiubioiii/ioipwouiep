@@ -1,0 +1,13 @@
+ID: 1026
+Problem Title: Max Difference Between Node and Ancestor
+Brute Force Method: For every node, start a new DFS to visit all its descendants and calculate the absolute difference between the node and each descendant.
+BF Complexity Visuals: Exploding search circles. Every node acts as a new epicenter for a complete sub-tree scan.
+How to Draw BF: Draw a tree. For root, draw arrows to all nodes. For child, draw arrows to its nodes. Write $O(N^2)$ for skewed trees.
+Optimised Pattern: DFS with Range Tracking (Top-Down).
+Opt Vis. Technique: A descending elevator carrying two suitcases: the "Min-so-far" and "Max-so-far" encountered on the path from root.
+Dry Run (Opt): Pass current min/max down to children. At each node, calculate `max(node - min, max - node)`. Update global result and keep going down.
+How to Draw (Opt): Draw a tree. At each node, write a pair `[min, max]`. When moving to a child, update the pair: `[min(P_min, val), max(P_max, val)]`.
+Opt Complexity Visuals: A single fluid traversal of the tree.
+How to Draw Opt Complexity: Draw a single DFS path (snake) through the tree. Write Time: $O(N)$.
+Mem Vis (BF): Repeatedly traversing subtrees, redundant visits visualized as darker, thick edges.
+Mem Vis (Opt): A single recursion stack depth of $O(H)$, where H is tree height. Visualized as one vertical column.

@@ -1,0 +1,13 @@
+ID: 2777
+Problem Title: Date Range Generator (JS)
+Brute Force Method: Calculate the total number of days between dates. Create an array of that size. Fill it with date strings. Return the array. $O(N)$ memory.
+BF Complexity Visuals: Pre-allocated Date Array
+How to Draw BF: Draw two dates. Draw a giant array being filled with every single date in between. Show the memory consumption for a 10-year range.
+Optimised Pattern: Heap Array Allocation (Visualizing thousands of string objects being stored simultaneously).
+Opt Vis. Technique: Generator Function (yield)
+Dry Run (Opt): Lazy Stream Production
+How to Draw (Opt): Use function*. In a while loop, yield the current date string, then increment the date by one day. This only computes the next date when requested.
+Opt Complexity Visuals: Draw a "Ticker Tape" (the timeline). Draw a "Window" (the generator). Every time you pull the tape, a new date appears, and the previous one is discarded.
+How to Draw Opt Complexity: $O(N)$ Time, $O(1)$ Space
+Mem Vis (BF): Draw an arrow moving along a timeline. Label it $O(1)$ Space since only one date is in memory at a time.
+Mem Vis (Opt): Generator State Machine (Visualize a single "Current Date" variable that persists between yield calls).

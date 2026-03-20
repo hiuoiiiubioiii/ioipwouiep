@@ -1,0 +1,13 @@
+ID: 598
+Problem Title: Range Addition II
+Brute Force Method: Initialize an M \times N matrix with zeros. For every operation [a, b], increment every cell in the a \times b sub-matrix. Finally, count the max values.
+BF Complexity Visuals: Matrix explosion. $O(K \\text{times} M \\text{times} N)$ where K is the number of operations.
+How to Draw BF: Draw a 10 \times 10 grid. For an op [3,3], shade 9 cells. For [2,2], shade 4 cells. Count the ones shaded most.
+Optimised Pattern: Minimum Boundary Tracking.
+Opt Vis. Technique: A "Focus Area." Every operation starts from (0,0). The only cells that will be updated by *every* operation are those within the smallest width and smallest height provided.
+Dry Run (Opt): Maintain `min_a` and `min_b`. For each `[a, b]`: `min_a = min(min_a, a)` and `min_b = min(min_b, b)`. Result is `min_a * min_b`.
+How to Draw (Opt): Draw a large rectangle. Draw smaller rectangles inside it, all starting from the top-left corner. The area where all rectangles overlap is the answer.
+Opt Complexity Visuals: Single pass over the operations list. $O(K)$.
+How to Draw Opt Complexity: Draw a list of operations flowing into two "Min" variables.
+Mem Vis (BF): A full M \times N matrix in memory.
+Mem Vis (Opt): $O(1)$ auxiliary space.

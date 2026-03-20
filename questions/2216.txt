@@ -1,0 +1,13 @@
+ID: 2216
+Problem Title: Minimum Deletions to Make Array Beautiful
+Brute Force Method: Recursive DeletionScan the array. If `nums[i] == nums[i+1]` on an even index, delete it, shift all remaining elements left, and restart the scan from the beginning.
+BF Complexity Visuals: Shifting Array Simulation
+How to Draw BF: Draw the array. Cross out the violating element. Redraw the *entire* array shifted one space to the left to show the $O(N)$ penalty of deletion.
+Optimised Pattern: Greedy / Virtual Deletion
+Opt Vis. Technique: Parity Offset Pointer
+Dry Run (Opt): Traverse left-to-right. Keep a `deleted` count. The *virtual* index of any element is `actual_index - deleted`. If virtual index is even and matches the next element, increment `deleted`.
+How to Draw (Opt): Draw the array. Keep a tally of `deleted` on the side. Point at an element. Subtract the tally from its index. If even and it matches the neighbor, cross it out and add 1 to the tally.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw one straight arrow across the array. Above it, write $O(N)$. Show the `deleted` variable updating in strictly $O(1)$ time without any array shifting.
+Mem Vis (BF): Multiple array copies allocated in memory for every shift/deletion (O(N^2) time, $O(N)$ space).
+Mem Vis (Opt): A single integer variable `deleted` acting as a virtual offset (O(1) space).

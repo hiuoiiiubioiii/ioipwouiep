@@ -1,0 +1,13 @@
+ID: 3525
+Problem Title: Find X Value of Array II (Hard)
+Brute Force Method: $O(N^2)$ pairing or iterative domain search (times out on large constraints).
+BF Complexity Visuals: Dense Grid Re-evaluation.
+How to Draw BF: Draw a massive 2D grid representing X domain vs Array indices. Shade the entire grid.
+Optimised Pattern: Binary Search on Answer + Sliding Window / Segment Tree.
+Opt Vis. Technique: Range Query Funnel.
+Dry Run (Opt): Use binary search to guess X. Validate X in $O(N)$ using a sliding window to check subarray constraints efficiently.
+How to Draw (Opt): Draw a binary search tree of X values. For a node (guess), draw a sliding window `[L...R]` smoothly moving across the array.
+Opt Complexity Visuals: Logarithmic Search over Linear Scan.
+How to Draw Opt Complexity: Draw a binary tree of depth log(Range). Inside each node, draw a straight $O(N)$ sliding window line. $O(N \log(\text{Range})$).
+Mem Vis (BF): Huge Search Space Maps: Draw massive lists of evaluated candidates.
+Mem Vis (Opt): Window Pointers: Draw two variables (L, R) acting as boundaries on a flat array.

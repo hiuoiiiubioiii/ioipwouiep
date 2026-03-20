@@ -1,0 +1,13 @@
+ID: 3382
+Problem Title: Maximum Area Rectangle With Point Constraints II
+Brute Force Method: Same as I, but fails due to 10^5 constraints. $O(N^3)$ times out instantly.
+BF Complexity Visuals: Memory-Crashing Point Scan
+How to Draw BF: Try to check interior points for a million possible rectangles.
+Optimised Pattern: Sweep Line + Segment Tree
+Opt Vis. Technique: The Y-Axis Scanner
+Dry Run (Opt): Group points by X-coordinate. Sweep a vertical line left-to-right. Use a Segment Tree to efficiently track valid Y-intervals and answer queries about the maximum empty rectangle area formed between the current X and previous X values.
+How to Draw (Opt): Draw the points. A vertical laser sweeps left to right. It records the Y-height of pairs of points. If it sees the *exact same* Y-pair later, it calculates the box area, using the tree to ensure no points sneaked in.
+Opt Complexity Visuals: Sweep Line $O(N \log N)$
+How to Draw Opt Complexity: Draw a timeline. At each step, update a Segment Tree in $O(\log N)$ time.
+Mem Vis (BF): $O(N^3)$ search space.
+Mem Vis (Opt): Segment Tree. $O(N)$ space.

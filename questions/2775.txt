@@ -1,0 +1,13 @@
+ID: 2775
+Problem Title: Undefined to Null (JS)
+Brute Force Method: Recursive for...in loop. If a value is undefined, change it to null. If it's an object or array, call the function recursively. Doesn't handle circular references or complex types well.
+BF Complexity Visuals: DFS Object Traversal
+How to Draw BF: Draw a JSON tree. Highlight every node. If a leaf is 'undefined', draw an arrow changing it to 'null'. Show recursive arrows for nested objects.
+Optimised Pattern: Recursive Call Stack (Visualize memory frames for every nested level of the object).
+Opt Vis. Technique: Recursive Mapping / JSON.parse with Reviver
+Dry Run (Opt): Functional Tree Transformation
+How to Draw (Opt): Use a recursive function that returns the transformed value. For arrays, use map(). For objects, use reduce() or Object.entries(). If value is undefined, return null.
+Opt Complexity Visuals: Draw an input tree on the left and an output tree on the right. Show a "Filter" in the middle that swaps undefined for null as data passes through.
+How to Draw Opt Complexity: $O(N)$ where N is Total Nodes
+Mem Vis (BF): Draw a single tree. Label it $O(N)$ to show every key/value is visited exactly once.
+Mem Vis (Opt): New Object Graph (Visualize the creation of a new transformed object in the heap to avoid mutating the original).

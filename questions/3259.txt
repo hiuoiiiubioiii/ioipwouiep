@@ -1,0 +1,13 @@
+ID: 3259
+Problem Title: Maximum Energy Boost From Two Drinks
+Brute Force Method: Recursive backtracking trying every combination of drinking A or B, including the 1-hour wait to switch. $O(2^N)$.
+BF Complexity Visuals: Parallel Decision Tree
+How to Draw BF: Draw two vertical lines (A and B). At each hour, draw arrows staying on the line or jumping to the other line (with a 1-hour gap). Show the branching paths.
+Optimised Pattern: 2D Dynamic Programming (State Switching)
+Opt Vis. Technique: Dual-Rail Track Diagram
+Dry Run (Opt): Maintain two DP arrays: `dpA[i]` (max boost ending with A) and `dpB[i]` (max boost ending with B). Transition: `dpA[i] = A[i] + max(dpA[i-1], dpB[i-2])`.
+How to Draw (Opt): Draw two parallel rows of numbers. Use your left finger for A and right for B. To calculate A[i], look at the cell directly left (A[i-1]) and the one diagonal-left-twice (B[i-2]). Take the max.
+Opt Complexity Visuals: Two-Pass Linear Sweep
+How to Draw Opt Complexity: Draw two horizontal lines of length N. Show a single arrow moving left-to-right updating both lines simultaneously. Label as $O(N)$.
+Mem Vis (BF): Exponential call stack storing every switch combination.
+Mem Vis (Opt): Two 1D arrays of size N (O(N) space) or four scalar variables for $O(1)$ space.

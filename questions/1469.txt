@@ -1,0 +1,13 @@
+ID: 1469
+Problem Title: Find All The Lonely Nodes
+Brute Force Method: Find all root-to-node paths. For each node, check if its parent has only one child.
+BF Complexity Visuals: Path Ancestor Scan
+How to Draw BF: Draw a tree. For every node, look at its parent and then look at the parent's other child pointer. Label $O(N)$.
+Optimised Pattern: DFS / BFS (Parental Context)
+Opt Vis. Technique: Single-Child Branch Detection
+Dry Run (Opt): Traverse the tree. At each node, if it has exactly one child, add that child's value to the result list.
+How to Draw (Opt): Draw a tree. Use a magnifying glass to look at each node. If the node has only one leg (left or right), circle the foot of that leg (the child).
+Opt Complexity Visuals: Linear Tree Traversal
+How to Draw Opt Complexity: Draw a single DFS traversal arrow visiting each node once. Label $O(N)$.
+Mem Vis (BF): List of all nodes
+Mem Vis (Opt): A result list and the recursion stack. Space $O(H)$ where H is tree height.

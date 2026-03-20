@@ -1,0 +1,13 @@
+ID: 1265
+Problem Title: Print Immutable Linked List in Reverse
+Brute Force Method: Iteratively find the last element, print it, then find the second to last, print it, and so on. Since you can't move backward, you must scan from the start N times.
+BF Complexity Visuals: Descending Length Scans
+How to Draw BF: Draw a list of N nodes. Draw an arrow from 1 to N. Then an arrow from 1 to N-1. Then 1 to N-2. The triangle of arrows represents $O(N^2)$.
+Optimised Pattern: Recursive Backtracking (Implicit Stack)
+Opt Vis. Technique: Depth-First Echo
+Dry Run (Opt): Call a function on the current node that first calls itself on `node.getNext()`. Only *after* the recursive call returns do you call `node.printValue()`. This naturally uses the call stack to reverse.
+How to Draw (Opt): Draw a vertical "Stack" box. Draw an arrow entering for node 1, then node 2, then node 3. Once at the end, show the arrows "popping" out in reverse order (3, then 2, then 1) with a "Print" label on each exit.
+Opt Complexity Visuals: Linear Recursion Depth
+How to Draw Opt Complexity: Draw a single straight line representing N steps. Write $O(N)$.
+Mem Vis (BF): Draw a constant memory footprint for the pointers but N repeated scans.
+Mem Vis (Opt): Draw a "Stack Frame" tower of height N. Each frame holds a reference to a node. Space: $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1295
+Problem Title: Find Numbers with Even Number of Digits
+Brute Force Method: Convert every number to a string and check the length of that string. If `length % 2 == 0`, increment the count.
+BF Complexity Visuals: String Conversion Scan
+How to Draw BF: Draw an array. For every number, draw an arrow to a "String Box". Count the characters in the box. Write $O(N \cdot D)$ where D is number of digits.
+Optimised Pattern: Logarithmic Digit Counting / Range Check
+Opt Vis. Technique: Mathematical Threshold Comparison
+Dry Run (Opt): Instead of strings, check if the number falls in specific ranges: [10, 99], [1000, 9999], [100000, 1000000]. Alternatively, use lfloor log_10(n) rfloor + 1 to get the digit count.
+How to Draw (Opt): Draw a number line. Mark "Even Digit Zones" with green shading and "Odd Digit Zones" with red. For each number in the array, simply check if it falls in a green zone.
+Opt Complexity Visuals: Linear Pass with Constant Operations
+How to Draw Opt Complexity: Draw an array. Draw one single arrow scanning once. For each element, draw a simple "If/Else" gate. Write $O(N)$.
+Mem Vis (BF): Draw a temporary string buffer for every single element in the array.
+Mem Vis (Opt): Draw zero extra data structures. Space: $O(1)$.

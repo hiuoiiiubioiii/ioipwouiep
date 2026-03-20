@@ -1,0 +1,13 @@
+ID: 3213
+Problem Title: Construct String with Minimum Cost
+Brute Force Method: Try every target word at every position in the string via DFS. $O(\text{Branching} ^ N)$.
+BF Complexity Visuals: Massive Backtracking Web
+How to Draw BF: Draw the target string. Under index 0, branch out for every word that matches the prefix. Repeat for the remaining suffix.
+Optimised Pattern: Aho-Corasick / Trie + 1D Dynamic Programming
+Opt Vis. Technique: State Transition Matching
+Dry Run (Opt): Build a Trie of the target words. Use a DP array where dp[i] is the min cost to build string up to index i. Use the Trie to rapidly find all matching words starting at index i.
+How to Draw (Opt): Draw a 1D DP array of size N. Draw a Trie on the side. For DP[i], trace down the Trie using characters from index i onwards, updating future DP states when reaching a valid word.
+Opt Complexity Visuals: Automaton State Jump
+How to Draw Opt Complexity: Draw the target string timeline. Draw multiple forward-jumping arcs representing matched words, labeled with their cost. Show it's $O(N^2 + \text{Trie Building})$.
+Mem Vis (BF): Extremely deep recursion stack branching indefinitely.
+Mem Vis (Opt): Trie structure (O(sum of word lengths)) + DP Array of size N.

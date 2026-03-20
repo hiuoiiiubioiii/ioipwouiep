@@ -1,0 +1,13 @@
+ID: 117
+Problem Title: Populating Next Right Pointers in Each Node II
+Brute Force Method: Standard BFS with a Queue, identical to Q116, indiscriminately buffering all nodes at each level regardless of missing children.
+BF Complexity Visuals: A standard BFS linear graph masking the structural gaps, using $O(N)$ memory to compensate.
+How to Draw BF: Draw an imperfect tree. Draw the Queue explicitly filling up with valid nodes to bridge the gaps across empty spaces.
+Optimised Pattern: Linked List Traversal with a Dummy Head (tracking the start of the next level).
+Opt Vis. Technique: A train track builder. A dummy engine sits at the start of the next level, hooking up carriages (nodes) as they are discovered from the level above.
+Dry Run (Opt): Maintain `dummy` and `tail` pointers for the next level. Traverse current level via `next`. If child exists, `tail.next = child; tail = tail.next`. When current level ends, move down to `dummy.next`.
+How to Draw (Opt): Draw the tree. Draw a "Dummy" circle on the left of an empty level. As you scan the level above, draw arrows from the dummy chain to the found children.
+Opt Complexity Visuals: $O(N)$ time and $O(1)$ space. The dummy node elegantly absorbs the complexity of missing branches without extra arrays.
+How to Draw Opt Complexity: Draw the dummy node resetting its position to the far left at the start of every new depth phase, creating a perfectly localized $O(1)$ memory footprint.
+Mem Vis (BF): $O(W)$ Queue memory where W is the maximum width of the imperfect tree.
+Mem Vis (Opt): A single Dummy Node and a Tail Pointer continuously reusing the same $O(1)$ memory space for every level.

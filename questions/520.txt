@@ -1,0 +1,13 @@
+ID: 520
+Problem Title: Detect Capital
+Brute Force Method: Write complex regular expressions or three separate `for` loops checking each of the 3 rules individually.
+BF Complexity Visuals: Multiple overlapping scans of the same word. $O(N)$ but messy.
+How to Draw BF: Write the word three times. Scan the first for ALL CAPS, second for all lower, third for Title Case.
+Optimised Pattern: Single-Pass Character Counting.
+Opt Vis. Technique: A turnstile counting exactly how many tall people (capitals) enter the room.
+Dry Run (Opt): Iterate word. If char is uppercase, `caps_count++`. If `caps_count` == len OR 0 OR (1 AND first char is upper), valid.
+How to Draw (Opt): Write the word. Point to each letter, incrementing a tally box if it's uppercase. Check the final tally against 3 simple rules.
+Opt Complexity Visuals: One smooth, uninterrupted scan across the word. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line broken into N uniform segments.
+Mem Vis (BF): Multiple string copies or complex Regex state machines in memory.
+Mem Vis (Opt): A single integer counter. $O(1)$ space.

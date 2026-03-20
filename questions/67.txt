@@ -1,0 +1,13 @@
+ID: 67
+Problem Title: Add Binary
+Brute Force Method: Base-2 to Base-10 Convert both binary strings to decimal integers, add them, and convert the result back to a binary string.
+BF Complexity Visuals: The Base Converter
+How to Draw BF: Draw two binary strings. Draw a conversion machine outputting base-10 numbers. Note the overflow risk for strings longer than 64 bits.
+Optimised Pattern: Two-Pointer Bitwise Addition
+Opt Vis. Technique: The Vertical Adder
+Dry Run (Opt): Align strings by the end. Add bits digit-by-digit along with a `carry` variable (0 or 1). Use modulo for the bit and division for the carry.
+How to Draw (Opt): Stack "1010" and "1011". Draw vertical columns. 0+1=1, carry 0. 1+1=0, carry 1. 0+0+1=1, carry 0. 1+1=0, carry 1. Result: "10101".
+Opt Complexity Visuals: Parallel Linear Scan
+How to Draw Opt Complexity: Draw two lines representing string lengths M and N. Draw a scanner moving from right to left once. Time: $O(\text{max}(M, N)$).
+Mem Vis (BF): Heavy memory usage for BigInt objects or intermediate decimal strings.
+Mem Vis (Opt): Draw a StringBuilder or character array of size max(M, N) + 1. Space: $O(\text{max}(M, N)$).

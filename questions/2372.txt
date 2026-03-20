@@ -1,0 +1,13 @@
+ID: 2372
+Problem Title: Calculate the Influence Score (SQL Premium)
+Brute Force Method: (Conceptual) For every user, run a separate query to count their followers, then another to count the followers of their followers, and sum them up.
+BF Complexity Visuals: Nested User-Follower Scans
+How to Draw BF: Draw a User table. For each user, draw arrows to their followers. For each follower, draw arrows to *their* followers. Count all unique arrows.
+Optimised Pattern: JOIN + SUM Aggregation
+Opt Vis. Technique: Two-Step Relational Expansion
+Dry Run (Opt): Join the `Follows` table with itself on `follower_id = user_id` to get second-level connections. Group by the original `user_id` and sum the influence.
+How to Draw (Opt): Draw a table of connections. Copy the table. Line them up so "Follower" in Table A matches "User" in Table B. Group by the first "User" and count the rows.
+Opt Complexity Visuals: Two-Pass Relational Join
+How to Draw Opt Complexity: Draw a data stream entering a Join block, then a Grouping block, then an Aggregation block.
+Mem Vis (BF): Draw multiple temporary tables for every user's recursive follower scan.
+Mem Vis (Opt): Draw one Result Set stream with `user_id` and `influence_score`.

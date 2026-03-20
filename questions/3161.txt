@@ -1,0 +1,13 @@
+ID: 3161
+Problem Title: Block Placement Queries
+Brute Force Method: For every query, scan all placed obstacles to find the largest gap between any two adjacent ones. $O(Q^2)$
+BF Complexity Visuals: A set of dynamic lines being cut into smaller pieces repeatedly.
+How to Draw BF: Draw a long line. Every time a block is added, draw a tick. For queries, manually measure every gap between ticks with a ruler.
+Optimised Pattern: Segment Tree + Balanced BST (Sorted Set)
+Opt Vis. Technique: The Gap Summary Tree
+Dry Run (Opt): Use a Sorted Set to find immediate neighbors of a new block. Use a Segment Tree to store and query the maximum gap in the range [0, x].
+How to Draw (Opt): Draw a tree where each node stores the "max gap" of its children. When a leaf (gap) changes, update the path to the root.
+Opt Complexity Visuals: Logarithmic update and query path.
+How to Draw Opt Complexity: Draw a Binary Tree. Circle one leaf and the path to the root. $O(Q \log (\text{min}(N, Q)$)).
+Mem Vis (BF): A simple list of obstacles that grows with every query.
+Mem Vis (Opt): A Segment Tree (array of size 4N) and a TreeSet. $O(N + Q)$.

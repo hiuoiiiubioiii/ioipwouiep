@@ -1,0 +1,13 @@
+ID: 790
+Problem Title: Domino and Tromino Tiling
+Brute Force Method: Recursively try placing a domino or tromino at the first empty cell of the 2 \times N board.
+BF Complexity Visuals: Brute Force Tiling Tree
+How to Draw BF: Draw a 2xN grid. Branch into all 4-5 ways to place a shape. $O(3^N)$.
+Optimised Pattern: Dynamic Programming (Matrix Exponentiation)
+Opt Vis. Technique: State Transition Tiling
+Dry Run (Opt): The board can be "Full", "Top-half protruding", or "Bottom-half protruding". Use DP to count ways to reach a full state based on previous partial states.
+How to Draw (Opt): Draw a 2x1 section. Show the 3 possible edge shapes. Draw arrows showing how adding a domino/tromino converts one edge shape to another.
+Opt Complexity Visuals: Linear State Progression
+How to Draw Opt Complexity: Draw the N columns. Show a single pass through columns updating the 3 state variables. $O(N)$.
+Mem Vis (BF): Deep recursion stack.
+Mem Vis (Opt): DP array or 3 variables $O(N)$ or $O(1)$.

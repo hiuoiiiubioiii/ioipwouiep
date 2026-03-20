@@ -1,0 +1,13 @@
+ID: 2932
+Problem Title: Maximum Strong Pair XOR I
+Brute Force Method: Nested loops (i, j) checking every pair for |x-y| &lt;= min(x,y) and tracking max XOR.
+BF Complexity Visuals: Upper Triangular Matrix
+How to Draw BF: Draw an N x N grid. Shade the diagonal and upper half. N=50 means 1,225 checks. $O(N^2)$.
+Optimised Pattern: Brute Force (Small Constraints)
+Opt Vis. Technique: Nested Loop Scan
+Dry Run (Opt): Iterate i from 0 to N. Iterate j from i to N. Check the "strong pair" condition. If true, calculate XOR and update max.
+How to Draw (Opt): Draw the array. Use two fingers (i, j) to point at elements. Note down the XOR value if the condition is met.
+Opt Complexity Visuals: Quadratic Area
+How to Draw Opt Complexity: Draw a square of side N. The area (N^2/2) represents the operations.
+Mem Vis (BF): Two integer variables.
+Mem Vis (Opt): Single integer for `maxXor`. Space $O(1)$.

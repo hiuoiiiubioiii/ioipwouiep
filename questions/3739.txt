@@ -1,0 +1,13 @@
+ID: 3739
+Problem Title: Count Subarrays With Majority Element II (Hard)
+Brute Force Method: Same as part I, exhaustive sub-segment generation and frequency counting. Will result in Time Limit Exceeded due to tighter constraints. $O(N^2)$.
+BF Complexity Visuals: Dense bracket overlays.
+How to Draw BF: Exhaustive listing of segments, crossing out invalid ones.
+Optimised Pattern: Prefix Sum + Binary Indexed Tree (Fenwick)
+Opt Vis. Technique: Accumulator Tree Query
+Dry Run (Opt): Treat target element as +1, others as -1. We need `Prefix[R] - Prefix[L-1] &gt; 0`. This means we need to count how many previous `Prefix[L-1]` are strictly less than `Prefix[R]`. Use a Fenwick tree to count this efficiently.
+How to Draw (Opt): Draw array and Prefix sums. Next to it, draw a Fenwick Tree as an array of bins. To check a prefix sum, query the bins for values strictly smaller than it, add the count to total, then drop the current prefix into its respective bin.
+Opt Complexity Visuals: $O(N \log N)$ overall.
+How to Draw Opt Complexity: Draw N segments on a line, with small tree-depth traversal loops (log N) occurring at every segment.
+Mem Vis (BF): $O(1)$ space, high time complexity.
+Mem Vis (Opt): 1D Array representing the Fenwick Tree (O(N) space).

@@ -1,0 +1,13 @@
+ID: 1800
+Problem Title: Maximum Ascending Subarray Sum
+Brute Force Method: Generate all subarrays (O(N^2)). For each, check if it's strictly ascending (O(N)) and find the sum.
+BF Complexity Visuals: Triple-Nested Loop Matrix.
+How to Draw BF: Draw array. Draw brackets for every possible start and end. Inside, draw a checkmark if ascending. $O(N^3)$.
+Optimised Pattern: Single-Pass Greedy Accumulation (Kadane's Variant).
+Opt Vis. Technique: The "Growing Wave" Reset.
+Dry Run (Opt): Iterate once. If `arr[i] &gt; arr[i-1]`, add to `current_sum`. Else, `current_sum = arr[i]`. Track `max_sum = max(max_sum, current_sum)`.
+How to Draw (Opt): Draw a line graph. As long as it goes up, keep a running total. If it drops, "break" the line and start a new total from the bottom.
+Opt Complexity Visuals: Single Linear Sweep.
+How to Draw Opt Complexity: Draw one arrow passing over the array. Label $O(N)$.
+Mem Vis (BF): List of all ascending subarray sums.
+Mem Vis (Opt): Two integer variables: `current` and `max`. $O(1)$ space.

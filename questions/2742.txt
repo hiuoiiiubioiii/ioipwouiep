@@ -1,0 +1,13 @@
+ID: 2742
+Problem Title: Painting the Walls
+Brute Force Method: Recursion: For each wall, choose either the paid painter or the free painter. Explore all 2^N combinations to find the minimum cost.
+BF Complexity Visuals: Binary Choice Tree
+How to Draw BF: Draw a wall. Branch "Paid" (high cost, saves time) vs "Free" (0 cost, takes time). The tree grows exponentially $O(2^N)$.
+Optimised Pattern: Redundant Decision Paths (Visualizing same wall counts being re-calculated in different branches).
+Opt Vis. Technique: 0/1 Knapsack style DP (O(N^2) Time)
+Dry Run (Opt): Resource Exchange DP
+How to Draw (Opt): Key insight: Buying time[i] + 1 walls of time allows the free painter to paint the rest. State: dp[rem_walls] is min cost to paint rem_walls. Update dp[j] = min(dp[j], dp[j - time[i] - 1] + cost[i]).
+Opt Complexity Visuals: Draw a DP array of size N. For each wall, slide from right to left, updating the "min cost" to reach that many walls.
+How to Draw Opt Complexity: $O(N^2)$ Nested Loop
+Mem Vis (BF): Draw a grid N x N. Label it $O(N^2)$ to show each wall is considered against all possible remaining wall counts.
+Mem Vis (Opt): 1D DP Array (Draw a single row of memory that evolves with each "Paid" wall option).

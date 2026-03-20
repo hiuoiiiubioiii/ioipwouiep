@@ -1,0 +1,13 @@
+ID: 2218
+Problem Title: Maximum Value of K Coins From Piles
+Brute Force Method: Backtracking CombinationsAt every pile, try picking 0 coins, 1 coin, 2 coins, etc., recursively moving to the next pile. Keep track of coins left until K is reached.
+BF Complexity Visuals: Massive N-ary Tree
+How to Draw BF: Draw a root node. Branch it out based on how many coins you pick from Pile 1. From *each* branch, branch out again for Pile 2. Show the tree width exploding.
+Optimised Pattern: 2D DP (Knapsack Variant)
+Opt Vis. Technique: Prefix Sum + 2D DP Table
+Dry Run (Opt): `dp[i][j]` is max value from first `i` piles using exactly `j` coins. Precalculate prefix sums for each pile. Try taking `x` coins from the current pile and `j-x` coins from the previous DP state.
+How to Draw (Opt): Draw a grid: Piles (Y-axis) by Coins (X-axis). To fill a cell, draw arrows pointing to `dp[prev_pile][j-x]` and add the prefix sum of `x` coins from the current pile. Pick the max.
+Opt Complexity Visuals: Nested Loop Matrix
+How to Draw Opt Complexity: Draw a 3-layered nested loop box: Loop Piles (N) -&gt; Loop Capacity (K) -&gt; Loop Current Pile Coins (min(K, size)). Label total $O(N \cdot K^2)$.
+Mem Vis (BF): A massive call stack depth of $O(N)$ with exponential branching states.
+Mem Vis (Opt): A 2D DP matrix of size `N x K` and a secondary array for prefix sums.

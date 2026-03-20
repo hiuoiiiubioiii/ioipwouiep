@@ -1,0 +1,13 @@
+ID: 3255
+Problem Title: Find the Power of K-Size Subarrays II
+Brute Force Method: The same brute force as 3254 (O(N * K)), which will Time Limit Exceeded (TLE) here due to N = 10^5.
+BF Complexity Visuals: Nested Loop Redundancy
+How to Draw BF: Draw the array. Show the window moving. Highlight that the brute force re-checks K-1 elements that were already verified in the previous window.
+Optimised Pattern: Amortized Linear Scan / Precomputation
+Opt Vis. Technique: Precomputed Validity Array
+Dry Run (Opt): Identical logic to 3254 but essential here: track the "length of the increasing streak" ending at each index. Use this precomputed info to answer each window query in $O(1)$.
+How to Draw (Opt): Draw the input array. Below it, draw a "Streak" array where you write how many consecutive increasing numbers end at that index. For any window, just check if `Streak[end] &gt;= k`.
+Opt Complexity Visuals: Precomputation + Query Block
+How to Draw Opt Complexity: Draw a block for "Building Streak Array $O(N)$" and a second block for "Extracting Results $O(N)$". Result: $O(N)$.
+Mem Vis (BF): Storage for all K-size subarrays.
+Mem Vis (Opt): An integer array of size N (O(N) space) or a rolling variable (O(1) space).

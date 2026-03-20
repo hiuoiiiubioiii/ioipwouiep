@@ -1,0 +1,13 @@
+ID: 1274
+Problem Title: Number of Ships in a Rectangle
+Brute Force Method: Scan every single integer coordinate (x, y) within the rectangle and call the `hasShips` API for each.
+BF Complexity Visuals: Grid Coordinate Exhaustion
+How to Draw BF: Draw a grid. Draw a dot on every single intersection point. Write $O(\text{Width} \\text{cdot Height})$.
+Optimised Pattern: Divide and Conquer (Quadtree Decomposition)
+Opt Vis. Technique: Quadrant Partitioning
+Dry Run (Opt): Call `hasShips` for the whole rectangle. If true, divide the rectangle into 4 smaller quadrants. Repeat for each quadrant. If `hasShips` is false for a quadrant, prune it immediately.
+How to Draw (Opt): Draw a large rectangle. Divide it into 4. If a quadrant has a ship, divide it into 4 again. If it doesn't, put a big red "X" and stop. Trace the path to the individual ship coordinates.
+Opt Complexity Visuals: Logarithmic Spatial Search
+How to Draw Opt Complexity: Draw a large box being split into smaller and smaller boxes. Write $O(S \cdot \log(\\text{text}{\text{max}_\text{dimension}})$) where S is number of ships.
+Mem Vis (BF): Draw a list of every single coordinate scanned.
+Mem Vis (Opt): Draw a recursion stack with a depth proportional to the log of the area. Space: $O(\log(\\text{text}{\text{max}_\text{dimension}})$).

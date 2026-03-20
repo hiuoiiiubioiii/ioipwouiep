@@ -1,0 +1,13 @@
+ID: 3544
+Problem Title: Subtree Inversion Sum (Hard)
+Brute Force Method: For every node, extract its entire subtree, count inversions using a nested loop, and sum them.
+BF Complexity Visuals: Repeated Subtree Scanning.
+How to Draw BF: Draw a tree. At each node, circle its descendants and draw an N x N inversion grid for that subset. $O(N^2)$.
+Optimised Pattern: DFS + Fenwick Tree (BIT) / Merge Sort Tree.
+Opt Vis. Technique: Time-In/Time-Out Tree Flattening.
+Dry Run (Opt): Flatten tree into an array (Euler Tour). A subtree becomes a contiguous range. Use a BIT to count inversions as you traverse.
+How to Draw (Opt): Draw a tree. Map nodes to an array based on visit order. For each node, query the BIT for its range [In, Out].
+Opt Complexity Visuals: $O(N \log N)$ Traversal.
+How to Draw Opt Complexity: Draw a tree traversal path. At each node, draw a log(N) vertical line representing a BIT query/update.
+Mem Vis (BF): Subtree Copies: Draw multiple copies of parts of the tree as arrays for manual inversion counting.
+Mem Vis (Opt): Euler Array + BIT: Draw one 1D array for the tree order and one Fenwick Tree (size N).

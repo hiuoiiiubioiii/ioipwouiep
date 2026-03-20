@@ -1,0 +1,13 @@
+ID: 2126
+Problem Title: Destroying Asteroids
+Brute Force Method: Scan the entire unsorted array repeatedly to find any asteroid smaller than current mass, destroy it, and repeat.
+BF Complexity Visuals: An unordered pool of rocks, with a line frantically jumping back and forth searching for targets.
+How to Draw BF: Draw a circle of rocks. Draw a line from the planet to a small rock, absorb it, then redraw lines checking all remaining rocks again. $O(N^2)$.
+Optimised Pattern: Greedy + Sorting.
+Opt Vis. Technique: A snowball rolling down a hill, accumulating increasingly larger rocks.
+Dry Run (Opt): Sort the array. Iterate left to right. If `current_mass &gt;= asteroid[i]`, `current_mass += asteroid[i]`. Else, return false.
+How to Draw (Opt): Draw sorted rocks in a line left to right. Draw a Pac-Man eating them one by one, writing its new size above each eaten rock. If it hits a wall (bigger rock), draw an X.
+Opt Complexity Visuals: $O(N \log N)$ sorting + $O(N)$ linear scan.
+How to Draw Opt Complexity: A sorting funnel that drops elements onto a single straight conveyor belt moving left to right.
+Mem Vis (BF): $O(N)$ boolean visited array to track which asteroids were destroyed in the chaotic loops.
+Mem Vis (Opt): $O(1)$ auxiliary space (or $O(\log N)$ for in-place sorting stack).

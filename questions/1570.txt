@@ -1,0 +1,13 @@
+ID: 1570
+Problem Title: Dot Product of Two Sparse Vectors
+Brute Force Method: Multiply the two full vectors index by index. $O(N)$. Even if most are zeros, you still waste time on 0 \cdot 0.
+BF Complexity Visuals: Linear Redundant Multiplication
+How to Draw BF: Draw two long lines of length 10^6. Most are zeros. Draw arrows connecting every pair, even if they result in zero.
+Optimised Pattern: Two Pointers on Compressed Pairs
+Opt Vis. Technique: The Parallel Index Matcher
+Dry Run (Opt): Store only `(index, value)` pairs in a list. Use two pointers to iterate through both lists. Only multiply when the indices match. If idx1 &lt; idx2, increment pointer 1.
+How to Draw (Opt): Draw two short lists: `[(2, 5), (10, 8)]` and `[(2, 3), (12, 1)]`. Align them vertically. Only draw a circle around the matching index 2. Ignore the rest.
+Opt Complexity Visuals: Intersection Linear Scan $O(L_1 + L_2)$
+How to Draw Opt Complexity: Draw two short lines representing the non-zero elements. The pointers move linearly through these condensed lists.
+Mem Vis (BF): Two full arrays of size N. $O(N)$.
+Mem Vis (Opt): Two compressed lists of size L (non-zero count). $O(L)$ space.

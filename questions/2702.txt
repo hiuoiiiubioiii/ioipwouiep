@@ -1,0 +1,13 @@
+ID: 2702
+Problem Title: Minimum Operations to Make Numbers Non-positive
+Brute Force Method: Simulate step-by-step: Find the max element, subtract X, subtract Y from everything else. Repeat until all elements ≤ 0.
+BF Complexity Visuals: Recursion Tree / Array State Mutation
+How to Draw BF: Draw the initial array. For each step, cross out the max value, subtract X, and subtract Y from others. Write the new array below it. The depth of this stack represents time complexity.
+Optimised Pattern: Array modification tracking (snapshotting the entire array state at each simulated step).
+Opt Vis. Technique: Binary Search on Answer Space
+Dry Run (Opt): Number Line Partitioning (True/False boundary)
+How to Draw (Opt): Pick a midpoint mid. Map elements to the number of extra X operations needed. If total extra ops ≤ mid, go left; else go right.
+Opt Complexity Visuals: Draw a horizontal axis representing total operations [0, MAX_VAL]. Mark L, R, and mid. Under mid, list array elements and tally max(0, ceil((val - mid*y) / (x-y))).
+How to Draw Opt Complexity: Search Space Reduction Tree
+Mem Vis (BF): Draw a box representing the space [L, R]. Halve the box at each downward level, writing the $O(N)$ check cost next to it. Total height is $O(\log(\text{MAX})$), width is $O(N)$.
+Mem Vis (Opt): Variable state tracking (Draw 4 boxes for pointers: L, R, mid, extra_ops. No extra arrays needed, $O(1)$ space).

@@ -1,0 +1,13 @@
+ID: 3131
+Problem Title: Find the Integer Added to Array I
+Brute Force Method: Try every possible integer x and for each, check if all elements in nums1 + x exist in nums2. $O(N^2 \log N)$ or $O(N^2)$
+BF Complexity Visuals: Multi-layer comparison grid where every element of A checks every element of B.
+How to Draw BF: Draw two arrays. Draw lines from every element in the first to every element in the second to calculate potential x.
+Optimised Pattern: Min-Element Comparison / Math
+Opt Vis. Technique: Scale Balance
+Dry Run (Opt): Find the smallest element in nums1 and nums2. The difference is the only possible x.
+How to Draw (Opt): Draw two boxes. Label them `min1` and `min2`. Draw an arrow between them showing the subtraction.
+Opt Complexity Visuals: Single pass through each array.
+How to Draw Opt Complexity: Draw two parallel lines of length N. Mark a single comparison step at the end. $O(N)$.
+Mem Vis (BF): Temporary storage for all potential x candidates.
+Mem Vis (Opt): Two scalar variables for minimums. $O(1)$.

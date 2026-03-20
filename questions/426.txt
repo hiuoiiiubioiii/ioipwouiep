@@ -1,0 +1,13 @@
+ID: 426
+Problem Title: Convert BST to Sorted DLL
+Brute Force Method: Traverse &amp; Store Perform In-order traversal, store nodes in a List, then loop through list to connect pointers.
+BF Complexity Visuals: Two-Pass Scan
+How to Draw BF: Draw a Tree. Below it, draw a separate Linear Array of nodes. Show arrows connecting the Array nodes. $O(N)$.
+Optimised Pattern: In-Place In-order Maintain a `first` and `last` pointer. Connect `last.right = current` and `current.left = last` during traversal.
+Opt Vis. Technique: Magnetic Pointer Snapping
+Dry Run (Opt): Imagine the BST nodes are magnets. As you visit in-order, they "snap" together horizontally.
+How to Draw (Opt): Draw a BST. Use a red pen to trace the in-order path. At each node, draw dotted lines to its predecessor and successor.
+Opt Complexity Visuals: Single Tree Walk
+How to Draw Opt Complexity: Draw a single continuous line weaving through the tree $O(N)$. No extra structures.
+Mem Vis (BF): Extra List Draw a block of N node references in memory. $O(N)$.
+Mem Vis (Opt): Call Stack Draw stack frames for tree height. $O(H)$.

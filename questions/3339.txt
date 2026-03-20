@@ -1,0 +1,13 @@
+ID: 3339
+Problem Title: Find the Number of K-Even Arrays
+Brute Force Method: Generate all M^N possible arrays and count how many satisfy the k-even condition.
+BF Complexity Visuals: M-ary Search Tree
+How to Draw BF: Draw a root. Branch M ways. From each, branch M ways again. The total leaf count is M^N, visualizing the brute force wall.
+Optimised Pattern: DP (Index, Remaining K, Last Parity)
+Opt Vis. Technique: State Transition Ribbon
+Dry Run (Opt): `dp[i][j][parity]` = ways to fill i slots with j pairs left, ending in even/odd. Multiply by `cntEven` or `cntOdd`.
+How to Draw (Opt): Draw a grid: columns are 1 dots N, rows are 0 dots K. Each cell has two sub-boxes (Even/Odd). Draw arrows from (i-1, j) and (i-1, j-1) into the current cell.
+Opt Complexity Visuals: Bounded Grid Area
+How to Draw Opt Complexity: Draw an N x K rectangle. Shading it shows $O(N \cdot K)$ work, where M is just a constant multiplier.
+Mem Vis (BF): An array of all M^N generated arrays in memory.
+Mem Vis (Opt): A 3D DP table (or two 2D layers) of size K x 2 (strictly $O(N \cdot K)$).

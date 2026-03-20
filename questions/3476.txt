@@ -1,0 +1,13 @@
+ID: 3476
+Problem Title: Maximize Profit from Task Assignment
+Brute Force Method: Exhaustively try every permutation of matching workers to tasks that meet their skill requirement. $O(N!)$
+BF Complexity Visuals: Bipartite Matching Expansion.
+How to Draw BF: Draw workers on left, tasks on right. Draw lines between all valid skill matches and try to find the max sum.
+Optimised Pattern: Greedy Assignment + Hash Map of Max-Heaps + Special Worker Greedy choice. $O((N+M)$ log M)
+Opt Vis. Technique: Priority Queue Bucket Assignment.
+Dry Run (Opt): Group tasks by skill in a Map. For each worker, pop the highest profit from their skill bucket. Finally, give the special worker the absolute max remaining profit.
+How to Draw (Opt): Draw buckets for each skill level. Put profits in each bucket. Draw a worker "taking" the top value. Draw a "Special" worker taking the best from any bucket.
+Opt Complexity Visuals: Sorting/Heap Tree Traversal.
+How to Draw Opt Complexity: Draw an $O(M \log M)$ sorting step followed by a linear worker pass with $O(\log M)$ heap pops.
+Mem Vis (BF): Massive permutation tree in the recursion stack.
+Mem Vis (Opt): A Hash Map containing several Priority Queues or sorted lists.

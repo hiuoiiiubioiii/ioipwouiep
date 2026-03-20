@@ -1,0 +1,13 @@
+ID: 3603
+Problem Title: Minimum Cost Path with Alternating Directions II (Med)
+Brute Force Method: Standard DFS/Backtracking trying all possible paths while forcing alternating directions.
+BF Complexity Visuals: Exponential Recursion Tree.
+How to Draw BF: Draw a tree node. Branch it out 4 ways. For each child, branch 3 ways. Note the depth is V. Write $O(4^V)$ to show path explosion.
+Optimised Pattern: State-Space Dijkstra's Algorithm. State = (Node, Arriving_Direction).
+Opt Vis. Technique: Layered Graph Visualization.
+Dry Run (Opt): Draw two parallel versions of the grid. Layer 1: "Arrived Horizontally". Layer 2: "Arrived Vertically". Edges only cross between layers.
+How to Draw (Opt): Draw a Min-Heap. Pull the lowest cost node. If it arrived Horizontal, ONLY draw lines to its top/bottom neighbors, pushing them to the Vertical layer.
+Opt Complexity Visuals: Priority Queue Flowchart.
+How to Draw Opt Complexity: Draw the V*2 possible states. Write E*2 possible edges. Write standard Dijkstra formula: $O((E + V)$ log V), noting V and E are just multiplied by 2 (constant factor).
+Mem Vis (BF): Draw a massive Call Stack frame pile representing deep recursion paths.
+Mem Vis (Opt): Draw a 2D array `dist[node][direction_arrived]`. Visually overwrite infinity symbols with actual integer costs as they are relaxed.

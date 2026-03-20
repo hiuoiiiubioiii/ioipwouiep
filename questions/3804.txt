@@ -1,0 +1,13 @@
+ID: 3804
+Problem Title: Number of Centered Subarrays (Med.)
+Brute Force Method: Generate all $O(N^2)$ subarrays, sort them or find the center, and check the condition.
+BF Complexity Visuals: Triangular matrix of subarray extractions.
+How to Draw BF: Draw two pointers (i, j). For each pair, draw a nested loop extracting elements to find the median/center.
+Optimised Pattern: Prefix Sum Transformation + Fenwick Tree / Sliding Window.
+Opt Vis. Technique: 1D Line Plot mapping elements to +1 or -1 based on the target center.
+Dry Run (Opt): Convert elements &gt; target to +1, &lt; target to -1. Maintain running sum. Use a data structure to count valid previous prefix sums.
+How to Draw (Opt): Write original array. Below, map it to [-1, 0, 1]. Below that, write prefix sums. Use curved arrows to link valid prefix pairs.
+Opt Complexity Visuals: 1D Sweep Line with logarithmic tree updates.
+How to Draw Opt Complexity: Draw an array of size N. Below each element, draw a small binary tree representing the $O(\log N)$ Fenwick update. Sum to $O(N \log N)$.
+Mem Vis (BF): Subarray memory allocation showing $O(N)$ space created per $O(N^2)$ loops (if not done in-place).
+Mem Vis (Opt): A Fenwick Tree array of size 2N, visualized as an array with step-wise index jumps storing frequency counts.

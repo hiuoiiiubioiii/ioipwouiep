@@ -1,0 +1,13 @@
+ID: 151
+Problem Title: Reverse Words in a String
+Brute Force Method: Split the string by spaces into an array, reverse the array, and join with a single space.
+BF Complexity Visuals: A three-stage conveyor belt: Split (O(N)) rightarrow Reverse (O(N)) rightarrow Join (O(N)).
+How to Draw BF: Draw the string. Draw a set of boxes (Array). Write words in boxes. Draw a new set of boxes in reverse order. Join them.
+Optimised Pattern: Two-Pointer In-place Reverse (or String Builder).
+Opt Vis. Technique: A "Mirror in Sections." First, reverse the entire string, then reverse each individual word back to its original spelling.
+Dry Run (Opt): 1. Clean spaces. 2. Reverse the whole string. 3. Use two pointers to find word boundaries and reverse each word in-place.
+How to Draw (Opt): Write "blue is sky". Reverse the letters: "yks si eulb". Then circle "yks" and flip it to "sky", circle "si" to "is", etc.
+Opt Complexity Visuals: $O(N)$ single-pass (or constant number of passes) over the characters.
+How to Draw Opt Complexity: Draw a single horizontal arrow through the string. Mark the points where it "doubles back" to flip a word.
+Mem Vis (BF): Visualise multiple temporary string objects and a full word array taking $O(N)$ heap space.
+Mem Vis (Opt): Visualize a single character array (if mutable) or a single String Builder instance in $O(N)$ space.

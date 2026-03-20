@@ -1,0 +1,13 @@
+ID: 1936
+Problem Title: Add Minimum Number of Rungs
+Brute Force Method: Simulate climbing the ladder, adding one rung at a time whenever the next gap exceeds the max distance.
+BF Complexity Visuals: Incremental Stepping Simulation
+How to Draw BF: Draw a ladder with a huge gap. Draw many small rungs being added one by one inside that gap. $O(\text{Total Height} / \text{Dist})$.
+Optimised Pattern: Greedy with Modular Arithmetic
+Opt Vis. Technique: Gap Quantization (Chunking)
+Dry Run (Opt): For each pair of rungs, calculate the gap. If `gap &gt; dist`, use ans += (gap - 1) / dist to jump the logic.
+How to Draw (Opt): Draw two rungs. Draw a bracket for the gap. Write the division formula inside the bracket to show instant calculation.
+Opt Complexity Visuals: Single-Pass Scan Line
+How to Draw Opt Complexity: Draw one straight arrow through all rungs. $O(N)$ time.
+Mem Vis (BF): A `while` loop counter incrementing many times in the stack.
+Mem Vis (Opt): A single integer `count` variable. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1683
+Problem Title: Invalid Tweets (SQL)
+Brute Force Method: Fetch all tweets into a script, loop through, and count characters in the content string one by one.
+BF Complexity Visuals: Network Data Stream
+How to Draw BF: Draw a DB cylinder sending full text blobs to a CPU icon. $O(N \\text{times} \\text{text}{\text{AvgLength}})$.
+Optimised Pattern: SQL Length Function (LENGTH/CHAR_LENGTH)
+Opt Vis. Technique: Filtered Column Scan
+Dry Run (Opt): Use `WHERE LENGTH(content) &gt; 15`. This runs natively in the database engine.
+How to Draw (Opt): Draw a single column (Content). Draw a "Ruler" next to it. If the ruler marks &gt; 15, highlight the row in green.
+Opt Complexity Visuals: Single Linear Table Scan
+How to Draw Opt Complexity: Draw a straight arrow through the table. $O(N)$.
+Mem Vis (BF): App Heap RAM: Draw a large box holding all tweet text.
+Mem Vis (Opt): Buffer Cache: Draw a small page-sized block where strings are measured and discarded.

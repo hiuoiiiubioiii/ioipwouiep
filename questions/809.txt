@@ -1,0 +1,13 @@
+ID: 809
+Problem Title: Expressive Words
+Brute Force Method: Dynamically mutate strings by inserting characters with nested loops to see if a query word can physically transform into the target string.
+BF Complexity Visuals: String Expansion / Mutation Chains. $O(W \cdot L^2)$ time.
+How to Draw BF: Draw a short word. Draw expanding bubbles pushing the letters apart to make room for new letters, repeatedly checking against a master template.
+Optimised Pattern: Two Pointers / Run-Length Encoding (RLE) grouping.
+Opt Vis. Technique: Zip-Matching Train Boxcars.
+Dry Run (Opt): Compress "heeellooo" into groups: [h:1, e:3, l:2, o:3]. Compress query "hello" into [h:1, e:1, l:2, o:1]. Compare cars sequentially. If the target car has 3+ of a letter, the query car's letter can "stretch" to match it.
+How to Draw (Opt): Draw two trains of boxcars side-by-side. Each boxcar holds a letter and a number count. Draw straight lines connecting matching boxcars between the two parallel trains.
+Opt Complexity Visuals: Parallel Linear Traversal. $O(S + W\cdot L)$ time.
+How to Draw Opt Complexity: Draw two parallel timelines (String S, and Word W). Draw two pointers moving synchronously left to right, stopping only once at the end.
+Mem Vis (BF): Intermediate Heap Allocations: Draw dozens of overlapping, slightly different string blocks cluttering the memory space.
+Mem Vis (Opt): Two Integer Pointers: Draw two small arrow icons (i and j) pointing at indices in the original immutable strings. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 348
+Problem Title: Design Tic-Tac-Toe
+Brute Force Method: Store the entire n \times n board. After every move, scan the entire row, column, and both diagonals to check if the current player has won.
+BF Complexity Visuals: Exhaustive Grid Scan
+How to Draw BF: Draw a 3 \times 3 grid. For every move, draw arrows scanning the whole row, then the whole column. Label $O(N)$.
+Optimised Pattern: Row/Column/Diagonal Sum Counters
+Opt Vis. Technique: Vectorized State Tracking
+Dry Run (Opt): Maintain two arrays: `rows` and `cols`, and two variables: `diag` and `antiDiag`. For Player 1, add 1; for Player 2, subtract 1. If any count reaches n or -n, that player wins.
+How to Draw (Opt): Draw a grid. Outside the grid, draw a vertical array for rows and a horizontal one for columns. When a move is made, just increment the corresponding array slot.
+Opt Complexity Visuals: Constant-Time State Check
+How to Draw Opt Complexity: Draw four specific memory updates (Row, Col, Diag1, Diag2). No loops. Label $O(1)$.
+Mem Vis (BF): A full n \times n 2D array. $O(N^2)$.
+Mem Vis (Opt): Two 1D arrays and two variables. Draw two horizontal tapes of size n. $O(N)$.

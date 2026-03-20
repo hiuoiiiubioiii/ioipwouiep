@@ -1,0 +1,13 @@
+ID: 2003
+Problem Title: Smallest Missing Genetic Value in Each Subtree
+Brute Force Method: For each node, traverse its entire subtree, collect all values into a set, and find MEX (Minimum Excluded) starting from 1.
+BF Complexity Visuals: Overlapping Subtree Blob Diagrams
+How to Draw BF: Draw a tree. For each node, circle its subtree. Show how subtrees at the top redundantly encompass already-processed subtrees. $O(N^2)$.
+Optimised Pattern: DFS Post-order Traversal + Tracking Node with Value 1
+Opt Vis. Technique: Path Upward Highlighting
+Dry Run (Opt): Find the node with value `1`. The MEX can only be &gt;1 for nodes on the path from `1` to the root. Track visited nodes using a global set.
+How to Draw (Opt): Draw the tree. Highlight the path from node `1` up to the root. Maintain a global "visited" bucket on the side, adding nodes as you walk up.
+Opt Complexity Visuals: Single-Pass Tree Edges
+How to Draw Opt Complexity: Trace every edge exactly twice (down and up). Show the global `mex` variable incrementing linearly. Total $O(N)$.
+Mem Vis (BF): N separate sets re-allocated for every single node in the tree.
+Mem Vis (Opt): One single global Set (hash set) that persists and grows as pointers move up the tree.

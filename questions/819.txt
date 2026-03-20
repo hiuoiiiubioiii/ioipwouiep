@@ -1,0 +1,13 @@
+ID: 819
+Problem Title: Most Common Word
+Brute Force Method: Iterate string, clean punctuation manually into a new string, split by space. Nested loop to check against banned words. Nested loop to count max frequency.
+BF Complexity Visuals: Messy Nested String Manipulation. $O(N^2)$ time.
+How to Draw BF: Draw the paragraph. Draw boxes copying words char by char, scrubbing them, then scanning against a growing list of frequencies over and over.
+Optimised Pattern: Regex/String Parsing + Hash Set + Hash Map.
+Opt Vis. Technique: Word Sieve and Tally Counters.
+Dry Run (Opt): Pour the paragraph through a "lowercase &amp; punctuation" sieve. Words fall out. If they match a banned word in the Set (a blocker), they are destroyed. Otherwise, they fall into a Tally Counter Map.
+How to Draw (Opt): Draw a text block. Draw arrows filtering it into clean words. Draw a wall (Banned Set). Valid words bypass the wall and stack up in bins. Point to the tallest bin.
+Opt Complexity Visuals: Linear Pipeline. $O(N + M)$ time.
+How to Draw Opt Complexity: Draw a straight line broken into three distinct phases: Clean -&gt; Filter -&gt; Count. All $O(N)$.
+Mem Vis (BF): Multiple intermediate string arrays: Draw lots of fragmented string boxes scattered in memory.
+Mem Vis (Opt): Hash Map (Freq) &amp; Hash Set (Banned): Draw two neat grids holding word counts and banned strings. $O(N)$ space.

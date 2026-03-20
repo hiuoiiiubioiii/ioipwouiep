@@ -1,0 +1,13 @@
+ID: 3314
+Problem Title: Construct the Minimum Bitwise Array I
+Brute Force Method: Loop `x` from 0 to `p`. For each, check if `x OR (x+1) == p`. Return the first one that matches.
+BF Complexity Visuals: Linear Trial-and-Error Track
+How to Draw BF: Write the target prime `p`. Below it, write 0, 1, 2, 3 in binary. Manually perform the OR operation line by line until you find the match.
+Optimised Pattern: Bit Manipulation (Flipping Trailing Ones)
+Opt Vis. Technique: Binary Bit-Flip Timeline
+Dry Run (Opt): Odd primes end in a sequence of 1s in binary. `x OR (x+1)` turns the lowest 0 into a 1. To reverse this, find the highest trailing 1 in `p` and flip it to 0.
+How to Draw (Opt): Write the prime `p` in binary. Box the block of 1s at the far right. Cross out the leftmost '1' in that box and write a '0'. Convert back to decimal.
+Opt Complexity Visuals: Constant Time Box
+How to Draw Opt Complexity: Draw a single square box. Inside write `O(1)`. No matter how large the number, the math calculation takes one step.
+Mem Vis (BF): A standard loop counter variable in the stack.
+Mem Vis (Opt): A single integer in a CPU register (O(1) auxiliary space).

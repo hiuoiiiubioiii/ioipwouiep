@@ -1,0 +1,13 @@
+ID: 1355
+Problem Title: Activity Participants (SQL)
+Brute Force Method: Calculate counts for all activities, then use nested subqueries to find the literal MIN and MAX values by scanning the count list twice.
+BF Complexity Visuals: $O(N²)$ Redundant Aggregation Scans
+How to Draw BF: Draw an Activity table. For each row, run a scan to count, then run another scan to find the max, then another for the min. Very inefficient disk usage.
+Optimised Pattern: Window Functions (RANK / DENSE_RANK)
+Opt Vis. Technique: Rank-Based Exclusion
+Dry Run (Opt): Group by activity and count. Use `RANK() OVER (ORDER BY count DESC)` and `RANK() OVER (ORDER BY count ASC)`. Filter out rows where either rank is 1.
+How to Draw (Opt): Draw a list of activities with their participant counts. Sort them. Cross out the very top and the very bottom. The remaining list is your answer.
+Opt Complexity Visuals: $O(N \log N)$ Sorting
+How to Draw Opt Complexity: Draw a single sorting funnel. Show the top and bottom of the sorted list being "snipped" off.
+Mem Vis (BF): Multiple Temp Tables: Storing intermediate counts in multiple scratchpads.
+Mem Vis (Opt): Single Result Set: Draw one table with an added `rank_desc` and `rank_asc` column.

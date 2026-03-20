@@ -1,0 +1,13 @@
+ID: 3437
+Problem Title: Permute Adjacent Array Elements
+Brute Force Method: Generate all N! permutations and check which ones only involve adjacent swaps from the original. $O(N \cdot N!)$
+BF Complexity Visuals: Factorial Permutation Tree.
+How to Draw BF: Draw a root. Branch it N times. Branch each N-1 times. The tree will be too large to finish drawing.
+Optimised Pattern: Greedy Swapping / Parity-Based Reordering. $O(N)$
+Opt Vis. Technique: Bubble-Hop Visualization.
+Dry Run (Opt): Identify target positions. If an element is at index i and needs to go to j, check if |i-j| = 1. If not, it's impossible.
+How to Draw (Opt): Draw the array twice (Before/After). Draw short "X" shaped arrows between adjacent indices that swapped.
+Opt Complexity Visuals: Linear Pairwise Scan.
+How to Draw Opt Complexity: Draw a line with N-1 segments. Mark each segment once to show you only check each adjacent pair.
+Mem Vis (BF): A massive table storing N! array configurations.
+Mem Vis (Opt): In-place array modification or one auxiliary 1D array.

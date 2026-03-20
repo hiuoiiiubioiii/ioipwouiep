@@ -1,0 +1,13 @@
+ID: 1619
+Problem Title: Mean of Array After Removing Some Elements
+Brute Force Method: Sort the entire array from scratch, manually slice off the top and bottom 5%, and sum the rest.
+BF Complexity Visuals: Heavy Sorting Funnel
+How to Draw BF: Draw a massive funnel rearranging every single item in the array to achieve $O(N \log N)$ time.
+Optimised Pattern: QuickSelect Partitioning (nth_element)
+Opt Vis. Technique: Pivot Boundary Shifting
+Dry Run (Opt): Calculate K = 5%. Use QuickSelect to place the Kth smallest element at index K. Then place the Kth largest at index N-K. Sum the middle.
+How to Draw (Opt): Draw an unsorted array. Draw two bold vertical lines at the 5% and 95% marks. Write arbitrary small numbers left of the first line, big numbers right of the second. Sum the middle.
+Opt Complexity Visuals: Linear Partitioning Time
+How to Draw Opt Complexity: Draw an array being split into buckets roughly in half a few times, culminating in an $O(N)$ straight line.
+Mem Vis (BF): Copied Array Slice: Draw a brand new, slightly smaller array allocated in memory.
+Mem Vis (Opt): In-Place Array Pointers: Draw the original array with elements swapped internally, avoiding extra memory overhead. $O(1)$ auxiliary space.

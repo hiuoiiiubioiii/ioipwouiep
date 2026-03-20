@@ -1,0 +1,13 @@
+ID: 777
+Problem Title: Swap Adjacent in LR String
+Brute Force Method: Use BFS to explore all possible 'XL' -&gt; 'LX' and 'RX' -&gt; 'XR' swaps to see if `start` can become `end`.
+BF Complexity Visuals: State Transition Maze
+How to Draw BF: Draw a string as a node. Branch out for every possible swap. $O(2^N)$ potential states.
+Optimised Pattern: Two-Pointer Position Invariant
+Opt Vis. Technique: Relative Order Tracking
+Dry Run (Opt): Ignore 'X's and check if 'L' and 'R' appear in the same relative order. Then verify 'L' only moves left and 'R' only moves right.
+How to Draw (Opt): Draw two strings without 'X's. Match 'L's and 'R's with lines. If lines cross, or an 'L' in `end` is to the right of `start`, mark as invalid.
+Opt Complexity Visuals: Parallel String Scan
+How to Draw Opt Complexity: Draw two strings with an arrow pointing to the current non-'X' char in each. $O(N)$.
+Mem Vis (BF): Huge HashSet of visited strings.
+Mem Vis (Opt): $O(1)$ extra space (just pointers).

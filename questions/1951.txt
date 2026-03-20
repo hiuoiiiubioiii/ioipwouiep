@@ -1,0 +1,13 @@
+ID: 1951
+Problem Title: All the Pairs With the Maximum Number of Common Followers (SQL)
+Brute Force Method: Generate all possible user pairs (A, B) and for each pair, query the intersection of their follower lists.
+BF Complexity Visuals: $O(U^2 \cdot F)$ Intersection Matrix
+How to Draw BF: Draw a grid of User pairs. In each cell, draw two lists and circle matching IDs. Highlight the cell with the most circles.
+Optimised Pattern: Self-Join on Follower Column
+Opt Vis. Technique: Relational Intersection Tally
+Dry Run (Opt): Join the table with itself on `follower_id` where `user1 &lt; user2`. Group by `user1, user2` and use `RANK()` or `ALL` to find the maximum count.
+How to Draw (Opt): Draw the table with User and Follower columns. Draw arrows connecting different users sharing the same Follower ID. Count these connections per pair.
+Opt Complexity Visuals: Index-Based Hash Join
+How to Draw Opt Complexity: Draw two copies of the Follower table. Connect them via a central "Follower ID" pivot. $O(N \log N)$ or $O(N)$ with indexing.
+Mem Vis (BF): Massive temporary intersection sets stored in database memory for every pair.
+Mem Vis (Opt): Internal Hash Map/B-Tree index traversal on the `follower_id` column.

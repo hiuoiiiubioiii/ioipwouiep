@@ -1,0 +1,13 @@
+ID: 2897
+Problem Title: Apply Operations on Array to Maximize Sum of Squares
+Brute Force Method: Randomly pick pairs of numbers (i, j) and apply the operation (nums[i]  AND  nums[j], nums[i]  OR  nums[j]) repeatedly to see if the sum of squares increases.
+BF Complexity Visuals: Stochastic Simulation
+How to Draw BF: Draw two numbers. Show bits moving from one to the other. Repeat this for thousands of random pairs without a clear termination.
+Optimised Pattern: Bit-Counting + Greedy Reconstruction
+Opt Vis. Technique: Bit-Vertical Stacking
+Dry Run (Opt): Count the total occurrences of each bit (0-30) across all numbers. To maximize the sum of squares, "push" as many bits as possible into the same numbers to create the largest possible values (since 10^2 + 2^2 &gt; 6^2 + 6^2).
+How to Draw (Opt): Draw 30 buckets (one for each bit power). Toss every number's bits into their respective buckets. Then, build the first number by taking one bit from every non-empty bucket. Repeat for k numbers.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a line. Scan all numbers to fill bit-counters (O(31N)), then reconstruct k numbers (O(31k)).
+Mem Vis (BF): $O(N)$ - Storing the history of operations.
+Mem Vis (Opt): $O(1)$ - Using only a fixed-size array of 31 integers to store bit counts.

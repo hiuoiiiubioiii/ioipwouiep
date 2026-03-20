@@ -1,0 +1,13 @@
+ID: 3309
+Problem Title: Maximum Possible Number by Binary Concatenation
+Brute Force Method: Generate all permutations of the given numbers, concatenate their binary strings, convert back to decimal, and find the max.
+BF Complexity Visuals: Permutation Branching Tree
+How to Draw BF: Draw 3 root branches, splitting into 2, then 1. Write the concatenated binary result at the 6 leaf nodes.
+Optimised Pattern: Custom Greedy Sorting
+Opt Vis. Technique: Binary Block Swap Comparisons
+Dry Run (Opt): Convert numbers to binary strings. Sort them using a custom comparator: Compare (A + B) against (B + A). Concatenate the fully sorted array.
+How to Draw (Opt): Write binary for A and B in boxes. Place A before B. Below it, place B before A. Circle the combination that forms the larger binary value.
+Opt Complexity Visuals: Constant Time Scale (O(1))
+How to Draw Opt Complexity: Since there are strictly 3 numbers, draw exactly 3 balance scales representing the constant $O(1)$ number of comparisons required.
+Mem Vis (BF): Building and storing all 6 combined string permutations in memory simultaneously.
+Mem Vis (Opt): $O(1)$ space. Merely swapping references or shifting bits in a 3-element array.

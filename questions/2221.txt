@@ -1,0 +1,13 @@
+ID: 2221
+Problem Title: Find Triangular Sum of an Array
+Brute Force Method: Iterative Array ReductionCreate a new array of size N-1, sum adjacent elements modulo 10, and repeat this process N-1 times until one number remains.
+BF Complexity Visuals: Inverted Number Pyramid
+How to Draw BF: Draw the initial array at the top. Draw lines connecting pairs of adjacent numbers down to a single number below them, forming a triangle that points downward.
+Optimised Pattern: Math / Binomial Coefficients
+Opt Vis. Technique: Combinatorial Weight Mapping
+Dry Run (Opt): Each number at index `i` contributes to the final sum exactly `nCr(N-1, i)` times. Calculate the combinations, multiply by `nums[i]`, and sum them all modulo 10.
+How to Draw (Opt): Draw the array. Below each element `i`, write `C(N-1, i)`. Draw an arrow multiplying the array element by its combinatorial weight, pointing to a final sum bucket.
+Opt Complexity Visuals: Linear Pass with Math Lookups
+How to Draw Opt Complexity: Draw a single pass timeline representing $O(N)$. Inside, show $O(1)$ mathematical updates using a precomputed factorials array or Lucas Theorem, completely avoiding the $O(N^2)$ triangle generation.
+Mem Vis (BF): Allocating N separate shrinking arrays, resulting in $O(N^2)$ memory overhead.
+Mem Vis (Opt): A single accumulation integer variable and possibly a small fixed array for factorial caching (O(1) auxiliary space).

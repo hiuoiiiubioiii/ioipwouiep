@@ -1,0 +1,13 @@
+ID: 2267
+Problem Title: Check if There Is a Valid Parentheses String Path
+Brute Force Method: Exhaustive DFSExplore every possible path from (0,0) to (m,n). For each path, maintain a string of '(' and ')' and check if it is a valid parenthesis sequence at the end.
+BF Complexity Visuals: Path Permutation Grid
+How to Draw BF: Draw a 3x3 grid. Draw every possible "Right-Down" snake path. For each path, write out the string and check balance. Show the $O(2^(M+N)$) explosion.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: Visited State Pruning
+Dry Run (Opt): Use a 3D state `dp[r][c][balance]`, where `balance` is the count of open '(' minus closed ')'. If `balance &lt; 0`, the path is invalid. Store booleans to mark reachable states.
+How to Draw (Opt): Draw the grid. In each cell, list the possible "balance" values (e.g., {1, 3}). When moving to the next cell, increment or decrement those values based on the new character.
+Opt Complexity Visuals: Matrix-State Filling
+How to Draw Opt Complexity: Draw an `M x N x (M+N)` box. Label it $O(M \cdot N \cdot (M+N)$). Show that even though it’s 3D, it’s far smaller than the exponential brute force.
+Mem Vis (BF): Storing every full path string in a list (massive memory overhead).
+Mem Vis (Opt): A 3D boolean array or a 2D array of Hash Sets (O(M * N * (M+N)) space).

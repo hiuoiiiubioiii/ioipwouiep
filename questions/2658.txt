@@ -1,0 +1,13 @@
+ID: 2658
+Problem Title: Maximum Number of Fish in a Grid
+Brute Force Method: Start a DFS/BFS from every single cell to calculate the total fish in connected water components.
+BF Complexity Visuals: Redundant Grid Search
+How to Draw BF: Draw a grid. From every cell, draw a sprawling DFS. Show how many cells are revisited. $O(R^2 \cdot C^2)$.
+Optimised Pattern: DFS / BFS + Grid Traversal (Visited tracking)
+Opt Vis. Technique: Flood Fill Component Sum
+Dry Run (Opt): Iterate through the grid. If a cell has fish and is unvisited, start a DFS to sum all fish in that "pond." Mark cells as visited to ensure each pond is only counted once.
+How to Draw (Opt): Draw a grid with "water" (numbers) and "land" (0). Pick a water cell, "color" the whole connected pond, and sum the values. Move to the next uncolored water cell.
+Opt Complexity Visuals: $O(R \cdot C)$ Single Visit
+How to Draw Opt Complexity: Draw a block representing R * C. Each cell is visited exactly once by the overall iteration and the DFS combined.
+Mem Vis (BF): Recursive stack for every cell
+Mem Vis (Opt): $O(R \cdot C)$ for the visited matrix and recursive call stack.

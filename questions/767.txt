@@ -1,0 +1,13 @@
+ID: 767
+Problem Title: Reorganize String
+Brute Force Method: Generate all permutations of the string and check which ones have no adjacent identical characters.
+BF Complexity Visuals: Permutation Tree
+How to Draw BF: Draw a tree branching into N! possibilities. Most branches fail the "adjacent check." $O(N!)$.
+Optimised Pattern: Max-Heap / Greedy with Interleaving
+Opt Vis. Technique: Priority Bucket Filling
+Dry Run (Opt): Count character frequencies. Use a Max-Heap to always pick the most frequent character. Place it, then pick the *second* most frequent to "separate" the first.
+How to Draw (Opt): Draw a frequency table. Draw "slots" for the new string. Fill every other slot with the most common letter. Fill the gaps with others.
+Opt Complexity Visuals: Heap Operation Logarithm
+How to Draw Opt Complexity: Draw a small heap (size 26). Show N extractions. Total time $O(N \log A)$ where A is alphabet size.
+Mem Vis (BF): Large set of string permutations.
+Mem Vis (Opt): Frequency array and Max-Heap $O(A)$ or $O(1)$ if A=26.

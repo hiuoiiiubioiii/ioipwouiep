@@ -1,0 +1,13 @@
+ID: 2774
+Problem Title: Array Upper Bound (JS)
+Brute Force Method: Iterate from the end of the array to the beginning. The first index where arr[i] == target is the upper bound. $O(N)$.
+BF Complexity Visuals: Linear Reverse Scan
+How to Draw BF: Draw the array. Start at the last box and move left until you find the target number. Circle the index.
+Optimised Pattern: Minimal Variable State (Only index i).
+Opt Vis. Technique: Binary Search (O(log N))
+Dry Run (Opt): Logarithmic Range Narrowing
+How to Draw (Opt): Use low and high pointers. While low &lt;= high, check mid. If arr[mid] &lt;= target, move low to mid + 1. The final answer is the last valid index found.
+Opt Complexity Visuals: Draw the array. Mark L and R. Half the distance at each step. Draw a "focus box" that gets smaller and smaller until it lands on the target.
+How to Draw Opt Complexity: Logarithmic Time $O(\log N)$
+Mem Vis (BF): Draw a binary tree. Write $O(\log N)$ to show the height of the search tree.
+Mem Vis (Opt): $O(1)$ Pointers (Draw exactly three integer variables: low, high, mid).

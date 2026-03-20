@@ -1,0 +1,13 @@
+ID: 1658
+Problem Title: Minimum Operations to Reduce X to Zero
+Brute Force Method: Try every combination of picking from the left and right ends using recursion/backtracking.
+BF Complexity Visuals: Binary Choice Tree
+How to Draw BF: Draw a tree where each node branches to "Pick Left" or "Pick Right". $O(2^N)$.
+Optimised Pattern: Sliding Window (Target = TotalSum - x)
+Opt Vis. Technique: Inverse Sliding Frame
+Dry Run (Opt): Finding the min elements to remove from ends is the same as finding the *max length* contiguous subarray that sums to `Total - x`.
+How to Draw (Opt): Draw an array. Draw a rectangular "frame" (window) sliding across it. Keep track of the frame's sum and its max width.
+Opt Complexity Visuals: Linear Simultaneous Scan
+How to Draw Opt Complexity: Draw two pointers moving from left to right across the array. $O(N)$.
+Mem Vis (BF): Recursive Call Stack: Draw a stack of depth N storing remaining sums.
+Mem Vis (Opt): Two Pointers: Draw two boxes (`left`, `right`) and a `currentSum` variable. $O(1)$ space.

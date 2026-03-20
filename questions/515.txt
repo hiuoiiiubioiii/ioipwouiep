@@ -1,0 +1,13 @@
+ID: 515
+Problem Title: Find Largest Value in Each Tree Row
+Brute Force Method: DFS passing depth, storing all values in a `Map&gt;`, then looping map to find maxes.
+BF Complexity Visuals: Nodes dropping into deep buckets based on depth, followed by scanning each bucket entirely. $O(N)$.
+How to Draw BF: Draw tree. Draw buckets labeled Depth 0, 1, 2. Toss node values into buckets. Run through buckets circling the max.
+Optimised Pattern: BFS (Level Order Traversal) tracking max per level.
+Opt Vis. Technique: A horizontal slicing blade cutting the tree layer by layer, picking the biggest fruit per slice.
+Dry Run (Opt): Queue holds level nodes. Loop `size` times: pop node, update level max, push children. Append max to result array.
+How to Draw (Opt): Draw tree. Draw horizontal dashed lines separating levels. Loop through each level left-to-right, writing the max on the dashed line.
+Opt Complexity Visuals: Linear scan layer by layer. $O(N)$.
+How to Draw Opt Complexity: Draw a line of length N chopped into varying sized segments (levels), evaluated once.
+Mem Vis (BF): Hash Map containing all N nodes plus recursion stack depth overhead.
+Mem Vis (Opt): Output array + Queue holding up to N/2 nodes at the bottom level. Max $O(N)$ space.

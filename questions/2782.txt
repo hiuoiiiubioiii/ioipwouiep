@@ -1,0 +1,13 @@
+ID: 2782
+Problem Title: Number of Unique Categories
+Brute Force Method: For every item i, compare it with every item j &lt; i using the haveSameCategory API. If it doesn't match any previous item, it's a new category. $O(N²)$.
+BF Complexity Visuals: N² Pairwise API Calls
+How to Draw BF: Draw a list of items. Draw lines from the 5th item to the 4th, 3rd, 2nd, and 1st. Repeat for the 6th. The number of lines (API calls) is $O(N²)$.
+Optimised Pattern: Minimal Memory (Only tracking unique category representatives).
+Opt Vis. Technique: Union-Find / Representative Grouping
+Dry Run (Opt): Component Disjoint Sets
+How to Draw (Opt): Maintain a list of "Representative" items (one for each category found so far). For a new item, check it against the representatives. If no match, add it to the representatives.
+Opt Complexity Visuals: Draw several "Bucket" nodes. For a new node, ask each bucket "Are we the same?". If all say no, the node becomes the head of a new bucket.
+How to Draw Opt Complexity: $O(N \\text{cdot UniqueCategories})$
+Mem Vis (BF): Draw a grid where one axis is N and the other is the number of categories. Label it $O(N \cdot K)$.
+Mem Vis (Opt): Representative List (Draw an array storing the indices of the first item found for each category).

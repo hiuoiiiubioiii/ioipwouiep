@@ -1,0 +1,13 @@
+ID: 2965
+Problem Title: Find Missing and Repeated Values
+Brute Force Method: Sort all numbers in the N x N grid and scan to find the duplicate and missing gap.
+BF Complexity Visuals: Sorting-Based Scan
+How to Draw BF: Draw N^2 boxes. Show them being rearranged. T = $O(N^2 \log N^2)$.
+Optimised Pattern: Frequency Array / Math (Sum &amp; Squares)
+Opt Vis. Technique: Tally Chart / Bucket Sort
+Dry Run (Opt): Create a frequency array of size N^2. Fill it by scanning the grid once. The index with 2 is repeated; the index with 0 is missing.
+How to Draw (Opt): Draw a grid of boxes labeled 1 to N^2. Put a coin in a box for every number seen. Find the box with 2 coins and 0 coins.
+Opt Complexity Visuals: Single Grid Pass
+How to Draw Opt Complexity: Draw a square N x N. Visit each cell once. T = $O(N^2)$.
+Mem Vis (BF): Storing a copy of the grid for sorting.
+Mem Vis (Opt): A 1D frequency array of size N^2. Space $O(N^2)$.

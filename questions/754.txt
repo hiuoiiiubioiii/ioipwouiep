@@ -1,0 +1,13 @@
+ID: 754
+Problem Title: Reach a Number
+Brute Force Method: BFS to find the shortest path from 0 to target by moving +k or -k at each step k.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a tree starting at 0. Step 1: (-1, 1). Step 2: (-1-2, -1+2, 1-2, 1+2). $O(2^N)$.
+Optimised Pattern: Mathematical Greedy + Parity Check
+Opt Vis. Technique: Target Overlap Calculation
+Dry Run (Opt): Sum integers 1+2+3...+k until the sum S \ge target. If (S - target) is even, k is the answer. If odd, increment k until it becomes even.
+How to Draw (Opt): Draw a number line. Draw arcs moving only right. Calculate the "gap" between current position and target. Check if gap is divisible by 2.
+Opt Complexity Visuals: Square Root Curve
+How to Draw Opt Complexity: Draw a parabolic curve y = x^2/2. The solution is approximately $O(\text{sqrt}(\text{Target})$).
+Mem Vis (BF): Queue for BFS growing exponentially.
+Mem Vis (Opt): $O(1)$ space (just mathematical variables).

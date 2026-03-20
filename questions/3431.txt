@@ -1,0 +1,13 @@
+ID: 3431
+Problem Title: Minimum Unlocked Indices to Sort Nums
+Brute Force Method: Try every subset of 'locked' indices to unlock and see if any combination allows sorting the array (1s, then 2s, then 3s). $O(2^N)$
+BF Complexity Visuals: Subset Power Set Decision Tree.
+How to Draw BF: Draw a root node branching into "unlock index 0" or "keep locked", repeating for N indices until reaching 2^N leaves.
+Optimised Pattern: Finding Bound Indices (Last 1, First 3) + Linear locked-state count. $O(N)$
+Opt Vis. Technique: Three-Zone Segmentation.
+Dry Run (Opt): Identify where 1s must end and 3s must start. Any 1 appearing after a 3 makes it impossible. Count locked indices in the wrong zones that must be moved.
+How to Draw (Opt): Draw the array. Divide it into three colored boxes (1s, 2s, 3s). Any number that is in the "wrong" box and is 'locked' gets a red cross.
+Opt Complexity Visuals: Single Linear Array Scan.
+How to Draw Opt Complexity: Draw one straight arrow moving from index 0 to N-1, highlighting the $O(N)$ traversal.
+Mem Vis (BF): Recursion stack storing 2^N branching states.
+Mem Vis (Opt): $O(1)$ auxiliary space using 4-5 integer variables to store key boundary indices.

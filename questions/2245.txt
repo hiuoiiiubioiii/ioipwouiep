@@ -1,0 +1,13 @@
+ID: 2245
+Problem Title: Maximum Trailing Zeros in a Cornered Path
+Brute Force Method: DFS Path TraversalFor every cell, explore all possible "cornered" paths (horizontal then vertical) and count the factors of 2 and 5 in the product of all numbers.
+BF Complexity Visuals: Exhaustive Path Counting
+How to Draw BF: Draw a 2D grid. From one cell, draw a line right, then several lines branching down from every point on that line. Show the $O(R\cdot C \cdot (R+C)$) explosion.
+Optimised Pattern: 2D Prefix Sums (Factors of 2 and 5)
+Opt Vis. Technique: Factor Grid Overlay
+Dry Run (Opt): Trailing zeros are `min(count_of_2, count_of_5)`. Create four 2D prefix sum arrays: prefix_2_row, prefix_5_row, prefix_2_col, prefix_5_col. For any corner, calculate factors in $O(1)$.
+How to Draw (Opt): Draw the grid. Overlay it with "Factor 2" and "Factor 5" counts instead of the original numbers. Show a horizontal prefix sum bar and a vertical one meeting at a "Corner Cell".
+Opt Complexity Visuals: Precomputation + Scan Matrix
+How to Draw Opt Complexity: Draw the precomputation block $O(R\cdot C)$. Then draw the evaluation block where each cell is checked in $O(1)$. Total time: $O(R\cdot C)$.
+Mem Vis (BF): Calculating the actual product of numbers (which would cause massive overflow) and counting zeros.
+Mem Vis (Opt): Four 2D arrays of integers (O(R*C) space) to store the prefix sums of prime factors.

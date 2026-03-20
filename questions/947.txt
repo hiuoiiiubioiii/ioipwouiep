@@ -1,0 +1,13 @@
+ID: 947
+Problem Title: Most Stones Removed with Same Row or Column
+Brute Force Method: Try every possible sequence of removing stones. For each stone removed, check if it shares a row/column with a remaining stone.
+BF Complexity Visuals: $O(N!)$. Factorial search for the optimal removal order.
+How to Draw BF: Draw stones on a grid. Pick stone A, then B, then C. Start over. Pick stone B, then A, then C. Count how many removals were valid in each path.
+Optimised Pattern: Union-Find (Connected Components)
+Opt Vis. Technique: "Constellations." Stones sharing a row or column belong to the same constellation. In any constellation of size S, you can remove S-1 stones, leaving 1.
+Dry Run (Opt): For each stone `(r, c)`, union row `r` and column `c` (using an offset to distinguish them). Total stones - number of unique components = stones removed.
+How to Draw (Opt): Draw the grid. Draw lines connecting stones in the same row/col. You will see "islands" of stones. Circle each island.
+Opt Complexity Visuals: $O(N \cdot α(N)$) where α is the inverse Ackermann function. Nearly linear.
+How to Draw Opt Complexity: Draw a small table of "Row/Column parents." Show how stones "hook" rows and columns together into groups.
+Mem Vis (BF): Stack overflow or massive memory from searching N! paths.
+Mem Vis (Opt): $O(N)$ to store parent pointers in Union-Find. Draw a single row of boxes representing groups.

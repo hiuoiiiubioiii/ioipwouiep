@@ -1,0 +1,13 @@
+ID: 3379
+Problem Title: Transformed Array
+Brute Force Method: For each index i, manually step forward or backward in the array nums[i] times, looping around the ends.
+BF Complexity Visuals: Linear Step Simulation
+How to Draw BF: Draw an array. For index i, count jumps one by one until you hit the limit. $O(N \\text{cdot max}(\text{nums})$).
+Optimised Pattern: Modulo Arithmetic (Circular Indexing)
+Opt Vis. Technique: The Clock-Face Map
+Dry Run (Opt): Calculate the new index using (i + nums[i] % N + N) % N to handle positive, negative, and wrap-around.
+How to Draw (Opt): Draw the array in a circle (like a clock). For each index, draw one "teleportation" arrow that lands on the target index.
+Opt Complexity Visuals: Constant-Time Index Mapping
+How to Draw Opt Complexity: Draw a single line of length N. Each index has exactly one arrow. Total work $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): A single output array of size N. $O(N)$ or $O(1)$ auxiliary.

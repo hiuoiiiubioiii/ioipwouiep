@@ -1,0 +1,13 @@
+ID: 1968
+Problem Title: Array With Elements Not Equal to Average of Neighbors
+Brute Force Method: Generate all permutations of the array and check the "not equal to average" condition for each.
+BF Complexity Visuals: Factorial Search Space Tree
+How to Draw BF: Draw a tree of permutations. Highlight paths that fail the average condition until a valid one is found. $O(N!)$.
+Optimised Pattern: Sort &amp; Interleave (Wiggle Sort)
+Opt Vis. Technique: Peak-Valley Waveform
+Dry Run (Opt): Sort the array. Interleave the first half with the second half so that every element is surrounded by much larger or smaller ones.
+How to Draw (Opt): Draw a "mountain range" graph. Place the smallest numbers in valleys and largest on peaks to ensure no element is the average of neighbors.
+Opt Complexity Visuals: Single Sorting Funnel
+How to Draw Opt Complexity: Draw the array falling into a "Sort" box, then splitting into two "Shuffler" streams. $O(N \log N)$.
+Mem Vis (BF): A massive set of all possible array permutations.
+Mem Vis (Opt): A single output array of size N. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 2540
+Problem Title: Minimum Common Value
+Brute Force Method: Nested loops: For every element in nums1, check every element in nums2 to see if they match. $O(N \cdot M)$.
+BF Complexity Visuals: Two arrays where every element in the first sends a "search ray" across the entirety of the second.
+How to Draw BF: Draw two lists. Start at the first item of List 1. Look through all of List 2. Not found? Move to the second item of List 1. Repeat.
+Optimised Pattern: Two Pointers (Sorted Array Property).
+Opt Vis. Technique: Two synchronized pointers "racing" through their respective arrays, only moving forward when they are "behind" the other.
+Dry Run (Opt): Compare nums1[i] and nums2[j]. If equal, that's your answer. If nums1[i] &lt; nums2[j], increment i. Otherwise, increment j. Stop when a match is found or an array ends.
+How to Draw (Opt): Draw two sorted arrays. Put one finger on the start of each. Move the finger pointing to the smaller number. If they point to the same number, you found it.
+Opt Complexity Visuals: $O(N + M)$ linear time.
+How to Draw Opt Complexity: Draw two arrays. Draw a single arrow over each moving strictly left-to-right, showing we never "go back" to re-check.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ - Just two index variables.

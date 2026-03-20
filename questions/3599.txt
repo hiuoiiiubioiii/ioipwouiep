@@ -1,0 +1,13 @@
+ID: 3599
+Problem Title: Partition Array to Minimize XOR (Med)
+Brute Force Method: Try every possible way to split the array into two parts and calculate their XOR difference.
+BF Complexity Visuals: Brute Force Partitioning.
+How to Draw BF: Draw the array. Draw a vertical line. Shift the line one by one, calculating XOR_left oplus XOR_right at each step. $O(N^2)$.
+Optimised Pattern: Prefix XOR + Target Search.
+Opt Vis. Technique: XOR Balance Point.
+Dry Run (Opt): Precompute Prefix XORs. Total XOR is T. We want to find a split point P such that P oplus (T oplus P) is minimized.
+How to Draw (Opt): Draw a line. Write "Running XOR" values below each element. Calculate (Value)  vs  (Total oplus Value) for each. Pick the closest pair.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw an array of N elements. Highlight the two passes (one for total XOR, one for best split).
+Mem Vis (BF): Subset XOR Logs: Draw a database recording the XOR result of every possible subarray.
+Mem Vis (Opt): Two Integer Variables: Draw `totalXor` and `minDiff` variables that update in place.

@@ -1,0 +1,13 @@
+ID: 2654
+Problem Title: Minimum Number of Operations to Make All Array Elements Equal to 1
+Brute Force Method: Exhaustively try all possible subarray GCDs to find the shortest subarray that results in 1.
+BF Complexity Visuals: Nested GCD Subarrays
+How to Draw BF: Draw an N x N matrix. Each cell represents a GCD of a subarray. Find the smallest distance `j-i` where GCD is 1. $O(N^2)$.
+Optimised Pattern: Iterative GCD + Greedy Expansion
+Opt Vis. Technique: GCD Cascade / Reduction
+Dry Run (Opt): Find the smallest subarray whose GCD is 1. If 1 already exists, the answer is `N - count(1)`. If not, find min length `L` of a subarray with GCD 1. Answer is `(L - 1) + (N - 1)`.
+How to Draw (Opt): Draw the array. Pick two numbers, find GCD. Replace one. Repeat until a 1 appears. Use that 1 to "infect" every other number in the array.
+Opt Complexity Visuals: $O(N^2)$ Matrix Traversal
+How to Draw Opt Complexity: Draw an $O(N^2)$ block for the nested loops to find the smallest GCD 1 subarray.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ space if modifying in place or using variables.

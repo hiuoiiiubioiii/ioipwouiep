@@ -1,0 +1,13 @@
+ID: 293
+Problem Title: Flip Game
+Brute Force Method: Check every adjacent pair of characters and flip "++" to "--" if found.
+BF Complexity Visuals: Linear String Scan: $O(N)$.
+How to Draw BF: Draw a string. Draw a sliding window of size 2. Shade each step.
+Optimised Pattern: String Iteration / Simulation
+Opt Vis. Technique: Sliding Window Flip
+Dry Run (Opt): Loop from 0 to len-2. If `s[i] == '+'` and `s[i+1] == '+'`, create a new string with those flipped and add to result list.
+How to Draw (Opt): Draw "++++". Mark indices 0-1, 1-2, 2-3. Draw the results "--++", "+--+", "++--" below the original.
+Opt Complexity Visuals: String Pass: $O(N^2)$ (due to string concatenation).
+How to Draw Opt Complexity: Draw a timeline. Each "find" takes $O(N)$ to create a new string copy. Area = $O(N^2)$.
+Mem Vis (BF): Original string modification.
+Mem Vis (Opt): List of Strings: Draw a box holding multiple string copies of length N.

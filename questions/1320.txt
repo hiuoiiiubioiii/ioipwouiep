@@ -1,0 +1,13 @@
+ID: 1320
+Problem Title: Minimum Distance to Type a Word
+Brute Force Method: Pure recursion without memoization. At each letter, branch into two parallel universes: Finger 1 types it, OR Finger 2 types it.
+BF Complexity Visuals: Exponential Binary Fork Tree
+How to Draw BF: Draw the root letter. Draw two branches (F1 moves, F2 moves). Repeat for every letter in the word. Tree explodes massively showing $O(2^N)$ paths.
+Optimised Pattern: 3D Dynamic Programming / Memoization
+Opt Vis. Technique: Two-Finger State Matrix
+Dry Run (Opt): Track `dp(index, finger1_pos, finger2_pos)`. To type the next letter, calculate the minimum of `dp(next, next_char, f2)` + dist(f1, next) AND `dp(next, f1, next_char)` + dist(f2, next).
+How to Draw (Opt): Draw an alphabet grid. Place two coins on it representing fingers. Move one coin to the next letter, note the distance. Reset and move the other coin. Record the smaller sum.
+Opt Complexity Visuals: N x 26 x 26 State Cuboid
+How to Draw Opt Complexity: Draw a 3D box (length N, width 26, height 26). Shade cells sequentially layer by layer, showing strict $O(N \cdot 26 \cdot 26)$ bounds.
+Mem Vis (BF): Unbounded Call Stack: Deep recursive frames blowing up memory with massive duplicate state evaluations.
+Mem Vis (Opt): 3D DP Array: Draw a static `int[][][]` table. Even better, draw two 2D layers swapping (Space Optimization to $O(1)$ auxiliary size).

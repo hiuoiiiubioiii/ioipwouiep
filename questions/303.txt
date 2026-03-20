@@ -1,0 +1,13 @@
+ID: 303
+Problem Title: Range Sum Query - Immutable
+Brute Force Method: On every sumRange(left, right) call, run a for-loop from 'left' to 'right' summing the elements sequentially.
+BF Complexity Visuals: Linear Pointer Traversal
+How to Draw BF: Draw an array. Draw a pointer starting at L, and a curved arrow jumping to L+1, L+2, up to R. Label this "O(N) per query".
+Optimised Pattern: Prefix Sum Array
+Opt Vis. Technique: Parallel Arrays Alignment
+Dry Run (Opt): Visualize two arrays: Original and PrefixSum. To find sum(2, 5), look at PrefixSum[6] and subtract PrefixSum[2]. The intermediate numbers don't matter.
+How to Draw (Opt): Draw two horizontal array rows. Top is nums. Bottom is prefix_sums. Draw an arrow from prefix[L] and prefix[R+1] with a subtraction symbol (-) between them.
+Opt Complexity Visuals: $O(1)$ Direct Lookup Point
+How to Draw Opt Complexity: Draw a massive $O(1)$ circle. Inside it, draw just two arrows pointing directly into an array. No loops.
+Mem Vis (BF): A single integer variable 'sum' accumulator box being overwritten over and over. $O(1)$ space.
+Mem Vis (Opt): 1D Array Block: Draw a new contiguous block of memory with length N+1. Shade it to indicate it persists across multiple queries. $O(N)$ space.

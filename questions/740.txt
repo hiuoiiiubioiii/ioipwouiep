@@ -1,0 +1,13 @@
+ID: 740
+Problem Title: Delete and Earn
+Brute Force Method: Recursively try taking or skipping every number, checking the constraints (delete x-1 and x+1) each time.
+BF Complexity Visuals: Decision Tree Explosion
+How to Draw BF: Draw a binary tree. Each level is a number: "Take" or "Skip". Branching factor 2^N.
+Optimised Pattern: Dynamic Programming (House Robber Variation)
+Opt Vis. Technique: Bucket Progression
+Dry Run (Opt): Count frequencies of each number. Transform into a `sum` array where `index` is the number and `value` is `count * number`. Apply House Robber logic: `dp[i] = max(dp[i-1], dp[i-2] + sum[i])`.
+How to Draw (Opt): Draw buckets labeled 1, 2, 3... Fill with total points. Use arrows to show jumping to the next-next bucket to maximize points.
+Opt Complexity Visuals: Linear Array Shading
+How to Draw Opt Complexity: Draw a horizontal array of point totals. Shade left-to-right exactly once. $O(N + \text{Max}_\text{Val})$.
+Mem Vis (BF): Massive recursion stack (O(N)).
+Mem Vis (Opt): Frequency array/map and two DP variables (O(Max_Val)).

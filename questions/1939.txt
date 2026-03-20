@@ -1,0 +1,13 @@
+ID: 1939
+Problem Title: Users That Actively Request Confirmation Messages
+Brute Force Method: Self-join the table on user_id, calculate the time difference for every single pair of requests per user. $O(N^2)$.
+BF Complexity Visuals: Quadratic Time-Delta Grid
+How to Draw BF: Draw a timeline of requests. Draw an arrow from request 1 to 2, 1 to 3, 2 to 3, checking if they fall within 24 hours.
+Optimised Pattern: Window Function (LAG/LEAD)
+Opt Vis. Technique: The 24-Hour Sliding Window
+Dry Run (Opt): Use `LEAD(time_stamp)` to peek at the user's *next* request. Use `TIMESTAMPDIFF` to check if the gap is &lt;= 24 hours.
+How to Draw (Opt): Draw a timeline. Move a 2-item viewing window left-to-right. Check the gap between the two items in the window.
+Opt Complexity Visuals: Partitioned Scan $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting pipeline partitioning by user, followed by a single read-head scanning adjacent pairs.
+Mem Vis (BF): Massive intermediate join tables.
+Mem Vis (Opt): Internal DB window buffer. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 3156
+Problem Title: Employee Task Duration and Concurrent Tasks
+Brute Force Method: Join task tables, run unoptimized subqueries to check overlaps per employee.
+BF Complexity Visuals: Cross-Join Overlap Grid
+How to Draw BF: Draw every task checked against every other task manually.
+Optimised Pattern: CTE + Interval Merging (Sweep Line SQL)
+Opt Vis. Technique: The Flattened Timeline
+Dry Run (Opt): Unpivot start and end times into +1 and -1 events. Use window functions `SUM() OVER(ORDER BY time)` to find concurrent tasks, and calculate duration by merging overlapping intervals.
+How to Draw (Opt): Draw a timeline. Plot +1 when a task starts, -1 when it ends. The "height" of the line is the concurrent task count. The base of the line is the total duration.
+Opt Complexity Visuals: Sorting &amp; Windowing $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting pass for times, followed by a linear window aggregation.
+Mem Vis (BF): Massive self-join memory.
+Mem Vis (Opt): Internal sort/window buffer. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 1142
+Problem Title: User Activity for the Past 30 Days II
+Brute Force Method: Loop through all users, count their unique sessions in the date range, then calculate the average in the application code.
+BF Complexity Visuals: User-by-User Scan
+How to Draw BF: Draw a list of users. For each, draw a sub-list of their activities. Manually count unique sessions. Sum all and divide by total users.
+Optimised Pattern: Aggregated Subquery / IFNULL
+Opt Vis. Technique: Multi-Level Aggregation Waterfall
+Dry Run (Opt): Step 1: Get `COUNT(DISTINCT session_id)` grouped by `user_id` within the date range. Step 2: Calculate the `AVG` of those counts. Use `IFNULL` to handle zero cases.
+How to Draw (Opt): Draw a box for each User. Count their unique sessions. Then, draw a large plus sign connecting all boxes, leading into a division symbol.
+Opt Complexity Visuals: Two-Stage Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a flow from the Main Table to a "User-Session Summary" table, then to a single "Average" value.
+Mem Vis (BF): Application-level hash maps
+Mem Vis (Opt): Database Hash Aggregator (Memory efficient).

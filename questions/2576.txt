@@ -1,0 +1,13 @@
+ID: 2576
+Problem Title: Find the Maximum Number of Marked Indices
+Brute Force Method: Check every possible combination of pairs (i, j) such that 2 * nums[i] <= nums[j] and maximize the number of unique indices used. $O(\text{Exponential})$.
+BF Complexity Visuals: A massive matching web where every element tries to find a partner that satisfies the 2x constraint.
+How to Draw BF: Write the array. Draw lines connecting numbers to their 2x counterparts. Try different pairings to see which set covers the most numbers.
+Optimised Pattern: Sorting + Greedy Two-Pointer (Split Search).
+Opt Vis. Technique: A "Lower-Half to Upper-Half" matching visual, where we only try to pair the smallest elements with the elements in the second half of the array.
+Dry Run (Opt): Sort the array. Split it into two halves. Place pointer `i` at the start of the first half (index 0) and pointer `j` at the start of the second half (index n/2). If 2 * nums[i] <= nums[j], it's a valid pair; increment both and add 2 to score. Else, just increment `j`.
+How to Draw (Opt): Draw a sorted array. Draw a vertical line in the middle. Put your left finger at the very start and right finger at the middle line. If the right is >= 2x the left, "match" them and move both fingers. If not, only move the right finger.
+Opt Complexity Visuals: $O(N \log N)$ for sorting, followed by $O(N)$ for the single-pass two-pointer scan.
+How to Draw Opt Complexity: Draw the sorted array. Draw a horizontal arrow for the first half and another for the second half, showing they only move forward once.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ extra space beyond the sorting overhead.

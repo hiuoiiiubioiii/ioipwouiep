@@ -1,0 +1,13 @@
+ID: 3230
+Problem Title: Customer Purchasing Behaviors Analysis (SQL)
+Brute Force Method: Heavy Cartesian products to compare every transaction of a customer against every other transaction.
+BF Complexity Visuals: Relational Cross-Join Matrix
+How to Draw BF: Draw a table joined against itself. Show lines connecting a single customer's row to every other row, squaring the intermediate dataset.
+Optimised Pattern: Window Functions / CTE (Common Table Expressions)
+Opt Vis. Technique: Partitioned Data Streams
+Dry Run (Opt): Use `PARTITION BY customer_id` to isolate transaction histories. Use `ORDER BY date` and analytical functions to find gaps, sums, and averages locally.
+How to Draw (Opt): Draw a large table split into distinct blocks by Customer ID. Inside each block, draw a vertical arrow moving row-by-row calculating rolling metrics.
+Opt Complexity Visuals: Sequential Table Scan Pipeline
+How to Draw Opt Complexity: Draw a single pass over the table representing the sorting $O(N \log N)$, followed by a linear scan $O(N)$ for window calculations.
+Mem Vis (BF): Huge intermediate temp tables holding $O(N^2)$ rows.
+Mem Vis (Opt): In-memory sorting buffer (O(1) extra space outside of sort).

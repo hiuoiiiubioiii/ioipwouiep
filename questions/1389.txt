@@ -1,0 +1,13 @@
+ID: 1389
+Problem Title: Create Target Array in the Given Order
+Brute Force Method: Use a standard dynamic array and perform the `insert(index, value)` operation for every element, causing massive element shifting.
+BF Complexity Visuals: $O(N^2)$ Array Shifting
+How to Draw BF: Draw an array. To insert a '5' at index 1, draw arrows moving every element from index 1 to the end one slot to the right. Repeat N times.
+Optimised Pattern: Self-Balancing BST or Linked List (Ideal)
+Opt Vis. Technique: Node Insertion without Shift
+Dry Run (Opt): In high-level languages like Python, `list.insert` is $O(N)$. For true optimization, use a Linked List (though index access is $O(N)$) or a Balanced BST where each node tracks subtree size for $O(\log N)$ inserts.
+How to Draw (Opt): Draw a sequence of nodes with pointers. To insert, simply "cut" two pointers and draw two new ones connecting the new node. No elements are "moved."
+Opt Complexity Visuals: $O(N)$ (Language dependent) / $O(N \log N)$
+How to Draw Opt Complexity: Draw a tree being built. Each insertion involves walking down the tree height and adding a node, proving logarithmic or linear performance per step.
+Mem Vis (BF): $O(N)$ contiguous block: One array being repeatedly resized and copied.
+Mem Vis (Opt): Pointer-based Memory: Draw individual nodes scattered in memory, connected by arrows.

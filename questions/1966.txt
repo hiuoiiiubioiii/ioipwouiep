@@ -1,0 +1,13 @@
+ID: 1966
+Problem Title: Binary Searchable Numbers in an Unsorted Array
+Brute Force Method: For every element in the array, simulate a binary search and see if it successfully finds that specific element.
+BF Complexity Visuals: N-Tree Simulation Grid
+How to Draw BF: Draw the array. Below each index, draw the specific path a binary search would take to find that index. $O(N \log N)$.
+Optimised Pattern: Prefix Max &amp; Suffix Min Pass
+Opt Vis. Technique: Squeeze-Bound Validation
+Dry Run (Opt): An element is searchable if it is greater than all elements to its left and smaller than all elements to its right.
+How to Draw (Opt): Draw two arrows above the array: one scanning Max from Left, one scanning Min from Right. Circle indices where both conditions meet.
+Opt Complexity Visuals: Linear Multi-Pass Scan
+How to Draw Opt Complexity: Draw two horizontal parallel arrows (Prefix/Suffix) over the array box. $O(N)$.
+Mem Vis (BF): A collection of log N search paths for every element.
+Mem Vis (Opt): Two 1D arrays `preMax[N]` and `sufMin[N]`. $O(N)$ space.

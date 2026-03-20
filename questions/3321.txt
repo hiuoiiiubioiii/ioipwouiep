@@ -1,0 +1,13 @@
+ID: 3321
+Problem Title: Find X-Sum of All K-Long Subarrays II
+Brute Force Method: For every window of size K, count all frequencies, completely sort the unique elements by frequency/value, and sum the top X.
+BF Complexity Visuals: Redrawing Histograms
+How to Draw BF: Draw the array. Bracket a window. Below it, draw a bar chart of frequencies. Move the bracket 1 step, erase the whole chart, and completely redraw it. Visually proves $O(N \cdot K \log K)$.
+Optimised Pattern: Sliding Window + Two Balanced BSTs (Heaps)
+Opt Vis. Technique: The "VIP Room" and "Waiting Area"
+Dry Run (Opt): Maintain a "Top X" Set (VIP) and a "Rest" Set (Waiting). As the window slides, update frequencies. If a Waiting element beats a VIP element, swap them and update a running sum.
+How to Draw (Opt): Draw two boxes: VIP (max size X) and Waiting. When sliding the window, erase/update tally marks. Draw physical arrows swapping numbers between the two boxes based on the new tallies.
+Opt Complexity Visuals: Dual Logarithmic Balancing
+How to Draw Opt Complexity: Draw a smooth line for the $O(N)$ sliding window. At each step, draw two small tree structures showing the $O(\log N)$ rebalancing act.
+Mem Vis (BF): Creating, populating, sorting, and destroying an array of size K for every single window shift.
+Mem Vis (Opt): Two `SortedList` or `TreeSet` structures mapping `(frequency, value)` strictly bounding $O(N)$ memory.

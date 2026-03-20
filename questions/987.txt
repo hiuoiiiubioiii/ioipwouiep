@@ -1,0 +1,13 @@
+ID: 987
+Problem Title: Vertical Order Traversal of a Binary Tree
+Brute Force Method: Perform BFS/DFS to find all nodes, store them in a list with their coordinates (x, y), and then perform a global sort on all nodes based on x, then y, then value.
+BF Complexity Visuals: $O(N \log N)$. Sorting the entire tree globally when it already has structural order.
+How to Draw BF: Draw a tree. For every node, write `(x, y)`. Draw a massive "Sorting Bin" and dump all node values into it.
+Optimised Pattern: TreeMap of Sorted Lists (Coordinate Grouping)
+Opt Vis. Technique: "The Vertical Slot Machine." Use a map where the key is the x-coordinate. For each x, keep a list of nodes that you sort by y and value.
+Dry Run (Opt): 1. BFS/DFS to populate `Map&gt;`. 2. Sort the keys of the Map. 3. For each key, sort its list. 4. Collect results.
+How to Draw (Opt): Draw a tree. Draw vertical "Silos" (columns) through the tree. As you visit a node, it "drops" into its corresponding silo based on its horizontal position.
+Opt Complexity Visuals: $O(N \log N)$ in the worst case, but better distributed because you only sort nodes within the same x-coordinate.
+How to Draw Opt Complexity: Draw a tree with vertical dashed lines representing x = -1, 0, 1... Below each line, draw a small vertical list of values.
+Mem Vis (BF): $O(N)$ to store the flat list of nodes.
+Mem Vis (Opt): $O(N)$ for the coordinate map. Draw a multi-column table where each column represents a vertical slice of the tree.

@@ -1,0 +1,13 @@
+ID: 1288
+Problem Title: Remove Covered Intervals
+Brute Force Method: Compare every interval with every other interval. If interval A is covered by B (i.e., B.start <= A.start and A.end <= B.end), mark A for removal.
+BF Complexity Visuals: All-Pairs Overlap Scan
+How to Draw BF: Draw N intervals on a timeline. Draw arrows from interval 1 to 2, 1 to 3, etc. checking for containment. Write $O(N^2)$.
+Optimised Pattern: Sort by Start (Asc) and End (Desc) + Greedy Scan
+Opt Vis. Technique: The "Expanding Shadow" Sweep
+Dry Run (Opt): Sort intervals by start time. If starts are equal, sort by end time descending. Now, as you scan, you only need to track the `max_end` seen so far. If a current interval's end is <= max_end, it's covered.
+How to Draw (Opt): Draw sorted intervals stacked vertically. The first one is the "Shadow". For the next one, if its end is inside the shadow, cross it out. If it extends beyond, it becomes the new "Shadow."
+Opt Complexity Visuals: Sorted Linear Pass
+How to Draw Opt Complexity: Draw a sorting block followed by a single arrow scanning once. Write $O(N \log N)$.
+Mem Vis (BF): Draw a boolean array of size N to track removals.
+Mem Vis (Opt): Draw one integer variable `max_end` and a counter. Space: $O(1)$ (ignoring sort).

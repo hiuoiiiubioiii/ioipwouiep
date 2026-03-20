@@ -1,0 +1,13 @@
+ID: 3390
+Problem Title: Longest Team Pass Streak
+Brute Force Method: Explore every possible path through the grid using DFS, tracking negative values manually. $O(2^R+C)$.
+BF Complexity Visuals: Exponential Path Grid
+How to Draw BF: Draw a grid. From the top-left, branch right and down. Continue branching at every cell. The overlapping paths are too dense to trace.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: The Layered Grid Extractor
+Dry Run (Opt): Use a 3D DP table `dp[r][c][k]` where `k` (0, 1, or 2) represents the number of negative values you've neutralized. Transition by taking the max of moving from top or left, factoring in whether you use a neutralization on the current cell.
+How to Draw (Opt): Draw 3 identical grids stacked like glass panes. Layer 0 has no neutralizations, Layer 1 has one, Layer 2 has two. To fill a cell in Layer 1, look at the cell above/left in Layer 1, OR pull from Layer 0 and "spend" a neutralization to ignore a negative number.
+Opt Complexity Visuals: State-Space Matrix $O(R \cdot C \cdot 3)$
+How to Draw Opt Complexity: Draw three parallel grid passes. Constant $O(1)$ lookups at each cell.
+Mem Vis (BF): Massive recursion stack tracking path states.
+Mem Vis (Opt): A 3D array of size R x C x 3. $O(R \cdot C)$ space.

@@ -1,0 +1,13 @@
+ID: 3510
+Problem Title: Minimum Pair Removal to Sort Array II (Hard)
+Brute Force Method: $O(N^2)$ DP (Same as 3507, but times out on large inputs).
+BF Complexity Visuals: N-Squared Backward Arrows.
+How to Draw BF: Draw N nodes in a line. From the last node, draw N-1 arrows backwards. Area = $O(N^2)$.
+Optimised Pattern: Segment Tree or Fenwick Tree (BIT) for $O(N \log N)$ LIS.
+Opt Vis. Technique: Range Max Query Tree Updating.
+Dry Run (Opt): For each number, query max in range [0, num]. Add 1. Update tree at index 'num'.
+How to Draw (Opt): Draw array of values at bottom, binary tree hierarchy bridging over them. Update path to root.
+Opt Complexity Visuals: Tree Traversal per Element.
+How to Draw Opt Complexity: Draw N steps horizontally. Above each step, draw a log(N) vertical path up a tree. $O(N \log N)$.
+Mem Vis (BF): Full NxN DP Matrix (if 2D used): Draw a massive unoptimized square grid.
+Mem Vis (Opt): 1D Fenwick/Segment Tree Array: Draw a single 1D array of size 4*N or M (max value).

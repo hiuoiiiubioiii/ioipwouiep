@@ -1,0 +1,13 @@
+ID: 4
+Problem Title: Median of Two Sorted Arrays
+Brute Force Method: Merge &amp; Find Middle Merge both arrays into a new sorted array and pick the middle index.
+BF Complexity Visuals: Two Funnels into One
+How to Draw BF: Draw Array A and Array B. Draw arrows from both pointing into a new, larger Array C. Count the sizes to show $O(M+N)$.
+Optimised Pattern: Binary Search on Partitions
+Opt Vis. Technique: Balanced See-Saw
+Dry Run (Opt): Visualize a vertical line cutting through both arrays. The goal is to move the cut left/right until the max on the left side is &lt;= the min on the right side.
+How to Draw (Opt): Draw Array A on top of Array B. Draw a red vertical partition line through both. Write the boundary conditions (L1 &lt;= R2 and L2 &lt;= R1) explicitly next to the line.
+Opt Complexity Visuals: Halving Block
+How to Draw Opt Complexity: Draw the smaller array. Draw a box around it, then cross out half the box, then cross out half of the remaining half. Write $O(\log(\text{min}(M,N)$)).
+Mem Vis (BF): Draw a massive new array block equal to the size of A + B (O(M+N) space).
+Mem Vis (Opt): Draw just the two original arrays. Place a few pointer arrows (L, R, mid). Emphasize no new array is drawn (O(1) space).

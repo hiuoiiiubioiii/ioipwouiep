@@ -1,0 +1,13 @@
+ID: 1089
+Problem Title: Duplicate Zeros
+Brute Force Method: Create a new array. Iterate through the original; if you see a non-zero, copy it. If you see a zero, copy it twice. Stop when the new array is full.
+BF Complexity Visuals: A "Double-Stamp" copier using a second sheet of paper.
+How to Draw BF: [1, 0, 2, 3]. New: [1]. Zero -&gt; [1, 0, 0]. Next: [1, 0, 0, 2]. Result: [1, 0, 0, 2]. Write $O(N)$ but $O(N)$ space.
+Optimised Pattern: Two-Pointer (In-Place).
+Opt Vis. Technique: A "Reverse-Fill" strategy. Calculate how far the elements will shift, then move them from the back to the front.
+Dry Run (Opt): Count the zeros that will fit in the final array. Then, use two pointers: `i` (end of the source elements) and `j` (the true end of the array). Move backwards, copying `arr[i]` to `arr[j]` and duplicating if `arr[i]` is zero.
+How to Draw (Opt): Draw the array. Count zeros. Mark where the "last" element will end up. Use two arrows pointing at the end, moving left. Copy numbers; when you hit a 0, write it twice.
+Opt Complexity Visuals: Two linear passes through the array.
+How to Draw Opt Complexity: Draw the array with two arrows moving right-to-left. Write $O(N)$ Time.
+Mem Vis (BF): $O(N)$ space for the auxiliary array.
+Mem Vis (Opt): $O(1)$ extra space.

@@ -1,0 +1,13 @@
+ID: 1585
+Problem Title: Check If String Is Transformable With Substring Sort Operations
+Brute Force Method: Try all possible substring sort operations at every step to see if you can reach the target string. $O(\\text{text}{\text{Exponential}})$.
+BF Complexity Visuals: Exponential State-Space BFS
+How to Draw BF: Draw a string. Branch out for every possible substring you could sort. The tree width is N^2 at every level.
+Optimised Pattern: Greedy / Relative Order Tracking
+Opt Vis. Technique: The "Barrier" Check Viz
+Dry Run (Opt): A digit d can move left only if no digit *smaller* than d is in its way. For each occurrence of digit d in the target, check if any digit 0 \dots d-1 appears earlier in the original string's relative queue.
+How to Draw (Opt): Write both strings. Use 10 queues to store the indices of each digit 0-9 in the original. For each character in the target, say '3', check the queues of '0', '1', and '2'. If any of their indices are smaller than the current '3' index, '3' is blocked and cannot move left.
+Opt Complexity Visuals: Linear Scan with Constant Multiplier $O(10 \cdot N)$
+How to Draw Opt Complexity: Draw a single straight line for the target string. For each character, draw 10 small "lookups" into the index queues.
+Mem Vis (BF): All possible string permutations.
+Mem Vis (Opt): 10 Queues (Lists) to store indices. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 3239
+Problem Title: Minimum Number of Flips to Make Binary Grid Palindromic I
+Brute Force Method: Try every possible subset of bit flips to see if the grid becomes palindromic row-wise or column-wise. $O(2^(R\cdot C)$).
+BF Complexity Visuals: State Space Explosion Tree
+How to Draw BF: Draw a small 2x2 grid. Branch it into two 2x2 grids (flip vs no flip for cell 1). Repeat for all 4 cells. Show the tree reaches 16 leaves for just 4 cells.
+Optimised Pattern: Independent Row/Column Counting
+Opt Vis. Technique: Parallel Axis Scan
+Dry Run (Opt): Count flips needed to make all rows palindromes. Separately, count flips to make all columns palindromes. The answer is the minimum of these two sums.
+How to Draw (Opt): Draw a grid. Use one finger to trace left-to-right on row 1, comparing symmetric ends. Then trace top-to-bottom on column 1. Write down "Row Cost" and "Col Cost" tallies.
+Opt Complexity Visuals: Linear Table Scan Pass
+How to Draw Opt Complexity: Draw one block for Row Pass (O(R*C)) and one for Col Pass (O(R*C)). Conclude $O(R\cdot C)$ total.
+Mem Vis (BF): Deep recursion stack storing grid copies.
+Mem Vis (Opt): Two scalar integer variables for the costs (O(1) space).

@@ -1,0 +1,13 @@
+ID: 1839
+Problem Title: Longest Substring Of All Vowels in Order
+Brute Force Method: Check every substring to see if it contains all 5 vowels in non-decreasing order.
+BF Complexity Visuals: Subsegment search matrix (O(N^3)).
+How to Draw BF: Draw a string. Highlight every possible start and end point. For each, check conditions. Mark as inefficient.
+Optimised Pattern: One-pass Sliding Window / Greedy.
+Opt Vis. Technique: Staircase vowel tracker.
+Dry Run (Opt): Iterate. If s[i] \ge s[i-1], increment length. Count unique vowels. If s[i] &lt; s[i-1], reset. Record length if unique vowels == 5.
+How to Draw (Opt): Draw the string. Draw an arrow i moving right. If next char is "equal or greater" in 'aeiou' order, keep going. Mark reset points.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw an arrow from 0 \to N. Mark $O(N)$.
+Mem Vis (BF): Storing all substrings in a list.
+Mem Vis (Opt): Integer variables for `current_len`, `max_len`, and `vowel_count`.

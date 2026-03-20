@@ -1,0 +1,13 @@
+ID: 3278
+Problem Title: Find Candidates for Data Scientist Position II
+Brute Force Method: Complex joins using `NOT IN` or subqueries to check specific skill strings.
+BF Complexity Visuals: Iterative Skill Filtering
+How to Draw BF: Draw a candidate. Scan their skills. Cross-reference manually against a hardcoded list.
+Optimised Pattern: GROUP BY + HAVING COUNT()
+Opt Vis. Technique: The Exact-Match Checklist
+Dry Run (Opt): Filter the table for the required skills. Group by Candidate ID. Use `HAVING COUNT(skill) = required_amount`.
+How to Draw (Opt): Draw candidates. Give them a checklist of required skills. If they have the skill, check the box. Filter out anyone who doesn't have 100% of the boxes checked.
+Opt Complexity Visuals: Hash Aggregation $O(N)$
+How to Draw Opt Complexity: Draw a filter node followed by a grouping node.
+Mem Vis (BF): N/A
+Mem Vis (Opt): DB grouping buffer. $O(\text{Candidates})$ space.

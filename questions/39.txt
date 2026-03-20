@@ -1,0 +1,13 @@
+ID: 39
+Problem Title: Combination Sum
+Brute Force Method: Generate All Subsets (With Repetition) Create a deeply nested loop to just brute-force every combination of numbers up to the target length, then filter those that match the sum.
+BF Complexity Visuals: The Infinite Blender
+How to Draw BF: Draw numbers flying into a blender, pouring out thousands of arrays. Draw a filter at the bottom that only lets arrays summing to the `target` pass through.
+Optimised Pattern: Backtracking (Include/Exclude)
+Opt Vis. Technique: The Fork in the Road
+Dry Run (Opt): At each number, make a choice: Path A) Include this number again and subtract it from the target. Path B) Move on to the next number. Base case: Target hits 0 (Save) or &lt; 0 (Backtrack).
+How to Draw (Opt): Draw a target number (e.g., 7). Draw a fork. Left: pick '2' (Target becomes 5, stay on '2'). Right: skip '2' (Target remains 7, move to '3').
+Opt Complexity Visuals: Deep Left-Leaning Tree
+How to Draw Opt Complexity: Draw a binary decision tree. Make the left branches (Include) go very deep (Target / min_element times), and right branches (Exclude) go shallow (Length of array). Time is $O(2^\text{target})$.
+Mem Vis (BF): Creates huge, unnecessary arrays of invalid sums before filtering them.
+Mem Vis (Opt): Draw a single `current_combination` array that grows (push) and shrinks (pop) as it traverses the tree. Space is $O(\text{Target} / \text{Min Element})$ for the recursion stack.

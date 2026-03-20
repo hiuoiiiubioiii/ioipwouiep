@@ -1,0 +1,13 @@
+ID: 2183
+Problem Title: Count Array Pairs Divisible by K
+Brute Force Method: Nested loops checking every pair (i, j) where (nums[i] * nums[j]) % k == 0.
+BF Complexity Visuals: Full quadratic matrix of pair multiplications.
+How to Draw BF: Draw an N x N grid. Shade the top triangle. Each cell performs a multiplication and modulo. $O(N^2)$.
+Optimised Pattern: Number Theory (GCD + Frequency Map).
+Opt Vis. Technique: Grouping numbers by their "Shared DNA" with K.
+Dry Run (Opt): For each number, find its `gcd(num, k)`. Store frequencies in a map. For any two GCDs `g1` and `g2`, if `(g1 * g2) % k == 0`, pairs = `freq[g1] * freq[g2]`.
+How to Draw (Opt): Draw a table of all divisors of K. For each number in the array, put it into a divisor bucket based on its GCD with K. Cross-multiply buckets that satisfy the condition.
+Opt Complexity Visuals: $O(N + \text{Divisors}^2)$.
+How to Draw Opt Complexity: A pass to fill buckets, then a small nested loop over the limited number of divisors.
+Mem Vis (BF): No extra memory (in-place checks).
+Mem Vis (Opt): Frequency Map of divisors (O(sqrt(k)) space).

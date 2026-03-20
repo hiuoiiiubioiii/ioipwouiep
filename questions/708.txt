@@ -1,0 +1,13 @@
+ID: 708
+Problem Title: Insert into a Sorted Circular Linked List
+Brute Force Method: Dump all nodes to an array, sort the array, and rebuild the entire circular list.
+BF Complexity Visuals: Array Sorting Pipeline
+How to Draw BF: Draw circle breaking into an array -&gt; sorting $O(N \log N)$ -&gt; forming back into a circle.
+Optimised Pattern: Two-Pointer Ring Traversal
+Opt Vis. Technique: Circular Ring ClockFace
+Dry Run (Opt): Place `prev` and `curr` adjacent. Rotate clockwise. Stop when `prev &lt;= insert &lt;= curr` or at the max-to-min boundary drop-off.
+How to Draw (Opt): Draw nodes in a circle connected by arrows. Use two colored markers for `prev` and `curr` rotating clockwise until finding the insertion gap.
+Opt Complexity Visuals: Single Loop Arc
+How to Draw Opt Complexity: Draw a circle and an arrow tracing its perimeter exactly once to show $O(N)$ worst-case time.
+Mem Vis (BF): Extra array block of size N.
+Mem Vis (Opt): Single newly allocated node box (O(1) extra space).

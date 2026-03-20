@@ -1,0 +1,13 @@
+ID: 2088
+Problem Title: Count Fertile Pyramids in a Land
+Brute Force Method: For every cell, try to build the largest possible pyramid and inverse pyramid, counting levels one by one.
+BF Complexity Visuals: Nested Geometric Growth
+How to Draw BF: Draw a grid. For each '1', draw larger and larger triangles until you hit a '0'. $O(R \cdot C \\text{cdot min}(R, C)$).
+Optimised Pattern: 2D Dynamic Programming (Bottom-Up)
+Opt Vis. Technique: Heatmap Leveling
+Dry Run (Opt): Let `dp[i][j]` be the max height of a pyramid with apex at `(i, j)`. It depends on the `dp` values of the three cells in the row below it. `dp[i][j] = min(dp[i+1][j-1], dp[i+1][j], dp[i+1][j+1]) + 1`.
+How to Draw (Opt): Draw a grid. Fill it with numbers. Each number is the min of its three "supports" below plus 1. Do it twice: once for up, once for down.
+Opt Complexity Visuals: Two Parallel Matrix Scans
+How to Draw Opt Complexity: Draw two grid sweeps. Total Time $O(R \cdot C)$.
+Mem Vis (BF): Redundant coordinate checks for every pyramid level.
+Mem Vis (Opt): Two 2D DP matrices of size R x C. Space $O(R \cdot C)$.

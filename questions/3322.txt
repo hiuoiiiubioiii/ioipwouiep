@@ -1,0 +1,13 @@
+ID: 3322
+Problem Title: Premier League Table Ranking III (SQL)
+Brute Force Method: (Imperative conceptualization) Use nested loops to compare every team against every other team to calculate their relative standings.
+BF Complexity Visuals: Cartesian Product Spaghetti
+How to Draw BF: Draw the table of teams twice. Draw lines connecting every row on the left to every row on the right, showing $O(N^2)$ cross-comparisons.
+Optimised Pattern: SQL Window Functions (RANK / DENSE_RANK)
+Opt Vis. Technique: Partitioned Sorting Buckets
+Dry Run (Opt): Partition data by a specific column. Within that partition, sort by points DESC. Assign sequential ranks 1, 2, 3... to the sorted rows.
+How to Draw (Opt): Draw several separate "buckets" (partitions). Write team names inside them. Physically rewrite the list inside the bucket in descending order and number them 1 to N.
+Opt Complexity Visuals: Hash Partition &amp; Sort Pipeline
+How to Draw Opt Complexity: Draw unsorted data flowing into separate buckets (O(N) Hash Partitioning), then draw an internal sorting diagram for each bucket (O(K log K)).
+Mem Vis (BF): $O(N^2)$ cross-joined temporary tables eating up database memory before filtering.
+Mem Vis (Opt): $O(N)$ sequential blocks of memory allocated for the partitions by the database engine.

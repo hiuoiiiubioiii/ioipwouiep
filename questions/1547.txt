@@ -1,0 +1,13 @@
+ID: 1547
+Problem Title: Minimum Cost to Cut a Stick
+Brute Force Method: Try every permutation of cut orders. For 100 cuts, this is 100!, which is more than the atoms in the universe.
+BF Complexity Visuals: Permutation Explosion
+How to Draw BF: Draw a stick. Draw 3 cut points. Branch into 3! = 6 paths. Now imagine 100 cut points. The tree cannot be drawn; it is a black hole of complexity.
+Optimised Pattern: Dynamic Programming (MCM Variant)
+Opt Vis. Technique: The Recursive Stick Splitter
+Dry Run (Opt): Sort the cut positions and add the stick ends (0 and L). Define `dp(i, j)` as the min cost to cut a stick between `cuts[i]` and `cuts[j]`. To solve `dp(i, j)`, try every cut `k` between them: `cost = (cuts[j] - cuts[i]) + dp(i, k) + dp(k, j)`.
+How to Draw (Opt): Draw a stick. Pick a cut point in the middle. The stick "snaps" into two smaller sub-problems. Draw arrows pointing to these two new sticks. Use a 2D table to store the cost of every possible `(left_cut, right_cut)` pair.
+Opt Complexity Visuals: Cubic DP $O(M^3)$ (M = # of cuts)
+How to Draw Opt Complexity: Draw a 2D matrix of size M x M. To fill one cell, draw a horizontal line representing the loop through all possible "middle" cuts `k`.
+Mem Vis (BF): Zero-memoization recursion with repeated subproblems.
+Mem Vis (Opt): A 2D DP table of size M x M. $O(M^2)$ space.

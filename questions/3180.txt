@@ -1,0 +1,13 @@
+ID: 3180
+Problem Title: Maximum Total Reward Using Operations I
+Brute Force Method: Backtracking to try every combination of rewards that satisfy the x &gt; reward condition. $O(2^N)$.
+BF Complexity Visuals: Constrained Branching Tree
+How to Draw BF: Draw rewards. Branch if x &gt; sum. Stop branch if not. Tally max sum at leaves.
+Optimised Pattern: DP / Bitset Optimization
+Opt Vis. Technique: Reachability Bitmask
+Dry Run (Opt): Sort rewards. Use a bitset where `bit[i]` means reward i is possible. For each `x`, `bit |= (bit &amp; mask_less_than_x) &lt;&lt; x`.
+How to Draw (Opt): Draw a long binary string (0s and 1s). For each reward, "Shift and OR" the string with itself.
+Opt Complexity Visuals: Linear Scan with Bitwise Parallelism
+How to Draw Opt Complexity: Draw a timeline 0 rightarrow N. Each node has a bitwise OR operation of length MaxReward. $O(N \\text{cdot MaxReward} / 64)$.
+Mem Vis (BF): Recursive stack for combinations.
+Mem Vis (Opt): A Bitset of size 2 x max(reward). $O(\text{MaxReward})$.

@@ -1,0 +1,13 @@
+ID: 1847
+Problem Title: Closest Room (Premium)
+Brute Force Method: For every query, iterate through all rooms, filter by size, and find the one with the minimum |preferred - roomID|.
+BF Complexity Visuals: Query \times Room search matrix.
+How to Draw BF: Draw Q rows and R columns. For each row, scan every column. Mark $O(Q \\text{times} R)$.
+Optimised Pattern: Offline Queries + Sorting + Balanced BST (TreeSet).
+Opt Vis. Technique: Sweep-line with a dynamic search set.
+Dry Run (Opt): Sort queries and rooms by size (descending). Iterate queries; add rooms that meet size requirement to a TreeSet. Use `ceiling` and `floor` to find closest ID.
+How to Draw (Opt): Draw a "Size" timeline. Move from right (large) to left (small). As you pass a room, put its ID in a "Search Box" (BST). Use the box to find the closest number.
+Opt Complexity Visuals: $O(R \log R + Q \log Q)$.
+How to Draw Opt Complexity: Draw two sorting trees and a loop with $O(\log R)$ tree operations.
+Mem Vis (BF): $O(1)$ extra besides input/output.
+Mem Vis (Opt): TreeSet (Red-Black Tree) nodes in heap memory.

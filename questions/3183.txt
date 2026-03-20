@@ -1,0 +1,13 @@
+ID: 3183
+Problem Title: The Number of Ways to Make the Sum
+Brute Force Method: Recursive backtracking to find every coin combination for values [1, 2, 4, 6] with constraints. $O(2^N)$
+BF Complexity Visuals: Exponential Path Tree
+How to Draw BF: Draw root 'n'. Branch for every coin subtraction. Cross out branches that use more than two 4s.
+Optimised Pattern: Unbounded Knapsack + Case Addition
+Opt Vis. Technique: Layered Coin Build-up
+Dry Run (Opt): Run $O(N)$ Knapsack for coins {1, 2, 6}. For the result, consider 0, 1, or 2 coins of value 4. Total = f[n] + f[n-4] + f[n-8].
+How to Draw (Opt): Draw a 1D DP table. Fill it using 1, then 2, then 6. At the very end, draw 3 "jump" arrows representing the inclusion of coin 4.
+Opt Complexity Visuals: Multi-pass 1D DP Fill
+How to Draw Opt Complexity: Draw 3 parallel horizontal lines (one per coin type). Label it $O(N)$.
+Mem Vis (BF): Deep recursive call stack with millions of states.
+Mem Vis (Opt): A 1D array of size N. $O(N)$.

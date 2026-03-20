@@ -1,0 +1,13 @@
+ID: 3716
+Problem Title: Find Churn Risk Customers (Med)
+Brute Force Method: Cross-join style nested loops comparing every transaction of a user with every other transaction they made.
+BF Complexity Visuals: Dense bipartite graph $O(N^2)$.
+How to Draw BF: Draw a list of transactions. Draw lines connecting every single transaction to every other transaction to check time gaps.
+Optimised Pattern: Hash Map Aggregation / Sorting by User
+Opt Vis. Technique: Bucketing System
+Dry Run (Opt): Group all transactions by Customer ID into buckets, sort timestamps inside each bucket, then linearly check adjacent times.
+How to Draw (Opt): Draw large squares (buckets) labeled with Customer IDs. Drop timestamps in, sort them, and draw small arcs between adjacent numbers to check differences.
+Opt Complexity Visuals: $O(N \log N)$ grouping and sorting.
+How to Draw Opt Complexity: Draw a branching sort-tree (log N) next to a flat line of length N.
+Mem Vis (BF): Duplicated rows in a giant relational table memory layout.
+Mem Vis (Opt): Hash Map pointing to dynamically sized arrays of integers (timestamps).

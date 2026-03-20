@@ -1,0 +1,13 @@
+ID: 2464
+Problem Title: Minimum Subarrays in a Valid Split
+Brute Force Method: Generate all possible partitions of the array. For each partition, check if the GCD of the first and last element of every subarray is &gt; 1.
+BF Complexity Visuals: Exponential Partition Tree
+How to Draw BF: Draw a root node. Branch out for every possible "cut" in the array. Label $O(2^N)$.
+Optimised Pattern: 1D Dynamic Programming + GCD Check
+Opt Vis. Technique: Stepping Stone Pathfinding
+Dry Run (Opt): `dp[i]` is the min subarrays to split prefix `0...i`. To find `dp[i]`, look at all `j &lt; i` where `gcd(nums[j], nums[i]) &gt; 1` and take `min(dp[j-1] + 1)`.
+How to Draw (Opt): Draw the array. For each index, draw backward-pointing arrows to indices where the GCD condition is met. Write the min-cost inside each array cell.
+Opt Complexity Visuals: Quadratic DP Scan
+How to Draw Opt Complexity: Draw a 1D array of size N. From each cell, show up to N backward checks. Label $O(N^2 \cdot \log(\text{MaxVal})$).
+Mem Vis (BF): Draw a recursion stack of depth N.
+Mem Vis (Opt): Draw a single 1D DP array of size N. $O(N)$ Space.

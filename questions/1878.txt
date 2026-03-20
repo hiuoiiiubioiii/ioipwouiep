@@ -1,0 +1,13 @@
+ID: 1878
+Problem Title: Get Biggest Three Rhombus Sums in a Grid
+Brute Force Method: For every cell (i, j) and every possible side length, calculate the sum of the four boundaries manually.
+BF Complexity Visuals: Triple nested loop (Row x Col x SideLength).
+How to Draw BF: Draw a grid. Pick a center. Draw a diamond. Show the addition of every cell on the diamond edge. $O(R\cdot C\\text{cdot min}(R,C)$).
+Optimised Pattern: 2D Diagonal Prefix Sums (Prefix Sum on two diagonal directions).
+Opt Vis. Technique: Diagonal accumulation matrix.
+Dry Run (Opt): Precompute `diag1[i][j]` and `diag2[i][j]`. The sum of a diamond side is now $O(1)$ using subtraction. Check only unique sums for the top 3.
+How to Draw (Opt): Draw the grid. Draw two extra grids for "Top-Left to Bottom-Right" and "Top-Right to Bottom-Left" running sums. Outline a diamond and calculate its sum using the four corner points.
+Opt Complexity Visuals: $O(R \cdot C)$ Precomputation + $O(R \cdot C \\text{cdot min}(R,C)$) checking (but with $O(1)$ interior).
+How to Draw Opt Complexity: Draw a rectangle area (R*C) and label the constant-time diamond lookup inside.
+Mem Vis (BF): None (besides input).
+Mem Vis (Opt): Two auxiliary 2D arrays of size R x C to store prefix sums.

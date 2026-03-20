@@ -1,0 +1,13 @@
+ID: 799
+Problem Title: Champagne Tower
+Brute Force Method: Simulate the flow of champagne drop by drop for every single unit poured.
+BF Complexity Visuals: Individual Drop Simulation
+How to Draw BF: Draw the pyramid. For every drop, trace its path left or right down the glass. $O(\\text{text}{\text{poured}})$.
+Optimised Pattern: Dynamic Programming (Pascal's Triangle Variation)
+Opt Vis. Technique: Waterfall Overflow Distribution
+Dry Run (Opt): Create a 2D array for glasses. Pour all champagne into `glass[0][0]`. For each glass, if it exceeds 1.0, split the excess `(val - 1) / 2` to the two glasses below.
+How to Draw (Opt): Draw rows of circles. Write the volume in the top circle. Draw two arrows down, each carrying half of the "spillover" to the next row.
+Opt Complexity Visuals: Grid Area Filling
+How to Draw Opt Complexity: Draw the pyramid. Show each glass being processed once. $O(R^2)$ where R is number of rows.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): 2D array of size 101 \times 101 (O(R^2)).

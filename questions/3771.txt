@@ -1,0 +1,13 @@
+ID: 3771
+Problem Title: Total Score of Dungeon Runs (Med)
+Brute Force Method: Exhaustively explore every possible path from top-left to bottom-right in a grid using recursion/DFS, summing the scores for all paths. $O(2^(R+C)$).
+BF Complexity Visuals: Exponential Path Web.
+How to Draw BF: Draw a grid. Draw arrows for every possible move (Right/Down). Follow every trail to the exit, writing the path sum at the end. Total them all.
+Optimised Pattern: 2D Dynamic Programming (Path Counting)
+Opt Vis. Technique: Grid Score Accumulator
+Dry Run (Opt): Each cell dp[r][c] stores the sum of scores of all paths reaching it. dp[r][c] = (dp[r-1][c] + dp[r][c-1]) + (CurrentCellValue * NumPaths).
+How to Draw (Opt): Draw a grid. In each cell, write two numbers: "Ways to reach" and "Total Score so far". Use the top and left neighbors to update both numbers.
+Opt Complexity Visuals: $O(R \cdot C)$ Matrix fill.
+How to Draw Opt Complexity: Draw a square grid and shade it row-by-row, showing values flowing into each cell from the top and left.
+Mem Vis (BF): Massive recursive call stack.
+Mem Vis (Opt): Two 2D arrays (Score DP and Path Count DP) or optimized 1D rows.

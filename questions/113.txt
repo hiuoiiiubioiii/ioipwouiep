@@ -1,0 +1,13 @@
+ID: 113
+Problem Title: Path Sum II
+Brute Force Method: Similar to 112, but instantiating a completely new list clone at every single node step to pass down to children.
+BF Complexity Visuals: A fractal explosion of duplicated lists in memory, demonstrating $O(N^2)$ space complexity overhead.
+How to Draw BF: Draw a node, then physically draw two separate, fully copied lists representing the path state being handed to the left and right children.
+Optimised Pattern: DFS with Backtracking. Maintain a single shared path list: `push` node, recurse, `pop` node.
+Opt Vis. Technique: A breadcrumb trail being laid down and then carefully picked back up (backtracking) as the explorer retreats from a dead end.
+Dry Run (Opt): Push current node to global list. If leaf &amp; sum matches, append a COPY of list to results. Recurse left/right. Pop current node from list before returning up.
+How to Draw (Opt): Draw a single list box. Write a value in it (push), draw a downward arrow. Erase the value (pop), draw an upward arrow. Repeat.
+Opt Complexity Visuals: $O(N)$ traversal time, but the result array copying adds time proportional to the number of valid paths.
+How to Draw Opt Complexity: Draw the single state list dynamically resizing. Only draw a "clone" operation (O(H) work) specifically when a valid leaf is hit.
+Mem Vis (BF): Heap fragmentation visualized as dozens of garbage-collected intermediate lists.
+Mem Vis (Opt): A single list in heap memory acting like a stack (expanding and shrinking), plus the $O(H)$ recursion stack tracking the exact current path.

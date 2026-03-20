@@ -1,0 +1,13 @@
+ID: 1591
+Problem Title: Strange Printer II
+Brute Force Method: Try every permutation of colors as the "printing order." For each order, check if the grid can be formed. $O(\\text{text}{\text{Colors}}! \cdot R \cdot C)$.
+BF Complexity Visuals: Factorial Color Permutation Tree
+How to Draw BF: Draw all colors present. Branch out for every possible printing sequence. For each sequence, simulate the layers. The tree is impossibly wide.
+Optimised Pattern: Graph Theory (Topological Sort)
+Opt Vis. Technique: The Color Dependency DAG
+Dry Run (Opt): For each color, find its bounding box. If another color exists inside that box, the first color must have been printed before the second. Build a directed graph where an edge A \rightarrow B means A is under B. Check for cycles using Kahn's or DFS.
+How to Draw (Opt): Draw a node for each color. Find the min/max rows and columns for Color 1. Scan that rectangle. If you see Color 2, draw an arrow 1 \rightarrow 2. Once all arrows are drawn, try to find a "Sink" node (no outgoing arrows).
+Opt Complexity Visuals: Directed Graph Scan $O(\\text{text}{\text{Colors}}^2 + R \cdot C)$
+How to Draw Opt Complexity: Draw a single pass through the grid (R \cdot C) to find boundaries, followed by a cycle detection scan on max 60 nodes.
+Mem Vis (BF): Storing every intermediate grid state.
+Mem Vis (Opt): An adjacency list for up to 60 colors and boundary arrays. $O(\\text{text}{\text{Colors}}^2)$ space.

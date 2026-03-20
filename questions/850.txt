@@ -1,0 +1,13 @@
+ID: 850
+Problem Title: Rectangle Area II
+Brute Force Method: Discretize all x and y coordinates into a grid of very small units. For every rectangle, mark all the grid units it covers. Sum the area of marked units.
+BF Complexity Visuals: Unit Grid Summation. $O(N^3)$.
+How to Draw BF: Draw a coordinate plane. Draw overlapping boxes. Divide the whole area into tiny graph-paper squares and count every single square one by one.
+Optimised Pattern: Line Sweep + Segment Tree (or Coordinate Compression).
+Opt Vis. Technique: Scanning Laser Beam.
+Dry Run (Opt): Imagine a vertical line (the laser) moving from left to right. At every "event" (left or right edge of a rectangle), update the set of active vertical intervals and calculate the area of the vertical strip.
+How to Draw (Opt): Draw rectangles. Draw a vertical dashed line sliding across. At each stop, highlight the parts of the dashed line that are "inside" any rectangle. Multiply that length by the distance to the next stop.
+Opt Complexity Visuals: Event-Driven Sweep. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a timeline with 2N ticks. Each tick represents a "Pause" where $O(\log N)$ work is done to update a Segment Tree.
+Mem Vis (BF): 2D Boolean Matrix: Draw a massive grid where thousands of cells are marked True/False.
+Mem Vis (Opt): Segment Tree Nodes: Draw a balanced binary tree where each node tracks "Active Length" and "Cover Count."

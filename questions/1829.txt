@@ -1,0 +1,13 @@
+ID: 1829
+Problem Title: Maximum XOR for Each Query
+Brute Force Method: For each query, calculate the XOR of the entire current array, then iterate through all k &lt; 2^{maximumBit} to find the max.
+BF Complexity Visuals: Nested bitwise scan matrix.
+How to Draw BF: Draw the array. At each step, XOR all elements. Then test every possible k. $O(N^2 + N \\text{times} 2^M)$.
+Optimised Pattern: Prefix XOR + Bitwise Complement.
+Opt Vis. Technique: Bitwise puzzle pieces (XOR cancellation).
+Dry Run (Opt): Maintain a running `totalXor`. The k that maximizes the result is `totalXor` XORed with a bitmask of all 1s (2^m - 1). Remove last element from `totalXor` for next query.
+How to Draw (Opt): Write `mask` (e.g., 111). Write `currentXor`. Subtract/XOR them to find k. Move to next number and repeat.
+Opt Complexity Visuals: Single pass cumulative XOR.
+How to Draw Opt Complexity: Draw an arrow traversing the array once. Mark each step as $O(1)$ bitwise math.
+Mem Vis (BF): Repeatedly creating new arrays for each query.
+Mem Vis (Opt): Single output array + one `currentXor` integer variable.

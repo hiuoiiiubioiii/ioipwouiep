@@ -1,0 +1,13 @@
+ID: 1326
+Problem Title: Minimum Number of Taps to Open to Water a Garden
+Brute Force Method: Generate all 2^N possible subsets of taps. For each subset, combine their coverage intervals and check if they fully cover [0, n].
+BF Complexity Visuals: Combinatorial Subset Tree
+How to Draw BF: Draw a massive binary tree where each tap is either "ON" or "OFF". The leaves generate wildly overlapping coverage maps, illustrating $O(2^N)$ wasted effort.
+Optimised Pattern: Greedy Array Processing (Jump Game II Pattern)
+Opt Vis. Technique: Overlapping Interval Jumps
+Dry Run (Opt): Convert tap ranges to `[left, right]`. Create an array `max_reach` where index is `left` and value is `right`. Iterate through the garden, greedily jumping to the furthest reachable `right` bound.
+How to Draw (Opt): Draw a number line from 0 to N. Above it, draw horizontal lines representing tap ranges. Start at 0, trace a line to the tap that extends the furthest right. Repeat from that new endpoint.
+Opt Complexity Visuals: Single-Pass Max-Reach Sweep
+How to Draw Opt Complexity: Draw an array of length N. Draw a single arrow making a few large, calculated leaps left-to-right, proving strictly $O(N)$ time.
+Mem Vis (BF): Unbounded Recursive Heap: Stack frames holding temporary arrays of combined intervals for subset validation.
+Mem Vis (Opt): 1D Max-Reach Array: Draw a fixed size `std::vector` mapping each starting integer to its maximum reachable endpoint.

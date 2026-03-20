@@ -1,0 +1,13 @@
+ID: 2732
+Problem Title: Find a Good Subset of Matrix
+Brute Force Method: Check every subset of rows. For a subset of size k, check if the sum of each column is <= k/2. Exponential $O(2^\text{Rows} \\text{cdot Cols})$.
+BF Complexity Visuals: Subset Power Set Tree
+How to Draw BF: Draw a tree where each row is either "In" or "Out". With 10^4 rows, the tree is too large to draw.
+Optimised Pattern: Combinatorial Row Storage (Visualizing all row combinations in memory).
+Opt Vis. Technique: Bitmask Compression + Pigeonhole Principle
+Dry Run (Opt): Bitwise Intersection Grid
+How to Draw (Opt): Each row has only <= 5 columns. Convert each row to a bitmask (2^5 = 32 possible masks). If any row is 0, return it. Otherwise, check all pairs of existing masks. If `(maskA &amp; maskB) == 0`, those two rows form a good subset.
+Opt Complexity Visuals: Draw a small 32-entry table. Map 10,000 rows into these 32 buckets. Compare only the buckets. It’s like sorting colors into 32 jars.
+How to Draw Opt Complexity: $O(\text{Rows} + 2^(2\\text{cdot Cols})$)
+Mem Vis (BF): Draw a funnel: 10,000 rows → 32 masks → Constant time pair check (32 x 32). Write $O(N)$.
+Mem Vis (Opt): Static Mask Map (Draw an array of size 32 storing the original row index for each bitmask).

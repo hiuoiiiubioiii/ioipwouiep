@@ -1,0 +1,13 @@
+ID: 3744
+Problem Title: Find Kth Character in Expanded String (Med)
+Brute Force Method: Actually generate the massive string in memory by applying the expansion rules iteratively until it's larger than K, then return `str[K]`.
+BF Complexity Visuals: Exponential string growth $O(2^\text{Steps})$.
+How to Draw BF: Write 'a', then 'ab', then 'abcd', expanding the string visually until it runs off the page.
+Optimised Pattern: Reverse Recursive Math / Divide and Conquer
+Opt Vis. Technique: Binary Tree Tracing Backwards
+Dry Run (Opt): Recognize string doubles each step. If K is in the right half, it is mapped from the left half with a character shift. Shrink K by subtracting half the length recursively until base case.
+How to Draw (Opt): Draw a long block. Cut in half. If K is on the right, draw an arrow to the exact mirrored spot on the left and write "+1 shift". Repeat halving until K is at index 0.
+Opt Complexity Visuals: $O(\log K)$ logarithmic halving.
+How to Draw Opt Complexity: Draw a line halving repeatedly `[----] -&gt; [--] -&gt; [-]`.
+Mem Vis (BF): Gigabytes of string memory.
+Mem Vis (Opt): $O(1)$ variables or $O(\log K)$ stack space.

@@ -1,0 +1,13 @@
+ID: 2055
+Problem Title: Plates Between Candles
+Brute Force Method: For each query `[L, R]`, iterate through the substring, find the first and last candle, and manually count the stars '*' between them.
+BF Complexity Visuals: Nested Query Scan
+How to Draw BF: Draw the string. For every query bracket, draw a loop scanning the characters inside. $O(\text{Queries} \cdot N)$.
+Optimised Pattern: Prefix Sums + Nearest Candle Precomputation
+Opt Vis. Technique: Instant Anchor Lookups
+Dry Run (Opt): Precompute: 1) Prefix sum of plates. 2) Nearest candle to the left of index `i`. 3) Nearest candle to the right. For any query, jump to the nearest candles within `[L, R]` and use prefix sums for the count.
+How to Draw (Opt): Draw the string. Below it, draw three helper rows: `LeftCandleIdx`, `RightCandleIdx`, and `PlateCount`. For a query, draw two lightning bolts to the helper rows to get the bounds and subtract the counts.
+Opt Complexity Visuals: Triple Precompute + $O(1)$ Query
+How to Draw Opt Complexity: Draw three parallel horizontal lines (O(N) total) for precomputation. Then draw $O(1)$ query points. Total Time $O(N + Q)$.
+Mem Vis (BF): $O(1)$ extra space but slow time.
+Mem Vis (Opt): Three integer arrays of size N. Space $O(N)$.

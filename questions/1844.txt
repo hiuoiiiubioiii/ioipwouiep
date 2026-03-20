@@ -1,0 +1,13 @@
+ID: 1844
+Problem Title: Replace All Digits with Characters
+Brute Force Method: Create a new string. For every character, if it's a digit, calculate the shift and append to the new string.
+BF Complexity Visuals: String builder accumulation.
+How to Draw BF: Draw the original string. Draw an arrow pointing to a new empty string filling up step-by-step.
+Optimised Pattern: In-place modification of Character Array.
+Opt Vis. Technique: Tape mutation.
+Dry Run (Opt): Iterate through odd indices. Replace `s[i]` with `(char)(s[i-1] + s[i] - '0')`.
+How to Draw (Opt): Draw the string as a tape. At index 1, 3, 5... draw an "X" and write the new calculated character directly over it.
+Opt Complexity Visuals: Linear one-pass traversal.
+How to Draw Opt Complexity: Draw an arrow moving from left to right across the string. Mark $O(N)$.
+Mem Vis (BF): Two string copies in memory (input and output).
+Mem Vis (Opt): $O(1)$ extra space (if modified in-place) or $O(N)$ for the character array.

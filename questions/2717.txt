@@ -1,0 +1,13 @@
+ID: 2717
+Problem Title: Semi-Ordered Permutation
+Brute Force Method: Simulate exactly: Find 1, swap it left iteratively. Then find N, swap it right iteratively. Physically modify the array with each step.
+BF Complexity Visuals: Step-by-Step Swap Trace
+How to Draw BF: Draw the array. Swap 1 to the left, redraw. Swap again, redraw. Do the same for N. Shows redundant $O(N)$ modifications.
+Optimised Pattern: In-place array mutations (Unnecessary write operations to memory).
+Opt Vis. Technique: Index Distance Math (O(N) Time, $O(1)$ Space)
+Dry Run (Opt): Pointer Distance with Crossing Overlap
+How to Draw (Opt): Find index of 1 (`idx1`) and N (`idxN`). Steps for 1 = `idx1`. Steps for N = `Length - 1 - idxN`. Total = `idx1 + steps_for_N`. If 1 started to the right of N (`idx1 &gt; idxN`), they cross paths during swapping, saving 1 step, so subtract 1.
+Opt Complexity Visuals: Draw the array. Mark 1 and N. Draw a left arrow from 1 (write distance). Draw a right arrow from N (write distance). If the arrows overlap, write "-1" above the intersection.
+How to Draw Opt Complexity: Single Array Scan
+Mem Vis (BF): Draw one horizontal arrow scanning the array to find the two indices. Label it $O(N)$.
+Mem Vis (Opt): $O(1)$ Integer Pointers (Draw exactly two variables, `idx1` and `idxN`, holding integers).

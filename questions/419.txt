@@ -1,0 +1,13 @@
+ID: 419
+Problem Title: Battleships in a Board
+Brute Force Method: DFS / BFS Traversal When you find an 'X', trigger a DFS to sink the ship and increment count.
+BF Complexity Visuals: Component Scan
+How to Draw BF: Draw a grid with ships. Draw a circle around each ship. Note that you visit each 'X' and its neighbors. $O(M\cdot N)$.
+Optimised Pattern: Single Pass (Head Counting) Iterate through the grid. Only count an 'X' if it doesn't have an 'X' above it or to its left.
+Opt Vis. Technique: Top-Left Anchor
+Dry Run (Opt): Scan like a laser. Only "beep" when you hit the very first (top-left) cell of a ship. Ignore the rest of the ship's body.
+How to Draw (Opt): Draw a grid. For an 'X', check the cell above and the cell to the left. If both are empty/off-board, circle it. If not, ignore.
+Opt Complexity Visuals: Scanline
+How to Draw Opt Complexity: Draw a single horizontal line passing top-to-bottom over the grid once. $O(M\cdot N)$.
+Mem Vis (BF): Visited Matrix Draw a 2D boolean grid to track "sunk" parts. $O(M\cdot N)$.
+Mem Vis (Opt): None Zero extra memory beyond the input. $O(1)$ space.

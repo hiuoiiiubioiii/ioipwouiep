@@ -1,0 +1,13 @@
+ID: 2111
+Problem Title: Minimum Operations to Make the Array K-Increasing
+Brute Force Method: Try all possible replacements for each k-spaced subsequence to make it non-decreasing.
+BF Complexity Visuals: Exponential decision tree per subsequence.
+How to Draw BF: Draw an array, branch into N^2 choices per element (keeping vs. replacing).
+Optimised Pattern: Longest Non-Decreasing Subsequence (Patience Sorting / Binary Search).
+Opt Vis. Technique: Multiple parallel arrays mapping out LIS sequences.
+Dry Run (Opt): Group elements by spacing `k`. Find length of LIS for each group. Operations = (Group Size) - (LIS Length).
+How to Draw (Opt): Circle elements spaced by `k`. Draw a separate line for them. Cross out elements that break the increasing order.
+Opt Complexity Visuals: $O(N \log(N/K)$) binary search trees over a linear scan.
+How to Draw Opt Complexity: Draw K separate arrays, each with a log(M) binary search curve underneath.
+Mem Vis (BF): Deep recursive call stack frames.
+Mem Vis (Opt): A `tails` array for the LIS binary search, dynamically resizing up to N/K.

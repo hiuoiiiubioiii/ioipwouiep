@@ -1,0 +1,13 @@
+ID: 2796
+Problem Title: Repeat String (JS)
+Brute Force Method: Create an empty string and use a for loop to concatenate the original string n times. $O(N²)$ in some engines due to immutable string re-allocation.
+BF Complexity Visuals: Iterative String Concatenation
+How to Draw BF: Draw a small block. Add an identical block to it. Redraw the now-double block. Add another. Redraw. The area of "redrawing" is $O(N²)$.
+Optimised Pattern: Heap Allocation Churn (Visualizing the heap filling with intermediate string fragments: "a", "aa", "aaa"...).
+Opt Vis. Technique: Binary String Doubling / Array.join
+Dry Run (Opt): Logarithmic String Building
+How to Draw (Opt): Native repeat(n) uses bitwise doubling: "a" -&gt; "aa" -&gt; "aaaa". Alternatively, new Array(n + 1).join(s) creates the final size once and fills it, avoiding intermediate copies.
+Opt Complexity Visuals: Draw a single block. Copy it to make 2. Copy those 2 to make 4. This doubling reaches the target in only log n steps.
+How to Draw Opt Complexity: Linear $O(N)$ Total Length
+Mem Vis (BF): Draw a single allocation block of size N x len. Label it $O(N)$ to show linear time for the final copy.
+Mem Vis (Opt): Single Buffer Allocation (Draw one contiguous block of memory allocated for the final string).

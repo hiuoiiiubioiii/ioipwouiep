@@ -1,0 +1,13 @@
+ID: 2581
+Problem Title: Count Number of Possible Roots
+Brute Force Method: For every node in the tree, perform a full DFS/BFS rooted at that node. Count how many guesses (u, v) match the parent-child relationship in that specific tree. $O(N^2)$.
+BF Complexity Visuals: A forest of N trees, where each tree is traversed completely to validate a set of guesses.
+How to Draw BF: Pick Node 0 as root. Do DFS. Count correct guesses. Pick Node 1 as root. Do DFS again. Repeat for all N nodes.
+Optimised Pattern: Tree DP with Rerooting (Change of Root).
+Opt Vis. Technique: A "Dynamic Parent-Child Flip" visual where we move the root to an adjacent neighbor and only update the count for that specific edge.
+Dry Run (Opt): 1. Root the tree at 0 and count correct guesses (K). 2. Perform a second DFS. When moving from parent u to child v: if (u, v) was a guess, K decreases by 1 (it's no longer a parent-child relationship). If (v, u) was a guess, K increases by 1. Check if K >= k at each node.
+How to Draw (Opt): Draw a small tree. Root it at 0. Write down the score. Move the root to an adjacent node. Only look at the edge connecting the old root and new root. Flip its direction and update the score.
+Opt Complexity Visuals: $O(N + G)$ where N is nodes and G is number of guesses. Two DFS passes are linear.
+How to Draw Opt Complexity: Draw a tree. Draw a downward arrow for the first DFS. Draw "outward" arrows from the root for the rerooting pass, showing only local edge updates.
+Mem Vis (BF): Massive $O(N^2)$ traversal memory.
+Mem Vis (Opt): $O(N + G)$ to store the adjacency list and the set of guesses.

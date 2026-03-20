@@ -1,0 +1,13 @@
+ID: 248
+Problem Title: Strobogrammatic Number III
+Brute Force Method: Generate all strobogrammatic numbers of length N, then filter based on the range [low, high].
+BF Complexity Visuals: Full Generation &amp; Filter: $O(\\text{text}{\text{Count}})$.
+How to Draw BF: Draw a set of all generated numbers. Draw a circle around the subset that falls between low and high.
+Optimised Pattern: Recursive Generation with Range Pruning
+Opt Vis. Technique: Range Bound Check
+Dry Run (Opt): Generate numbers from length L_{low} to L_{high}. Immediately discard (stop branching) if the current prefix cannot possibly be in range.
+How to Draw (Opt): Draw a number line. Show the recursive generator "skipping" entire branches that are outside the range markers.
+Opt Complexity Visuals: Exponential-to-Linear Shift: $O(5^{N/2})$.
+How to Draw Opt Complexity: Draw a branching tree where some paths end in an 'X' (out of range).
+Mem Vis (BF): Storage for all numbers of specific length.
+Mem Vis (Opt): DFS recursion stack: $O(N)$. Draw a vertical stack frame indicating the depth is proportional to the number of digits.

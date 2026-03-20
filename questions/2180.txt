@@ -1,0 +1,13 @@
+ID: 2180
+Problem Title: Count Integers With Even Digit Sum
+Brute Force Method: Loop from 1 to N. For each number, convert to string or use modulo to sum digits. Increment count if sum is even.
+BF Complexity Visuals: Linear scan with digit decomposition.
+How to Draw BF: Draw a line of numbers. Under each, write its digit sum. Circle the even ones. Write $O(N \cdot \log N)$.
+Optimised Pattern: Math / Parity Analysis.
+Opt Vis. Technique: A pattern that repeats every 10 or 20 numbers.
+Dry Run (Opt): If the digit sum of N is even, the answer is floor(N/2). If N is even but the sum is odd, it's (N/2)-1. Generally, if digit_sum(N) is even, floor(N/2) otherwise floor((N-1)/2).
+How to Draw (Opt): Write numbers 1-20. Sum their digits. Notice the alternating pattern: Even, Odd, Even, Odd... If N is even, the sum of its digits tells you if the "even count" ends on a high or low note.
+Opt Complexity Visuals: $O(\log N)$ to sum the digits of the upper bound N once.
+How to Draw Opt Complexity: A single vertical drop (digit sum) followed by an $O(1)$ subtraction.
+Mem Vis (BF): No significant memory used.
+Mem Vis (Opt): $O(1)$ extra space.

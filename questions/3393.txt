@@ -1,0 +1,13 @@
+ID: 3393
+Problem Title: Count Paths with the Given XOR Value
+Brute Force Method: DFS with backtracking to find all paths from (0,0) to (n-1, m-1), calculating XOR at each step.
+BF Complexity Visuals: Grid-XOR Path Explosion
+How to Draw BF: Draw a grid. From start, draw every possible path to the end. For each path, keep a running XOR. $O(2^N+M)$.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: Layered XOR Bit-Slices
+Dry Run (Opt): `dp[i][j][current_xor]` is the count of paths to (i, j) resulting in `current_xor`. Max XOR is usually small (up to 15 or 31).
+How to Draw (Opt): Draw the grid. For each cell, draw a small table (0 to 15). To fill cell (i, j) with XOR value V, add paths from (i-1, j) and (i, j-1) that XOR with `grid[i][j]` to reach V.
+Opt Complexity Visuals: Volume-Filling Scan
+How to Draw Opt Complexity: Draw a 3D block: N x M x 16. Shading the volume proves $O(N \cdot M \cdot 16)$ rightarrow $O(\text{NM})$.
+Mem Vis (BF): Massive path list storing every single coordinate sequence.
+Mem Vis (Opt): A 3D array (or two 2D layers) of size N x M x 16. $O(\text{NM})$.

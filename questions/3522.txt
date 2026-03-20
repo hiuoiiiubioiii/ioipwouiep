@@ -1,0 +1,13 @@
+ID: 3522
+Problem Title: Calculate Score After Performing Instructions (Med)
+Brute Force Method: Simulate the instruction string step-by-step, updating coordinates directly for every single query.
+BF Complexity Visuals: Winding Path Tracing.
+How to Draw BF: Draw a grid. For Q queries, draw the entire winding path taking up to N steps each time. Total area = $O(Q \cdot N)$.
+Optimised Pattern: Prefix Sums on 2D Coordinates / Hash Map caching.
+Opt Vis. Technique: Displacement Vector Chart.
+Dry Run (Opt): Instead of walking every step, use a lookup table to instantly jump to the net displacement after K instructions.
+How to Draw (Opt): Plot a start point. Instead of squiggly lines, draw one straight vector arrow pointing directly to the final coordinate.
+Opt Complexity Visuals: $O(1)$ Vector Jump.
+How to Draw Opt Complexity: Draw an array of N prefix states. Draw a query resolving instantly in 1 step by subtracting prefix[R] - prefix[L].
+Mem Vis (BF): Massive State Logs: Draw endless lists recording every tiny coordinate change per query.
+Mem Vis (Opt): Prefix State Array: Draw a single 1D array of (x, y) vectors representing cumulative movement.

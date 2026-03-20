@@ -1,0 +1,13 @@
+ID: 2599
+Problem Title: Make the Prefix Sum Non-negative (Premium)
+Brute Force Method: Try moving every possible combination of negative numbers to the end of the array and check prefix sums. $O(2^\text{negatives})$.
+BF Complexity Visuals: A combinatorial search of "Which negative should I move?" to keep the running total above zero.
+How to Draw BF: Array: [2, -3, 1]. Prefix: 2, -1 (Fail!). Move -3 to end: [2, 1, -3]. Prefixes: 2, 3, 0 (Pass!).
+Optimised Pattern: Greedy with Min-Heap (Priority Queue).
+Opt Vis. Technique: A "Safety Reserve" visual: we move forward normally, but if our "bank balance" (prefix sum) drops below zero, we retroactively "undo" the worst transaction (most negative number) we've made so far.
+Dry Run (Opt): Maintain a runningSum and a Min-Heap of all negative numbers encountered so far. Iterate through the array. Add the current number to runningSum. If it's negative, push it to the heap. If runningSum &lt; 0, pop the smallest (most negative) number from the heap, subtract it from runningSum, and increment the "moved" counter.
+How to Draw (Opt): Write the numbers and a "Running Total." When the total goes negative, look back at the negative numbers you've passed. Pick the biggest "debt" (like -10), cross it out, and add that 10 back to your total.
+Opt Complexity Visuals: $O(N \log N)$ because each negative number is pushed and potentially popped from the heap once.
+How to Draw Opt Complexity: Draw a timeline. Below it, draw a "Trash Can" (the Heap). Show an arrow moving right; when the sum drops, a number from the timeline flies into the trash can.
+Mem Vis (BF): $O(2^N)$ for combination states.
+Mem Vis (Opt): $O(N)$ for the priority queue.

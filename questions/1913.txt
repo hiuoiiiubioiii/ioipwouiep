@@ -1,0 +1,13 @@
+ID: 1913
+Problem Title: Maximum Product Difference Between Two Pairs
+Brute Force Method: Sort the entire array first, then multiply the two largest numbers and subtract the product of the two smallest numbers.
+BF Complexity Visuals: Sorting Funnel Timeline
+How to Draw BF: Draw a jumbled array falling through a funnel labeled "Sort", emerging as an ordered array. Highlight the first two and last two boxes. $O(N \log N)$.
+Optimised Pattern: Single Pass Greedy Tracking
+Opt Vis. Technique: Four-Variable Pipeline
+Dry Run (Opt): Iterate the array exactly once. Compare each number against your running `max1`, `max2`, `min1`, and `min2` variables, updating them on the fly.
+How to Draw (Opt): Draw an array. Draw 4 distinct boxes below it (M1, M2, m1, m2). Slide a single pointer across the array, drawing update arrows to the boxes.
+Opt Complexity Visuals: Single Continuous Arrow
+How to Draw Opt Complexity: Draw one straight arrow moving from left to right over an array block, representing strictly $O(N)$ time.
+Mem Vis (BF): Heap memory allocated for sorting algorithms (like TimSort's auxiliary arrays).
+Mem Vis (Opt): Just 4 primitive integer variables stored on the stack. $O(1)$ space.

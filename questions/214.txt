@@ -1,0 +1,13 @@
+ID: 214
+Problem Title: Shortest Palindrome
+Brute Force Method: Iterate from N down to 1. Check if prefix of length i is a palindrome by reversing it.
+BF Complexity Visuals: Stepped Triangle Graph: $O(N^2)$ Time.
+How to Draw BF: Draw an N-length string. Draw arrows checking the whole string. Move right bound in by 1, check again. Forms an $O(N^2)$ shaded triangle.
+Optimised Pattern: KMP Partial Match Table (LPS Array)
+Opt Vis. Technique: Prefix-Suffix Matching Ribbon
+Dry Run (Opt): Create string `s + "#" + reverse(s)`. Slide a matching window to find the longest matching prefix and suffix using the KMP LPS array logic.
+How to Draw (Opt): Write the combined string horizontally. Below it, draw the LPS integer array. Draw arrows jumping back to previous LPS values when characters mismatch.
+Opt Complexity Visuals: Linear Scan Line: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a single straight line from start to finish over the combined string of length 2N, proving linear traversal.
+Mem Vis (BF): Recreated Strings in Memory: Draw multiple long strings being instantiated per iteration.
+Mem Vis (Opt): LPS Array Tape: Draw a single 1D array of integers tracking the longest proper prefix lengths.

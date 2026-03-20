@@ -1,0 +1,13 @@
+ID: 1896
+Problem Title: Minimum Cost to Change the Final Value of Expression
+Brute Force Method: Recursively try flipping every character (0 to 1, AND to OR) and re-evaluate the entire string.
+BF Complexity Visuals: Exponential decision tree.
+How to Draw BF: Draw a root node. Branch out for every possible character flip. Mark as $O(2^N)$ combinations.
+Optimised Pattern: Stack-based Expression Parsing + Dynamic Programming (bottom-up costs).
+Opt Vis. Technique: Nodal evaluation pairs (value, cost).
+Dry Run (Opt): Parse into a tree or stack. Each node returns a pair: its result and the cost to change it. Combine costs using boolean logic rules.
+How to Draw (Opt): Draw an expression tree. At each leaf, write (val, 1). For parent nodes, use min() logic to determine cost based on AND/OR rules.
+Opt Complexity Visuals: Linear tree traversal.
+How to Draw Opt Complexity: Draw an arrow traversing the tree from leaves to root. Mark $O(N)$.
+Mem Vis (BF): None (computational explosion).
+Mem Vis (Opt): Stack of integer pairs `[value, cost_to_flip]` in memory.

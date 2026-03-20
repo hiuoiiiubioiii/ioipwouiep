@@ -1,0 +1,13 @@
+ID: 1512
+Problem Title: Number of Good Pairs
+Brute Force Method: Nested loops comparing every single element with every other element appearing after it to check if they match.
+BF Complexity Visuals: Handshake Network $O(N^2)$
+How to Draw BF: Draw N dots in a line. Draw an arc from the 1st dot to all others. Then from the 2nd to all others. The arcs form a dense, messy web.
+Optimised Pattern: Hash Map / Combinatorics
+Opt Vis. Technique: Frequency Buckets
+Dry Run (Opt): Count the occurrences of each number. If a number appears `C` times, the number of valid pairs is `C * (C - 1) / 2`. Add this formula's result for all unique numbers.
+How to Draw (Opt): Draw labelled buckets. As you read the array, drop tally marks into the matching bucket. Once finished, write the `n(n-1)/2` formula under each bucket and sum them up.
+Opt Complexity Visuals: Two Parallel Lines $O(N)$
+How to Draw Opt Complexity: Draw one line for iterating the array to build the map, and a second shorter line representing iterating through the map's keys to apply the formula.
+Mem Vis (BF): $O(1)$ space. Draw two pointer fingers `i` and `j` moving along a single array block.
+Mem Vis (Opt): A Hash Map. Draw a 2-column table mapping the integer key to an integer tally count. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 205
+Problem Title: Isomorphic Strings
+Brute Force Method: Nested loops or `.indexOf()` checks comparing first occurrences of characters.
+BF Complexity Visuals: Quadratic Grid: $O(N^2)$ Time.
+How to Draw BF: Draw an N x N matrix. Shade half the matrix to represent nested loops checking `indexOf` every time.
+Optimised Pattern: Two Hash Maps / Two Frequency Arrays
+Opt Vis. Technique: Bipartite Graph Mapping
+Dry Run (Opt): Write String S on top, String T on bottom. Draw lines connecting S[i] to T[i]. If a line from a letter ever diverges to two different targets, it fails.
+How to Draw (Opt): Draw two columns of nodes (S characters left, T characters right). Draw directional arrows from left to right. Ensure 1-to-1 mapping.
+Opt Complexity Visuals: Parallel Array Traversal Line: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a timeline of length N. Show constant $O(1)$ lookups at each step, making a flat $O(N)$ line.
+Mem Vis (BF): Recreated strings in memory per iteration.
+Mem Vis (Opt): Two 256-slot Array Grids. Write the mapped character's ASCII index into the slots to show $O(1)$ spatial mapping.

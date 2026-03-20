@@ -1,0 +1,13 @@
+ID: 553
+Problem Title: Optimal Division
+Brute Force Method: Recursive backtracking to try every possible placement of parentheses to find the maximum result.
+BF Complexity Visuals: Catalan number complexity based on parenthesis placement. $O(2^N)$.
+How to Draw BF: Draw numbers with brackets shifting in every possible way: `(a/b)/c`, `a/(b/c)`, etc.
+Optimised Pattern: Math / Greedy Observation.
+Opt Vis. Technique: A fraction where the numerator is as big as possible and the denominator is as small as possible. X_1 / (X_2 / X_3 / ... / X_n).
+Dry Run (Opt): The first number is always the numerator. To maximize, minimize the entire rest of the sequence by grouping everything after the first slash.
+How to Draw (Opt): Write the numbers. Draw a big bracket starting after the first number and ending at the very last number.
+Opt Complexity Visuals: Single string join operation. $O(N)$.
+How to Draw Opt Complexity: Draw the array once and insert characters at fixed positions.
+Mem Vis (BF): Deep recursion tree with repeated floating-point divisions.
+Mem Vis (Opt): String buffer to store the final formatted result. $O(N)$.

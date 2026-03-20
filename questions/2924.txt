@@ -1,0 +1,13 @@
+ID: 2924
+Problem Title: Find Champion II
+Brute Force Method: Run DFS/BFS from every single node to see if it can visit all other N-1 nodes.
+BF Complexity Visuals: N Overlapping Search Trees
+How to Draw BF: Draw the graph. From every single node, draw a massive web spreading to all other nodes. $O(V \cdot (V+E)$).
+Optimised Pattern: Directed Acyclic Graph (DAG) - Count In-Degrees
+Opt Vis. Technique: Nodes with Incoming Arrows
+Dry Run (Opt): Iterate through edges. For every edge `u -&gt; v`, increment `in_degree[v]`. A champion must have `in_degree == 0`. If exactly ONE node has 0 in-degree, return it. Else, -1.
+How to Draw (Opt): Draw a network of circles (nodes) and directed arrows (edges). Write a tally mark inside the circle for every arrow pointing *into* it. Find circles with 0 tallies.
+Opt Complexity Visuals: Two Sequential Linear Passes
+How to Draw Opt Complexity: Draw a line representing E (edges pass). Then a line representing V (nodes pass). Time $O(V + E)$.
+Mem Vis (BF): Deep recursion call stacks and N separate `visited` arrays. Space $O(V^2)$.
+Mem Vis (Opt): A single 1D Array of size V tracking `in_degrees`. Space $O(V)$.

@@ -1,0 +1,13 @@
+ID: 1565
+Problem Title: Unique Orders and Customers Per Month (SQL)
+Brute Force Method: Fetch all orders, parse the month in your code, use a Set to find unique customers per month, and count orders manually. $O(N)$.
+BF Complexity Visuals: Manual Tally Sheet
+How to Draw BF: Draw a database. Draw an arrow pulling every row out into a "Sorting Room" where you manually write things on sticky notes.
+Optimised Pattern: SQL GROUP BY + COUNT(DISTINCT)
+Opt Vis. Technique: The Multi-Pivot Table
+Dry Run (Opt): Group by the month (extracted using `DATE_FORMAT`). For each group, count total `order_id` and use `COUNT(DISTINCT customer_id)` to handle the unique requirement. Filter by `invoice &gt; 20`.
+How to Draw (Opt): Draw a table. Circle the rows where price &gt; 20. Group the circled rows into boxes by month. Inside each box, count the items and count the *unique* names.
+Opt Complexity Visuals: Index-Optimized Aggregation $O(N \log N)$
+How to Draw Opt Complexity: Draw a single flow line into a hash-aggregation node. The database performs the grouping and distinct-counting in a highly optimized internal pass.
+Mem Vis (BF): Application-side memory for storing large sets of customer IDs.
+Mem Vis (Opt): Database internal hash buffer. $O(M)$ where M is the number of months.

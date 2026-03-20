@@ -1,0 +1,13 @@
+ID: 1630
+Problem Title: Arithmetic Subarrays
+Brute Force Method: For each query, copy the subarray, run a full sorting algorithm, and check if the differences are uniform.
+BF Complexity Visuals: Multiple Sorting Funnels
+How to Draw BF: Draw Q different funnels. Slices of an array are thrown into each funnel to be sorted. $O(Q \cdot M \log M)$.
+Optimised Pattern: Hash Set + Min/Max Math (No Sorting)
+Opt Vis. Technique: Set Boundary Validation
+Dry Run (Opt): Find min/max of subarray. Diff = (max - min) / (len - 1). If not an integer, return false. Put subarray in HashSet. Loop from min to max by Diff, check if present.
+How to Draw (Opt): Draw a sliced array. Pluck out the smallest and largest numbers. Calculate the required "step". Toss all sliced numbers into a bucket (Set). Check if the bucket has every required "step" number.
+Opt Complexity Visuals: Linear Scan per Query
+How to Draw Opt Complexity: Draw Q straight arrows tracing over slices of the array. No funnels. $O(Q \cdot M)$.
+Mem Vis (BF): Copied Arrays: Draw M new arrays allocated in memory to be sorted.
+Mem Vis (Opt): Temporary Hash Set: Draw a single bucket created and emptied for each query to check for element existence. $O(M)$ space per query.

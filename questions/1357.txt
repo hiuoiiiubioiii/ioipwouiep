@@ -1,0 +1,13 @@
+ID: 1357
+Problem Title: Apply Discount Every n Orders
+Brute Force Method: Maintain a full transaction history in a list. Every time a bill is calculated, check the entire history to see if the current count is a multiple of n.
+BF Complexity Visuals: $O(N)$ History Traversal
+How to Draw BF: Draw a ledger. For every new customer, scan all previous pages to count them. $O(N^2)$ over time.
+Optimised Pattern: Stateful Counter + Hash Map
+Opt Vis. Technique: Incremental Triggering
+Dry Run (Opt): Store a simple integer `counter`. Use a Map to store `productId -&gt; price`. For each bill, increment counter. If `counter % n == 0`, apply discount.
+How to Draw (Opt): Draw a counter (like a car odometer). Draw a "Price Book" (Map). For each customer, look up prices in the book, sum them, and check if the odometer hit the discount mark.
+Opt Complexity Visuals: $O(M)$ per Bill
+How to Draw Opt Complexity: Draw a single lookup into a Map for each item in the bill (O(1)) and a single modulo check (O(1)).
+Mem Vis (BF): List of All Transactions: A growing memory footprint storing every past order.
+Mem Vis (Opt): Fixed Price Map: Draw a `std::unordered_map`. Memory is $O(\text{Products})$, staying constant regardless of the number of customers.

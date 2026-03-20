@@ -1,0 +1,13 @@
+ID: 1654
+Problem Title: Minimum Jumps to Reach Home
+Brute Force Method: Recursive DFS trying all forward and backward jumps without tracking visited states properly.
+BF Complexity Visuals: Infinite Loop Graph
+How to Draw BF: Draw a character jumping back and forth on a number line forever.
+Optimised Pattern: BFS (Breadth-First Search)
+Opt Vis. Technique: Level-by-Level Ripple
+Dry Run (Opt): Use a Queue and a Visited Set that stores (position, direction). Direction matters because you can't jump back twice in a row. Stop at forbidden points or beyond the upper bound.
+How to Draw (Opt): Draw a number line. Mark forbidden spots with 'X'. Draw circles around reachable points, expanding outwards like a ripple until you hit 'home'.
+Opt Complexity Visuals: Bounded State Traversal
+How to Draw Opt Complexity: Draw a graph where each node is a (position, flag). Total states are roughly 2 \times (\max\_pos + a + b). $O(N)$.
+Mem Vis (BF): Infinite Call Stack: Stack crashing due to cycles.
+Mem Vis (Opt): Queue + HashSet: Draw a pipe (Queue) and a bucket (Set) holding coordinate-direction pairs.

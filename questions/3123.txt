@@ -1,0 +1,13 @@
+ID: 3123
+Problem Title: Find Edges in Shortest Paths
+Brute Force Method: Use DFS to find *all* possible paths from start to finish, sum their weights, and filter for edges inside the minimum paths. $O(V!)$
+BF Complexity Visuals: A tangled web of every possible route branching endlessly through the nodes.
+How to Draw BF: Draw nodes. Use different colored pens to trace every single path. Sum them up manually and circle the ones matching the lowest sum.
+Optimised Pattern: Dijkstra's (Bi-directional) + Edge Relaxation
+Opt Vis. Technique: Colliding Wavefronts
+Dry Run (Opt): Run Dijkstra from node 0 (save distances to `dist0`). Run Dijkstra from node N-1 (save distances to `dist1`). For any edge (u,v,w), if `dist0[u] + w + dist1[v] == min_path`, it's valid.
+How to Draw (Opt): Draw graph. Write `dist0` on top of nodes, `dist1` below them. For an edge, add `top(u) + weight + bottom(v)`. Does it equal the total shortest path? Check mark it.
+Opt Complexity Visuals: Two expanding Priority Queue trees + 1D array scan.
+How to Draw Opt Complexity: Draw two $O(E \log V)$ binary trees (heaps). After they complete, draw a linear array sweep representing the $O(E)$ edge check.
+Mem Vis (BF): Exhaustive path arrays tracking visited nodes for every route.
+Mem Vis (Opt): Two distance arrays of size V and a Priority Queue. $O(V + E)$ space.

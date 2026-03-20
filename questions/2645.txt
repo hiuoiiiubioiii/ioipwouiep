@@ -1,0 +1,13 @@
+ID: 2645
+Problem Title: Minimum Additions to Make Valid String
+Brute Force Method: Backtracking or BFS to find the shortest path from current string to a valid "abc...abc" sequence.
+BF Complexity Visuals: State Space Search Tree
+How to Draw BF: Draw a tree where each branch is adding 'a', 'b', or 'c'. The tree explodes in size. $O(3^N)$.
+Optimised Pattern: Greedy / Math-based Cycle Counting
+Opt Vis. Technique: Pattern Cycle Filling
+Dry Run (Opt): Iterate through the string. Every time the current character is less than or equal to the previous (e.g., 'b' followed by 'a'), a new "abc" cycle must have started. Total additions = 3 * (number of cycles) - original length.
+How to Draw (Opt): Draw the string. Draw a vertical line whenever the alphabetical order breaks (e.g., ab | a | c | b). Count the blocks. Additions = 3 * Blocks - Length.
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw a single arrow scanning the string once. $O(N)$.
+Mem Vis (BF): Recursive state storage
+Mem Vis (Opt): $O(1)$ space (variable to track cycles and previous character).

@@ -1,0 +1,13 @@
+ID: 1034
+Problem Title: Coloring A Border
+Brute Force Method: Iterate every cell. If it matches the color, check neighbors. If any neighbor is different or it's an edge, add it to a list. Finally, color everything in the list.
+BF Complexity Visuals: Two separate passes: one to find the border and another to paint it.
+How to Draw BF: Draw a grid. Circle the target color. For each, look at its 4 neighbors. If one neighbor is different, draw a thick border. Write $O(M\cdot N)$.
+Optimised Pattern: DFS / BFS with Connectivity Logic.
+Opt Vis. Technique: A "Coastline Finder". You travel only on land (original color) and mark only the spots that touch the ocean (different color) or the world's edge.
+Dry Run (Opt): Start DFS at (row, col). Visit neighbors of the same color. If a neighbor is out of bounds or a different color, the current cell is a "border" cell. Save border cells in a list, then paint them at the end.
+How to Draw (Opt): Draw a grid. Shade the connected component. Use a different color to trace ONLY the outer edge of that shape and internal boundaries.
+Opt Complexity Visuals: A single graph traversal through one connected component.
+How to Draw Opt Complexity: Draw a blob in a grid. Draw a single path tracing its perimeter. Write Time: $O(M \cdot N)$.
+Mem Vis (BF): A copy of the entire grid to track changes.
+Mem Vis (Opt): A "visited" boolean array and a recursion stack. Space: $O(M \cdot N)$.

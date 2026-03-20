@@ -1,0 +1,13 @@
+ID: 1727
+Problem Title: Largest Submatrix With Rearrangements
+Brute Force Method: Generate every possible subset of columns, rearrange them, and check all resulting submatrices for all 1s.
+BF Complexity Visuals: Column Permutation Explosion.
+How to Draw BF: Draw a matrix. Slice out columns. Shuffle them in every possible order. Check for rectangles. $O(N! \cdot N^2)$.
+Optimised Pattern: Dynamic Programming (Histogram Heights) + Greedy Sorting.
+Opt Vis. Technique: Falling Tetris Blocks / Pillar Sorting.
+Dry Run (Opt): Going row by row, count consecutive 1s looking upwards (like pillars). For the current row, sort the pillar heights descending. The max rectangle area ending here is `height[i] * (index + 1)`.
+How to Draw (Opt): Draw matrix of 1s and 0s. Transform columns into vertical stacks of blocks (tallest where 1s are continuous). On each row, sort the stacks tallest to shortest. Draw the largest bounding box.
+Opt Complexity Visuals: Row-by-Row Array Sorting.
+How to Draw Opt Complexity: Draw Matrix R x C. For each row, draw the sorting block `C log C`. Label $O(R \cdot C \log C)$.
+Mem Vis (BF): Massive copies of rearranged matrices.
+Mem Vis (Opt): A single 1D array updating the heights of the pillars row-by-row. $O(C)$ space.

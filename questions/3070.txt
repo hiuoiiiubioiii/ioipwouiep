@@ -1,0 +1,13 @@
+ID: 3070
+Problem Title: Count Submatrices with Top-Left Element and Sum Less Than k
+Brute Force Method: For every possible bottom-right corner (r, c), iterate through all cells from (0, 0) to (r, c) to calculate the sum and compare with k.
+BF Complexity Visuals: 4-Nested Loop Volume
+How to Draw BF: Draw a 3D grid representing R x C x R x C. It shows a massive amount of re-calculation for overlapping areas. $O(R^2 \cdot C^2)$.
+Optimised Pattern: 2D Prefix Sum (In-Place)
+Opt Vis. Technique: Area Accumulation Matrix
+Dry Run (Opt): Calculate prefix sums for the grid where `sum[i][j] = grid[i][j] + sum[i-1][j] + sum[i][j-1] - sum[i-1][j-1]`. If `sum[i][j] &lt;= k`, increment the count.
+How to Draw (Opt): Draw a grid. For cell (i, j), draw arrows coming from the top cell, the left cell, and a "subtraction" arrow from the top-left diagonal cell.
+Opt Complexity Visuals: $O(\text{Rows} \\text{cdot Cols})$ Matrix Pass
+How to Draw Opt Complexity: Draw a single pass through the matrix. Each cell is calculated in $O(1)$ after looking at its 3 immediate neighbors.
+Mem Vis (BF): Redundant sum variables calculated from scratch for every sub-rectangle.
+Mem Vis (Opt): A 2D array of the same size as the grid, or the grid itself modified to store cumulative sums.

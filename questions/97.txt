@@ -1,0 +1,13 @@
+ID: 97
+Problem Title: Interleaving String
+Brute Force Method: Recursion with Backtracking Try matching the first char of s3 with s1. If it matches, recurse. If it doesn't work, backtrack and try matching with s2.
+BF Complexity Visuals: The Binary Decision Path
+How to Draw BF: Draw three strings. Draw a decision tree where each node has two choices: "Take from s1" or "Take from s2". Note the exponential $O(2^M+N)$ paths.
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: The Reachability Grid
+Dry Run (Opt): dp[i][j] is a boolean: "Can the first i chars of s1 and first j chars of s2 form the first i+j chars of s3?". Fill based on top/left neighbors.
+How to Draw (Opt): Draw a grid with s1 on top and s2 on left. Start at (0,0) as `T`. A cell is `T` if (left is `T` AND s1 matches s3) OR (top is `T` AND s2 matches s3).
+Opt Complexity Visuals: Matrix Area Shade
+How to Draw Opt Complexity: Draw an M x N rectangle. Show a single pass through every cell. Time: $O(M x N)$.
+Mem Vis (BF): Exhaustive recursion stack of depth M+N.
+Mem Vis (Opt): Draw a 1D array representing the current row. We only need the previous state to calculate the current. Space: $O(N)$.

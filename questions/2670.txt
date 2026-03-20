@@ -1,0 +1,13 @@
+ID: 2670
+Problem Title: Find the Distinct Difference Array
+Brute Force Method: For every index `i`, use nested loops to count unique elements in the prefix `0...i` and suffix `i+1...n-1`.
+BF Complexity Visuals: Nested Unique Scans
+How to Draw BF: Draw an array. For every index, draw two separate scans looking for duplicates. $O(N^2)$.
+Optimised Pattern: Two-Pass Hash Set (Prefix/Suffix)
+Opt Vis. Technique: Parallel Set Accumulation
+Dry Run (Opt): 1. Scan left to right, adding to a Set to track prefix unique counts. 2. Scan right to left, adding to a Set to track suffix unique counts. Result at `i` is `prefixCount[i] - suffixCount[i+1]`.
+How to Draw (Opt): Draw the array. Above it, write the count of unique items seen from the left. Below it, write unique items seen from the right. Subtract the two rows.
+Opt Complexity Visuals: $O(N)$ Linear Pass
+How to Draw Opt Complexity: Draw two sequential $O(N)$ arrows (Forward and Backward).
+Mem Vis (BF): Repeated sub-array slicing
+Mem Vis (Opt): Two integer arrays of size N + two Sets (max size N).

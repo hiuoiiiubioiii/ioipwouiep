@@ -1,0 +1,13 @@
+ID: 465
+Problem Title: Optimal Account Balancing
+Brute Force Method: Recursive Permutations Try every possible sequence of transfers between people with positive and negative balances.
+BF Complexity Visuals: Factorial Tree
+How to Draw BF: Draw people nodes. Draw all possible arrows. Massive $O(N!)$ exploration.
+Optimised Pattern: Backtracking on Net Balances Flatten everyone into their net balance. Try to settle one person's balance with any other person of the opposite sign.
+Opt Vis. Technique: Bucket Settlement
+Dry Run (Opt): Imagine "plus" buckets and "minus" buckets. Pour from one to another until a bucket is empty. Find the minimum pours needed.
+How to Draw (Opt): List net balances: `[10, -5, -2, -3]`. Start with 10. Give 5 to the second person. Update list and move to the next index.
+Opt Complexity Visuals: Pruned State Search
+How to Draw Opt Complexity: Draw a tree where each node is a "settlement" action. Pruning happens when a balance hits zero. $O(N!)$.
+Mem Vis (BF): Graph Buffer Storing all transactions.
+Mem Vis (Opt): Balance Array Draw a small 1D array of net balances. $O(N)$.

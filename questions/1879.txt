@@ -1,0 +1,13 @@
+ID: 1879
+Problem Title: Minimum XOR Sum of Two Arrays
+Brute Force Method: Generate all permutations of `nums2` and calculate XOR sum with `nums1`.
+BF Complexity Visuals: Factorial Permutation Forest.
+How to Draw BF: Draw a root node branching into N paths. Note $O(N!)$.
+Optimised Pattern: Dynamic Programming + Bitmasking.
+Opt Vis. Technique: State Transition DAG (Directed Acyclic Graph).
+Dry Run (Opt): `dp[mask]` represents the min XOR sum using elements of `nums1` indicated by bits in `mask`. For the next number, try XORing with all available elements in `nums2`.
+How to Draw (Opt): Draw a vertical column for "Index in nums1". Draw a set of bits (0110). Show arrows representing choosing the next element and updating the mask.
+Opt Complexity Visuals: $O(N \cdot 2^N)$.
+How to Draw Opt Complexity: Draw a grid where one axis is N and the other is 2^N. Mark the total cells as the complexity.
+Mem Vis (BF): Storage of all permutations.
+Mem Vis (Opt): DP array of size 2^N (Max 2^{14} = 16384 entries).

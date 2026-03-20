@@ -1,0 +1,13 @@
+ID: 3726
+Problem Title: Remove Zeros in Decimal Representation (Easy)
+Brute Force Method: Convert the integer to a string, iterate through to strip out '0' characters, then parse back to integer.
+BF Complexity Visuals: String Array Shifting $O(D)$ where D is digits.
+How to Draw BF: Write the number. Cross out any '0'. Rewrite the remaining numbers squished together.
+Optimised Pattern: Mathematical Digit Extraction (Modulo &amp; Division)
+Opt Vis. Technique: Digit Reconstruction Stack
+Dry Run (Opt): Loop while N &gt; 0: Pop last digit using `N % 10`. If it's not 0, multiply it by a running power of 10 and add to result. Divide N by 10.
+How to Draw (Opt): Draw a number. Divide by 10 to drop the last digit into a bucket. If bucket has a non-zero, push it onto a new reconstructed pile.
+Opt Complexity Visuals: Fast loop $O(\log10(N)$).
+How to Draw Opt Complexity: Draw a short, straight line with a few dots representing digit iterations.
+Mem Vis (BF): String allocations on the heap.
+Mem Vis (Opt): Pure integer variables (O(1) space).

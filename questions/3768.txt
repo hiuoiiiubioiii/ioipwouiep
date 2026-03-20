@@ -1,0 +1,13 @@
+ID: 3768
+Problem Title: Minimum Inversion Count in Subarrays of Fixed Length (Hard)
+Brute Force Method: For every subarray of length L, count inversions using a nested loop. $O((N-L)$ * L^2).
+BF Complexity Visuals: Sliding window with internal quadratic scans.
+How to Draw BF: Draw the array. Slide a window of length L. For every window position, draw lines between all pairs (i, j) where i &lt; j and arr[i] &gt; arr[j].
+Optimised Pattern: Sliding Window + Fenwick Tree / Segment Tree
+Opt Vis. Technique: Dynamic Inversion Counter
+Dry Run (Opt): As the window slides: 1) Subtract inversions caused by the exiting element using a Fenwick Tree. 2) Add inversions caused by the entering element. The Fenwick Tree tracks the frequency of values currently in the window.
+How to Draw (Opt): Draw a window moving across the array. Below it, draw a Fenwick Tree. When a number enters, "Ask" the tree how many numbers are larger. When it leaves, "Tell" the tree to remove it.
+Opt Complexity Visuals: $O(N \log L)$.
+How to Draw Opt Complexity: Draw a horizontal line (sliding) with a small tree icon (log L) above each step.
+Mem Vis (BF): N subarrays stored as separate lists.
+Mem Vis (Opt): Fenwick Tree array of size proportional to value range or L.

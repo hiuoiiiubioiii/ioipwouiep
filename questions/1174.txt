@@ -1,0 +1,13 @@
+ID: 1174
+Problem Title: Immediate Food Delivery II (SQL)
+Brute Force Method: For every customer, find all orders, sort by date, find the first one, then check if it was immediate.
+BF Complexity Visuals: Partitioned Sort &amp; Filter
+How to Draw BF: Draw a table. Group by Customer. Sort each group. Circle the first row. Check the "Immediate" status. $O(N \log N)$.
+Optimised Pattern: IN Clause with Multi-Column Key
+Opt Vis. Technique: Ranked Template Filtering
+Dry Run (Opt): Use a subquery to find `(customer_id, MIN(order_date))`. Filter the main table for these pairs. Then apply the logic from Q1173.
+How to Draw (Opt): Draw a list of (Customer, Earliest Date). Use this as a "Key Card" to unlock only the first-order rows from the massive main table.
+Opt Complexity Visuals: $O(N)$ with Hash Join
+How to Draw Opt Complexity: Draw a single pass to find mins, then a single hash-join pass to filter.
+Mem Vis (BF): Complex nested maps in Python
+Mem Vis (Opt): Hash Aggregation for Minimums.

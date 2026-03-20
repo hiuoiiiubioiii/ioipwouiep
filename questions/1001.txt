@@ -1,0 +1,13 @@
+ID: 1001
+Problem Title: Grid Illumination
+Brute Force Method: For every query, iterate through every single lamp in the list. Check if its row, col, or diagonals hit the target square.
+BF Complexity Visuals: $O(\text{Queries} \\text{cdot Lamps})$. Quadratic search for every light check.
+How to Draw BF: Draw a grid. For one query square, draw four long lines looking for any 'L' (Lamp) in the entire list of lamps. Repeat for all queries.
+Optimised Pattern: HashMaps for Line Counting
+Opt Vis. Technique: "The Four-Way Tally." Instead of checking lamps, track how many lamps are active on each row, column, and the two types of diagonals (r+c and r-c). A square is lit if any of its 4 lines have a count &gt; 0.
+Dry Run (Opt): 1. Four maps: `row`, `col`, `diag1`, `diag2`. 2. For each query, check maps. 3. Check 9 neighbors; if a lamp exists, decrement map counts and delete the lamp.
+How to Draw (Opt): Draw a grid. Above it, draw a row-counter; next to it, a col-counter. Draw two diagonal "rails" with counters. When a lamp is placed, it "increments" one slot on each of the 4 counters.
+Opt Complexity Visuals: $O(\text{Lamps} + \text{Queries})$. Building the counters is linear, and each query check is $O(1)$.
+How to Draw Opt Complexity: Draw a 1D timeline of queries. Above it, draw four tiny hash tables being updated and queried.
+Mem Vis (BF): $O(1)$ extra space but unusable time.
+Mem Vis (Opt): $O(\text{Lamps})$ to store the maps and the lamp coordinates. Draw four vertical tables: [LineID -&gt; Count].

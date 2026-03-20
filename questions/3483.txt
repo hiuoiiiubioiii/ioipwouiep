@@ -1,0 +1,13 @@
+ID: 3483
+Problem Title: Unique 3-Digit Even Numbers
+Brute Force Method: Generate all P(N, 3) permutations of digits, convert to numbers, and filter for uniqueness, evenness, and no leading zeros. $O(N^3)$
+BF Complexity Visuals: Permutation Tree Expansion.
+How to Draw BF: Draw 3 blank slots. Branch from slot 1 to all N digits, then from slot 2 to N-1 digits.
+Optimised Pattern: Fixed-Space Iteration (100..998) + Frequency Map Tally. $O(N + 450)$
+Opt Vis. Technique: Tally Bucket Comparison.
+Dry Run (Opt): Count occurrences of 0-9 in the input. Iterate through even numbers from 100 to 998. Check if each number's digits fit in your tally.
+How to Draw (Opt): Draw 10 buckets (0-9). For number "246", check if buckets 2, 4, and 6 have >= 1 item.
+Opt Complexity Visuals: Constant Time Post-Scan.
+How to Draw Opt Complexity: Draw one $O(N)$ line followed by a small fixed-size grid of 450 dots.
+Mem Vis (BF): Huge HashSet storing all generated numeric strings.
+Mem Vis (Opt): A fixed array of size 10 to store the digit counts.

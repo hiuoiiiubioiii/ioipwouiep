@@ -1,0 +1,13 @@
+ID: 3083
+Problem Title: Existence of a Substring in a String and Its Reverse
+Brute Force Method: Generate all substrings of length 2. Reverse the whole string. For each original substring, check if reverse_s.contains(sub).
+BF Complexity Visuals: $O(N^2)$ String Matching
+How to Draw BF: Draw the string and its reverse. Draw arrows connecting every 2-char block in String A to String B.
+Optimised Pattern: 2D Bitset / Hash Set of Pairs
+Opt Vis. Technique: Adjacency Matrix Mapping
+Dry Run (Opt): Iterate once to find all 2-length substrings ab. Check if ba was already seen. Use a 26x26 boolean matrix for $O(1)$ lookups.
+How to Draw (Opt): Draw a 26x26 grid (a-z by a-z). For each pair s[i], s[i+1], mark the cell. Then check if the symmetric cell (row/col swapped) is also marked.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw one straight arrow through the string. Label the lookup as $O(1)$. Total $O(N)$.
+Mem Vis (BF): Creating N new string objects and a full reversed string in memory.
+Mem Vis (Opt): A 26x26 boolean matrix (676 bits) or a single HashSet.

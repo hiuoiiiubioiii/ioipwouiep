@@ -1,0 +1,13 @@
+ID: 89
+Problem Title: Gray Code
+Brute Force Method: Backtracking with Visited Set Generate all possible binary strings and use backtracking to find a sequence where each number differs by only one bit from the previous, avoiding the visited set.
+BF Complexity Visuals: The Bit-Flip Maze
+How to Draw BF: Draw a graph where nodes are binary numbers and edges connect numbers with 1-bit difference. Trace a path that hits every node once (Hamiltonian path). $O(2^N)$ time.
+Optimised Pattern: Iterative Mirroring / Bitwise Formula
+Opt Vis. Technique: The Binary Reflective Symmetry
+Dry Run (Opt): Start with `[0]`. For each bit i from 0 to n-1, take the current list, reverse it, add 2^i to each element, and append it to the original list. Or use the formula: G(i) = i oplus (i gg 1).
+How to Draw (Opt): Draw a list: `0, 1`. Mirror it: `1, 0`. Add 2^1 (which is 2) to the mirrored part: `2, 3`. New list: `0, 1, 3, 2`.
+Opt Complexity Visuals: Exponential List Growth
+How to Draw Opt Complexity: Draw a bar that doubles in length N times. Total elements = 2^N. Time: $O(2^N)$.
+Mem Vis (BF): Recursion stack and visited set taking up $O(2^N)$ space.
+Mem Vis (Opt): Draw the final result list. The iterative logic uses no recursion or extra sets. Space: $O(2^N)$ (for the output) or $O(1)$ auxiliary.

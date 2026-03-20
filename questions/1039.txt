@@ -1,0 +1,13 @@
+ID: 1039
+Problem Title: Minimum Score Triangulation of Polygon
+Brute Force Method: Try every possible way to pick 3 vertices and divide the polygon into smaller pieces. Recurse until only triangles remain.
+BF Complexity Visuals: An exploding decision tree of "cuts" across a polygon.
+How to Draw BF: Draw a hexagon. Draw one triangle inside. Recurse on the remaining shapes. Write $O(\text{Exponential})$.
+Optimised Pattern: Dynamic Programming (Matrix Chain Multiplication style).
+Opt Vis. Technique: A "Slicing Table". You solve for small gaps between vertices and combine them to solve the whole polygon.
+Dry Run (Opt): `dp[i][j]` is the min score to triangulate vertices from `i` to `j`. To solve `dp[i][j]`, pick an intermediate vertex `k` and calculate `dp[i][k] + score(i,k,j) + dp[k][j]`.
+How to Draw (Opt): Draw a polygon. Label vertices 0 to N. Create a 2D table. Fill it diagonally, starting with gaps of size 2, then 3, until you reach the gap size of N.
+Opt Complexity Visuals: Filling a 2D triangle-shaped matrix.
+How to Draw Opt Complexity: Draw an N x N matrix. Shade the upper triangle. Write $O(N^3)$ Time.
+Mem Vis (BF): Massive recursion depth without memoization.
+Mem Vis (Opt): An N x N 2D array for memoization. $O(N^2)$ space.

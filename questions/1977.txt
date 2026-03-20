@@ -1,0 +1,13 @@
+ID: 1977
+Problem Title: Number of Ways to Separate Numbers
+Brute Force Method: Backtracking to try every possible split of the string into numbers, checking if the sequence is non-decreasing.
+BF Complexity Visuals: Recursive Partition Tree
+How to Draw BF: Draw a string. Branch at every character. Label branches with the number formed. Cross out invalid paths. $O(2^N)$.
+Optimised Pattern: DP + LCP (Suffix) + Prefix Sums
+Opt Vis. Technique: Windowed State Transition Matrix
+Dry Run (Opt): `dp[i][len]` is the number of ways to form a valid sequence ending at index `i` with the last number having length `len`. Use LCP to compare strings in $O(1)$.
+How to Draw (Opt): Draw a 2D grid where X-axis is string index and Y-axis is length. Draw arrows summing the previous row's valid lengths to fill the current cell.
+Opt Complexity Visuals: Quadratic Dynamic Programming
+How to Draw Opt Complexity: Draw an N x N grid. Explain that each cell is computed in $O(1)$ via prefix sums. $O(N^2)$.
+Mem Vis (BF): Massive recursive tree with string slicing for comparisons.
+Mem Vis (Opt): A 2D DP array `dp[N][N]` and an $O(N^2)$ LCP matrix. $O(N^2)$ space.

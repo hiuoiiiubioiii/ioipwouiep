@@ -1,0 +1,13 @@
+ID: 710
+Problem Title: Random Pick with Blacklist
+Brute Force Method: Pick random number [0, N-1]. If it's in the blacklist, reject and pick again (rejection sampling).
+BF Complexity Visuals: Rejection Spinning Wheel
+How to Draw BF: Draw a loop spinning repeatedly until a white-listed number is hit. Highly unpredictable time.
+Optimised Pattern: Hash Map Remapping (Virtual Array)
+Opt Vis. Technique: Bipartite Remapping
+Dry Run (Opt): Valid range is `[0, N - len(B)]`. Any blacklisted number in this safe zone is mapped in a Hash Map to a safe number at the end of the array.
+How to Draw (Opt): Draw a line `[0, N)`. Draw a divider at `N - len(B)`. Draw arcs from blacklisted numbers on the left to safe numbers on the right.
+Opt Complexity Visuals: Direct Access Hit
+How to Draw Opt Complexity: Draw a single point landing on an index to represent $O(1)$ guaranteed random access time.
+Mem Vis (BF): Hash Set storing blacklist (O(B)).
+Mem Vis (Opt): Hash Map storing only the remapped indices (O(B)).

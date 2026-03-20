@@ -1,0 +1,13 @@
+ID: 432
+Problem Title: All O`one Data Structure
+Brute Force Method: Hash Map + Sort Keep string counts in a Map. For `getMax/Min`, sort the map values.
+BF Complexity Visuals: Sorting Spike
+How to Draw BF: Draw a Map. For every "Get" operation, draw a massive "Sort" wall $O(N \log N)$.
+Optimised Pattern: Hash Map + Doubly Linked List of Buckets Map strings to nodes. Nodes are buckets of strings with the same count. Buckets are linked in order of count.
+Opt Vis. Technique: Train of Buckets
+Dry Run (Opt): A train where each car is a "Count" (1, 2, 5). If a string's count increases, it jumps to the next car or creates a new one.
+How to Draw (Opt): Draw a horizontal DLL where each node contains a Set of strings. Use arrows from a separate Hash Map pointing into these Set nodes.
+Opt Complexity Visuals: Constant Horizon
+How to Draw Opt Complexity: Draw a straight horizontal line for every operation (Inc, Dec, Get). $O(1)$ for all.
+Mem Vis (BF): Map Storage Just the string counts.
+Mem Vis (Opt): Hybrid Structure Map (O(N)) + DLL (O(N)). Total $O(N)$.

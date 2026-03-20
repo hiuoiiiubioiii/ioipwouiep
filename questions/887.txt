@@ -1,0 +1,13 @@
+ID: 887
+Problem Title: Super Egg Drop
+Brute Force Method: Recursive trial-and-error: Try dropping an egg from every floor. If it breaks, you have K-1 eggs and floor-1 levels to check. If not, K eggs and total-floor levels. Find the min of maxes.
+BF Complexity Visuals: Minimax Decision Tree. $O(2^\text{Floors})$.
+How to Draw BF: Draw a building. Branch at floor 10. Left branch (Break), Right branch (Safe). The tree explores every single possible strategy.
+Optimised Pattern: 2D DP with Binary Search OR "Moves to Floors" Inverse DP.
+Opt Vis. Technique: The "Max Reach" Strategy.
+Dry Run (Opt): Instead of "What's the min drops for F floors?", ask "What's the max floors I can check with M moves and K eggs?". dp[m][k] = dp[m-1][k-1] + dp[m-1][k] + 1. Keep increasing moves until dp[m][k] >= N.
+How to Draw (Opt): Draw a table where Rows are "Drops" and Columns are "Eggs." Fill in how many floors you can cover. Each cell is the sum of the cells above it (the "above-and-left" logic).
+Opt Complexity Visuals: Optimized DP. $O(K \log N)$.
+How to Draw Opt Complexity: Draw a small grid that only goes as high as the log N of the floors.
+Mem Vis (BF): Exponential Call Stack: Draw a tree N levels deep with overlapping calls.
+Mem Vis (Opt): 1D DP Array (Space Optimized): Draw a single strip of size K being updated. $O(K)$ space.

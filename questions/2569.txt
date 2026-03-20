@@ -1,0 +1,13 @@
+ID: 2569
+Problem Title: Handling Sum Queries After Update
+Brute Force Method: For every "flip" query, loop through the array and flip bits. For "sum" queries, count 1s in nums1 and multiply. $O(Q \cdot N)$.
+BF Complexity Visuals: A heavy "Array Toggle" operation that touches every element for every update.
+How to Draw BF: Draw the bits. Flip index 2 to 5. Manually flip them. Then count all the 1s in the whole array. Repeat for every query.
+Optimised Pattern: Segment Tree with Lazy Propagation.
+Opt Vis. Technique: A "Hierarchy of Ranges" where we flip entire blocks of the array at once without visiting individual elements.
+Dry Run (Opt): Build a Segment Tree where each node stores the count of 1s in its range. "Flip" becomes a range-update: for a range [L, R], the number of 1s becomes (R - L + 1) - current_ones. Use a lazy tag to delay updates to children. Query 3 is a constant time sum update based on SegmentTree.root.totalOnes * p.
+How to Draw (Opt): Draw a tree where each leaf is a bit. Each parent shows the sum of 1s below it. When flipping a range, just flip the parent and mark a "Pending Flip" tag on the children.
+Opt Complexity Visuals: $O((N + Q)$ log N). Building and updating the Segment Tree are logarithmic per query.
+How to Draw Opt Complexity: Draw a balanced binary tree. Highlight a path from the root down to a range, showing we only touch $O(\log N)$ nodes.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N)$ - Specifically 4 x N to store the Segment Tree array.

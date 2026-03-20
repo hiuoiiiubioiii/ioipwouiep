@@ -1,0 +1,13 @@
+ID: 719
+Problem Title: Find K-th Smallest Pair Distance
+Brute Force Method: Nested loops to generate all pair distances, store them in a list, and sort them.
+BF Complexity Visuals: Complete Graph to Funnel
+How to Draw BF: Draw dots for every array element. Draw lines connecting every single dot to every other dot. Pipe them into a sorting funnel. $O(N^2 \log N)$.
+Optimised Pattern: Binary Search on Distance + Sliding Window
+Opt Vis. Technique: Ruler Search + Caterpillar Window
+Dry Run (Opt): Sort array. Binary search the *answer* (distance from 0 to max_dist). For a mid distance, use a sliding window to count how many pairs have distance &lt;= mid. Adjust bounds based on K.
+How to Draw (Opt): Draw a number line (0 to max diff) for Binary Search. Below it, draw the sorted array. Use a bracket [L, R] expanding as long as `arr[R] - arr[L] &lt;= mid`, counting valid pairs.
+Opt Complexity Visuals: Log(W) x N Overlap
+How to Draw Opt Complexity: Draw a halving line for distance range W (O(log W)). For each half, draw a flat $O(N)$ sweep line to represent the sliding window check.
+Mem Vis (BF): Massive array storing N(N-1)/2 distance values.
+Mem Vis (Opt): In-place sorted array + counter variables (O(1) extra space).

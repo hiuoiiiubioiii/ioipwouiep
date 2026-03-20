@@ -1,0 +1,13 @@
+ID: 2406
+Problem Title: Divide Intervals Into Minimum Number of Groups
+Brute Force Method: Sort intervals. Create groups list. For each interval, iterate through all existing groups to find one where it doesn't overlap.
+BF Complexity Visuals: List Traversal Chains
+How to Draw BF: Draw intervals. Draw lines from current interval checking every single established group one by one. Label $O(N^2)$ worst case.
+Optimised Pattern: Line Sweep Algorithm (Prefix Sum over time) OR Min-Heap
+Opt Vis. Technique: Elevation Map / Active Event Counter
+Dry Run (Opt): Plot start and end times on a timeline. +1 for start, -1 for end+1. Sweep left to right keeping a running sum. Peak sum = min groups.
+How to Draw (Opt): Draw a number line. Draw overlapping line segments above it. Draw a histogram below showing how many segments stack over each point. Find the tallest peak.
+Opt Complexity Visuals: Timeline Sort &amp; Sweep
+How to Draw Opt Complexity: Draw sorting block (O(N log N)). Draw a single sweep line over 2N events (O(N)). Total dominates: $O(N \log N)$.
+Mem Vis (BF): Draw a list of lists `List&gt;` showing heavy dynamic allocation $O(N)$.
+Mem Vis (Opt): Draw a single Map (TreeSet/TreeMap in Java/C++) or two arrays (starts, ends) tracking $O(N)$ events.

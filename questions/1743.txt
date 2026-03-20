@@ -1,0 +1,13 @@
+ID: 1743
+Problem Title: Restore the Array From Adjacent Pairs
+Brute Force Method: Generate all possible permutations of the numbers. Check each one to see if every adjacent pair in the permutation exists in the input pairs.
+BF Complexity Visuals: Factorial Permutation Search.
+How to Draw BF: Draw all numbers. Draw every possible path connecting them. Cross out 99.9% of the paths. $O(N!)$.
+Optimised Pattern: Graph Adjacency List + Degree Finding + DFS/Linear Traversal.
+Opt Vis. Technique: Connecting the Dots (Unrolling a Chain).
+Dry Run (Opt): Build an adjacency map from the pairs. Find the two nodes with degree 1 (the endpoints). Start at one endpoint and follow the unique path to the other.
+How to Draw (Opt): Draw nodes. Draw edges as lines. Circle the two nodes that only have one line. Follow the line from one circle to the next node until you hit the other circle.
+Opt Complexity Visuals: Adjacency Map Build + Single Path Trace.
+How to Draw Opt Complexity: Draw a hash map $O(N)$. Draw a single line of nodes $O(N)$. Total $O(N)$.
+Mem Vis (BF): None (if just checking permutations).
+Mem Vis (Opt): Adjacency List (Map of Lists). $O(N)$ space.

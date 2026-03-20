@@ -1,0 +1,13 @@
+ID: 2852
+Problem Title: Sum of Remoteness of All Cells
+Brute Force Method: For every non-blocked cell (r, c), perform a BFS/DFS to find all other reachable cells, sum their values, and calculate the "remoteness." Repeat for every single cell.
+BF Complexity Visuals: $O((R \cdot C)$^2) Repeated Traversal
+How to Draw BF: Draw a grid. For cell A, shade all reachable cells. For cell B, shade all reachable cells. Show the massive overlap where the same components are traversed thousands of times.
+Optimised Pattern: Connected Components (BFS/DFS) + Global Totals
+Opt Vis. Technique: Island Component Analysis
+Dry Run (Opt): 1. Calculate the total sum of all non-blocked cells and the total count. 2. Use BFS/DFS to find each "island" (connected component). 3. For each island, calculate its sum_i and count_i. 4. The remoteness contribution of each cell in that island is (TotalSum - sum_i). Multiply by count_i for the whole island.
+How to Draw (Opt): Draw a grid with a few "islands" separated by 'X's. Circle each island. Next to each island, write its sum and size. Calculate (GrandTotal - IslandSum) * IslandSize for each.
+Opt Complexity Visuals: Single Pass Grid Sweep $O(R \cdot C)$
+How to Draw Opt Complexity: Draw a line that visits every cell in the grid exactly once. Total time is linear relative to the number of cells.
+Mem Vis (BF): Visualize multiple redundant sets of visited nodes being created in memory.
+Mem Vis (Opt): Visualize one visited 2D array and a single queue for BFS. Space $O(R \cdot C)$.

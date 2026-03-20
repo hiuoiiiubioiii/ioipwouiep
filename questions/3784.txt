@@ -1,0 +1,13 @@
+ID: 3784
+Problem Title: Minimum Deletion Cost to Make All Characters Equal (Med)
+Brute Force Method: Try making the string all 'a's, then all 'b's, etc. For each target character, sum the deletion costs of all characters that are NOT that character. $O(26 \cdot N)$.
+BF Complexity Visuals: 26-Target Comparison.
+How to Draw BF: List costs for "apple". Target 'p': Delete 'a', 'l', 'e'. Sum their costs. Target 'a': Delete 'p', 'p', 'l', 'e'. Sum their costs. Pick the minimum total.
+Optimised Pattern: Total Cost - Max Character Frequency Cost
+Opt Vis. Technique: Complementary Summation
+Dry Run (Opt): Calculate the total_cost of all characters. Then, for each character 'a-z', calculate the sum_of_costs for only that character. The answer is total_cost - max(sum_of_costs).
+How to Draw (Opt): Draw a bar chart where the X-axis is 'a-z' and the Y-axis is the total cost for that letter. Find the tallest bar. The "Minimum Deletion" is the sum of all other bars.
+Opt Complexity Visuals: Single Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a flat timeline with 26 "accumulators" (buckets) below it.
+Mem Vis (BF): $O(N)$ to store filtered strings for each case.
+Mem Vis (Opt): $O(1)$ auxiliary space (Fixed 26-element array).

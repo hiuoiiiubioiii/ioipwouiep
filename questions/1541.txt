@@ -1,0 +1,13 @@
+ID: 1541
+Problem Title: Minimum Insertions to Balance a Parentheses String
+Brute Force Method: Generate all possible valid parentheses combinations and check the edit distance to the target string. $O(2^N)$.
+BF Complexity Visuals: Backtracking Growth Tree
+How to Draw BF: Draw a root. Branch out 3 ways: "Add (", "Add )", "Leave as is". The tree explodes to depth N.
+Optimised Pattern: Greedy / Stack Logic (Counter)
+Opt Vis. Technique: Dual-Requirement Counter
+Dry Run (Opt): Treat '(' as a requirement for TWO ')'. Iterate through the string. If you see '(', you need two closers. If you see ')', check if the next char is also ')'. If not, "insert" one. Use a `need` and `res` variable to track.
+How to Draw (Opt): Draw the string. Below it, draw a "Debt Box" labeled `needed_closers`. When you see `(`, put two +1 tokens in the box. When you see `))`, take two tokens out. If the box is empty and you see `)`, add a +1 to your "Fine" (result) and take a token anyway.
+Opt Complexity Visuals: One-Pass Linear $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Above the line, show a running total incrementing and decrementing. Constant work at each index.
+Mem Vis (BF): A stack of character objects. $O(N)$.
+Mem Vis (Opt): Two integer variables: `res` (total insertions) and `need` (current balance). $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2047
+Problem Title: Number of Valid Words in a Sentence
+Brute Force Method: Split sentence by spaces. For each word, use nested loops to check if every character is a digit, if multiple hyphens exist, or if punctuation is in the wrong place.
+BF Complexity Visuals: Word-by-Word Character Scan Grid
+How to Draw BF: Draw the sentence. For every word, draw a checklist: No digits? One hyphen max? Punctuation at end? $O(\text{Words} \\text{cdot AvgChars})$.
+Optimised Pattern: Regex Matching or Structured Single-Pass Scan
+Opt Vis. Technique: Pattern Filter Sieve
+Dry Run (Opt): Iterate each character once. Track hyphen count and punctuation position. Validate: digits = invalid, hyphen must be surrounded by letters, punctuation must be at end.
+How to Draw (Opt): Draw a word. Draw three boxes below: `hyphens`, `punctuation`, `valid?`. Fill boxes as you scan character by character. If a digit appears, immediately cross out the word.
+Opt Complexity Visuals: Linear String Scan Line
+How to Draw Opt Complexity: Draw one continuous line from 0 to string length N. Total time $O(N)$.
+Mem Vis (BF): A list of strings created by the `split()` function. Space $O(N)$.
+Mem Vis (Opt): A few boolean flags and integer counters. Space $O(1)$.

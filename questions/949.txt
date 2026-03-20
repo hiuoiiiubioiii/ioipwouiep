@@ -1,0 +1,13 @@
+ID: 949
+Problem Title: Largest Time for Given Digits
+Brute Force Method: N/A - The input size is fixed at 4 digits. Brute force is the only way (check all 4! permutations).
+BF Complexity Visuals: $O(4!)$ = $O(24)$. Constant time because the input size never changes.
+How to Draw BF: Draw 4 slots. List all 24 ways to arrange the digits (e.g., 1234, 1243, etc.).
+Optimised Pattern: Permutation Validation (Fixed Size)
+Opt Vis. Technique: "The Digital Clock Filter." Test all 24 arrangements. Filter out those where HH &gt; 23 or MM &gt; 59. Pick the maximum of the remaining.
+Dry Run (Opt): Use nested loops or recursion to generate permutations. Format as `HH:MM`. Check if `HH &lt; 24` and `MM &lt; 60`. Compare with the current maximum time.
+How to Draw (Opt): Draw a 4x4 grid of permutations. Draw a "strikethrough" over times like 25:00 or 12:61. Circle the one that looks the "latest" on a clock.
+Opt Complexity Visuals: $O(1)$. Since the input is always 4 digits, the work is always 24 steps.
+How to Draw Opt Complexity: Draw 24 small boxes. Each box is a "check/fail" test.
+Mem Vis (BF): $O(1)$. Only enough memory to store 4 digits and the max string.
+Mem Vis (Opt): $O(1)$. Same as brute force. Draw one "Result" string box.

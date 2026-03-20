@@ -1,0 +1,13 @@
+ID: 3355
+Problem Title: Zero Array Transformation I
+Brute Force Method: For each query [l, r], iterate through the array from l to r and decrement values. Check if all <= 0.
+BF Complexity Visuals: Query-Range Overlap Matrix
+How to Draw BF: Draw the array. For every query, draw a horizontal bracket. Count the overlaps manually for every index. $O(Q \cdot N)$.
+Optimised Pattern: Difference Array (Prefix Sum of Queries)
+Opt Vis. Technique: Step-Function Accumulator
+Dry Run (Opt): Create a `diff` array. For each query, `diff[l]++` and `diff[r+1]--`. Compute prefix sums to get total decrements per index.
+How to Draw (Opt): Draw a line of zeros. For a query [2, 5], write +1 at index 2 and -1 at index 6. Draw a "running total" line below that adds up these markers.
+Opt Complexity Visuals: Linear Sequence (Query + Array)
+How to Draw Opt Complexity: Draw a line for queries (Q) and a line for the array (N). Total $O(N + Q)$.
+Mem Vis (BF): A 2D matrix of Q rows to track updates.
+Mem Vis (Opt): A single 1D difference array of size N. $O(N)$.

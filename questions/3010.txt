@@ -1,0 +1,13 @@
+ID: 3010
+Problem Title: Divide an Array Into Subarrays With Minimum Cost I
+Brute Force Method: Use three nested loops to test every possible way to drop two partition lines into the array, calculate the cost of the 3 resulting subarrays, and track the minimum.
+BF Complexity Visuals: Array Slicing Combinations
+How to Draw BF: Draw the array. Draw two vertical lines cutting the array. Redraw the array multiple times below it, shifting the lines rightwards sequentially to show the $O(N^3)$ combinations.
+Optimised Pattern: Greedy Selection (Math/Sorting)
+Opt Vis. Technique: Fixed Anchor + Top 2 Selection
+Dry Run (Opt): Notice the first subarray must start at index 0, so nums[0] is an unavoidable cost. The problem then reduces to simply finding the two absolute smallest numbers in the rest of the array.
+How to Draw (Opt): Draw the array. Put a heavy box around index 0 (Anchor). Scan the rest of the array and circle the two smallest numbers. Connect the three boxed/circled numbers with a plus sign.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw one straight arrow across the array from index 1 to N, doing constant $O(1)$ checks.
+Mem Vis (BF): Indices i, j, k keeping track of recursive boundary cuts.
+Mem Vis (Opt): Three isolated integer variables: cost1 (anchor), min1, and min2.

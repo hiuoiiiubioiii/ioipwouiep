@@ -1,0 +1,13 @@
+ID: 978
+Problem Title: Longest Turbulent Subarray
+Brute Force Method: Nested loops checking every possible subarray (i, j) and verifying if it follows the "Up-Down-Up" or "Down-Up-Down" pattern.
+BF Complexity Visuals: $O(N^2)$. Checking all N^2 ranges for the turbulent property.
+How to Draw BF: Draw a line graph. Draw brackets around every possible "Zig-Zag" segment. The paper is covered in overlapping zig-zag lines.
+Optimised Pattern: Sliding Window / DP
+Opt Vis. Technique: "Riding the Wave." Keep track of how long the current zig-zag has been going. If the pattern breaks, "reset" the wave and start counting again from the last two elements.
+Dry Run (Opt): Iterate through array. Compare `A[i-1]` and `A[i]`. If they flip comparison (e.g., `&lt;` followed by `&gt;`), `curr++`. Else if they are equal, `curr = 1`. Else `curr = 2`. Track `max_curr`.
+How to Draw (Opt): Draw a zig-zag line. Below it, draw a counter that increments as long as the line zig-zags. If the line goes flat or moves in the same direction twice, draw a "Reset" button.
+Opt Complexity Visuals: $O(N)$. A single pass through the array.
+How to Draw Opt Complexity: Draw a horizontal line with an arrow. Above it, draw a single counter box that updates at each step.
+Mem Vis (BF): $O(1)$ extra space but unusable time.
+Mem Vis (Opt): $O(1)$. Only variables to store the current length and the previous comparison result. Draw two small boxes.

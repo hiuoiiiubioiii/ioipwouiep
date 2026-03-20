@@ -1,0 +1,13 @@
+ID: 3755
+Problem Title: Find Maximum Balanced XOR Subarray Length (Med)
+Brute Force Method: Generate all $O(N^2)$ subarrays. For each, calculate the bitwise XOR of all elements. If XOR == 0, check the length. Track the max length found. $O(N^3)$ or $O(N^2)$ with prefix XOR.
+BF Complexity Visuals: Overlapping bracket scans.
+How to Draw BF: Draw array. Draw brackets for every possible length. Calculate XOR for each and circle the ones where result is zero.
+Optimised Pattern: Prefix XOR + Hash Map (First Occurrence)
+Opt Vis. Technique: XOR Anchor Points
+Dry Run (Opt): Calculate running prefix XOR. If `PrefXOR[i] == PrefXOR[j]`, then the subarray from `i+1` to `j` has a XOR of 0. Store the first time each XOR value is seen in a map.
+How to Draw (Opt): Draw array. Underneath, write running XOR (e.g., 5, 2, 7, 2...). Circle the two "2"s. Draw a bracket between them. That's a XOR-0 subarray.
+Opt Complexity Visuals: Single Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a flat timeline with dots representing $O(1)$ map lookups.
+Mem Vis (BF): Constant re-calculation of XORs.
+Mem Vis (Opt): Hash Map [XOR_Value -&gt; First_Index].

@@ -1,0 +1,13 @@
+ID: 681
+Problem Title: Next Closest Time
+Brute Force Method: Generate all 4^4 (256) possible time combinations using the digits from the input. Validate each and find the one with the smallest positive time difference.
+BF Complexity Visuals: Exhaustive permutation list.
+How to Draw BF: Draw 4 slots. List 4 options for each slot. Draw lines connecting every combination. Write $O(1)$ (since the total is capped at 256).
+Optimised Pattern: Simulation / Minute-by-Minute Increment.
+Opt Vis. Technique: Circular 24-hour Clock Scan.
+Dry Run (Opt): Add 1 minute to the current time. Check if all digits in the new time exist in the original set. If yes, that's the answer. If you hit 1440 minutes, you've wrapped around.
+How to Draw (Opt): Draw a clock face. Mark the current time. Step forward minute-by-minute until your "Digit Filter" (a set of 4 digits) lets a time through.
+Opt Complexity Visuals: Constant time (max 1440 checks).
+How to Draw Opt Complexity: Draw a circle (24h) with a small segment highlighted. Write $O(1)$.
+Mem Vis (BF): Draw a list of 256 time strings.
+Mem Vis (Opt): Draw a small Hash Set of size 4. $O(1)$ space.

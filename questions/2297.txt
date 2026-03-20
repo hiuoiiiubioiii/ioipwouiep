@@ -1,0 +1,13 @@
+ID: 2297
+Problem Title: Jump Game VIII
+Brute Force Method: Recursive DFS with MemoFrom each index, check all possible jump conditions (min/max of range). Recursively find the path with minimum cost to reach the end.
+BF Complexity Visuals: Decision Tree Branching
+How to Draw BF: Draw an index. Branch to every index it *could* jump to. Repeat. Even with memoization, show the number of edges being checked repeatedly.
+Optimised Pattern: Monotonic Stack + 1D DP
+Opt Vis. Technique: Next Greater/Smaller Anchoring
+Dry Run (Opt): An index `i` can jump to the "next greater or equal" element and the "next smaller" element. Use two monotonic stacks to precompute these "next" indices for everyone. Then run a simple DP to find the min cost.
+How to Draw (Opt): Draw the array. Use a stack to find the "Next Big" and "Next Small" neighbors for each point. Draw arrows connecting them. Fill a 1D DP array by taking `min(cost[current] + jump_price)`.
+Opt Complexity Visuals: Linear Precomputation + DP
+How to Draw Opt Complexity: Draw $O(N)$ for precomputing jump targets using stacks. Draw $O(N)$ for the DP pass. Total complexity: $O(N)$.
+Mem Vis (BF): Massive recursion stack and potentially checking $O(N^2)$ jump edges.
+Mem Vis (Opt): Two integer arrays for jump targets and one for DP costs (O(N) space).

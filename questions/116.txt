@@ -1,0 +1,13 @@
+ID: 116
+Problem Title: Populating Next Right Pointers in Each Node
+Brute Force Method: Standard Level Order Traversal (BFS) using a Queue to link nodes level by level.
+BF Complexity Visuals: A wide queue structure ballooning to hold N/2 nodes at the bottom level, showing $O(N)$ space.
+How to Draw BF: Draw a perfect binary tree. Draw a large box beside it (the queue). Cross out nodes as they enter and exit the queue, drawing arrows between them.
+Optimised Pattern: Level-by-Level Linked List Traversal (using existing `next` pointers to traverse horizontally).
+Opt Vis. Technique: A spider weaving a web. The spider crawls across the current level using `next` pointers while simultaneously spinning the thread connecting the level below.
+Dry Run (Opt): Start at root. While `left` exists: traverse current level via `next`. Link `curr.left.next = curr.right`. If `curr.next`, link `curr.right.next = curr.next.left`. Move `curr` to `curr.next`.
+How to Draw (Opt): Draw a tree. Use your finger to trace horizontally across level L. As your finger moves, draw straight dashed lines connecting the children on level L+1.
+Opt Complexity Visuals: $O(N)$ time with $O(1)$ space. A strictly horizontal scan that requires zero secondary data structures.
+How to Draw Opt Complexity: Highlight the horizontal `next` pointers in a bright color to show that the tree itself has become the traversal mechanism.
+Mem Vis (BF): Visualize an $O(N)$ Queue actively allocating heap memory to store half the tree at once.
+Mem Vis (Opt): Visualize purely in-place pointer manipulation. Memory stays flat at $O(1)$ constant space (ignoring recursive stack if done recursively, but iterative is truly $O(1)$).

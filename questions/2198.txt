@@ -1,0 +1,13 @@
+ID: 2198
+Problem Title: Number of Single Divisor Triplets
+Brute Force Method: Triple nested loops checking every combination (i, j, k) to see if their sum is divisible by exactly one of the numbers.
+BF Complexity Visuals: Full cubic search space.
+How to Draw BF: Draw three pointers i, j, k. Move k across N, then j, then i. Write $O(N^3)$.
+Optimised Pattern: Frequency Array + Triple Loop (Values 1-100).
+Opt Vis. Technique: A small, dense grid representing the limited range of values.
+Dry Run (Opt): Count frequencies of values 1-100. Loop `a` from 1 to 100, `b` from `a`, `c` from `b`. Check the "single divisor" rule. If true, count = `freq[a] * freq[b] * freq[c]` (adjust for duplicates).
+How to Draw (Opt): Draw a frequency table (1: 5 times, 2: 10 times...). Pick three numbers from the table. If they pass the rule, multiply their frequencies. Sum the results.
+Opt Complexity Visuals: $O(V^3)$ where V=100 (Constant time effectively).
+How to Draw Opt Complexity: A 100x100x100 tiny cube compared to an N^3 massive block.
+Mem Vis (BF): No extra memory.
+Mem Vis (Opt): $O(1)$ extra space (Frequency array of size 101).

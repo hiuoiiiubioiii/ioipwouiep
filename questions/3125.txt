@@ -1,0 +1,13 @@
+ID: 3125
+Problem Title: Max Number That Makes Result of Bitwise AND Zero
+Brute Force Method: Loop backward from N-1 to 1. Check if `N &amp; i == 0`. Return the first one that matches. $O(N)$
+BF Complexity Visuals: Iterating backward step-by-step on a number line, running a bitwise operation at each tick.
+How to Draw BF: Write the binary of N. Write binary of N-1, N-2, etc. manually stacking them and performing an AND until the result is 0.
+Optimised Pattern: Bit Manipulation / Math
+Opt Vis. Technique: Flipping the Most Significant Bit
+Dry Run (Opt): Find the highest set bit (MSB) of N. The answer is mathematically guaranteed to be the maximum number with all bits set *strictly below* that MSB. If MSB is at index `i`, answer is (1 ll i) - 1.
+How to Draw (Opt): Write N in binary (e.g., `10110`). Cross out the leftmost `1`. Write `1`s everywhere to the right of it (`01111`). Convert to decimal.
+Opt Complexity Visuals: Single $O(1)$ discrete mathematical jump.
+How to Draw Opt Complexity: Draw a binary string, erase the first 1, fill the rest with 1s. Write $O(1)$ or $O(\log N)$ depending on how bits are counted.
+Mem Vis (BF): A loop counter variable tracking the backward countdown.
+Mem Vis (Opt): A single scalar integer variable. $O(1)$ space.

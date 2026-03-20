@@ -1,0 +1,13 @@
+ID: 3521
+Problem Title: Find Product Recommendation Pairs (Med)
+Brute Force Method: Cross-join all users and products, manually calculating similarity scores for every pair.
+BF Complexity Visuals: Complete Bipartite Graph Grid.
+How to Draw BF: Draw a massive matrix (Users x Products). Draw arrows from every user to every product, tallying interaction scores.
+Optimised Pattern: Graph Traversal (BFS) / Collaborative Filtering with Inverted Index.
+Opt Vis. Technique: Bipartite V-Shape Traversal.
+Dry Run (Opt): Pick a target user. Traverse to their bought products, then traverse back to other users who bought those, then forward to new products.
+How to Draw (Opt): Draw two columns: Users (L) and Products (R). Draw a V-shaped path: User A -&gt; Product 1 -&gt; User B.
+Opt Complexity Visuals: Sparse Matrix Traversal.
+How to Draw Opt Complexity: Draw a mostly empty matrix. Trace a thin branching tree representing only the 2-hop active edges. $O(U + E)$.
+Mem Vis (BF): Dense NxM Matrix: Draw a massive, mostly empty 2D array consuming huge memory.
+Mem Vis (Opt): Adjacency List: Draw a vertical array of Users, with linked lists pointing only to interacted products.

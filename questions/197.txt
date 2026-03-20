@@ -1,0 +1,13 @@
+ID: 197
+Problem Title: Rising Temperature
+Brute Force Method: Nested loops: For every date, scan the entire table to find the record for "yesterday" and compare temperatures.
+BF Complexity Visuals: An $O(N^2)$ cross-reference grid where every day checks every other day.
+How to Draw BF: Draw a calendar. For each day, draw a search line through all other days to find the one that is exactly 24 hours prior.
+Optimised Pattern: Self-Join with DATEDIFF.
+Opt Vis. Technique: "The Sliding Mirror." The table is joined with itself, but the "Join Condition" shifts the second table forward by exactly one day.
+Dry Run (Opt): Join Weather w1 and w2 on DATEDIFF(w1.recordDate, w2.recordDate) = 1. Filter where w1.temp &gt; w2.temp.
+How to Draw (Opt): Draw the table. Draw a second copy shifted down by one row. Align the rows and circle pairs where the top row temperature is higher.
+Opt Complexity Visuals: $O(N \log N)$ if sorting by date is required, otherwise $O(N)$ with a date index.
+How to Draw Opt Complexity: Draw a single timeline arrow. Highlight only the "peaks" that are higher than the point immediately to their left.
+Mem Vis (BF): Redundant temporary storage for every possible date pair comparison.
+Mem Vis (Opt): Visualize the Join Buffer holding only two adjacent days' worth of data at a time.

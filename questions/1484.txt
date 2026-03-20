@@ -1,0 +1,13 @@
+ID: 1484
+Problem Title: Group Sold Products By The Date (SQL)
+Brute Force Method: Multiple Selects and Joins. For every unique date, run a subquery to find all distinct products and another to count them, then concatenate them manually.
+BF Complexity Visuals: Correlated Subquery Aggregation
+How to Draw BF: Draw the Activities table. For each date, draw an arrow to a filtered list of unique products. Label $O(\text{Dates} \cdot N)$.
+Optimised Pattern: GROUP BY + GROUP_CONCAT / STRING_AGG
+Opt Vis. Technique: Pivoted String Accumulation
+Dry Run (Opt): Group the table by `sell_date`. Use `COUNT(DISTINCT product)` for the count and `GROUP_CONCAT(DISTINCT product ORDER BY product)` for the comma-separated list.
+How to Draw (Opt): Draw a funnel. Dump rows into buckets by date. Inside the bucket, remove duplicate names, sort them alphabetically, and join them with a comma.
+Opt Complexity Visuals: Sort-Centric Aggregation
+How to Draw Opt Complexity: Draw a Sort $O(N \log N)$ -&gt; Single Pass Grouping $O(N)$. Total $O(N \log N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A temporary buffer/map to handle string concatenation per group. Space $O(N)$.

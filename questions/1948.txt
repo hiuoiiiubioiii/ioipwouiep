@@ -1,0 +1,13 @@
+ID: 1948
+Problem Title: Delete Duplicate Folders in System
+Brute Force Method: For every folder, recursively build its full string representation (content + children) and compare with every other folder's string.
+BF Complexity Visuals: $O(N^2)$ String Matching Matrix
+How to Draw BF: Draw folder icons. Draw lines connecting every folder to every other folder with a "String Compare" label.
+Optimised Pattern: Trie + Merkle Hashing (Post-order)
+Opt Vis. Technique: Subtree Fingerprinting
+Dry Run (Opt): Build a Trie. Use post-order traversal to generate a unique hash/string for each subtree. Store counts in a map. Delete subtrees with count &gt; 1.
+How to Draw (Opt): Draw a Tree. At each node, write its "Fingerprint" (e.g., "a(b)(c)"). Color duplicate fingerprints with the same color.
+Opt Complexity Visuals: $O(N \\text{cdot Depth})$ Tree Traversal
+How to Draw Opt Complexity: Draw the tree once. Show a single bottom-up "bubbling" of hash strings.
+Mem Vis (BF): Heavy overhead of redundant string objects for every path.
+Mem Vis (Opt): A Trie (Tree structure) and a Hash Map for fingerprint deduplication.

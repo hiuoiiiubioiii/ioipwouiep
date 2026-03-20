@@ -1,0 +1,13 @@
+ID: 1213
+Problem Title: Intersection of Three Sorted Arrays
+Brute Force Method: Take every element from array 1. For each element, use Binary Search to look for it in array 2. If found, use Binary Search to look for it in array 3.
+BF Complexity Visuals: Nested Loop Pogo-Stick
+How to Draw BF: Draw Array 1. For index 0, draw an arrow jumping down to Array 2, bouncing logarithmically, then down to Array 3. Repeat for index 1, 2, etc. Write $O(N \log N)$.
+Optimised Pattern: Three Pointers
+Opt Vis. Technique: Three Runners on Parallel Tracks
+Dry Run (Opt): Place three runners at the start of three tracks (arrays). If they are all standing on the same number, record it and move all three forward. Otherwise, only the runner standing on the smallest number steps forward to catch up.
+How to Draw (Opt): Draw three horizontal arrays stacked on top of each other. Draw an upward pointing arrow (pointer) under the first element of each. Look at the three pointed values. Cross out the smallest one(s) and redraw its arrow one step right.
+Opt Complexity Visuals: Synchronized Linear Sweep
+How to Draw Opt Complexity: Draw three horizontal lines. Draw three arrows moving rightwards steadily. They never go backward. Write $O(N)$.
+Mem Vis (BF): Draw a HashMap storing all 3N elements to count frequencies, wasting spatial efficiency.
+Mem Vis (Opt): Draw exactly three static integer boxes (p1, p2, p3) taking up $O(1)$ auxiliary memory space.

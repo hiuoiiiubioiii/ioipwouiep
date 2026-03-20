@@ -1,0 +1,13 @@
+ID: 1324
+Problem Title: Print Words Vertically
+Brute Force Method: Create a massive NxM 2D character matrix filled entirely with spaces. Loop through words, placing chars precisely, then scan column-by-column to build outputs.
+BF Complexity Visuals: Sparse Matrix Wasted Space
+How to Draw BF: Draw a large grid. Write a small word. Leave dozens of empty cells (wasted space) before the next word. Highlight the padding overhead.
+Optimised Pattern: Parallel StringBuilder Appending
+Opt Vis. Technique: Vertical Typewriter Columns
+Dry Run (Opt): Find max word length `max_len`. Create an array of `max_len` StringBuilders. Iterate through the words array. Append the i-th character of the word to the i-th StringBuilder (or a space if out of bounds).
+How to Draw (Opt): Draw vertical columns. For each word in the string, read it top-to-bottom. Drop its letters down into the respective columns one by one like a Tetris piece.
+Opt Complexity Visuals: Dynamic String Expansion
+How to Draw Opt Complexity: Draw distinct vertical bars of varying heights. Show them extending smoothly downward only when characters are actually added, proving optimal $O(N)$ time.
+Mem Vis (BF): Fixed 2D Char Array: Allocating `O(Words * MaxLength)` contiguous memory, heavily populated with useless space characters.
+Mem Vis (Opt): Array of Dynamic Builders: Draw a `std::vector`. Each string dynamically sizes to its required length. A final `.trimRight()` drops trailing spaces efficiently.

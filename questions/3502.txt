@@ -1,0 +1,13 @@
+ID: 3502
+Problem Title: Minimum Cost to Reach Every Position (Easy)
+Brute Force Method: BFS / Dijkstra's from start to all possible positions.
+BF Complexity Visuals: Graph Traversal Map (Node expansion).
+How to Draw BF: Draw a starting dot, branch out to every valid next index. Write cumulative cost on edges.
+Optimised Pattern: Greedy (Rightward free, Leftward paid).
+Opt Vis. Technique: State Transition Diagram.
+Dry Run (Opt): Point a finger at current index. If moving right, draw a green arrow (cost 0). Left, red arrow (cost +X).
+How to Draw (Opt): Draw boxes for indices. Draw arched arrows jumping between boxes, labeling weights (0 or C).
+Opt Complexity Visuals: Linear Scan Pipeline.
+How to Draw Opt Complexity: Draw a single straight line passing through N nodes. Write $O(1)$ ops under each node.
+Mem Vis (BF): BFS Queue memory: Draw a growing list of queue elements holding (index, cost).
+Mem Vis (Opt): Single pointer tracking: Draw just two integer variables (Current Pos, Total Cost) overwriting themselves.

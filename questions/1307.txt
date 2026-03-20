@@ -1,0 +1,13 @@
+ID: 1307
+Problem Title: Verbal Arithmetic Puzzle
+Brute Force Method: Generate all permutations of 0-9 for up to 10 unique characters, fully evaluating the entire equation string to test validity.
+BF Complexity Visuals: 10-ary Permutation Tree
+How to Draw BF: Draw a root node. Branch 10 times for the first letter, 9 for the next. Show a massive tree of 10! (3.6M) leaf nodes where full equations are calculated.
+Optimised Pattern: Backtracking DFS with Column-by-Column Pruning
+Opt Vis. Technique: Column-Addition Grid Space
+Dry Run (Opt): Write the words stacked vertically like primary school addition. Start right. Assign digits, calculate `sum % 10` and `carry`. Immediately reject paths if the column doesn't match the result string.
+How to Draw (Opt): Stack words. Draw a box around the rightmost column. Write assigned numbers above letters. Draw an arrow carrying the 10s place to the next column left.
+Opt Complexity Visuals: Severely Pruned DFS Tree
+How to Draw Opt Complexity: Draw the permutation tree, but immediately place a red "X" right beneath the root on most branches, proving invalid sums cut off thousands of paths instantly.
+Mem Vis (BF): Deep Call Stack + Mutable Array: Deep recursive frames passing heavy string states.
+Mem Vis (Opt): Static Map &amp; Bitmask: Draw a 26-slot fixed array mapping characters to digits, paired with a 10-bit integer bitmask locking used numbers.

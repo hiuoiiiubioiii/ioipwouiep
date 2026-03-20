@@ -1,0 +1,13 @@
+ID: 3687
+Problem Title: Library Late Fee Calculator (Easy)
+Brute Force Method: Manually counting days between two dates using a loop, then multiplying by the daily rate based on item type. $O(\text{Days})$.
+BF Complexity Visuals: Day-by-Day Tick Counter.
+How to Draw BF: Start at Jan 1. Increment a counter 365 times to reach next year. If the book is 10 years late, this is thousands of iterations.
+Optimised Pattern: Datetime library or Formula-based difference. `(Date2 - Date1).days * rate`.
+Opt Vis. Technique: The "Date Stamp" Subtracter.
+Dry Run (Opt): Visualize two calendars. Instead of counting days, treat the dates as single points in time. The "distance" between the points is the delta.
+How to Draw (Opt): Convert both dates to "Days since Year 0". Day2 - Day1 = TotalDays. Multiplied by rate_map[item_type].
+Opt Complexity Visuals: Constant-Time Calculation.
+How to Draw Opt Complexity: Write $O(1)$. Draw two points on a line and a single arrow connecting them.
+Mem Vis (BF): Creating arrays or lists of every single day in the late period.
+Mem Vis (Opt): Two or three integer variables. Space $O(1)$.

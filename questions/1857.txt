@@ -1,0 +1,13 @@
+ID: 1857
+Problem Title: Largest Color Value in a Directed Graph
+Brute Force Method: Use DFS to find every possible path in the graph. For each path, count the occurrences of each color.
+BF Complexity Visuals: Exponential Path Tree.
+How to Draw BF: Draw a graph with many cycles or paths. Show how DFS explores all permutations. Note $O(V \cdot 2^E)$ potential paths.
+Optimised Pattern: Topological Sort (Kahn's) + Dynamic Programming.
+Opt Vis. Technique: Node processing queue with color propagation.
+Dry Run (Opt): Calculate in-degrees. Use a Queue for 0 in-degree nodes. For each node, update its neighbors' color counts: dp[neighbor][color] = \max(dp[neighbor][color], dp[node][color]).
+How to Draw (Opt): Draw nodes with colors. Next to each node, draw a 26-slot table. As you process a node, pass its table values to neighbors, adding 1 for the neighbor's color.
+Opt Complexity Visuals: Linear Graph Traversal (V+E) with constant color factor.
+How to Draw Opt Complexity: Draw an arrow passing through each edge once. Mark $O(26 \\text{times} (V+E)$).
+Mem Vis (BF): Recursion stack leading to TLE or StackOverflow.
+Mem Vis (Opt): 2D DP Array (V \times 26) in heap memory + Adjacency List.

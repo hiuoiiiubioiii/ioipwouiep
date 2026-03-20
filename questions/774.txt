@@ -1,0 +1,13 @@
+ID: 774
+Problem Title: Minimize Max Distance to Gas Station
+Brute Force Method: Add gas stations one by one. Each time, find the largest gap and split it.
+BF Complexity Visuals: Greedy Gap Splitting
+How to Draw BF: Draw a line with dots. Find the widest gap, add a dot in the middle. Repeat K times. $O(K \\text{times} N)$.
+Optimised Pattern: Binary Search on Answer (Range)
+Opt Vis. Technique: Threshold Guessing
+Dry Run (Opt): Binary search for the distance D. For a given D, calculate how many stations are needed to ensure no gap &gt; D. Adjust D based on K.
+How to Draw (Opt): Draw a ruler. Guess a distance (e.g., 2.0). Count how many "dots" you'd need to fit that rule. If you need more than K, make the distance bigger.
+Opt Complexity Visuals: Logarithmic Precision Convergence
+How to Draw Opt Complexity: Draw a range [0, 10^8]. Show it halving 100 times for precision. $O(N \log(\\text{text}{\text{Range}}/\\text{epsilon})$).
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ extra space.

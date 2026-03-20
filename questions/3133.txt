@@ -1,0 +1,13 @@
+ID: 3133
+Problem Title: Minimum Array End
+Brute Force Method: Iteratively check every number starting from x and count how many have (num  AND  x) == x until reaching n. $O(n \\text{cdot bits})$
+BF Complexity Visuals: A slow number line "tally" counter skipping invalid numbers.
+How to Draw BF: Write x in binary. Write x+1, x+2... underneath. Perform bitwise AND for each until you've found n valid matches.
+Optimised Pattern: Bit Manipulation (Zero-Bit Filling)
+Opt Vis. Technique: Binary Bit-Mask Inlay
+Dry Run (Opt): Identify all '0' bit positions in x. Take binary representation of n-1 and "pour" its bits into these '0' slots of x.
+How to Draw (Opt): Write x in binary. Circle the zeros. Write (n-1) in binary above it. Draw arrows dropping (n-1) bits into the circled zeros.
+Opt Complexity Visuals: Single bit-by-bit scan of the number's length.
+How to Draw Opt Complexity: Draw a 64-bit register. Mark a single pass of length 64. $O(\log N + \log X)$.
+Mem Vis (BF): A large list storing every number that satisfies the AND condition.
+Mem Vis (Opt): A few 64-bit integer variables. $O(1)$.

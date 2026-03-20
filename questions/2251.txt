@@ -1,0 +1,13 @@
+ID: 2251
+Problem Title: Number of Flowers in Full Bloom
+Brute Force Method: Full Calendar SimulationFor every person's arrival time, iterate through the entire list of flowers and check if the arrival time falls within the start and end bloom times.
+BF Complexity Visuals: Point-to-Interval Intersection
+How to Draw BF: Draw a timeline. For each person (point), draw a vertical line that crosses through all horizontal bars (flower bloom intervals). Show $O(P \cdot F)$ complexity.
+Optimised Pattern: Coordinate Compression / Line Sweep
+Opt Vis. Technique: Difference Array on Sorted Events
+Dry Run (Opt): Convert each flower into two events: `(start, +1)` and `(end+1, -1)`. Sort events by time. Use a prefix sum to find the bloom count at any specific time point using binary search.
+How to Draw (Opt): Draw a timeline with points labeled "+1" (bloom start) and "-1" (bloom end). Draw a person's arrival time as a magnifying glass and calculate the sum of all +1s and -1s to its left.
+Opt Complexity Visuals: Dual-Point Binary Search
+How to Draw Opt Complexity: Draw two sorted arrays: `starts` and `ends`. For a time `T`, find `count(starts &lt;= T) - count(ends &lt; T)`. Label each search $O(\log F)$. Total time: $O((F+P)$ log F).
+Mem Vis (BF): Allocating a massive array for every single possible day (millions of entries) if done via simulation.
+Mem Vis (Opt): Two sorted integer arrays of size F (O(F) space).

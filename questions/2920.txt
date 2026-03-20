@@ -1,0 +1,13 @@
+ID: 2920
+Problem Title: Maximum Points After Collecting Coins From All Nodes
+Brute Force Method: Pure DFS on the tree without memoization, branching twice at every single node.
+BF Complexity Visuals: Binary Tree over a Graph
+How to Draw BF: Draw the given tree graph. At every node, draw a split into two parallel universes (Option 1 vs Option 2). Size is $O(2^N)$.
+Optimised Pattern: Tree DP + Memoization (State Reduction via Bit Shifts)
+Opt Vis. Technique: Node-Attached State Arrays
+Dry Run (Opt): Key insight: Shifting a max value of 10^4 right by 14 bits makes it 0. Track state as `(node, shifts)`. Shifts cap at 14. Option 1 costs k. Option 2 increases shift.
+How to Draw (Opt): Draw the tree structure. Next to EVERY node, draw a tiny 1D array of 14 slots representing the memoized answers for 0 to 14 shifts.
+Opt Complexity Visuals: State Grid Overlaid on Tree
+How to Draw Opt Complexity: Draw a grid of N rows and 14 columns. Show that each of the N nodes is processed exactly 14 times. Time $O(14 \cdot N)$ = $O(N)$.
+Mem Vis (BF): $O(2^N)$ call stack frames.
+Mem Vis (Opt): A 2D memoization table `memo[N][15]`. Space $O(14 \cdot N)$ = $O(N)$.

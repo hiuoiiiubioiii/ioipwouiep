@@ -1,0 +1,13 @@
+ID: 3057
+Problem Title: Employees Project Allocation (SQL)
+Brute Force Method: For every employee, calculate their average task duration. Then, join with the projects table and check if their project task duration is higher than their personal average.
+BF Complexity Visuals: Pairwise Average Check
+How to Draw BF: Draw a list of employees. For each one, draw a sub-list of all their tasks to calculate an average, then another check for the current project.
+Optimised Pattern: Window Function (AVG over Partition)
+Opt Vis. Technique: Layered Average Strips
+Dry Run (Opt): Use AVG(duration) OVER(partition by employee_id) to get the employee average in a new column. Simply compare the row's project duration to this column value.
+How to Draw (Opt): Draw a table with a "Duration" column. Add a dashed "Personal Average" line that changes for each employee group. Circle any project bar that exceeds its dashed line.
+Opt Complexity Visuals: $O(N)$ Analytical Pass
+How to Draw Opt Complexity: Draw one vertical pass over the sorted data. Analytical functions compute averages without a second full scan.
+Mem Vis (BF): Recursive calculation of averages for every row-project pair.
+Mem Vis (Opt): Memory-efficient frame buffer used by the window function engine.

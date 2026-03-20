@@ -1,0 +1,13 @@
+ID: 785
+Problem Title: Is Graph Bipartite?
+Brute Force Method: Try every possible way to split nodes into two sets and check for internal edges.
+BF Complexity Visuals: Brute Force Partitioning
+How to Draw BF: Draw nodes. Try every combination of "Set A" and "Set B". $O(2^N)$.
+Optimised Pattern: Graph Coloring (BFS/DFS)
+Opt Vis. Technique: Two-Tone Node Coloring
+Dry Run (Opt): Start at a node, color it Red. Color all its neighbors Blue. Color their neighbors Red. If you ever try to color a node with the "wrong" color, it's not bipartite.
+How to Draw (Opt): Draw the graph. Pick a node and color it '1'. Color neighbors '-1'. If an edge connects two '1's or two '-1's, circle that edge in red.
+Opt Complexity Visuals: Standard Graph Traversal
+How to Draw Opt Complexity: Draw a graph. Show each node and edge being visited once. $O(V+E)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Color array of size V and BFS Queue $O(V)$.

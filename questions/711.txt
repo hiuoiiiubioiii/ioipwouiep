@@ -1,0 +1,13 @@
+ID: 711
+Problem Title: Number of Distinct Islands II
+Brute Force Method: DFS to find all islands, manually rotate/reflect each grid 8 ways, and compare every pair.
+BF Complexity Visuals: Pairwise Bounding Box Match
+How to Draw BF: Draw grids of shapes. Draw lines connecting every shape to every other shape to represent $O(N^2)$ comparisons.
+Optimised Pattern: Canonical Hashing (DFS + Sort)
+Opt Vis. Technique: Shape Normalization Pipeline
+Dry Run (Opt): DFS to extract coordinates. Translate shape so top-left is (0,0). Generate all 8 transforms. Sort them lexicographically. Pick the "smallest" string representation and add to a HashSet.
+How to Draw (Opt): Draw an island shape. Draw 8 arrows pointing to rotated/mirrored versions. Circle the one that sorts first alphabetically, draw an arrow dropping it into a "Set" bucket.
+Opt Complexity Visuals: Set Insertion Hit
+How to Draw Opt Complexity: Draw an $O(R\cdot C)$ grid traversal path, plus an $O(K \log K)$ sorting funnel for the coordinate transformation.
+Mem Vis (BF): Giant 3D array or List of Lists for grid states.
+Mem Vis (Opt): HashSet box containing canonical string representations (O(R*C)).

@@ -1,0 +1,13 @@
+ID: 1438
+Problem Title: Longest Continuous Subarray With Absolute Diff &lt;= Limit
+Brute Force Method: All Subarrays. Generate every possible subarray (O(N²)). For each, find max and min (O(N)). Check if `max - min &lt;= limit`.
+BF Complexity Visuals: Cubic Subarray Inspection
+How to Draw BF: Draw an array. Draw a sliding window that grows from every starting point. Inside each window, draw arrows finding high/low values. Label $O(N³)$.
+Optimised Pattern: Sliding Window + Monotonic Deques
+Opt Vis. Technique: Dual Monotonic Queue Pipeline
+Dry Run (Opt): Maintain two deques: one `max_deque` (decreasing) and one `min_deque` (increasing). As you expand the window, update deques. If `max - min &gt; limit`, shrink window from left.
+How to Draw (Opt): Draw a window over an array. Below it, draw two "tubes" (deques). One holds the "kings" (descending maxes), one holds the "peasants" (ascending mins). When they clash (diff &gt; limit), push the window left.
+Opt Complexity Visuals: Amortized Linear Scan
+How to Draw Opt Complexity: Draw an arrow moving right (Expand) and a trailing arrow moving right (Shrink). Total $O(N)$.
+Mem Vis (BF): $O(N²)$ result list
+Mem Vis (Opt): Two Deques storing indices. Space $O(N)$.

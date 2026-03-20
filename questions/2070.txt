@@ -1,0 +1,13 @@
+ID: 2070
+Problem Title: Most Beautiful Item for Each Query
+Brute Force Method: For each query `q`, iterate through all items, find those with `price &lt;= q`, and keep track of the maximum beauty seen.
+BF Complexity Visuals: Nested Query Scan
+How to Draw BF: Draw Items on left, Queries on right. Draw lines from every query to every single item to check the price. $O(Q \cdot N)$.
+Optimised Pattern: Sorting + Prefix Maximum + Binary Search
+Opt Vis. Technique: Ascending Beauty Staircase
+Dry Run (Opt): Sort items by price. Replace each beauty value with the max beauty seen up to that point (`items[i].beauty = max(items[i].beauty, items[i-1].beauty)`). Binary search for each query price.
+How to Draw (Opt): Draw items as dots on a graph (Price vs Beauty). Connect dots with a "staircase" line that never goes down. For a query, draw a vertical line and find where it hits the staircase.
+Opt Complexity Visuals: Sorting Funnel to Binary Search Arcs
+How to Draw Opt Complexity: Draw a funnel (O(N log N) sort). Then draw Q arcs representing the $O(\log N)$ binary searches. Total Time $O((N+Q)$ log N).
+Mem Vis (BF): Storing lists of filtered items for every single query.
+Mem Vis (Opt): One sorted array of items and one result array of size Q. Space $O(N + Q)$.

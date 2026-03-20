@@ -1,0 +1,13 @@
+ID: 1586
+Problem Title: Binary Search Tree Iterator II (Premium)
+Brute Force Method: Upon initialization, perform a full In-order traversal and store all nodes in a list. Moving next/prev is just moving a pointer in that list. $O(N)$ init.
+BF Complexity Visuals: Full Tree Flattening
+How to Draw BF: Draw a BST. Draw a single long horizontal line below it. Draw arrows from every node dropping down into the line in sorted order.
+Optimised Pattern: Lazy Iteration + Stack/List Cache
+Opt Vis. Technique: The Controlled Stack Surge
+Dry Run (Opt): Only traverse when `next()` is called beyond the cached list. Use a stack to store the "left-most" path. Keep an index to allow `prev()` to move back through the list without re-traversing.
+How to Draw (Opt): Draw a BST. Draw a vertical Stack box on the side. Draw a horizontal "Cache List" below. When `next()` is called, show nodes moving from Tree \rightarrow Stack \rightarrow List. For `prev()`, just move a pointer i back on the List.
+Opt Complexity Visuals: Amortized Linear $O(1)$ per call
+How to Draw Opt Complexity: Draw a timeline of N calls. Highlight that the total "push/pop" work over all N calls equals the number of nodes.
+Mem Vis (BF): A static list of N nodes. $O(N)$.
+Mem Vis (Opt): A dynamic list plus a stack of height H. $O(N)$ total, but lazy.

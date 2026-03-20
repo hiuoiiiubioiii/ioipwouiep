@@ -1,0 +1,13 @@
+ID: 1405
+Problem Title: Longest Happy String
+Brute Force Method: Backtracking algorithm. Try adding 'a', 'b', or 'c'. If valid (no 3 consecutive), recurse. Find the longest valid path.
+BF Complexity Visuals: Trinary Backtracking Tree
+How to Draw BF: Draw a root splitting into 3 branches (a, b, c). Prune branches where 3 identical letters align. Extremely wide tree, $O(3^(A+B+C)$).
+Optimised Pattern: Max Heap / Priority Queue (Greedy)
+Opt Vis. Technique: Resource Pool Extraction
+Dry Run (Opt): Put counts of a, b, c in a Max Heap. Pop the most frequent character. If appending it breaks the rule, pop the second most frequent. Append, decrement, and push back if &gt; 0.
+How to Draw (Opt): Draw 3 buckets for a, b, c. Continually take a block from the fullest bucket. If you take 2 from the same bucket in a row, temporarily block it and take from the next fullest.
+Opt Complexity Visuals: Logarithmic Heap Operations
+How to Draw Opt Complexity: Draw a loop iterating (A+B+C) times. Inside the loop, draw a heap push/pop box labeled $O(\log 3)$ -&gt; effectively $O(1)$.
+Mem Vis (BF): Deep Recursion Call Stack
+Mem Vis (Opt): Draw a small 3-element tree/array representing the Max Heap. Below it, draw a dynamically growing string buffer for the result.

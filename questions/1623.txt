@@ -1,0 +1,13 @@
+ID: 1623
+Problem Title: All Valid Triplets That Can Represent a Country (SQL)
+Brute Force Method: Cross-joining all three tables blindly (Cartesian product) and filtering at the very end.
+BF Complexity Visuals: 3D Cartesian Block
+How to Draw BF: Draw three axes (A, B, C) creating a massive 3D cube of millions of invalid row combinations. $O(A \cdot B \cdot C)$.
+Optimised Pattern: INNER JOIN with Inequality Filtering
+Opt Vis. Technique: Sequential Funneling
+Dry Run (Opt): Join A to B filtering out matching names/IDs. Take that small result and Join to C filtering out names/IDs from both A and B.
+How to Draw (Opt): Draw a large funnel. Pour Table A and B in, filter out duplicates. Pour the trickle into a second funnel with Table C.
+Opt Complexity Visuals: Progressive Row Reduction
+How to Draw Opt Complexity: Draw thick lines (data) progressively getting thinner after passing through two distinct filter checkpoints.
+Mem Vis (BF): Massive Temp Table: Draw an overflowing memory buffer holding a 3D join result.
+Mem Vis (Opt): Streaming Pipeline: Draw small, temporary row buffers processing data step-by-step.

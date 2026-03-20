@@ -1,0 +1,13 @@
+ID: 2105
+Problem Title: Watering Plants II
+Brute Force Method: Simulate exactly as described using a loop and conditions.
+BF Complexity Visuals: Two pointers moving inward.
+How to Draw BF: Draw array of plants. Draw 'A' at start, 'B' at end. Draw arrows moving inward one step at a time. $O(N)$.
+Optimised Pattern: Two Pointers (Greedy Simulation).
+Opt Vis. Technique: Pincers closing in on an array.
+Dry Run (Opt): Track remaining water for A and B. Deduct plant requirement. Refill (increment counter) if negative.
+How to Draw (Opt): Draw water bucket icons above A and B. Cross out bucket capacity and write new capacity after each plant.
+Opt Complexity Visuals: $O(N/2)$ linear scan.
+How to Draw Opt Complexity: Draw N boxes. Shade boxes from left and right simultaneously until meeting in the middle.
+Mem Vis (BF): Single flat array.
+Mem Vis (Opt): Single flat array with two integer variables (pointers) referencing indices.

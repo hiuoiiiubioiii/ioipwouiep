@@ -1,0 +1,13 @@
+ID: 3283
+Problem Title: Maximum Number of Moves to Kill All Pawns
+Brute Force Method: Generate all permutations of the order in which to kill pawns. $O(P! \cdot N^2)$.
+BF Complexity Visuals: Factorial Path Explosion
+How to Draw BF: Draw 15 pawns on a board. Try to list every sequence of killing them. Show how the number of sequences (15!) is over a trillion.
+Optimised Pattern: BFS Precomputation + Bitmask DP
+Opt Vis. Technique: State-Space Game Tree
+Dry Run (Opt): 1. Use BFS to find the shortest distance between all pairs of pawns (and the knight). 2. Use Bitmask DP `dp(mask, last_pawn)` to find the max moves for Alice/Bob.
+How to Draw (Opt): Draw a table where one axis is "Which pawns are dead" (as binary 1011...) and the other is "Which pawn was killed last". Fill cells by picking the best next move from the BFS distances.
+Opt Complexity Visuals: Combinatorial Mask Grid
+How to Draw Opt Complexity: Draw a block for "BFS P x N^2". Draw a second block for "DP 2^P x P". Label as the dominating factors.
+Mem Vis (BF): Massive recursion stack for factorial search.
+Mem Vis (Opt): 2D Distance Matrix (P^2) and DP table (2^P * P) ( $O(2^P \cdot P)$ space).

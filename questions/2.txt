@@ -1,0 +1,13 @@
+ID: 2
+Problem Title: Add Two Numbers
+Brute Force Method: List to Int Traverse both lists, convert to integers, add them, convert back to list (Fails for huge numbers).
+BF Complexity Visuals: Data Type Pipeline
+How to Draw BF: Draw two chains of nodes. Draw a funnel combining them into a massive integer variable, then an arrow pushing that integer out into a new chain.
+Optimised Pattern: Digit-by-Digit Math w/ Carry
+Opt Vis. Technique: Vertical Addition with Carry Over
+Dry Run (Opt): Stack the linked lists vertically like primary school addition. Add top node + bottom node + carry, output modulo 10 to a new node, pass carry to next column.
+How to Draw (Opt): Draw L1 on top, L2 below it. Draw vertical boxes circling the nodes at index 'i'. Write a "+ Carry" bubble at the top of the next column.
+Opt Complexity Visuals: Parallel Traversal Lines
+How to Draw Opt Complexity: Draw two parallel lines of length max(M,N). The complexity is strictly bounded by the longer line. $O(\text{max}(M,N)$).
+Mem Vis (BF): Draw giant variables (Strings/BigInts) holding the intermediate numbers.
+Mem Vis (Opt): Draw a new chain of nodes (O(max(M,N)) length) mapping 1:1 with the longest input list plus one potential carry node.

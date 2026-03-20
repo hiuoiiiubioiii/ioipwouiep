@@ -1,0 +1,13 @@
+ID: 3641
+Problem Title: Longest Semi-Repeating Subarray (Med)
+Brute Force Method: Generate every possible subarray (i, j), and for each, count how many pairs of adjacent characters are identical. $O(N^3)$.
+BF Complexity Visuals: Subarray Nested Scan Grid.
+How to Draw BF: Draw an array. Draw a bracket for every possible start and end point. Inside each bracket, draw arrows checking every single adjacent pair. Write $O(N^3)$.
+Optimised Pattern: Sliding Window with a single counter for "duplicate pairs".
+Opt Vis. Technique: Expanding Window with a Violation Trigger.
+Dry Run (Opt): Move your `Right` pointer. If `arr[Right] == arr[Right-1]`, increment your "Double Count". If the count exceeds 1, move your `Left` pointer forward until the count drops back to 1.
+How to Draw (Opt): Draw an array. Use two fingers (L and R). Move R right. When you see two identical numbers together, write "Doubles: 1". Move R again. If you see another double, move L until one double is "pushed out" of the window.
+Opt Complexity Visuals: Amortized Linear Timeline.
+How to Draw Opt Complexity: Draw a single line for the array. Show the L and R pointers only moving forward, never backward. Write $O(2N)$ ≈ $O(N)$.
+Mem Vis (BF): N^2 memory allocations if storing subarrays as separate strings.
+Mem Vis (Opt): Two integer pointers and one "duplicate_counter" variable. Space $O(1)$.

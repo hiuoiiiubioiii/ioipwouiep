@@ -1,0 +1,13 @@
+ID: 1436
+Problem Title: Destination City
+Brute Force Method: Nested Search. For every "Destination" city in the list, check if it appears as a "Source" city anywhere else in the list. If it doesn't, that's the final destination.
+BF Complexity Visuals: Quadratic Lookup Scan
+How to Draw BF: Draw a list of paths [A-&gt;B, B-&gt;C]. Take 'B', scan all sources (A, B). Found B. Take 'C', scan all sources. Not found. Label $O(N²)$.
+Optimised Pattern: Set Difference / Hash Map
+Opt Vis. Technique: Source City Exclusion
+Dry Run (Opt): Add all "Source" cities to a Hash Set. Iterate through all "Destination" cities. The city that is NOT in the set is the answer.
+How to Draw (Opt): Draw two buckets: "Outgoing" and "Incoming". Throw the first city of every pair into Outgoing. Then look at the second city of every pair—if it can't find itself in the Outgoing bucket, it's the end.
+Opt Complexity Visuals: Linear Two-Phase Scan
+How to Draw Opt Complexity: Draw one arrow for "Set Build" $O(N)$ -&gt; one arrow for "Set Check" $O(N)$. Total $O(N)$.
+Mem Vis (BF): N/A (In-place search)
+Mem Vis (Opt): A Hash Set containing all source cities. Space $O(N)$.

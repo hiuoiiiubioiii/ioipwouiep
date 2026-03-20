@@ -1,0 +1,13 @@
+ID: 2239
+Problem Title: Find Closest Number to Zero
+Brute Force Method: Sort by Absolute ValueSort the entire array using a custom comparator that looks at `abs(x)`. If absolute values are equal, sort by the actual value in descending order. Return the first element.
+BF Complexity Visuals: Sorting Re-ordering Pipeline
+How to Draw BF: Draw the number line. Draw arrows moving every number to its absolute distance from 0. Show the sorting process $O(N \log N)$ rearranging the whole array.
+Optimised Pattern: Linear One-Pass Update
+Opt Vis. Technique: Closest-So-Far Register
+Dry Run (Opt): Traverse the array once. Maintain a variable `closest`. If `abs(current) &lt; abs(closest)`, update. If `abs(current) == abs(closest)`, pick the larger of the two.
+How to Draw (Opt): Draw a number line with a "Zero" marker. As you scan the array, draw a "target" that jumps to the number nearest to zero. If two numbers are equidistant, the target moves to the positive one.
+Opt Complexity Visuals: Single Linear Timeline
+How to Draw Opt Complexity: Draw one straight arrow representing the array scan. Label it $O(N)$. Show the `closest` variable updating instantly in $O(1)$ at each step.
+Mem Vis (BF): A new sorted copy of the array (O(N) space) or sorting stack space (O(log N)).
+Mem Vis (Opt): A single integer variable `closest` updating in-place (O(1) space).

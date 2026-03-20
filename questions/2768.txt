@@ -1,0 +1,13 @@
+ID: 2768
+Problem Title: Number of Black Blocks
+Brute Force Method: Allocate an M x N 2D array. Mark black cells. Iterate through every possible 2x2 subgrid and count the black cells inside. $O(M \cdot N)$.
+BF Complexity Visuals: Full Grid Density Map
+How to Draw BF: Draw a giant grid. Shade black cells. Use a 2x2 square "lens" and slide it across every single possible position. Total positions are (M-1)*(N-1).
+Optimised Pattern: $O(M\cdot N)$ Matrix Allocation (Massive memory waste for grids like 10^5 x 10^5).
+Opt Vis. Technique: Sparse Matrix HashMap / Coordinate Hashing
+Dry Run (Opt): Anchor-Based Frequency Counting
+How to Draw (Opt): A black cell at (r, c) affects up to four 2x2 blocks. Use a HashMap to store the count of black cells for each 2x2 block, identified by its top-left corner. Iterate only over the provided black cells. Calculate the "zero-black-cell" count by subtracting found blocks from the total.
+Opt Complexity Visuals: Draw only the black dots on a void. Around each dot, draw the four 2x2 squares it touches. Tally how many dots fall into each square using a list on the side.
+How to Draw Opt Complexity: $O(B)$ where B = Black Cells
+Mem Vis (BF): Draw a single arrow passing through the list of black cells. Label it $O(B)$. Note that it's independent of grid size M, N.
+Mem Vis (Opt): HashMap of Coordinates (Draw a dictionary mapping "r,c" strings to integer counts).

@@ -1,0 +1,13 @@
+ID: 615
+Problem Title: Average Salary: Departments VS Company (SQL)
+Brute Force Method: Calculate the company average for the month, store it. Calculate the department average for the month, store it. Join them back to the original rows via subqueries.
+BF Complexity Visuals: Looping back and forth between global tallies and local tallies.
+How to Draw BF: Draw a big circle (Company), then a small circle (Dept). Draw an arrow bringing data to the big circle, then taking it to the small circle, then back to the output row.
+Optimised Pattern: Window Functions (AVG OVER PARTITION).
+Opt Vis. Technique: Parallel Timelines / Matrix Columns.
+Dry Run (Opt): Use `AVG(amount) OVER (PARTITION BY pay_date)` for company avg. Use `AVG(amount) OVER (PARTITION BY pay_date, department_id)` for dept avg. Compare the two columns directly using a CASE statement.
+How to Draw (Opt): Draw a wide table. Fill a 'Company Avg' column with the exact same number all the way down. Fill a 'Dept Avg' column with numbers clustered by dept. Draw a `&lt; &gt; =` symbol between them.
+Opt Complexity Visuals: Simultaneous linear sweeps using partition bounds.
+How to Draw Opt Complexity: Draw two straight lines running parallel downwards. One has markers every month, the other has markers every month+dept. Both finish in $O(N \log N)$ time.
+Mem Vis (BF): Draw three huge separate tables: Raw Data, Company Aggregates, and Dept Aggregates, taking up 3x space.
+Mem Vis (Opt): Draw the original table with two extra 'virtual' columns streamed in place using $O(N)$ sort/window memory.

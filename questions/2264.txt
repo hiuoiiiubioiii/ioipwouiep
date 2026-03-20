@@ -1,0 +1,13 @@
+ID: 2264
+Problem Title: Largest 3-Same-Digit Number in String
+Brute Force Method: Substring Slicing &amp; SortExtract every 3-character substring. Check if all 3 characters are the same. Store valid ones in a list, sort them, and return the largest.
+BF Complexity Visuals: Window Extraction &amp; Filtering
+How to Draw BF: Draw the string. Draw a 3-wide box. Slide it. If the box has "777", copy it to a side list. If "333", copy it. Sort the list at the end.
+Optimised Pattern: Iterative Comparison
+Opt Vis. Technique: Peak Triple Search
+Dry Run (Opt): Traverse the string from index 0 to N-3. If `s[i] == s[i+1] == s[i+2]`, compare this digit to the `max_digit` found so far. Return the digit repeated thrice as a string.
+How to Draw (Opt): Draw the string. Point to `s[i]`. Check the next two neighbors. If they match, update a "Best Digit" register. Do this in one pass without extra string allocations.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw one $O(N)$ line. Show three simple equality checks at each step. Total time is $O(N)$ with $O(1)$ extra work per step.
+Mem Vis (BF): A list of strings containing all valid 3-digit triplets (O(N) space).
+Mem Vis (Opt): A single character or integer variable `max_digit` (O(1) space).

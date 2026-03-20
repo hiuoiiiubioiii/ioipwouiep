@@ -1,0 +1,13 @@
+ID: 890
+Problem Title: Find and Replace Pattern
+Brute Force Method: For every word, generate every possible character mapping to see if one matches the pattern.
+BF Complexity Visuals: Permutation Mapping Scan. $O(N x L!)$.
+How to Draw BF: Draw a word. Draw branches for every letter in the alphabet mapping to 'a', then 'b', etc. The search space is massive.
+Optimised Pattern: Dual-Map Bijection or Pattern Normalization.
+Opt Vis. Technique: The "Fingerprint" Signature.
+Dry Run (Opt): Transform every word into a generic code (e.g., "paper" -&gt; "0.1.0.2.3"). If the word's code matches the pattern's code, it's a match. Alternatively, use two maps to ensure word[i] <=ftrightarrow pattern[i] is a 1-to-1 link.
+How to Draw (Opt): Draw the word "abb". Map a -&gt; 0, b -&gt; 1. Signature is "011". Draw the pattern "dee". Map d -&gt; 0, e -&gt; 1. Signature is "011". They match!
+Opt Complexity Visuals: Linear Character Scan. $O(N x L)$.
+How to Draw Opt Complexity: Draw one straight timeline for each word. Every letter is visited exactly once to check or build the map.
+Mem Vis (BF): $O(L!)$ mapping tables for every word.
+Mem Vis (Opt): Two 256-size arrays/maps: Draw two small boxes for char-to-char translation.

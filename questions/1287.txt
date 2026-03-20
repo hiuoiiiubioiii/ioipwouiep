@@ -1,0 +1,13 @@
+ID: 1287
+Problem Title: Element Appearing More Than 25% In Sorted Array
+Brute Force Method: Iterate through the array and use a HashMap to count the frequency of every element. Check if any count exceeds N/4.
+BF Complexity Visuals: Frequency Counting Map
+How to Draw BF: Draw an array. Draw a Map next to it. For every element, draw an arrow to its key in the Map and increment the value. Write $O(N)$.
+Optimised Pattern: Binary Search on Candidate Points
+Opt Vis. Technique: The "25% Interval Jump"
+Dry Run (Opt): Because the array is sorted, an element appearing &gt; 25% must appear at index N/4, 2N/4, or 3N/4. Check only these 3 candidates. Use `upper_bound - lower_bound` (via binary search) to get their exact count.
+How to Draw (Opt): Draw a long bar. Mark the 25%, 50%, and 75% markers. Pick the numbers at those spots. For each number, find its first and last occurrence. If the gap between first and last is &gt; N/4, you're done.
+Opt Complexity Visuals: Constant-Search within Logarithmic Bounds
+How to Draw Opt Complexity: Draw 3 dots on an array. For each dot, draw two binary search "V" shapes. Write $O(\log N)$.
+Mem Vis (BF): Draw a HashMap that could potentially store N keys.
+Mem Vis (Opt): Draw 3 candidate variables and a few pointers for binary search. Space: $O(1)$.

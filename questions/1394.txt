@@ -1,0 +1,13 @@
+ID: 1394
+Problem Title: Find Lucky Integer in an Array
+Brute Force Method: For every number in the array, loop through the whole array to count its frequency. If `count == value`, it's a candidate.
+BF Complexity Visuals: $O(N²)$ Nested Frequency Counts
+How to Draw BF: Draw an array. For each element, draw arrows to every other element to count matches. A dense web of redundant checks.
+Optimised Pattern: Frequency Map (Counting Sort Style)
+Opt Vis. Technique: Histogram Density Check
+Dry Run (Opt): Use a Hash Map or a fixed-size array (if values are bounded) to count all frequencies in one pass. Then iterate the Map to find the max key where `key == value`.
+How to Draw (Opt): Draw 10 buckets. As you read the array, toss a pebble into the bucket matching the number. At the end, check if any bucket has exactly as many pebbles as its label.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw two separate arrows: one to build the tally and one to check the counts, proving 2N steps total.
+Mem Vis (BF): $O(1)$ Accumulator: Resetting a single counter variable N times.
+Mem Vis (Opt): $O(N)$ Hash Table: Draw a key-value store mapping numbers to their frequencies.

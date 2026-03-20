@@ -1,0 +1,13 @@
+ID: 408
+Problem Title: Valid Word Abbreviation
+Brute Force Method: String Expansion Read the abbreviation. If it has numbers, generate the fully expanded string with dummy characters, then compare.
+BF Complexity Visuals: Expanding Box
+How to Draw BF: Draw a short string stretching out into a long array of asterisks, mapping 1-to-1 with the target word. $O(N)$.
+Optimised Pattern: Two Pointers Pointer `i` traverses the word, `j` traverses abbreviation. Parse numbers to skip `i` forward.
+Opt Vis. Technique: Sliding Rulers
+Dry Run (Opt): Place string and abbreviation parallel. Slide pointers together on chars. On a number, "jump" the word pointer forward by that amount.
+How to Draw (Opt): Write the word and abbreviation aligned. Draw arrows for `i` and `j` underneath. Draw a long arcing jump for `i` when `j` hits a digit.
+Opt Complexity Visuals: Linear Scan Line
+How to Draw Opt Complexity: Draw two parallel timelines with a single vertical line scanning across them left to right. $O(N)$ time.
+Mem Vis (BF): String Pool Big chunk of memory for the new expanded string $O(N)$.
+Mem Vis (Opt): Variables Just two integer arrows (pointers). $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 758
+Problem Title: Bold Words in String
+Brute Force Method: For every word in the dictionary, find all occurrences in the string and wrap them individually in tags.
+BF Complexity Visuals: Overlapping Tag Mess
+How to Draw BF: Draw a string. Draw tags like `` around overlapping parts, creating invalid nested HTML. $O(N\cdot W)$.
+Optimised Pattern: Boolean Array Masking
+Opt Vis. Technique: Binary Coverage Map
+Dry Run (Opt): Create a boolean array `bold[n]`. Use a Trie or `indexOf` to find all matches. Set `bold[i...j]` to true. Finally, iterate and insert tags where `bold` flips.
+How to Draw (Opt): Draw the string. Below it, draw a row of empty boxes. Fill boxes with '1' if the letter should be bold, '0' otherwise. Draw tags only at 0/1 transitions.
+Opt Complexity Visuals: Linear Pass with Trie
+How to Draw Opt Complexity: Draw a line for the string. For each char, draw a Trie lookup path. Total $O(N \\text{cdot max}_\text{word}_\text{len})$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): A boolean array of length N (O(N)).

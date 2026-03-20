@@ -1,0 +1,13 @@
+ID: 435
+Problem Title: Non-overlapping Intervals
+Brute Force Method: Recursive Combinations Try every combination of removing/keeping intervals. Check for overlaps. $O(2^N)$.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a tree where each node is "Keep interval i?" (Yes/No). Show 2^N leaf nodes.
+Optimised Pattern: Greedy (Sort by End Time) Sort intervals by their end times. Always pick the one that ends earliest to leave maximum room for others.
+Opt Vis. Technique: The Early Bird
+Dry Run (Opt): A timeline. Several meeting bars. Always pick the meeting that finishes first, then look for the next meeting that starts after it.
+How to Draw (Opt): Draw intervals on a timeline. Mark "X" through any interval that starts before the current "Last End Time."
+Opt Complexity Visuals: Sort + Scan
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block followed by a single $O(N)$ scan line. Total $O(N \log N)$.
+Mem Vis (BF): Recursion Stack $O(N)$ depth.
+Mem Vis (Opt): In-place Sort $O(1)$ extra space (or $O(\log N)$ for sort stack).

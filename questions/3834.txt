@@ -1,0 +1,13 @@
+ID: 3834
+Problem Title: Merge Adjacent Equal Elements (Med.)
+Brute Force Method: Scan array, find the first adjacent equal pair, merge them, shift everything down, and restart the entire scan from index 0.
+BF Complexity Visuals: An array that constantly shrinks and shifts its blocks leftward over and over again.
+How to Draw BF: Draw array [2, 2, 4]. Cross out 2,2. Write 4. Rewrite whole array as [4, 4]. Cross out 4,4. Write 8. Write $O(N^2)$ for the shifting.
+Optimised Pattern: Greedy Stack (Simulation).
+Opt Vis. Technique: A vertical Tetris column where identical blocks falling on top of each other fuse together and double in value instantly.
+Dry Run (Opt): Iterate array. Push to Stack. If `stack.top() == current_element`, pop the top, double the value, and recursively check the new top. Else, push.
+How to Draw (Opt): Draw an open-top bucket. Push a '2'. Push another '2'. They touch, erase them, write '4'. The next number is '4'. Push it. They touch, write '8'.
+Opt Complexity Visuals: Linear push/pop sequence across the array.
+How to Draw Opt Complexity: Draw N elements. Draw arrows going into the stack and sometimes bouncing back. Total operations is at most 2N. Write $O(N)$.
+Mem Vis (BF): Creating new array copies for every merge operation, $O(N^2)$ space.
+Mem Vis (Opt): An Array used as a Stack taking up to $O(N)$ space in the worst case (no merges).

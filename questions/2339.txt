@@ -1,0 +1,13 @@
+ID: 2339
+Problem Title: All the Matches of the League
+Brute Force Method: Write manual pairs or complex subqueries mapping IDs iteratively.
+BF Complexity Visuals: Manual Mapping Matrix
+How to Draw BF: Draw Team A connecting to B, C, D manually, then B to A, C, D manually.
+Optimised Pattern: CROSS JOIN / SELF JOIN
+Opt Vis. Technique: The Cartesian Scheduler
+Dry Run (Opt): Use `SELECT t1.team_name, t2.team_name FROM Teams t1 JOIN Teams t2 ON t1.team_name != t2.team_name`.
+How to Draw (Opt): Draw the list of teams vertically and horizontally. Draw a grid. Check every box where the row name and column name are different.
+Opt Complexity Visuals: Cartesian Product $O(N^2)$
+How to Draw Opt Complexity: Draw two lists multiplying into a square grid of size N \times N.
+Mem Vis (BF): N/A
+Mem Vis (Opt): DB result buffer. $O(N^2)$ space.

@@ -1,0 +1,13 @@
+ID: 3811
+Problem Title: Number of Alternating XOR Partitions (Med.)
+Brute Force Method: Backtracking: Recursively split the array into all possible partitions, calculating the XOR for each sub-segment to verify the alternating condition.
+BF Complexity Visuals: Exponential recursion tree where every index has a "cut" or "no cut" decision branch.
+How to Draw BF: Draw an array. Draw scissors between elements. Branch down into 2^N paths representing all partition combos.
+Optimised Pattern: Prefix XOR + Dynamic Programming with HashMap.
+Opt Vis. Technique: 1D Array moving forward while looking back via a HashMap to find valid previous partition boundaries.
+Dry Run (Opt): Calculate running prefix XOR. Look up the required XOR target in the HashMap to form a valid alternating partition. Add matching frequencies to DP state.
+How to Draw (Opt): Draw array. Below it, write the running Prefix XOR. Draw curved backward arrows linking current index to valid previous prefix values.
+Opt Complexity Visuals: Single pass timeline mapped to $O(1)$ lookups.
+How to Draw Opt Complexity: Draw N nodes in a line. Under each, write "O(1) Map Lookup". Bracket the whole sequence as $O(N)$.
+Mem Vis (BF): Deep recursive call stack proportional to $O(N)$ depth, generating $O(2^N)$ branches.
+Mem Vis (Opt): A HashMap and a 1D DP array of size N tracking the number of valid ways to partition up to index i.

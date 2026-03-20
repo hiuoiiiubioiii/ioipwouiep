@@ -1,0 +1,13 @@
+ID: 786
+Problem Title: K-th Smallest Prime Fraction
+Brute Force Method: Generate every possible fraction pair `arr[i]/arr[j]`, store them in a list, and sort them.
+BF Complexity Visuals: Fraction Matrix Sorting
+How to Draw BF: Draw a grid of all possible fractions. Pour them into a "Sort" funnel. $O(N^2 \log N)$.
+Optimised Pattern: Binary Search on Value or Min-Heap Merge
+Opt Vis. Technique: Sorted Matrix Diagonal Sweep
+Dry Run (Opt): Binary search the fraction value X between 0 and 1. Count how many fractions are \le X using two pointers. Adjust X until the count is exactly K.
+How to Draw (Opt): Draw a square grid where rows/cols are array indices. Draw a diagonal line Y=X. Count the "cells" (fractions) that fall below this line.
+Opt Complexity Visuals: Log-Linear Convergence
+How to Draw Opt Complexity: Draw a line 0-1. Show it halving while a pointer sweeps the array. $O(N \log(\\text{text}{\text{precision}})$).
+Mem Vis (BF): Massive array of all N^2 fraction objects.
+Mem Vis (Opt): $O(1)$ extra space for Binary Search; $O(N)$ for Min-Heap.

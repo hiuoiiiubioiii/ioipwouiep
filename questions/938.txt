@@ -1,0 +1,13 @@
+ID: 938
+Problem Title: Range Sum of BST
+Brute Force Method: Perform a full traversal (Pre-order or In-order) of the entire tree, checking every single node's value against the range [L, R].
+BF Complexity Visuals: $O(N)$. Visiting every node regardless of its value.
+How to Draw BF: Draw a tree. Draw a single line that touches every single node, summing them as it goes.
+Optimised Pattern: Recursive Pruning (BST Property)
+Opt Vis. Technique: "Closing the Gates." If a node's value is greater than R, you know the entire right subtree is also greater than R, so you ignore it completely.
+Dry Run (Opt): If `root.val &lt; low`, only search `root.right`. If `root.val &gt; high`, only search `root.left`. Otherwise, add `root.val` and search both sides.
+How to Draw (Opt): Draw a BST. Shade the nodes that fall within the range. Draw a red "X" over entire branches that are clearly outside the range based on the parent's value.
+Opt Complexity Visuals: $O(N)$ in worst case (skewed tree), but $O(\log N)$ on average.
+How to Draw Opt Complexity: Draw a tree where only a small "slice" or "wedge" of nodes is visited, while others remain untouched.
+Mem Vis (BF): $O(H)$ recursion stack for a full traversal.
+Mem Vis (Opt): $O(H)$ recursion stack, but with fewer calls overall. Draw a shorter, thinner call stack.

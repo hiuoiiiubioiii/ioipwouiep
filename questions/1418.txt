@@ -1,0 +1,13 @@
+ID: 1418
+Problem Title: Display Table of Food Orders in a Restaurant
+Brute Force Method: Multiple full scans. Find all unique tables. Find all unique foods. For every (table, food) combination, scan the entire orders list to count occurrences.
+BF Complexity Visuals: Nested Loop Scanning Grid
+How to Draw BF: Draw a grid of Tables (rows) and Foods (cols). In every single cell, draw an arrow pointing to a full top-to-bottom scan of the original Orders list. Label $O(T \cdot F \cdot N)$.
+Optimised Pattern: Hash Map of Hash Maps &amp; Tree Sets
+Opt Vis. Technique: 2D Matrix Aggregation
+Dry Run (Opt): Track unique foods in a TreeSet (auto-sorts). Use a Map `&gt;`. Iterate orders once, populating counts. Sort Table IDs, then format into a 2D string array.
+How to Draw (Opt): Draw a large map symbol. Inside it, draw smaller maps keyed by Table ID. Beside it, draw a sorted vertical list of unique food names. Draw arrows mapping data into a clean 2D table.
+Opt Complexity Visuals: Map Insertion &amp; Sort Pipeline
+How to Draw Opt Complexity: Draw Hashing $O(N)$ -&gt; Sorting Foods $O(F \log F)$ -&gt; Sorting Tables $O(T \log T)$ -&gt; Formatting $O(T \cdot F)$.
+Mem Vis (BF): Cartesian Product Temp Tables
+Mem Vis (Opt): Draw a nested Map structure and a Set structure in memory, finally converting into a 2D String Array.

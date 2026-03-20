@@ -1,0 +1,13 @@
+ID: 1346
+Problem Title: Check If N and Its Double Exist
+Brute Force Method: Nested loops comparing every element `i` with every element `j` to see if `arr[i] == 2 * arr[j]`.
+BF Complexity Visuals: $O(N²)$ All-Pairs Comparison Web
+How to Draw BF: Draw an array. From each element, draw arrows to every other element in the array. Note the N^2 total connections.
+Optimised Pattern: Hash Set (Single Pass)
+Opt Vis. Technique: Dynamic Membership Testing
+Dry Run (Opt): Iterate through the array. For each `x`, check if `2*x` or `x/2` (if even) exists in the Set. If not, add `x` to the Set.
+How to Draw (Opt): Draw an array and an empty "Bucket" (Set). Move through the array; for each number, check the bucket for its double or half. If found, stop. If not, drop the number in.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a single straight arrow passing through each element once, pointing to a Set lookup box (O(1)).
+Mem Vis (BF): $O(1)$ Accumulator: No extra memory beyond loop indices.
+Mem Vis (Opt): Hash Set Storage: Draw a hash table structure where each element occupies a bucket based on its hash. $O(N)$.

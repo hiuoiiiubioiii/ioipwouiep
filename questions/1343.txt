@@ -1,0 +1,13 @@
+ID: 1343
+Problem Title: Number of Sub-arrays of Size K and Average &gt;= Threshold
+Brute Force Method: For every starting index `i`, loop `k` times to calculate the sum of the subarray, calculate average, and compare.
+BF Complexity Visuals: $O(N\cdot K)$ Sliding Brackets
+How to Draw BF: Draw an array. Draw a bracket of length K. Slide it right. At every stop, draw K small arrows inside the bracket summing elements. Show massive overlap.
+Optimised Pattern: Sliding Window (Fixed Size)
+Opt Vis. Technique: Rolling Sum Window
+Dry Run (Opt): Calculate sum of first `K` elements. Slide the window: `new_sum = old_sum - arr[left] + arr[right]`. Compare `sum` to `threshold * k` to avoid division.
+How to Draw (Opt): Draw an array. Draw a box around first K elements. Move the box one step right; draw an arrow removing the left element and another adding the new right element.
+Opt Complexity Visuals: Single-Pass Constant Update
+How to Draw Opt Complexity: Draw one arrow moving left-to-right. At each step, show exactly one addition and one subtraction, proving $O(N)$.
+Mem Vis (BF): $O(1)$ Accumulator: Resetting sum for every bracket.
+Mem Vis (Opt): $O(1)$ Rolling Sum: Draw a single integer variable that updates in-place as the window moves.

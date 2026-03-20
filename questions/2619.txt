@@ -1,0 +1,13 @@
+ID: 2619
+Problem Title: Array Prototype Last (JS)
+Brute Force Method: Iterate through the array with a loop until the end is reached.
+BF Complexity Visuals: Linear Scan Array
+How to Draw BF: Draw an array and point a finger at index 0, moving it right one-by-one until you hit an empty spot.
+Optimised Pattern: Array Length Property (`this.length`)
+Opt Vis. Technique: Direct Index Mapping
+Dry Run (Opt): Look at the internal `length` property of the array context (`this`). Subtract 1. Access that index directly in memory. Return -1 if length is 0.
+How to Draw (Opt): Draw an array block. Read length variable (e.g., L=5). Point arrow directly to index 4.
+Opt Complexity Visuals: $O(1)$ Access Block
+How to Draw Opt Complexity: Write $O(1)$. Draw a single arrow skipping straight to the end of the array.
+Mem Vis (BF): Loop index variable
+Mem Vis (Opt): Context binding (`this`) referencing existing array in Heap.

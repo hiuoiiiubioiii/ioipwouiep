@@ -1,0 +1,13 @@
+ID: 3643
+Problem Title: Flip Square Submatrix Vertically (Easy)
+Brute Force Method: Creating a completely new matrix, copying the submatrix into it in reverse order, then copying it back into the original.
+BF Complexity Visuals: Matrix Copy Overlay.
+How to Draw BF: Draw Matrix A. Draw an empty Matrix B. Draw arrows copying row 5 of A into row 1 of B. Then copy B back into A. Space $O(N^2)$.
+Optimised Pattern: In-place row swapping within the specified submatrix boundaries.
+Opt Vis. Technique: Mirror Image Reflection.
+Dry Run (Opt): Identify the top row and bottom row of the submatrix. Swap them. Move to the next inner pair of rows. Stop at the middle.
+How to Draw (Opt): Draw a 4x4 square inside a larger grid. Draw a horizontal "mirror line" in the center of that square. Draw arrows showing row 1 and row 4 of that square swapping places.
+Opt Complexity Visuals: Sub-area Scan Chart.
+How to Draw Opt Complexity: Draw a square of size K by K. Show that only K/2 swaps are made. Write $O(K^2)$.
+Mem Vis (BF): Allocating an entirely new 2D array for the flip.
+Mem Vis (Opt): Standard temp variable for in-place value swapping. Space $O(1)$.

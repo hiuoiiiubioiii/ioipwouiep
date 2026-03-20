@@ -1,0 +1,13 @@
+ID: 1815
+Problem Title: Maximum Number of Groups Getting Fresh Donuts
+Brute Force Method: Generate all permutations of the groups to find the exact ordering that maximizes happy groups.
+BF Complexity Visuals: Factorial explosion tree (O(N!)).
+How to Draw BF: Draw a tree branching into N paths, then N-1, etc. Note that it's physically impossible to draw completely.
+Optimised Pattern: Greedy (modulo matches) + DP with Bitmask / Memoization for remainders.
+Opt Vis. Technique: State space reduction + Memoization DAG.
+Dry Run (Opt): 1. Take groups where size % batch == 0. 2. Pair up groups where a + b == batch. 3. Use DP/DFS with a tuple of remainder frequencies to find the rest.
+How to Draw (Opt): Draw buckets 0 to batch_size-1. Match bucket 1 with bucket k-1. For leftovers, draw a small state transition tree showing memoized branches.
+Opt Complexity Visuals: Bounded state combinations grid.
+How to Draw Opt Complexity: Draw a multidimensional grid representing states of remainder counts. Max states are heavily constrained, making it $O(\text{States})$.
+Mem Vis (BF): Massive recursion stack for permutations.
+Mem Vis (Opt): Hash Map / Multi-dimensional Array mapping tuple states to max happy groups.

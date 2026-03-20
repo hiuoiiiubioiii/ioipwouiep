@@ -1,0 +1,13 @@
+ID: 939
+Problem Title: Minimum Area Rectangle
+Brute Force Method: Try every combination of 4 points from the input. For each set of 4, check if they form a rectangle aligned with the axes and calculate area.
+BF Complexity Visuals: $O(N^4)$. A massive combination problem.
+How to Draw BF: Draw a scattered plot of dots. Draw four lines connecting four dots. Repeat this for every possible quartet. The paper becomes a mess of squares.
+Optimised Pattern: Diagonal Point Matching + Hashset
+Opt Vis. Technique: "Connecting the Corners." Pick any two points that could be a diagonal (i.e., different x and different y). Instantly check if the other two required corners exist in your "point database."
+Dry Run (Opt): Store all points in a Set for $O(1)$ lookup. Iterate pairs `(x1, y1)` and `(x2, y2)`. If `x1 != x2` and `y1 != y2`: check if `(x1, y2)` and `(x2, y1)` are in the Set. If yes, update `minArea`.
+How to Draw (Opt): Draw two dots as a diagonal. Draw "ghost" dots at the other two corners. Draw a "Search" icon pointing to a database to see if those ghosts are actually there.
+Opt Complexity Visuals: $O(N^2)$. We check every pair of points once.
+How to Draw Opt Complexity: Draw a grid. Draw one arrow connecting two points, then two smaller arrows "pinging" the set to verify the rectangle.
+Mem Vis (BF): $O(1)$ extra space but unusable time complexity.
+Mem Vis (Opt): $O(N)$ to store the point coordinates in a hash-friendly format. Draw a table of `(x, y)` pairs.

@@ -1,0 +1,13 @@
+ID: 1520
+Problem Title: Maximum Number of Non-Overlapping Substrings
+Brute Force Method: Generate every single valid substring that meets the condition (all occurrences of its characters are inside it). Then use recursive backtracking to find the maximum non-overlapping combination.
+BF Complexity Visuals: Exploding Interval Tree $O(2^N)$
+How to Draw BF: Draw a timeline with overlapping horizontal lines (intervals). Branch into a massive decision tree: "Include Interval A" (branch left) vs "Exclude Interval A" (branch right).
+Optimised Pattern: Interval Expansion + Greedy Search
+Opt Vis. Technique: Bounding Box Consolidation
+Dry Run (Opt): 1. Find first and last occurrence of every letter. 2. Expand these bounds (if interval 'a' contains 'b', expand 'a' to include all of 'b'). 3. Sort valid intervals by their END point and pick greedily.
+How to Draw (Opt): Draw a string. Draw a bracket under all the 'a's, and a bracket under all the 'b's. If the brackets overlap, draw a giant bracket merging them. Finally, sort the brackets by their right edge and circle them left-to-right.
+Opt Complexity Visuals: 3-Phase Linear Pipeline $O(N)$
+How to Draw Opt Complexity: Draw 3 horizontal lines. Phase 1: Scan string to find start/ends. Phase 2: Expand bounds (26 characters max, so constant work). Phase 3: Greedy select. Overall time is strictly linear.
+Mem Vis (BF): Massive subsets of arrays stored in memory during backtracking.
+Mem Vis (Opt): Two arrays of size 26 storing the `left` and `right` indices of each character. $O(1)$ auxiliary space (since 26 is constant).

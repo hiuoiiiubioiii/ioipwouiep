@@ -1,0 +1,13 @@
+ID: 3541
+Problem Title: Find Most Frequent Vowel and Consonant (Easy)
+Brute Force Method: Two separate passes: one to find all vowels and count, another for consonants.
+BF Complexity Visuals: Double String Scan.
+How to Draw BF: Draw two parallel arrows passing over the same string. Tally each type into long lists. $O(2N)$.
+Optimised Pattern: Single Pass with Hash Map/Frequency Array.
+Opt Vis. Technique: Sorting Bins (Vowel vs Consonant).
+Dry Run (Opt): Scan the string once. For each char, check if it's in "aeiou". Increment the respective vowel/consonant map counter. Update max trackers.
+How to Draw (Opt): Draw two small tables (5 rows for vowels, 21 for consonants). Mark tallies as you read left-to-right. Circle the winner in each table.
+Opt Complexity Visuals: $O(N)$ Single Stream.
+How to Draw Opt Complexity: Draw a single straight arrow through the string. Highlight constant-time $O(1)$ map updates below it.
+Mem Vis (BF): Massive Sub-strings: Draw memory blocks storing extracted vowel-only and consonant-only strings.
+Mem Vis (Opt): Fixed Size Maps: Draw two small grids (size 5 and size 26) storing integer counts.

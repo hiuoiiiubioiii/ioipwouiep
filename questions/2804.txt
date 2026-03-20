@@ -1,0 +1,13 @@
+ID: 2804
+Problem Title: Array Prototype ForEach (JS)
+Brute Force Method: Iterate through the array. For each element, use eval() to execute the callback string or a try-catch inside the loop.
+BF Complexity Visuals: Heavy Eval Execution
+How to Draw BF: Draw an array. For every box, draw a "Lightning Bolt" (eval) hitting it. Slow and dangerous.
+Optimised Pattern: Execution Context Overhead (Visualizing the engine creating and destroying complex scopes for every iteration).
+Opt Vis. Technique: Standard Prototypal for Loop
+Dry Run (Opt): Linear Execution Pass
+How to Draw (Opt): Add forEach to Array.prototype. Use a simple for loop to iterate from 0 to this.length. Call callback.call(thisArg, this[i], i, this).
+Opt Complexity Visuals: Draw an array. Draw an arrow pointing at the first box. Show it triggering the "Callback" function, then moving to the second box.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal line through the array. Label it $O(N)$.
+Mem Vis (Opt): Function Frame Stack (Draw a stack showing the forEach frame at the bottom and the callback frame appearing/disappearing on top).

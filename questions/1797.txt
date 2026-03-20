@@ -1,0 +1,13 @@
+ID: 1797
+Problem Title: Design Authentication Manager
+Brute Force Method: Use a list of pairs `(tokenId, expiryTime)`. For every `generate` and `renew`, scan the entire list to find the ID.
+BF Complexity Visuals: Iterative Record Searching.
+How to Draw BF: Draw a vertical log. For every request, draw an arrow searching from the top to find a specific ID. $O(N)$ per op.
+Optimised Pattern: Hash Map (Dictionary) for $O(1)$ Access.
+Opt Vis. Technique: Token Vault.
+Dry Run (Opt): Store tokens in a Map: `tokenId: expiryTime`. `generate` is a simple put. `renew` checks if `current &lt; map[id]`; if yes, update. `countUnexpired` iterates over values.
+How to Draw (Opt): Draw a box divided into slots (HashMap). Show an ID pointing directly to its expiry time slot. No searching required.
+Opt Complexity Visuals: Constant Time Operations (mostly).
+How to Draw Opt Complexity: Write $O(1)$ for generate/renew and $O(T)$ for counting. Label $O(N)$ for space.
+Mem Vis (BF): List of pairs. $O(N)$.
+Mem Vis (Opt): HashMap entries. $O(N)$ space.

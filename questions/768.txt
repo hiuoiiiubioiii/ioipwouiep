@@ -1,0 +1,13 @@
+ID: 768
+Problem Title: Max Chunks To Make Sorted II
+Brute Force Method: Try every possible split point, sort the chunks, and check if the merged result is sorted.
+BF Complexity Visuals: Combinatorial Split &amp; Sort
+How to Draw BF: Draw an array. Draw "cutting lines" at all 2^N positions. Sort each resulting piece. $O(2^N \\text{times} N \log N)$.
+Optimised Pattern: Prefix Max &amp; Suffix Min
+Opt Vis. Technique: Balance Beam Boundaries
+Dry Run (Opt): Create two arrays: `leftMax` (max seen from left) and `rightMin` (min seen from right). A chunk can end at index i if `leftMax[i] &lt;= rightMin[i+1]`.
+How to Draw (Opt): Draw the array. Below it, write the max-so-far. Below that, write the min-so-far from the right. Circle indices where the top number \le bottom number.
+Opt Complexity Visuals: Parallel Linear Sweeps
+How to Draw Opt Complexity: Draw an array. Show one pass left, one pass right, one pass to count. $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Two auxiliary arrays of size N (O(N)).

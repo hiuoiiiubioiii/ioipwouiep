@@ -1,0 +1,13 @@
+ID: 3122
+Problem Title: Min Operations to Satisfy Conditions
+Brute Force Method: Recursively try changing every grid cell to every number from 0 to 9 to see which combination fits the rules and costs the least. $O(10^M x N)$
+BF Complexity Visuals: Massive, exploding tree with 10 branches stemming from every single grid cell.
+How to Draw BF: Draw the matrix. Physically erase and rewrite numbers 0-9 randomly, checking rows/cols, erasing again when it fails.
+Optimised Pattern: Dynamic Programming (Column by Column)
+Opt Vis. Technique: State Transition Wave (Moving Left to Right)
+Dry Run (Opt): Precompute frequencies of 0-9 per column. DP State: If column `i` is made entirely of digit `k`, add the operations `(rows - freq[k])` to the best valid cost of column `i-1`.
+How to Draw (Opt): Draw an N x 10 DP table. Fill it left to right. Draw arrows from valid states in column `i-1` to compatible states in column `i`.
+Opt Complexity Visuals: N x 10 grid filling up left to right sequentially.
+How to Draw Opt Complexity: Draw an array of size 10. Physically cross out and rewrite the values inside it N times as you traverse columns. $O(N x 10)$ rightarrow $O(N)$.
+Mem Vis (BF): Enormous call stack holding deep recursive state grids.
+Mem Vis (Opt): An N x 10 memoization table, or two 1 x 10 arrays (current and previous state). $O(N)$.

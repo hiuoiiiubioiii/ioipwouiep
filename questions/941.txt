@@ -1,0 +1,13 @@
+ID: 941
+Problem Title: Valid Mountain Array
+Brute Force Method: Check every possible peak index `i`. For each `i`, verify if all elements before it are strictly increasing and all elements after are strictly decreasing.
+BF Complexity Visuals: $O(N^2)$. Checking the entire array properties for every index.
+How to Draw BF: Draw the array as a bar chart. Draw a "Peak" marker at index 1 and scan everything. Move marker to index 2 and scan everything again.
+Optimised Pattern: Two-Pointer "Climb"
+Opt Vis. Technique: "Two Hikers." One hiker starts at the left and climbs up as long as it's steep. Another hiker starts at the right and climbs up (backwards) as long as it's steep.
+Dry Run (Opt): `i = 0, j = N-1`. While `arr[i] &lt; arr[i+1]`, `i++`. While `arr[j] &lt; arr[j-1]`, `j--`. If `i == j` and `0 &lt; i &lt; N-1`, it's a valid mountain.
+How to Draw (Opt): Draw a mountain shape. Place an 'L' at the start and an 'R' at the end. Draw arrows showing them both climbing toward the summit. They must meet at the same point.
+Opt Complexity Visuals: $O(N)$. Each element is visited at most once as pointers move inward.
+How to Draw Opt Complexity: Draw a horizontal line. Draw two pointers moving toward each other, stopping at the first "downhill" slope they encounter.
+Mem Vis (BF): $O(1)$ space, but redundant logic.
+Mem Vis (Opt): $O(1)$. Two integer pointers. Draw two small boxes for `i` and `j`.

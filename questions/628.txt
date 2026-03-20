@@ -1,0 +1,13 @@
+ID: 628
+Problem Title: Maximum Product of Three Numbers
+Brute Force Method: Three nested loops to find the product of every possible triplet in the array.
+BF Complexity Visuals: 3D Volume Grid (N x N x N).
+How to Draw BF: Draw an array. Point to 3 different numbers. Show how many combinations exist by drawing a dense cube of dots. $O(N^3)$.
+Optimised Pattern: Sort OR Linear Scan for Top 3 and Bottom 2.
+Opt Vis. Technique: Extreme Bound Tracking.
+Dry Run (Opt): Find 3 largest numbers and 2 smallest (most negative). Max product is either (Max1*Max2*Max3) or (Max1*Min1*Min2).
+How to Draw (Opt): Draw a horizontal line. Mark 3 dots at the far right and 2 dots at the far left. Draw two "product" bubbles comparing the results.
+Opt Complexity Visuals: $O(N \log N)$ for sorting or $O(N)$ for single-pass scan.
+How to Draw Opt Complexity: Draw a scanner moving across the array once. Write "Min1, Min2, Max1, Max2, Max3" above it. $O(N)$.
+Mem Vis (BF): Draw a massive list of all calculated products.
+Mem Vis (Opt): Draw exactly five integer variables. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1166
+Problem Title: Design File System
+Brute Force Method: Store all paths in a simple Hash Map. To create `/a/b`, manually split the string and check if `/a` exists in the map.
+BF Complexity Visuals: Flat Map Lookups
+How to Draw BF: Draw a list of paths. For every new path, draw an arrow scanning the entire list to find the parent string. $O(N)$ string operations.
+Optimised Pattern: Trie (Prefix Tree)
+Opt Vis. Technique: Hierarchical Directory Tree
+Dry Run (Opt): Each node in the Trie represents a folder level. `createPath` traverses the Trie; if the parent node doesn't exist, it fails. If the leaf already exists, it fails.
+How to Draw (Opt): Draw a root node `/`. Draw branches for each folder level. Circle nodes that have a "value" assigned. Tracing a path is moving down the branches.
+Opt Complexity Visuals: Path Length Linear $O(L)$
+How to Draw Opt Complexity: Draw a single vertical line from the root down to the depth of the file. L is the number of parts in the path.
+Mem Vis (BF): Massive Map of full strings
+Mem Vis (Opt): Nested HashMaps (Trie nodes). Draw a tree where each node is a box containing a Map of its children.

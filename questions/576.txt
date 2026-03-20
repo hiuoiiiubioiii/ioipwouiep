@@ -1,0 +1,13 @@
+ID: 576
+Problem Title: Out of Boundary Paths
+Brute Force Method: Recursive DFS exploring all 4 directions for every step until `maxMove` is reached, counting every time the coordinates go out of bounds.
+BF Complexity Visuals: Exponential branching $O(4^N)$ where N is maxMove.
+How to Draw BF: Draw a grid. From the start point, draw 4 arrows. From each arrow, draw 4 more. Circle any arrow that leaves the grid.
+Optimised Pattern: 3D Dynamic Programming (Memoization).
+Opt Vis. Technique: A "Heat Map" over time. Each "second" (move), the probability of being at a cell spreads to its neighbors. The "heat" that leaks off the edge is your answer.
+Dry Run (Opt): `dp[move][r][c]` is the number of ways to reach `(r, c)` in `move` steps. The count for `move + 1` is the sum of its neighbors' counts from `move`.
+How to Draw (Opt): Draw a 3 \times 3 grid. In each cell, write the number of ways to get there in 1 move, then 2, then 3. Any time you "move" off the paper, add that value to a "Total Out" box.
+Opt Complexity Visuals: Bounded grid filling over moves. $O(N \\text{times} M \\text{times} \\text{text}{\text{maxMove}})$.
+How to Draw Opt Complexity: Draw a stack of grids (one for each move count) where each grid's values are derived from the one below it.
+Mem Vis (BF): Massive recursion stack with millions of redundant path calculations.
+Mem Vis (Opt): Two 2D arrays (Current Move and Previous Move) of size M \times N. $O(M \\text{times} N)$.

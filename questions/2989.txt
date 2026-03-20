@@ -1,0 +1,13 @@
+ID: 2989
+Problem Title: Class Performance
+Brute Force Method: Calculate the sum of three scores for every student, then use `ORDER BY` and `LIMIT 1` twice to get Max and Min.
+BF Complexity Visuals: Dual Sorting Pass
+How to Draw BF: Draw two lines. Show the array being sorted twice (once ascending, once descending). $O(2N \log N)$.
+Optimised Pattern: Aggregate Math (`MAX` - `MIN`)
+Opt Vis. Technique: Extremity Difference Mapping
+Dry Run (Opt): Calculate the total score per student. Simply select `MAX(total) - MIN(total)` from this derived set.
+How to Draw (Opt): Draw a number line. Mark the furthest left dot (Min) and the furthest right dot (Max). Draw a bracket showing the distance between them.
+Opt Complexity Visuals: Single Sweep with Scalars
+How to Draw Opt Complexity: Draw a straight line of length N. Track two variables (min, max). T = $O(N)$.
+Mem Vis (BF): Storing two sorted copies of the dataset.
+Mem Vis (Opt): Two scalar integer variables. Space $O(1)$ relative to N.

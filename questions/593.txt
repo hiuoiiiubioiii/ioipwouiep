@@ -1,0 +1,13 @@
+ID: 593
+Problem Title: Valid Square
+Brute Force Method: Check every possible permutation of the 4 points to see if they form four equal sides and two equal diagonals.
+BF Complexity Visuals: 4! = 24 permutations to check. $O(1)$ but messy.
+How to Draw BF: Draw 4 points. Draw lines connecting 1-2, 2-3, 3-4, 4-1. Measure them. Then measure 1-3 and 2-4.
+Optimised Pattern: Distance Sorting / Hash Set of Lengths.
+Opt Vis. Technique: A "Geometric Signature." In a square, if you calculate the distance between every pair of points (6 total), you should only ever see exactly two distinct values (side length and diagonal).
+Dry Run (Opt): Calculate squared distances between all 6 pairs of points. Put distances in a Set. The Set must have size 2, and the distances must be non-zero.
+How to Draw (Opt): Draw 4 points. Draw all 6 possible lines. Write the squared distance on each line. There should be four "small" equal numbers and two "large" equal numbers.
+Opt Complexity Visuals: Constant number of calculations (6 pairs). $O(1)$.
+How to Draw Opt Complexity: Draw a single box that takes 4 points and outputs a Set of 2 values.
+Mem Vis (BF): Storing all permutations in a list.
+Mem Vis (Opt): A Set to store up to 6 integers. $O(1)$.

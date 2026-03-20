@@ -1,0 +1,13 @@
+ID: 2554
+Problem Title: Maximum Number of Integers to Choose From a Range I
+Brute Force Method: Generate all possible subsets of integers from 1 to n that don't contain banned numbers, check if the sum <= maxSum, and find the largest subset size. $O(2^n)$.
+BF Complexity Visuals: A massive power-set search tree.
+How to Draw BF: List all numbers from 1 to n. Try picking every combination. If it's banned or too heavy, cross it out.
+Optimised Pattern: Greedy Selection + Hash Set Lookup.
+Opt Vis. Technique: A "Sieve and Sack" approach: filter the banned numbers and pack the smallest remaining numbers into a "sack" until it's full.
+Dry Run (Opt): Put `banned` into a Hash Set for $O(1)$ lookup. Iterate i from 1 to n. If i is not in the set and currentSum + i &lt;= maxSum, add i to the count and update the sum. Because we start from 1 (the smallest), we naturally maximize the count.
+How to Draw (Opt): Write 1 to n. Cross out the banned numbers. Start circling the remaining numbers from left to right. Stop when the sum of circled numbers exceeds maxSum.
+Opt Complexity Visuals: $O(N + B)$ where B is the size of the banned list.
+How to Draw Opt Complexity: Draw a timeline from 1 to n. Draw a single arrow moving left to right. Mark "X" for banned and "O" for chosen.
+Mem Vis (BF): Exponential space.
+Mem Vis (Opt): $O(B)$ to store the banned numbers in a Hash Set.

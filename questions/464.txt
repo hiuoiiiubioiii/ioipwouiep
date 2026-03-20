@@ -1,0 +1,13 @@
+ID: 464
+Problem Title: Can I Win
+Brute Force Method: Recursive Game Tree Try every possible number choice for Player 1, then for Player 2, until a winner is found.
+BF Complexity Visuals: Exponential Tree
+How to Draw BF: Draw a tree branching M, M-1, M-2 \dots levels deep. $O(M!)$.
+Optimised Pattern: Recursion + Bitmask Memoization Use an integer bitmask to represent which numbers are used. Cache result in a Map `mask: win/loss`.
+Opt Vis. Technique: State Space Pruning
+Dry Run (Opt): The bitmask represents a "key" to a room. If you've been in the room (state) before, use the cached answer.
+How to Draw (Opt): Draw a binary bitmask (e.g., `1011`). Next to it, write "T/F". Show arrows from different branches leading to the same bitmask.
+Opt Complexity Visuals: State Count
+How to Draw Opt Complexity: Complexity is the number of possible states. $O(2^M)$.
+Mem Vis (BF): Call Stack Massive factorial depth.
+Mem Vis (Opt): Memo Table Draw a boolean array/map of size 2^M. $O(2^M)$.

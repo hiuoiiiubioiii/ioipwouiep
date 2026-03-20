@@ -1,0 +1,13 @@
+ID: 624
+Problem Title: Maximum Distance in Arrays
+Brute Force Method: Compare every element of every array with every element of every other array.
+BF Complexity Visuals: Complete bipartite matching of all possible pairs.
+How to Draw BF: Draw 3 arrays. Draw lines from every number in Array 1 to every number in Array 2 and 3. Write $O(\text{Total}_\text{Elements}^2)$.
+Optimised Pattern: Greedy Min/Max Tracking.
+Opt Vis. Technique: Running Goalposts.
+Dry Run (Opt): Initialize `globalMin` and `globalMax` with the first array's ends. For each subsequent array: calc `abs(currMax - globalMin)` and `abs(globalMax - currMin)`. Update global values.
+How to Draw (Opt): Draw two horizontal lines (Min and Max bounds). For each new array, draw its "range bar" and see how much it stretches the existing bounds.
+Opt Complexity Visuals: Single pass through the list of arrays.
+How to Draw Opt Complexity: Draw a horizontal arrow scanning across the "Arrays" list. Write $O(M)$ where M is the number of arrays.
+Mem Vis (BF): Draw a giant matrix storing all comparison results.
+Mem Vis (Opt): Draw two integer variables: `min_val` and `max_val`. $O(1)$ space.

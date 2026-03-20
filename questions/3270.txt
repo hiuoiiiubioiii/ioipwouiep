@@ -1,0 +1,13 @@
+ID: 3270
+Problem Title: Find the Key of the Numbers
+Brute Force Method: Convert all numbers to strings, pad with leading zeros using `zfill(4)`, and iterate character-by-character to find the minimum.
+BF Complexity Visuals: String Character Alignment
+How to Draw BF: Write the three 4-digit strings stacked. Draw vertical boxes around each column (index 0-3). Circle the smallest character in each box.
+Optimised Pattern: Arithmetic Digit Extraction
+Opt Vis. Technique: Modular Digit Breakdown
+Dry Run (Opt): Avoid strings. Use `/ 1000 % 10`, `/ 100 % 10`, etc., to extract digits at each position. Find the minimum of extracted digits and reconstruct the key using `sum * 10 + current_min`.
+How to Draw (Opt): Draw three numbers. Underneath, draw 4 rows (thousands, hundreds, tens, units). Tally the digits for each number into these rows and circle the winner in each.
+Opt Complexity Visuals: Constant Time Math Block
+How to Draw Opt Complexity: Draw a single box labeled "4 iterations". Inside, draw three "min" operations. Label strictly $O(1)$ time.
+Mem Vis (BF): Storing three padded strings in memory.
+Mem Vis (Opt): Four local integer variables for digit extraction (O(1) space).

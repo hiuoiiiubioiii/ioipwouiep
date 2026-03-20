@@ -1,0 +1,13 @@
+ID: 165
+Problem Title: Compare Version Numbers
+Brute Force Method: Split both strings by '.' into arrays, convert all segments to integers, and compare index by index.
+BF Complexity Visuals: A dual-conveyor belt showing $O(N+M)$ space for split arrays.
+How to Draw BF: Draw two version strings. Draw two boxes below them containing the list of integers. Draw vertical lines comparing the boxes.
+Optimised Pattern: Two-Pointer Integer Parsing.
+Opt Vis. Technique: "Crawling through Dots." Two pointers move through the strings, stopping at each '.' to evaluate the integer value of the preceding segment.
+Dry Run (Opt): While i &lt; len1 or j &lt; len2: parse digits until dot to get `v1` and `v2`. If `v1 &gt; v2` return 1, etc. Move pointers past the dot.
+How to Draw (Opt): Draw the strings. Draw two pointers. Circle the digits between the dots and write the integer value (e.g., "001" rightarrow 1) above the circle.
+Opt Complexity Visuals: $O(N+M)$ time. Each character in both strings is visited exactly once.
+How to Draw Opt Complexity: Draw a single horizontal line through both strings. Mark each dot as a "checkpoint."
+Mem Vis (BF): $O(N+M)$ space for the split string arrays and converted integer lists.
+Mem Vis (Opt): Visualize $O(1)$ space with two pointers and two temporary integer variables.

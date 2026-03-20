@@ -1,0 +1,13 @@
+ID: 211
+Problem Title: Design Add and Search Words Data Structure
+Brute Force Method: Store words in a standard Array or List. Linearly scan and use Regex matching for the '.' character.
+BF Complexity Visuals: Rectangular Matrix Scan: $O(M \cdot N)$ Time.
+How to Draw BF: Draw an Array of N words. Draw an arrow checking all M characters of every word against the search string.
+Optimised Pattern: Trie (Prefix Tree) + DFS Backtracking for '.'
+Opt Vis. Technique: Branching Trie Diagram
+Dry Run (Opt): Trace down the tree. For normal letters, go down one path. For '.', put a finger on ALL child nodes simultaneously and explore them.
+How to Draw (Opt): Draw a tree root with letters as edges. Draw a dashed circle enclosing all children of a node when a '.' is encountered to show parallel search paths.
+Opt Complexity Visuals: Depth-Limited DFS Tree: $O(M)$ or $O(26^M)$ worst case for all dots.
+How to Draw Opt Complexity: Draw a vertical line descending M steps. Expand the line outward horizontally only when hitting a dot, showing the branch factor up to 26.
+Mem Vis (BF): Flat Array Box: Draw an array expanding linearly as new words are added.
+Mem Vis (Opt): Nested Array/Map Nodes: Draw a node as a 26-slot box. Fill slots with arrows pointing to new 26-slot boxes.

@@ -1,0 +1,13 @@
+ID: 2363
+Problem Title: Merge Similar Items
+Brute Force Method: Iterate through the first list. For each item, scan the entire second list to see if the ID matches, add the weights, and then sort the final combined list.
+BF Complexity Visuals: Nested Comparison + Sort (O(N*M))
+How to Draw BF: Draw two lists. Pick an item from List A. Draw an arrow scanning every item in List B looking for a matching ID. Repeat for all of List A.
+Optimised Pattern: Treemap (Sorted Dictionary)
+Opt Vis. Technique: Ordered Bucket Collection
+Dry Run (Opt): Use a Map that automatically keeps keys sorted (like `TreeMap` in Java or a sorted array in Python). Iterate both lists once, adding weights to the corresponding ID key.
+How to Draw (Opt): Draw a row of numbered boxes (IDs). As you read List A and List B, toss the weights into the matching boxes. Since the boxes are already in order, just read them left to right at the end.
+Opt Complexity Visuals: Two Linear Scans + Map Sort (O(N+M + K log K))
+How to Draw Opt Complexity: Draw two timelines merging into a single sorted dictionary structure.
+Mem Vis (BF): Draw numerous intermediate list copies during the re-scans.
+Mem Vis (Opt): Draw one Sorted Map (Red-Black Tree structure) or a fixed-size 1001-element Frequency Array.

@@ -1,0 +1,13 @@
+ID: 3461
+Problem Title: Check If Digits Are Equal in String After Operations I
+Brute Force Method: Iteratively calculate the new digit string row by row until only two digits remain. $O(N^2)$
+BF Complexity Visuals: Inverted Pascal's Triangle.
+How to Draw BF: Draw the original string at the top. Below, draw N-1 digits, then N-2, forming a pyramid pointing downwards.
+Optimised Pattern: Simulation (due to small N=100). $O(N^2)$
+Opt Vis. Technique: Layered Reduction Map.
+Dry Run (Opt): Calculate each layer's values. Each cell (i, j) is (val[i-1][j] + val[i-1][j+1]) mod10.
+How to Draw (Opt): Draw the string. Draw "V" shapes between adjacent digits and write the sum mod10 at the tip of each "V."
+Opt Complexity Visuals: 2D Matrix Area.
+How to Draw Opt Complexity: Draw a square of size N x N and shade the lower triangle to show frac12N^2 work.
+Mem Vis (BF): A 2D array or a list of lists representing the entire pyramid.
+Mem Vis (Opt): A single 1D array of size N updated in-place (rolling row).

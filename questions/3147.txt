@@ -1,0 +1,13 @@
+ID: 3147
+Problem Title: Taking Maximum Energy From the Mystic Dungeon
+Brute Force Method: From every possible starting index i, simulate the jumps of size k until the end, summing energy. $O(N^2/k)$
+BF Complexity Visuals: A forest of sparse jump-paths starting at every index.
+How to Draw BF: Write the array. Draw arrows from 0 to k, 2k... Then from 1 to 1+k, 1+2k... Tally each chain separately.
+Optimised Pattern: Dynamic Programming (Suffix Sum with Jump)
+Opt Vis. Technique: Reverse Waterfall
+Dry Run (Opt): Start from the end of the array. The max energy at index i is `energy[i] + energy[i+k]` (if within bounds). Carry the sum backward.
+How to Draw (Opt): Write the array. Start at the end. Draw an arrow from index i back to i-k, adding the value. Only one pass needed.
+Opt Complexity Visuals: One-pass linear traversal.
+How to Draw Opt Complexity: Draw a single straight line from N rightarrow 0. $O(N)$.
+Mem Vis (BF): Stack of energy sums for every starting point.
+Mem Vis (Opt): Modifying the energy array in-place or a single 1D DP array. $O(1)$ or $O(N)$.

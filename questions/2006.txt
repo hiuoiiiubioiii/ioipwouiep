@@ -1,0 +1,13 @@
+ID: 2006
+Problem Title: Count Number of Pairs With Absolute Difference K
+Brute Force Method: Nested loops iterating `i` and `j` checking `|nums[i] - nums[j]| == k` for every possible pair.
+BF Complexity Visuals: Complete Graph / N x N Grid
+How to Draw BF: Draw the array on both the X and Y axis of a grid. Cross out the diagonal. The remaining checks represent $O(N^2)$ time.
+Optimised Pattern: Hash Map (Frequency Count) / Single Pass
+Opt Vis. Technique: Array to Hash Map Lookup Arrow
+Dry Run (Opt): Iterate the array once. For element `x`, look up `x-k` and `x+k` in the Hash Map. Add their frequencies to total. Add `x` to map.
+How to Draw (Opt): Draw the array on the left and a Hash Map on the right. Draw a forward arrow from the array to the map asking "Do I have my pair?".
+Opt Complexity Visuals: Single Timeline Arrow
+How to Draw Opt Complexity: Draw a straight horizontal line. Mark points on it representing $O(1)$ hash map lookups. Total time $O(N)$.
+Mem Vis (BF): Call stack boxes with just two integer pointers `i` and `j` constantly resetting. Space $O(1)$.
+Mem Vis (Opt): Key-Value Block Diagram showing integers as keys and their occurrence frequencies as values. Space $O(N)$.

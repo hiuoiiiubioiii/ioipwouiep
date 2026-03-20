@@ -1,0 +1,13 @@
+ID: 3247
+Problem Title: Number of Subsequences with Odd Sum
+Brute Force Method: Generate all 2^N subsequences and check the sum of each. $O(N \cdot 2^N)$.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a tree branching for every element (Include/Exclude). At each leaf, sum the elements. Show the $O(2^N)$ leaf count.
+Optimised Pattern: Combinatorics / DP (Parity Switch)
+Opt Vis. Technique: Binary State Toggle
+Dry Run (Opt): If there is at least one odd number, exactly half the subsequences will be odd and half will be even. The total subsequences are 2^N, so the answer is 2^(N-1).
+How to Draw (Opt): Draw two boxes: "Odd Sums" and "Even Sums". Take an odd number. Show how adding it to an "Even" makes it "Odd" and vice-versa, perfectly balancing the counts.
+Opt Complexity Visuals: Constant Time Math Block
+How to Draw Opt Complexity: Draw a single $O(N)$ pass to check if an odd number exists. Then draw a single box for the 2^(N-1) calculation. Total $O(N)$.
+Mem Vis (BF): Exponential list of all subsets.
+Mem Vis (Opt): $O(1)$ space to track if an odd number was seen.

@@ -1,0 +1,13 @@
+ID: 3376
+Problem Title: Minimum Time to Break Locks I
+Brute Force Method: Try every possible permutation of the N locks and calculate the total time for each order.
+BF Complexity Visuals: Permutation Tree
+How to Draw BF: Draw a root node branching into N locks, then N-1, etc. Total leaves = N!. $O(N!)$.
+Optimised Pattern: Backtracking / Greedy (Small N)
+Opt Vis. Technique: Decision Timeline
+Dry Run (Opt): For each lock in the chosen order, calculate the time required based on the current X (which increases after each break).
+How to Draw (Opt): Draw a horizontal timeline. Mark "Break Lock" events. After each event, draw an "Up Arrow" showing X increasing by K. Sum the segments.
+Opt Complexity Visuals: Pruned Search Tree
+How to Draw Opt Complexity: Draw the same tree but "cut" branches that are obviously worse than the current minimum. $O(N!)$.
+Mem Vis (BF): Massive array of all N! possible time sums.
+Mem Vis (Opt): Recursive call stack of depth N (O(N) space).

@@ -1,0 +1,13 @@
+ID: 976
+Problem Title: Largest Perimeter Triangle
+Brute Force Method: Try every combination of three lengths from the array (N choose 3). For each, check if they satisfy the Triangle Inequality (a+b &gt; c).
+BF Complexity Visuals: $O(N^3)$. A cubic search through all possible triplets.
+How to Draw BF: Draw a pile of sticks. Pick three, try to form a triangle. Repeat for every possible trio. The paper is littered with "failed" triangles.
+Optimised Pattern: Sort + Greedy (Adjacent Triplet)
+Opt Vis. Technique: "The Heavyweight Trio." Sort the sticks by length. The best chance of forming a triangle is with three sticks that are as close in length as possible. Check only adjacent triplets starting from the largest.
+Dry Run (Opt): Sort `A`. Iterate from `i = N-1` down to 2. If `A[i-2] + A[i-1] &gt; A[i]`, return `A[i-2] + A[i-1] + A[i]`. Else, move to the next triplet.
+How to Draw (Opt): Draw a sorted bar chart. Draw a "Triplet Window" (3 bars) at the very right. Slide it one step to the left until the two shorter bars combined are taller than the longest bar.
+Opt Complexity Visuals: $O(N \log N)$ for sorting, $O(N)$ for the single-pass check.
+How to Draw Opt Complexity: Draw a sorting machine followed by a horizontal array with a 3-slot window sliding from right to left.
+Mem Vis (BF): $O(1)$ extra space, but unusable time.
+Mem Vis (Opt): $O(1)$ extra space (ignoring sort). Draw the sorted array with three pointers: `a`, `b`, and `c`.

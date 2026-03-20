@@ -1,0 +1,13 @@
+ID: 115
+Problem Title: Distinct Subsequences
+Brute Force Method: Generate all possible subsequences of string `s` using recursion (Include/Exclude char), and check if they equal `t`.
+BF Complexity Visuals: A massive, unmanageable $O(2^N)$ binary decision tree branching out for every character inclusion/exclusion.
+How to Draw BF: Write the string `s`. Draw a bifurcating tree where each level represents taking or dropping the next character. It quickly runs off the page.
+Optimised Pattern: 2D Dynamic Programming (Bottom-Up Tabulation).
+Opt Vis. Technique: A grid where previously calculated subsequence matches are pushed forward and accumulated to build larger matching patterns.
+Dry Run (Opt): `dp[i][j]` = matches of `t[0..j]` in `s[0..i]`. If `s[i] == t[j]`, `dp[i][j] = dp[i-1][j-1] (use char) + dp[i-1][j] (ignore char)`. Else, `dp[i][j] = dp[i-1][j]`.
+How to Draw (Opt): Draw a 2D matrix. `s` on rows, `t` on cols. Fill base cases (empty `t` = 1). Fill row by row, carrying values from the top and top-left cells.
+Opt Complexity Visuals: A perfectly structured $O(S \cdot T)$ grid filling sequentially, eliminating all redundant calculations.
+How to Draw Opt Complexity: Draw the DP matrix. Highlight a cell, draw arrows pointing to it strictly from the cell directly above it and the cell diagonally top-left to show $O(1)$ transitions.
+Mem Vis (BF): $O(2^N)$ deep recursive call stack eventually leading to StackOverflow or Time Limit Exceeded.
+Mem Vis (Opt): $O(S \cdot T)$ contiguous memory block for the 2D array. (Pro level: visualize it collapsing into a 1D $O(T)$ array for ultimate space optimization).

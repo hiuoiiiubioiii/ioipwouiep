@@ -1,0 +1,13 @@
+ID: 239
+Problem Title: Sliding Window Maximum
+Brute Force Method: For every window of size K, iterate through all K elements to find the maximum.
+BF Complexity Visuals: Stepped Rectangles: $O(N \cdot K)$ Time.
+How to Draw BF: Draw an array. Draw a box of width K. Shift it N times. Shade the total area covered by the moving box.
+Optimised Pattern: Monotonic Deque (Double-Ended Queue)
+Opt Vis. Technique: Declining Staircase Deque
+Dry Run (Opt): As you slide the window, remove elements from the back of the deque that are smaller than the new element. Keep indices at the front.
+How to Draw (Opt): Draw an array. Below it, draw a small box (Deque). Write numbers in the box, but erase any smaller numbers behind a new larger number.
+Opt Complexity Visuals: Amortized Analysis: $O(N)$ Time.
+How to Draw Opt Complexity: Draw N elements. Show that each element enters and leaves the deque exactly once. Total ops = 2N.
+Mem Vis (BF): List of maximums per window.
+Mem Vis (Opt): Deque structure: Draw a small variable-sized box that rarely exceeds size K.

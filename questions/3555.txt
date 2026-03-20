@@ -1,0 +1,13 @@
+ID: 3555
+Problem Title: Smallest Subarray to Sort in Every Sliding Window (Med)
+Brute Force Method: For every window of size K, find the smallest unsorted range by checking all inner sub-ranges.
+BF Complexity Visuals: Window-by-Window Sorting Checks.
+How to Draw BF: Draw a sliding window. For each position, redraw the window and highlight the messy part. $O(N \cdot K)$.
+Optimised Pattern: Monotonic Deque / Two Pointers + Sliding Window Minimum.
+Opt Vis. Technique: Sliding Bound Trackers (Left/Right Mismatches).
+Dry Run (Opt): Track the leftmost and rightmost elements that violate the "sorted" property within the window as it slides. Use a deque to find local mins/maxes.
+How to Draw (Opt): Draw a window moving right. Use a red pen to mark the first "dip" (arr[i] &lt; arr[i-1]) and the last "peak" within the current window.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a timeline. Below it, draw a window moving. Show only $O(1)$ work (deque updates) per shift.
+Mem Vis (BF): Sub-window Slices: Draw N copies of small arrays, each of size K, taking up massive total space.
+Mem Vis (Opt): Monotonic Deque: Draw a small, fixed-size queue (size K) that only stores indices of increasing/decreasing values.

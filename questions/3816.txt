@@ -1,0 +1,13 @@
+ID: 3816
+Problem Title: Lexicographically Smallest String After Deleting Duplicate Characters (Hard)
+Brute Force Method: Backtracking: Generate all possible string combinations by keeping/deleting duplicates, sort the valid results alphabetically, and pick the first one.
+BF Complexity Visuals: Massive binary decision tree (keep vs. delete) expanding out to 2^N leaves, followed by a sorting bottleneck.
+How to Draw BF: Write the string. Draw branching lines for every duplicate letter forming thousands of resulting words. Write $O(2^N \cdot N \log N)$.
+Optimised Pattern: Monotonic Stack + Frequency Map + Visited Array.
+Opt Vis. Technique: A vertical bucket (Stack) that actively ejects larger letters if a smaller one arrives and the larger one appears again later.
+Dry Run (Opt): Track char frequencies. Iterate string. If char is smaller than stack top AND stack top char has remaining count &gt; 0, pop stack. Push new char.
+How to Draw (Opt): Draw a vertical open-top box. Push letters in. When a 'b' arrives and 'c' is on top, draw an arrow pulling 'c' out (if 'c' exists later). Push 'b'.
+Opt Complexity Visuals: Linear timeline with localized push/pop actions.
+How to Draw Opt Complexity: Draw N characters on a line. Draw a small max 26-step loop below each. Write $O(N \cdot 26)$ = $O(N)$.
+Mem Vis (BF): Gigantic arrays of string permutations taking $O(2^N)$ memory space.
+Mem Vis (Opt): A Frequency Array (size 26), Visited Boolean Array (size 26), and a Stack taking $O(N)$ space.

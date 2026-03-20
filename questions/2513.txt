@@ -1,0 +1,13 @@
+ID: 2513
+Problem Title: Minimize the Maximum of Two Arrays
+Brute Force Method: Linearly increment numbers from 1 upwards. Try placing them in arr1 or arr2 based on divisibility rules until both array counts are strictly satisfied.
+BF Complexity Visuals: Number line generator pushing integers into two distinct buckets based on modulo conditions until buckets are full.
+How to Draw BF: Write 1, 2, 3, 4, 5... Cross out multiples of the divisors. Keep a running tally of valid numbers for arr1 and arr2 until you hit the required targets.
+Optimised Pattern: Binary Search on Answer Space + Number Theory (Inclusion-Exclusion Principle using LCM).
+Opt Vis. Technique: Venn diagram representing sets of valid divisible numbers bounded by an expanding/contracting maximum limit limit.
+Dry Run (Opt): Pick a massive middle number m. Calculate total numbers NOT divisible by divisor1, NOT by divisor2, and NOT by their LCM. If all counts satisfy the requirements, search a smaller max. If not, search larger.
+How to Draw (Opt): Draw a number line. Pick a midpoint m. Calculate valid counts using integer division. If valid, cross out the right half (search smaller). Else, cross out the left half.
+Opt Complexity Visuals: Logarithmic scale zooming in on a single target value in a massive search space.
+How to Draw Opt Complexity: Draw an interval from 0 to 2^31. Draw vertical lines repeatedly splitting the remaining interval in half, mathematically showing $O(\log(\text{MAX})$) steps.
+Mem Vis (BF): Expanding arrays arr1 and arr2 storing explicit integer sequences in memory.
+Mem Vis (Opt): $O(1)$ space. Just holding low, high, mid, and calculated count variables.

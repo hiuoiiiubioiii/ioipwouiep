@@ -1,0 +1,13 @@
+ID: 3150
+Problem Title: Invalid Tweets II (SQL)
+Brute Force Method: Load all tweets, then use a procedural loop to check string length and character counts (@, #).
+BF Complexity Visuals: Sequential row-by-row inspection with heavy regex.
+How to Draw BF: Draw a table of tweets. For each row, count characters with your finger, check against 140, and tally hashtags.
+Optimised Pattern: String Predicate Filtering
+Opt Vis. Technique: The Sieve
+Dry Run (Opt): Use `LENGTH()` and `LENGTH(REPLACE())` or `REGEXP_LIKE` to filter rows directly in the SQL engine.
+How to Draw (Opt): Draw a table. Draw a "filter" box. Rows that fail any condition (len &gt; 140, counts &gt; 3) get dropped. Remaining rows are the result.
+Opt Complexity Visuals: Linear scan of the database rows.
+How to Draw Opt Complexity: Draw a single straight arrow through the table rows. $O(N)$.
+Mem Vis (BF): Temporary memory holding all row copies.
+Mem Vis (Opt): In-engine pointer filtering. $O(1)$ auxiliary.

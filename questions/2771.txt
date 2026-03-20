@@ -1,0 +1,13 @@
+ID: 2771
+Problem Title: Longest Non-decreasing Subarray From Two Arrays
+Brute Force Method: Check every possible subarray $O(N²)$. For each position, try picking from nums1 or nums2 to maintain the non-decreasing property. $O(2^N \cdot N²)$.
+BF Complexity Visuals: Dual-Choice Path Explosion
+How to Draw BF: Draw two parallel arrays. At each step, you can pick Top or Bottom. Draw arrows for all valid paths. It looks like a lattice with 2^N routes.
+Optimised Pattern: Exponential State Memory (Visualizing the storage of all valid subarray combinations).
+Opt Vis. Technique: Iterative DP with Two State Variables
+Dry Run (Opt): Parallel State Transition
+How to Draw (Opt): Maintain dp1[i] (max length ending at i using nums1[i]) and dp2[i] (using nums2[i]). Transition by checking nums1[i] against nums1[i-1] and nums2[i-1]. $O(N)$.
+Opt Complexity Visuals: Draw two rows of boxes. Draw arrows from the previous two boxes to the current two boxes if the non-decreasing rule holds. Write the max length inside each box.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal line passing through the pairs. Label it $O(N)$.
+Mem Vis (Opt): Two State Variables (Draw only two variables per step, or two 1D arrays of size N).

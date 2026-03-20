@@ -1,0 +1,13 @@
+ID: 2141
+Problem Title: Maximum Running Time of N Computers
+Brute Force Method: Try every possible time `T` and attempt to distribute battery power using a greedy recursive simulation.
+BF Complexity Visuals: A massive branching search over the time range [1, TotalPower].
+How to Draw BF: Draw a timeline. For every possible second, try to fit batteries like a Tetris game. Write $O(\text{Sum}(\text{Power})$).
+Optimised Pattern: Binary Search on Answer + Greedy.
+Opt Vis. Technique: A water tank being filled to a specific height limit.
+Dry Run (Opt): Pick a time `mid`. Each battery can contribute at most `mid` minutes. If total battery capacity &gt;= `n * mid`, then `mid` is possible. Adjust binary search bounds.
+How to Draw (Opt): Draw `n` vertical columns (computers). Draw batteries as blocks. Any battery taller than the `mid` line is "chopped off" at the line. Sum the areas of all blocks and see if it covers the rectangle `n * mid`.
+Opt Complexity Visuals: $O(M \log(\text{MaxPower})$) where M is number of batteries.
+How to Draw Opt Complexity: A binary search tree narrowing down on a single horizontal "capacity line."
+Mem Vis (BF): Recursive state matrices tracking battery usage per computer.
+Mem Vis (Opt): $O(1)$ extra space (after sorting).

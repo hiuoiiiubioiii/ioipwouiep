@@ -1,0 +1,13 @@
+ID: 109
+Problem Title: Convert Sorted List to Binary Search Tree
+Brute Force Method: Iterate the Linked List to convert it to an Array $O(N)$, then apply the exact Divide and Conquer algorithm from Q108 $O(N)$.
+BF Complexity Visuals: Two separate $O(N)$ sequential blocks: List-to-Array conversion, followed by Array-to-BST conversion.
+How to Draw BF: Draw the Linked List. Draw arrows transferring each node into a drawn Array box. Then draw the Divide and Conquer tree below it.
+Optimised Pattern: Inorder Simulation (DFS). Calculate list length. Build left subtree, assign current list node as root, advance list pointer, build right subtree.
+Opt Vis. Technique: A zipper closing. The tree is built from the bottom-left up to the root and down to the bottom-right exactly as the Linked List is traversed linearly.
+Dry Run (Opt): Get length `L`. `recurse(0, L-1)`. Build left child: `left = recurse(...)`. Create root from global list pointer. Advance list pointer. Build right: `right = recurse(...)`.
+How to Draw (Opt): Draw the Linked List. Draw the empty tree structure. Trace the Inorder traversal path, filling in the empty tree nodes strictly in the order of the Linked List.
+Opt Complexity Visuals: $O(N)$ time for processing every node exactly once during the Inorder build. Space is $O(\log N)$ for the balanced call stack.
+How to Draw Opt Complexity: Draw a linear graph showing the global list pointer moving one step to the right precisely when a node is finalized in the recursive tree build.
+Mem Vis (BF): $O(N)$ extra Heap space explicitly allocated to store the intermediate Array structure.
+Mem Vis (Opt): Visualize $O(\log N)$ Call Stack space. No extra heap memory is allocated; the tree nodes are built directly from the list's progression.

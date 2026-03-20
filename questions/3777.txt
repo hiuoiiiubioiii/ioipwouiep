@@ -1,0 +1,13 @@
+ID: 3777
+Problem Title: Minimum Deletions to Make Alternating Substring (Hard)
+Brute Force Method: Generate all 2^N subsequences, check if they are alternating (e.g., "0101" or "1010"), and find the longest one. Subtract its length from N. $O(2^N)$.
+BF Complexity Visuals: Binary Subsequence Tree.
+How to Draw BF: Draw the string. Branch for every character: "Keep" or "Delete". At the leaves, check if the resulting string flickers between 0 and 1.
+Optimised Pattern: Greedy Single Pass / State Machine
+Opt Vis. Technique: Flicker Tracker
+Dry Run (Opt): Walk through the string. Keep a variable expected. If the current character matches expected, keep it and flip expected. If not, "delete" it (increment count).
+How to Draw (Opt): Write the string. Below it, write the pattern "0101...". Draw a line connecting the first '0' in the string to the '0' in the pattern, then the next '1', and so on. Any skipped characters are deletions.
+Opt Complexity Visuals: Single Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a flat timeline with a "Next Expected" toggle box.
+Mem Vis (BF): Recursive stack for all subsequences.
+Mem Vis (Opt): $O(1)$ extra space (just 2-3 variables).

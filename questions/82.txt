@@ -1,0 +1,13 @@
+ID: 82
+Problem Title: Remove Duplicates from Sorted List II
+Brute Force Method: Hash Map Frequency Count Traverse the list and store frequencies in a Map. Traverse again and only include nodes whose count is exactly 1.
+BF Complexity Visuals: The Two-Pass Filter
+How to Draw BF: Draw a linked list. Draw a tally table next to it. Draw a new list being built by skipping any value with a tally &gt; 1. $O(N)$ time, $O(N)$ space.
+Optimised Pattern: Sentinel Node + Two Pointers
+Opt Vis. Technique: The "Delete the Whole Block" Rule
+Dry Run (Opt): Use a dummy node. Maintain a `prev` pointer. If `curr` has a duplicate next to it, skip the *entire* block of duplicates by pointing `prev.next` to the first non-duplicate node found.
+How to Draw (Opt): Draw a list `1-&gt;2-&gt;2-&gt;3`. Use a `Dummy`. `prev` stays at 1. When it sees `2-&gt;2`, it jumps directly to `3`. Draw the pointer bypassing the entire "2" block.
+Opt Complexity Visuals: Single Forward Traverse
+How to Draw Opt Complexity: Draw a line of length N. Show a pointer moving through it once. Even when skipping blocks, every node is visited at most twice. $O(N)$.
+Mem Vis (BF): Draw a Hash Map storing all values and counts. Space: $O(N)$.
+Mem Vis (Opt): Draw a `Dummy` node and a few pointer variables. All work is done by re-linking existing nodes. Space: $O(1)$.

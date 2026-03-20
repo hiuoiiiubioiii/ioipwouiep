@@ -1,0 +1,13 @@
+ID: 3724
+Problem Title: Minimum Operations to Transform Array (Med)
+Brute Force Method: BFS exploring all possible forward operations (add, subtract, multiply) on all elements until the target is hit.
+BF Complexity Visuals: Explosive State Space Graph $O(\text{Branch}^\text{Depth})$.
+How to Draw BF: Draw the array. Draw lines branching out for every possible operation applied to it, creating a massive expanding web.
+Optimised Pattern: Backwards Traversal (Target to Start)
+Opt Vis. Technique: Reverse Engineering Pathway
+Dry Run (Opt): Start from the Target array and work *backwards* to the Start array using inverse operations (e.g., divide by 2 if even, instead of trying to multiply up).
+How to Draw (Opt): Write Target on the right, Start on the left. Draw arrows pointing *leftward*, dividing or subtracting optimally until you hit start values.
+Opt Complexity Visuals: $O(N \log(\text{MaxVal})$) reduction.
+How to Draw Opt Complexity: Draw a line representing array N, with small logarithmic spirals below each number showing its reduction path.
+Mem Vis (BF): Massive Queue holding thousands of array states.
+Mem Vis (Opt): In-place array modifications, $O(1)$ extra space.

@@ -1,0 +1,13 @@
+ID: 1757
+Problem Title: Recyclable and Low Fat Products (SQL)
+Brute Force Method: Select all rows from the table, then use a `for` loop in a programming language to filter for 'Y' in both columns.
+BF Complexity Visuals: Unfiltered Data Stream.
+How to Draw BF: Draw a massive table. Draw a funnel that checks every single row one by one. $O(N)$.
+Optimised Pattern: SQL Logical Indexing (`AND` condition).
+Opt Vis. Technique: Boolean Masking.
+Dry Run (Opt): Database engine uses a B-Tree or Hash Index to immediately isolate rows where `low_fats = 'Y'` and `recyclable = 'Y'`.
+How to Draw (Opt): Draw two overlapping circles (Low Fat and Recyclable). Shade the intersection.
+Opt Complexity Visuals: Index Seek vs Scan.
+How to Draw Opt Complexity: Draw a B-Tree traversal path. Label $O(\log N)$ if indexed, or $O(N)$ if not.
+Mem Vis (BF): Whole table loaded into application memory.
+Mem Vis (Opt): Database-level filtering, only result rows returned. $O(1)$ extra space.

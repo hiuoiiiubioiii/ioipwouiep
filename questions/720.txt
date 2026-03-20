@@ -1,0 +1,13 @@
+ID: 720
+Problem Title: Longest Word in Dictionary
+Brute Force Method: Sort words. For each word, generate every single prefix and check if it exists in a HashSet.
+BF Complexity Visuals: Prefix Chopping Block
+How to Draw BF: Draw a long word. Draw a knife chopping off the last letter repeatedly, checking a Set bucket every time. Time: $O(Σ(L^2)$).
+Optimised Pattern: Trie (Prefix Tree) + DFS/BFS
+Opt Vis. Technique: Branching Rooted Tree
+Dry Run (Opt): Insert all words into a Trie. Mark end of valid words. Run DFS/BFS from root. Only traverse down paths where every node is a valid "end of word". Keep track of the longest string found.
+How to Draw (Opt): Draw a root node. Draw branches dropping down, letter by letter. Color the nodes green if they complete a dictionary word. Trace the deepest path of all green nodes.
+Opt Complexity Visuals: Tree Depth Plumb Line
+How to Draw Opt Complexity: Draw a line plunging from the root to the deepest valid leaf node to represent time proportional to word lengths $O(ΣL)$.
+Mem Vis (BF): HashSet of all words (O(ΣL)).
+Mem Vis (Opt): Trie Node object tree (O(ΣL) space, but with shared prefix overlap saving some memory).

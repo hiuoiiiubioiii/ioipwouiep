@@ -1,0 +1,13 @@
+ID: 2226
+Problem Title: Maximum Candies Allocated to K Children
+Brute Force Method: Linear Increment SimulationStart by trying to give every child 1 candy. Then try 2, then 3, iterating linearly and recounting the piles every time until it fails to satisfy K children.
+BF Complexity Visuals: Endless Trial-and-Error Loop
+How to Draw BF: Draw the candy piles. Write "Target: 1". Cross out piles and divide them manually. Erase, write "Target: 2", and redraw the division. Show $O(N \\text{cdot Max}_\text{Candy})$ explosion.
+Optimised Pattern: Binary Search on Answer
+Opt Vis. Technique: Search Space Halving Line
+Dry Run (Opt): The minimum possible answer is 0, the max is the largest pile. Pick the middle value. See if you can form K piles of that size. If yes, search the right half; if no, search the left half.
+How to Draw (Opt): Draw a number line from 0 to Max Candy. Put a dot in the middle. Do a quick division check `sum(pile // mid)`. Draw an arrow discarding half the number line instantly based on the result.
+Opt Complexity Visuals: Logarithmic Search Timeline
+How to Draw Opt Complexity: Draw a loop iterating `log(Max_Candy)` times. Inside the loop, draw an $O(N)$ line representing the array scan. Total complexity is strictly $O(N \log M)$.
+Mem Vis (BF): Repeated array allocations to simulate the breaking down of piles step-by-step.
+Mem Vis (Opt): Two pointers (`left`, `right`) representing the binary search bounds (O(1) space).

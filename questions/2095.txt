@@ -1,0 +1,13 @@
+ID: 2095
+Problem Title: Delete the Middle Node of a Linked List
+Brute Force Method: Count all nodes in the list, calculate the middle index N/2, then iterate again to find the (N/2 - 1)-th node and delete its next.
+BF Complexity Visuals: Two-Pass Linear Scan
+How to Draw BF: Draw the list. Draw one arrow counting 1, 2, 3... until the end. Then draw a second arrow stopping at the midpoint. $O(2N)$.
+Optimised Pattern: Fast and Slow Pointers
+Opt Vis. Technique: The Hare and the Tortoise
+Dry Run (Opt): Initialize `slow` and `fast` pointers at head. Move `fast` two steps and `slow` one step. When `fast` hits the end, `slow` will be at the middle.
+How to Draw (Opt): Draw the list. Use two markers. Move one twice as fast as the other. When the fast one hits the finish line, the slow one is exactly at the node before the middle.
+Opt Complexity Visuals: Single-Pass Threading
+How to Draw Opt Complexity: Draw one straight line (O(N)) with two pointers moving in parallel. Total Time $O(N)$.
+Mem Vis (BF): Variables for the two passes and the count integer.
+Mem Vis (Opt): Only two node pointers (`slow`, `fast`). Space $O(1)$.

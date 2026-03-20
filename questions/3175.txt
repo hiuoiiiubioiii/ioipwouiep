@@ -1,0 +1,13 @@
+ID: 3175
+Problem Title: Find The First Player to win K Games in a Row
+Brute Force Method: Physically simulate the deque: move losers to the back, track wins. $O(N \cdot K)$.
+BF Complexity Visuals: Circular Queue Carousel
+How to Draw BF: Draw players in a circle. Move the loser to the back every "round" until someone hits K wins.
+Optimised Pattern: Greedy / One-Pass Simulation
+Opt Vis. Technique: King of the Hill
+Dry Run (Opt): The current "winner" stays at the front. Iterate once. If a challenger is stronger, they become the new winner (reset count). Stop at K or end of array.
+How to Draw (Opt): Draw players. Place a "Crown" on the first player. Move to next player. If next is stronger, move the crown. Keep a tally of crown "defenses."
+Opt Complexity Visuals: Linear Pass stopping early
+How to Draw Opt Complexity: Draw a line 0 rightarrow N. No backtracking. $O(N)$.
+Mem Vis (BF): A full Deque data structure.
+Mem Vis (Opt): A few integer variables: `current_winner`, `consecutive_wins`. $O(1)$.

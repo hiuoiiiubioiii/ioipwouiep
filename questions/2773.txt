@@ -1,0 +1,13 @@
+ID: 2773
+Problem Title: Height of Special Binary Tree
+Brute Force Method: Perform a standard BFS/DFS to find the height. Use a Set to track visited nodes to avoid getting stuck in the "special" leaves that point back to ancestors. $O(N)$.
+BF Complexity Visuals: Graph Traversal with Cycle Detection
+How to Draw BF: Draw the tree. Draw the "back-links" from leaves. Show the traversal path circling back. Highlight the visited nodes.
+Optimised Pattern: Visited Node HashSet (Visualizing extra memory to store every node ID to prevent infinite loops).
+Opt Vis. Technique: Recursive DFS with Leaf Logic
+Dry Run (Opt): Pure Tree Depth Recursion
+How to Draw (Opt): Key insight: A node is a "special leaf" if its left child's right is itself, or similar. In DFS, if a node is a leaf, return 0. Otherwise, return 1 + max(leftHeight, rightHeight). No visited set needed if logic is leaf-specific.
+Opt Complexity Visuals: Draw the tree. At each node, write the height of its subtrees. If you hit a node that points back up (leaf), stop and return 0.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single DFS path through the tree. Label it $O(N)$.
+Mem Vis (Opt): Recursion Stack (Draw a stack of frames representing the current depth of the tree).

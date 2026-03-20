@@ -1,0 +1,13 @@
+ID: 3769
+Problem Title: Sort Integers by Binary Reflection (Easy)
+Brute Force Method: For every integer, convert it to a binary string, reverse the string, convert it back to an integer, and then sort the array based on these new values.
+BF Complexity Visuals: Transformation-Sort Pipeline.
+How to Draw BF: Write [1, 2, 3]. Step 1: Binary [01, 10, 11]. Step 2: Reverse [10, 01, 11]. Step 3: Back to decimal [2, 1, 3]. Step 4: Sort original by these keys.
+Optimised Pattern: Custom Comparator with Bitwise Manipulation
+Opt Vis. Technique: In-Place Bit-Reversal Logic
+Dry Run (Opt): Use a sorting function with a custom comparator. Inside the comparator, reflect the bits of the two numbers using bitwise operations (shift and mask) to compare their "reflected" values without string conversion.
+How to Draw (Opt): Draw two numbers. Show their bits swapping positions (Bit 0 with Bit N, etc.). Compare the results directly.
+Opt Complexity Visuals: $O(N \log N \cdot \log(\text{Value})$).
+How to Draw Opt Complexity: Draw a sorting curve where each comparison has a small "Bit Swap" loop.
+Mem Vis (BF): Multiple string objects for every number.
+Mem Vis (Opt): $O(1)$ auxiliary space (in-place sort).

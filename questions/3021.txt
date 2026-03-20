@@ -1,0 +1,13 @@
+ID: 3021
+Problem Title: Alice and Bob Playing Flower Game
+Brute Force Method: Double nested loop: iterate `x` from 1 to `n`, and `y` from 1 to `m`. Check if `x + y` is odd to count valid pairs.
+BF Complexity Visuals: 2D Grid Traversal
+How to Draw BF: Draw a grid of size N x M. Check every single cell one by one, writing "Odd" or "Even". Tally the odds. $O(N \cdot M)$ time.
+Optimised Pattern: $O(1)$ Combinatorics (Parity Math)
+Opt Vis. Technique: 4-Quadrant Multiplication Box
+Dry Run (Opt): Recognize that an odd sum only happens when you add an (Odd + Even) or (Even + Odd). Calculate total odd/even numbers in `n` and `m` using simple division. Multiply them.
+How to Draw (Opt): Draw a 2x2 matrix. Rows are `N (Odd, Even)`, Cols are `M (Odd, Even)`. Draw an 'X' in (Odd, Odd) and (Even, Even). Circle the other two cells and write the multiplication formula.
+Opt Complexity Visuals: $O(1)$ Constant Time Box
+How to Draw Opt Complexity: Draw a single solid square box labeled "O(1) Math Operations". No loops at all.
+Mem Vis (BF): Accumulator variables nested inside a double loop.
+Mem Vis (Opt): Four isolated integer variables: `odd_n`, `even_n`, `odd_m`, `even_m`.

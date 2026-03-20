@@ -1,0 +1,13 @@
+ID: 289
+Problem Title: Game of Life
+Brute Force Method: Create a complete copy of the m \times n matrix to store the next state while calculating it.
+BF Complexity Visuals: Matrix Duplication: $O(m \\text{times} n)$ Space.
+How to Draw BF: Draw two identical grids. Show the first grid being read and the second grid being written to. Shade both.
+Optimised Pattern: In-Place State Encoding (Bit Manipulation)
+Opt Vis. Technique: State Transition Layering
+Dry Run (Opt): Use bits to store both current and next state. (00: dead\todead, 01: live\todead, 10: dead\tolive, 11: live\tolive). After calculating for all cells, shift bits to update.
+How to Draw (Opt): Draw a single cell. Write two numbers in it: "Old: 1, New: 0". Use a special symbol (like '2' or '3') to represent intermediate states on paper.
+Opt Complexity Visuals: Double Pass Grid: $O(m \\text{times} n)$ Time.
+How to Draw Opt Complexity: Draw two arrows: one passing through the grid to calculate states, and another to finalize the transition. Total 2 \times (m \times n).
+Mem Vis (BF): Matrix Buffer: Draw a second m \times n grid.
+Mem Vis (Opt): In-Place: Draw the original grid with small markings inside the cells. Space: $O(1)$.

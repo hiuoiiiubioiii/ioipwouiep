@@ -1,0 +1,13 @@
+ID: 2310
+Problem Title: Sum of Numbers With Units Digit K
+Brute Force Method: Backtracking: generate all possible combinations of numbers ending in K, sum them, and check if they equal `num`.
+BF Complexity Visuals: Exponential Recursion Tree
+How to Draw BF: Draw a root node branching out for every number ending in K (k, k+10, k+20...).
+Optimised Pattern: Greedy Math / Modulo Arithmetic
+Opt Vis. Technique: Modulo 10 Wheel
+Dry Run (Opt): Since we only care about the last digit, loop `n` from 1 to 10. Check if `(n * k) % 10 == num % 10`. If it matches, verify that `n * k &lt;= num`. If so, `n` is the answer.
+How to Draw (Opt): Draw a 1-to-10 table. Write the result of `n * k`. Circle the last digit. Draw a line connecting it to the last digit of `num`.
+Opt Complexity Visuals: Constant Time Block (O(1))
+How to Draw Opt Complexity: Draw a tiny, fixed loop of exactly 10 iterations. It never grows regardless of the input size.
+Mem Vis (BF): Draw a deep Call Stack for the recursive backtracking state.
+Mem Vis (Opt): Draw three small integer variable boxes (`n`, `k`, `num`).

@@ -1,0 +1,13 @@
+ID: 3352
+Problem Title: Count K-Reducible Numbers Less Than N
+Brute Force Method: Iterate from 1 to N. For each, repeatedly replace it with its set bit count until it becomes 1.
+BF Complexity Visuals: Linear Reduction Sequence
+How to Draw BF: Write 1 dots N. For each, draw a chain of numbers until 1. Total work $O(N \log \log N)$.
+Optimised Pattern: Digit DP + Precomputed Sieve
+Opt Vis. Technique: Tight/Limit State Tree
+Dry Run (Opt): Use Digit DP to count numbers with X set bits. Precompute which bit counts reduce to 1 in <= K-1 steps.
+How to Draw (Opt): Draw a tree where each node is `(index, current_count, is_less)`. Show how the "is_less" flag prunes half the branches.
+Opt Complexity Visuals: Bounded State Matrix
+How to Draw Opt Complexity: Draw a matrix of size Length(N) x Count(Bits). Filling this once is $O(\log N \\text{cdot bits})$.
+Mem Vis (BF): Massive integer list of all N results.
+Mem Vis (Opt): A 2D memoization table of size approx 800 x 800. $O(\log^2 N)$.

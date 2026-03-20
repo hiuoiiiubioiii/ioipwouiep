@@ -1,0 +1,13 @@
+ID: 1040
+Problem Title: Moving Stones Until Consecutive II
+Brute Force Method: Generate all possible positions for stones and use BFS to find the shortest/longest path to a state where stones are consecutive.
+BF Complexity Visuals: A massive state-space graph where nodes are stone coordinates and edges are legal moves.
+How to Draw BF: Draw 3 dots on a line. Draw all possible jumps for the end stones. Note the branching factor. Write $O(\text{Exponential})$.
+Optimised Pattern: Sliding Window + Mathematical Logic.
+Opt Vis. Technique: A "Fixed-Size Template". You try to find where the existing stones fit best into a window of size N.
+Dry Run (Opt): **Max moves**: Total gaps minus the smaller of the two end-gaps. **Min moves**: Slide a window of size N; stones inside are "kept", stones outside need a jump. Handle the n-1 stone edge case separately.
+How to Draw (Opt): Draw a number line. Mark stones. Use a bracket of width N. Slide it left to right. Count "empty spots" in the bracket at each step. Record the minimum.
+Opt Complexity Visuals: Two separate linear logic checks.
+How to Draw Opt Complexity: Draw a single arrow across the sorted stone array. Write $O(N \log N)$ for sorting, $O(N)$ for sliding window.
+Mem Vis (BF): Massive Hashset to track visited stone configurations in BFS.
+Mem Vis (Opt): $O(1)$ space for variables (if ignoring sorting stack space). $O(N)$ to store stones.

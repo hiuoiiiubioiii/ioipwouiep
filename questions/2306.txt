@@ -1,0 +1,13 @@
+ID: 2306
+Problem Title: Naming a Company
+Brute Force Method: Double loop over the array, swapping first letters of every possible pair and checking if both new words exist in the array.
+BF Complexity Visuals: N-Squared Grid (O(N^2))
+How to Draw BF: Draw an N by N matrix. Each cell represents a pair comparison with two string creations and two array lookups.
+Optimised Pattern: Group by First Letter + Venn Diagram Intersection
+Opt Vis. Technique: Intersecting Sets (Venn Diagrams)
+Dry Run (Opt): Group suffixes into 26 sets by their first letter. Pick two sets (e.g., 'c' and 't'). Find mutual suffixes. Valid names = (Set1_Size - Mutual) * (Set2_Size - Mutual) * 2.
+How to Draw (Opt): Draw 26 buckets. Pick two. Draw overlapping circles for their contents. Count the items exclusively in the left circle and exclusively in the right circle, then multiply.
+Opt Complexity Visuals: 26x26 Grid Comparison (O(26^2 * N))
+How to Draw Opt Complexity: Draw a constant 26x26 grid. Inside each cell, draw a linear scan representing the $O(N)$ time to find the intersection of two sets.
+Mem Vis (BF): Draw one massive Hash Set containing all original strings.
+Mem Vis (Opt): Draw an Array of 26 Hash Sets, where each set holds string suffixes.

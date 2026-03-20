@@ -1,0 +1,13 @@
+ID: 3802
+Problem Title: Number of Ways to Paint Sheets (Hard)
+Brute Force Method: Recursive assignment: Generate all valid color arrays segment by segment, checking adjacent constraints.
+BF Complexity Visuals: N-ary Decision Tree where branches equal available colors.
+How to Draw BF: Draw nodes representing the sheet segments. Branch out with colored markers. Cross out invalid branches (pruning) to show wasted work.
+Optimised Pattern: Matrix Exponentiation / 1D DP.
+Opt Vis. Technique: Adjacency Matrix mapping valid color state transitions.
+Dry Run (Opt): Multiply the transition matrix by itself to jump K steps forward exponentially rather than linearly.
+How to Draw (Opt): Draw a small grid mapping Color A -&gt; Color B valid transitions. Draw a square operation (Matrix^2) to show 2-step jumps.
+Opt Complexity Visuals: Logarithmic Exponentiation steps.
+How to Draw Opt Complexity: Draw an M x M matrix. Write '^N'. Draw binary division branches of N to prove $O(M^3 \log N)$ time complexity.
+Mem Vis (BF): Deep recursion stack showing the current index and the previously used color.
+Mem Vis (Opt): Two M x M matrices side-by-side swapping roles during multiplication, demonstrating $O(M^2)$ strict space limits.

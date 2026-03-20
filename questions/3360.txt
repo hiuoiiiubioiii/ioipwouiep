@@ -1,0 +1,13 @@
+ID: 3360
+Problem Title: Stone Removal Game
+Brute Force Method: Simulate the game recursively with Minimax, exploring every possible sequence of moves. $O(2^N)$.
+BF Complexity Visuals: Recursive Minimax Tree
+How to Draw BF: Draw a pile of stones. Branch out for Alice's moves, then Bob's moves, checking win states at the bottom.
+Optimised Pattern: Math / Simulation
+Opt Vis. Technique: The Deterministic Subtractor
+Dry Run (Opt): The game rules are fixed (Alice takes 10, Bob takes 9, Alice takes 8...). Just simulate it directly with a while loop, alternating turns until someone can't make a move.
+How to Draw (Opt): Draw a pile of stones. Alice grabs a handful of 10. Bob grabs 9. Keep shrinking the pile by a strictly decreasing number until someone's hand hits the bottom of an empty bucket.
+Opt Complexity Visuals: Constant Time Iteration $O(1)$
+How to Draw Opt Complexity: Draw a loop that runs at most 10 times.
+Mem Vis (BF): Recursive call stack.
+Mem Vis (Opt): A boolean turn flag. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2629
+Problem Title: Function Composition (JS)
+Brute Force Method: Manually nesting calls: `fn1(fn2(fn3(x)))` which is rigid and hardcoded.
+BF Complexity Visuals: Deeply Nested Parentheses
+How to Draw BF: Write out the mathematical expression `f(g(h(x)))` showing how deep and unscalable it is.
+Optimised Pattern: Right-to-Left Array Reduce
+Opt Vis. Technique: Reverse Assembly Line
+Dry Run (Opt): Start with input `x`. Feed `x` into the LAST function in the array. Take its output, feed it into the second-to-last function. Repeat to index 0.
+How to Draw (Opt): Draw a pipe. Put array of functions in boxes backwards. Push value `x` in from the right. Draw the transformed value moving left through each box.
+Opt Complexity Visuals: Sequential Processing Arrow
+How to Draw Opt Complexity: Draw a right-to-left $O(N)$ timeline through the array of functions.
+Mem Vis (BF): Multiple intermediate variables
+Mem Vis (Opt): $O(1)$ State variable carrying the transformed result.

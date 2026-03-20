@@ -1,0 +1,13 @@
+ID: 3620
+Problem Title: Network Recovery Pathways (Hard)
+Brute Force Method: Generate all possible permutations of nodes/paths to find the cheapest recovery order. $O(V!)$.
+BF Complexity Visuals: Factorial Explosion Tree.
+How to Draw BF: Start at Node A. Branch to all V-1 nodes. From those, branch to V-2 nodes. The tree gets so wide the paper turns completely black.
+Optimised Pattern: Dijkstra's Algorithm with Bitmask DP (State Space Search). State = (Current_Node, Visited_Mask).
+Opt Vis. Technique: Bitmask "Keyring" Expansion.
+Dry Run (Opt): Imagine walking through a graph. Every time you fix a server, you add its "key" to your keyring (the bitmask). You can visit the same node twice, but only if you have a *different* set of keys.
+How to Draw (Opt): Draw nodes as circles. Next to a node, instead of writing one distance, write multiple distances mapped to binary strings (e.g., 1010 : Cost 45, 1110 : Cost 60).
+Opt Complexity Visuals: Exponential yet Bounded Grid.
+How to Draw Opt Complexity: Draw V rows (nodes) and 2^K columns (where K is number of critical servers to recover). The graph size is bounded to $O(E \cdot 2^K)$.
+Mem Vis (BF): Storing millions of full path integer arrays in a massive list to compare totals at the end.
+Mem Vis (Opt): A 2D array dist[V][1 &lt;&lt; K] initialized to infinity, storing minimum costs for every mask state. Space $O(V \cdot 2^K)$.

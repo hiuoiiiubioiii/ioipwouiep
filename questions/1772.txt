@@ -1,0 +1,13 @@
+ID: 1772
+Problem Title: Sort Features by Popularity
+Brute Force Method: For each feature, loop through all responses. Count occurrences using nested loops, then use a standard sort.
+BF Complexity Visuals: Nested Search and Reorder.
+How to Draw BF: Draw Features list. For each item, draw arrows to all responses. $O(F \\text{times} R \\text{times} \\text{text}{\text{WordsPerResponse}})$.
+Optimised Pattern: Hash Map (Counter) + Custom Stable Sort.
+Opt Vis. Technique: The "Tally and Index" Rank.
+Dry Run (Opt): Put unique words of each response into a set to count popularity. Store counts in a Map. Sort features by (count DESC, original_index ASC).
+How to Draw (Opt): Draw a frequency table. Next to it, draw the original list with index numbers. Use a "Stable Sorting" funnel to keep order in case of ties.
+Opt Complexity Visuals: Linear Count &amp; Logarithmic Sort.
+How to Draw Opt Complexity: Draw the tallying pass $O(R \cdot W)$ and the sorting pass $O(F \log F)$. Total $O(R \cdot W + F \log F)$.
+Mem Vis (BF): Repeatedly scanning text in-place.
+Mem Vis (Opt): Hash Map for counts + Set for response unique words. $O(F + \\text{text}{\text{TotalWords}})$ space.

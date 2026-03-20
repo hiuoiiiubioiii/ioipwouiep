@@ -1,0 +1,13 @@
+ID: 3160
+Problem Title: Find the Number of Distinct Colors Among the Balls
+Brute Force Method: For every update, maintain the full ball-color array and scan it entirely to count distinct colors. $O(Q x N)$
+BF Complexity Visuals: A massive state-matrix recalculated from scratch for every move.
+How to Draw BF: Draw 10 balls. Paint ball 1 Red. Count distinct. Paint ball 2 Blue. Count distinct. Re-paint ball 1 Green. Count distinct again.
+Optimised Pattern: Dual Hash Maps (Frequency Tracking)
+Opt Vis. Technique: The Color Dashboard
+Dry Run (Opt): Map 1: `ball -&gt; color`. Map 2: `color -&gt; count`. On update: decrement count of old color (remove if 0), increment count of new. Distinct count = size of Map 2.
+How to Draw (Opt): Draw two boxes: `Balls` and `ColorCount`. When a ball changes color, cross out its old color in `Balls`, update its frequency in `ColorCount`. The size of `ColorCount` is the answer.
+Opt Complexity Visuals: Linear query processing.
+How to Draw Opt Complexity: Draw Q discrete steps, each involving exactly two $O(1)$ map updates. $O(Q)$.
+Mem Vis (BF): Large array of N ball colors updated repeatedly.
+Mem Vis (Opt): Two Hash Maps storing only active balls and non-zero color counts. $O(N)$.

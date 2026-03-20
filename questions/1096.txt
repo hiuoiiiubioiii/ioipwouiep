@@ -1,0 +1,13 @@
+ID: 1096
+Problem Title: Brace Expansion II
+Brute Force Method: Recursive expansion of every comma and brace. Store all generated strings in a Set and sort at the end.
+BF Complexity Visuals: An exponential tree of string concatenations and unions.
+How to Draw BF: "{a,b}{c,{d,e}}". Expanding all possible paths. Write $O(\text{Exponential})$.
+Optimised Pattern: Recursive Descent Parsing / Stack.
+Opt Vis. Technique: A "Nested Layer" processing. We evaluate the innermost expressions and bubble their results up to combine with outer layers.
+Dry Run (Opt): Use a stack to store "current groups". When you see '{', push a new context. When you see ',', start a new term in the current context. When you see '}', pop and multiply (Cartesian product) with the previous context.
+How to Draw (Opt): Draw the string. Use vertical bars to represent stack levels. When a brace closes, draw lines showing how strings from the current level multiply into the previous level.
+Opt Complexity Visuals: Orderly expansion of the grammar.
+How to Draw Opt Complexity: Draw a parse tree for the expression. Write Time: $O(N \log N)$ or $O(N^2)$ depending on result size.
+Mem Vis (BF): Massive duplication of intermediate strings.
+Mem Vis (Opt): $O(\text{Depth of Braces})$ stack space + Result Set.

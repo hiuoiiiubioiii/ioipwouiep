@@ -1,0 +1,13 @@
+ID: 2457
+Problem Title: Beautiful Number / Minimum Addition to Make Integer Beautiful
+Brute Force Method: Keep adding 1 to 'n' and recalculate the digit sum until the sum is less than or equal to 'target'.
+BF Complexity Visuals: Iterative Step Ladder
+How to Draw BF: Draw a number line. Draw tiny steps (n+1, n+2...). Label $O(10^\text{LogN})$ which is worst-case huge.
+Optimised Pattern: Greedy Zero-ing (Place Value Increment)
+Opt Vis. Technique: Right-to-Left Carry Wave
+Dry Run (Opt): If digit sum &gt; target, round up to the next power of 10 (e.g., 467 -&gt; 470 -&gt; 500 -&gt; 1000). Each step zeros out the last non-zero digit and carries the 1.
+How to Draw (Opt): Write the number. Circle the rightmost non-zero digit. Change it to 0 and add 1 to the digit to its left. Re-check the digit sum. Repeat.
+Opt Complexity Visuals: Digit-Length Scan
+How to Draw Opt Complexity: Draw a box for each digit (max 12-15). Label $O(\log10(N)$) Time.
+Mem Vis (BF): Draw a loop counter.
+Mem Vis (Opt): Draw 2-3 long-type variables. $O(1)$ Space.

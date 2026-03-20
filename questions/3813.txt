@@ -1,0 +1,13 @@
+ID: 3813
+Problem Title: Vowel-Consonant Score (Easy)
+Brute Force Method: Nested loops generating every possible substring to count vowels and consonants independently.
+BF Complexity Visuals: Right-angled triangle grid representing all $O(N^2)$ substrings.
+How to Draw BF: Write a string. Draw brackets around [0,1], [0,2], [0,3]. Recount the vowels inside each bracket from scratch.
+Optimised Pattern: Single Pass Linear Scan / Prefix Sums.
+Opt Vis. Technique: Two counters moving left-to-right alongside the string index.
+Dry Run (Opt): Initialize V=0, C=0. Loop through characters. If vowel, V++. If consonant, C++. Apply score math at each step or at the end.
+How to Draw (Opt): Write the string. Below each letter, write a tuple (V, C) that increments as you read from left to right.
+Opt Complexity Visuals: Straight 1D vector timeline.
+How to Draw Opt Complexity: Draw a string of N boxes. Draw one long arrow crossing all boxes. Write $O(N)$.
+Mem Vis (BF): Memory wasted if substrings are extracted as actual string copies (O(N^2) space).
+Mem Vis (Opt): $O(1)$ space: Just a couple of integer variables maintaining the running counts.

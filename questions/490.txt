@@ -1,0 +1,13 @@
+ID: 490
+Problem Title: The Maze
+Brute Force Method: Standard DFS Move one cell at a time like a normal maze. (Fails to simulate the "sliding" physics).
+BF Complexity Visuals: Grid Scan
+How to Draw BF: Draw a grid with arrows moving one cell at a time. This doesn't match the "roll until wall" constraint.
+Optimised Pattern: BFS/DFS with Sliding Logic From a cell, move in one direction using a `while` loop until hitting a wall. Treat the *stop point* as a graph node.
+Opt Vis. Technique: Ice Skating Graph
+Dry Run (Opt): Imagine the floor is ice. You only stop at walls. The "nodes" in your graph are only the cells next to walls or the start/end.
+How to Draw (Opt): Draw a grid with walls. From start, draw a long arrow until a wall. Circle that stop point. From there, draw 4 new "sliding" arrows.
+Opt Complexity Visuals: Edge Traversing
+How to Draw Opt Complexity: Draw nodes (stop points) and edges (sliding paths). $O(M \\text{times} N)$ since each cell is visited max 4 times.
+Mem Vis (BF): Call Stack DFS recursion depth.
+Mem Vis (Opt): Queue + Visited Draw a BFS Queue and a 2D boolean visited grid. $O(\text{MN})$.

@@ -1,0 +1,13 @@
+ID: 265
+Problem Title: Paint House II
+Brute Force Method: Recursive DFS checking all color combinations for N houses with K colors.
+BF Complexity Visuals: Explosive Branching: $O(K \cdot (K-1)$^{N-1}).
+How to Draw BF: Draw a tree where each node has K-1 branches. Level 1 has K, level 2 has K(K-1). Show it filling the page instantly.
+Optimised Pattern: DP with Minimum Tracking (Two-Minima Optimization)
+Opt Vis. Technique: Rolling Min-State
+Dry Run (Opt): Instead of checking all previous K-1 colors, track the `min1` and `min2` costs of the previous house. If current color matches `min1`, use `min2`. Else, use `min1`.
+How to Draw (Opt): Draw a row of K costs. Highlight the two smallest numbers. For the next row, use these two "cached" values instead of rescanning the row.
+Opt Complexity Visuals: Reduced Matrix Scan: $O(N \cdot K)$ Time.
+How to Draw Opt Complexity: Draw an N \times K grid. Show that each cell only looks at a "Global Min" box from the previous row instead of the whole row.
+Mem Vis (BF): Full N \times K recursion stack.
+Mem Vis (Opt): Two Smallest Value Boxes: Draw exactly two variables, `m1` and `m2`, per row. Space: $O(1)$ extra (if in-place).

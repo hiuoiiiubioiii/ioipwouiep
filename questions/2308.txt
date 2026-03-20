@@ -1,0 +1,13 @@
+ID: 2308
+Problem Title: Arrange Table by Gender
+Brute Force Method: Scan the input array multiple times, picking out one gender sequentially (e.g., female, then male, then other) and appending to a new array.
+BF Complexity Visuals: Multi-pass Scanning Lines (O(N^2))
+How to Draw BF: Draw a horizontal array. Draw three separate scan lines passing over it from left to right, repeatedly starting over.
+Optimised Pattern: Multi-Queue Interleaving
+Opt Vis. Technique: Three Funnels into One Stream
+Dry Run (Opt): Make 3 Queues (F, M, O). Iterate input once, pushing elements to their respective queue. Then Pop from F, Pop from M, Pop from O repeatedly until empty.
+How to Draw (Opt): Draw three vertical tubes representing queues. Draw arrows pulling the bottom item from each tube sequentially into a single horizontal output row.
+Opt Complexity Visuals: Single Pass + Merge (O(N))
+How to Draw Opt Complexity: Draw one timeline splitting into three, which immediately zip back together into a single timeline.
+Mem Vis (BF): Draw multiple intermediary arrays being created and destroyed.
+Mem Vis (Opt): Draw 3 separate Linked Lists (Queues) and 1 output Array.

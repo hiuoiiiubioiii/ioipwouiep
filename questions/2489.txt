@@ -1,0 +1,13 @@
+ID: 2489
+Problem Title: Number of Substrings With Fixed Ratio
+Brute Force Method: Generate all subarrays, count 0s and 1s, check ratio. $O(N^2)$.
+BF Complexity Visuals: Sliding Window Matrix
+How to Draw BF: Draw nested brackets checking every possible slice.
+Optimised Pattern: Prefix Sum + Hash Map (Math Restructuring)
+Opt Vis. Technique: The Ratio Balancer
+Dry Run (Opt): Ratio equation: `zeros / ones = num1 / num2`. Restructure it: `zeros * num2 - ones * num1 = 0`. Track this "balance" score. If you see the same score again, the subarray between them has the perfect ratio.
+How to Draw (Opt): Draw the string. Maintain the balance score. If the score is 3, and you see 3 again later, the slice between them is valid. Use a Map to count frequencies of scores.
+Opt Complexity Visuals: Single Pass Lookups $O(N)$
+How to Draw Opt Complexity: Draw a straight line. Update a math formula and query a Map at each step.
+Mem Vis (BF): Storing N^2 substring counts.
+Mem Vis (Opt): A Hash Map of balance frequencies. $O(N)$ space.

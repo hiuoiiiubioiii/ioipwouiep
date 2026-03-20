@@ -1,0 +1,13 @@
+ID: 457
+Problem Title: Circular Array Loop
+Brute Force Method: Exhaustive DFS From every index i, follow the pointers to see if you return to i. Keep a "Visited" set for each start.
+BF Complexity Visuals: Redundant Webs
+How to Draw BF: Draw a circle of nodes. From each node, draw a messy path. $O(N^2)$.
+Optimised Pattern: Two Pointers (Slow/Fast) Use Floyd's Cycle-Finding algorithm. A fast pointer moves 2 steps, slow moves 1. Check for direction changes or single-node loops.
+Opt Vis. Technique: Race Track
+Dry Run (Opt): Imagine two runners on a circular track. If there's a loop, the fast runner will eventually "lap" the slow runner.
+How to Draw (Opt): Draw a "Clock Face" with array indices. Draw jump arrows. Move a "S" and "F" marker. If they land on the same spot, a loop exists.
+Opt Complexity Visuals: Grid Coloring
+How to Draw Opt Complexity: Draw the array once. Color nodes "Dead" as you finish checking them to ensure each node is visited only once. $O(N)$.
+Mem Vis (BF): HashSet Draw N different sets in memory. $O(N)$.
+Mem Vis (Opt): None Use the array itself or one "State" array. $O(1)$ extra or $O(N)$ for state.

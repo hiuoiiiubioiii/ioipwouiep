@@ -1,0 +1,13 @@
+ID: 224
+Problem Title: Basic Calculator
+Brute Force Method: Recursively solve every sub-expression found within parentheses.
+BF Complexity Visuals: Nested Contextual Bubbles: $O(N^2)$ in worst case (e.g., many nested parens).
+How to Draw BF: Draw nested circles. Each circle represents a new string being parsed and evaluated from scratch.
+Optimised Pattern: Stack-Based Single Pass with Sign Tracking
+Opt Vis. Technique: State-Machine Ribbon
+Dry Run (Opt): Maintain a `result`, a `sign` (1 or -1), and a `stack`. When you hit '(', push current result/sign. When ')', pop and combine.
+How to Draw (Opt): Draw a ribbon of the expression. Draw a "Stack" bucket. Put a result and sign into the bucket when '(' appears. Pour it back out at ')'.
+Opt Complexity Visuals: Linear Timeline: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a single line scanning the string from left to right. Each character is processed once.
+Mem Vis (BF): Multiple String Buffers: Draw multiple copies of the input string being sliced.
+Mem Vis (Opt): Value/Sign Stack: Draw a vertical stack containing only integers (previous results and signs).

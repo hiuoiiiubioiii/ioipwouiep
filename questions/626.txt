@@ -1,0 +1,13 @@
+ID: 626
+Problem Title: Exchange Seats (SQL)
+Brute Force Method: Self-join the table on `a.id = b.id + 1` and `a.id = b.id - 1`, then use UNION to combine odd/even results.
+BF Complexity Visuals: Two separate result sets colliding and merging.
+How to Draw BF: Draw two copies of the table. Cross-link them with messy, diagonal arrows. Draw a big plus sign (+) for the UNION. $O(N)$.
+Optimised Pattern: Bitwise Logic / CASE statement with ID manipulation.
+Opt Vis. Technique: Index Shifting / Mathematical Remapping.
+Dry Run (Opt): If ID is odd and not last: ID+1. If ID is even: ID-1. Else (last odd): ID. The data doesn't move; only the "Label" changes.
+How to Draw (Opt): Draw a column of numbers [1, 2, 3, 4]. Draw arrows swapping only the numbers, while keeping the student names fixed in place.
+Opt Complexity Visuals: Single-pass table scan.
+How to Draw Opt Complexity: Draw a straight arrow through the table. Above it, write the formula `(id-1)^1 + 1`. Write $O(N)$.
+Mem Vis (BF): Draw two full intermediate tables in memory for the JOIN and UNION operations.
+Mem Vis (Opt): Draw the original table with a virtual "New ID" column. $O(1)$ extra space.

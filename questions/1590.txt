@@ -1,0 +1,13 @@
+ID: 1590
+Problem Title: Make Sum Divisible by P
+Brute Force Method: Try removing every possible subarray [i, j] and check if the sum of the remaining elements is divisible by P. $O(N^2)$.
+BF Complexity Visuals: Quadratic Subarray Deletion
+How to Draw BF: Draw an array. Cross out one index, check sum. Cross out two indices, check sum. You will draw N(N+1)/2 cross-out scenarios.
+Optimised Pattern: Prefix Sum + Hash Map (Modular Arithmetic)
+Opt Vis. Technique: The Target Remainder Tracker
+Dry Run (Opt): Calculate total sum mod P (let it be T). We need to find the shortest subarray with sum mod P = T. Iterate with prefix sums S, storing the latest index of each S \pmod P in a Map. Look for (S - T) \pmod P.
+How to Draw (Opt): Draw the array and a Hash Map on the side. As you scan, write the current Sum \pmod P in the Map. Draw an arrow from the current index i to a previous index j stored in the Map that satisfies the modular condition.
+Opt Complexity Visuals: Linear Scan with Map Lookups $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Above each node, draw an arrow pointing to a Map box. $O(1)$ work per node.
+Mem Vis (BF): Storing the results of all N^2 sum checks.
+Mem Vis (Opt): A Hash Map of size P (or N). $O(N)$ space.

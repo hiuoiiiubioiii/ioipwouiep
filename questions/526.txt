@@ -1,0 +1,13 @@
+ID: 526
+Problem Title: Beautiful Arrangement
+Brute Force Method: Generate every single permutation of numbers 1 to N, then check each fully built permutation against the modulo rules.
+BF Complexity Visuals: A massive, unpruned N! factorial tree exploding outward. $O(N!)$.
+How to Draw BF: Draw branches for 1, then from 1 draw 2,3,4... multiplying at every level until the page is completely full.
+Optimised Pattern: Backtracking with Pruning + Visited Array (or Bitmask).
+Opt Vis. Technique: A labyrinth where paths that violate the rule immediately trigger a dead end, forcing an instant turn-around.
+Dry Run (Opt): Loop 1 to N. If unused and (`num % pos == 0` or `pos % num == 0`), mark used, recurse to `pos+1`. Unmark when returning.
+How to Draw (Opt): Draw a decision tree. If a branch fails the modulo check, draw a big red X on it immediately and do not draw any child nodes.
+Opt Complexity Visuals: A sparse tree with many short, terminated branches. Valid paths = K. $O(K)$.
+How to Draw Opt Complexity: Draw a tree, but aggressively erase or cross out the middle branches to show paths dying early.
+Mem Vis (BF): Massive array allocations if storing all permutations. $O(N!)$.
+Mem Vis (Opt): A simple boolean array of size N (or an integer bitmask) + recursion stack. $O(N)$.

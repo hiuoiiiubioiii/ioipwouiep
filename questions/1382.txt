@@ -1,0 +1,13 @@
+ID: 1382
+Problem Title: Balance a Binary Search Tree
+Brute Force Method: Repeatedly perform tree rotations or attempts to "re-hang" nodes until the height difference between children is minimized.
+BF Complexity Visuals: $O(N \log N)$ Chaotic Rebalancing
+How to Draw BF: Draw a skewed tree. Draw arrows showing nodes shifting left and right. The logic is hard to visualize and prone to infinite loops.
+Optimised Pattern: In-Order Flattening + Midpoint Reconstruction
+Opt Vis. Technique: Array-to-Balanced-Tree Fold
+Dry Run (Opt): 1. Perform in-order traversal to get a sorted array of nodes. 2. Use a recursive function to pick the middle element as the root, then repeat for left and right halves.
+How to Draw (Opt): Draw a sorted list of numbers. Circle the middle one—that's the root. Draw two lines to the middle of the left and right halves—those are the children. It creates a perfect pyramid.
+Opt Complexity Visuals: $O(N)$ Linear Reconstruction
+How to Draw Opt Complexity: Draw a single tree traversal (O(N)) followed by a recursive build process that visits each element once (O(N)).
+Mem Vis (BF): In-place Rotation Stack: Complex pointers and temporary node variables during rotation.
+Mem Vis (Opt): $O(N)$ Sorted List: Draw a simple flat array of node pointers used to store the tree's values temporarily.

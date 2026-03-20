@@ -1,0 +1,13 @@
+ID: 2740
+Problem Title: Find the Value of the Partition
+Brute Force Method: Generate all possible partitions of the array into two non-empty sets. For each, find max(nums1) and min(nums2), then find the absolute difference. $O(2^N)$.
+BF Complexity Visuals: Subsets Comparison Tree
+How to Draw BF: Draw a tree where each element is branched into "Set A" or "Set B". With 10^5 elements, the tree is infinitely wide.
+Optimised Pattern: Partition Memory Sets (Visualizing two massive separate heaps for every single partition attempt).
+Opt Vis. Technique: Sorting + Consecutive Difference (O(N log N))
+Dry Run (Opt): Sorted Array Gap Analysis
+How to Draw (Opt): Sort the array. The minimum difference between any max(nums1) and min(nums2) must occur between two adjacent elements in the sorted version. Iterate once and find min(nums[i] - nums[i-1]).
+Opt Complexity Visuals: Draw the array as a sorted line of boxes. Draw small vertical "ruler" marks between every adjacent pair. The smallest ruler mark is your answer.
+How to Draw Opt Complexity: Sort Bottleneck $O(N \log N)$
+Mem Vis (BF): Draw a standard sorting block (O(N log N)) followed by a single horizontal scan line (O(N)).
+Mem Vis (Opt): $O(1)$ Auxiliary Space (Draw the array in-place; no extra data structures besides a single min_diff variable).

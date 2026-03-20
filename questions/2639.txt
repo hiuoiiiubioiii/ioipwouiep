@@ -1,0 +1,13 @@
+ID: 2639
+Problem Title: Find the Width of Columns of a Grid
+Brute Force Method: Iterate through every cell, convert to string, and update a max width variable for the column.
+BF Complexity Visuals: Cell-by-Cell Stringification
+How to Draw BF: Draw the grid. For every cell, draw a "ToString()" conversion and a length check. $O(R \cdot C)$.
+Optimised Pattern: Column-Wise Linear Scan
+Opt Vis. Technique: Vertical Scanner Bar
+Dry Run (Opt): Traverse column-by-column. For each column, find the maximum string length of its elements.
+How to Draw (Opt): Draw a grid. Draw a vertical rectangle highlighting Column 1. Find the longest string. Move the rectangle to Column 2.
+Opt Complexity Visuals: $O(R \cdot C)$ Scan
+How to Draw Opt Complexity: Draw a block representing R rows and C columns being visited exactly once.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(C)$ space for storing width of each column.

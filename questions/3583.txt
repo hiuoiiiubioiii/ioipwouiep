@@ -1,0 +1,13 @@
+ID: 3583
+Problem Title: Count Special Triplets (Med)
+Brute Force Method: Three nested loops to iterate through all possible indices (i, j, k) and check the special condition.
+BF Complexity Visuals: 3D Loop Cube.
+How to Draw BF: Draw a cube of dimension N x N x N. Shade the valid triangular volume where i &lt; j &lt; k. $O(N^3)$.
+Optimised Pattern: Prefix Sums / Frequency Mapping.
+Opt Vis. Technique: Middle-Element Pivot.
+Dry Run (Opt): Fix the middle element j. Count valid elements to its left and right using precomputed frequency maps or prefix sums. Total = LeftCount * RightCount.
+How to Draw (Opt): Draw an array. Point to element j. Draw a bracket to the left (elements &lt; arr[j]) and a bracket to the right. Write their counts above.
+Opt Complexity Visuals: $O(N^2)$ or $O(N)$ depending on condition.
+How to Draw Opt Complexity: Draw a 1D array with a sliding j pointer. Show constant-time prefix lookups at each step.
+Mem Vis (BF): Nested Iterator Pointers: Draw three pointers constantly scanning the same array.
+Mem Vis (Opt): Prefix/Frequency Arrays: Draw two 1D arrays storing running counts for left and right conditions.

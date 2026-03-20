@@ -1,0 +1,13 @@
+ID: 68
+Problem Title: Text Justification
+Brute Force Method: Trial and Error Padding Try adding words to a line; if it exceeds `maxWidth`, try adding different amounts of spaces between words until it looks right.
+BF Complexity Visuals: The Brute Force Typesetter
+How to Draw BF: Draw a box of width W. Try putting words in and drawing random space gaps, recalculating constantly. $O(N^2)$ or $O(N x W)$ complexity.
+Optimised Pattern: Greedy Word Packing + Round Robin Spacing
+Opt Vis. Technique: The Balanced Scale
+Dry Run (Opt): Pack as many words as possible. Calculate total spaces needed. Distribute spaces evenly. If there's a remainder, add extra spaces to the left-most gaps first. Handle the last line as left-justified.
+How to Draw (Opt): Draw a line with 3 words. Space needed = 7. Gaps = 2. 7 / 2 = 3 spaces each, with 1 remainder. Give 4 spaces to gap 1 and 3 spaces to gap 2.
+Opt Complexity Visuals: Linear Word Processing
+How to Draw Opt Complexity: Draw a line of words. Show a pointer moving through the words once to group them into lines. Each word is processed exactly once. Time: $O(N)$.
+Mem Vis (BF): Storing multiple copies of strings during the padding/recalculation phase.
+Mem Vis (Opt): Draw the final list of strings. Space is $O(N)$ to store the output text. No significant auxiliary structures are used.

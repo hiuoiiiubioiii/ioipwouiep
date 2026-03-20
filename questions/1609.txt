@@ -1,0 +1,13 @@
+ID: 1609
+Problem Title: Even Odd Tree
+Brute Force Method: DFS traversal, throwing all nodes and their levels into an unstructured list, then sorting and verifying later.
+BF Complexity Visuals: Tangled Graph
+How to Draw BF: Draw a tree with messy lines jumping from random leaf nodes to a separate table, symbolizing $O(N \log N)$ sorting step.
+Optimised Pattern: BFS (Level Order Traversal)
+Opt Vis. Technique: Horizontal Slicing
+Dry Run (Opt): Use a queue. For each level, keep track of the 'previous' node value. Check parity (even/odd) and strict increasing/decreasing rules.
+How to Draw (Opt): Draw a tree and slice it with horizontal dashed lines. Draw a left-to-right arrow on each level validating the &gt; or &lt; signs.
+Opt Complexity Visuals: Level-by-Level Linear Process
+How to Draw Opt Complexity: Draw N nodes in a straight horizontal line to represent $O(N)$ time complexity.
+Mem Vis (BF): List + Call Stack: Draw a deep recursive stack and a chaotic 1D array.
+Mem Vis (Opt): Queue: Draw an open-ended pipe containing exactly one level of the tree at a time (Max size = W).

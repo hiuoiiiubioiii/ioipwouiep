@@ -1,0 +1,13 @@
+ID: 3068
+Problem Title: Find the Maximum Sum of Node Values
+Brute Force Method: Try every possible subset of edges to flip (XOR with k) and calculate the total sum. $O(2^E)$ where E is number of edges.
+BF Complexity Visuals: Edge Selection Power Set
+How to Draw BF: Draw the graph. Branch into 2^N-1 paths for "Flip" or "Don't Flip" for each edge. Label as $O(2^N)$.
+Optimised Pattern: Greedy + Delta Sorting (or Simple DP)
+Opt Vis. Technique: Profit/Loss Gain Bar
+Dry Run (Opt): For each node, calculate the "Gain" if XORed: (node XOR k) - node. Sort these gains. Pairs of flips are allowed. Take pairs as long as their combined gain is positive.
+How to Draw (Opt): Draw a bar for each node representing its current value. Draw a "Potential Change" bar (positive or negative). Group the largest positive changes in pairs.
+Opt Complexity Visuals: $O(N \log N)$ or $O(N)$ Greedy
+How to Draw Opt Complexity: Draw a single pass to calculate gains, then a sort $O(N \log N)$, then a final linear pass.
+Mem Vis (BF): Massive recursive tree tracking every possible XOR state of the entire graph.
+Mem Vis (Opt): A 1D array of "Difference" (delta) values and a few tracking variables.

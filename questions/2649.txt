@@ -1,0 +1,13 @@
+ID: 2649
+Problem Title: Nested Array Generator (JS)
+Brute Force Method: Flatten the entire array into a 1D list first, then iterate.
+BF Complexity Visuals: Eager Flattening Scan
+How to Draw BF: Draw a deeply nested array being copied into a flat list. High initial memory and time cost. $O(N)$.
+Optimised Pattern: Recursive Yield* (Delegation)
+Opt Vis. Technique: Recursive Lazy Traversal
+Dry Run (Opt): Iterate the array. If an element is a number, `yield` it. If it is an array, use `yield*` to delegate to the same generator recursively.
+How to Draw (Opt): Draw a tree. The generator walks down a branch. When it hits a leaf (number), it yields it. It "remembers" its path and resumes from the exact spot.
+Opt Complexity Visuals: $O(N)$ Total Traversal
+How to Draw Opt Complexity: Draw a single DFS path through the nested structure. Each element is visited exactly once.
+Mem Vis (BF): $O(N)$ Flat Array copy
+Mem Vis (Opt): $O(D)$ memory where D is the maximum depth of nesting (stack size).

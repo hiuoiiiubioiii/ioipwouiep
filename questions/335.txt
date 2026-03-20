@@ -1,0 +1,13 @@
+ID: 335
+Problem Title: Self Crossing
+Brute Force Method: For every new segment i, check if it intersects with any segment from 0 to i-2 using coordinate geometry formulas.
+BF Complexity Visuals: Exhaustive Segment Intersection Check
+How to Draw BF: Draw a spiral. For segment 10, draw lines connecting its endpoints to every other previous line to check for overlap. $O(N^2)$.
+Optimised Pattern: Pattern Categorization (6-Segment Window)
+Opt Vis. Technique: Geometric State Comparison
+Dry Run (Opt): A crossing only happens in three specific cases: 1. Fourth segment crosses first. 2. Fifth segment crosses first. 3. Sixth segment crosses first. Only check these specific relative distances.
+How to Draw (Opt): Draw three types of spirals: "Expanding", "Shrinking", and "Stalled". Mark the specific points where the "Shrinking" line hits the "Expanding" boundary.
+Opt Complexity Visuals: Constant-Window Rolling Scan
+How to Draw Opt Complexity: Draw a sliding window covering 6 segments. Show the window moving along the spiral. $O(N)$.
+Mem Vis (BF): List of all previous (x, y) coordinates. $O(N)$.
+Mem Vis (Opt): Zero extra memory; just use the input array. Draw a sliding bracket over the input array. $O(1)$.

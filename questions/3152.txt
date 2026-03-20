@@ -1,0 +1,13 @@
+ID: 3152
+Problem Title: Special Array II
+Brute Force Method: For every query [from, to], run a loop to check if all adjacent elements have different parity. $O(Q x N)$
+BF Complexity Visuals: A series of overlapping horizontal bars (queries) over a base array.
+How to Draw BF: Draw the array. Below it, draw 5 lines of varying lengths representing queries. For each line, manually scan the array elements above it.
+Optimised Pattern: Prefix Sum (Parity Violations)
+Opt Vis. Technique: Cumulative Penalty Track
+Dry Run (Opt): Precompute a `prefix_sum` array where `P[i]` is the count of parity violations (nums[j] % 2 == nums[j+1] % 2) up to index i. A query is "special" if `P[to] - P[from] == 0`.
+How to Draw (Opt): Write parity: E, O, E, E, O. Below it, write violations: 0, 0, 0, 1, 0. Below that, write the running sum: 0, 0, 0, 1, 1. Use the subtraction rule for queries.
+Opt Complexity Visuals: Two-stage process: $O(N)$ build + $O(Q)$ lookups.
+How to Draw Opt Complexity: Draw a horizontal line $O(N)$, followed by Q discrete dots representing $O(1)$ subtraction checks. $O(N+Q)$.
+Mem Vis (BF): An array of all query results stored before processing.
+Mem Vis (Opt): One integer array of size N for the prefix sums. $O(N)$.

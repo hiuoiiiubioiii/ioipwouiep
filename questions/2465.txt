@@ -1,0 +1,13 @@
+ID: 2465
+Problem Title: Number of Distinct Averages
+Brute Force Method: Find the min and max, calculate average, remove them, and repeat until empty. Store averages in a list, then sort and count unique.
+BF Complexity Visuals: Iterative Shrinking Array
+How to Draw BF: Draw an array. Draw arrows pointing to min/max. Erase them. Repeat. Label $O(N^2)$ if searching for min/max every time.
+Optimised Pattern: Sorting + Two Pointers
+Opt Vis. Technique: Inward Squeeze Map
+Dry Run (Opt): Sort the array. Pair `arr[i]` with `arr[n-1-i]`. Calculate `(arr[i] + arr[j]) / 2` and insert into a Hash Set. The size of the set is the answer.
+How to Draw (Opt): Draw a sorted array. Draw an arrow at index 0 and index N-1. Move them toward the center one step at a time, writing the sum of the pointed values.
+Opt Complexity Visuals: Sorting Block + Linear Scan
+How to Draw Opt Complexity: Draw a block labeled "O(N log N)" followed by a line labeled "O(N)". Total $O(N \log N)$.
+Mem Vis (BF): Draw the result list of averages.
+Mem Vis (Opt): Draw a Hash Set containing up to N/2 values. $O(N)$ Space.

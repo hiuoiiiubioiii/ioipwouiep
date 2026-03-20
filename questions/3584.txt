@@ -1,0 +1,13 @@
+ID: 3584
+Problem Title: Max Product of First and Last Elements of a Subsequence (Med)
+Brute Force Method: Generate every possible subsequence, find their first and last elements, and calculate their products.
+BF Complexity Visuals: Power Set Permutations.
+How to Draw BF: Draw an array. Draw a binary tree of 2^N leaves. Each leaf is a subsequence. Note the start/end and product.
+Optimised Pattern: Two-Pointer Greedy / Sorting.
+Opt Vis. Technique: Extreme Pairs Convergence.
+Dry Run (Opt): Sort the array. The maximum product will come from either the two largest elements or the two smallest (most negative).
+How to Draw (Opt): Draw a sorted line. Draw an arc between the two largest numbers and an arc between the two smallest. Calculate both; pick max.
+Opt Complexity Visuals: $O(N \log N)$.
+How to Draw Opt Complexity: Draw an arrow representing the sort. Highlight the two $O(1)$ product calculations at the ends of the sorted array.
+Mem Vis (BF): Subsequence Heap: Draw massive lists of subsequence objects in RAM before performing the math.
+Mem Vis (Opt): Two-Pointer In-Place: Draw a sorted array with two fixed pointers at the 0th and last index.

@@ -1,0 +1,13 @@
+ID: 1318
+Problem Title: Minimum Flips to Make a OR b Equal to c
+Brute Force Method: Convert A, B, and C to full 32-bit binary strings, pad them with leading zeros, and manually compare string indices.
+BF Complexity Visuals: Stringified Binary Alignment
+How to Draw BF: Draw three long 32-character arrays of '1's and '0's. Draw a pointer moving column by column, doing character comparisons.
+Optimised Pattern: Bitwise Operations &amp; Masking
+Opt Vis. Technique: Vertical Bit-Column Alignment
+Dry Run (Opt): Iterate through all 32 bits. Extract the i-th bit of A, B, and C using `(val &gt;&gt; i) &amp; 1`. If `bit_c == 1`, flip A or B if both are 0. If `bit_c == 0`, flip A and B if they are 1.
+How to Draw (Opt): Stack A, B, and C vertically as binary numbers. Draw a vertical box around a single column of bits. Apply the logic rules to count flips for that specific column. Move right-to-left.
+Opt Complexity Visuals: 32-Step Bit Shift
+How to Draw Opt Complexity: Draw a fixed 32-slot grid. Show an arrow sweeping across exactly 32 times, proving strict $O(1)$ total time regardless of integer size.
+Mem Vis (BF): Allocated String Buffers: Three 32-byte strings resting in dynamic memory.
+Mem Vis (Opt): Bitwise Registers: Draw pure CPU-level bit manipulation. Memory is strictly $O(1)$ auxiliary space using basic integer variables.

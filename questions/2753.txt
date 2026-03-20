@@ -1,0 +1,13 @@
+ID: 2753
+Problem Title: Count Houses in a Circular Street II
+Brute Force Method: Randomly walk around the circle and count houses until you think you've seen them all. No guarantee of correctness.
+BF Complexity Visuals: Infinite Random Walk
+How to Draw BF: Draw a circle. Draw a person wandering aimlessly. The path line never closes or terminates predictably.
+Optimised Pattern: Unbounded Step Counter.
+Opt Vis. Technique: Marker Placement &amp; Seek (O(k) where k is max possible)
+Dry Run (Opt): Flag and Lap Sweep
+How to Draw (Opt): Close the door at the start. Move k houses (max limit), closing all doors as you go. Then open the door at the start. Walk until you hit that open door. The number of steps is the count.
+Opt Complexity Visuals: Draw a circle of houses. Draw a hand closing every door in one lap. Open one door. Walk until you find that "Flag" door again.
+How to Draw Opt Complexity: Linear $O(k)$
+Mem Vis (BF): Draw two circles representing the two laps. Label it $O(k)$.
+Mem Vis (Opt): $O(1)$ State Variables (Draw one integer steps).

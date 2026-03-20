@@ -1,0 +1,13 @@
+ID: 732
+Problem Title: My Calendar III
+Brute Force Method: Re-calculate the maximum overlap for the entire timeline every time a new booking is added.
+BF Complexity Visuals: Brute Force Layering
+How to Draw BF: Draw a timeline. Every time a segment is added, re-scan the whole line to count the "tallest" stack of segments. $O(N^2)$.
+Optimised Pattern: Segment Tree with Lazy Propagation
+Opt Vis. Technique: Hierarchical Range Coverage
+Dry Run (Opt): Use a segment tree to represent the timeline. For each `book(start, end)`, update the range in the tree. The root always stores the max k-booking.
+How to Draw (Opt): Draw a tree where the root covers [0, 10^9]. Draw child nodes covering halves. Shade the paths representing the new interval.
+Opt Complexity Visuals: Logarithmic Range Update
+How to Draw Opt Complexity: Draw a tree of height log(Range). Highlight the path from root to the specific range. $O(\log N)$.
+Mem Vis (BF): A massive array representing every possible time unit.
+Mem Vis (Opt): Dynamic Segment Tree nodes (allocated only as needed) or TreeMap (O(N)).

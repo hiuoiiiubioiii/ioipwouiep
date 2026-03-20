@@ -1,0 +1,13 @@
+ID: 1403
+Problem Title: Minimum Subsequence in Non-Increasing Order
+Brute Force Method: Generate all subsets. Check if subset sum &gt; remaining sum. Filter valid subsets, sort by length, then by sum, and pick the optimal one.
+BF Complexity Visuals: Subset Generation Tree
+How to Draw BF: Draw a tree expanding into 2^N subsets. At each leaf node, draw a scale weighing "Subset Sum" vs "Total - Subset Sum".
+Optimised Pattern: Sorting + Greedy Accumulation
+Opt Vis. Technique: Two-Pan Balance Scale Visualization
+Dry Run (Opt): Calculate total array sum. Sort descending. Iterate, adding to `current_sum` and pushing to result array. Stop when `current_sum` &gt; `total_sum - current_sum`.
+How to Draw (Opt): Draw the sorted array. Shade elements from the left one by one. Draw a scale below where the left side gets heavier (current sum) while the right side gets lighter (remaining sum).
+Opt Complexity Visuals: Sorting Bottleneck Graph
+How to Draw Opt Complexity: Draw $O(N)$ for Total Sum -&gt; $O(N \log N)$ for Sort -&gt; $O(N)$ for Greedy selection.
+Mem Vis (BF): Massive Array Heap
+Mem Vis (Opt): Draw one output array growing dynamically (List/Vector) and a single integer variable tracking 'current_sum'.

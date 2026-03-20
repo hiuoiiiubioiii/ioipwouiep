@@ -1,0 +1,13 @@
+ID: 3408
+Problem Title: Design Task Manager
+Brute Force Method: Store tasks in a simple unsorted list. To execute the top task, scan the entire list to find the max priority. (O(N))
+BF Complexity Visuals: Linear Scan Line for every operation.
+How to Draw BF: Draw an unordered array. For every execTop or edit query, draw a looping arrow from index 0 to N-1 examining every element.
+Optimised Pattern: Hash Map + Max-Heap/SortedList with Lazy Deletion. (O(log N))
+Opt Vis. Technique: Synchronized Dual-Structure Mapping.
+Dry Run (Opt): Add: Map ID to priority, push tuple to Heap. Edit: Update Map, push NEW tuple to Heap (leave old one). Exec: Pop Heap until popped priority matches Map priority.
+How to Draw (Opt): Draw a Map (Key-&gt;Value) on the left. Draw a Max-Heap (Tree) on the right. Show an edit updating the Map but leaving a "stale" crossed-out node in the Tree.
+Opt Complexity Visuals: Hash Table Direct Access + Binary Tree Traversal.
+How to Draw Opt Complexity: Draw an $O(1)$ direct arrow into a map bucket, paired with a traversal path down a binary tree of height log N.
+Mem Vis (BF): A single 1D array of task objects.
+Mem Vis (Opt): A Hash Table mapping IDs to metadata, alongside a balanced Tree or Max-Heap storing tuples.

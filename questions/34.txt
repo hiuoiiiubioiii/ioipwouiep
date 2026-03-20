@@ -1,0 +1,13 @@
+ID: 34
+Problem Title: Find First and Last Position of Element in Sorted Array
+Brute Force Method: Scan and Extend Do a linear scan to find the first target. Then keep moving right one by one until the target stops repeating.
+BF Complexity Visuals: The Bleeding Marker
+How to Draw BF: Draw a sorted array with a block of identical numbers. Draw an arrow hitting the first one, then bleeding over one step at a time until the numbers change. Worst case (all same numbers) is $O(N)$.
+Optimised Pattern: Double Binary Search
+Opt Vis. Technique: The Left/Right Brackets
+Dry Run (Opt): Run standard binary search to find the target. To find the *first* occurrence, purposely squeeze the `right` pointer inward even if you find the target. To find the *last*, squeeze the `left` pointer.
+How to Draw (Opt): Draw an array. Draw one binary search tree converging to place a `[` on the leftmost target. Draw a completely separate binary search tree converging to place a `]` on the rightmost target.
+Opt Complexity Visuals: Two Halving Blocks
+How to Draw Opt Complexity: Draw two separate array blocks. Show both getting chopped in half logarithmically. $O(\log N)$ + $O(\log N)$ = $O(\log N)$ total time.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw standard binary search pointers. Reused for both searches. Perfectly $O(1)$ space.

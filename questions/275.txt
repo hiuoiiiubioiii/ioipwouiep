@@ -1,0 +1,13 @@
+ID: 275
+Problem Title: H-Index II
+Brute Force Method: Linear scan since the array is already sorted (O(N)).
+BF Complexity Visuals: Linear Pass: $O(N)$.
+How to Draw BF: Draw a sorted bar chart. Draw an arrow starting from the beginning checking every bar.
+Optimised Pattern: Binary Search on H-Boundary
+Opt Vis. Technique: Midpoint "Flip-Flop" search
+Dry Run (Opt): Calculate `mid`. If `citations[mid] &gt;= n - mid`, the H-index is at least `n - mid`. Search left to find a larger h; else search right.
+How to Draw (Opt): Draw a sorted array. Point to the middle. If citations there are high, draw an arrow indicating "H-index might be bigger, look left."
+Opt Complexity Visuals: Logarithmic Search: $O(\log N)$.
+How to Draw Opt Complexity: Draw a line. Divide it in half, then half again. Show that we only visit 3-4 points for an array of size 10.
+Mem Vis (BF): None (In-place).
+Mem Vis (Opt): Three Pointers: Draw `low`, `high`, `mid`. Zero extra storage.

@@ -1,0 +1,13 @@
+ID: 1044
+Problem Title: Longest Duplicate Substring
+Brute Force Method: Generate all possible substrings of all lengths. Store them in a frequency map. Return the longest one with a count &gt; 1.
+BF Complexity Visuals: A massive pile of string "shards" (O(N²) substrings) causing memory overflow.
+How to Draw BF: Write "banana". List: "b", "ba", "ban"... "a", "an", "ana". Sort and count. Write $O(N^3)$ due to string comparisons.
+Optimised Pattern: Binary Search on Length + Rolling Hash (Rabin-Karp).
+Opt Vis. Technique: A "Fingerprint Scanner". We search for the length of the substring by halving the search space, then use hashes to find duplicates quickly.
+Dry Run (Opt): Binary search for the length `L`. For a fixed `L`, slide a window over the string and calculate a rolling hash. Use a Set to store hashes. If a hash collision occurs, check if it's a real duplicate.
+How to Draw (Opt): Draw a number line for length 0 to N. Mark `mid`. For length `mid`, draw the sliding window. Write the hash formula `(h * base + char) % mod`.
+Opt Complexity Visuals: A logarithmic search wrapper around a linear scan.
+How to Draw Opt Complexity: Draw a Binary Search tree of length. Inside each node, draw a linear arrow. Write $O(N \log N)$ Time.
+Mem Vis (BF): $O(N²)$ space to store all possible substrings.
+Mem Vis (Opt): $O(N)$ space for the Hash Set and rolling hash variables.

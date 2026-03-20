@@ -1,0 +1,13 @@
+ID: 199
+Problem Title: Binary Tree Right Side View
+Brute Force Method: Level-order traversal (BFS) to visit every node, storing all nodes by level and picking the last element from each level list.
+BF Complexity Visuals: A "Full Tree Scan" highlighting every node in the tree to extract just a few.
+How to Draw BF: Draw the tree. Draw horizontal lines for levels. Circle only the node at the far right of each line. Show the work to find the inner nodes.
+Optimised Pattern: Recursive DFS (Root \rightarrow Right \rightarrow Left).
+Opt Vis. Technique: "The Sun Shadow." Imagine light coming from the right; only the first node hit at each depth is visible in the shadow.
+Dry Run (Opt): Keep a max_depth_seen tracker. Recurse Right first. If current_depth &gt; max_depth_seen, add node to result and update tracker.
+How to Draw (Opt): Draw the tree. Trace your pen from the root strictly down the right-most branches first. When you hit a depth you haven't marked, write the number down.
+Opt Complexity Visuals: $O(N)$ time. In the worst case (skewed tree), you visit all nodes once.
+How to Draw Opt Complexity: Draw a single traversal path. Mark each depth index on a vertical ruler to show you only record one node per level.
+Mem Vis (BF): Queue storage for the widest level of the tree, potentially $O(N/2)$.
+Mem Vis (Opt): Visualize the recursion stack depth $O(H)$. Space is $O(H)$, which is $O(\log N)$ for a balanced tree.

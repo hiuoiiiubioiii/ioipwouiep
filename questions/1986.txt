@@ -1,0 +1,13 @@
+ID: 1986
+Problem Title: Minimum Number of Work Sessions to Finish the Tasks
+Brute Force Method: Recursively try all possible permutations of tasks and greedily assign them to sessions until all are done.
+BF Complexity Visuals: Decision Tree Permutation
+How to Draw BF: Draw a root. Branch for every possible first task. At level 2, branch for every remaining task. Total leaf nodes: N!.
+Optimised Pattern: DP with Bitmask (State: Mask of completed tasks)
+Opt Vis. Technique: State-Space Lattice
+Dry Run (Opt): Use a bitmask to represent completed tasks. For each state, iterate through all submasks to find the optimal last session.
+How to Draw (Opt): Draw a column of 16-bit binary numbers. Draw arrows from "simpler" masks (few bits set) to "complex" masks.
+Opt Complexity Visuals: $O(3^N)$ Submask Enumeration Graph
+How to Draw Opt Complexity: Draw a pyramid. Each level k represents masks with k bits. Total transitions follow the \sum \binom{n}{k} 2^k = 3^n logic.
+Mem Vis (BF): Massive recursion stack with N levels of task lists.
+Mem Vis (Opt): A 1D array of size 2^N (storing min sessions). $O(2^N)$ space.

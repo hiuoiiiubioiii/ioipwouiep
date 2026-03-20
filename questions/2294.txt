@@ -1,0 +1,13 @@
+ID: 2294
+Problem Title: Partition Array Such That Maximum Difference Is K
+Brute Force Method: Power Set PartitioningTry every possible way to group the numbers into subsets. For each subset, check if `max - min &lt;= k`. Find the minimum number of subsets needed.
+BF Complexity Visuals: Exponential Grouping Tree
+How to Draw BF: Draw a set 1, 2, 10. Branch into groups: [1,2, 10] or [1, 2, 10]. Note the massive number of partitions to check.
+Optimised Pattern: Sorting + Greedy Subsequences
+Opt Vis. Technique: Sorted Interval Anchoring
+Dry Run (Opt): Sort the array. Start a new subsequence with the first element as the `min`. Iterate through the array; if the current element is &gt; `min + k`, start a *new* subsequence and update the `min`.
+How to Draw (Opt): Draw a sorted number line. Mark the first point. Draw a bracket of width K. All points inside the bracket are in Group 1. The first point *outside* starts Group 2. Count the brackets.
+Opt Complexity Visuals: Sort and Linear Sweep
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort. Draw an $O(N)$ single pass to count the brackets. Total time: $O(N \log N)$.
+Mem Vis (BF): Storing multiple lists of subsets in memory.
+Mem Vis (Opt): A single variable to track the current `min` of the active group (O(1) auxiliary space).

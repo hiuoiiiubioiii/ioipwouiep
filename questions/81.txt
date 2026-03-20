@@ -1,0 +1,13 @@
+ID: 81
+Problem Title: Search in Rotated Sorted Array II
+Brute Force Method: Linear Scan Since the array contains duplicates, simply iterate from index 0 to N-1 to find the target.
+BF Complexity Visuals: The Constant Speed Walker
+How to Draw BF: Draw a pointer moving step-by-step from start to finish. $O(N)$ time. Point out that the "rotated" property is ignored.
+Optimised Pattern: Binary Search (Shrinking Bound)
+Opt Vis. Technique: The Shifting Pivot
+Dry Run (Opt): Use binary search. If `nums[L] == nums[mid] == nums[R]`, we can't tell which side is sorted. Shrink the window by L++ and R-- until they differ. Then apply standard rotated search logic.
+How to Draw (Opt): Draw a graph with two plateaus at the same height. Show that if the middle is also that height, we must "step in" from both sides until we find a slope to apply binary search.
+Opt Complexity Visuals: Halving with Linear "Worst-Case"
+How to Draw Opt Complexity: Draw a binary search tree. At the root, draw a small horizontal arrow showing the boundary shrink. Total time: $O(\log N)$ on average, $O(N)$ worst case.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw three pointers (L, R, mid) and the shrinking movement of L/R. Space: $O(1)$.

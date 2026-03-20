@@ -1,0 +1,13 @@
+ID: 989
+Problem Title: Add to Array-Form of Integer
+Brute Force Method: Convert the array `[1, 2, 0]` into the number 120, add `K`, and then convert the result back into an array.
+BF Complexity Visuals: $O(N)$ but fails for large numbers. Most programming languages cannot store an array-form number like 10^10000 as a standard integer.
+How to Draw BF: Draw a huge array. Draw a tiny "Integer" box. Show the array trying to squeeze into the box and the box exploding (overflow).
+Optimised Pattern: Schoolbook Addition (Right-to-Left)
+Opt Vis. Technique: "The Manual Carry." Start at the end of the array. Add `K` to the last element. The new digit is `sum % 10`, and the new "carry" is `sum // 10`. Move left and repeat.
+Dry Run (Opt): Iterate `i` from `N-1` to 0. `K += A[i]`. `res.append(K % 10)`. `K //= 10`. After loop, if `K &gt; 0`, append remaining digits of `K`. Reverse `res`.
+How to Draw (Opt): Draw two numbers stacked vertically, like in 2nd-grade math. Draw small "1"s (carries) above the columns as you move from right to left.
+Opt Complexity Visuals: $O(\text{max}(N, \log K)$). A single linear pass through the digits.
+How to Draw Opt Complexity: Draw a horizontal array. Draw an arrow moving from right to left, with a "Carry" box being updated and added at each step.
+Mem Vis (BF): Negligible, but functionally broken for large inputs.
+Mem Vis (Opt): $O(\text{max}(N, \log K)$) for the result array. Draw a single row of result digits.

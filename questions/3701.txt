@@ -1,0 +1,13 @@
+ID: 3701
+Problem Title: Compute Alternating Sum (Easy)
+Brute Force Method: Iterate through array, maintaining a boolean/multiplier flag that flips between +1 and -1, multiplying and accumulating.
+BF Complexity Visuals: Linear step graph $O(N)$.
+How to Draw BF: Draw a horizontal line with N nodes. Below each node, write + or -, alternating.
+Optimised Pattern: Single-Pass Accumulator / State Machine
+Opt Vis. Technique: Accumulator Variable Box
+Dry Run (Opt): Point finger at index, update accumulator box, mentally flip sign, move finger right.
+How to Draw (Opt): Draw an array. Underneath, draw one box named "SUM". Cross out and update SUM as you move left to right.
+Opt Complexity Visuals: Flat horizontal line $O(N)$ time, dot for $O(1)$ space.
+How to Draw Opt Complexity: Draw a 1D timeline axis to represent N ops. Write $O(1)$ in a tiny box.
+Mem Vis (BF): Single Variable Box (Sum)
+Mem Vis (Opt): Single Variable Box + Sign Boolean Box

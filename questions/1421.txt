@@ -1,0 +1,13 @@
+ID: 1421
+Problem Title: NPV Queries (SQL)
+Brute Force Method: Correlated Subqueries / Unfiltered Cross Joins. For every row in the Queries table, run an independent SELECT on the NPV table to find the matching id and year, returning null if missing, then wrap in an ISNULL check.
+BF Complexity Visuals: Nested Query Pipeline
+How to Draw BF: Draw the Queries table. From each row, draw an arrow triggering a full scan of the NPV table. Label $O(Q \cdot N)$.
+Optimised Pattern: LEFT JOIN + COALESCE / IFNULL
+Opt Vis. Technique: Hash Join &amp; Default Fallback
+Dry Run (Opt): Perform a standard LEFT JOIN from Queries to NPV on id and year. Wrap the joined NPV value in `COALESCE(npv, 0)` so that unmatched queries safely resolve to 0.
+How to Draw (Opt): Draw two tables side-by-side. Draw straight lines connecting matching IDs. For unconnected Queries rows, draw a dotted line dropping into a "Default 0" bucket.
+Opt Complexity Visuals: Hash Match Node Graph
+How to Draw Opt Complexity: Draw a Join node: Queries -&gt; Hash Map (NPV). Label $O(Q + N)$.
+Mem Vis (BF): Cartesian Product Temp Tables
+Mem Vis (Opt): Draw a small Hash Map in memory holding the NPV data. $O(N)$ space.

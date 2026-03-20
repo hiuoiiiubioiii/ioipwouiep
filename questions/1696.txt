@@ -1,0 +1,13 @@
+ID: 1696
+Problem Title: Jump Game VI
+Brute Force Method: Dynamic Programming: for each index i, look back at all indices from i-1 to i-k to find the max score.
+BF Complexity Visuals: Scanning Window Overlap
+How to Draw BF: Draw an array. For each cell, draw k arrows pointing backwards to previous cells. $O(N \\text{times} K)$.
+Optimised Pattern: DP + Monotonic Queue (Deque)
+Opt Vis. Technique: Sliding Max-Window Deque
+Dry Run (Opt): Use a Deque to store indices of potential max scores. Ensure the Deque is always decreasing. Pop indices out of the k-range. DP[i] = nums[i] + DP[deque.front()].
+How to Draw (Opt): Draw an array and a small "Tube" (Deque) above it. Write indices in the tube. When a new number comes, "kick out" smaller numbers from the back of the tube.
+Opt Complexity Visuals: Linear Amortized Scan
+How to Draw Opt Complexity: Draw a single horizontal arrow moving through the array. $O(N)$.
+Mem Vis (BF): DP Array: A static array of size N.
+Mem Vis (Opt): Deque + DP Array: Draw a horizontal array and a small segmented tube for the Deque. $O(N + K)$.

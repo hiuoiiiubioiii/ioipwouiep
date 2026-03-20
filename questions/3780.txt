@@ -1,0 +1,13 @@
+ID: 3780
+Problem Title: Maximum Sum of Three Numbers Divisible by Three (Med)
+Brute Force Method: Generate all combinations of three numbers, calculate their sum, check if sum % 3 == 0, and track the maximum. $O(N^3)$.
+BF Complexity Visuals: Triple Pointer Brute Force.
+How to Draw BF: Pick three numbers from the list. Add them. If the result is a multiple of 3, write it down. Check every possible triplet.
+Optimised Pattern: Greedy / Bucketing by Remainder
+Opt Vis. Technique: Remainder Pigeonhole Buckets
+Dry Run (Opt): Sort and group numbers into three buckets based on val % 3 (Remainders 0, 1, and 2). Valid triplets are (0,0,0), (1,1,1), (2,2,2), or (0,1,2). Pick the largest numbers from these buckets to maximize the sum.
+How to Draw (Opt): Draw three boxes labeled "Rem 0", "Rem 1", "Rem 2". Sort the numbers into them. Pick the top 3 from Rem 0; compare with picking the top 1 from each; compare with top 3 from Rem 1, etc.
+Opt Complexity Visuals: $O(N \log N)$ for sorting or $O(N)$ if only top-3 are kept.
+How to Draw Opt Complexity: Draw a sorting pass followed by 4-5 constant-time comparisons.
+Mem Vis (BF): N^3 combinations in memory.
+Mem Vis (Opt): $O(1)$ extra space (keeping only top-3 of each remainder).

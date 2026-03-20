@@ -1,0 +1,13 @@
+ID: 2555
+Problem Title: Maximize Win From Two Segments
+Brute Force Method: Try every possible pair of segments (s1, e1) and (s2, e2) of length k. For each pair, count the number of prizes covered and find the max. $O(N^2)$ or $O(N^4)$.
+BF Complexity Visuals: A dense search of overlapping or separate windows across the prize line.
+How to Draw BF: Draw the prize positions. Take two physical rulers of length k. Try placing them in every possible way and count the dots under them.
+Optimised Pattern: Sliding Window + Dynamic Programming (Prefix Max).
+Opt Vis. Technique: Two "Competitive Sliders" where the first slider finds the best single segment for every endpoint, and the second slider uses that info to maximize the total.
+Dry Run (Opt): Use two pointers to find the max prizes covered by a single segment of length k ending at or before index i (store this in dp[i]). Then, for a second segment ending at j, the total prizes = (count in current segment) + dp[j - current_segment_length].
+How to Draw (Opt): Draw the prizes. Slide a window of length k. Write down the "best score so far" in a row of boxes below. Then, at each step, add the "current window score" to the "best score found before this window started."
+Opt Complexity Visuals: $O(N)$ - Linear scan with two pointers.
+How to Draw Opt Complexity: Draw the prize array. Draw two sliding windows. Show the first one leaving a trail of "max values" that the second one picks up.
+Mem Vis (BF): $O(N^2)$ to store counts of all possible segments.
+Mem Vis (Opt): $O(N)$ for the DP array to store the prefix maximums.

@@ -1,0 +1,13 @@
+ID: 1250
+Problem Title: Check If It Is a Good Array
+Brute Force Method: Generate all possible linear combinations of the numbers in the array (Bézout's identity) and check if any combination can result in 1.
+BF Complexity Visuals: Infinite Linear Combination Web
+How to Draw BF: Draw circles for numbers. Draw infinitely branching lines for (ax + by + cz...). Show the search space never ending. Write $O(2^N)$.
+Optimised Pattern: Number Theory (Greatest Common Divisor)
+Opt Vis. Technique: GCD Reduction Chain
+Dry Run (Opt): According to Bézout's Lemma, a "Good Array" exists if and only if the GCD of all numbers in the array is 1. Iterate through the array, updating the cumulative GCD. If it hits 1, stop.
+How to Draw (Opt): Draw the array. Draw a funnel below the first two numbers calculating their GCD. Feed that result and the next number into another GCD funnel. If the funnel output ever reaches 1, draw a big green checkmark.
+Opt Complexity Visuals: Linear Logarithmic Step-down
+How to Draw Opt Complexity: Draw a sequence of N blocks. Above each transition, write "Euclidean Algorithm". Write $O(N + \log(\text{min}_\text{val})$).
+Mem Vis (BF): Draw a massive set storing every possible sum result generated.
+Mem Vis (Opt): Draw a single integer variable `g` to store the current GCD. Space: $O(1)$.

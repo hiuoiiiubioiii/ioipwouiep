@@ -1,0 +1,13 @@
+ID: 40
+Problem Title: Combination Sum II
+Brute Force Method: Combination Sum 1 + Hash Set Treat it like the previous problem, but since the input has duplicates, dump all successful arrays into a Hash Set to remove identical combinations at the very end.
+BF Complexity Visuals: The Duplicate Sieve
+How to Draw BF: Draw a backtracking tree spitting out arrays: `[1, 2, 5]`, `[1, 7]`, and another `[1, 2, 5]`. Draw them hitting a Hash Set wall where the duplicate bounces off.
+Optimised Pattern: Sort + Backtracking (Skip Dupes)
+Opt Vis. Technique: The Smart Skipper
+Dry Run (Opt): Sort the array first. In the backtracking loop, if `i &gt; start` and `arr[i] == arr[i-1]`, skip it! This prevents generating duplicate branches at the exact same depth level entirely.
+How to Draw (Opt): Draw a sorted array: `[1, 1, 2, 5, 6]`. Start a branch with the first '1'. When the loop moves to the second '1', draw a giant red curved arrow jumping over it to '2'.
+Opt Complexity Visuals: Severed Tree Branches
+How to Draw Opt Complexity: Draw the same backtracking tree, but draw thick red lines cutting off massive subtrees before they even start because of the `if` skip condition. Time is $O(2^N)$.
+Mem Vis (BF): Draw a massive Hash Set holding heavy array objects to deduplicate.
+Mem Vis (Opt): Draw a single `current_combination` array and the recursion stack. Because we sorted and skipped, no Hash Set is needed. Space is $O(N)$.

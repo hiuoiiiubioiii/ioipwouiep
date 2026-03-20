@@ -1,0 +1,13 @@
+ID: 1957
+Problem Title: Delete Characters to Make Fancy String
+Brute Force Method: Check every possible substring and remove characters if they violate the "no 3-consecutive" rule, repeatedly scanning.
+BF Complexity Visuals: Repeated String Re-scans
+How to Draw BF: Draw the string. Circle 3 identical chars. Redraw the string without one. Repeat until clean. $O(N^2)$.
+Optimised Pattern: Single-Pass Greedy Scan
+Opt Vis. Technique: Sliding Window Filter
+Dry Run (Opt): Iterate once. Keep a character only if it is not the same as the previous two characters in the result string.
+How to Draw (Opt): Draw the string. Below it, draw a "Result Bucket". Drop characters in unless the last two in the bucket match the current one.
+Opt Complexity Visuals: $O(N)$ Linear Flow
+How to Draw Opt Complexity: Draw a single straight arrow from start to end of the input string.
+Mem Vis (BF): Multiple intermediate string objects created during deletions (Garbage Collection heavy).
+Mem Vis (Opt): A single StringBuilder or character array of size N. $O(N)$ space.

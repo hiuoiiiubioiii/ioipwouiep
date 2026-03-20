@@ -1,0 +1,13 @@
+ID: 1825
+Problem Title: Finding MK Average
+Brute Force Method: Keep a queue of the last M elements. On calculate, copy to an array, sort it, slice bottom/top K, and average the rest.
+BF Complexity Visuals: Queue flushing to an $O(M \log M)$ sort operation.
+How to Draw BF: Draw a queue. Copy it to a list. Sort the list. Cross out first K and last K elements. Average the middle ones.
+Optimised Pattern: Queue + 3 TreeMaps (Multisets for Bottom K, Middle M-2K, Top K) + Running Sum.
+Opt Vis. Technique: Three balancing BSTs transferring elements.
+Dry Run (Opt): Add num: Insert into a TreeMap, rebalance sizes to exactly K, M-2K, K. Update Middle sum. Remove old num (from queue): Delete from TreeMap, rebalance. Calculate: MiddleSum / (M-2K).
+How to Draw (Opt): Draw 3 buckets (Bottom, Mid, Top). Put new number in. If Mid gets too big, push max to Top or min to Bottom. Read pre-calculated Mid sum in $O(1)$.
+Opt Complexity Visuals: Logarithmic tree balancing paths.
+How to Draw Opt Complexity: Draw insertion/deletion paths of depth log M in the trees. Mark query as $O(1)$.
+Mem Vis (BF): $O(M)$ intermediate arrays created and garbage collected on every query.
+Mem Vis (Opt): Queue of size M + 3 TreeMaps holding exactly M nodes in heap memory.

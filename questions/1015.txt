@@ -1,0 +1,13 @@
+ID: 1015
+Problem Title: Smallest Integer Divisible by K
+Brute Force Method: Build the actual numbers 1, 11, 111, 1111... using BigInt logic and check if `number % K == 0`.
+BF Complexity Visuals: A rapidly expanding string of '1's overflowing standard integer memory limits.
+How to Draw BF: Write 1 % K, 11 % K, 111 % K. Draw the numbers getting absurdly large. Write Time: $O(K)$, Space: $O(K)$ BigInts.
+Optimised Pattern: Math (Modulo Arithmetic / Pigeonhole Principle).
+Opt Vis. Technique: A clock face of size K. Stepping around the clock. If you hit a spot you've seen before without hitting 0, it's an infinite loop.
+Dry Run (Opt): Start at remainder R = 1 % K. Next R = (R * 10 + 1) % K. If R == 0, return length. If R repeats a past value, return -1.
+How to Draw (Opt): Draw a circle with K notches. Mark current remainder. Draw an arrow to the next remainder. Write the sequence 1, (R*10+1)%K...
+Opt Complexity Visuals: A loop running strictly at most K times before either hitting 0 or entering a cycle.
+How to Draw Opt Complexity: Draw a line capping at length K. Write $O(K)$ Time.
+Mem Vis (BF): Massive BigInt text blocks filling up heap memory.
+Mem Vis (Opt): A single integer tracking the remainder, and maybe a boolean array of size K (or just relying on loop count &lt;= K). $O(1)$ space optimally.

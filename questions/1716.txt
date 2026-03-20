@@ -1,0 +1,13 @@
+ID: 1716
+Problem Title: Calculate Money in Leetcode Bank
+Brute Force Method: Loop from day 1 to n. Keep track of the current day of the week and the current Monday's base value. Sum day by day.
+BF Complexity Visuals: Calendar Tallying.
+How to Draw BF: Draw a calendar grid. Point to each day, write the incrementing amount, and keep a running sum next to it. $O(N)$.
+Optimised Pattern: Math (Arithmetic Progression Series).
+Opt Vis. Technique: Stacking Blocks (Staircase).
+Dry Run (Opt): Calculate full weeks: `w = n / 7`. The sum of these weeks forms an arithmetic series. Calculate leftover days: `d = n % 7`. Sum the remainder directly.
+How to Draw (Opt): Draw large rectangular blocks for full weeks (AP formula). Draw a small staircase block for the remainder days. Add them.
+Opt Complexity Visuals: Formula Substitution.
+How to Draw Opt Complexity: Write `O(1)` next to the math equation. No loops required.
+Mem Vis (BF): $O(1)$ loop variables.
+Mem Vis (Opt): $O(1)$ math formula variables. Constant space.

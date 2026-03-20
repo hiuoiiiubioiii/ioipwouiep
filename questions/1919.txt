@@ -1,0 +1,13 @@
+ID: 1919
+Problem Title: Leetcodify Similar Friends (SQL)
+Brute Force Method: Cross-join the entire Friends table with the Listens table multiple times to find overlapping daily songs naively.
+BF Complexity Visuals: Redundant Table Scans
+How to Draw BF: Draw the Friends table pointing to the entire Listens table for user1, then pointing again for user2, with heavy loops iterating row by row.
+Optimised Pattern: Filtered Inner Join Pipeline
+Opt Vis. Technique: Intersection Pipelining
+Dry Run (Opt): Inner join Friends with Listens for user1, then inner join again with Listens for user2 on the same day and song_id. Group and filter for count ≥ 3.
+How to Draw (Opt): Draw the Friends table acting as a strict bridge. Only rows matching the bridge pass into the Listens self-join. Draw the overlapping songs dropping into a counter bucket.
+Opt Complexity Visuals: Indexed Hash Join Filter
+How to Draw Opt Complexity: Draw the Friends table as a primary filter gate, massively reducing the data volume before it hits the heavier Group-By operations.
+Mem Vis (BF): Massive temporary Cartesian tables spilling over into database disk storage.
+Mem Vis (Opt): Efficient Hash Tables mapping User-Day-Song triplets, staying well within the SQL engine's RAM limits.

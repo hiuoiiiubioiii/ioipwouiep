@@ -1,0 +1,14 @@
+ID: 854
+Problem Title: K-Similar Strings
+Brute Force Method: Generate every possible permutation of the first string and check which one matches the second string with the minimum number of swaps.
+BF Complexity Visuals: Permutation Tree. $O(N!)$.
+How to Draw BF: Draw String A. Draw every possible single swap. From those, draw every possible second swap. The tree grows factorially.
+Optimised Pattern: BFS with State Pruning (Shortest Path in String Graph).
+Opt Vis. Technique: Breadth-First String Morphing.
+Dry Run (Opt): Treat each string as a node in a graph. A swap is an edge. Find the first index i where A[i] 
+eq B[i]. Find all j &gt; i where A[j] == B[i] and swap them to create next states. BFS ensures the first time you hit String B, it's the min swaps.
+How to Draw (Opt): Draw String A at the top. Draw arrows to strings that are 1 swap away (only swapping at the first mismatch). Use a "Visited" set to avoid loops.
+Opt Complexity Visuals: Capped BFS. $O(\\text{text}{\text{States}} \\text{times} N)$.
+How to Draw Opt Complexity: Draw a circle of "Visited Strings." Draw ripples moving outward from the start string until the target string is "touched."
+Mem Vis (BF): Exhaustive List: Draw every permutation of the string in memory.
+Mem Vis (Opt): Queue + Visited Set: Draw a queue of string states and a hash set storing seen strings to prevent cycles.

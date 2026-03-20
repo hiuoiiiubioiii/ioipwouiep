@@ -1,0 +1,13 @@
+ID: 1094
+Problem Title: Car Pooling
+Brute Force Method: For every location from 0 to 1000, iterate through all trips and check how many people are in the car at that specific point.
+BF Complexity Visuals: A "Snapshot Scan". At every mile marker, we re-verify the entire list of passengers.
+How to Draw BF: Trips: [[2,1,5], [3,3,7]]. Mile 1: 2. Mile 2: 2. Mile 3: 2+3=5. Mile 4: 5. Mile 5: 3. Write $O(\text{Locations} \\text{cdot Trips})$.
+Optimised Pattern: Difference Array / Prefix Sums.
+Opt Vis. Technique: A "Passenger Logbook". We only record when people get in (+) and when they get out (-).
+Dry Run (Opt): Create an array of size 1001. For each trip [num, start, end], do `arr[start] += num` and `arr[end] -= num`. Finally, compute the prefix sum; if any point exceeds capacity, return false.
+How to Draw (Opt): Draw a timeline 0-1000. At the 'start' mark, write '+ passengers'. At the 'end' mark, write '- passengers'. Sweep across the timeline, keeping a running sum.
+Opt Complexity Visuals: Two linear passes (one to log, one to sum).
+How to Draw Opt Complexity: Draw a timeline with arrows going up and down. Write Time: $O(\text{Trips} + 1001)$.
+Mem Vis (BF): Storing lists of people for every single coordinate.
+Mem Vis (Opt): $O(1)$ space (fixed-size array of 1001).

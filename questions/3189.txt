@@ -1,0 +1,13 @@
+ID: 3189
+Problem Title: Minimum Moves to Get a Peaceful Board
+Brute Force Method: Try every possible permutation of row/column assignments for the rooks. $O(N!)$.
+BF Complexity Visuals: Factorial Permutation Grid
+How to Draw BF: Draw an N x N board. List all ways to place N non-attacking rooks. Tally distance for each.
+Optimised Pattern: Greedy / Independent Sorting
+Opt Vis. Technique: Orthogonal Coordinate Matching
+Dry Run (Opt): Rows and columns are independent. Sort rooks by current row, and match them to target rows 0 dots N-1. Repeat for columns. Total moves = sum |curr - target|.
+How to Draw (Opt): Draw two columns: Current Rows and Target Rows. Sort both. Draw horizontal lines connecting them in order. Tally the absolute differences.
+Opt Complexity Visuals: Linear Scan after Sorting
+How to Draw Opt Complexity: Draw two $O(N \log N)$ sorting trees followed by a single $O(N)$ linear pass.
+Mem Vis (BF): A massive list of all valid rook positions.
+Mem Vis (Opt): Two arrays of size N for sorting coordinates. $O(N)$.

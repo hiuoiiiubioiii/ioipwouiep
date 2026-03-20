@@ -1,0 +1,13 @@
+ID: 3774
+Problem Title: Absolute Difference Between Maximum and Minimum K Elements (Easy)
+Brute Force Method: Try every possible subset of size K. For each, find the max and min, calculate the difference, and find the overall minimum/maximum difference. $O(N \text{choose} K)$.
+BF Complexity Visuals: Combinatorial Selection.
+How to Draw BF: Draw N dots. Circle any K dots. Find the widest and narrowest range. Repeat for every single way to pick K dots.
+Optimised Pattern: Sorting + Sliding Window (Fixed Size K)
+Opt Vis. Technique: Sorted Distance Bracket
+Dry Run (Opt): Sort the array. The set of K elements with the smallest difference between max and min will always be contiguous. Use a window of size K and calculate arr[i + K - 1] - arr[i].
+How to Draw (Opt): Draw the array and sort it. Draw a fixed-width bracket covering K elements. Slide it from left to right, measuring the distance between the two ends of the bracket.
+Opt Complexity Visuals: $O(N \log N)$ Sorting + $O(N)$ Scan.
+How to Draw Opt Complexity: Draw a sorting curve followed by a single pass with a fixed sliding bracket.
+Mem Vis (BF): $O(N \text{choose} K)$ combinations in memory.
+Mem Vis (Opt): $O(1)$ extra space (in-place sort).

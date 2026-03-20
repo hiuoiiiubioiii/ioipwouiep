@@ -1,0 +1,13 @@
+ID: 1188
+Problem Title: Design Bounded Blocking Queue
+Brute Force Method: Use a simple list and check its size in a loop (`while size == capacity`).
+BF Complexity Visuals: Busy-Waiting Spinlock
+How to Draw BF: Draw a thread spinning in a circle, hitting a "Full" wall repeatedly. Shows 100% CPU usage for nothing.
+Optimised Pattern: Condition Variables / Semaphores
+Opt Vis. Technique: Wait-Notify Traffic Signal
+Dry Run (Opt): Use two conditions: `notFull` and `notEmpty`. Threads call `wait()` when the queue is full/empty and are "woken up" by the OS when space or items are available.
+How to Draw (Opt): Draw a box (Queue) with a fixed size. Draw "Sleep" clouds above blocked threads. Draw a "Bell" (Notify) that wakes them up when an item is added/removed.
+Opt Complexity Visuals: Constant Time $O(1)$
+How to Draw Opt Complexity: Draw a direct flow: Push rightarrow Notify rightarrow Done. No redundant checks.
+Mem Vis (BF): Volatile variable polling
+Mem Vis (Opt): Thread-safe memory buffer (Mutexes). Draw a locked container.

@@ -1,0 +1,13 @@
+ID: 417
+Problem Title: Pacific Atlantic Water Flow
+Brute Force Method: Cell-by-Cell DFS For every single cell in the grid, run a DFS to see if you can reach both oceans.
+BF Complexity Visuals: Repeating Blobs
+How to Draw BF: Draw a grid. Pick a cell, draw a messy ink blob spreading. Pick the next cell, draw another blob. $O((\text{MN})$^2).
+Optimised Pattern: Multi-source BFS/DFS Start from the Pacific edges and "flow uphill." Do the same for Atlantic. Find the intersection.
+Opt Vis. Technique: Inverse Flood Fill
+Dry Run (Opt): Imagine the oceans are "rising." Paint the cells they can reach. The cells with both colors are your answer.
+How to Draw (Opt): Draw two empty grids. In Grid 1, shade everything reachable from top/left. In Grid 2, shade from bottom/right. Overlay them.
+Opt Complexity Visuals: Linear Grid Pass
+How to Draw Opt Complexity: Draw the grid once. Show that each cell is visited max twice (once for each ocean). $O(M\cdot N)$.
+Mem Vis (BF): Call Stack Massive recursion depth for every cell.
+Mem Vis (Opt): Two Bitmaps Draw two boolean grids (PacificReachable, AtlanticReachable). $O(M\cdot N)$.

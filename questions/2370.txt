@@ -1,0 +1,13 @@
+ID: 2370
+Problem Title: Longest Ideal Subsequence
+Brute Force Method: Generate every possible subsequence (2^N), check if every adjacent character pair in the subsequence has a distance &lt;= `k`.
+BF Complexity Visuals: Exponential Subsequence Tree (O(2^N))
+How to Draw BF: Draw a string. At each letter, branch into "Include" or "Exclude". If you include, check the distance against the last included letter.
+Optimised Pattern: 1D DP (Character Bucket State)
+Opt Vis. Technique: Alphabet Max-Height Bars
+Dry Run (Opt): Maintain a DP array `dp[26]` where `dp[c]` is the length of the longest ideal subsequence ending with character `c`. For a new char `i`, `dp[i] = 1 + max(dp[i-k...i+k])`.
+How to Draw (Opt): Draw 26 vertical bars (a to z). As you read a letter (e.g., 'm'), look at the bars from 'm-k' to 'm+k'. Find the tallest bar in that range, add 1 to its height, and make the 'm' bar that new height.
+Opt Complexity Visuals: Linear Scan + Constant Alphabet (O(26 * N))
+How to Draw Opt Complexity: Draw a timeline of length N. At each step, draw a small fixed-size scan over 26 characters.
+Mem Vis (BF): Draw a massive recursion stack storing all valid/invalid subsequence fragments.
+Mem Vis (Opt): Draw a 26-element Integer Array `dp` to track the longest sequence ending at each letter.

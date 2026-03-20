@@ -1,0 +1,13 @@
+ID: 1104
+Problem Title: Path In Zigzag Labelled Binary Tree
+Brute Force Method: Build the entire tree up to the level containing `label`, accounting for the zigzag pattern, then traverse up to the root.
+BF Complexity Visuals: A "Tower Construction" requiring memory for every single node in the tree.
+How to Draw BF: Label 14. Level 1: 1. Level 2: 3, 2. Level 3: 4, 5, 6, 7. Level 4: 15...8. Construct and find 14. Write $O(\text{label})$.
+Optimised Pattern: Math (Symmetry / Bit Manipulation).
+Opt Vis. Technique: A "Mirror-Reflection" climb. In a normal tree, parent is `child/2`. In a zigzag tree, the parent is the mirror of `child/2` in the previous level.
+Dry Run (Opt): Find current level. Calculate the range of the current level `[min, max]`. The parent in a non-zigzag tree would be `label / 2`. The true parent is `(min_of_prev_level + max_of_prev_level) - (label / 2)`.
+How to Draw (Opt): Draw the levels. Write the labels in zigzag. For 14, look at the level above. Find its reflection point. Write the sequence: 14 -&gt; 7 -&gt; ... until 1.
+Opt Complexity Visuals: Logarithmic climb to the root.
+How to Draw Opt Complexity: Draw a single straight line up from the leaf to the root. Write Time: $O(\\text{log label})$.
+Mem Vis (BF): $O(\text{label})$ space for the full tree structure.
+Mem Vis (Opt): $O(\\text{log label})$ space to store the path nodes.

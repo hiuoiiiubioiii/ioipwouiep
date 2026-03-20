@@ -1,0 +1,13 @@
+ID: 304
+Problem Title: Range Sum Query 2D - Immutable
+Brute Force Method: Nested loops iterating from row1 to row2, and col1 to col2, adding up matrix[r][c] for every single query.
+BF Complexity Visuals: Sub-matrix Iteration Grid
+How to Draw BF: Draw a large grid. Outline a smaller rectangle inside. Draw a snake-like line winding through every single cell inside the smaller rectangle. $O(M\cdot N)$ per query.
+Optimised Pattern: 2D Prefix Sum (Inclusion-Exclusion Principle)
+Opt Vis. Technique: Overlapping Area Rectangles (Venn Diagram logic)
+Dry Run (Opt): Sum = Prefix(r2, c2) - Prefix(r1-1, c2) - Prefix(r2, c1-1) + Prefix(r1-1, c1-1). Visualize taking the big rectangle from (0,0) and cutting out the top and left excess chunks, then adding back the doubly-subtracted corner.
+How to Draw (Opt): Draw the full matrix. Shade the target region. Draw dashed lines extending to the top and left to show the areas being subtracted. Draw a dark dot at the top-left overlapping corner being added back.
+Opt Complexity Visuals: Constant Time Block Access
+How to Draw Opt Complexity: Draw 4 arrows pointing independently to 4 random cells in a grid, merging into a single math equation. $O(1)$ per query.
+Mem Vis (BF): $O(1)$ space, single variable accumulator box.
+Mem Vis (Opt): 2D Matrix Memory Block: Draw a grid of size (R+1) x (C+1). Shade it to indicate pre-computed $O(M\cdot N)$ space allocation.

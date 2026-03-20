@@ -1,0 +1,13 @@
+ID: 1371
+Problem Title: Find the Longest Substring Containing Vowels in Even Counts
+Brute Force Method: Check every possible substring (O(N^2)) and count the vowels in each to see if all counts are even (O(N)).
+BF Complexity Visuals: $O(N^3)$ Substring Sifting
+How to Draw BF: Draw a string. Draw thousands of brackets. Inside each, draw 5 counters (a, e, i, o, u) ticking up. Total N^3 operations.
+Optimised Pattern: Bitmask + Prefix XOR (First Occurrence)
+Opt Vis. Technique: State-Space Hashing
+Dry Run (Opt): Represent the parity (odd/even) of the 5 vowels as a 5-bit mask (e.g., `00101`). Use XOR to update the mask. The longest substring is between two indices with the same mask.
+How to Draw (Opt): Draw a string. As you move, toggle bits in a 5-bit "switchboard." Record the first index each switchboard configuration appears in a Map. If you see the configuration again, calculate the distance.
+Opt Complexity Visuals: $O(N)$ Linear Pass
+How to Draw Opt Complexity: Draw a single arrow moving left-to-right. Show a small "state" variable (the mask) updating in-place, and a single Map lookup per step.
+Mem Vis (BF): $O(N^2)$ Substring Storage: Massive memory consumption for intermediate string processing.
+Mem Vis (Opt): 32-Slot First-Occurrence Array: Draw a fixed-size array of 32 elements (2^5). Space is strictly $O(1)$.

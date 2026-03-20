@@ -1,0 +1,13 @@
+ID: 833
+Problem Title: Find And Replace in String
+Brute Force Method: Iteratively find a match, use string slicing to remove the old part and insert the new part. Repeat for every replacement.
+BF Complexity Visuals: $O(N \cdot K \cdot L)$ String Shifting.
+How to Draw BF: Draw a string. For every replace, erase a chunk and push all remaining letters to the right to make space. Note how many times you move the tail.
+Optimised Pattern: Descending Order Sorting or Single-Pass Mapping.
+Opt Vis. Technique: "Post-it Note" Overlay.
+Dry Run (Opt): Identify all valid matches first. Store them in a map `index -&gt; length, replacement`. Build a new string by scanning the original; if an index has a "post-it," use the replacement and skip `length` chars.
+How to Draw (Opt): Draw the original string. Draw "post-it notes" above the specific indices that need replacement. Copy everything to a new line, using notes where they exist.
+Opt Complexity Visuals: Linear Building. $O(N + \\text{text}{\text{Replacements}})$.
+How to Draw Opt Complexity: Draw a timeline. Each character or replacement is visited exactly once from left to right.
+Mem Vis (BF): Repeated Re-allocations: Draw dozens of shrinking and growing memory blocks.
+Mem Vis (Opt): Index Map + StringBuilder: Draw a Map for lookup and one final large buffer for construction.

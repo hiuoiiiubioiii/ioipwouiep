@@ -1,0 +1,13 @@
+ID: 3412
+Problem Title: Find Mirror Score of a String
+Brute Force Method: For each character, scan backwards character-by-character to find the closest unmarked mirror letter. (O(N^2))
+BF Complexity Visuals: Left-to-Right Scan with Backward Searching.
+How to Draw BF: Draw the string. For index i, draw an arrow looping backwards all the way to index 0, searching for a match.
+Optimised Pattern: Array of 26 Stacks / Deques mapping available indices. (O(N))
+Opt Vis. Technique: 26 Bucket Stacks.
+Dry Run (Opt): Read char. Find its mirror. Check the mirror's stack. If not empty, pop the index and calculate score. Else, push current index into char's stack.
+How to Draw (Opt): Draw 26 vertical slots. Read 'a', put its index in 'a' slot. Read 'z', look at 'a' slot, pull out the top index, and connect them with a line.
+Opt Complexity Visuals: Single Horizontal Pass.
+How to Draw Opt Complexity: Draw a single continuous arrow moving strictly left to right across the string array.
+Mem Vis (BF): A boolean array or set tracking the "marked" state of every character.
+Mem Vis (Opt): An array of 26 Stacks, storing integer indices as they appear.

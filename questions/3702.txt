@@ -1,0 +1,13 @@
+ID: 3702
+Problem Title: Longest Subsequence With Non-Zero Bitwise XOR (Med)
+Brute Force Method: Generate all 2^N subsequences, calculate XOR for each, find max length where XOR != 0.
+BF Complexity Visuals: Exponential branching tree $O(2^N)$.
+How to Draw BF: Draw a binary decision tree. Left branch = "Include element", Right branch = "Exclude".
+Optimised Pattern: Prefix XOR / Greedy Mathematical Observation
+Opt Vis. Technique: Total XOR Bucket
+Dry Run (Opt): Calculate total array XOR. If != 0, answer is N. If 0, find first non-zero element to exclude. Answer is N-1.
+How to Draw (Opt): Draw whole array inside a bracket. Calculate total. If 0, cross out the first non-zero number and re-bracket.
+Opt Complexity Visuals: Single linear scan $O(N)$.
+How to Draw Opt Complexity: Draw one straight line across the array blocks. $O(N)$ Time, $O(1)$ Space.
+Mem Vis (BF): Call Stack (Recursion) frames visualised as stacked boxes.
+Mem Vis (Opt): Single Accumulator Box for Total XOR.

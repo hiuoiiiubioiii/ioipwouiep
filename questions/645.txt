@@ -1,0 +1,13 @@
+ID: 645
+Problem Title: Set Mismatch
+Brute Force Method: Sort the array and scan for duplicates and missing numbers. Alternatively, use a Hash Map to count frequencies.
+BF Complexity Visuals: Sorting overhead or auxiliary storage mapping.
+How to Draw BF: Draw a list. Sort it. Scan for a number that equals its neighbor. Write $O(N \log N)$.
+Optimised Pattern: Index-as-Hash / Negation Marker.
+Opt Vis. Technique: In-place Checkmarks.
+Dry Run (Opt): Iterate through the array. For value `x`, go to `arr[abs(x)-1]`. If it's already negative, `x` is the duplicate. If not, make it negative. Finally, the only index with a positive value is the missing number.
+How to Draw (Opt): Draw an array. When you see '2', put a "tick" (negative sign) on the box at index 1. If you try to tick a box that already has one, you found your double.
+Opt Complexity Visuals: Linear scan, $O(N)$.
+How to Draw Opt Complexity: Draw a straight line through the array. Write $O(N)$.
+Mem Vis (BF): Draw a Hash Map or a sorted copy of the array (O(N)).
+Mem Vis (Opt): Draw the array being modified in-place. $O(1)$ extra space.

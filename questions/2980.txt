@@ -1,0 +1,13 @@
+ID: 2980
+Problem Title: Check if Bitwise OR Has Trailing Zeros
+Brute Force Method: Generate all $O(N^2)$ pairs, calculate bitwise OR, and check if the result is even.
+BF Complexity Visuals: Quadratic Pair Grid
+How to Draw BF: Draw an N x N grid. Each cell is an OR operation. $O(N^2)$.
+Optimised Pattern: Greedy (Count Even Numbers)
+Opt Vis. Technique: Even Number Filter
+Dry Run (Opt): A bitwise OR has a trailing zero if the result is even. For the OR of two numbers to be even, both numbers must be even. Just check if there are at least two even numbers in the array.
+How to Draw (Opt): Draw the array. Circle any number divisible by 2. If you find two circles, you are done.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a straight line of length N. One modulo check per element. T = $O(N)$.
+Mem Vis (BF): Storing all pair results.
+Mem Vis (Opt): One integer counter. Space $O(1)$.

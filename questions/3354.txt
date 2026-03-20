@@ -1,0 +1,13 @@
+ID: 3354
+Problem Title: Make Array Elements Equal to Zero
+Brute Force Method: For every index i where nums[i] = 0, simulate the movement left and right to see if it clears the array.
+BF Complexity Visuals: Recursive Path Simulation
+How to Draw BF: Draw the array. Pick a 0. Draw a ball bouncing back and forth, decrementing numbers until it hits an edge. $O(N \\text{cdot Sum})$.
+Optimised Pattern: Prefix Sum Balance
+Opt Vis. Technique: Seesaw Balance Beam
+Dry Run (Opt): A start is valid if the sum of elements to the left equals the sum of elements to the right (or differs by 1).
+How to Draw (Opt): Draw a horizontal line (the array). Put a triangle (pivot) at each 0. Write the total weight on the Left and Right sides. If they balance, it's a "Yes".
+Opt Complexity Visuals: Two-Pass Prefix Sum
+How to Draw Opt Complexity: Draw a horizontal line. One pass to get the total sum, second pass to check pivots. $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Two integer variables: `left_sum` and `right_sum`. $O(1)$ auxiliary space.

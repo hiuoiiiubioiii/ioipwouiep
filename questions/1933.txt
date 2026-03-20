@@ -1,0 +1,13 @@
+ID: 1933
+Problem Title: Check if String Is Decomposable Into Value-Equal Substrings
+Brute Force Method: Generate all possible partitions of the string and check if exactly one has length 2 and the rest have length 3.
+BF Complexity Visuals: Backtracking Partition Tree
+How to Draw BF: Draw a string. Branch out every possible cut (length 2 or 3). Check if any path consumes the whole string correctly.
+Optimised Pattern: Greedy Block Counting (Run-Length)
+Opt Vis. Technique: Frequency Block Segmentation
+Dry Run (Opt): Iterate through the string, grouping identical consecutive characters. Count the remainder of each group length when divided by 3.
+How to Draw (Opt): Draw the string. Draw brackets over identical character runs. Below each bracket, write `length % 3`. Sum the remainders to see if they fit the "one 2, zero 1" rule.
+Opt Complexity Visuals: Single-Pass Scan Line
+How to Draw Opt Complexity: Draw a single straight arrow over the string. $O(N)$ time.
+Mem Vis (BF): A list of strings or substrings created for every possible partition combination.
+Mem Vis (Opt): Two simple integer counters: `countOfLength2` and a `boolean` flag for validity. $O(1)$ space.

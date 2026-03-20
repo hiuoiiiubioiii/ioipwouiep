@@ -1,0 +1,13 @@
+ID: 385
+Problem Title: Mini Parser
+Brute Force Method: Use heavy regex or manual string splitting to find every bracket and comma, then recursively build the NestedInteger structure.
+BF Complexity Visuals: Recursive String Fragmenting
+How to Draw BF: Draw a string like "[123, [456]]". Draw a tree where each bracket pair creates a new level. Label $O(N^2)$ due to string slicing.
+Optimised Pattern: Stack-Based Iterative Parsing
+Opt Vis. Technique: Hierarchical Container Stacking
+Dry Run (Opt): Iterate through the string. When you see '[', push a new NestedInteger onto a stack. When you see a number, add it to the top NestedInteger. When you see ']', pop from the stack and add the popped item to the new top.
+How to Draw (Opt): Draw a string. Below it, draw a vertical Stack. As you hit '[', show a new "Box" being pushed onto the stack. When you hit ']', show the "Box" being placed inside the box below it.
+Opt Complexity Visuals: Single-Pass Tokenization
+How to Draw Opt Complexity: Draw a single arrow moving through the string. Above it, show a stack growing and shrinking. Label it $O(N)$.
+Mem Vis (BF): Large number of intermediate substrings.
+Mem Vis (Opt): Stack of NestedInteger references. Draw a vertical column of boxes pointing to deeper nested levels. $O(D)$ where D is max depth.

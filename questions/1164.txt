@@ -1,0 +1,13 @@
+ID: 1164
+Problem Title: Product Price at a Given Date (SQL)
+Brute Force Method: For every product, run a correlated subquery to find the maximum change date <= '2019-08-16'. If none, set price to 10.
+BF Complexity Visuals: Nested Select Per Row
+How to Draw BF: Draw the Products table. For each unique ID, draw a loop back to the Prices table to find the latest valid date.
+Optimised Pattern: UNION ALL + CTE / Subquery
+Opt Vis. Technique: Filtered Grouping + Default Template
+Dry Run (Opt): Query 1: Find the latest price for each product before the date using `RANK()` or `MAX`. Query 2: Find all product IDs NOT in Query 1 and assign price 10. UNION them.
+How to Draw (Opt): Draw two boxes: "Updated Items" and "Default Items". Join them into one list. Show the date filter acting as a "Cutoff Wall".
+Opt Complexity Visuals: Linear Hash Aggregation $O(N)$
+How to Draw Opt Complexity: Draw a single pass through the price history and a single pass through the product list.
+Mem Vis (BF): Application layer filtering
+Mem Vis (Opt): Database-level grouping and filtering.

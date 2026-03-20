@@ -1,0 +1,13 @@
+ID: 1790
+Problem Title: Check if One String Swap Can Make Strings Equal
+Brute Force Method: Try swapping every possible pair (i, j) in string 1. After each swap, check if s1 == s2.
+BF Complexity Visuals: All-Pairs Swapping.
+How to Draw BF: Draw string 1. Draw arrows swapping index 0 with 1, 0 with 2... after each, compare with s2. $O(N^3)$.
+Optimised Pattern: Mismatch Index Comparison.
+Opt Vis. Technique: The "Error Spotlight".
+Dry Run (Opt): Find all indices i where s1[i] != s2[i]. If count is 0, true. If count is not 2, false. If count is 2, check if s1[i] == s2[j] and s1[j] == s2[i].
+How to Draw (Opt): Draw two strings. Circle the indices where letters don't match. If you have exactly two circles, draw an "X" between them to see if the letters flip correctly.
+Opt Complexity Visuals: Single Linear Scan.
+How to Draw Opt Complexity: Draw one arrow passing over the strings. Label $O(N)$.
+Mem Vis (BF): None, just loop pointers.
+Mem Vis (Opt): A list of at most 2 indices. $O(1)$ extra space.

@@ -1,0 +1,13 @@
+ID: 3277
+Problem Title: Maximum XOR Score Subarray Queries
+Brute Force Method: For every query (L, R), iterate through all subarrays within that range to calculate XOR scores and find the max. $O(Q \cdot N^2)$.
+BF Complexity Visuals: Triangular Range Scan
+How to Draw BF: Draw the array. For one query, shade the "triangle" of all subarrays. Repeat this for every query, showing massive overlapping work.
+Optimised Pattern: 2D DP (Subarray XOR Triangle + Range Max)
+Opt Vis. Technique: Pascal’s Triangle of XORs
+Dry Run (Opt): Precompute `score[i][j]` (XOR score of A[i dots j]) using the property score[i][j] = score[i][j-1] oplus score[i+1][j]. Then precompute `max_score[i][j]` using a second 2D DP.
+How to Draw (Opt): Draw a 2D matrix. Fill the diagonal (size 1 subarrays). Fill the next diagonal by XORing the two elements below it. Then create a second matrix to find the max in each rectangle.
+Opt Complexity Visuals: Precomputed Quadratic Grid
+How to Draw Opt Complexity: Draw a block for "Precompute XORs $O(N^2)$", another for "Precompute Maxes $O(N^2)$", and a tiny box for "Query $O(1)$". Total: $O(N^2 + Q)$.
+Mem Vis (BF): Recalculating XORs millions of times for overlapping queries.
+Mem Vis (Opt): Two 2D DP tables of size N x N ( $O(N^2)$ space).

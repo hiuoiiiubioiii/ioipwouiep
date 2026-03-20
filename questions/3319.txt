@@ -1,0 +1,13 @@
+ID: 3319
+Problem Title: K-th Largest Perfect Subtree Size in Binary Tree
+Brute Force Method: At every single node, run a full DFS downward to check if all left/right branches form a perfect tree. $O(N^2)$.
+BF Complexity Visuals: Overlapping Triangle Scans
+How to Draw BF: Draw a large tree. Pick the root, trace a huge triangle over it. Pick a child, trace another triangle inside it. The heavy overlapping ink shows redundant $O(N^2)$ work.
+Optimised Pattern: Bottom-Up DFS (Post-order Traversal)
+Opt Vis. Technique: Bubbling Up Information Data-Packets
+Dry Run (Opt): Process children first. A node is perfect if: Left is perfect, Right is perfect, and Left Height == Right Height. Pass `(isPerfect, height)` up to the parent.
+How to Draw (Opt): Draw a tree. Start at the bottom leaves. Write `(True, 1)` next to them. Draw arrows pointing UP to their parents. Combine the pairs at the parent to form `(True, 2)`.
+Opt Complexity Visuals: Single-Pass Node Highlighting
+How to Draw Opt Complexity: Draw the tree once. Take a marker and touch every node exactly one time from bottom to top, visualizing strict $O(N)$ time.
+Mem Vis (BF): $O(N)$ recursive call stack combined with repeated $O(N)$ inner-call stacks.
+Mem Vis (Opt): $O(H)$ recursion stack for the tree height, plus a Min-Heap array of size K to track the largest sizes.

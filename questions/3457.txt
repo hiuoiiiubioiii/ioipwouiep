@@ -1,0 +1,13 @@
+ID: 3457
+Problem Title: Eat Pizzas!
+Brute Force Method: Generate all possible daily combinations of 4 pizzas and calculate the total weight gain. $O(N!)$ or complex recursion.
+BF Complexity Visuals: Factorial Combinatorial Tree.
+How to Draw BF: Draw a root. Branch it into every set of 4 pizzas. It becomes a massive, dense web.
+Optimised Pattern: Greedy Selection on Sorted Array. $O(N \log N)$
+Opt Vis. Technique: Sorted "Top-Shelf" Pizza Selection.
+Dry Run (Opt): Sort pizzas. Calculate number of odd/even days. For odd days, take the absolute largest available. For even days, skip one large and take the next largest.
+How to Draw (Opt): Draw the sorted array. Color the last X pizzas for odd days. Skip every other pizza moving left for the next Y even days.
+Opt Complexity Visuals: Sort Tree + Summing Sub-array.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting box followed by a single pass summing specific indices.
+Mem Vis (BF): Recursive stack depth storing pizza permutations.
+Mem Vis (Opt): $O(1)$ extra space after sorting the input array.

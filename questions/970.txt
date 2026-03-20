@@ -1,0 +1,13 @@
+ID: 970
+Problem Title: Powerful Integers
+Brute Force Method: Iterate through every integer i from 0 to bound and check if it can be represented as x^a + y^b by trying all combinations of a and b.
+BF Complexity Visuals: $O(\text{bound} \cdot \log(\text{bound})$). Checking every single number in the range manually.
+How to Draw BF: Draw a number line from 0 to Bound. For every single tick mark, run a "Search" box that tries to solve the equation x^a + y^b = i.
+Optimised Pattern: Double Logarithmic Loop (Logarithmic Bounds)
+Opt Vis. Technique: "The Cartesian Grid." Instead of checking every number, pre-calculate all powers of x and y up to the bound. Then, just sum every pair.
+Dry Run (Opt): Nested loops: `i` from 1 (x^0) to bound, `j` from 1 (y^0) to bound. If `i + j &lt;= bound`, add to a Set. (Handle case where x=1 or y=1 to avoid infinite loops).
+How to Draw (Opt): Draw a 2D grid. The x-axis is powers of x (1, x, x², ...), the y-axis is powers of y. Circle the intersections where the sum is less than the bound.
+Opt Complexity Visuals: $O(\log_x(\text{bound})$ * log_y(bound)). The number of powers is very small (e.g., 2^20 approx 10^6).
+How to Draw Opt Complexity: Draw a small grid (e.g., 20x20). This is much smaller than the 1,000,000 length timeline of the brute force.
+Mem Vis (BF): $O(1)$ extra space but very slow.
+Mem Vis (Opt): $O(\text{ResultSize})$ for the HashSet. Draw a small circular bin containing the unique sums.

@@ -1,0 +1,13 @@
+ID: 3308
+Problem Title: Find Top Performing Driver (SQL)
+Brute Force Method: (Imperative conceptualization) Nested loops iterating over every Trip, Vehicle, and Driver to match IDs and calculate.
+BF Complexity Visuals: Nested Table Iteration
+How to Draw BF: Draw three distinct tables. Draw spaghetti lines connecting every row in Trips to every row in Vehicles, visualizing $O(N \cdot M)$ cross-joins.
+Optimised Pattern: SQL JOINs + Window Functions (RANK)
+Opt Vis. Technique: Relational Data Pipeline Flowchart
+Dry Run (Opt): Join on IDs. Group by fuel_type and driver. Compute AVG rating. Partition by fuel_type and apply RANK() ordered by rating DESC. Filter rank = 1.
+How to Draw (Opt): Draw three small blocks. Draw funnels merging them (JOIN). Draw a bucket (GROUP BY). Draw a sorted list inside the bucket (RANK). Pick the top item.
+Opt Complexity Visuals: Sort-Merge Join / Hash Join Track
+How to Draw Opt Complexity: Draw unsorted data blocks, an arrow pointing to a Hash Table, and an arrow to a Sorted Block showing $O(N \log N)$ grouping and ranking.
+Mem Vis (BF): Loading all tables entirely into raw memory (Cartesian Product visualization).
+Mem Vis (Opt): Intermediate temporary tables and Hash maps used by the DB engine for the partitions.

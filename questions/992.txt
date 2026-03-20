@@ -1,0 +1,13 @@
+ID: 992
+Problem Title: Subarrays with K Different Integers
+Brute Force Method: Nested loops checking every possible subarray (i, j) and counting the number of unique integers in each using a HashSet.
+BF Complexity Visuals: $O(N^2)$. Checking a quadratic number of ranges.
+How to Draw BF: Draw an array. Draw overlapping brackets for every range. Inside each bracket, draw a tiny Set { } to count unique numbers.
+Optimised Pattern: Sliding Window (Exact = AtMost(K) - AtMost(K-1))
+Opt Vis. Technique: "The Difference of Two Windows." Counting *exactly* K is hard. Instead, calculate how many subarrays have *at most* K, and subtract those with *at most* K-1.
+Dry Run (Opt): `atMost(K)`: Use a sliding window with two pointers and a frequency map. If `map.size() &gt; K`, shrink left. Subarrays ending at `right` = `right - left + 1`.
+How to Draw (Opt): Draw a large "Window" frame (AtMost K) and a smaller "Window" frame (AtMost K-1). Show that the subarrays in the large one but NOT the small one are exactly what we need.
+Opt Complexity Visuals: $O(N)$. Two linear passes (one for K, one for K-1).
+How to Draw Opt Complexity: Draw two horizontal lines. On each, show two arrows (Left and Right pointers) moving strictly forward.
+Mem Vis (BF): $O(N^2)$ time with $O(N)$ space for sets.
+Mem Vis (Opt): $O(K)$ space for the frequency map. Draw a vertical two-column table: [Integer -&gt; Count].

@@ -1,0 +1,13 @@
+ID: 189
+Problem Title: Rotate Array
+Brute Force Method: Rotate the array by 1 step, k times. For each rotation, shift N-1 elements.
+BF Complexity Visuals: An $O(N x K)$ diagram showing many small, redundant shifts.
+How to Draw BF: Draw the array. Draw an arrow shifting everyone right. Repeat this drawing k times.
+Optimised Pattern: The Reversal Algorithm.
+Opt Vis. Technique: "The Triple Flip." Reversing segments of the array logically moves the elements to their rotated positions without extra space.
+Dry Run (Opt): 1. Reverse the whole array. 2. Reverse first k elements. 3. Reverse remaining n-k elements.
+How to Draw (Opt): [2, 4, 6, 8], k=1. Step 1: [8, 6, 4, 2]. Step 2: [8] (no change). Step 3: [8, 2, 4, 6].
+Opt Complexity Visuals: $O(N)$ time. Two total passes over the array elements.
+How to Draw Opt Complexity: Draw a single line. Mark it with three segments representing the three reversal operations.
+Mem Vis (BF): Minimal time efficiency, but potentially $O(N)$ if a copy array is used for the rotation.
+Mem Vis (Opt): Visualize $O(1)$ stack memory. Only the `reverse` function pointers exist.

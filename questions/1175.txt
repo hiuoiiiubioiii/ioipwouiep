@@ -1,0 +1,13 @@
+ID: 1175
+Problem Title: Prime Arrangements
+Brute Force Method: Count primes up to n using a simple loop for each number. Then calculate permutations manually.
+BF Complexity Visuals: Nested Primality Testing
+How to Draw BF: Draw numbers 1 to N. For each, draw a loop from 2 to √N checking for factors. $O(N √N)$.
+Optimised Pattern: Sieve of Eratosthenes + Combinatorics
+Opt Vis. Technique: Grid Pruning &amp; Factorial Blocks
+Dry Run (Opt): Use a Sieve to find count of primes P in $O(N \log \log N)$. Primes must go in prime positions, non-primes in non-prime. Result = (P! x (N-P)!) mod 10^9+7.
+How to Draw (Opt): Draw a grid 1 to N. Cross out multiples of 2, 3, 5... Count remaining (Primes). Draw two "Factorial Machines" P! and (N-P)! and multiply their outputs.
+Opt Complexity Visuals: Linear-ish $O(N)$
+How to Draw Opt Complexity: Draw a Sieve pass followed by a single loop for factorials.
+Mem Vis (BF): List of boolean flags for primality
+Mem Vis (Opt): Fixed-size boolean array `bool[N+1]`. Draw a row of T/F boxes.

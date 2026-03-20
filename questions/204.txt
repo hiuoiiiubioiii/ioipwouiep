@@ -1,0 +1,13 @@
+ID: 204
+Problem Title: Count Primes
+Brute Force Method: Iterate 1 to N, for each number iterate 1 to sqrt(i) to check divisibility.
+BF Complexity Visuals: Area under curve (Integration style): $O(N \\text{cdot sqrt}(N)$).
+How to Draw BF: Draw a graph with N on the X-axis and sqrt(N) on the Y-axis. Shade the area under the curve to represent total operations.
+Optimised Pattern: Sieve of Eratosthenes
+Opt Vis. Technique: Array Striking / Sieve Grid
+Dry Run (Opt): Write numbers 1 to N in a grid. Circle 2, cross out all multiples. Circle 3, cross out multiples. Repeat up to sqrt(N).
+How to Draw (Opt): Draw a 1D tape. Shade out the multiples using different colors or stroke styles (e.g., / for 2s,  for 3s).
+Opt Complexity Visuals: Harmonic Series Graph: $O(N \log(\log N)$).
+How to Draw Opt Complexity: Draw a bar chart where bar heights shrink rapidly (N/2, N/3, N/5...). Show that the sum converges tightly near linear.
+Mem Vis (BF): Call stack for prime checking. No complex data structure, just loop variables.
+Mem Vis (Opt): Boolean Array Tape: Draw a long sequence of [T|T|T...]. Erase T and write F as you hit multiples.

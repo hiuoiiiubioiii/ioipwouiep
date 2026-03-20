@@ -1,0 +1,13 @@
+ID: 3418
+Problem Title: Maximum Amount of Money Robot Can Earn
+Brute Force Method: Recursive DFS finding all paths from top-left to bottom-right, branching into "use charge" or "take penalty" at every negative cell. $O(3^(M+N)$)
+BF Complexity Visuals: Exploding 3-Way Grid Path Tree.
+How to Draw BF: Draw a start node. Branch to Right and Down. At a negative cell, branch into "Neutralize Right", "Neutralize Down", "Take Hit Right", "Take Hit Down".
+Optimised Pattern: 3D Dynamic Programming / Grid DP (State: row, col, neutralizations_left). $O(M \cdot N \cdot K)$
+Opt Vis. Technique: Layered 2D DP Grids.
+Dry Run (Opt): Imagine 3 identical grids stacked on each other (for 0, 1, and 2 charges left). Update a cell by checking the max of adjacent cells in its layer AND the layer below it (if neutralizing).
+How to Draw (Opt): Draw 3 grids side-by-side. Draw arrows from Grid 1 (1 charge) to Grid 0 (0 charges) representing a neutralization jump.
+Opt Complexity Visuals: 3-Layer Matrix Traversal.
+How to Draw Opt Complexity: Draw a 3D box of size M x N x 3. Shade it from top-left-front to bottom-right-back to prove bounded polynomial time.
+Mem Vis (BF): Call stack depth up to M+N, repeatedly calculating overlapping subproblems.
+Mem Vis (Opt): A 3D DP Matrix of dimensions [M][N][3] storing the max money at that state.

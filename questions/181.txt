@@ -1,0 +1,13 @@
+ID: 181
+Problem Title: Employees Earning More Than Their Managers
+Brute Force Method: For every row in the Employee table, run a separate query to find the salary of the manager whose ID matches the current employee's ManagerId.
+BF Complexity Visuals: A "Nested Loop" diagram where N external requests trigger N internal scans.
+How to Draw BF: Draw a table. Pick Employee A. Search the entire table again for Manager A. Repeat for Employee B. Count the total arrows (N^2).
+Optimised Pattern: Self-Join on ManagerId = Id.
+Opt Vis. Technique: A "Parallel Mirror." Two identical tables are placed side-by-side, and lines are drawn only between an employee and their specific manager.
+Dry Run (Opt): Match `Emp.ManagerId` with `Mgr.Id`. Filter rows where `Emp.Salary &gt; Mgr.Salary`.
+How to Draw (Opt): Draw two boxes (Employee a, Employee b). Link them with an arrow based on ID. Write their salaries on the arrow and circle if the first is larger.
+Opt Complexity Visuals: $O(N)$ with indexing. A single pass over the join condition.
+How to Draw Opt Complexity: Draw two vertical lines. Draw a single set of horizontal bridges between them, showing a 1-to-1 mapping.
+Mem Vis (BF): Large memory overhead for managing N separate query contexts.
+Mem Vis (Opt): Visualize the Join Buffer in the database engine holding only relevant columns for the active join.

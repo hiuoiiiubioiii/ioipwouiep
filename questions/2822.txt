@@ -1,0 +1,13 @@
+ID: 2822
+Problem Title: Inversion of Object
+Brute Force Method: Using `for...in` loops without checking `hasOwnProperty`, accidentally grabbing prototype chain methods.
+BF Complexity Visuals: Prototype Pollution Grid
+How to Draw BF: Draw an object. The loop accidentally grabs built-in functions like `toString` and tries to invert them, causing chaos.
+Optimised Pattern: Object.entries() + Array.reduce()
+Opt Vis. Technique: The Key-Value Swapper
+Dry Run (Opt): Extract `[key, value]` pairs using `Object.entries(obj)`. Iterate and assign `newObj[value] = key`. Array values require special handling to either stringify or map effectively.
+How to Draw (Opt): Draw a list of name tags `[Key: A, Value: 1]`. Take the tags, flip them over to read `[Key: 1, Value: A]`, and stick them onto a brand new blank object.
+Opt Complexity Visuals: Linear Object Iteration $O(N)$
+How to Draw Opt Complexity: Draw a single pass over the object's keys. $O(1)$ hash map insertion per key.
+Mem Vis (BF): Modifying the object in place and breaking references.
+Mem Vis (Opt): A brand new Object with N keys. $O(N)$ space.

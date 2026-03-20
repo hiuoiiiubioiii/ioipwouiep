@@ -1,0 +1,13 @@
+ID: 1381
+Problem Title: Design a Stack With Increment Operation
+Brute Force Method: When `increment(k, val)` is called, iterate through the first k elements of the stack and physically add `val` to each.
+BF Complexity Visuals: $O(K)$ Linear Increment
+How to Draw BF: Draw a stack of boxes. For every increment, draw an arrow pointing to each of the bottom k boxes, adding the value. Note the performance hit for large stacks.
+Optimised Pattern: Lazy Propagation (Difference Array Logic)
+Opt Vis. Technique: Bottom-Up Value Cascading
+Dry Run (Opt): Store increments in an auxiliary array `inc`. When `pop()` happens, return `stack[top] + inc[top]`, and pass the increment down: `inc[top-1] += inc[top]`.
+How to Draw (Opt): Draw a stack. Next to it, draw an "Increment Buffer." When you increment the bottom 3 by 10, just write '10' next to the 3rd element. Only add it when that element is popped.
+Opt Complexity Visuals: $O(1)$ Constant Time per Op
+How to Draw Opt Complexity: Draw a stack with a single pointer. Show that `push`, `pop`, and `increment` each touch only a single memory address, proving $O(1)$.
+Mem Vis (BF): $O(N)$ Repeated Iteration: CPU cycles wasted looping through stack contents.
+Mem Vis (Opt): Auxiliary Increment Array: Draw two parallel 1D arrays of size `maxSize`. One for data, one for "lazy" updates.

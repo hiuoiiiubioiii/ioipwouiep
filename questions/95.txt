@@ -1,0 +1,13 @@
+ID: 95
+Problem Title: Unique Binary Search Trees II
+Brute Force Method: Recursive Generation For a range [1, n], pick i as root. Recursively generate all left subtrees from [1, i-1] and all right subtrees from [i+1, n]. Combine every left with every right.
+BF Complexity Visuals: The Forest Generator
+How to Draw BF: Draw the number 1, 2, 3. Pick '2' as root. Draw the possible '1' on the left and '3' on the right. Note the massive repetition of building the same subtrees. $O(4^N/N^1.5)$.
+Optimised Pattern: Recursion with Memoization
+Opt Vis. Technique: The Pre-built Subtree Library
+Dry Run (Opt): Same as brute force, but store the result of `generate(start, end)` in a map. If you need the subtrees for range [1, 2] again, just pull the already-constructed list of trees.
+How to Draw (Opt): Draw a Map where the Key is the range (e.g., "1-3") and the Value is a list of root pointers. Show the algorithm "checking out" a tree from the library instead of building it.
+Opt Complexity Visuals: Catalan Complexity
+How to Draw Opt Complexity: Draw the growth of Catalan numbers. Time is $O(\text{Catalan}(N)$ x N), which accounts for the cost of building each tree.
+Mem Vis (BF): Redundant creation of identical tree structures in the heap.
+Mem Vis (Opt): Draw the memoization map. Note that many large trees actually share pointers to the same smaller subtree nodes in memory. Space: $O(\text{Catalan}(N)$ x N).

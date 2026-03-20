@@ -1,0 +1,13 @@
+ID: 3027
+Problem Title: Find the Number of Ways to Place People II
+Brute Force Method: (Same as 3025, but with N=1000. $O(N^3)$ will fail).
+BF Complexity Visuals: Clock on Fire (TLE)
+How to Draw BF: Draw a timer exploding. $O(N^3)$ with 1000 points is 1 billion operations, too slow for 1s.
+Optimised Pattern: Sorting + Single Pass Optimization
+Opt Vis. Technique: Monotonic Y-Limit Sweep
+Dry Run (Opt): After sorting by X (asc) and Y (desc), for each point `i`, we only care about points `j` where `y[j]` is less than `y[i]` but greater than the maximum `y` seen so far between them.
+How to Draw (Opt): Draw points on a grid. For a fixed point A, move a horizontal line downwards. Only count point B if it's the "highest" point seen so far that is still below A.
+Opt Complexity Visuals: $O(N^2)$ Optimization
+How to Draw Opt Complexity: Draw a 2D grid showing the two nested loops over 1000 points (1 million operations).
+Mem Vis (BF): Large coordinate matrices.
+Mem Vis (Opt): Sorted array of point objects and a few integer tracking variables.

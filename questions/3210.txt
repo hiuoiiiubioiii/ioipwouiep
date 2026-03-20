@@ -1,0 +1,13 @@
+ID: 3210
+Problem Title: Find the Encrypted String
+Brute Force Method: Loop through string, manually calculate (i+k)%n for each character and build a new string. $O(N)$.
+BF Complexity Visuals: Linear Character Map
+How to Draw BF: Draw the string characters in boxes. Draw an arrow from index i to index (i+k) wrapping around. Do this for all N boxes.
+Optimised Pattern: String Slicing / Cyclic Shift
+Opt Vis. Technique: Circular Array Rotation
+Dry Run (Opt): Draw the string in a circle. Rotate the entire circle counter-clockwise by `k % n` steps simultaneously.
+How to Draw (Opt): Write the string twice (e.g., "abcabc"). Put a window of size N starting at index `k % n`. Read the characters inside the window.
+Opt Complexity Visuals: String Slicing Block
+How to Draw Opt Complexity: Draw one block representing string `s`. Draw a cut at index `k`. Swap the left and right chunks. Label it $O(N)$ time for copying.
+Mem Vis (BF): New string built char by char (O(N) space).
+Mem Vis (Opt): Two sliced string allocations combining into one (O(N) space).

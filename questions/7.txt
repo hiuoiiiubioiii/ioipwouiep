@@ -1,0 +1,13 @@
+ID: 7
+Problem Title: Reverse Integer
+Brute Force Method: String Conversion Convert integer to string, reverse the string characters, handle the minus sign, parse back to integer.
+BF Complexity Visuals: String Pipeline
+How to Draw BF: Draw a box with a number, an arrow to an array of characters, reverse the arrows pointing to a new array, and an arrow parsing it back.
+Optimised Pattern: Digit Extraction (Pop &amp; Push)
+Opt Vis. Technique: Modulo Machine
+Dry Run (Opt): Pop the last digit using `% 10`. Push it onto the new number by multiplying the new number by 10 and adding the popped digit. Divide original by 10.
+How to Draw (Opt): Draw two boxes: `X` and `Rev`. Draw a loop where the rightmost digit of `X` falls off, slides over, and attaches to the right side of `Rev`.
+Opt Complexity Visuals: Shrinking Digit Bar
+How to Draw Opt Complexity: Draw a bar representing the number's length. Erase one segment per step. Time complexity is $O(\log10(x)$) — proportional to the number of digits.
+Mem Vis (BF): Draw an array of characters allocated in memory (O(log10(x)) space).
+Mem Vis (Opt): Draw exactly two integer variables (`X` and `Rev`) updating in place (O(1) space).

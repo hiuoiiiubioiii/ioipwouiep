@@ -1,0 +1,13 @@
+ID: 3246
+Problem Title: Premier League Table Ranking (SQL)
+Brute Force Method: Self-joins to count how many teams have more points than the current team. $O(N²)$.
+BF Complexity Visuals: Nested Comparison Loop
+How to Draw BF: Draw a table. For Team A, look at every other row to see who has more points. Repeat for Team B. Label it $O(N²)$.
+Optimised Pattern: Window Function (RANK)
+Opt Vis. Technique: Sorted Ranking Stream
+Dry Run (Opt): Use `RANK() OVER (ORDER BY points DESC, team_name ASC)`. This assigns a rank based on the sort order, handling ties automatically by skipping the next rank value.
+How to Draw (Opt): Draw the table sorted by points. Draw a vertical arrow. Next to the values, write 1, 2, 2, 4 (notice the skip after the tie). This is the "Rank" column.
+Opt Complexity Visuals: Sorting Bottleneck Pipeline
+How to Draw Opt Complexity: Draw a block labeled "Sort" $O(N \log N)$. Draw a single-pass ranking block $O(N)$. Total $O(N \log N)$.
+Mem Vis (BF): Redundant temporary tables for joins.
+Mem Vis (Opt): Sorting buffer in memory (O(1) extra space outside of the sort).

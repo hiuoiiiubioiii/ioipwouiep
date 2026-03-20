@@ -1,0 +1,13 @@
+ID: 931
+Problem Title: Minimum Falling Path Sum
+Brute Force Method: Recursive DFS exploring all three possible downward paths (diagonal left, down, diagonal right) from every cell in the top row.
+BF Complexity Visuals: $O(3^N)$ Exponential. A tree that triples in size at every single row level.
+How to Draw BF: Draw the top cell. Draw 3 arrows down. From those 3, draw 9 more. Show the tree quickly becoming a solid black mass of paths.
+Optimised Pattern: Dynamic Programming (In-place)
+Opt Vis. Technique: "Rainwater" accumulating. Each cell "pulls" the minimum value from the three cells directly above it to determine its own best total.
+Dry Run (Opt): Iterate from row 1 to N. `matrix[r][c] += min(matrix[r-1][c-1], matrix[r-1][c], matrix[r-1][c+1])`. The answer is the min value in the last row.
+How to Draw (Opt): Draw a grid. For a cell in row 2, draw three arrows pointing to it from the row above. Write the 'min' of those three inside the current cell.
+Opt Complexity Visuals: $O(N^2)$ where N is the grid dimension. Each cell is visited exactly once.
+How to Draw Opt Complexity: Draw the grid. Draw a horizontal "scanning" line moving from the top row to the bottom row, coloring cells as it goes.
+Mem Vis (BF): Massive call stack due to $O(N)$ recursion depth and $O(3^N)$ branches.
+Mem Vis (Opt): $O(1)$ if modifying the input matrix, or $O(N)$ to store one previous row. Draw a single row-sized buffer.

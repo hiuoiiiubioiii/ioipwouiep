@@ -1,0 +1,13 @@
+ID: 2479
+Problem Title: Maximum XOR of Two Non-Overlapping Subtrees
+Brute Force Method: Find all subtree sums. For every pair of non-overlapping subtrees, calculate XOR. $O(N^2)$.
+BF Complexity Visuals: Quadratic Subtree Comparison
+How to Draw BF: Draw the tree. For Node A, compare to Node B, C, D... checking overlap each time.
+Optimised Pattern: DFS + Trie (Bitwise)
+Opt Vis. Technique: The Boundary Trie Query
+Dry Run (Opt): 1. DFS to get subtree sums. 2. DFS again to track max XOR. Keep a Trie of valid (non-overlapping) subtree sums. Add a branch to the Trie *after* processing its subtree to ensure no overlap.
+How to Draw (Opt): Draw the tree. On the right, draw a Trie (binary tree of 0s and 1s). As you leave a node in DFS, push its sum into the Trie. For the current node, query the Trie for the opposite bits.
+Opt Complexity Visuals: Tree Traversal + Trie Lookup $O(N \cdot 40)$
+How to Draw Opt Complexity: Draw a single tree trace. At each node, draw a quick 40-step descent down the Trie (constant time).
+Mem Vis (BF): 2D array of all possible pair XORs.
+Mem Vis (Opt): A Bit Trie of depth ~40. $O(N)$ space.

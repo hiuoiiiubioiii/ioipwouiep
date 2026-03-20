@@ -1,0 +1,13 @@
+ID: 1045
+Problem Title: Customers Who Bought All Products
+Brute Force Method: (SQL) Use a cross-join or subqueries to check every customer against every product in the product table.
+BF Complexity Visuals: A Cartesian product grid where you manually check off every customer-product pair.
+How to Draw BF: Draw a table of Customers and a table of Products. Draw lines from every customer to every product. Highlight customers where all lines exist.
+Optimised Pattern: Group By + Having Count (Distinct).
+Opt Vis. Technique: A "Filtering Funnel". Aggregate the purchases and compare the size of the customer's shopping bag to the total product list.
+Dry Run (Opt): Group the `Customer` table by ID. Count the unique `product_key`s for each. Compare this count to the `SELECT COUNT(*)` from the `Product` table.
+How to Draw (Opt): Draw the Customer table. Circle unique product keys per ID. Write the count. Separately, count the Product table. Draw an equal sign between the counts.
+Opt Complexity Visuals: Single pass aggregation with a hash-map check.
+How to Draw Opt Complexity: Draw the table with a grouping arrow. Write $O(N)$ where N is number of rows in Customer table.
+Mem Vis (BF): Temporary tables for every subquery comparison.
+Mem Vis (Opt): A small hash map storing counts per Customer ID. $O(C)$ where C is number of customers.

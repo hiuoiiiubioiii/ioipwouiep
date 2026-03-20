@@ -1,0 +1,13 @@
+ID: 910
+Problem Title: Smallest Range II
+Brute Force Method: Try adding and subtracting K for every single element, creating all 2^N possible arrays, then find the min/max difference of each.
+BF Complexity Visuals: $O(2^N)$ Exponential explosion. A massive, binary decision tree of array states.
+How to Draw BF: Draw an array element as a root node splitting into two paths (+K and -K). Repeat this split for every element, forming a dense web.
+Optimised Pattern: Sort + Greedy Linear Scan
+Opt Vis. Technique: A staircase of blocks (sorted array). You make a single vertical slice: everything left of the slice gets boosted (+K), everything right drops (-K).
+Dry Run (Opt): Sort the array. Iterate a split point `i`. Calculate the potential new max (either end of array - K, or `i` + K) and new min. Track the smallest gap.
+How to Draw (Opt): Draw a sorted bar chart. Draw a vertical line cutting through it. Draw up-arrows on the left bars and down-arrows on the right bars. Measure the new highest/lowest peaks.
+Opt Complexity Visuals: $O(N \log N)$ for sort, $O(N)$ for scan. A sorting funnel followed by a straight, one-way path.
+How to Draw Opt Complexity: Draw a sorting algorithm box. Below it, draw a horizontal sorted array with a single pointer sliding from left to right.
+Mem Vis (BF): Generates $O(2^N)$ distinct array copies taking up massive heap space.
+Mem Vis (Opt): In-place sorting $O(1)$ or $O(\log N)$ stack, plus a few isolated $O(1)$ variables to hold the current min and max peaks.

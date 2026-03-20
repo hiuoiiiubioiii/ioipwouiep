@@ -1,0 +1,13 @@
+ID: 849
+Problem Title: Maximize Distance to Closest Person
+Brute Force Method: For every empty seat '0', loop left to find the nearest '1' and loop right to find the nearest '1'. Take the min, then find the global max of these mins.
+BF Complexity Visuals: Radial Search from Every Zero. $O(N^2)$.
+How to Draw BF: Draw a row of seats. At every '0', draw two arrows stretching out until they hit a '1'. Notice how many times the same '1's are hit by arrows.
+Optimised Pattern: Two-Pass Distance Arrays OR Two Pointers (Gap Tracking).
+Opt Vis. Technique: Longest Zero-Gap Measurement.
+Dry Run (Opt): Find the lengths of all "0" gaps. The max distance in a middle gap is `(length + 1) / 2`. Edge gaps (start or end) have a max distance equal to the total length of the gap.
+How to Draw (Opt): Draw the seats. Highlight the continuous blocks of zeros. Measure the width of each block. Write the "Max Distance" result for each block using the gap rules.
+Opt Complexity Visuals: Single Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw a single horizontal timeline. Mark '1's as milestones and measure the distance between them once.
+Mem Vis (BF): Multiple temporary distance lists: Draw overlapping arrays for each scan.
+Mem Vis (Opt): Two Pointer Variables: Draw 'last_person' and 'current_seat' arrows. $O(1)$ space.

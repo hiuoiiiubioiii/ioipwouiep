@@ -1,0 +1,13 @@
+ID: 3530
+Problem Title: Maximum Profit from Valid Topological Order in DAG (Hard)
+Brute Force Method: Generate all valid topological permutations, calculate profit for each sequence, return max.
+BF Complexity Visuals: Factorial Path Permutations.
+How to Draw BF: Draw a massive branching tree. Each branch represents picking a valid 0-indegree node. $O(N!)$ leaf nodes.
+Optimised Pattern: Dynamic Programming with Bitmask (State Compression).
+Opt Vis. Technique: State Transition DAG.
+Dry Run (Opt): Represent visited nodes as a bitmask (e.g., 0101). Transition to valid next states by flipping bits, carrying max profit forward.
+How to Draw (Opt): Write binary states like `0011`. Draw arrows to next states like `0111` or `1011`, labeling the edges with the profit gained.
+Opt Complexity Visuals: $O(N \cdot 2^N)$ Subproblem Expansion.
+How to Draw Opt Complexity: Draw levels grouped by the number of '1' bits in the state. Draw edges connecting N to N+1 levels.
+Mem Vis (BF): Massive Sequence Arrays: Draw heavy memory blocks storing every possible path string.
+Mem Vis (Opt): 1D DP Bitmask Array: Draw a single array of size 2^N storing integer profits, indexed by the bitmask.

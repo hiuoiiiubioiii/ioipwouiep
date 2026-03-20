@@ -1,0 +1,13 @@
+ID: 1018
+Problem Title: Binary Prefix Divisible By 5
+Brute Force Method: Build the actual integer by appending bits one by one. Check if `num % 5 == 0`.
+BF Complexity Visuals: An integer growing exponentially until it overflows 64-bit limits and crashes.
+How to Draw BF: Write 1. Next 10 (2). Next 101 (5). Write numbers getting massive. Write $O(N^2)$ due to BigInt string parsing.
+Optimised Pattern: Math (Running Modulo).
+Opt Vis. Technique: A dial with 5 positions (0-4). Appending a bit means doubling the dial position and adding the bit, wrapping around 5.
+Dry Run (Opt): Keep a running variable R = 0. For each bit, R = (R * 2 + bit) % 5. If R == 0, record true; else false.
+How to Draw (Opt): Draw the array. Below each bit, write the running R. E.g., bit 1 -&gt; R=1. bit 0 -&gt; R=(1*2+0)%5 = 2.
+Opt Complexity Visuals: A single stream processing bits and maintaining a tiny state machine.
+How to Draw Opt Complexity: Draw the array with an arrow moving left to right. Write $O(N)$ Time.
+Mem Vis (BF): $O(N)$ large objects (BigInts) or huge strings allocated at each step.
+Mem Vis (Opt): A single integer variable R. Perfect $O(1)$ space constraint.

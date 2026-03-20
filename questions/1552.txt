@@ -1,0 +1,13 @@
+ID: 1552
+Problem Title: Magnetic Force Between Two Balls
+Brute Force Method: Generate all combinations of placing M balls in N positions and calculate the minimum distance for each. $O(N \text{Choose} M)$.
+BF Complexity Visuals: Combinatorial Explosion $O(C(N, M)$)
+How to Draw BF: Draw N dots. Try to pick M dots. Draw all possible ways to pick those M dots. The number of paths is massive.
+Optimised Pattern: Binary Search on Answer
+Opt Vis. Technique: The "Can-Place" Feasibility Bar
+Dry Run (Opt): Binary search for the *distance* (result). For a given distance `d`, greedily place balls to see if you can fit M of them. If yes, try a larger `d`; if no, try a smaller `d`.
+How to Draw (Opt): Draw a sorted number line of positions. Draw a ruler of length `d`. Place the first ball at index 0. Slide the ruler: place the next ball only where the ruler ends or further. Count balls.
+Opt Complexity Visuals: Search-Space Reduction $O(N \log(\text{Max}_\text{Dist})$)
+How to Draw Opt Complexity: Draw a range [1, 10^9]. Draw a line being chopped in half at each step. At each chop, draw a linear scan across the array (N).
+Mem Vis (BF): Storing every possible combination.
+Mem Vis (Opt): A sorted array of positions. $O(1)$ extra space beyond sorting.

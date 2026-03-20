@@ -1,0 +1,13 @@
+ID: 1637
+Problem Title: Widest Vertical Area Between Two Points...
+Brute Force Method: Compare every point (x,y) with every other point to find the gap between their x-coordinates.
+BF Complexity Visuals: Complete Connection Graph
+How to Draw BF: Draw N dots. Draw lines connecting every single pair to measure the horizontal distance. $O(N^2)$.
+Optimised Pattern: X-Coordinate Sorting
+Opt Vis. Technique: Vertical Slat/Fence Scan
+Dry Run (Opt): Ignore y-coordinates. Sort all x-coordinates. Loop once to find the maximum `x[i] - x[i-1]`.
+How to Draw (Opt): Draw points on a graph. Draw vertical dashed lines through each point. The widest "hallway" between any two adjacent lines is the answer.
+Opt Complexity Visuals: Log-Linear Funnel
+How to Draw Opt Complexity: Draw a funnel (O(N log N)) leading to a straight linear pipe (O(N)).
+Mem Vis (BF): Point Matrix: Draw a 2D grid storing both X and Y for all points.
+Mem Vis (Opt): 1D X-Array: Draw a single horizontal array holding only the sorted x-values. $O(N)$ space.

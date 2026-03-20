@@ -1,0 +1,13 @@
+ID: 893
+Problem Title: Groups of Special-Equivalent Strings
+Brute Force Method: For every pair of strings, try every possible swap of even-indexed and odd-indexed characters to see if they can become equal.
+BF Complexity Visuals: Restricted Permutation Search. $O(N^2 x (L/2)$!).
+How to Draw BF: Draw a string. Branch out every possible swap for even indices, then every swap for odd indices. Compare all results to every other string.
+Optimised Pattern: Character Frequency Signatures (Even/Odd split).
+Opt Vis. Technique: The "Split Bucket" Fingerprint.
+Dry Run (Opt): Two strings are equivalent if their even-indexed characters are anagrams AND their odd-indexed characters are anagrams. Create a signature: `sorted(evenChars) + sorted(oddChars)`. Count unique signatures in a Set.
+How to Draw (Opt): Draw a string like "abcd". Split it into "ac" (even) and "bd" (odd). Sort both. The fingerprint is "ac|bd". Drop this string into a Hash Set.
+Opt Complexity Visuals: Linear String Scan. $O(N x L)$.
+How to Draw Opt Complexity: Draw a timeline where each string is split, sorted (O(L log L)), and hashed.
+Mem Vis (BF): List of permutations for every string.
+Mem Vis (Opt): Hash Set of Signatures: Draw a set containing N strings of length L.

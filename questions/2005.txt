@@ -1,0 +1,13 @@
+ID: 2005
+Problem Title: Subtree Removal Game with Fibonacci Tree
+Brute Force Method: Minimax algorithm generating all possible game states for Alice and Bob.
+BF Complexity Visuals: Game State Decision Tree
+How to Draw BF: Draw a root state. Branch out for every possible subtree removal. Notice the tree expands factorially based on remaining nodes.
+Optimised Pattern: Game Theory (Sprague-Grundy/Nim) &amp; Modulo Math Pattern
+Opt Vis. Technique: Modulo Cycle Wheel
+Dry Run (Opt): Compute `N % 6`. If it's `1`, Bob wins. Otherwise, Alice wins. No tree traversal needed.
+How to Draw (Opt): Draw a circle with numbers 0 through 5. Map `N` onto the circle. If it lands on 1, write "False", else write "True".
+Opt Complexity Visuals: Constant Time Block (O(1))
+How to Draw Opt Complexity: Write down the formula `N % 6 != 1`. Draw a box around it. It executes in exactly one operation.
+Mem Vis (BF): Massive recursive tree with memoization dictionary mapping tree structures to boolean states.
+Mem Vis (Opt): A single integer register in the CPU holding `N`, performing one modulo operation. (O(1) Space).

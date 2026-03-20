@@ -1,0 +1,13 @@
+ID: 1391
+Problem Title: Check if There is a Valid Path in a Grid
+Brute Force Method: Try moving in all 4 directions from every cell without checking if the street pipes actually connect, leading to invalid jumps.
+BF Complexity Visuals: Blind BFS/DFS Exploration
+How to Draw BF: Draw a grid with pipes. Show an arrow jumping through a wall where pipes don't align. The path logic is broken.
+Optimised Pattern: Disjoint Set Union (DSU) or Validated BFS
+Opt Vis. Technique: Pipe-to-Pipe Connection Validation
+Dry Run (Opt): For each cell, check its 4 neighbors. Only union/jump if the current pipe's opening matches the neighbor's opening (e.g., a "Left" opening must meet a "Right" opening).
+How to Draw (Opt): Draw two adjacent cells with their pipe shapes. Circle the "mouths" of the pipes. If the mouths touch, draw a "link." Check if (0,0) and (M,N) are in the same link-set.
+Opt Complexity Visuals: $O(M x N x \text{alpha}(N)$)
+How to Draw Opt Complexity: Draw the grid as a graph. Show a single BFS wave that only passes through valid connections, visiting each cell once.
+Mem Vis (BF): Unchecked Recursion Stack: Exploring paths that don't exist, leading to deep wasted recursion.
+Mem Vis (Opt): $O(\text{MN})$ DSU Array or Visited Set: Draw a parent array representing connected pipe components.

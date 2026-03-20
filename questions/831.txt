@@ -1,0 +1,13 @@
+ID: 831
+Problem Title: Masking Personal Information
+Brute Force Method: Use complex, multi-layered nested `if-else` blocks and string concatenations to handle every specific character edge case for both email and phone.
+BF Complexity Visuals: Spaghetti Logic Flow. $O(N)$.
+How to Draw BF: Draw a flowchart with 20 different branching paths that loop back and overlap, making logic tracing difficult.
+Optimised Pattern: Standardization via Pre-filtering + Template Mapping.
+Opt Vis. Technique: The "Identity Shredder."
+Dry Run (Opt): Check for '@'. If present (Email): lowercase everything, keep first/last char of name, and middle is `*****`. If absent (Phone): strip all non-digits, keep last 4, and prefix based on digit count.
+How to Draw (Opt): Draw a box labeled "Sieve." Email goes in one pipe, Phone in another. Out comes a uniform, pre-defined template string.
+Opt Complexity Visuals: Linear Scan/Replace. $O(N)$.
+How to Draw Opt Complexity: Draw a timeline. One pass to clean/identify, one pass to build the result string.
+Mem Vis (BF): Multiple temporary string fragments: Draw scattered blocks of memory for each partial mask.
+Mem Vis (Opt): Single StringBuilder: Draw one expandable buffer that builds the final masked string in one go.

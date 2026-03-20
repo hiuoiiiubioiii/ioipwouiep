@@ -1,0 +1,13 @@
+ID: 3035
+Problem Title: Maximum Palindromes After Operations
+Brute Force Method: Try all possible character swaps across all words to see which combination allows forming the most palindromes.
+BF Complexity Visuals: Permutation Tree
+How to Draw BF: Draw a pool of all characters. Branch out every possible way to distribute characters into word slots. Shows exponential growth.
+Optimised Pattern: Greedy Counting + Sorting lengths
+Opt Vis. Technique: Bucket Filling (Pairs vs Singles)
+Dry Run (Opt): Count total pairs of characters and total singles across all words. Sort word lengths ascending. Fill the shortest words first using pairs (and 1 single if the length is odd).
+How to Draw (Opt): Draw a "Pool" of character pairs. Draw empty word boxes of different lengths. Drag pairs into boxes. If a box is odd-sized, use a single char for the center.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Bar
+How to Draw Opt Complexity: Draw an $O(N)$ frequency count block followed by an $O(N \log N)$ block for sorting the word lengths array.
+Mem Vis (BF): Massive recursive state tracking of every character position.
+Mem Vis (Opt): A frequency map of 26 integers and a sorted integer array of word lengths.

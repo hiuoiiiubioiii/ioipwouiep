@@ -1,0 +1,13 @@
+ID: 3091
+Problem Title: Apply Operations to Make Sum Greater Than or Equal to k
+Brute Force Method: BFS to try every possible combination of "Increment element" or "Duplicate element" until the sum reaches k.
+BF Complexity Visuals: State-Space Growth Tree
+How to Draw BF: Draw a root node branching into "Inc" and "Dup". Label it as $O(2^S)$ where S is the number of operations.
+Optimised Pattern: Math / Square Root Optimization
+Opt Vis. Technique: Optimal Dimension Grid
+Dry Run (Opt): Realize you should increment the single element to a value v and then duplicate it d times. Total ops: (v-1) + lceil k/v rceil - 1. The optimal v is close to √k.
+How to Draw (Opt): Draw a grid representing Sum = Value x Count. Show how changing the width (value) or height (count) affects the "perimeter" (total operations).
+Opt Complexity Visuals: $O(\text{sqrt}(k)$) Scan
+How to Draw Opt Complexity: Draw a short timeline from 1 to √k. Label as $O(√k)$.
+Mem Vis (BF): Deep recursive stack storing current array state.
+Mem Vis (Opt): Zero extra structure; just a few variables for v, d, and min_ops.

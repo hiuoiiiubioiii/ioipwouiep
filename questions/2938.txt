@@ -1,0 +1,13 @@
+ID: 2938
+Problem Title: Separate Black and White Balls
+Brute Force Method: Simulate every single swap needed to move '0's to the left and '1's to the right (like Bubble Sort).
+BF Complexity Visuals: Quadratic Swap Grid
+How to Draw BF: Draw N items. Show one ball moving across N positions. Repeat for N balls. $O(N^2)$.
+Optimised Pattern: Two Pointers / Greedy (Counting 1s)
+Opt Vis. Technique: Accumulating "Weight" of Ones
+Dry Run (Opt): Traverse left to right. Every time you see a '1', increment a `ones` counter. Every time you see a '0', add the current `ones` count to your `total_swaps`.
+How to Draw (Opt): Write "11001". Above it, track a tally. For '0', draw an arrow back to all '1's it must pass.
+Opt Complexity Visuals: Single Pass Timeline
+How to Draw Opt Complexity: Draw a single straight line of length N. Each step is $O(1)$. T(N) = $O(N)$.
+Mem Vis (BF): N/2 swap operations recorded.
+Mem Vis (Opt): Two long long variables (`swaps`, `ones`). Space $O(1)$.

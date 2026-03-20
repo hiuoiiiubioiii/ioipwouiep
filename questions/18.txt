@@ -1,0 +1,13 @@
+ID: 18
+Problem Title: 4Sum
+Brute Force Method: Generate All Quadruplets Four nested loops scanning every combination of four numbers.
+BF Complexity Visuals: 4D Hypercube
+How to Draw BF: Write out four nested loops (i, j, k, l). Note the complexity as N * (N-1) * (N-2) * (N-3). A massive $O(N⁴)$ time block.
+Optimised Pattern: Sort + Two Anchors + Squeeze
+Opt Vis. Technique: Dual Pinned Thumbtacks
+Dry Run (Opt): Sort the array. Pin pointer 'i'. Pin pointer 'j' just ahead of 'i'. Then use the L and R pointers to squeeze the remaining array. Skip duplicates at all levels!
+How to Draw (Opt): Draw a sorted array. Stick a red thumbtack on 'i' and a blue one on 'j'. Bracket the rest. Put L at j+1, R at the end. Move L/R to hit the target.
+Opt Complexity Visuals: N² * (Squeezing Line)
+How to Draw Opt Complexity: Draw two nested outer loops for the anchors (O(N²)). Inside, draw a straight line for the L/R squeeze (O(N)). Total time is reduced to $O(N³)$.
+Mem Vis (BF): Generates massive duplicate sets requiring expensive hash sets for deduplication.
+Mem Vis (Opt): Draw four pointer variables (i, j, L, R) scanning in place. Space complexity is mostly $O(1)$ or $O(N)$ depending on the sorting step.

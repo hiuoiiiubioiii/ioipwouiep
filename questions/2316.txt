@@ -1,0 +1,13 @@
+ID: 2316
+Problem Title: Count Unreachable Pairs of Nodes in an Undirected Graph
+Brute Force Method: Iterate through all possible pairs of nodes (i, j) and run BFS/DFS for each pair to see if a path exists.
+BF Complexity Visuals: N-Squared Graph Search (O(N^2 * (V+E)))
+How to Draw BF: Draw an N x N matrix. Inside every cell, sketch a tiny tree representing a full graph search to connect two nodes.
+Optimised Pattern: Connected Components (DFS/BFS) + Combinatorics
+Opt Vis. Technique: Grouped Islands Cross-Multiplication
+Dry Run (Opt): Find the size of each isolated island of nodes. For an island of `size`, the number of unreachable nodes from it is `Total_Nodes - size`. Add `size * (Total - size)` to total pairs, then divide by 2 to remove duplicates.
+How to Draw (Opt): Draw circles representing disconnected islands. Write the number of nodes inside each circle. Draw lines connecting the islands, representing the multiplication of their sizes.
+Opt Complexity Visuals: Linear Component Sum (O(V + E))
+How to Draw Opt Complexity: Draw a few separate clusters of dots. Draw one line scanning through all clusters exactly once.
+Mem Vis (BF): Draw an enormous Call Stack for repeated DFS calls + a 2D matrix of pairs.
+Mem Vis (Opt): Draw an Adjacency List (Array of Lists) + a boolean `visited` Array.

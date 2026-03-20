@@ -1,0 +1,13 @@
+ID: 3549
+Problem Title: Multiply Two Polynomials (Hard)
+Brute Force Method: Standard nested loop (convolution): multiply every term of Poly A by every term of Poly B.
+BF Complexity Visuals: All-to-All Term Mapping.
+How to Draw BF: Draw two lists (A and B). Draw arrows from every element in A to every element in B. Tally into result indices. $O(N \cdot M)$.
+Optimised Pattern: Fast Fourier Transform (FFT) or Karatsuba.
+Opt Vis. Technique: Frequency Domain Butterfly.
+Dry Run (Opt): Convert polynomials to "Point-Value" form using complex roots of unity. Multiply point-wise. Inverse FFT back to coefficients.
+How to Draw (Opt): Draw a 'Butterfly Diagram': pairs of values merging and splitting through layers.
+Opt Complexity Visuals: $O(N \log N)$.
+How to Draw Opt Complexity: Draw a recursive tree of depth log N. At each level, show N work. $O(N \log N)$.
+Mem Vis (BF): Result Coefficient Array: Draw a large array of size N+M, but visualized as being updated $O(N\cdot M)$ times.
+Mem Vis (Opt): Complex Value Arrays: Draw two arrays of complex numbers (real + imaginary) being transformed in-place.

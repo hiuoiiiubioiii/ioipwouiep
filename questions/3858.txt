@@ -1,0 +1,13 @@
+ID: 3858
+Problem Title: Minimum Bitwise OR From Grid (Med.)
+Brute Force Method: Exhaustive Pathfinding: Use DFS to find every possible path from top-left to bottom-right, calculating the cumulative bitwise OR for each. Find the minimum.
+BF Complexity Visuals: An exponential branching tree of paths (2^N+M).
+How to Draw BF: Draw a 3x3 grid. Draw every possible path from (0,0) to (2,2). Write the OR result for each. Write $O(2^N+M)$.
+Optimised Pattern: Dynamic Programming with Bitmasking / Dijkstra.
+Opt Vis. Technique: A grid where each cell stores the minimum possible "state" (OR value) required to reach it.
+Dry Run (Opt): `dp[r][c] = min(dp[r-1][c] | grid[r][c], dp[r][c-1] | grid[r][c])`. Note: Since Bitwise OR is non-decreasing, standard DP works if there's no "back-tracking" required.
+How to Draw (Opt): Draw the grid. In each cell, write the binary OR of the cell above and the cell to the left. Pick the smaller binary value.
+Opt Complexity Visuals: A single $O(R x C)$ pass over the grid.
+How to Draw Opt Complexity: Draw a grid N x M. Draw an arrow scanning row by row. Write $O(N \cdot M)$.
+Mem Vis (BF): Storing thousands of path strings in a list.
+Mem Vis (Opt): A 2D DP table of size N x M storing integers. Space $O(N \cdot M)$.

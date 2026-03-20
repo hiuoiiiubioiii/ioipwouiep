@@ -1,0 +1,13 @@
+ID: 2704
+Problem Title: To Be Or Not To Be (JS)
+Brute Force Method: Store val in a global/outer variable, then use verbose traditional functions with if/else statements to return boolean or throw errors.
+BF Complexity Visuals: Closure Scope Chain Map
+How to Draw BF: Draw concentric circles representing variable scope. Place val in the outer circle, and draw arrows from the inner circles (the toBe methods) reaching out to read it.
+Optimised Pattern: Heap memory allocation map (Drawing separate object allocations in memory for every closure context created).
+Opt Vis. Technique: ES6 Arrow Functions with Object Literals and concise condition evaluation.
+Dry Run (Opt): Object Map / Data Flow Block
+How to Draw (Opt): Pass val into the factory block. Show the block emitting an object with two buttons: toBe and notToBe. Pushing a button feeds val2 into a strict equality === gate with the stored val.
+Opt Complexity Visuals: Draw a box labeled expect(val). Inside, draw an object bracket { } containing two arrows. One points to a val === val2 diamond, the other to val !== val2.
+How to Draw Opt Complexity: Constant Time $O(1)$ Execution Block
+Mem Vis (BF): Draw a single, solid square representing the comparison step. Write $O(1)$ in the center to show it happens instantly regardless of input scaling.
+Mem Vis (Opt): Execution Context Stack (Draw a stack: Push expect, pop it, then push toBe, pop it. Shows minimal memory footprint).

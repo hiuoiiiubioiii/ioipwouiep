@@ -1,0 +1,13 @@
+ID: 3417
+Problem Title: Zigzag Grid Traversal With Skip
+Brute Force Method: Traverse the grid cell by cell keeping a boolean toggle variable. Conditionally add to result and manually manage boundary direction changes. $O(M \cdot N)$
+BF Complexity Visuals: Winding Path with Checkmarks.
+How to Draw BF: Draw a grid. Draw a snake-like path through it. Place a checkmark on the 1st cell, an X on the 2nd, checkmark on 3rd, etc.
+Optimised Pattern: Row-based Parity Processing + Array Slicing. $O(M \cdot N)$
+Opt Vis. Technique: Alternating Row Reversals.
+Dry Run (Opt): Read rows top to bottom. If row index is odd, reverse the row. Then flat-map the grid and take every alternating element.
+How to Draw (Opt): Draw the grid. Draw a reverse arrow next to odd rows. Redraw the grid with odd rows flipped, then circle every other element.
+Opt Complexity Visuals: Row-by-Row Block Processing.
+How to Draw Opt Complexity: Draw M boxes (rows). Shade them sequentially to show $O(M \cdot N)$ total operations, completely avoiding complex coordinate math.
+Mem Vis (BF): A complex set of state variables (x, y, dx, dy, skip_flag) updated per cell.
+Mem Vis (Opt): A single 1D result array, building elements sequentially.

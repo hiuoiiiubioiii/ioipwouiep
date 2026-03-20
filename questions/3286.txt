@@ -1,0 +1,13 @@
+ID: 3286
+Problem Title: Find a Safe Walk Through a Grid
+Brute Force Method: DFS/Backtracking to explore all possible paths from (0,0) to (M,N), keeping track of health. $O(3^M x N)$.
+BF Complexity Visuals: Recursive Path Explosion
+How to Draw BF: Draw a small grid. From (0,0), draw arrows to all neighbors. From each neighbor, draw arrows to their neighbors. Show the exponential "web" of possible paths.
+Optimised Pattern: 0-1 BFS or Dijkstra
+Opt Vis. Technique: Least-Cost Wavefront Expansion
+Dry Run (Opt): Treat the grid as a graph where cells with '1' have weight 1 and '0' have weight 0. Find the shortest path (minimum health loss) from start to end. If min_loss &lt; health, the walk is safe.
+How to Draw (Opt): Draw the grid. Use a pen to draw "ripples" expanding from (0,0). For each cell, write the minimum health lost to reach it. If you reach the end with a number smaller than the starting health, you win.
+Opt Complexity Visuals: Dijkstra/BFS State Grid
+How to Draw Opt Complexity: Draw an M x N grid. Label the work as $O(M x N)$ since each cell is processed with its minimum possible cost.
+Mem Vis (BF): Massive recursion stack and path history.
+Mem Vis (Opt): A 2D distance/health array of size M x N (O(M x N) space).

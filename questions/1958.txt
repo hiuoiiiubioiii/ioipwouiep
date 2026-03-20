@@ -1,0 +1,13 @@
+ID: 1958
+Problem Title: Check if Move is Legal
+Brute Force Method: For every cell on the board, check if placing a piece there completes a valid line in any direction.
+BF Complexity Visuals: Full Grid Multi-directional Scan
+How to Draw BF: Draw an 8x8 grid. For every single cell, draw 8 arrows stretching out to the edges. $O(64 \cdot 8 \cdot 8)$.
+Optimised Pattern: 8-Directional Raycasting from Move
+Opt Vis. Technique: Compass Point Expansion
+Dry Run (Opt): From the specific `(r, c)` coordinate, fire "rays" in 8 directions. Check if a ray hits an opposite color and ends with the same color.
+How to Draw (Opt): Draw a central dot (the move). Draw 8 arrows (Compass). Along each arrow, check for the pattern: `Opposite...Opposite Same`.
+Opt Complexity Visuals: $O(1)$ Constant Bound Scan
+How to Draw Opt Complexity: Draw 8 lines. Each line is max 8 units long. Indicate 8 * 8 = 64 operations (Constant for an 8x8 board).
+Mem Vis (BF): No extra structures, but high repeated logic if scanning every cell.
+Mem Vis (Opt): A simple 2D direction array `[[-1,0], [1,0]...]` and integer coordinate variables. $O(1)$ space.

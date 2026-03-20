@@ -1,0 +1,13 @@
+ID: 703
+Problem Title: Kth Largest Element in a Stream
+Brute Force Method: Store stream in an array. Sort array in descending order on every single `add()` call.
+BF Complexity Visuals: Sorting Bar Chart
+How to Draw BF: Draw a bar chart. Show all bars shuffling completely every time a new bar is added (O(N log N)).
+Optimised Pattern: Min-Heap (Size K)
+Opt Vis. Technique: Bounded Priority Queue / Funnel
+Dry Run (Opt): Draw a triangle (heap) with exactly K slots. When a number arrives, if it's larger than the top (minimum), replace top and sink it down.
+How to Draw (Opt): Draw a binary tree of max depth log(K). Use arrows to show a new number replacing the root and bubbling down.
+Opt Complexity Visuals: Logarithmic Tree Depth
+How to Draw Opt Complexity: Draw a tree of height log(K). Show operation traversing from root to leaf to represent $O(\log K)$ time.
+Mem Vis (BF): Dynamic Array (expanding block) for stream history (O(N)).
+Mem Vis (Opt): Fixed-size Array/Tree of exactly K nodes (O(K)).

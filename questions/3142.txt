@@ -1,0 +1,14 @@
+ID: 3142
+Problem Title: Check if Grid Satisfies Conditions
+Brute Force Method: For every cell (i, j), check all other cells in the same column and adjacent rows to see if they match the rules. $O((N x M)$^2)
+BF Complexity Visuals: A web of comparison lines connecting every cell to its neighbors.
+How to Draw BF: Draw a grid. Put your finger on cell (0,0). Scan all other cells to check the column/row rules. Repeat for every cell.
+Optimised Pattern: Matrix Traversal (Local Constraint)
+Opt Vis. Technique: Scanner Beam
+Dry Run (Opt): Iterate through the grid. Only check if grid[i][j] == grid[i+1][j] and grid[i][j] 
+eq grid[i][j+1]. One bad check returns false.
+How to Draw (Opt): Draw a grid. Draw a small "L-shaped" bracket that moves across the grid. The bracket checks the cell below and the cell to the right.
+Opt Complexity Visuals: Sequential grid scan.
+How to Draw Opt Complexity: Draw a snake-like path through the grid. $O(N x M)$.
+Mem Vis (BF): A full adjacency list of all cell relations.
+Mem Vis (Opt): No extra space. $O(1)$ auxiliary.

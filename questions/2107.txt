@@ -1,0 +1,13 @@
+ID: 2107
+Problem Title: Number of Unique Flavors After Sharing K Candies
+Brute Force Method: Try removing every contiguous subsegment of size K, put rest in a hash set, count unique.
+BF Complexity Visuals: Rebuilding a Hash Set N-K times.
+How to Draw BF: Draw N overlapping rectangles of size N-K, each pointing to a separate bucket (Set).
+Optimised Pattern: Sliding Window + Frequency HashMap.
+Opt Vis. Technique: A fixed-width frame sliding over an array.
+Dry Run (Opt): Add elements outside window to map. Slide window: subtract outgoing element's count, add incoming element's count.
+How to Draw (Opt): Draw array. Draw bracket [ ... ] of size K. Erase old boundary, draw new boundary shifted by 1. Update tally marks in a box.
+Opt Complexity Visuals: Single linear pass $O(N)$.
+How to Draw Opt Complexity: Single straight horizontal arrow sliding across an array block.
+Mem Vis (BF): $O(N)$ distinct Hash Sets instantiated repeatedly.
+Mem Vis (Opt): Single Frequency Map tracking integer counts.

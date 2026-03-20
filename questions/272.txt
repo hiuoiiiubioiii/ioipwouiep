@@ -1,0 +1,13 @@
+ID: 272
+Problem Title: Closest BST Value II
+Brute Force Method: Perform an In-order traversal to a list, then sort the list by distance to the target (O(N \log N)).
+BF Complexity Visuals: Sorting Slope: $O(N \log N)$.
+How to Draw BF: Draw a tree. Flatten it into an array. Show a sorting algorithm moving elements around based on a math formula.
+Optimised Pattern: Two Stacks (Predecessor &amp; Successor)
+Opt Vis. Technique: Clamped Range Expansion
+Dry Run (Opt): Use two stacks to find the closest element. One stack tracks nodes smaller than target, one tracks larger. Compare tops and "pop" the closest.
+How to Draw (Opt): Draw a BST. Draw two vertical tubes (Stacks). Fill them as you descend to the target. "Pop" values from the tubes like a dual-ended dispenser.
+Opt Complexity Visuals: Height-Limited: $O(H + K)$.
+How to Draw Opt Complexity: Draw a path from root to target (Height H). Show K operations pulling from that path. Total is H+K.
+Mem Vis (BF): Full Array of Nodes: $O(N)$.
+Mem Vis (Opt): Two-Stack Buffers: Draw two vertical stacks of max height H. Space: $O(H)$.

@@ -1,0 +1,13 @@
+ID: 3699
+Problem Title: Number of ZigZag Arrays I (Hard)
+Brute Force Method: Generate all 2^N subsequences and for each, check if the elements alternate between larger and smaller. $O(N \cdot 2^N)$.
+BF Complexity Visuals: Subsequence Directional Tree.
+How to Draw BF: Draw an array. Branch "Include" or "Exclude". For included items, check: Up? Down? Up? Down? Most branches fail the "ZigZag" rule early.
+Optimised Pattern: Dynamic Programming (DP). `dp[i][direction]` = number of zigzags ending at index i going "up" or "down".
+Opt Vis. Technique: The "Mountain and Valley" Step.
+Dry Run (Opt): To be at the top of a peak at index i, you must have come from a valley at some previous index j. To be in a valley, you must have come from a peak.
+How to Draw (Opt): Draw a row of boxes. Each box has two slots: `Up` and `Down`. For arr[i], look at all arr[j] &lt; arr[i] and add their `Down` counts to your `Up` slot.
+Opt Complexity Visuals: N^2 DP Grid.
+How to Draw Opt Complexity: Draw a grid of size N x 2. Show that for each i, we scan all j &lt; i. Total $O(N^2)$.
+Mem Vis (BF): Storing every valid zigzag path in a list of lists.
+Mem Vis (Opt): A 2D DP array dp[N][2]. Space $O(N)$.

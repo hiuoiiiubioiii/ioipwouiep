@@ -1,0 +1,13 @@
+ID: 145
+Problem Title: Binary Tree Postorder Traversal
+Brute Force Method: Recursive DFS (Left, Right, Root).
+BF Complexity Visuals: A "bottom-up" recursion graph where parents wait for both children to finish.
+How to Draw BF: Draw the tree. Draw arrows going down to leaves, then values "returning" up to the parent. The parent is the last to be recorded.
+Optimised Pattern: Iterative Traversal using Two Stacks (or One Stack + Reverse).
+Opt Vis. Technique: A "Reverse Preorder" (Root, Right, Left) which is then flipped backward to get (Left, Right, Root).
+Dry Run (Opt): Push Root to Stack1. While Stack1 not empty: Pop node, Push to Stack2. Push Left to Stack1, then Push Right to Stack1. Finally, pop all from Stack2.
+How to Draw (Opt): Draw two stack boxes. Move items from S1 to S2 in (Root-Right-Left) order. Draw the result of popping S2 to see the (Left-Right-Root) order.
+Opt Complexity Visuals: $O(N)$ time. Every node is moved between stacks in constant time.
+How to Draw Opt Complexity: Draw the tree. Use two different colored pens: one for the "visit" order and one for the "result" order.
+Mem Vis (BF): Recursive call stack storage of $O(H)$ depth.
+Mem Vis (Opt): Two stacks in memory, effectively doubling the space constant but remaining $O(H)$ in complexity.

@@ -1,0 +1,13 @@
+ID: 1821
+Problem Title: Find Customers With Positive Revenue this Year (SQL)
+Brute Force Method: Pull all records into application memory, iterate through them, and filter in code.
+BF Complexity Visuals: Full table scan highlighting.
+How to Draw BF: Draw a table. Draw an arrow reading every single row. Cross out rows where year != 2021 or revenue &lt;= 0.
+Optimised Pattern: WHERE clause filtering directly in SQL engine.
+Opt Vis. Technique: Data filtering funnel.
+Dry Run (Opt): Database engine evaluates `year = 2021 AND revenue &gt; 0`. Only matching `customer_id`s are passed to the result set.
+How to Draw (Opt): Draw a funnel. Top: "All Rows". Middle: "Filter: 2021 &amp; &gt;0". Bottom: "Result IDs".
+Opt Complexity Visuals: $O(N)$ linear scan or $O(\log N)$ index seek.
+How to Draw Opt Complexity: Draw an arrow jumping directly to the relevant block via a B-Tree index visualization.
+Mem Vis (BF): Pulling all rows into an application-side array (O(N) RAM).
+Mem Vis (Opt): Streamed result set in Database memory (O(1) extra space).

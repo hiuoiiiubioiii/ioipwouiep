@@ -1,0 +1,13 @@
+ID: 600
+Problem Title: Non-negative Integers without Consecutive Ones
+Brute Force Method: Iterate from 0 to N, convert each number to binary, and check if it contains "11".
+BF Complexity Visuals: Linear scan of N numbers. $O(N \log N)$.
+How to Draw BF: Draw numbers 1 to 10. Write binary: 1, 10, 11 (skip), 100, 101, 110 (skip)... count the valid ones.
+Optimised Pattern: Digit DP / Fibonacci Pattern.
+Opt Vis. Technique: A "Binary Tree of Choices." At each bit, you can choose 0 or 1, but if you chose 1 for the previous bit, you *must* choose 0 now. This follows the Fibonacci sequence.
+Dry Run (Opt): 1. Precompute Fibonacci numbers up to 32. 2. Traverse bits of N from left to right. 3. If bit is 1, add `fib[k]` (all valid combos for this bit-length). 4. If "11" is encountered, stop and return.
+How to Draw (Opt): Draw a bitline: `1 0 1 0 1`. Starting from the left, if you see a '1', it means all combinations starting with '0' (for that length) are valid. Add that Fibonacci number to your total and move to the next bit.
+Opt Complexity Visuals: Logarithmic bit traversal. $O(\log N)$.
+How to Draw Opt Complexity: Draw a binary tree where the "1" branch is pruned if the parent was "1".
+Mem Vis (BF): $O(1)$ extra space but very slow for large N.
+Mem Vis (Opt): A small array of 32 Fibonacci numbers. $O(1)$.

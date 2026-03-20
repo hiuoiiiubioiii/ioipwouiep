@@ -1,0 +1,13 @@
+ID: 2927
+Problem Title: Distribute Candies Among Children II
+Brute Force Method: Triple nested loops (i, j, k) to find all combinations where i+j+k = n and each is &lt;= limit.
+BF Complexity Visuals: 3D Coordinate Cube
+How to Draw BF: Draw an isometric cube representing N^3. Shade the region that satisfies i+j+k=n.
+Optimised Pattern: Combinatorics (Inclusion-Exclusion Principle)
+Opt Vis. Technique: Venn Diagram of Overlapping Constraints
+Dry Run (Opt): Total ways (Stars &amp; Bars) - (Ways where child 1 &gt; limit) - (Child 2 &gt; limit)... + (Ways where 2 children &gt; limit) and so on.
+How to Draw (Opt): Draw three large overlapping circles. Label each circle "Child X &gt; Limit". Use the formula: Total - ΣA + Σ(A∩B) - (A∩B∩C).
+Opt Complexity Visuals: Constant Time Mathematical Formula
+How to Draw Opt Complexity: Draw a single dot. Write "O(1)" next to it. The calculation is just a few additions and subtractions of combinations.
+Mem Vis (BF): Three integer variables for loops.
+Mem Vis (Opt): No extra memory used beyond the result variable. Space $O(1)$.

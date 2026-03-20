@@ -1,0 +1,13 @@
+ID: 1367
+Problem Title: Linked List in Binary Tree
+Brute Force Method: For every single node in the binary tree, start a new DFS to see if the linked list matches a downward path from that node.
+BF Complexity Visuals: $O(N \cdot M)$ Dual Traversal
+How to Draw BF: Draw a tree. At every node, draw a "mini-tree" representing a full path check for the list. Note the massive overlapping checks.
+Optimised Pattern: KMP Pattern Matching on Tree
+Opt Vis. Technique: String-Matching State Machine
+Dry Run (Opt): Treat the linked list as a pattern. Precompute KMP's prefix function. Use DFS to traverse the tree while maintaining the KMP state.
+How to Draw (Opt): Draw the linked list with "fallback" arrows (KMP). As you move down the tree, follow the list. If a mismatch occurs, use the fallback arrow to skip redundant comparisons.
+Opt Complexity Visuals: $O(N + M)$ Linear Tree Scan
+How to Draw Opt Complexity: Draw a tree with a single arrow tracing it, while a small pointer moves along the linked list pattern, proving single-pass efficiency.
+Mem Vis (BF): Deep Recursive Stack: Many overlapping frames checking the same list segments repeatedly.
+Mem Vis (Opt): KMP Prefix Array + Stack: Draw a small array for the list pattern and a standard DFS stack.

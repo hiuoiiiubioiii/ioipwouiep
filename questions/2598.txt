@@ -1,0 +1,13 @@
+ID: 2598
+Problem Title: Smallest Missing Non-negative Integer After Operations
+Brute Force Method: Try every possible addition/subtraction of value for every element to see if you can form 0, then 1, then 2... $O(\text{Exponential})$.
+BF Complexity Visuals: A chaotic search trying to fit numbers into specific "slots" using infinite shifts.
+How to Draw BF: Array: [1, 2], value: 3. Can I make 0? No. Smallest missing is 0.
+Optimised Pattern: Modulo Frequency Mapping (Remainders).
+Opt Vis. Technique: A "Remainder Bucket" visual: any number x can represent any value y as long as x mod v == y mod v. We just need to fill the smallest values first.
+Dry Run (Opt): Count the frequency of each remainder nums[i] % value. The smallest missing integer MEX can be formed if we have a remainder MEX % value available. We can use each instance of a remainder only once to "cover" a number in the sequence 0, 1, 2...
+How to Draw (Opt): Draw "buckets" labeled 0 to value-1. Put each array number into a bucket based on its remainder. Start at 0. Is there a number in Bucket 0? Yes, take it and move to 1. Is there one in Bucket 1? Yes, take it. Repeat until a bucket is empty.
+Opt Complexity Visuals: $O(N + \text{value})$ - One pass to count remainders and one pass to find the MEX.
+How to Draw Opt Complexity: Draw a row of buckets. Draw an arrow moving through the sequence 0, 1, 2... and "pulling" an item from the corresponding bucket at each step.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(\text{value})$ to store the frequency of each remainder.

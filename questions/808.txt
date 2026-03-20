@@ -1,0 +1,13 @@
+ID: 808
+Problem Title: Soup Servings
+Brute Force Method: Pure 4-way recursion simulating every single pouring operation (4 choices) until both A and B are empty or just A is empty.
+BF Complexity Visuals: Exploding Quad-Tree. $O(4^N)$ time.
+How to Draw BF: Draw a root node (A,B). Draw 4 branches branching down. At the next level, draw 4 branches from each of those 4 nodes. The tree gets impossibly wide almost instantly.
+Optimised Pattern: 2D Dynamic Programming with Memoization + Math Pruning (Probability limit).
+Opt Vis. Technique: Converging Grid + A Giant "Skip" Button.
+Dry Run (Opt): Scale down by 25 (e.g., 100ml = 4 portions). Start at (N, N) on a grid. Pull probabilities from 4 specific cells closer to (0,0). If N &gt; 192 (which is 4800ml), hit the "Skip" button: A empties first 99.999% of the time, so just return 1.0.
+How to Draw (Opt): Draw a Cartesian coordinate system. Start at a point top-right. Draw 4 arrows pointing down and left towards the origin (0,0).
+Opt Complexity Visuals: Capped 2D Bounded Traversal. $O(1)$ for large N, max $O(200^2)$ otherwise.
+How to Draw Opt Complexity: Draw a 200x200 box and shade it in (DP work). Then draw an infinitely long line stretching out to the right with "O(1) Jump" written over it.
+Mem Vis (BF): Massive Call Stack: Draw a towering, teetering stack of recursion frames mapped directly to the depth of the tree.
+Mem Vis (Opt): 2D Memoization Matrix (Max 200x200): Draw a finite square grid storing decimal numbers, halting memory growth.

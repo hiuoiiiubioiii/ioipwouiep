@@ -1,0 +1,13 @@
+ID: 1999
+Problem Title: Smallest Greater Multiple Made of Two Digits
+Brute Force Method: Start from k+1 and check every single integer to see if it only contains digits d1, d2 and is a multiple of k.
+BF Complexity Visuals: Infinite Linear Search
+How to Draw BF: Draw a number line starting at k. Mark every multiple. Check digits for each. Worst-case: no upper bound.
+Optimised Pattern: BFS (Digit Permutation Generation)
+Opt Vis. Technique: Queue-Based Level Traversal
+Dry Run (Opt): Use a Queue to generate numbers using only d1 and d2 in increasing order. For each, check if it's &gt; k and a multiple of k. Stop at 32-bit integer limit.
+How to Draw (Opt): Draw a tree: Root (empty) branches into d1 and d2. Each child branches into d1 and d2. Traverse level by level.
+Opt Complexity Visuals: BFS Tree Depth Analysis
+How to Draw Opt Complexity: Draw a tree with 2^L nodes where L is the number of digits in 2^{31}-1. $O(2^{10})$.
+Mem Vis (BF): A list of every valid number checked on the number line.
+Mem Vis (Opt): A Queue storing generated candidate numbers. $O(2^L)$ space.

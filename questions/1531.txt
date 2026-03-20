@@ -1,0 +1,13 @@
+ID: 1531
+Problem Title: String Compression II
+Brute Force Method: Try every possible combination of deleting K characters using backtracking. $O(2^N)$.
+BF Complexity Visuals: Exponential Subsequence Tree $O(2^N)$
+How to Draw BF: Draw the string. Branch out twice for every character: "Keep" or "Delete". The tree depth is N, and the width doubles at every level.
+Optimised Pattern: Dynamic Programming (Top-Down with Memo)
+Opt Vis. Technique: The 4-Variable State Cube
+Dry Run (Opt): Define a state `dp(idx, last_char, last_count, k)`. At each step, either delete the char (if `k &gt; 0`) or keep it. If keeping, check if it matches `last_char` to update the compressed length (watching for 1-&gt;2, 9-&gt;10, 99-&gt;100 transitions).
+How to Draw (Opt): Draw a 3D grid where axes are `Index`, `K`, and `LastChar`. As you move through the string, draw an arrow jumping between cells in the grid, only computing a cell if it's empty (memoization).
+Opt Complexity Visuals: State-Space Product $O(N^2 \cdot K \cdot 26)$
+How to Draw Opt Complexity: Draw a dense 2D table representing `Index x K`. Inside each cell, imagine a small 26-slot drawer. The total "work" is filling every drawer exactly once.
+Mem Vis (BF): An enormous recursion tree with redundant string slices.
+Mem Vis (Opt): A 4D Memoization table/array. Draw a block of memory divided into `N * K * 26 * 100` small compartments. $O(N^2 \cdot K)$ space.

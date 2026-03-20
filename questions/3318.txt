@@ -1,0 +1,13 @@
+ID: 3318
+Problem Title: Find X-Sum of All K-Long Subarrays I
+Brute Force Method: For each window of size K, extract all elements, count frequencies, sort the elements by frequency/value, and sum the top X.
+BF Complexity Visuals: Redrawing Histograms
+How to Draw BF: Draw the array. Bracket a window. Below it, draw a bar chart of frequencies. Move the bracket 1 step, erase the whole chart, and redraw it from scratch. $O(N \cdot K \log K)$.
+Optimised Pattern: Sliding Window + Ordered Set / Hash Map
+Opt Vis. Technique: Frequency Shift &amp; Balance Scales
+Dry Run (Opt): Maintain a frequency map. As the window slides, add the new element, remove the old one. Update the top X sum dynamically.
+How to Draw (Opt): Draw the array with a sliding bracket [ ]. Below, draw a Hash Map box. When sliding, draw a "+1" arrow for the incoming char and "-1" for outgoing. Maintain a small "Top X" VIP list next to it.
+Opt Complexity Visuals: Rolling Wheel Timeline
+How to Draw Opt Complexity: Draw a long road (the array). Draw a wheel rolling over it. The wheel never stops or goes backward, representing the smooth $O(N \log K)$ transition.
+Mem Vis (BF): Creating and destroying an array of size K, plus a sorting stack, over and over.
+Mem Vis (Opt): A static Hash Map of frequencies and a balanced BST (like `std::set` or TreeMap) taking exactly $O(K)$ space.

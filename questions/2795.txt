@@ -1,0 +1,13 @@
+ID: 2795
+Problem Title: Parallel Execution of Promises for Individual Results Retrieval
+Brute Force Method: Awaiting promises in a `for` loop, destroying the parallel nature of Promises. Time = sum of all execution times.
+BF Complexity Visuals: The Sequential Waterfall
+How to Draw BF: Draw 3 runners. Runner 1 runs, finishes. Runner 2 runs, finishes. Runner 3 runs. Highly inefficient.
+Optimised Pattern: Promise.allSettled Polyfill
+Opt Vis. Technique: The Racing Lanes
+Dry Run (Opt): Fire all promises simultaneously. Attach `.then()` and `.catch()` to each to capture the `{status, value/reason}` object. Keep a counter of finished promises. When the counter hits the array length, resolve the main wrapper promise.
+How to Draw (Opt): Draw 3 runners starting at the exact same time. Draw a "Finish Line Clerk" with a clipboard. As each runner crosses (success or fail), the clerk writes it down. When 3 names are written, the clerk hands over the clipboard.
+Opt Complexity Visuals: Parallel Asynchronous $O(\text{Max}(\text{Time})$)
+How to Draw Opt Complexity: Draw a Gantt chart. All tasks start at T=0. The total time is the length of the longest task.
+Mem Vis (BF): Blocking the main thread with massive arrays.
+Mem Vis (Opt): An array of result objects identical in size to the input. $O(N)$ space.

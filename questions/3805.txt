@@ -1,0 +1,13 @@
+ID: 3805
+Problem Title: Count Caesar Cipher Pairs (Med.)
+Brute Force Method: Compare every pair. Shift string A 26 times and check if it matches string B.
+BF Complexity Visuals: Dense Bipartite Graph mapping N strings to each other.
+How to Draw BF: Write two strings on paper. Draw 26 arrows between them representing the 26 rotational checks.
+Optimised Pattern: Difference Array String Hashing + Frequency Map.
+Opt Vis. Technique: Transformation pipeline (String -&gt; Difference Array -&gt; Hash).
+Dry Run (Opt): Convert "abc" to its adjacent difference [1, 1]. Hash this array. Look up [1, 1] in a map. Add frequency to total pairs.
+How to Draw (Opt): Write "abc". Draw arrows between a-&gt;b (1) and b-&gt;c (1). Write [1, 1]. Draw a bucket (HashMap) catching identical arrays from other words.
+Opt Complexity Visuals: Linear Scan Grouping.
+How to Draw Opt Complexity: Draw N words flowing into a funnel (hashing algorithm), coming out as N keys. Show $O(N \cdot L)$ total time calculation.
+Mem Vis (BF): String copies generated during the 26 rotations, taking $O(N^2 \cdot L)$ space.
+Mem Vis (Opt): A Trie (Prefix Tree) where each node represents an integer difference between characters, merging common prefixes.

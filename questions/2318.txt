@@ -1,0 +1,13 @@
+ID: 2318
+Problem Title: Number of Distinct Roll Sequences
+Brute Force Method: Backtracking: build every sequence of length N by trying digits 1-6, verifying GCD, adjacent equality, and the 2-gap rule at every step.
+BF Complexity Visuals: Base-6 Exponential Tree (O(6^N))
+How to Draw BF: Draw a root node branching into 6 paths. Each of those branches into 6 paths, going N levels deep (crossing out invalid branches).
+Optimised Pattern: 3D Dynamic Programming (State Machine)
+Opt Vis. Technique: Sliding 6x6 Matrix Grid
+Dry Run (Opt): The state only depends on `length`, `last_roll`, and `second_to_last_roll`. For length `i`, look at valid `(prev1, prev2)` pairs from `i-1`, check constraints, and sum paths to the new `(curr, prev1)` state.
+How to Draw (Opt): Draw N vertical slices. Inside each slice, draw a 6x6 grid representing `(prev1, prev2)`. Draw arrows carrying the sum of ways from valid cells in slice `i-1` to cells in slice `i`.
+Opt Complexity Visuals: Constant Grid Layers (O(N * 6^3))
+How to Draw Opt Complexity: Draw a straight timeline. At each step, draw a small, fixed-size 3D cube (6x6x6 transitions).
+Mem Vis (BF): Draw an extremely deep Call Stack representing the sequence building.
+Mem Vis (Opt): Draw a 3D Matrix/Array of size `N x 6 x 6` (or just two `6 x 6` matrices swapped for space optimization).

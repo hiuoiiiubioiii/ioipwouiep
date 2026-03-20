@@ -1,0 +1,13 @@
+ID: 2400
+Problem Title: Number of Ways to Reach a Position After Exactly k Steps
+Brute Force Method: Backtracking: From `startPos`, branch into `left` and `right` for every step. After k steps, count how many paths ended at `endPos`.
+BF Complexity Visuals: Exponential Movement Tree (O(2^K))
+How to Draw BF: Draw a starting point. At every step, branch left and right. Go K levels deep. Circle the leaf nodes that land on the `endPos` coordinate.
+Optimised Pattern: Combinatorics (Pascal's Triangle / Math)
+Opt Vis. Technique: Binomial Coefficient Selection
+Dry Run (Opt): Total steps k, net distance d = |start - end|. We need R right steps and L left steps such that R + L = k and R - L = d. Solving gives R = (k + d) / 2. The answer is C(k, R).
+How to Draw (Opt): Draw a grid of steps. Realize that to get from 0 to 2 in 4 steps, you MUST take 3 steps right and 1 step left in any order. This is just choosing which of the 4 "step-slots" will be "left turns."
+Opt Complexity Visuals: Constant Time Math (O(1) with Factorials)
+How to Draw Opt Complexity: Draw a single "Choose" formula: kCr. The complexity is a single mathematical calculation.
+Mem Vis (BF): Draw an immense recursion tree with 2^K nodes.
+Mem Vis (Opt): Draw zero extra memory (or a small 2D DP table if using iterative Pascal's Triangle).

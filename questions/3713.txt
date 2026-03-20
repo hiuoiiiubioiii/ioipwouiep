@@ -1,0 +1,13 @@
+ID: 3713
+Problem Title: Longest Balanced Substring I (Med)
+Brute Force Method: Generate all substrings, count balance of each to find the longest valid one. $O(N^2)$.
+BF Complexity Visuals: Nested brackets $O(N^2)$.
+How to Draw BF: Write string. Draw a bracket for every possible substring and count 0s and 1s inside.
+Optimised Pattern: Prefix Sum + Hash Map (First Occurrence)
+Opt Vis. Technique: State Tracker Chart
+Dry Run (Opt): Treat '0' as -1, '1' as +1. Track running sum. If sum repeats, a balanced substring occurred between those indices!
+How to Draw (Opt): Draw string. Below it, write running sum (+1/-1). Circle duplicate sum numbers. The distance between them is the substring length.
+Opt Complexity Visuals: Linear Scan $O(N)$.
+How to Draw Opt Complexity: Draw a wavy line (running sum). Draw a horizontal line connecting two peaks at the same height.
+Mem Vis (BF): String chunk allocations.
+Mem Vis (Opt): Hash Map storing (RunningSum -&gt; FirstIndex).

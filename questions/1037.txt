@@ -1,0 +1,13 @@
+ID: 1037
+Problem Title: Valid Boomerang
+Brute Force Method: Calculate the distances between all 3 points. Use the Triangle Inequality: if `a + b == c`, they are collinear (not a boomerang).
+BF Complexity Visuals: Three measuring tapes forming a flat line.
+How to Draw BF: Draw 3 dots. Draw lines between them. Measure. Check if they form a flat line. Write $O(1)$ but involves floating point precision issues.
+Optimised Pattern: Math (Cross Product / Slope Comparison).
+Opt Vis. Technique: A "Leaning Test". If the slope from A to B is the same as the slope from B to C, they are a straight line.
+Dry Run (Opt): Instead of division `(y2-y1)/(x2-x1)`, use multiplication to avoid `div by zero`: `(y2 - y1) * (x3 - x2) == (y3 - y2) * (x2 - x1)`. If unequal, it's a boomerang.
+How to Draw (Opt): Write the coordinates. Calculate `dy1 * dx2` and `dy2 * dx1`. If the results are different, it's a boomerang.
+Opt Complexity Visuals: A single arithmetic comparison.
+How to Draw Opt Complexity: Draw one box with the formula `Δy1*Δx2 != Δy2*Δx1`. Write $O(1)$ Time.
+Mem Vis (BF): Standard floating point variables.
+Mem Vis (Opt): Three integer product variables. $O(1)$ space.

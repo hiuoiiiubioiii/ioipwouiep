@@ -1,0 +1,13 @@
+ID: 951
+Problem Title: Flip Equivalent Binary Trees
+Brute Force Method: Generate all possible tree structures by flipping every possible node, then check each one for isomorphism with the target tree.
+BF Complexity Visuals: $O(2^N)$. An exponential number of potential "flipped" versions of the tree.
+How to Draw BF: Draw a tree. For every node, draw two branches: "Flip Children" and "Keep Children." It becomes a fractal of tree variants.
+Optimised Pattern: Recursive Canonical Comparison
+Opt Vis. Technique: "The Mirror Sync." At each node, check if the children match as-is OR if they match when cross-paired (Left1 with Right2 and Right1 with Left2).
+Dry Run (Opt): `isFlip(r1, r2)`: if both null, true; if one null or vals differ, false. Return `(isFlip(L1, L2) &amp;&amp; isFlip(R1, R2)) || (isFlip(L1, R2) &amp;&amp; isFlip(R1, L2))`.
+How to Draw (Opt): Draw two trees. Place a "Comparison Lens" over the roots. If they match, split the lens into two: one pair checking normally, one pair checking cross-wise.
+Opt Complexity Visuals: $O(\text{min}(N1, N2)$). Each node pair is visited once in the recursion.
+How to Draw Opt Complexity: Draw a tree structure where each node has a "double-ended" arrow connecting it to its counterpart in the other tree.
+Mem Vis (BF): Exponential memory to store all tree permutations.
+Mem Vis (Opt): $O(H)$ recursion stack where H is tree height. Draw a vertical column of function calls.

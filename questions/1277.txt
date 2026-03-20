@@ -1,0 +1,13 @@
+ID: 1277
+Problem Title: Count Square Submatrices with All Ones
+Brute Force Method: For every cell (i, j) containing a '1', try to expand squares of size 2x2, 3x3, etc., checking if every cell in the expanded square is also a '1'.
+BF Complexity Visuals: Expanding Perimeter Scan
+How to Draw BF: Draw a grid. For a '1' at the center, draw concentric squares growing outward. For each square, shade every inner cell. Write $O(M \cdot N \cdot \\text{min}(M,N)$).
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: Corner-Based Dependency
+Dry Run (Opt): `dp[i][j]` represents the size of the largest square whose bottom-right corner is at (i, j). If `grid[i][j] == 1`, then `dp[i][j] = min(top, left, top-left) + 1`. The total count is the sum of all `dp[i][j]` values.
+How to Draw (Opt): Draw a 3x3 grid of 1s. For the bottom-right cell, draw 3 arrows pointing from its neighbors (up, left, up-left). Write the minimum of those neighbors + 1 in the cell. Show how this value represents exactly how many squares end there.
+Opt Complexity Visuals: Linear Grid Traversal
+How to Draw Opt Complexity: Draw a grid. Show a single sweep from top-left to bottom-right. Write $O(M \cdot N)$.
+Mem Vis (BF): Draw no extra memory but massive re-scans of the input grid.
+Mem Vis (Opt): Draw a 2D integer matrix `dp[M][N]` (can be done in-place to save space). Space: $O(1)$ or $O(M\cdot N)$.

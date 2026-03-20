@@ -1,0 +1,13 @@
+ID: 1081
+Problem Title: Smallest Subsequence of Distinct Characters
+Brute Force Method: Generate every possible subsequence that contains all distinct characters exactly once. Sort them lexicographically and pick the smallest.
+BF Complexity Visuals: An exponential explosion of string permutations.
+How to Draw BF: "cbacdcbc". Distinct: a, b, c, d. Generate "abcd", "adbc"... compare. Write $O(2^N)$.
+Optimised Pattern: Monotonic Stack + Greedy (Frequency Map).
+Opt Vis. Technique: A "Strict Concierge". Characters enter a stack only if they are smaller than the top and the top character appears again later in the string.
+Dry Run (Opt): Track counts of each char. Use a stack and a `visited` set. If `char &lt; stack.top` AND `count[stack.top] &gt; 0`, pop the stack. Push char. Decrement counts.
+How to Draw (Opt): Draw a U-shaped stack. List the string. As you process a char, check if it's already in the stack. If not, pop larger tops that appear later. Put char in.
+Opt Complexity Visuals: Single pass through the string.
+How to Draw Opt Complexity: Draw the string with one arrow and a stack filling/emptying. Write Time: $O(N)$.
+Mem Vis (BF): $O(2^N)$ space for all subsequences.
+Mem Vis (Opt): $O(1)$ space (stack and map size capped at 26).

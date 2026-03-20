@@ -1,0 +1,13 @@
+ID: 1348
+Problem Title: Tweet Counts Per Frequency
+Brute Force Method: Store every tweet in a simple list. For every query, filter the entire list by name and time, then sort the results to group them into intervals.
+BF Complexity Visuals: $O(Q \cdot N \log N)$ Query Filtering
+How to Draw BF: Draw a long list of tweets. For one query, draw a filter that extracts a few items, then a sorting funnel. Repeat for every query.
+Optimised Pattern: Hash Map of Sorted Sets (TreeMap)
+Opt Vis. Technique: Binned Time Segments
+Dry Run (Opt): Map each `tweetName` to a `std::set` or `std::multiset` of timestamps. Use `lower_bound` to find the start time and iterate through the interval, incrementing counts for each "bin".
+How to Draw (Opt): Draw a Map where keys are names. Each key points to a sorted timeline. For a query, draw a "window" on the timeline and divide it into equal segments (bins). Count dots in each bin.
+Opt Complexity Visuals: $O(Q \cdot (\log N + K)$) Range Search
+How to Draw Opt Complexity: Draw a balanced tree (Set). Show an arrow jumping directly to the start time (O(log N)) and then traversing only the relevant interval (O(K)).
+Mem Vis (BF): Unstructured List: A massive, unsorted array of all tweet objects ever recorded.
+Mem Vis (Opt): Grouped Timelines: Draw a Map pointing to multiple sorted arrays or BSTs, optimizing for search over insertion.

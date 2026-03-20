@@ -1,0 +1,13 @@
+ID: 3467
+Problem Title: Transform Array by Parity
+Brute Force Method: Iterate once to change values (Even to 0, Odd to 1), then sort the entire array. $O(N \log N)$
+BF Complexity Visuals: Sort Funnel Processing.
+How to Draw BF: Draw the array being modified. Then draw it entering a "Sort" box that splits into multiple levels (merge sort tree).
+Optimised Pattern: Counting &amp; Filling (Stable Parity). $O(N)$
+Opt Vis. Technique: Count-Based Bucket Filling.
+Dry Run (Opt): Count the number of even numbers. Create a result array. Fill the first `evenCount` slots with 0, and the rest with 1.
+How to Draw (Opt): Draw a tally mark for every even number. Draw an empty array and fill a "0" block and a "1" block based on that tally.
+Opt Complexity Visuals: Two-Pass Linear Scan.
+How to Draw Opt Complexity: Draw one line for counting and one line for filling. Total 2N operations.
+Mem Vis (BF): Sort-overhead memory (stack space).
+Mem Vis (Opt): $O(1)$ extra space if modifying in-place; $O(N)$ for a new result array.

@@ -1,0 +1,13 @@
+ID: 705
+Problem Title: Design HashSet
+Brute Force Method: A massive boolean array of size 1,000,001 (direct addressing).
+BF Complexity Visuals: Massive Grid
+How to Draw BF: Draw a giant grid representing 10^6 slots. Shade in the index when `add(key)` is called. $O(1)$ time but huge space.
+Optimised Pattern: Chaining (Array of Linked Lists / BSTs)
+Opt Vis. Technique: Buckets and Chains
+Dry Run (Opt): Draw an array of buckets (e.g., size 10^4). Hash the key. Go to bucket. Traverse the linked list inside the bucket to add/check.
+How to Draw (Opt): Draw a vertical array. From an index, draw horizontal arrows linking squares (Linked List nodes) representing collisions.
+Opt Complexity Visuals: Average vs Worst-Case graph
+How to Draw Opt Complexity: Draw $O(1)$ as a flat line for average. Draw $O(N)$ as a diagonal line for worst-case (all keys in one bucket).
+Mem Vis (BF): A massive contiguous block of memory (O(Max_Value)).
+Mem Vis (Opt): Array of pointers + dynamically allocated node boxes (O(N + K)).

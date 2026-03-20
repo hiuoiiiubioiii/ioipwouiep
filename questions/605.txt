@@ -1,0 +1,13 @@
+ID: 605
+Problem Title: Can Place Flowers
+Brute Force Method: Recursion/Backtracking: Try placing a flower at every valid empty spot, branch out, and check if N flowers can be placed.
+BF Complexity Visuals: Exponential branching Tree structure.
+How to Draw BF: Draw a tree starting from an empty array. Branch left for 'Plant here', branch right for 'Skip'. The tree gets massively wide. Write $O(2^N)$.
+Optimised Pattern: Greedy Algorithm / Single Pass Array Scan.
+Opt Vis. Technique: Sliding 3-element inspection window.
+Dry Run (Opt): Look at [i-1, i, i+1]. If all are 0, plant a flower at i (change to 1), decrement N, and jump index by 2. If N hits 0, return true immediately.
+How to Draw (Opt): Draw an array [1,0,0,0,1]. Draw a sliding box covering 3 cells. If the box shows [0,0,0], cross out the middle 0, write 1, and tally N-1.
+Opt Complexity Visuals: A straight, unbroken timeline ending early.
+How to Draw Opt Complexity: Draw a straight line. Put a stop-sign halfway through to signify early termination (when N=0). Write $O(N)$ max time.
+Mem Vis (BF): Draw a deep stack of frames representing the recursive call stack hitting depth N.
+Mem Vis (Opt): Draw the original array in place. Draw one variable box for 'N', showing it decrementing. $O(1)$ extra space.

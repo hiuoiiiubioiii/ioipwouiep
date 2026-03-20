@@ -1,0 +1,13 @@
+ID: 2315
+Problem Title: Count Asterisks
+Brute Force Method: Split the entire string by the '|' character into a new array. Iterate over the even-indexed chunks and count the '*' characters.
+BF Complexity Visuals: Array Allocation &amp; Scanning (O(N))
+How to Draw BF: Draw a string being chopped into distinct blocks, copied into a list, and then scanned.
+Optimised Pattern: Single Pass State Toggle
+Opt Vis. Technique: On/Off Switchboard
+Dry Run (Opt): Read char by char. Keep a boolean `inside_bar`. If you see '|', flip the boolean. If you see '*' AND you are `!inside_bar`, increment count.
+How to Draw (Opt): Draw a timeline of characters. Draw a line above it: when you hit '|', the line jumps UP (inside). Hit '|' again, it jumps DOWN (outside). Only circle '*' when the line is DOWN.
+Opt Complexity Visuals: Flat Straight Line (O(N))
+How to Draw Opt Complexity: Draw a constant linear arrow left to right. No branching, no extra steps.
+Mem Vis (BF): Draw a new Array in memory holding the split substring chunks.
+Mem Vis (Opt): Draw just two variables: a Boolean (`inside`) and an Integer (`count`).

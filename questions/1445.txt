@@ -1,0 +1,13 @@
+ID: 1445
+Problem Title: Apples &amp; Oranges (SQL)
+Brute Force Method: Two separate SELECTs and a JOIN. Get total apples per day in one table, total oranges per day in another, then join on the date and subtract.
+BF Complexity Visuals: Multi-Scan Joined Result
+How to Draw BF: Draw two filtered versions of the Sales table (one for Apples, one for Oranges). Draw lines matching the dates. Label $O(N)$.
+Optimised Pattern: GROUP BY + SUM(CASE WHEN)
+Opt Vis. Technique: Pivoted Aggregation
+Dry Run (Opt): Group by sale_date. Use `SUM(CASE WHEN fruit='apples' THEN sold_num ELSE -sold_num END)` to calculate the net difference in a single pass.
+How to Draw (Opt): Draw the Sales table. Group rows by date. Inside each group, flip the sign of "Oranges". Sum the numbers. One table out.
+Opt Complexity Visuals: Single Pass Aggregation
+How to Draw Opt Complexity: Draw one scan $O(N)$ -&gt; Grouping/Sort $O(N \log N)$. Total $O(N \log N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Small hash table for grouping categories in memory. Space $O(\text{Unique Dates})$.

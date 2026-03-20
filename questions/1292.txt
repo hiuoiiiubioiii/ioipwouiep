@@ -1,0 +1,13 @@
+ID: 1292
+Problem Title: Maximum Side Length of a Square with Sum Less than or Equal to Threshold
+Brute Force Method: For every cell (i, j), try squares of all possible side lengths k. For each square, sum all elements manually to check the threshold.
+BF Complexity Visuals: Brute Force Volume Scan
+How to Draw BF: Draw a grid. For one cell, draw a 1x1, 2x2, 3x3 square. For each, shade every inner cell. Write $O(M \cdot N \cdot \\text{min}(M,N)$^3).
+Optimised Pattern: 2D Prefix Sum + Binary Search (or Greedy Side Length)
+Opt Vis. Technique: Integral Image / Region Sum
+Dry Run (Opt): Pre-calculate a 2D prefix sum. Now, the sum of any square can be found in $O(1)$. Since side lengths are monotonic, for each cell, check if a square of `current_max_side + 1` is valid. If so, increment and repeat.
+How to Draw (Opt): Draw a grid. Draw the formula: `Sum = P[i][j] - P[i-k][j] - P[i][j-k] + P[i-k][j-k]`. Show how 4 points on the prefix sum grid replace thousands of additions.
+Opt Complexity Visuals: Linear Grid Traversal with $O(1)$ Checks
+How to Draw Opt Complexity: Draw a grid. Show a single sweep. At each cell, show a single $O(1)$ lookup. Write $O(M \cdot N)$.
+Mem Vis (BF): Draw no extra memory but massive re-scans of the input grid.
+Mem Vis (Opt): Draw a 2D Prefix Sum matrix of size (M+1) x (N+1). Space: $O(M \cdot N)$.

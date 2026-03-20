@@ -1,0 +1,13 @@
+ID: 1423
+Problem Title: Maximum Points You Can Obtain from Cards
+Brute Force Method: Recursion Tree. At each step, branch into two decisions: take the leftmost card or take the rightmost card. Recurse K times to find the max sum.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a root node branching into "Pick Left" and "Pick Right". Continue branching K times. Label $O(2^K)$.
+Optimised Pattern: Sliding Window (Inverse approach)
+Opt Vis. Technique: Fixed-Length Min Window
+Dry Run (Opt): Taking K cards from the edges is mathematically identical to leaving a contiguous subarray of size `N-K` in the middle. Find the minimum sum subarray of size `N-K`. Max Score = Total Sum - Min Subarray Sum.
+How to Draw (Opt): Draw a long array. Draw a box of length `N-K` over the array. Slide the box from left to right. Whatever sum is left OUTSIDE the box is your score. Find the box placement that minimizes the inside sum.
+Opt Complexity Visuals: Single Window Slide
+How to Draw Opt Complexity: Draw an array with a fixed-size bracket sliding from left to right. Label $O(N)$ time.
+Mem Vis (BF): Call Stack Tower
+Mem Vis (Opt): Draw a single `current_window_sum` integer updating as the window shifts. $O(1)$ space.

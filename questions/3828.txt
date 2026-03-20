@@ -1,0 +1,13 @@
+ID: 3828
+Problem Title: Final Element After Subarray Deletions (Med.)
+Brute Force Method: Physically mutate the array: Find the target subarray, slice it out, shift all remaining elements left, and repeat until one element remains.
+BF Complexity Visuals: Memory blocks constantly shrinking and shifting leftward.
+How to Draw BF: Draw an array. Cross out 3 elements. Draw arrows moving the entire right side leftward to fill the gap. Write $O(N^2)$ for repeated shifting.
+Optimised Pattern: Two Pointers / Stack-based simulation.
+Opt Vis. Technique: A logical stack where elements are pushed, and if a deletion pattern is matched at the top of the stack, they are popped (deleted) virtually.
+Dry Run (Opt): Iterate through the array pushing to a Stack. Check the top K elements against the deletion rule. If they match, pop them. The final element is the last one remaining.
+How to Draw (Opt): Draw an open-top bucket. Push numbers in one by one. If the top 3 numbers form the bad sequence, draw an eraser wiping them out. Continue pushing.
+Opt Complexity Visuals: Single pass linear scan with localized stack pops.
+How to Draw Opt Complexity: Draw N numbers on a line. Draw an arrow entering the stack, and sometimes popping out. Write $O(N)$.
+Mem Vis (BF): Creating new array copies for every deletion step, $O(N^2)$ cumulative space.
+Mem Vis (Opt): An Array used as a Stack, taking $O(N)$ space to store the non-deleted elements.

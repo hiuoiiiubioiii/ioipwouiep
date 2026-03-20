@@ -1,0 +1,13 @@
+ID: 3383
+Problem Title: Minimum Runes to Add to Cast Spell
+Brute Force Method: Try casting the spell by manually testing combinations of runes to add.
+BF Complexity Visuals: Manual Combination Search
+How to Draw BF: Draw a spell circle and randomly guess which runes are missing.
+Optimised Pattern: Graph Reachability / SCC (Tarjan's)
+Opt Vis. Technique: The Crystal Component Linker
+Dry Run (Opt): Treat crystals/runes as a directed graph. Find Strongly Connected Components (SCCs). Condense the graph into a Directed Acyclic Graph (DAG). The answer is the number of SCCs with an in-degree of 0 (sources that must be manually activated).
+How to Draw (Opt): Draw nodes and arrows. Circle groups of nodes that loop into each other (SCCs). Treat each circle as one giant node. Count the circles that have absolutely zero arrows pointing *into* them.
+Opt Complexity Visuals: Tarjan's DFS $O(V + E)$
+How to Draw Opt Complexity: Draw a single DFS traversal to identify components, followed by an in-degree scan.
+Mem Vis (BF): Matrix of all reachability states.
+Mem Vis (Opt): DFS stacks, `low-link` arrays. $O(V+E)$ space.

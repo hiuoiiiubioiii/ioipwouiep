@@ -1,0 +1,13 @@
+ID: 2013
+Problem Title: Detect Squares
+Brute Force Method: For every query point, pair it with EVERY other existing point in the system, then search for the remaining two points.
+BF Complexity Visuals: Scatter Plot Complete Graph
+How to Draw BF: Draw points on a 2D plane. Draw lines connecting EVERY point to EVERY other point. $O(N^2)$ or worse per query.
+Optimised Pattern: Hash Map Point Frequencies + Diagonal Anchoring
+Opt Vis. Technique: Corner Completion Box
+Dry Run (Opt): Given query `(x,y)`, iterate only over points that form a diagonal `(px, py)`. The missing corners MUST be `(x, py)` and `(px, y)`. Multiply their frequencies.
+How to Draw (Opt): Draw a query point and one diagonal point. Draw a bounding box around them. The other two corners are instantly known. Read their counts from a Hash Map.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a line representing the list of unique points. For each valid diagonal, draw 3 quick $O(1)$ lookups to the Hash Map. Time $O(N)$ per query.
+Mem Vis (BF): A dynamic array continuously growing, requiring full linear scans.
+Mem Vis (Opt): A nested Hash Map `Map&gt;` or 1D array if coordinates are small. Space $O(N)$.

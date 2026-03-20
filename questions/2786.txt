@@ -1,0 +1,13 @@
+ID: 2786
+Problem Title: Visit Array Positions to Maximize Score
+Brute Force Method: Recursion with Backtracking: At each index i, try jumping to every index j &gt; i. Calculate the score based on parity changes. Explore all paths. $O(2^N)$.
+BF Complexity Visuals: Exponential Jump Tree
+How to Draw BF: Draw a line of numbers. From node 0, branch out to every single following node. The tree depth is N, width is 2^N.
+Optimised Pattern: Recursive Call Stack (Visualizing the massive overhead of re-calculating the best path for the same index multiple times).
+Opt Vis. Technique: Dynamic Programming with Parity States
+Dry Run (Opt): Two-Lane State Transition
+How to Draw (Opt): Maintain two variables: even_max and odd_max (the best scores ending on an even or odd number so far). For the current number, if it's even, its best score is nums[i] + max(even_max, odd_max - x). Update the parity maxes.
+Opt Complexity Visuals: Draw two rows labeled "Even" and "Odd". As you move through the array, update the corresponding row with the new high score, potentially pulling from the other row with a "-x" penalty.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow. Note that you only check two variables at each step. Label it $O(N)$.
+Mem Vis (Opt): $O(1)$ State Variables (Draw exactly two 64-bit integer cells: lastEven and lastOdd).

@@ -1,0 +1,13 @@
+ID: 518
+Problem Title: Coin Change II
+Brute Force Method: Recursion. For every coin, branch: either take the coin (stay on index) or skip the coin (move to next).
+BF Complexity Visuals: A massive unbalanced binary tree where "take" branches repeat infinitely until sum exceeds target. $O(2^N)$.
+How to Draw BF: Draw target sum. Branch left (-coin value) and right (next coin). Stop when sum is 0 or negative.
+Optimised Pattern: 1D Dynamic Programming (Unbounded Knapsack).
+Opt Vis. Technique: A row of buckets representing amounts, where each new coin pours combinations into higher buckets sequentially.
+Dry Run (Opt): Create `dp` array of size Amount+1. DP[0] = 1. For each coin, loop from coin_val to Amount: DP[i] += DP[i - coin_val].
+How to Draw (Opt): Draw an array from 0 to Amount. Put 1 in index 0. Pick a coin. Point an arrow from `i - coin` to `i`, adding combinations.
+Opt Complexity Visuals: A grid of size Coins x Amount filled row by row. $O(C \cdot A)$.
+How to Draw Opt Complexity: Draw a rectangle with C rows and A columns, shade it left to right, top to bottom.
+Mem Vis (BF): Extremely deep recursion stack, depth up to (Amount / min_coin).
+Mem Vis (Opt): A simple 1D array of size Amount + 1. $O(A)$ space.

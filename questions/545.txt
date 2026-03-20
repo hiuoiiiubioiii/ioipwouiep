@@ -1,0 +1,13 @@
+ID: 545
+Problem Title: Boundary of Binary Tree
+Brute Force Method: Perform multiple full traversals to find all paths, then filter for the specific edges (left, leaves, right) and remove duplicates.
+BF Complexity Visuals: Disorganized tree scans with heavy overlap and manual filtering. $O(N)$.
+How to Draw BF: Draw a tree. Trace every possible path and then highlight the outer shell.
+Optimised Pattern: Pre-order / In-order / Post-order Coordination.
+Opt Vis. Technique: A "shadow" cast on a tree. You walk down the left shadow, along the bottom floor (leaves), and up the right shadow.
+Dry Run (Opt): 1. Add Root. 2. DFS Left Boundary (exclude leaves). 3. DFS all Leaves (Left to Right). 4. DFS Right Boundary (exclude leaves, reverse order).
+How to Draw (Opt): Draw a tree. Draw a blue line down the leftmost nodes, a green line across the bottom leaves, and a red line up the rightmost nodes.
+Opt Complexity Visuals: Three distinct linear passes. $O(N)$.
+How to Draw Opt Complexity: Draw the outline of the tree with three different colored arrows in sequence.
+Mem Vis (BF): Arrays storing all possible paths for filtering.
+Mem Vis (Opt): A list to store the boundary nodes + recursion stack. $O(N)$.

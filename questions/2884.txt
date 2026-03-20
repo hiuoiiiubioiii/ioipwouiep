@@ -1,0 +1,13 @@
+ID: 2884
+Problem Title: Modify Columns
+Brute Force Method: Use a for loop to iterate through the indices of the 'salary' column, multiply each value by 2, and update the cell directly.
+BF Complexity Visuals: Element-wise Iteration
+How to Draw BF: Draw a column of numbers. Draw a small "x 2" box next to every single cell.
+Optimised Pattern: df['salary'] *= 2 (Vectorized Math)
+Opt Vis. Technique: Columnar Transformation
+Dry Run (Opt): Visualize the entire 'salary' column being fed into a "Math Block" that outputs a doubled column in one swift motion.
+How to Draw (Opt): Draw one vertical rectangle. Draw a broad arrow pointing to a second vertical rectangle of the same size, labeled "Double".
+Opt Complexity Visuals: Linear $O(N)$ (Vectorized)
+How to Draw Opt Complexity: Draw a very shallow line, indicating that while it's $O(N)$, the constant factor is tiny due to hardware acceleration.
+Mem Vis (BF): $O(N)$ for Python object overhead in the loop.
+Mem Vis (Opt): $O(N)$ using contiguous memory blocks (NumPy arrays).

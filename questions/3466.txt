@@ -1,0 +1,13 @@
+ID: 3466
+Problem Title: Maximum Coin Collection
+Brute Force Method: Exhaustively search every possible entry mile, every possible exit mile, and every possible lane switch combination. $O(2^N)$
+BF Complexity Visuals: Exponential Decision Path Tree.
+How to Draw BF: Draw Mario at Mile 0. Branch into Lane 1 or 2. At each mile, branch again into "Switch" or "Stay" until depth N.
+Optimised Pattern: Dynamic Programming (State: mile, lane, switchesLeft). $O(N)$
+Opt Vis. Technique: 3-Layered Grid Traversal.
+Dry Run (Opt): Imagine 3 versions of the 2-lane road (0, 1, and 2 switches remaining). At each mile, move Mario to the best neighbor in his layer or jump to a lower switch-layer.
+How to Draw (Opt): Draw 2 rows of road. Above them, write the "Max Coins" possible at each mile for 0, 1, and 2 switches. Connect them with "switch" arrows.
+Opt Complexity Visuals: Linear Progress through Matrix Layers.
+How to Draw Opt Complexity: Draw a 3 x 2 x N block and shade it mile by mile to show bounded complexity.
+Mem Vis (BF): Trillions of overlapping paths in the recursion stack.
+Mem Vis (Opt): A 3 x 2 x N DP table or memoization map.

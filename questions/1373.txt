@@ -1,0 +1,13 @@
+ID: 1373
+Problem Title: Maximum Sum BST in Binary Tree
+Brute Force Method: For every node, run a full BST validation check $O(N)$ and calculate the sum of its subtree $O(N)$. Total $O(N^2)$.
+BF Complexity Visuals: $O(N^2)$ Nested Tree Validation
+How to Draw BF: Draw a tree. For the root, draw a circle around the whole tree. For its child, draw another overlapping circle. Repeat for every node.
+Optimised Pattern: Post-Order DFS (Bottom-Up State)
+Opt Vis. Technique: Multi-Value Recursive Return
+Dry Run (Opt): Each node returns: `{isBST, minVal, maxVal, sum}`. A node is a BST only if its children are BSTs and `left.max &lt; node.val &lt; right.min`.
+How to Draw (Opt): Draw a tree. Start at leaves. Write `[Min, Max, Sum]` in a box. Move to parent; check the child boxes, calculate new sum, and update the global max.
+Opt Complexity Visuals: $O(N)$ Bottom-Up Pass
+How to Draw Opt Complexity: Draw an arrow moving from leaves up to the root. Each node is processed exactly once after its children, proving linear time.
+Mem Vis (BF): Redundant Traversal Stacks: Re-visiting subtrees over and over to re-verify BST properties.
+Mem Vis (Opt): $O(H)$ Stack + Struct: Draw a stack where each frame returns a custom object containing 4 integers.

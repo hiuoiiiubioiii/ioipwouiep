@@ -1,0 +1,13 @@
+ID: 1052
+Problem Title: Grumpy Bookstore Owner
+Brute Force Method: For every possible starting minute i of the "secret technique," calculate the total satisfied customers. Pick the i that maximizes the sum.
+BF Complexity Visuals: A spotlight of size `minutes` sliding across the array, but recalculating the whole array sum from scratch at every step.
+How to Draw BF: Draw the customers and grumpy arrays. Draw a bracket of size K. Sum everything inside it + all non-grumpy outside. Move bracket. Repeat. Write $O(N^2)$.
+Optimised Pattern: Sliding Window (Fixed Size).
+Opt Vis. Technique: A "Conversion Window". The window turns "grumpy" 0s into "satisfied" 1s. We move it to find where it captures the most "lost" customers.
+Dry Run (Opt): Sum all customers where owner is NOT grumpy. Then, use a sliding window of size `minutes` to find the maximum "extra" customers that can be gained by ignoring grumpiness. Total = Initial + MaxExtra.
+How to Draw (Opt): Draw the array. Below it, write the number of "unhappy" customers (where grumpy=1). Slide a window of size K over these numbers and find the max sum.
+Opt Complexity Visuals: Two linear passes (one for base sum, one for window).
+How to Draw Opt Complexity: Draw the array with one arrow for the base sum and a sliding box for the window. Write $O(N)$ Time.
+Mem Vis (BF): Redundant calculations stored for every window position.
+Mem Vis (Opt): Three variables: `total_satisfied`, `current_window_extra`, `max_extra`. $O(1)$ space.

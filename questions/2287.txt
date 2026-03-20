@@ -1,0 +1,13 @@
+ID: 2287
+Problem Title: Rearrange Characters to Make Target String
+Brute Force Method: Target SimulationPhysically remove characters from the source string to build one copy of the target. Repeat until you can no longer complete the target string.
+BF Complexity Visuals: Physical Character Depletion
+How to Draw BF: Draw the source "abbacc" and target "abc". Cross out one 'a', one 'b', one 'c'. That's 1 copy. Try to cross out more. Count the total successful rounds.
+Optimised Pattern: Frequency Map Ratio
+Opt Vis. Technique: Limiting Reagent Calculation
+Dry Run (Opt): Count the frequency of each character in the source and the target. For each character in the target, calculate `source_freq / target_freq`. The minimum of these ratios is the maximum number of copies.
+How to Draw (Opt): Draw two frequency tables. Table A: Source counts. Table B: Target counts. For each letter in Table B, divide A/B. Circle the smallest resulting number (the "bottleneck").
+Opt Complexity Visuals: Parallel Map Scan
+How to Draw Opt Complexity: Draw an $O(N)$ line for the source scan and an $O(M)$ line for the target. Label it $O(N + M)$. Show the $O(26)$ calculation at the end.
+Mem Vis (BF): Creating multiple new strings as you "delete" characters from the source.
+Mem Vis (Opt): Two integer arrays of size 26 (O(1) auxiliary space).

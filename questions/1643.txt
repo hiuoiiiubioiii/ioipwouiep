@@ -1,0 +1,13 @@
+ID: 1643
+Problem Title: Kth Smallest Instructions
+Brute Force Method: Generate all permutations of "H" and "V" instructions, sort them lexicographically, and pick the Kth one.
+BF Complexity Visuals: Permutation Explosion
+How to Draw BF: Draw a massive sorted list of all combinations. $O(\\text{binom}{R+C}{R} \log \\text{text}{\text{total}})$.
+Optimised Pattern: Combinatorial Counting (Pascal's Triangle logic)
+Opt Vis. Technique: Recursive Range Partitioning
+Dry Run (Opt): At each step, decide whether to place 'H'. Calculate how many instructions start with 'H'. If K \leq that count, place 'H'; else place 'V' and subtract count from K.
+How to Draw (Opt): Draw a path grid. At each junction, write the number of ways to reach the destination using combinations formula nCr. Compare K to this number.
+Opt Complexity Visuals: Linear Step-down
+How to Draw Opt Complexity: Draw a straight path of length R+C where each step is a single decision. $O(R + C)$.
+Mem Vis (BF): List of Strings: A massive storage of all possible strings.
+Mem Vis (Opt): $O(1)$ Variables: Draw a few boxes for n, r, k and the result string.

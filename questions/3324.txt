@@ -1,0 +1,13 @@
+ID: 3324
+Problem Title: Find the Sequence of Strings Appeared on the Screen
+Brute Force Method: Strictly simulate key presses, appending strings and looping blindly until strings match.
+BF Complexity Visuals: Typewriter Ribbon Simulation
+How to Draw BF: Write the target word. Below it, write 'a'. Erase it, write 'b'. Keep erasing and re-writing the very last character until you get the final word.
+Optimised Pattern: Prefix Expansion / Direct String Construction
+Opt Vis. Technique: Staircase Construction
+Dry Run (Opt): Iterate through the target string. For each character, start at 'a' and increment up to the target character, appending the current prefix to the result list each time.
+How to Draw (Opt): Write the target word. In a column below, write 'a'. Next row, write the prefix + 'a', then prefix + 'b'. The shape will look like a staircase stepping down.
+Opt Complexity Visuals: Bounded Linear Grid
+How to Draw Opt Complexity: Draw an N (length) by 26 (alphabet) grid. You only ever trace downwards and rightwards through this grid, proving $O(26 \cdot N)$ -&gt; $O(N)$ complexity.
+Mem Vis (BF): A massive array holding strings that are constantly being reallocated and copied under the hood.
+Mem Vis (Opt): An array of strings collecting exactly the intermediate steps, taking $O(N^2)$ total characters in memory.

@@ -1,0 +1,13 @@
+ID: 3493
+Problem Title: Properties Graph
+Brute Force Method: Check every pair of nodes (i, j). Use two nested loops to find the intersection of their property arrays. $O(N^2 \cdot M)$
+BF Complexity Visuals: All-Pairs Intersection Web.
+How to Draw BF: Draw N dots. Draw lines between every pair. Next to each line, write the size of the intersection.
+Optimised Pattern: Set-Based Adjacency List + DFS/BFS for Components. $O(N^2 \cdot M)$ (Optimized constant factor).
+Opt Vis. Technique: Connected Components Forest.
+Dry Run (Opt): Convert arrays to Sets. Build the graph. Run DFS from every unvisited node to mark its component. Count the number of DFS starts.
+How to Draw (Opt): Draw the dots and edges. Circle each group of connected dots. Count the circles.
+Opt Complexity Visuals: Linear Graph Shading (V + E).
+How to Draw Opt Complexity: Draw the graph and shade each node/edge exactly once.
+Mem Vis (BF): Massive N x N matrix of intersection counts.
+Mem Vis (Opt): An Adjacency List (Map) and a boolean "Visited" array.

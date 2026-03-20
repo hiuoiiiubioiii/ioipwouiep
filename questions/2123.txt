@@ -1,0 +1,13 @@
+ID: 2123
+Problem Title: Minimum Operations to Remove Adjacent Ones in Matrix
+Brute Force Method: Try flipping every combination of 1s to 0s to see if no adjacent 1s remain.
+BF Complexity Visuals: Grid states exploding exponentially.
+How to Draw BF: Draw a grid, branch out 2 choices (flip or don't flip) for every single '1'. $O(2^K)$.
+Optimised Pattern: Bipartite Graph Matching / Min Vertex Cover.
+Opt Vis. Technique: A chessboard pattern separating nodes into black and white sets.
+Dry Run (Opt): Color the grid like a chessboard. Edges only exist between adjacent 1s (which are different colors). Run Max Bipartite Matching to find the Min Vertex Cover.
+How to Draw (Opt): Draw the grid. Circle the 1s. Color them alternating shades. Draw lines between adjacent 1s. Circle the minimum number of nodes needed to break all those lines.
+Opt Complexity Visuals: Polynomial time graph matching (e.g., Hopcroft-Karp or DFS matching).
+How to Draw Opt Complexity: Draw two columns of nodes (bipartite). Draw a network flow arrow pushing through them.
+Mem Vis (BF): Recursive state matrices.
+Mem Vis (Opt): Adjacency List for the bipartite graph + boolean visited arrays.

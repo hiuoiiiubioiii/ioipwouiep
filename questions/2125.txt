@@ -1,0 +1,13 @@
+ID: 2125
+Problem Title: Number of Laser Beams in a Bank
+Brute Force Method: For every single device, scan the entire grid below it to find the next devices without blocked paths.
+BF Complexity Visuals: Rays drawn point-to-point, checking empty rows continuously.
+How to Draw BF: Draw an R x C grid. Draw lines from one '1' to another '1' in a lower row, manually verifying no 1s exist in rows between them. $O((R\cdot C)$^2).
+Optimised Pattern: Math (Combinatorics) + Filtering.
+Opt Vis. Technique: Collapsing empty space and multiplying adjacent layers.
+Dry Run (Opt): Count '1's in each row. Discard rows with 0 devices. For remaining rows, multiply count of row `i` with row `i+1` and add to total.
+How to Draw (Opt): Draw the grid. Write the total count of '1's next to each row. Cross out any '0' totals. Multiply the remaining adjacent numbers: `R1 * R2 + R2 * R3`.
+Opt Complexity Visuals: $O(R \cdot C)$ single pass through grid.
+How to Draw Opt Complexity: Draw a scanner moving down the rows one by one, outputting a single integer list, then a math symbol multiplying them.
+Mem Vis (BF): Coordinate arrays storing locations of every single device.
+Mem Vis (Opt): Two integer variables: `prev_row_count` and `curr_row_count`. $O(1)$ space.

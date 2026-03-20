@@ -1,0 +1,13 @@
+ID: 2530
+Problem Title: Maximal Score After Applying K Operations
+Brute Force Method: For each of the K operations, linearly scan the entire array to find the maximum element, add it to the score, and update it to its ceiling third. $O(K \cdot N)$ time.
+BF Complexity Visuals: Repeated, exhaustive full-array sweeps looking for the highest peak.
+How to Draw BF: Draw the array. Scan your eyes across all numbers to find the biggest. Cross it out, write its new value (ceil(val/3)), tally your score. Repeat from scratch K times.
+Optimised Pattern: Max-Heap (Priority Queue) to maintain the largest element dynamically.
+Opt Vis. Technique: A Max-Heap tree structure where the largest number naturally bubbles to the top root node instantly after every change.
+Dry Run (Opt): Push all array elements into a Max-Heap. Loop K times: pop the top element (the maximum), add it to your score, divide it by 3 (ceiling), and push the new value back into the heap.
+How to Draw (Opt): Draw a pyramid of numbers with the biggest on top. Take the top number, add it to your score, divide it by 3, and drop it back into the pyramid, letting it sink to its proper level. Repeat.
+Opt Complexity Visuals: $O(N + K \log N)$ execution. Building the heap is $O(N)$, and each of the K operations does an $O(\log N)$ tree rebalancing.
+How to Draw Opt Complexity: Draw the array transforming into a tree once. Then, draw K loops. Inside each loop, draw an element traveling strictly down the height of the tree (log N steps).
+Mem Vis (BF): Constant space if done in-place, but highly inefficient time-wise.
+Mem Vis (Opt): $O(N)$ space to maintain the elements within the Max-Heap structure.

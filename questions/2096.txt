@@ -1,0 +1,13 @@
+ID: 2096
+Problem Title: Step-By-Step Directions From a Binary Tree Node to Another
+Brute Force Method: Build a full adjacency list of the tree (convert to a graph), then run BFS to find the shortest path between start and end.
+BF Complexity Visuals: Graph Search Wavefront
+How to Draw BF: Draw the tree as a bidirectional graph. Start a ripple from the start node until it hits the destination. $O(N)$ space and time.
+Optimised Pattern: LCA (Lowest Common Ancestor) + Path Comparison
+Opt Vis. Technique: Common Path Trimming
+Dry Run (Opt): Find the path from root to Start and root to Dest as strings (L, R). Find the first point where paths diverge (LCA). Convert start path to 'U's and append the remaining dest path.
+How to Draw (Opt): Draw paths from root to S and D. Circle the fork in the road (LCA). Replace every edge in the S-branch with 'U' (Up) and keep the D-branch edges as is.
+Opt Complexity Visuals: Two Parallel DFS Traversals
+How to Draw Opt Complexity: Draw two separate arrows from root to nodes. Total time $O(N)$.
+Mem Vis (BF): A full Map/Graph structure storing all parent pointers. Space $O(N)$.
+Mem Vis (Opt): Two string/StringBuilder objects for path strings. Space $O(\text{Height})$.

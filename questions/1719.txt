@@ -1,0 +1,13 @@
+ID: 1719
+Problem Title: Number Of Ways To Reconstruct A Tree
+Brute Force Method: Generate all possible rooted trees from the nodes. For each tree, find all ancestor-descendant pairs and compare with the given pairs array.
+BF Complexity Visuals: Forest of All Possible Trees.
+How to Draw BF: Draw 5 different tree structures. For each, list all vertical paths. Compare lists. $O(V^V)$.
+Optimised Pattern: Graph Theory / Degree Sorting (Constructive).
+Opt Vis. Technique: Hierarchy by Popularity (Degree).
+Dry Run (Opt): Count degree (pairs) per node. Root MUST have degree `V-1`. Sort nodes by degree descending. Attach each node to the ancestor with the smallest degree &gt;= its own degree.
+How to Draw (Opt): Draw nodes as circles sized by their degree. Largest circle goes at the top. Smaller circles hang off circles just slightly larger than them.
+Opt Complexity Visuals: Adjacency Matrix Validation.
+How to Draw Opt Complexity: Draw nodes, sorting them $O(V \log V)$. Draw edge validation loop taking $O(V^2)$ or $O(E)$.
+Mem Vis (BF): Storing multiple tree structures.
+Mem Vis (Opt): Adjacency list/set for fast lookup. $O(E)$ space.

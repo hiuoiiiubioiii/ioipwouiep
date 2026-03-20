@@ -1,0 +1,13 @@
+ID: 3330
+Problem Title: Find the Original Typed String I
+Brute Force Method: Generate every possible combination of string compressions for repeating characters and count the unique results.
+BF Complexity Visuals: Permutation Branching Tree
+How to Draw BF: Write the string. At every duplicated character, draw a fork in the road: one branch deletes it, one keeps it. Tree explodes exponentially.
+Optimised Pattern: Linear Scan / Adjacent Identical Pairs Math
+Opt Vis. Technique: Connected Character Chain Links
+Dry Run (Opt): Since Alice made at most ONE mistake, each pair of adjacent identical characters adds exactly one alternative possibility. The answer is simply `1 + count(adjacent identical pairs)`.
+How to Draw (Opt): Write the string out. Take a pen and draw a little physical "link" bridge between any two adjacent letters that are the same. Count the links. Add 1.
+Opt Complexity Visuals: Single-Pass Array Scan
+How to Draw Opt Complexity: Draw an array of length N. Draw a simple arrow jumping from index `i-1` to `i`, proving strict $O(N)$ time.
+Mem Vis (BF): Thousands of generated substring variants dumped into a Hash Set to check for uniqueness.
+Mem Vis (Opt): A single integer counter keeping a running tally (Strictly $O(1)$ auxiliary space).

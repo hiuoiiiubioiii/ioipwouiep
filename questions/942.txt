@@ -1,0 +1,13 @@
+ID: 942
+Problem Title: DI String Match
+Brute Force Method: Generate all (N+1)! permutations of numbers [0...N]. For each, check if it satisfies the sequence of 'I' (increase) and 'D' (decrease).
+BF Complexity Visuals: $O(N!)$. Factorial explosion.
+How to Draw BF: Draw a tree that branches N+1 times, then N times, etc. Mark the very few valid paths with a green checkmark.
+Optimised Pattern: Greedy Two-Pointer Placement
+Opt Vis. Technique: "Squeezing the Range." Use the smallest available number for 'I' and the largest available for 'D'. This ensures you never "run out" of room to increase or decrease.
+Dry Run (Opt): `low = 0, high = N`. For each char: if 'I', use `low++`. If 'D', use `high--`. Use the remaining number for the last slot.
+How to Draw (Opt): Draw a list [0, 1, 2, 3, 4]. For 'I', take from the left end. For 'D', take from the right end. Show the "available" range shrinking from both sides.
+Opt Complexity Visuals: $O(N)$. A single pass through the string of length N.
+How to Draw Opt Complexity: Draw the string. Below it, draw a horizontal line representing the output array, filling it as the pointers move.
+Mem Vis (BF): Storing N! permutations in a search tree.
+Mem Vis (Opt): $O(N)$ to store the result array. Draw a single row of N+1 empty boxes.

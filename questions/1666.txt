@@ -1,0 +1,13 @@
+ID: 1666
+Problem Title: Change the Root of a Binary Tree
+Brute Force Method: Copy the entire tree into an adjacency list (Graph), then run BFS/DFS from the new root to rebuild the tree.
+BF Complexity Visuals: Full Graph Conversion
+How to Draw BF: Draw a tree. Draw arrows going in both directions for every edge to show it's now a graph. $O(N)$.
+Optimised Pattern: Recursive In-place Pointer Reversal
+Opt Vis. Technique: Path Reversal / Link Flipping
+Dry Run (Opt): Traverse from `leaf` up to the original `root`. For each node, make its parent its child and adjust left/right pointers.
+How to Draw (Opt): Draw a tree. Pick a leaf. Draw a thick "path" to the root. Erase the parent-child arrows on that path and draw them in reverse.
+Opt Complexity Visuals: Linear Path Traversal
+How to Draw Opt Complexity: Draw a single straight arrow from the leaf to the root. $O(H)$ where H is height.
+Mem Vis (BF): Adjacency List: Draw a table mapping every node to a list of neighbors. $O(N)$ space.
+Mem Vis (Opt): Recursive Call Stack: Draw a narrow stack representing the depth of the path being reversed. $O(H)$.

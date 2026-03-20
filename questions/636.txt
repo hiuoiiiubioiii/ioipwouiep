@@ -1,0 +1,13 @@
+ID: 636
+Problem Title: Exclusive Time of Functions
+Brute Force Method: Create a massive array of size `Max_Timestamp`. For every second, simulate which function is currently running by processing logs.
+BF Complexity Visuals: High-resolution timeline expansion.
+How to Draw BF: Draw a line with 10,000 tick marks. Color each segment according to the function ID. Write $O(\text{Total}_\text{Duration})$.
+Optimised Pattern: Stack-based Interval Calculation.
+Opt Vis. Technique: Nested Activity Blocks (Gantt Chart style).
+Dry Run (Opt): Push `functionID` and `startTime` onto a stack. When an 'end' log comes, pop the stack, calculate duration, and subtract it from the previous function's "exclusive" time.
+How to Draw (Opt): Draw a vertical stack. Push a box "F0" at time 0. Push "F1" at time 2. On "F1 end", pop and write duration into F1's tally.
+Opt Complexity Visuals: Single pass through the logs $O(N)$.
+How to Draw Opt Complexity: Draw a straight arrow spanning N log entries. Write $O(N)$.
+Mem Vis (BF): Draw a massive array whose length depends on the timestamps (O(T)).
+Mem Vis (Opt): Draw a stack that only grows as deep as the nesting of function calls (O(N/2)).

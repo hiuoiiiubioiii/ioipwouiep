@@ -1,0 +1,13 @@
+ID: 2832
+Problem Title: Maximal Range of Each Element
+Brute Force Method: For each element at index i, use two pointers to expand left and right as long as the neighbors are strictly smaller than nums[i].
+BF Complexity Visuals: $O(N2)$ Radial Expansion
+How to Draw BF: Draw an array. For each element, draw two arrows pointing outwards until they hit a larger number. Show the "Scan Overlap" where pointers cross the same elements repeatedly.
+Optimised Pattern: Monotonic Stack (Next Greater Element)
+Opt Vis. Technique: Range Boundary Logic
+Dry Run (Opt): Run a monotonic stack twice: once to find the index of the nearest greater element to the left (L[i]) and once for the right (R[i]). The range is R[i] - L[i] - 1.
+How to Draw (Opt): Draw the array. Use a stack to "block" smaller numbers. When a larger number arrives, pop the stack and mark the right boundary for the popped elements. Repeat for the left.
+Opt Complexity Visuals: Two Linear Passes
+How to Draw Opt Complexity: Draw two parallel lines, one for the "Left Pass" and one for the "Right Pass". Each is $O(n)$. Total time $O(n)$.
+Mem Vis (BF): Visualize $O(1)$ space but $O(N^2)$ time wastage in the worst case (e.g., a sorted array).
+Mem Vis (Opt): Visualize two arrays of size N (for L and R boundaries) and one stack. Space is $O(N)$.

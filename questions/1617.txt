@@ -1,0 +1,13 @@
+ID: 1617
+Problem Title: Count Subtrees With Max Distance Between Cities
+Brute Force Method: Run BFS/DFS from every node in every possible subset to find the maximum tree diameter.
+BF Complexity Visuals: Double Exponential Explosion
+How to Draw BF: Draw a massive branching tree of subsets (2^N), and inside every leaf, draw a tangled graph search.
+Optimised Pattern: Bitmasking Subset Enumeration + DFS / Floyd-Warshall
+Opt Vis. Technique: State Traversal Filtering
+Dry Run (Opt): Precompute all-pairs shortest paths. Use a bitmask (1 to 2^N) to represent a subset. Check if subset is connected (Edges == Nodes - 1). If valid, find max distance in subset.
+How to Draw (Opt): Draw a binary number representing included cities. Beside it, draw a distance matrix grid. Circle the matrix intersections that correspond to the 1s in the binary number.
+Opt Complexity Visuals: Matrix + Exponential Check
+How to Draw Opt Complexity: Draw a 2^N tall column. For each row, draw an arrow pointing to a fixed, pre-calculated square grid (Matrix).
+Mem Vis (BF): Call Stacks + Dynamic Sets: Chaotic clusters of hash sets created and destroyed for every subset.
+Mem Vis (Opt): 2D Array + Integer Bitmask: Draw a static NxN grid for distances, and a single 32-bit register mapping the current subset.

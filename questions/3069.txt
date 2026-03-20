@@ -1,0 +1,13 @@
+ID: 3069
+Problem Title: Distribute Elements Into Two Arrays I
+Brute Force Method: Iterate through the array. For each element, check the last elements of both `arr1` and `arr2` and append accordingly. Small N allows simple simulation.
+BF Complexity Visuals: Sequential Branching List
+How to Draw BF: Draw an input array. Below it, draw two expanding lists. Show an arrow from each input element to its chosen list. $O(N)$.
+Optimised Pattern: Simple Greedy Simulation
+Opt Vis. Technique: Two-Pointer Array Growth
+Dry Run (Opt): Maintain two dynamic arrays. For each number starting from the third, compare it with `arr1.back()` and `arr2.back()`. Append to the one with the larger last element.
+How to Draw (Opt): Draw two horizontal bars. Write the first two numbers. For the next, circle the larger of the two "tips" of the bars and place the number there.
+Opt Complexity Visuals: $O(N)$ Linear Flow
+How to Draw Opt Complexity: Draw one straight arrow through the array. It’s already optimal because you must visit every element once.
+Mem Vis (BF): $O(N)$ extra space to store the two result arrays.
+Mem Vis (Opt): Two contiguous memory blocks (Arrays) that grow as elements are added.

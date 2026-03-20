@@ -1,0 +1,13 @@
+ID: 535
+Problem Title: Encode and Decode TinyURL
+Brute Force Method: Use a counter or the URL string itself. (Brute force isn't really applicable, but a poor way is to store full URLs in an array and use index).
+BF Complexity Visuals: Searching an entire array for a URL to find its index. $O(N)$.
+How to Draw BF: Draw a long list. Scan from the top every time you need to decode a URL.
+Optimised Pattern: Hash Map with Random Base62 Encoding.
+Opt Vis. Technique: A luggage tag system. A long bag (URL) gets a tiny tag (6-char code). The tag points exactly to one bag in the storage room.
+Dry Run (Opt): Encode: Generate 6 random chars. If code exists in Map, retry. Map `code -&gt; longURL`. Decode: Return `Map[code]`.
+How to Draw (Opt): Draw two boxes: "Short-to-Long Map" and "Long-to-Short Map". Draw an arrow from `tinyurl.com/aB123` pointing to its full address.
+Opt Complexity Visuals: Instant lookups. $O(1)$.
+How to Draw Opt Complexity: Draw a direct arrow from a key to a value in one step.
+Mem Vis (BF): $O(N)$ searching through an array.
+Mem Vis (Opt): $O(N)$ storage in a Hash Map for all URLs processed.

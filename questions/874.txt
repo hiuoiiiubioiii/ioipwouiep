@@ -1,0 +1,13 @@
+ID: 874
+Problem Title: Walking Robot Simulation
+Brute Force Method: For every command, move the robot step-by-step. For every step, check the entire list of obstacles to see if the robot is blocked.
+BF Complexity Visuals: Step-by-Obstacle Scan. $O(\text{Commands} x \text{Steps} x \text{Obstacles})$.
+How to Draw BF: Draw a grid. Move a dot. For every tiny move, draw a line to every "X" (obstacle) on the map to see if you hit it.
+Optimised Pattern: Hash Set (Coordinate Encoding).
+Opt Vis. Technique: The "Obstacle Radar" (Pre-filtered).
+Dry Run (Opt): Convert all obstacle (x, y) coordinates into a string or long integer and store them in a Set. When moving, just check if the "Next Step" coordinate exists in the Set (O(1)).
+How to Draw (Opt): Draw a grid. Mark obstacles. When the robot moves, it "pings" the spot in front of it. If the ping hits the Set, it stops moving.
+Opt Complexity Visuals: Linear Path Simulation. $O(\text{Commands} x \text{Steps} + \text{Obstacles})$.
+How to Draw Opt Complexity: Draw a timeline for obstacles, then a timeline for movement. No nested scans.
+Mem Vis (BF): $O(1)$ space but high CPU latency from redundant searches.
+Mem Vis (Opt): Hash Set: Draw a bucket containing the "Blacklisted" coordinates. $O(\text{Obstacles})$ space.

@@ -1,0 +1,13 @@
+ID: 1401
+Problem Title: Circle and Rectangle Overlapping
+Brute Force Method: Check every coordinate point (x,y) inside the rectangle bounds to see if it satisfies the circle's equation: (x-center_x)² + (y-center_y)² &lt;= radius².
+BF Complexity Visuals: 2D Grid Traversal / Nested Loops Space
+How to Draw BF: Draw a Cartesian plane. Draw a box representing bounds (x1 to x2, y1 to y2). Draw arrows iterating through every single integer point inside the box. Label area as $O(W \cdot H)$.
+Optimised Pattern: Math / Geometry (Closest Point)
+Opt Vis. Technique: Bounding Box Projection
+Dry Run (Opt): Clamp the circle's center coordinates to the rectangle's edges. Calculate the distance from this new "closest point" to the circle's center. If distance &lt;= radius, they overlap.
+How to Draw (Opt): Draw the rectangle. Draw the circle center outside it. Draw dashed orthogonal lines projecting the center onto the closest edge/corner of the rectangle. Draw a solid line showing the distance.
+Opt Complexity Visuals: $O(1)$ Constant Time Node
+How to Draw Opt Complexity: Draw a single box labeled "Clamp X, Clamp Y -&gt; Math Formula". Write $O(1)$ inside it with no loops attached.
+Mem Vis (BF): Single Frame / Scalar Variables
+Mem Vis (Opt): Two small boxes labeled "closestX" and "closestY" floating independently. No arrays.

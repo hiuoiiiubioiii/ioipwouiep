@@ -1,0 +1,13 @@
+ID: 2948
+Problem Title: Make Lexicographically Smallest Array by Swapping Elements
+Brute Force Method: Try all possible swaps of elements with difference <= limit and sort them greedily.
+BF Complexity Visuals: Graph Permutation Web
+How to Draw BF: Draw nodes for array elements. Add edges if |a-b| <= limit. Find all paths. $O(N!)$.
+Optimised Pattern: Sorting + Grouping (Disjoint Connectivity)
+Opt Vis. Technique: Island Formation
+Dry Run (Opt): Sort elements with their original indices. If |sorted[i] - sorted[i-1]| <= limit, they belong to the same group. For each group, sort the original indices and place elements.
+How to Draw (Opt): Draw a line. Cluster elements that are close together. Sort these clusters individually and map them back to their original positions.
+Opt Complexity Visuals: Sorting + Linear Grouping
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ for initial sort + $O(N)$ for grouping.
+Mem Vis (BF): Graph adjacency lists for all possible swaps.
+Mem Vis (Opt): Storing sorted pairs (value, index) and group lists. Space $O(N)$.

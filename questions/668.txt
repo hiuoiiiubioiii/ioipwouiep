@@ -1,0 +1,13 @@
+ID: 668
+Problem Title: Kth Smallest Number in Multiplication Table
+Brute Force Method: Generate all M * N products, put them in a list, sort the list, and pick the k-th element.
+BF Complexity Visuals: Massive Grid Flattening.
+How to Draw BF: Draw an M x N grid. Write every multiplication result. Draw an arrow sorting them into one long line. $O(\text{MN} \\text{log MN})$.
+Optimised Pattern: Binary Search on Answer.
+Opt Vis. Technique: Frequency Counting / Matrix Step-Down.
+Dry Run (Opt): Guess a number `mid`. For each row `i`, the number of elements `&lt;=` `mid` is `min(mid/i, n)`. Sum these counts. If sum &gt;= k, `mid` could be our answer.
+How to Draw (Opt): Draw a number line of values. Pick a middle value. Draw a "Staircase" on the multiplication table showing which numbers are smaller than the guess.
+Opt Complexity Visuals: $O(M \cdot \log(M\cdot N)$).
+How to Draw Opt Complexity: Draw a loop (Log) containing a single scan of rows (M). Write $O(M \log(\text{MN})$).
+Mem Vis (BF): Draw a massive list holding M*N integers in memory.
+Mem Vis (Opt): Draw zero extra space beyond simple variables. $O(1)$ space.

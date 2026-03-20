@@ -1,0 +1,13 @@
+ID: 2850
+Problem Title: Minimum Moves to Spread Stones Over Grid
+Brute Force Method: Use recursion/backtracking to simulate every possible way to move an "extra" stone (from cells with &gt;1 stone) to an "empty" cell (0 stones).
+BF Complexity Visuals: Permutation Backtracking Tree
+How to Draw BF: Draw a list of "Giver" cells (stones &gt; 1) and "Receiver" cells (stones = 0). Draw a bipartite graph showing all possible matching permutations. $O(9!)$ combinations.
+Optimised Pattern: Backtracking with Pruning / BFS for State Space
+Opt Vis. Technique: Recursive Assignment Search
+Dry Run (Opt): Identify all coordinates of empty cells and all coordinates of cells with surplus stones. Use recursion to pick an empty cell and try filling it with a stone from any available surplus cell, calculating Manhattan distance abs(r1-r2) + abs(c1-c2).
+How to Draw (Opt): Write down the coordinates of the zeros: (0,1), (2,2)... and the extras: (0,0) has 2 extra.... Draw lines connecting them in different patterns, summing the "lengths" of the lines. Pick the smallest sum.
+Opt Complexity Visuals: Factorial/Permutation Complexity
+How to Draw Opt Complexity: Draw a branching tree labeled $O(N!)$ where N is the number of empty cells (max 9). Since 9! = 362,880, this fits well within time limits.
+Mem Vis (BF): Visualize deep recursion stacks if not handling state correctly.
+Mem Vis (Opt): Visualize small coordinate lists for "zeros" and "extras." Space is $O(1)$ because the grid is fixed at 3 x 3.

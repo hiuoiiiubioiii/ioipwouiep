@@ -1,0 +1,13 @@
+ID: 1526
+Problem Title: Minimum Number of Increments on Subarrays to Form a Target Array
+Brute Force Method: Find the minimum value in the array, add it to the total operations, subtract it from all elements, and recursively process the left and right split arrays. Worst case $O(N^2)$.
+BF Complexity Visuals: Cascading Valleys $O(N^2)$
+How to Draw BF: Draw a mountain range (the array). Draw a horizontal line cutting off the lowest peak, splitting the mountain in two. Recursively draw lines cutting the sub-mountains. High redundant scanning.
+Optimised Pattern: Greedy / Array Math
+Opt Vis. Technique: The Staircase Difference
+Dry Run (Opt): Only count the *upward* steps. Iterate through the array. If `target[i] &gt; target[i-1]`, it means we need `target[i] - target[i-1]` new overlapping operations that the previous number couldn't cover. Add this difference to the total.
+How to Draw (Opt): Draw a bar chart of the array. Start from the left. Draw a horizontal line extending rightwards from the top of the first bar. When a taller bar pierces the line, color the exposed top part. The sum of these colored top parts is the answer.
+Opt Complexity Visuals: Single Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. At each step, do a constant $O(1)$ subtraction check between the current node and the immediate previous node.
+Mem Vis (BF): Deep recursive call stacks holding start/end indices of subarrays. $O(N)$.
+Mem Vis (Opt): A single variable `operations`. $O(1)$ space.

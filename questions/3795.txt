@@ -1,0 +1,13 @@
+ID: 3795
+Problem Title: Minimum Subarray Length With Distinct Sum At Least K (Med)
+Brute Force Method: Generate all $O(N^2)$ subarrays. For each, count unique elements to see if the count is >=q K. Calculate length and find the minimum. $O(N^3)$.
+BF Complexity Visuals: Exhaustive Sub-segment Scan.
+How to Draw BF: Draw the array. Bracket every possible chunk. Inside each bracket, count how many *different* numbers there are. If count >=q K, record length. Find the shortest bracket.
+Optimised Pattern: Sliding Window + Frequency Map
+Opt Vis. Technique: Elastic Contractive Window
+Dry Run (Opt): Expand the right pointer and update a frequency map until the number of distinct elements is >=q K. Then, shrink the left pointer as much as possible while maintaining the condition.
+How to Draw (Opt): Draw the array. Draw a bracket [ ]. Move the right side until you have K distinct numbers. Now drag the left side forward until you're about to lose a distinct number. The size of the bracket is your current "Best".
+Opt Complexity Visuals: Amortized Linear $O(N)$.
+How to Draw Opt Complexity: Draw a timeline where two pointers move strictly rightward, never backtracking.
+Mem Vis (BF): Redundant counting for every subarray.
+Mem Vis (Opt): Hash Map of current window frequencies (O(N) or $O(K)$ space).

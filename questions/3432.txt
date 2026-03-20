@@ -1,0 +1,13 @@
+ID: 3432
+Problem Title: Count Partitions with Even Sum Difference
+Brute Force Method: Iterate through all split points. For each, sum the left side and right side, then check if their difference is even. $O(N^2)$
+BF Complexity Visuals: Dividing Line Sweep.
+How to Draw BF: Draw the array. Draw a vertical line after index 0, then 1, etc. At each step, write the sum of elements on both sides and their difference.
+Optimised Pattern: Parity Logic (Difference is even iff Total Sum is even). $O(N)$
+Opt Vis. Technique: Total Sum Parity Bucket.
+Dry Run (Opt): Calculate the total sum of the array. If the total sum is even, every single split point (N-1 total) results in an even difference. Otherwise, 0.
+How to Draw (Opt): Draw the whole array as one big block. Write the "Total Sum" above it. If totalSum % 2 == 0, write "All N-1 splits valid".
+Opt Complexity Visuals: Single Reduction Operation.
+How to Draw Opt Complexity: Draw an arrow pointing to a single summation box, representing the $O(N)$ sum calculation.
+Mem Vis (BF): N pairs of sums (Left/Right) stored in the heap.
+Mem Vis (Opt): One $O(1)$ integer variable for the `totalSum`.

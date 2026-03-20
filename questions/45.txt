@@ -1,0 +1,13 @@
+ID: 45
+Problem Title: Jump Game II
+Brute Force Method: DFS / Recursion From index 0, recursively try every single possible jump length. Keep a global minimum of jumps to reach the end.
+BF Complexity Visuals: The Exhausting Tree
+How to Draw BF: Draw a tree where each node branches out equal to its jump value. Highlight how many overlapping paths calculate the exact same jumps. $O(N!)$ time.
+Optimised Pattern: Greedy (BFS-Style Window)
+Opt Vis. Technique: The Expanding Flashlight
+Dry Run (Opt): Keep track of the `current_jump_end` and the `farthest` you can reach. Iterate through the array. Update `farthest`. When you hit `current_jump_end`, you *must* jump, so increment jump count and update the end to `farthest`.
+How to Draw (Opt): Draw the array. Bracket index 0. That's Jump 0. Look at the values inside the bracket to find the furthest reach. Bracket that new range. That's Jump 1. Repeat until the bracket covers the end.
+Opt Complexity Visuals: Single Chunked Line
+How to Draw Opt Complexity: Draw a single straight arrow from left to right. Draw vertical dividers representing the forced jumps. We only look at each element once. $O(N)$ time.
+Mem Vis (BF): Draw a deep recursion stack going all the way to the end of the array.
+Mem Vis (Opt): Draw exactly three variables (`jumps`, `current_end`, `farthest`). We never look back and never store paths. $O(1)$ space.

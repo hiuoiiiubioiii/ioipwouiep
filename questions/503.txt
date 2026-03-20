@@ -1,0 +1,13 @@
+ID: 503
+Problem Title: Next Greater Element II
+Brute Force Method: Nested loop. For each element, search circularly (up to N-1 elements) to find the first greater element.
+BF Complexity Visuals: Circular complete graph showing every node pointing to potentially all other nodes. $O(N^2)$.
+How to Draw BF: Draw a circle of N dots. Draw lines from one dot traversing the whole circle. Repeat for all dots.
+Optimised Pattern: Monotonic Decreasing Stack (Looping 2N times).
+Opt Vis. Technique: A physical stack of plates where a larger plate smashes all smaller plates below it.
+Dry Run (Opt): Iterate array twice. If current &gt; stack top, pop stack top, map popped index to current value. Push current index.
+How to Draw (Opt): Draw array twice side-by-side. Draw a vertical bucket (stack). Push indices. Cross them out (pop) when a larger number appears.
+Opt Complexity Visuals: Linear pass over 2N items, each item pushed/popped at most once. $O(N)$.
+How to Draw Opt Complexity: Draw a timeline of 2N length. Show push (+1) and pop (+1) operations summing to 4N max operations.
+Mem Vis (BF): Call stack mapping to N^2 nested local variable states.
+Mem Vis (Opt): A single vertical cylinder (Stack) growing up to max size N.

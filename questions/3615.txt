@@ -1,0 +1,13 @@
+ID: 3615
+Problem Title: Longest Palindromic Path in Graph (Hard)
+Brute Force Method: Running a full DFS from every node, accumulating path strings, and checking isPalindrome() at the end of every path.
+BF Complexity Visuals: Exponential Path Tree.
+How to Draw BF: Start at Node A. Branch to B, C, D. For each, branch again. The tree grows infinitely. Write $O(V \cdot 2^E)$.
+Optimised Pattern: Bi-directional Dynamic Programming (Meet-in-the-Middle) / Graph BFS. State = (u, v).
+Opt Vis. Technique: Pincer Movement (Closing the Gap).
+Dry Run (Opt): Place a finger on start node `u` and end node `v`. Move `u` forward and `v` backward simultaneously. If the letters match, the palindrome length grows by 2.
+How to Draw (Opt): Draw a grid where rows are Node `u` and columns are Node `v`. Shade cells dp[u][v] where a valid palindrome path connects them.
+Opt Complexity Visuals: State-Space Matrix Area.
+How to Draw Opt Complexity: Draw a box of size V by V. The algorithm only computes each cell once. Write $O(V^2 + E)$ transition time.
+Mem Vis (BF): A massive Call Stack holding thousands of strings in memory.
+Mem Vis (Opt): A 2D array dp[V][V] storing integer lengths, or a Queue storing pairs (u, v). Space $O(V^2)$.

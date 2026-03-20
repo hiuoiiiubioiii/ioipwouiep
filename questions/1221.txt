@@ -1,0 +1,13 @@
+ID: 1221
+Problem Title: Split a String in Balanced Strings
+Brute Force Method: Iterate through all possible starting and ending indices (i, j) to form substrings. Count the 'L's and 'R's in each. If equal, increment a counter.
+BF Complexity Visuals: Nested Triangle Grid
+How to Draw BF: Draw the string at the top. Below, draw lines for every substring length (size 1, size 2, size 3). For each line, scan and tally L vs R. Write $O(N^2)$.
+Optimised Pattern: Greedy / Running Balance Counter
+Opt Vis. Technique: Scale / Seesaw Balance
+Dry Run (Opt): Walk through the string character by character. If you see 'L', put a weight on the left side of a seesaw (+1). If 'R', put it on the right (-1). Every time the seesaw perfectly balances (counter hits 0), make a cut.
+How to Draw (Opt): Draw a horizontal line. Write the string above it. Below it, plot a line graph starting at 0. Go up 1 for 'L', down 1 for 'R'. Draw a thick vertical line every time your graph touches the 0 axis. Count the cuts.
+Opt Complexity Visuals: Single Linear Sweep
+How to Draw Opt Complexity: Draw an array of characters. Draw one straight arrow scanning from left to right exactly once. Write $O(N)$.
+Mem Vis (BF): Draw an array storing every generated substring, wasting memory.
+Mem Vis (Opt): Draw exactly two integer variables: `balance` and `split_count`. Takes $O(1)$ auxiliary space.

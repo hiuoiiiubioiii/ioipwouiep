@@ -1,0 +1,13 @@
+ID: 407
+Problem Title: Trapping Rain Water II
+Brute Force Method: Exhaustive DFS For every inner cell, search all paths to the boundary to find the minimum max-height enclosing it. $O(M^2 N^2)$.
+BF Complexity Visuals: Radiating Matrix
+How to Draw BF: Draw a grid. Pick a cell. Draw squiggly lines spreading out from it in all directions to the edges. Repeat for all cells.
+Optimised Pattern: Min-Heap + BFS Push perimeter to min-heap. Pop lowest boundary, process neighbors, add to heap. "Shrinking perimeter".
+Opt Vis. Technique: Rising Water Level
+Dry Run (Opt): Imagine a walled city. Water spills in over the lowest wall first. If an inner building is lower than the spillway, water fills it up to that height.
+How to Draw (Opt): Draw a 2D grid top-down. Circle perimeter cells. Cross out the lowest number, draw an arrow to an inner neighbor, calculate trapped water, circle neighbor.
+Opt Complexity Visuals: Heap Processing
+How to Draw Opt Complexity: Draw an M*N matrix. Draw an arrow pointing to a logarithmic Tree (Heap) of size M*N. $O(\text{MN} \log(\text{MN})$).
+Mem Vis (BF): Call Stack Deep recursive maze stack.
+Mem Vis (Opt): Priority Queue Draw a binary tree (heap) and a boolean visited grid $O(\text{MN})$.

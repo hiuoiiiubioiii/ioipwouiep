@@ -1,0 +1,13 @@
+ID: 1816
+Problem Title: Truncate Sentence
+Brute Force Method: Split the entire string by spaces into an array, slice the first k elements, then join them back into a string.
+BF Complexity Visuals: Array fragmentation and reassembly block.
+How to Draw BF: Draw a long string. Draw vertical lines slicing it at every space. Box the first k words, draw an arrow joining them back. Mark $O(N)$ space.
+Optimised Pattern: Single Pointer Iteration (count spaces and substring once).
+Opt Vis. Technique: Pointer sliding on a continuous tape.
+Dry Run (Opt): Move a pointer i from 0. If s[i] == ' ', increment a space counter. When counter == k, return s[0...i].
+How to Draw (Opt): Draw the string as a single strip. Move an arrow (pointer i) left to right. Tick off a tally mark at each space. Cut the strip at k.
+Opt Complexity Visuals: Partial linear scan line.
+How to Draw Opt Complexity: Draw an arrow starting at index 0 and stopping before the end of the line at index M (where M &lt;= N). Mark $O(M)$ time.
+Mem Vis (BF): Full array of string tokens allocated in heap memory.
+Mem Vis (Opt): Single contiguous memory block for the final substring.

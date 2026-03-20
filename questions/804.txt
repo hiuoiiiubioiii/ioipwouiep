@@ -1,0 +1,13 @@
+ID: 804
+Problem Title: Unique Morse Code Words
+Brute Force Method: Translate every word, append to an array, then use nested loops to compare every string against every other string to count uniques.
+BF Complexity Visuals: Complete Bipartite Graph / Complete Web. $O(N^2 \cdot L)$ time.
+How to Draw BF: Draw a column of the translated words. Draw a line from the top word to every single other word below it, representing $O(N^2)$ comparison overhead.
+Optimised Pattern: Hash Set.
+Opt Vis. Technique: Funnel filtering into a bucket.
+Dry Run (Opt): Imagine a funnel. Drop a word in, it translates on the way down. If the bucket already contains that exact Morse shape, it evaporates. Otherwise, it stays. Count remaining items.
+How to Draw (Opt): Draw a large circle representing the Set. As you process a word, draw its Morse string inside. If it's a duplicate, draw an 'X' over the new one.
+Opt Complexity Visuals: Linear Scanning Pipeline. $O(S)$ time where S is total characters.
+How to Draw Opt Complexity: Draw a single horizontal line passing through a "Translation Box" and directly into a "Set Box" in $O(1)$ time per string.
+Mem Vis (BF): Array of Strings: Draw a long list of overlapping rectangular boxes storing full strings.
+Mem Vis (Opt): Hash Set: Draw a grid with random scattered slots filled in, showing $O(N)$ space optimized for quick lookups.

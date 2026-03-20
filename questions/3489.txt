@@ -1,0 +1,13 @@
+ID: 3489
+Problem Title: Zero Array Transformation IV
+Brute Force Method: Iteratively subtract values from subarrays, checking if all elements reach zero. $O(N \cdot Q)$.
+BF Complexity Visuals: Iterative Array Flattening
+How to Draw BF: Draw the array. Subtract from a range. Scan the whole array to check for zeros.
+Optimised Pattern: Difference Array / Sweep Line
+Opt Vis. Technique: The Overlapping Operations Tally
+Dry Run (Opt): You want to know if queries can reduce the array to zero. Use a difference array to apply all queries at once in $O(Q)$ time. Sweep it in $O(N)$ to get the total reduction at each index. Compare against the original array.
+How to Draw (Opt): Draw a blank line. Drop +V at the start of a query range and -V at the end. Sweep left-to-right to build the total "reduction power" at each index. If the power >= the original number everywhere, it works!
+Opt Complexity Visuals: Two-Pass Linear $O(N + Q)$
+How to Draw Opt Complexity: Draw a pass over the queries, then a single sweep pass over the array.
+Mem Vis (BF): Modifying the array continuously.
+Mem Vis (Opt): A single difference array of size N+1. $O(N)$ space.

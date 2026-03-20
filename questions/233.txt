@@ -1,0 +1,13 @@
+ID: 233
+Problem Title: Number of Digit One
+Brute Force Method: Iterate from 1 to N, convert each number to a string, and count the '1' characters.
+BF Complexity Visuals: Char-by-Char Scan: $O(N \cdot \log N)$.
+How to Draw BF: Draw a long list of numbers. For each number, draw multiple boxes representing its digits. Shade every '1'.
+Optimised Pattern: Digit DP / Mathematical Counting (Digit-by-Digit)
+Opt Vis. Technique: Positional Weight Table
+Dry Run (Opt): Calculate '1's at the units place, then tens, then hundreds. Use formula based on `prefix`, `current digit`, and `suffix`.
+How to Draw (Opt): Draw N as a set of slots (e.g., [1][2][3][4]). For each slot, calculate the "1-cycles" based on the power of 10 for that position.
+Opt Complexity Visuals: Logarithmic Digit Pass: $O(\log10 N)$ Time.
+How to Draw Opt Complexity: Draw a horizontal line with length equal to the number of digits in N. Show a single calculation per digit.
+Mem Vis (BF): String conversion memory: $O(\log N)$.
+Mem Vis (Opt): Constant Math Variables: Draw 4-5 integer boxes (`count`, `i`, `prefix`, etc.).

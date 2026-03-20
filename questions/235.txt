@@ -1,0 +1,13 @@
+ID: 235
+Problem Title: Lowest Common Ancestor of a BST
+Brute Force Method: Standard LCA for a general tree (DFS traversing all nodes and returning matches).
+BF Complexity Visuals: Full Tree Search: $O(N)$ Time.
+How to Draw BF: Draw a tree. Show the search visiting every single leaf to find the nodes P and Q.
+Optimised Pattern: BST Property Traversal (Value Comparison)
+Opt Vis. Technique: Directional Tree Descent
+Dry Run (Opt): Compare `root.val` with P and Q. If both are smaller, go left. If both are larger, go right. If they split (one smaller, one larger), the root is the LCA.
+How to Draw (Opt): Draw a BST. Highlight P and Q. Draw a single path from root. At each node, ask "Are they both on my left? Both right? Or do I split them?"
+Opt Complexity Visuals: Height-Limited Descent: $O(H)$ Time.
+How to Draw Opt Complexity: Draw a single line descending from the root to the LCA node. Show that the length of this line is at most the height of the tree.
+Mem Vis (BF): Recursion stack for full traversal: $O(H)$.
+Mem Vis (Opt): Iterative Pointers: Draw a single `curr` pointer box that updates its address as it moves down the tree. Space: $O(1)$.

@@ -1,0 +1,13 @@
+ID: 650
+Problem Title: 2 Keys Keyboard
+Brute Force Method: Backtracking/DFS: At each step, either "Copy All" or "Paste", exploring all paths to reach exactly `n` characters.
+BF Complexity Visuals: Binary decision tree with redundant states.
+How to Draw BF: Draw the number 1. Branch to "Copy" then "Paste". Branch again. Write $O(2^N)$.
+Optimised Pattern: Prime Factorization (Greedy/DP).
+Opt Vis. Technique: Factor Summation.
+Dry Run (Opt): The minimum steps to get `n` characters is the sum of its prime factors. (e.g., for 6: 2+3=5. Copy1, Paste1, Paste1, Copy3, Paste3).
+How to Draw (Opt): Write the number `n`. Divide by the smallest possible factor (2, 3...). Add that factor to your total and update `n`. Repeat until `n` is 1.
+Opt Complexity Visuals: Linear reduction of `n`.
+How to Draw Opt Complexity: Draw a division ladder. Write $O(\text{sqrt}(N)$).
+Mem Vis (BF): Draw a massive recursion tree.
+Mem Vis (Opt): Draw zero extra space, just a loop variable. $O(1)$ space.

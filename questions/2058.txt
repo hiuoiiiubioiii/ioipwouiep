@@ -1,0 +1,13 @@
+ID: 2058
+Problem Title: Find the Minimum and Maximum Number of Nodes Between Critical Points
+Brute Force Method: Traverse the list, find all critical points, store their indices in an array, then use nested loops to find min/max distances between all pairs.
+BF Complexity Visuals: Two-Pass List-to-Array Transformation
+How to Draw BF: Draw a linked list. Circle the critical points. Draw an array and copy indices. Then draw arcs between all elements in the array to find min/max.
+Optimised Pattern: Single Pass with Three-Node Window + Edge Point Tracking
+Opt Vis. Technique: Sliding Triple-Node Frame
+Dry Run (Opt): Maintain `first_cp`, `prev_cp`, and `curr_cp`. As you find a new critical point, update `max_dist = current - first_cp` and `min_dist = min(min_dist, current - prev_cp)`.
+How to Draw (Opt): Draw the list. Use a 3-node bracket `[prev, curr, next]`. When a CP is found, draw a pin on the timeline. Update `min` using the last pin and `max` using the very first pin.
+Opt Complexity Visuals: Single Linear Sweep
+How to Draw Opt Complexity: Draw a horizontal line. Total time $O(N)$.
+Mem Vis (BF): An auxiliary array storing all CP indices, potentially size $O(N)$.
+Mem Vis (Opt): Four integer variables: `first`, `prev`, `count`, and `min_dist`. Space $O(1)$.

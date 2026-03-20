@@ -1,0 +1,13 @@
+ID: 1928
+Problem Title: Minimum Cost to Reach Destination in Time
+Brute Force Method: Find all possible paths from source to destination using DFS, then filter by those within `maxTime`.
+BF Complexity Visuals: Path Enumeration Tree
+How to Draw BF: Draw nodes. Draw every single possible sequence of edges. Highlight many paths that exceed time and are discarded. $O(V!)$.
+Optimised Pattern: Modified Dijkstra (or 2D DP)
+Opt Vis. Technique: Time-Layered Graph State
+Dry Run (Opt): Run Dijkstra where the state is `(cost, node, time)`. Prune nodes if a cheaper cost is found for the SAME or LESS time.
+How to Draw (Opt): Draw a table where Rows = Nodes and Columns = Time (0 to maxTime). Fill cells with the minimum fee to reach that node at that time.
+Opt Complexity Visuals: Layered Node Processing
+How to Draw Opt Complexity: Draw E edges being relaxed for each of the T time units. Total $O(E \\text{cdot maxTime})$.
+Mem Vis (BF): A list of all possible path strings or node sequences stored in memory.
+Mem Vis (Opt): A 2D array `min_cost[maxTime + 1][n]` or a Priority Queue storing `[fee, node, time]`.

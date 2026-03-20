@@ -1,0 +1,13 @@
+ID: 3602
+Problem Title: Hexadecimal and Hexatrigesimal Conversion (Easy)
+Brute Force Method: Using string concatenation `res = newChar + res` inside the division loop (causes $O(N)$ memory shifting per char).
+BF Complexity Visuals: String Re-allocation Cascade.
+How to Draw BF: Draw a string. For every new character, draw a completely new box copying the old string over and adding one letter to the front.
+Optimised Pattern: Mathematical Base Conversion (N % K, N // K) using a StringBuilder/Byte Array, followed by a single Reverse operation.
+Opt Vis. Technique: Modulo-Division Stack / Remainder Tree.
+Dry Run (Opt): Take N. Write `N % 16`. Point down to a remainder. Write `N / 16`. Pass that new N to the next step. Map remainders &gt; 9 to A-Z.
+How to Draw (Opt): Draw an upside-down division bracket. Write quotients on bottom, remainders on the right. Read remainders from bottom to top.
+Opt Complexity Visuals: Linear Array Fill timeline.
+How to Draw Opt Complexity: Draw an array of size `log_base(N)`. Shade one slot per division step. Write $O(\log_16(N)$ + log_36(N)) to show time bounds based on output length.
+Mem Vis (BF): Draw overlapping, growing string arrays in memory being orphaned to garbage collection.
+Mem Vis (Opt): Draw a single, fixed-size contiguous array block. Fill slots left to right, then draw an arrow showing an in-place two-pointer swap to reverse it.

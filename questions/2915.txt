@@ -1,0 +1,13 @@
+ID: 2915
+Problem Title: Length of the Longest Subsequence That Sums to Target
+Brute Force Method: Generate all 2^N subsequences. Filter by sum == target, return max length.
+BF Complexity Visuals: Take/Skip Binary Tree
+How to Draw BF: Draw a binary tree tracking (current_sum, current_length). Depth N. Leaves represent 2^N possible subsequences.
+Optimised Pattern: 0/1 Knapsack Dynamic Programming
+Opt Vis. Technique: 1D Array Backwards Traversal
+Dry Run (Opt): Create `dp` array of size `target+1` initialized to -1, `dp[0]=0`. For each num, traverse `dp` backwards. Update `dp[j] = max(dp[j], dp[j-num] + 1)`.
+How to Draw (Opt): Draw a 1D array from 0 to Target. Draw an arrow pointing from `j-num` jumping forward to `j` to carry the max sequence length.
+Opt Complexity Visuals: Matrix Area Grid
+How to Draw Opt Complexity: Draw a rectangle representing N (elements) by T (target). Show that traversing the inner loop takes T steps N times. $O(N \cdot T)$.
+Mem Vis (BF): Call stack depth N.
+Mem Vis (Opt): A single 1D Array of size `Target+1`. Space $O(T)$.

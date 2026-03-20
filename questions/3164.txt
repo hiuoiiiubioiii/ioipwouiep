@@ -1,0 +1,13 @@
+ID: 3164
+Problem Title: Find the Number of Good Pairs II
+Brute Force Method: $O(N x M)$ TLE. (Same logic as 3162 but with 10^5 constraints).
+BF Complexity Visuals: A grid with 10^10 cells—physically impossible to scan.
+How to Draw BF: Try drawing 10^5 lines connecting 10^5 dots. You'll run out of ink.
+Optimised Pattern: Frequency Map + Multiples / Divisors
+Opt Vis. Technique: The Sieve of Multiples
+Dry Run (Opt): Count frequencies of nums2[j] x k. Iterate through multiples of each val in nums2_freq, or count all divisors of nums1[i] and check the map.
+How to Draw (Opt): Write nums2 values in a freq map. For each nums1[i], find all its divisors and see if they exist in the map. Sum the counts.
+Opt Complexity Visuals: Sub-linear divisor scan or Harmonic series sum.
+How to Draw Opt Complexity: Draw $O(N √\text{max})$ operations or $O(V \log V)$ where V is max value.
+Mem Vis (BF): 10^10 possible pair comparisons in memory.
+Mem Vis (Opt): A frequency map of size 10^6. $O(\text{Max}_\text{Value})$.

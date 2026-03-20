@@ -1,0 +1,13 @@
+ID: 675
+Problem Title: Cut Off Trees for Golf Event
+Brute Force Method: Try every possible permutation of trees to find the shortest path that visits all of them in order.
+BF Complexity Visuals: TSP-style Path Explosion.
+How to Draw BF: Draw a grid. Draw lines between trees in every possible order. Write $O(N!)$.
+Optimised Pattern: BFS / Dijkstra on Sorted Checkpoints.
+Opt Vis. Technique: Step-by-Step Shortest Path Sequence.
+Dry Run (Opt): Sort all trees by height. Use BFS to find the shortest distance from (0,0) to the shortest tree, then from that tree to the next shortest, and so on. Sum the distances.
+How to Draw (Opt): Draw a grid with numbers. Draw a line from 1 to 2, then 2 to 3. If any path is blocked by '0' (obstacle), return -1.
+Opt Complexity Visuals: $O(T \cdot R \cdot C)$ where T is number of trees.
+How to Draw Opt Complexity: Draw a sequence of BFS "waves" (circles) expanding from one tree to the next. Write $O(M\cdot N \cdot T)$.
+Mem Vis (BF): Draw a factorial number of path combinations.
+Mem Vis (Opt): Draw the BFS Queue and a sorted list of tree coordinates. $O(M\cdot N)$.

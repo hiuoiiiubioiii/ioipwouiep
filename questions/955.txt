@@ -1,0 +1,13 @@
+ID: 955
+Problem Title: Delete Columns to Make Sorted II
+Brute Force Method: Try deleting every possible subset of columns (2^C combinations) and check if the resulting strings are lexicographically sorted.
+BF Complexity Visuals: $O(2^C \cdot R \cdot L)$. Exponential search across all column combinations.
+How to Draw BF: Draw a grid. Cross out column 1. Check rows. Undo. Cross out column 2. Check. Undo. Cross out 1 and 2... the paper fills with "X" marks.
+Optimised Pattern: Greedy with Sortedness Tracking
+Opt Vis. Technique: "Locking the Rows." Check columns one by one. If a column helps sort the rows, "lock" the rows that are now strictly ordered so they don't need to be checked in future columns.
+Dry Run (Opt): Maintain a boolean array `isSorted[R-1]`. For each column, check if it's "safe" (no row `i` has `char[i] &gt; char[i+1]` unless `isSorted[i]` is true). If safe, update `isSorted` where `char[i] &lt; char[i+1]`. If not, delete column.
+How to Draw (Opt): Draw a vertical grid of words. Draw a "Lock" icon next to row pairs once the upper word is strictly alphabetically smaller than the lower one.
+Opt Complexity Visuals: $O(R \cdot C)$. Each character in the grid is inspected exactly once.
+How to Draw Opt Complexity: Draw a horizontal arrow scanning columns. Below it, draw a vertical column of "Lock" symbols that close as the arrow moves right.
+Mem Vis (BF): $O(2^C)$ space to store or track combinations.
+Mem Vis (Opt): $O(R)$ to store the `isSorted` boolean array. Draw a single column of R-1 checkboxes.

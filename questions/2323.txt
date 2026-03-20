@@ -1,0 +1,13 @@
+ID: 2323
+Problem Title: Find Minimum Time to Finish All Jobs II (Premium)
+Brute Force Method: Generate all permutations of assigning `N` jobs to `N` workers. Calculate the maximum time taken for each permutation and find the minimum of those maximums.
+BF Complexity Visuals: Factorial Tree (O(N!))
+How to Draw BF: Draw a tree where the first node branches N times, the next level branches N-1 times, cascading down to a massive bottom layer.
+Optimised Pattern: Greedy Sorting Alignment
+Opt Vis. Technique: Zipped Parallel Timelines
+Dry Run (Opt): Sort the `jobs` array ascending. Sort the `workers` array ascending. Pair `jobs[i]` with `workers[i]`. The answer is the maximum of `ceil(jobs[i] / workers[i])` across all pairs.
+How to Draw (Opt): Draw two arrays side-by-side, both sorted small to large. Draw straight horizontal arrows connecting index `i` to index `i`. Write the division result next to the arrow and circle the largest one.
+Opt Complexity Visuals: Sorting Funnels (O(N log N))
+How to Draw Opt Complexity: Draw two wide funnels narrowing down to sorted lines, followed by one quick zip-line connecting them.
+Mem Vis (BF): Draw a massive permutation Call Stack array.
+Mem Vis (Opt): Draw the two 1D Arrays being mutated (sorted in place), plus one `max_time` Integer variable.

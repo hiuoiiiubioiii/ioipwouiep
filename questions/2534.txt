@@ -1,0 +1,13 @@
+ID: 2534
+Problem Title: Time Taken to Cross the Door
+Brute Force Method: Check every second from 0 to the last arrival. At each second, scan the entire input list to see who is waiting at the door and apply the priority rules. $O(\text{Time} \cdot N)$.
+BF Complexity Visuals: A timeline with a "searchlight" scanning the entire input pool at every discrete moment.
+How to Draw BF: Draw a clock. At 1:00, look at all people. At 1:01, look at all people again. If no one arrives for 100 seconds, you waste 100 steps.
+Optimised Pattern: Two Queues (Enter and Exit) with State Tracking.
+Opt Vis. Technique: Two parallel queues feeding into a single "Door" bottleneck that switches states based on previous usage.
+Dry Run (Opt): Put people in an enterQueue or exitQueue based on their direction. At each second where someone is waiting, use the priority rules (Exit &gt; Enter if door was unused or used for Exit). If the door is idle, jump time to the next person's arrival.
+How to Draw (Opt): Draw two columns: "Enter" and "Exit". Place person IDs in them sorted by arrival time. Use a "Last State" variable (0, 1, or Idle). Pop from the top of the correct column based on the state.
+Opt Complexity Visuals: $O(N)$ linear pass to process each person once.
+How to Draw Opt Complexity: Draw two horizontal queues. Draw a single "Door" exit point. Show an arrow pulling one person from a queue at a time until both are empty.
+Mem Vis (BF): Large temporary lists for people waiting at each specific second.
+Mem Vis (Opt): Two standard queues storing indices or timestamps.

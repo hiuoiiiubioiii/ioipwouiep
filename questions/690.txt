@@ -1,0 +1,13 @@
+ID: 690
+Problem Title: Employee Importance
+Brute Force Method: Search through the entire list of employees to find a specific ID, then repeat the search for every subordinate in the list.
+BF Complexity Visuals: Linear Search inside a Recursion.
+How to Draw BF: Draw a list of names. To find a boss, scan the list. To find their 3 subordinates, scan the list 3 more times. $O(N^2)$.
+Optimised Pattern: Hash Map + DFS/BFS.
+Opt Vis. Technique: $O(1)$ Direct Access Adjacency Map.
+Dry Run (Opt): Store all employee objects in a Map (ID -&gt; Employee). Start at the given ID. Recursively add its importance and the importance of all IDs in its `subordinates` list.
+How to Draw (Opt): Draw a "Directory" (Map). Look up the boss. Follow arrows directly to subordinates without searching the whole book. Tally values.
+Opt Complexity Visuals: Linear traversal of the hierarchy $O(N)$.
+How to Draw Opt Complexity: Draw a tree structure where each edge is traversed once. Write $O(N)$.
+Mem Vis (BF): Draw the list being passed around and scanned repeatedly.
+Mem Vis (Opt): Draw a Hash Map and the recursion stack. $O(N)$ space.

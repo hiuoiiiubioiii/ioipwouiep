@@ -1,0 +1,13 @@
+ID: 337
+Problem Title: House Robber III
+Brute Force Method: Recursively decide to rob a node or not. If robbed, move to grandchildren. If not robbed, move to children. Repeat for every node without caching.
+BF Complexity Visuals: Exponential Binary Decision Tree
+How to Draw BF: Draw the original tree. For the root, draw two branches: "Robbed" (sum grandchildren) and "Skipped" (sum children). Show these branches duplicating for every node. $O(2^N)$.
+Optimised Pattern: Tree Dynamic Programming (Post-order Traversal)
+Opt Vis. Technique: Bottom-Up State Propagation (Rob/Skip)
+Dry Run (Opt): Each node returns an array of two values: `[max_if_robbed, max_if_skipped]`. `max_if_robbed` = current_val + left_skipped + right_skipped. `max_if_skipped` = max(left) + max(right).
+How to Draw (Opt): Draw a tree. Starting from leaves, write a pair [1, 0] (if value is 1). For the parent, show the addition logic to create its own [rob, skip] pair.
+Opt Complexity Visuals: Single-Pass Tree Depth Scan
+How to Draw Opt Complexity: Draw an arrow starting at the leaves and moving upward to the root. Label it $O(N)$.
+Mem Vis (BF): Massive recursion stack with redundant calls.
+Mem Vis (Opt): Recursion stack + pair-array returns. Draw a vertical stack where each frame holds two integer variables. $O(H)$.

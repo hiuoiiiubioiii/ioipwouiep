@@ -1,0 +1,13 @@
+ID: 1087
+Problem Title: Brace Expansion
+Brute Force Method: Generate every possible combination of strings by expanding the braces. Store them in a list and sort them at the end.
+BF Complexity Visuals: A massive branching tree of string permutations.
+How to Draw BF: "{a,b}c{d,e}". Branches: acd, ace, bcd, bce. List and sort. Write $O(K^N)$ where K is choices per brace.
+Optimised Pattern: Backtracking + Sorting Groups.
+Opt Vis. Technique: A "Pathfinder" through multiple layers of choices.
+Dry Run (Opt): Parse the string into groups (e.g., ["a","b"], ["c"], ["d","e"]). Sort characters within each group. Use DFS to traverse and build strings.
+How to Draw (Opt): Draw layers of dots. First layer: a, b. Second layer: c. Third layer: d, e. Draw every possible path from top to bottom. Each path is a result.
+Opt Complexity Visuals: Ordered exploration of the state-space.
+How to Draw Opt Complexity: Draw a decision tree where characters are already alphabetically ordered at each branch. Write $O(\text{ResultCount})$.
+Mem Vis (BF): Exponential space to store all result strings before sorting.
+Mem Vis (Opt): $O(N)$ recursion stack, where N is the number of groups.

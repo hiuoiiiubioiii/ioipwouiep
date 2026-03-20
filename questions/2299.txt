@@ -1,0 +1,13 @@
+ID: 2299
+Problem Title: Strong Password Checker II
+Brute Force Method: Multiple Regex PassesRun 6-7 different regular expressions against the password to check for length, lowercase, uppercase, digits, special chars, and duplicates.
+BF Complexity Visuals: Sequential Pattern Matching
+How to Draw BF: Draw a password string. Pass it through Filter 1 (Length), then Filter 2 (Lower), etc. Show how the engine restarts the scan from the beginning for every regex.
+Optimised Pattern: Single-Pass Flagging
+Opt Vis. Technique: Multi-State Boolean Registry
+Dry Run (Opt): Iterate through the string exactly once. Use 4-5 boolean flags. At each character, update the flags and check `char[i] == char[i-1]` for the duplicate rule.
+How to Draw (Opt): Draw the string. Write 5 checkboxes below it. As you scan, check the boxes. At the end, if all boxes are checked and you never saw two same neighbors, the password is "Strong."
+Opt Complexity Visuals: Linear Single-Pass Timeline
+How to Draw Opt Complexity: Draw one straight $O(N)$ arrow. Show all conditions being evaluated simultaneously at each character step.
+Mem Vis (BF): Allocating multiple match objects and temporary string copies for each regex.
+Mem Vis (Opt): A set of boolean variables and one "last_char" variable (O(1) space).

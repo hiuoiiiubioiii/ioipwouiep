@@ -1,0 +1,13 @@
+ID: 1840
+Problem Title: Maximum Building Height
+Brute Force Method: Brute force simulation of every building height while satisfying constraints for all neighbors.
+BF Complexity Visuals: $O(N \\text{cdot MaxHeight})$ grid filling.
+How to Draw BF: Draw a grid. Try to fill each building height by checking every restriction. Note $O(N^2)$ or worse.
+Optimised Pattern: Sorting + Two-pass scan (Left-to-Right &amp; Right-to-Left).
+Opt Vis. Technique: Squeeze-bound visualization.
+Dry Run (Opt): Sort restrictions. Pass 1: Bound h[i] by h[i-1] + dist. Pass 2: Bound h[i] by h[i+1] + dist. Max height between two is calculated via (h1 + h2 + dist) / 2.
+How to Draw (Opt): Draw points (restrictions). Draw a line from left, then a line from right, "pinching" the heights. Find the highest peak in the gaps.
+Opt Complexity Visuals: $O(M \log M)$ where M is number of restrictions.
+How to Draw Opt Complexity: Draw the sort tree, followed by two linear passes over M points. Mark $O(M \log M)$.
+Mem Vis (BF): Large DP table for all buildings.
+Mem Vis (Opt): List of restriction tuples (O(M) space).

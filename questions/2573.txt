@@ -1,0 +1,13 @@
+ID: 2573
+Problem Title: Find the String with LCP
+Brute Force Method: Try every possible string of length N using lowercase letters and check if its Longest Common Prefix (LCP) matrix matches the input. $O(26^N)$.
+BF Complexity Visuals: An impossible branching tree of all possible strings of length N.
+How to Draw BF: Start with 'a'. Then 'aa', 'ab', 'ac'... For each, build an N x N matrix and compare it to the input.
+Optimised Pattern: Union-Find / Greedy Coloring + LCP Verification.
+Opt Vis. Technique: A "Connectivity Map" where the LCP matrix tells us which characters *must* be identical, followed by a suffix-link validation.
+Dry Run (Opt): If `LCP[i][j] &gt; 0`, then `s[i]` must equal `s[j]`. Group these indices using Union-Find. Assign the smallest possible characters ('a' to 'z') to groups greedily. Finally, verify the generated string: `LCP[i][j]` should equal `(s[i] == s[j] ? 1 + LCP[i+1][j+1] : 0)`.
+How to Draw (Opt): Draw N circles. Look at the LCP matrix: if `LCP[i][j] &gt; 0`, draw a line between circle i and circle j. Color connected circles with the same letter. Then, double-check that the "prefix length" rules are actually followed.
+Opt Complexity Visuals: $O(N^2)$ - To iterate through the matrix for Union-Find and the final verification.
+How to Draw Opt Complexity: Draw the N x N matrix. Draw one arrow sweeping the matrix to build groups, and another arrow performing the DP-based verification.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N^2)$ to store the input matrix and $O(N)$ for Union-Find/string storage.

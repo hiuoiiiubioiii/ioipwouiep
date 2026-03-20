@@ -1,0 +1,13 @@
+ID: 1946
+Problem Title: Largest Number After Mutating Substring
+Brute Force Method: Generate all possible substrings, apply the mutation map to each, and compare results to find the lexicographically largest.
+BF Complexity Visuals: $O(N^2)$ Substring Grid
+How to Draw BF: Draw a matrix where row is start index and col is end index. Color every cell to represent a string mutation check.
+Optimised Pattern: Greedy One-Pass
+Opt Vis. Technique: First-Improvement Window
+Dry Run (Opt): Scan left to right. Start mutating at the first digit where change &gt; original. Stop mutating the moment change &lt; original.
+How to Draw (Opt): Draw the string. Draw a "Mutation Brush". Show the brush painting over a segment of digits until it hits a "stop" condition.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a single arrow from start to finish with a "Mutation Active" toggle.
+Mem Vis (BF): A collection of N strings stored in a list during comparison.
+Mem Vis (Opt): In-place character array modification or single string builder. $O(N)$ space.

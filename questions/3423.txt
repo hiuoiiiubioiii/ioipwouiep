@@ -1,0 +1,13 @@
+ID: 3423
+Problem Title: Maximum Difference Between Adjacent Elements in a Circular Array
+Brute Force Method: Iterate using modulo arithmetic `(i+1)%n` for every element to wrap around, repeatedly executing modulo division. $O(N)$ but high constant time.
+BF Complexity Visuals: Circular Clock-Face Traversal.
+How to Draw BF: Draw the array as a circle. Point an arrow from each number to the next, calculating the division remainder at every single step.
+Optimised Pattern: Linear loop checking `nums[i]-nums[i-1]` + one explicit edge check for `nums[N-1]-nums[0]`. $O(N)$
+Opt Vis. Technique: Straight Line with a Wrap-around String.
+Dry Run (Opt): Scan the array left-to-right updating `max_diff`. At the end, imagine the array folding in half so the first and last elements touch, and compare them.
+How to Draw (Opt): Draw the array horizontally. Draw arching arrows between adjacent cells, then draw one giant arching line from the last box back to the first.
+Opt Complexity Visuals: Linear Track + 1 Jump.
+How to Draw Opt Complexity: Draw a horizontal timeline representing N steps, plus one distinct dot at the end representing the final $O(1)$ jump.
+Mem Vis (BF): Redundant variables calculated in the call stack per iteration.
+Mem Vis (Opt): Two $O(1)$ tracking integers (`current_diff`, `max_diff`).

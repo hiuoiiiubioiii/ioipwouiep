@@ -1,0 +1,13 @@
+ID: 1533
+Problem Title: Find the Index of the Large Integer (Interactive)
+Brute Force Method: Compare every single index or pair using the API until the "heavier" one is found. $O(N)$.
+BF Complexity Visuals: Linear Balance Scale $O(N)$
+How to Draw BF: Draw a line of weights. Put weight 1 on the left scale and weight 2 on the right. If equal, repeat for weight 3 and 4. Slow, incremental progress.
+Optimised Pattern: Binary Search (Ternary Splitting)
+Opt Vis. Technique: The Halving Scale
+Dry Run (Opt): Split the range into two equal halves (if odd, keep the middle element out). Compare the two halves using the API. Move to the half that is "heavier". If they are equal, the middle element you kept out is the answer.
+How to Draw (Opt): Draw a large block. Split it in half. Draw two hands lifting each half. An arrow points to the heavier side, and the other half is crossed out. Repeat until one small block remains.
+Opt Complexity Visuals: Logarithmic Queries $O(\log N)$
+How to Draw Opt Complexity: Draw a line that shrinks by half at every step. Even for a billion elements, you only need ~30 steps.
+Mem Vis (BF): Zero memory; purely sequential logic.
+Mem Vis (Opt): Two pointer variables `low` and `high`. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 3707
+Problem Title: Equal Score Substrings (Easy)
+Brute Force Method: Generate all possible substrings and calculate the score for each to check for equality.
+BF Complexity Visuals: Branching Substring Tree $O(N^2)$.
+How to Draw BF: Write the string. Below it, write all 1-letter parts. Below that, 2-letter parts. Calculate score for each block.
+Optimised Pattern: Sliding Window / Prefix Sum Array
+Opt Vis. Technique: Moving Window Box
+Dry Run (Opt): Maintain a running score. Expand window right. If score breaks rule, shrink from left until valid.
+How to Draw (Opt): Draw string. Draw a rectangle over valid chars. Tally score inside. Drag right edge, then drag left edge to keep score equal.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a timeline. Put a box representing the window sliding right without resetting.
+Mem Vis (BF): Massive array of newly allocated string chunks.
+Mem Vis (Opt): Integer variables for Left, Right, and Score.

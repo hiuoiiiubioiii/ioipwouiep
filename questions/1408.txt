@@ -1,0 +1,13 @@
+ID: 1408
+Problem Title: String Matching in an Array
+Brute Force Method: Compare every string with every other string using standard string search `str1.indexOf(str2)`. Requires nested loops over the array.
+BF Complexity Visuals: All-Pairs Directed Graph
+How to Draw BF: Draw N nodes. Draw directed edges from every node to every other node (N^2 edges). Label edge cost as $O(L^2)$ for basic string matching.
+Optimised Pattern: Length Sort + KMP (or Suffix Tree)
+Opt Vis. Technique: Substring Sliding Window
+Dry Run (Opt): Sort array by string length. For each string, use KMP to search for it in all longer strings. KMP uses an LPS (Longest Prefix Suffix) array to skip redundant checks.
+How to Draw (Opt): Draw a short string underneath a long string. Draw a sliding window box. When a character mismatches, draw an arrow sliding the window right by multiple spaces using LPS.
+Opt Complexity Visuals: Linear String Matching
+How to Draw Opt Complexity: Draw string traversal $O(L1 + L2)$. Total time $O(N^2 \cdot (L1+L2)$).
+Mem Vis (BF): N^2 Function Call Frames
+Mem Vis (Opt): Draw a small integer array (LPS array) floating next to the string variables, size equal to the shortest string.

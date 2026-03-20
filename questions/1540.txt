@@ -1,0 +1,13 @@
+ID: 1540
+Problem Title: Can Convert String in K Moves
+Brute Force Method: For each character difference, try to find a unique "move number" by iterating from 1 to K for every single character. $O(N \cdot K)$.
+BF Complexity Visuals: Move-exhaustion Loop
+How to Draw BF: Draw two strings. For each character, draw a loop that spins from 1 to K looking for an available shift value.
+Optimised Pattern: Hash Map / Frequency Counting
+Opt Vis. Technique: Shift Cycle Multiplier
+Dry Run (Opt): Calculate the required shift `d` for each character `(t[i] - s[i] + 26) % 26`. If `d &gt; 0`, the moves needed are `d, d+26, d+52...`. Just track how many times each shift `d` has occurred and check if the *last* required move `d + (count[d]-1)*26` is within K.
+How to Draw (Opt): Draw a table with 26 slots (0-25). As you calculate a shift, put a tally mark in the slot. If slot 5 has 3 tallies, the moves used are 5, 31, and 57. Check if 57 &lt;= K.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw a single line for the string. For each character, draw one arrow to a fixed-size table of 26 buckets.
+Mem Vis (BF): Allocating a new string or list of all possible moves. $O(K)$.
+Mem Vis (Opt): A fixed-size integer array of size 26. $O(1)$ space (since 26 is constant).

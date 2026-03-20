@@ -1,0 +1,13 @@
+ID: 3822
+Problem Title: Design Order Management System (Med.)
+Brute Force Method: Array simulation: Store all orders in a single list. For updates or deletes, scan the entire list from start to finish to find the Order ID.
+BF Complexity Visuals: A long conveyor belt where you must inspect every item to find the one you want.
+How to Draw BF: Draw an array of boxes. Write an ID in each. Draw an arrow scanning left to right across all boxes to find "ID 42". Write $O(N)$ per query.
+Optimised Pattern: Hash Map (Dictionary) for $O(1)$ CRUD.
+Opt Vis. Technique: A post office with PO Boxes. You go directly to the box number without checking the others.
+Dry Run (Opt): Initialize a Hash Map tying OrderID to OrderDetails. Insert directly via key. Update/Delete directly via key in constant time.
+How to Draw (Opt): Draw a table with two columns: Key (ID) and Value (Details). Draw an arrow jumping directly from an external query straight to the correct row.
+Opt Complexity Visuals: Direct memory addressing timeline.
+How to Draw Opt Complexity: Draw a box. Draw an arrow going straight in. Write "O(1) time".
+Mem Vis (BF): Dynamic array resizing constantly, taking up $O(N)$ space and shifting elements.
+Mem Vis (Opt): Hash Map taking $O(N)$ space, structurally allocating buckets based on hash codes for rapid access.

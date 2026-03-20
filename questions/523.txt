@@ -1,0 +1,13 @@
+ID: 523
+Problem Title: Continuous Subarray Sum
+Brute Force Method: Nested loops. Outer loop picks start, inner loop extends to end, summing and checking `% k == 0`. $O(N^2)$.
+BF Complexity Visuals: Overlapping horizontal brackets covering every possible segment of the array.
+How to Draw BF: Draw an array. Draw an arc from idx 0 to 1, 0 to 2, 0 to 3... then 1 to 2, 1 to 3...
+Optimised Pattern: Prefix Sum + Modulo Hash Map.
+Opt Vis. Technique: A clock face. As you add numbers, the hand spins. If it hits the exact same time twice (and distance &gt; 1), you've done a full circle (multiple of k).
+Dry Run (Opt): Running sum % k. If this remainder exists in Map, check if `current index - map[remainder] &gt; 1`. If yes, true! Else, add to Map.
+How to Draw (Opt): Draw array. Below, write running sum. Below that, write sum % k. Keep a side Map of (Remainder : Index). Circle matching remainders.
+Opt Complexity Visuals: A single, straight line passing over the array. $O(N)$.
+How to Draw Opt Complexity: Draw a timeline moving strictly left to right, processing N items.
+Mem Vis (BF): Call stack mapping to N^2 loop states.
+Mem Vis (Opt): A Hash Map growing up to size `k` to store remainder indices. $O(\text{min}(N, k)$).

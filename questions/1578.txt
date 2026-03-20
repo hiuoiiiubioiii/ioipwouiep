@@ -1,0 +1,13 @@
+ID: 1578
+Problem Title: Minimum Time to Make Rope Colorful
+Brute Force Method: Backtracking: for every consecutive pair of same-colored balloons, try deleting either the left or the right and recurse to find the minimum total cost. $O(2^N)$.
+BF Complexity Visuals: Decision-Binary Tree
+How to Draw BF: Draw a rope. For every pair of same colors, branch out: "Delete 1st" or "Delete 2nd". Tree depth is N.
+Optimised Pattern: Greedy / Two Pointers
+Opt Vis. Technique: The "Keep the Maximum" Rule
+Dry Run (Opt): Whenever you encounter a group of consecutive balloons with the same color, you must remove all but one. To minimize cost, you keep the one with the *highest* cost and remove the rest.
+How to Draw (Opt): Draw a row of same-colored balloons. Write their costs underneath. Circle the highest cost. Cross out all other costs in that group and add them to a "Total Cost" box.
+Opt Complexity Visuals: One-Pass Linear $O(N)$
+How to Draw Opt Complexity: Draw a single horizontal line. When you hit a sequence, you only do one scan to find the max and the sum.
+Mem Vis (BF): Massive recursive stack for every pair deletion. $O(N)$.
+Mem Vis (Opt): A few pointer variables and a `total_cost` integer. $O(1)$ space.

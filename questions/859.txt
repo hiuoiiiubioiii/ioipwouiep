@@ -1,0 +1,15 @@
+ID: 859
+Problem Title: Buddy Strings
+Brute Force Method: Generate every possible single-swap permutation of String A and check if any of them equal String B.
+BF Complexity Visuals: Permutation Matching. $O(N^2)$.
+How to Draw BF: Draw String A. Pick two letters, swap them, draw the result. Compare to B. Repeat for all \frac{N(N-1)}{2} pairs.
+Optimised Pattern: Case-Based Comparison (Counter + Mismatch Pointer).
+Opt Vis. Technique: The "Spot the Difference" Check.
+Dry Run (Opt): 1. If lengths differ, False. 2. If A == B, check if A has any duplicate letter (swap them). 3. If A 
+eq B, find all indices where A[i] 
+eq B[i]. There MUST be exactly 2 differences, and A[i], A[j] must match B[j], B[i] cross-wise.
+How to Draw (Opt): Draw two strings. Trace your finger across both. When they differ, draw a circle. If you have 3 circles, stop (False). If 2 circles, check if they can "swap" to match.
+Opt Complexity Visuals: Single Pass Scan. $O(N)$.
+How to Draw Opt Complexity: Draw a single straight line through both strings. No backtracking.
+Mem Vis (BF): Heap Copying: Draw N^2 different string objects being created in memory.
+Mem Vis (Opt): List of Indices: Draw a small array that holds only 2 integers (mismatch positions).

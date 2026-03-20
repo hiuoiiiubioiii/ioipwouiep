@@ -1,0 +1,13 @@
+ID: 952
+Problem Title: Largest Component Size by Common Factor
+Brute Force Method: For every pair of numbers (a, b), calculate GCD(a, b). If &gt; 1, draw an edge between them. Finally, find the largest connected component.
+BF Complexity Visuals: $O(N^2 \cdot \log(\text{maxVal})$). Quadratic pair-checks with logarithmic GCD math.
+How to Draw BF: Draw dots for numbers. Draw lines between every single pair that shares a factor. The paper becomes a dense, unreadable cobweb.
+Optimised Pattern: Union-Find + Prime Factorization
+Opt Vis. Technique: "The Prime Hub." Instead of connecting numbers directly, connect each number to its prime factors. Numbers sharing a prime "hub" are automatically joined.
+Dry Run (Opt): For each `num`, find its prime factors (up to √num). Union `num` with all its prime factors. Use a map to count which parent has the most children.
+How to Draw (Opt): Draw numbers on top and prime numbers (2, 3, 5...) in the middle. Draw lines from numbers to their factors. Numbers that "plug into" the same prime are one group.
+Opt Complexity Visuals: $O(N \cdot √\text{maxVal})$. Much faster than checking all pairs.
+How to Draw Opt Complexity: Draw a bipartite graph mapping Numbers to Prime Factors. Use Union-Find to merge the "Prime" sets.
+Mem Vis (BF): $O(N^2)$ memory to store all edges in the graph.
+Mem Vis (Opt): $O(\text{maxVal})$ for the Union-Find parent array. Draw a single long row of boxes.

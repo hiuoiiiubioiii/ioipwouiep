@@ -1,0 +1,13 @@
+ID: 133
+Problem Title: Clone Graph
+Brute Force Method: Attempt to deep-copy nodes recursively without tracking visited nodes, leading to infinite loops in cyclic graphs.
+BF Complexity Visuals: A spiral arrow that loops infinitely within a circle of three nodes, never reaching a termination state.
+How to Draw BF: Draw three circles in a triangle. Draw arrows connecting them. Trace your pen around the circle 10 times to show the infinite loop.
+Optimised Pattern: DFS/BFS with a Hash Map (Mapping Original Nodes to Cloned Nodes).
+Opt Vis. Technique: A parallel universe construction. As you step into a room in the "Original" graph, you build a "Clone" room and link it to the Map.
+Dry Run (Opt): Start at the root. If the node is in the Map, return the clone. Else, create a clone, put it in the Map, and recursively clone all neighbors.
+How to Draw (Opt): Draw the Original graph on the left and an empty space on the right. Draw a "Map" table in the middle. As you touch an Original node, draw the Clone and update the Map.
+Opt Complexity Visuals: $O(V + E)$ linear traversal where every node and every edge is visited and processed exactly once.
+How to Draw Opt Complexity: Draw the graph. Mark each node with a '1' as it's visited and a '2' as its neighbors are finished, proving no redundant work.
+Mem Vis (BF): StackOverflow errors as the recursion depth exceeds memory limits due to cycles.
+Mem Vis (Opt): Visualize a Hash Map in heap memory holding V pointers, alongside the recursion stack $O(V)$.

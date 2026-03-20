@@ -1,0 +1,13 @@
+ID: 906
+Problem Title: Super Palindromes
+Brute Force Method: Iterate through every single number from L to R. Check if it's a palindrome, then calculate its square root and check if that's a whole number and a palindrome.
+BF Complexity Visuals: $O(R-L)$. A massive, dense timeline checking mostly invalid, useless numbers. Time Limit Exceeded.
+How to Draw BF: Draw a massive straight line with dots for numbers. Mark almost every dot with a red 'X' to demonstrate the sheer volume of wasted checks.
+Optimised Pattern: Palindrome Construction (Math/Generator)
+Opt Vis. Technique: Building outward from a "seed". Instead of checking big numbers, generate small seeds, mirror them into palindromes, square them, and verify range.
+Dry Run (Opt): Iterate seeds from 1 to 10^5. For each seed '12', create odd ('121') and even ('1221') palindromes. Square them. If the square is a palindrome in [L, R], increment count.
+How to Draw (Opt): Draw a small "seed" box (e.g., '12'). Draw arrows outward mirroring it to make '121'. Draw a machine box that squares it -&gt; '14641'.
+Opt Complexity Visuals: $O(W^(1/4)$) where W is the upper bound R. The search space shrinks from 10^18 to just 10^5 iterations.
+How to Draw Opt Complexity: Draw a tiny box (the seed generation space) compared to a massive box (the brute force space) to show the mathematical shortcut.
+Mem Vis (BF): Negligible variables, but massive loop bound counters ticking away.
+Mem Vis (Opt): A string builder for constructing the mirrored seed, and a 64-bit integer variable to safely hold the squared result up to 10^18.

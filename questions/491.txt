@@ -1,0 +1,13 @@
+ID: 491
+Problem Title: Non-decreasing Subsequences
+Brute Force Method: Exhaustive Recursion Try pick/don't pick for every number. Filter for length \ge 2 and non-decreasing.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a tree with N levels. Each node has two branches. Total $O(2^N)$.
+Optimised Pattern: DFS with Local Set Use backtracking. At each recursive level, use a `HashSet` to skip duplicate numbers to avoid redundant subsequences.
+Opt Vis. Technique: Pruned Decision Tree
+Dry Run (Opt): Visualize the tree. If you've already branched on a "4" at this depth, the second "4" branch is immediately cut off.
+How to Draw (Opt): Draw a tree. At each node, draw a small "Used" box. If a value is in the box, don't draw its branch.
+Opt Complexity Visuals: State Space Count
+How to Draw Opt Complexity: Draw the tree but show many "cut" branches. $O(2^N)$ worst case but significantly faster.
+Mem Vis (BF): Result List Storing all 2^N combinations.
+Mem Vis (Opt): Call Stack Vertical stack of size N. $O(N)$.

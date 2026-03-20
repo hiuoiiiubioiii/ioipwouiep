@@ -1,0 +1,13 @@
+ID: 1239
+Problem Title: Maximum Length of a Concatenated String with Unique Characters
+Brute Force Method: Try every possible subset of the given strings. For each subset, combine them and check if all characters are unique.
+BF Complexity Visuals: Power Set Tree
+How to Draw BF: Draw strings ["un", "iq", "ue"]. Branch: "Take un" / "Skip un". From "Take un", branch "Take iq" / "Skip iq". Write $O(2^N)$.
+Optimised Pattern: Bitmasking + Backtracking (Pruned)
+Opt Vis. Technique: 32-bit Integer Filters
+Dry Run (Opt): Convert each string into a bitmask (bit 0 for 'a', bit 1 for 'b'). If a string has internal duplicates, discard it. Recursively combine masks using `(mask &amp; next_mask) == 0`. Keep track of max bits set.
+How to Draw (Opt): Draw an array of strings. Below, draw 26-bit binary numbers. Use an AND (&amp;) gate symbol between two bitmasks. If output &gt; 0, draw a red line. If 0, show them combining via OR (|).
+Opt Complexity Visuals: Pruned Recursive Forest
+How to Draw Opt Complexity: Draw a tree where many branches are cut early due to bitmask collisions. Write $O(2^N)$ (worst case) but effectively much faster.
+Mem Vis (BF): Draw a call stack storing many temporary string concatenations.
+Mem Vis (Opt): Draw a list of integers (bitmasks) and a single max_length integer. Space: $O(N)$.

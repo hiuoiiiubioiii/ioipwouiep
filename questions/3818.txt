@@ -1,0 +1,13 @@
+ID: 3818
+Problem Title: Minimum Prefix Removal to Make Array Strictly Increasing (Med.)
+Brute Force Method: Iteratively remove prefixes of length 1, 2, 3... and loop through the remaining array to check if it is strictly increasing.
+BF Complexity Visuals: A staircase-like sequence of smaller and smaller arrays being re-checked from scratch.
+How to Draw BF: Draw full array, cross out element 0, scan rest. Cross out 0, 1, scan rest. Write $O(N^2)$ to show the nested loop check.
+Optimised Pattern: Suffix Array Traversal (Right-to-Left Scan).
+Opt Vis. Technique: A single pointer moving backward from the end of the array until the strictly increasing rule breaks.
+Dry Run (Opt): Start at N-1. Move left as long as arr[i-1] &lt; arr[i]. The moment arr[i-1] &gt;= arr[i], the index 'i' is the length of the prefix that must be removed.
+How to Draw (Opt): Draw array. Start pencil at the rightmost number. Draw an arrow leftward, marking green until a number is bigger than the right one. Mark red and stop.
+Opt Complexity Visuals: A single backward timeline vector.
+How to Draw Opt Complexity: Draw array. Draw one arrow starting at the end and stopping somewhere in the middle. Write $O(N)$.
+Mem Vis (BF): Re-allocating substring memory for every prefix deletion step, $O(N^2)$ space overhead.
+Mem Vis (Opt): $O(1)$ Memory. A single integer pointer (`i`) moving backward in place.

@@ -1,0 +1,13 @@
+ID: 3240
+Problem Title: Minimum Number of Flips to Make Binary Grid Palindromic II
+Brute Force Method: Check all combinations of flips to satisfy both row and column symmetry simultaneously. $O(2^(R\cdot C)$).
+BF Complexity Visuals: Exponential Decision Web
+How to Draw BF: Draw a grid with interconnected lines showing that flipping one cell affects both its row and column symmetry. Label it "Interdependent constraints."
+Optimised Pattern: Symmetry Grouping (2x2 Blocks + Centroids)
+Opt Vis. Technique: Quadrant Fold-over Map
+Dry Run (Opt): Group the grid into sets of 4 symmetric cells. For each group, calculate the cost to make them all 0 or all 1. Handle special cases for the middle row/column (pairs) and the center cell.
+How to Draw (Opt): Draw a grid. Mark 4 corners with 'A', then move inward and mark the next 4 with 'B'. Circle the middle cross (if R or C is odd). Tally the bits in each lettered group.
+Opt Complexity Visuals: Grouped Element Scan
+How to Draw Opt Complexity: Draw the grid split into groups of 4. Show that you visit each cell exactly once. Label $O(R\cdot C)$ time.
+Mem Vis (BF): Massive memory stack for backtracking search.
+Mem Vis (Opt): Scalar variables to track pair counts and 1-bit counts (O(1) space).

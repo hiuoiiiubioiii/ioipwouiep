@@ -1,0 +1,13 @@
+ID: 1273
+Problem Title: Delete Tree Nodes
+Brute Force Method: For every node, calculate the sum of its subtree. If the sum is 0, delete it. But since deleting a parent affects the structure, you'd have to re-scan the tree multiple times.
+BF Complexity Visuals: Recursive Multi-Scan
+How to Draw BF: Draw a tree. Pick a node, scan its children. Go back to the root, scan again. Write $O(N^2)$.
+Optimised Pattern: Post-Order Traversal (Bottom-Up)
+Opt Vis. Technique: Subtree Information Bubbling
+Dry Run (Opt): Use a single DFS. Each node returns two things to its parent: the total sum of its subtree and the total number of non-deleted nodes. If the sum is 0, the node tells the parent "my count is 0".
+How to Draw (Opt): Draw a tree. Draw arrows moving from leaves up to the root. At each node, write "(Sum, Count)". If Sum=0, cross out the node and all its children and change Count to 0.
+Opt Complexity Visuals: Linear Single-DFS Sweep
+How to Draw Opt Complexity: Draw a tree. Show a single path that visits every node and edge exactly twice (down and up). Write $O(N)$.
+Mem Vis (BF): Draw a massive table of all subtree sums stored separately.
+Mem Vis (Opt): Draw a recursion stack and an Adjacency List. Space: $O(N)$.

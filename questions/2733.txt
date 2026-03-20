@@ -1,0 +1,13 @@
+ID: 2733
+Problem Title: Neither Minimum nor Maximum
+Brute Force Method: Sort the entire array. Return the second element. $O(N \log N)$.
+BF Complexity Visuals: Full Array Reordering
+How to Draw BF: Draw the whole array. Sort it. Cross out the first and last. The work is overkill for just one middle value.
+Optimised Pattern: Sort Buffer (Visualize the $O(N)$ or $O(\log N)$ extra space used by sorting).
+Opt Vis. Technique: Constant Sample Selection
+Dry Run (Opt): Fixed Window Filter
+How to Draw (Opt): If array length &lt; 3, return -1. Otherwise, just take the first three elements. Sort only those three (constant time). Return the one that isn't the min or max.
+Opt Complexity Visuals: Draw a giant array. Circle the first three boxes. Ignore the rest. Pick the "middle" value of those three.
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single tiny box. Label it $O(1)$ because we only ever look at 3 elements regardless of array size.
+Mem Vis (Opt): Register Memory (Draw exactly 3 memory cells used for the comparison).

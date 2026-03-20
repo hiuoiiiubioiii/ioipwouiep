@@ -1,0 +1,13 @@
+ID: 1594
+Problem Title: Maximum Non Negative Product in a Matrix
+Brute Force Method: Explore every path from (0,0) to (R-1, C-1) using DFS and calculate the product for each. $O(2^{R+C})$.
+BF Complexity Visuals: Path-Explosion Binary Tree
+How to Draw BF: Draw a grid. From (0,0), draw two arrows (Right/Down). Each node branches again. Highlight the massive overlapping paths.
+Optimised Pattern: Dynamic Programming (Min/Max Tracking)
+Opt Vis. Technique: The Sign-Aware Value Grid
+Dry Run (Opt): Because negative numbers can flip a product, each cell (r, c) must store two values: the `min_product` and `max_product` possible to reach it.
+How to Draw (Opt): Draw the grid. In each cell, draw two boxes (Min/Max). Calculate the Max by looking at (Previous\_Max \cdot current) and (Previous\_Min \cdot current) from the top and left. The negative numbers act as "switches."
+Opt Complexity Visuals: Iterative Matrix DP $O(R \cdot C)$
+How to Draw Opt Complexity: Draw a 2D rectangle. A single diagonal-like arrow sweeps from top-left to bottom-right. Each cell is filled once.
+Mem Vis (BF): Full recursion stack for every possible path.
+Mem Vis (Opt): A 2D DP table (or two 1D rows) storing two long integers per cell. $O(R \cdot C)$ space.

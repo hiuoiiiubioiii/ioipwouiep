@@ -1,0 +1,13 @@
+ID: 1998
+Problem Title: GCD Sort of an Array
+Brute Force Method: Try every possible swap of pairs (i, j) if `gcd(nums[i], nums[j]) &gt; 1`, and check if you can eventually sort the array.
+BF Complexity Visuals: $O(N!)$ Permutation Search
+How to Draw BF: Draw a state graph where each node is an array configuration and edges are valid GCD swaps. $O(N!)$.
+Optimised Pattern: Union-Find + Sieve of Eratosthenes
+Opt Vis. Technique: Component Connectivity Clusters
+Dry Run (Opt): Connect numbers to their prime factors using DSU. If `nums[i]` and `sortedNums[i]` belong to the same component, they can be swapped.
+How to Draw (Opt): Draw a list of numbers. Below them, draw their prime factors. Draw circles (DSU) grouping all numbers sharing at least one prime factor.
+Opt Complexity Visuals: $O(N \log(\log N)$) Sieve + DSU Pass
+How to Draw Opt Complexity: Draw a Sieve timeline (primes) and then a linear scan through the array with DSU lookups. $O(N \\text{sqrt}{M})$.
+Mem Vis (BF): A massive adjacency list for all reachable array states.
+Mem Vis (Opt): DSU `parent` array and a prime-factor mapping array up to 10^5. $O(\\text{text}{\text{MaxNum}})$.

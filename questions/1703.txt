@@ -1,0 +1,13 @@
+ID: 1703
+Problem Title: Minimum Adjacent Swaps for K Consecutive Ones
+Brute Force Method: Find all combinations of K ones, calculate swap distance for each to group them together.
+BF Complexity Visuals: Combination Matrix / Nested Loops.
+How to Draw BF: Draw array. Pick K items. Draw curved lines to pull them together. Repeat for next combination.
+Optimised Pattern: Sliding Window over an array of indices + Median greediness.
+Opt Vis. Technique: Window frame sliding over the 'Indices Array'. Target converging on the median.
+Dry Run (Opt): Extract indices of all '1's. Slide a window of size K. The optimal meeting point is the median index of this window.
+How to Draw (Opt): List indices of '1's. Draw a bracket of size K. Circle the middle element. Draw arrows from others to the middle.
+Opt Complexity Visuals: Sliding Window Cost Update.
+How to Draw Opt Complexity: Draw array of size N (for extraction) + Window sliding over size M (M&lt;=N). $O(N)$.
+Mem Vis (BF): Temporary arrays for every combination tested.
+Mem Vis (Opt): One array `P` (storing indices), and a prefix sum array `Pref` for $O(1)$ cost calculation. $O(N)$ space.

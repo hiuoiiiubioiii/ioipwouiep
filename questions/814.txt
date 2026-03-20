@@ -1,0 +1,13 @@
+ID: 814
+Problem Title: Binary Tree Pruning
+Brute Force Method: For every single node, run a completely new DFS/BFS on its subtrees. If the subtree scan finds no '1', delete the node.
+BF Complexity Visuals: Overlapping Subtree Scans. $O(N^2)$ time.
+How to Draw BF: Draw a tree. Highlight the whole tree (Root scan). Move to Left Child, highlight its tree (Child scan). Notice how the bottom leaves are highlighted over and over again.
+Optimised Pattern: Post-Order Traversal (Bottom-Up DFS).
+Opt Vis. Technique: Pruning Shears from the Roots Up.
+Dry Run (Opt): Go all the way to the bottom leaves first. Look at a leaf. Is it a '0'? Snip it off (return null to parent). Move up to the parent. Did both of its kids just get snipped off? Is the parent also a '0'? Snip it too.
+How to Draw (Opt): Draw a tree. Start at the bottommost '0' leaves. Cross them out with a red 'X'. Draw an arrow pointing UP to the parent. If the parent is a '0' and now childless, cross it out too.
+Opt Complexity Visuals: Single Pass Contour Trace. $O(N)$ time.
+How to Draw Opt Complexity: Draw the tree. Trace a single continuous line down the left edge, looping under every single node exactly once, and traveling back up to the root.
+Mem Vis (BF): Heavy Call Stack: Multiple recursive stacks spawning other recursive stacks.
+Mem Vis (Opt): $O(H)$ Call Stack: Draw a vertical stack of boxes that only ever grows as tall as the tree is deep (H).

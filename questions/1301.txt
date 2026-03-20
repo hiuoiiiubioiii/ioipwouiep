@@ -1,0 +1,13 @@
+ID: 1301
+Problem Title: Number of Paths with Max Score
+Brute Force Method: Use simple recursion (DFS) to find every possible path from 'S' to 'E'. For each path, calculate the sum of digits and count paths that hit the maximum found.
+BF Complexity Visuals: Exponential Path Tree
+How to Draw BF: Draw a grid. From 'S', draw arrows to Up, Left, and Diagonal. From those, branch again. The tree grows to size 3^N. Write $O(3^N)$.
+Optimised Pattern: 2D Dynamic Programming (Suffix-Sum style)
+Opt Vis. Technique: Grid Propagation (Max &amp; Count)
+Dry Run (Opt): Start from the target 'E'. Each cell (i, j) stores two values: [Max Score to reach E, Number of ways to get that Max]. Update each cell by looking at its neighbors (Down, Right, Bottom-Right).
+How to Draw (Opt): Draw the board. Start at bottom-right. Move towards top-left. In each cell, write two numbers. Use arrows to show the "best" score being pulled from neighbor cells into the current one.
+Opt Complexity Visuals: Linear Grid Scan
+How to Draw Opt Complexity: Draw a grid. Show a single sweep from bottom-right to top-left. Write $O(N^2)$.
+Mem Vis (BF): Draw a massive recursion stack storing millions of path segments.
+Mem Vis (Opt): Draw two 2D integer arrays (or one 2D array of pairs) of size N x N. Space: $O(N^2)$.

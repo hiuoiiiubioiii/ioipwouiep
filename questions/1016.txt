@@ -1,0 +1,13 @@
+ID: 1016
+Problem Title: Binary String With Substrings Representing 1 To N
+Brute Force Method: Loop i from 1 to N. Convert i to a binary string. Run standard substring search `S.contains(binary)` for every single number.
+BF Complexity Visuals: N separate search parties sequentially scanning the entirety of string S.
+How to Draw BF: Write S. Under it, write binary of 1, 2, 3... and draw full-length search lines for each. Write $O(N \cdot S.\text{length})$.
+Optimised Pattern: Sliding Window / Hash Set.
+Opt Vis. Technique: A small, fixed-size window sliding over S once, capturing integer values into a bucket.
+Dry Run (Opt): Slide windows of lengths 1 up to log2(N)+1 across S. Convert those binary substrings to int. Add to a Set. If Set has N valid numbers &lt;= N, return true.
+How to Draw (Opt): Draw string S. Draw a box of size 1 sliding across. Then box of size 2. Write numbers found into a circle (Set). Check if circle size == N.
+Opt Complexity Visuals: Sliding windows of max size ~30 over S, regardless of how huge N is.
+How to Draw Opt Complexity: Draw S with a sliding frame. Write Time: $O(|S| \cdot \log N)$.
+Mem Vis (BF): N separate binary string allocations in memory.
+Mem Vis (Opt): A Set holding at most N integers. $O(N)$ space constraint.

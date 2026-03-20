@@ -1,0 +1,13 @@
+ID: 723
+Problem Title: Candy Crush
+Brute Force Method: Scan grid, crush any 3+, then do a full 2D array shift to drop candies. Repeat until stable.
+BF Complexity Visuals: Multi-pass Grid Scan
+How to Draw BF: Draw a grid. Draw arrows looping over every cell horizontally, then vertically, over and over. Very slow $O((R\cdot C)$^2).
+Optimised Pattern: In-place State Flagging &amp; Two-Pointer Drop
+Opt Vis. Technique: Falling Sand / Gravity Columns
+Dry Run (Opt): 1. Scan rows/cols. If 3+ match, negate their values (mark). 2. For each column, use read/write pointers bottom-up. Keep positive numbers, skip negatives. Fill top with 0s. Repeat if board changed.
+How to Draw (Opt): Draw a single column. Write numbers. Circle negative values. Draw a heavy arrow pushing positive numbers to the bottom, leaving zeros at the top.
+Opt Complexity Visuals: Matrix Sweeps
+How to Draw Opt Complexity: Draw the matrix. Draw horizontal sweep arrows, then vertical sweep arrows. Enclose in a loop arrow to represent worst-case $O((R\cdot C)$^2) time.
+Mem Vis (BF): Deep copies of the 2D grid for every single simulation step.
+Mem Vis (Opt): In-place value negation (O(1) extra space).

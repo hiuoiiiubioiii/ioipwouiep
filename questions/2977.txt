@@ -1,0 +1,13 @@
+ID: 2977
+Problem Title: Minimum Cost to Convert String II
+Brute Force Method: Same as 2976 but with variable-length substrings. Try every possible string partition and every replacement.
+BF Complexity Visuals: Exponential Recursive Tiling
+How to Draw BF: Draw a tree where each node branches into all possible substring splits. $O(2^N)$.
+Optimised Pattern: Trie + Floyd-Warshall + DP
+Opt Vis. Technique: Prefix Tree with Distance Mapping
+Dry Run (Opt): Map each unique conversion string to an ID using a Trie. Run Floyd-Warshall on IDs. Use DP where dp[i] is min cost to convert first i chars: dp[i] = min(dp[j] + cost(j dots i)).
+How to Draw (Opt): Draw a Trie to ID strings. Draw a 1D DP array. For index i, draw arrows from all j &lt; i where s[j dots i] has a known conversion.
+Opt Complexity Visuals: String Length x Unique Substrings
+How to Draw Opt Complexity: Draw a square N x N. For each row, show a Trie traversal. T = $O(N^2 + U^3)$ where U is unique strings.
+Mem Vis (BF): Deep recursion call stack.
+Mem Vis (Opt): Trie nodes, a distance matrix, and a DP array. Space $O(\text{Total Chars} + U^2)$.

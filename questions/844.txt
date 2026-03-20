@@ -1,0 +1,13 @@
+ID: 844
+Problem Title: Backspace String Compare
+Brute Force Method: Iterate through both strings and build two new strings using a Stack. If you see '#', pop. At the end, compare the two built strings.
+BF Complexity Visuals: Simulation via Stack. $O(N)$.
+How to Draw BF: Draw two strings. For each, draw a "Result" box. Draw letters jumping into the box and being erased by #. Compare the two final boxes.
+Optimised Pattern: Two Pointers (Reverse Scanning).
+Opt Vis. Technique: The "Reverse Eraser."
+Dry Run (Opt): Start from the END of both strings. If you see '#', increment a "skip" counter. Skip letters while skip &gt; 0. Compare the first non-skipped letters. Move backward.
+How to Draw (Opt): Draw two strings. Place pointers at the last indices. Draw a "Skip Counter" bubble next to each. Move pointers left, decrementing counter for letters and incrementing for #.
+Opt Complexity Visuals: Single Pass In-Place. $O(N)$.
+How to Draw Opt Complexity: Draw two parallel timelines with arrows moving from right to left, stopping at the same points.
+Mem Vis (BF): Extra Strings/Stacks: Draw two new memory blocks of size N.
+Mem Vis (Opt): $O(1)$ Space: Draw two integer pointers (i, j) and two "Skip" variables.

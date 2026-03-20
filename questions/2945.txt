@@ -1,0 +1,13 @@
+ID: 2945
+Problem Title: Find Maximum Non-decreasing Array Length
+Brute Force Method: Try all ways to partition the array into subarrays such that their sums are non-decreasing.
+BF Complexity Visuals: Partition Bell Tree
+How to Draw BF: Draw all ways to split "1, 2, 3, 4" (e.g., [1,2,3,4], [1|2,3,4], [1,2|3,4]...). Exponential growth.
+Optimised Pattern: Greedy DP + Prefix Sums + Monotonic Queue
+Opt Vis. Technique: Optimal Split Point Tracker
+Dry Run (Opt): Maintain dp[i] (max length up to i) and last[i] (sum of the last group in that optimal partition). We want to find the largest j &lt; i such that sum(j dots i) >= last[j].
+How to Draw (Opt): Draw the prefix sum array. For each i, use a monotonic queue to find the best j in $O(1)$ that satisfies the greedy condition.
+Opt Complexity Visuals: Linear Scan with Deque Lookups
+How to Draw Opt Complexity: Draw a line for N. Mark $O(1)$ operations per element thanks to the monotonic property. Total T = $O(N)$.
+Mem Vis (BF): Storing all partition possibilities.
+Mem Vis (Opt): Two 1D arrays (dp and last) and a Deque. Space $O(N)$.

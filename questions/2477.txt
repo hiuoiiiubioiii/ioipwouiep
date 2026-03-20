@@ -1,0 +1,13 @@
+ID: 2477
+Problem Title: Minimum Fuel Cost to Report to the Capital
+Brute Force Method: Iterate through every possible road path. For every city, manually count passengers and simulate car assignments at every junction.
+BF Complexity Visuals: Recursive Traffic Simulation
+How to Draw BF: Draw a graph. Draw individual car icons moving towards the center, recalculating at every intersection. Label $O(N^2)$ for naive re-calculations.
+Optimised Pattern: DFS + Subtree Size Math
+Opt Vis. Technique: Inward Flow Accumulation
+Dry Run (Opt): Perform DFS. For each node, the total people moving to its parent is `1 + sum(people from children)`. Fuel cost for this road is `ceil(people / seats)`.
+How to Draw (Opt): Draw a tree. At each node, write the count of people it "sends" upward. Draw fuel canisters on the edges based on `count/seats`.
+Opt Complexity Visuals: Single Tree Traversal
+How to Draw Opt Complexity: Draw an arrow sweeping from leaves to root. Label $O(N)$ Time.
+Mem Vis (BF): Draw deep recursion frames.
+Mem Vis (Opt): Draw the adjacency list and one `fuel` variable. $O(N)$ Space.

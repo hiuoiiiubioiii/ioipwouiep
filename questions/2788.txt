@@ -1,0 +1,13 @@
+ID: 2788
+Problem Title: Split Strings by Separator
+Brute Force Method: Iterate through each word. Use a manual nested loop to build a temporary string character by character. When the separator is hit, push the temp string and clear it. $O(\text{Total Characters})$.
+BF Complexity Visuals: Manual Character Buffering
+How to Draw BF: Draw a string with separators. Scan left-to-right. Build a "LEGO" block for each segment. When you hit a separator, put the block in a box and start a new one.
+Optimised Pattern: Repeated String Concatenation (Visualizing memory churn from adding one char at a time to a string).
+Opt Vis. Technique: Native split + filter
+Dry Run (Opt): Stream Transformation Pipeline
+How to Draw (Opt): For each string, call s.split(separator). Flatten the results into one list. Filter out any empty strings "" produced by adjacent separators or leading/trailing separators.
+Opt Complexity Visuals: Draw a funnel. Strings go in. A "Splitter" blade cuts them at the separator. A "Filter" sieve at the bottom catches the empty pieces, letting only valid words through.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single straight line through all input strings. Label it $O(\text{Sum of Lengths})$.
+Mem Vis (Opt): Result List Buffer (Draw an array in memory holding only the final valid string segments).

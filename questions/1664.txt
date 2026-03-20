@@ -1,0 +1,13 @@
+ID: 1664
+Problem Title: Ways to Make a Fair Array
+Brute Force Method: For every index i, remove the element, then run a loop to sum all new even indices and all new odd indices.
+BF Complexity Visuals: N^2 Re-Summing
+How to Draw BF: Draw an array. Draw N different "views" where one element is missing, each with its own full-scan summation. $O(N^2)$.
+Optimised Pattern: Prefix Sums (Even/Odd Tracking)
+Opt Vis. Technique: Running Balance Sheet
+Dry Run (Opt): Precompute total even/odd sums. As you iterate i, "even" indices after i become "odd", and vice versa. Use totals to calculate new sums in $O(1)$.
+How to Draw (Opt): Draw two rows: "Prefix Evens" and "Prefix Odds". When you "remove" a node, swap the "suffixes" of the two rows to see if they balance.
+Opt Complexity Visuals: Linear Scan with Constant Lookups
+How to Draw Opt Complexity: Draw a single horizontal arrow with two summary boxes (LeftSum, RightSum). $O(N)$.
+Mem Vis (BF): Variable Counters: Simple loop indices.
+Mem Vis (Opt): Four Variables / Two Arrays: Draw two prefix arrays or just four variables tracking running sums. $O(1)$ or $O(N)$ space.

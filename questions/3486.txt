@@ -1,0 +1,13 @@
+ID: 3486
+Problem Title: Longest Special Path II
+Brute Force Method: Check every path in the tree. For each, verify if all node values are unique using a Set. $O(N^2)$
+BF Complexity Visuals: All-Paths DFS Forest.
+How to Draw BF: Draw the tree N times. In each copy, highlight a different node as the root and draw arrows exploring all paths from it.
+Optimised Pattern: DFS + Sliding Window on Path + Hash Map for Last Depth. $O(N)$
+Opt Vis. Technique: Left-Boundary Depth Pointer.
+Dry Run (Opt): Traverse DFS. Keep a map of "Value -&gt; Last Depth Seen". Maintain a `leftBoundary` for the current path; if a duplicate is seen, move the boundary to `max(leftBoundary, lastSeen[val])`.
+How to Draw (Opt): Draw a tree path. Draw a sliding bracket alongside the path. If you hit a duplicate value, "shrink" the top of the bracket down to the old value's position.
+Opt Complexity Visuals: Single Pass Tree Shading.
+How to Draw Opt Complexity: Draw one tree and shade each edge once during the DFS traversal.
+Mem Vis (BF): Multiple sets created and destroyed in the heap during exploration.
+Mem Vis (Opt): One global Hash Map and a recursive call stack.

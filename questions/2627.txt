@@ -1,0 +1,13 @@
+ID: 2627
+Problem Title: Debounce (JS)
+Brute Force Method: Calling the function on every single user input/event directly.
+BF Complexity Visuals: Spam Execution Timeline
+How to Draw BF: Draw a timeline. Every time the user types a letter, draw a massive spike indicating a heavy API call (O(Spam)).
+Optimised Pattern: Closure + clearTimeout / setTimeout
+Opt Vis. Technique: Resetting Fuse / Timer Bar
+Dry Run (Opt): Trigger event -&gt; start timer. Trigger again before timer ends -&gt; destroy old timer, start new timer. Timer hits 0 -&gt; execute function.
+How to Draw (Opt): Draw a timeline. Draw an event as a dot. Start drawing a horizontal line (the timer). If another dot appears, erase the line and start over. When the line reaches length 'T', draw an execution star.
+Opt Complexity Visuals: Delayed $O(1)$ Execution
+How to Draw Opt Complexity: Draw the timeline showing execution shifted by `t` ms after the final event.
+Mem Vis (BF): Clogged Event Queue
+Mem Vis (Opt): Single integer memory (Timer ID variable in closure).

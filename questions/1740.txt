@@ -1,0 +1,13 @@
+ID: 1740
+Problem Title: Find Distance in a Binary Tree
+Brute Force Method: Convert the tree into an undirected graph (Adjacency List). Use BFS starting from `p` to find `q`.
+BF Complexity Visuals: Spiderweb Graph Traversal.
+How to Draw BF: Draw the tree. Draw double arrows between all nodes. Trace a path from `p` to `q`. $O(N)$.
+Optimised Pattern: Lowest Common Ancestor (LCA) + Node Depth.
+Opt Vis. Technique: Tree "V" Shape Path.
+Dry Run (Opt): `Dist(p, q) = Depth(p) + Depth(q) - 2 * Depth(LCA(p, q))`. Find LCA in one pass, then find depths.
+How to Draw (Opt): Draw the tree. Highlight `p` and `q`. Trace up to the first shared node (LCA). Count steps from `p` to LCA and `q` to LCA.
+Opt Complexity Visuals: Single Pass DFS Traversal.
+How to Draw Opt Complexity: Draw one DFS arrow visiting every node once. Label $O(N)$.
+Mem Vis (BF): Adjacency List + Visited Set + Queue. $O(N)$.
+Mem Vis (Opt): Recursion stack (height of tree). $O(H)$.

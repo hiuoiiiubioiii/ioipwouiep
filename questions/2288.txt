@@ -1,0 +1,13 @@
+ID: 2288
+Problem Title: Apply Discount to Prices
+Brute Force Method: Regex Splitting + Global SearchUse a complex regular expression to find all price patterns. For each match, parse the number, calculate the discount, and replace the text.
+BF Complexity Visuals: Pattern Matching &amp; Replacement
+How to Draw BF: Draw the sentence. Highlight "100". Draw an arrow to a calculator. Write "90.00" in its place. Show how edge cases like "10a" can break complex regex logic.
+Optimised Pattern: Word-by-Word Parsing
+Opt Vis. Technique: Token Validation &amp; Transform
+Dry Run (Opt): Split the sentence into words by spaces. For each word, check if it starts with '', followed only by digits. If valid, convert to double, apply discount, and format to 2 decimal places. Join words back.
+How to Draw (Opt): Draw the string split into boxes. Look at box 1. Does it start with ''? Yes. Are the rest digits? Yes. Apply math. Look at box 2. Repeat. Assemble the boxes back into a line.
+Opt Complexity Visuals: Single Pass Tokenizer
+How to Draw Opt Complexity: Draw an $O(N)$ timeline where N is the length of the string. Show each word being processed exactly once in linear time.
+Mem Vis (BF): Multiple large strings created during repeated regex `replaceAll` calls.
+Mem Vis (Opt): A list of word strings and a `StringBuilder` to reconstruct the sentence (O(N) space).

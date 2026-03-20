@@ -1,0 +1,13 @@
+ID: 972
+Problem Title: Equal Rational Numbers
+Brute Force Method: Convert the repeating decimals into high-precision floating point numbers and check if the difference is less than a tiny epsilon.
+BF Complexity Visuals: $O(L)$ but numerically unstable. Fails due to precision limits and rounding errors with long repeating sequences.
+How to Draw BF: Draw two numbers with 100 decimal places. Draw a magnifying glass over the 101st digit showing a slight mismatch.
+Optimised Pattern: Fractional Conversion (Math/String)
+Opt Vis. Technique: "The Pizza Slice." Every rational number (including repeating ones) can be perfectly represented as a fraction A/B. Convert both strings to fractions and compare.
+Dry Run (Opt): Parse non-repeating and repeating parts. Use formula: repeating_part / (10^len - 1) scaled by the decimal position. Simplify both to lowest terms using GCD.
+How to Draw (Opt): Draw a repeating decimal string. Use arrows to split it into an "Integer Part," "Fraction Part," and "Repeating Part." Show them being plugged into a formula to create a single fraction box.
+Opt Complexity Visuals: $O(L)$ where L is string length.
+How to Draw Opt Complexity: Draw a flowchart: String -&gt; Components -&gt; Formula -&gt; Fraction -&gt; Simplify -&gt; Compare.
+Mem Vis (BF): Negligible, but functionally broken.
+Mem Vis (Opt): $O(1)$ to store the Numerator and Denominator. Draw two integer boxes.

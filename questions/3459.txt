@@ -1,0 +1,13 @@
+ID: 3459
+Problem Title: Length of Longest V-Shaped Diagonal Segment
+Brute Force Method: From every cell, explore every possible diagonal path sequence including turns without memoization. $O(4 \cdot (N \cdot M)$^2)
+BF Complexity Visuals: Exploding Path Traversal.
+How to Draw BF: Draw a grid. From one cell, draw hundreds of branching paths that wrap and turn, eventually filling the whole page.
+Optimised Pattern: DFS + Memoization / DP (State: r, c, dir, turn_taken, next_val). $O(N \cdot M)$
+Opt Vis. Technique: Directional State Table.
+Dry Run (Opt): For each cell with '1', try 4 directions. DFS carries the state: expected next number (2, 0, 2, 0) and whether the 90-degree turn is used.
+How to Draw (Opt): Draw the grid. Draw an arrow with a 90-degree "joint." Label the cells along the path with the alternating 2, 0, 2 sequence.
+Opt Complexity Visuals: Bounded State Traversal.
+How to Draw Opt Complexity: Draw a grid and imagine 16 layers (4 dirs x 2 turn-states x 2 numbers). Shade each layer to show total work is $O(16 \cdot N \cdot M)$.
+Mem Vis (BF): Recursive stack overflow from trillions of re-calculated paths.
+Mem Vis (Opt): A 5D Memoization table of size [N][M][4][2][2] or a Hash Map of states.

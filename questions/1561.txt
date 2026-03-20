@@ -1,0 +1,13 @@
+ID: 1561
+Problem Title: Maximum Number of Coins You Can Get
+Brute Force Method: Try every possible triplet combination (A, B, C) to find the grouping that maximizes your total (the second largest in each triplet). $O(N!)$.
+BF Complexity Visuals: Factorial Permutation Web
+How to Draw BF: Draw a set of piles. Draw arrows branching out showing every possible way to pick 3 piles at a time. The tree width explodes instantly.
+Optimised Pattern: Greedy / Sorting
+Opt Vis. Technique: The Sandwich Selection
+Dry Run (Opt): Sort the piles. Alice takes the largest, you take the second largest, and Bob takes the absolute smallest. This ensures you always get the best "middle" value while Bob gets the "trash."
+How to Draw (Opt): Draw a sorted line of numbers. Mark 'A' at the rightmost, 'Me' next to it, and 'B' at the leftmost. Move the 'A/Me' pair inward and the 'B' pointer rightward. Circle the 'Me' values.
+Opt Complexity Visuals: Sorting Bottleneck $O(N \log N)$
+How to Draw Opt Complexity: Draw a standard Merge Sort tree height \log N followed by a single linear line representing the N/3 iterations.
+Mem Vis (BF): Massive recursive stack for triplet combinations.
+Mem Vis (Opt): Array blocks shifting in-place. $O(1)$ extra space if using in-place sort.

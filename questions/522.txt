@@ -1,0 +1,13 @@
+ID: 522
+Problem Title: Longest Uncommon Subsequence II
+Brute Force Method: Generate all subsequences for every string in the array, tally frequencies, return longest with freq=1.
+BF Complexity Visuals: A forest of exploding binary trees, one for each string in the array. $O(N \cdot 2^L)$.
+How to Draw BF: Draw multiple strings. Below each, draw an expanding cone representing millions of subsequences.
+Optimised Pattern: Custom Sort + Two Pointers (Subsequence Check).
+Opt Vis. Technique: A waterfall filtering down by length. The first unique rock that doesn't fit inside any other rock wins.
+Dry Run (Opt): Sort descending by length. Pick string. Compare it against all others using two pointers. If it's not a subsequence of any, return its length.
+How to Draw (Opt): Draw strings stacked by length (longest on top). Take top string. Draw two arrows (pointers) checking if its letters exist in other strings.
+Opt Complexity Visuals: Sorting phase followed by nested traversal. $O(N^2 \cdot L)$.
+How to Draw Opt Complexity: Draw a sorting timeline, then an N x N grid where each cell represents a quick linear scan.
+Mem Vis (BF): Hash Map exploding with 2^L string combinations.
+Mem Vis (Opt): No extra data structures, just pointers. $O(1)$ space beyond sorting.

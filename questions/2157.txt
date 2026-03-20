@@ -1,0 +1,13 @@
+ID: 2157
+Problem Title: Groups of Strings
+Brute Force Method: Compare every pair of strings. Check if they are connected by 1 addition, 1 deletion, or 1 replacement.
+BF Complexity Visuals: An $O(N^2)$ fully connected graph comparison.
+How to Draw BF: Draw N dots. Draw lines between every single dot and check the rules for each line. Write $O(N^2 \\text{cdot length})$.
+Optimised Pattern: Bitmasking + Disjoint Set Union (DSU).
+Opt Vis. Technique: Merging bubbles together based on shared attributes.
+Dry Run (Opt): Represent each string as a 26-bit integer. For each bitmask, check its variations (flip one bit for add/delete, flip two for replace). Use a Map to see if those variations exist and `union()` them.
+How to Draw (Opt): Draw bitmasks as binary strings. Draw a "Variation Factory" that flips 1 bit at a time. If the factory output matches another string, draw a circle around both to group them.
+Opt Complexity Visuals: $O(N \cdot 26)$ or $O(N \cdot 26^2)$ depending on replacement logic.
+How to Draw Opt Complexity: A vertical list of N strings, each branching into 26 constant-time lookups.
+Mem Vis (BF): $O(N^2)$ graph adjacency list.
+Mem Vis (Opt): DSU `parent` and `size` arrays (O(N)) + Hash Map of bitmasks.

@@ -1,0 +1,13 @@
+ID: 49
+Problem Title: Group Anagrams
+Brute Force Method: Nested Loop Comparisons For every string, compare it against every other string by sorting both of them. If they match, group them.
+BF Complexity Visuals: The Exhaustive Sorter
+How to Draw BF: Draw N strings. Draw arrows pointing from string 1 to strings 2, 3, 4, sorting them every single time. Extremely slow: $O(N² \cdot K \log K)$.
+Optimised Pattern: Hash Map (Sorted Key / Char Count)
+Opt Vis. Technique: The Labeled Buckets
+Dry Run (Opt): Sort each string once and use it as a Hash Map key (e.g., "eat", "tea" -&gt; "aet"). Append the original strings to the list at that key. Alternatively, use an array of 26 character counts as the key.
+How to Draw (Opt): Draw three buckets. Label one "aet", one "ant", one "abt". Draw strings ("eat", "tea", "ate") falling cleanly into the "aet" bucket.
+Opt Complexity Visuals: Linear Sorting Line
+How to Draw Opt Complexity: Draw a single timeline representing N strings. Over each string, draw a small box representing the $O(K \log K)$ sort. Total time: $O(N \cdot K \log K)$.
+Mem Vis (BF): $O(N \cdot K)$ space, but the time limit will definitely exceed first.
+Mem Vis (Opt): Draw a single Hash Map grouping pointers/references to the strings. The total size is exactly the sum of all string characters, $O(N \cdot K)$ space.

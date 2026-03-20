@@ -1,0 +1,13 @@
+ID: 388
+Problem Title: Longest Absolute File Path
+Brute Force Method: Split the string by newlines. For each line, count the tabs to determine depth, and for every file found, reconstruct the full path by looking at all previous entries.
+BF Complexity Visuals: Exhaustive Path Reconstruction
+How to Draw BF: Draw a list of split strings. For a file at depth 3, draw arrows to the most recent items at depth 2, 1, and 0 to build the string. $O(N^2)$.
+Optimised Pattern: Stack / Array Depth Tracking
+Opt Vis. Technique: Hierarchical Length Stack
+Dry Run (Opt): Maintain an array or stack `depth_lengths` where `depth_lengths[i]` is the length of the path up to level i. When moving to depth d, update `depth_lengths[d] = depth_lengths[d-1] + current_len + 1`.
+How to Draw (Opt): Draw a vertical stack. As you see a directory, push its length. If a new directory has a smaller tab count, pop until the stack matches the depth. When you see a dot (file), calculate the total.
+Opt Complexity Visuals: Single-Pass Tokenization
+How to Draw Opt Complexity: Draw a single arrow moving through the input string. Above it, draw a stack that grows and shrinks. $O(N)$.
+Mem Vis (BF): List of all full path strings. $O(N^2)$.
+Mem Vis (Opt): A stack of integers (lengths). Draw a vertical column of boxes where each box holds a "length" value. $O(\\text{text}{\text{Depth}})$.

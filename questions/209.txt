@@ -1,0 +1,13 @@
+ID: 209
+Problem Title: Minimum Size Subarray Sum
+Brute Force Method: Nested loops: For every starting index, iterate forward to find the sum.
+BF Complexity Visuals: Stepped Triangle Graph: $O(N^2)$ Time.
+How to Draw BF: Draw a right-angled triangle grid. Each row represents the inner loop getting shorter as the start index moves right.
+Optimised Pattern: Sliding Window (Two Pointers)
+Opt Vis. Technique: Elastic Band Window
+Dry Run (Opt): Stretch right finger until sum is reached. Then pull left finger in to shrink the window while sum is still valid. Record smallest width.
+How to Draw (Opt): Draw an array. Draw a bracket `[ ]` around the elements. Expand the right side `]`, then shrink the left side `[` like an inchworm.
+Opt Complexity Visuals: Two-Lane Track: $O(N)$ Time.
+How to Draw Opt Complexity: Draw two parallel lines (Left and Right pointers). Both lines only move forward to the end, never backward. 2N total steps = $O(N)$.
+Mem Vis (BF): Variables per loop iteration, no complex structure.
+Mem Vis (Opt): Two Pointer Variables + 1 Sum Accumulator: Draw 3 small boxes that update values as the window shifts.

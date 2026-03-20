@@ -1,0 +1,13 @@
+ID: 1149
+Problem Title: Article Views II (SQL)
+Brute Force Method: Group by User and Date, then count how many unique articles they viewed. Loop through these results in the app layer.
+BF Complexity Visuals: Multi-Level Aggregation Scan
+How to Draw BF: Draw a table. Group it by User. Inside that group, group by Date. Manually count distinct articles. Repeat for all users.
+Optimised Pattern: GROUP BY + HAVING COUNT(DISTINCT)
+Opt Vis. Technique: Bucketing with Threshold Filter
+Dry Run (Opt): `GROUP BY viewer_id, view_date`. Use `HAVING COUNT(DISTINCT article_id) &gt; 1`. Finally, select the distinct `viewer_id` and sort.
+How to Draw (Opt): Draw buckets for each `(User, Date)` pair. Count unique articles in each. Cross out buckets with count <= 1. Output the User IDs from remaining buckets.
+Opt Complexity Visuals: $O(N \log N)$ Hash Grouping
+How to Draw Opt Complexity: Draw a flow from table into composite key buckets `(User+Date)`, then a filter step.
+Mem Vis (BF): Massive Map of Maps
+Mem Vis (Opt): Optimized Hash Aggregator.

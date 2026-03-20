@@ -1,0 +1,13 @@
+ID: 2151
+Problem Title: Maximum Good People Based on Statements
+Brute Force Method: Generate all 2^N combinations of people being "good" or "bad". For each combo, check if all statements are consistent.
+BF Complexity Visuals: Massive binary tree with 2^N leaves.
+How to Draw BF: Draw a root branching into 'Good' and 'Bad' for Person 0, then 2 branches for Person 1, etc. Circle valid leaf nodes. $O(2^N \cdot N^2)$.
+Optimised Pattern: Bitmasking (Brute Force is the only way, but Bitmasking is the production-ready implementation).
+Opt Vis. Technique: Iterating through an integer from 0 to (2^N - 1) as a binary representation.
+Dry Run (Opt): For mask `i`, if `(i &gt;&gt; j) &amp; 1`, assume person `j` is good. Check their statements in the grid against the mask bits. If contradiction, discard mask.
+How to Draw (Opt): Write numbers 0-7 (if N=3). Convert to binary (000, 001...). For each binary string, map 1 to Good and 0 to Bad. Check if '1' people's statements match the binary pattern.
+Opt Complexity Visuals: $O(2^N \cdot N^2)$ search space.
+How to Draw Opt Complexity: A vertical list of 2^N binary strings being fed through a "Consistency Filter" one by one.
+Mem Vis (BF): Deep recursion stack for backtracking.
+Mem Vis (Opt): $O(1)$ extra space (using bitwise integers).

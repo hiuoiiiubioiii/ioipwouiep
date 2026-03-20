@@ -1,0 +1,13 @@
+ID: 482
+Problem Title: License Key Formatting
+Brute Force Method: Forward Simulation Remove dashes, convert to upper, then iterate forward and try to insert dashes at the right intervals.
+BF Complexity Visuals: Shifting Array
+How to Draw BF: Draw a string. For every dash insertion, show all characters to the right being shifted. $O(N^2)$.
+Optimised Pattern: Reverse Traversal Start from the end of the string. Collect K characters, add a dash, and repeat. Reverse the result at the end.
+Opt Vis. Technique: Reverse Grouping
+Dry Run (Opt): Imagine filling boxes from right to left. Since the "first" group can be shorter, the end is the only stable anchor.
+How to Draw (Opt): Write the alphanumeric string. Draw an arrow starting at the last char, moving left. Every K steps, draw a vertical line (dash).
+Opt Complexity Visuals: Single Pass
+How to Draw Opt Complexity: Draw one arrow scanning the string once. $O(N)$.
+Mem Vis (BF): Intermediate Strings Multiple copies of the string during split/join.
+Mem Vis (Opt): StringBuilder Draw one buffer growing to size N. $O(N)$ space.

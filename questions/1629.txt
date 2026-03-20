@@ -1,0 +1,13 @@
+ID: 1629
+Problem Title: Slowest Key
+Brute Force Method: Create a separate array of all durations, sort it to find the max, resolve ties using a secondary sort.
+BF Complexity Visuals: Sorting Bottleneck
+How to Draw BF: Draw a list of numbers passing through a sorting funnel $O(N \log N)$ just to find the biggest one.
+Optimised Pattern: Single Pass Linear Scan
+Opt Vis. Technique: Max Tracking Sweep
+Dry Run (Opt): Loop once. Current duration = releaseTimes[i] - releaseTimes[i-1]. Update `maxDuration` and `bestKey` if current is greater (or equal but lexically larger).
+How to Draw (Opt): Draw an array of times. Slide a 2-element window across it. Subtract the left from the right. If it beats the current record holder, overwrite the record box.
+Opt Complexity Visuals: Linear Arrow
+How to Draw Opt Complexity: Draw a single straight arrow pointing left to right across the data array. $O(N)$.
+Mem Vis (BF): Secondary Duration Array: Draw a newly allocated array of size N holding the differences.
+Mem Vis (Opt): Two Trackers: Draw two isolated boxes labeled `max_time` and `best_char` being continuously overwritten. $O(1)$.

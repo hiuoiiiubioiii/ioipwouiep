@@ -1,0 +1,13 @@
+ID: 2982
+Problem Title: Find Longest Special Substring That Occurs Thrice II
+Brute Force Method: Same as 2981 (Brute force). TLE due to N=5 * 10^5.
+BF Complexity Visuals: Massive Quadratic Area
+How to Draw BF: Draw a massive 500,000^2 grid. Label "CRITICAL TLE".
+Optimised Pattern: Top-3 Length Tracking per Character
+Opt Vis. Technique: Priority Queue per Character
+Dry Run (Opt): For each character, find all consecutive block lengths. You only need the top 3 longest lengths to determine if a substring of length X occurs 3 times.
+How to Draw (Opt): Draw 26 small buckets. For 'a', drop in block lengths [10, 5, 5]. The 3rd largest length (5) is your candidate. Or 10-2, or max(5, 10-1).
+Opt Complexity Visuals: Linear Sweep with Constant Sort
+How to Draw Opt Complexity: Draw a line for N. For each block, sort 3 numbers. T = $O(N)$.
+Mem Vis (BF): Quadratic map storage.
+Mem Vis (Opt): 26 lists of size 3. Space $O(1)$ relative to N.

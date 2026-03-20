@@ -1,0 +1,13 @@
+ID: 1569
+Problem Title: Number of Ways to Reorder Array to Get Same BST
+Brute Force Method: Generate all N! permutations, build a BST for each, and compare the structures. $O(N! \cdot N)$.
+BF Complexity Visuals: Permutation Tree Explosion
+How to Draw BF: Draw N dots. Branch out N! ways. For each leaf, draw a full tree structure. Impossible to fit on paper.
+Optimised Pattern: Divide &amp; Conquer + Combinatorics (Pascal's Triangle)
+Opt Vis. Technique: The Subtree Interleaving Viz
+Dry Run (Opt): The first element is the root. All smaller elements go to the left subtree, larger to the right. The number of ways is `(WaysLeft * WaysRight * combinations(total-1, left_size))`. Recurse.
+How to Draw (Opt): Draw the root. Draw two arrows to "Left" and "Right" buckets. Write the size of each bucket. Use the formula: \binom{L+R}{L} to show how many ways the two sequences can interleave.
+Opt Complexity Visuals: Recursive Partitioning $O(N^2)$
+How to Draw Opt Complexity: Draw a tree where each node shows the "nCr" calculation. Pascal's triangle lookup is $O(1)$ after $O(N^2)$ precomputation.
+Mem Vis (BF): Storing every permutation.
+Mem Vis (Opt): Recursion stack and a precomputed Pascal's Triangle (2D array). $O(N^2)$ space.

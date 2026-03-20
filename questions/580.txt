@@ -1,0 +1,13 @@
+ID: 580
+Problem Title: Count Student Number in Departments (SQL)
+Brute Force Method: For every department, iterate through the entire Student table to count how many students belong to it.
+BF Complexity Visuals: Nested loop $O(\\text{text}{\text{Depts}} \\text{times} \\text{text}{\text{Students}})$.
+How to Draw BF: Draw Dept table. For Dept A, scan every row in Student table. Repeat for Dept B.
+Optimised Pattern: Left Join + Group By.
+Opt Vis. Technique: Empty bins with labels. You walk through the student list and drop each student into their labeled department bin. Even bins with 0 students are kept.
+Dry Run (Opt): `SELECT dept_name, COUNT(student_id) FROM department LEFT JOIN student ON department.dept_id = student.dept_id GROUP BY department.dept_id ORDER BY student_number DESC`.
+How to Draw (Opt): Draw the Department list. Draw the Student list. For each student, draw an arrow to their department. Count arrows per department.
+Opt Complexity Visuals: Hash-based join and grouping. $O(N)$.
+How to Draw Opt Complexity: Draw two tables merging and then collapsing into a summary count table.
+Mem Vis (BF): $O(1)$ extra space but high time complexity.
+Mem Vis (Opt): Hash Map for department counts. $O(\\text{text}{\text{Unique Departments}})$.

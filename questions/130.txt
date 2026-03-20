@@ -1,0 +1,13 @@
+ID: 130
+Problem Title: Surrounded Regions
+Brute Force Method: For every 'O' in the grid, run a DFS to check if it can reach the boundary. If not, flip it to 'X'.
+BF Complexity Visuals: $O(M \cdot N \cdot (M+N)$) overlapping searches. Every interior 'O' might re-explore the whole board.
+How to Draw BF: Draw a grid. For an 'O' in the middle, draw search paths in all 4 directions. Repeat for the 'O' next to it. Show the overlap.
+Optimised Pattern: Border-to-Interior DFS (Inverse Flood Fill).
+Opt Vis. Technique: A firewall. Only 'O's connected to the borders are "safe." We mark the safe ones first, then flip everyone else.
+Dry Run (Opt): Iterate only border cells. If 'O', run DFS to mark all reachable 'O's as 'Safe' (or 'S'). Finally, scan grid: 'S' becomes 'O', everything else becomes 'X'.
+How to Draw (Opt): Draw the grid. Use a highlighter to "color in" every 'O' that touches the edge, and any 'O' touching those. Any 'O' without color gets turned into an 'X'.
+Opt Complexity Visuals: $O(M \cdot N)$ time. Each cell is visited at most twice.
+How to Draw Opt Complexity: Draw the grid. Draw arrows starting only from the 4 edges and moving inward. No arrows originate from the center.
+Mem Vis (BF): Deep recursive stacks for every single cell search.
+Mem Vis (Opt): Visualize the call stack depth limited to the total number of 'O's, with no redundant exploration.

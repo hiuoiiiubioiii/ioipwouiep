@@ -1,0 +1,13 @@
+ID: 1965
+Problem Title: Employees With Missing Information (SQL)
+Brute Force Method: Use correlated subqueries in the SELECT clause to check for the existence of information in the other table.
+BF Complexity Visuals: Row-by-Row Membership Testing
+How to Draw BF: Draw Table A. For every row, draw a loop that scans every row of Table B. $O(A \cdot B)$.
+Optimised Pattern: FULL OUTER JOIN (or UNION of LEFT JOINs)
+Opt Vis. Technique: Venn Diagram Symmetric Difference
+Dry Run (Opt): Select IDs where information is missing in either the Employees table OR the Salaries table, then sort.
+How to Draw (Opt): Draw two overlapping circles. Shade the parts that do NOT overlap. Label the shaded regions as the result set.
+Opt Complexity Visuals: Hash Join / Index Merge Pipeline
+How to Draw Opt Complexity: Draw two sorted IDs lists being merged. Indicate that non-matches are immediately identified. $O(N \log N)$ or $O(N)$.
+Mem Vis (BF): Temp tables created for every row check if indexes aren't present.
+Mem Vis (Opt): In-memory Hash Table for the join operation.

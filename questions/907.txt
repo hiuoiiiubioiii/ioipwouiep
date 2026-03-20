@@ -1,0 +1,13 @@
+ID: 907
+Problem Title: Sum of Subarray Minimums
+Brute Force Method: Nested loops to generate every possible contiguous subarray, find the minimum of each, and sum them up.
+BF Complexity Visuals: $O(N^2)$ or $O(N^3)$. A massive triangle of overlapping subarray segments being re-evaluated repeatedly.
+How to Draw BF: Draw the array. Below it, draw a bracket for size 1 subarrays, then size 2, etc., forming a dense pyramid of overlapping brackets.
+Optimised Pattern: Monotonic Stack (Increasing)
+Opt Vis. Technique: A bar chart / histogram where each bar casts a "shadow" left and right until it hits a shorter bar, defining its territory as the minimum.
+Dry Run (Opt): Find Previous Smaller Element (PSE) and Next Smaller Element (NSE) using a stack. For each element, subarrays where it is min = (i - PSE) * (NSE - i). Add (arr[i] * count) to total.
+How to Draw (Opt): Draw a histogram. From the top of a specific bar, draw a horizontal line left and right. Stop the line exactly when it crashes into a shorter bar.
+Opt Complexity Visuals: $O(N)$ linear time. A two-pass left-to-right and right-to-left sweep.
+How to Draw Opt Complexity: Draw an array with a `+` above an element when pushed to the stack, and a `-` when popped. Max 2 operations per element.
+Mem Vis (BF): Conceptual $O(1)$ space, but mentally visualizing $O(N^2)$ temporary sub-arrays stored in memory.
+Mem Vis (Opt): A vertical cylinder (stack) storing only array indices. When a smaller number arrives, the stack pops higher indices out.

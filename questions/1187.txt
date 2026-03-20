@@ -1,0 +1,13 @@
+ID: 1187
+Problem Title: Make Array Strictly Increasing
+Brute Force Method: Try every possible replacement from `arr2` for every element in `arr1` using recursion.
+BF Complexity Visuals: Exponential Branching Tree $O(2^N \cdot M)$
+How to Draw BF: Draw `arr1`. For each element, branch into "Keep" or "Replace with any valid from arr2". Show the tree depth N.
+Optimised Pattern: Dynamic Programming (State: Index + Prev Value)
+Opt Vis. Technique: Decision Matrix with Sorted Lookup
+Dry Run (Opt): `dp[i][prev]` stores min swaps to make `arr1[0...i]` increasing with `arr1[i]` ending at `prev`. Use binary search on `arr2` to pick the smallest valid replacement.
+How to Draw (Opt): Draw a table where Rows = Index in `arr1`, Columns = possible values from `arr2`. Mark paths that satisfy arr1[i] &gt; prev. Shade the path with lowest cost.
+Opt Complexity Visuals: Quadratic $O(N \cdot M)$
+How to Draw Opt Complexity: Draw a grid of size N x M. Each cell represents a state transition calculated once.
+Mem Vis (BF): Massive recursion stack
+Mem Vis (Opt): 2D DP Table or a Map to handle sparse states. Draw a grid of integers.

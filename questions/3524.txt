@@ -1,0 +1,13 @@
+ID: 3524
+Problem Title: Find X Value of Array I (Med)
+Brute Force Method: Iterate all possible candidate values for X, applying the formula to the entire array to check validity.
+BF Complexity Visuals: Nested Domain Loop.
+How to Draw BF: Draw a timeline of X values. Under each tick, draw an inner loop scanning the entire N-length array. $O(\text{Max}_X \cdot N)$.
+Optimised Pattern: Bitwise Evaluation / Prefix Counts.
+Opt Vis. Technique: Bit-level Decision Tree.
+Dry Run (Opt): Construct the ideal X bit-by-bit from MSB to LSB, making local greedy decisions to maximize/minimize the target.
+How to Draw (Opt): Write 32 blank slots `_ _ _ _`. For each slot, evaluate if a '1' or '0' is better using array bit counts. Fill left to right.
+Opt Complexity Visuals: 32-Step Linear Scan.
+How to Draw Opt Complexity: Draw 32 vertical levels. At each level, draw an $O(N)$ scan. $O(32 \cdot N)$.
+Mem Vis (BF): Heavy CPU Iteration: CPU registers visualized constantly overwriting during deep nested loops.
+Mem Vis (Opt): Bit Count Array: Draw an array of size 32 holding counts of set bits at each position across the array.

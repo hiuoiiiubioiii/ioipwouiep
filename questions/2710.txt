@@ -1,0 +1,13 @@
+ID: 2710
+Problem Title: Remove Trailing Zeros From a String
+Brute Force Method: Iterate from the end of the string. If a character is '0', slice the string to remove it. Re-evaluate the new string repeatedly until a non-zero is found.
+BF Complexity Visuals: Decreasing String Slices
+How to Draw BF: Draw the string. Erase the last character if it's '0'. Redraw the whole slightly shorter string below it. Repeat.
+Optimised Pattern: Heap Allocation Overload (Visualize multiple intermediate string objects piling up in memory due to immutable string slicing).
+Opt Vis. Technique: Single Pass Right-to-Left Pointer / Built-in rstrip("0")
+Dry Run (Opt): 1D Array Boundary Marker
+How to Draw (Opt): Place a pointer at the rightmost edge. Move left until you hit a non-zero character. Mark that index, then take one final slice from index 0 to that mark.
+Opt Complexity Visuals: Draw the string as an array of boxes. Draw an arrow starting at the end, hopping left over the 0s. Stop at a non-zero and draw a giant bracket covering the valid prefix.
+How to Draw Opt Complexity: Constant Reverse Sweep
+Mem Vis (BF): Draw a single straight line moving right-to-left. Label it $O(N)$ to denote checking characters at most once.
+Mem Vis (Opt): Single Integer Pointer (Draw a single memory cell i moving backwards, plus one final memory allocation for the resulting substring).

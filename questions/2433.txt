@@ -1,0 +1,13 @@
+ID: 2433
+Problem Title: Find The Original Array of Prefix XOR
+Brute Force Method: For each index `i`, solve the equation `pref[i] = A[0] ^ A[1] ^ ... ^ A[i]` by testing all possible numbers for `A[i]`.
+BF Complexity Visuals: Iterative Equation Solver
+How to Draw BF: Draw a chain of XOR symbols. For each link, show a search for the missing piece. Label $O(N \\text{cdot Range})$.
+Optimised Pattern: XOR Inverse Property
+Opt Vis. Technique: Bitwise Difference Chain
+Dry Run (Opt): Since `pref[i] = pref[i-1] ^ A[i]`, then `A[i] = pref[i] ^ pref[i-1]`. Just XOR adjacent elements.
+How to Draw (Opt): Draw the `pref` array. Draw a 'V' shape between `pref[i]` and `pref[i-1]`. Put an XOR symbol in the V and write the result below.
+Opt Complexity Visuals: Linear Stream XOR
+How to Draw Opt Complexity: Draw a single line with XOR gates between indices. Label $O(N)$ Time.
+Mem Vis (BF): Draw a workspace for testing values. $O(1)$.
+Mem Vis (Opt): Draw the result array `A`. $O(N)$ (or $O(1)$ if modifying in place).

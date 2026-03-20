@@ -1,0 +1,13 @@
+ID: 2354
+Problem Title: Number of Excellent Pairs
+Brute Force Method: Nested loops: For every pair `(num1, num2)`, calculate `bits(num1 OR num2) + bits(num1 AND num2)` and check if it’s &gt;= `k`.
+BF Complexity Visuals: N-Squared Bitwise Logic (O(N^2))
+How to Draw BF: Draw an N x N grid. In each cell, draw the binary representation of two numbers, perform OR/AND, and count the 1s.
+Optimised Pattern: Bit Count Frequency + Inclusion-Exclusion
+Opt Vis. Technique: 1D Bit-Count Histogram
+Dry Run (Opt): Key insight: `bits(a OR b) + bits(a AND b) == bits(a) + bits(b)`. Get unique numbers, count their set bits, and store frequencies of these counts (0-30). Use a nested loop over the 30 possible bit-counts (30x30) to find valid pairs.
+How to Draw (Opt): Draw a "Bit-Count Bin" (0 to 30). Count how many unique numbers have 1 bit, 2 bits, etc. Then, pick two bins (e.g., bin 10 and bin 20). If 10+20 &gt;= k, multiply the number of items in both bins and add to your total.
+Opt Complexity Visuals: Unique Pass + Constant Grid (O(N + 30^2))
+How to Draw Opt Complexity: Draw a single line scanning the array, followed by a tiny fixed 30x30 grid calculation.
+Mem Vis (BF): Draw a 2D matrix storing bitwise results for every pair.
+Mem Vis (Opt): Draw a Hash Set for unique numbers and a 31-element Frequency Array.

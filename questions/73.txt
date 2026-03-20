@@ -1,0 +1,13 @@
+ID: 73
+Problem Title: Set Matrix Zeroes
+Brute Force Method: Additional Matrix Copy Create a clone of the original M x N matrix. Whenever you find a 0 in the original, set the entire row and column to 0 in the clone.
+BF Complexity Visuals: The Double Grid
+How to Draw BF: Draw two identical M x N matrices side-by-side. Draw an arrow from a '0' in Grid A to a full cross of '0's in Grid B. Time: $O(M x N)$.
+Optimised Pattern: In-Place State Marking
+Opt Vis. Technique: The Flagship Rows
+Dry Run (Opt): Use the first row and first column of the matrix itself as markers. If `matrix[i][j]` is 0, set `matrix[i][0]` and `matrix[0][j]` to 0. Then, iterate again to fill zeroes based on those markers.
+How to Draw (Opt): Draw a grid. When you hit a 0 at `(2,3)`, draw an arrow pointing to the "0" at the start of Row 2 and the "0" at the top of Col 3. Those are your "flags".
+Opt Complexity Visuals: Two-Pass Grid Scan
+How to Draw Opt Complexity: Draw a grid. Show one pass to set markers (O(MN)) and a second pass to apply markers (O(MN)). Time: $O(M x N)$.
+Mem Vis (BF): Draw a completely separate M x N array taking up extra memory. Space: $O(M x N)$.
+Mem Vis (Opt): Draw the original grid. Highlight that only 2 extra boolean variables (for the first row/col) are needed. Space: $O(1)$.

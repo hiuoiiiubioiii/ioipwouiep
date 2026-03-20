@@ -1,0 +1,13 @@
+ID: 85
+Problem Title: Maximal Rectangle
+Brute Force Method: All Possible Subgrids Check every possible rectangle (top-left to bottom-right) in the matrix to see if it consists only of 1s.
+BF Complexity Visuals: The Brute Force Grid Scanner
+How to Draw BF: Draw a 2D grid. Highlight a small rectangle, then a bigger one, then a taller one. Total combinations: $O(N^2 M^2)$. Checking each takes $O(\text{NM})$. Total: $O(N^3 M^3)$.
+Optimised Pattern: DP + Largest Histogram (Q84)
+Opt Vis. Technique: The Rising Tide
+Dry Run (Opt): Treat each row as the "ground" for a histogram. For row i, the height of bar j is the number of consecutive 1s ending at `(i, j)`. Run the $O(M)$ histogram algorithm for each row.
+How to Draw (Opt): Draw a grid. For row 1, heights are `[1, 0, 1]`. For row 2, if there's a 1 below a 1, height becomes 2. Now run the "Histogram" visual on these heights.
+Opt Complexity Visuals: Row-by-Row Stack Pass
+How to Draw Opt Complexity: Draw an N x M grid. For each of the N rows, you perform an $O(M)$ stack-based scan. Total time: $O(N x M)$.
+Mem Vis (BF): Storing every possible rectangle coordinate.
+Mem Vis (Opt): Draw a 1D array of size M that stores the current "heights" as you move down the rows. Space: $O(M)$.

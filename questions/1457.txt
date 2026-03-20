@@ -1,0 +1,13 @@
+ID: 1457
+Problem Title: Pseudo-Palindromic Paths in a Binary Tree
+Brute Force Method: Find all root-to-leaf paths. For each path, store it as a list, sort it, and check if it can form a palindrome (at most one odd-frequency element).
+BF Complexity Visuals: Full Path Construction &amp; Sorting
+How to Draw BF: Draw a tree. At each leaf, draw a full array of the path. Draw a sorting machine for each array. Label $O(N \cdot H \log H)$.
+Optimised Pattern: DFS + Bit Manipulation
+Opt Vis. Technique: Parity Bitmask Toggling
+Dry Run (Opt): Run DFS. Use an integer as a bitmask where the `i-th` bit represents the parity of digit `i`. XOR the bitmask with `(1 &lt;&lt; node.val)`. At a leaf, path is valid if `(mask &amp; (mask - 1)) == 0`.
+How to Draw (Opt): Draw a tree. Each node has a 10-bit light switch panel. As you go down, flip the switch for that digit. At the leaf, if only 0 or 1 lights are on, it's a "pseudo-palindrome".
+Opt Complexity Visuals: Single DFS Traversal
+How to Draw Opt Complexity: Draw a tree with a single DFS path. Label $O(N)$.
+Mem Vis (BF): Path Lists $O(N\cdot H)$
+Mem Vis (Opt): Recursion stack (Height) + single integer bitmask per level. Space $O(H)$.

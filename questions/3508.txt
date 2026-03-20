@@ -1,0 +1,13 @@
+ID: 3508
+Problem Title: Implement Router (Med)
+Brute Force Method: Store routes in a List, linear string matching for every packet.
+BF Complexity Visuals: Linear List Scan.
+How to Draw BF: Draw a vertical list of strings. Draw an arrow sliding top-to-bottom until a match is found.
+Optimised Pattern: Trie (Prefix Tree) with Wildcard/Parameter Support.
+Opt Vis. Technique: Branching Decision Tree.
+Dry Run (Opt): Split URL by '/'. Trace each segment down the tree. Fork paths for exact matches vs wildcards.
+How to Draw (Opt): Draw circles for path segments (e.g., 'api', 'users'). Draw lines connecting parent to child paths.
+Opt Complexity Visuals: Path Traversal Depth.
+How to Draw Opt Complexity: Draw a tree. Highlight a single vertical line from root to a leaf. $O(L)$ where L is URL length.
+Mem Vis (BF): Array of Massive Strings: Draw a long table containing heavy, duplicated text data.
+Mem Vis (Opt): Trie Nodes HashMaps: Draw circles (nodes) containing mini-tables pointing to next circles.

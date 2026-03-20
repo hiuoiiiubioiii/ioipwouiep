@@ -1,0 +1,13 @@
+ID: 1473
+Problem Title: Paint House III
+Brute Force Method: Backtracking. For every unpainted house, try all N colors. For each configuration, calculate the number of neighborhoods and the total cost. Keep the minimum cost.
+BF Complexity Visuals: Exponential Color Assignment
+How to Draw BF: Draw M houses. Each splits into N branches. At the bottom, draw a neighborhood counter. Label $O(N^M)$.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: State Compression (House, Neighborhood, PrevColor)
+Dry Run (Opt): `dp[i][j][k]` = min cost to paint up to house `i` with `j` neighborhoods and the i-th house painted color `k`. Transition by checking if current color matches previous to increment neighborhood count.
+How to Draw (Opt): Draw a 3D grid. X-axis: Houses, Y-axis: Target Neighborhoods, Z-axis: Colors. For each cell, look at the previous house's Z-plane and pick the cheapest compatible color.
+Opt Complexity Visuals: Triple Nested Loop with Color Scans
+How to Draw Opt Complexity: Draw three nested loops (M, Target, N) plus an inner loop for prev color. Label $O(M \\text{cdot Target} \cdot N^2)$.
+Mem Vis (BF): Massive Recursion Tree
+Mem Vis (Opt): A 3D DP table of size M x Target x N. Space $O(M \\text{cdot Target} \cdot N)$.

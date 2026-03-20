@@ -1,0 +1,13 @@
+ID: 1993
+Problem Title: Operations on Tree
+Brute Force Method: For every `lock`, `unlock`, or `upgrade`, traverse up to the root to check ancestors and down to all leaves for descendants.
+BF Complexity Visuals: Tree Path Exhaustion
+How to Draw BF: Draw a tree. For one node, draw lines to every ancestor and every single descendant. $O(N)$ per operation.
+Optimised Pattern: Hash Map State Tracking + DFS Pruning
+Opt Vis. Technique: State-Annotated Tree Nodes
+Dry Run (Opt): Store `lock` status in an array. For `upgrade`, check ancestors using the `parent` array and count locked descendants using a quick DFS.
+How to Draw (Opt): Draw a tree. Label nodes with 'L' (Locked) or 'U' (Unlocked). Use a recursive "Search" arrow for the upgrade operation.
+Opt Complexity Visuals: Operation-Specific Complexity Bars
+How to Draw Opt Complexity: Draw $O(H)$ for ancestors and $O(N)$ for descendants. Total time depends on tree depth.
+Mem Vis (BF): Lists of paths or repeated tree copies.
+Mem Vis (Opt): `parent` array, `locked` state array, and an adjacency list for children. $O(N)$ space.

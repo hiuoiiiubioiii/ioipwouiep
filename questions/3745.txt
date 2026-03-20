@@ -1,0 +1,13 @@
+ID: 3745
+Problem Title: Maximize Expression of Three Elements (Easy)
+Brute Force Method: Three nested loops picking 3 distinct indices (i &lt; j &lt; k). Calculate the expression for all triplets and track max. $O(N^3)$.
+BF Complexity Visuals: Triple pointer scanning.
+How to Draw BF: Pin pointer 1. Pin pointer 2. Scan pointer 3 to the end. Move pointer 2. Repeat.
+Optimised Pattern: Prefix Max / Suffix Max Arrays
+Opt Vis. Technique: Peak Tracking Arrays
+Dry Run (Opt): Precalculate the best possible element for term 1 (prefix array, L to R) and term 3 (suffix array, R to L). Loop the middle element, lookup prefix and suffix, and compute.
+How to Draw (Opt): Draw array. Above it, write max-so-far moving L to R. Below it, write max-so-far moving R to L. Pick a middle element and add the top, middle, and bottom numbers together.
+Opt Complexity Visuals: 3 Linear Passes $O(N)$.
+How to Draw Opt Complexity: Draw three parallel horizontal lines (Prefix pass, Suffix pass, Evaluation pass).
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Two 1D arrays of size N.

@@ -1,0 +1,13 @@
+ID: 3023
+Problem Title: Find Pattern in Infinite Stream I
+Brute Force Method: Sliding window. Keep an array of the last `P` elements of the stream. Every time a new element arrives, loop through the window to check if it matches the pattern.
+BF Complexity Visuals: Shifting Window Overlap
+How to Draw BF: Draw the infinite stream tape. Draw the pattern below it. Slide the pattern right by 1 on every mismatch and re-check all characters. $O(N \cdot P)$.
+Optimised Pattern: Knuth-Morris-Pratt (KMP) Automaton
+Opt Vis. Technique: LPS Array &amp; State Transitions
+Dry Run (Opt): Precompute the LPS (Longest Prefix Suffix) array for the pattern. As stream bits arrive, update the matching state index using the LPS array to avoid redundant checks. $O(N)$ strictly.
+How to Draw (Opt): Draw the pattern array. Below it, draw the LPS array. Draw a state pointer. When a stream bit matches, move pointer right. On mismatch, follow the LPS arrow backward to the next valid prefix.
+Opt Complexity Visuals: Linear Monotonic Timeline
+How to Draw Opt Complexity: Draw the infinite stream as a straight line. Draw a single forward-moving arrow representing the $O(1)$ state transition per incoming bit.
+Mem Vis (BF): A shifting array buffer of size `P` constantly doing memory copies.
+Mem Vis (Opt): An integer array `LPS` of size `P` and a single integer `state_index`.

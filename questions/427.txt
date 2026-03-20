@@ -1,0 +1,13 @@
+ID: 427
+Problem Title: Construct Quad Tree
+Brute Force Method: Naive Check For every square, check every single pixel to see if they are the same value. If not, divide.
+BF Complexity Visuals: Overlapping Grids
+How to Draw BF: Draw a grid. Draw many smaller boxes inside, with redundant arrows checking the same pixels repeatedly. $O(N^2 \log N)$.
+Optimised Pattern: Divide &amp; Conquer Recursively check if a quadrant is "leaf". If all 4 children are leaves and same value, merge.
+Opt Vis. Technique: Recursive Box Splitting
+Dry Run (Opt): Draw a big square. If it's not uniform, draw a cross in the middle to make 4 squares. Repeat.
+How to Draw (Opt): Draw an 8x8 grid. Draw a cross splitting it to 4x4s. In one 4x4, if all bits are '1', write 'Leaf'. If mixed, split again.
+Opt Complexity Visuals: Grid Coverage
+How to Draw Opt Complexity: Draw the grid. Show that each pixel is processed in a way that maps to the total pixels. $O(N^2)$.
+Mem Vis (BF): Redundant Objects Massive creation of temporary check arrays.
+Mem Vis (Opt): Tree Nodes Draw a 4-ary tree where height is log(N). $O(N^2)$ space for nodes.

@@ -1,0 +1,13 @@
+ID: 2382
+Problem Title: Maximum Segment Sum After Removals
+Brute Force Method: Actually remove the element, splitting the array. Recalculate the sum of all remaining segments to find the max. $O(N^2)$.
+BF Complexity Visuals: Shattering Array Re-sums
+How to Draw BF: Draw the array. Smash a hole in it. Manually re-add the left pieces and right pieces. Repeat for every smash.
+Optimised Pattern: Reverse Processing + Union Find (DSU)
+Opt Vis. Technique: The Reverse Builder
+Dry Run (Opt): Work backwards! Start with an empty array. Add elements back in the reverse order of the queries. When adding, use DSU to merge it with adjacent existing elements, track the component sum, and update `global_max`.
+How to Draw (Opt): Draw an empty line. Drop numbers into it backwards. When two numbers touch, they fuse into a bigger block. Write the weight on the block. Record the heaviest block seen so far. Reverse the recorded answers.
+Opt Complexity Visuals: Union-Find $O(N \\text{cdot alpha}(N)$)
+How to Draw Opt Complexity: Draw a timeline moving right-to-left. Above it, draw $O(1)$ DSU merges and sum updates.
+Mem Vis (BF): Massive arrays of subarray slices.
+Mem Vis (Opt): DSU parent and sum arrays. $O(N)$ space.

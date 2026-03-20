@@ -1,0 +1,13 @@
+ID: 35
+Problem Title: Search Insert Position
+Brute Force Method: Linear Search Iterate through the array until you find the target OR a number greater than the target.
+BF Complexity Visuals: The Tripwire
+How to Draw BF: Draw a pointer walking left to right. Draw a literal tripwire at the first element `&gt;= target`. $O(N)$ time.
+Optimised Pattern: Standard Binary Search
+Opt Vis. Technique: The Closing Gap
+Dry Run (Opt): Standard binary search. If target is not found, the `left` pointer will naturally cross the `right` pointer and land on the exact correct insertion index.
+How to Draw (Opt): Draw a sorted array. Draw `L` and `R` pointers closing in. Draw the moment they cross: `R` is now behind `L`. Draw an arrow pointing at `L` saying "Insert Here".
+Opt Complexity Visuals: Halving Block
+How to Draw Opt Complexity: Draw a single block getting halved step by step until it reduces to 0. $O(\log N)$ time.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw only three pointers (`L`, `R`, `mid`). $O(1)$ space.

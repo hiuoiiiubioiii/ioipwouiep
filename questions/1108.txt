@@ -1,0 +1,13 @@
+ID: 1108
+Problem Title: Defanging an IP Address
+Brute Force Method: String concatenation in a loop. Because strings are immutable, this creates a new string copy every time a '.' is found.
+BF Complexity Visuals: String Copy Waterfall
+How to Draw BF: Draw the original string. Draw a new, slightly longer string every time a '.' is encountered.
+Optimised Pattern: String Builder / Pre-allocated Array
+Opt Vis. Technique: Two-Pointer Array Fill
+Dry Run (Opt): Allocate a new array of size N + 6. Pointer 'i' reads original, pointer 'j' writes to new. If reading '.', write '[.]' to the new array and advance 'j' by 3.
+How to Draw (Opt): Draw original array top, new array bottom. Draw straight down arrows for numbers, and diagonal branching arrows mapping '.' to '[', '.', ']'.
+Opt Complexity Visuals: Flat Line $O(N)$
+How to Draw Opt Complexity: Sweep from left to right exactly once. Draw a straight line showing $O(N)$ time.
+Mem Vis (BF): Pyramid of garbage collected strings
+Mem Vis (Opt): Two fixed-size character arrays (Input and Output).

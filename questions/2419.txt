@@ -1,0 +1,13 @@
+ID: 2419
+Problem Title: Longest Subarray With Maximum Bitwise AND
+Brute Force Method: Nested loops checking every possible subarray. Calculate the bitwise AND of each and keep track of the max value and its length.
+BF Complexity Visuals: Nested Matrix Sweep
+How to Draw BF: Draw a matrix where row = start, col = end. Fill with AND results. Label $O(N^2)$.
+Optimised Pattern: Linear Scan (Max Property Observation)
+Opt Vis. Technique: Peak Island Finder
+Dry Run (Opt): The max AND value is just the max element in the array. Pass once to find max. Pass again to find the longest consecutive streak of that max value.
+How to Draw (Opt): Draw the array. Circle the highest numbers. Draw a bracket around the longest consecutive group of those circled numbers.
+Opt Complexity Visuals: Linear Timeline
+How to Draw Opt Complexity: Draw a single horizontal line from 0 to N. Label $O(N)$ Time.
+Mem Vis (BF): Draw multiple variables storing AND results for every index pair.
+Mem Vis (Opt): Draw three variables: `max_val`, `current_streak`, `max_streak`. $O(1)$ Space.

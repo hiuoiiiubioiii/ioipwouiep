@@ -1,0 +1,13 @@
+ID: 1083
+Problem Title: Sales Analysis II
+Brute Force Method: (SQL) Select all buyers of S8. Select all buyers of iPhone. Subtract the iPhone set from the S8 set.
+BF Complexity Visuals: Set-based subtraction operations.
+How to Draw BF: S8 Buyers: {A, B, C}. iPhone Buyers: {B, D}. Result: {A, C}. Write $O(N)$.
+Optimised Pattern: Group By + Having (Conditional Sums).
+Opt Vis. Technique: A "Checklist Filter". Each buyer has a bucket; we only keep buckets that contain an S8 but do NOT contain an iPhone.
+Dry Run (Opt): `SELECT buyer_id FROM Sales JOIN Product USING(product_id) GROUP BY buyer_id HAVING SUM(product_name = 'S8') &gt; 0 AND SUM(product_name = 'iPhone') = 0`.
+How to Draw (Opt): Draw the table. Group by Buyer. For each buyer, check: "Do they have an S8?" AND "Do they have 0 iPhones?".
+Opt Complexity Visuals: Single pass join and aggregation.
+How to Draw Opt Complexity: Draw two tables merging, then a grouping filter. Write Time: $O(\text{Sales} + \text{Products})$.
+Mem Vis (BF): Multiple subqueries stored in temp memory.
+Mem Vis (Opt): A hash map for grouping. $O(\text{UniqueBuyers})$ space.

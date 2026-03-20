@@ -1,0 +1,13 @@
+ID: 3095
+Problem Title: Shortest Subarray With OR at Least K I
+Brute Force Method: Generate all possible subarrays using nested loops (i, j). Calculate the bitwise OR for each and track the shortest one that meets the k threshold.
+BF Complexity Visuals: $O(N²)$ Subarray Matrix
+How to Draw BF: Draw a triangle of all pairs. For each cell, show the OR calculation. $O(N^2)$.
+Optimised Pattern: Two Pointers / Sliding Window
+Opt Vis. Technique: Elastic Band Shrinking
+Dry Run (Opt): Expand the right pointer. Since N is small (50), simple simulation works. Shrink the left pointer when the condition is met to find the minimum length.
+How to Draw (Opt): Write the numbers. Slide a bracket to the right. When the OR >= k, move the left side of the bracket until OR &lt; k. Measure the bracket length.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a straight arrow through the string. Pointers L and R move forward monotonically.
+Mem Vis (BF): Storing every subarray in a list to find the minimum.
+Mem Vis (Opt): A single integer variable for the current OR and the min length.

@@ -1,0 +1,13 @@
+ID: 1333
+Problem Title: Filter Restaurants
+Brute Force Method: Sort the entire raw dataset first $O(N \log N)$, then run multiple nested loops or unoptimized filters to remove invalid restaurants.
+BF Complexity Visuals: Over-Sorting Redundant Data
+How to Draw BF: Draw a massive funnel sorting all restaurants. Below it, draw a filter that throws away 80% of the sorted data. Highlights wasted sorting computations.
+Optimised Pattern: Linear Filter Pipeline + Custom Sort
+Opt Vis. Technique: Multi-Stage Sieve
+Dry Run (Opt): Pass 1: Iterate strictly once. If `veganFriendly` matches AND `price &lt;= maxPrice` AND `distance &lt;= maxDistance`, keep it. Pass 2: Sort only the surviving restaurants by rating, then ID.
+How to Draw (Opt): Draw an array of restaurant objects. Pass a sliding "filter box" over them. Erase non-matching ones. Take the small remaining pile and arrange them highest-rating first.
+Opt Complexity Visuals: Data Reduction Funnel
+How to Draw Opt Complexity: Draw a wide array entering a filter block. A much thinner array exits. Point the thin array into a small sorting box, proving $O(K \log K)$ where K &lt;&lt; N.
+Mem Vis (BF): Full Cloned Array: Duplicating the entire N-sized 2D array before applying any logic.
+Mem Vis (Opt): Filtered Dynamic Array: Draw a `std::vector` that only ever allocates space for valid entries before the sort operation.

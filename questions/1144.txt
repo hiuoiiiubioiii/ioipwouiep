@@ -1,0 +1,13 @@
+ID: 1144
+Problem Title: Decrease Elements To Make Array Zigzag
+Brute Force Method: Try every possible reduction of every element and check if it satisfies the zigzag property.
+BF Complexity Visuals: State-Space Search Tree
+How to Draw BF: Draw an array. Branch out into thousands of variations where elements are smaller. $O(2^N)$ logic.
+Optimised Pattern: Greedy (Two Scenarios: Even vs Odd indices)
+Opt Vis. Technique: Parity-Based Comparative Peaks
+Dry Run (Opt): Calculate cost for two cases: 1. Making even indices smaller than neighbors. 2. Making odd indices smaller than neighbors. Return the minimum cost.
+How to Draw (Opt): Draw the array twice. In row 1, circle even indices; in row 2, circle odd indices. For each circled item, calculate how much it must drop to be 1 less than its smallest neighbor.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw two separate lines under the array. Each represents one pass through the elements.
+Mem Vis (BF): Multiple array copies
+Mem Vis (Opt): Constant $O(1)$ space using two accumulator variables (cost1, cost2).

@@ -1,0 +1,13 @@
+ID: 1243
+Problem Title: Array Transformation
+Brute Force Method: Create a new copy of the array for every single day. Iterate through the array and apply rules. If no changes occur, stop.
+BF Complexity Visuals: Repeated Simulation Cycles
+How to Draw BF: Draw the array. Below it, draw a modified copy. Below that, another copy. Draw a big loop arrow until the "day before" matches the "current day". Write $O(\text{Days} \cdot N)$.
+Optimised Pattern: In-Place Simulation (Two Pointers/Copying)
+Opt Vis. Technique: Accordion Oscillation
+Dry Run (Opt): Use two arrays: `current` and `next`. In each step, check if an element is greater than its neighbors (shrink) or smaller (grow). Swap `current` and `next` until they are identical.
+How to Draw (Opt): Draw the array values as vertical bars (like a bar chart). Draw arrows showing bars getting shorter or taller based on neighbors. Stop when the "silhouette" of the bars stays the same.
+Opt Complexity Visuals: Linear Convergence Pass
+How to Draw Opt Complexity: Draw a sequence of N operations. Write $O(N \cdot \\text{text}{\text{max}_\text{val}})$ because an element can only change at most `max_val` times.
+Mem Vis (BF): Draw many copies of the array being allocated in memory.
+Mem Vis (Opt): Draw exactly two arrays: `arr` and `temp`. Space: $O(N)$.

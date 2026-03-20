@@ -1,0 +1,13 @@
+ID: 1515
+Problem Title: Best Position for a Service Centre
+Brute Force Method: Iterate over every coordinate on a dense 2D grid within the bounds using tiny increments (e.g., 0.00001) to find the minimum distance sum.
+BF Complexity Visuals: Dense Pixel Grid Search $O(\text{Grid Area})$
+How to Draw BF: Draw a large square grid completely filled with dots. Shade in the entire area, representing the brute-force checking of every possible sub-coordinate.
+Optimised Pattern: Geometry / Gradient Descent (or Weiszfeld's)
+Opt Vis. Technique: Simulated Annealing / Converging Steps
+Dry Run (Opt): Start at the centroid (average x, average y). Check neighbors at a step distance `d`. Move to the neighbor if it lowers the total distance. If no neighbor is better, shrink `d` (e.g., `d *= 0.9`). Stop when `d` is incredibly small.
+How to Draw (Opt): Draw scattered points on a 2D plane. Drop a pin in the middle. Draw arrows stepping outward in 4 directions. Move the pin to the best option. Draw progressively shorter arrows as the pin hones in on the center of mass.
+Opt Complexity Visuals: Shrinking Radii Loops $O(N \\text{cdot iterations})$
+How to Draw Opt Complexity: Draw a line of length N representing the distance calculation for one step. Encircle it with a loop representing the number of gradient steps before the delta hits the precision limit.
+Mem Vis (BF): $O(1)$ space, purely looping over variables.
+Mem Vis (Opt): Variables for `x`, `y`, `step`, and an array holding the input coordinates. $O(1)$ extra space.

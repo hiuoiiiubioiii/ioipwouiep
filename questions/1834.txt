@@ -1,0 +1,13 @@
+ID: 1834
+Problem Title: Single-Threaded CPU
+Brute Force Method: At every time step, scan all available tasks and pick the one with the shortest processing time manually.
+BF Complexity Visuals: Timeline with nested $O(N)$ search per event.
+How to Draw BF: Draw a timeline. At t=1, scan all tasks. At t=5, scan again. Mark $O(N²)$ worst case.
+Optimised Pattern: Min-Priority Queue (Min-Heap) sorted by processing time and original index.
+Opt Vis. Technique: Waiting Room (Heap) and Processing Table.
+Dry Run (Opt): Sort tasks by arrival. Add arrived tasks to heap. CPU pops from heap, advances time by processing duration. Repeat.
+How to Draw (Opt): Draw a queue for incoming tasks and a Triangle (Heap). Move tasks from queue to heap as time passes. Pop the top task.
+Opt Complexity Visuals: $O(N \log N)$ event-based jumps.
+How to Draw Opt Complexity: Draw $O(\log N)$ paths for each heap insertion/deletion along a line of N tasks.
+Mem Vis (BF): Unordered list of tasks.
+Mem Vis (Opt): Heap structure (Array-based binary tree) in memory.

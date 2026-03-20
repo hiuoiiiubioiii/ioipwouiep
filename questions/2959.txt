@@ -1,0 +1,13 @@
+ID: 2959
+Problem Title: Number of Possible Sets of Closing Branches
+Brute Force Method: Check all 2^N subsets of branches. For each, run Dijkstra/Floyd-Warshall to verify distances.
+BF Complexity Visuals: Exponential Bitmask + All-Pairs Shortest Path
+How to Draw BF: Draw 2^N small graphs. For each, draw all-pairs distance lines. $O(2^N \cdot N^3)$.
+Optimised Pattern: Bitmask DP + Floyd-Warshall
+Opt Vis. Technique: Binary Toggle Grid
+Dry Run (Opt): Iterate bitmask from 0 to 2^N - 1. For active bits, run Floyd-Warshall on the subgraph. If all distances between active nodes <= maxDistance, count it.
+How to Draw (Opt): Draw a 10-bit binary number. For each '1', highlight that node in the graph. Run a 3-loop Floyd-Warshall on paper for a small case.
+Opt Complexity Visuals: Sub-cubic complexity over subsets
+How to Draw Opt Complexity: Write T = 2^N * N^3. With N=10, 1024 * 1000 approx 10^6, which fits in time limits.
+Mem Vis (BF): Recursion stack for subsets.
+Mem Vis (Opt): Adjacency matrix for the graph. Space $O(N^2)$.

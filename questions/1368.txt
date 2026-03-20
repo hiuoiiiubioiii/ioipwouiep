@@ -1,0 +1,13 @@
+ID: 1368
+Problem Title: Minimum Cost to Make at Least One Valid Path in a Grid
+Brute Force Method: Use DFS to find all possible paths from (0,0) to (m,n), summing the costs of changing arrows on each path.
+BF Complexity Visuals: $O(4^\text{NM})$ Path Explosion
+How to Draw BF: Draw a grid. Show arrows branching in 4 directions from every cell. The tree grows exponentially, revisiting cells and looping.
+Optimised Pattern: 0-1 BFS / Dijkstra's Algorithm
+Opt Vis. Technique: Weight-Layered Expansion
+Dry Run (Opt): Follow the arrow's direction with weight 0 (Deque: push to front). Move in other directions with weight 1 (Deque: push to back). Always pop from the front.
+How to Draw (Opt): Draw the grid. Start at (0,0). "Free" moves (cost 0) expand like a liquid. "Paid" moves (cost 1) create a new outer layer. The first time you touch the exit, that's your min cost.
+Opt Complexity Visuals: $O(N \cdot M)$ Level Traversal
+How to Draw Opt Complexity: Draw the grid. Show the BFS "front" moving across cells. Each cell is added/popped from the Deque at most twice, proving linear time.
+Mem Vis (BF): Unbounded Path History: Massive memory usage tracking every path's unique direction changes.
+Mem Vis (Opt): Cost Grid + Deque: Draw a 2D array `dist[M][N]` and a Double-Ended Queue (Deque).

@@ -1,0 +1,13 @@
+ID: 2093
+Problem Title: Minimum Cost to Reach City With Discounts
+Brute Force Method: Standard BFS exploring all paths, but branching for "use discount" and "don't use discount" at every single edge.
+BF Complexity Visuals: Exponential Branching Graph
+How to Draw BF: Draw a node. Branch to all neighbors. For each edge, draw two versions: "Full Price" and "Discounted". Tree explodes $O(2^\text{Edges})$.
+Optimised Pattern: Dijkstra with State (City, DiscountsUsed)
+Opt Vis. Technique: Multi-Layered Graph Plane
+Dry Run (Opt): Treat each (City, k) as a unique node in a 2D state space. Run Dijkstra. If a city has d discounts left, you can move to (neighbor, d) or (neighbor, d-1).
+How to Draw (Opt): Draw the cities. Above each city, draw "Discount Levels" 0 to K. Draw arrows between cities that either stay on the same level or drop down one level.
+Opt Complexity Visuals: Priority Queue Wavefront (O(E * K log(V * K)))
+How to Draw Opt Complexity: Draw a Priority Queue popping (Cost, City, d). Show it exploring $O(E\cdot K)$ states. Total Time $O(\text{EK} \log(\text{VK})$).
+Mem Vis (BF): Heavy recursive stack frames storing all path possibilities.
+Mem Vis (Opt): A 2D `dist[V][K+1]` array to store minimum costs per state. Space $O(\text{VK})$.

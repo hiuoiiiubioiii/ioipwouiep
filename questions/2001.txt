@@ -1,0 +1,13 @@
+ID: 2001
+Problem Title: Number of Pairs of Interchangeable Rectangles
+Brute Force Method: Nested loops comparing width/height ratio of every single pair `i` and `j`.
+BF Complexity Visuals: N x N Adjacency/Comparison Matrix
+How to Draw BF: Draw an N x N grid. Cross out the diagonal and bottom half. The remaining upper triangle represents the $O(N^2)$ comparisons.
+Optimised Pattern: Hash Map (Frequency Counter) with GCD reduction for fractions
+Opt Vis. Technique: State Tracking Array to Map Transition
+Dry Run (Opt): Map each rectangle to a simplified ratio string/tuple, tally it in the hash map, and add current tally to total pairs.
+How to Draw (Opt): Draw two columns: Left is the incoming array. Right is a dynamic Hash Table updating the frequency of ratio keys.
+Opt Complexity Visuals: Linear Timeline Arrow
+How to Draw Opt Complexity: Draw a single straight line spanning 0 to N-1, showing $O(1)$ hash map operations at each step. Total time $O(N)$.
+Mem Vis (BF): Call stack boxes containing variables for nested loop pointers `i` and `j`.
+Mem Vis (Opt): Key-Value Block Diagram showing ratio strings as keys and integer frequencies as values.

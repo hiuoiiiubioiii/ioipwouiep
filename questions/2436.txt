@@ -1,0 +1,13 @@
+ID: 2436
+Problem Title: Minimum Split Into Subarrays With GCD Greater Than One
+Brute Force Method: Test all subarray splits using backtracking, calculating the GCD for every segment from scratch. $O(2^N \cdot N)$.
+BF Complexity Visuals: Recursive Split &amp; Recalculate
+How to Draw BF: Draw an array. Put a divider at index 1. Calculate GCDs. Move divider to index 2. Calculate again.
+Optimised Pattern: Greedy / Running GCD
+Opt Vis. Technique: The GCD Collapse Boundary
+Dry Run (Opt): Iterate through the array maintaining a running GCD. When the `GCD(current_running_gcd, nums[i]) == 1`, you MUST split the array here. Reset the running GCD to `nums[i]` and increment the subarray count.
+How to Draw (Opt): Draw the array. Keep a "Current GCD" box. For each number, merge it into the box. If the box turns into '1', draw a hard vertical wall, count it, and put the current number into a fresh box.
+Opt Complexity Visuals: Linear Scan $O(N \log(\text{Max}_\text{Val})$)
+How to Draw Opt Complexity: Draw a single straight line. The log factor comes from the Euclidean algorithm at each step.
+Mem Vis (BF): Array slices and deep recursion.
+Mem Vis (Opt): A single integer tracking the running GCD. $O(1)$ space.

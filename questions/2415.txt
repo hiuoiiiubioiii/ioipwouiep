@@ -1,0 +1,13 @@
+ID: 2415
+Problem Title: Reverse Odd Levels of Binary Tree
+Brute Force Method: Traverse the tree level by level. Extract odd level values into an array, reverse the array, then traverse again to overwrite the node values.
+BF Complexity Visuals: Extraction &amp; Insertion Funnel
+How to Draw BF: Draw a tree. Draw arrows pulling nodes out into a horizontal array block. Draw an arrow reversing it, then pushing values back into the tree. $O(N)$ Time.
+Optimised Pattern: DFS/BFS with Symmetrical Dual-Pointers
+Opt Vis. Technique: Mirror Reflection Traversal
+Dry Run (Opt): Start at children of root (left, right). Swap their values (Level 1). For the next level, pass (left.left, right.right) and (left.right, right.left). Swap if level is odd.
+How to Draw (Opt): Draw a perfect binary tree. Draw curved double-headed arrows swapping nodes at level 1. Then draw curved arrows swapping outer nodes, and inner nodes at level 3.
+Opt Complexity Visuals: Symmetrical Descent Paths
+How to Draw Opt Complexity: Draw a tree outline. Draw two arrows descending simultaneously down opposite sides of the tree. Label $O(N)$ Time.
+Mem Vis (BF): Draw a large array queue storing $O(N)$ node values for reversal. $O(N)$ Space.
+Mem Vis (Opt): Draw a deep stack representing $O(\log N)$ recursive depth for a balanced tree.

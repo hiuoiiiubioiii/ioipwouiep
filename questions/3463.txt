@@ -1,0 +1,13 @@
+ID: 3463
+Problem Title: Check If Digits Are Equal in String After Operations II
+Brute Force Method: Simulate the process as in Part I. For N=10^5, this fails. $O(N^2)$
+BF Complexity Visuals: Dense Pyramid Matrix.
+How to Draw BF: Draw the same pyramid as Part I, but note that for 10^5, the number of "V" tips is 5 x 10^9, exceeding time limits.
+Optimised Pattern: Combinatorics (nCr mod10) using Lucas Theorem &amp; CRT. $O(N)$
+Opt Vis. Technique: Weighted Contribution Coefficient Map.
+Dry Run (Opt): Final digits are sum ((N-2 Choose i) * s[i]) mod10. Compute mod 2 and mod 5 separately then combine.
+How to Draw (Opt): Draw the string. Below each digit i, write its weight (N-2 Choose i). Draw lines summing them into the final two slots.
+Opt Complexity Visuals: Single Pass Modular Calculation.
+How to Draw Opt Complexity: Draw one horizontal line for the loop through N digits, with a small "Math Box" at each step.
+Mem Vis (BF): Trillions of simulated state integers.
+Mem Vis (Opt): A few arrays for factorials and inverse factorials up to size N.

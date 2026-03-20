@@ -1,0 +1,13 @@
+ID: 2736
+Problem Title: Maximum Sum Queries
+Brute Force Method: For every query [x, y], iterate through all pairs (nums1[i], nums2[i]). Check if nums1[i] ≥ x and nums2[i] ≥ y. Track the max sum. $O(Q \cdot N)$.
+BF Complexity Visuals: Linear Search over Pairs
+How to Draw BF: Draw queries as dots and pairs as stars on a 2D plane. For each dot, draw a giant "L" shape and count all stars inside it. Repeat for every dot.
+Optimised Pattern: Query/Pair Stack (Drawing the search range for every individual query).
+Opt Vis. Technique: Sorting + Monotonic Stack + Binary Search / Segment Tree
+Dry Run (Opt): Offline Query Processing (Coordinate Compression)
+How to Draw (Opt): Sort pairs by nums1 descending and queries by x descending. As you process a query, add all pairs that now satisfy nums1 ≥ x to a monotonic stack (tracking nums2 and sum). Binary search the stack for the best y.
+Opt Complexity Visuals: Draw a "Processing Line" moving left. As it passes pairs, they drop into a "Bucket" (the stack). For each query, peak into the bucket to find the highest value.
+How to Draw Opt Complexity: $O((N+Q)$ log N) Sort &amp; Search
+Mem Vis (BF): Draw a sorting block followed by a search tree. Label the bottleneck as $O((N+Q)$ log N).
+Mem Vis (Opt): Monotonic Stack / Segment Tree Structure (Draw a stack where elements are pruned if they are smaller in both Y and Sum).

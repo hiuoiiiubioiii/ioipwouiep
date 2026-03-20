@@ -1,0 +1,13 @@
+ID: 1140
+Problem Title: Stone Game II
+Brute Force Method: Brute force recursion. Try taking x stones where 1 <= x <= 2M, then let the opponent do the same for all possibilities.
+BF Complexity Visuals: Min-Max Game Tree Explosion
+How to Draw BF: Draw the pile count. Branch out for X=1 to 2M. For each, branch again for the opponent. $O(2^N)$ complexity.
+Optimised Pattern: DP with Memoization (Suffix Sums)
+Opt Vis. Technique: Top-Down Decision State Cache
+Dry Run (Opt): State is `(index, M)`. Use a 2D DP table. At each state, calculate the max stones the current player can get using the remaining stones (suffix sum) minus the opponent's best outcome.
+How to Draw (Opt): Draw a table where Rows = Index, Cols = M. Fill the table using results from sub-problems. Show the "Max" calculation choosing the best path.
+Opt Complexity Visuals: $O(N^3)$ State Space
+How to Draw Opt Complexity: Draw a grid N x N. Each cell takes $O(N)$ work to compute the max.
+Mem Vis (BF): Exponential Call Stack
+Mem Vis (Opt): 2D DP Array $O(N^2)$.

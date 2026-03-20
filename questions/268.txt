@@ -1,0 +1,13 @@
+ID: 268
+Problem Title: Missing Number
+Brute Force Method: Sort the array and check if `nums[i] != i`.
+BF Complexity Visuals: Sorting Slope: $O(n \log n)$.
+How to Draw BF: Draw a messy list of numbers. Draw an arrow showing them being rearranged into a line.
+Optimised Pattern: Gauss' Sum Formula OR XOR Gates
+Opt Vis. Technique: Balance Scale / Bit Cancellation
+Dry Run (Opt): Math: ExpectedSum - ActualSum. XOR: XOR all indices and all numbers; the result is the missing one.
+How to Draw (Opt): Draw two lists: 0 to n and the input array. Use a "Zap" line to connect identical numbers. The one without a partner is the answer.
+Opt Complexity Visuals: Single Pass: $O(n)$.
+How to Draw Opt Complexity: Draw a single arrow across the array. No extra data structures, just an accumulator.
+Mem Vis (BF): Sorted Copy: Draw a second array of size n.
+Mem Vis (Opt): Accumulator Variable: Draw one single integer box (`sum` or `res`).

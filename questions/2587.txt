@@ -1,0 +1,13 @@
+ID: 2587
+Problem Title: Rearrange Array to Maximize Prefix Score
+Brute Force Method: Try all N! permutations of the array. For each, calculate the prefix sums and count how many are positive. $O(N! x N)$.
+BF Complexity Visuals: A massive factorial explosion of possible array orderings.
+How to Draw BF: Write [2, -1, 1]. Try [2, -1, 1], [2, 1, -1], [-1, 2, 1]... Calculate prefixes for all.
+Optimised Pattern: Greedy Sorting (Descending Order).
+Opt Vis. Technique: A "Descending Staircase" visual where the prefix sum is kept as high as possible for as long as possible by adding the largest numbers first.
+Dry Run (Opt): Sort the array in descending order. Maintain a runningSum. For each number, add it to runningSum. If runningSum &gt; 0, increment the score. Once the sum becomes non-positive, all subsequent prefix sums in a descending sorted array will likely decrease further.
+How to Draw (Opt): Write the numbers from largest to smallest. Below them, write the cumulative sum. Count how many numbers stay above zero.
+Opt Complexity Visuals: $O(N \log N)$ for sorting the array.
+How to Draw Opt Complexity: Draw a descending bar chart. Draw a line graph above it representing the running total, showing it peaking early and then descending.
+Mem Vis (BF): Exponential space for permutations.
+Mem Vis (Opt): $O(1)$ extra space beyond sorting.

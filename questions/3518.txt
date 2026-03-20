@@ -1,0 +1,13 @@
+ID: 3518
+Problem Title: Smallest Palindromic Rearrangement II (Hard)
+Brute Force Method: Backtracking to try all valid swap sequences to enforce palindrome constraints.
+BF Complexity Visuals: Constrained Backtracking Tree.
+How to Draw BF: Draw a decision tree with deep branches. Draw big red 'X's on branches that violate constraints early.
+Optimised Pattern: Two-Pointer Greedy Swapping (Bubble Swaps for target positions).
+Opt Vis. Technique: Inward Pincer with Bubble Swaps.
+Dry Run (Opt): L at start, R at end. If mismatch, find closest matching char to R starting from L's right, bubble-swap it over.
+How to Draw (Opt): Write the string. Draw inward arrows from L and R. If L != R, draw a curved arrow jumping a matching character over to the left side.
+Opt Complexity Visuals: $O(N^2)$ Bubble Decay.
+How to Draw Opt Complexity: Draw an inverted triangle representing the shrinking search space for character matching.
+Mem Vis (BF): Deep Recursion Stack: Draw nested stack frames holding partial string states.
+Mem Vis (Opt): In-Place Char Array: Draw a single string array being mutated directly via index swaps.

@@ -1,0 +1,13 @@
+ID: 3430
+Problem Title: Maximum and Minimum Sums of at Most Size K Subarrays
+Brute Force Method: Generate every subarray of length 1 to K, find the min and max for each, and sum them. $O(N \cdot K)$
+BF Complexity Visuals: Sliding Window Brackets of Variable Sizes.
+How to Draw BF: Draw the array. Below it, draw brackets of size 1, then size 2... up to K. In each bracket, circle the largest and smallest numbers.
+Optimised Pattern: Monotonic Stack + Contribution of Each Element + Math (Counting valid subarrays). $O(N)$
+Opt Vis. Technique: Boundary Range Bars (Left &amp; Right Limits).
+Dry Run (Opt): For each element, find the nearest smaller/larger elements to the left and right. Calculate how many subarrays of size <= K it dominates as min/max.
+How to Draw (Opt): Draw the array. For one element, draw a horizontal bar reaching left and right until it hits a larger/smaller value. Label the bar length.
+Opt Complexity Visuals: Two Stack-Based Linear Passes.
+How to Draw Opt Complexity: Draw a horizontal timeline representing a single pass for "Min" and a single pass for "Max" (using Monotonic Stacks).
+Mem Vis (BF): A massive list of min/max pairs stored for every possible subarray length.
+Mem Vis (Opt): Two 1D arrays (`left_limit`, `right_limit`) of size N and a single stack structure.

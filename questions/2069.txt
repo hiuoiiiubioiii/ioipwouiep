@@ -1,0 +1,13 @@
+ID: 2069
+Problem Title: Walking Robot Simulation II
+Brute Force Method: Actually move the robot one grid cell at a time for every `num` steps requested. Handle direction turns at corners.
+BF Complexity Visuals: Step-by-Step Crawl
+How to Draw BF: Draw the grid. For a command "Move 1,000,000", physically draw one million tiny arrows around the perimeter. Time Limit Exceeded.
+Optimised Pattern: Perimeter Modulo Math
+Opt Vis. Technique: Track on a Flattened Perimeter Line
+Dry Run (Opt): The robot only moves along the perimeter of size `P = 2*(W+H) - 4`. Use `num % P` to find the actual displacement. Map the resulting number back to (x, y) coordinates.
+How to Draw (Opt): Draw the grid. Calculate the perimeter length. If the robot moves past the total length, use the remainder. Mark the remainder's position on the "border" only.
+Opt Complexity Visuals: Constant Time Calculation (O(1))
+How to Draw Opt Complexity: Draw a single mathematical formula box. It takes 1 step regardless of how large the input `num` is. Total Time $O(1)$ per move.
+Mem Vis (BF): Variables tracking every single coordinate the robot touches during the crawl.
+Mem Vis (Opt): Four integer variables: `x`, `y`, `width`, `height`, and one direction string. Space $O(1)$.

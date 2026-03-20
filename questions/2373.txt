@@ -1,0 +1,13 @@
+ID: 2373
+Problem Title: Largest Local Values in a Matrix
+Brute Force Method: For every cell `(i, j)` in the result matrix, iterate through all 9 cells in the corresponding 3x3 subgrid in the original matrix to find the maximum.
+BF Complexity Visuals: Nested 3x3 Window Scans (O(N^2 * 9))
+How to Draw BF: Draw an N x N grid. Draw a small 3x3 red box. Slide it one step at a time. Inside each red box, draw a tiny arrow checking all 9 numbers.
+Optimised Pattern: Sliding Window Maximum
+Opt Vis. Technique: 3x3 Kernel Max-Pooling
+Dry Run (Opt): Iterate `i` from 0 to N-3 and `j` from 0 to N-3. For each `(i, j)`, use two nested loops (0 to 2) to find the max in `grid[i+r][j+c]`. Store in `res[i][j]`.
+How to Draw (Opt): Draw the matrix. Place a 3x3 cardboard cutout with a hole in the middle over the top-left. Find the max, write it down. Slide the cardboard right. Repeat.
+Opt Complexity Visuals: Flat Matrix Traversal (O(N^2))
+How to Draw Opt Complexity: Draw a 2D grid. Draw a single line scanning row by row. Each point on the line represents a fixed 9-step calculation.
+Mem Vis (BF): Draw a massive amount of temporary 3x3 subgrid copies in memory.
+Mem Vis (Opt): Draw one `(N-2) x (N-2)` Result Matrix. No extra data structures needed.

@@ -1,0 +1,13 @@
+ID: 3636
+Problem Title: Threshold Majority Queries (Hard)
+Brute Force Method: Iterate over every query range [L, R], scan the subarray to count frequencies of all elements, and check if any exceed the threshold. $O(Q \cdot N)$.
+BF Complexity Visuals: Full Array Scan Per Query.
+How to Draw BF: Draw an array. Draw Q brackets. For each bracket, draw an arrow scanning every single element inside it to build a tally. Write $O(Q \cdot N)$.
+Optimised Pattern: Segment Tree with Boyer-Moore Voting or Random Sampling + Range Binary Search (using a map of indices).
+Opt Vis. Technique: Candidate Filtering + Verification.
+Dry Run (Opt): Pick a few random elements from the range [L, R]. If a majority exists, there is a very high mathematical probability one of these random picks is the candidate. Then, use a Hash Map of indices to check its frequency in $O(\log N)$.
+How to Draw (Opt): Draw a subarray. Circle 5 random elements. For each circled number, look it up in a precomputed "Sorted Indices Map" and subtract `upper_bound - lower_bound` to get the count.
+Opt Complexity Visuals: Probabilistic log-time Chart.
+How to Draw Opt Complexity: Write $O(Q \cdot K \cdot \log N)$, where K is a small constant (number of samples). Draw a flat line for queries compared to the steep brute force slope.
+Mem Vis (BF): A massive frequency map created and destroyed for every single query, causing heap fragmentation.
+Mem Vis (Opt): A single Hash Map where Keys are value and Values are List of indices. Space $O(N)$.

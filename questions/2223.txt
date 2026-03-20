@@ -1,0 +1,13 @@
+ID: 2223
+Problem Title: Sum of Scores of Built Strings
+Brute Force Method: Suffix String MatchingFor every suffix of the string, iterate character by character comparing it to the prefix of the original string until a mismatch occurs.
+BF Complexity Visuals: Overlapping Prefix/Suffix Alignment
+How to Draw BF: Write the string. Write the suffix below it aligned to the left. Draw vertical lines comparing characters until you hit a mismatch. Repeat for every suffix.
+Optimised Pattern: Z-Algorithm
+Opt Vis. Technique: Z-Box Sliding Window
+Dry Run (Opt): Use the Z-algorithm to construct a Z-array in linear time, where `Z[i]` stores the length of the longest substring starting at `i` that matches the prefix. Sum the Z-array.
+How to Draw (Opt): Draw the string. Draw a "Z-box" bracket over the known matching prefix. When evaluating a new index `i` inside the box, draw an arrow pulling the previously calculated `Z` value to instantly skip redundant checks.
+Opt Complexity Visuals: Z-Array Linear Construction
+How to Draw Opt Complexity: Draw the string array and the Z-array side-by-side. Trace pointers `L` and `R` moving strictly to the right, proving that character comparisons never go backward. $O(N)$ time.
+Mem Vis (BF): Creating new string copies for every suffix substring check (O(N^2) space).
+Mem Vis (Opt): A single integer `Z-array` of length N tracking prefix matches (O(N) space).

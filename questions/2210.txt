@@ -1,0 +1,13 @@
+ID: 2210
+Problem Title: Count Hills and Valleys in an Array
+Brute Force Method: Nested ExpansionFor every element, use an inner loop to scan left and right until you find a non-equal neighbor to determine if it's a peak or valley.
+BF Complexity Visuals: Left/Right Radiating Arrows
+How to Draw BF: Draw the array. For element `i`, draw arrows pointing left and right, stepping one by one until a different number is found. Repeat this for every element.
+Optimised Pattern: Single Pass + Prev Pointer
+Opt Vis. Technique: Pointer Tracking &amp; Flatline Compression
+Dry Run (Opt): Traverse the array once. Keep a pointer to the `last_different_value`. If the current value differs from the next, compare it against `last_different_value` and `next_value`.
+How to Draw (Opt): Draw the array as a line graph (mountains and valleys). If there's a flat plateau (e.g., 5, 5, 5), draw a circle around the whole flat part and treat it as a single compressed point.
+Opt Complexity Visuals: Two-Pointer Traversal Line
+How to Draw Opt Complexity: Draw an $O(N)$ line representing the main loop. Show the `prev` pointer trailing behind and updating instantly, proving $O(1)$ operations per element without inner loops.
+Mem Vis (BF): Static array with multiple temporary pointer variables instantiated repeatedly inside loops.
+Mem Vis (Opt): Two single integer registers (`prev_val` and `count`) updating continuously (O(1) space).

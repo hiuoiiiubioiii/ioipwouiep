@@ -1,0 +1,13 @@
+ID: 2159
+Problem Title: Order Two Columns Independently (SQL)
+Brute Force Method: Complexity is in the logic. Brute force would be a cross join and filtering, which is highly inefficient.
+BF Complexity Visuals: A Cartesian product shrinking down.
+How to Draw BF: Draw Table A. Draw Table B. Connect every row of A to every row of B. Filter out 99% of it.
+Optimised Pattern: Window Functions (`ROW_NUMBER`).
+Opt Vis. Technique: Two separate parallel sorted lists.
+Dry Run (Opt): Rank Column 1 by value. Rank Column 2 by value. Join the two lists where `Rank1 == Rank2`.
+How to Draw (Opt): Draw two separate vertical lists. Sort the first list. Sort the second list. Draw straight horizontal lines connecting the 1st items, 2nd items, etc.
+Opt Complexity Visuals: $O(N \log N)$ database sorting.
+How to Draw Opt Complexity: Two funnels (sorting) feeding into a single zipper (join).
+Mem Vis (BF): Massive temporary tables for intermediate joins.
+Mem Vis (Opt): In-memory sorting buffers (O(N)).

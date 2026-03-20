@@ -1,0 +1,13 @@
+ID: 2009
+Problem Title: Minimum Number of Operations to Make Array Continuous
+Brute Force Method: Try making every possible continuous range of length N. Iterate the array to see how many elements already fit in that range.
+BF Complexity Visuals: Sliding Window over Infinite Number Line
+How to Draw BF: Draw a huge number line. Draw a bracket of size N sliding by 1 unit infinitely. Highly inefficient $O(N^2)$ or worse.
+Optimised Pattern: Sort + Deduplicate + Sliding Window (Two Pointers)
+Opt Vis. Technique: Caterpillar Window on Unique Blocks
+Dry Run (Opt): Sort and remove duplicates. For each `nums[i]`, valid range is `[nums[i], nums[i] + N - 1]`. Slide a right pointer to count valid elements. Operations = N - valid.
+How to Draw (Opt): Draw the unique sorted array as blocks. Draw a fixed-width bracket `[ ... ]` starting at each block. Count blocks inside the bracket.
+Opt Complexity Visuals: Funnel + Inchworm Line
+How to Draw Opt Complexity: Draw a funnel (O(N log N) sorting). Below it, draw a line with a sliding segment moving rightwards in $O(N)$ time. Total $O(N \log N)$.
+Mem Vis (BF): Temporary arrays constantly created to hold checked ranges.
+Mem Vis (Opt): A compacted, deduplicated version of the original array (Space $O(N)$) with two integer pointers `L` and `R`.

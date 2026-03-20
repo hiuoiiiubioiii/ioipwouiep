@@ -1,0 +1,13 @@
+ID: 382
+Problem Title: Linked List Random Node
+Brute Force Method: Traverse the list to find the total length L. Generate a random number between 0 and L-1, then traverse the list again to that index.
+BF Complexity Visuals: Two-Pass Length Indexing
+How to Draw BF: Draw a linked list. Pass 1: Draw a counter incrementing. Pass 2: Draw an arrow jumping node-by-node to the target. Label $O(N)$.
+Optimised Pattern: Reservoir Sampling
+Opt Vis. Technique: Streaming Probability Selection
+Dry Run (Opt): Traverse the list once. For the i-th node, replace the current "chosen" node with the i-th node with probability 1/i. By the end, every node has an equal 1/N chance.
+How to Draw (Opt): Draw a list. As you move the pointer, draw a "Dice" icon. At node 1, you pick it. At node 2, you flip a coin to decide if you keep 1 or switch to 2. Label the "Current Winner" box.
+Opt Complexity Visuals: Single-Pass Probabilistic Sweep
+How to Draw Opt Complexity: Draw a single line through the list. Above it, write the probability 1/i for each node. Label it $O(N)$.
+Mem Vis (BF): An array or list copy of all nodes for random indexing. $O(N)$.
+Mem Vis (Opt): Only one "current_result" variable. Draw a single box holding the value of the currently selected node. $O(1)$ extra space.

@@ -1,0 +1,13 @@
+ID: 3632
+Problem Title: Subarrays with XOR at Least K (Hard)
+Brute Force Method: Nested loops iterating over every possible subarray `(i, j)`, calculating the running XOR and checking if it's `&gt;= K`. $O(N^2)$.
+BF Complexity Visuals: Subarray Triangle Grid.
+How to Draw BF: Draw an N x N grid. Shade the upper right triangle. Inside every shaded cell, write the XOR computation. Takes way too long.
+Optimised Pattern: Prefix XOR Array combined with a Binary Trie (Prefix Tree) to count valid pairs in $O(N \log(\text{Max}_\text{Value})$) time.
+Opt Vis. Technique: Binary Tree Traversal (Trie).
+Dry Run (Opt): Store all previous Prefix XORs in a Trie as 32-bit binary paths. For the current Prefix XOR, walk down the Trie. If going down a specific bit-branch guarantees the XOR with that branch will be `&gt; K`, count the whole subtree instantly and stop.
+How to Draw (Opt): Draw a tree where left branches are '0' and right branches are '1'. Start at the root. Compare your current bit with K's bit. Draw an arrow cleanly bypassing entire subtrees that are mathematically guaranteed to win.
+Opt Complexity Visuals: Trie Depth Bounding.
+How to Draw Opt Complexity: Draw an array scan $O(N)$. For each element, draw an arrow pointing to a tree of max depth 32. Write $O(32 \cdot N)$ = $O(N)$.
+Mem Vis (BF): Massive 2D matrices attempting to memoize the XOR of every possible subarray pair.
+Mem Vis (Opt): A Binary Trie structure. Each node has at most 2 children and a `count` variable. Max space is strictly bounded by $O(N \cdot 32)$.

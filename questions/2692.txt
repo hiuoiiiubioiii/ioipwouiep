@@ -1,0 +1,13 @@
+ID: 2692
+Problem Title: Make Object Immutable
+Brute Force Method: Manually checking every property modification with `if` statements, failing on nested objects or array pushes.
+BF Complexity Visuals: Manual Property Guards
+How to Draw BF: Draw a bouncer at the door of an object checking every single read/write request manually.
+Optimised Pattern: Proxy Object / Recursive Object.freeze
+Opt Vis. Technique: The Recursive Ice Block
+Dry Run (Opt): Use a JS `Proxy` to intercept `set`, `defineProperty`, and `setPrototypeOf` traps, throwing an error. Or recursively use `Object.freeze()` on all keys that are objects/arrays.
+How to Draw (Opt): Draw an object tree. Pour liquid nitrogen over the root, watching it freeze solid down through all its branches and leaves, rejecting any attempt to bend them.
+Opt Complexity Visuals: Recursive Traversal $O(N)$
+How to Draw Opt Complexity: Draw a tree representing the object structure. A single line traces through all shared nodes.
+Mem Vis (BF): Creating massive deep copies.
+Mem Vis (Opt): Call stack depth matching object nesting. $O(\text{Depth})$ space.

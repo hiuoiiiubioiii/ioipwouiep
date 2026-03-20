@@ -1,0 +1,13 @@
+ID: 3841
+Problem Title: Palindromic Path Queries in a Tree (Hard)
+Brute Force Method: For every query (u, v), perform a DFS to find the unique path, collect all character frequencies, and check if at most one character has an odd count.
+BF Complexity Visuals: A spiderweb of DFS paths being traced over and over, traversing the same edges thousands of times for different queries.
+How to Draw BF: Draw a tree. Pick node A and B, trace path. Pick C and D, trace path. Write $O(Q \cdot N)$ to show the redundant path-finding.
+Optimised Pattern: LCA (Lowest Common Ancestor) + Binary Lifting + Prefix Bitmasks.
+Opt Vis. Technique: A "teleportation" technique using precomputed powers of 2 (2^0, 2^1...) to jump up the tree and aggregate character counts instantly.
+Dry Run (Opt): Precompute path-bitmask from root to every node (where bit 'i' is toggled for char 'i'). For query (u, v), path-mask = `Mask(u) XOR Mask(v) XOR CharBit(LCA(u,v))`. If `popcount(path-mask) &lt;= 1`, it's a palindrome.
+How to Draw (Opt): Draw a tree. Draw a bitmask (0101) for each node. For two nodes, show the XOR operation canceling out common ancestors, leaving only the path between them.
+Opt Complexity Visuals: Logarithmic "jumps" per query after a linear setup.
+How to Draw Opt Complexity: Draw a tree. Write "Setup: $O(N \log N)$". Draw a query arrow: "Jump $O(\log N)$". Total: $O((N+Q)$ log N).
+Mem Vis (BF): Memory overhead of thousands of character frequency arrays (size 26) created during DFS, $O(Q \cdot N \cdot 26)$.
+Mem Vis (Opt): A 2D "jump table" of size N x log(N) and a 1D bitmask array of size N. Space $O(N \log N)$.

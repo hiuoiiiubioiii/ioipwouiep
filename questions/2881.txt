@@ -1,0 +1,13 @@
+ID: 2881
+Problem Title: Create a New Column
+Brute Force Method: Iterate through the DataFrame row by row using a loop, calculate salary * 2, and append it to a new list, then assign the list to a new column.
+BF Complexity Visuals: Row-wise Iteration Pipeline
+How to Draw BF: Draw a column being built one cell at a time by looking at a neighbor cell.
+Optimised Pattern: Vectorized Assignment: df['bonus'] = df['salary'] * 2
+Opt Vis. Technique: SIMD (Single Instruction Multiple Data)
+Dry Run (Opt): Visualize a "multi-lane highway" where the multiplication operation is applied to the entire column simultaneously.
+How to Draw (Opt): Draw two vertical parallel bars. Draw many horizontal arrows across at once representing the multiplication.
+Opt Complexity Visuals: Linear $O(N)$ (Vectorized)
+How to Draw Opt Complexity: Draw a line with a fast slope, indicating highly efficient low-level loops.
+Mem Vis (BF): $O(N)$ for a Python list overhead.
+Mem Vis (Opt): $O(N)$ but stored in a contiguous NumPy array block.

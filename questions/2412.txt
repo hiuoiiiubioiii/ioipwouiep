@@ -1,0 +1,13 @@
+ID: 2412
+Problem Title: Minimum Money Required Before Transactions
+Brute Force Method: Generate all permutations of transactions. For each permutation, simulate the money flow and track the lowest dip. Find the worst-case lowest dip.
+BF Complexity Visuals: Factorial Decision Tree
+How to Draw BF: Draw a root node splitting into N branches, then N-1, etc. Label $O(N!)$ Time.
+Optimised Pattern: Greedy / Math Accumulator
+Opt Vis. Technique: Worst-Case Valley Plot
+Dry Run (Opt): Assume you take all net-loss transactions first. Calculate total losses. The maximum money needed is total losses + the maximum cost of a "winning" transaction (or the cashback of a losing one).
+How to Draw (Opt): Draw a line graph starting at 0, dipping down with every loss. Add a variable 'max_extra_needed' representing the deepest single drop before a recovery.
+Opt Complexity Visuals: Single Pass Accumulation Line
+How to Draw Opt Complexity: Draw one straight line across N transactions, accumulating a 'loss' sum. Label $O(N)$ Time.
+Mem Vis (BF): Draw massive call stacks for permutations, $O(N)$ depth, plus tracking arrays.
+Mem Vis (Opt): Draw two variables: `total_losses` and `max_cashback_or_cost`. $O(1)$ space.

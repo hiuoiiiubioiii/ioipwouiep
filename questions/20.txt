@@ -1,0 +1,13 @@
+ID: 20
+Problem Title: Valid Parentheses
+Brute Force Method: String Replacement Repeatedly search for "()", "{}", and "[]" and replace them with empty strings. If the string becomes empty, it's valid.
+BF Complexity Visuals: The Eraser
+How to Draw BF: Draw the string `"{[()]}"`. Erase the middle `()`. Then erase the `[]`. Then erase the `{}`. Emphasize that string shifting makes this $O(N²)$.
+Optimised Pattern: Stack (LIFO)
+Opt Vis. Technique: The Spring-Loaded Tube
+Dry Run (Opt): Read left to right. If it's an open bracket, push it into the tube. If it's a closed bracket, check if it matches the top of the tube. If yes, pop it. If no, invalid.
+How to Draw (Opt): Draw a vertical bucket. Push `(`, `[`, `{` down into it. When `}` arrives, check the top of the bucket. Since it's `{`, cross them both out.
+Opt Complexity Visuals: Single Pass + $O(1)$ Ops
+How to Draw Opt Complexity: Draw a single straight arrow reading the string (O(N)). Next to it, draw a tiny push/pop box to show stack operations take $O(1)$. Total time $O(N)$.
+Mem Vis (BF): Draw multiple intermediate string copies being created during the replacement process.
+Mem Vis (Opt): Draw a vertical Stack data structure. In the worst case (all open brackets), it grows to size $O(N)$.

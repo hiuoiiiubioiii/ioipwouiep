@@ -1,0 +1,13 @@
+ID: 2829
+Problem Title: Determine the Minimum Sum of a k-avoiding Array
+Brute Force Method: Start from 1 and keep adding numbers to a set. For each new number x, check if k - x is already in the set. If not, add it. Stop when the set size reaches n.
+BF Complexity Visuals: Set-Search Iteration
+How to Draw BF: Draw a number line starting at 1. Draw a "Bucket" (Set). For every number on the line, draw a "Search" arrow into the bucket before deciding to drop it in.
+Optimised Pattern: Mathematical Greedy Partitioning
+Opt Vis. Technique: Arithmetic Series Summation
+Dry Run (Opt): Take numbers 1, 2, ..., k/2. These are safe because their complements are larger than themselves. Then, skip numbers from k/2 + 1 to k-1. Start taking numbers again from k onwards until you have n elements.
+How to Draw (Opt): Write numbers 1 to k. Cross out the numbers from k/2 + 1 to k-1. Circle the first n numbers that are NOT crossed out. Use the sum formula n(a+l)/2 for the two segments.
+Opt Complexity Visuals: Constant Time Formula
+How to Draw Opt Complexity: Draw a single box representing the math formula. Since we can calculate the sum of two segments directly, it's $O(1)$ if n and k are used in a formula, or $O(n)$ for a simple loop.
+Mem Vis (BF): Visualize a HashSet growing to size n, consuming $O(n)$ space.
+Mem Vis (Opt): Visualize a single totalSum variable. Pure $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2268
+Problem Title: Minimum Number of Keypresses
+Brute Force Method: Permutation of KeymapsTry mapping every character (a-z) to every possible position on a 9-key keypad. Calculate total presses for each map and pick the minimum.
+BF Complexity Visuals: Brute Force Mapping Search
+How to Draw BF: Draw a 9-key keypad. Assign 'a' to key 1, 'b' to key 1, 'c' to key 1, etc. Then swap. Note the $O(26!)$ factorial possibilities.
+Optimised Pattern: Greedy + Sorting
+Opt Vis. Technique: Frequency-First Distribution
+Dry Run (Opt): Count the frequency of each letter. Sort letters by frequency (highest first). Assign the top 9 letters to the 1st position (1 press), next 9 to 2nd (2), and the rest to 3rd (3).
+How to Draw (Opt): Draw a frequency bar chart. Take the 9 tallest bars and put them in a "1-Press" bucket. Take the next 9 and put them in a "2-Press" bucket. Multiply frequency by bucket weight.
+Opt Complexity Visuals: Frequency Sort Timeline
+How to Draw Opt Complexity: Draw an $O(N)$ pass for counting, an $O(26 \log 26)$ step for sorting, and an $O(26)$ pass for calculation. Total time: $O(N)$.
+Mem Vis (BF): Generating and storing millions of keypad configuration strings.
+Mem Vis (Opt): An integer array of size 26 for frequency counts (O(1) auxiliary space).

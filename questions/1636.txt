@@ -1,0 +1,13 @@
+ID: 1636
+Problem Title: Sort Array by Increasing Frequency
+Brute Force Method: Nested loops to count every element's frequency, then use a standard sort on the count results.
+BF Complexity Visuals: Multi-Pass Funnel
+How to Draw BF: Draw an array. Draw N arrows pointing to a frequency table. Then draw a sorting funnel. $O(N^2)$ or $O(N \log N)$ depending on count logic.
+Optimised Pattern: Hash Map + Custom Comparator Sorting
+Opt Vis. Technique: Frequency Bucket Mapping
+Dry Run (Opt): Store counts in a Map. Sort the original array using a comparator that checks Map.get(a) vs Map.get(b), then (b-a) for ties.
+How to Draw (Opt): Draw a 2-column table (Val | Freq). Below it, draw the array and use "Weight" lines (thicker lines for higher freq) to visualize the new order.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw a funnel with N log N capacity. Input is N, output is sorted N.
+Mem Vis (BF): Intermediate Count Array: Draw a separate, potentially large array of counts.
+Mem Vis (Opt): Hash Map: Draw a small "cloud" or "bucket" holding unique keys and their integer counts. $O(N)$ space.

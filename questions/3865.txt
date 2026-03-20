@@ -1,0 +1,13 @@
+ID: 3865
+Problem Title: Reverse K Subarrays (Med.)
+Brute Force Method: Simulation: For each of the K instructions, physically reverse the specified range in the array.
+BF Complexity Visuals: An array being heavily modified K times, involving $O(N)$ work per reversal.
+How to Draw BF: Draw an array. Reverse [2,5]. Rewrite array. Reverse [1,3]. Rewrite array. Write $O(K \cdot N)$.
+Optimised Pattern: Difference Array / Lazy Propagation (Segment Tree).
+Opt Vis. Technique: A "Marking" strategy where you only record where reversals *start* and *stop*, and apply them all at once at the end.
+Dry Run (Opt): Note: For simple reversals, 2-pointers is often enough, but if K is huge and ranges overlap, use a Segment Tree or Splay Tree to perform "Lazy Reversals" in $O(\log N)$ time per operation.
+How to Draw (Opt): Draw a tree structure. For a range [L,R], mark the root of that range with a "Flip" tag. Only flip the children when you actually need to read them.
+Opt Complexity Visuals: Logarithmic operations per instruction.
+How to Draw Opt Complexity: Draw K boxes. Under each, draw a tree traversal of height log N. Total: $O(K \log N)$.
+Mem Vis (BF): Creating new array copies for every reversal step.
+Mem Vis (Opt): A tree-based data structure taking $O(N)$ space.

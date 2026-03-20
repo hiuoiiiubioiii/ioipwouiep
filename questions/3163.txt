@@ -1,0 +1,13 @@
+ID: 3163
+Problem Title: String Compression III
+Brute Force Method: Building strings by concatenation in a loop (depending on language, this can be $O(N^2)$).
+BF Complexity Visuals: A growing snowball of string memory.
+How to Draw BF: Write the string. Write "1a", then "1a1b", then "1a1b1b"... Rewrite the whole thing every time.
+Optimised Pattern: Two-Pointer / Greedy Counting
+Opt Vis. Technique: The Compression Buffer
+Dry Run (Opt): Scan the string. Count consecutive identical characters. Once you hit 9 or the character changes, append count and char to a list.
+How to Draw (Opt): Draw a string. Draw a "counter" box. Move through characters; if same, increment box. If box == 9, reset and write to result.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw a straight line 0 rightarrow N. $O(N)$.
+Mem Vis (BF): Repeatedly creating new string objects.
+Mem Vis (Opt): A string builder or character array. $O(N)$.

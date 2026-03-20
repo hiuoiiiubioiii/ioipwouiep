@@ -1,0 +1,13 @@
+ID: 2673
+Problem Title: Make Costs of Paths Equal in a Binary Tree
+Brute Force Method: Try every possible increment combination for every node to equalize all leaf-to-root path sums.
+BF Complexity Visuals: Brute Force Path Balancing
+How to Draw BF: Draw a tree. Branch out with different increment values for every node. $O(\text{Exponential})$.
+Optimised Pattern: Bottom-Up Greedy (Post-order Traversal)
+Opt Vis. Technique: Recursive Level Balancing
+Dry Run (Opt): Start from the bottom-most leaves. For any two siblings, find the difference in their path costs. Add that difference to the smaller sibling's cost (increments result). Pass the max of the two up to the parent.
+How to Draw (Opt): Draw a tree with leaf values. Pick two sibling leaves. Add to the smaller one to match the larger. Treat their parent as having the new balanced cost. Repeat upward.
+Opt Complexity Visuals: $O(N)$ Linear Traversal
+How to Draw Opt Complexity: Draw a single bottom-up pass through the tree nodes. $O(N)$.
+Mem Vis (BF): Recursive state explosion
+Mem Vis (Opt): $O(1)$ or $O(\log N)$ for the recursion stack (array-based tree).

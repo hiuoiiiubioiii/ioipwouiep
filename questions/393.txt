@@ -1,0 +1,13 @@
+ID: 393
+Problem Title: UTF-8 Validation
+Brute Force Method: Convert every integer to an 8-bit binary string. Use complex regex or substring matching to check the prefix rules for 1-4 byte characters.
+BF Complexity Visuals: Binary String Pattern Matching
+How to Draw BF: Draw each number as "110xxxxx". Use a "Pattern Matcher" box to check subsequent numbers. $O(N)$ but high overhead.
+Optimised Pattern: Bit Manipulation (Bitmasking)
+Opt Vis. Technique: Leading One Counter
+Dry Run (Opt): Iterate through the array. For the first byte, count the leading '1' bits using a mask (e.g., `0x80`, `0x40`). This tells you how many "continuation bytes" (starting with `10`) to expect.
+How to Draw (Opt): Draw an 8-bit box. Show an AND operation with `10000000` to check the first bit. Use a "Counter" variable to keep track of how many `10......` bytes are needed.
+Opt Complexity Visuals: Constant-Time Byte Window Scan
+How to Draw Opt Complexity: Draw a single pass through the integers. Above it, draw a "Bytes Left" counter that decrements. $O(N)$.
+Mem Vis (BF): Strings of binary digits for every number.
+Mem Vis (Opt): A single `numberOfBytesToProcess` variable. Draw one small integer box. $O(1)$.

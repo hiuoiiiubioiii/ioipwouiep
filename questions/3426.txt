@@ -1,0 +1,13 @@
+ID: 3426
+Problem Title: Manhattan Distances of All Arrangements of Pieces
+Brute Force Method: Generate all (R x C Choose K) piece arrangements. For each, calculate pairwise Manhattan distances. $O(\text{Exponential})$.
+BF Complexity Visuals: Factorial Grid Layouts
+How to Draw BF: Draw a grid. Place K pieces. Measure them. Move one piece. Measure again.
+Optimised Pattern: Math (Contribution to Sum) + Combinatorics
+Opt Vis. Technique: The Single-Axis Separator
+Dry Run (Opt): Instead of looking at grids, calculate how much a single pair of coordinates (x_1, x_2) contributes to the TOTAL sum across ALL valid boards. Distance on X-axis and Y-axis are independent. Multiply the distance by the number of ways to place the remaining K-2 pieces.
+How to Draw (Opt): Pick two columns, c_1 and c_2. The horizontal distance is |c_1 - c_2|. If two pieces are placed in these columns, there are (R x C - 2 Choose K - 2) ways to place the rest of the pieces. Multiply distance x combinations. Sum for all column pairs and row pairs.
+Opt Complexity Visuals: Mathematical Formulation $O(R + C)$
+How to Draw Opt Complexity: Draw two simple loops (one for rows, one for columns) calculating formulas.
+Mem Vis (BF): Generating physical grids.
+Mem Vis (Opt): A few large integer accumulators for modulo math. $O(1)$ space.

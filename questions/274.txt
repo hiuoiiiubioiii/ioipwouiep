@@ -1,0 +1,13 @@
+ID: 274
+Problem Title: H-Index
+Brute Force Method: Sort the array and check for the point where `citations[i] &gt;= i + 1`.
+BF Complexity Visuals: Sorting Curve: $O(N \log N)$.
+How to Draw BF: Draw a bar chart of citations. Show them being reordered from highest to lowest.
+Optimised Pattern: Bucket Sort (Counting Citations)
+Opt Vis. Technique: Frequency Histogram
+Dry Run (Opt): Create buckets from 0 to N. Count how many papers have X citations. Sum from the back until the sum exceeds the bucket index.
+How to Draw (Opt): Draw boxes labeled 0, 1, 2... N. Place "papers" into boxes based on citation count. Scan right-to-left. Stop when papers \ge index.
+Opt Complexity Visuals: Linear Scan: $O(N)$.
+How to Draw Opt Complexity: Draw a horizontal arrow scanning the original array (Pass 1) and then the buckets (Pass 2). Total = 2N.
+Mem Vis (BF): Sorted Copy: $O(N)$.
+Mem Vis (Opt): Fixed Bucket Array: Draw an array of size N+1 in memory.

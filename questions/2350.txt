@@ -1,0 +1,13 @@
+ID: 2350
+Problem Title: Shortest Impossible Sequence of Rolls
+Brute Force Method: Generate all possible sequences of length 1, then length 2, and so on. For each sequence, scan the `rolls` array to see if it can be formed as a subsequence.
+BF Complexity Visuals: Exponential Sequence Search (O(K^N))
+How to Draw BF: Draw a tree of all possible roll sequences (1,1; 1,2...). For each leaf, draw a full scan across the input `rolls` array.
+Optimised Pattern: Greedy Set Partitioning
+Opt Vis. Technique: Complete Set Collection Rounds
+Dry Run (Opt): Try to find a "complete set" (all numbers 1 to K). Once you find all K numbers, start a new "round." The number of complete rounds + 1 is the length of the shortest impossible sequence.
+How to Draw (Opt): Draw the array of rolls. Draw a vertical line (a "fence") every time you have seen all numbers from 1 to K. Count the number of fences you built and add 1.
+Opt Complexity Visuals: Single Pass Set Filling (O(N))
+How to Draw Opt Complexity: Draw a horizontal line. Draw dots of different colors. When you have all colors, draw a thick divider and start again.
+Mem Vis (BF): Draw a huge recursion stack for every possible roll combination.
+Mem Vis (Opt): Draw one Hash Set (or Boolean Array of size K) and one Integer counter (`rounds`).

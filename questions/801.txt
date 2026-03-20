@@ -1,0 +1,13 @@
+ID: 801
+Problem Title: Minimum Swaps To Make Sequences Increasing
+Brute Force Method: Recursive Backtracking: At each index i, branch into two parallel universes (swap A[i] and B[i], or do not swap).
+BF Complexity Visuals: Complete Binary Decision Tree. $O(2^n)$ time.
+How to Draw BF: Draw a root node. Draw two branches down (Left: Swap, Right: Keep). At each node, write out the current state of A and B. It explodes outwards like a fractal.
+Optimised Pattern: Dynamic Programming (State Machine): 2 states per index (Swapped vs Not Swapped).
+Opt Vis. Technique: State Transition Graph / 2xN Grid.
+Dry Run (Opt): Move index by index left to right. Only look at i and i-1. If A[i]&gt;A[i-1] and B[i]&gt;B[i-1], draw straight horizontal arrows. If A[i]&gt;B[i-1] and B[i]&gt;A[i-1], draw diagonal crossing arrows.
+How to Draw (Opt): Draw a grid with 2 rows ('Keep', 'Swap') and N columns. Fill boxes left to right with integer minimums based on the previous column's valid transitions.
+Opt Complexity Visuals: Linear Timeline / Domino chain. $O(N)$ time.
+How to Draw Opt Complexity: Draw a single straight horizontal line crossing N vertical tick marks. Each tick represents $O(1)$ constant work.
+Mem Vis (BF): Deep Call Stack: Draw vertical overlapping boxes representing recursion depth mapping up to N frames.
+Mem Vis (Opt): Two variables holding $O(1)$ space: Draw two small squares side-by-side that constantly overwrite their previous values.

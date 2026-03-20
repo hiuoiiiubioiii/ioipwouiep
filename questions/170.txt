@@ -1,0 +1,13 @@
+ID: 170
+Problem Title: Two Sum III - Data structure design
+Brute Force Method: Store all numbers in a list. For `find`, perform an $O(N^2)$ nested loop search or sort and use two pointers (O(N log N)).
+BF Complexity Visuals: A "Heavy Search" visualization where adding data is fast but finding data is extremely slow and red-lined.
+How to Draw BF: Draw a list of numbers. For `find(7)`, show the searcher checking every single pair combination until it finds 3+4.
+Optimised Pattern: Hash Map (Value rightarrow Frequency Count).
+Opt Vis. Technique: A "Speedy Lookup Table." The `add` operation is $O(1)$, and the `find` operation is a single $O(N)$ pass through the unique keys in the map.
+Dry Run (Opt): `add`: increment count in Map. `find(T)`: for each `key` in Map: `complement = T - key`. If `complement` exists (handle same-key case), return true.
+How to Draw (Opt): Draw a Map. For `add`, just update the counts. For `find(10)`, iterate through the keys, subtract from 10, and do a quick "Is it in the map?" check.
+Opt Complexity Visuals: $O(N)$ for `find`, $O(1)$ for `add`. Optimized for heavy data insertion and moderate searching.
+How to Draw Opt Complexity: Draw a single scan through the *unique* keys of the map, proving the work is proportional to the number of distinct elements.
+Mem Vis (BF): Storing full pairs or sorted copies of the data redundantly.
+Mem Vis (Opt): Visualize a Hash Map in heap memory storing N unique keys and their counts.

@@ -1,0 +1,13 @@
+ID: 820
+Problem Title: Short Encoding of Words
+Brute Force Method: Sort words by length descending. For each word, check if it already exists as a suffix in our encoding string. If not, append it.
+BF Complexity Visuals: String-in-String Search Web. $O(N^2 \cdot L)$ time.
+How to Draw BF: Draw a growing string. For every new word, draw arrows comparing it to every possible substring starting position in the master string.
+Optimised Pattern: Suffix Trie (Inverted Prefix Tree).
+Opt Vis. Technique: Nested Branching Tree (Roots at the End).
+Dry Run (Opt): Reverse every word ("time" -&gt; "emit"). Insert into a Trie. Every leaf node represents a word that can't be a suffix of another. Total length = sum of (depth of leaf nodes + 1).
+How to Draw (Opt): Draw a root node. Draw branches for 'e' -&gt; 'm' -&gt; 'i' -&gt; 't'. If "me" ("em") comes, it's already on the path, so no new leaf. Total the depth of only terminal leaves.
+Opt Complexity Visuals: Linear Character Scan. $O(Σ \text{Words})$ time.
+How to Draw Opt Complexity: Draw a single path through the Trie for each character in the input exactly once. No backtracking.
+Mem Vis (BF): Massive String Buffer: Draw one giant continuous block of memory that keeps getting re-allocated and copied.
+Mem Vis (Opt): Trie Nodes (Hash Maps/Arrays): Draw a tree of small interconnected node boxes. $O(Σ \text{Words})$ space.

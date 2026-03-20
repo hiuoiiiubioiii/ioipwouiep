@@ -1,0 +1,13 @@
+ID: 2696
+Problem Title: Minimum String Length After Removing Substrings
+Brute Force Method: Repeatedly search for "AB" or "CD" in the string and replace them with empty strings using `String.replace()`.
+BF Complexity Visuals: Iterative String Rescan
+How to Draw BF: Draw a string. Highlight "AB", erase it, then draw the string again. Repeat until no "AB" or "CD" remains. $O(N^2)$.
+Optimised Pattern: Stack-Based Character Matching
+Opt Vis. Technique: Single-Pass Eraser
+Dry Run (Opt): Iterate through the string. Push characters onto a stack. If the top of the stack and current character form "AB" or "CD", pop the stack instead of pushing.
+How to Draw (Opt): Draw a vertical stack. As characters arrive, check if they "cancel out" the top item. If yes, pop. If no, push. The final stack size is the answer.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a single pass arrow over the string. $O(N)$.
+Mem Vis (BF): Creating multiple string copies
+Mem Vis (Opt): $O(N)$ space for the stack (or a character array).

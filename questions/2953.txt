@@ -1,0 +1,13 @@
+ID: 2953
+Problem Title: Count Complete Substrings
+Brute Force Method: Check all $O(N^2)$ substrings for character counts and adjacent difference conditions.
+BF Complexity Visuals: Quadratic Matrix Area
+How to Draw BF: Draw an N x N grid. Each cell represents a complex string check. Label "TLE" for N=10^5.
+Optimised Pattern: Sliding Window + Segment Splitting
+Opt Vis. Technique: Bracketed Valid Segments
+Dry Run (Opt): 1. Split string into segments where |word[i] - word[i-1]| <= 2. 2. For each segment, test windows of size 1k, 2k dots 26k. Count if all chars appear exactly k times.
+How to Draw (Opt): Draw the string. Draw vertical "walls" where the adjacent diff &gt; 2. Inside each room, draw sliding brackets of fixed sizes (k, 2k, 3k).
+Opt Complexity Visuals: N Linear Passes x 26 Window Sizes
+How to Draw Opt Complexity: Draw a line of length N. Above it, draw 26 parallel lines. Total operations T = $O(26 \cdot N)$.
+Mem Vis (BF): Storing N^2 substring character maps.
+Mem Vis (Opt): Frequency array of size 26 and a few counters. Space $O(1)$ or $O(26)$.

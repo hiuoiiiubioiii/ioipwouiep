@@ -1,0 +1,13 @@
+ID: 1060
+Problem Title: Missing Element in Sorted Array
+Brute Force Method: Start from the first element and iterate one by one, checking the gap between neighbors. Count how many numbers are missing until you hit K.
+BF Complexity Visuals: A slow-moving walker checking every single floor tile for cracks.
+How to Draw BF: Draw [4, 7, 9, 10]. Count gaps: 4-7 has 2 missing (5,6), 7-9 has 1 missing (8). Total 3. If K=3, answer is 8. Write $O(N)$.
+Optimised Pattern: Binary Search (Range-based).
+Opt Vis. Technique: A "Gap Measurement". We check how many numbers are missing in the left half vs. the right half and jump accordingly.
+Dry Run (Opt): Calculate `missing(i) = nums[i] - nums[0] - i`. If `missing(mid) &lt; k`, the answer is in the right half. Adjust K and move.
+How to Draw (Opt): Draw the array. Write `missing` counts below each index. Use Binary Search pointers L and R to narrow down the segment where the Kth missing number lies.
+Opt Complexity Visuals: Logarithmic search over the array indices.
+How to Draw Opt Complexity: Draw a Binary Search tree narrowing down to a single index. Write Time: $O(\log N)$.
+Mem Vis (BF): No extra memory needed for the linear scan.
+Mem Vis (Opt): Strictly $O(1)$ space with 3 integer pointers (L, R, Mid).

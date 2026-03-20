@@ -1,0 +1,13 @@
+ID: 511
+Problem Title: Game Play Analysis I (SQL)
+Brute Force Method: Self-join the table on matching player IDs and filter manually to find where no earlier date exists.
+BF Complexity Visuals: Cartesian product matrix showing all possible row combinations per player. $O(N^2)$.
+How to Draw BF: Draw a large N x N grid connecting rows. Cross out intersections where the date is not the absolute minimum.
+Optimised Pattern: SQL `GROUP BY` with Aggregate Function `MIN()`.
+Opt Vis. Technique: Sorting bins. Records drop into player buckets, and a filter keeps only the top card.
+Dry Run (Opt): Scan rows -&gt; Separate into piles by `player_id` -&gt; Pick the card with the earliest date from each pile.
+How to Draw (Opt): Draw 3 circles (representing players). Draw dots (logins) inside them. Circle the dot furthest to the left (earliest date).
+Opt Complexity Visuals: Linear scan grouped by a hash map structure. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line mapping directly into discrete, non-overlapping buckets.
+Mem Vis (BF): Massive temporary table created in memory for the join. $O(N^2)$.
+Mem Vis (Opt): Small hash table holding just `player_id` and a single date variable. $O(N)$.

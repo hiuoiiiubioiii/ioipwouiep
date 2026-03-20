@@ -1,0 +1,13 @@
+ID: 954
+Problem Title: Array of Doubled Pairs
+Brute Force Method: Pick a number, search the entire array for its double. If found, remove both and repeat. If not found, try a different number first (backtracking).
+BF Complexity Visuals: $O(N!)$. Factorial search for the correct removal order.
+How to Draw BF: Draw a tree where each node is a "removal choice." Most branches end early when no double is found for a remaining number.
+Optimised Pattern: Frequency Map + Sorted Greedy
+Opt Vis. Technique: "Smallest First." Always try to pair the smallest absolute value first. Since it's the smallest, it *must* be the "half" of a (x, 2x) pair, never the "double."
+Dry Run (Opt): 1. Count frequencies in a Map. 2. Sort unique keys by absolute value. 3. For each `x`, if `count[x] &gt; count[2x]`, return false; else `count[2x] -= count[x]`.
+How to Draw (Opt): Draw a sorted frequency table. Pick the first (smallest) number. Draw an arrow to its double. "Consume" the counts of both. Move to the next non-zero count.
+Opt Complexity Visuals: $O(N \log N)$ for sorting unique values, $O(N)$ for the greedy match.
+How to Draw Opt Complexity: Draw a horizontal array. Draw one arrow sweeping from left to right, with "tally" marks being erased in pairs.
+Mem Vis (BF): $O(N!)$ search space in memory.
+Mem Vis (Opt): $O(N)$ for the frequency map. Draw a two-column vertical table: [Value -&gt; Count].

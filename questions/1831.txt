@@ -1,0 +1,13 @@
+ID: 1831
+Problem Title: Maximum Transaction Each Day (SQL)
+Brute Force Method: Correlated subquery: For each row, calculate the max amount for its day and check if it matches.
+BF Complexity Visuals: Nested loop execution tree.
+How to Draw BF: Draw a table. For every row, draw a loop that scans the entire table again to find the max of that date. Mark $O(N²)$.
+Optimised Pattern: Window Function: RANK() or ALL operator.
+Opt Vis. Technique: Grouped partitions with rank labels.
+Dry Run (Opt): Partition table by Date. Sort by Amount descending. Label rows with rank. Select only those where rank = 1.
+How to Draw (Opt): Draw boxes around rows with the same date. Circle the row with the largest number in each box.
+Opt Complexity Visuals: Linear partition scan.
+How to Draw Opt Complexity: Draw a table divided into sections. Draw one arrow passing through each section once. Mark $O(N)$.
+Mem Vis (BF): Full table copies in nested recursion.
+Mem Vis (Opt): In-memory partitioned frames for the window function.

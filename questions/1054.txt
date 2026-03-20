@@ -1,0 +1,13 @@
+ID: 1054
+Problem Title: Distant Barcodes
+Brute Force Method: Generate all permutations and check each one to see if adjacent barcodes are identical. Return the first valid one.
+BF Complexity Visuals: An N! explosion of sequences, most failing the "no-neighbor" rule.
+How to Draw BF: Draw [1, 1, 1, 2, 2, 2]. List permutations until you find [1, 2, 1, 2, 1, 2]. Write $O(N!)$.
+Optimised Pattern: Greedy + Frequency Fill (Even/Odd Interleaving).
+Opt Vis. Technique: A "Zebra Stripe" filling pattern. We place the most frequent items in the "even" slots first to ensure they are separated.
+Dry Run (Opt): Count frequencies. Sort by frequency descending. Fill all even indices (0, 2, 4...) with the sorted barcodes. When even indices are full, fill all odd indices (1, 3, 5...).
+How to Draw (Opt): Draw N empty boxes. Sort numbers by count. Fill boxes 0, 2, 4... then 1, 3, 5... with the sorted numbers.
+Opt Complexity Visuals: Frequency count (O(N)) + Sorting (O(1) since barcode range is fixed) + Filling (O(N)).
+How to Draw Opt Complexity: Draw a frequency map and an array with a "jumping" pointer (i += 2). Write $O(N)$ Time.
+Mem Vis (BF): $O(N!)$ space for permutations.
+Mem Vis (Opt): A frequency map and the result array. $O(N)$ space.

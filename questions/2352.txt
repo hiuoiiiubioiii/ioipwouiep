@@ -1,0 +1,13 @@
+ID: 2352
+Problem Title: Equal Row and Column Pairs
+Brute Force Method: Nested loops: For every row, iterate through every column and compare every single element (row[i] == col[i]) to check for equality.
+BF Complexity Visuals: Cubic Matrix Comparison (O(N^3))
+How to Draw BF: Draw a grid. Draw a horizontal box (row) and a vertical box (column). Draw tiny arrows comparing every cell inside the intersection and the rest of the boxes.
+Optimised Pattern: Hash Map (Stringified Rows)
+Opt Vis. Technique: Frequency Key Matching
+Dry Run (Opt): Convert each row into a string/tuple and store its frequency in a Hash Map. Then, iterate through each column, convert it to a string/tuple, and add the frequency from the Map to your total.
+How to Draw (Opt): Draw a grid. Next to it, draw a "Row Dictionary." For each row, write its pattern and how many times it appeared. Then, look at each column and check the dictionary. If the column pattern is in the dictionary, add the count to your score.
+Opt Complexity Visuals: Linear Matrix Scan (O(N^2))
+How to Draw Opt Complexity: Draw two separate passes: one vertical (to build the map) and one horizontal (to check columns). No nested element-by-element re-scans.
+Mem Vis (BF): Draw thousands of temporary coordinate variables for the triple nested loop.
+Mem Vis (Opt): Draw a Hash Map where keys are Row Tuples and values are Integers (counts).

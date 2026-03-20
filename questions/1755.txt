@@ -1,0 +1,13 @@
+ID: 1755
+Problem Title: Closest Subsequence Sum
+Brute Force Method: Generate every possible subset sum of the array (2^N combinations) and find the one closest to the target.
+BF Complexity Visuals: Full Power Set Expansion.
+How to Draw BF: Draw N nodes. Each node splits into "Include" or "Exclude". Total 2^N leaves. For N=40, this is 1 trillion.
+Optimised Pattern: Meet-in-the-Middle + Two Pointers.
+Opt Vis. Technique: Half-Divide &amp; Conquer.
+Dry Run (Opt): Split array into two halves (20 elements each). Generate all sums for both (2^{20} \approx 10^6 each). Sort one. Use Two Pointers/Binary Search to find pairs `(sum1 + sum2)` closest to target.
+How to Draw (Opt): Draw two smaller trees (2^20 each). List their results. Draw two sorted lists side-by-side with pointers at opposite ends moving toward the target sum.
+Opt Complexity Visuals: Exponential Reduction.
+How to Draw Opt Complexity: Draw $O(2^{N/2} \cdot N)$. Label it as the "Bridge" between brute force and impossible.
+Mem Vis (BF): Variable for min difference.
+Mem Vis (Opt): Two arrays of size 2^{N/2}. $O(2^N/2)$ space.

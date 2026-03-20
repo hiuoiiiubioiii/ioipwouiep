@@ -1,0 +1,13 @@
+ID: 756
+Problem Title: Pyramid Transition Matrix
+Brute Force Method: Try every possible allowed triple for every position in every row recursively.
+BF Complexity Visuals: State Space Explosion Tree
+How to Draw BF: Draw a pyramid. At each block, branch out arrows for every possible color match. $O(A^N)$ where A is alphabet.
+Optimised Pattern: Backtracking with Memoization (Bitmasking)
+Opt Vis. Technique: Bottom-Up Level Validation
+Dry Run (Opt): Process row by row. For a row, find all valid next-rows. Cache the results of a row string to avoid re-calculating identical patterns.
+How to Draw (Opt): Draw a pyramid. Highlight one row. Draw a "Cache" box next to it. If the row pattern repeats elsewhere, draw an arrow back to the box.
+Opt Complexity Visuals: Pruned Search Tree
+How to Draw Opt Complexity: Draw a tree where many branches are cut off (X) early due to the cache. $O(A^N)$ worst case, but average is much lower.
+Mem Vis (BF): Infinite recursion stack.
+Mem Vis (Opt): HashMap for memoization of row strings (O(A^N)).

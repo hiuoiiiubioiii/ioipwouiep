@@ -1,0 +1,13 @@
+ID: 1214
+Problem Title: Two Sum BSTs
+Brute Force Method: For every single node in Tree 1, perform a full recursive search (or binary search) across Tree 2 to look for the complement value (target - node.val).
+BF Complexity Visuals: Tree-to-Tree Cartesian Search
+How to Draw BF: Draw Tree 1. Point to the root. Draw a long arrow to the root of Tree 2, showing a full traversal. Move to a leaf in Tree 1, draw another arrow to Tree 2 showing another full traversal. Write $O(N \cdot M)$.
+Optimised Pattern: Inorder Traversal to Hash Set (or Two Pointers on Arrays)
+Opt Vis. Technique: Tree Flattening / Bucket Filtering
+Dry Run (Opt): Traverse Tree 1 and dump all its values into a magic bucket (Hash Set). Then, traverse Tree 2. At each node, ask the bucket: "Do you contain (target - my_value)?". If yes, return true.
+How to Draw (Opt): Draw a Tree. Draw arrows pulling all its numbers out and dropping them into a circular 'Set'. Draw the second Tree. Draw arrows from its nodes pointing into the Set, carrying the math equation `(Target - Val)`.
+Opt Complexity Visuals: Sequential Tree Processing
+How to Draw Opt Complexity: Draw Tree A being scanned once. Next to it, draw Tree B being scanned once. Write $O(N + M)$ indicating two independent linear time operations.
+Mem Vis (BF): Draw deep recursive call stacks running concurrently, potentially up to `O(Height1 + Height2)` space but highly inefficient in time.
+Mem Vis (Opt): Draw a Hash Set (a circle containing numbers) taking up $O(N)$ space to store Tree 1's values, completely eliminating the need to re-traverse it.

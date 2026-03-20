@@ -1,0 +1,13 @@
+ID: 2394
+Problem Title: Employees With Deductions (SQL Premium)
+Brute Force Method: (Conceptual) For every employee, manually sum their work hours, then manually calculate the "ceiling" for every single log entry to see if they met the quota.
+BF Complexity Visuals: Nested Logging Scans
+How to Draw BF: Draw an Employee list. For each, draw an arrow to the `Logs` table, scan all entries, perform a `CEIL` math check on each, and sum them.
+Optimised Pattern: CEIL + SUM + LEFT JOIN
+Opt Vis. Technique: Relational Aggregation Filter
+Dry Run (Opt): Select employees from the `Employees` table. `LEFT JOIN` with `Logs`. Calculate `SUM(CEIL(duration / 60))` per employee. Filter those whose sum is less than their `needed_hours`.
+How to Draw (Opt): Draw two tables. Join them by ID. In the "Logs" part, round every minute count up to the next hour. Group by Name and compare the total hours to their contract.
+Opt Complexity Visuals: Single Pass Aggregation
+How to Draw Opt Complexity: Draw a data stream entering a "Rounding" block, then a "Summing" block, then a "Comparison" filter.
+Mem Vis (BF): Draw multiple temporary tables for each employee's hour rounding.
+Mem Vis (Opt): Draw one Result Set stream with `employee_id`.

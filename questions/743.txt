@@ -1,0 +1,13 @@
+ID: 743
+Problem Title: Network Delay Time
+Brute Force Method: DFS to explore every single possible path from K to every other node, tracking the minimum time.
+BF Complexity Visuals: Exponential Path Exploration
+How to Draw BF: Draw nodes and edges. Draw arrows spinning through every possible cycle and path. $O(V^V)$.
+Optimised Pattern: Dijkstra’s Algorithm (Min-Priority Queue)
+Opt Vis. Technique: Expanding Frontier / Dijkstra's Reach
+Dry Run (Opt): Maintain `dist` map. Use a Min-Heap of `(time, node)`. Always expand the node with the shortest known time. Update neighbors if a shorter path is found.
+How to Draw (Opt): Draw nodes with labels "∞". Start at K with "0". Circle the smallest neighbor, update its "∞" to a number, and repeat like a spreading stain.
+Opt Complexity Visuals: Logarithmic Expansion Curve
+How to Draw Opt Complexity: Draw a graph where edges are processed. Write E \log V next to the priority queue operations.
+Mem Vis (BF): Set of all path strings.
+Mem Vis (Opt): Min-Heap array and a distance dictionary (O(V + E)).

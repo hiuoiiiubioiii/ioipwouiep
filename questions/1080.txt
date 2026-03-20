@@ -1,0 +1,13 @@
+ID: 1080
+Problem Title: Insufficient Nodes in Root to Leaf Paths
+Brute Force Method: Generate every possible path from root to leaf. For each path, check if the sum is &lt; limit. If all paths passing through a node are "insufficient," delete the node.
+BF Complexity Visuals: A tree where every node is covered in countless redundant path-strings.
+How to Draw BF: Draw a tree. List every path sum. If a node belongs only to sums &lt; limit, erase it. Write $O(N \cdot H)$ or $O(N^2)$.
+Optimised Pattern: Post-order Traversal (Bottom-Up Pruning).
+Opt Vis. Technique: A "Path Validator". Nodes only stay if they can report at least one successful leaf-connection back to their parent.
+Dry Run (Opt): DFS down the tree. Subtract node value from the limit as you go. At leaf, if `limit &gt; 0`, it's insufficient (return null). Going up, if both children of a node are null, this node becomes null too.
+How to Draw (Opt): Draw the tree. Write the current 'remaining limit' next to nodes. Start from bottom: if a leaf sum is bad, cross it out. If a parent has no children left, cross it out too.
+Opt Complexity Visuals: Single pass through the tree.
+How to Draw Opt Complexity: Draw a tree with a single DFS "snake" path. Write Time: $O(N)$.
+Mem Vis (BF): Huge list of path-to-sum mappings stored in memory.
+Mem Vis (Opt): $O(H)$ recursion stack space.

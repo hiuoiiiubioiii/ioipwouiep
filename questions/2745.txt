@@ -1,0 +1,13 @@
+ID: 2745
+Problem Title: Construct the Longest New String
+Brute Force Method: Recursive Backtracking: Try appending "AA", "BB", or "AB" at each step while respecting the "no AAA/BBB" constraints. Explore all valid paths. $O(3^N)$.
+BF Complexity Visuals: Branching Decision Tree
+How to Draw BF: Draw a tree where each node branches into three possibilities. Cross out branches that violate constraints. Depth is the total number of blocks.
+Optimised Pattern: Recursive Call Stack (Visualizing depth-first search for the longest possible valid string path).
+Opt Vis. Technique: Greedy Mathematical Observation
+Dry Run (Opt): Pattern Balancing Tally
+How to Draw (Opt): Observe that "AB" can always be placed next to itself. "AA" and "BB" must alternate. The longest sequence of "AA" and "BB" is 2 * min(x, y) + (x != y ? 1 : 0). Add all z ("AB") blocks. Multiply total blocks by 2.
+Opt Complexity Visuals: Draw three piles of blocks (x, y, z). Pair up one 'x' with one 'y' repeatedly. If one is left over, add it. Then stack all 'z's on top. Count the height.
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single formula box. Write $O(1)$ because it uses a direct math calculation.
+Mem Vis (Opt): Zero Extra Space (Draw a single integer result variable).

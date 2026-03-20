@@ -1,0 +1,13 @@
+ID: 2635
+Problem Title: Apply Transform Over Each Element (JS)
+Brute Force Method: Modifying the original array in place (mutating input).
+BF Complexity Visuals: Destructive Update
+How to Draw BF: Draw an array. Scratch out old values and write new ones. Data loss occurs if original is needed later.
+Optimised Pattern: Iterative Mapping (New Array)
+Opt Vis. Technique: Transformation Pipeline
+Dry Run (Opt): Create new array. For each index `i`, calculate `fn(arr[i], i)` and store at `res[i]`.
+How to Draw (Opt): Draw an input array. Above it, draw the "Transformation Function". Draw arrows up, through the function, and into a new array.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a single pass arrow over the array, $O(N)$.
+Mem Vis (BF): Zero extra space (if modifying input)
+Mem Vis (Opt): $O(N)$ space for the new resulting array.

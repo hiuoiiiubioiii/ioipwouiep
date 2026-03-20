@@ -1,0 +1,13 @@
+ID: 129
+Problem Title: Sum Root to Leaf Numbers
+Brute Force Method: DFS to find all paths. Store paths as strings (e.g., "123"). Convert strings to integers and sum them.
+BF Complexity Visuals: Strings being concatenated and converted, adding $O(H)$ overhead to every path found.
+How to Draw BF: Draw the tree. Beside each leaf, write out the full string path, then draw a "plus" sign between them.
+Optimised Pattern: DFS with Arithmetic Accumulation.
+Opt Vis. Technique: A growing snowball. As you roll down the tree, the number shifts left (multiplies by 10) and adds the current node's value.
+Dry Run (Opt): Pass a `currentSum` to the child. `newSum = currentSum * 10 + node.val`. If leaf, return `newSum`. Else return `left_sum + right_sum`.
+How to Draw (Opt): Draw the tree. Write the running number *inside* each node as you go down (e.g., root is 1, left child is 12, its child is 123).
+Opt Complexity Visuals: $O(N)$ single-pass traversal where each node is visited once and its value is updated in constant time.
+How to Draw Opt Complexity: Draw a standard DFS path. Cross out each node once it passes its accumulated integer to its parent.
+Mem Vis (BF): A pool of temporary string objects being created and destroyed in memory.
+Mem Vis (Opt): Visualize a single integer being passed down the call stack frames $O(H)$. Zero heap allocation for paths.

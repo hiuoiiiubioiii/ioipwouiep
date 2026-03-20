@@ -1,0 +1,13 @@
+ID: 2263
+Problem Title: Make Array Non-decreasing or Non-increasing
+Brute Force Method: Recursive Cost MinimizationAt each index, try changing the number to every possible value within the range [min, max] of the array and recurse to see if the rest can be made non-decreasing.
+BF Complexity Visuals: Branching Value Assignments
+How to Draw BF: Draw an array element. Branch out into 100 different possible values it could become. Repeat for every element. Show the exponential $O(\text{Range}^N)$ explosion.
+Optimised Pattern: Priority Queue (Slope Trick)
+Opt Vis. Technique: Max-Heap Gradient Balancing
+Dry Run (Opt): To make an array non-decreasing, maintain a Max-Heap. For each element `x`, push it to the heap. If `x &lt; heap.top()`, the cost is `heap.top() - x`. Pop the top and push `x` twice to maintain the optimal "slope."
+How to Draw (Opt): Draw a Max-Heap. Push numbers in. When a smaller number arrives, "squash" the difference by popping the largest and adding the difference to a `total_cost` bucket. Repeat for the reversed array.
+Opt Complexity Visuals: Linear Heap Processing
+How to Draw Opt Complexity: Draw an $O(N)$ timeline for the array pass. Inside, draw an $O(\log N)$ heap operation. Total complexity: $O(N \log N)$.
+Mem Vis (BF): A massive 2D DP table `dp[index][value]` if using standard DP (O(N * Range)).
+Mem Vis (Opt): A Priority Queue (Max-Heap) containing at most N elements (O(N) space).

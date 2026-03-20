@@ -1,0 +1,13 @@
+ID: 3111
+Problem Title: Minimum Rectangles to Cover Points
+Brute Force Method: Iterate all subsets of points to find valid bounds, or check every point against every other point. **O(N^2)** or exponential.
+BF Complexity Visuals: Overlapping 2D bounding boxes scattered chaotically across a coordinate plane.
+How to Draw BF: Draw random dots on a 2D grid. Attempt to draw boxes covering them randomly, crossing out redundant overlapping boxes.
+Optimised Pattern: 1D Greedy / Sorting
+Opt Vis. Technique: 1D Number Line Sweeping (Ruler Method)
+Dry Run (Opt): Ignore Y-coordinates entirely. Sort X-coords. Place a "ruler" of length W starting at the first point. Skip all points under the ruler. Repeat.
+How to Draw (Opt): Draw a horizontal line. Mark dots for X-coordinates. Use your thumb to represent width W, sliding left to right and covering dots.
+Opt Complexity Visuals: A sorting funnel followed by a linear timeline sweep.
+How to Draw Opt Complexity: Draw an **O(N log N)** branching tree for the sort, then a straight horizontal line **O(N)** skipping chunks.
+Mem Vis (BF): Large matrix holding combinations of point subsets.
+Mem Vis (Opt): Two scalar registers: `rect_count` and `current_limit` (the W boundary). **O(1)** aux space.

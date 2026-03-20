@@ -1,0 +1,13 @@
+ID: 2761
+Problem Title: Prime Pairs With Target Sum
+Brute Force Method: Check every number up to N for primality $O(√N)$, then check if n - i is prime. $O(N \cdot √N)$.
+BF Complexity Visuals: Repeated Prime Testing
+How to Draw BF: Draw the number line. For every single number, draw a mini-loop calculating its divisors. Redundant checks everywhere.
+Optimised Pattern: Sieve of Eratosthenes + Two Pointers
+Opt Vis. Technique: The Sieve &amp; Meet-in-Middle
+Dry Run (Opt): 1. Precompute primes up to N using the Sieve in $O(N \log \log N)$. 2. Iterate i from 2 to n/2. If `isPrime[i]` and `isPrime[n-i]` are both true, it's a valid pair.
+How to Draw (Opt): Draw a grid of numbers 1 to N. Cross out multiples of 2, 3, 5. Then, put a left finger on 2 and right finger on N-2. If both fingers are on uncrossed numbers, record them. Slide fingers inward.
+Opt Complexity Visuals: Sieve Precomputation $O(N \log \log N)$
+How to Draw Opt Complexity: Draw a grid with crossing-out lines, followed by a single linear scan up to N/2.
+Mem Vis (BF): Calling primality tests without caching.
+Mem Vis (Opt): A boolean array of size N. $O(N)$ space.

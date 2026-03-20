@@ -1,0 +1,13 @@
+ID: 3138
+Problem Title: Minimum Length of Anagram Concatenation
+Brute Force Method: Try every possible length L from 1 to N. Check if every L-length block is an anagram of the first. $O(N x \text{Divisors} x 26)$
+BF Complexity Visuals: Branching divisor tree checking block symmetry.
+How to Draw BF: Write the string. Try splitting into blocks of size 1, 2, 3... For each split, count characters in every block and compare.
+Optimised Pattern: Divisor Iteration + Freq Map Comparison
+Opt Vis. Technique: Synchronized Histogram Overlay
+Dry Run (Opt): Iterate through divisors d of N. For each d, compare the 26-char frequency counts of all N/d blocks. Stop at the first valid d.
+How to Draw (Opt): Draw string blocks. Below each, draw a tiny 26-slot bar chart. If all bar charts in a row match, you found the answer.
+Opt Complexity Visuals: Multi-pass filter on divisors.
+How to Draw Opt Complexity: Draw a timeline. Below it, draw a few "checkpoints" only at divisor indices. $O(\text{Divisors} x N)$.
+Mem Vis (BF): Storing every possible permutation of the string for comparison.
+Mem Vis (Opt): One or two arrays of size 26 for frequency counting. $O(1)$ auxiliary (ignoring alphabet size).

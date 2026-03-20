@@ -1,0 +1,13 @@
+ID: 2422
+Problem Title: Merge Operations to Make Array Palindrome
+Brute Force Method: Recursive backtracking: in each step, either merge the first two elements, the last two, or both. Check if the resulting array is a palindrome.
+BF Complexity Visuals: Exponential Merge Tree
+How to Draw BF: Draw a root array. Branch into "Merge Left" or "Merge Right". Label $O(2^N)$.
+Optimised Pattern: Two Pointers (Greedy)
+Opt Vis. Technique: Inward Squeeze Collapsing
+Dry Run (Opt): Start `L` at 0 and `R` at N-1. If `arr[L] == arr[R]`, move both inward. If `arr[L] &lt; arr[R]`, merge `arr[L]` with `arr[L+1]`. Else, merge `arr[R]` with `arr[R-1]`.
+How to Draw (Opt): Draw two fingers at the ends of the array. If the numbers are unequal, draw a circle around the smaller one and its neighbor to "glue" them together.
+Opt Complexity Visuals: Linear Converging Scan
+How to Draw Opt Complexity: Draw one line from both ends meeting in the middle. Label $O(N)$ Time.
+Mem Vis (BF): Stack depth $O(N)$.
+Mem Vis (Opt): Two integer pointers. $O(1)$ Space.

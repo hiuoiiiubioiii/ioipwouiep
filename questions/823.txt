@@ -1,0 +1,13 @@
+ID: 823
+Problem Title: Binary Trees With Factors
+Brute Force Method: Recursively try to build every possible tree. For each number x, check every combination of other numbers to see if their product is x.
+BF Complexity Visuals: Exhaustive Tree Construction. $O(\text{Exponential})$.
+How to Draw BF: Draw a number. Below it, draw all pairs that multiply to it. For each of those, draw their factors. The tree branches out wildly with many duplicate subproblems.
+Optimised Pattern: DP with Hash Map + Sorting.
+Opt Vis. Technique: Building a Pyramid from Bottom Up.
+Dry Run (Opt): Sort numbers. Smallest numbers are the base (1 tree each). For a larger number, look at its factors (which are already solved). Trees(x) = sum of (Trees(factor1) * Trees(factor2)) for all factor pairs.
+How to Draw (Opt): Draw numbers in ascending order. Draw arrows from smaller numbers pointing to their multiples. Accumulate products in a table.
+Opt Complexity Visuals: Nested Frequency Accumulation. $O(N^2)$ time.
+How to Draw Opt Complexity: Draw a Half-Matrix (Triangle). Each cell (i, j) represents checking if number j is a factor of number i.
+Mem Vis (BF): Infinite Recursion Memory: Draw a tree of calls that duplicates the same calculations thousands of times.
+Mem Vis (Opt): Hash Map: Draw a table with 'Number' in column 1 and 'Count of Trees' in column 2. $O(N)$ space.

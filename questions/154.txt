@@ -1,0 +1,13 @@
+ID: 154
+Problem Title: Find Minimum in Rotated Sorted Array II
+Brute Force Method: Linear scan (identical to Q153), as duplicates don't change the brute force cost.
+BF Complexity Visuals: A single $O(N)$ pass.
+How to Draw BF: Draw the array with duplicates. Draw the same finger scan as Q153.
+Optimised Pattern: Binary Search with Duplicate Handling (O(log N) average, $O(N)$ worst).
+Opt Vis. Technique: A "Foggy Search." When nums[mid] == nums[high], you can't tell which way to go, so you just "creep" inward by one step.
+Dry Run (Opt): Same as Q153, but add: if nums[mid] == nums[high]: high -= 1. This handles the ambiguity caused by duplicates.
+How to Draw (Opt): Draw an array like [2, 2, 2, 0, 2]. Show how L, M, and H are all the same, forcing the 'H' pointer to move just one step left.
+Opt Complexity Visuals: A graph that is $O(\log N)$ for most inputs but becomes $O(N)$ for arrays full of the same number.
+How to Draw Opt Complexity: Draw the binary tree, but show one branch "branching" into a sequential line for the worst-case scenario.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Visualize the same $O(1)$ pointers, but with more frequent "single-step" increments compared to "half-jumps."

@@ -1,0 +1,13 @@
+ID: 2462
+Problem Title: Total Cost to Hire K Workers
+Brute Force Method: For each hiring round, scan the first `c` and last `c` workers, find the minimum, remove them, and repeat `k` times.
+BF Complexity Visuals: N-Iteration Minimum Scan
+How to Draw BF: Draw an array. Circle the ends. Draw a scan arrow for each of the K rounds. Label $O(K \cdot N)$.
+Optimised Pattern: Two Min-Heaps (Priority Queues)
+Opt Vis. Technique: Double-Ended Priority Sifter
+Dry Run (Opt): Fill `leftHeap` with first `c` workers and `rightHeap` with last `c`. Compare roots. Pop the smaller, then pull the next available worker from the appropriate end.
+How to Draw (Opt): Draw two inverted trees (Heaps). Draw an array with two pointers moving toward the center. Show nodes moving from array to trees.
+Opt Complexity Visuals: K-Log-C Event Timeline
+How to Draw Opt Complexity: Draw a line of K events. Each event is a Heap op (Log C). Label $O(K \log C)$.
+Mem Vis (BF): Draw one result variable.
+Mem Vis (Opt): Draw two Min-Heaps of size C. $O(C)$ Space.

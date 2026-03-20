@@ -1,0 +1,13 @@
+ID: 1915
+Problem Title: Number of Wonderful Substrings
+Brute Force Method: Generate all possible substrings. For each one, count the character frequencies to check if at most one character is odd.
+BF Complexity Visuals: Nested Substring Bracketing
+How to Draw BF: Draw a string. Draw overlapping brackets underneath for every possible start and end index. Tally characters inside every bracket. $O(N^2)$ or $O(N^3)$.
+Optimised Pattern: Bitmasking + Prefix XOR + Frequency Hash Map
+Opt Vis. Technique: Bitmask State Toggling
+Dry Run (Opt): Represent the 10 letters (a-j) as a 10-bit binary number. Toggle bits via XOR as you iterate. Count how many times you've seen the current mask (or masks 1 flip away).
+How to Draw (Opt): Draw the string. Below each char, write a 10-bit number. Draw a running "XOR Mask" box that flips bits. Draw arrows from it to a Hash Map keeping count.
+Opt Complexity Visuals: Linear Scan with $O(1)$ Checks
+How to Draw Opt Complexity: Draw a timeline arrow. At each step, draw exactly 10 tiny checkmarks, showing the constant-time bit-flip checks. $O(N \cdot 10)$.
+Mem Vis (BF): Generating thousands of temporary string objects or frequency integer arrays.
+Mem Vis (Opt): A fixed-size integer array of length 1024 (representing 2^10 possible bitmasks), operating in $O(1)$ space.

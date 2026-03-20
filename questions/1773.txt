@@ -1,0 +1,13 @@
+ID: 1773
+Problem Title: Count Items Matching a Rule
+Brute Force Method: Loop through every item. Check if any property matches the rule using multiple IF-ELSE conditions or nested loops.
+BF Complexity Visuals: Item-by-Item Verification.
+How to Draw BF: Draw a spreadsheet. For each row, check the specific column requested. $O(N)$.
+Optimised Pattern: Index Mapping + Linear Scan.
+Opt Vis. Technique: The "Column Filter".
+Dry Run (Opt): Map `ruleKey` to index (0 for type, 1 for color, 2 for name). Iterate through items and check if `item[index] == ruleValue`.
+How to Draw (Opt): Draw a table. Highlight only the column mentioned in the `ruleKey`. Scan only that column.
+Opt Complexity Visuals: Single Pass Filtering.
+How to Draw Opt Complexity: Draw one vertical arrow down the target column. Label $O(N)$.
+Mem Vis (BF): None, just variables.
+Mem Vis (Opt): A single counter variable. $O(1)$ extra space.

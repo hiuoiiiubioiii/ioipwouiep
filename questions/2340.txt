@@ -1,0 +1,13 @@
+ID: 2340
+Problem Title: Minimum Adjacent Swaps to Make a Valid Array (Premium)
+Brute Force Method: Try every possible sequence of adjacent swaps until the smallest element is at index 0 and the largest is at index n-1, tracking the minimum steps.
+BF Complexity Visuals: Factorial Permutation Search (O(N!))
+How to Draw BF: Draw an array. Draw a web of branches where every branch represents one swap, leading to a new array state.
+Optimised Pattern: Greedy (Extreme Finding)
+Opt Vis. Technique: Two-Way Slide to Edges
+Dry Run (Opt): Find the index of the first occurrence of the minimum element and the last occurrence of the maximum element. The swaps needed = `min_idx + (n - 1 - max_idx)`. Subtract 1 if the min is to the right of the max (they cross).
+How to Draw (Opt): Draw an array. Circle the min and the max. Draw an arrow from min to the front and max to the back. Count the "steps" (indices) the arrows pass over.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw one horizontal timeline. Mark two points (min and max) and draw two straight lines to the boundaries.
+Mem Vis (BF): Draw a BFS queue holding all array permutations.
+Mem Vis (Opt): Draw two Integer variables (`min_idx`, `max_idx`) and two more for the values.

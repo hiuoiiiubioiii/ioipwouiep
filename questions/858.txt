@@ -1,0 +1,13 @@
+ID: 858
+Problem Title: Mirror Reflection
+Brute Force Method: Simulate the laser beam physics. Calculate the y-coordinate at every wall hit (x=0, x=p) until y is exactly 0 or p.
+BF Complexity Visuals: Point-by-Point Physics Simulation. $O(\\text{text}{\text{Intersections}})$.
+How to Draw BF: Draw a square. Draw a zig-zag line bouncing off walls. Track the coordinates manually until you hit a corner.
+Optimised Pattern: Mathematical Least Common Multiple (LCM).
+Opt Vis. Technique: The "Infinite Mirror Stack."
+Dry Run (Opt): Instead of bouncing the beam, imagine the room reflects upward infinitely. The beam is a straight line. It hits a corner when the total vertical distance (m \times q) equals the total horizontal distance (n \times p). Use GCD to simplify p and q.
+How to Draw (Opt): Draw a square. Above it, stack identical squares like a skyscraper. Draw one straight diagonal line from the bottom-left. See which floor and side it hits.
+Opt Complexity Visuals: Logarithmic GCD. $O(\log(\\text{min}(P, Q)$)).
+How to Draw Opt Complexity: Draw the Euclidean Algorithm steps (repeated subtraction or modulo). Very few steps needed.
+Mem Vis (BF): Simulation Variables: Draw several float boxes (x, y, dx, dy) that update millions of times.
+Mem Vis (Opt): $O(1)$ Space: Draw two integer variables P and Q.

@@ -1,0 +1,13 @@
+ID: 3307
+Problem Title: Find the K-th Character in String Game II
+Brute Force Method: Simulate the exact game rules: copy the string, apply operations, concatenate, until length hits K.
+BF Complexity Visuals: Exponential String Doubling
+How to Draw BF: Write the base string. Draw a line to the next string (twice as long). Repeat. Visually map the massive memory explosion to $O(K)$.
+Optimised Pattern: Recursion / Divide and Conquer
+Opt Vis. Technique: Binary Search Tree Shrinking
+Dry Run (Opt): Find the nearest power of 2 &gt;= K. Check if K falls in the first half or second half. If second, map K to its original position in the first half and apply the operation rule.
+How to Draw (Opt): Draw a long bar for length N. Cut it in half. Mark where K sits. If it's on the right, draw an arrow mapping it to the left half. Repeat until size is 1.
+Opt Complexity Visuals: Logarithmic Depth Bar
+How to Draw Opt Complexity: Draw a bar of length K. Halve it, then halve it again. Count the number of cuts to prove $O(\log K)$ time complexity.
+Mem Vis (BF): A continuously re-allocated string array that eats $O(K)$ memory.
+Mem Vis (Opt): A deep vertical stack of activation records (call stack) representing $O(\log K)$ space.

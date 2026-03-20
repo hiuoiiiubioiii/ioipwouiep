@@ -1,0 +1,13 @@
+ID: 1161
+Problem Title: Maximum Level Sum of a Binary Tree
+Brute Force Method: Recursive DFS. For every node, find its level, and then use another DFS or a global map to add its value to the sum of that level.
+BF Complexity Visuals: Scattered Multi-Scan Diagram
+How to Draw BF: Draw a tree. For every single node, draw a pointer going back to the root to calculate depth, then update a global table. $O(N \cdot H)$.
+Optimised Pattern: BFS (Queue-based Level Order)
+Opt Vis. Technique: Level-by-Level Slicing
+Dry Run (Opt): Use a queue. While queue not empty, get the current size (number of nodes in this level). Sum them up. Track the max sum and its level index.
+How to Draw (Opt): Draw a tree. Draw horizontal dashed lines separating each level. Write the "Sum" at the end of each dashed line. Circle the maximum sum.
+Opt Complexity Visuals: Single Traversal $O(N)$
+How to Draw Opt Complexity: Draw a single continuous line passing through every node once in a horizontal wave pattern.
+Mem Vis (BF): Large hash map of level sums
+Mem Vis (Opt): Queue holding max W (max width of tree) nodes. Draw a horizontal buffer.

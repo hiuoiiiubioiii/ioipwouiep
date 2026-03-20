@@ -1,0 +1,13 @@
+ID: 2018
+Problem Title: Check if Word Can Be Placed In Crossword
+Brute Force Method: For every single cell, try fitting the word in all 4 directions, backing out (backtracking) if a block or mismatch is hit.
+BF Complexity Visuals: 4-Way Spiderweb Search
+How to Draw BF: Draw a grid. From every single empty cell, draw 4 arrows expanding outward. Highly redundant checks.
+Optimised Pattern: String Splitting (by '#') + Segment Matching
+Opt Vis. Technique: Window Overlay Template Matching
+Dry Run (Opt): Extract every valid vertical/horizontal segment (bounded by '#' or edges). Reverse it to check both directions. Overlay the target word to see if characters match perfectly.
+How to Draw (Opt): Draw the grid. Highlight a gap between two '#' blocks. Below it, write the target word forwards, then backwards. Connect matching letters with straight lines.
+Opt Complexity Visuals: Linear Scan of Segments
+How to Draw Opt Complexity: Draw the grid as flattened 1D strips. Slide the target word over the strips. Time $O(M\cdot N)$ to scan the matrix.
+Mem Vis (BF): Deep recursive stack maintaining current cell `(r, c)` and current character index.
+Mem Vis (Opt): A temporary string buffer to hold the current row/column segment being checked.

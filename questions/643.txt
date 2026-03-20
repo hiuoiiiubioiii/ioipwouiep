@@ -1,0 +1,13 @@
+ID: 643
+Problem Title: Maximum Average Subarray I
+Brute Force Method: Nested loops: For every index `i`, calculate the sum of the next `k` elements, then find the max.
+BF Complexity Visuals: Overlapping "Searchlight" scans.
+How to Draw BF: Draw an array. Draw a bracket of length K. Move the bracket one step. Re-calculate everything inside the bracket. $O(N \cdot K)$.
+Optimised Pattern: Sliding Window (Fixed Size).
+Opt Vis. Technique: Rolling Sum / Ribbon Slide.
+Dry Run (Opt): Calculate sum of first `k` elements. To move the window, subtract the element leaving the window and add the new element entering. Update `maxSum` if current sum is higher.
+How to Draw (Opt): Draw an array. Draw a bracket. Draw an arrow "ejecting" the leftmost number and an arrow "injecting" the rightmost number.
+Opt Complexity Visuals: Single pass linear scan.
+How to Draw Opt Complexity: Draw a straight arrow spanning N. Write $O(N)$.
+Mem Vis (BF): Draw many temporary "sum" variables created and discarded.
+Mem Vis (Opt): Draw one `currentSum` variable and one `maxSum` variable. $O(1)$ space.

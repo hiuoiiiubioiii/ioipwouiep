@@ -1,0 +1,13 @@
+ID: 456
+Problem Title: 132 Pattern
+Brute Force Method: Triple Loop Check every triplet (i, j, k) where i &lt; j &lt; k to see if nums[i] &lt; nums[k] &lt; nums[j].
+BF Complexity Visuals: Nested Cubes
+How to Draw BF: Draw three nested loops. Label the volume as $O(N^3)$.
+Optimised Pattern: Monotonic Stack (Right-to-Left) Keep a stack of potential "2" values (middle magnitude) and track the largest "3" value found so far.
+Opt Vis. Technique: Cliff and Valley Map
+Dry Run (Opt): Visualize the array as a mountain range. You are looking for a peak ("3") that has a slightly lower hill ("2") to its right and a deep valley ("1") to its left.
+How to Draw (Opt): Draw a line graph of the numbers. Use a vertical "Stack" bucket. As you scan left, pop smaller values to find the "next greater" value.
+Opt Complexity Visuals: Single Scan Line
+How to Draw Opt Complexity: Draw one arrow scanning the array once. Each element enters and leaves the stack max once. $O(N)$.
+Mem Vis (BF): None Constant space beyond logic.
+Mem Vis (Opt): Monotonic Stack Draw a vertical stack of numbers that always stays in sorted order. $O(N)$.

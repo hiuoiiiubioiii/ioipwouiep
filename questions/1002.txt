@@ -1,0 +1,13 @@
+ID: 1002
+Problem Title: Find Common Characters
+Brute Force Method: Pick the first word. For each of its characters, check if it exists in every other word. If yes, remove it from all words and add to the result.
+BF Complexity Visuals: $O(N \cdot L^2)$. Repeatedly searching and modifying strings (which is expensive).
+How to Draw BF: Draw three words. Pick 'a' from word 1. Hunt for 'a' in word 2 and 3. Erase them with a pencil. Repeat. The paper is messy with erasures.
+Optimised Pattern: Frequency Intersection (Min-Tally)
+Opt Vis. Technique: "The Lowest Common Denominator." Count the characters in the first word. For every subsequent word, update your count to be the *minimum* of what you currently have and what the new word has.
+Dry Run (Opt): 1. `minFreq` = 26-slot array for word[0]. 2. For word in words[1:]: get `currFreq`. For `i` in 0..25: `minFreq[i] = min(minFreq[i], currFreq[i])`.
+How to Draw (Opt): Draw a 26-slot "Master Frequency" bar chart. For each new word, "squash" the bars down so they never exceed the height of the current word's bars.
+Opt Complexity Visuals: $O(N \cdot L)$. You look at every character in every word exactly once.
+How to Draw Opt Complexity: Draw a vertical stack of 26-slot arrays. Draw an arrow pointing down through each slot, taking the `min` value to the next row.
+Mem Vis (BF): $O(N \cdot L)$ for storing modified versions of the words.
+Mem Vis (Opt): $O(1)$ extra space (fixed 26-size arrays). Draw two rows of 26 boxes: `Master` and `Current`.

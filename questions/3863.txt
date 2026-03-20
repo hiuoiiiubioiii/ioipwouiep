@@ -1,0 +1,13 @@
+ID: 3863
+Problem Title: Minimum Operations to Sort a String (Med.)
+Brute Force Method: BFS on States: Treat the string as a node in a graph. Each operation is an edge to a new string. Search for the shortest path to the sorted string.
+BF Complexity Visuals: An massive state-space explosion (N! possible strings).
+How to Draw BF: Draw "CBA". Draw arrows to "BCA", "CAB", etc. Continue until you reach "ABC". Write $O(N!)$.
+Optimised Pattern: Cycle Decomposition (Permutation Theory).
+Opt Vis. Technique: A "Link-and-Swap" map where you count how many "closed loops" exist in the current arrangement versus the sorted one.
+Dry Run (Opt): 1. Create a sorted version of the string. 2. Map current characters to their target positions. 3. Count cycles (e.g., A is where B should be, B is where A should be = 1 cycle). Min swaps = N - number of cycles.
+How to Draw (Opt): Draw the current string above the sorted string. Draw arrows from each top letter to its matching letter below. Count the independent "loops" formed by arrows.
+Opt Complexity Visuals: Linear mapping and cycle counting.
+How to Draw Opt Complexity: Draw a line of N elements. Write "Map Positions: $O(N)$". Write "Count Cycles: $O(N)$". Total: $O(N)$.
+Mem Vis (BF): Storing all N! permutations in a Queue.
+Mem Vis (Opt): $O(N)$ space for a visited array to track which elements have been processed in a cycle.

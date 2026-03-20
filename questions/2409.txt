@@ -1,0 +1,13 @@
+ID: 2409
+Problem Title: Count Days Spent Together
+Brute Force Method: Iterate day-by-day from Jan 1 to Dec 31. For each day, check if it falls within both Alice's and Bob's date ranges.
+BF Complexity Visuals: Calendar Tick-Marks
+How to Draw BF: Draw a 365-cell grid. Put a checkmark in every cell that satisfies the condition. Label $O(365)$ or $O(\text{Days in Year})$.
+Optimised Pattern: Math / Line Intersection (Convert MMDD to Day of Year Integer)
+Opt Vis. Technique: Overlapping 1D Segments
+Dry Run (Opt): Convert dates to integers (1-365). Find the max of their start dates, and the min of their end dates. Subtract start from end + 1.
+How to Draw (Opt): Draw a number line. Draw a blue line for Alice's dates and a red line for Bob's dates below it. Shade the region where they vertically overlap.
+Opt Complexity Visuals: Constant Time $O(1)$ Target
+How to Draw Opt Complexity: Draw four variables merging into a single calculation box. Label $O(1)$ Time.
+Mem Vis (BF): Draw an array of size 365 (if precomputing days of months).
+Mem Vis (Opt): Draw just 4 integer boxes in memory. $O(1)$ space.

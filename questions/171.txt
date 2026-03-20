@@ -1,0 +1,13 @@
+ID: 171
+Problem Title: Excel Sheet Column Number
+Brute Force Method: Iterate through the string from right to left, manually calculating 26^0, 26^1, 26^2... using a power function for every character.
+BF Complexity Visuals: A "Weighty Digit" diagram where each letter has a floating exponent block above it, showing redundant power calculations.
+How to Draw BF: Write "AB". Draw an arrow from 'B' to 2 x 26^0 and 'A' to 1 x 26^1. Show the power function calculation steps separately.
+Optimised Pattern: Polynomial Rolling Sum (Base-26 conversion).
+Opt Vis. Technique: An "Accumulator Tank." You start with 0, multiply the current total by 26 to "shift" it, and add the new character's value.
+Dry Run (Opt): Initialize result = 0. For each char c: result = result * 26 + (c - 'A' + 1).
+How to Draw (Opt): Draw a single box labeled 'Result'. As you read 'A', 'B', 'C', update the box: 0 to 1, 1 to (1 x 26 + 2) = 28, etc.
+Opt Complexity Visuals: $O(N)$ linear time where N is string length. One multiplication and one addition per char.
+How to Draw Opt Complexity: Draw a single horizontal arrow through the string. Mark each char with a single dot to prove a single pass.
+Mem Vis (BF): Stacking multiple calls of a power function $O(N)$ or using large intermediate storage for powers.
+Mem Vis (Opt): A single integer variable in $O(1)$ stack memory.

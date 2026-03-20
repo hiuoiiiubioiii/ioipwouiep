@@ -1,0 +1,13 @@
+ID: 3400
+Problem Title: Maximum Number of Matching Indices After Right Shifts
+Brute Force Method: Physically shift the second array right by 1, compare all elements. Shift again, compare. Repeat N times. $O(N^2)$.
+BF Complexity Visuals: Quadratic Array Spinning
+How to Draw BF: Draw two arrays. Compare them. Rotate the bottom one. Compare them all again.
+Optimised Pattern: KMP / String Matching (or $O(N^2)$ if constraints allow)
+Opt Vis. Technique: The Offset Frequency Counter
+Dry Run (Opt): If constraints are small, brute force is fine. If large, note that an element `A[i]` matches `B[j]` if `B` is shifted by `(j - i + N) % N`. Calculate this required shift offset for every matching pair of values and find the most frequent offset.
+How to Draw (Opt): Draw array A and B. For a '5' at A[2] and a '5' at B[5], the shift needed is (5 - 2) = 3. Toss a coin into the "Shift by 3" bucket. Do this for all matching values. The heaviest bucket is the answer.
+Opt Complexity Visuals: Linear Map / Sorting $O(N)$
+How to Draw Opt Complexity: Draw a single pass mapping values to indices, then counting offset frequencies.
+Mem Vis (BF): Creating N physical copies of the shifted array.
+Mem Vis (Opt): A frequency map of required shifts. $O(N)$ space.

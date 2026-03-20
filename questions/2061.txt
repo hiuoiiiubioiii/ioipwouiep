@@ -1,0 +1,13 @@
+ID: 2061
+Problem Title: Number of Spaces Cleaned by Robot
+Brute Force Method: Simulate the robot's movement step by step. If it hits a wall or obstacle, turn 90 degrees. Keep going until an arbitrary time limit.
+BF Complexity Visuals: Infinite Simulation Path
+How to Draw BF: Draw a grid. Draw a line for the robot's path. Without a cycle-detection rule, the line could loop forever in your drawing. $O(\text{Infinity})$.
+Optimised Pattern: Simulation + 3D State Tracking (r, c, direction)
+Opt Vis. Technique: State-Space Grid Overlay
+Dry Run (Opt): Move the robot according to rules. Use a boolean 3D array `visited[rows][cols][4]` to track if the robot has been at `(r, c)` facing the same direction. Stop if a state repeats.
+How to Draw (Opt): Draw the grid. As the robot cleans a cell, shade it. On the side, maintain a "State Log": `(0,0,East) -&gt; (0,1,East)`. If you see a log entry repeat, stop.
+Opt Complexity Visuals: Bounded Grid Scan
+How to Draw Opt Complexity: Draw the grid. Since there are only `R*C*4` possible states, the robot eventually stops. Time $O(R \cdot C)$.
+Mem Vis (BF): Storing every coordinate in a massive list for comparison.
+Mem Vis (Opt): A 3D boolean array `visited[R][C][4]` and a 2D array for cleaned cells. Space $O(R \cdot C)$.

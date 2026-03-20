@@ -1,0 +1,13 @@
+ID: 1437
+Problem Title: Check If All 1's Are at Least Length K Places Away
+Brute Force Method: Nested Loops. For every '1' found at index `i`, run a loop from `i+1` up to `i+k` to ensure no other '1's exist in that range.
+BF Complexity Visuals: Sliding Fixed-Range Scan
+How to Draw BF: Draw an array. At every '1', draw a bracket of size K. If another '1' falls inside the bracket, mark invalid. Label $O(N \cdot K)$.
+Optimised Pattern: Single-Pass Pointer Distance
+Opt Vis. Technique: Previous Index Tracking
+Dry Run (Opt): Iterate once. Keep a variable `last_pos`. When you hit a '1', check if `current_index - last_pos - 1 &lt; k`. Update `last_pos` to `current_index`.
+How to Draw (Opt): Draw the array. Place a marker at the first '1'. As you move to the next '1', draw a bridge between them and count the empty slots. If bridge &lt; K, fail.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw a single arrow left-to-right. Label $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A single integer variable `last_pos`. Space $O(1)$.

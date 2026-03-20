@@ -1,0 +1,13 @@
+ID: 2780
+Problem Title: Minimum Index of a Valid Split
+Brute Force Method: For every index i, split the array. Find the dominant element (mode) for both subarrays and check if it's the same and satisfies the frequency condition. $O(N²)$.
+BF Complexity Visuals: Nested Frequency Counting
+How to Draw BF: Draw an array. Draw a vertical line moving from index 0 to N. At each stop, redraw two frequency tables for the left and right sides. Visual area is $O(N²)$.
+Optimised Pattern: Dual Frequency Maps (Visualizing two HashMaps being fully rebuilt for every possible split point).
+Opt Vis. Technique: Boyer-Moore Voting + Prefix Frequency
+Dry Run (Opt): Global-to-Local Frequency Mapping
+How to Draw (Opt): First, find the dominant element of the whole array (only one can exist). Then, iterate once more, keeping a running count x of that element. At index i, check if x * 2 &gt; i + 1 and (totalCount - x) * 2 &gt; (n - i - 1).
+Opt Complexity Visuals: Draw the array. Label the "King" (dominant element). As you walk, tally how many times the King appears. At each box, compare the tally against the "Success" formula.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow. Label it $O(N)$ to show two simple linear passes.
+Mem Vis (Opt): $O(1)$ Auxiliary Space (Draw three variables: candidate, totalCount, and runningCount).

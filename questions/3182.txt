@@ -1,0 +1,13 @@
+ID: 3182
+Problem Title: Find Top Scoring Students
+Brute Force Method: Correlated subqueries or large Cartesian Joins checking every student against every course. $O(S x C)$
+BF Complexity Visuals: Dense Adjacency Web
+How to Draw BF: Draw a column of Students and a column of Courses. Connect everyone. Filter by major manually.
+Optimised Pattern: JOIN + Aggregation (HAVING Count Match)
+Opt Vis. Technique: Relational Sieve / Bucket Comparison
+Dry Run (Opt): Join `Students` with `Courses` on major. Filter `Enrollments` for grade 'A'. Count matching courses per student; if count equals total courses in major, student is "Top."
+How to Draw (Opt): Draw 3 tables. Use arrows to filter 'A' grades. Group results by Student ID. Compare the "Count of As" with the "Count of Required Courses."
+Opt Complexity Visuals: Relational Algebra DAG
+How to Draw Opt Complexity: Draw a data pipeline: Join → Filter → Group → Aggregate Check. $O(N \log N)$ (Sort/Join).
+Mem Vis (BF): Massive intermediate join results in temporary storage.
+Mem Vis (Opt): Hash-aggregates in-memory for counts. $O(S)$.

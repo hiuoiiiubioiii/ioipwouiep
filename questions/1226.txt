@@ -1,0 +1,13 @@
+ID: 1226
+Problem Title: The Dining Philosophers
+Brute Force Method: Allow every philosopher to pick up their left fork whenever they want. This leads to a circular wait where everyone has one fork and no one can eat.
+BF Complexity Visuals: Cyclic Lock Diagram
+How to Draw BF: Draw 5 circles (philosophers) and 5 lines (forks) between them. Draw an arrow from every philosopher to their left fork. Note the closed loop—this is Deadlock.
+Optimised Pattern: Resource Hierarchy / Semaphores
+Opt Vis. Technique: The "Odd-Man Out" Protocol
+Dry Run (Opt): Either limit the number of philosophers at the table to 4, or force one philosopher to pick up forks in the opposite order (Right then Left) while others do (Left then Right). This breaks the symmetry.
+How to Draw (Opt): Draw the 5 circles. Draw a "Permission Slip" (Semaphore) in the middle. Only 4 philosophers can hold the slip at once. Trace the fork-grabbing sequence and show how at least one person is always guaranteed both forks.
+Opt Complexity Visuals: State Transition Graph
+How to Draw Opt Complexity: Draw a graph showing states (Thinking, Hungry, Eating). Show that no state leads to a sink-hole (deadlock). Write $O(1)$ per philosopher action.
+Mem Vis (BF): Draw 5 threads spinning in an infinite 'while(true)' loop, consuming CPU cycles.
+Mem Vis (Opt): Draw a Mutex array of size 5 and a single "Chaperone" Semaphore with a counter of 4.

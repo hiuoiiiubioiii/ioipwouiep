@@ -1,0 +1,13 @@
+ID: 3823
+Problem Title: Reverse Letters Then Special Characters in a String (Easy)
+Brute Force Method: Extract all letters to Array A, extract specials to Array B. Reverse both arrays independently. Loop through the original string and overwrite using the arrays.
+BF Complexity Visuals: Three separate strings physically moving data back and forth.
+How to Draw BF: Draw string. Draw two buckets. Funnel letters into Bucket 1, specials into Bucket 2. Flip buckets. Funnel back. Time $O(N)$, Space $O(N)$.
+Optimised Pattern: Multi-pass Two Pointers (In-Place).
+Opt Vis. Technique: Two separate sets of pointers. One pair only "sees" letters, the other pair only "sees" specials.
+Dry Run (Opt): Pass 1: Pointers L (start) and R (end). Move until both hit a letter, swap. Pass 2: Reset L and R. Move until both hit a special character, swap.
+How to Draw (Opt): Draw string. Pass 1: Draw red pointers leaping over symbols to swap letters. Pass 2: Draw blue pointers leaping over letters to swap symbols.
+Opt Complexity Visuals: Two linear sweeps across the string.
+How to Draw Opt Complexity: Draw a line. Write "Pass 1: $O(N)$". Draw second line. Write "Pass 2: $O(N)$". Total: $O(N)$.
+Mem Vis (BF): Two temporary arrays storing copies of the string's characters, $O(N)$ space.
+Mem Vis (Opt): $O(1)$ memory. Just integer pointers (left, right) swapping characters directly in the original char array/string builder.

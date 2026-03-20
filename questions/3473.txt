@@ -1,0 +1,13 @@
+ID: 3473
+Problem Title: Sum of K Subarrays With Length at Least M
+Brute Force Method: Recursive DFS picking any k non-overlapping segments of size >= m. $O((n \text{Choose} k \cdot m)$)
+BF Complexity Visuals: Combinatorial Segment Picker.
+How to Draw BF: Draw the array. Draw k brackets. Try sliding and resizing each bracket independently, resulting in an explosive number of configurations.
+Optimised Pattern: DP with Prefix Sum Optimization + "Ongoing" State. $O(n \cdot k)$
+Opt Vis. Technique: State Machine on Array Track.
+Dry Run (Opt): Track current index, how many subarrays remain, and if a subarray is currently being extended. Use prefix sums for $O(1)$ range sum calculations.
+How to Draw (Opt): Draw the array. Below it, draw a "Skip" arrow and a "Take m block" arrow. Label the arrows with the cost/sum and number of k left.
+Opt Complexity Visuals: 2D DP Grid Traversal.
+How to Draw Opt Complexity: Draw a table with n rows and k columns. Shade it to show the $O(n \cdot k)$ work.
+Mem Vis (BF): Massive recursion stack without memoization.
+Mem Vis (Opt): A 2D memoization table of size [n][k] or [n][2][k].

@@ -1,0 +1,13 @@
+ID: 634
+Problem Title: Find the Derangement of An Array
+Brute Force Method: Generate all N! permutations and check each one to see if `A[i] == i` for any element.
+BF Complexity Visuals: Factorial Permutation Tree.
+How to Draw BF: Draw [1, 2, 3]. List every shuffle. Cross out any where a number is in its original spot. $O(N! \cdot N)$.
+Optimised Pattern: Dynamic Programming (Subproblem relation).
+Opt Vis. Technique: Recursive Build-up with State Transition.
+Dry Run (Opt): A derangement of `n` elements can be formed from `n-1` or `n-2` elements. Formula: `D(n) = (n-1) * (D(n-1) + D(n-2))`.
+How to Draw (Opt): Draw a box for n=1, then n=2, then n=3. Show how the previous two boxes are used to calculate the current one with a simple multiplier.
+Opt Complexity Visuals: Linear iterative calculation.
+How to Draw Opt Complexity: Draw a straight line of N steps. Each step only looks at the two previous steps. $O(N)$.
+Mem Vis (BF): Draw a recursion tree with N! nodes.
+Mem Vis (Opt): Draw just two variables, `prev1` and `prev2`, to store the last two results. $O(1)$ space.

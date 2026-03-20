@@ -1,0 +1,13 @@
+ID: 986
+Problem Title: Interval List Intersections
+Brute Force Method: Nested loops: for every interval in list A, compare it against every interval in list B to find overlaps.
+BF Complexity Visuals: $O(A \cdot B)$. Checking every pair across two timelines.
+How to Draw BF: Draw two timelines. Draw lines connecting every segment in A to every segment in B. It becomes a tangled web of comparisons.
+Optimised Pattern: Two Pointers (Parallel Scan)
+Opt Vis. Technique: "The Zipper." Since both lists are sorted, you can move two pointers forward simultaneously. Only compare the two intervals the pointers are currently touching.
+Dry Run (Opt): `i=0, j=0`. While `i &lt; A.size` and `j &lt; B.size`: find `start = max(A[i].start, B[j].start)`, `end = min(A[i].end, B[j].end)`. If `start &lt;= end`, record intersection. Increment the pointer that has the smaller `end` value.
+How to Draw (Opt): Draw two parallel horizontal lines with segments. Draw a vertical "Comparison Frame" that moves across both lines, only looking at two segments at a time.
+Opt Complexity Visuals: $O(A + B)$. A single pass through both lists.
+How to Draw Opt Complexity: Draw two horizontal lines. Draw two arrows (one for each line) pointing right, moving in a "staggered" fashion until both reach the end.
+Mem Vis (BF): $O(1)$ extra space but quadratic time.
+Mem Vis (Opt): $O(\text{IntersectionCount})$ for the result. Draw a single row of result segments below the two original lines.

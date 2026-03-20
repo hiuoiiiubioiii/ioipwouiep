@@ -1,0 +1,13 @@
+ID: 1137
+Problem Title: N-th Tribonacci Number
+Brute Force Method: Pure Recursion: T(n) = T(n-1) + T(n-2) + T(n-3).
+BF Complexity Visuals: Exponential Triple-Branch Tree
+How to Draw BF: Draw T(n) at top. Split into 3 branches. Show how nodes like T(2) are recalculated hundreds of times. $O(3^N)$.
+Optimised Pattern: Dynamic Programming (Iterative Space Optimized)
+Opt Vis. Technique: Sliding Window of 3 Variables
+Dry Run (Opt): Start with a=0, b=1, c=1. In a loop, calculate next = a+b+c. Move a rightarrow b, b rightarrow c, c rightarrow next. Repeat N times.
+How to Draw (Opt): Draw three boxes labeled a, b, c. Write numbers in them. Draw an arrow shifting the numbers to the left and dropping the new sum into the c box.
+Opt Complexity Visuals: Linear Timeline $O(N)$
+How to Draw Opt Complexity: Draw a single straight line from 0 to N with a single loop operation.
+Mem Vis (BF): Massive Call Stack $O(N)$
+Mem Vis (Opt): Constant $O(1)$ space using 3 variables.

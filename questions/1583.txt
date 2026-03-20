@@ -1,0 +1,13 @@
+ID: 1583
+Problem Title: Count Unhappy Friends
+Brute Force Method: For every pair (x, y), iterate through all other pairs (u, v) and check the preference list conditions for both x and y. $O(N^2)$.
+BF Complexity Visuals: Quadratic Comparison Matrix
+How to Draw BF: Draw N dots. For every connected pair, draw arrows to every other dot to check for "jealousy" based on preference indices. A tangled web.
+Optimised Pattern: Rank Mapping (Hash Map / 2D Array)
+Opt Vis. Technique: The Preference Ranker
+Dry Run (Opt): Pre-calculate the rank (index) of each friend in everyone's preference list: `rank[i][j]` is how much friend i likes friend j. Then, for any pair (x, y), iterate through friends u that x likes *more* than y and check if u also likes x more than their current partner.
+How to Draw (Opt): Draw the pairs. For person x, list everyone they like more than their current partner. For each person u in that list, look up their partner v. Check if rank[u][x] &lt; rank[u][v]. If so, x is unhappy.
+Opt Complexity Visuals: Linear Partner Check $O(N^2)$
+How to Draw Opt Complexity: Draw a single pass through the N/2 pairs. For each person, we check at most N people. Overall time is proportional to the size of the preference grid.
+Mem Vis (BF): Nested simulation loops.
+Mem Vis (Opt): A 2D `rank` array of size N \times N. $O(N^2)$ space.

@@ -1,0 +1,13 @@
+ID: 2706
+Problem Title: Buy Two Chocolates
+Brute Force Method: Nested loop (O(N²)): Check every single pair prices[i] + prices[j] to find the combination with the lowest sum.
+BF Complexity Visuals: Complete Graph / 2D Grid
+How to Draw BF: Draw a 2D matrix (Prices × Prices). Cross out the diagonal (can't buy same chocolate twice). Fill cells with sums. Visual area grows as $O(N²)$.
+Optimised Pattern: Loop pointers footprint (Draw i and j pointers constantly jumping back and forth across an array).
+Opt Vis. Technique: Single Pass State Tracking (O(N) Time, $O(1)$ Space)
+Dry Run (Opt): Linear Scan with 2-Pointer State Updates
+How to Draw (Opt): Slide a pointer across the array once. Maintain two buckets: min1 and min2. When you find a smaller number, shift min1 into min2, and update min1.
+Opt Complexity Visuals: Draw the array as a row of boxes. Draw two small boxes below labeled m1 and m2. Point an arrow scanning left to right, erasing and rewriting m1 and m2 as needed.
+How to Draw Opt Complexity: Linear Time Sweep
+Mem Vis (BF): Draw a single straight horizontal line passing through N items. Label the arrow $O(N)$ to denote a single, uninterrupted pass.
+Mem Vis (Opt): State Variable Cells (Draw exactly two small memory cells, updated in place. No extra arrays or data structures needed).

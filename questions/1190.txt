@@ -1,0 +1,13 @@
+ID: 1190
+Problem Title: Reverse Substrings Between Each Pair of Parentheses
+Brute Force Method: Find the innermost parentheses, reverse that substring, replace it in the original string, and repeat.
+BF Complexity Visuals: Nested String Reconstruction $O(N^2)$
+How to Draw BF: Draw a string. Highlight parentheses. Draw a whole new string with the middle reversed. Repeat for every pair.
+Optimised Pattern: Wormhole Teleportation (O(N) Pre-matching)
+Opt Vis. Technique: Two-Way Portal Jumping
+Dry Run (Opt): Pre-process parentheses to store pairs. Walk through the string; when you hit a bracket, "teleport" to its partner and reverse your walking direction.
+How to Draw (Opt): Draw the string. Draw "Portals" connecting '(' and ')'. Trace a line. When you hit a portal, jump to the other side and flip your arrow direction.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single continuous line that never visits a character more than twice. $O(N)$.
+Mem Vis (BF): Multiple temporary strings
+Mem Vis (Opt): 1D Array for portal indices + StringBuilder. Draw one index-map array.

@@ -1,0 +1,13 @@
+ID: 967
+Problem Title: Numbers With Same Consecutive Differences
+Brute Force Method: Generate every number between 10^N-1 and 10^N - 1 and for each, check if the absolute difference between every two consecutive digits is K.
+BF Complexity Visuals: $O(10^N)$. Checking billions of numbers for a small N.
+How to Draw BF: Draw a number line from 0 to 1,000,000. Put a tiny dot on the few numbers that satisfy the condition. The rest is empty space.
+Optimised Pattern: BFS / DFS Digit Construction
+Opt Vis. Technique: "Growing a Number." Start with digits 1-9. At each step, only add a digit that is exactly `last_digit + K` or `last_digit - K`.
+Dry Run (Opt): Start a Queue with [1,2,3,4,5,6,7,8,9]. While `num` length &lt; N: pop `num`, find `last = num % 10`. If `last + K &lt; 10`, push `num * 10 + (last + K)`. Repeat for `- K`.
+How to Draw (Opt): Draw a tree where the root is "Start". Level 1 has 9 nodes (1-9). Level 2 shows each node branching only to its "K-different" neighbors.
+Opt Complexity Visuals: $O(2^N)$. Each digit can branch at most twice.
+How to Draw Opt Complexity: Draw a tree structure that is very narrow (only 2 branches max per node) rather than the massive 10-branch brute force tree.
+Mem Vis (BF): $O(10^N)$ would be needed if you stored the whole range.
+Mem Vis (Opt): $O(2^N)$ for the BFS queue or recursion stack. Draw a horizontal pipe containing partially built numbers.

@@ -1,0 +1,13 @@
+ID: 3045
+Problem Title: Count Prefix and Suffix Pairs II
+Brute Force Method: Check every pair (i, j) where i &lt; j. Use startsWith() and endsWith() for string comparison. $O(N^2 \cdot L)$ total.
+BF Complexity Visuals: Pairwise Comparison Matrix
+How to Draw BF: Draw a triangle representing all word pairs. Label it $O(N^2 \cdot L)$.
+Optimised Pattern: Trie with Pairwise Character Keys
+Opt Vis. Technique: Combined Prefix-Suffix Trie
+Dry Run (Opt): For each word, traverse a Trie where each node is keyed by a pair (word[i], word[len-1-i]). At each node, add the count of words that ended there previously to your answer.
+How to Draw (Opt): Draw a tree where edges are labeled with pairs like (a, b). Write a count inside nodes where a word finishes.
+Opt Complexity Visuals: Sum of Lengths $O(∑L)$
+How to Draw Opt Complexity: Draw a single pass through all characters of all words.
+Mem Vis (BF): Repeated $O(L)$ substring memory objects created for every check.
+Mem Vis (Opt): A custom Trie where each Node contains a Map.

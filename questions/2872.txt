@@ -1,0 +1,13 @@
+ID: 2872
+Problem Title: Maximum Number of K-Divisible Components
+Brute Force Method: Try removing every possible set of edges in the tree. For each set, check if all resulting components have a sum divisible by k.
+BF Complexity Visuals: $O(2N)$ Edge Deletion Search
+How to Draw BF: Draw a tree with N-1 edges. Each edge is a "Cut" or "Keep" decision. Show the 2^N-1 tree configurations.
+Optimised Pattern: Post-Order Traversal (Bottom-Up Summing)
+Opt Vis. Technique: Recursive Greedy Cutting
+Dry Run (Opt): DFS from the root. For each node, calculate the sum of its subtree. If a subtree sum is divisible by k, it *can* be cut off to form a valid component. Return sum % k to the parent.
+How to Draw (Opt): Draw the tree. Starting at the leaves, write their values. Move up to parents, adding the leaf values. If a node's total sum is a multiple of k, draw a "Scissor" icon on the edge above it and don't pass that sum up.
+Opt Complexity Visuals: Single DFS Pass $O(N)$
+How to Draw Opt Complexity: Draw a single line tracing the tree (Euler Tour). Each node and edge is visited once. Total $O(N)$.
+Mem Vis (BF): Visualize thousands of temporary graph objects representing different partitions.
+Mem Vis (Opt): Visualize the recursion stack and an adjacency list. Space $O(N)$.

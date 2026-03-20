@@ -1,0 +1,14 @@
+ID: 932
+Problem Title: Beautiful Array
+Brute Force Method: Generate all N! permutations and for each, check the condition 2 * A[k] 
+eq A[i] + A[j] for all triplets.
+BF Complexity Visuals: $O(N! \cdot N^2)$. Factorial explosion combined with a quadratic check. Impossible for N &gt; 10.
+How to Draw BF: Draw a tree that branches N! times. It is so wide that it goes off the edges of the paper immediately.
+Optimised Pattern: Divide and Conquer (Odd/Even Separation)
+Opt Vis. Technique: "Genetic Splitting." A beautiful array of size N is built by transforming a beautiful array of size N/2 into Odds and Evens and joining them.
+Dry Run (Opt): `f(N)` = `f(odds)` + `f(evens)`. Mapping: `odd = 2*x - 1`, `even = 2*x`. This property preserves the "beautiful" condition across scales.
+How to Draw (Opt): Draw a box labeled `[1]`. Split it into `[1]` (odd) and `[]` (even). Then split `[1, 2]` into `[1]` (odd) and `[2]` (even). Show the pattern 1, 3, 2, 4 emerging.
+Opt Complexity Visuals: $O(N \log N)$. A recursive tree with depth log(N), doing $O(N)$ work to transform elements at each level.
+How to Draw Opt Complexity: Draw a binary tree where each node is a list. Each level's lists are combined to form the level above.
+Mem Vis (BF): Storing factorial numbers of array permutations.
+Mem Vis (Opt): $O(N \log N)$ for the recursion stack and intermediate lists. Draw a few nested array boxes.

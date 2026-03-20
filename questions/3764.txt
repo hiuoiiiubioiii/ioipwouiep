@@ -1,0 +1,13 @@
+ID: 3764
+Problem Title: Most Common Course Pairs (Hard)
+Brute Force Method: For every student, generate all pairs of courses they are taking. Count the frequency of every pair across all students using a nested loop. $O(S \cdot C^2)$.
+BF Complexity Visuals: Pairwise Combination Grid.
+How to Draw BF: List students. For student A, draw lines between all their courses. Repeat for student B. Count which line (pair) appears most often.
+Optimised Pattern: Hash Map with Tuple Keys / Bitsets
+Opt Vis. Technique: Frequency Heatmap
+Dry Run (Opt): Map each course to a Bitset where the i-th bit is 1 if student i takes it. To find commonality between Course A and B, perform a bitwise AND and count set bits (Popcount).
+How to Draw (Opt): Draw a grid: Courses (Rows) vs Students (Cols). Fill with 1s and 0s. To compare two rows, look for columns where both have a "1".
+Opt Complexity Visuals: $O(C^2 \cdot (S/64)$) using bitset optimization.
+How to Draw Opt Complexity: Draw a matrix multiplication-style visualization with fast bitwise AND operations.
+Mem Vis (BF): Massive list of all course pairs.
+Mem Vis (Opt): $O(C \cdot S)$ Bitset matrix.

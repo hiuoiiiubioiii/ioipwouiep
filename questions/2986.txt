@@ -1,0 +1,13 @@
+ID: 2986
+Problem Title: Find Third Transaction
+Brute Force Method: Use nested subqueries with `COUNT` or `GROUP BY` to find users with >= 3 transactions, then join back to filter.
+BF Complexity Visuals: Nested Loop Join Web
+How to Draw BF: Draw two tables. Show arrows from the filter query scanning the main table N times. $O(N^2)$.
+Optimised Pattern: Window Function (`RANK()` / `ROW_NUMBER()`)
+Opt Vis. Technique: Segmented Row Enumeration
+Dry Run (Opt): Partition the data by `user_id` and order by `transaction_date`. Assign a number to each row. Filter where number is 3.
+How to Draw (Opt): Draw a table. Group rows by User ID. Write 1, 2, 3... next to each group. Highlight the 3rd row in each block.
+Opt Complexity Visuals: Single Pass Partition Scan
+How to Draw Opt Complexity: Draw a line for N. The sort-and-partition step takes $O(N \log N)$. T = $O(N \log N)$.
+Mem Vis (BF): Multiple temporary tables in memory.
+Mem Vis (Opt): One sorted data frame in memory. Space $O(N)$.

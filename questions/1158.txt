@@ -1,0 +1,13 @@
+ID: 1158
+Problem Title: Market Analysis I (SQL)
+Brute Force Method: Iterate through Users. For each, run a subquery to count orders in 2019. JOIN with the orders table and group.
+BF Complexity Visuals: Nested Select Waterfall
+How to Draw BF: Draw a table of Users. For each row, draw an arrow to the Orders table, filtering by Date manually.
+Optimised Pattern: LEFT JOIN + Conditional Aggregate
+Opt Vis. Technique: Skeleton-to-Data Mapping
+Dry Run (Opt): Start with the `Users` table (the skeleton). LEFT JOIN with `Orders` where year is 2019. Group by `user_id` and count. This ensures users with 0 orders remain in result.
+How to Draw (Opt): Draw a column of all User IDs. Draw a bridge to the Orders table. Only cross the bridge if the date is 2019. Count the crossings per user.
+Opt Complexity Visuals: Linear Hash Join $O(U + O)$
+How to Draw Opt Complexity: Draw a single pass through Users and a single pass through Orders to build the count.
+Mem Vis (BF): Rowset buffering
+Mem Vis (Opt): Hash Aggregation for counts.

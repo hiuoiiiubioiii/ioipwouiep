@@ -1,0 +1,13 @@
+ID: 2491
+Problem Title: Divide Players Into Teams of Equal Skill
+Brute Force Method: Generate all possible pairings of players and check if the sum of skills for each team is the same.
+BF Complexity Visuals: Recursive Pairing Tree
+How to Draw BF: Draw nodes for players. Branch out every possible pair combination. Label $O(N!)$.
+Optimised Pattern: Sorting + Two Pointers
+Opt Vis. Technique: Inward Folding Mirror
+Dry Run (Opt): Sort players. Pair the weakest with the strongest. If any pair sum differs from the first pair sum, return -1. Otherwise, sum their products (chemistries).
+How to Draw (Opt): Draw a sorted array. Draw an arrow from 0 and N-1. Move them inward. Write the sum of the pair. If consistent, multiply and add.
+Opt Complexity Visuals: Sort Block + Linear Scan
+How to Draw Opt Complexity: Draw a sorting block (N log N) and a single scan line (N). Label $O(N \log N)$.
+Mem Vis (BF): Draw the result sum variable.
+Mem Vis (Opt): Draw a single integer/long for total chemistry. $O(1)$ extra Space.

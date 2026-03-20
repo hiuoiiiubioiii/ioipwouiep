@@ -1,0 +1,13 @@
+ID: 994
+Problem Title: Rotting Oranges
+Brute Force Method: Perform a full DFS from every single rotten orange. For each, keep track of when each fresh orange gets infected, taking the minimum of all times.
+BF Complexity Visuals: $O((R\cdot C)$^2). Multiple redundant traversals across the same grid.
+How to Draw BF: Draw a grid with two rotten oranges. Draw "Infection Ripples" from the first, then from the second. The ripples overlap and conflict on the paper.
+Optimised Pattern: Multi-Source BFS
+Opt Vis. Technique: "The Contagion." All rotten oranges start "rotting" their neighbors at the exact same time. The infection spreads in concentric squares level-by-level.
+Dry Run (Opt): 1. Count fresh oranges. 2. Push all initial rotten oranges into a Queue. 3. While queue: for each rotten orange, infect neighbors, push to queue, `fresh--`. 4. Result is `time_elapsed`.
+How to Draw (Opt): Draw a grid. Mark rotten oranges as time "0". Mark their neighbors as "1", their neighbors as "2". It looks like a topography map where the "high points" are the last fresh oranges to rot.
+Opt Complexity Visuals: $O(R \cdot C)$. Every grid cell is visited exactly once.
+How to Draw Opt Complexity: Draw the grid. Use a highlighter to "shade" cells minute-by-minute, showing the rot spreading outward like a wave.
+Mem Vis (BF): Deep recursion stack with $O(R\cdot C)$ depth and many branches.
+Mem Vis (Opt): $O(R \cdot C)$ for the queue. Draw a large circular buffer containing `(row, col)` coordinates.

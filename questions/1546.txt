@@ -1,0 +1,13 @@
+ID: 1546
+Problem Title: Maximum Number of Non-Overlapping Subarrays With Sum Equals Target
+Brute Force Method: Generate every single subarray, find all that sum to target, and use backtracking to find the maximum non-overlapping set. $O(2^N)$.
+BF Complexity Visuals: Recursive Interval Forest
+How to Draw BF: Draw an array. Underneath, draw dozens of overlapping horizontal brackets representing valid subarrays. Branch out into a tree where you choose to "pick" or "skip" each bracket.
+Optimised Pattern: Prefix Sum + Hash Set + Greedy
+Opt Vis. Technique: The Resetting Prefix Map
+Dry Run (Opt): Keep a running prefix sum. If `(prefix_sum - target)` exists in your Set, you've found a valid subarray. To ensure they are non-overlapping, count it and **clear the Set** immediately to start fresh from the current index.
+How to Draw (Opt): Draw an array. Draw a scanner moving right. Below it, draw a "Memory Bin" (Set). When the scanner finds a match, draw a vertical "Wall" (reset). The number of walls you draw is the answer.
+Opt Complexity Visuals: Linear Greedy Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Each element is visited once, and Set operations (add/check/clear) are $O(1)$ on average.
+Mem Vis (BF): Storing all possible subarray indices in a 2D list. $O(N^2)$.
+Mem Vis (Opt): A Hash Set of prefix sums. $O(N)$ space.

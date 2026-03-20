@@ -1,0 +1,13 @@
+ID: 2930
+Problem Title: Number of Strings Which Can Be Rearranged to Contain Substring
+Brute Force Method: Generate all 26^N strings and count those containing 'l'x1, 'e'x2, 't'x1.
+BF Complexity Visuals: 26-ary Search Tree
+How to Draw BF: Draw a root node branching 26 times. Repeat for depth N. Leaves = 26^N. Huge!
+Optimised Pattern: Inclusion-Exclusion Principle with Modular Exponentiation
+Opt Vis. Technique: Venn Diagram of "Missing" requirements
+Dry Run (Opt): Total strings (26^N) - (Strings missing 'l') - (Strings missing 't') - (Strings with &lt;2 'e's) + Overlaps.
+How to Draw (Opt): Draw three circles for 'l', 'e', and 't'. Calculate sizes using powers like 25^N, 24^N. Add/Subtract based on the intersection counts.
+Opt Complexity Visuals: Logarithmic Power Function
+How to Draw Opt Complexity: Draw a line of length Log(N) representing the binary exponentiation steps. $O(\log N)$.
+Mem Vis (BF): Massive string storage.
+Mem Vis (Opt): Only 5-10 long long variables for modular arithmetic. Space $O(1)$.

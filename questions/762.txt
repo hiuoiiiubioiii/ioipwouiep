@@ -1,0 +1,13 @@
+ID: 762
+Problem Title: Prime Number of Set Bits in Binary Representation
+Brute Force Method: For each number in range, convert to binary string, count '1's, and perform a full primality test.
+BF Complexity Visuals: String Conversion Pipeline
+How to Draw BF: Draw a number entering a box that outputs a long binary string. Then a second box checking all divisors. $O(N \\text{sqrt}{\log N})$.
+Optimised Pattern: Bit Manipulation (bitCount) + Constant Set Check
+Opt Vis. Technique: Binary PopCount Lookup
+Dry Run (Opt): Use `Integer.bitCount(i)`. Since max bits for 10^6 is 20, use a fixed set of primes \{2, 3, 5, 7, 11, 13, 17, 19\} for $O(1)$ checking.
+How to Draw (Opt): Write the number. Draw an arrow converting it to a small integer (count of 1s). Compare that integer against a tiny list of primes.
+Opt Complexity Visuals: Linear Scan with Constant Work
+How to Draw Opt Complexity: Draw a flat line across the range. Each step has a small "constant" box above it. $O(N)$.
+Mem Vis (BF): Temporary binary strings for every number.
+Mem Vis (Opt): $O(1)$ extra space (no strings needed).

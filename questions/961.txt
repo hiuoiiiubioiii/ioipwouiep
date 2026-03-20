@@ -1,0 +1,13 @@
+ID: 961
+Problem Title: N-Repeated Element in Size 2N Array
+Brute Force Method: Sort the array and then iterate through it to find the element that appears N times.
+BF Complexity Visuals: $O(N \log N)$. Sorting the entire array just to find a highly frequent element.
+How to Draw BF: Draw a bar chart of the array. Show the sorting process rearranging all bars, then a scan finding the longest flat plateau.
+Optimised Pattern: Sliding Window / Randomized Search
+Opt Vis. Technique: "The Proximity Rule." Since one element takes up half the array, it MUST appear either adjacent to itself or with at most two other elements in between.
+Dry Run (Opt): Iterate through the array. Check if `A[i] == A[i-1]`, `A[i] == A[i-2]`, or `A[i] == A[i-3]`. The first match found is the answer.
+How to Draw (Opt): Draw the array. Move a small "Magnifying Glass" of size 4 across it. The moment the glass contains two identical numbers, they are highlighted.
+Opt Complexity Visuals: $O(N)$. A single pass through the array.
+How to Draw Opt Complexity: Draw a horizontal line. Draw a small sliding box moving from left to right, stopping immediately when a duplicate is found.
+Mem Vis (BF): $O(1)$ or $O(\log N)$ for sorting space.
+Mem Vis (Opt): $O(1)$. No extra structures needed beyond the index pointer. Draw one small index box.

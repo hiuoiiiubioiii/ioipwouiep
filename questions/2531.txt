@@ -1,0 +1,13 @@
+ID: 2531
+Problem Title: Make Number of Distinct Characters Equal
+Brute Force Method: Try every possible swap of one character from word1 with one character from word2. For each swap, calculate the number of unique characters in both words from scratch. $O(N \cdot M)$ or $O(N^2)$.
+BF Complexity Visuals: A bipartite graph where every character in Word A attempts to link and switch places with every character in Word B.
+How to Draw BF: Draw two lists of characters. Draw lines connecting every character in list A to every character in list B. For every line, imagine the swap and count unique letters.
+Optimised Pattern: 26x26 Frequency Map Simulation.
+Opt Vis. Technique: A small 26x26 grid representing all possible character-to-character swaps between lowercase English letters.
+Dry Run (Opt): Count frequencies of 'a'-'z' for both words. Iterate i from 0-25 and j from 0-25. If char(i) is in word1 and char(j) is in word2, simulate the swap by updating counts by pm 1. Check if distinct counts match.
+How to Draw (Opt): Draw two frequency tables (26 rows). Pick a row from Table 1 and a row from Table 2. Mentally decrement one, increment the other, and count how many rows have a value &gt; 0.
+Opt Complexity Visuals: Constant time $O(26 \cdot 26)$ after a single linear pass to count frequencies. $O(N + M)$.
+How to Draw Opt Complexity: Draw Word A and Word B. Draw a single arrow over each to build the frequency map. Then draw a small 26x26 box representing the nested loop which doesn't grow with input size.
+Mem Vis (BF): New HashSets created for every single potential swap iteration.
+Mem Vis (Opt): Two fixed-size integer arrays (size 26) to store character frequencies.

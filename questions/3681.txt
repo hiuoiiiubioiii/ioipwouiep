@@ -1,0 +1,13 @@
+ID: 3681
+Problem Title: Maximum XOR of Subsequences (Hard)
+Brute Force Method: Generating all 2^N subsequences and calculating the XOR sum for each. $O(N \cdot 2^N)$.
+BF Complexity Visuals: Binary Subsequence Tree.
+How to Draw BF: Draw an array. Branch "Keep" or "Discard" for every number. For N=100, the number of leaves exceeds the atoms in the universe. 2^100 is mathematically impossible to brute force.
+Optimised Pattern: Linear Basis (Gaussian Elimination for XOR). Find a set of basis vectors that can represent any possible XOR sum of the array.
+Opt Vis. Technique: The "XOR Dimension" Filter.
+Dry Run (Opt): Visualize a set of slots (32 or 64). For each number, try to "insert" it. If it can be represented by existing numbers in the slots, it disappears. If not, it fills a slot. This reduces N numbers to at most 64 "Basis" numbers.
+How to Draw (Opt): Draw 31 slots. For each number, find its highest set bit B. If slot B is empty, put it there. If not, XOR it with slot B and repeat with the new number. Finally, greedily XOR from the top slot to 0 to get the max.
+Opt Complexity Visuals: Constant-Time Vector Scan.
+How to Draw Opt Complexity: Draw an arrow through N items. For each, draw a loop of 32 iterations. Total $O(N \cdot 32)$. Write $O(N)$.
+Mem Vis (BF): Massive recursive memory frames trying to store every XOR result.
+Mem Vis (Opt): An array of 64 integers (the Basis). Space $O(1)$.

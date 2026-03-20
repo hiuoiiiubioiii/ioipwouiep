@@ -1,0 +1,13 @@
+ID: 678
+Problem Title: Valid Parenthesis String
+Brute Force Method: Backtracking: For every '*', try three possibilities: '(', ')', or empty. Check if the resulting string is valid.
+BF Complexity Visuals: Exponential Branching Tree.
+How to Draw BF: Draw a string with three '*'. Branch 3x3x3 = 27 times. It becomes a massive tree. Write $O(3^N)$.
+Optimised Pattern: Greedy (Min/Max Balance Tracking).
+Opt Vis. Technique: Dynamic Range Boundaries.
+Dry Run (Opt): Maintain a range `[low, high]` of possible open-parenthesis counts. '(' increases both. ')' decreases both. '*' expands the range: `low--`, `high++`. Ensure `low` never goes below 0. Valid if `0` is in the range at the end.
+How to Draw (Opt): Draw a vertical line. As you read the string, draw a "Bracket" that expands or shrinks. If the bracket crosses the 0-line and contains it at the end, it's valid.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight arrow through the string. Write $O(N)$.
+Mem Vis (BF): Draw a massive recursion stack.
+Mem Vis (Opt): Draw exactly two integer variables: `minOpen` and `maxOpen`. $O(1)$ space.

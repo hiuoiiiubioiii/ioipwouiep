@@ -1,0 +1,13 @@
+ID: 1127
+Problem Title: User Purchase Platform (SQL)
+Brute Force Method: Multiple UNIONs or CASE statements attempting to calculate "Both" (Mobile + Web) by iterating through users one by one.
+BF Complexity Visuals: Multi-Pass Fragmentation
+How to Draw BF: Draw three separate diagrams for Mobile, Web, and Both. Show the difficulty in aligning users who exist in two diagrams simultaneously.
+Optimised Pattern: CROSS JOIN (Template) + LEFT JOIN
+Opt Vis. Technique: Full Grid Skeleton Filling
+Dry Run (Opt): Create a "Template" of all possible Dates and Platforms (Mobile, Web, Both) using a CROSS JOIN. Left Join the actual purchase data into this skeleton and use `SUM(CASE...)` for the logic.
+How to Draw (Opt): Draw a 3x3 grid (Rows = Dates, Cols = Platforms). Even if a date has no purchases, the grid cell exists. Fill the grid cells with data from the real table.
+Opt Complexity Visuals: Cartesian Product x Linear Scan
+How to Draw Opt Complexity: Draw a small fixed-size grid (Template) being joined with a large incoming stream of transaction data.
+Mem Vis (BF): Multiple temporary result sets
+Mem Vis (Opt): Hash Aggregation for grouping by Date and Platform Type.

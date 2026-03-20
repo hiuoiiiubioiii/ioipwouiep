@@ -1,0 +1,13 @@
+ID: 175
+Problem Title: Combine Two Tables
+Brute Force Method: Fetch all data from the Person table, then for each row, run a separate query to search the Address table for a matching personId.
+BF Complexity Visuals: A "Nested Loop Query" (N query calls), visualizing multiple round-trips to the database.
+How to Draw BF: Draw two tables. Pick a row in Table A. Draw arrows to every row in Table B until a match is found. Repeat.
+Optimised Pattern: SQL Left Outer Join.
+Opt Vis. Technique: A "Selective Merge." Table A is the anchor; Table B is joined where possible, leaving 'NULL' holes where no match exists.
+Dry Run (Opt): SELECT FirstName, LastName, City, State FROM Person LEFT JOIN Address ON Person.personId = Address.personId.
+How to Draw (Opt): Draw Table A. Draw Table B. Draw lines connecting matching IDs. If a row in A has no line, draw a box with "NULL" in the B columns.
+Opt Complexity Visuals: $O(N + M)$ assuming the join column is indexed in the database.
+How to Draw Opt Complexity: Draw a single merge line where two streams of data flow together based on a shared key.
+Mem Vis (BF): Temporary memory used to store N intermediate result sets from N separate queries.
+Mem Vis (Opt): A single execution plan in database memory, mapping pointers to disk locations.

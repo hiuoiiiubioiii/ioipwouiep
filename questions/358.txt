@@ -1,0 +1,13 @@
+ID: 358
+Problem Title: Rearrange String k Distance Apart
+Brute Force Method: Generate all possible permutations of the string and check if any of them satisfy the condition that identical characters are at least distance k apart.
+BF Complexity Visuals: Permutation Tree with Distance Constraint
+How to Draw BF: Draw a root. Branch for every char. For level 2, check if char is valid based on its previous position. Show massive pruning or $O(N!)$.
+Optimised Pattern: Max-Heap + Cooling Queue (Greedy)
+Opt Vis. Technique: Resource Cooling / Priority Scheduling
+Dry Run (Opt): Count frequencies. Put chars in a Max-Heap. Extract the most frequent char and append to result. Put that char into a "Waiting Queue" with its next available index. Only move it back to the Max-Heap when index \ge k.
+How to Draw (Opt): Draw a "Ready" box (Max-Heap) and a "Waiting Room" (Queue). Show a character moving from the box to the string, then sitting in the waiting room for k steps before jumping back to the box.
+Opt Complexity Visuals: Bounded Heap Operations
+How to Draw Opt Complexity: Draw a horizontal string being built. Above it, draw a small heap that grows/shrinks. Label it $O(N \log 26)$ → $O(N)$.
+Mem Vis (BF): Massive collection of string permutations in memory.
+Mem Vis (Opt): Frequency Map + Max-Heap + Wait Queue. Draw a table, a triangle (heap), and a small tape (queue). $O(1)$ if character set is fixed (26).

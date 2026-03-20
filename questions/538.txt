@@ -1,0 +1,13 @@
+ID: 538
+Problem Title: Convert BST to Greater Tree
+Brute Force Method: For every node, traverse the entire tree to find all values greater than it and sum them up. $O(N^2)$.
+BF Complexity Visuals: N nodes each performing an N-node scan. $O(N^2)$.
+How to Draw BF: Draw a tree. For each node, draw a shadow tree where you circle only the larger nodes.
+Optimised Pattern: Reverse In-Order Traversal (Right → Root → Left).
+Opt Vis. Technique: A "Rainfall" effect starting from the highest value (rightmost leaf) and flowing down/left, accumulating water (sum).
+Dry Run (Opt): Maintain global `sum`. Traverse Right, then current Node (`sum += node.val`, `node.val = sum`), then Left.
+How to Draw (Opt): Draw the BST. Start at the bottom-right node. Write its value. Move to parent, add child's value. Move to parent's left... follow the path like a snake.
+Opt Complexity Visuals: Linear scan of every node exactly once. $O(N)$.
+How to Draw Opt Complexity: Draw a single line tracing the "Reverse In-Order" path through the tree.
+Mem Vis (BF): No extra data structures, but high time cost.
+Mem Vis (Opt): Recursion stack proportional to tree height. $O(H)$.

@@ -1,0 +1,13 @@
+ID: 185
+Problem Title: Department Top Three Salaries
+Brute Force Method: For every employee, count how many distinct salaries in their department are higher than their own. If count &lt; 3, keep them.
+BF Complexity Visuals: An $O(N^2)$ correlated subquery where every employee triggers a filtered scan of their own department.
+How to Draw BF: Draw the list. For the first person, count everyone in their dept who earns more. Write the count. Repeat for everyone.
+Optimised Pattern: Window Function: DENSE_RANK().
+Opt Vis. Technique: "The Olympic Podium." People are ranked 1st, 2nd, 3rd. If two people tie for 1st, the next unique salary is still 2nd.
+Dry Run (Opt): Rank employees by salary within each department. Only select those with a rank <= 3.
+How to Draw (Opt): Draw columns representing departments. Within each, write salaries in order. Mark the first three unique value levels.
+Opt Complexity Visuals: $O(N \log N)$ due to partitioning and sorting requirements.
+How to Draw Opt Complexity: Draw a set of sorted blocks. Show a single pass through each block that stops after the 3rd unique rank.
+Mem Vis (BF): High CPU and memory cost for N separate counting operations.
+Mem Vis (Opt): Visualize a sorted buffer for each department being processed sequentially in memory.

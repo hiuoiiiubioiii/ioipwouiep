@@ -1,0 +1,13 @@
+ID: 249
+Problem Title: Group Shifted Strings
+Brute Force Method: Nested loops: compare every string with every other string by checking if their relative character differences match.
+BF Complexity Visuals: All-Pairs Comparison: $O(N^2 \cdot L)$.
+How to Draw BF: Draw a matrix where every cell represents a comparison. If N=1000, the grid has 1,000,000 cells.
+Optimised Pattern: Hash Map with Canonical Form Key
+Opt Vis. Technique: Bucket Sorting by DNA-like Sequence
+Dry Run (Opt): Convert each string into a "diff-key" (e.g., "abc" \rightarrow "1,1"). Strings with the same key go into the same bucket.
+How to Draw (Opt): Draw strings on top. Below, draw buckets labeled with numeric sequences like "1,1,1". Draw arrows putting strings into buckets.
+Opt Complexity Visuals: Linear String Scan: $O(N \cdot L)$.
+How to Draw Opt Complexity: Draw one arrow scanning through the list of strings. Each string is hashed once and moved to its bucket.
+Mem Vis (BF): Temporary comparison strings: $O(L)$.
+Mem Vis (Opt): Grouped Hash Map: Draw a table where each Key is a diff-sequence and Value is a list of original strings.

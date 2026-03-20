@@ -1,0 +1,13 @@
+ID: 1861
+Problem Title: Rotating the Box
+Brute Force Method: Rotate the matrix first, then for each column, repeatedly swap stones down until they hit an obstacle or the bottom.
+BF Complexity Visuals: Step-by-step frame animation of falling stones.
+How to Draw BF: Draw the rotated grid. For every stone '#', draw an arrow moving it down one cell at a time. $O(R \cdot C \cdot R)$.
+Optimised Pattern: Two Pointers (Gravity logic) + Standard Matrix Rotation.
+Opt Vis. Technique: Sliding "Empty Slot" pointer.
+Dry Run (Opt): In each row (pre-rotation), iterate from right to left. Keep a pointer `empty` at the rightmost free space. If stone found, move it to `empty` and decrement `empty`. If obstacle found, reset `empty` to obstacle-1.
+How to Draw (Opt): Draw a row. Place a finger at the end (empty slot). Move another finger left. When it hits a '#', move the '#' to your first finger's spot. Rotate the paper 90°.
+Opt Complexity Visuals: Two independent linear passes (Gravity then Rotate).
+How to Draw Opt Complexity: Draw one arrow for the row scan and one arrow for the index mapping. Mark $O(R \\text{times} C)$.
+Mem Vis (BF): Intermediate matrix copies for each "step" of gravity.
+Mem Vis (Opt): In-place modification of the original row (O(1) extra) + final rotated matrix (O(R*C)).

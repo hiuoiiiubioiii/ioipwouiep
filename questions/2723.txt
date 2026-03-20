@@ -1,0 +1,13 @@
+ID: 2723
+Problem Title: Add Two Promises
+Brute Force Method: Await `promise1`, store it. Then await `promise2`, store it. Add them. (Unnecessarily slow if both could have been resolving at the same time).
+BF Complexity Visuals: Step-wise Resolution
+How to Draw BF: Draw a "Waiting" block for P1. Once it ends, draw a "Waiting" block for P2.
+Optimised Pattern: Serialized Memory Wait (The closure for the addition waits twice).
+Opt Vis. Technique: Destructured Promise.all
+Dry Run (Opt): Concurrent Value Fetching
+How to Draw (Opt): Trigger Promise.all([promise1, promise2]). This allows both to resolve in parallel. Destructure the resulting array [val1, val2] and return the sum.
+Opt Complexity Visuals: Draw two parallel pipes leading into a single addition (+) operator. Both pipes flow at the same time.
+How to Draw Opt Complexity: $O(1)$ Concurrent Logic
+Mem Vis (BF): Draw two dots resolving simultaneously. Write $O(1)$ as the logic is independent of input size (fixed at 2).
+Mem Vis (Opt): Microtask Queue Visualization (Draw two microtasks entering the queue simultaneously).

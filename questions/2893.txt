@@ -1,0 +1,13 @@
+ID: 2893
+Problem Title: Calculate Orders Within Each Interval
+Brute Force Method: Iterate through all orders and for each order, check which time interval it falls into by comparing against a list of interval boundaries.
+BF Complexity Visuals: Sequential Boundary Check
+How to Draw BF: Draw a list of intervals. For every single order, draw a "Search" arrow that tests every interval until it finds a match.
+Optimised Pattern: Mathematical Binning (Floor Division)
+Opt Vis. Technique: Fixed-Width Histogram
+Dry Run (Opt): Divide each order's timestamp by the interval length and use the floor result as a key in a frequency map or an index in a result array.
+How to Draw (Opt): Draw a timeline. Mark segments of 6 (e.g., 0-5, 6-11). For any number X, write the formula lfloor X/6 rfloor to show it maps directly to a segment index.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a straight line. Every order is processed in a single math operation without searching.
+Mem Vis (BF): $O(I)$ where I is intervals if using a search tree.
+Mem Vis (Opt): $O(N/I)$ - Memory corresponds only to the number of resulting buckets.

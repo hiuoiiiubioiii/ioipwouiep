@@ -1,0 +1,13 @@
+ID: 3770
+Problem Title: Largest Prime from Consecutive Prime Sum (Med)
+Brute Force Method: Find all primes up to N. For every possible sequence of consecutive primes, calculate their sum and check if that sum is also prime. $O(P^3)$ where P is the number of primes.
+BF Complexity Visuals: Nested Summation and Primality Checks.
+How to Draw BF: List primes [2, 3, 5, 7...]. Draw brackets for [2+3], [2+3+5], [3+5+7]... Check if each sum is in the prime list.
+Optimised Pattern: Sieve of Eratosthenes + Sliding Window / Prefix Sums
+Opt Vis. Technique: Prime-Only Timeline
+Dry Run (Opt): 1) Sieve up to N to get all primes. 2) Use a Prefix Sum array of these primes. 3) Any consecutive sum is Prefix[j] - Prefix[i]. If this sum <=q N and is prime (use the Sieve for $O(1)$ check), update max.
+How to Draw (Opt): Draw a horizontal line of prime numbers. Below it, draw a Prefix Sum line. Draw an elastic bracket over the prime line; if the sum it covers is prime, mark it as a candidate.
+Opt Complexity Visuals: $O(N \log \log N)$ Sieve + $O(P^2)$ Sum checks.
+How to Draw Opt Complexity: Draw a Sieve grid followed by a 2D scan of the Prefix Sum array.
+Mem Vis (BF): Deep recursion for sum checking.
+Mem Vis (Opt): $O(N)$ Boolean array for the Sieve.

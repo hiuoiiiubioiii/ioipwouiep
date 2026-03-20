@@ -1,0 +1,13 @@
+ID: 1107
+Problem Title: New Users Daily Count (SQL)
+Brute Force Method: Correlated subqueries. For every row, run another query to find the MIN(activity_date) for that specific user.
+BF Complexity Visuals: Nested Table Scans
+How to Draw BF: Draw a table. For each row, draw an arrow looping back over the entire table to find the earliest date.
+Optimised Pattern: Common Table Expression (CTE) / GROUP BY
+Opt Vis. Technique: Hash Aggregation Pipeline
+Dry Run (Opt): Group all rows by user_id to find the minimum activity_date per user. Filter where the date is within 90 days. Group again by the resulting date and count users.
+How to Draw (Opt): Draw Input Table -&gt; Funnel (Group by User) -&gt; Filter Block (Date &gt; 90 days) -&gt; Funnel (Group by Date) -&gt; Output Table.
+Opt Complexity Visuals: Map-Reduce Flowchart
+How to Draw Opt Complexity: Draw two distinct mapping blocks (the two GROUP BY clauses) executing sequentially, not nested.
+Mem Vis (BF): Row-by-row memory cache
+Mem Vis (Opt): Hash Tables holding User IDs and their first login dates.

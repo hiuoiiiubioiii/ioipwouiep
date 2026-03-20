@@ -1,0 +1,13 @@
+ID: 3680
+Problem Title: Generate Schedule (Med)
+Brute Force Method: Backtracking to try every possible task order (N!) to see which one fits the time constraints.
+BF Complexity Visuals: Permutation Decision Tree.
+How to Draw BF: Start at Time 0. Try Task A, then Task B... Try Task B, then Task A... For 15 tasks, this is 1.3 trillion paths.
+Optimised Pattern: Greedy Strategy: Earliest Deadline First (EDF) or Shortest Processing Time (SPT).
+Opt Vis. Technique: The "Triage" Priority Queue.
+Dry Run (Opt): Visualize tasks as people in an ER. The person who will "die" (deadline) first gets treated first. If they take too long, you can't save everyone.
+How to Draw (Opt): Draw a timeline. Sort tasks by deadline. Place them on the timeline one by one. If any task's "End Time" exceeds its "Deadline", that schedule is invalid.
+Opt Complexity Visuals: Sorting-Bounded Timeline.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block. Draw a single $O(N)$ scan to verify the timeline. Total $O(N \log N)$.
+Mem Vis (BF): Storing every failed permutation in a giant list.
+Mem Vis (Opt): A Min-Priority Queue or sorted list of tasks. Space $O(N)$.

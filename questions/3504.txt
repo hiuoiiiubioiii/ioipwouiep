@@ -1,0 +1,13 @@
+ID: 3504
+Problem Title: Longest Palindrome After Substring Concatenation II (Hard)
+Brute Force Method: DP checking all possible split and merge points.
+BF Complexity Visuals: 2D DP Matrix filling.
+How to Draw BF: Draw a huge N x N grid. Draw arrows showing cell (i,j) depends on (i+1, j-1).
+Optimised Pattern: Manacher's Algorithm + Suffix Automaton / Hash.
+Opt Vis. Technique: Radius Expansion Timeline.
+Dry Run (Opt): Track the rightmost palindrome boundary. Use previous symmetry to skip redundant character checks.
+How to Draw (Opt): Write string with # delimiters. Below each char, write its palindrome radius. Draw boundary brackets [L, R].
+Opt Complexity Visuals: Right-Boundary shifting.
+How to Draw Opt Complexity: Draw an axis. Draw a bracket [L, R]. Show R strictly moving rightward without backtracking. $O(N)$.
+Mem Vis (BF): N x N DP Table memory: Draw a vast grid of integers.
+Mem Vis (Opt): 1D Radius Array: Draw a single flat array of length 2N+1 holding radius integers.

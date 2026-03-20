@@ -1,0 +1,13 @@
+ID: 3384
+Problem Title: Team Dominance (SQL)
+Brute Force Method: (Imperative) For every goal, look back at all previous goals to see which team was leading or "dominating" the timeline.
+BF Complexity Visuals: $O(N^2)$ Timeline Scan
+How to Draw BF: Draw a timeline of goals. For Goal #10, scan Goals #1-9 to calculate the score. Repeat for every goal.
+Optimised Pattern: Window Functions (SUM OVER) + CASE
+Opt Vis. Technique: Running Score Tally
+Dry Run (Opt): Use `SUM(CASE WHEN...) OVER (ORDER BY time)` to get the score at every second. Calculate the duration where Team A score &gt; Team B score.
+How to Draw (Opt): Draw a scoreboard with two columns: Team A and Team B. As you scroll down the "Goals" table, update the counts. Highlight the rows where A &gt; B.
+Opt Complexity Visuals: Single-Pass Result Set
+How to Draw Opt Complexity: Draw a horizontal arrow $O(N)$. The DB engine calculates the running sum in one pass over the sorted time.
+Mem Vis (BF): Temporary tables for every single point in time.
+Mem Vis (Opt): A single pass through the result set with $O(1)$ state variables.

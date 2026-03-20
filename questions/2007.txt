@@ -1,0 +1,13 @@
+ID: 2007
+Problem Title: Find Original Array From Doubled Array
+Brute Force Method: For every element, search the entire remaining array for its double. Use backtracking if a dead end is reached.
+BF Complexity Visuals: Multi-branch Backtracking Tree
+How to Draw BF: Draw a tree where each node is the array state. Branch out for every valid pair removal. Notice the massive branching factor.
+Optimised Pattern: Sorting + Frequency Map (or Queue)
+Opt Vis. Technique: Sliding Window / Matching Arcs
+Dry Run (Opt): Sort the array. Sweep left to right. If the current number's count is &gt; 0, find its double. Decrement both counts.
+How to Draw (Opt): Write out the sorted array. Circle the smallest number, draw an arc to its double, and cross them both out. Move right.
+Opt Complexity Visuals: Sorting Funnel to Linear Pipe
+How to Draw Opt Complexity: Draw a funnel representing $O(N \log N)$ sorting, connecting to a straight pipe representing the $O(N)$ sweep.
+Mem Vis (BF): Deep recursive call stack frames holding copied array states.
+Mem Vis (Opt): A Hash Map (or fixed-size array if values are small) holding leftover counts, decrementing in real-time.

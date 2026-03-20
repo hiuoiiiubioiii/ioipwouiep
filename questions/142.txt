@@ -1,0 +1,13 @@
+ID: 142
+Problem Title: Linked List Cycle II
+Brute Force Method: Store nodes in a Hash Map (Node rightarrow Index). The first node you see twice is the start of the cycle.
+BF Complexity Visuals: A dictionary mapping showing N pairs of references and integers.
+How to Draw BF: Draw the list. Write the node's address and its position in a table. When you hit a duplicate address, circle the table entry.
+Optimised Pattern: Two-Pointer Meeting Point + Distance Logic.
+Opt Vis. Technique: A synchronization of two clocks. The distance from the head to the entry is equal to the distance from the meeting point to the entry.
+Dry Run (Opt): 1. Find meeting point with Tortoise/Hare. 2. Place a new pointer at the head. 3. Move both (head-pointer and meeting-pointer) 1 step at a time; they meet at the entry.
+How to Draw (Opt): Draw the loop. Mark the meeting point 'M'. Draw an arrow from 'Head' and 'M' moving at the same speed. Mark the junction where they collide.
+Opt Complexity Visuals: $O(N)$ time. Two linear passes (one to find the cycle, one to find the junction).
+How to Draw Opt Complexity: Draw a line that loops. Trace the pointers. Note that you traverse the "non-cycle" part twice at most.
+Mem Vis (BF): A Hash Map occupying $O(N)$ heap space to store node pointers.
+Mem Vis (Opt): Pure $O(1)$ stack memory. No additional data structures; only pointer variables are used.

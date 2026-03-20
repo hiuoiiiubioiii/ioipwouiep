@@ -1,0 +1,13 @@
+ID: 2913
+Problem Title: Subarrays Distinct Element Sum of Squares I
+Brute Force Method: Generate all $O(N^2)$ subarrays. For each, put elements in a set to count distinct, square it, and sum.
+BF Complexity Visuals: Redundant Array Slicing
+How to Draw BF: Draw the full array. Underneath, draw brackets isolating every single contiguous subarray, emphasizing redundant recalculations.
+Optimised Pattern: Nested Loop Sliding Window with Running Set
+Opt Vis. Technique: Expanding Window with Anchor
+Dry Run (Opt): Pin an 'i' pointer. Move 'j' to the right. Keep a running HashSet. Add nums[j] to the set, immediately take set.size()^2, and add to total.
+How to Draw (Opt): Draw array. Put an anchor pin at 'i'. Draw a sliding bracket 'j' moving right. Below it, draw a single expanding circle representing the HashSet.
+Opt Complexity Visuals: Upper Triangular Grid
+How to Draw Opt Complexity: Draw an N x N grid. Shade half of it to represent the inner loop executing N-i times. Area = $O(N^2)$.
+Mem Vis (BF): $O(N^2)$ HashSets allocated and destroyed in memory repeatedly. Space $O(N^3)$.
+Mem Vis (Opt): A single HashSet box being cleared and refilled. Max Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1519
+Problem Title: Number of Nodes in the Sub-Tree With the Same Label
+Brute Force Method: For every single node in the tree, launch a completely new DFS to explore its subtree and count matching labels. $O(N^2)$ time.
+BF Complexity Visuals: Overlapping Triangles $O(N^2)$
+How to Draw BF: Draw a large triangle (the tree). Draw a smaller triangle inside it for a child's DFS. Then another inside that. The overlapping shading represents massive redundant work.
+Optimised Pattern: Post-Order DFS (Bottom-Up)
+Opt Vis. Technique: Buckets Merging Upwards
+Dry Run (Opt): Go to the leaf nodes first. Each node returns an array of size 26 (frequencies of a-z). A parent node receives these arrays from its children, adds them together, adds its own label, and passes the merged array up.
+How to Draw (Opt): Draw a tree. At the bottom leaves, draw small boxes like `[a:1]`. Draw arrows pushing these boxes UP to the parent. The parent combines them into a bigger box `[a:2, b:1]`, answers its own question, and pushes it up again.
+Opt Complexity Visuals: Linear Scan x 26 $O(N)$
+How to Draw Opt Complexity: Draw a single line hitting every node exactly once. At each node, draw a small, fixed-size block of 26 operations. Since 26 is constant, it's $O(N)$.
+Mem Vis (BF): Recursive call stack $O(H)$, plus N separate tally arrays allocated and destroyed.
+Mem Vis (Opt): A single call stack of depth $O(H)$. The memory visualization is an array of size 26 being passed and returned at every level. Space is $O(H + 26)$ -&gt; $O(H)$.

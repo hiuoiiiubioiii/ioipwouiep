@@ -1,0 +1,13 @@
+ID: 586
+Problem Title: Customer Placing the Largest Number of Orders (SQL)
+Brute Force Method: For every customer in the orders table, count their occurrences individually, then sort and find the maximum.
+BF Complexity Visuals: Manual tallying of a long list. $O(N \log N)$.
+How to Draw BF: Draw a list of Order IDs and Customer IDs. For each customer, count how many times they appear. Circle the one with the highest count.
+Optimised Pattern: Group By + Order By Count + Limit 1.
+Opt Vis. Technique: A sorting bin system. You throw every order into a bin labeled with the Customer Number. The tallest bin wins the prize.
+Dry Run (Opt): `SELECT customer_number FROM orders GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1`.
+How to Draw (Opt): Draw the Orders table. Group it into piles by Customer ID. Measure the height of each pile. Pick the top one and write down the ID.
+Opt Complexity Visuals: Hash-based grouping. $O(N)$.
+How to Draw Opt Complexity: Draw the table flowing into a Hash Map (ID : Count) and then a single "Max" pointer.
+Mem Vis (BF): $O(1)$ extra space but slow for very large tables.
+Mem Vis (Opt): A Hash Map for counts. $O(\\text{text}{\text{Unique Customers}})$.

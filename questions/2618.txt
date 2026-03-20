@@ -1,0 +1,13 @@
+ID: 2618
+Problem Title: Check if Object Instance of Class (JS)
+Brute Force Method: Manually checking properties or constructor names (flawed).
+BF Complexity Visuals: Literal Property Search
+How to Draw BF: Draw a box representing an object and try to find a hardcoded "class" string inside it.
+Optimised Pattern: JavaScript Prototype Chain Traversal
+Opt Vis. Technique: Linked List Traversal (Prototypes)
+Dry Run (Opt): Take the object. Look at its `__proto__`. Does it match the Class's `prototype`? If not, move up to `__proto__.__proto__`. Stop at null.
+How to Draw (Opt): Draw an Object box. Draw an arrow pointing up to its Prototype object. Draw an arrow from the Class to its `.prototype`. Check if the arrows ever land on the same box.
+Opt Complexity Visuals: Depth Traversal Arrow
+How to Draw Opt Complexity: Draw an $O(D)$ arrow where D is the depth of the prototype chain.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Object reference pointers in Heap memory.

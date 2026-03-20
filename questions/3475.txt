@@ -1,0 +1,13 @@
+ID: 3475
+Problem Title: DNA Pattern Recognition
+Brute Force Method: Iterate through every row in the Samples table and manually use string search functions for each of the 4 patterns. $O(N x L)$
+BF Complexity Visuals: Character-by-Character Pattern Tally.
+How to Draw BF: Draw a sequence of DNA. Draw 4 magnifying glasses over it, each checking a different rule (start, end, motif, repeats).
+Optimised Pattern: SQL `CASE` statements with `LIKE` and `REGEXP` for vectorized pattern matching. $O(N)$
+Opt Vis. Technique: Binary Feature Matrix.
+Dry Run (Opt): Apply 4 filters simultaneously to the DNA string. Record 1 if a filter "catches" a pattern and 0 otherwise.
+How to Draw (Opt): Draw a table with columns: `has_start`, `has_stop`, `has_atat`, `has_ggg`. For each DNA string, check off the boxes.
+Opt Complexity Visuals: Single Table Scan.
+How to Draw Opt Complexity: Draw one straight arrow moving down the Sample rows to show $O(N)$ row-level processing.
+Mem Vis (BF): Temporary string allocations for regex matching.
+Mem Vis (Opt): $O(1)$ extra space as the processing happens in-stream within the database engine.

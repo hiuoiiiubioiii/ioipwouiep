@@ -1,0 +1,13 @@
+ID: 2266
+Problem Title: Count Number of Texts
+Brute Force Method: Recursive PermutationsFor a string like "222", recursively branch into: "2", "22", or "222" (representing 'a', 'b', 'c'). Count all leaf nodes in the recursion tree.
+BF Complexity Visuals: Exploding Decision Tree
+How to Draw BF: Draw a root node. Branch into 3 choices for digit '2'. From each choice, branch again. Show the $O(3^N)$ or $O(4^N)$ depth for keys like '7' or '9'.
+Optimised Pattern: Linear DP (Climbing Stairs Variant)
+Opt Vis. Technique: Sliding Window Accumulator
+Dry Run (Opt): `dp[i]` is the number of ways to decode the prefix of length `i`. If `s[i] == s[i-1]`, then `dp[i]` can include `dp[i-2]`, and so on, up to the max letters per key (3 or 4).
+How to Draw (Opt): Draw a 1D array. For each index, draw curved arrows reaching back to the previous 3 (or 4) indices. Sum those values and write the result in the current cell.
+Opt Complexity Visuals: 1D State-Space Timeline
+How to Draw Opt Complexity: Draw an $O(N)$ line representing the DP array fill. Above it, show a constant-time "Lookback" window of size 4. Total complexity: $O(N)$.
+Mem Vis (BF): Massive call stack depth with thousands of redundant calculations for the same substrings.
+Mem Vis (Opt): A 1D DP array of size N (or even $O(1)$ space if using only the last 4 variables).

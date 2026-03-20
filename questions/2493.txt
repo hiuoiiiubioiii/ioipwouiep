@@ -1,0 +1,13 @@
+ID: 2493
+Problem Title: Divide Nodes Into the Maximum Number of Groups
+Brute Force Method: Try every possible starting node. Use BFS to assign levels. Check if levels satisfy the "adjacent nodes differ by 1" condition for all edges.
+BF Complexity Visuals: Full Graph Brute BFS
+How to Draw BF: Draw a graph. For every node, draw a BFS tree. Label $O(V \cdot (V + E)$).
+Optimised Pattern: Bipartite Check + Component BFS Max Depth
+Opt Vis. Technique: BFS Layer Maximization
+Dry Run (Opt): Check if each component is bipartite. If yes, for each component, find the max BFS depth by trying all nodes in that component as root. Sum these maxes.
+How to Draw (Opt): Draw the components. For each, draw two BFS trees starting at different nodes. Write the height of each tree. Circle the tallest tree per component.
+Opt Complexity Visuals: Quadratic Component Traversal
+How to Draw Opt Complexity: Draw BFS scans for each node. Label $O(V \cdot (V + E)$). *Note: Necessary due to lack of specific tree structure.*
+Mem Vis (BF): Draw recursion stack.
+Mem Vis (Opt): Draw adjacency list, visited arrays, and a BFS queue. $O(V + E)$ Space.

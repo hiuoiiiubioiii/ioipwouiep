@@ -1,0 +1,13 @@
+ID: 631
+Problem Title: Design Excel Sum Formula
+Brute Force Method: Recursive re-calculation: Every time a cell's value is requested, traverse all its dependencies and sum them up from scratch.
+BF Complexity Visuals: Deep, redundant Dependency Tree.
+How to Draw BF: Draw cell A1. Draw arrows to B1, B2. From B1, draw arrows to C1, C2. Show the same cell being visited 100 times. Write $O(\text{Branching}^\text{Depth})$.
+Optimised Pattern: Directed Acyclic Graph (DAG) with Topological Updates.
+Opt Vis. Technique: Observer Pattern / Reactive Graph.
+Dry Run (Opt): When a cell value changes, only notify the cells that directly depend on it. Use a map to store "who depends on me" and "what do I depend on". Update values only when needed.
+How to Draw (Opt): Draw a node. Draw outgoing arrows to its "Parents" (formulas using it). When the node changes, follow the arrows and update parent values.
+Opt Complexity Visuals: Amortized updates based on graph edges.
+How to Draw Opt Complexity: Draw a web where a single "Pulse" (update) travels along specific lines rather than flooding the whole system. $O(\text{Edges})$.
+Mem Vis (BF): Draw no storage—just massive overhead on the CPU stack during every `get` call.
+Mem Vis (Opt): Draw a Hash Map where keys are cells and values are a list of dependent cell coordinates. $O(\text{Cells} + \text{Formulas})$.

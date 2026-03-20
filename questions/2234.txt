@@ -1,0 +1,13 @@
+ID: 2234
+Problem Title: Maximum Total Beauty of the Gardens
+Brute Force Method: Backtracking / CombinationsRecursively try every combination of forcing a garden to be "complete" and distributing remaining flowers to incomplete gardens.
+BF Complexity Visuals: Exponential Branching
+How to Draw BF: Draw the array of gardens. Branch into two paths: "Make Complete" or "Leave Incomplete". For "Leave Incomplete", branch again on how many flowers to add. Show infinite combinatorial spread.
+Optimised Pattern: Sorting + Prefix Sum + Two Pointers/Binary Search
+Opt Vis. Technique: Suffix Anchoring &amp; Prefix Flooding
+Dry Run (Opt): Sort gardens. Precompute prefix sums to quickly calculate how many flowers are needed to raise the minimum level of the first `i` gardens. Loop backwards making `N` to `0` gardens complete, and use binary search on the prefix to maximize the minimum of the rest.
+How to Draw (Opt): Draw the sorted array as a rising staircase. Pin the top steps (suffix) and color them "Complete". For the bottom steps (prefix), draw "water" (flowers) flooding them until you run out of remaining flowers. Calculate the score.
+Opt Complexity Visuals: Two-Phase Array Sweep
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting step. Draw a timeline representing the suffix loop $O(N)$. Inside it, draw an $O(\log N)$ binary search step to find the water level. Total: $O(N \log N)$.
+Mem Vis (BF): Massive call stack depth passing remaining flower counts and garden states.
+Mem Vis (Opt): A prefix sum array of size N to allow $O(1)$ range sum queries (O(N) space).

@@ -1,0 +1,13 @@
+ID: 3513
+Problem Title: Number of Unique XOR Triplets I (Med)
+Brute Force Method: Three nested loops (i, j, k) to compute and check XOR for every triplet.
+BF Complexity Visuals: 3D Loop Cube.
+How to Draw BF: Draw an N x N x N 3D grid. Shade the valid (i &lt; j &lt; k) triangular pyramid volume. Volume = $O(N^3)$.
+Optimised Pattern: Bitwise Prefix XOR &amp; Frequency Counting.
+Opt Vis. Technique: XOR Cancellation Matrix.
+Dry Run (Opt): Use property A ^ B == 0 implies A == B. Track prefix XOR frequencies in a map to eliminate the innermost loop.
+How to Draw (Opt): Draw an array. Underneath, draw a prefix XOR array. Draw brackets connecting matching prefix values which denote XOR sum of 0.
+Opt Complexity Visuals: 2D Nested Loop Equivalent.
+How to Draw Opt Complexity: Draw a square grid, cutting it in half diagonally (representing $O(N^2)$).
+Mem Vis (BF): Loop Iterators: Draw three isolated pointers (i, j, k) constantly resetting.
+Mem Vis (Opt): Prefix Array + Map: Draw one 1D array of size N, and a HashMap storing frequency counts.

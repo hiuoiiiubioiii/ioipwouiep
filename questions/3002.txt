@@ -1,0 +1,13 @@
+ID: 3002
+Problem Title: Maximum Size of a Set After Removals
+Brute Force Method: Generate all possible combinations of removing exactly n/2 elements from both arrays, then calculate the union size for each.
+BF Complexity Visuals: Combinatorial Decision Tree
+How to Draw BF: Draw a root node splitting into "Pick / Don't Pick" for elements in nums1, then cascading into nums2. Label branches to show exponential $O(2^N)$ growth.
+Optimised Pattern: Greedy Selection + Hash Sets
+Opt Vis. Technique: Venn Diagram
+Dry Run (Opt): Draw Set 1 and Set 2. Place unique numbers in the left circle, unique in the right, and shared in the intersection. Greedily take up to n/2 from unique sides first, then fill remaining capacity from the intersection.
+How to Draw (Opt): Draw two overlapping circles. Write numbers: n1_only, n2_only, shared. Write the formula: min(n/2, n1_only) + min(n/2, n2_only) + shared capped at n.
+Opt Complexity Visuals: Linear Sequence Diagram
+How to Draw Opt Complexity: Draw three sequential blocks on a timeline: "Array1 to Set $O(N)$", "Array2 to Set $O(N)$", and "Set Intersection $O(N)$".
+Mem Vis (BF): Overlapping stack frames representing recursion, drawn as an array subset shrinking at each step.
+Mem Vis (Opt): Two Hash Tables, drawn as arrays with buckets containing the unique integers from the input.

@@ -1,0 +1,13 @@
+ID: 243
+Problem Title: Shortest Word Distance
+Brute Force Method: Nested loops: for every occurrence of word1, iterate through the entire array to find word2 and calculate distance.
+BF Complexity Visuals: Pairwise Matrix: $O(N^2)$.
+How to Draw BF: Draw a grid where rows are indices of word1 and columns are indices of word2. Area represents the total comparisons.
+Optimised Pattern: Two-Pointer Index Tracking (One Pass)
+Opt Vis. Technique: Sliding Index Markers
+Dry Run (Opt): Traverse the array once. Keep two variables: `idx1` and `idx2`. Every time you update one, calculate the absolute difference with the other.
+How to Draw (Opt): Draw the array. Place two distinct markers (arrows) that move right. Whenever one moves, draw a bridge between them and label it with the distance.
+Opt Complexity Visuals: Linear Timeline: $O(N)$.
+How to Draw Opt Complexity: Draw one arrow from index 0 to N-1. Note that distance is calculated in $O(1)$ during the move.
+Mem Vis (BF): Minimal storage (indices).
+Mem Vis (Opt): Two Integer Variable Boxes: Draw `p1` and `p2` updating their values as they slide.

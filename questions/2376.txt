@@ -1,0 +1,13 @@
+ID: 2376
+Problem Title: Count Special Integers
+Brute Force Method: Iterate from 1 up to N. For every single number, convert it to a string or use a Hash Set to check if all its digits are unique. Count the ones that are.
+BF Complexity Visuals: Brute Force Iteration (O(N * log N))
+How to Draw BF: Draw a timeline from 1 to N. At every tick, draw a small sub-scan checking all the digits of that number for duplicates.
+Optimised Pattern: Digit Dynamic Programming (Bitmask)
+Opt Vis. Technique: Constraint-Based Digit Filling
+Dry Run (Opt): Use a recursive function `count(index, mask, isLess, isStarted)`. `mask` tracks used digits. `isLess` handles the boundary of N. `isStarted` handles leading zeros. Memoize the results.
+How to Draw (Opt): Draw a tree where each level is a digit position (10s, 100s). Each branch is a digit (0-9). Cross out branches that lead to digits already used in that path (using the bitmask).
+Opt Complexity Visuals: Logarithmic Digit Depth (O(log10(N) * 2^10))
+How to Draw Opt Complexity: Draw a shallow tree (max 10 levels deep). Each node represents a state in the memoization table.
+Mem Vis (BF): Draw a huge boolean array for every number up to N.
+Mem Vis (Opt): Draw a 2D/3D `memo` table and a 10-bit integer (Bitmask).

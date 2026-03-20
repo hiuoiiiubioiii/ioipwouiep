@@ -1,0 +1,13 @@
+ID: 2688
+Problem Title: Find Active Users
+Brute Force Method: Self-join the table on `user_id` and `date`, checking if `course_id_1 != course_id_2`. $O(N^2)$.
+BF Complexity Visuals: Quadratic Self-Join
+How to Draw BF: Draw lines connecting every row for a user to every other row for that same user.
+Optimised Pattern: GROUP BY + COUNT(DISTINCT)
+Opt Vis. Technique: The Date-User Pivot
+Dry Run (Opt): `GROUP BY user_id, date` and use `HAVING COUNT(DISTINCT course_id) &gt;= 2`. This is much cleaner and faster than a self-join.
+How to Draw (Opt): Draw a table. Group rows into buckets by exact User + Date combination. Count the unique courses inside each bucket. Keep buckets with 2+.
+Opt Complexity Visuals: Hash Aggregation $O(N)$
+How to Draw Opt Complexity: Draw a single pass through the table building a hash map of groupings.
+Mem Vis (BF): Large temporary join tables.
+Mem Vis (Opt): Hash map in DB memory. $O(N)$ space.

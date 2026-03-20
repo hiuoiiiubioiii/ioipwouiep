@@ -1,0 +1,13 @@
+ID: 3500
+Problem Title: Minimum Cost to Divide Array Into Subarrays
+Brute Force Method: Recursive partitioning picking any i number of split points and calculating the cost formula for each. $O(2^N)$
+BF Complexity Visuals: Exponential Cut Tree.
+How to Draw BF: Draw a timeline. At every index, branch into "Cut" or "Keep Going". The tree width doubles at every step.
+Optimised Pattern: DP with Convex Hull Trick (CHT) or prefix sum optimization. $O(N^2)$
+Opt Vis. Technique: Lower Convex Hull Envelope.
+Dry Run (Opt): Use DP state `dp[i][j]` (min cost using j subarrays for first i elements). The formula (P_nums[i] + k * j) x P_cost[p..i] can be viewed as a line y=mx+c. Maintain the hull to find the min in $O(1)$.
+How to Draw (Opt): Draw a 2D DP grid. For each cell, draw a line. The "best" choice is the lowest intersection on a vertical scan-line.
+Opt Complexity Visuals: Quadratic Matrix Shading.
+How to Draw Opt Complexity: Draw a square grid of size N x N. Shade it row by row to show bounded polynomial complexity.
+Mem Vis (BF): Deep recursion stack with trillion-level overlapping states.
+Mem Vis (Opt): A 2D memoization table or 1D rolling array of size N x (subarrays).

@@ -1,0 +1,13 @@
+ID: 1624
+Problem Title: Largest Substring Between Two Equal Characters
+Brute Force Method: Nested loops checking every character against every other character ahead of it to find matching pairs.
+BF Complexity Visuals: N^2 Pairwise Matrix
+How to Draw BF: Draw a string. Draw a line from the 1st letter to all other letters. Then from the 2nd letter to all others. $O(N^2)$.
+Optimised Pattern: Hash Map / Fixed Array (First Occurrence)
+Opt Vis. Technique: Anchor and Measure
+Dry Run (Opt): Use an array of size 26. Store the index of the *first* time a char appears. When seen again, calculate `currentIndex - firstIndex - 1`.
+How to Draw (Opt): Draw an array of 26 empty slots. Point an anchor line from a slot to a letter. Later in the string, draw a measuring tape back to that anchor.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw a single straight arrow scanning across the string from left to right. $O(N)$.
+Mem Vis (BF): Two Loop Counters: Simple floating variables `i` and `j`.
+Mem Vis (Opt): Size-26 Integer Array: Draw a small, fixed-size 26-box grid storing integer indices. Space is $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1328
+Problem Title: Break a Palindrome
+Brute Force Method: Iterate through every index. Replace the character with every letter 'a' through 'z'. Check if the result is still a palindrome. Keep the lexicographically smallest.
+BF Complexity Visuals: $O(N²)$ String Mutation &amp; Verification
+How to Draw BF: Draw a word. Draw 26 arrows pointing down from the first letter, 26 from the second. For every new word created, draw an arrow scanning the whole string to verify palindrome status.
+Optimised Pattern: Greedy Half-Scan Mutation
+Opt Vis. Technique: Midpoint Pointer Stop
+Dry Run (Opt): Scan only the first half of the string (`0` to `n/2 - 1`). Change the very first non-'a' character to 'a' and return. If all are 'a', change the very last character to 'b'.
+How to Draw (Opt): Draw a palindrome. Draw a vertical line exactly in the middle. Scan left to right until the line. Cross out the first non-'a', write 'a'. If you hit the line without changing anything, change the final character to 'b'.
+Opt Complexity Visuals: Early-Exit Single Arrow
+How to Draw Opt Complexity: Draw a string array. Draw an arrow stopping before the halfway point, proving optimal $O(N)$ time with immediate short-circuiting.
+Mem Vis (BF): String Factory Heap Fragmentation: Generating thousands of candidate `std::string` objects and holding them for `min()` comparison.
+Mem Vis (Opt): In-Place Character Array Mutation: Draw a single `std::string` or `char[]`. A single byte is overwritten in memory. Space complexity is exactly $O(1)$ auxiliary.

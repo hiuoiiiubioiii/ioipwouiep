@@ -1,0 +1,13 @@
+ID: 2909
+Problem Title: Minimum Sum of Mountain Triplets II
+Brute Force Method: Nested for-loops checking every combination (TLE due to 10^5 constraints).
+BF Complexity Visuals: 3D Cubic Grid
+How to Draw BF: Draw a massive cube (N=10^5) shaded red to indicate Time Limit Exceeded (N^3).
+Optimised Pattern: Prefix Min &amp; Suffix Min Arrays (Identical to 2908)
+Opt Vis. Technique: Valley &amp; Peak Overlays
+Dry Run (Opt): Same as 2908: Maintain minimums on both sides of the pivot element to avoid redundant scanning.
+How to Draw (Opt): Draw array. Circle `j`. Draw arrows from the precomputed `left_min[j-1]` and `right_min[j+1]` pointing up to `j` to form a mountain.
+Opt Complexity Visuals: Linear Sweep Timeline
+How to Draw Opt Complexity: Draw 3 non-overlapping line segments of length N. Equation: T(N) = 3N. $O(N)$.
+Mem Vis (BF): Loop counters.
+Mem Vis (Opt): Two 1D Arrays of size N. Space $O(N)$. Show memory blocks sitting side-by-side.

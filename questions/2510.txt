@@ -1,0 +1,13 @@
+ID: 2510
+Problem Title: Check if There is a Path With Equal Number of 0's And 1's
+Brute Force Method: Recursively explore every valid path (moving right and down). $O(2^(M+N)$)
+BF Complexity Visuals: Exponential recursion tree where every cell splits into two distinct future realities.
+How to Draw BF: Draw the grid. Start top-left. Trace a line down, then trace a line right. For every step, split your line into two new lines, writing the sequence of 0s and 1s.
+Optimised Pattern: Dynamic Programming (DP) tracking the minimum and maximum possible sum of `1s - 0s` at each cell.
+Opt Vis. Technique: Grid matrix where each cell contains a mathematical range/interval [min, max].
+Dry Run (Opt): If path length is odd, impossible (return false). Treat 1 as +1, 0 as -1. For each cell, calculate the lowest and highest possible running sum coming from the top or left. Check if 0 is in the range at the bottom-right cell.
+How to Draw (Opt): Draw the grid. Inside cell (0,0), write its value as `[val, val]`. Moving right and down, add the current cell's value to the `[min, max]` of the previous cells. Merge bounds.
+Opt Complexity Visuals: $O(M\cdot N)$ grid traversal.
+How to Draw Opt Complexity: Draw a matrix. Draw a single arrow snaking through every cell exactly once from top-left to bottom-right, updating a couple of numbers per cell.
+Mem Vis (BF): Massive $O(M+N)$ recursion call stack memory.
+Mem Vis (Opt): $O(M\cdot N)$ DP array, or $O(N)$ optimized 1D array.

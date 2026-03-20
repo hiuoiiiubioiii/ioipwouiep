@@ -1,0 +1,13 @@
+ID: 616
+Problem Title: Add Bold Tag in String
+Brute Force Method: For every index in S, check every word in the dictionary. If it matches, insert &lt;b&gt; and &lt;/b&gt; immediately. Then use Regex to merge overlapping tags.
+BF Complexity Visuals: Staggered, overlapping intervals with heavy string slicing.
+How to Draw BF: Draw a sentence. Draw 10 small "brackets" overlapping each other messily. Draw an eraser trying to fix the overlaps. $O(S \\text{cdot Words} \\text{cdot WordLen})$.
+Optimised Pattern: Boolean Mask + Interval Merging.
+Opt Vis. Technique: 1D Binary Ribbon / Bitmask.
+Dry Run (Opt): Create a boolean array `bold` of same length as S. For each word in dict, find all occurrences in S and mark `bold[i...j]` as True. Finally, traverse S: if `bold[i]` starts being True, add &lt;b&gt;; when it turns False, add &lt;/b&gt;.
+How to Draw (Opt): Draw the string. Underneath it, draw a row of empty checkboxes. Fill checkboxes with 'X' where words match. Draw one big box around consecutive 'X's.
+Opt Complexity Visuals: Linear scan of string after pre-marking.
+How to Draw Opt Complexity: Draw a straight line for the string scan. Above it, draw a parallel "Mask" line. Mark $O(S \cdot Σ\text{Words})$ or $O(S \cdot L)$ with Aho-Corasick.
+Mem Vis (BF): Draw dozens of temporary string copies created during constant concatenation and slicing.
+Mem Vis (Opt): Draw one boolean array of size N and one StringBuilder/List for the final output. $O(N)$.

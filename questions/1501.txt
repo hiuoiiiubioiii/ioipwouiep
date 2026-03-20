@@ -1,0 +1,13 @@
+ID: 1501
+Problem Title: Countries You Can Safely Invest In (SQL)
+Brute Force Method: Calculate global avg. Then for each country, scan calls table to find specific avg. $O(N \\text{cdot Calls})$.
+BF Complexity Visuals: Repetitive Aggregation Loops
+How to Draw BF: Draw a globe. For each country, draw a calculator rescanning the entire Calls table.
+Optimised Pattern: JOIN + GROUP BY + HAVING
+Opt Vis. Technique: The Global Filter Funnel
+Dry Run (Opt): Join all tables once. Group by country. Calculate avg per group and use HAVING to compare to the global mean.
+How to Draw (Opt): Draw data pouring into Country Buckets. Calculate bucket avg. Draw a horizontal "Global Avg Line"; keep buckets above it.
+Opt Complexity Visuals: Linear Aggregation $O(\text{Calls})$
+How to Draw Opt Complexity: Draw a single pipeline flow processing all calls in one pass.
+Mem Vis (BF): App-side memory for multiple lists.
+Mem Vis (Opt): Database internal aggregation buffer. $O(\text{Countries})$ space.

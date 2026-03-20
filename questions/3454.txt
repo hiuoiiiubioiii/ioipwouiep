@@ -1,0 +1,13 @@
+ID: 3454
+Problem Title: Separate Squares II
+Brute Force Method: Similar to Part I, but for every candidate Y, calculate the union of horizontal segments to avoid double-counting overlaps. $O(N² \log N)$ or worse.
+BF Complexity Visuals: Nested Union Area Calculations.
+How to Draw BF: Draw overlapping squares. For every Y, draw the horizontal shadow they cast, then manually calculate the length of the merged shadow.
+Optimised Pattern: Sweep Line + Segment Tree (with Lazy Propagation/Coverage Count). $O(N \log N)$
+Opt Vis. Technique: Vertical Scanning Beam with Interval Merging.
+Dry Run (Opt): Sweep a horizontal line from bottom to top. Use a Segment Tree to track the total X-coverage (union width) as you move. Area = Σ (width * ΔY).
+How to Draw (Opt): Draw the squares. Draw a vertical ruler on the side. As the horizontal sweep line moves up, color in the "active" horizontal segments in the Segment Tree.
+Opt Complexity Visuals: Sorted Event Timeline + Tree Traversal.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting step for Y-events, then an $O(N \log N)$ traversal where each move updates a tree of height log N.
+Mem Vis (BF): Massive lists of overlapping interval coordinates.
+Mem Vis (Opt): A Segment Tree of size 4N and an Event list of size 2N.

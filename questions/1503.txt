@@ -1,0 +1,13 @@
+ID: 1503
+Problem Title: Last Moment Before All Ants Fall Out of a Plank
+Brute Force Method: Simulate every single step (t=1, t=2...) for every ant. When ants collide, swap their directions.
+BF Complexity Visuals: 2D Grid Simulation (Time x Space)
+How to Draw BF: Draw a matrix where rows are time (t) and columns are positions. Draw arrows moving. Highly dense, showing $O(T \cdot N)$ explosion.
+Optimised Pattern: Brainteaser / Array Math (Ghost Ants)
+Opt Vis. Technique: Pass-Through Illusion Viz
+Dry Run (Opt): Realize that two ants bouncing off each other is mathematically identical to two ants passing *through* each other. Ignore collisions completely.
+How to Draw (Opt): Draw the plank as a straight line. Draw a left-facing arrow from the rightmost 'left' ant to index 0. Draw a right-facing arrow from the leftmost 'right' ant to index n. The answer is simply the longest arrow.
+Opt Complexity Visuals: Max Search $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Highlight finding the max value in the `left` array and max value of `n - val` in the `right` array.
+Mem Vis (BF): Multiple array snapshots for every time step `t`.
+Mem Vis (Opt): Two single variable boxes: `max_left` and `max_right`. Erase and rewrite the number inside as you iterate linearly. $O(1)$ space.

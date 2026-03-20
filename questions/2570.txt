@@ -1,0 +1,13 @@
+ID: 2570
+Problem Title: Merge Two 2D Arrays by Summing Values
+Brute Force Method: Combine both arrays into one, sort by ID, and then iterate through to merge duplicate IDs. $O((N+M)$ log (N+M)).
+BF Complexity Visuals: A "Shuffle and Sort" visual where everything is thrown into a pile before being organized.
+How to Draw BF: Write all pairs from both arrays into one long list. Sort by the first number. If you see two IDs that are the same, add their second numbers together.
+Optimised Pattern: Two-Pointer Merging (Sorted Property).
+Opt Vis. Technique: A "Zipper Merge" where two sorted streams are combined into one in a single pass.
+Dry Run (Opt): Set i = 0, j = 0. Compare nums1[i][0] and nums2[j][0]. If i.ID &lt; j.ID, add nums1[i] to result and move i. If j.ID &lt; i.ID, add nums2[j] and move j. If i.ID == j.ID, sum values and move both.
+How to Draw (Opt): Draw the two sorted lists. Place a finger at the start of each. Move the finger pointing to the smaller ID. If they match, sum the values. Record the results on a third piece of paper.
+Opt Complexity Visuals: $O(N + M)$ - Linear time because the inputs are already sorted.
+How to Draw Opt Complexity: Draw two horizontal arrays. Draw a single "Merge" funnel below them that takes elements from the pointers and outputs a single sorted list.
+Mem Vis (BF): $O(N + M)$ for the combined unsorted array.
+Mem Vis (Opt): $O(N + M)$ for the output array only.

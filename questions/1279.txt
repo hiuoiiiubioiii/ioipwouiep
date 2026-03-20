@@ -1,0 +1,13 @@
+ID: 1279
+Problem Title: Traffic Light Controlled Intersection
+Brute Force Method: Allow any car to cross whenever it arrives. If two cars from different roads (Road 1 and Road 2) cross at the same time, it results in a collision/concurrency error.
+BF Complexity Visuals: Uncontrolled Race Condition
+How to Draw BF: Draw two intersecting lines. Draw two cars arriving at the center simultaneously. Draw a red explosion symbol. Write Safety Violation.
+Optimised Pattern: Synchronization (Mutex/Locking)
+Opt Vis. Technique: The "Green Light" Semaphore
+Dry Run (Opt): Use a single `Lock` or `synchronized` block for the entire intersection. When a car arrives, check if the current green light is for its road. If not, toggle the light (call `turnGreen`). Then let the car cross and release the lock.
+How to Draw (Opt): Draw a "Lock" icon over the intersection. Draw a "Light" variable (1 or 2). Show a car arriving: it grabs the lock, checks the light, flips it if needed, crosses, and then "drops" the lock for the next car.
+Opt Complexity Visuals: Serialized Event Processing
+How to Draw Opt Complexity: Draw a timeline. Show car events being placed one after another, never overlapping. Write $O(N)$.
+Mem Vis (BF): Draw multiple threads crashing into each other.
+Mem Vis (Opt): Draw a single `Mutex` object and one integer variable for `currentLight`. Space: $O(1)$.

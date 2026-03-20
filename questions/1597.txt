@@ -1,0 +1,13 @@
+ID: 1597
+Problem Title: Build Binary Expression Tree From Infix Expression
+Brute Force Method: Full recursive parsing: find the operator with the lowest precedence that is not in parentheses, make it the root, and recurse on left/right. $O(N^2)$.
+BF Complexity Visuals: Recursive Substring Slicing
+How to Draw BF: Draw the expression. Search for '+' or '-'. Split the string. Search again. Draw a tree where each node requires a full string scan.
+Optimised Pattern: Shunting-yard Algorithm / Stack
+Opt Vis. Technique: The Operator-Operand Two-Stack Viz
+Dry Run (Opt): Use two stacks: one for operands (nodes) and one for operators. When an operator is popped, it becomes the parent of the top two nodes in the operand stack.
+How to Draw (Opt): Draw two vertical boxes: "Values" and "Ops". Walk through the string. Push numbers. When an op has lower precedence than the stack top, pop Op, pop two Values, draw a mini-tree, and push the root back to Values.
+Opt Complexity Visuals: One-Pass Linear $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Above each character, show a $O(1)$ stack push/pop operation.
+Mem Vis (BF): Massive recursive call stack and string allocations.
+Mem Vis (Opt): Two stacks storing pointers to node objects. $O(N)$ space.

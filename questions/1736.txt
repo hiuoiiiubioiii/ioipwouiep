@@ -1,0 +1,13 @@
+ID: 1736
+Problem Title: Latest Time by Replacing Hidden Digits
+Brute Force Method: Check all 1440 possible minutes in a day (00:00 to 23:59) and see which one fits the pattern.
+BF Complexity Visuals: Clock Face Tally.
+How to Draw BF: Draw a clock. Rotate through every minute. Check if the string matches. $O(1440)$ -&gt; $O(1)$.
+Optimised Pattern: Greedy Positional Logic.
+Opt Vis. Technique: Slot-by-Slot Maximization.
+Dry Run (Opt): Evaluate each '?' independently from left to right. If `time[0] == '?'`, check `time[1]` to decide between 1 or 2.
+How to Draw (Opt): Draw 4 boxes. For each '?', write the highest possible digit allowed by time rules (23:59).
+Opt Complexity Visuals: Constant Step Checklist.
+How to Draw Opt Complexity: Draw 4 checkmarks. Label $O(1)$.
+Mem Vis (BF): Variable for max time.
+Mem Vis (Opt): Single string of length 5. $O(1)$.

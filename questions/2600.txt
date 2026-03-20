@@ -1,0 +1,13 @@
+ID: 2600
+Problem Title: K Items With the Maximum Sum
+Brute Force Method: Generate an array containing all 1s, 0s, and -1s, then pick the first k elements. $O(\text{numOnes} + \text{numZeros} + \text{numNegOnes})$.
+BF Complexity Visuals: Physically laying out all items in a line before picking the top k.
+How to Draw BF: Ones: 2, Zeros: 1, Negs: 2, k: 4. Array: [1, 1, 0, -1, -1]. Sum of first 4: 1+1+0-1 = 1.
+Optimised Pattern: Greedy Case-Based Logic.
+Opt Vis. Technique: A "Prioritized Selection" visual: take all available 1s first, then 0s, and only take -1s if absolutely necessary.
+Dry Run (Opt): 1. If k <= numOnes, return k. 2. If k <= numOnes + numZeros, return numOnes. 3. Otherwise, you must take some -1s. Return numOnes - (k - numOnes - numZeros).
+How to Draw (Opt): You want the biggest sum. You have a pile of 1 bills, a pile of 0 bills, and a pile of -1 bills. Take k bills. Take all the 1s you can first. If you still need more, take the 0s. If you still need more, you're forced to take the -1s.
+Opt Complexity Visuals: $O(1)$ - Constant time math checks.
+How to Draw Opt Complexity: Draw three buckets (1, 0, -1). Draw an arrow taking from the '1' bucket first, then '0', then '-1'.
+Mem Vis (BF): $O(N)$ to store the explicit array of items.
+Mem Vis (Opt): $O(1)$ - Constant space.

@@ -1,0 +1,13 @@
+ID: 1769
+Problem Title: Minimum Number of Operations to Move All Balls to Each Box
+Brute Force Method: For every box i, loop through all other boxes j. If box j has a ball, add `abs(i - j)` to the total for box i.
+BF Complexity Visuals: All-Pairs Manhattan Distance.
+How to Draw BF: Draw boxes. Pick box 0, draw arrows from all other balls. Pick box 1, repeat. $O(N^2)$.
+Optimised Pattern: Two-Pass Prefix and Suffix Sum.
+Opt Vis. Technique: Cumulative Momentum.
+Dry Run (Opt): Pass left-to-right: keep track of `balls` seen and current `operations`. At each box, `ops = ops + balls`. Repeat right-to-left. The result for each box is `left_ops + right_ops`.
+How to Draw (Opt): Draw boxes. Draw a rolling snowball from the left. As it hits a ball, it gets heavier (ball count) and takes more effort (ops) to push. Do the same from the right.
+Opt Complexity Visuals: Two Sequential Linear Sweeps.
+How to Draw Opt Complexity: Draw one arrow moving right, then one arrow moving left. Label $O(N)$.
+Mem Vis (BF): None, just loop variables.
+Mem Vis (Opt): One result array of size N. $O(N)$ space.

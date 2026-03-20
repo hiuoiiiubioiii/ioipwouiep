@@ -1,0 +1,13 @@
+ID: 806
+Problem Title: Number of Lines To Write String
+Brute Force Method: Build actual string objects in memory line by line. Keep adding characters to a string until its width exceeds 100, then push that string to an array and start a new one. Count array length.
+BF Complexity Visuals: String Builder Accumulator. $O(N)$ time but heavy overhead.
+How to Draw BF: Draw a horizontal track. Stack blocks on it. When it overflows, draw an arrow pointing to a whole new physical track below it.
+Optimised Pattern: Single-Pass Greedy Accumulation / Simulation.
+Opt Vis. Technique: Typewriter Carriage Return.
+Dry Run (Opt): Imagine an old typewriter. Each letter moves the carriage. When you hear the "Ding!" (100 pixels), hit Enter (Lines + 1) and slide the carriage back to 0 + current letter width.
+How to Draw (Opt): Draw a ruler marked 0 to 100. Draw varying length blocks (letters) fitting into it. Once a block hangs past 100, draw a swoop arrow dropping it to the start of a new ruler.
+Opt Complexity Visuals: Linear Scan. $O(N)$ time.
+How to Draw Opt Complexity: Draw a single continuous timeline. Mark small tick marks on it for each character processed.
+Mem Vis (BF): Array of Strings: Draw an array where each index holds a horizontal bar representing an allocated string.
+Mem Vis (Opt): Two Integer Variables: Draw two small squares (like digital odometers or counters) labeled "Lines" and "Width" that just overwrite their numbers. $O(1)$ space.

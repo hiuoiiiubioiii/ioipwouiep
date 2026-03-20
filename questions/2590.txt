@@ -1,0 +1,13 @@
+ID: 2590
+Problem Title: Design a Todo List (Premium)
+Brute Force Method: Store all tasks in a single list. For every query (getTasks, completeTask), iterate through the entire list and filter/modify. $O(N x Q)$.
+BF Complexity Visuals: A messy, unorganized pile of notes that you have to read from top to bottom every time someone asks for a specific task.
+How to Draw BF: Write every task on a piece of paper. To find "Work" tasks, read every paper. To complete Task 5, find it in the pile and cross it out.
+Optimised Pattern: Hash Map (User to Task-List) + Sorting/Filtering.
+Opt Vis. Technique: A "Filing Cabinet" visual where each user has their own folder, and tasks are sorted by due date within that folder.
+Dry Run (Opt): Use a Hash Map where keys are userId and values are a list of Task objects. Each Task contains an ID, description, due date, tags, and a completion status. To getTasksForUser, filter the user's list for incomplete tasks (and tags if specified), then sort by dueDate.
+How to Draw (Opt): Draw a Map. Key 1 points to a list of tasks. Sort that list by the "Date" field. When a task is completed, change its status but keep it in the list (or remove it).
+Opt Complexity Visuals: $O(1)$ for adding tasks. $O(N \log N)$ for getting tasks (due to sorting). $O(N)$ for completing/deleting.
+How to Draw Opt Complexity: Draw the Hash Map structure. Show an arrow pointing from a UserID to a sorted list, then show a "Filter" box that removes completed tasks.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(T)$ where T is the total number of tasks created across all users.

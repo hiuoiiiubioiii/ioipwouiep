@@ -1,0 +1,13 @@
+ID: 2375
+Problem Title: Construct Smallest Number From DI String
+Brute Force Method: Generate all permutations of numbers 1-9 (9!), check if each permutation follows the 'D' and 'I' pattern, and pick the smallest one.
+BF Complexity Visuals: Factorial Permutation Search (O(9!))
+How to Draw BF: Draw a string like "IDID". Branch into every possible starting number (1-9). For 'I', branch into larger numbers; for 'D', branch into smaller. Find the first valid leaf.
+Optimised Pattern: Stack-Based Segment Reversal
+Opt Vis. Technique: Incremental Number Reversing
+Dry Run (Opt): Iterate through `pattern` and numbers `1` to `N+1`. Push numbers onto a stack. If you hit an 'I' or the end of the string, pop everything from the stack and append to the result.
+How to Draw (Opt): Draw the pattern. Write numbers 1, 2, 3... under it. If you see 'D', put the number in a "waiting room" (stack). When you hit 'I', let everyone out of the waiting room in reverse order.
+Opt Complexity Visuals: Single Pass with Stack (O(N))
+How to Draw Opt Complexity: Draw a timeline. Numbers flow into a stack and then immediately out into the result string. No branching back.
+Mem Vis (BF): Draw a massive recursion tree of all numeric permutations.
+Mem Vis (Opt): Draw one Stack and one Result String (or Character Array).

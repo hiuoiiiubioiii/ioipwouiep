@@ -1,0 +1,13 @@
+ID: 1762
+Problem Title: Buildings With an Ocean View
+Brute Force Method: For each building, check every building to its right. If any building is taller or equal, it has no ocean view.
+BF Complexity Visuals: Nested Right-Scan.
+How to Draw BF: Draw buildings as bars. For each bar, draw arrows to every bar to the right. $O(N^2)$.
+Optimised Pattern: Right-to-Left Monotonic Scan.
+Opt Vis. Technique: The "Horizon Sweep".
+Dry Run (Opt): Start from the rightmost building (always has a view). Move left, keeping track of the `max_height_seen`. If current building &gt; `max`, it has a view. Update `max`.
+How to Draw (Opt): Draw buildings. Place a "sun" on the right. Draw a horizontal line moving left that only rises when it hits a taller building.
+Opt Complexity Visuals: Single Reverse Pass.
+How to Draw Opt Complexity: Draw one arrow moving from right to left over the array. Label $O(N)$.
+Mem Vis (BF): None, just loop pointers. $O(1)$.
+Mem Vis (Opt): One integer variable: `max_height`. $O(1)$ extra space visual.

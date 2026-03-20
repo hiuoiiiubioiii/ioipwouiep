@@ -1,0 +1,13 @@
+ID: 112
+Problem Title: Path Sum
+Brute Force Method: DFS generating arrays of all complete root-to-leaf paths, summing each array, and checking against the target.
+BF Complexity Visuals: Large memory blocks forming to hold every path array in memory simultaneously.
+How to Draw BF: Write out the complete sequence of numbers for every path as separate lists, then write a sum equation next to each.
+Optimised Pattern: DFS (Pre-order) with target subtraction (passing `target - node.val` down the recursion).
+Opt Vis. Technique: A fuel gauge depleting. The target is the starting fuel, and each node consumes its value. Reaching exactly 0 fuel at a leaf is a success.
+Dry Run (Opt): Subtract current node value from target. Check if current is a leaf AND target == 0. If yes, return true. Else, recurse left and right with new target.
+How to Draw (Opt): Write the starting target at the root. Cross it out, write `target - root.val`, and draw an arrow passing this new number down to children.
+Opt Complexity Visuals: A single $O(N)$ recursion tree showing nodes visited once, with boolean `true` short-circuiting upwards.
+How to Draw Opt Complexity: Draw the tree. When a path hits 0 at a leaf, draw a thick "TRUE" arrow zipping straight back up to the root, ignoring remaining branches.
+Mem Vis (BF): $O(N\cdot H)$ heap allocations to dynamically create and store path arrays.
+Mem Vis (Opt): $O(H)$ call stack strictly holding primitives (pointers and integers) with zero heap allocation overhead.

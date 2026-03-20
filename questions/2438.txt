@@ -1,0 +1,13 @@
+ID: 2438
+Problem Title: Range Product Queries of Powers
+Brute Force Method: For each query [left, right], iterate from left to right in the powers array and calculate the product modulo 10^9 + 7.
+BF Complexity Visuals: Nested Query Iteration
+How to Draw BF: Draw the powers array. Below it, draw multiple brackets representing queries, some overlapping. Label $O(Q \cdot N)$.
+Optimised Pattern: Precomputation (Prefix Products)
+Opt Vis. Technique: Cumulative Product Array
+Dry Run (Opt): Decompose 'n' into powers of 2. Create an array of these powers. Precompute prefix products such that product(L, R) = Prefix[R] / Prefix[L-1]. *Note: Use modular inverse if needed, or simple product since N is small.*
+How to Draw (Opt): Draw the powers array. Draw a second "Prefix" array below it where each cell is the product of everything to the left. Circle two indices to show the division/subtraction logic.
+Opt Complexity Visuals: Linear Precompute + $O(1)$ Query
+How to Draw Opt Complexity: Draw one long bar (Precompute: $O(\log N)$) and small dots (Queries: $O(Q)$). Label $O(\log N + Q)$.
+Mem Vis (BF): Draw one result variable.
+Mem Vis (Opt): Draw an array of size log(N) (approx 30-32). $O(\log N)$ Space.

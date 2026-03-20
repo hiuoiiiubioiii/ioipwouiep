@@ -1,0 +1,13 @@
+ID: 536
+Problem Title: Construct Binary Tree from String
+Brute Force Method: Recursively find matching parentheses pairs to split the string into root, left, and right substrings. $O(N^2)$ due to repeated string slicing.
+BF Complexity Visuals: A fractal pattern where a line keeps breaking into smaller, redundant lines.
+How to Draw BF: Draw a string. Draw brackets over pairs. Draw new strings below. Repeat until all characters are processed.
+Optimised Pattern: Stack-based Iterative Construction.
+Opt Vis. Technique: A building site where you "stack" floors. A '(' means go up a floor, a ')' means finish that floor and go down.
+Dry Run (Opt): Scan string. If number, create Node. If '(', push current Node to Stack. If ')', pop from Stack (finished child) and attach to current Stack top.
+How to Draw (Opt): Draw a vertical stack box. As you read `4(2(3)(1))(6)`, push 4, then 2, then 3. On `)`, pop 3 and draw a line from 2 to 3.
+Opt Complexity Visuals: Single pass over the string length. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line with N marks, each processed once.
+Mem Vis (BF): Multiple temporary string copies for every recursive call.
+Mem Vis (Opt): A stack holding at most the height of the tree. $O(H)$.

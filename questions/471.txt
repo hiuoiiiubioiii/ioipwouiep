@@ -1,0 +1,13 @@
+ID: 471
+Problem Title: Encode String with Shortest Length
+Brute Force Method: Exhaustive Recursion Try every possible split point and every possible repetition pattern for every substring.
+BF Complexity Visuals: Exploding Tree
+How to Draw BF: Draw a string. Branch out for every split point k. Inside each branch, search for repetitions. $O(2^N)$.
+Optimised Pattern: Interval DP `dp[i][j]` stores the shortest encoded string for `s[i...j]`. Check for patterns using `(s+s).indexOf(s, 1)`.
+Opt Vis. Technique: Substring Matrix
+Dry Run (Opt): Fill a 2D table where cells represent substrings of increasing length. Use previously computed smaller cells to build larger ones.
+How to Draw (Opt): Draw an N \times N grid. Fill it diagonally starting from length 1. For `dp[0][4]`, show it checking `dp[0][k] + dp[k+1][4]`.
+Opt Complexity Visuals: Triangle Fill
+How to Draw Opt Complexity: Draw the upper triangle of a grid. Total $O(N^3)$ or $O(N^4)$ depending on string search.
+Mem Vis (BF): Recursion Stack Deep tree of string fragments.
+Mem Vis (Opt): String Matrix Draw a 2D grid where each cell holds a string. $O(N^2 \cdot N)$ space.

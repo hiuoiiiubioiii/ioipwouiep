@@ -1,0 +1,13 @@
+ID: 2848
+Problem Title: Points That Intersect With Cars
+Brute Force Method: Create a boolean array (or Set) of size 101. For every car interval [start, end], loop from start to end and mark each point in the array as occupied. Count the true values.
+BF Complexity Visuals: Point-by-Point Marking Map
+How to Draw BF: Draw a number line from 1 to 100. For each car, draw a bracket. Below the bracket, draw a series of dots marking every single integer point it covers. Show the overlap where points are marked multiple times.
+Optimised Pattern: Difference Array / Prefix Sums
+Opt Vis. Technique: Sweep Line Events
+Dry Run (Opt): Create an array diff of size 102. For each car [s, e], do diff[s]++ and diff[e+1]--. Run a prefix sum (running total) across diff. If sum &gt; 0, the current point is covered.
+How to Draw (Opt): Draw a number line. Mark +1 at every start point and -1 at every end + 1 point. Draw a "Running Total" graph above it; whenever the graph is above zero, shade the area.
+Opt Complexity Visuals: Single Pass Scan $O(N + \text{MaxCoord})$
+How to Draw Opt Complexity: Draw two boxes: "Interval Marking" $O(N)$ and "Prefix Sum Sweep" $O(100)$. Total is linear and extremely fast.
+Mem Vis (BF): Visualize a HashSet that might store up to 100 integers, which is small but less efficient than a primitive array.
+Mem Vis (Opt): Visualize a fixed-size primitive integer array of 102 elements. $O(\text{MaxCoord})$ space.

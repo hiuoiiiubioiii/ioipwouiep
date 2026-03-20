@@ -1,0 +1,13 @@
+ID: 1680
+Problem Title: Concatenation of Consecutive Binary Numbers
+Brute Force Method: For each number i from 1 to n, convert i to a binary string, concatenate all strings, then convert the massive string back to decimal.
+BF Complexity Visuals: Heavy String Conversion
+How to Draw BF: Draw numbers turning into binary text ribbons, being taped together, then re-parsed. $O(N \\text{times} \\text{text}{\text{Length}})$.
+Optimised Pattern: Bit Manipulation (Shift and Add)
+Opt Vis. Technique: Binary Sliding Accumulator
+Dry Run (Opt): Maintain a `result`. For each i, determine its bit-length. Shift `result` left by that length and add i. Take modulo at each step.
+How to Draw (Opt): Write current total in binary. To add the next number, "push" the total to the left to make empty spaces, then write the next number in those spaces.
+Opt Complexity Visuals: Direct Mathematical Loop
+How to Draw Opt Complexity: Draw a single loop from 1 to n where each step is a bit-shift. $O(N)$.
+Mem Vis (BF): Massive String Buffer: Draw a giant ribbon of text. $O(N \log N)$ space.
+Mem Vis (Opt): Single 64-bit Variable: Draw one small box holding the running total. $O(1)$ auxiliary space.

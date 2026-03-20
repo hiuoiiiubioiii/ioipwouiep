@@ -1,0 +1,13 @@
+ID: 2810
+Problem Title: Faulty Keyboard
+Brute Force Method: Iterate through the string. Whenever 'i' is encountered, take the string built so far and run a full string reversal operation.
+BF Complexity Visuals: String Reallocation Graph
+How to Draw BF: Draw the string building up. At every 'i', draw an arrow to a completely new block of memory with the reversed characters. Label the cost of this reversal as $O(K)$ where K is current length.
+Optimised Pattern: Double Ended Queue (Deque) / Two Pointers
+Opt Vis. Technique: Deque Insertion Flow
+Dry Run (Opt): Maintain a boolean flag `reverse`. When hitting 'i', toggle `reverse`. If `reverse` is false, append to the tail of the Deque. If true, prepend to the head. At the end, read left-to-right (or right-to-left if `reverse` is still true).
+How to Draw (Opt): Draw a box with open ends. Use a coin to represent the `reverse` flag (heads=normal, tails=reversed). As you process characters, add them to the right side if heads, left side if tails. Flip the coin when you see 'i'.
+Opt Complexity Visuals: Linear Timeline
+How to Draw Opt Complexity: Draw a straight timeline. Each character processed represents one tick. Since Deque insertions at either end are $O(1)$, the entire timeline is simply $O(N)$.
+Mem Vis (BF): Visualize a pile of abandoned strings in memory (garbage collection nightmare) as new reversed strings are constantly allocated. $O(N^2)$ overall space churn.
+Mem Vis (Opt): Visualize a single block of contiguous memory or a linked list of nodes (the Deque) growing strictly to size N, with $O(N)$ space.

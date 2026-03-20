@@ -1,0 +1,13 @@
+ID: 2942
+Problem Title: Find Words Containing Character
+Brute Force Method: Iterate through each word, and for each word, iterate through its characters to find the target.
+BF Complexity Visuals: Linear Search Timeline
+How to Draw BF: Draw a series of boxes (words). Inside each box, draw dots (characters). Touch every dot. $O(\text{sum word}_\text{length})$.
+Optimised Pattern: Simple Linear Scan
+Opt Vis. Technique: Pointer Filtering
+Dry Run (Opt): Iterate index i from 0 to words.length - 1. Use a built-in `find` or `contains` method. If true, add i to the result list.
+How to Draw (Opt): Draw a list of strings. Draw an arrow pointing to each word. Circle the index if the character 'x' is found inside.
+Opt Complexity Visuals: Total String Length Line
+How to Draw Opt Complexity: Draw one straight line representing the total number of characters in all words combined. T = $O(L)$.
+Mem Vis (BF): Temporary character arrays for each word.
+Mem Vis (Opt): A single list of integers (result indices). Space $O(N)$.

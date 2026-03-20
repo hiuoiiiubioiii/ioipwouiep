@@ -1,0 +1,13 @@
+ID: 1398
+Problem Title: Customers Who Bought A and B but Not C (SQL)
+Brute Force Method: Use `WHERE product='A' AND product='B' AND product!='C'`, which fails because SQL filters row-by-row, not across the customer's entire history.
+BF Complexity Visuals: Logical Record Mismatch
+How to Draw BF: Draw a table. Check row 1: "Is it A and B and not C?" No, it's just A. Row 2 is just B. Result is empty. Visually shows why row-level logic fails for set-level problems.
+Optimised Pattern: Group By + Having (Set Membership)
+Opt Vis. Technique: Venn Diagram Filtering
+Dry Run (Opt): `GROUP BY customer_id` and use `HAVING SUM(product='A') &gt; 0 AND SUM(product='B') &gt; 0 AND SUM(product='C') = 0`.
+How to Draw (Opt): Draw a circle for Customer 1. Put all their purchases inside. If 'A' and 'B' are inside, but 'C' is not, color the circle green. If 'C' enters, color it red immediately.
+Opt Complexity Visuals: $O(N \log N)$ or $O(N)$
+How to Draw Opt Complexity: Draw a Hash Map where keys are Customer IDs and values are a bitmask or set of products, proving a single pass over the orders table.
+Mem Vis (BF): Subquery Temp Tables: Database creating multiple intermediate clones of the table to perform `EXCEPT` or `INTERSECT`.
+Mem Vis (Opt): In-Memory Hash Aggregator: Draw a simple Hash Table tallying product counts per ID.

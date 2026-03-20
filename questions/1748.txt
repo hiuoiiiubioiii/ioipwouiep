@@ -1,0 +1,13 @@
+ID: 1748
+Problem Title: Sum of Unique Elements
+Brute Force Method: For each element, loop through the rest of the array to see if it appears again. If not, add it to the sum.
+BF Complexity Visuals: Nested Scanning (Quadratic).
+How to Draw BF: Draw array. For element 1, scan everything else. For element 2, scan everything else. $O(N^2)$.
+Optimised Pattern: Hash Map / Frequency Array.
+Opt Vis. Technique: Sorting into Tally Buckets.
+Dry Run (Opt): Traverse array once to count frequencies in a map/array. Traverse the map and add keys where value == 1.
+How to Draw (Opt): Draw bins labeled with numbers found. Toss items into bins. Only count the sum of bins that contain exactly one item.
+Opt Complexity Visuals: Two-Pass Linear Scan.
+How to Draw Opt Complexity: Draw two sequential arrows over the array/map. Label $O(N)$.
+Mem Vis (BF): None, just loop pointers.
+Mem Vis (Opt): A frequency array of size 101. $O(1)$ space relative to problem constraints.

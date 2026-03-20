@@ -1,0 +1,13 @@
+ID: 1582
+Problem Title: Special Positions in a Binary Matrix
+Brute Force Method: For every cell `(r, c)` that contains a 1, scan the entire row `r` and entire column `c` to count 1s. $O(R \cdot C \cdot (R+C)$).
+BF Complexity Visuals: Cubic Intersection Scan
+How to Draw BF: Draw a 2D grid. For every '1', draw a horizontal and a vertical laser line. If a laser hits another '1', the cell isn't "special." Redundant laser fires.
+Optimised Pattern: Preprocessing (Row/Col Sums)
+Opt Vis. Technique: The Coordinate Projection Viz
+Dry Run (Opt): Pre-calculate the sum of 1s in every row and every column. A cell `(r, c)` is special if `mat[r][c] == 1`, `row_sum[r] == 1`, and `col_sum[c] == 1`.
+How to Draw (Opt): Draw the grid. To the right of each row, write the row sum. Below each column, write the column sum. Circle the '1's where the corresponding row and column sums are both exactly 1.
+Opt Complexity Visuals: Single Grid Pass $O(R \cdot C)$
+How to Draw Opt Complexity: Draw a rectangle. One pass to fill sum arrays, one pass to check cells. Strictly linear to grid size.
+Mem Vis (BF): Storing full lists of 1-coordinates. $O(R \cdot C)$.
+Mem Vis (Opt): Two integer arrays: `rowCount` of size R and `colCount` of size C. $O(R + C)$ space.

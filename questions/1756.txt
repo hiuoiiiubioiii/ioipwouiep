@@ -1,0 +1,13 @@
+ID: 1756
+Problem Title: Design Most Recently Used Queue
+Brute Force Method: Use a standard list. For `fetch(k)`, remove element at `k-1` and `append` to the end.
+BF Complexity Visuals: Array Shift Animation.
+How to Draw BF: Draw a line of boxes. Cross out box K. Draw arrows shifting every box to the right of K one spot left. $O(N)$.
+Optimised Pattern: Square Root Decomposition or Fenwick Tree.
+Opt Vis. Technique: Block-Level Jumping.
+Dry Run (Opt): Divide N elements into \sqrt{N} blocks. Fetching involves finding the right block, removing from it, and appending to the last block. Rebalance if a block gets too large.
+How to Draw (Opt): Draw \sqrt{N} large buckets. To move an item, draw it jumping from Bucket A to the very last Bucket Z.
+Opt Complexity Visuals: Segmented Linear Scan.
+How to Draw Opt Complexity: Draw \sqrt{N} steps to find the block + \sqrt{N} steps to shift within the block. Label $O(\\text{sqrt}{N})$.
+Mem Vis (BF): Single contiguous array.
+Mem Vis (Opt): A list of lists (the blocks). $O(N)$ total space.

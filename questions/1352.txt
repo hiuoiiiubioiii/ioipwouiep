@@ -1,0 +1,13 @@
+ID: 1352
+Problem Title: Product of the Last K Numbers
+Brute Force Method: Store all numbers in a list. For every query, iterate back through the last K elements and multiply them.
+BF Complexity Visuals: $O(K)$ Linear Query Scan
+How to Draw BF: Draw an array. For a query, draw a bracket covering the last K elements and an arrow hopping through each. Repeat for every query.
+Optimised Pattern: Prefix Product Array with Zero-Reset
+Opt Vis. Technique: Cumulative Multiplier Stream
+Dry Run (Opt): Maintain a running product list. `getProduct(k)` is `total_product / prefix[N-K-1]`. If a zero is added, clear the list because any product including it will be zero.
+How to Draw (Opt): Draw a stream of numbers. Below it, write the running product. When a '0' appears, draw a "Wall" and start the running product from '1' again.
+Opt Complexity Visuals: $O(1)$ Constant Lookup
+How to Draw Opt Complexity: Draw an array index. Draw two dots and a single division operator, proving the result takes exactly one math operation regardless of K.
+Mem Vis (BF): Dynamic List: A simple growing list of integers.
+Mem Vis (Opt): Prefix List: Draw a list where each element i is the product of all elements from the last '0' to i.

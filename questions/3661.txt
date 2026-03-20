@@ -1,0 +1,13 @@
+ID: 3661
+Problem Title: Maximum Walls Destroyed by Robots (Hard)
+Brute Force Method: Iterate through every possible path for every robot, checking every wall combination. $O(2^R x C x \text{Paths})$.
+BF Complexity Visuals: Path-Wall Intersection Matrix.
+How to Draw BF: Draw a grid with robots. Draw lines representing paths. Try every single possible "toggle" for every robot (on/off) to see which combo breaks the most walls. $O(2^N)$ is too slow.
+Optimised Pattern: Maximum Flow / Bipartite Matching. Model robots as one set of nodes, walls as another, and find the maximum matching/coverage.
+Opt Vis. Technique: The "Power Grid" Flow Map.
+Dry Run (Opt): Imagine water flowing from a Source to Robots, through the Walls they can hit, into a Sink. The "capacity" of the pipes determines the maximum destruction.
+How to Draw (Opt): Draw a "Source" node. Connect it to Robots. Connect Robots to the Walls they can destroy. Connect Walls to a "Sink". The max flow value is your answer.
+Opt Complexity Visuals: Max-Flow Min-Cut Chart.
+How to Draw Opt Complexity: Write the complexity of Dinic's algorithm or Edmonds-Karp: $O(V^2 E)$ or $O(\text{VE}^2)$. In a grid, V and E are proportional to R x C.
+Mem Vis (BF): A massive recursion stack for backtracking through every robot's decision tree.
+Mem Vis (Opt): A flow network residual graph (Adjacency List with capacities). Space $O(V+E)$.

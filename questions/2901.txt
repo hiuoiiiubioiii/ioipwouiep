@@ -1,0 +1,13 @@
+ID: 2901
+Problem Title: Longest Unequal Adjacent Groups Subsequence II
+Brute Force Method: Check all combinations of strings to find the longest chain where adjacent strings have the same length, Hamming distance of 1, and different group IDs.
+BF Complexity Visuals: $O(2^N)$ Complex Subsequence
+How to Draw BF: Draw a graph where strings are nodes and valid jumps are edges. Find the longest path in this Directed Acyclic Graph.
+Optimised Pattern: Dynamic Programming (LIS Variation)
+Opt Vis. Technique: State-Space Pathfinding
+Dry Run (Opt): Let `dp[i]` be the length of the longest valid subsequence ending at index i. For each i, look at all j &lt; i and update if all three conditions (length, Hamming, group) are met.
+How to Draw (Opt): Draw a grid with N boxes. For each box, draw arrows from all previous valid boxes. Write the length of the longest path in each box.
+Opt Complexity Visuals: $O(N^2 \cdot L)$ where L is string length.
+How to Draw Opt Complexity: Draw a triangular nested loop area. For each pair of indices, perform a string comparison of length L.
+Mem Vis (BF): $O(N^2)$ - For the graph or DP table.
+Mem Vis (Opt): $O(N)$ - To store DP values and parent pointers for path reconstruction.

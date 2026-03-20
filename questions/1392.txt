@@ -1,0 +1,13 @@
+ID: 1392
+Problem Title: Longest Happy Prefix
+Brute Force Method: For every possible prefix length L, extract the prefix and the suffix of length L, and compare them as strings $O(N)$.
+BF Complexity Visuals: $O(N^2)$ String Slicing
+How to Draw BF: Draw a string. Highlight a prefix and suffix of length 1, then length 2... For each, draw a comparison process scanning both.
+Optimised Pattern: KMP Algorithm (Prefix Function)
+Opt Vis. Technique: Self-Matching Array (LPS)
+Dry Run (Opt): Compute the "Longest Prefix Suffix" (LPS) array used in KMP. The value at the very last index of the LPS array tells you the longest prefix that is also a suffix.
+How to Draw (Opt): Draw the string. Below it, draw an empty array. Fill the array by matching the string against itself with a shift. The value at the end is your answer.
+Opt Complexity Visuals: $O(N)$ Linear Scan
+How to Draw Opt Complexity: Draw a single arrow moving across the string, maintaining a "match" length that updates in-place without ever backtracking.
+Mem Vis (BF): $O(N^2)$ String Fragments: Storing or comparing hundreds of temporary substring objects in memory.
+Mem Vis (Opt): $O(N)$ LPS Array: Draw a single integer array of size N that tracks the state of the pattern match.

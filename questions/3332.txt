@@ -1,0 +1,13 @@
+ID: 3332
+Problem Title: Maximum Points Tourist Can Earn
+Brute Force Method: Explore all 2^K paths (stay or move to any city every day). $O(N^K)$.
+BF Complexity Visuals: Exponential Travel Graph
+How to Draw BF: Draw City 1. Branch to all N cities for Day 1. Branch again for Day 2.
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: The City-Day Value Grid
+Dry Run (Opt): `dp[day][city]` is the max score ending at `city` on `day`. For the next day, you can either stay (add `stay[city]`) or travel from `prev_city` to `city` (add `travel[prev_city][city]`).
+How to Draw (Opt): Draw a matrix (Cities x Days). To fill Day 2 for City A, look at Day 1 for City A (stay) and Day 1 for all other Cities (travel). Take the max.
+Opt Complexity Visuals: State Transition $O(K \cdot N^2)$
+How to Draw Opt Complexity: Draw the matrix. Each cell takes a loop of size N to compute.
+Mem Vis (BF): Massive recursion tracking every path.
+Mem Vis (Opt): A 2D DP table (or two 1D rows for space opt). $O(N)$ space.

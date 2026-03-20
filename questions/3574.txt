@@ -1,0 +1,13 @@
+ID: 3574
+Problem Title: Maximize Subarray GCD Score (Hard)
+Brute Force Method: Check every possible subarray, compute its GCD, and multiply by its length to find the max score.
+BF Complexity Visuals: N^3 Nested Subarray Scans.
+How to Draw BF: Draw an N x N matrix of subarrays. For each, draw a "GCD Machine" looping through its elements. $O(N^3)$.
+Optimised Pattern: Sparse Table + Decreasing GCD Property.
+Opt Vis. Technique: GCD Segment Compression.
+Dry Run (Opt): The number of unique GCDs starting at any index is logarithmic (log MaxVal). Store these "active" GCDs and their ranges in a list.
+How to Draw (Opt): Draw an array. Below it, draw brackets showing ranges where the GCD remains constant. When the GCD changes, "split" the bracket.
+Opt Complexity Visuals: $O(N \log N \cdot \\text{log MaxVal})$.
+How to Draw Opt Complexity: Draw a sparse table structure (logarithmic layers) being queried for each index.
+Mem Vis (BF): Full GCD Cache: Draw a massive 2D matrix storing precomputed GCDs for all pairs.
+Mem Vis (Opt): Sparse Table / Active GCD List: Draw a compact array of logarithmic depth and a small list of "current" GCD values.

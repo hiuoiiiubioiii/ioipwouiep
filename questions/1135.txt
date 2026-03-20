@@ -1,0 +1,13 @@
+ID: 1135
+Problem Title: Connecting Cities With Minimum Cost
+Brute Force Method: Backtracking. Try every combination of edges to see which forms a tree with the minimum sum.
+BF Complexity Visuals: Edge Power Set Explosion
+How to Draw BF: Draw 3 cities. Draw all possible edges between them. Branch out for every "Edge Included" vs "Edge Excluded". $O(2^E)$ complexity.
+Optimised Pattern: Kruskal's Algorithm (Greedy + DSU)
+Opt Vis. Technique: Edge-Weight Ranking &amp; Merging
+Dry Run (Opt): Sort all edges by cost. Use Union-Find to pick the cheapest edge that connects two different components. Stop when you have N-1 edges.
+How to Draw (Opt): Draw isolated city dots. List sorted edges. For the cheapest edge, draw a line. If the next edge connects two already connected cities, cross it out (cycle).
+Opt Complexity Visuals: $O(E \log E + E \text{alpha}(V)$)
+How to Draw Opt Complexity: Draw a sorting timeline followed by a fast Union-Find pass.
+Mem Vis (BF): Adjacency Matrix $O(V^2)$
+Mem Vis (Opt): 1D `parent` array for DSU and a list of edges.

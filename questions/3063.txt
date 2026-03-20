@@ -1,0 +1,13 @@
+ID: 3063
+Problem Title: Linked List Frequency
+Brute Force Method: For every node, traverse the entire rest of the list to count how many times its value appears.
+BF Complexity Visuals: Nested Traversal Loops
+How to Draw BF: Draw the list. From each node, draw an arrow that scans all subsequent nodes. $O(N^2)$ total.
+Optimised Pattern: Hash Map + Result Linked List Construction
+Opt Vis. Technique: Frequency Mapping
+Dry Run (Opt): Traverse the list once, storing Value -&gt; Frequency in a Hash Map. Then, iterate through the map and create new nodes for each frequency.
+How to Draw (Opt): Draw the Linked List. Below it, draw a Hash Map box. As you pass each node, increment a tally in the map. Finally, draw a new list where each node contains one of the tally totals.
+Opt Complexity Visuals: $O(N)$ Hash Pass
+How to Draw Opt Complexity: Draw two distinct $O(N)$ arrows: "Count Pass" and "Construction Pass."
+Mem Vis (BF): Recursive stack frames or multiple nested pointers.
+Mem Vis (Opt): A Hash Map of size $O(\text{Unique}_\text{Elements})$ and a new list of the same size.

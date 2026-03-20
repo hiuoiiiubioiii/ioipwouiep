@@ -1,0 +1,13 @@
+ID: 2430
+Problem Title: Maximum Deletions on a String
+Brute Force Method: Recursive backtracking: try every possible prefix length 'i'. If prefix matches next 'i' chars, delete and recurse.
+BF Complexity Visuals: Recursive Tree Branches
+How to Draw BF: Draw a root string. Branch out for every possible valid deletion. Label $O(2^N)$.
+Optimised Pattern: DP + Longest Common Prefix (LCP) with Rolling Hash or Suffix Array
+Opt Vis. Technique: LCP Overlap Matrix
+Dry Run (Opt): Let `dp[i]` be max deletions for suffix starting at `i`. `dp[i] = max(1 + dp[i+j])` if `LCP(i, i+j) &gt;= j`. Calculate LCP in $O(1)$ using precomputed $O(N^2)$ table.
+How to Draw (Opt): Draw a 1D DP array. For each cell `i`, draw arrows to cells `i+j` only if the string repeats. Use a precomputed LCP grid to validate arrows instantly.
+Opt Complexity Visuals: Quadratic DP Grid
+How to Draw Opt Complexity: Draw an N x N matrix for LCP precomputation. Label $O(N^2)$ Time.
+Mem Vis (BF): Draw recursive call stacks of depth N. $O(N)$.
+Mem Vis (Opt): Draw an N x N LCP table and a 1D DP array. Label $O(N^2)$ Space.

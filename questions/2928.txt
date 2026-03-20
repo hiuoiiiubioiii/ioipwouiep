@@ -1,0 +1,13 @@
+ID: 2928
+Problem Title: Distribute Candies Among Children I
+Brute Force Method: Nested loops (i, j, k) where i+j+k == n and each &lt;= limit. (N is small here, so brute force is fine).
+BF Complexity Visuals: Nested Loop Pyramid
+How to Draw BF: Draw a triangle. Top row has 1 dot, next has 2... up to N. This represents the valid search space for 3 variables.
+Optimised Pattern: Iterative Brute Force (Optimized Range)
+Opt Vis. Technique: Nested Variable Scopes
+Dry Run (Opt): Fix child 1 (i). Child 2 (j) can range from 0 to min(limit, n-i). Child 3 is then fixed as (n-i-j). Verify if child 3 &lt;= limit.
+How to Draw (Opt): Draw two nested boxes (i and j). Inside the j box, draw a logic gate checking if n-i-j is valid.
+Opt Complexity Visuals: Bounded Quadratic Area
+How to Draw Opt Complexity: Draw a square of side N. Shade the portion where i+j &lt;= n and i,j &lt;= limit. Area is $O(\text{min}(N, \text{limit})$^2).
+Mem Vis (BF): Three scalar counters.
+Mem Vis (Opt): Single result counter. Space $O(1)$.

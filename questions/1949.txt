@@ -1,0 +1,13 @@
+ID: 1949
+Problem Title: Strong Friendship (SQL)
+Brute Force Method: For every friend pair, perform a subquery to count the intersection of their friend lists one by one.
+BF Complexity Visuals: Row-by-Row Correlation Scan
+How to Draw BF: Draw the Friend table. For each row, draw two magnifying glasses scanning the entire table again. $O(N^2)$.
+Optimised Pattern: Self-Join on Common Friends
+Opt Vis. Technique: Triadic Closure Filter
+Dry Run (Opt): Join the table with itself on `user1_id` to find common friends. Group by the original friend pair and filter for `COUNT &gt;= 3`.
+How to Draw (Opt): Draw three dots (A, B, C). Draw lines forming a triangle. The SQL finds how many "C"s exist for a fixed "A-B" line.
+Opt Complexity Visuals: Hash Join Aggregate
+How to Draw Opt Complexity: Draw two tables feeding into a Join Gear, then a Group-By funnel. $O(N \log N)$ or $O(N)$.
+Mem Vis (BF): Massive intermediate result sets in temp storage.
+Mem Vis (Opt): Database Hash Index buckets for fast friend-pair lookups.

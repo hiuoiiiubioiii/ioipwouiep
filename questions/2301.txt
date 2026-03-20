@@ -1,0 +1,13 @@
+ID: 2301
+Problem Title: Match Substring After Replacement
+Brute Force Method: Nested loops: For every index in `s`, check if `sub` matches using an exhaustive check against the `mappings` array.
+BF Complexity Visuals: Nested Loop Tree (O(N * M * K))
+How to Draw BF: Draw a timeline for `s`. From each node (character), draw branches representing the length of `sub`, then branch again for every possible character mapping.
+Optimised Pattern: Sliding Window + Hash Map of Sets
+Opt Vis. Technique: Sliding Window Frame over `s` mapped to a Dictionary Lookup.
+Dry Run (Opt): Slide a fixed-width rectangular box (size of `sub`) across `s`. For each alignment, point arrows from `sub` chars to `s` chars, checking the Hash Map.
+How to Draw (Opt): Draw string `s` as an array. Draw string `sub` below it. Draw a box around `sub`. Cross out mismatched pairs, or draw a checkmark if valid via mapping.
+Opt Complexity Visuals: Linear Scan Line + Constant Lookups (O(N * M))
+How to Draw Opt Complexity: Draw a straight timeline of N steps. At each step, draw a smaller secondary line of M steps. No deep branching.
+Mem Vis (BF): Draw a 2D matrix representing the raw `mappings` array.
+Mem Vis (Opt): Draw a Hash Map where keys are chars and values are circled Sets of allowed replacement chars.

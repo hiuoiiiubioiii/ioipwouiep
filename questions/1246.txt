@@ -1,0 +1,13 @@
+ID: 1246
+Problem Title: Palindrome Removal
+Brute Force Method: Try every possible subset of palindromes to remove recursively. Explore all permutations of removals to see which leads to the minimum steps.
+BF Complexity Visuals: Exponential Recursive Explosion
+How to Draw BF: Draw a string. Branch out for every possible sub-palindrome removal. From the resulting fragmented strings, branch again. Write $O(2^N)$.
+Optimised Pattern: Interval Dynamic Programming
+Opt Vis. Technique: Sub-Interval Collapsing Matrix
+Dry Run (Opt): Define `dp[i][j]` as the min steps to remove substring `s[i...j]`. If `s[i] == s[j]`, they can potentially be removed along with the last palindrome in the inner interval.
+How to Draw (Opt): Draw an N x N grid with indices on both axes. Fill the diagonal (length 1) with 1s. Then fill length 2, then length 3. For each cell, show it combining results from smaller inner intervals.
+Opt Complexity Visuals: Half-Matrix Filling (Diagonal-wise)
+How to Draw Opt Complexity: Draw a square grid. Shade only the upper triangle. Draw arrows showing the "bottom-up" filling from diagonal to corner. Write $O(N^3)$.
+Mem Vis (BF): Draw a recursive tree with millions of string copies.
+Mem Vis (Opt): Draw a 2D integer array `dp[N][N]`. Space: $O(N^2)$.

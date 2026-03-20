@@ -1,0 +1,13 @@
+ID: 714
+Problem Title: Best Time to Buy and Sell Stock with Transaction Fee
+Brute Force Method: Explore all possible daily decisions: Buy, Sell, or Skip, via recursion.
+BF Complexity Visuals: Full State Space Tree
+How to Draw BF: Draw a tree starting at Day 1, branching into 3 options every single day. Time: $O(3^N)$.
+Optimised Pattern: State Machine DP / Greedy
+Opt Vis. Technique: Two-State Machine Diagram
+Dry Run (Opt): Track `cash` (max profit not holding) and `hold` (max profit holding). `cash = max(cash, hold + price - fee)`, `hold = max(hold, cash - price)`. Update daily.
+How to Draw (Opt): Draw two circles labeled "Holding" and "Not Holding". Draw looped arrows on them (skip), and arrows between them (+price-fee, -price). Write updated values next to them.
+Opt Complexity Visuals: Linear State Progression
+How to Draw Opt Complexity: Draw a straight timeline. At each tick, update two values simultaneously showing $O(N)$ time.
+Mem Vis (BF): Massive call stack for recursion.
+Mem Vis (Opt): Two integer variable boxes (`cash`, `hold`) - $O(1)$ space.

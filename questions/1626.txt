@@ -1,0 +1,13 @@
+ID: 1626
+Problem Title: Best Team With No Conflicts
+Brute Force Method: Generate every possible subset of players, check each for age/score conflicts, and keep the max sum.
+BF Complexity Visuals: Exponential Tree Branches
+How to Draw BF: Draw a massive binary tree (include/exclude) for N players. $O(2^N)$ time.
+Optimised Pattern: Sorting + DP (Longest Increasing Subsequence Variant)
+Opt Vis. Technique: Sorted Cascading Array
+Dry Run (Opt): Sort players by age (then score). Run a nested loop: for each player `i`, look back at all `j &lt; i`. If score[i] &gt;= score[j], dp[i] = max(dp[i], dp[j] + score[i]).
+How to Draw (Opt): Draw an array of players sorted by age. Draw curved arrows pointing from left-side players to right-side players, carrying a cumulative score sum.
+Opt Complexity Visuals: Double Iteration Overlap
+How to Draw Opt Complexity: Draw an N x N triangular grid representing the `i` outer loop and `j` inner loop. $O(N^2)$ time.
+Mem Vis (BF): Deep Recursion Call Stack: Overflowing stack tracking massive combinations.
+Mem Vis (Opt): 1D DP Array: Draw a single horizontal array holding the max score achievable up to that index.

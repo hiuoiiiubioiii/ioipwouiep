@@ -1,0 +1,13 @@
+ID: 2776
+Problem Title: Convert Callback to Promise (JS)
+Brute Force Method: Manually create a new function that calls the original function. Use a global variable to store the result when the callback fires, then poll that variable.
+BF Complexity Visuals: Polling / Busy-Waiting Trace
+How to Draw BF: Draw a function call. Draw a loop that keeps checking "Is result ready?". Very inefficient.
+Optimised Pattern: Blocking Main Thread (Visualizing the CPU stuck in a loop waiting for the async task).
+Opt Vis. Technique: Promisification Wrapper
+Dry Run (Opt): Promise Wrapper Pattern
+How to Draw (Opt): Return a new function that returns new Promise((resolve, reject) =&gt; { ... }). Inside, call the original function, passing a custom callback that resolves or rejects the promise.
+Opt Complexity Visuals: Draw a "Box" (the Promise) around the original "Function". When the function finishes, it "unlocks" the box with a value (resolve).
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single wrapper box. Write $O(1)$ as the conversion logic is fixed overhead.
+Mem Vis (Opt): Closure Reference (Draw a memory bubble holding the resolve/reject handles and the original function).

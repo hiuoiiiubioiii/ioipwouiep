@@ -1,0 +1,13 @@
+ID: 3613
+Problem Title: Minimize Maximum Component Cost (Med)
+Brute Force Method: Iterate threshold `X` from 1 to Max Cost. For each `X`, build the graph and check if components are valid. $O(\text{Max}_\text{Cost} \cdot (V+E)$).
+BF Complexity Visuals: Linear Search Iteration Grid.
+How to Draw BF: Draw a number line from 0 to 100. For 1, 2, 3... draw a tiny graph above it and test if it works. Cross it out and move to the next.
+Optimised Pattern: Binary Search on Answer + Disjoint Set Union (DSU) / Connected Components Check.
+Opt Vis. Technique: Binary Search Halving + Blob Merging.
+Dry Run (Opt): Pick a middle cost `M`. Add edges with cost `&lt;= M`. If nodes merge into valid blobs, `M` is valid; cut the top half of the search space.
+How to Draw (Opt): Draw a number line. Drop a pin in the middle. Draw dots grouping together. If it succeeds, cross out the entire right half of the line in one stroke.
+Opt Complexity Visuals: Logarithmic Depth Chart.
+How to Draw Opt Complexity: Draw a tall bar for search space. Cut it in half. Cut it in half again. Write $O(\log(\text{Max}_\text{Cost})$ * (V+E)).
+Mem Vis (BF): Draw full Adjacency Matrix copies generated for every single iteration.
+Mem Vis (Opt): Draw two 1D arrays: parent[] and size[] used for DSU. Space strictly $O(V)$.

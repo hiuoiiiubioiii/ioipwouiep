@@ -1,0 +1,13 @@
+ID: 2693
+Problem Title: Call Function with Custom Context (JS)
+Brute Force Method: Manually passing the context as an argument to the function (if the function allows it).
+BF Complexity Visuals: Argument Injection
+How to Draw BF: Draw a function call where you "sneak" the context object into the parameters. $O(1)$.
+Optimised Pattern: Function.prototype.apply / Symbol Key
+Opt Vis. Technique: Context Binding (Temporary Property)
+Dry Run (Opt): Attach the function to the context object using a unique `Symbol` key. Invoke the function using `context[symbol](...args)`, then delete the property.
+How to Draw (Opt): Draw an Object (Context). Draw a "Temporary Slot" (Symbol). Place the Function in the slot, pull the lever to run it, then remove the Function from the slot.
+Opt Complexity Visuals: $O(1)$ Execution
+How to Draw Opt Complexity: Draw a single property assignment and deletion. $O(1)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Temporary property allocation in the context object.

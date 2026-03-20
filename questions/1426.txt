@@ -1,0 +1,13 @@
+ID: 1426
+Problem Title: Counting Elements
+Brute Force Method: Nested Loops. For every element `x` in the array, run a second loop to search for `x + 1` in the entire array. Increment count if found.
+BF Complexity Visuals: Quadratic Search Scan
+How to Draw BF: Draw an array. For each index, draw a long arrow that sweeps across the entire array again. Label $O(N²)$.
+Optimised Pattern: Hash Set / Boolean Array
+Opt Vis. Technique: Presence Lookup Table
+Dry Run (Opt): Put all elements into a Hash Set. Iterate through the array once: if `set.contains(x + 1)`, increment result.
+How to Draw (Opt): Draw a list of numbers. Draw a circle representing a "Knowledge Bucket" (Set). Pour all numbers into the bucket. Then point to each number in the list and ask the bucket "Do you have my+1?".
+Opt Complexity Visuals: Linear Two-Phase Scan
+How to Draw Opt Complexity: Draw two parallel arrows: one for "Insert" $O(N)$, one for "Search" $O(N)$. Label total $O(N)$.
+Mem Vis (BF): N/A (In-place search)
+Mem Vis (Opt): Draw a Set structure (Unique values) separate from the original array. Space $O(N)$.

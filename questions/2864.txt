@@ -1,0 +1,13 @@
+ID: 2864
+Problem Title: Maximum Odd Binary Number
+Brute Force Method: Generate all possible permutations of the binary string. Convert each to decimal and check if it's odd. Pick the maximum value.
+BF Complexity Visuals: Permutation Factorial Tree
+How to Draw BF: Draw a string like "0110". Draw a tree branching for every digit arrangement (4!). Show the search space becoming huge for 100-bit strings.
+Optimised Pattern: Greedy Bit Alignment
+Opt Vis. Technique: Bit Bucket Sorting
+Dry Run (Opt): Count the number of '1's in the string. To make it odd, one '1' *must* be at the last position. To make it maximum, all remaining '1's must be at the very front. Fill the middle with '0's.
+How to Draw (Opt): Count the ones (e.g., 3 ones). Draw a line of boxes. Put a '1' in the very last box. Put the other 2 ones in the very first boxes. Fill the gaps with '0'.
+Opt Complexity Visuals: Single Pass Count $O(N)$
+How to Draw Opt Complexity: Draw a line scanning the string once (O(N)) and a line writing the new string (O(N)). Total $O(N)$.
+Mem Vis (BF): Visualize $O(N!)$ space if storing all permutations.
+Mem Vis (Opt): Visualize a single integer counter or a character array. Space $O(N)$.

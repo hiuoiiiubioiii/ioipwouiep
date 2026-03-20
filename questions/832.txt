@@ -1,0 +1,13 @@
+ID: 832
+Problem Title: Flipping an Image
+Brute Force Method: Create a brand new matrix. Iterate through the old matrix, calculate new indices, and then run a second loop to invert 0s and 1s.
+BF Complexity Visuals: Multi-Pass Grid Copy. $O(N^2)$.
+How to Draw BF: Draw two grids. Draw arrows from row 1 of Grid A to row 1 of Grid B in reverse. Then draw a "flip switch" over every cell in Grid B.
+Optimised Pattern: Two Pointers In-Place (Symmetry Swap).
+Opt Vis. Technique: Reflective Mirror Fold.
+Dry Run (Opt): For each row, use two pointers (Left, Right). If they point to the same value, invert both (XOR 1). If different, they cancel out during the flip/invert, so do nothing.
+How to Draw (Opt): Draw a grid. Draw a vertical dotted line down the center. Fold the paper at the line and imagine 0s turning into 1s where they overlap.
+Opt Complexity Visuals: Single Pass In-Place. $O(N^2)$.
+How to Draw Opt Complexity: Draw a grid. Draw one arrow across each row that processes both ends of the row simultaneously.
+Mem Vis (BF): Full N \times N Copy: Draw two identical large memory blocks side-by-side.
+Mem Vis (Opt): In-Place Modification: Draw one grid with small 'i' and 'j' arrows inside the rows. $O(1)$ extra space.

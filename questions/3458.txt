@@ -1,0 +1,13 @@
+ID: 3458
+Problem Title: Select K Disjoint Special Substrings
+Brute Force Method: Identify all substrings, check "special" condition (containment), and try all 2^M subsets of these. $O(N^2 \cdot 2^M)$
+BF Complexity Visuals: Nested Condition Decision Tree.
+How to Draw BF: Draw all intervals. For each, draw a decision branch "Include" or "Exclude" while checking for overlap.
+Optimised Pattern: Interval Consolidation + Greedy Activity Selection. $O(N)$
+Opt Vis. Technique: Greedy Interval Scheduling Bars.
+Dry Run (Opt): For each character, find its min range [L, R]. Expand R if internal chars have occurrences outside. Filter special substrings. Sort by end-time and pick K disjoint ones.
+How to Draw (Opt): Draw intervals as horizontal bars on a timeline. Pick the bar that ends first. Remove overlapping bars. Count how many you picked.
+Opt Complexity Visuals: Multi-Linear Pass (Tally -&gt; Expand -&gt; Schedule).
+How to Draw Opt Complexity: Draw 3 linear blocks: one for frequency map, one for range expansion, and one for interval counting.
+Mem Vis (BF): Storing all possible N^2 substrings in a list.
+Mem Vis (Opt): Fixed-size maps (26 keys) and a list of at most 26 valid special intervals.

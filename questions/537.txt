@@ -1,0 +1,13 @@
+ID: 537
+Problem Title: Complex Number Multiplication
+Brute Force Method: Manual string parsing with complex regex or multiple index-of checks to separate 'a', 'b', and 'i'.
+BF Complexity Visuals: A messy web of string slicing and index calculations.
+How to Draw BF: Draw the input strings. Draw arrows pointing to '+', then 'i'. Shade the substrings in between.
+Optimised Pattern: Math (FOIL Method) + String Split.
+Opt Vis. Technique: A 2x2 grid (Punnett square style) where (a+bi)(c+di) = ac + adi + bci + bdi^2.
+Dry Run (Opt): Split strings by '+' and 'i'. Calculate: Real = (a \cdot c) - (b \cdot d); Imaginary = (a \cdot d) + (b \cdot c). Concatenate with '+' and 'i'.
+How to Draw (Opt): Draw a 2x2 table. Columns: a, bi. Rows: c, di. Multiply intersections. Note that i^2 = -1. Sum real and imaginary parts.
+Opt Complexity Visuals: Constant number of math operations. $O(1)$ (relative to input string length N).
+How to Draw Opt Complexity: Draw a single box with 4 internal multiplication steps.
+Mem Vis (BF): String buffers and intermediate substring objects.
+Mem Vis (Opt): Minimal space for 4 integer variables. $O(1)$.

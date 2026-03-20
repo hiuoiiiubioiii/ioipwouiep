@@ -1,0 +1,13 @@
+ID: 760
+Problem Title: Find Anagram Mappings
+Brute Force Method: For every element in A, perform a linear search in B to find a matching value and record its index.
+BF Complexity Visuals: Nested Loop Search
+How to Draw BF: Draw Array A and Array B. For each element in A, draw an arrow scanning every element in B until a match is found. $O(N^2)$.
+Optimised Pattern: Hash Map Indexing
+Opt Vis. Technique: Direct Address Mapping
+Dry Run (Opt): Store elements of B in a HashMap: `value -&gt; list of indices`. For each element in A, pop an index from the map for that value.
+How to Draw (Opt): Draw Array A. Draw a HashMap. Draw an arrow from A[i] to the Map, then directly to its location in B.
+Opt Complexity Visuals: Linear Map Construction
+How to Draw Opt Complexity: Draw two arrays. Show one pass to build the map and one pass to create the result. $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): HashMap storing N indices (O(N)).

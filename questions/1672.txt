@@ -1,0 +1,13 @@
+ID: 1672
+Problem Title: Richest Customer Wealth
+Brute Force Method: Standard nested loops: sum each row, compare with global max.
+BF Complexity Visuals: Linear Row Sweep
+How to Draw BF: Draw a grid. Draw an arrow scanning each row horizontally. $O(M \\text{times} N)$.
+Optimised Pattern: Row-wise Iteration (Simple Scan)
+Opt Vis. Technique: Horizontal Accumulator
+Dry Run (Opt): Iterate through customers. For each, sum their accounts. If current sum &gt; max, update max.
+How to Draw (Opt): Draw a table. Add a "Total" column on the right. Write the sum for each row and circle the biggest one.
+Opt Complexity Visuals: Constant Flow Grid Scan
+How to Draw Opt Complexity: Draw a single straight arrow weaving through every cell in the matrix once. $O(M \\text{times} N)$.
+Mem Vis (BF): Temporary Variable: Single sum variable.
+Mem Vis (Opt): Single Integer: Draw one small box labeled `maxWealth`. $O(1)$ space.

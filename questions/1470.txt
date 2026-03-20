@@ -1,0 +1,13 @@
+ID: 1470
+Problem Title: Shuffle the Array
+Brute Force Method: Create two temporary arrays (first half and second half). Iterate through both and alternate adding elements to a new result array.
+BF Complexity Visuals: Array Split &amp; Merge
+How to Draw BF: Draw an array. Cut it in half. Draw two buckets. Pull from Bucket 1, then Bucket 2. Label $O(N)$.
+Optimised Pattern: Single-Pass Two-Pointer (In-place if bits allow)
+Opt Vis. Technique: Interleaved Index Mapping
+Dry Run (Opt): Use one pointer `i` starting at 0 and another `j` starting at `n`. Increment both by 1 while alternating their placement in the result.
+How to Draw (Opt): Draw the array with two pointers, `p1` at 0 and `p2` at N. Draw an output array. Draw an arrow from `p1` to index 0, then `p2` to index 1, then move both pointers.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single arrow from start to mid. Label $O(N)$.
+Mem Vis (BF): Two temporary arrays $O(N)$
+Mem Vis (Opt): A result array of size 2N. Space $O(N)$ (or $O(1)$ extra if modifying original using bit manipulation).

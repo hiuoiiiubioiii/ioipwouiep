@@ -1,0 +1,13 @@
+ID: 2842
+Problem Title: Count K-Subsequences of a String With Maximum Beauty
+Brute Force Method: Generate all possible K-length subsequences and manually calculate the beauty (frequency sum) of each. $O(\text{Combinations})$.
+BF Complexity Visuals: Combinatorial Nightmare Tree
+How to Draw BF: Draw the string. Branch out to pick every possible combination of K characters. Compute frequencies for millions of strings.
+Optimised Pattern: Greedy Frequency Sorting + Combinatorics
+Opt Vis. Technique: The Frequency-Ranked Bucket Math
+Dry Run (Opt): Count frequencies of all chars. Sort descending. Greedily pick the top K frequencies. If the Kth frequency ties with others, use combinations (nCr) to calculate ways to pick the remaining slots. Multiply by frequencies.
+How to Draw (Opt): Draw buckets for A-Z based on frequency height. Sort buckets tallest to shortest. Grab top K buckets. If the last bucket ties with leftovers, use math to calculate permutations.
+Opt Complexity Visuals: Sorting + Math $O(N + 26 \log 26)$
+How to Draw Opt Complexity: Draw a linear scan to count, a tiny $O(1)$ sort of 26 items, and a constant time math calculation.
+Mem Vis (BF): Storing full subsequences.
+Mem Vis (Opt): Frequency array of size 26. $O(1)$ space.

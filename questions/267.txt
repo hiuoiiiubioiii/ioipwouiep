@@ -1,0 +1,13 @@
+ID: 267
+Problem Title: Palindrome Permutation II
+Brute Force Method: Generate all permutations and filter out non-palindromes using a helper.
+BF Complexity Visuals: Factorial Tree: $O(n!)$.
+How to Draw BF: Draw a tree where leaves are full strings. Shade the 99% of leaves that aren't palindromes to show wasted work.
+Optimised Pattern: Backtracking (Half-String Construction)
+Opt Vis. Technique: Mirror-Image Generation
+Dry Run (Opt): Count frequencies. If valid (from Q266), take half of each even-count char and generate all permutations. Mirror them around the odd char.
+How to Draw (Opt): Draw a "Half-Bank" of letters. Draw a backtracking tree for just those letters. For each leaf, draw a "Mirror" line and reflect it.
+Opt Complexity Visuals: Reduced Permutation: $O((\\text{frac}{n}{2})$!).
+How to Draw Opt Complexity: Draw a tree for length n vs a tree for length n/2. The n/2 tree is significantly smaller.
+Mem Vis (BF): Massive String Array: $O(n \cdot n!)$.
+Mem Vis (Opt): Recursion Stack: Draw a vertical stack of height n/2. Each frame holds a partial string.

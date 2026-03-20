@@ -1,0 +1,13 @@
+ID: 3107
+Problem Title: Min Operations to Make Median Equal to K
+Brute Force Method: Iteratively applying +1 or -1 to random elements, re-sorting, and checking median. **O(2^N * N log N)**
+BF Complexity Visuals: State space graph of chaotic array mutations and sorts.
+How to Draw BF: Write array, draw +1/-1 arrows on random indices, draw a funnel to represent re-sorting every time.
+Optimised Pattern: Sorting + Greedy Target Matching
+Opt Vis. Technique: Seesaw Balancing / Histogram Leveling
+Dry Run (Opt): Sort array. Snap median to K. Sweep left: if element &gt; K, chop down to K. Sweep right: if element &lt; K, build up to K.
+How to Draw (Opt): Draw a sorted bar chart. Draw a horizontal target line at height K. Shade the "chop off" parts left of median and "fill in" parts right of median.
+Opt Complexity Visuals: Sort Funnel followed by a 1D scan.
+How to Draw Opt Complexity: Draw an N log N branching tree (sort phase), followed by a single linear array pass evaluating differences.
+Mem Vis (BF): Queue of array copies for state searching.
+Mem Vis (Opt): The original array sorted in-place, plus one long integer for `total_operations`.

@@ -1,0 +1,13 @@
+ID: 2102
+Problem Title: Sequentially Ordinal Rank Tracker
+Brute Force Method: Insert item into a List, sort the List, index the i-th element.
+BF Complexity Visuals: Array shifting and block sorting visualization.
+How to Draw BF: Draw an unsorted array, draw an arrow pointing to a newly sorted array, circle the target index.
+Optimised Pattern: Two Heaps (Min-Heap / Max-Heap) or Balanced BST.
+Opt Vis. Technique: Two balanced scales or two triangles facing each other.
+Dry Run (Opt): Push string to Max-Heap, pop top of Max-Heap and push to Min-Heap.
+How to Draw (Opt): Draw 2 triangles (trees). Draw arrows moving root of one triangle over to the bottom of the other.
+Opt Complexity Visuals: $O(\log N)$ tree traversal paths.
+How to Draw Opt Complexity: Draw a binary tree. Highlight a single path from root to leaf to represent log(N) time.
+Mem Vis (BF): Continuous contiguous array blocks.
+Mem Vis (Opt): Two distinct tree structures containing object references.

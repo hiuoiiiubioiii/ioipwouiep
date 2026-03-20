@@ -1,0 +1,13 @@
+ID: 436
+Problem Title: Find Right Interval
+Brute Force Method: Nested Loops For each interval i, iterate through every other interval j to find the min j.start \ge i.end.
+BF Complexity Visuals: Comparison Matrix
+How to Draw BF: Draw an N \times N grid of checkboxes. For each interval, you look at every other box. $O(N^2)$.
+Optimised Pattern: Binary Search + Sort Store all `start` values in a sorted list with original indices. For each `end`, binary search the list.
+Opt Vis. Technique: Sorted Pointer Array
+Dry Run (Opt): Draw the original intervals. Below, draw an array of just the `start` values in ascending order. "Probe" the array with each `end` value.
+How to Draw (Opt): Draw two horizontal lists. List A (unsorted intervals). List B (sorted starts). Draw an arrow from List A[i].end into List B using "High/Low" markers.
+Opt Complexity Visuals: Sort-Search Hybrid
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block plus N small $O(\log N)$ search trees. Total $O(N \log N)$.
+Mem Vis (BF): Registers No extra storage beyond the result array.
+Mem Vis (Opt): Map/Tuple Array Draw a sorted list of (start, index) pairs. $O(N)$.

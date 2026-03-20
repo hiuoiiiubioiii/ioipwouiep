@@ -1,0 +1,13 @@
+ID: 770
+Problem Title: Basic Calculator IV
+Brute Force Method: Convert the expression to a string, substitute variables, and use a standard string-based math evaluator.
+BF Complexity Visuals: String Substitution Mess
+How to Draw BF: Draw a formula. Show x becoming (a+b). The string grows exponentially with nested parentheses. $O(\\text{text}{\text{Exponential}})$.
+Optimised Pattern: Polynomial Class / Map of Term-to-Coefficient
+Opt Vis. Technique: Algebraic Object Expansion
+Dry Run (Opt): Represent each expression as a Map where keys are sorted variable lists (e.g., "a*b") and values are coefficients. Overload +, -, and * for these maps.
+How to Draw (Opt): Draw two maps: `"a": 1, "1": 2` and `"b": 1`. Show the distribution rule (1a + 2) \times (1b) = 1ab + 2b. Combine terms.
+Opt Complexity Visuals: Recursive Descent with Map Merging
+How to Draw Opt Complexity: Draw a tree of operations. Each node merges two maps. Complexity depends on the number of terms. $O(2^N)$ in worst case, but efficient for real formulas.
+Mem Vis (BF): Massive intermediate strings.
+Mem Vis (Opt): Recursive stack and Map-based term storage $O(N)$.

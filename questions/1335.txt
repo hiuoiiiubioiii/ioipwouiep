@@ -1,0 +1,13 @@
+ID: 1335
+Problem Title: Minimum Difficulty of a Job Schedule
+Brute Force Method: Generate all possible ways to partition an array into `d` contiguous subarrays, calculating the max of each subarray and summing them.
+BF Complexity Visuals: Combinatorial Partitioning
+How to Draw BF: Draw an array. Draw `d-1` vertical slices. Show all possible places those slices could be inserted. Highlights $O(N^d)$ explosion of combinations.
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: State Matrix Expansion
+Dry Run (Opt): `dp[i][k]` = min difficulty to schedule first `i` jobs in `k` days. Iterate `k` days, iterate `i` jobs, iterate `j` (last day's jobs). `dp[i][k] = min(dp[j][k-1] + max(jobs[j+1...i]))`.
+How to Draw (Opt): Draw a grid: Days (rows) vs Jobs (cols). Fill day 1 by tracking the running maximum. For day 2, look at previous day's cells and add the max of the remaining jobs chunk.
+Opt Complexity Visuals: 3-Loop Matrix Fill
+How to Draw Opt Complexity: Draw a 2D grid. Point to a cell. Draw a line looking back at the previous row, scanning a range of columns to find the optimal cut, proving $O(N² \cdot d)$ time.
+Mem Vis (BF): Deep Partition Stack: Recursive frames tracking array indices and running sums.
+Mem Vis (Opt): 2D DP Cache: Draw a `std::vector&gt;` of size `N` x `d`. (Can also be space-optimized to 1D `vector` of size N, swapping daily).

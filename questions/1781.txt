@@ -1,0 +1,13 @@
+ID: 1781
+Problem Title: Sum of Beauty of All Substrings
+Brute Force Method: Three nested loops: two for (i, j) boundaries and a third to count char frequencies in each substring.
+BF Complexity Visuals: Triple-Nested Sliding Window.
+How to Draw BF: Draw a string. Draw brackets for every substring. For each bracket, draw a frequency table and scan all letters. $O(N^3)$.
+Optimised Pattern: Nested Loop with Running Frequency Array.
+Opt Vis. Technique: The "Expanding Balloon" Tally.
+Dry Run (Opt): Fix the start point i. Move j from i to n-1. In each step, just increment the frequency of S[j] in a 26-size array and find the max/min of that array.
+How to Draw (Opt): Draw i as an anchor. Draw j sliding right. Below, draw a 26-slot array updating in real-time. Sum (max - min) at each j.
+Opt Complexity Visuals: 2D Parameter Scan.
+How to Draw Opt Complexity: Draw an N \times N grid. Each cell is $O(26)$. Label $O(26 \cdot N^2)$.
+Mem Vis (BF): $O(N)$ for each substring's copy.
+Mem Vis (Opt): A fixed-size array of 26. $O(1)$ extra space visual.

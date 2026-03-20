@@ -1,0 +1,13 @@
+ID: 2212
+Problem Title: Maximum Points in an Archery Competition
+Brute Force Method: Permutations of ArrowsTry distributing `numArrows` across 12 sections in every possible combination (e.g., 0 for section 1, 3 for section 2...) and check valid sums.
+BF Complexity Visuals: N-ary Recursion Tree
+How to Draw BF: Draw a root node. Branch it out into `numArrows` + 1 children. Repeat this 12 levels deep to show a massive combinatorial explosion.
+Optimised Pattern: Bitmask / Binary Enumeration
+Opt Vis. Technique: 12-Bit Binary Mask Table
+Dry Run (Opt): Bob either strictly wins a section (shooting Alice's arrows + 1) or shoots 0. Since there are exactly 12 sections, iterate through all 2^12 (4096) win/loss combinations using a bitmask.
+How to Draw (Opt): Draw 12 slots. Write a binary number like `1010001...` below it. For every `1`, write `alice[i]+1` arrows and add `i` points. If the arrow sum &lt;= `numArrows`, keep the max score.
+Opt Complexity Visuals: Fixed-Size Bitmask Grid
+How to Draw Opt Complexity: Draw a box representing 4096 rows. Next to it, draw 12 columns. Write `O(2^12 * 12)` and circle it, writing "O(1) Constant Time" since the constraint is strictly fixed to 12.
+Mem Vis (BF): A deep recursion call stack with an array passed down each level to track arrow distributions.
+Mem Vis (Opt): A single integer `mask` iterating up to 4096, and a few temporary sum variables (O(1) space).

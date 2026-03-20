@@ -1,0 +1,13 @@
+ID: 33
+Problem Title: Search in Rotated Sorted Array
+Brute Force Method: Linear Scan Ignore the fact that it's partially sorted and just check every single element from index 0 to N.
+BF Complexity Visuals: The Slow Walker
+How to Draw BF: Draw a pointer starting at 0 and moving step-by-step to the end. Write $O(N)$ overhead, completely wasting the "sorted" clue.
+Optimised Pattern: Modified Binary Search
+Opt Vis. Technique: The Fault Line
+Dry Run (Opt): Find `mid`. Because it's rotated, at least ONE half (left or right of mid) MUST be perfectly sorted. Check if the target falls within the strict bounds of that sorted half. If yes, search there; if no, search the other half.
+How to Draw (Opt): Draw a line graph that goes up, breaks, drops down, and goes up again. Draw a vertical line down the middle. Circle the half that is an unbroken straight line and write "Is Target Here?"
+Opt Complexity Visuals: Halving Block
+How to Draw Opt Complexity: Draw an array. Cross out half. Cross out half of the remainder. Standard $O(\log N)$ time visual.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw exactly three pointer variables (`left`, `right`, `mid`) converging. Space is purely $O(1)$.

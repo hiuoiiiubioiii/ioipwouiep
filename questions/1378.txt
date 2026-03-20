@@ -1,0 +1,13 @@
+ID: 1378
+Problem Title: Replace Employee ID With The Unique Identifier (SQL)
+Brute Force Method: Nested Loop Join: For every employee, full scan the UniqueID table. $O(N \cdot M)$.
+BF Complexity Visuals: Full Cartesian Product Grid
+How to Draw BF: Draw Table A and Table B. Draw a line from every row of A to every row of B.
+Optimised Pattern: LEFT JOIN (Hash Join)
+Opt Vis. Technique: The Index Matcher
+Dry Run (Opt): The engine builds a hash table of UniqueID and probes it using Employee IDs in a single pass.
+How to Draw (Opt): Draw the Employees table. Next to it, draw a "Lookup Map". Draw straight arrows directly to the map.
+Opt Complexity Visuals: Hash/Merge Join $O(N + M)$
+How to Draw Opt Complexity: Draw two parallel lines flowing into a single merge node.
+Mem Vis (BF): Massive disk I/O for repeated scans.
+Mem Vis (Opt): Hash Table for the smaller table. $O(M)$ space.

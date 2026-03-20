@@ -1,0 +1,13 @@
+ID: 3378
+Problem Title: Count Connected Components in LCM Graph
+Brute Force Method: Calculate the LCM for every pair (i, j) and build an edge if LCM <= threshold. Run DFS. $O(N^2)$.
+BF Complexity Visuals: Dense Quadratic Graph
+How to Draw BF: Draw N dots. Draw lines between every single pair to check their LCM. Graph becomes too dense.
+Optimised Pattern: DSU + Multiples (Sieve-like)
+Opt Vis. Technique: The Factor-Bridge Connector
+Dry Run (Opt): Instead of connecting numbers to numbers, connect numbers to their *multiples* up to the threshold using a Disjoint Set Union (DSU). If x is in the array, union x with 2x, 3x... if those multiples also exist.
+How to Draw (Opt): Draw the numbers. Instead of checking pairs, take '2'. Draw bridges from '2' to '4', '6', '8'. Then take '3'. Draw bridges to '6', '9'. The shared multiples merge the components automatically.
+Opt Complexity Visuals: Harmonic Series Scan $O(M \log M)$
+How to Draw Opt Complexity: Draw a Sieve-like loop where the inner loop runs M/i times. Highly optimized.
+Mem Vis (BF): Adjacency matrix of size N x N.
+Mem Vis (Opt): DSU parent array up to max threshold. $O(\text{Threshold})$ space.

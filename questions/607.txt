@@ -1,0 +1,13 @@
+ID: 607
+Problem Title: Sales Person (SQL)
+Brute Force Method: Massive 3-way JOIN of SalesPerson, Company, and Orders tables, then filtering rows and selecting distinct names.
+BF Complexity Visuals: Three overlapping huge circles (Venn Diagram) merging into one giant temporary table.
+How to Draw BF: Draw 3 separate grids. Draw thick lines blending them all into a giant 3x-wide grid. Cross out rows with "RED" and keep the rest. Mark $O(S \cdot C \cdot O)$.
+Optimised Pattern: Subquery / NOT IN clause.
+Opt Vis. Technique: Filter-First Pipeline.
+Dry Run (Opt): Subquery: Join Orders and Company where name='RED'. Output list of sales_id. Main query: Scan SalesPerson, if id is NOT in the subquery list, select name.
+How to Draw (Opt): Draw two small tables combining to output a short list of "Bad IDs". Draw the main Sales table and draw an arrow skipping any row that matches the "Bad IDs" list.
+Opt Complexity Visuals: Two separate, sequential pipelines instead of a massive cross-product.
+How to Draw Opt Complexity: Draw a small funnel filtering bad IDs (O(O+C)), pointing to a simple linear scan of the SalesPerson array (O(S)).
+Mem Vis (BF): Draw a massive RAM block holding the intermediate joined table of all three relations before the WHERE clause filters it.
+Mem Vis (Opt): Draw a small 1D array representing the subquery's integer list in memory, taking negligible space $O(K)$.

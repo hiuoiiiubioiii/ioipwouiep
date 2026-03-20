@@ -1,0 +1,13 @@
+ID: 2022
+Problem Title: Convert 1D Array Into 2D Array
+Brute Force Method: Manually copy elements using nested `for` loops for rows and columns, manually tracking the 1D index with a separate variable.
+BF Complexity Visuals: Manual Copy Grid
+How to Draw BF: Draw the 1D array on top. Draw an empty 2D grid below. Draw an arrow moving one item at a time, crossing out the top and filling the bottom.
+Optimised Pattern: Math/Index Mapping (i / n, i % n)
+Opt Vis. Technique: Division/Modulo Coordinates
+Dry Run (Opt): Iterate through the 1D array with index `i`. Place `original[i]` at `2D_array[i / cols][i % cols]`.
+How to Draw (Opt): Write the 1D indices 0,1,2,3. If cols=2, write the division (row) and modulo (col) results underneath each index to see the exact 2D coordinates instantly.
+Opt Complexity Visuals: 1-to-1 Mapping Arrows
+How to Draw Opt Complexity: Draw N straight, parallel arrows from the 1D array to the 2D grid. Strict $O(M\cdot N)$ time where M*N is the array length.
+Mem Vis (BF): Intermediate variables managing row and column states continuously.
+Mem Vis (Opt): A pre-allocated contiguous block of memory for the resulting 2D array (Space $O(M\cdot N)$).

@@ -1,0 +1,13 @@
+ID: 2690
+Problem Title: Infinite Method Objects (JS)
+Brute Force Method: Trying to hardcode every possible method name on an object.
+BF Complexity Visuals: Hardcoded Mapping
+How to Draw BF: Draw a box. Try to write every word in the dictionary as a property. Impossible/Infinite.
+Optimised Pattern: JavaScript Proxy (`get` trap)
+Opt Vis. Technique: Dynamic Property Interception
+Dry Run (Opt): Use `new Proxy({}, { get: (target, prop) =&gt; () =&gt; prop })`. The `get` trap catches any property access (method name) and returns a function that returns that name.
+How to Draw (Opt): Draw an object with a "Shield" (the Proxy). When a hand (code) reaches for a property that doesn't exist, the Shield "catches" the request and generates a response on the fly.
+Opt Complexity Visuals: $O(1)$ Interception
+How to Draw Opt Complexity: Draw a single dot for the property access. Logic is $O(1)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Minimal Proxy object metadata in the Heap.

@@ -1,0 +1,13 @@
+ID: 981
+Problem Title: Time Based Key-Value Store
+Brute Force Method: Store every `(key, value, timestamp)` in a single large list. For every `get(key, time)`, iterate backward through the whole list to find the match.
+BF Complexity Visuals: $O(N)$ per get. A "Windshield Wiper" that sweeps the entire history for every single query.
+How to Draw BF: Draw a vertical timeline of all inputs. For a query at Time=10, draw an arrow scanning from the bottom of the paper all the way to the top.
+Optimised Pattern: HashMap + Sorted List (Binary Search)
+Opt Vis. Technique: "The Filing Cabinet." Each key has its own drawer. Inside each drawer, files (values) are sorted perfectly by time. You use a "Time Index" to jump to the right file.
+Dry Run (Opt): `Map&gt;`. For `get`, fetch the list for that key. Use binary search (`bisect_right` or `upper_bound`) to find the largest timestamp
+How to Draw (Opt): Draw a cabinet. Labels are 'foo', 'bar'. Inside 'foo', draw a sorted list of timestamps [10, 20, 30]. For query 25, draw an arrow pointing between 20 and 30.
+Opt Complexity Visuals: $O(1)$ set, $O(\log N)$ get. Logarithmic "narrowing" of the search space.
+How to Draw Opt Complexity: Draw a Binary Search Tree structure for a single key's history to show how we skip half the data at each step.
+Mem Vis (BF): $O(N)$ to store everything in a flat list.
+Mem Vis (Opt): $O(N)$ to store everything in the Map. Draw a dictionary structure where each value is a horizontal array.

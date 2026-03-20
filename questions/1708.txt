@@ -1,0 +1,13 @@
+ID: 1708
+Problem Title: Largest Subarray Length K
+Brute Force Method: Generate all possible subarrays of length K. Compare them element by element to find the lexicographically largest.
+BF Complexity Visuals: Overlapping Window Matrix.
+How to Draw BF: Draw long array. Draw many brackets of size K. Draw comparison arrows between every single bracket.
+Optimised Pattern: Greedy Peak Finding (Single Element Identifier).
+Opt Vis. Technique: Sniper Scope on Valid Range.
+Dry Run (Opt): Because elements are unique, the largest subarray of length K MUST start with the maximum number available in indices `0` to `N-K`.
+How to Draw (Opt): Draw array. Bracket indices `0` to `N-K`. Circle the largest number in that bracket. Take K items from there.
+Opt Complexity Visuals: Single Partial Pass.
+How to Draw Opt Complexity: Draw array. Arrow scanning only the first N-K elements. Label $O(N-K)$.
+Mem Vis (BF): Storing multiple sub-arrays in memory for comparison: $O(N \cdot K)$.
+Mem Vis (Opt): Two solitary boxes: `max_val` and `max_idx`. $O(1)$ space visual.

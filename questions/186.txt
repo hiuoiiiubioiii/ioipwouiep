@@ -1,0 +1,13 @@
+ID: 186
+Problem Title: Reverse Words in a String II
+Brute Force Method: Copy words into a temporary array, reverse the array, and join them back into the original array.
+BF Complexity Visuals: A "Temporary Warehouse" where all items are moved out of the room to be rearranged.
+How to Draw BF: Draw the array. Draw a separate set of boxes. Show arrows moving words from array to boxes in reverse.
+Optimised Pattern: Double In-place Reversal (Reverse Whole + Reverse Words).
+Opt Vis. Technique: "The Pancake Flip." You flip the entire sequence, then flip each individual "pancake" (word) back to its original orientation.
+Dry Run (Opt): 1. Reverse the entire array in-place. 2. Iterate through: when you hit a space, reverse the characters between the last space and current.
+How to Draw (Opt): Write "sky is blue". Step 1: Write "eulb si yks". Step 2: Circle "eulb" and flip to "blue", "si" to "is", "yks" to "sky".
+Opt Complexity Visuals: $O(N)$ linear time. Every character is swapped exactly twice.
+How to Draw Opt Complexity: Draw a horizontal line. Mark two passes: a full-length swap and a series of smaller internal segments.
+Mem Vis (BF): $O(N)$ heap memory used to buffer the list of words.
+Mem Vis (Opt): Visualize $O(1)$ stack memory. Only three index pointers (left, right, start) are used.

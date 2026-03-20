@@ -1,0 +1,13 @@
+ID: 1056
+Problem Title: Confusing Number
+Brute Force Method: Convert number to string. Check if it contains invalid digits (2, 3, 4, 5, 7). If valid, generate all rotations and compare to original.
+BF Complexity Visuals: String manipulation and character-by-character flipping.
+How to Draw BF: Write "89". Flip '8' to '8', '9' to '6'. Reverse order to get "68". Compare 68 != 89. Write $O(L)$ where L is digits.
+Optimised Pattern: Math (Digit Extraction and Remainder).
+Opt Vis. Technique: A "Rotating Dial". You extract digits from the end, map them to their rotated counterparts, and build a new number.
+Dry Run (Opt): Use `n % 10` to get digits. If digit is in {2,3,4,5,7}, return false. Else, use a map {0:0, 1:1, 6:9, 8:8, 9:6} to build `rotated = rotated * 10 + map[digit]`.
+How to Draw (Opt): Write original N. Below it, write the rotated digits as you extract them. If you see a 2, 3, 4, 5, or 7, draw a big X. Check if `rotated != original`.
+Opt Complexity Visuals: Single pass through the digits.
+How to Draw Opt Complexity: Draw a number being dismantled and reassembled bit by bit. Write Time: $O(\log N)$.
+Mem Vis (BF): $O(L)$ space for string conversion.
+Mem Vis (Opt): $O(1)$ space using integer math and a fixed-size mapping.

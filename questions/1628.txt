@@ -1,0 +1,13 @@
+ID: 1628
+Problem Title: Design an Expression Tree With Evaluate Function
+Brute Force Method: Repetitive string parsing and recalculation every time the evaluate function is triggered.
+BF Complexity Visuals: String Parsing Loop
+How to Draw BF: Draw a long string equation being sliced and re-read from left to right constantly.
+Optimised Pattern: Object-Oriented Design (Polymorphism) + Postfix Stack Tree
+Opt Vis. Technique: Abstract Syntax Tree (AST)
+Dry Run (Opt): Read postfix array. Push numbers as NumberNodes to stack. For operators, pop right and left nodes, create OperatorNode, push back. Call `evaluate()` recursively.
+How to Draw (Opt): Draw a tree where leaves are numbers and internal nodes are operators (+, -, *, /). Draw arrows bubbling values from the bottom up to the root.
+Opt Complexity Visuals: Single DFS Traversal
+How to Draw Opt Complexity: Draw a tree and a single continuous line weaving through every node exactly once to get the final answer. $O(N)$.
+Mem Vis (BF): Raw Strings / Arrays: Raw data buffers constantly being copied.
+Mem Vis (Opt): Node Objects + Stack: Draw a stack used temporarily to assemble an interconnected web of smart Node objects.

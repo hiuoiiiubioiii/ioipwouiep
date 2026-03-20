@@ -1,0 +1,13 @@
+ID: 1706
+Problem Title: Where Will the Ball Fall
+Brute Force Method: Deep recursion tree trying every path, checking boundaries repeatedly without caching.
+BF Complexity Visuals: Branching Maze Search.
+How to Draw BF: Draw a grid. Draw squiggly lines bouncing off walls blindly.
+Optimised Pattern: Iterative Grid Simulation.
+Opt Vis. Technique: Pinball Plinko Drop.
+Dry Run (Opt): Drop ball at col `c`. Look at `grid[r][c]`. If 1, check right for V-shape. If -1, check left. If clear, drop to `r+1`.
+How to Draw (Opt): Draw grid cells. Draw a diagonal arrow `` for 1, `/` for -1. Trace a solid line mapping the drop path. Stop if it hits a `V`.
+Opt Complexity Visuals: Independent Parallel Lines.
+How to Draw Opt Complexity: Draw N starting nodes. Draw straight lines down M levels. Label $O(M \cdot N)$.
+Mem Vis (BF): Deep Call Stack frames (O(M) memory for recursion).
+Mem Vis (Opt): One single integer `current_col` per ball. $O(1)$ space visual.

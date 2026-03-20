@@ -1,0 +1,13 @@
+ID: 1005
+Problem Title: Maximize Sum Of Array After K Negations
+Brute Force Method: Scan the whole array to find the absolute minimum element. Flip its sign. Repeat this full scan K times.
+BF Complexity Visuals: A loop running K times, where each iteration forces a full linear sweep of the array.
+How to Draw BF: Draw the array. Cross out the smallest number, write its opposite. Do this K times. Write $O(K \cdot N)$.
+Optimised Pattern: Greedy (Sorting).
+Opt Vis. Technique: A conveyor belt sorting elements from negative to positive, followed by a toggling machine.
+Dry Run (Opt): Sort the numbers. March left to right, flipping negatives to positives. If you run out of negatives but still have odd K left, flip the smallest positive number back and forth.
+How to Draw (Opt): Draw the sorted array. Put an arrow moving left-to-right. Strike through '-' signs while counting down K. If K remains, point at the smallest number and toggle it.
+Opt Complexity Visuals: A sorting funnel followed by a single straight line.
+How to Draw Opt Complexity: Draw a box labeled "Sort" and write $O(N \log N)$ inside it. Follow it with a straight arrow labeled $O(N)$.
+Mem Vis (BF): In-place modification, so just one array.
+Mem Vis (Opt): The same single array in-place, but visually ordered. Sorting overhead may take $O(\log N)$ stack space depending on the language.

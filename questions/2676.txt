@@ -1,0 +1,13 @@
+ID: 2676
+Problem Title: Throttle
+Brute Force Method: Execute the function every time the event triggers, ignoring the time limit entirely.
+BF Complexity Visuals: High-Frequency Execution Spike
+How to Draw BF: Draw a timeline with 100 dots (events) and 100 stars (executions). $O(N)$.
+Optimised Pattern: Closure + setTimeout + Stored Arguments
+Opt Vis. Technique: The "Cooling Down" Pipe
+Dry Run (Opt): If called and not in "cooling down" state, execute immediately and start a timer. If called while cooling down, save the latest arguments. Once the timer ends, if there were saved arguments, execute again and restart the timer.
+How to Draw (Opt): Draw a timeline. Event 1 starts a "Busy" block. Any events during the block are ignored except the very last one. When the "Busy" block ends, the last one executes and starts a new "Busy" block.
+Opt Complexity Visuals: $O(1)$ Overhead per Event
+How to Draw Opt Complexity: Draw a timeline showing only one execution per interval T. $O(1)$.
+Mem Vis (BF): Event listener buildup
+Mem Vis (Opt): Closure memory storing the `timeoutId` and `nextArgs`.

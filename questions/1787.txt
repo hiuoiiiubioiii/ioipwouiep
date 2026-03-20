@@ -1,0 +1,13 @@
+ID: 1787
+Problem Title: Make the XOR of All Segments Equal to Zero
+Brute Force Method: For every segment of size K, try changing every number to all possible values in range (0-1023) to see if XOR of every segment is 0.
+BF Complexity Visuals: State-Space Combinatorial Explosion.
+How to Draw BF: Draw K slots. For each slot, draw 1024 branches. $O(1024^K)$.
+Optimised Pattern: DP with Frequency Partitioning (i \pmod K).
+Opt Vis. Technique: XOR Cumulative Balance Sheet.
+Dry Run (Opt): Numbers nums[i] and nums[i+K] must be the same for all segments to have XOR 0. Group indices by i \pmod K. Use DP to find the min changes for each group to reach a target XOR.
+How to Draw (Opt): Draw K columns. Put numbers into columns based on `index % K`. For each column, track how many elements exist. Use a DP table `dp[position][current_xor]`.
+Opt Complexity Visuals: Iterative Matrix Transformation.
+How to Draw Opt Complexity: Draw a K \times 1024 grid. Each cell is a XOR state. Label $O(K \cdot 1024)$.
+Mem Vis (BF): Recursive stacks for combinations.
+Mem Vis (Opt): 2D DP table + Frequency Maps for each column. $O(K \cdot 1024)$ space.

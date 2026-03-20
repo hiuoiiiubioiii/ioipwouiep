@@ -1,0 +1,13 @@
+ID: 1909
+Problem Title: Remove One Element to Make the Array Strictly Increasing
+Brute Force Method: Create N different versions of the array, each missing one element. Scan each version to see if it is strictly increasing.
+BF Complexity Visuals: N-Array Rebuilding
+How to Draw BF: Draw the original array N times, each with a different element shaded out. Draw scan arrows over all N arrays. $O(N^2)$.
+Optimised Pattern: Single Pass Greedy Violation Detection
+Opt Vis. Technique: Dip Detection &amp; Patching
+Dry Run (Opt): Traverse left to right. At the first violation (`nums[i-1] &gt;= nums[i]`), verify if removing either `nums[i-1]` or `nums[i]` fixes the slope based on `nums[i-2]`.
+How to Draw (Opt): Draw the array values as points on a line graph. Identify the "dip". Draw dotted lines showing the two possible deletions to see which bridges the gap cleanly.
+Opt Complexity Visuals: Violation Stop-Gate
+How to Draw Opt Complexity: Draw a single line forward. Add a small "bump" icon. Allow exactly one bump before returning false. $O(N)$ time.
+Mem Vis (BF): N separate arrays of size N-1 actively sitting in system memory.
+Mem Vis (Opt): A few pointer and counter variables (`count`, `prev_val`) traversing the original array. $O(1)$ space.

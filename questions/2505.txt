@@ -1,0 +1,13 @@
+ID: 2505
+Problem Title: Bitwise OR of All Subsequence Sums
+Brute Force Method: Generate all 2^N possible subsequences, compute the sum of each explicitly, and bitwise OR the final results.
+BF Complexity Visuals: Massive binary decision tree mapping the combinatorial inclusion/exclusion paths of each element.
+How to Draw BF: Draw a tree where each branch splits into "include nums[i]" and "exclude nums[i]". The leaf nodes represent all explicit subsequence sums.
+Optimised Pattern: Bit contribution counting array tracking 1s, coupled with right-shift carry propagation logic.
+Opt Vis. Technique: 64-bit frequency array simulating binary addition and structural carry logic across bits.
+Dry Run (Opt): Create an array of 64 buckets. For each number, drop a token into the bucket for each 1-bit. Sweep from bucket 0 to 63, moving half the tokens to the next bucket (carry logic).
+How to Draw (Opt): Draw a table with 64 columns. Write the binary form of the array numbers in rows. Count the 1s in each column. Shift count / 2 to the left column to simulate carries.
+Opt Complexity Visuals: Single array traversal followed by a constant, fixed 64-step loop.
+How to Draw Opt Complexity: Draw the input array with an $O(N)$ scan arrow underneath it, then draw the fixed 64-element bit array with an $O(1)$ constant scan arrow next to it.
+Mem Vis (BF): Enormous exponential array storing 2^N explicit sums.
+Mem Vis (Opt): Fixed-size 64-element integer array cnt.

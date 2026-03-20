@@ -1,0 +1,13 @@
+ID: 1881
+Problem Title: Maximum Value after Insertion
+Brute Force Method: Try inserting the digit x at every possible index (0 \dots N) and store all resulting strings in a list. Find the maximum.
+BF Complexity Visuals: Permutation generation tree.
+How to Draw BF: Draw the number. Draw arrows to N+1 different circles, each representing a new string. Mark as $O(N^2)$ due to string copying.
+Optimised Pattern: Greedy (First Mismatch).
+Opt Vis. Technique: Pointer comparison tape.
+Dry Run (Opt): If positive, find first digit &lt; x. If negative, find first digit &gt; x. Insert x at that position.
+How to Draw (Opt): Draw the digits on a line. Move an arrow. At the first digit that fails the "greater/smaller" check, draw a caret (^) and write x.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw a single arrow moving from 0 \to N. Mark $O(N)$.
+Mem Vis (BF): $O(N^2)$ space to store all temporary string results.
+Mem Vis (Opt): Single StringBuilder or character array (O(N) space).

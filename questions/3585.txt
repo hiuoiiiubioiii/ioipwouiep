@@ -1,0 +1,13 @@
+ID: 3585
+Problem Title: Find Weighted Median Node in Tree (Hard)
+Brute Force Method: For every node, calculate the sum of weighted distances to all other nodes and find the node with the minimum sum.
+BF Complexity Visuals: Repeated Tree Traversal.
+How to Draw BF: Draw a tree. For node 1, run BFS to all other nodes. Reset. For node 2, repeat. $O(N^2)$.
+Optimised Pattern: Tree Centroid Decomposition / Subtree Weight Sums.
+Opt Vis. Technique: Weight Balance Gravity.
+Dry Run (Opt): Total weight W is the sum of all node weights. The weighted median is the node where every subtree has weight <= W/2.
+How to Draw (Opt): Draw a tree with numbers in nodes. Calculate the total sum. Start at the root. Move to the child whose subtree weight is &gt; W/2. Stop when no such child exists.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single DFS traversal (calculating weights) and a single downward path search. $O(N)$.
+Mem Vis (BF): Distance Matrices: Draw an N x N matrix storing weights between every possible pair of nodes.
+Mem Vis (Opt): 1D Weight Array: Draw a single array storing the total weight of each node's subtree.

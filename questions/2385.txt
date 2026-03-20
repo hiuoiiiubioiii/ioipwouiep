@@ -1,0 +1,13 @@
+ID: 2385
+Problem Title: Amount of Time for Binary Tree to Be Infected
+Brute Force Method: From every node, run a search to find the "start" node, then from there, perform a search to find the longest path, manually tracking parent pointers for every node.
+BF Complexity Visuals: Multi-Pass Graph Search (O(N^2))
+How to Draw BF: Draw a tree. For every node, draw a search to find 'start'. Then from 'start', draw a search to find the most distant leaf.
+Optimised Pattern: Adjacency List + BFS (Graph Conversion)
+Opt Vis. Technique: Ripple-Effect Graph Traversal
+Dry Run (Opt): Convert the tree into an undirected graph (Adjacency List) where each node points to its children and its parent. Then, run a BFS starting from the `start` node to find the maximum distance.
+How to Draw (Opt): Draw a tree. Draw arrows both down (to children) and up (to parents) to turn it into a web. Start at the infected node and draw "ripples" (circles) expanding outward. Count how many ripples it takes to hit the last node.
+Opt Complexity Visuals: Linear Graph Traversal (O(N))
+How to Draw Opt Complexity: Draw a single pass to build the graph, followed by one expanding ripple pass.
+Mem Vis (BF): Draw numerous redundant searches to find the start node and its neighbors.
+Mem Vis (Opt): Draw an Adjacency List (Map of Lists) and a `visited` Set.

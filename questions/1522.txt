@@ -1,0 +1,13 @@
+ID: 1522
+Problem Title: Diameter of N-Ary Tree (Premium)
+Brute Force Method: For every single node, run a full DFS to find the maximum depth of all its children subtrees, summing the top two. $O(N^2)$ for skewed trees.
+BF Complexity Visuals: Cascading Triangles $O(N^2)$
+How to Draw BF: Draw a large tree. Pick a node, draw a shaded triangle under it for its DFS. Pick its child, draw another shaded triangle overlapping the first. Huge redundant work.
+Optimised Pattern: Post-Order DFS (Tree DP)
+Opt Vis. Technique: Top-2 Bubble Up
+Dry Run (Opt): Traverse to the leaves. As you return back up to a parent, each child reports its max depth. The parent tracks its *top 2* deepest children. The diameter through that parent is `top1 + top2`. Pass `top1 + 1` up to the grandparent.
+How to Draw (Opt): Draw a node with 4 children. The children pass up the numbers `[1, 4, 2, 3]`. The parent circles `4` and `3`, adds them to check the global max (7), and then passes `4 + 1 = 5` up the chain.
+Opt Complexity Visuals: Single-Pass Tree Trace $O(N)$
+How to Draw Opt Complexity: Draw a single line snaking down to the leaves and back up to the root, touching every edge exactly twice (down and up).
+Mem Vis (BF): Massive recursive call stacks stacked inside loops. $O(N)$.
+Mem Vis (Opt): Two local variables per stack frame (`max1` and `max2`). $O(H)$ space for the recursive call stack height.

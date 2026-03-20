@@ -1,0 +1,13 @@
+ID: 286
+Problem Title: Walls and Gates
+Brute Force Method: For every empty room (0), start a separate BFS to find the nearest gate (G).
+BF Complexity Visuals: Nested Grid Scans: $O(m^2 n^2)$.
+How to Draw BF: Draw a grid. Pick an empty cell. Draw concentric circles expanding until they hit a 'G'. Repeat this for *every* empty cell on the grid.
+Optimised Pattern: Multi-Source BFS
+Opt Vis. Technique: Wavefront Expansion
+Dry Run (Opt): Add ALL gates to the queue at once. Process level by level. When a gate's "wave" hits an empty room, that room gets the current level count and becomes a "source" for the next level.
+How to Draw (Opt): Draw a grid. Shade all 'G' cells simultaneously. Draw a "1" in all adjacent empty cells. Then a "2" in their neighbors. Show the waves merging without overlap.
+Opt Complexity Visuals: Linear Grid Scan: $O(m \\text{times} n)$ Time.
+How to Draw Opt Complexity: Draw a single grid. Show each cell being visited exactly once as the BFS queue processes it.
+Mem Vis (BF): Individual BFS Queues: Multiple queue boxes.
+Mem Vis (Opt): Single Queue Ribbon: Draw one long queue starting with all 'G' coordinates. Space: $O(m \\text{times} n)$.

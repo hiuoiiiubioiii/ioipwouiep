@@ -1,0 +1,13 @@
+ID: 3395
+Problem Title: Subsequences with a Unique Middle Mode I
+Brute Force Method: Generate all possible subsequences of length 5, find the middle element, count frequencies, and verify the mode. $O(N^5)$.
+BF Complexity Visuals: Quintic Subsequence Forest
+How to Draw BF: Draw the array. Pick 5 numbers. Check the mode. Repeat for every combination.
+Optimised Pattern: Combinatorics + Prefix/Suffix Maps
+Opt Vis. Technique: The Pivot Combinations
+Dry Run (Opt): Treat every index i as the middle element. Use prefix and suffix frequency arrays to calculate how many valid pairs can be picked from the left and right such that `nums[i]` remains the strict mode.
+How to Draw (Opt): Draw the array. Lock a middle element. Look left: calculate combinations of choosing 2 numbers. Look right: do the same. Subtract invalid combinations where another number ties or beats your locked middle element's frequency.
+Opt Complexity Visuals: Linear Scan + Map Math $O(N \\text{cdot Unique}_\text{Vals})$
+How to Draw Opt Complexity: Draw a single pass timeline. At each step, iterate over a fixed-size frequency map.
+Mem Vis (BF): Storing millions of length-5 arrays.
+Mem Vis (Opt): Prefix and Suffix Hash Maps. $O(N)$ space.

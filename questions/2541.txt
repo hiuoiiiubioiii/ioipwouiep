@@ -1,0 +1,19 @@
+ID: 2541
+Problem Title: Minimum Operations to Make Array Equal II
+Brute Force Method: Try every possible combination of adding/subtracting k to elements in nums1 to match nums2, checking all permutations. $O(\text{Exponential})$.
+BF Complexity Visuals: A massive branching tree of state changes where each node represents a new version of the array.
+How to Draw BF: Draw the array. From each element, branch out +k and -k possibilities. This grows into a messy web of potential arrays.
+Optimised Pattern: Greedy Difference Tracking + Parity Check.
+Opt Vis. Technique: A "Balance Scale" where the total positive deviations must exactly equal the total negative deviations, and all gaps must be multiples of k.
+
+
+
+
+
+[Image of balancing a scale with weights]
+Dry Run (Opt): For each index, calculate diff = nums1[i] - nums2[i]. If k=0, check if nums1 == nums2. If k&gt;0, ensure diff % k == 0. Sum the positive differences and negative differences. If posSum + negSum == 0, the answer is posSum / k.
+How to Draw (Opt): Draw a table with 3 columns: nums1, nums2, and Difference. Mark each difference as a multiple of k. Check if the sum of all differences is 0. If yes, count the "up-moves" (+ differences).
+Opt Complexity Visuals: $O(N)$ - A single linear scan through the array.
+How to Draw Opt Complexity: Draw the array with one arrow moving left to right. Above the arrow, show a running tally of "needed additions" vs "needed subtractions."
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ - Just a few long/integer variables for sums.

@@ -1,0 +1,13 @@
+ID: 278
+Problem Title: First Bad Version
+Brute Force Method: Linear scan from version 1 to n, calling `isBadVersion(i)` until it returns true.
+BF Complexity Visuals: Linear Timeline: $O(n)$.
+How to Draw BF: Draw a long line. Put a "check" mark on every single version until you hit the first "X".
+Optimised Pattern: Binary Search (Leftmost Boundary)
+Opt Vis. Technique: Halving Search Range
+Dry Run (Opt): Check `mid`. If `isBadVersion(mid)` is true, the first bad version could be `mid` or earlier; move `high = mid`. If false, move `low = mid + 1`.
+How to Draw (Opt): Draw a number line. Draw a bracket covering the whole range. Move the brackets inward by halves until they meet at a single point.
+Opt Complexity Visuals: Logarithmic Search: $O(\log n)$.
+How to Draw Opt Complexity: Draw a line. Divide it into 2, then 4, then 8. Show that for 1,000,000 versions, you only ask about 20 times.
+Mem Vis (BF): None.
+Mem Vis (Opt): Two Pointers: Draw `left` and `right`. Space: $O(1)$.

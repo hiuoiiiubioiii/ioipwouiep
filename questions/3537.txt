@@ -1,0 +1,13 @@
+ID: 3537
+Problem Title: Fill a Special Grid (Med)
+Brute Force Method: Backtracking DFS to try placing every valid number in every empty cell, rolling back on failure.
+BF Complexity Visuals: Deep Recursion Tree.
+How to Draw BF: Draw a massive branching tree. Each node is a grid state. Draw red 'X's on branches that violate row/col rules and backtrack. $O(K^(N\cdot M)$).
+Optimised Pattern: Constructive Algorithm / Greedy Pattern Filling.
+Opt Vis. Technique: Tessellation / Offset Staggering.
+Dry Run (Opt): Use mathematical offsets (like `(row + col) % K`) to predictably drop numbers into valid slots without needing to check constraints repeatedly.
+How to Draw (Opt): Draw a blank grid. Instead of guessing, write a simple math formula next to the grid and fill cells diagonally in a predictable, repeating pattern.
+Opt Complexity Visuals: Single Grid Sweep.
+How to Draw Opt Complexity: Draw a matrix. Draw a single continuous snake-like arrow passing through every cell exactly once. $O(N \cdot M)$.
+Mem Vis (BF): Call Stack Overload: Draw thousands of stacked grid states taking up massive memory during recursion.
+Mem Vis (Opt): In-Place Matrix: Draw the output 2D array being filled exactly once, with $O(1)$ auxiliary space.

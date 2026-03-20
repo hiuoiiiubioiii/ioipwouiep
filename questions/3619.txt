@@ -1,0 +1,13 @@
+ID: 3619
+Problem Title: Count Islands With Total Value Divisible by K (Med)
+Brute Force Method: DFS without properly marking a global `visited` set, causing the algorithm to re-traverse the same islands from different starting cells.
+BF Complexity Visuals: Endless Meandering DFS.
+How to Draw BF: Draw a grid. Draw a line snaking around forming an island. Then start at a different cell in the same island and draw the exact same snaking line again.
+Optimised Pattern: Standard BFS/DFS Connected Components. Accumulate a `running_sum` during the traversal. Modulo K at the very end of the island.
+Opt Vis. Technique: Expanding Flood-Fill with a Bucket.
+Dry Run (Opt): Drop paint on an unvisited land cell. As the paint spreads to adjacent land, throw their values into a bucket. When the paint stops spreading, check `bucket % K == 0`.
+How to Draw (Opt): Draw a grid. Shade cells as you "visit" them. Write a tally mark outside the grid summing up the shaded cells. When the island is done, write `% K`.
+Opt Complexity Visuals: One-Dot-Per-Cell Matrix.
+How to Draw Opt Complexity: Draw a grid. Place exactly ONE dot inside every single cell to prove that no cell is processed more than once. Write $O(R \cdot C)$.
+Mem Vis (BF): A massive implicit call stack from runaway recursion trying to backtrack over water and land.
+Mem Vis (Opt): A visited[R][C] boolean matrix and an explicit Queue for BFS. Space $O(R \cdot C)$.

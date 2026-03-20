@@ -1,0 +1,13 @@
+ID: 3196
+Problem Title: Maximize Total Cost of Alternating Subarrays
+Brute Force Method: Recursive backtracking to explore all possible partition points for the alternating subarrays. $O(2^N)$.
+BF Complexity Visuals: Exponential Branching Tree
+How to Draw BF: Draw root. For each index, branch into "start new subarray" or "continue current." Tally alternating sums.
+Optimised Pattern: 1D Dynamic Programming (2 States)
+Opt Vis. Technique: State Transition Wave
+Dry Run (Opt): `dp[i][0]` (elem at i is positive) and `dp[i][1]` (elem at i is negative). Transition based on the previous index state.
+How to Draw (Opt): Draw a row of numbers. Below each, draw two boxes. Draw arrows showing which box values flow into the next based on max.
+Opt Complexity Visuals: Linear Matrix Fill
+How to Draw Opt Complexity: Draw an N x 2 grid. Shade it column by column. $O(N)$.
+Mem Vis (BF): Deep recursive stack of 2^N states.
+Mem Vis (Opt): A 1D DP table or two scalar variables. $O(1)$ aux.

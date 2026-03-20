@@ -1,0 +1,13 @@
+ID: 3673
+Problem Title: Find Zombie Sessions (Hard)
+Brute Force Method: Running a full BFS from every single node to find all connected components (zombie clusters) repeatedly for every session. $O(S \cdot (V+E)$).
+BF Complexity Visuals: Repeated Graph Traversal.
+How to Draw BF: Draw a graph. Color a cluster. If a new edge appears, erase all colors and re-run BFS to find the new clusters. Repeat S times.
+Optimised Pattern: Disjoint Set Union (DSU) with Path Compression. For every session connection, union the two nodes and decrement the total cluster count.
+Opt Vis. Technique: The "Blob Merger" Animation.
+Dry Run (Opt): Start with N isolated dots. For every "zombie session" connection (A, B), draw a circle around them. If they are already in the same circle, do nothing. If not, merge their circles.
+How to Draw (Opt): Draw two 1D arrays: `parent` and `size`. When A and B connect, point A's root to B's root. Show the "Component Count" variable dropping by 1.
+Opt Complexity Visuals: Nearly-Linear DSU Chart.
+How to Draw Opt Complexity: Write $O(S \\text{cdot alpha}(V)$) where alpha is the inverse Ackermann function (effectively a constant). This is vastly faster than BFS.
+Mem Vis (BF): Building new Adjacency Lists from scratch for every session.
+Mem Vis (Opt): A single `parent` array of size N. Space $O(V)$.

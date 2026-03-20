@@ -1,0 +1,13 @@
+ID: 3682
+Problem Title: Minimum Index Sum of Common Elements (Med)
+Brute Force Method: Nested loops comparing every element of List A with every element of List B. If they match, sum their indices. $O(A \cdot B)$.
+BF Complexity Visuals: Cartesian Product Grid.
+How to Draw BF: Draw List A as rows and List B as columns. Put a check in the cell where values match. Calculate index sums for all checks. For N=10^5, this is 10 billion checks.
+Optimised Pattern: Hash Map for List A (Value -&gt; Index). Scan List B and look up values in the Map in $O(1)$.
+Opt Vis. Technique: The "Value-to-Index" Lookup Table.
+Dry Run (Opt): Instead of searching the whole crowd for a specific person, you have a directory. Look up the person's name (Value) and get their seat number (Index) instantly.
+How to Draw (Opt): Draw a Map: {"Pizza": 0, "Burger": 1}. Read List B. When you see "Burger", get 1 from the map. Sum it with current index in B. Keep track of the minimum sum found.
+Opt Complexity Visuals: Two-Pass Linear Scan.
+How to Draw Opt Complexity: Draw one arrow scanning List A to build the Map $O(A)$. Draw a second arrow scanning List B $O(B)$. Total $O(A + B)$.
+Mem Vis (BF): Building a full intersection matrix in memory.
+Mem Vis (Opt): A Hash Map containing elements of List A. Space $O(A)$.

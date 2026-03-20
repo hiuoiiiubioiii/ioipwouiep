@@ -1,0 +1,13 @@
+ID: 2246
+Problem Title: Longest Path With Different Adjacent Characters
+Brute Force Method: All-Pairs DFSFor every single node in the tree, run a DFS to find the longest valid path starting at that node where no two adjacent nodes have the same character.
+BF Complexity Visuals: Overlapping Tree Traversals
+How to Draw BF: Draw the tree. Highlight node A and trace all paths from it. Then highlight node B and trace all paths from it. Show how many edges are re-traversed, leading to $O(N^2)$.
+Optimised Pattern: Tree DP (Post-order Traversal)
+Opt Vis. Technique: Two-Max Child Branching
+Dry Run (Opt): Each node returns the longest valid path from its subtree to itself. The longest path *through* the current node is the sum of the two longest valid paths from its children (plus 1).
+How to Draw (Opt): Draw a node with several children. Only keep paths from children whose characters differ from the parent. Pick the top 2 longest paths, draw a "V" shape connecting them through the parent.
+Opt Complexity Visuals: Bottom-Up Single Pass
+How to Draw Opt Complexity: Draw the tree. Draw arrows starting from the leaves moving upward to the root. Label it $O(N)$ because each node and edge is visited exactly once.
+Mem Vis (BF): Recursive call stack storage of all paths found during the $O(N^2)$ search.
+Mem Vis (Opt): A single recursion stack of height H and one integer return value per node (O(N) space).

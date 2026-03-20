@@ -1,0 +1,13 @@
+ID: 1553
+Problem Title: Minimum Number of Days to Eat N Oranges
+Brute Force Method: Simple recursion: `1 + min(eat(n-1), eat(n/2), eat(n/3))`. This explores many redundant paths. $O(3^N)$.
+BF Complexity Visuals: Expanding 3-way Decision Tree
+How to Draw BF: Draw a root N. Draw three branches (-1, /2, /3). Repeat. The tree becomes incredibly wide almost immediately.
+Optimised Pattern: DP + BFS / Optimized Recursion
+Opt Vis. Technique: The Greedy Jump BFS
+Dry Run (Opt): Instead of subtracting 1 orange at a time, calculate the days to reach the next multiple of 2 or 3: `1 + (n % 2) + eat(n / 2)` and `1 + (n % 3) + eat(n / 3)`. Use a map for memoization.
+How to Draw (Opt): Draw a node N. Draw only TWO branches that "jump" to `n/2` and `n/3`. Write the cost of the "jump" (1 + remainder) on the edge. This forces the tree to shrink logarithmically.
+Opt Complexity Visuals: Logarithmic State Space $O(\log^2 N)$
+How to Draw Opt Complexity: Draw a tree where each node has only two children and the value of the children is half or a third of the parent. The tree is very deep but very thin.
+Mem Vis (BF): A recursion stack that goes N levels deep.
+Mem Vis (Opt): A Hash Map (Memo table). Draw a table with key-value pairs where keys are only the specific values of N reached by division. $O(\log^2 N)$ space.

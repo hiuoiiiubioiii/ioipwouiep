@@ -1,0 +1,13 @@
+ID: 2644
+Problem Title: Find the Maximum Divisibility Score
+Brute Force Method: Nested loops: For each divisor, iterate through all numbers to check divisibility.
+BF Complexity Visuals: Divisor-to-Array Mapping
+How to Draw BF: Draw a list of divisors. For each one, draw arrows to every element in the array. $O(D \cdot N)$.
+Optimised Pattern: Frequency Map + Divisibility Check
+Opt Vis. Technique: Tally Counter / Sieve-lite
+Dry Run (Opt): Count frequencies of numbers in `nums`. Then, for each unique divisor, multiply the frequency of its multiples in the map to get the score.
+How to Draw (Opt): Draw a frequency table for `nums`. For each divisor, look up its multiples in the table and sum their counts.
+Opt Complexity Visuals: $O(D \cdot N)$ or $O(D \\text{cdot unique}(N)$)
+How to Draw Opt Complexity: Draw an $O(N)$ grouping block followed by an $O(D \\text{cdot unique}_N)$ check block.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Hash Map for number frequencies.

@@ -1,0 +1,13 @@
+ID: 3793
+Problem Title: Find Users with High Token Usage (Easy)
+Brute Force Method: Iterate through all token usage logs. For each log, search for the user in a list, update their total, then iterate the list again to find users exceeding the threshold. $O(L \cdot U)$.
+BF Complexity Visuals: Nested Search and Tally.
+How to Draw BF: Draw a log file with names and numbers. Take a highlighter. Find "Alice", add her numbers. Find "Bob", add his. Circle names that pass the "1000" mark.
+Optimised Pattern: Hash Map Aggregation
+Opt Vis. Technique: Key-Value Accumulator
+Dry Run (Opt): Use a Hash Map where keys are UserIDs and values are TotalTokens. Iterate the logs once to populate the map, then iterate the map to filter users.
+How to Draw (Opt): Draw a table with two columns: "User" and "Tokens". As you read the logs, update the token count next to the user's name. Finally, cross out anyone with tokens below the limit.
+Opt Complexity Visuals: Single Linear Pass $O(L)$.
+How to Draw Opt Complexity: Draw a flat timeline with an $O(1)$ map "Drop-in" at every log entry.
+Mem Vis (BF): Multiple passes over large raw log files.
+Mem Vis (Opt): Hash Map in memory (O(U) space where U is unique users).

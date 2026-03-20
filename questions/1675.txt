@@ -1,0 +1,13 @@
+ID: 1675
+Problem Title: Minimize Deviation in Array
+Brute Force Method: Generate every possible version of every number (by multiplying/dividing by 2) and check every subset for the smallest range.
+BF Complexity Visuals: Exhaustive Range Search
+How to Draw BF: Draw a tree where each leaf is a unique combination of transformed numbers. $O(\\text{text}{\text{Too much to calculate}})$.
+Optimised Pattern: Priority Queue (Max-Heap) + Greedy Shrinking
+Opt Vis. Technique: Squeezing the Range
+Dry Run (Opt): Convert all odds to evens (multiply by 2). Put all in a Max-Heap. Keep track of the minimum. Pop the max, calculate deviation, divide it by 2, push back, and update min. Stop when max is odd.
+How to Draw (Opt): Draw a Max-Heap (Pyramid). Draw a "Min" box on the side. Pop the top of the pyramid, half it, and put it back in. Watch the "Max" and "Min" values get closer together.
+Opt Complexity Visuals: Heap-Logarithmic Convergence
+How to Draw Opt Complexity: Draw a funnel (Heap) processing N \log(\max) operations. $O(N \log N \cdot \log(\\text{max})$).
+Mem Vis (BF): Transformation Matrix: Storing all possible states of all numbers.
+Mem Vis (Opt): Max-Heap + Variable: Draw a binary tree (heap) and one integer box (`currentMin`). $O(N)$ space.

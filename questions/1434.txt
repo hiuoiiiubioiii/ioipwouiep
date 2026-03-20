@@ -1,0 +1,13 @@
+ID: 1434
+Problem Title: Number of Ways to Wear Different Hats to Each Other
+Brute Force Method: Backtracking. For each person, try assigning every hat they like. Keep track of used hats in a set. If all people get a unique hat, increment count.
+BF Complexity Visuals: Exponential Assignment Tree
+How to Draw BF: Draw 10 people. Branch each into their liked hats (up to 40). Prune if a hat is already taken. Label $O(H^P)$ where H=hats, P=people.
+Optimised Pattern: Bitmask Dynamic Programming (Inverted)
+Opt Vis. Technique: State Compression (Person Mask)
+Dry Run (Opt): Instead of "People pick hats," do "Hats pick people." `dp[hat_id][mask]` is the number of ways to assign hats up to `hat_id` to people represented by the bitmask.
+How to Draw (Opt): Draw a grid: Rows = Hats (1-40), Cols = Bitmask (0-1023). For Hat 1, decide which person in the mask gets it. Move to Hat 2. Use bitwise OR to update masks.
+Opt Complexity Visuals: Grid Traversal (Hats * 2^People)
+How to Draw Opt Complexity: Draw a loop for 40 hats and a nested loop for 1024 states. Label $O(H \cdot 2^P)$.
+Mem Vis (BF): Deep Recursion Call Stack
+Mem Vis (Opt): A 2D DP table (or two 1D rows for space optimization) of size 2^P. Space $O(2^P)$.

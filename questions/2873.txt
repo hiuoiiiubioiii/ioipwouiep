@@ -1,0 +1,13 @@
+ID: 2873
+Problem Title: Maximum Value of an Ordered Triplet I
+Brute Force Method: Use three nested loops: for i, for j &gt; i, for k &gt; j. Calculate (nums[i] - nums[j]) * nums[k] for every possible triplet and track the maximum.
+BF Complexity Visuals: $O(N3)$ Nested Cube
+How to Draw BF: Draw a 3D grid or a series of nested brackets. Show that for an array of size N, the number of triplets is N(N-1)(N-2)/6, leading to cubic growth.
+Optimised Pattern: Prefix Maximum &amp; Suffix Maximum (or Pre-calculation)
+Opt Vis. Technique: Boundary Extremes Tracking
+Dry Run (Opt): To maximize (nums[i] - nums[j]) * nums[k], for a fixed j, we need the largest nums[i] to its left and the largest nums[k] to its right. Precompute prefixMax and suffixMax.
+How to Draw (Opt): Draw the array. Above it, write the max seen from the left. Below it, write the max seen from the right. For each index j, subtract nums[j] from the value above its left neighbor and multiply by the value below its right neighbor.
+Opt Complexity Visuals: Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw three horizontal lines. Pass 1: Compute Left Max. Pass 2: Compute Right Max. Pass 3: One scan to find the max triplet value. All $O(N)$.
+Mem Vis (BF): Visualize $O(1)$ auxiliary space but massive time wastage.
+Mem Vis (Opt): Visualize two arrays of size N to store precomputed maximums. Space $O(N)$.

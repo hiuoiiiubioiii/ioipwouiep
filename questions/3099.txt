@@ -1,0 +1,13 @@
+ID: 3099
+Problem Title: Harshad Number
+Brute Force Method: Convert the number to a string, iterate through each character, convert back to integer to sum, then check divisibility.
+BF Complexity Visuals: String-Integer Pipeline
+How to Draw BF: Draw a number being "unpacked" into a string, then each character being "cast" back to an int into a summation box.
+Optimised Pattern: Digit Extraction (Modulo Arithmetic)
+Opt Vis. Technique: Modulo Loop Cycle
+Dry Run (Opt): Use while(n &gt; 0) with n % 10 to extract digits. Sum them up and check if original_n % sum == 0.
+How to Draw (Opt): Write the number. Draw a circular arrow showing the last digit being "plucked" off using %10 and the rest shifting down using /10.
+Opt Complexity Visuals: $O(\log N)$ Digital Scan
+How to Draw Opt Complexity: Draw a short arrow for each digit of the number. Label as $O(\text{number of digits})$.
+Mem Vis (BF): String buffer allocation for the character representation of the number.
+Mem Vis (Opt): Three integer variables: sum, temp, and original. $O(1)$ space.

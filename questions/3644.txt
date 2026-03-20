@@ -1,0 +1,13 @@
+ID: 3644
+Problem Title: Maximum K to Sort a Permutation (Med)
+Brute Force Method: Try every value of K from 1 to N. For each K, simulate the sorting process to see if it works. $O(N^2)$.
+BF Complexity Visuals: Linear Search Simulation.
+How to Draw BF: Draw a number line for K. For K=1, run sort. For K=2, run sort. If N is 100,000, this takes 10 billion operations. Write "Time Limit Exceeded".
+Optimised Pattern: Greatest Common Divisor (GCD) of the displacements. Find the distance each element needs to move and find the GCD of all those distances.
+Opt Vis. Technique: Synchronization of Gears.
+Dry Run (Opt): Imagine elements are on gears of size K. For all elements to reach their home at once, K must be a divisor of the distance between `current_index` and `target_index` for every single element.
+How to Draw (Opt): Draw an array. Point to '5' at index 2. Its home is index 8. Distance = 6. Point to '3' at index 0. Its home is index 9. Distance = 9. Find GCD(6, 9) = 3. Final K = 3.
+Opt Complexity Visuals: GCD Reduction Line.
+How to Draw Opt Complexity: Draw a linear scan (O(N)). At each step, update a single `current_gcd` variable. Write $O(N + \log(\text{Max}_\text{Distance})$).
+Mem Vis (BF): Large arrays storing the intermediate states of the simulation for every K.
+Mem Vis (Opt): A single integer variable ans_gcd. Space $O(1)$.

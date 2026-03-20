@@ -1,0 +1,13 @@
+ID: 613
+Problem Title: Shortest Distance in a Line (SQL)
+Brute Force Method: Cross join comparing the absolute difference between every single coordinate on the number line.
+BF Complexity Visuals: Matrix grid of absolute differences.
+How to Draw BF: Draw points randomly on a number line. Draw long, overlapping arcs connecting the far-left point to the far-right point and everything in between.
+Optimised Pattern: Sorting / Window Functions (LEAD/LAG).
+Opt Vis. Technique: Sorted Number Line with Adjacent Hops.
+Dry Run (Opt): Sort the table by 'x' value. Use LEAD(x) to look at the very next row. Subtract current x from next x. Keep the minimum difference across the table.
+How to Draw (Opt): Draw points sorted strictly left-to-right on a line. Draw tiny, discrete "hop" arrows strictly between immediate neighbors. Note the smallest hop.
+Opt Complexity Visuals: Linear scan after an $O(N \log N)$ sort operation.
+How to Draw Opt Complexity: Draw a quick gear icon for 'Sort', followed by a straight, single-pass line with small hop increments $O(N)$.
+Mem Vis (BF): Draw a Cartesian explosion N x N table in RAM.
+Mem Vis (Opt): Draw a single column of sorted data with a 2-row sliding window frame.

@@ -1,0 +1,13 @@
+ID: 31
+Problem Title: Next Permutation
+Brute Force Method: Generate All Permutations Create a list of every single possible combination, sort them lexographically, find the current one, and pick the next one.
+BF Complexity Visuals: The Factorial Mountain
+How to Draw BF: Draw a massive list of N! (factorial) rows. Highlight how searching through millions of rows for an array of just 10 elements takes catastrophic $O(N!)$ time.
+Optimised Pattern: Find Dip, Swap, Reverse
+Opt Vis. Technique: The Peak and Valley Graph
+Dry Run (Opt): Scan right-to-left to find the first "dip" (decreasing number). Find the smallest number to its right that is larger than the dip. Swap them. Reverse everything after the swap index.
+How to Draw (Opt): Draw the array as a 2D line graph. Scanning left from the end, draw an arrow pointing to the first drop in elevation (the dip). Swap it with a slightly higher peak to its right, then draw a flat line showing the rest being sorted (reversed).
+Opt Complexity Visuals: Three Segmented Lines
+How to Draw Opt Complexity: Draw three straight horizontal arrows, representing the three distinct linear passes (find dip, find swap, reverse). 3 * $O(N)$ = $O(N)$ time.
+Mem Vis (BF): Allocates massive 2D arrays to hold N! permutations. $O(N!)$ space.
+Mem Vis (Opt): Draw the single original array being modified perfectly in-place. No extra memory used. $O(1)$ space.

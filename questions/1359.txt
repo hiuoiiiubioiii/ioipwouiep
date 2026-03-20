@@ -1,0 +1,13 @@
+ID: 1359
+Problem Title: Count All Valid Pickup and Delivery Options
+Brute Force Method: Generate all (2N)! permutations and validate if every Pickup happens before its Delivery. $O((2N)$!).
+BF Complexity Visuals: Factorial Validation Tree
+How to Draw BF: Draw an impossible tree. Branch out for every P and D. Cross out branches where D comes before P.
+Optimised Pattern: Combinatorics / Math (DP)
+Opt Vis. Technique: The Slot Insertion Visual
+Dry Run (Opt): For n pairs, we have 2n total slots. Assume n-1 pairs are placed (taking 2n-2 slots). The new pair (P, D) can be placed in the remaining slots. The number of ways is (2n-1) x n.
+How to Draw (Opt): Draw existing items as blocks with gaps. Draw P and D. If P is put in gap 1, D can go in any gap after it. The math formula perfectly calculates the sum of these choices.
+Opt Complexity Visuals: Linear Formula Iteration $O(N)$
+How to Draw Opt Complexity: Draw a straight line 1 dots N. Multiply an accumulator by a simple math function at each step.
+Mem Vis (BF): Generating permutations.
+Mem Vis (Opt): One integer variable. $O(1)$ space.

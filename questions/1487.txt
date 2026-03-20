@@ -1,0 +1,13 @@
+ID: 1487
+Problem Title: Making File Names Unique
+Brute Force Method: Nested Search. For every new name, check if it exists in a list. If it does, try appending (1), (2), (3)... and re-scan the entire list for each attempt.
+BF Complexity Visuals: Quadratic Collision Search
+How to Draw BF: Draw a list of names. For a new "doc", check list. Found. Try "doc(1)", check list. Found. Try "doc(2)". Label $O(n^2)$.
+Optimised Pattern: Hash Map with Suffix Tracking
+Opt Vis. Technique: Historical Collision Memory
+Dry Run (Opt): Use a Hash Map to store `name -&gt; next_available_suffix`. When a name is seen, check the map. If it exists, start searching from the stored suffix number until a unique name is found. Update map for both old and new names.
+How to Draw (Opt): Draw a Map. Key: "file", Value: 3. When a new "file" comes in, instantly jump to checking "file(3)". No need to check (1) or (2) again.
+Opt Complexity Visuals: Amortized Linear Insertion
+How to Draw Opt Complexity: Draw an arrow through the names. Each name lookup/insertion is $O(L)$ where L is string length. Label $O(n \cdot L)$.
+Mem Vis (BF): List of all generated names
+Mem Vis (Opt): A Hash Map storing all used names and their next suffix counter. Space $O(n \cdot L)$.

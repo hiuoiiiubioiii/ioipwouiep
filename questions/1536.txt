@@ -1,0 +1,13 @@
+ID: 1536
+Problem Title: Minimum Swaps to Arrange a Binary Grid
+Brute Force Method: Exhaustively try every possible row swap combination to see which leads to the target "upper triangular" form. $O(N!)$.
+BF Complexity Visuals: Factorial Permutation Tree
+How to Draw BF: Draw a grid. Branch out N times for every possible first row swap, then (N-1) for the second. The tree width is astronomical.
+Optimised Pattern: Greedy / Bubble Sort Logic
+Opt Vis. Technique: Trailing Zero Tally
+Dry Run (Opt): 1. Convert each row into a single number: the count of trailing zeros. 2. For each position `i`, find the first row (from `i` downwards) that has at least `n-1-i` trailing zeros. 3. "Bubble" that row up to position `i` and count the swaps.
+How to Draw (Opt): Draw the grid. To the right of each row, write the count of its trailing zeros (e.g., [2, 0, 1]). For row 0, you need 2 zeros. Locate the row with '2', draw a curved arrow hopping it over the other rows to the top. Count the hops.
+Opt Complexity Visuals: Nested Linear Scan $O(N^2)$
+How to Draw Opt Complexity: Draw a square. An arrow sweeps from top to bottom (outer loop), and for each step, a second arrow sweeps from the current point to the bottom (inner search).
+Mem Vis (BF): Storing full grid states in a queue for BFS. $O(N^2 \cdot N!)$.
+Mem Vis (Opt): A 1D array of size N to store the trailing zero counts. $O(N)$ space.

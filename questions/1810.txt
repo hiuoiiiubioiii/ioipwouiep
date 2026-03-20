@@ -1,0 +1,13 @@
+ID: 1810
+Problem Title: Minimum Path Cost in a Hidden Grid (Premium)
+Brute Force Method: Random walk or unoptimized backtracking to find the target, then simple BFS.
+BF Complexity Visuals: Blindfolded maze traversal graph.
+How to Draw BF: Draw a grid with hidden cells. Draw a chaotic squiggly line showing inefficient exploration.
+Optimised Pattern: DFS mapping (to reveal grid) + Dijkstra's Algorithm (Shortest Path).
+Opt Vis. Technique: Wavefront expansion on a newly revealed map.
+Dry Run (Opt): Use DFS to move the robot, recording costs. Backtrack to explore all reachable cells. Run Dijkstra from start on the known map.
+How to Draw (Opt): 1. Draw a tree for DFS backtracking. 2. Draw concentric rings from the start node showing Dijkstra expanding.
+Opt Complexity Visuals: Graph traversal V+E bounds combined.
+How to Draw Opt Complexity: Draw a grid bounding box, noting $O(V+E)$ exploration and $O(E \log V)$ for Dijkstra's heap operations.
+Mem Vis (BF): Unbounded recursive call stack or infinite loops without visited sets.
+Mem Vis (Opt): 2D Visited/Cost Matrix + Priority Queue (Min-Heap array) for routing.

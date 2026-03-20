@@ -1,0 +1,13 @@
+ID: 32
+Problem Title: Longest Valid Parentheses
+Brute Force Method: Check All Substrings Generate every possible even-length substring and use a stack to check if it's a valid parenthesis sequence.
+BF Complexity Visuals: The Exhaustive Scanner
+How to Draw BF: Draw a massive string. Bracket every possible chunk. Draw a miniature stack checking every single chunk individually. $O(N³)$ time.
+Optimised Pattern: Two Counters (Left/Right Passes)
+Opt Vis. Technique: The Twin Scales
+Dry Run (Opt): Keep two counters: `left` and `right`. Scan left-to-right. If `right == left`, record length. If `right &gt; left`, reset counters to 0. Do a second pass right-to-left (resetting if `left &gt; right`).
+How to Draw (Opt): Draw the string. Draw two tally boxes (L and R). Scan forward. When L and R match, draw a "Max Length" box updating. If R exceeds L, draw a red "X" and zero out the tallies. Repeat backwards.
+Opt Complexity Visuals: Two Parallel Timelines
+How to Draw Opt Complexity: Draw an arrow going left-to-right across the string, and another going right-to-left. 2 * $O(N)$ passes = $O(N)$ time.
+Mem Vis (BF): Draw heavy auxiliary strings or stack traces for every substring.
+Mem Vis (Opt): Draw exactly three integer variables (`left`, `right`, `maxLength`). No stacks or arrays needed. $O(1)$ space.

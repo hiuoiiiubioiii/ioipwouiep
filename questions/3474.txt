@@ -1,0 +1,14 @@
+ID: 3474
+Problem Title: Lexicographically Smallest Generated String
+Brute Force Method: Try all 26^(n+m-1) possible strings and check if they satisfy the str1 conditions for str2. $O(26^L)$
+BF Complexity Visuals: Exponential Character Decision Tree.
+How to Draw BF: Draw a root. Branch it 26 times ('a' to 'z'). Repeat for length n+m-1. The tree fills the universe before the first valid string is found.
+Optimised Pattern: Greedy Template Filling + Contradiction Check (KMP/Suffix). $O(n \cdot m)$
+Opt Vis. Technique: Constraint Propagation over Template.
+Dry Run (Opt): Pre-fill all 'T' requirements into the result string. For 'F' indices, find the earliest character that ensures the substring 
+eq str2 without breaking 'T' rules.
+How to Draw (Opt): Draw the result string as empty boxes. Shade boxes where 'T' forces characters. For remaining boxes, write 'a' and draw an "Alert" symbol if it matches str2 at an 'F' position.
+Opt Complexity Visuals: Template Pass followed by Verification Pass.
+How to Draw Opt Complexity: Draw two parallel linear arrows scanning the template string to show linear-multiplicative time complexity.
+Mem Vis (BF): Heap overflow from generating trillions of strings.
+Mem Vis (Opt): A single character array for the result string and a few integer pointers.

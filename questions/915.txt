@@ -1,0 +1,13 @@
+ID: 915
+Problem Title: Partition Array into Disjoint Intervals
+Brute Force Method: Try every possible split point. For each split, scan the left side for the maximum and the right side for the minimum.
+BF Complexity Visuals: $O(N^2)$. Two nested scans for every split point in the array.
+How to Draw BF: Draw an array. Draw a vertical line moving from left to right. At each stop, draw two sweeping arrows: one checking everything to the left, one to the right.
+Optimised Pattern: One-Pass Running Maximum
+Opt Vis. Technique: A "High-Water Mark" system. You track the highest peak seen so far in the left partition and compare it to new elements as you walk.
+Dry Run (Opt): Track `maxLeft` (max in current left) and `globalMax` (max seen so far). If `arr[i] &lt; maxLeft`, the split MUST move further right to include `i`. Update `maxLeft = globalMax`.
+How to Draw (Opt): Draw a line chart. Draw a horizontal "ceiling" line. If the chart dips below the ceiling later, the ceiling must be raised to the new peak.
+Opt Complexity Visuals: $O(N)$. A single runner moving from start to finish without looking back.
+How to Draw Opt Complexity: Draw a straight arrow from index 0 to N-1. Draw a small "backpack" icon labeled `maxLeft` that updates as the arrow moves.
+Mem Vis (BF): $O(N)$ if storing prefix/suffix arrays, or $O(1)$ with repetitive re-calculation.
+Mem Vis (Opt): $O(1)$. Two simple integer variables: `maxLeft` and `globalMax`. Draw two small post-it notes.

@@ -1,0 +1,13 @@
+ID: 3703
+Problem Title: Remove K-Balanced Substrings (Med)
+Brute Force Method: Find all substrings. If one is K-balanced, remove it, concatenate the rest, and restart the process from index 0.
+BF Complexity Visuals: String state transition graph $O(N^2)$ or worse.
+How to Draw BF: Write the string. Circle a substring, draw an arrow to a new string without it. Repeat until stuck.
+Optimised Pattern: Stack / Amortized Sliding Window
+Opt Vis. Technique: Vertical Stack Push/Pop
+Dry Run (Opt): Push chars to stack. Check top K elements. If they match the balance condition, pop them all.
+How to Draw (Opt): Draw a tall open box (Stack). Write letters from bottom up. When top elements form a match, erase/cross them out.
+Opt Complexity Visuals: Amortized $O(N)$ stair-step graph.
+How to Draw Opt Complexity: Draw a graph where Y-axis is Stack Size. Line goes up, drops sharply on matches, ending at final size.
+Mem Vis (BF): New string arrays created constantly (Heap memory fragmentation).
+Mem Vis (Opt): Contiguous Array/Stack memory layout. Pointers indicating "Top".

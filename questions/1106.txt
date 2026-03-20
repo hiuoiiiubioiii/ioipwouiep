@@ -1,0 +1,13 @@
+ID: 1106
+Problem Title: Parsing A Boolean Expression
+Brute Force Method: Recursive Descent Parser. Find matching parentheses, slice substrings, and recursively evaluate inner expressions.
+BF Complexity Visuals: Deep Recursion Tree
+How to Draw BF: Draw the full string. Branch out for every '('. Draw substring slices being passed down. Write $O(N^2)$ next to it due to string copying.
+Optimised Pattern: Stack (Iterative Evaluation)
+Opt Vis. Technique: Stack Push/Pop Diagram
+Dry Run (Opt): Read left to right. Push operators (!, &amp;, |) and characters (t, f, '(') to the stack. When hitting ')', pop 't' and 'f' until '(', evaluate against the operator, and push result back.
+How to Draw (Opt): Draw an open bucket (stack). Write chars going in. Cross them out as they pop, write 't' or 'f' result back in.
+Opt Complexity Visuals: Linear Timeline
+How to Draw Opt Complexity: Draw a timeline of length N. Draw a single arrow sweeping left to right, representing $O(N)$ time.
+Mem Vis (BF): Massive Call Stack Frames
+Mem Vis (Opt): Single 1D Array/Stack expanding and shrinking in place.

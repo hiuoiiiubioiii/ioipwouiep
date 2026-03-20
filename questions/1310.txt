@@ -1,0 +1,13 @@
+ID: 1310
+Problem Title: XOR Queries of a Subarray
+Brute Force Method: For each query [L, R], iterate through the array from L to R and compute the cumulative XOR sum manually.
+BF Complexity Visuals: Overlapping Subarray Scans
+How to Draw BF: Draw array. For each query, draw horizontal brackets over [L, R]. Show brackets heavily overlapping, indicating redundant $O(Q \cdot N)$ operations.
+Optimised Pattern: Prefix XOR Array (Cumulative State Cache)
+Opt Vis. Technique: Cumulative State Blocks
+Dry Run (Opt): Calculate `prefix[i] = prefix[i-1] ^ arr[i]`. To solve query [L, R], look up `prefix[R]` and `prefix[L-1]`, then XOR them together.
+How to Draw (Opt): Draw `arr`. Below it, draw `prefix`. To solve [L, R], draw a circle around `prefix[R]` and `prefix[L-1]`, connecting them with an XOR gate symbol.
+Opt Complexity Visuals: Two-Step $O(1)$ Lookup
+How to Draw Opt Complexity: Draw Q dots (queries). Draw exactly 2 straight lines from each dot down to the prefix array, proving $O(1)$ work per query.
+Mem Vis (BF): Accumulator Variable: No complex structure, just an integer resetting repeatedly.
+Mem Vis (Opt): Parallel Cache Array: Draw `std::vector arr` next to a `std::vector prefix_xor` of size N+1 acting as a permanent lookup table.

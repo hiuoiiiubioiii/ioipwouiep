@@ -1,0 +1,13 @@
+ID: 2695
+Problem Title: Array Wrapper (JS)
+Brute Force Method: Iteratively summing elements and building strings manually every time the wrapper is used.
+BF Complexity Visuals: Repetitive Aggregation
+How to Draw BF: Draw an array. Every time you need its sum, loop through it. Every time you need its string, loop again. $O(N)$.
+Optimised Pattern: valueOf() and toString() Overriding
+Opt Vis. Technique: Operator Overloading (Implicit)
+Dry Run (Opt): Define `valueOf` to return the pre-calculated sum (allowing `+` operations) and `toString` to return the formatted string.
+How to Draw (Opt): Draw an array wrapped in a "Magic Box". When the box is put next to a plus sign, a number pops out. When put next to a string, a string pops out.
+Opt Complexity Visuals: $O(1)$ after pre-calculation
+How to Draw Opt Complexity: Draw a single property access for the pre-calculated sum. $O(1)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Internal variables to cache the sum and the string.

@@ -1,0 +1,13 @@
+ID: 3371
+Problem Title: Identify the Largest Outlier in an Array
+Brute Force Method: For every possible element x, assume it is the outlier. For every other element y, assume it is the sum of the remaining n-2 elements.
+BF Complexity Visuals: Nested Iteration Grid
+How to Draw BF: Draw an N x N matrix. Rows are candidate outliers, columns are candidate sums. Check the "validity" of each cell. $O(N^2)$.
+Optimised Pattern: Frequency Hash Map + Sum Equation
+Opt Vis. Technique: Balance Scale Equation
+Dry Run (Opt): Total Sum S = sum + sum + outlier. Therefore, outlier = S - 2 * sum. Iterate through potential sums and check if the required outlier exists in the Hash Map.
+How to Draw (Opt): Write the Total Sum S. Draw a box labeled "Potential Sums". For each y in the array, calculate S - 2y. Draw a line to the Frequency Map to see if that value is available.
+Opt Complexity Visuals: Linear Frequency Scan
+How to Draw Opt Complexity: Draw a single straight line N. Each lookup in the map is $O(1)$, proving $O(N)$.
+Mem Vis (BF): Creating temporary array slices or sub-lists for every pair of candidates.
+Mem Vis (Opt): A Frequency Map (Hash Table) of size N, taking $O(N)$ space.

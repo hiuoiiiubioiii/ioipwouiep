@@ -1,0 +1,13 @@
+ID: 745
+Problem Title: Prefix and Suffix Search
+Brute Force Method: For every query, loop through the dictionary and use `.startsWith()` and `.endsWith()` on every word.
+BF Complexity Visuals: Dictionary Scan Pipeline
+How to Draw BF: Draw a dictionary book. For every query, flip through every page and check both ends of every word. $O(N\cdot L)$ per query.
+Optimised Pattern: Trie of Combined Strings (suffix + \{ + prefix)
+Opt Vis. Technique: Super-String Trie Index
+Dry Run (Opt): Insert each word multiple times: for "apple", insert "#apple", "e#apple", "le#apple"... into a Trie. Query for `suffix + # + prefix`.
+How to Draw (Opt): Draw a Trie. For word "apple", show nodes for "e#apple". When searching for prefix "ap" and suffix "e", look up "e#ap".
+Opt Complexity Visuals: Direct Trie Path Search
+How to Draw Opt Complexity: Draw a single path down a Trie. The length is proportional to the query string, not the dictionary size. $O(L)$ per query.
+Mem Vis (BF): N/A (Simple list).
+Mem Vis (Opt): A massive Trie structure storing L^2 combinations per word (O(N * L^2)).

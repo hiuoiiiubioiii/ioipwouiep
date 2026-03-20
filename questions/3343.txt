@@ -1,0 +1,13 @@
+ID: 3343
+Problem Title: Count Number of Balanced Permutations
+Brute Force Method: Generate all unique permutations of the digits and check the sum of even vs odd indices.
+BF Complexity Visuals: Permutation Leaf Counting
+How to Draw BF: Draw a tree starting with all available digits. Each level picks a digit. Count the valid leaf nodes. $O(N! / (\text{freq of digits}!)$).
+Optimised Pattern: DP + Combinatorics (Digits, Count, Sum)
+Opt Vis. Technique: Recursive Partitioning Grid
+Dry Run (Opt): `dp(digit, even_count, even_sum)`: Number of ways to place `k` instances of `digit` into even/odd slots to reach a target sum. Use combinations (nCr) for ways to arrange.
+How to Draw (Opt): Draw a table where rows are digits (0-9) and columns are possible sums. For each digit, draw arrows showing how many you "give" to the even-indexed slots vs odd-indexed slots.
+Opt Complexity Visuals: Bounded State Volume
+How to Draw Opt Complexity: Draw a 3D block: 10 (digits) x N/2 (slots) x TotalSum/2. Shading it proves $O(10 \cdot N \\text{cdot Sum})$.
+Mem Vis (BF): Storing every generated permutation string in a Hash Set to count unique valid ones.
+Mem Vis (Opt): A 3D DP table or a memoization map storing calculated states for (index, count, sum).

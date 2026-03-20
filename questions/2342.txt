@@ -1,0 +1,13 @@
+ID: 2342
+Problem Title: Max Sum of a Pair With Equal Sum of Digits
+Brute Force Method: Nested loops: Compare every pair `(i, j)`. Calculate the digit sum for both. If equal, update the global maximum sum.
+BF Complexity Visuals: N-Squared Comparison (O(N^2))
+How to Draw BF: Draw an N x N grid. In each cell, draw a small calculator icon representing the digit sum logic and an addition operation.
+Optimised Pattern: Hash Map of Max Values
+Opt Vis. Technique: Digit Sum Bucketing
+Dry Run (Opt): Iterate once. Calculate `digitSum`. Check a Hash Map: `map[digitSum]`. If it exists, update `maxTotalSum` using `map[digitSum] + currentNum`. Always update `map[digitSum]` with the larger of the two.
+How to Draw (Opt): Draw a series of numbered buckets (0-81). As you read a number, calculate its digit sum and try to put it in the corresponding bucket. If the bucket already has a number, "duel" them: add them for a potential score, but only keep the bigger one in the bucket for the next round.
+Opt Complexity Visuals: Linear Scan with Constant Map (O(N))
+How to Draw Opt Complexity: Draw a timeline. Below it, draw a fixed-size row of 82 boxes. Each step in the timeline only interacts with one box.
+Mem Vis (BF): Draw a 2D matrix storing every possible pair's metadata.
+Mem Vis (Opt): Draw a Hash Map (or Array of size 82) storing only the largest Integer seen for each digit sum.

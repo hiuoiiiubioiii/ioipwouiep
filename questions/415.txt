@@ -1,0 +1,13 @@
+ID: 415
+Problem Title: Add Strings
+Brute Force Method: Parse to Int Use built-in parseInt() or Integer.valueOf(). Fails instantly on overflow &gt; 64 bits.
+BF Complexity Visuals: Overflow Bomb
+How to Draw BF: Draw a massively long string entering a small 64-bit integer box and drawing explosion lines (Overflow Error).
+Optimised Pattern: Two Pointers (Right to Left) Traverse both strings backwards. Add digits plus carry. Append to StringBuilder and reverse.
+Opt Vis. Technique: Primary School Addition
+Dry Run (Opt): Stack the two strings right-aligned exactly how you learned to add large numbers in elementary school. Process column by column.
+How to Draw (Opt): Draw strings stacked vertically. Draw vertical lines for columns. Circle the column sum. Draw a swooping left arrow to carry the '1' to the next column.
+Opt Complexity Visuals: Parallel Reverse Scan
+How to Draw Opt Complexity: Draw two arrays. Draw an arrow starting at the end of each, moving backwards in tandem. Max(L1, L2) time.
+Mem Vis (BF): Large Int Object Memory allocated for a BigInt structure.
+Mem Vis (Opt): String Builder Draw a growing character array. $O(\text{Max}(L1, L2)$) space.

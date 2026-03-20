@@ -1,0 +1,13 @@
+ID: 802
+Problem Title: Find Eventual Safe States
+Brute Force Method: DFS from every single node. Keep a hashset of the current path to detect cycles for every node independently.
+BF Complexity Visuals: Overlapping Redundant Directed Graphs. $O(V \cdot (V+E)$).
+How to Draw BF: Draw the whole graph 5 times. On each graph, trace a path with a thick marker until you hit a cycle or dead end. Notice how many edges you re-trace.
+Optimised Pattern: Graph Coloring (3-Color DFS) OR Kahn's Algorithm (Topological Sort on reversed edges).
+Opt Vis. Technique: Traffic Light System (White/Gray/Black).
+Dry Run (Opt): All nodes start white. When entering a node, color it gray (visiting). Traverse neighbors. If a neighbor is gray, a cycle is found. If all neighbors are safe, color it black (safe).
+How to Draw (Opt): Draw graph nodes as empty circles. Lightly shade a circle with pencil when entering (Gray). Firmly shade it in with pen when returning from DFS (Black).
+Opt Complexity Visuals: Single Unified Traversal Tree. $O(V+E)$ time.
+How to Draw Opt Complexity: Draw an adjacency list and simply cross out each edge exactly once as you process it.
+Mem Vis (BF): Multiple separate stack towers, drawn side-by-side, representing independent memory allocations.
+Mem Vis (Opt): A single 1D array of size V. Draw a strip of N boxes. Write 0 (White), 1 (Gray), or 2 (Black) in each box.

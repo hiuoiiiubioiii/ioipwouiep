@@ -1,0 +1,13 @@
+ID: 618
+Problem Title: Students Report By Geography (SQL)
+Brute Force Method: Multiple self-joins on the Student table for each continent, attempting to align them by a dummy row index.
+BF Complexity Visuals: Sparse, disconnected tables trying to "snap" together.
+How to Draw BF: Draw three vertical lists of different lengths. Try drawing horizontal lines to connect them, leaving massive gaps.
+Optimised Pattern: Window Function (ROW_NUMBER) + Pivot (CASE WHEN).
+Opt Vis. Technique: Categorical Bucket Alignment.
+Dry Run (Opt): Assign a row number to each student *within* their continent. Use the row number as the "Y-axis" and Continent as "X-axis". Group by row number and pick student name based on continent.
+How to Draw (Opt): Draw a grid. Label columns: America, Asia, Europe. Label rows: 1, 2, 3. Place names in cells like a game of Bingo.
+Opt Complexity Visuals: Sort-based partitioning followed by a single aggregation pass.
+How to Draw Opt Complexity: Draw a funnel (sorting by continent/name) followed by a horizontal "stacking" motion into columns. $O(N \log N)$.
+Mem Vis (BF): Draw massive intermediate JOIN tables filled with NULLs.
+Mem Vis (Opt): Draw a single sorted list being streamed into a 2D result buffer.

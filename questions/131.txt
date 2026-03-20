@@ -1,0 +1,13 @@
+ID: 131
+Problem Title: Palindrome Partitioning
+Brute Force Method: Generate every possible combination of substrings (partition points) and check if every substring in the partition is a palindrome.
+BF Complexity Visuals: A massive $O(N \cdot 2^N)$ binary tree where every gap between characters is a "split" or "don't split" decision.
+How to Draw BF: Write the string. For every character gap, draw a fork. One branch is "Cut", one is "No Cut". Show the resulting 2^N leaf nodes.
+Optimised Pattern: Backtracking with DP/Memoization (pre-checking palindromes).
+Opt Vis. Technique: A pruning shears visualization. The recursion tree grows, but any branch that creates a non-palindrome is "snipped" immediately.
+Dry Run (Opt): Start at index 0. Try all possible end-indices i. If `s[0:i]` is a palindrome, recursively solve for `s[i+1:]`. If it hits the end, record the path.
+How to Draw (Opt): Draw a decision tree. On each arrow, write the substring chosen. If it's a palindrome, draw a green check; if not, draw a red X and stop that branch.
+Opt Complexity Visuals: A depth-first traversal of a pruned state space, bounded by $O(N \cdot 2^N)$ in the worst case but significantly faster in practice.
+How to Draw Opt Complexity: Draw the recursion tree. For each node, draw a small horizontal bar representing the $O(N)$ palindrome check overhead.
+Mem Vis (BF): Visualise thousands of intermediate string slices $O(N^2)$ cluttering the heap.
+Mem Vis (Opt): Visualize a single 2D $O(N^2)$ boolean matrix `isPalindrome[i][j]` that prevents redundant character comparisons.

@@ -1,0 +1,13 @@
+ID: 1353
+Problem Title: Maximum Number of Events That Can Be Attended
+Brute Force Method: Sort by start time. Try every possible day for every event using a recursive backtracking approach to see which combination yields the max.
+BF Complexity Visuals: Exponential Choice Tree
+How to Draw BF: Draw an event. Branch out into every possible day it could be attended. The branches multiply for every overlapping event, leading to $O(2^N)$.
+Optimised Pattern: Greedy + Min-Heap (Priority Queue)
+Opt Vis. Technique: Timeline Priority Sorter
+Dry Run (Opt): Sort events by start time. Iterate through days. On each day, add all events starting today to a Min-Heap (ordered by end time). Attend the event that ends the earliest.
+How to Draw (Opt): Draw a timeline (days). Above it, draw events as horizontal bars. On Day 1, pick the bar that finishes first. On Day 2, pick the next. Throw away bars whose end date has passed.
+Opt Complexity Visuals: $O(N \log N + \text{TotalDays} \log N)$
+How to Draw Opt Complexity: Draw a sorting funnel followed by a moving day-pointer and a small Heap bucket that constantly pushes/pops.
+Mem Vis (BF): Global Combinatorial Stack: Massive memory usage tracking all valid/invalid day assignments.
+Mem Vis (Opt): Min-Priority Queue: Draw a heap structure storing only the end-times of "active" events. Space is $O(N)$.

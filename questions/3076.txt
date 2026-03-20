@@ -1,0 +1,13 @@
+ID: 3076
+Problem Title: Shortest Uncommon Substring in an Array
+Brute Force Method: For every string, generate all possible substrings. For each substring, check every other string in the array to see if it's a substring there.
+BF Complexity Visuals: $O(N² \cdot L³)$ Substring Grid
+How to Draw BF: Draw a string. From it, branch out every substring. For each leaf, draw arrows to all other strings. Shows massive $O(N^2 \cdot L^3)$ redundancy.
+Optimised Pattern: Hash Map Frequency + Sorting
+Opt Vis. Technique: Substring Dictionary Mapping
+Dry Run (Opt): Map every unique substring to the set of indices of the strings it appears in. For each string, iterate through its substrings (by length) and return the first one whose map-set size is 1.
+How to Draw (Opt): Draw a "Master Table" with columns: Substring | Frequency. Tally up every substring found. Highlight the shortest ones with Frequency = 1.
+Opt Complexity Visuals: $O(N \cdot L²)$ Mapping
+How to Draw Opt Complexity: Draw one pass to generate and map $O(L^2)$ substrings per string. Label the lookup as $O(1)$ via Hash Map.
+Mem Vis (BF): A massive 2D matrix of all pairwise substring comparisons.
+Mem Vis (Opt): A HashMap&lt;String, Integer&gt; storing substring frequencies.

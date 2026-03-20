@@ -1,0 +1,13 @@
+ID: 1278
+Problem Title: Palindrome Partitioning III
+Brute Force Method: Recursively try every possible way to partition the string into K parts. For each partition, calculate the changes needed to make each part a palindrome.
+BF Complexity Visuals: Recursive Partition Tree
+How to Draw BF: Draw a string. Branch out for every possible location of the first cut. For each, branch for the second cut. Continue until K cuts. Write $O(N^K)$.
+Optimised Pattern: Interval DP + Partition DP
+Opt Vis. Technique: Two-Stage Cost Matrix
+Dry Run (Opt): 1. Pre-calculate `cost[i][j]`: min changes to make `s[i...j]` a palindrome. 2. Define `dp[i][k]` as min changes to partition `s[0...i]` into k palindromes. `dp[i][k] = min(dp[j][k-1] + cost[j+1][i])`.
+How to Draw (Opt): Draw a 2D matrix `cost`. Below it, draw a 2D matrix `dp`. Show an entry in `dp` being filled by looking at a whole row in the `cost` matrix. Trace the "optimal cut" back through the layers.
+Opt Complexity Visuals: Nested Interval Loops
+How to Draw Opt Complexity: Draw a square grid for the cost pre-calculation (N^2). Below it, draw a grid for the DP (N * K). Write $O(N^2 \cdot K)$.
+Mem Vis (BF): Draw a massive recursion stack with redundant palindrome checks.
+Mem Vis (Opt): Draw two 2D arrays: `cost[N][N]` and `dp[N][K]`. Space: $O(N^2)$.

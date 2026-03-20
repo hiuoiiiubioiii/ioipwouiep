@@ -1,0 +1,13 @@
+ID: 1027
+Problem Title: Longest Arithmetic Subsequence
+Brute Force Method: Generate all possible subsequences (2^N), check if each is arithmetic, and track the maximum length.
+BF Complexity Visuals: A dense forest of subsequences where most are invalid, checked only at the end.
+How to Draw BF: Draw dots for array elements. Draw branching lines for include/exclude. Write $O(2^N)$.
+Optimised Pattern: 2D Dynamic Programming (HashMap/Array).
+Opt Vis. Technique: A 2D spreadsheet where Rows = Index in array and Columns = Common Difference.
+Dry Run (Opt): For each index `i`, look at all previous indices `j`. Calculate `diff = A[i] - A[j]`. The length at `(i, diff)` is `length at (j, diff) + 1`.
+How to Draw (Opt): Draw a grid. Rows 0 to N. Columns -500 to 500 (diffs). At `dp[i][diff]`, look at the value in row `j`, column `diff` and add 1.
+Opt Complexity Visuals: A double nested loop over the array.
+How to Draw Opt Complexity: Draw a triangle of arrows: 0-&gt;1, 0-&gt;2, 1-&gt;2... Write $O(N^2)$ Time.
+Mem Vis (BF): Exponential memory for storing 2^N subsequences.
+Mem Vis (Opt): A 2D table or an array of HashMaps. Space: $O(N \\text{cdot Range}_\text{of}_\text{Diffs})$.

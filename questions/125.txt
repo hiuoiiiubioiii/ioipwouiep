@@ -1,0 +1,13 @@
+ID: 125
+Problem Title: Valid Palindrome
+Brute Force Method: Clean the string (remove non-alphanumeric), reverse the cleaned string, and compare if cleaned == reversed.
+BF Complexity Visuals: A three-pass approach: $O(N)$ Filter + $O(N)$ Reverse + $O(N)$ Compare.
+How to Draw BF: Write the string. Draw a second string below it. Draw arrows flipping the letters, then draw vertical lines comparing them.
+Optimised Pattern: Two-Pointer Technique (Meeting in the center).
+Opt Vis. Technique: Two pinchers closing in from both ends of the string, ignoring the "noise" (spaces/symbols) automatically.
+Dry Run (Opt): Left pointer at 0, Right at N-1. While Left &lt; Right: skip non-alphanumeric. Compare chars. If mismatch, return false. Else, increment/decrement.
+How to Draw (Opt): Draw the string. Place a 'L' finger on the first letter and a 'R' finger on the last. Move them inward, skipping symbols until they point at letters.
+Opt Complexity Visuals: A single $O(N)$ pass where the total distance covered by both pointers equals the length of the string.
+How to Draw Opt Complexity: Draw the string. Draw two arrows pointing inward. Mark each character with a small dot as it is "validated" by a pointer.
+Mem Vis (BF): $O(N)$ space to store the new cleaned and reversed string copies.
+Mem Vis (Opt): Visualize zero extra heap memory. The pointers exist in $O(1)$ stack space and operate directly on the original input.

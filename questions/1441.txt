@@ -1,0 +1,13 @@
+ID: 1441
+Problem Title: Build an Array With Stack Operations
+Brute Force Method: Generate every possible combination of "Push" and "Pop" sequences. Check each sequence against the target array to see which one builds it exactly.
+BF Complexity Visuals: Backtracking Decision Tree
+How to Draw BF: Draw a root node branching into "Push" or "Push then Pop". Continue for all numbers up to N. Label $O(2^N)$.
+Optimised Pattern: Simulation (Two-Pointer Logic)
+Opt Vis. Technique: Stream Synchronization
+Dry Run (Opt): Iterate from 1 to N. Use a pointer `p` for the target array. If `i == target[p]`, Push and move `p`. Else, Push and immediately Pop. Stop when `p` reaches end.
+How to Draw (Opt): Draw a stream of numbers 1, 2, 3... and the Target list. For each number, if it matches Target, draw a "Push" arrow to a bucket. If it doesn't match, draw "Push" then a "Pop" arrow out of the bucket.
+Opt Complexity Visuals: Single Pass Iteration
+How to Draw Opt Complexity: Draw an arrow from 1 to N. Label $O(N)$ or $O(\text{target}.\text{length})$ depending on exit condition.
+Mem Vis (BF): List of all operation strings
+Mem Vis (Opt): A single result list of strings. Space $O(N)$ for output.

@@ -1,0 +1,13 @@
+ID: 1892
+Problem Title: Page Recommendations II (SQL Premium)
+Brute Force Method: Self-join the Friendship and Likes tables multiple times to find friends' liked pages that the user hasn't liked.
+BF Complexity Visuals: Nested join interaction tree.
+How to Draw BF: Draw two tables (Users, Pages). Draw lines for friends, then more lines for their likes. Mark $O(N^3)$ complexity.
+Optimised Pattern: Common Table Expression (CTE) + LEFT JOIN filtering.
+Opt Vis. Technique: Venn Diagram exclusion.
+Dry Run (Opt): 1. Create symmetric friendship table. 2. Join with Likes on friend_id. 3. Join with original Likes on user_id to exclude existing likes.
+How to Draw (Opt): Draw two circles: "Pages Friends Liked" and "Pages I Liked". The answer is the crescent moon shape (Left Only).
+Opt Complexity Visuals: Linear table scan and set subtraction.
+How to Draw Opt Complexity: Draw a flow chart: Join \to GroupBy \to Filter. Mark as $O(N \log N)$ or $O(N)$.
+Mem Vis (BF): Large N^2 temporary join results in disk/memory.
+Mem Vis (Opt): In-memory hash-joins and indexed lookups.

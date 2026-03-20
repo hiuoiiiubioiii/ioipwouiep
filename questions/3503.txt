@@ -1,0 +1,13 @@
+ID: 3503
+Problem Title: Longest Palindrome After Substring Concatenation I (Med)
+Brute Force Method: Concatenate all possible substring pairs, verify palindrome.
+BF Complexity Visuals: Nested N^4 Loop Grid.
+How to Draw BF: Draw a 4D grid mapping (i, j) of str1 to (x, y) of str2. Shade cells that form palindromes.
+Optimised Pattern: String Hashing + Center Expansion.
+Opt Vis. Technique: Symmetry Mirroring Strings.
+Dry Run (Opt): Place a mirror line at each character/gap. Expand left and right pointers checking hash equality.
+How to Draw (Opt): Write the concatenated string. Draw a vertical line at the center. Draw symmetric arcs expanding outward.
+Opt Complexity Visuals: 2-Pointer expansion over N centers.
+How to Draw Opt Complexity: Draw N dots. From each dot, draw small expanding brackets. Max expansions = N.
+Mem Vis (BF): Massive Substring Allocation: Draw hundreds of string blocks duplicated in RAM.
+Mem Vis (Opt): Prefix Hash Array: Draw two 1D arrays (forward hash, reverse hash) representing constant space lookups.

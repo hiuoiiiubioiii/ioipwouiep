@@ -1,0 +1,13 @@
+ID: 3709
+Problem Title: Design Exam Scores Tracker (Med)
+Brute Force Method: Store scores in an unsorted array. Search or sort the whole array for every query.
+BF Complexity Visuals: Sorting Bar Chart $O(N \log N)$ per query.
+How to Draw BF: Draw unsorted bars. Every time a query comes, erase them and redraw them sorted by height.
+Optimised Pattern: Segment Tree / Balanced BST (TreeMap)
+Opt Vis. Technique: Binary Tree Traversal
+Dry Run (Opt): Insert score into tree to maintain order. Use tree properties to quickly find percentiles, max, or min.
+How to Draw (Opt): Draw a tree node. Left child is smaller score, right is larger. Keep counts in nodes. Trace path down for queries.
+Opt Complexity Visuals: $O(\log N)$ depth per query.
+How to Draw Opt Complexity: Draw a triangle (Tree). Draw a single straight line from top to bottom representing $O(\log N)$ query time.
+Mem Vis (BF): Flat Array memory layout.
+Mem Vis (Opt): Node-based memory scattered on heap with left/right pointers.

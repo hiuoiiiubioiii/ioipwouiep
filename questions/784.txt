@@ -1,0 +1,13 @@
+ID: 784
+Problem Title: Letter Case Permutation
+Brute Force Method: Nested loops to generate all variations by toggling each letter.
+BF Complexity Visuals: Binary String Tree
+How to Draw BF: Draw the string. For each letter, branch into "lower" and "upper". $O(2^L \\text{times} N)$ where L is letter count.
+Optimised Pattern: Backtracking / DFS
+Opt Vis. Technique: Decision Permutation Tree
+Dry Run (Opt): Recurse through the string. If char is a digit, skip. If a letter, recurse with lowercase and again with uppercase.
+How to Draw (Opt): Draw the input string at the top. Draw two arrows down for the first letter. Repeat until leaves contain all variations.
+Opt Complexity Visuals: Exponential Leaf Count
+How to Draw Opt Complexity: Draw a tree with 2^L leaf nodes. $O(2^L \\text{times} N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Recursive stack and result list $O(2^L \\text{times} N)$.

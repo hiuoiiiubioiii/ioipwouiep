@@ -1,0 +1,13 @@
+ID: 875
+Problem Title: Koko Eating Bananas
+Brute Force Method: Try every possible eating speed K starting from 1. For each K, calculate the total hours needed. Stop at the first K that is <= H.
+BF Complexity Visuals: Linear Search on Speed. $O(N x \text{max}(\text{piles})$).
+How to Draw BF: Draw a line of piles. For K=1, draw many tick marks for each pile. For K=2, redraw. Repeat thousands of times until K works.
+Optimised Pattern: Binary Search on Answer (Range [1, max(piles)]).
+Opt Vis. Technique: The "Speed Dial" Adjustment.
+Dry Run (Opt): Instead of 1 by 1, try the middle speed. If she finishes too fast, turn the dial down (Left). If she finishes too late, turn it up (Right). Each check takes $O(N)$ to sum up the hours.
+How to Draw (Opt): Draw a number line for Speed K. Mark L and R. Pick mid. Draw a clock icon showing if the total hours for mid is &gt; H (Fail) or <= H (Possible).
+Opt Complexity Visuals: Binary Search Efficiency. $O(N \log(\text{max}(\text{piles})$)).
+How to Draw Opt Complexity: Draw a timeline of length M (max piles). Cut it in half roughly 30 times (for 10^9) to show how fast it hits the answer.
+Mem Vis (BF): $O(1)$ extra space but visualized as massive repetitive CPU loops.
+Mem Vis (Opt): $O(1)$ Space: Draw three integer variables: low, high, and totalHours.

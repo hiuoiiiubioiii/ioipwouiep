@@ -1,0 +1,13 @@
+ID: 28
+Problem Title: Find the Index of the First Occurrence in a String
+Brute Force Method: Nested Loops (Sliding Window) For every character in the `haystack`, try to match the entire `needle` character by character.
+BF Complexity Visuals: The Brute Scanner
+How to Draw BF: Draw the haystack. Draw a box the size of the needle. Slide the box one letter at a time. For every step, draw M smaller arrows checking the letters inside the box. $O(N\cdot M)$ time.
+Optimised Pattern: KMP Algorithm (LPS Array)
+Opt Vis. Technique: The Smart Skipper
+Dry Run (Opt): Preprocess the `needle` to create an LPS (Longest Proper Prefix which is also Suffix) array. When a mismatch occurs, use the LPS array to skip redundant character checks instead of resetting to the beginning.
+How to Draw (Opt): Draw the haystack and needle. When a mismatch hits at index `j`, look up `LPS[j-1]`. Draw a long sweeping arrow shifting the needle forward, bypassing already matched prefixes.
+Opt Complexity Visuals: Two Independent Linear Passes
+How to Draw Opt Complexity: Draw a short line for building the LPS array $O(M)$. Draw a separate line for scanning the haystack $O(N)$. Since we never step backward in the haystack, time is $O(N+M)$.
+Mem Vis (BF): Draw no extra memory, but emphasize the terrible $O(N\cdot M)$ time overlap.
+Mem Vis (Opt): Draw a small auxiliary array (LPS) of size M (length of the needle). Space is strictly $O(M)$.

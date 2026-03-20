@@ -1,0 +1,13 @@
+ID: 3635
+Problem Title: Earliest Finish Time for Land and Water Rides II (Med)
+Brute Force Method: Simulating the rides minute by minute, advancing a time counter and checking which rides are available. $O(\text{Max}_\text{Time} \cdot N)$.
+BF Complexity Visuals: Infinite Clock Ticks.
+How to Draw BF: Draw a clock. Tick to minute 1: loop through all rides. Minute 2: loop through all rides. Very slow if times are huge.
+Optimised Pattern: Binary Search on the Answer. Guess a "Finish Time" T. Write a greedy $O(N)$ checker to see if all rides can be completed within time T.
+Opt Vis. Technique: The "Will It Fit?" Halving Line.
+Dry Run (Opt): Guess a time: "Can we finish in 100 mins?" Run a quick check. "Yes! Okay, can we finish in 50?" "No. Okay, how about 75?" Keep slicing the search space in half.
+How to Draw (Opt): Draw a number line from 0 to Max_Possible_Time. Drop a pin in the middle. If the $O(N)$ check passes, cross out the right half. If it fails, cross out the left.
+Opt Complexity Visuals: Binary Search Logarithmic Scale.
+How to Draw Opt Complexity: Write the formula: $O(N \cdot \log(\text{Max}_\text{Time})$). Draw the log(Max_Time) as the number of guesses, and N as the work done per guess.
+Mem Vis (BF): Massive state arrays tracking minute-by-minute status of every single ride.
+Mem Vis (Opt): A few integer variables for binary search bounds (low, high, mid). Space strictly $O(1)$.

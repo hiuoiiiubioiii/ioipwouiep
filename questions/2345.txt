@@ -1,0 +1,13 @@
+ID: 2345
+Problem Title: Finding the Number of Visible Mountains (Premium)
+Brute Force Method: For every mountain, check if its triangle is completely contained within any other mountain's triangle by comparing slopes and peaks.
+BF Complexity Visuals: N-Squared Triangle Overlap (O(N^2))
+How to Draw BF: Draw N triangles on a coordinate plane. For each triangle, draw a "shadow" from every other triangle to see if it's swallowed up.
+Optimised Pattern: Interval Sorting + Monotonic Scan
+Opt Vis. Technique: 1D Shadow Coverage
+Dry Run (Opt): Convert each mountain `[x, y]` into an interval `[x-y, x+y]`. Sort intervals by start point ascending (and end point descending). Iterate: if a mountain's end point is covered by the current maximum end point, it's hidden.
+How to Draw (Opt): Draw a horizontal line. Represent each mountain as a bracket `[start, end]`. Sort the brackets. If a new bracket's end is inside the current longest bracket's end, it's "invisible." Count the unique, non-covered ones.
+Opt Complexity Visuals: Sorting + Linear Scan (O(N log N))
+How to Draw Opt Complexity: Draw a wide sorting funnel. Below it, draw a single horizontal line with an arrow moving left-to-right, occasionally marking a "max_reach" point.
+Mem Vis (BF): Draw a 2D matrix of coordinate comparisons.
+Mem Vis (Opt): Draw a 1D Array of intervals (Pairs) and one Integer variable (`max_right`).

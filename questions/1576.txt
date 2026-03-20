@@ -1,0 +1,13 @@
+ID: 1576
+Problem Title: Replace All ?'s to Avoid Consecutive Repeating Characters
+Brute Force Method: Try all 26^Q combinations for Q question marks and check each full string for validity. $O(26^Q)$.
+BF Complexity Visuals: Exponential Substitution Tree
+How to Draw BF: Draw a string with '?' at index 1 and 3. Branch out 26 times for the first '?', then 26 for the second. The tree width is huge.
+Optimised Pattern: Greedy / Linear Scan
+Opt Vis. Technique: The Neighbor-Exclusion Check
+Dry Run (Opt): Iterate through the string. When you hit '?', check the characters at i-1 and i+1. Pick the first letter ('a', 'b', or 'c') that doesn't match either neighbor.
+How to Draw (Opt): Draw the string. When you reach '?', draw two small arrows to the left and right characters. Cross out the letters those neighbors use. Write the first available letter in the box.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. At each index, show a maximum of 3 character checks. Constant work per index.
+Mem Vis (BF): Storing every possible generated string. $O(N \cdot 26^Q)$.
+Mem Vis (Opt): Converting the string to a character array. $O(N)$ space.

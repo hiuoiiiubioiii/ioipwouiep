@@ -1,0 +1,13 @@
+ID: 2820
+Problem Title: Election Results (SQL/Logic)
+Brute Force Method: Iterate through every vote, look up the candidate, check for ties manually, and handle the logic of "who won" by scanning the entire result set multiple times.
+BF Complexity Visuals: Nested Scan Execution Plan
+How to Draw BF: Draw a "Votes" table and a "Candidates" table. Draw arrows scanning the whole Votes table for Candidate A, then again for Candidate B, etc.
+Optimised Pattern: Common Table Expressions (CTE) + Window Functions (RANK/DENSE_RANK)
+Opt Vis. Technique: Ranking Partitioning
+Dry Run (Opt): Group votes by candidate to get counts. Use RANK() partitioned by the election ID and ordered by vote count descending. Filter where rank = 1 to handle ties automatically.
+How to Draw (Opt): Draw a table. Group rows by candidate. Add a "Count" column. Add a "Rank" column. Circle all rows where Rank is 1.
+Opt Complexity Visuals: Index-Assisted Aggregation
+How to Draw Opt Complexity: Draw a B-Tree index structure. Show how the database "pumps" data through the Group-By and Sort nodes in $O(N \log N)$.
+Mem Vis (BF): Visualize temporary "spill to disk" files if the vote counts are calculated in-memory without proper grouping.
+Mem Vis (Opt): Visualize a Hash Map or Hash Aggregate in memory storing CandidateID -&gt; VoteCount pairs.

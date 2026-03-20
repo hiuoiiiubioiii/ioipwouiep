@@ -1,0 +1,13 @@
+ID: 3557
+Problem Title: Find Max Number of Non Intersecting Substrings (Med)
+Brute Force Method: Generate every valid substring and use recursion to try every combination of non-overlapping sets.
+BF Complexity Visuals: Recursive Subset Tree.
+How to Draw BF: Draw a tree. Each node splits into "Include this substring" or "Skip". Branching factor = number of overlaps.
+Optimised Pattern: Greedy Interval Scheduling (Earliest Deadline First).
+Opt Vis. Technique: Overlapping Gantt Chart.
+Dry Run (Opt): Identify boundaries for each character. Treat these as intervals. Sort intervals by their end times and pick the first available.
+How to Draw (Opt): Draw horizontal bars representing substrings. Place a vertical line at the end of the first bar. Skip all bars that touch the line. Pick next.
+Opt Complexity Visuals: $O(N)$ Boundary Scan + $O(N \log N)$ Sorting.
+How to Draw Opt Complexity: Draw a sorted list of intervals. Draw a single pass scanning them left to right.
+Mem Vis (BF): Recursion Stack: Draw deep stack frames holding lists of "currently picked" substrings.
+Mem Vis (Opt): Boundary Arrays: Draw three arrays of size 26 (First occurrence, Last occurrence, Is valid).

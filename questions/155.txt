@@ -1,0 +1,13 @@
+ID: 155
+Problem Title: Min Stack
+Brute Force Method: For every getMin operation, iterate through the entire stack to find the smallest element (O(N)).
+BF Complexity Visuals: An $O(N)$ vertical scan of the stack for every query.
+How to Draw BF: Draw a vertical stack. For 'getMin', draw an arrow checking every single item from the top to the bottom.
+Optimised Pattern: Two Stacks (Data Stack + Min Stack) or One Stack with Pairs.
+Opt Vis. Technique: A "Shadow Record." The second stack acts as a shadow that only remembers the minimum value at each "height" of the main stack.
+Dry Run (Opt): When pushing X: push to mainStack. Push min(X, currentMin) to minStack. When popping, pop from both.
+How to Draw (Opt): Draw two parallel stacks. When you drop a number in the left, drop the *lowest seen so far* in the right. Popping keeps them synchronized.
+Opt Complexity Visuals: $O(1)$ for all operations: push, pop, top, and getMin.
+How to Draw Opt Complexity: Draw a single dot. Accessing the top of either stack is a constant time operation.
+Mem Vis (BF): Low time efficiency, but potentially saves memory by not storing a second stack.
+Mem Vis (Opt): Visualize two $O(N)$ stack structures in heap memory. Space is $O(N)$.

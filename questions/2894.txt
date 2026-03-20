@@ -1,0 +1,13 @@
+ID: 2894
+Problem Title: Divisible and Non-divisible Sums Difference
+Brute Force Method: Iterate through every integer from 1 to n. Check if it's divisible by m. If yes, add to num2; if no, add to num1. Subtract at the end.
+BF Complexity Visuals: $O(N)$ Iteration Loop
+How to Draw BF: Draw a sequence of numbers from 1 to N. Below each, write "Yes" or "No" for divisibility. Add up the two groups separately.
+Optimised Pattern: Arithmetic Progression (AP) Formula
+Opt Vis. Technique: Summation Formula
+Dry Run (Opt): Calculate the total sum of 1 to n using n(n+1)/2. Calculate the sum of multiples of m using the same formula scaled by m. The difference is derived purely from these totals.
+How to Draw (Opt): Draw two large blocks. Block A is the sum of all numbers. Block B is the sum of only multiples of m. Write the formula m x (k(k+1)/2) where k = n/m.
+Opt Complexity Visuals: Constant Time $O(1)$
+How to Draw Opt Complexity: Draw a single dot. The calculation is independent of the size of n.
+Mem Vis (BF): $O(1)$ - No extra structures, but $O(n)$ time.
+Mem Vis (Opt): $O(1)$ - No extra structures and near-zero time.

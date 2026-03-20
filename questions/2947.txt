@@ -1,0 +1,13 @@
+ID: 2947
+Problem Title: Count Beautiful Substrings I
+Brute Force Method: Generate all $O(N^2)$ substrings, count vowels and consonants, and check the "beautiful" condition.
+BF Complexity Visuals: Quadratic Substring Scan
+How to Draw BF: Draw an N x N grid. Each cell is a substring check. $O(N^2)$.
+Optimised Pattern: Prefix Sums + Hash Map (Frequency Tracking)
+Opt Vis. Technique: Coordinate Grid of Counts
+Dry Run (Opt): Condition 1: v == c means v - c == 0. Condition 2: (v * c) % k == 0. Since v=c, this is v^2 % k == 0. Find the smallest x such that x^2 % (4k) == 0.
+How to Draw (Opt): Draw a 1D array of prefix differences (v-c). Use a map to store `(diff, v % x)` and count occurrences.
+Opt Complexity Visuals: Linear Sweep with Map Lookups
+How to Draw Opt Complexity: Draw a line of length N. Mark $O(1)$ operations at each index. T = $O(N)$.
+Mem Vis (BF): Storing all substring slices.
+Mem Vis (Opt): A Hash Map of size up to N. Space $O(N)$.

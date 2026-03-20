@@ -1,0 +1,13 @@
+ID: 2270
+Problem Title: Number of Ways to Split Array
+Brute Force Method: Nested SummationFor every possible split point `i`, run an inner loop from 0 to `i` for the left sum and `i+1` to N-1 for the right sum.
+BF Complexity Visuals: Pivot-Point Overlap
+How to Draw BF: Draw an array. Point to index 0. Draw a sum-bracket for the left and a long sum-bracket for the right. Move to index 1 and redraw everything. Show $O(N^2)$.
+Optimised Pattern: Prefix Sum / Running Total
+Opt Vis. Technique: Balance Beam Pivot
+Dry Run (Opt): Calculate the total sum first. Traverse once. Maintain a `left_sum`. The `right_sum` is simply `total_sum - left_sum`. Compare `left_sum &gt;= right_sum`.
+How to Draw (Opt): Draw the total sum as a weight. Draw a sliding divider. As the divider moves right, the "Left Weight" increases and "Right Weight" decreases instantly. Count the moments of balance.
+Opt Complexity Visuals: Two-Pass Linear Scan
+How to Draw Opt Complexity: Draw an $O(N)$ line for the total sum, then a second $O(N)$ line for the splitting checks. Total time: $O(N)$.
+Mem Vis (BF): Re-calculating the sum of N elements for N split points (O(N^2) work).
+Mem Vis (Opt): Two 64-bit integer variables (`total_sum`, `left_sum`) taking $O(1)$ space.

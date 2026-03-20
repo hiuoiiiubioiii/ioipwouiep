@@ -1,0 +1,13 @@
+ID: 3176
+Problem Title: Max Length of a Good Subsequence I
+Brute Force Method: Recursion checking every subsequence for the "at most k different neighbors" rule. $O(2^N)$.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a root. Branch for "include" or "exclude" for every element. Tally the cost k at each node.
+Optimised Pattern: Dynamic Programming (O(N^2 * k))
+Opt Vis. Technique: 2D State Grid
+Dry Run (Opt): `dp[i][j]` is max length ending at index i with j changes. For each i, look back at all p &lt; i. If same value, no cost. Else, use j-1 changes.
+How to Draw (Opt): Draw a grid with N rows and k columns. For each cell, draw arrows pointing back to all previous valid indices in the grid.
+Opt Complexity Visuals: Nested Loop Matrix Fill
+How to Draw Opt Complexity: Draw a square (N x N) and a layer for k. Shade the area being processed. $O(N^2 k)$.
+Mem Vis (BF): Deep recursion stack for 2^N paths.
+Mem Vis (Opt): A 2D array of size N x k. $O(\text{Nk})$.

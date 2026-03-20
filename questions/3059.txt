@@ -1,0 +1,13 @@
+ID: 3059
+Problem Title: Find All Unique Email Domains (SQL)
+Brute Force Method: Use a regular expression or nested REPLACE/SUBSTRING calls inside a SELECT DISTINCT to strip prefixes and find domains.
+BF Complexity Visuals: Sequential String Stripping
+How to Draw BF: Draw an email address. Draw an eraser removing everything before the '@'. Draw a circle around the remaining domain. $O(N \cdot L)$ pass.
+Optimised Pattern: SUBSTRING_INDEX / Regex + Group By
+Opt Vis. Technique: Domain Extraction Pipe
+Dry Run (Opt): Use SUBSTRING_INDEX(email, '@', -1). This acts like a "right-to-left" search until it hits the '@' symbol. Filter for specific domains like '@gmail.com' and count unique occurrences.
+How to Draw (Opt): Draw a table with Email and Domain columns. Use an arrow to "slice" the string at '@'. Cross out duplicate domain rows to show DISTINCT.
+Opt Complexity Visuals: $O(N)$ Full Table Scan
+How to Draw Opt Complexity: Draw a single vertical line moving down the emails column. Each row takes constant time $O(L)$ to parse.
+Mem Vis (BF): Multiple temporary string buffers in the DB engine for each row.
+Mem Vis (Opt): Hash Set (internally) for domain uniqueness; stores only unique domain strings.

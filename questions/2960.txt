@@ -1,0 +1,13 @@
+ID: 2960
+Problem Title: Count Tested Devices After Test Operations
+Brute Force Method: For each device i, if battery &gt; 0, loop through all devices i+1 dots N and decrement their batteries.
+BF Complexity Visuals: Nested Loop Simulation
+How to Draw BF: Draw a series of batteries. For each "success", draw arrows hitting every battery to the right. $O(N^2)$.
+Optimised Pattern: Greedy (Running Offset)
+Opt Vis. Technique: Global Decrement Filter
+Dry Run (Opt): Instead of decrementing everyone, keep a count of successful tests. A device is "successful" if `initial_battery - current_success_count &gt; 0`.
+How to Draw (Opt): Draw a line of batteries. Maintain a tally. For each battery, subtract the tally and see if it's &gt;0. If yes, increment the tally.
+Opt Complexity Visuals: Single Pass Timeline
+How to Draw Opt Complexity: Draw a straight line of length N. One comparison per element. T = $O(N)$.
+Mem Vis (BF): Temporary arrays for each state of batteries.
+Mem Vis (Opt): One integer for the running count. Space $O(1)$.

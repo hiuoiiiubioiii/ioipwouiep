@@ -1,0 +1,13 @@
+ID: 1900
+Problem Title: The Earliest and Latest Rounds Where Players Compete
+Brute Force Method: Simulate all possible tournament brackets and track the round where player 1 and player 2 meet.
+BF Complexity Visuals: Combinatorial bracket explosion.
+How to Draw BF: Draw a tournament tree. Branch out for every possible winner of every game. Mark $O(2^N)$ brackets.
+Optimised Pattern: Memoized Recursion / Dynamic Programming on (n, firstPlayer, secondPlayer).
+Opt Vis. Technique: State space reduction grid.
+Dry Run (Opt): Recursive function `solve(n, p1, p2)`. Try all possible counts of winners between p1 and p2. Use memoization to avoid re-calculating identical game states.
+How to Draw (Opt): Draw a table representing `solve(n, p1, p2)`. For each cell, show a loop trying different winner counts. Mark states that merge to the same result.
+Opt Complexity Visuals: $O(N^4)$ State Space.
+How to Draw Opt Complexity: Draw a 4D cube (or N^4 grid) representing all state variables. Mark as $O(N^4)$.
+Mem Vis (BF): $O(1)$ extra space (ignoring recursive calls).
+Mem Vis (Opt): 3D/4D memoization table (e.g., `int[n][n][n]`) in heap memory.

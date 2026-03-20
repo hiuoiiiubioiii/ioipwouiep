@@ -1,0 +1,13 @@
+ID: 587
+Problem Title: Erect the Fence
+Brute Force Method: Check every possible line segment between two points (P_i, P_j) to see if all other points lie on one side of that line.
+BF Complexity Visuals: Brute force Convex Hull (All pairs). $O(N^3)$.
+How to Draw BF: Draw 10 dots. Draw a line between two. Check if all 8 other dots are on the left. Repeat for all 45 pairs.
+Optimised Pattern: Monotone Chain Algorithm (Sorting + Cross Product).
+Opt Vis. Technique: A rubber band effect. You sort the points and then wrap a "string" around the top half and then the bottom half, popping the string outward if it hits a "dent."
+Dry Run (Opt): 1. Sort points by X-coordinate. 2. Build upper hull by adding points and checking cross product (turn direction); pop points that create a "right turn." 3. Repeat for lower hull.
+How to Draw (Opt): Draw dots. Move left to right. Connect three dots. If the middle one creates a "cave" (concave), erase it and connect the outer two. It should look like an expanding shell.
+Opt Complexity Visuals: Sorting + Two Linear Passes. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a sorting timeline followed by a string wrapping around a set of pins.
+Mem Vis (BF): Storing all possible line combinations.
+Mem Vis (Opt): A list to store the perimeter points. $O(N)$.

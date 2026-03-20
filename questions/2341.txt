@@ -1,0 +1,13 @@
+ID: 2341
+Problem Title: Maximum Number of Pairs in Array
+Brute Force Method: Repeatedly scan the array to find any two identical numbers, remove them, increment a counter, and repeat until no pairs remain.
+BF Complexity Visuals: Repeated Linear Scans (O(N^2))
+How to Draw BF: Draw an array. Circle two '3's, erase them. Redraw the array. Circle two '1's, erase them. Repeat until only a few scattered numbers remain.
+Optimised Pattern: Frequency Map (Hash Table)
+Opt Vis. Technique: Modulo 2 Bucket Tally
+Dry Run (Opt): Count the frequency of each number using a Hash Map. For each count, `pairs += count / 2` and `leftover += count % 2`.
+How to Draw (Opt): Draw a table with two columns: "Number" and "Count". Read the array once to fill the table. Then, for each count, draw a circle around groups of two and a square around the remainder.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight, horizontal timeline. One pass to build the map, one very short pass (max 100 entries) to sum the results.
+Mem Vis (BF): Draw multiple copies of the array as it shrinks in size.
+Mem Vis (Opt): Draw a 101-element Integer Array (or Hash Map) and two Integer result variables.

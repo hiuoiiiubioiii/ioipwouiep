@@ -1,0 +1,16 @@
+ID: 371
+Problem Title: Sum of Two Integers
+Brute Force Method: Using the built-in + or - operators to perform the calculation directly.
+BF Complexity Visuals: Constant-Time Scalar Operation
+How to Draw BF: Draw two boxes, an addition symbol, and a result box. Simple and direct.
+Optimised Pattern: Bitwise XOR (Sum) &amp; AND-Shift (Carry) Loop
+Opt Vis. Technique: [Image of full adder logic circuit]
+
+
+ Logic Gate Simulation
+Dry Run (Opt): Think like a CPU: XOR gives the sum without carry. AND shifted left by 1 gives the carry bits. Repeat until carry is zero.
+How to Draw (Opt): Draw two binary strings. Underneath, draw the XOR result and the AND-Shift result. Show the shift "carrying" bits to the next column until the carry line is all zeros.
+Opt Complexity Visuals: Iterative State Transformation
+How to Draw Opt Complexity: Draw a loop where variables a and b are updated. Label the complexity as $O(1)$ since integers are fixed width (32-bit).
+Mem Vis (BF): Single integer variable storage.
+Mem Vis (Opt): Two 32-bit registers (a and b). Draw two horizontal bit-fields. $O(1)$ space.

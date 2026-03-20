@@ -1,0 +1,13 @@
+ID: 1451
+Problem Title: Rearrange Words in a Sentence
+Brute Force Method: Split string into a list. Run a standard unstable sort (like quicksort) based on length. Re-capitalize the first word and join.
+BF Complexity Visuals: Unstable Sorting Scatter
+How to Draw BF: Draw a list of words. Draw arrows swapping words of the same length, showing they lose their original relative order. Label $O(N \log N)$.
+Optimised Pattern: Stable Sort / Map of Lists
+Opt Vis. Technique: Preservation Sorting (Stable)
+Dry Run (Opt): Split string. Use a stable sort algorithm (like MergeSort or built-in `stable_sort`) to sort words by length. This ensures words of the same length maintain their input order.
+How to Draw (Opt): Draw a set of colored blocks of varying lengths. Sort them by length, but ensure blocks of the same length keep their left-to-right sequence. Re-case the new head block.
+Opt Complexity Visuals: Stable Sorting Pipeline
+How to Draw Opt Complexity: Draw $O(N)$ Split -&gt; $O(N \log N)$ Stable Sort -&gt; $O(N)$ Join. Total $O(N \log N)$.
+Mem Vis (BF): In-place swapping (risky)
+Mem Vis (Opt): A list of word objects/strings. Space $O(N)$ for the split components.

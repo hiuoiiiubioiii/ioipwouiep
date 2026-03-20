@@ -1,0 +1,13 @@
+ID: 2725
+Problem Title: Interval Cancellation (JS)
+Brute Force Method: Use a recursive setTimeout where the next call is scheduled only after the previous one finishes. This can lead to "drift" where the interval time isn't consistent.
+BF Complexity Visuals: Staggered/Drifting Timeline
+How to Draw BF: Draw a timeline. Mark "Task 1", then a delay, then "Task 2". Show how the total time between start points is delay + execution_time instead of just delay.
+Optimised Pattern: Accumulating Closure Scopes (Each timeout creates a new closure, potentially keeping old variables in memory longer).
+Opt Vis. Technique: setInterval with Immediate Invocation
+Dry Run (Opt): Fixed Frequency Pulse
+How to Draw (Opt): Call the function immediately. Then, start a setInterval. Return a function that calls clearInterval. This ensures the first run happens at t=0 and subsequent runs follow a strict heartbeat.
+Opt Complexity Visuals: Draw a timeline with dots at perfect intervals (0, 100, 200ms). Draw a "Stop" button that, when pressed, removes all future dots.
+How to Draw Opt Complexity: $O(1)$ Scheduling
+Mem Vis (BF): Draw a single box representing the JS Timer API. Write $O(1)$ as the registration cost is independent of the number of ticks.
+Mem Vis (Opt): Timer Registry Slot (Visualize a single slot in the browser's timer table being occupied and then freed).

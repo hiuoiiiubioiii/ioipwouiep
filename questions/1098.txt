@@ -1,0 +1,13 @@
+ID: 1098
+Problem Title: Unpopular Books
+Brute Force Method: (SQL) Select all books. For each book, filter orders in the last year, sum them, and check if &lt; 10. Filter books available &lt; 1 month.
+BF Complexity Visuals: Filtered lookups for every book in the library.
+How to Draw BF: Book A: Check orders in 2026. Sum. Book B: Repeat. Write $O(\text{Books} \\text{cdot Orders})$.
+Optimised Pattern: Left Join + Filtering + Having.
+Opt Vis. Technique: A "Sales Ledger Filter". Combine the book list with recent orders, sum them, and keep only the "cold" inventory.
+Dry Run (Opt): `SELECT b.book_id, b.name FROM Books b LEFT JOIN Orders o ON b.book_id = o.book_id AND o.dispatch_date &gt;= '2025-05-23' WHERE b.available_from &lt; '2026-04-23' GROUP BY b.book_id HAVING SUM(o.quantity) &lt; 10 OR SUM(o.quantity) IS NULL`.
+How to Draw (Opt): Draw the Books table. Cross out books released in the last month. Join remaining with the Orders table (filtered by date). Sum quantities. Highlight books with total &lt; 10.
+Opt Complexity Visuals: Single pass join and filter.
+How to Draw Opt Complexity: Draw a filtered table merging into an aggregation. Write Time: $O(\text{Books} + \text{Orders})$.
+Mem Vis (BF): Multiple sub-selections stored in memory.
+Mem Vis (Opt): Hash map for grouping. $O(\text{Books})$ space.

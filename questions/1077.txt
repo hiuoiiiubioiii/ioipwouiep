@@ -1,0 +1,13 @@
+ID: 1077
+Problem Title: Project Employees III
+Brute Force Method: (SQL) For every project, find all employees, then find the one with max experience within that subset.
+BF Complexity Visuals: Nested correlated subqueries for every row in the Project table.
+How to Draw BF: Row 1: Project 1, Emp 1. Find max experience in Project 1. Compare Emp 1 to max. Write $O(\text{Projects} \\text{cdot Employees})$.
+Optimised Pattern: Window Function (RANK/DENSE_RANK) or Join with Max-Group.
+Opt Vis. Technique: A "League Leaderboard". Within each project "league," we rank employees by experience and pick only those in rank #1.
+Dry Run (Opt): `SELECT project_id, employee_id FROM (SELECT p.project_id, p.employee_id, RANK() OVER(PARTITION BY p.project_id ORDER BY e.experience_years DESC) as rnk FROM Project p JOIN Employee e ON ...) WHERE rnk = 1`.
+How to Draw (Opt): Draw the joined table. Group by project_id. Within each group, highlight the employee(s) with the highest years. Output those rows.
+Opt Complexity Visuals: Single pass sort-merge join and window calculation.
+How to Draw Opt Complexity: Draw the table partitioned into colored blocks (projects), with a star next to the top value in each. Write Time: $O(N \log N)$.
+Mem Vis (BF): Exponentially growing complexity with nested subqueries.
+Mem Vis (Opt): $O(N)$ space for the intermediate result set of the window function.

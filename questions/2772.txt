@@ -1,0 +1,13 @@
+ID: 2772
+Problem Title: Apply Operations to Make All Array Elements Zero
+Brute Force Method: For each element nums[i] &gt; 0, subtract nums[i] from nums[i...i+k-1]. If any element becomes negative or you run out of range, fail. $O(N \cdot K)$.
+BF Complexity Visuals: Repeated Range Subtraction
+How to Draw BF: Draw the array. For the first element, draw a bracket of size K and subtract its value from all. Redraw the array. Repeat. Visual area is N * K.
+Optimised Pattern: In-place Array Mutations (Visualizing the CPU repeatedly writing to memory for every range update).
+Opt Vis. Technique: Difference Array / Sliding Window Sum
+Dry Run (Opt): Aggregated Offset Tracking
+How to Draw (Opt): Keep track of a current_reduction. As you move right, subtract the reduction that "expires" (from i-k). The value needed to zero nums[i] is nums[i] - current_reduction. If positive, add it to the reduction.
+Opt Complexity Visuals: Draw the array and a "Reduction Tank" below it. As the tank moves right, it drains from the left and fills from the right. Check if the tank level ever exceeds the array box height.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow. Label it $O(N)$ because each element is processed once.
+Mem Vis (Opt): Difference Array / Queue (Draw an array tracking where reductions end, plus one sum variable).

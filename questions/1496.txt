@@ -1,0 +1,13 @@
+ID: 1496
+Problem Title: Path Crossing
+Brute Force Method: Iterate through the string. For every step, store the full coordinate history in a List. For each new step, iterate through the entire list to see if the current (x,y) has appeared before.
+BF Complexity Visuals: Quadratic History Scan
+How to Draw BF: Draw a 2D grid. Trace a path. At every point, draw arrows pointing back to every single previous dot on the path to check for a match. Label $O(N^2)$.
+Optimised Pattern: Hash Set of Visited Points
+Opt Vis. Technique: Coordinate Fingerprinting
+Dry Run (Opt): Use a Hash Set to store strings of coordinates like `"x,y"`. For each move (N, S, E, W), update current (x, y), check if it exists in the set. If it does, return true; else, add it.
+How to Draw (Opt): Draw a "Memory Bucket" (Set). As you walk on the grid, drop your coordinate into the bucket. If you try to drop a coordinate that's already in the bucket, a buzzer sounds (Path Crossed).
+Opt Complexity Visuals: Single Pass Constant Lookup
+How to Draw Opt Complexity: Draw one arrow through the input string. Label $O(N)$.
+Mem Vis (BF): List of coordinates $O(N^2)$
+Mem Vis (Opt): A Hash Set of point strings. Space $O(N)$.

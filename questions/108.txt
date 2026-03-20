@@ -1,0 +1,13 @@
+ID: 108
+Problem Title: Convert Sorted Array to Binary Search Tree
+Brute Force Method: Sequentially insert array elements into a new BST. This results in a completely skewed, linked-list-like $O(N)$ height tree.
+BF Complexity Visuals: A straight diagonal line of nodes leaning entirely to the right, showing $O(N)$ height degradation.
+How to Draw BF: Draw the array. Draw an arrow from the first element to a root node, next element to its right child, next to its right child, forming a straight line.
+Optimised Pattern: Divide and Conquer / DFS. Find mid, make root, recurse left half, recurse right half.
+Opt Vis. Technique: A balanced scale. Finding the exact center of the array to balance the left and right weights perfectly at every recursive step.
+Dry Run (Opt): Pass `left` and `right` pointers. Calculate `mid = left + (right - left) / 2`. `nums[mid]` is root. `root.left = recurse(left, mid-1)`. `root.right = recurse(mid+1, right)`.
+How to Draw (Opt): Draw the array. Circle the middle element. Draw arrows from the left half to a left child placeholder, and right half to a right child placeholder. Repeat.
+Opt Complexity Visuals: A perfectly symmetrical, balanced recursion tree with exactly $O(\log N)$ depth.
+How to Draw Opt Complexity: Draw the recursion tree. Count the levels to physically demonstrate that a balanced division always yields a logarithmic height.
+Mem Vis (BF): Call stack reaching $O(N)$ depth for the skewed sequential insertion.
+Mem Vis (Opt): Visualize the call stack cleanly expanding and contracting to a maximum depth of strictly $O(\log N)$.

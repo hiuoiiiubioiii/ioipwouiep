@@ -1,0 +1,13 @@
+ID: 57
+Problem Title: Insert Interval
+Brute Force Method: Append &amp; Re-Merge Add the new interval to the existing list and then run the full "Merge Intervals" (Q56) logic on the whole set.
+BF Complexity Visuals: The Pipeline Funnel
+How to Draw BF: Draw a list of intervals. Draw an arrow adding one more. Then draw the $O(N \log N)$ sorting machine from Q56.
+Optimised Pattern: Three-Phase Linear Scan
+Opt Vis. Technique: The Categorized Conveyor
+Dry Run (Opt): Iterate once. 1: Add all intervals that end before the new one starts. 2: Merge all overlapping intervals into one. 3: Add the merged result and all remaining intervals.
+How to Draw (Opt): Draw three shaded regions on a timeline: "Left (No Overlap)", "Middle (Merging Zone)", and "Right (Remaining)". Place the intervals into their respective regions.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single straight arrow from index 0 to N. We decide the fate of each interval in a single check. $O(N)$ time.
+Mem Vis (BF): $O(N \log N)$ time/space overhead due to re-sorting an almost-sorted list.
+Mem Vis (Opt): Draw a single result list. We build it element-by-element in one pass. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 1475
+Problem Title: Final Prices With a Special Discount in a Shop
+Brute Force Method: Nested Loops. For every item at index i, scan all items to its right (j &gt; i) until you find the first one where prices[j] <= prices[i]. Apply the discount.
+BF Complexity Visuals: Quadratic Right-Scan
+How to Draw BF: Draw an array. For each element, draw a search arrow that moves right until it finds a smaller/equal value. Label $O(N^2)$.
+Optimised Pattern: Monotonic Stack (Increasing)
+Opt Vis. Technique: Next Smaller Element Pattern
+Dry Run (Opt): Iterate through prices. Maintain a stack of indices whose prices are in increasing order. When you see a price smaller than the stack top, the stack top has found its discount. Pop and update.
+How to Draw (Opt): Draw the array. Below it, draw a "Waiting Room" (Stack). If a new shopper is "cheaper" than the person in the waiting room, the person in the room gets their discount and leaves.
+Opt Complexity Visuals: Linear Pass with Stack Pops
+How to Draw Opt Complexity: Draw an arrow moving once across the array. Each element enters and leaves the stack exactly once. Label $O(N)$.
+Mem Vis (BF): N/A (Modify in place)
+Mem Vis (Opt): A stack storing at most N indices. Space $O(N)$.

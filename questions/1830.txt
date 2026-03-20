@@ -1,0 +1,13 @@
+ID: 1830
+Problem Title: Minimum Number of Operations to Make String Sorted
+Brute Force Method: Physically perform the operation (find i, find j, swap, reverse) until the string is sorted.
+BF Complexity Visuals: Permutation state graph.
+How to Draw BF: Write the string. Manually find indices, swap, and reverse. Redraw the string. Repeat until sorted. $O(N!)$.
+Optimised Pattern: Combinatorics (Cantor Expansion) + Modular Multiplicative Inverse + Precomputed Factorials.
+Opt Vis. Technique: Permutation rank tree.
+Dry Run (Opt): For each position, count how many characters smaller than s[i] are available. Multiply by (n-1-i)! and divide by duplicates factorials. Sum these up modulo 10^9+7.
+How to Draw (Opt): Write the string. Under each char, write "Count of smaller chars on right". Write factorials. Multiply and sum.
+Opt Complexity Visuals: Linear pass with frequency array updates.
+How to Draw Opt Complexity: Draw a line of length N. At each point, show an $O(26)$ scan of the frequency array. Total $O(26N)$.
+Mem Vis (BF): Massive recursion stack or thousands of string objects.
+Mem Vis (Opt): Frequency array (size 26) + Precomputed factorial array (size N).

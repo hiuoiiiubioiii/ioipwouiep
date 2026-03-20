@@ -1,0 +1,13 @@
+ID: 2698
+Problem Title: Find the Punishment Number of an Integer
+Brute Force Method: Calculate `i*i`, then use a nested loop to try every possible split, but without memoization or efficient recursion.
+BF Complexity Visuals: Brute Force Partitioning
+How to Draw BF: Draw the digits of `i*i`. Branch out every possible way to slice the string. $O(N \cdot 2^D)$ where D is number of digits.
+Optimised Pattern: Recursion with Backtracking
+Opt Vis. Technique: Digit Partition Tree
+Dry Run (Opt): For each `i` from 1 to `n`, square it. Use a recursive function to check if any partition of the digits of `i*i` sums up to `i`.
+How to Draw (Opt): Write the number (e.g., 1296). Draw lines splitting it: 1|296, 12|96, 1|2|9|6, etc. If any branch sums to the target, it's a valid punishment number.
+Opt Complexity Visuals: $O(N \cdot 2^(\log10(N^2)$))
+How to Draw Opt Complexity: Draw a limited-depth recursion tree for each number up to N.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(D)$ recursive stack depth where D is digits in `i*i`.

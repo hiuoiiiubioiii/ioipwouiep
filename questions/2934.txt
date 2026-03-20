@@ -1,0 +1,13 @@
+ID: 2934
+Problem Title: Minimum Operations to Maximize Last Elements
+Brute Force Method: Try every subset of swaps (2^N) to see if the condition `nums1[i] &lt;= nums1[n-1]` and `nums2[i] &lt;= nums2[n-1]` holds.
+BF Complexity Visuals: Binary Swap Tree
+How to Draw BF: Draw a tree where each node is an index. Left = Don't Swap, Right = Swap. Depth N. $O(2^N)$.
+Optimised Pattern: Greedy (Two Scenarios)
+Opt Vis. Technique: Two Parallel Simulations
+Dry Run (Opt): Only two possible ending states: either you swap the last elements or you don't. For each case, greedily swap any `i` that violates the condition.
+How to Draw (Opt): Draw two versions of the arrays. Case A: Last elements as is. Case B: Last elements swapped. Use a checkmark for valid pairs.
+Opt Complexity Visuals: Two Linear Sweeps
+How to Draw Opt Complexity: Draw two horizontal lines of length N. T(N) = 2 * N = $O(N)$.
+Mem Vis (BF): Recursion stack for 2^N swaps.
+Mem Vis (Opt): Two integer counters for swaps. Space $O(1)$.

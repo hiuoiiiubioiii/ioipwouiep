@@ -1,0 +1,13 @@
+ID: 148
+Problem Title: Sort List
+Brute Force Method: Convert the linked list to an array, sort the array using a built-in sort (O(N log N)), and convert it back to a list.
+BF Complexity Visuals: A "Transfer" block: List rightarrow Array rightarrow List, adding $O(N)$ space overhead.
+How to Draw BF: Draw a list. Draw a box (Array). Write numbers in the box, sort them, then draw the list again.
+Optimised Pattern: Merge Sort (Bottom-Up Iterative for $O(1)$ space, or Top-Down Recursive).
+Opt Vis. Technique: "Divide and Conquer" zipper. The list is split into single-node pieces and zipped back together in sorted pairs.
+Dry Run (Opt): Use Fast/Slow pointers to find mid. Split list. Recurse. Merge two sorted halves by comparing heads and linking the smaller one.
+How to Draw (Opt): Draw the list. Draw a tree-like structure splitting it in half, then half again. Draw arrows merging the small pieces into larger sorted chains.
+Opt Complexity Visuals: $O(N \log N)$ recursion tree. The depth is log N and the work at each level is N.
+How to Draw Opt Complexity: Draw a binary tree. Each level has a total width of N. There are log N levels. Shade the area to show N log N.
+Mem Vis (BF): $O(N)$ space for the temporary array buffer.
+Mem Vis (Opt): Visualize the $O(\log N)$ recursive call stack (Top-Down) or $O(1)$ extra pointers (Bottom-Up).

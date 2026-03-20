@@ -1,0 +1,13 @@
+ID: 2411
+Problem Title: Smallest Subarrays With Maximum Bitwise OR
+Brute Force Method: For each index 'i', start a nested loop 'j' to the end. Calculate running OR. Find the max OR, then find the shortest length that achieves it.
+BF Complexity Visuals: Expanding Triangle
+How to Draw BF: Draw an array. Under index 0, draw lines extending to 1, 2, 3... Under index 1, lines to 2, 3... Shape forms a right triangle. Label $O(N^2)$.
+Optimised Pattern: Reverse Traversal + 32-Bit Position Tracking
+Opt Vis. Technique: Sliding Maximum Index Window
+Dry Run (Opt): Traverse right-to-left. Keep an array of 32 integers tracking the *nearest* index where each bit is '1'. For current 'i', max of these 32 indices gives the subarray end.
+How to Draw (Opt): Draw a table of 32 rows (bits) and update the index numbers as you walk backward through the array. The answer for index 'i' is the largest number currently in the table.
+Opt Complexity Visuals: Linear Pass with $O(1)$ vertical checks
+How to Draw Opt Complexity: Draw an arrow going right-to-left. At each step, draw a small vertical box of constant size 32. Label $O(32 \cdot N)$ = $O(N)$.
+Mem Vis (BF): Draw massive overlapping variables tracking running ORs for every nested loop.
+Mem Vis (Opt): Draw a fixed-size 32-element array called `nearest_bit_idx[32]`. Label $O(1)$ space.

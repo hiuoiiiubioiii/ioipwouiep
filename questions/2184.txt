@@ -1,0 +1,13 @@
+ID: 2184
+Problem Title: Number of Ways to Build Sturdy Brick Wall
+Brute Force Method: Recursively try every combination of bricks for every row, checking every joint against the row below.
+BF Complexity Visuals: Exponential branching of row configurations.
+How to Draw BF: Draw row 1. Branch into all 20 possible brick patterns. For each, branch into row 2 patterns. $O(\text{Patterns}^\text{Height})$.
+Optimised Pattern: Bitmask DP + State Compression.
+Opt Vis. Technique: A graph where nodes are "Row Patterns" and edges are "Compatibility".
+Dry Run (Opt): 1. Find all possible row patterns as bitmasks (bits = joint positions). 2. Pre-calculate which masks don't have overlapping bits. 3. `dp[row][mask]` = ways to end current row with this mask.
+How to Draw (Opt): Draw a single row. Mark the cracks between bricks. Represent as 10100. Draw a second row. If its cracks are 01010, they don't line up—"Sturdy!" Write a transition between these two states.
+Opt Complexity Visuals: $O(\text{Height} \\text{cdot Patterns}^2)$.
+How to Draw Opt Complexity: A layered graph where each layer represents a row in the wall.
+Mem Vis (BF): Deep recursion stack.
+Mem Vis (Opt): $O(\text{Height} \\text{cdot Patterns})$ for the DP table.

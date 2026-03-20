@@ -1,0 +1,13 @@
+ID: 3711
+Problem Title: Maximum Transactions Without Negative Balance (Med)
+Brute Force Method: Try every subset of transactions using Backtracking to see which keeps balance &gt;= 0.
+BF Complexity Visuals: Decision Tree $O(2^N)$.
+How to Draw BF: Draw a tree. Branch left: "Take transaction". Branch right: "Skip". Cross out branches going below 0.
+Optimised Pattern: Greedy + Priority Queue (Min-Heap of negative values)
+Opt Vis. Technique: Heap Rebalancing / Time Travel Undo
+Dry Run (Opt): Add all to balance. If balance &lt; 0, remove the most negative transaction seen so far (pop from Heap).
+How to Draw (Opt): Draw a running total. Draw a bucket (Heap) for negative numbers. When total &lt; 0, cross out the biggest negative in the bucket and add it back to total.
+Opt Complexity Visuals: $O(N \log N)$ Heap insertions.
+How to Draw Opt Complexity: Draw a straight line N with small sorting loops (log N) at each step.
+Mem Vis (BF): Call stack (recursion).
+Mem Vis (Opt): Tree-shaped Array (Priority Queue).

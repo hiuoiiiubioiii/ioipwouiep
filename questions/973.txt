@@ -1,0 +1,13 @@
+ID: 973
+Problem Title: K Closest Points to Origin
+Brute Force Method: Calculate the distance for all points, store them in a list of `(distance, point)` pairs, sort the entire list by distance, and take the first K.
+BF Complexity Visuals: $O(N \log N)$. Sorting the whole list when we only need the top K.
+How to Draw BF: Draw a scatter plot. Draw a line from the origin to every point. Show a massive "Sorting Machine" rearranging all points into a long line.
+Optimised Pattern: Max-Heap (Size K) or QuickSelect
+Opt Vis. Technique: "The Top K Club." Maintain a heap of the K closest points. When a new point comes, if it's closer than the "furthest" point in your club, kick the furthest one out and let the new one in.
+Dry Run (Opt): Maintain a Max-Heap of size K. For each point: calculate distance. If heap size &lt; K, push. Else if `dist &lt; heap.max()`, pop max and push current.
+How to Draw (Opt): Draw a small bucket that can only hold 3 balls. If you find a smaller ball, throw out the largest ball in the bucket and put the small one in.
+Opt Complexity Visuals: $O(N \log K)$. If K is much smaller than N, this is significantly faster than sorting.
+How to Draw Opt Complexity: Draw a horizontal timeline of points. Above it, draw a small "Heap" triangle that stays the same size while points flow through it.
+Mem Vis (BF): $O(N)$ to store the distances of all points.
+Mem Vis (Opt): $O(K)$ to store the heap. Draw a small binary tree structure (the heap) with K nodes.

@@ -1,0 +1,13 @@
+ID: 1763
+Problem Title: Longest Nice Substring
+Brute Force Method: Generate all substrings. For each, check if it's "nice" (contains both uppercase and lowercase for every character present).
+BF Complexity Visuals: Substring Matrix Check.
+How to Draw BF: Draw the string. Draw brackets for all (i, j) pairs. Inside each bracket, check all chars. $O(N^3)$.
+Optimised Pattern: Divide and Conquer (Recursive Splitting).
+Opt Vis. Technique: Shattering a Glass String.
+Dry Run (Opt): Scan string for characters that don't have their "pair" (e.g., 'a' exists but not 'A'). If found, the longest nice substring cannot contain this char. Split the string at this char and recurse.
+How to Draw (Opt): Draw the string. Circle the "lonely" character. Draw a vertical line through it, splitting the string into two smaller pieces. Repeat for each piece.
+Opt Complexity Visuals: Recursive Tree Depth.
+How to Draw Opt Complexity: Draw a tree where each node is a string segment. Label $O(N^2)$ worst-case or $O(26 \cdot N)$ with sliding window.
+Mem Vis (BF): List of all substrings. $O(N^3)$.
+Mem Vis (Opt): Recursion call stack. $O(N)$ space visual.

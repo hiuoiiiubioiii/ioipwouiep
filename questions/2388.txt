@@ -1,0 +1,13 @@
+ID: 2388
+Problem Title: Change Null Values in a Table to the Previous Value (SQL Premium)
+Brute Force Method: (Conceptual) For every row, scan all preceding rows manually to find the most recent non-null value and copy it.
+BF Complexity Visuals: Nested Row Back-Scanning
+How to Draw BF: Draw a table with gaps. For each gap, draw a finger pointing upward, moving one row at a time until it hits a value.
+Optimised Pattern: Window Functions with IGNORE NULLS
+Opt Vis. Technique: Vertical Value "Filling"
+Dry Run (Opt): Use `LAST_VALUE(column IGNORE NULLS) OVER (ORDER BY row_id)`. This treats the table as a stream where the "current" state is the last seen value.
+How to Draw (Opt): Draw a table. Imagine a "Paint Bucket" at the top. As you move down, if a cell is empty, it gets painted with the color of the cell above it.
+Opt Complexity Visuals: Single Pass Window Scan
+How to Draw Opt Complexity: Draw a data stream entering a "State Buffer" that only updates when a non-null value passes through.
+Mem Vis (BF): Draw multiple subqueries for every single null cell.
+Mem Vis (Opt): Draw one Result Set stream with a "Sticky Value" buffer.

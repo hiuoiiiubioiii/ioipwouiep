@@ -1,0 +1,13 @@
+ID: 1252
+Problem Title: Cells with Odd Values in a Matrix
+Brute Force Method: Initialize a full m x n matrix with zeros. For every query (r, c), iterate through the entire row r and increment values, then iterate through the entire column c and increment. Finally, count odd cells.
+BF Complexity Visuals: Full Grid Simulation
+How to Draw BF: Draw a grid. For every query, draw a horizontal line and a vertical line, manually adding +1 to every box. Then count all boxes with odd numbers. Write $O(L \cdot (M+N)$ + M*N).
+Optimised Pattern: Parity Counting (Row/Col Arrays)
+Opt Vis. Technique: XOR-like Row/Column Toggles
+Dry Run (Opt): Instead of the whole grid, just maintain two arrays: `rows[m]` and `cols[n]`. For each query (r, c), increment `rows[r]` and `cols[c]`. A cell (i, j) is odd if `rows[i] + cols[j]` is odd.
+How to Draw (Opt): Draw a horizontal array (Rows) and a vertical array (Cols) next to a ghost grid. Mark which rows/cols were incremented an odd number of times. A cell is odd if exactly one of its row/column markers is "Odd".
+Opt Complexity Visuals: Linear Vector Scan
+How to Draw Opt Complexity: Draw two separate lines (length M and length N). Write $O(L + M + N)$ where L is the number of indices.
+Mem Vis (BF): Draw a full M x N integer matrix in memory.
+Mem Vis (Opt): Draw two 1D boolean/integer arrays of size M and N. Space: $O(M + N)$.

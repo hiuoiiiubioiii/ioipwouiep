@@ -1,0 +1,13 @@
+ID: 683
+Problem Title: K Empty Slots
+Brute Force Method: For every new flower planted, scan K positions to the left and K to the right to see if another flower exists and if the space between is empty.
+BF Complexity Visuals: Local Radius Scanning.
+How to Draw BF: Draw a garden. For every new flower, draw two "Scan Arms" extending K units. Write $O(N \cdot K)$.
+Optimised Pattern: Sliding Window / Monotonic Queue.
+Opt Vis. Technique: Inverse Mapping / Range Minimum.
+Dry Run (Opt): Create a `days` array where `days[i]` is the day flower at position `i` blooms. Find a window of size K+2 where the endpoints bloom earlier than all flowers inside.
+How to Draw (Opt): Draw the "Blooming Day" array. Draw a bracket of size K. If the two "Post" values are smaller than everything inside the bracket, you've found the day.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight arrow with a sliding box. Write $O(N)$.
+Mem Vis (BF): Draw the garden state at every single day (N x N grid).
+Mem Vis (Opt): Draw one 1D array of size N. $O(N)$.

@@ -1,0 +1,13 @@
+ID: 2906
+Problem Title: Construct Product Matrix
+Brute Force Method: For every cell, loop through the entire matrix again to multiply all other elements, applying modulo.
+BF Complexity Visuals: Star/Hub-and-Spoke Mapping
+How to Draw BF: Draw a 3x3 grid. Pick one target cell. Draw 8 arrows originating from all other cells pointing into the target. Represents $O((N\cdot M)$^2).
+Optimised Pattern: Prefix &amp; Suffix Products (Flattened 2D to 1D)
+Opt Vis. Technique: Forward &amp; Backward Sweeping Arrays
+Dry Run (Opt): Sweep top-left to bottom-right saving running products. Sweep backwards saving running products. Multiply intersecting prefix and suffix.
+How to Draw (Opt): Draw a single flattened array. Draw one arrow sweeping left-to-right (Prefix), and another right-to-left (Suffix).
+Opt Complexity Visuals: Two Parallel Timelines
+How to Draw Opt Complexity: Draw two parallel straight lines of length N*M. T(N,M) = 2*(N*M) = $O(N\cdot M)$. Constant time cell multiplication.
+Mem Vis (BF): Single scalar box for the running product accumulator. Space $O(1)$.
+Mem Vis (Opt): Two large 1D array blocks (prefix/suffix) sized N*M. Space $O(N\cdot M)$.

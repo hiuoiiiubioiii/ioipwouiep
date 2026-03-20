@@ -1,0 +1,13 @@
+ID: 1079
+Problem Title: Letter Tile Possibilities
+Brute Force Method: Generate every possible permutation of every possible length. Store them in a Set to handle duplicates and return the size of the set.
+BF Complexity Visuals: A massive, branching "Tree of Babble" where most branches are redundant.
+How to Draw BF: Tiles: "AAB". Length 1: A, B. Length 2: AA, AB, BA. Length 3: AAB, ABA, BAA. Write $O(P!)$ where P is number of tiles.
+Optimised Pattern: Backtracking + Frequency Array.
+Opt Vis. Technique: A "Tile Inventory". We don't care about the tiles' original order; we just care about how many 'A's and 'B's we have in our bag at any moment.
+Dry Run (Opt): Count character frequencies. Use DFS. In each step, pick an available character from the frequency array, decrement its count, increment the total count, and recurse. Increment the count back (backtrack) for the next branch.
+How to Draw (Opt): Draw the frequency map {A:2, B:1}. Start DFS. Pick A -&gt; {A:1, B:1}. From there, pick A -&gt; {A:0, B:1} or pick B -&gt; {A:1, B:0}. Count every valid state reached.
+Opt Complexity Visuals: Exploration of unique character combinations.
+How to Draw Opt Complexity: Draw a decision tree where each node is a frequency state. Write Time: $O(\text{Exponential but bounded by unique permutations})$.
+Mem Vis (BF): $O(P!)$ space to store all possible strings in a Set.
+Mem Vis (Opt): $O(K)$ space for the frequency array (K=26) and $O(P)$ for the recursion stack.

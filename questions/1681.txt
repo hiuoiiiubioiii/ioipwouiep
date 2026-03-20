@@ -1,0 +1,13 @@
+ID: 1681
+Problem Title: Minimum Incompatibility
+Brute Force Method: Backtracking to try every possible way of partitioning n numbers into k groups of size n/k.
+BF Complexity Visuals: Factorial Branching Tree
+How to Draw BF: Draw a root node splitting into every possible subset of size n/k. Repeat for remaining. $O(N! / (n/k)$!^k).
+Optimised Pattern: Bitmask DP + Submask Iteration
+Opt Vis. Technique: State-Space Matrix
+Dry Run (Opt): dp[\text{mask}] represents the min incompatibility for a used subset of numbers. Iterate through submasks of size n/k that are valid (unique numbers).
+How to Draw (Opt): Draw a bitmask (e.g., 1011). Show it splitting into a valid submask (1001) and a remaining mask (0010). Write incompatibility sums in the nodes.
+Opt Complexity Visuals: Exponential Grid Fill
+How to Draw Opt Complexity: Draw a row of 2^N states. For each, show a loop of size \binom{n}{n/k}. $O(3^N)$ or $O(2^N \cdot \\text{binom}{n}{n/k})$.
+Mem Vis (BF): Recursive Call Stack: Massive stack of partial group assignments.
+Mem Vis (Opt): 1D DP Array: Draw a horizontal array of size 2^N storing integers.

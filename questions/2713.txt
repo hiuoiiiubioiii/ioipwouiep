@@ -1,0 +1,13 @@
+ID: 2713
+Problem Title: Maximum Strictly Increasing Cells in a Matrix
+Brute Force Method: DFS from every cell. Search its entire row and column for strictly greater values, branching recursively. $O((M\cdot N)$!).
+BF Complexity Visuals: N-ary Graph Expansion
+How to Draw BF: Draw a grid. Pick a cell. Draw arrows to all larger cells in its row and column. From those, draw more arrows. Looks like an uncontrollable web.
+Optimised Pattern: Unbounded Call Stack (Deep recursion for every valid path permutation).
+Opt Vis. Technique: Value Sorting + 1D Array Dynamic Programming
+Dry Run (Opt): Value-Based Layer DP
+How to Draw (Opt): Group cells by value and sort ascending. To calculate the longest path ending at value X at (i,j), look at the best previous results recorded in rowMax[i] and colMax[j]. Update answers simultaneously for identical values.
+Opt Complexity Visuals: Draw two 1D arrays outside the grid (one for rows, one for cols). Process values in order. Draw an arrow pulling the max from the row/col arrays, calculating +1, and pushing the new max back.
+How to Draw Opt Complexity: Map-Reduce Pipeline
+Mem Vis (BF): Draw a funnel showing the sort step $O(\text{MN} \\text{log MN})$, feeding into a single iteration block $O(M\cdot N)$ processing the DP states.
+Mem Vis (Opt): Orthogonal DP Arrays (Draw one array of size M and one of size N. This compresses the $O(M\cdot N)$ graph space into $O(M+N)$ tracking space).

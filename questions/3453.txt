@@ -1,0 +1,13 @@
+ID: 3453
+Problem Title: Separate Squares I
+Brute Force Method: Test every possible Y coordinate from the lowest to highest in increments of 0.00001, calculating areas above and below for each. $O(10^5 \cdot N)$
+BF Complexity Visuals: Dense Scanning "Y-Line".
+How to Draw BF: Draw the squares. Draw a dashed horizontal line that moves up 1 pixel at a time, recalculating everything at every step.
+Optimised Pattern: Binary Search on Answer (Y-coordinate). $O(N \log(\text{Range}/\text{Epsilon})$)
+Opt Vis. Technique: Horizontal Waterline Balancing.
+Dry Run (Opt): Pick a middle Y. Calculate AreaAbove and AreaBelow (O(N)). If Above &gt; Below, move Y up; else move Y down. Repeat until precise.
+How to Draw (Opt): Draw the squares. Draw a "waterline" halfway. If the top half has more "water" (area), raise the waterline.
+Opt Complexity Visuals: BS Tree Height with Linear Check.
+How to Draw Opt Complexity: Draw a Binary Search tree of depth 60-100 (for precision). Each node contains an $O(N)$ scan box.
+Mem Vis (BF): Minimal, but massive CPU time.
+Mem Vis (Opt): $O(1)$ space, storing only the target area and current Y bounds.

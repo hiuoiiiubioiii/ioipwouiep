@@ -1,0 +1,13 @@
+ID: 2616
+Problem Title: Minimize the Maximum Difference of Pairs
+Brute Force Method: Generate all possible subsets of pairs of size P and find the minimum of their maximum differences.
+BF Complexity Visuals: Combinatorial Explosion Branching
+How to Draw BF: Draw a massive tree picking pairs, calculating $O(N \text{choose} 2P)$.
+Optimised Pattern: Sort + Binary Search on Answer + Greedy
+Opt Vis. Technique: Red/Blue Domain Number Line
+Dry Run (Opt): Assume a max difference 'mid'. Scan sorted array: if nums[i+1] - nums[i] &lt;= mid, count the pair and jump 2 spots. If we hit P pairs, 'mid' is valid (blue), try smaller.
+How to Draw (Opt): Draw the sorted array. Write a "mid" value. Loop through array drawing brackets [ ] around adjacent elements that fit the difference limit. Count brackets.
+Opt Complexity Visuals: Logarithmic Search over Range
+How to Draw Opt Complexity: Draw sorting block $O(N \log N)$ + Binary search block $O(N \log M)$ where M is the max possible difference.
+Mem Vis (BF): Deep recursive stack
+Mem Vis (Opt): Constant space variables (left, right, mid) with sorted input array in place.

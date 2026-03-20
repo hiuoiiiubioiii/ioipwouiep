@@ -1,0 +1,13 @@
+ID: 1806
+Problem Title: Minimum Number of Operations to Reinitialize a Permutation
+Brute Force Method: Simulate the permutation process using two arrays until the array matches the original.
+BF Complexity Visuals: Array state transition matrix.
+How to Draw BF: Draw the array at step 0. Draw arrows moving elements to new indices. Count steps until sorted. Mark $O(N^2)$ worst case.
+Optimised Pattern: Math/Graph (Cycle Detection). Track only the movement of index 1.
+Opt Vis. Technique: Directed graph cycle tracking a single node.
+Dry Run (Opt): Start at index 1. Apply the formula to find its next position. Increment a counter until it returns to 1.
+How to Draw (Opt): Draw a circle. Write '1' at the top. Calculate the next index, draw an arrow to it. Continue until the arrow points back to '1'.
+Opt Complexity Visuals: Single integer loop timeline.
+How to Draw Opt Complexity: Draw a single loop with a counter 'k'. Annotate with $O(N)$ time and $O(1)$ space.
+Mem Vis (BF): Multiple arrays created and cloned in memory (O(N) space).
+Mem Vis (Opt): Two integer variables (current_pos, steps) mapped as $O(1)$ registers.

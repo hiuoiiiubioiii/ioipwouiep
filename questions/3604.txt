@@ -1,0 +1,13 @@
+ID: 3604
+Problem Title: Minimum Time to Reach Destination in Directed Graph (Med)
+Brute Force Method: Bellman-Ford algorithm or unoptimized BFS (if weights are unequal).
+BF Complexity Visuals: V * E Relaxation Grid.
+How to Draw BF: Draw a matrix of V rows (iterations) and E columns (edges). Shade every cell to show redundant checks. Write $O(V \cdot E)$.
+Optimised Pattern: Standard Dijkstra's Algorithm using an Adjacency List and a Min-Heap (Priority Queue).
+Opt Vis. Technique: Expanding Water Ripple (Wavefront).
+Dry Run (Opt): Start at source. Color nodes based on current shortest known time. Always process the node with the absolute lowest time next, expanding its "ripple".
+How to Draw (Opt): Draw circles for nodes, lines with weights. Keep a tally box for `currentTime`. Update node labels by crossing out old values and writing smaller ones.
+Opt Complexity Visuals: Heap Operations Bar Chart.
+How to Draw Opt Complexity: Draw a bar for "Extract Min" (V times, $O(\log V)$) and "Decrease Key / Add" (E times, $O(\log V)$). Sum them up visually.
+Mem Vis (BF): Draw a massive 2D Adjacency Matrix filled with mostly empty/infinite space (O(V^2)).
+Mem Vis (Opt): Draw an Array of Arrays (Adjacency List) and a Binary Tree shape representing the active Priority Queue in memory.

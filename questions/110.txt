@@ -1,0 +1,13 @@
+ID: 110
+Problem Title: Balanced Binary Tree
+Brute Force Method: Top-down DFS. For every single node, calculate the full height of its left and right subtrees. Leads to redundant $O(N^2)$ height calculations.
+BF Complexity Visuals: An overlapping web of paths where the bottom nodes are visited and measured repeatedly for every ancestor above them.
+How to Draw BF: Draw a tree. Pick a leaf node. Draw multiple distinct lines overlapping it, representing every time an ancestor requested its height.
+Optimised Pattern: Bottom-Up DFS. Return the height of the subtree if it is balanced. If it is ever unbalanced, return -1 immediately to short-circuit.
+Opt Vis. Technique: A circuit breaker system. Heights bubble up from the leaves. If any left/right difference exceeds 1, a "-1" breaker trips and instantly cascades to the top.
+Dry Run (Opt): Recurse to leaves. Leaves return 0. At each parent: `left = dfs()`, `right = dfs()`. If `abs(left - right) &gt; 1` or either is -1, return -1. Else `return max(left, right) + 1`.
+How to Draw (Opt): Draw the tree. Write heights next to nodes starting from the bottom. If a parent sees a difference &gt; 1, write "-1" boldly and strike through the rest of the path up.
+Opt Complexity Visuals: A single $O(N)$ traversal where every node is visited strictly once and passes a constant-sized integer up the chain.
+How to Draw Opt Complexity: Draw the recursion tree. Cross out each node permanently once its height is returned to its parent, proving no redundant visits.
+Mem Vis (BF): Deep $O(N)$ call stacks triggered repeatedly, wasting CPU cycles though not necessarily heavy static memory.
+Mem Vis (Opt): Visualize the call stack reaching $O(H)$ depth, instantly collapsing and bubbling up a -1 error state the moment an imbalance is detected.

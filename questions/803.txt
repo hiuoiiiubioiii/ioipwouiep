@@ -1,0 +1,13 @@
+ID: 803
+Problem Title: Bricks Falling When Hit
+Brute Force Method: For each hit, remove the brick. Then run a full BFS/DFS from row 0 to find all connected components. Count unvisited components as 'fallen'.
+BF Complexity Visuals: Repeated Grid Flood-Fills. $O(H \cdot M \cdot N)$.
+How to Draw BF: Draw multiple M x N grids. On the first grid, erase one block, shade the connected ones. On the next grid, erase another block, shade again.
+Optimised Pattern: Reverse Time Union-Find (Disjoint Set).
+Opt Vis. Technique: Forest merging into a 'Ceiling' Master Node.
+Dry Run (Opt): Remove ALL hit bricks first. Build the safe structure. Then, step backward in time: add a hit brick back. Merge it with neighbors. If it connects to the roof, count the new size of the cluster.
+How to Draw (Opt): Draw nodes like floating bubbles. Draw a giant box at the top called 'ROOF'. As you add bricks backward, draw lines connecting bubbles. Point arrows upward to the ROOF.
+Opt Complexity Visuals: Amortized Flat Trees. $O(H \cdot α(M \cdot N)$) time.
+How to Draw Opt Complexity: Draw a very wide, shallow tree where almost all leaf nodes point directly to the root (representing Path Compression).
+Mem Vis (BF): Draw overlapping 2D matrices representing $O(M\cdot N)$ memory allocated per hit simulation.
+Mem Vis (Opt): A 1D array of size M*N + 1 (for the dummy roof). Draw a single line of indexed boxes storing parent indices.

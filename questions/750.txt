@@ -1,0 +1,13 @@
+ID: 750
+Problem Title: Number Of Corner Rectangles
+Brute Force Method: Iterate through every possible combination of 4 cells and check if they all contain '1's.
+BF Complexity Visuals: Combinatorial Search
+How to Draw BF: Draw a grid. Draw rectangles connecting any 4 points. $O(N^4)$ or $O(R^2 \cdot C^2)$.
+Optimised Pattern: Row-Pair Comparison (DP-lite)
+Opt Vis. Technique: Parallel Line Scanning
+Dry Run (Opt): Compare every pair of rows `(i, j)`. For each column `k`, if `grid[i][k] == 1` and `grid[j][k] == 1`, increment a counter `count`. Add `count * (count - 1) / 2` to total.
+How to Draw (Opt): Draw two horizontal rows. Highlight columns where both have a '1'. Count these "matches" and use the formula to find rectangles.
+Opt Complexity Visuals: Row-Pair Matrix Shading
+How to Draw Opt Complexity: Draw the matrix. Draw two sliding horizontal bars (rows). For each position, scan columns. $O(R^2 \cdot C)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ auxiliary space (excluding input).

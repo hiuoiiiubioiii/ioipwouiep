@@ -1,0 +1,13 @@
+ID: 3719
+Problem Title: Longest Balanced Subarray I (Med)
+Brute Force Method: Generate every possible subarray (O(N^2)), count elements in each to check balance condition.
+BF Complexity Visuals: Overlapping Brackets $O(N^2)$.
+How to Draw BF: Draw sequence. Draw a bracket for every size-2 group, then size-4, etc. Count items inside each bracket.
+Optimised Pattern: Prefix Sum Difference + Hash Map
+Opt Vis. Technique: Running Balance Altitude Graph
+Dry Run (Opt): Treat categories as +1 and -1. Track running sum. If the sum reaches a value it has seen before, the items between are balanced.
+How to Draw (Opt): Draw sequence. Below it, plot a line graph going up (+1) and down (-1). Draw a horizontal line connecting two peaks at the exact same altitude.
+Opt Complexity Visuals: Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a single squiggly line progressing strictly rightward.
+Mem Vis (BF): $O(1)$ memory but very high CPU usage.
+Mem Vis (Opt): Hash Map mapping (Running Sum Integer -&gt; First Seen Index).

@@ -1,0 +1,13 @@
+ID: 2767
+Problem Title: Partition String Into Minimum Beautiful Substrings
+Brute Force Method: Generate all possible partitions of the string. Convert each to decimal and check if it's a power of 5. $O(2^N)$.
+BF Complexity Visuals: Exponential Partition Forest
+How to Draw BF: Draw the string. At every character gap, branch: Split or Don't Split. Tree width is massive.
+Optimised Pattern: Dynamic Programming (1D)
+Opt Vis. Technique: The Valid-Jump Tracker
+Dry Run (Opt): `dp[i]` = min substrings for the prefix of length `i`. To calculate `dp[i]`, look back at all previous indices `j`. If `substring(j, i)` has no leading zeros and is a power of 5, `dp[i] = min(dp[i], dp[j] + 1)`.
+How to Draw (Opt): Draw the binary string. Below it, draw a DP array. From index `i`, draw backward arcs to previous valid split points `j`. Write the minimum arc path length in `dp[i]`.
+Opt Complexity Visuals: Quadratic Substring Checks $O(N^2)$
+How to Draw Opt Complexity: Draw an array of length N. At each index, draw a backward-scanning loop of max length N. Since N <= 15, this is extremely fast.
+Mem Vis (BF): Massive recursion depth and string slicing.
+Mem Vis (Opt): A 1D DP array of size N. $O(N)$ space.

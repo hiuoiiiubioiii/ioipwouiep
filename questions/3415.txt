@@ -1,0 +1,13 @@
+ID: 3415
+Problem Title: Find Products with Three Consecutive Digits
+Brute Force Method: Nested loops checking every 3-character substring of the string to see if all three are numeric digits. $O(N^2)$
+BF Complexity Visuals: Overlapping Substring Brackets.
+How to Draw BF: Draw the string. Draw a bracket over chars 0-2, then 1-3, then 2-4, evaluating each block completely from scratch.
+Optimised Pattern: Sliding Window / Regex Pattern Matching. $O(N)$
+Opt Vis. Technique: Rigid 3-Slot Sliding Window.
+Dry Run (Opt): Create a 3-slot window. Slide it one character right. If the new char is a digit, keep checking; if not, jump the window past the failure.
+How to Draw (Opt): Draw the string. Draw a box around 3 chars. Slide the box right continuously, highlighting consecutive digits in green.
+Opt Complexity Visuals: Single Horizontal Pass.
+How to Draw Opt Complexity: Draw one straight line above the string pointing right to represent an $O(N)$ single scan.
+Mem Vis (BF): Multiple temporary 3-character string allocations in memory.
+Mem Vis (Opt): Two integer pointers (start, end) or a compiled Regex state machine.

@@ -1,0 +1,13 @@
+ID: 2142
+Problem Title: The Number of Passengers in Each Bus (SQL)
+Brute Force Method: For each bus, scan the entire passenger table to see who arrived before the bus but after the previous bus.
+BF Complexity Visuals: Nested loops scanning a table for every row of another table.
+How to Draw BF: Draw Bus A. Draw lines to all passengers. Draw Bus B. Draw lines to all passengers. Write $O(B \cdot P)$.
+Optimised Pattern: Sorting + Window Functions (Lead/Lag) or Inequality Joins.
+Opt Vis. Technique: A timeline with intervals where people "fall" into the next available slot.
+Dry Run (Opt): Order buses by time. For each bus, find the range `[prev_bus_time, current_bus_time]`. Count passengers in that range.
+How to Draw (Opt): Draw a horizontal time axis. Mark buses as vertical walls. Mark passengers as dots. Count how many dots are trapped between two walls.
+Opt Complexity Visuals: $O(B \log B + P \log P)$ due to sorting and efficient indexing.
+How to Draw Opt Complexity: Two sorted streams being merged/zipped together once.
+Mem Vis (BF): $O(B \cdot P)$ intermediate join result sets in memory.
+Mem Vis (Opt): $O(B + P)$ streaming execution.

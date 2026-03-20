@@ -1,0 +1,13 @@
+ID: 1347
+Problem Title: Minimum Number of Steps to Make Two Strings Anagram
+Brute Force Method: For every character in string `s`, search for it in string `t`. If found, "delete" it from `t`. Count the remaining characters in `s`.
+BF Complexity Visuals: $O(N²)$ Repeated String Searches
+How to Draw BF: Draw two strings. Draw an arrow from the first char of `s` scanning all of `t`. If matched, cross it out. Repeat for every char in `s`.
+Optimised Pattern: Frequency Array (Character Tally)
+Opt Vis. Technique: Character Balance Sheet
+Dry Run (Opt): Create a frequency array of size 26. Increment counts for chars in `s`, decrement for chars in `t`. The sum of all positive differences is the answer.
+How to Draw (Opt): Draw a table with 26 columns (A-Z). For string `s`, put a '+' mark in the corresponding letter box. For `t`, put a '-' mark. Count how many '+' remain unmatched.
+Opt Complexity Visuals: $O(N)$ Linear Tally
+How to Draw Opt Complexity: Draw two horizontal bars (strings) feeding into a single 26-slot histogram, proving $O(N + M)$ time.
+Mem Vis (BF): Mutable String Copies: Storing modified versions of `t` to track "deleted" characters.
+Mem Vis (Opt): Fixed Frequency Map: Draw a 26-slot integer array. This is $O(1)$ space relative to the alphabet size.

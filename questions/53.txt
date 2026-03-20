@@ -1,0 +1,13 @@
+ID: 53
+Problem Title: Maximum Subarray
+Brute Force Method: All Subarrays (Nested Loops) Check every possible starting index `i` and ending index `j`, calculating the sum of each.
+BF Complexity Visuals: The 2D Sum Grid
+How to Draw BF: Draw an array. Draw a bracket for every possible start/end pair. Total pairs = N(N+1)/2. Calculating each sum takes $O(N)$, leading to $O(N³)$, or $O(N²)$ if optimized.
+Optimised Pattern: Kadane’s Algorithm (Greedy/DP)
+Opt Vis. Technique: The Fresh Start
+Dry Run (Opt): Iterate through the array. At each element, decide: "Is it better to add this to my current sum, or start a new sum from this element?" Keep track of the global maximum.
+How to Draw (Opt): Draw a running total box. As you move through the array, if the box becomes negative, "empty" it (reset to 0) and start fresh with the next number.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw a single straight arrow from left to right. One pass. Exactly N operations. $O(N)$ time.
+Mem Vis (BF): Storing all subarray sums in a large table or matrix.
+Mem Vis (Opt): Draw just two variables: `currentSum` and `maxSum`. $O(1)$ space.

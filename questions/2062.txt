@@ -1,0 +1,13 @@
+ID: 2062
+Problem Title: Count Vowel Substrings of a String
+Brute Force Method: Generate all possible substrings using nested loops. For each substring, check if it contains *only* vowels and includes all five ('a', 'e', 'i', 'o', 'u').
+BF Complexity Visuals: Nested Triangle Grid
+How to Draw BF: Draw the string. Draw brackets for every possible start and end. Inside each, draw 5 checkboxes for the vowels. $O(N^3)$.
+Optimised Pattern: Sliding Window (Two Pointers) with Sub-problem Logic
+Opt Vis. Technique: Caterpillar Window with Constraints
+Dry Run (Opt): A substring is "vowel-only" if it ends at `j` and starts after the nearest consonant. The number of such substrings containing all 5 vowels is `atMost(5) - atMost(4)`.
+How to Draw (Opt): Write the string. Mark consonant positions as "walls". Between walls, slide a window. Tally vowel counts in a 5-slot box below the window.
+Opt Complexity Visuals: Linear Scan with Two Passes
+How to Draw Opt Complexity: Draw a horizontal line. Show the window expanding and contracting. Total time $O(N)$.
+Mem Vis (BF): Creating new string objects for every substring check. Space $O(N^2)$.
+Mem Vis (Opt): A Hash Map or `int[26]` array for the 5 vowel frequencies. Space $O(1)$.

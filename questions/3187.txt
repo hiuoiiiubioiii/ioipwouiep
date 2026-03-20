@@ -1,0 +1,13 @@
+ID: 3187
+Problem Title: Peaks in Array
+Brute Force Method: For every update, change the element. For every query, scan the range [L, R] and count peaks. $O(Q x N)$.
+BF Complexity Visuals: Sequential Range Scan
+How to Draw BF: Draw an array. For each query, use a magnifying glass to scan from L to R, counting local maxima. Repeat for every query.
+Optimised Pattern: Segment Tree / Fenwick Tree
+Opt Vis. Technique: Dynamic Cumulative Sums
+Dry Run (Opt): Define a "Peak" as a 1 or 0. Use a Segment Tree to store these 1s. On update (i), re-evaluate indices i-1, i, i+1 and update the tree nodes. Query range sum in $O(\log N)$.
+How to Draw (Opt): Draw a Binary Tree where leaf nodes are 1 (peak) or 0. Circle the nodes that get updated when one leaf changes. Draw the "merge" logic at each parent.
+Opt Complexity Visuals: Logarithmic Update and Query Paths
+How to Draw Opt Complexity: Draw a Binary Tree. Shade one path from bottom to top for update; shade a few subtrees for query. $O(Q \log N)$.
+Mem Vis (BF): Multiple full copies of the array for every query's state.
+Mem Vis (Opt): A tree array of size 4N or N (for Fenwick). $O(N)$.

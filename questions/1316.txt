@@ -1,0 +1,13 @@
+ID: 1316
+Problem Title: Distinct Echo Substrings
+Brute Force Method: Generate all possible substrings $O(N^2)$, split each in half, compare them for equality $O(N)$, and store them in a Set. Overall $O(N^3)$.
+BF Complexity Visuals: Massive String Slicing Tree
+How to Draw BF: Draw a word. Draw dozens of brackets extracting every possible substring. Draw a scissors icon cutting each in half, and a balance scale comparing them.
+Optimised Pattern: Rolling Hash (Rabin-Karp) + Hash Set
+Opt Vis. Technique: Sliding Window Hash Comparison
+Dry Run (Opt): Precompute prefix hashes. For any length L, compare the hash of `str[i...i+L-1]` against `str[i+L...i+2L-1]` in $O(1)$ time. If they match, add the hash to a set.
+How to Draw (Opt): Draw an array representing a string. Draw two contiguous boxes of length L. Write a numeric "Hash Code" inside each box. Compare the two numbers directly.
+Opt Complexity Visuals: Dual Sliding Windows
+How to Draw Opt Complexity: Draw a string array. Show two adjacent, fixed-size windows sliding left-to-right together, demonstrating $O(N^2)$ total comparisons instead of $O(N^3)$.
+Mem Vis (BF): String Pool Explosion: Draw hundreds of distinct `std::string` objects filling up memory from `substr()` calls.
+Mem Vis (Opt): Numeric Hash Set: Draw a `std::unordered_set` storing only 64-bit integer hashes, drastically reducing memory footprint compared to string storage.

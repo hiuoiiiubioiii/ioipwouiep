@@ -1,0 +1,13 @@
+ID: 380
+Problem Title: Insert Delete GetRandom $O(1)$
+Brute Force Method: Use a list to store elements. For `remove()`, find the element and shift all subsequent elements to fill the gap.
+BF Complexity Visuals: Linear Array Shift
+How to Draw BF: Draw an array. To remove the middle element, draw arrows showing every element to its right moving one slot left. $O(N)$.
+Optimised Pattern: HashMap + Dynamic Array (Swap with Last)
+Opt Vis. Technique: Indexed Map with Tail-Swap Removal
+Dry Run (Opt): Store values in a List for $O(1)$ random access. Store value-to-index in a HashMap. To remove, swap the target element with the last element in the list, update the HashMap, and then pop the last element.
+How to Draw (Opt): Draw a List and a Map. To delete "B", show the last element "Z" moving into "B"'s slot. Update the Map to point "Z" to the new index. Erase the tail.
+Opt Complexity Visuals: Amortized Constant Logic
+How to Draw Opt Complexity: Draw three single-step arrows (Map lookup, Swap, Pop). $O(1)$.
+Mem Vis (BF): Unordered list with fragmentation.
+Mem Vis (Opt): Dynamic Array and Hash Map. Draw a contiguous tape and a table. $O(N)$.

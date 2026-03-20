@@ -1,0 +1,13 @@
+ID: 1549
+Problem Title: The Most Recent Orders for Each Product (SQL)
+Brute Force Method: Join Products and Orders, then use a `WHERE order_date = (SELECT MAX...)` subquery that runs for every single row. $O(N^2)$.
+BF Complexity Visuals: Correlated Subquery Loop
+How to Draw BF: Draw a table. For every row, draw a separate "Searcher" that scans the entire table again to find the max date for that product.
+Optimised Pattern: Window Function (RANK)
+Opt Vis. Technique: The Product-Date Ranker
+Dry Run (Opt): Use `RANK() OVER (PARTITION BY product_id ORDER BY order_date DESC)`. This labels the most recent orders as "1". Filter for `rank = 1`. This is faster than `MAX()` because it handles ties automatically.
+How to Draw (Opt): Draw a table sorted by Product and Date. Draw brackets around each product. Within each bracket, write "1" next to the latest date(s), "2" next to the second latest, etc.
+Opt Complexity Visuals: Sorted Partition Scan $O(N \log N)$
+How to Draw Opt Complexity: Draw a single sorting flow into a partitioner. The database handles the ranking in one efficient pass.
+Mem Vis (BF): Application-side memory for manual filtering.
+Mem Vis (Opt): Database internal sort buffer. $O(N)$ space.

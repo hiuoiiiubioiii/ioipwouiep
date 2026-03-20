@@ -1,0 +1,13 @@
+ID: 1902
+Problem Title: Depth of BST Given Insertion Order
+Brute Force Method: Insert nodes one by one into a standard Binary Search Tree, traversing from the root every time.
+BF Complexity Visuals: Unbalanced Tree Expansion
+How to Draw BF: Draw a root. Draw paths getting longer and longer for worst-case (e.g., sorted array), counting edge traversals up to $O(N^2)$.
+Optimised Pattern: TreeMap / Ordered Map (Next/Prev Greater Element)
+Opt Vis. Technique: Number Line Boundary Mapping
+Dry Run (Opt): Place node on a 1D number line. Find nearest left and right neighbors. Depth is max(depth[left], depth[right]) + 1.
+How to Draw (Opt): Draw a horizontal line. Plot existing nodes. Drop a new node between two existing ones. Draw vertical arrows mapping its depth to the max of its neighbors.
+Opt Complexity Visuals: Logarithmic Map Insertion Timeline
+How to Draw Opt Complexity: Draw N dots. For each, draw an $O(\log N)$ lookup arrow to a balanced Binary Search Tree representing the TreeMap. Total $O(N \log N)$.
+Mem Vis (BF): Standard Pointer-based Tree nodes dynamically allocating memory on the heap (many isolated boxes with L/R arrows).
+Mem Vis (Opt): A contiguous Array/Hash Map storing `node_val -&gt; depth`, representing flattened memory lookup.

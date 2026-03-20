@@ -1,0 +1,13 @@
+ID: 3011
+Problem Title: Find if Array Can Be Sorted
+Brute Force Method: Run a standard Bubble Sort. Every time you need to swap two elements, count their set bits. If the bit counts differ, abort and return false.
+BF Complexity Visuals: Conditional Bubble Sort
+How to Draw BF: Draw the array. Draw swapping arrows between adjacent elements. Put a big red 'X' on an arrow if the binary 1-counts of the two numbers don't match.
+Optimised Pattern: Array Grouping by Set Bits + Min/Max Tracking
+Opt Vis. Technique: Segmented Array Blocks
+Dry Run (Opt): Group adjacent numbers that share the same bit-count into contiguous blocks. For the array to be sortable, the maximum value of the previous block must be less than or equal to the minimum value of the current block.
+How to Draw (Opt): Draw the array. Draw vertical walls between numbers with different bit-counts. In each walled section, write the Min and Max. Draw an arrow checking if Prev_Max &lt;= Curr_Min.
+Opt Complexity Visuals: Segmented Linear Scan
+How to Draw Opt Complexity: Draw a single pass timeline. Show block boundaries being evaluated in $O(N)$ time without actually sorting the elements.
+Mem Vis (BF): The full array constantly shifting elements around in memory.
+Mem Vis (Opt): Four integer variables: prev_max, curr_max, curr_min, and current_bit_count.

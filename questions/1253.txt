@@ -1,0 +1,13 @@
+ID: 1253
+Problem Title: Reconstruct a 2-Row Binary Matrix
+Brute Force Method: Use backtracking to try all combinations of 0s and 1s in the two rows for every column, checking if the sums match `upper`, `lower`, and `colsum`.
+BF Complexity Visuals: Exponential Choice Tree
+How to Draw BF: Draw columns. For column 0, branch [1,1], [1,0], [0,1], [0,0]. Repeat for N columns. Write $O(2^N)$.
+Optimised Pattern: Greedy Strategy
+Opt Vis. Technique: Priority Placement (2s then 1s)
+Dry Run (Opt): Columns with `colsum=2` must have 1 in both rows. Fill those first. Then for `colsum=1`, greedily place a 1 in the row (upper or lower) that still needs more 1s. If `colsum=0`, both are 0.
+How to Draw (Opt): Draw two empty rows. Look at the `colsum` array. For every '2', put '1' in both rows. For every '1', check if `upper &gt; 0`; if yes, put '1' on top, else put it on bottom. If you run out of 1s to give, draw a red "Impossible".
+Opt Complexity Visuals: Single-Pass Deterministic Scan
+How to Draw Opt Complexity: Draw an array. Draw a single arrow scanning left-to-right once. Write $O(N)$.
+Mem Vis (BF): Draw a massive recursion stack for the 2^N search.
+Mem Vis (Opt): Draw two 1D arrays of size N. Space: $O(N)$.

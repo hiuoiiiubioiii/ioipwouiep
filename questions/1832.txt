@@ -1,0 +1,13 @@
+ID: 1832
+Problem Title: Check if the Sentence Is Pangram
+Brute Force Method: Iterate through the alphabet (a-z). For each letter, scan the entire string to see if it exists.
+BF Complexity Visuals: 26-row linear scan matrix.
+How to Draw BF: Write a-z on the left. For 'a', draw an arrow through the sentence. For 'b', draw another arrow, etc. $O(26 \cdot N)$.
+Optimised Pattern: Hash Set or Boolean Frequency Array.
+Opt Vis. Technique: Checklist / Bucket filling.
+Dry Run (Opt): Traverse the string once. Mark the corresponding index in a boolean array of size 26. Check if the final set size is 26.
+How to Draw (Opt): Draw 26 empty squares. Read the sentence. Tick the square for each letter found. See if all squares are ticked.
+Opt Complexity Visuals: Single pass linear timeline.
+How to Draw Opt Complexity: Draw an arrow from 0 to N. Mark each step as $O(1)$ array access. Total $O(N)$.
+Mem Vis (BF): No extra memory if using alphabet scan (but slow).
+Mem Vis (Opt): Fixed-size bitset or array of 26 booleans (O(1) space).

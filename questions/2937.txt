@@ -1,0 +1,13 @@
+ID: 2937
+Problem Title: Make Three Strings Equal
+Brute Force Method: Check all prefix lengths for all three strings to find a common match.
+BF Complexity Visuals: Overlapping Circles (Venn)
+How to Draw BF: Draw three lines of different lengths. Shade the section where they overlap at the start.
+Optimised Pattern: Greedy Prefix Matching
+Opt Vis. Technique: Parallel Scanning Head
+Dry Run (Opt): Iterate index `i` from 0. Compare `s1[i], s2[i], s3[i]`. If they differ or `i` exceeds a length, stop. Common length is `i`. Total operations = (len1+len2+len3) - 3*i.
+How to Draw (Opt): Stack the three strings vertically. Draw a vertical line through them. Move the line right until the letters at the line don't match.
+Opt Complexity Visuals: Single Pass Linear Scan
+How to Draw Opt Complexity: Draw a straight line of length min(L1, L2, L3). T(N) = $O(\text{min}_\text{length})$.
+Mem Vis (BF): Storing all possible prefix combinations.
+Mem Vis (Opt): Three integer variables for lengths and one index counter. Space $O(1)$.

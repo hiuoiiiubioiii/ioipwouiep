@@ -1,0 +1,13 @@
+ID: 496
+Problem Title: Next Greater Element I
+Brute Force Method: Nested Search For each x in nums1, find its index in nums2, then scan right to find the first larger number.
+BF Complexity Visuals: Repeated Scan Line
+How to Draw BF: Draw nums1 and nums2. For each nums1[i], draw a long arrow traversing nums2. $O(N \cdot M)$.
+Optimised Pattern: Monotonic Stack + HashMap Pre-process nums2 using a stack to find all "Next Greater" pairs. Store in a Map `num: next_greater`.
+Opt Vis. Technique: Falling Off a Cliff
+Dry Run (Opt): Imagine numbers walking. If a taller number appears, the smaller numbers behind it are "blocked" and paired with the tall one.
+How to Draw (Opt): Draw a "Stack" bucket. Push numbers. When a larger number comes, "pop" smaller ones and write the pair. Map the result.
+Opt Complexity Visuals: Linear Pipeline
+How to Draw Opt Complexity: Draw a single pass through nums2 and a single pass through nums1. $O(N + M)$.
+Mem Vis (BF): None Constant pointers.
+Mem Vis (Opt): Stack + Map Draw a vertical bucket and a 2-column table (Map). $O(M)$ space.

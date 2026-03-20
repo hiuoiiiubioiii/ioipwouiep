@@ -1,0 +1,13 @@
+ID: 2269
+Problem Title: Find the K-Beauty of a Number
+Brute Force Method: Integer-to-String SlicingConvert the number to a string. Use a nested loop to extract every substring of length K, convert it back to an integer, and check the divisibility.
+BF Complexity Visuals: Sub-segment Division Check
+How to Draw BF: Write "240" with k=2. Highlight "24" and "40". Draw a division sign `/` for 240/24 and 240/40. Circle the ones that leave 0 remainder.
+Optimised Pattern: Sliding Window (String or Math)
+Opt Vis. Technique: Fixed-Width Window Scan
+Dry Run (Opt): Use a single pass over the string version of the number. Extract a window from index `i` to `i+k`. Check divisibility immediately. Use `BigInteger` if the constraints exceed 64 bits.
+How to Draw (Opt): Draw the number as a tape. Draw a fixed-size frame of width K. Slide the frame one digit at a time. At each step, write the frame's number and the result of the `%` operation.
+Opt Complexity Visuals: Linear String Sweep
+How to Draw Opt Complexity: Draw an $O(N)$ timeline where N is the number of digits. Label each step as $O(K)$ for substring and parsing. Total: $O(N\cdot K)$.
+Mem Vis (BF): Creating and storing an array of all possible substring integers before checking.
+Mem Vis (Opt): A few integer/string variables for the current window (O(K) or $O(1)$ space).

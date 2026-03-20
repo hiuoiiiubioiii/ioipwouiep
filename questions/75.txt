@@ -1,0 +1,13 @@
+ID: 75
+Problem Title: Sort Colors
+Brute Force Method: Standard Library Sort Simply call `Arrays.sort()` or `sort()`. While fast, it uses $O(N \log N)$ and doesn't exploit the fact that there are only 3 unique values.
+BF Complexity Visuals: The Generic Sorter
+How to Draw BF: Draw a box labeled "QuickSort". Put `[2,0,2,1,1,0]` in, get `[0,0,1,1,2,2]` out. Note the $O(N \log N)$ cost.
+Optimised Pattern: Dutch National Flag (3-Pointer)
+Opt Vis. Technique: The Three-Zone Divider
+Dry Run (Opt): Maintain 3 pointers: `low` (boundary for 0s), `mid` (current element), and `high` (boundary for 2s). If `mid` is 0, swap with `low`. If 2, swap with `high`. If 1, just move `mid`.
+How to Draw (Opt): Draw an array. Place `L` at the start, `H` at the end, `M` in the middle. Show 0s being kicked to the left of `L` and 2s being kicked to the right of `H`.
+Opt Complexity Visuals: One-Pass Triple Pointer
+How to Draw Opt Complexity: Draw a line of length N. Show the `mid` pointer traversing it exactly once. Time: $O(N)$.
+Mem Vis (BF): Depends on the library sort (O(N) or $O(\log N)$).
+Mem Vis (Opt): Draw the array being modified in-place with just 3 integer pointers. Space: $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1711
+Problem Title: Count Good Meals
+Brute Force Method: Nested loop over all pairs. Check if `sum(arr[i], arr[j])` is a power of 2 using bitwise AND.
+BF Complexity Visuals: Complete Graph Connections.
+How to Draw BF: Draw array elements in a circle. Draw lines connecting every single node to every other node. $O(N^2)$.
+Optimised Pattern: Hash Map (Frequency Map) + Two Sum variant for 22 static targets.
+Opt Vis. Technique: Vending Machine / Target Lock.
+Dry Run (Opt): Iterate array. For each num, calculate `target - num` for all powers of 2 (up to 2^21). Look up targets in Hash Map. Add to answer, then add `num` to Map.
+How to Draw (Opt): Draw array and a box for Hash Map. Point to current element. Draw 22 branching arrows to potential "partners" in the Map.
+Opt Complexity Visuals: Linear Scan with Constant Magnifying Glass.
+How to Draw Opt Complexity: Draw array of size N. Draw a magnifying glass over one item split into 22 small rays. Label $O(22 \cdot N)$ -&gt; $O(N)$.
+Mem Vis (BF): Two integer pointers. $O(1)$ space.
+Mem Vis (Opt): Hash Map box scaling with unique array elements. $O(N)$ space.

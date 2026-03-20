@@ -1,0 +1,13 @@
+ID: 1101
+Problem Title: The Earliest Moment When Everyone Become Friends
+Brute Force Method: For every log entry (timestamp, X, Y), rebuild the entire friendship graph and check if it's connected (all nodes reachable from one).
+BF Complexity Visuals: A massive graph being redrawn from scratch for every single second in the logs.
+How to Draw BF: Logs: [T1, 0, 1], [T2, 2, 3]... After T1, is everyone connected? No. After T2? No. Write $O(L \cdot (N + L)$) where L is logs.
+Optimised Pattern: Union-Find (DSU) with Component Counting.
+Opt Vis. Technique: A "Merger Map". We start with N isolated islands. Every log entry is a bridge. We stop when only 1 island remains.
+Dry Run (Opt): Sort logs by timestamp. Use DSU. Initialize `count = N`. For each log (X, Y), if `find(X) != find(Y)`, union them and `count--`. When `count == 1`, return the timestamp.
+How to Draw (Opt): Draw N dots. Sort the logs. Draw lines between dots as you read logs. Next to the graph, write "Islands: N". Decrement it every time a line connects two separate groups.
+Opt Complexity Visuals: Logarithmic sorting followed by near-linear union operations.
+How to Draw Opt Complexity: Draw a sort box $O(L \log L)$ followed by a DSU line $O(L α(N)$). Write Time: $O(L \log L)$.
+Mem Vis (BF): Re-allocating the adjacency list multiple times.
+Mem Vis (Opt): A single parent array of size N. $O(N)$ space.

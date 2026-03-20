@@ -1,0 +1,13 @@
+ID: 1505
+Problem Title: Minimum Possible Integer After at Most K Adjacent Swaps
+Brute Force Method: Recursively try all combinations of adjacent swaps up to K depth, tracking the lexicographically smallest string.
+BF Complexity Visuals: K-ary Expansion Tree $O(N^K)$
+How to Draw BF: Draw a giant, rapidly expanding tree. The root is the starting string, branching out N times for each possible swap, extending K levels deep.
+Optimised Pattern: Greedy + Fenwick Tree / Segment Tree
+Opt Vis. Technique: Dynamic Sliding Window
+Dry Run (Opt): Scan for the smallest digit (0-9) within a window of size K. Bring it to the front. Use a Fenwick tree to track how indices shift dynamically so you don't actually modify the array $O(N)$ times.
+How to Draw (Opt): Write the string. Draw a bracket of size K. Find the min digit inside. Draw a curved arrow pulling it to the front. Mark a '+1 shift' counter on the elements it jumped over.
+Opt Complexity Visuals: Logarithmic Updates $O(N \log N)$
+How to Draw Opt Complexity: Draw a straight line of length N. Above each node, draw a tiny binary tree of height logN representing the cost to query/update the shift offset.
+Mem Vis (BF): Huge recursive call stack boxes stacking infinitely. $O(K)$ deep.
+Mem Vis (Opt): A 1D array representing the Fenwick Tree. Draw it as an array where certain indices hold sum brackets covering multiple preceding elements. $O(N)$.

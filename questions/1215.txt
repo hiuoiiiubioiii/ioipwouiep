@@ -1,0 +1,13 @@
+ID: 1215
+Problem Title: Stepping Numbers
+Brute Force Method: Iterate through every single number from 'low' to 'high'. Convert each number to a string and check if the absolute difference between every adjacent digit is exactly 1.
+BF Complexity Visuals: 1D Number Line Check
+How to Draw BF: Draw a massive horizontal number line from 'low' to 'high'. For every tick mark, draw a downward arrow into a "checker" box. Write $O(N \cdot \log10(N)$) where N is the difference between high and low.
+Optimised Pattern: BFS / DFS (State Space Generation)
+Opt Vis. Technique: Directed N-ary Tree (Digit Appending)
+Dry Run (Opt): Start with seed digits 1-9. To generate the next valid number, look at the last digit 'd'. Append 'd-1' and 'd+1' (ignoring &lt; 0 or &gt; 9). If the generated number is within [low, high], add it. Stop branching if it exceeds 'high'.
+How to Draw (Opt): Draw root nodes 1 through 9. From 1, draw branches to 10 and 12. From 12, draw branches to 121 and 123. Circle the numbers that fall within your target range. Put a red 'X' on branches that go over 'high'.
+Opt Complexity Visuals: Pruned Tree Branching
+How to Draw Opt Complexity: Draw a tree that starts wide but rapidly terminates branches with red Xs. Write $O(2^D)$ where D is the number of digits in 'high' (approx log10(high)).
+Mem Vis (BF): Draw basic static integer variables, but paired with millions of wasted CPU cycles.
+Mem Vis (Opt): Draw a Queue (FIFO) array if using BFS, or a Call Stack block if using DFS, storing up to max $O(2^D)$ numbers at once.

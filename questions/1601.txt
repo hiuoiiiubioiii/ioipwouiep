@@ -1,0 +1,13 @@
+ID: 1601
+Problem Title: Maximum Number of Achievable Transfer Requests
+Brute Force Method: Backtracking (Try taking/ignoring every request)
+BF Complexity Visuals: Recursion Tree Growth
+How to Draw BF: Draw a binary tree. Each level (M) splits into 2 branches (Take/Skip). Total leaves = 2^M.
+Optimised Pattern: Bitmasking / State Space Search
+Opt Vis. Technique: Binary State Enumeration
+Dry Run (Opt): List bitmasks 0 to (2^M)-1. For each 1-bit, trace +1/-1 on building capacities.
+How to Draw (Opt): Draw an array of N buildings. Underneath, write a bitmask (e.g., 101). Draw arrows between array indices based on 1s.
+Opt Complexity Visuals: Iteration Space Grid
+How to Draw Opt Complexity: Draw a massive grid of 2^M rows. Next to it, draw a small inner loop column of size M to show the $O(M \cdot 2^M)$ steps.
+Mem Vis (BF): Call Stack: Stack overlapping boxes vertically representing recursive calls.
+Mem Vis (Opt): 1D Array: Draw a single horizontal array of size N (indegrees) that resets to 0s each loop.

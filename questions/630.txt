@@ -1,0 +1,13 @@
+ID: 630
+Problem Title: Course Schedule III
+Brute Force Method: Try every possible subset of courses. For each subset, try all permutations to see if they can be completed by their deadlines.
+BF Complexity Visuals: Exponential Subsets + Permutations (2^N * N!).
+How to Draw BF: Draw a list of courses. Draw a tree where every level is a choice to "take" or "skip". It's a massive, infinite-looking forest.
+Optimised Pattern: Greedy with Max-Priority Queue.
+Opt Vis. Technique: Timeline Displacement / "Regret" Strategy.
+Dry Run (Opt): Sort courses by deadline. Add courses to a timeline. If a course exceeds its deadline, look back at all courses taken so far. Remove the longest course (Priority Queue) to make room.
+How to Draw (Opt): Draw a timeline. Add blocks. When a block goes past the "Deadline" line, find the fattest block already on the timeline and throw it out.
+Opt Complexity Visuals: $O(N \log N)$ for sorting and heap operations.
+How to Draw Opt Complexity: Draw a sorted list feeding into a small box (Heap). Write $O(N \log N)$.
+Mem Vis (BF): Draw all possible course sequences being stored in a recursion stack.
+Mem Vis (Opt): Draw a single Priority Queue (Heap) containing at most N course durations. $O(N)$.

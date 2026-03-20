@@ -1,0 +1,13 @@
+ID: 1062
+Problem Title: Longest Repeating Substring
+Brute Force Method: Generate every possible substring and count their frequencies using a HashMap. Return the length of the longest one with frequency &gt; 1.
+BF Complexity Visuals: A massive "shredder" turning the string into $O(N²)$ pieces and piling them into buckets.
+How to Draw BF: "aaaaa". Substrings: "a", "aa", "aaa"... Count occurrences. Write $O(N^3)$ due to string extraction/hashing.
+Optimised Pattern: Binary Search on Length + Rolling Hash (Rabin-Karp).
+Opt Vis. Technique: A "Length Filter". We guess a length, scan for duplicates using hashes, and adjust our guess based on the result.
+Dry Run (Opt): Binary search the length `L` from 1 to N. For length `L`, use a rolling hash to check for duplicates in $O(N)$. If duplicate found, try a longer `L`.
+How to Draw (Opt): Draw the string. Pick a middle length. Use a sliding window to generate hashes. Write hashes into a Set. If a duplicate exists, mark "True".
+Opt Complexity Visuals: Logarithmic search over a linear scan.
+How to Draw Opt Complexity: Draw a Binary Search tree of length values. Write Time: $O(N \log N)$.
+Mem Vis (BF): $O(N³)$ space for all substring objects.
+Mem Vis (Opt): $O(N)$ space for storing hashes in a Set.

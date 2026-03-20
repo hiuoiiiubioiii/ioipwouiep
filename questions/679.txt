@@ -1,0 +1,13 @@
+ID: 679
+Problem Title: 24 Game
+Brute Force Method: Brute force: try every permutation of the 4 numbers and every combination of the 4 operators (+, -, *, /) and all possible parenthesis placements.
+BF Complexity Visuals: Exhaustive Permutation &amp; Operator Tree.
+How to Draw BF: Draw 4 numbers. Branch into every possible math expression. Note the complexity of fractions and divisions. $O(\text{Constant but high})$.
+Optimised Pattern: Backtracking / Divide and Conquer.
+Opt Vis. Technique: Recursive Number Reduction.
+Dry Run (Opt): Pick any 2 numbers from the current list (6 pairs). Apply all 4 operations. Create a new list with the result and the remaining numbers. Repeat until 1 number is left. Check if it's 24.
+How to Draw (Opt): Draw 4 circles. Merge 2 circles into 1 using an operator. Repeat until 1 circle remains. Use a tree structure to track the "merges."
+Opt Complexity Visuals: $O(1)$ because the input size is always 4.
+How to Draw Opt Complexity: Draw a small, fixed-depth decision tree. Write $O(9216 \text{combinations})$.
+Mem Vis (BF): Draw every intermediate expression string.
+Mem Vis (Opt): Draw a recursion stack with a maximum depth of 4. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 2851
+Problem Title: String Transformation
+Brute Force Method: Simulate the transformation step-by-step for k operations. At each step, generate all possible cyclic shifts and count how many match the target string.
+BF Complexity Visuals: $O(K \cdot N^2)$ Simulation
+How to Draw BF: Draw string S. Draw N-1 arrows to all possible shifts. For each shift, draw another N-1 arrows. Repeat K times. Show the state count exploding.
+Optimised Pattern: KMP (String Matching) + Matrix Exponentiation (DP)
+Opt Vis. Technique: State Transition Matrix
+Dry Run (Opt): 1. Use KMP to find all indices where s matches target in the circular string. 2. Define two states: dp[0] (matches target) and dp[1] (doesn't match). 3. Create a 2 x 2 transition matrix. 4. Use Binary Exponentiation to raise the matrix to power k in $O(\log K)$.
+How to Draw (Opt): Draw two circles labeled "Match" and "No Match." Draw weighted arrows between them representing the number of ways to transition. Show a "Fast Power" box that squares the transition matrix repeatedly.
+Opt Complexity Visuals: $O(N + \log K)$
+How to Draw Opt Complexity: Draw a box for KMP/Z-algorithm $O(N)$. Draw a tiny box for Matrix Power $O(\log K)$. Total time is dominated by the initial string match.
+Mem Vis (BF): Visualize $O(N \cdot K)$ space if trying to store DP states for every step.
+Mem Vis (Opt): Visualize a 2 x 2 matrix and the KMP pi array. Space $O(N)$.

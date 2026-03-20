@@ -1,0 +1,13 @@
+ID: 2816
+Problem Title: Double a Number Represented as a Linked List
+Brute Force Method: Traverse the list to extract all digits. Build a massive string or BigInt. Multiply by 2. Convert the resulting string back into a brand new Linked List.
+BF Complexity Visuals: String Allocation Pipeline
+How to Draw BF: Draw a Linked List feeding into a massive String Box, passing through a Math block, outputting a new String Box, and feeding into a new Linked List.
+Optimised Pattern: Single Pass with Lookahead (In-Place)
+Opt Vis. Technique: Look-ahead Carry Pointer
+Dry Run (Opt): Traverse left to right. Double the current node's value and take modulo 10. Look at the NEXT node; if its value is 5 or greater, it will generate a carry, so add 1 to the CURRENT node. Handle a new head node if the first digit is ≥ 5.
+How to Draw (Opt): Draw the linked list. Above each node, write its doubled value. Draw a small arrow pointing from the right neighbor to the current node with a "+1" if the neighbor is ≥ 5. Update the node values in place.
+Opt Complexity Visuals: Linear Traversal Line
+How to Draw Opt Complexity: Draw a single straight line from the Head to the Tail of the list. Mark it $O(N)$.
+Mem Vis (BF): Visualize huge, temporary String or BigInt objects dynamically allocated on the heap, wasting $O(N)$ memory.
+Mem Vis (Opt): Visualize strict $O(1)$ auxiliary space. No new nodes are created (except potentially one new head node). Everything is modified in-place.

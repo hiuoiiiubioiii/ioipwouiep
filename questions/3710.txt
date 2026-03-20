@@ -1,0 +1,13 @@
+ID: 3710
+Problem Title: Maximum Partition Factor (Hard)
+Brute Force Method: Try cutting the array at every possible combination of indices (2^N partitions).
+BF Complexity Visuals: Binary Partition Tree $O(2^N)$.
+How to Draw BF: Draw the array. Draw lines branching to "cut here" and "don't cut here" for every single gap.
+Optimised Pattern: Dynamic Programming with Memoization
+Opt Vis. Technique: State Transition Array
+Dry Run (Opt): Calculate max factor for subproblems (prefix arrays). Store result. Build up to full array.
+How to Draw (Opt): Draw an empty array DP. For each cell, look back at previous cells, apply factor math, and write the max value.
+Opt Complexity Visuals: $O(N^2)$ or $O(N)$ depending on math optimization.
+How to Draw Opt Complexity: Draw a 1D array filling up left-to-right, with backward arrows showing lookups.
+Mem Vis (BF): Deep recursive call stack.
+Mem Vis (Opt): 1D DP Array memory block.

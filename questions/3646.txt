@@ -1,0 +1,13 @@
+ID: 3646
+Problem Title: Next Special Palindrome Number (Hard)
+Brute Force Method: Iterate through every integer starting from N+1, checking isPalindrome() and then checking "Special" digit rules one by one. $O(\text{Result} - N)$.
+BF Complexity Visuals: Infinite Number Line Scan.
+How to Draw BF: Draw a number line. Start at N. Step by 1... step by 1... for every single number, check all rules. If the next palindrome is 10 million away, the program times out.
+Optimised Pattern: Mirroring + Middle-Digit Increment. Construct the palindrome from the first half of N, then adjust based on "Special" digit constraints.
+Opt Vis. Technique: Butterfly Fold Construction.
+Dry Run (Opt): Take the first half of the digits of N. Mirror them to create a palindrome. If this is smaller than N or violates special rules, increment the middle digit and re-mirror.
+How to Draw (Opt): Draw a number (e.g., 12345). Draw a vertical dashed line in the middle. "Fold" the left side (12) onto the right side to get 12321. Adjust the '3' if needed.
+Opt Complexity Visuals: Logarithmic Construction Map.
+How to Draw Opt Complexity: Draw an arrow to the "Half-Length" of the number. Write $O(\log10 N)$. It takes constant time to construct the number regardless of distance.
+Mem Vis (BF): Millions of integer-to-string conversions filling the heap with temporary objects.
+Mem Vis (Opt): A small array of digits (size ~10-20). Space $O(\log N)$.

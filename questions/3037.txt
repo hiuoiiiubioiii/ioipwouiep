@@ -1,0 +1,13 @@
+ID: 3037
+Problem Title: Find Pattern in Infinite Stream II
+Brute Force Method: Read bits one by one. For every new bit, check the last M bits against the pattern.
+BF Complexity Visuals: Bitwise Window Shift
+How to Draw BF: Draw a stream of 0s and 1s. Draw a sliding box of size M shifting one bit at a time, re-checking the entire box.
+Optimised Pattern: KMP with Stream State
+Opt Vis. Technique: Continuous State Machine
+Dry Run (Opt): Maintain a single state variable (index in pattern). As a new bit arrives, look up the next state in the LPS logic. When state == pattern.length, record the index.
+How to Draw (Opt): Draw the pattern. Above it, draw a "Current Match" pointer. As a stream bit comes in, show the pointer moving forward or jumping back via LPS.
+Opt Complexity Visuals: $O(1)$ Per Bit
+How to Draw Opt Complexity: Draw the stream. At each bit, draw a single "Next State" box. Total time $O(\text{Stream}_\text{Length})$.
+Mem Vis (BF): A shifting bit-buffer that requires frequent resizing or copying.
+Mem Vis (Opt): A single integer current_match_index and the precomputed LPS array.

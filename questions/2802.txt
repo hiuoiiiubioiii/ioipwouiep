@@ -1,0 +1,13 @@
+ID: 2802
+Problem Title: Find The K-th Lucky Number
+Brute Force Method: Generate all lucky numbers (strings of 4s and 7s) in level-order (BFS) and put them in a list. Return the K-th element. $O(K)$.
+BF Complexity Visuals: BFS Lucky Tree Expansion
+How to Draw BF: Draw a root. Branch to '4' and '7'. From '4', branch to '44' and '47'. Continue until you have K nodes.
+Optimised Pattern: Queue Memory (Visualizing the BFS queue growing linearly with K, potentially millions of strings).
+Opt Vis. Technique: Binary Representation Mapping
+Dry Run (Opt): Logarithmic Number Mapping
+How to Draw (Opt): Observe that lucky numbers are effectively a binary tree. The number of nodes in levels 1 to L is 2^L+1-2. Find the length L of the K-th number, then map the remainder of K to a binary string where 0='4' and 1='7'.
+Opt Complexity Visuals: Draw a binary tree. Label the nodes by their rank (1, 2, 3...). Notice that the K-th node's value corresponds to the binary path from the root.
+How to Draw Opt Complexity: $O(\log K)$
+Mem Vis (BF): Draw a single path down a tree. Label it $O(\log K)$ because we only calculate the digits of the answer.
+Mem Vis (Opt): $O(\log K)$ String Buffer (Draw a single small character array for the final answer).

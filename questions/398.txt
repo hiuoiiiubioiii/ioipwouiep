@@ -1,0 +1,13 @@
+ID: 398
+Problem Title: Random Pick Index
+Brute Force Method: Store all indices for each number in a HashMap (e.g., `Map&gt;`). For `pick(target)`, return a random element from the list.
+BF Complexity Visuals: Pre-computed Index Map
+How to Draw BF: Draw a table where keys are numbers and values are lists of indices. Draw a "Dice" being rolled over the list. $O(n)$ space.
+Optimised Pattern: Reservoir Sampling (Memory Efficient)
+Opt Vis. Technique: Streaming Probability Selection
+Dry Run (Opt): Iterate through the array. When you find the `target`, increment a counter `count`. Replace the `result` with the current index with probability 1/count.
+How to Draw (Opt): Draw the array. Move a pointer. Every time it hits the target, draw a "Dice" and show the probability 1/k of updating the "Result" box.
+Opt Complexity Visuals: Single-Pass Probabilistic Sweep
+How to Draw Opt Complexity: Draw a single straight line through the array. Above it, write the 1/k logic. Label it $O(n)$ time, $O(1)$ extra space.
+Mem Vis (BF): A complete Map of all indices in the array. Draw a massive table. $O(n)$.
+Mem Vis (Opt): Zero extra memory beyond the input array. Draw one "result" and one "count" variable box. $O(1)$.

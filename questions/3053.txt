@@ -1,0 +1,13 @@
+ID: 3053
+Problem Title: Classifying Triangles by Lengths (SQL)
+Brute Force Method: Manually check every row with multiple nested if-statements in a procedural loop.
+BF Complexity Visuals: Nested Decision Tree
+How to Draw BF: Draw a flowchart with branches for A+B&gt;C, then A=B=C, then A=B, etc.
+Optimised Pattern: Case When Logic (Geometric Constraints)
+Opt Vis. Technique: Categorical Flowchart
+Dry Run (Opt): First, validate if it's a triangle using A+B &gt; C. If true, nested logic checks for number of equal sides (3 = Equilateral, 2 = Isosceles, 0 = Scalene).
+How to Draw (Opt): Draw a 3-column table for A, B, C. Write "Invalid" for any row where the sum of two isn't &gt; third. For the rest, write the category based on the number of unique values.
+Opt Complexity Visuals: $O(N)$ Row-Wise Pass
+How to Draw Opt Complexity: Draw one straight vertical arrow moving down the database table. Label it $O(N)$.
+Mem Vis (BF): Buffer for row-by-row string concatenation.
+Mem Vis (Opt): Zero extra structure; the logic is applied to each row in a single stream.

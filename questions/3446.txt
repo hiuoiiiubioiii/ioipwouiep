@@ -1,0 +1,13 @@
+ID: 3446
+Problem Title: Sort Matrix by Diagonals
+Brute Force Method: For every diagonal, extract elements into a list, sort them, and manually place them back based on coordinates. $O(N² \log N)$
+BF Complexity Visuals: Diagonal Sweep Arrows.
+How to Draw BF: Draw the matrix. Draw arrows starting from column 0 and row 0. Each arrow represents an independent list sort.
+Optimised Pattern: Diagonal Indexing (i - j) + HashMap/Bucket Sort. $O(N²)$
+Opt Vis. Technique: Color-coded Coordinate Groups.
+Dry Run (Opt): Group cells by (i - j). Diagonals share the same result. Sort each bucket and re-map based on the non-increasing/non-decreasing rule.
+How to Draw (Opt): Draw the matrix. In each cell, write the value (i - j). Circle all cells with the same number to reveal the diagonals.
+Opt Complexity Visuals: Linear Matrix Pass.
+How to Draw Opt Complexity: Draw a grid and shade it in one continuous S-shaped pass to show you visit each cell exactly twice.
+Mem Vis (BF): Dozens of temporary list allocations during diagonal extraction.
+Mem Vis (Opt): A single Hash Map where keys are (i - j) and values are sorted arrays.

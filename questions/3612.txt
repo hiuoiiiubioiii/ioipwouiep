@@ -1,0 +1,13 @@
+ID: 3612
+Problem Title: Process String with Special Operations I (Med)
+Brute Force Method: Using string concatenation str = str.substring() + new_char or `.replace()` for every single operation.
+BF Complexity Visuals: String Shift Dominoes.
+How to Draw BF: Draw an array of characters. Insert a character in the middle, then draw arrows shifting every character to its right by one slot. Write $O(N^2)$.
+Optimised Pattern: Single-pass Simulation using a Stack or a dynamically sized Array/StringBuilder.
+Opt Vis. Technique: Vertical Stack Pushing.
+Dry Run (Opt): Read string left to right. Push valid characters into a bucket. When a special operation occurs, look at the top item in the bucket and mutate/pop it.
+How to Draw (Opt): Draw the input string on top. Draw an empty vertical box (Stack) below. Cross off characters from the string and re-write them inside the box one by one.
+Opt Complexity Visuals: Single Horizontal Timeline.
+How to Draw Opt Complexity: Draw an arrow moving strictly left-to-right across the input string exactly once. Write $O(N)$.
+Mem Vis (BF): Draw overlapping, slightly mutated copies of the entire string piling up in memory to be garbage-collected.
+Mem Vis (Opt): Draw one contiguous array (StringBuilder buffer) filling up linearly. Space $O(N)$.

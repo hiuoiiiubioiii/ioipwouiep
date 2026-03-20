@@ -1,0 +1,13 @@
+ID: 3349
+Problem Title: Adjacent Increasing Subarrays Detection I
+Brute Force Method: Check every possible pair of adjacent subarrays of length K and verify if both are strictly increasing.
+BF Complexity Visuals: Nested Subarray Scan
+How to Draw BF: Draw the array. Bracket two adjacent windows. Move them one index at a time. For each move, re-verify all 2K elements. $O(N \cdot K)$.
+Optimised Pattern: One-Pass Precomputation
+Opt Vis. Technique: Increasing Block Counter
+Dry Run (Opt): Calculate the length of the increasing sequence ending at each index. Then check if inc[i] >= K and inc[i+K] >= K.
+How to Draw (Opt): Draw the array. Above it, write the length of the "increasing streak" so far (e.g., 1, 2, 3, 1, 2). To check for K=2, look for two 2s that are K distance apart.
+Opt Complexity Visuals: Single-Pass Linear Arrow
+How to Draw Opt Complexity: Draw a straight line N. One pass to build the `inc` array, one pass to check. $O(N)$.
+Mem Vis (BF): $O(N)$ to store results of all N^2 checks in a matrix.
+Mem Vis (Opt): A single 1D array of size N (or $O(1)$ if checking on the fly).

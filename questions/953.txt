@@ -1,0 +1,13 @@
+ID: 953
+Problem Title: Verifying an Alien Dictionary
+Brute Force Method: For every pair of adjacent words, check every possible alphabetical permutation until you find one that makes the list sorted.
+BF Complexity Visuals: $O(26!)$. Checking against all possible alien alphabets.
+How to Draw BF: Draw a list of 26! possible alphabets. For each, draw a "Sorted?" checkmark next to the word list.
+Optimised Pattern: Direct Mapping + Pairwise Check
+Opt Vis. Technique: "The Translation Sheet." Convert the alien alphabet into a 26-slot lookup table where each alien letter maps to its "rank" (0-25). Then check adjacent words once.
+Dry Run (Opt): Create `orderMap[char] = index`. Compare words `A` and `B`: find first differing char; if `orderMap[A[i]] &gt; orderMap[B[i]]`, return false. If `A` is a prefix of `B` and longer, return false.
+How to Draw (Opt): Draw two words vertically. Draw a "Comparison Bridge" between the first two letters. Use the "Translation Table" to check which letter is "heavier."
+Opt Complexity Visuals: $O(\text{Total Characters})$. A single linear pass through all words.
+How to Draw Opt Complexity: Draw a horizontal timeline through the words. For each pair, draw a single "Comparison" box that either passes or fails.
+Mem Vis (BF): $O(26!)$ to store or iterate alphabet permutations.
+Mem Vis (Opt): $O(1)$ extra space (fixed 26-size array). Draw one small row of 26 boxes labeled 'Alien Rank'.

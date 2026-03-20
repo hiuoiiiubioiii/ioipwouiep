@@ -1,0 +1,13 @@
+ID: 2097
+Problem Title: Valid Arrangement of Pairs
+Brute Force Method: Backtracking to try every possible permutation of the given pairs to form a continuous chain.
+BF Complexity Visuals: Factorial Permutation Tree
+How to Draw BF: Draw pairs as dominoes. Try every combination to see which ones "snap" together. $O(N!)$.
+Optimised Pattern: Hierholzer’s Algorithm (Eulerian Path)
+Opt Vis. Technique: Non-Reversible Threading
+Dry Run (Opt): Treat pairs as directed edges in a graph. Find the start node (OutDegree = InDegree + 1). Use DFS to find the Eulerian path, pushing nodes to a stack as you backtrack.
+How to Draw (Opt): Draw the graph nodes. Start at the "Source". Follow edges, erasing them as you go. If you get stuck, move the node to a "Finished" list and step back.
+Opt Complexity Visuals: Linear Edge Traversal
+How to Draw Opt Complexity: Draw a single pass through all edges. Total time $O(V + E)$.
+Mem Vis (BF): Massive recursion stack for all permutation attempts.
+Mem Vis (Opt): Adjacency List (Map) + Frequency Map for In/Out Degrees. Space $O(N)$.

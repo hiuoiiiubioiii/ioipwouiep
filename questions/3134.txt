@@ -1,0 +1,13 @@
+ID: 3134
+Problem Title: Median of Uniqueness Array
+Brute Force Method: Generate every single subarray, count unique elements in each, put counts in an array, sort, find median. $O(N^3 \log N)$
+BF Complexity Visuals: Dense triangle of subarray statistics leading to a sorting funnel.
+How to Draw BF: Draw the array. Bracket every possible segment. Count unique numbers in each bracket. Write counts in a long list and sort it.
+Optimised Pattern: Binary Search on Answer + Sliding Window
+Opt Vis. Technique: Monotonic "Uniqueness Threshold" Slider
+Dry Run (Opt): Binary search for the median M in range [1, N]. For a guess M, use a sliding window to count how many subarrays have <= M unique elements.
+How to Draw (Opt): Draw a number line 1 to N. Pick midpoint. Below it, draw an array with two pointers L and R and a frequency map, counting valid windows.
+Opt Complexity Visuals: log N iterations of an $O(N)$ scan.
+How to Draw Opt Complexity: Draw a Binary Search tree where each node contains a horizontal $O(N)$ timeline. $O(N \log N)$.
+Mem Vis (BF): Massive $O(N^2)$ array storing counts for every subarray.
+Mem Vis (Opt): A frequency hash map of size N for the sliding window. $O(N)$.

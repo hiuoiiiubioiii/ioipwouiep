@@ -1,0 +1,13 @@
+ID: 3149
+Problem Title: Find the Minimum Cost Array Permutation
+Brute Force Method: Generate all N! permutations and calculate the cost for each. $O(N \cdot N!)$
+BF Complexity Visuals: A factorial tree branching N times at every level.
+How to Draw BF: Write 0...N. Try every order. 0,1,2..., 0,2,1..., etc. Calculate |perm[i] - adj[perm[i+1]]| for each.
+Optimised Pattern: Bitmask DP (TSP Variant)
+Opt Vis. Technique: The Subset State-Space Graph
+Dry Run (Opt): `dp(mask, last)`: min cost to complete the permutation given the set of used numbers (`mask`) and the previous number added (`last`). Use bitmask to represent the set.
+How to Draw (Opt): Draw a column of binary numbers (masks). Draw arrows between them representing adding a new number. Use memoization to avoid repeating the same mask-last state.
+Opt Complexity Visuals: Exponential state-space (2^N x N) with $O(N)$ transitions.
+How to Draw Opt Complexity: Draw a grid of size 2^N x N. Label each cell calculation as $O(N)$. Total $O(2^N \cdot N^2)$.
+Mem Vis (BF): Massive N! permutation lists in memory.
+Mem Vis (Opt): A 2D DP table of size 2^N x N. $O(2^N \cdot N)$.

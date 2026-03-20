@@ -1,0 +1,13 @@
+ID: 3868
+Problem Title: Minimum Cost to Equalize Arrays Using Swaps (Med.)
+Brute Force Method: BFS on Permutations: Treat the array as a node in a graph. Each swap is an edge. Use BFS to find the shortest path to the target array state.
+BF Complexity Visuals: A state explosion of N! nodes in a graph.
+How to Draw BF: Draw [3, 1, 2]. Draw edges for every possible swap. Hope you reach [1, 2, 3] quickly. Write $O(N!)$.
+Optimised Pattern: Greedy / Cycle Counting with Costs.
+Opt Vis. Technique: A "Distance-to-Target" calculation using the positions of elements.
+Dry Run (Opt): 1. If all elements are the same, cost is 0. 2. If swaps are between any two indices, count how many elements are "out of place." If swaps have specific costs, use a Minimum Spanning Tree (MST) approach or greedy swaps if cost is uniform.
+How to Draw (Opt): Draw the current array and the goal array. Draw arrows from each number to its goal position. Count how many arrows cross.
+Opt Complexity Visuals: Linear scan of positions.
+How to Draw Opt Complexity: Draw two lines of N. Write "Compare indices: $O(N)$". Total: $O(N)$.
+Mem Vis (BF): Queue storing N! array states.
+Mem Vis (Opt): $O(1)$ extra space if only counting mismatches; $O(N)$ if tracking positions in a map.

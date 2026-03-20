@@ -1,0 +1,13 @@
+ID: 860
+Problem Title: Lemonade Change
+Brute Force Method: Maintain an array of every bill received. For change, use a nested loop to search the array for combinations that sum to 5 or 15.
+BF Complexity Visuals: Exhaustive Combination Search. $O(N^2)$.
+How to Draw BF: Draw a wallet getting stuffed with 5, 10, 20. For every new customer, draw arrows scanning through every single bill in the wallet to find change.
+Optimised Pattern: Greedy Billing (Counter-based).
+Opt Vis. Technique: Cashier's Till Logic.
+Dry Run (Opt): Only track the COUNT of 5 and 10 bills. When you need to give 15 change, ALWAYS try to give one 10 and one 5 first. Saving 5 bills is greedy because they are more "flexible" than 10s.
+How to Draw (Opt): Draw two bins: "5s" and "10s". When a 20 bill arrives, take one from the 10-bin and one from the 5-bin. If the 10-bin is empty, take three from the 5-bin.
+Opt Complexity Visuals: Single Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw a single straight line. Each customer is a $O(1)$ update to the counters.
+Mem Vis (BF): Dynamic List: Draw an array that grows to size N as the day progresses.
+Mem Vis (Opt): $O(1)$ Space: Draw two integer variables 'five' and 'ten'.

@@ -1,0 +1,13 @@
+ID: 2425
+Problem Title: Bitwise XOR of All Pairings
+Brute Force Method: Iterate through every element in nums1 and every element in nums2. Calculate XOR for every pair and accumulate in a running XOR total.
+BF Complexity Visuals: N x M Bipartite Web
+How to Draw BF: Draw two columns of nodes. Draw lines from every node in A to every node in B. Label $O(N \cdot M)$ total lines.
+Optimised Pattern: XOR Parity Property (Even/Odd Counts)
+Opt Vis. Technique: Cancellation Pulse
+Dry Run (Opt): If nums2.length is even, every element in nums1 is XORed an even number of times (cancels to 0). If odd, XOR the element. Apply same logic to nums2.
+How to Draw (Opt): Draw the two arrays. Write "Count" next to them. If Count is even, draw a big '0' or cross out the array. If odd, draw a 'Σ' (XOR sum) symbol.
+Opt Complexity Visuals: Dual Linear Scan Line
+How to Draw Opt Complexity: Draw two separate lines representing the pass through each array. Label $O(N + M)$ Time.
+Mem Vis (BF): Draw a massive list of all pairing results (if stored). $O(N \cdot M)$.
+Mem Vis (Opt): Draw one integer variable `result`. $O(1)$ Space.

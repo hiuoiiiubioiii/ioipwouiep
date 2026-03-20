@@ -1,0 +1,13 @@
+ID: 611
+Problem Title: Valid Triangle Number
+Brute Force Method: Three nested loops picking every possible combination of 3 sides and checking x + y &gt; z.
+BF Complexity Visuals: 3D volumetric grid of combinations (N x N x N).
+How to Draw BF: Draw an array. Point three fingers at indices 0, 1, and 2. Vigorously slide the third finger to the end, then move the second, repeating for every combination. Write $O(N^3)$.
+Optimised Pattern: Sort + Two Pointers.
+Opt Vis. Technique: Anchored Right Boundary with Squeezing Left/Mid Pointers.
+Dry Run (Opt): Sort array. Anchor 'k' at the very end. Place 'i' at start, 'j' at k-1. If arr[i]+arr[j] &gt; arr[k], then ALL elements between i and j form valid triangles with j and k. Tally (j-i), move j left. Else move i right.
+How to Draw (Opt): Draw sorted array. Box the last element (Target). Place 'L' at start and 'R' right before Target. If L+R &gt; Target, draw a sweeping arc from L to R showing all are valid.
+Opt Complexity Visuals: $O(N \log N)$ sorting phase + $O(N^2)$ two-pointer convergence.
+How to Draw Opt Complexity: Draw a funnel representing sorting, followed by a wide square (O(N^2)) representing the two pointers sliding inward across N anchored positions.
+Mem Vis (BF): Draw a massive hypothetical list storing every evaluated triplet in memory.
+Mem Vis (Opt): Draw the array modified in place (sorting space $O(1)$ to $O(\log N)$), with just three integer variables: i, j, k.

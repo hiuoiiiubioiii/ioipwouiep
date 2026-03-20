@@ -1,0 +1,13 @@
+ID: 1205
+Problem Title: Monthly Transactions II (SQL)
+Brute Force Method: Perform multiple separate queries (one for approved, one for chargebacks) grouping by month/country, then join them using subqueries or FULL OUTER JOIN on a cross-product of dates. Handles nulls poorly.
+BF Complexity Visuals: Tangled Web / Spaghetti Graph
+How to Draw BF: Draw two separate tables. Draw complex, tangled lines connecting rows between them, highlighting the expensive repeated scans of the Transactions table for different conditions. Write $O(N \cdot M)$.
+Optimised Pattern: UNION ALL + Unified GROUP BY (CTEs)
+Opt Vis. Technique: Data Funneling / Stacking Blocks
+Dry Run (Opt): Extract 'approved' transactions into a clean virtual pile. Extract 'chargebacks' (joining with transactions to get country/amount) into another virtual pile. Stack both piles on top of each other (UNION ALL). Push the stacked pile through a single "GroupBy" funnel.
+How to Draw (Opt): Draw a box labeled 'CTE_Approved'. Draw a box labeled 'CTE_Chargeback'. Draw arrows from both boxes feeding into a single large funnel labeled 'UNION ALL'. Below the funnel, draw a table with final aggregate columns (sums/counts).
+Opt Complexity Visuals: Parallel Processing Pipelines merging into Linear Aggregation
+How to Draw Opt Complexity: Draw two separate linear scans $O(N)$ + $O(M)$ merging into a single hash-map bucket structure representing $O(N+M)$ grouping time.
+Mem Vis (BF): Draw multiple temporary database tables materializing in memory, taking up vast redundant disk space.
+Mem Vis (Opt): Draw a single, unified intermediate table with a 'type' column (distinguishing 'approved' vs 'chargeback') feeding into a Hash-based Aggregation memory structure.

@@ -1,0 +1,13 @@
+ID: 2722
+Problem Title: Join Two Arrays by ID
+Brute Force Method: Nested loop (O(N*M)): For every object in `arr1`, iterate through `arr2` to find a matching ID. If found, merge; otherwise, add to result.
+BF Complexity Visuals: N x M Matching Grid
+How to Draw BF: Draw `arr1` on the left and `arr2` on the right. Draw lines from every element in 1 to every element in 2 looking for a match.
+Optimised Pattern: Temporary Object Accumulation (Creating massive amounts of intermediate merged objects).
+Opt Vis. Technique: HashMap Merging (O(N+M) Time)
+Dry Run (Opt): Key-Value Aggregator
+How to Draw (Opt): Create a single Map. Iterate through `arr1` and put every object into the Map using `id` as the key. Iterate through `arr2`; if an ID exists, merge properties into the existing object. Sort keys at the end.
+Opt Complexity Visuals: Draw a "Registry" (the Map). Drop items from list 1 into it. Drop items from list 2 in; if a box is already occupied, merge the contents inside that box.
+How to Draw Opt Complexity: Linear Hash Map + Sort
+Mem Vis (BF): Draw two sequential arrows (one for each array) followed by a sort block. Total: $O(N+M + K \log K)$.
+Mem Vis (Opt): Dictionary Heap Space (Draw a Map structure showing unique IDs pointing to merged object values).

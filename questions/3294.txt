@@ -1,0 +1,13 @@
+ID: 3294
+Problem Title: Convert Doubly Linked List to Array II
+Brute Force Method: From the given node, traverse forward to find all following nodes, then traverse backward to find all preceding nodes. Store and reverse the backward part. $O(N)$.
+BF Complexity Visuals: Bi-directional Collection Map
+How to Draw BF: Draw the node with arrows pointing both ways. Draw two "collection buckets." Fill the right bucket moving forward and the left bucket moving backward. Show the concatenation step.
+Optimised Pattern: Two-Pass Linear Traversal (Head-to-Tail)
+Opt Vis. Technique: Head-First Pointer Stream
+Dry Run (Opt): 1. Move backward using `node.prev` until you reach the head (where `prev` is NULL). 2. Traverse forward from the head to the tail, adding values to your result array.
+How to Draw (Opt): Draw the DLL. Put your pen on the given node. Draw a dashed line moving left until the start. From the start, draw a solid line all the way to the right, labeling each node value.
+Opt Complexity Visuals: Two-Stage Sequential Pass
+How to Draw Opt Complexity: Draw a straight line of length N. Draw an arrow moving left, then an arrow moving the full length right. Total: $O(2N)$ rightarrow $O(N)$.
+Mem Vis (BF): Two separate arrays for backward/forward results.
+Mem Vis (Opt): A single result array and a single pointer (O(1) extra space).

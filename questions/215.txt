@@ -1,0 +1,13 @@
+ID: 215
+Problem Title: Kth Largest Element in an Array
+Brute Force Method: Standard Array Sort and return the element at index N - K.
+BF Complexity Visuals: Merge Sort Tree / $O(N \log N)$ Curve.
+How to Draw BF: Draw a full array splitting down to single elements and merging back up fully sorted. Select the target index.
+Optimised Pattern: Quickselect (Hoare's Partition) OR Min-Heap
+Opt Vis. Technique: Partitioning Array Pivot
+Dry Run (Opt): Pick a pivot. Move smaller elements left, larger elements right. If pivot ends up at index N-K, return it. If less, search right half. If more, search left half.
+How to Draw (Opt): Draw an array. Circle a pivot. Draw arrows sorting elements around it. Draw a vertical line at the N-K index to show which half you discard.
+Opt Complexity Visuals: Converging Funnel: $O(N)$ Average Time.
+How to Draw Opt Complexity: Draw a bar of length N. Below it, draw a bar of N/2, then N/4. The sum is a geometric series bounded by 2N = $O(N)$.
+Mem Vis (BF): Full Array Copy for sorting.
+Mem Vis (Opt): In-Place Swap Array: Draw curved arrows showing elements swapping indices within the same boundary box. No extra space used.

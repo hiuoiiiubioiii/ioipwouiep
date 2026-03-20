@@ -1,0 +1,13 @@
+ID: 2741
+Problem Title: Special Permutations
+Brute Force Method: Generate all N! permutations. For each, check if nums[i] % nums[i+1] == 0 or nums[i+1] % nums[i] == 0 for all i. $O(N! \cdot N)$.
+BF Complexity Visuals: Factorial Permutation Tree
+How to Draw BF: Draw a tree where each level has N-1, N-2 branches. Even for N=14, this results in over 87 billion leaf nodes.
+Optimised Pattern: Stack Frame Explosion (Visualizing a call stack N-levels deep repeated billions of times).
+Opt Vis. Technique: Bitmask Dynamic Programming (O(N^2 * 2^N))
+Dry Run (Opt): State Space Compression
+How to Draw (Opt): Use a DP state dp(mask, last_index). mask tracks used elements; last_index ensures the next element is "special" relative to the previous. Sum up recursive results with memoization.
+Opt Complexity Visuals: Draw a grid where rows are 0 to 2^N (binary numbers) and columns are array indices. Draw arrows from mask to mask | (1 &lt;&lt; next) if the special condition is met.
+How to Draw Opt Complexity: Exponential Bound $O(2^N)$
+Mem Vis (BF): Draw a 2D table of size N x 2^N. Label it $O(N^2 2^N)$ to show it scales with the bitmask.
+Mem Vis (Opt): Memoization Table (Draw a 2D array in memory where each cell stores a previously computed count of permutations).

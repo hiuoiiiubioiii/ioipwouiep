@@ -1,0 +1,13 @@
+ID: 1323
+Problem Title: Maximum 69 Number
+Brute Force Method: Convert the integer to a string, generate all N possible string variations by replacing one digit, parse all back to integer, and use `max()`.
+BF Complexity Visuals: String Factory Overhead
+How to Draw BF: Draw an integer entering a factory, splitting into multiple `String` objects, undergoing character replacement, parsing back to integers, and fighting for the highest value.
+Optimised Pattern: First-Occurrence String Search / Math
+Opt Vis. Technique: Left-to-Right Greedy Scan
+Dry Run (Opt): Convert to string/char array. Scan strictly left-to-right. The absolute first time you see a '6', change it to '9' and instantly return.
+How to Draw (Opt): Write the number. Put your pen on the leftmost digit. Move right. If you see a '6', cross it out, write '9', and stop immediately.
+Opt Complexity Visuals: Single Short-Circuit Arrow
+How to Draw Opt Complexity: Draw an array of digits. Draw a single arrow pointing left-to-right that abruptly stops in the middle, proving worst-case $O(L)$ where L is length.
+Mem Vis (BF): Garbage Collection Nightmare: Repeated heap allocations for temporary strings throwing off the garbage collector.
+Mem Vis (Opt): In-place Char Array Mutation: Convert to `std::string` or `char[]`, mutate one byte in-place, and `stoi()` back. Negligible memory footprint.

@@ -1,0 +1,13 @@
+ID: 1431
+Problem Title: Kids With the Greatest Number of Candies
+Brute Force Method: Nested Loops. For each kid, add extraCandies. Then, loop through all other kids to see if anyone has more than the current kid's new total.
+BF Complexity Visuals: Quadratic Comparison Grid
+How to Draw BF: Draw an array of kids. For Kid A, draw arrows to Kids B, C, D... checking candy counts. Repeat for Kid B. Label $O(N²)$.
+Optimised Pattern: Two-Pass Greedy (Max Tracking)
+Opt Vis. Technique: High-Water Mark Strategy
+Dry Run (Opt): Pass 1: Find the absolute maximum candy count in the array. Pass 2: For each kid, check if (candies[i] + extraCandies) &gt;= max_candy.
+How to Draw (Opt): Draw a horizontal line representing the 'Max Candy' level. For each kid, draw a dashed line extending their candy bar by the 'extra' amount. If it touches or crosses the Max line, mark True.
+Opt Complexity Visuals: Two Linear Scans
+How to Draw Opt Complexity: Draw two parallel arrows across the array. Label $O(N)$ + $O(N)$ = $O(N)$.
+Mem Vis (BF): N/A (In-place check)
+Mem Vis (Opt): A single integer `max_val` and a boolean result array of size N. Space $O(1)$ auxiliary.

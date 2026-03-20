@@ -1,0 +1,13 @@
+ID: 1468
+Problem Title: Calculate Salaries (SQL)
+Brute Force Method: Correlated Subqueries. For every employee, run a SELECT to find the MAX(salary) of their company, then apply a CASE statement to determine the tax.
+BF Complexity Visuals: Row-by-Row Max Calculation
+How to Draw BF: Draw the Salaries table. For each row, draw an arrow scanning all other rows in the same company to find the max. Label $O(N^2)$.
+Optimised Pattern: Window Function (MAX OVER)
+Opt Vis. Technique: Partitioned Maximum Scaling
+Dry Run (Opt): Use `MAX(salary) OVER(PARTITION BY company_id)` to get the threshold for the entire company. Use a `CASE` statement to apply 0%, 24%, or 49% tax based on that max.
+How to Draw (Opt): Draw the table grouped by company. Add a temporary column "CompanyMax". Calculate the tax based on "CompanyMax" and subtract from original salary.
+Opt Complexity Visuals: Single Scan Partitioning
+How to Draw Opt Complexity: Draw a Database symbol -&gt; Sort/Partition $O(N \log N)$ -&gt; Filter/Math $O(N)$. Total $O(N \log N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A temporary sorted partition in memory. Space $O(N)$.

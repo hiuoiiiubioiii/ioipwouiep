@@ -1,0 +1,13 @@
+ID: 1760
+Problem Title: Minimum Limit of Balls in a Bag
+Brute Force Method: Try every possible "max balls" value from 1 to 10^9. For each, simulate the splits.
+BF Complexity Visuals: Linear Search on Answer Space.
+How to Draw BF: Draw a number line from 1 to 1,000,000,000. Start at 1 and check every single dot. $O(\text{MaxVal} \cdot N)$.
+Optimised Pattern: Binary Search on the Answer.
+Opt Vis. Technique: The "Can-I-Do-It?" Guessing Game.
+Dry Run (Opt): If we allow at most M balls per bag, the number of operations needed is \sum (\text{bag} - 1) // M. If \text{ops} \leq \text{maxOps}, M is possible; try smaller. Otherwise, try larger.
+How to Draw (Opt): Draw a "Target Size" slider. If slider is at 3, show how a bag of 9 splits into [3, 3, 3] (2 operations).
+Opt Complexity Visuals: Logarithmic Guessing Funnel.
+How to Draw Opt Complexity: Draw a range [Low, High]. Draw a split in the middle. Show the search space shrinking by half. $O(N \log (\\text{text}{\text{maxVal}})$).
+Mem Vis (BF): None, just variables.
+Mem Vis (Opt): Standard integer variables for Low, High, Mid. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1856
+Problem Title: Maximum Subarray Min-Product
+Brute Force Method: Iterate through every possible subarray (i, j), find the minimum element in that range, and multiply it by the subarray sum.
+BF Complexity Visuals: N x N Subarray search matrix.
+How to Draw BF: Draw an array. Draw nested loops covering all segments. For each segment, draw a scan to find the min. Mark $O(N^3)$.
+Optimised Pattern: Prefix Sum + Monotonic Stack (Next Smaller Element).
+Opt Vis. Technique: Building boundaries with a Stack.
+Dry Run (Opt): For each element, find the nearest smaller element to the left and right using a stack. These form the boundaries. Use prefix sums to get the sum in $O(1)$.
+How to Draw (Opt): Draw a bar chart. For each bar, draw horizontal dashed lines until you hit a shorter bar. Calculate area = (bar height) * (sum of bars between dashed lines).
+Opt Complexity Visuals: Three independent linear scans.
+How to Draw Opt Complexity: Draw three parallel arrows representing $O(N)$ for prefix sums, $O(N)$ for left bounds, and $O(N)$ for right bounds.
+Mem Vis (BF): $O(1)$ extra space (ignoring recursive calls).
+Mem Vis (Opt): Prefix Sum array and an Array-based Stack (LIFO) in heap memory.

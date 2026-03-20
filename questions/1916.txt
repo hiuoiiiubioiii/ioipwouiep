@@ -1,0 +1,13 @@
+ID: 1916
+Problem Title: Count Ways to Build Rooms in an Ant Colony
+Brute Force Method: Generate all possible topological permutations of the dependency tree and validate them one by one.
+BF Complexity Visuals: Brute Force Permutation Tree
+How to Draw BF: Draw a massive branching tree generating N! permutations. Cross out paths that violate the tree's parent-child ordering constraints.
+Optimised Pattern: Tree DP with Combinatorics
+Opt Vis. Technique: Subtree Merging (Multinomial Coefficients)
+Dry Run (Opt): Run a bottom-up DFS. At each node, merge its children's valid permutations using combinations (size A + size B choose size A), multiplying the ways.
+How to Draw (Opt): Draw a tree. Start at the leaves, passing up their "sizes" and "ways". At each parent, draw a merging funnel labeled "Combinatorics Math" producing a new "ways" count.
+Opt Complexity Visuals: Bottom-Up Tree Reduction
+How to Draw Opt Complexity: Draw a tree collapsing layer by layer upwards into the root, showing an $O(N)$ single-pass consolidation.
+Mem Vis (BF): Huge sets holding N! array permutations on the heap.
+Mem Vis (Opt): Precomputed 1D Arrays for Factorials/Inverses, plus the recursive DFS Call Stack frames tracking subtree sizes and ways.

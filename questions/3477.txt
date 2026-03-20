@@ -1,0 +1,13 @@
+ID: 3477
+Problem Title: Fruits Into Baskets II
+Brute Force Method: For each fruit, iterate through all baskets from index 0 to N-1 until a suitable basket is found. $O(N^2)$
+BF Complexity Visuals: Nested Scanning Brackets.
+How to Draw BF: Draw the fruits array. For each fruit, draw a search arrow that scans the entire basket array from the start.
+Optimised Pattern: Simulation with Leftmost Greedy Search. $O(N^2)$ is acceptable given N=100.
+Opt Vis. Technique: Sequential Basket Exclusion.
+Dry Run (Opt): Try placing fruit i in the first available basket j that fits. If found, "mark" basket j as full and move to the next fruit.
+How to Draw (Opt): Draw the baskets as boxes. For a fruit, slide your finger over boxes until you find a big enough one. Draw a big 'X' over it.
+Opt Complexity Visuals: Upper Triangle Matrix Area.
+How to Draw Opt Complexity: Draw an N x N grid. Shade the cells checked to show at most N^2 comparisons.
+Mem Vis (BF): Minimal extra memory.
+Mem Vis (Opt): A boolean array of size N to track which baskets are occupied.

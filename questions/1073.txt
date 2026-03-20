@@ -1,0 +1,13 @@
+ID: 1073
+Problem Title: Adding Two Negabinary Numbers
+Brute Force Method: Convert both arrays to base-10 integers, add them, and convert the result back to base -2.
+BF Complexity Visuals: Arithmetic overflow! Base-10 cannot handle the large numbers represented by long negabinary arrays.
+How to Draw BF: [1,1] -&gt; -2+1 = -1. [1] -&gt; 1. Sum = 0. Convert 0 to negabinary -&gt; [0]. Write $O(N)$ but fails on large N.
+Optimised Pattern: Bitwise Simulation (Carry Manipulation).
+Opt Vis. Technique: A "Custom Carry" logic. In base -2, a carry of `1+1` becomes `-1` because 2 = (-2) x (-1).
+Dry Run (Opt): Add digits from right to left with a `carry`. `sum = arr1[i] + arr2[j] + carry`. Digit = `sum &amp; 1`. New carry = `-(sum &gt;&gt; 1)`.
+How to Draw (Opt): Write the two arrays one above the other. Add column by column. Write the result and the "negative carry" above the next column. Handle the -1 carry case carefully.
+Opt Complexity Visuals: Single pass from right to left.
+How to Draw Opt Complexity: Draw two parallel arrays with a carry arrow moving left. Write Time: $O(\text{max}(N1, N2)$).
+Mem Vis (BF): Massive BigInteger allocations to avoid overflow.
+Mem Vis (Opt): A single result array. $O(N)$ space.

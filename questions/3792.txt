@@ -1,0 +1,13 @@
+ID: 3792
+Problem Title: Sum of Increasing Product Blocks (Med)
+Brute Force Method: Generate all possible ways to partition the array into blocks. For each partition, check if the product of each block is strictly increasing. Sum the products of all valid partitions. $O(2^N)$.
+BF Complexity Visuals: Partition Power Set.
+How to Draw BF: Draw the array. Draw lines to split it into chunks. Calculate products. If product sequence is 2, 10, 50, it's valid. Add 2+10+50 to total. Try every single split combination.
+Optimised Pattern: Linear DP + Monotonic Optimization
+Opt Vis. Technique: State Summation Flow
+Dry Run (Opt): dp[i][last_product] stores the sum of products of all valid partitions ending at index i with the last block's product being last_product. Use a Map to handle the large state space of products.
+How to Draw (Opt): Draw an array. For each index, draw arrows looking back. Each arrow carries a "Product" and a "Running Sum". Only arrows where new_product &gt; old_product are allowed to contribute to the current cell.
+Opt Complexity Visuals: $O(N^2)$ or $O(N \\text{cdot unique}_\text{products})$.
+How to Draw Opt Complexity: Draw a grid where rows are indices and columns are product values. Shade cells where the "increasing" rule is satisfied.
+Mem Vis (BF): Exponential recursive paths.
+Mem Vis (Opt): 1D or 2D DP array (often optimized with a Hash Map per index).

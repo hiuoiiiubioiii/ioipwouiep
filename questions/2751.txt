@@ -1,0 +1,13 @@
+ID: 2751
+Problem Title: Robot Collisions
+Brute Force Method: Simulation: Move all robots by 0.5 units at each step. Check for collisions, update health, and remove robots. $O(\text{Time} \cdot N)$.
+BF Complexity Visuals: Temporal Step Simulation
+How to Draw BF: Draw robots on a line. Move them in increments. When they overlap, draw a "Boom" icon and decrement health. Very slow for large coordinates.
+Optimised Pattern: State Array Snapshots (Drawing the entire array state for every microscopic time increment).
+Opt Vis. Technique: Sorting + Monotonic Stack
+Dry Run (Opt): Directional Collision Stack
+How to Draw (Opt): Sort robots by position. Use a stack to store robots moving 'R'. When a robot moving 'L' appears, pop 'R' robots from the stack one by one to collide. Update health accordingly. Only survivors remain. Sort back to original order.
+Opt Complexity Visuals: Draw a conveyor belt. Robots moving Right go into a "Waiting Room" (the stack). When a Left-moving robot comes by, it "fights" the first one in the room. Winner stays.
+How to Draw Opt Complexity: Sorting $O(N \log N)$
+Mem Vis (BF): Draw a sorting block followed by a single linear pass using a stack. Label it $O(N \log N)$.
+Mem Vis (Opt): Stack &amp; Position Map (Visualize a stack holding robot indices and an array for health tracking).

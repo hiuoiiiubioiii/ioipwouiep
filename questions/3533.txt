@@ -1,0 +1,13 @@
+ID: 3533
+Problem Title: Concatenated Divisibility (Hard)
+Brute Force Method: Concatenate every possible pair of numbers as strings, parse to integer, and check modulo K.
+BF Complexity Visuals: N^2 String Concatenation.
+How to Draw BF: Draw a massive N x N grid. In every cell, write "Num1 + Num2", followed by a long division sign. $O(N^2)$.
+Optimised Pattern: Modular Arithmetic + Hash Map (Digit Length Bins).
+Opt Vis. Technique: Mathematical Complement Bins.
+Dry Run (Opt): `Concatenated % K == 0` means `(X * 10^len(Y) + Y) % K == 0`. Precompute remainders of Y, group by length, and search for the mathematical complement needed by X.
+How to Draw (Opt): Draw bins labeled by digit lengths (1-digit, 2-digit). Put `Y % K` values inside. For a given X, calculate its required complement and draw an arrow directly to the matching bin.
+Opt Complexity Visuals: Linear Scan + $O(1)$ Lookup.
+How to Draw Opt Complexity: Draw an array of N numbers. Under each number, draw an arrow to a hash map taking $O(1)$ time. $O(N)$.
+Mem Vis (BF): Massive String Allocations: Draw hundreds of thousands of newly allocated concatenated strings flooding heap memory.
+Mem Vis (Opt): 2D Frequency Map: Draw a small grid `map[digit_length][remainder]` storing integer counts.

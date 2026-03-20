@@ -1,0 +1,13 @@
+ID: 338
+Problem Title: Counting Bits
+Brute Force Method: For every number from 0 to n, count its set bits using a loop or a built-in function (Brian Kernighan’s algorithm).
+BF Complexity Visuals: Bitwise Iteration Tape
+How to Draw BF: Draw a number line. Below each number, draw its binary form and count the 1s. Label $O(N \cdot \\text{text}{\text{bits}})$.
+Optimised Pattern: Dynamic Programming (Most Significant Bit / Least Significant Bit)
+Opt Vis. Technique: Sub-problem Bit Offset
+Dry Run (Opt): Observe the pattern: `count[i] = count[i &gt;&gt; 1] + (i &amp; 1)`. The number of bits in i is the number of bits in i/2 plus 1 if i is odd.
+How to Draw (Opt): Draw a 1D array. For index 7 (111), show an arrow pointing to index 3 (011) and adding the +1 from the last bit.
+Opt Complexity Visuals: Linear Dependency Chain
+How to Draw Opt Complexity: Draw a 1D array. Draw curved arrows pointing from i/2 to i. $O(N)$.
+Mem Vis (BF): N separate bit-counting function calls.
+Mem Vis (Opt): 1D Integer Array. Draw a horizontal tape of size n+1. $O(N)$.

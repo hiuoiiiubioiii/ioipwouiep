@@ -1,0 +1,13 @@
+ID: 1304
+Problem Title: Find N Unique Integers Sum up to Zero
+Brute Force Method: Use a randomized search or backtracking to pick N unique numbers and check if their sum is 0. If not, backtrack and try again.
+BF Complexity Visuals: Randomized Search Space
+How to Draw BF: Draw a bag of numbers. Draw branches picking different sets. Write $O(\text{Explosive})$.
+Optimised Pattern: Symmetric Construction (Pairing)
+Opt Vis. Technique: Zero-Centered Balance
+Dry Run (Opt): Construct pairs of (i, -i) starting from 1. For n=5, use (1, -1, 2, -2) and then add a 0. For n=4, use (1, -1, 2, -2). This guaranteed uniqueness and a zero sum.
+How to Draw (Opt): Draw a number line with 0 in the center. Mark 1 and -1, then 2 and -2. Show how they "cancel out" back to zero. If N is odd, put a dot on 0.
+Opt Complexity Visuals: Single-Pass Array Fill
+How to Draw Opt Complexity: Draw an array of size N. Draw a single arrow filling it from left to right. Write $O(N)$.
+Mem Vis (BF): Draw many discarded arrays during randomized trials.
+Mem Vis (Opt): Draw one integer array of size N. Space: $O(N)$ for the result.

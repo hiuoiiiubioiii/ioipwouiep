@@ -1,0 +1,13 @@
+ID: 3799
+Problem Title: Word Squares II (Med)
+Brute Force Method: Try every combination of words for the grid rows and check if grid[i][j] == grid[j][i] for all indices. $O(N^K)$.
+BF Complexity Visuals: Brute Force Backtracking.
+How to Draw BF: Pick a word for Row 1. This forces Column 1. Pick a word for Row 2 that matches the 2nd letter of Column 1. Repeat until the square is full or invalid.
+Optimised Pattern: Trie-Based Backtracking
+Opt Vis. Technique: Prefix-Guided Search
+Dry Run (Opt): Build a Trie of all words. When picking the k-th word, you know its required prefix because it must match the characters already placed in the k-th column of previous rows. Use the Trie to quickly find all words starting with that prefix.
+How to Draw (Opt): Draw a grid. Fill Row 1. Now, Column 1 is fixed. Use the prefix formed by Row 1, Col 2 to search the Trie for valid Row 2 words. Draw the Trie path for each prefix.
+Opt Complexity Visuals: $O(N \cdot 26^L)$ where L is word length.
+How to Draw Opt Complexity: Draw a backtracking tree where each node represents a Trie prefix lookup.
+Mem Vis (BF): Deep recursive search across all word combinations.
+Mem Vis (Opt): Trie data structure (Prefix Tree) in memory.

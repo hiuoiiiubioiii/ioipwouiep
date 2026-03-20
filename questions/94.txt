@@ -1,0 +1,13 @@
+ID: 94
+Problem Title: Binary Tree Inorder Traversal
+Brute Force Method: Standard Recursion Visit `left`, then current `node`, then `right`. The system stack handles the "waiting" nodes.
+BF Complexity Visuals: The Depth-First Dive
+How to Draw BF: Draw a tree. Draw a line tracing the perimeter of the tree, starting at the root and hugging the left side until it can't go further, then recording the node. $O(N)$ time.
+Optimised Pattern: Iterative with Stack (or Morris)
+Opt Vis. Technique: The Manual LIFO Stack
+Dry Run (Opt): While `curr` is not null, push it to stack and move to `curr.left`. When null, pop from stack, record value, and move to `curr.right`. (Morris is $O(1)$ space).
+How to Draw (Opt): Draw a tree and a vertical bucket (Stack). Push the left spine of the tree into the bucket. Pop one, then look at its right child and repeat.
+Opt Complexity Visuals: Single Node Visit
+How to Draw Opt Complexity: Draw a tree. Mark each node with a single dot. Total time is exactly the number of nodes. $O(N)$.
+Mem Vis (BF): Implicit recursion stack of depth H (height of tree). $O(H)$ space.
+Mem Vis (Opt): Draw an explicit Stack structure. Max size is the height of the tree. If using Morris Traversal, draw temporary "threads" (pointers) back to ancestors. Space: $O(H)$ or $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1168
+Problem Title: Optimize Water Distribution in a Village
+Brute Force Method: Brute force recursion. Try every combination of building a well in a house vs. building a pipe between houses.
+BF Complexity Visuals: Power Set Explosion
+How to Draw BF: Draw houses. Draw possible pipes. Branch out: "Well at H1", "Pipe H1-H2", etc. $O(2^N+E)$ complexity.
+Optimised Pattern: Kruskal's / Prim's with Virtual Root
+Opt Vis. Technique: Augmented Graph Merging
+Dry Run (Opt): Create a "Virtual Node" (Node 0) representing the water source. The cost to build a well at house i becomes an edge between Node 0 and Node i. Run MST on this graph.
+How to Draw (Opt): Draw houses as dots. Draw a "Star" (Node 0) in the middle. Connect it to all houses with well-costs. Draw pipe edges between houses. Use Kruskal's to pick the cheapest edges.
+Opt Complexity Visuals: $O(E \log E)$ for MST
+How to Draw Opt Complexity: Draw a sorting line for edges, followed by a Union-Find $O(E \text{alpha} V)$ sweep.
+Mem Vis (BF): Adjacency Matrix $O(V^2)$
+Mem Vis (Opt): Union-Find `parent` array + Edge List.

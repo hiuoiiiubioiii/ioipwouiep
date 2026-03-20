@@ -1,0 +1,13 @@
+ID: 1299
+Problem Title: Replace Elements with Greatest Element on Right Side
+Brute Force Method: For every element at index i, scan the entire sub-array from i+1 to N-1 to find the maximum value. Replace `arr[i]` with that max.
+BF Complexity Visuals: Nested Max Scanning
+How to Draw BF: Draw an array. For index 0, draw an arrow scanning all remaining elements. For index 1, scan again. Write $O(N^2)$.
+Optimised Pattern: Reverse Linear Scan (Right-to-Left)
+Opt Vis. Technique: The "Backwards Max" Rolling Variable
+Dry Run (Opt): Start from the last element. The last element is replaced by -1. Keep a running variable `maxSoFar`. As you move left, the current element's replacement is the current `maxSoFar`. Update `maxSoFar` with the original value of the current element.
+How to Draw (Opt): Draw an array. Place an arrow at the very end. Move the arrow left. Write down `max_val` and update it as the arrow passes each number. Show the numbers being overwritten by the *previous* `max_val`.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw an array. Draw one single arrow moving purely right-to-left once. Write $O(N)$.
+Mem Vis (BF): Draw nothing extra, but note the $O(N^2)$ time complexity.
+Mem Vis (Opt): Draw exactly one integer variable `maxSoFar`. Space: $O(1)$.

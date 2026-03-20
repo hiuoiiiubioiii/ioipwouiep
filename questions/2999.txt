@@ -1,0 +1,13 @@
+ID: 2999
+Problem Title: Count the Number of Powerful Integers
+Brute Force Method: Iterate through every integer from `start` to `finish` and check if each digit <= limit and if it ends with s.
+BF Complexity Visuals: Brute Force Range Sweep
+How to Draw BF: Draw a massive timeline from 1 to 10^15. Mark $O(10^15)$ checks. Impossible.
+Optimised Pattern: Digit Dynamic Programming (Digit DP)
+Opt Vis. Technique: State Tree with Tight Constraints
+Dry Run (Opt): Process digit by digit. dp(pos, isTight) counts valid suffixes. If remaining length matches s, verify s is valid. Range [L, R] is count(R) - count(L-1).
+How to Draw (Opt): Draw a tree where each depth is a digit position (0-9). Add branches for each digit 0 dots min(limit, current_digit). Use a "Tight" flag to stay under the limit.
+Opt Complexity Visuals: Logarithmic in Value (Linear in Number of Digits)
+How to Draw Opt Complexity: Draw a line of length log_10(finish). Each step has at most 10 branches. T = $O(\text{digits} \cdot 10)$.
+Mem Vis (BF): Not applicable (time too high).
+Mem Vis (Opt): Memoization table of size `digits x 2`. Space $O(\text{digits})$.

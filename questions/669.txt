@@ -1,0 +1,13 @@
+ID: 669
+Problem Title: Trim a Binary Search Tree
+Brute Force Method: Traverse the tree and for every node, search if it is in range. If not, delete it and perform a full tree re-balance.
+BF Complexity Visuals: Recursive Re-balancing / Heavy Grafting.
+How to Draw BF: Draw a tree. Cut a node. Move its entire bottom branch up. Check if the balance is ruined. Write $O(N \log N)$.
+Optimised Pattern: Recursive Pointer Re-assignment.
+Opt Vis. Technique: Pruning / Branch Grafting.
+Dry Run (Opt): If `node.val &lt; low`, the whole left side is invalid; return `trim(node.right)`. If `node.val &gt; high`, right side is invalid; return `trim(node.left)`. Else, trim both children.
+How to Draw (Opt): Draw a tree. Draw a "Fence" at Low and High. Any node outside the fence gets its "parent string" snipped and re-tied to its valid grandchild.
+Opt Complexity Visuals: Single pass tree traversal.
+How to Draw Opt Complexity: Draw a single line passing through all nodes once. Write $O(N)$.
+Mem Vis (BF): Draw multiple temporary tree copies during re-balancing.
+Mem Vis (Opt): Draw the recursion stack. Space is $O(\text{Height})$.

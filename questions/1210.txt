@@ -1,0 +1,13 @@
+ID: 1210
+Problem Title: Minimum Moves to Reach Target with Rotations
+Brute Force Method: Standard DFS without memoization. Recursively explore every possible move (right, down, rotate) from every position, resulting in exploring identical positions multiple times.
+BF Complexity Visuals: Infinite Cyclic Tree
+How to Draw BF: Draw a root node. Draw branches for 'Right', 'Down', 'Rotate'. From those, draw branches again. Draw red arrows looping back to previous states, writing $O(4^N)$ to show exponential trap.
+Optimised Pattern: Breadth-First Search (BFS) Shortest Path on a 3D State Graph
+Opt Vis. Technique: Grid Snake &amp; State-Space Layers
+Dry Run (Opt): Treat the 2-cell snake as a single object with a specific state: (tail_row, tail_col, orientation). Start at (0,0,Horizontal). Expand outwards layer by layer in a queue. If a state has been seen, ignore it.
+How to Draw (Opt): Draw a small N x N grid. Draw a 2-cell long block. Write down a queue: `[ (r, c, dir, dist) ]`. Pop the front, draw arrows in the grid for valid next positions, and add those new (r, c, dir, dist+1) tuples back to the queue.
+Opt Complexity Visuals: Bounded Grid Area Fill
+How to Draw Opt Complexity: Draw a 2D N x N grid. Cut it in half diagonally or shade it. Write `N*N` cells * `2` orientations = $O(N^2)$ maximum possible unique states visited.
+Mem Vis (BF): Draw a massively deep, overflowing Recursive Call Stack memory block representing infinite loops.
+Mem Vis (Opt): Draw a 3D boolean array `Visited[row][col][2]` (where 2 is H or V orientation) alongside a FIFO Queue structure. Space is $O(N^2)$.

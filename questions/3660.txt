@@ -1,0 +1,13 @@
+ID: 3660
+Problem Title: Jump Game IX (Med)
+Brute Force Method: For every index i, scan all j &gt; i to find valid jumps, then run a standard BFS. $O(N^2)$.
+BF Complexity Visuals: Oversaturated Jump Arcs.
+How to Draw BF: Draw an array. For index 0, draw arcs to every single index that is larger or smaller. The graph becomes too dense to process for large N.
+Optimised Pattern: Monotonic Stack to find the next/previous greater/smaller elements in $O(N)$, then Dijkstra/DP on those specific edges.
+Opt Vis. Technique: Specific Target Radar.
+Dry Run (Opt): Instead of looking everywhere, your "radar" only locks onto the very next element that is taller than you or the very next that is shorter. These are your only valid "efficient" jumps.
+How to Draw (Opt): Draw an array of heights. Use a stack to find the "Next Greater" index for each. Draw only ONE jump arrow from i to its Next Greater. Repeat for Next Smaller.
+Opt Complexity Visuals: Linear Edge Construction.
+How to Draw Opt Complexity: Show that each node now has at most a constant number of outgoing edges (e.g., 2-4). Total time $O(N \log N)$ or $O(N)$ with DP.
+Mem Vis (BF): A full adjacency matrix for all possible jumps.
+Mem Vis (Opt): A 1D DP array and two monotonic stacks. Space $O(N)$.

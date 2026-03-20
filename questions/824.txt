@@ -1,0 +1,13 @@
+ID: 824
+Problem Title: Goat Latin
+Brute Force Method: Split string into words. For each word, use string concatenation to move the first letter, add "ma", and then run a loop to add 'a' repeatedly.
+BF Complexity Visuals: $O(N^2)$ String Reconstruction.
+How to Draw BF: Draw a word. Draw it being copied letter-by-letter, then a new block for "ma", then a growing block of "aaaa". Show the memory overhead for each intermediate word.
+Optimised Pattern: StringBuilder / String Join with Index-based Suffix.
+Opt Vis. Technique: Assembly Line Word Processing.
+Dry Run (Opt): Treat each word as a car on a belt. If it starts with a vowel, tack on "ma". If a consonant, move the first letter to the back and tack on "ma". Append "a" based on the car's position index.
+How to Draw (Opt): Draw words moving through a "Latin Machine". Word 1 gets "a", Word 2 gets "aa". Show the letters being appended in-place or in a single buffer.
+Opt Complexity Visuals: Linear Scan with Quadratic Suffix growth. $O(N^2)$ total due to 'a's.
+How to Draw Opt Complexity: Draw a timeline that gets slightly thicker as it moves to the right, representing the increasing 'a' suffixes.
+Mem Vis (BF): Heap Fragmentation: Draw many small, temporary string boxes being discarded by the Garbage Collector.
+Mem Vis (Opt): StringBuilder Buffer: Draw one long, expandable rectangular block that collects all parts in a single pass. $O(N^2)$ space for result.

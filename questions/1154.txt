@@ -1,0 +1,13 @@
+ID: 1154
+Problem Title: Day of the Year
+Brute Force Method: Manual calculation using a complex series of `if-else` blocks for every month and year combination.
+BF Complexity Visuals: Decision Tree Flowchart
+How to Draw BF: Draw a start node. Branch for month 1, 2, 3... Branch again for leap year in Feb. Show the logic nesting.
+Optimised Pattern: Prefix Sum Array + Leap Year Logic
+Opt Vis. Technique: Accumulative Bucket Fill
+Dry Run (Opt): Use a pre-computed array of days per month. Sum days for all months before the target month. Add the day of the current month. Add 1 if it's after Feb in a leap year.
+How to Draw (Opt): Draw 12 buckets with numbers (31, 28, 31...). Draw an arrow summing buckets up to the target month. Add a +1 box if leap year condition is met.
+Opt Complexity Visuals: Constant $O(1)$
+How to Draw Opt Complexity: Draw a direct path from input to sum. Total 12 lookups max.
+Mem Vis (BF): String parsing overhead
+Mem Vis (Opt): Constant $O(1)$ integer space.

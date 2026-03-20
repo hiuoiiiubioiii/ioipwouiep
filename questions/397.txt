@@ -1,0 +1,13 @@
+ID: 397
+Problem Title: Integer Replacement
+Brute Force Method: Recursively try both +1 and -1 for every odd number until you reach 1, exploring all possible paths.
+BF Complexity Visuals: Binary Decision Tree (Unpruned)
+How to Draw BF: Draw a root n. For every odd node, branch into (n+1) and (n-1). For even, branch into n/2. Show the tree expanding. Label $O(2^{\log n})$ \approx $O(n)$.
+Optimised Pattern: Greedy (Bit Manipulation)
+Opt Vis. Technique: Bit-Trailing Zero Optimization
+Dry Run (Opt): For odd n: if (n+1) creates more trailing zeros than (n-1), choose (n+1) (exception for n=3). This maximizes the "speed" of the n/2 operations.
+How to Draw (Opt): Draw n in binary (e.g., 15 = 1111_2). Show that adding 1 makes it 10000_2, which allows 4 consecutive divisions, whereas subtracting 1 only allows one.
+Opt Complexity Visuals: Logarithmic Bit-Shift Scan
+How to Draw Opt Complexity: Draw the binary string of n. Draw a pointer moving right-to-left, "clearing" bits. Label it $O(\log n)$.
+Mem Vis (BF): Deep recursion stack for all explored paths. $O(n)$.
+Mem Vis (Opt): A few integer variables for counts. Draw a single "Steps" counter box. $O(1)$.

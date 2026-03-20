@@ -1,0 +1,13 @@
+ID: 206
+Problem Title: Reverse Linked List
+Brute Force Method: Store all values in an array/stack, then create a new linked list or overwrite values.
+BF Complexity Visuals: Array / Stack Fill &amp; Empty Diagram: $O(N)$ Time, $O(N)$ Space.
+How to Draw BF: Draw N nodes going into a bucket (stack), then draw them coming out into a new chain. Size of bucket = $O(N)$.
+Optimised Pattern: Iterative In-Place Reversal (Three Pointers: prev, curr, next)
+Opt Vis. Technique: Sliding Window of Pointers
+Dry Run (Opt): Place three fingers on nodes. Move `next` ahead, flip `curr`'s arrow to point to `prev`, then shift `prev` and `curr` forward.
+How to Draw (Opt): Draw 4 boxed nodes. Draw arrows pointing right. Use a red pen to cross out the right arrow and draw a left arrow one by one.
+Opt Complexity Visuals: Flat Timeline: $O(N)$ Time, $O(1)$ Space.
+How to Draw Opt Complexity: Draw a timeline showing 1 pass over N elements. Below it, draw a tiny fixed box labeled "Space: 3 Pointers".
+Mem Vis (BF): Stack Array Box: Draw an array growing vertically up to N elements.
+Mem Vis (Opt): Three Fixed Pointer Cells: Draw 3 small boxes (`prev`, `curr`, `next`). Just erase and rewrite the node addresses inside them.

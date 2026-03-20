@@ -1,0 +1,13 @@
+ID: 552
+Problem Title: Student Attendance Record II
+Brute Force Method: Recursive generation of all possible strings of length N (3^N combinations) and checking each against the rules.
+BF Complexity Visuals: An exponentially exploding 3-ary tree. $O(3^N)$.
+How to Draw BF: Draw 'A', 'L', 'P' branches from the root, then 3 more from each, then 3 more... it becomes a solid wall of lines.
+Optimised Pattern: Multi-Dimensional Dynamic Programming (State Compression).
+Opt Vis. Technique: A control panel with 6 dials representing: (Total 'A' count: 0-1) x (Ending 'L' count: 0-2). Each day, the dials shift based on the new character.
+Dry Run (Opt): State `dp[i][j][k]` = ways for length `i` with `j` total 'A's and `k` trailing 'L's. Use transitions to fill for `i+1`.
+How to Draw (Opt): Draw a 2x3 grid (the 6 states). Draw arrows showing how an 'L' move, an 'A' move, and a 'P' move transitions you from one box to another.
+Opt Complexity Visuals: Linear progression through N days across 6 states. $O(N)$.
+How to Draw Opt Complexity: Draw a timeline of N steps, where each step is a small fixed-size calculation of 6 numbers.
+Mem Vis (BF): Massive recursion stack and storage for 3^N strings.
+Mem Vis (Opt): A 2D array of 2x3 (if only keeping the previous day's state). $O(1)$ or $O(N)$.

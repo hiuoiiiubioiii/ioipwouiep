@@ -1,0 +1,13 @@
+ID: 1961
+Problem Title: Check If String Is a Prefix of Array
+Brute Force Method: Concatenate the entire array into one long string first, then check if it starts with the target string.
+BF Complexity Visuals: Full String Expansion
+How to Draw BF: Draw all array elements being merged into one giant box. Then draw a comparison pointer. $O(\text{Total Chars in Array})$.
+Optimised Pattern: Early Exit Iterator
+Opt Vis. Technique: Pointer-to-String Segment Matching
+Dry Run (Opt): Iterate through `words`. Match each word against the target `s` using a pointer. If they mismatch or `s` ends mid-word, return false.
+How to Draw (Opt): Draw the target string `s` as a long bar. Below it, draw array words as small blocks. Check if blocks align perfectly with the bar.
+Opt Complexity Visuals: Linear Scan with Short-Circuiting
+How to Draw Opt Complexity: Draw a single line moving across `s`. Note that we stop as soon as `s` is covered or a mismatch occurs. $O(\text{min}(\text{len}(s)$, len(total_words))).
+Mem Vis (BF): A newly created, massive string object in the heap.
+Mem Vis (Opt): $O(1)$ auxiliary space (just a few integer pointers/indices).

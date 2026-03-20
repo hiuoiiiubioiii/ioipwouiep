@@ -1,0 +1,13 @@
+ID: 3080
+Problem Title: Mark Elements on Array by Performing Queries
+Brute Force Method: For each query, mark the index. Then, perform a full scan or sort of the array to find the k smallest unmarked elements.
+BF Complexity Visuals: $O(Q \cdot N \log N)$ Repeated Sort
+How to Draw BF: Draw the array. For every query, draw a "Sorting Machine" box that processes the entire array to find the minima.
+Optimised Pattern: Min-Heap + Boolean Visited Array
+Opt Vis. Technique: Priority Queue "Popping"
+Dry Run (Opt): Pre-load all (value, index) pairs into a Min-Heap. Use a boolean array to track "Marked" status. For each query, mark the specific index, then pop k valid elements from the heap.
+How to Draw (Opt): Draw a Heap (Binary Tree) and a horizontal bit-array (0s and 1s). Show nodes being "plucked" from the heap and their index being flipped to '1' in the array.
+Opt Complexity Visuals: $O((N + Q)$ log N)
+How to Draw Opt Complexity: Draw one heap-build block $O(N)$. Then draw Q query spikes, each having a small $O(\log N)$ heap-pop overhead.
+Mem Vis (BF): Generating a filtered and sorted copy of the unmarked array for every single query.
+Mem Vis (Opt): A PriorityQueue and a boolean[] of size N to track visited states.

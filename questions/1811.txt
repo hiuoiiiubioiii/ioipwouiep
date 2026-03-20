@@ -1,0 +1,13 @@
+ID: 1811
+Problem Title: Find Interview Candidates (SQL)
+Brute Force Method: Multiple heavy subqueries: Self-joins to find 3 consecutive wins, UNION with group by for 3+ total medals.
+BF Complexity Visuals: Nested query execution trees.
+How to Draw BF: Draw tables joined multiple times with thick lines, highlighting the massive row combinations (N x N) for consecutive checks.
+Optimised Pattern: Window Functions (ROW_NUMBER) to group consecutive sequences + CTEs.
+Opt Vis. Technique: Partitioned data blocks sliding over time.
+Dry Run (Opt): Subtract row_number from contest_id. If a user wins consecutive contests, this difference remains constant. Group by this difference.
+How to Draw (Opt): List rows. Next to them, write RowNum and (ContestID - RowNum). Circle the blocks where the result is identical.
+Opt Complexity Visuals: Linear table scan pipeline.
+How to Draw Opt Complexity: Draw a single arrow scanning down the table, calculating $O(1)$ row_number operations per row.
+Mem Vis (BF): Large intermediate temporary tables generated in memory/disk.
+Mem Vis (Opt): In-memory partitioned window frames.

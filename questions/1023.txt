@@ -1,0 +1,13 @@
+ID: 1023
+Problem Title: Camelcase Matching
+Brute Force Method: Generate a regular expression from the pattern (e.g., `F[a-z]*B[a-z]*`) and test every query string against it using a heavy Regex engine.
+BF Complexity Visuals: A massive, opaque regex state machine compiling and evaluating strings over multiple passes.
+How to Draw BF: Write the pattern. Write the query. Draw complex regex matching paths for lowercase letters. Write $O(Q \cdot L^2)$ depending on the regex engine.
+Optimised Pattern: Two Pointers (Subsequence Match with Constraints).
+Opt Vis. Technique: A strict VIP checkpoint. The pattern is the VIP list. Lowercase letters in the query can wander past, but uppercase letters MUST match the next VIP in line.
+Dry Run (Opt): Pointer `i` on Query, `j` on Pattern. If `Q[i] == P[j]`, advance both. If `Q[i]` is lowercase, just advance `i`. If `Q[i]` is uppercase and DOESN'T match `P[j]`, the query fails. If `j` finishes, remaining `Q` must be lowercase.
+How to Draw (Opt): Write Query and Pattern. Put a dot under the start of each. Move Query dot right. If it matches Pattern dot, move Pattern dot. If Query hits an uppercase letter that doesn't match Pattern, draw a big red X.
+Opt Complexity Visuals: Parallel linear scans per query string.
+How to Draw Opt Complexity: Draw two parallel arrays (Query and Pattern) with an arrow stepping through them. Write Time: $O(Q \cdot L)$ where L is max string length.
+Mem Vis (BF): Heavy Regex compilation objects and matcher states.
+Mem Vis (Opt): Strictly $O(1)$ space per query (just two integer pointers `i` and `j`).

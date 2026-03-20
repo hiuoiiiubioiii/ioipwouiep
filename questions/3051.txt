@@ -1,0 +1,13 @@
+ID: 3051
+Problem Title: Find Candidates for Data Scientist Position (SQL)
+Brute Force Method: Filter the table for each required skill separately, then perform an intersection (AND) of all results.
+BF Complexity Visuals: List Intersection
+How to Draw BF: Draw three separate lists of IDs. Draw lines connecting the same ID across all three lists.
+Optimised Pattern: Group By + Having Count Clause
+Opt Vis. Technique: Bucket Aggregation
+Dry Run (Opt): Filter for the three specific skills. Group the rows by candidate_id and count how many rows each ID has. If count == 3, they are the candidate.
+How to Draw (Opt): Draw a table with Candidate ID and Skill. Circle the rows with 'Python', 'Tableau', and 'PostgreSQL'. Tally the occurrences per ID. Draw a trophy next to IDs with 3 tallies.
+Opt Complexity Visuals: $O(N)$ Scan
+How to Draw Opt Complexity: Draw a single pass through the Skills table. Label it $O(N)$ because the aggregation happens in one pass.
+Mem Vis (BF): Multiple sub-queries or CTEs stored in memory.
+Mem Vis (Opt): A Hash Map (internally used by SQL) for grouping IDs and their respective counts.

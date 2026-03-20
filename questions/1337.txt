@@ -1,0 +1,13 @@
+ID: 1337
+Problem Title: The K Weakest Rows in a Matrix
+Brute Force Method: Scan every entire row $O(N)$ to count '1's. Store (count, index) pairs, then sort the entire list $O(M \log M)$.
+BF Complexity Visuals: Full Array Scan + Heavy Sort
+How to Draw BF: Draw a 2D matrix. Draw an arrow reading every single '0', wasting time. Point the results to a massive sorting funnel processing all M rows.
+Optimised Pattern: Binary Search + Max-Heap (Priority Queue)
+Opt Vis. Technique: Targeted Indexing + Bounded Sifting
+Dry Run (Opt): Since rows are sorted (1s then 0s), use Binary Search to find the last '1' in $O(\log N)$. Push the count and index into a Max-Heap of strictly size K.
+How to Draw (Opt): Draw a row. Jump to the middle. If '1', jump right. If '0', jump left. Find the boundary. Toss the result into a small bucket that only holds K items, throwing out the largest when full.
+Opt Complexity Visuals: Logarithmic Search Rails
+How to Draw Opt Complexity: Draw M horizontal lines (rows). Draw a dot cutting each line in half recursively (Binary Search). Point them to a Heap container bounded by K, proving $O(M \log N + M \log K)$.
+Mem Vis (BF): $O(M)$ Pair Array: An unoptimized list of M tuples waiting to be sorted.
+Mem Vis (Opt): Fixed Size Max-Heap: Draw a `std::priority_queue`. Cap its physical drawing size at K. When a new item enters, the heaviest item immediately falls out.

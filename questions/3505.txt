@@ -1,0 +1,13 @@
+ID: 3505
+Problem Title: Minimum Operations to Make Elements Within K Subarrays Equal (Hard)
+Brute Force Method: Iterate all target values, calculate differences for subarrays.
+BF Complexity Visuals: 3D Loop Box (Subarrays * Targets * Elements).
+How to Draw BF: Draw multiple nested arrays. For every subarray, draw a loop iterating over every possible target value.
+Optimised Pattern: Sliding Window + Running Medians (Two Heaps).
+Opt Vis. Technique: Balancing Scales (Max Heap / Min Heap).
+Dry Run (Opt): Slide a window of size K. Add incoming, remove outgoing. Keep lower half in Max Heap, upper in Min Heap.
+How to Draw (Opt): Draw two triangles (Heaps) balancing on a scale. Moving window: cross out old number, insert new.
+Opt Complexity Visuals: Heap rebalancing over linear time.
+How to Draw Opt Complexity: Draw N elements entering a funnel (Heap insertion = log K). N * log K.
+Mem Vis (BF): Frequency Maps + Target Arrays: Draw massive hash maps for every subarray state.
+Mem Vis (Opt): Two Heaps: Draw two fixed-size binary tree structures (size K/2) acting as real-time priority queues.

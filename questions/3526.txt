@@ -1,0 +1,13 @@
+ID: 3526
+Problem Title: Range XOR Queries with Subarray Reversals (Hard)
+Brute Force Method: Physically reverse the subarray elements, then loop to calculate the XOR sum for each query.
+BF Complexity Visuals: Array Flipping &amp; Scanning.
+How to Draw BF: Draw an array. For each query, cross out a section, rewrite it backwards, then draw a bracket to XOR sum it. $O(Q \cdot N)$.
+Optimised Pattern: Implicit Treap (Randomized Binary Search Tree) / Splay Tree with Lazy Propagation.
+Opt Vis. Technique: Tree Splitting and Merging.
+Dry Run (Opt): Split the tree into 3 parts: [Left, Target, Right]. Tag the Target root with a "reverse" flag. Merge them back.
+How to Draw (Opt): Draw a binary tree. Cut edges to isolate a subtree. Draw a circular arrow (reverse flag) on its root. Reattach the edges.
+Opt Complexity Visuals: Logarithmic Tree Operations.
+How to Draw Opt Complexity: Draw a tree of depth log N. Draw a path down the tree splitting nodes, taking log N steps per query.
+Mem Vis (BF): Continuous Array Reallocation: Draw heavily duplicated arrays flooding memory for every reverse operation.
+Mem Vis (Opt): Pointer/Node Graph: Draw isolated circle nodes connected by left/right pointers, holding "lazy" boolean flags.

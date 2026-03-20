@@ -1,0 +1,13 @@
+ID: 838
+Problem Title: Push Dominoes
+Brute Force Method: Simulate second-by-second. In each second, look at every domino and decide if it falls based on its neighbors' state from the *previous* second.
+BF Complexity Visuals: Time-Step Simulation. $O(N \\text{times} \\text{text}{\text{Time}})$.
+How to Draw BF: Draw the dominoes. Draw a new row for T=1, T=2... showing the ripple effect until no more changes occur.
+Optimised Pattern: Two-Pass Force Calculation or Two-Pointer Segmenting.
+Opt Vis. Technique: "Gravity Fields" from L and R.
+Dry Run (Opt): Calculate the "Force" from the nearest 'R' on the left (decays with distance) and 'L' on the right. Sum the forces: positive is 'R', negative is 'L', zero is vertical.
+How to Draw (Opt): Draw the dominoes. Draw green arrows pointing right from every 'R' that get smaller. Draw blue arrows pointing left from every 'L'. Subtract the arrow sizes at each dot.
+Opt Complexity Visuals: Two-Pass Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw two parallel timelines (Left-Pass and Right-Pass) merged into a final result timeline.
+Mem Vis (BF): Grid of Time-Steps: Draw multiple N-sized arrays for each second of simulation.
+Mem Vis (Opt): One Force Array: Draw a single 1D strip of N integers being updated.

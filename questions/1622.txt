@@ -1,0 +1,13 @@
+ID: 1622
+Problem Title: Fancy Sequence
+Brute Force Method: Loop through the entire sequence and apply the add or multiply operation to every element, one by one.
+BF Complexity Visuals: Sweeping Array Updates
+How to Draw BF: Draw an array. For every operation Q, draw an arrow hitting every single cell in the array. $O(N \cdot Q)$.
+Optimised Pattern: Math (Modular Inverse) + Global Modifiers
+Opt Vis. Technique: Global Lens Filter
+Dry Run (Opt): Keep global `add` and `mul` variables. When appending `x`, reverse-engineer its value before adding it: `(x - add) * modInverse(mul)`.
+How to Draw (Opt): Draw an array of raw values. Draw a "lens" or "filter" box above it containing the global multiplier and adder.
+Opt Complexity Visuals: $O(1)$ Direct Access
+How to Draw Opt Complexity: Draw a single direct arrow through the "lens" straight to a specific array index. $O(1)$ per query.
+Mem Vis (BF): Standard Array: Modifying the actual values constantly in memory.
+Mem Vis (Opt): Array + Global Variables: Draw a static array with two standalone, highly active variables floating above it.

@@ -1,0 +1,13 @@
+ID: 188
+Problem Title: Best Time to Buy and Sell Stock IV
+Brute Force Method: Recursive backtracking: At every day, decide whether to buy, sell (if holding), or skip, keeping track of k transactions.
+BF Complexity Visuals: A massive $O(2^N)$ binary decision tree.
+How to Draw BF: Draw "Day 1". Branch into "Buy" or "Skip". Repeat for N days. Show the tree exploding exponentially.
+Optimised Pattern: Dynamic Programming (DP Table with State).
+Opt Vis. Technique: "A Multi-Story Building." Each floor represents a transaction count (1 to k), and each room tracks the max profit for that state.
+Dry Run (Opt): dp[k][i] = max profit with k transactions up to day i. Use a rolling variable to track max(profit - price) to optimize.
+How to Draw (Opt): Draw a K x N grid. Fill it row by row. For each cell, look at the cell directly above it and the max value from the row above.
+Opt Complexity Visuals: $O(N x K)$ time. Every state in the grid is visited once.
+How to Draw Opt Complexity: Draw a rectangular grid. Shade it in row-by-row to show that work is proportional to the area.
+Mem Vis (BF): $O(2^N)$ call stack memory leading to stack overflow.
+Mem Vis (Opt): Visualize a K x N matrix (or two 1 x N rows for space optimization) in heap memory.

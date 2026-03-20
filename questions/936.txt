@@ -1,0 +1,13 @@
+ID: 936
+Problem Title: Stamping The Sequence
+Brute Force Method: Try every possible position to place the stamp at every step of the process, searching for a path to the target string.
+BF Complexity Visuals: $O(N!)$ or high exponential. An astronomical number of ways to layer stamps.
+How to Draw BF: Draw the target string. Draw a stamp being placed at index 0, then index 1, etc. Show a massive tree of "partially stamped" strings.
+Optimised Pattern: Greedy Reverse Matching (Work Backwards)
+Opt Vis. Technique: "Removing the Paint." Instead of stamping, look for any part of the target that matches the stamp. "Un-stamp" it by turning it into wildcards (*), which can match anything in the next step.
+Dry Run (Opt): While changes occur: scan target for any substring that matches `stamp` (treating * as a match). If found, record index, turn those chars to *, and repeat until all are *. Reverse the recorded indices.
+How to Draw (Opt): Draw the final string. Circle a segment that matches the stamp. Replace it with '????'. Now look for the next segment that matches the stamp using the '?' as jokers.
+Opt Complexity Visuals: $O(N \cdot (N - M)$). Multiple passes through the string, where N is target length and M is stamp length.
+How to Draw Opt Complexity: Draw a vertical stack of strings, each with more '?' than the one above it, until the string is all '????'.
+Mem Vis (BF): Storing thousands of intermediate string states in a search tree.
+Mem Vis (Opt): $O(N)$ to store the result indices and the modified target string. Draw a single character array and a list of integers.

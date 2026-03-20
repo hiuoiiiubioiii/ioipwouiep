@@ -1,0 +1,13 @@
+ID: 3154
+Problem Title: Number of Ways to Reach the K-th Stair
+Brute Force Method: Exhaustive DFS/BFS starting from stair 1, trying "Jump" and "Down" at every step. $O(2^\text{steps})$
+BF Complexity Visuals: An exponentially branching tree.
+How to Draw BF: Draw "1". Draw two branches: "0" (down) and "2" (jump). From "2", draw "1" and "6". Continue until you hit K or exceed it.
+Optimised Pattern: DP + Memoization / Combinatorics
+Opt Vis. Technique: State-Space Compression
+Dry Run (Opt): State: `(current_stair, jump_power, can_go_down)`. Many paths lead to the same stair with the same power; memoize the results to avoid re-calculation.
+How to Draw (Opt): Draw a grid with columns as `jump_power` and rows as `current_stair`. Mark the paths that converge. Show that only small `jump_power` (up to 30) is needed.
+Opt Complexity Visuals: Search space traversal of memoized states.
+How to Draw Opt Complexity: Draw a grid of size 30 x 2 (representing the jumps and the toggle). Total $O(\log K)$.
+Mem Vis (BF): The entire execution tree stored in a call stack.
+Mem Vis (Opt): A Hash Map (Dictionary) storing the state tuples. $O(\log K)$.

@@ -1,0 +1,13 @@
+ID: 3110
+Problem Title: Score of a String
+Brute Force Method: Creating pairs of all adjacent chars into a new structure, then mapping absolute differences. **O(N)** time, **O(N)** space.
+BF Complexity Visuals: Separating the string into overlapping string objects.
+How to Draw BF: Write string. Draw out separate 2-character strings below it, then map values.
+Optimised Pattern: Linear Simulation / Iteration
+Opt Vis. Technique: Sliding Window of Size 2
+Dry Run (Opt): Iterate from index 0 to N-2. Subtract ASCII value of `s[i]` from `s[i+1]`, take absolute value, add to sum.
+How to Draw (Opt): Write string. Draw a 2-character box. Move it right step-by-step. Write the numeric difference inside the box.
+Opt Complexity Visuals: A straight line with sequential, discrete steps.
+How to Draw Opt Complexity: Draw an array. Draw short curved arrows strictly between index `i` and `i+1`. Label each arrow **O(1)**.
+Mem Vis (BF): An array storing N-1 numeric differences before summing.
+Mem Vis (Opt): A single scalar variable `score` tracking the sum. **O(1)** aux space.

@@ -1,0 +1,13 @@
+ID: 3741
+Problem Title: Minimum Distance Between Three Equal Elements II (Med)
+Brute Force Method: Triple nested loops checking every combination of three identical numbers. Re-running entirely on updates. $O(N^3)$.
+BF Complexity Visuals: 3-Point Anchoring Loops.
+How to Draw BF: Pick element. Scan for 2nd match. Scan for 3rd match. Measure span. Repeat for all elements.
+Optimised Pattern: Hash Map with Size-3 Deque (Sliding Window of Indices)
+Opt Vis. Technique: 3-Slot FIFO Queue
+Dry Run (Opt): Keep a map of numbers to a queue of length 3. When you see a number, push its index. If queue &gt; 3, pop oldest. Calculate diff between newest and oldest.
+How to Draw (Opt): Draw small 3-box arrays for each unique number. Move left to right. Erase the oldest index in the box to write the newest one, then subtract the first from the third.
+Opt Complexity Visuals: Single Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a flat horizontal timeline moving right.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Hash Map pointing to tiny 3-element arrays.

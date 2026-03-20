@@ -1,0 +1,13 @@
+ID: 3328
+Problem Title: Find Cities in Each State II (SQL)
+Brute Force Method: (Imperative conceptualization) Nested loops running through the entire database repeatedly to group states and check prefixes.
+BF Complexity Visuals: Cartesian Product Spaghetti
+How to Draw BF: Draw the raw table twice. Draw chaotic lines connecting every state to every city row, visualizing $O(N^2)$ unoptimized scanning.
+Optimised Pattern: SQL GROUP BY + String Aggregation + HAVING
+Opt Vis. Technique: Hash Partitioning Buckets
+Dry Run (Opt): Group data by state into buckets. Inside each bucket, sort cities, concatenate them, and sum up a boolean condition `(LEFT(city, 1) == LEFT(state, 1))`. Filter via HAVING.
+How to Draw (Opt): Draw a big funnel splitting data into labeled State buckets. Inside a bucket, draw a list of cities getting chained together into one long string. Keep a tally mark for prefix matches.
+Opt Complexity Visuals: Hash Pipeline Diagram
+How to Draw Opt Complexity: Draw scattered data mapping directly into $O(N)$ hash groups, followed by an $O(K \log K)$ internal sort per group for the concatenation ordering.
+Mem Vis (BF): Full raw table loaded into cross-joined temporary database memory blocks.
+Mem Vis (Opt): Temporary sorted partition spaces handled by the DB execution engine, taking strictly $O(N)$ overall space.

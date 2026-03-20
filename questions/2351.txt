@@ -1,0 +1,13 @@
+ID: 2351
+Problem Title: First Letter to Appear Twice
+Brute Force Method: Double loop: For each character, scan the rest of the string to see if it appears again. Keep track of the one with the smallest "second appearance" index.
+BF Complexity Visuals: N-Squared Lookahead (O(N^2))
+How to Draw BF: Draw a string. Pick the first letter, draw arrows to all subsequent letters. Pick the second letter, repeat. Mark the first "hit" you find.
+Optimised Pattern: Hash Set / Boolean Array (Bitmask)
+Opt Vis. Technique: Single Pass Existence Check
+Dry Run (Opt): Iterate through the string once. For each character, check if it's already in the Hash Set. If yes, return it immediately. If no, add it to the Set.
+How to Draw (Opt): Draw a string and an empty "seen" bucket. As you move along the string, drop each letter into the bucket. The moment you try to drop a letter that’s already in the bucket, circle it—that's your answer.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. A single pointer moves forward and stops at the first duplicate.
+Mem Vis (BF): Draw the string being copied and scanned multiple times in memory.
+Mem Vis (Opt): Draw a 26-element Boolean Array or a single 32-bit Integer (Bitmask) to track seen characters.

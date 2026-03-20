@@ -1,0 +1,13 @@
+ID: 2205
+Problem Title: The Number of Users That Are Eligible for Discount
+Brute Force Method: Nested Window IterationFor each user, iterate through every possible sliding window of their purchases and check if it meets the requirements.
+BF Complexity Visuals: Sliding Window Combinatorics
+How to Draw BF: Draw a timeline of purchases. Draw boxes of varying sizes over the timeline. Draw inner loops counting frequencies for each box.
+Optimised Pattern: Fixed Sliding Window + Frequency Map
+Opt Vis. Technique: Rolling Hash / Frequency Counters
+Dry Run (Opt): Maintain a dictionary of required items. Slide a fixed window across the user's purchases. When an item enters, +1; when it leaves, -1. Check against requirements.
+How to Draw (Opt): Draw an array of purchases. Draw a transparent "window" box covering N items. Slide the box right: cross out the item falling off the left side, add the new item on the right.
+Opt Complexity Visuals: Window Shift Arrow Diagram
+How to Draw Opt Complexity: Draw a line representing $O(N)$ traversal. Show operations at each step as strictly $O(1)$ hash map updates, verifying linear time.
+Mem Vis (BF): Multiple sub-array copies allocated per window slice.
+Mem Vis (Opt): Two Frequency Hash Maps: One static (requirements), one rolling (current window state).

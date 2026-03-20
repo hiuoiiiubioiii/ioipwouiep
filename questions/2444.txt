@@ -1,0 +1,13 @@
+ID: 2444
+Problem Title: Count Subarrays With Fixed Bounds
+Brute Force Method: Nested loops checking every subarray (i, j). For each, scan to see if min equals 'minK' and max equals 'maxK', and no element is outside [minK, maxK].
+BF Complexity Visuals: Triple Nested Loop Grid
+How to Draw BF: Draw a 3D-like stack of arrays. Label $O(N^3)$ (Subarrays * verification scan).
+Optimised Pattern: Three-Pointer Sliding Window (Tracking Indices)
+Opt Vis. Technique: Elastic Boundary Snap
+Dry Run (Opt): Keep 3 indices: last invalid, last minK, last maxK. Valid subarrays ending at 'i' start anywhere between 'lastInvalid' and 'min(lastMin, lastMax)'.
+How to Draw (Opt): Draw the array. Use three colored arrows (Red for invalid, Blue for minK, Green for maxK). At each step, count = max(0, min(Blue, Green) - Red).
+Opt Complexity Visuals: Single Pass Line
+How to Draw Opt Complexity: Draw a single horizontal arrow from 0 to N. Label $O(N)$ Time.
+Mem Vis (BF): Draw a results variable.
+Mem Vis (Opt): Draw three integer variables in memory. $O(1)$ Space.

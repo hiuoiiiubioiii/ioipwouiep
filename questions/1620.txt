@@ -1,0 +1,13 @@
+ID: 1620
+Problem Title: Coordinate With Maximum Network Quality
+Brute Force Method: N/A - The constraints are so small (50x50) that an exhaustive calculation is the intended brute force and optimized solution.
+BF Complexity Visuals: Radar Map Iteration
+How to Draw BF: Draw a 50x50 grid. For every single cell, draw a line to every single tower (T) in the list. $O(\text{Grid} \cdot T)$.
+Optimised Pattern: Exhaustive Heatmap Search (Brute Force)
+Opt Vis. Technique: Signal Overlay Processing
+Dry Run (Opt): Loop X (0-50), Loop Y (0-50). Measure Euclidean distance to all towers. If &lt;= radius, add `floor(quality / (1 + distance))` to cell score. Track max score.
+How to Draw (Opt): Draw a 2D coordinate plane. Place 3 dots (towers). Pick a random coordinate square. Draw expanding rings from the towers to see if they reach that square. Tally the score.
+Opt Complexity Visuals: Fixed Boundary Iteration
+How to Draw Opt Complexity: Draw a static square (51x51) with a straight arrow looping through it representing a strict bounded $O(1)$ mathematical constraint.
+Mem Vis (BF): Variables: Accumulators tracking distance and signal strength.
+Mem Vis (Opt): $O(1)$ Memory Trackers: Draw three distinct boxes: `max_quality`, `best_X`, `best_Y`. Overwrite them continuously as you scan the grid.

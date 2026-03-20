@@ -1,0 +1,13 @@
+ID: 236
+Problem Title: Lowest Common Ancestor of a Binary Tree
+Brute Force Method: Find paths from root to P and root to Q, store in two lists, then find the last common node.
+BF Complexity Visuals: Path Comparison Graph: $O(N)$ Time, $O(N)$ Space.
+How to Draw BF: Draw a tree. Draw two different colored paths from root to nodes. Circle the point where the colors diverge.
+Optimised Pattern: Recursive Backtracking (Post-Order Traversal)
+Opt Vis. Technique: Bubbling-Up Search Flags
+Dry Run (Opt): If current node is P or Q, return self. Ask left child and right child for results. If both return non-null, I am the LCA. If only one, pass it up.
+How to Draw (Opt): Draw a tree. Use arrows pointing UP from P and Q. Where two arrows meet in a single node, that's your LCA.
+Opt Complexity Visuals: Traversal Path Area: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a single continuous line snaking through every node. Each node is visited once, $O(N)$.
+Mem Vis (BF): Two separate path lists (Arrays) storing node references.
+Mem Vis (Opt): Implicit Recursion Stack: Draw a vertical stack of height H.

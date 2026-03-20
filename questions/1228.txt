@@ -1,0 +1,13 @@
+ID: 1228
+Problem Title: Missing Number In Arithmetic Progression
+Brute Force Method: Scan the array and calculate the difference between every pair of adjacent numbers. The most frequent difference is the step. Scan again to find where the step is violated.
+BF Complexity Visuals: Double Linear Pass
+How to Draw BF: Draw the array. Draw small "jump" arrows between every number. Write the difference above each arrow. Find the one that's double the others. Write $O(N)$.
+Optimised Pattern: Binary Search (Range-based Gap Detection)
+Opt Vis. Technique: Binary Search "Middle Check"
+Dry Run (Opt): Compare the value at `mid` with the expected value `first + mid * diff`. If they match, the gap is to the right. If they don't, the gap is to the left (or at mid).
+How to Draw (Opt): Draw a line with `L`, `M`, and `R` pointers. Calculate `expected_mid`. If `actual_mid == expected_mid`, move `L` to `M+1`. Repeat until `L == R`.
+Opt Complexity Visuals: Logarithmic Halving
+How to Draw Opt Complexity: Draw a block of length N. Divide it in half, then half again. Write $O(\log N)$.
+Mem Vis (BF): Draw a standard array in memory.
+Mem Vis (Opt): Draw 3 integer variables: `low`, `high`, `mid`. Space is $O(1)$.

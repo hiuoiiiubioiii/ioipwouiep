@@ -1,0 +1,13 @@
+ID: 652
+Problem Title: Find Duplicate Subtrees
+Brute Force Method: For every node, traverse its entire subtree to generate a string representation. Compare every string with every other string.
+BF Complexity Visuals: N x N String Comparison Grid.
+How to Draw BF: Draw a tree. For every node, draw a bubble containing the subtree. Draw lines between identical bubbles. $O(N^2)$.
+Optimised Pattern: Post-order Traversal + Serialization + Hash Map.
+Opt Vis. Technique: Fingerprinting / Content Hashing.
+Dry Run (Opt): Recursively visit nodes. For each node, build a string: `val, left_subtree, right_subtree`. Store this string in a Map. If count becomes 2, add the node to results.
+How to Draw (Opt): Draw a tree. As you move up from leaves, write a "Code" on each node representing its structure. If you see the same "Code" twice, circle it.
+Opt Complexity Visuals: Single pass tree traversal with string hashing.
+How to Draw Opt Complexity: Draw a straight scanline through the tree. Write $O(N^2)$ (due to string creation) or $O(N)$ (with ID-mapping).
+Mem Vis (BF): Draw a list storing all possible subtree structures independently.
+Mem Vis (Opt): Draw a Hash Map storing serialized strings. $O(N)$ unique structures.

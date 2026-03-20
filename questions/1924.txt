@@ -1,0 +1,13 @@
+ID: 1924
+Problem Title: Erect a Fence II
+Brute Force Method: Exhaustively check all possible circles formed by 2 or 3 points to see which one contains all other points.
+BF Complexity Visuals: Exhaustive Geometric Search
+How to Draw BF: Draw every triplet of points. Draw the circumcircle. Check if all other N-3 points are inside. $O(N^4)$.
+Optimised Pattern: Welzl's Algorithm (Recursive Smallest Enclosing Circle)
+Opt Vis. Technique: Incremental Boundary Expansion
+Dry Run (Opt): Start with an empty circle. Randomly add points. If a point is outside, the new circle must have this point on its boundary.
+How to Draw (Opt): Draw a set of points. Circle the first two. Add a third; if outside, redraw circle using the new point and previous ones. Repeat.
+Opt Complexity Visuals: Linear Randomized Expected Time
+How to Draw Opt Complexity: Draw a single line. Indicate that while it looks complex, the "expected" visits per point is constant. $O(N)$ average case.
+Mem Vis (BF): $O(1)$ if iterative, but $O(N^4)$ state checks in the naive version.
+Mem Vis (Opt): Recursive call stack for Welzl's, with depth proportional to the number of points on the boundary (usually small).

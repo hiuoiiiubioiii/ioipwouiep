@@ -1,0 +1,13 @@
+ID: 557
+Problem Title: Reverse Words in a String III
+Brute Force Method: Split the string into an array of words, reverse each word string completely, then join them back together with spaces.
+BF Complexity Visuals: Multiple string allocations and full-string reconstructions. $O(N)$.
+How to Draw BF: Draw the sentence. Draw a box around each word. Draw a new line with the boxes in the same order but letters flipped.
+Optimised Pattern: Two-Pointer In-Place Swap.
+Opt Vis. Technique: A "per-word" mirror. You move through the string, and every time you hit a space, you flip the section behind you.
+Dry Run (Opt): Maintain a `start` pointer. Iterate with `i`. When `s[i]` is a space, swap characters from `start` to `i-1` moving inward. Update `start = i + 1`.
+How to Draw (Opt): Write the sentence. Draw a bracket under the first word. Draw two arrows at the bracket edges pointing inward. Move to the next word and repeat.
+Opt Complexity Visuals: Single pass with in-place character swaps. $O(N)$.
+How to Draw Opt Complexity: Draw a straight line with N segments and localized "swap" loops at each word boundary.
+Mem Vis (BF): Creating an array of strings and multiple reversed string objects.
+Mem Vis (Opt): A character array (in languages with immutable strings) or zero extra space. $O(N)$.

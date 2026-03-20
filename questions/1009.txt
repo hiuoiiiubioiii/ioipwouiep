@@ -1,0 +1,13 @@
+ID: 1009
+Problem Title: Complement of Base 10 Integer
+Brute Force Method: Convert the integer into a binary string ("101"), loop through the characters to flip '0' to '1' and '1' to '0', then parse the string back to an integer.
+BF Complexity Visuals: A three-stage factory: Integer -&gt; String Array -&gt; Flipped String Array -&gt; Integer.
+How to Draw BF: Write "5". Draw an arrow to "101". Cross out bits to write "010". Draw an arrow to "2". Write $O(\log N)$ operations with heavy string overhead.
+Optimised Pattern: Bit Manipulation (XOR Masking).
+Opt Vis. Technique: A precise stamped overlay (a mask of all 1s) pressing down onto the original bits to invert them simultaneously.
+Dry Run (Opt): Find out how many bits the number uses (e.g., 5 uses 3 bits: 101). Create a mask of the same length filled with 1s (111). XOR the mask with the number.
+How to Draw (Opt): Write the binary of N. Directly underneath it, write a row of 1s of the exact same length. Draw a line and perform XOR (if same write 0, if different write 1).
+Opt Complexity Visuals: Instantaneous bitwise logic gate.
+How to Draw Opt Complexity: Draw a single bitwise operation block `N ^ Mask`. Write $O(1)$ or $O(\log N)$ depending on how the bit length is calculated.
+Mem Vis (BF): A string or char array allocation taking up $O(\log N)$ memory boxes.
+Mem Vis (Opt): A single integer box for the bitmask. $O(1)$ pure space.

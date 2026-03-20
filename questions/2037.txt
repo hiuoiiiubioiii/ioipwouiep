@@ -1,0 +1,13 @@
+ID: 2037
+Problem Title: Minimum Number of Moves to Seat Everyone
+Brute Force Method: Try every possible permutation matching students to seats and calculate the total difference for each arrangement to find the minimum. $O(N!)$.
+BF Complexity Visuals: Factorial Bipartite Graph Matching
+How to Draw BF: Draw seats on the left, students on the right. Draw chaotic, crossing lines connecting every student to every seat in all combinations. Explodes instantly.
+Optimised Pattern: Sorting + Greedy Matching
+Opt Vis. Technique: Parallel Ordered Lines
+Dry Run (Opt): Sort both the seats array and the students array. The optimal matching is simply pairing the i-th student with the i-th seat. Sum the absolute differences.
+How to Draw (Opt): Draw the unsorted arrays. Then draw them sorted directly beneath. Draw perfectly vertical, parallel lines connecting index 0 to 0, 1 to 1, etc., writing the difference on the line.
+Opt Complexity Visuals: Sorting Funnels to Parallel Sweep
+How to Draw Opt Complexity: Draw two funnels representing the $O(N \log N)$ sorts. Below them, draw a single straight downward sweep adding the differences $O(N)$.
+Mem Vis (BF): Massive recursion tree generating permutations.
+Mem Vis (Opt): Two in-place sorted integer arrays. Space $O(1)$ or $O(N)$ depending on sorting algorithm.

@@ -1,0 +1,13 @@
+ID: 2273
+Problem Title: Find Resultant Array After Removing Anagrams
+Brute Force Method: Recursive DeletionScan the array. If `words[i]` and `words[i-1]` are anagrams, delete `words[i]`, shift the array, and restart the scan from index 1.
+BF Complexity Visuals: Array Mutation Simulation
+How to Draw BF: Draw the list of words. Circle two anagrams. Cross one out. Redraw the *entire* list shifted. Repeat. Show the $O(N^2)$ work for removals.
+Optimised Pattern: Stack / Previous-Word Pointer
+Opt Vis. Technique: Immediate Neighbor Comparison
+Dry Run (Opt): Iterate through the array once. Compare the current word's sorted version (or frequency map) with the *last added* word in your result list. If they differ, add the current word.
+How to Draw (Opt): Draw a "Result" conveyor belt. Look at the word in the input. Compare its "sorted" tag to the last word on the belt. If they don't match, drop it on the belt. If they do, skip it.
+Opt Complexity Visuals: Single Pass Filter
+How to Draw Opt Complexity: Draw a single $O(N)$ timeline. Label each step as $O(\text{Length of Word})$ for the anagram check. Total time: $O(N \cdot L)$.
+Mem Vis (BF): Repeatedly creating new shifted copies of the original array.
+Mem Vis (Opt): A new result list and a temporary frequency array of size 26 (O(N * L) space).

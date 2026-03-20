@@ -1,0 +1,13 @@
+ID: 572
+Problem Title: Subtree of Another Tree
+Brute Force Method: For every node in the main tree, initiate a full recursive "isSameTree" check against the subRoot.
+BF Complexity Visuals: N nodes each performing an M-node comparison. $O(N \\text{times} M)$.
+How to Draw BF: Draw a large tree. At every single node, draw a shadow of the small tree and check for a perfect match.
+Optimised Pattern: Merkle Hashing or String Serialization (KMP).
+Opt Vis. Technique: A fingerprint scanner. You give the small tree a unique ID (hash) and then check every node in the big tree to see if its "subtree ID" matches.
+Dry Run (Opt): Serialize both trees into strings (using markers for nulls). Use `string.contains()` or KMP to find if the small string exists in the large one.
+How to Draw (Opt): Draw both trees. Convert them into strings: `[#3[#4[#1][#2]][#5]]`. Check if the small string is a substring of the big one.
+Opt Complexity Visuals: Linear time serialization and search. $O(N + M)$.
+How to Draw Opt Complexity: Draw two strings with a sliding window check (KMP style).
+Mem Vis (BF): Deep recursion stack for the $O(N \\text{times} M)$ approach.
+Mem Vis (Opt): $O(N + M)$ space to store the serialized strings.

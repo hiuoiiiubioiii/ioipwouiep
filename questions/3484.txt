@@ -1,0 +1,13 @@
+ID: 3484
+Problem Title: Design Spreadsheet
+Brute Force Method: Store all possible cells in a 2D array. For formulas, re-calculate the entire grid on every update. $O(N \cdot M)$
+BF Complexity Visuals: Full Matrix Grid Refresh.
+How to Draw BF: Draw a large grid. When one cell changes, shade the entire grid to represent it being re-processed.
+Optimised Pattern: Hash Map (Sparse Storage) + Direct Formula Parsing. $O(1)$ set / $O(L)$ get.
+Opt Vis. Technique: Key-Value Map with Direct Access.
+Dry Run (Opt): Use a Map to store "CellID -&gt; Value". Formulas simply look up the required keys. Sparse storage ignores the thousands of empty "0" cells.
+How to Draw (Opt): Draw two columns: ID (e.g., A1) and Value. Only write rows for cells that actually have data.
+Opt Complexity Visuals: Point-to-Point Hashing.
+How to Draw Opt Complexity: Draw a formula cell and draw two direct arrows pointing to its operand cells in the Map.
+Mem Vis (BF): Static N x 26 grid, mostly filled with memory-wasting zeros.
+Mem Vis (Opt): A dynamic Hash Map storing only "Set" cells (O(SetCells)).

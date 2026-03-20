@@ -1,0 +1,13 @@
+ID: 855
+Problem Title: Exam Room
+Brute Force Method: Maintain a sorted list of seated students. For every seat() call, iterate through all gaps between students to find the largest distance.
+BF Complexity Visuals: Linear Gap Scan. $O(N)$ per seat.
+How to Draw BF: Draw a row of seats. For every student added, draw arrows measuring every single empty space between students 'X'.
+Optimised Pattern: Max-Heap (Priority Queue) of Intervals.
+Opt Vis. Technique: The "Largest Void" Picker.
+Dry Run (Opt): Store every empty gap as an interval [start, end] in a Heap. The Heap is ordered by the distance to the closest student. seat() pops the best interval, splits it, and pushes two new ones back.
+How to Draw (Opt): Draw a number line. Draw arcs representing empty gaps. The Heap always points to the "fattest" arc. When someone sits, split the fat arc into two thinner arcs.
+Opt Complexity Visuals: Logarithmic Seat/Leave. $O(\log N)$.
+How to Draw Opt Complexity: Draw a Tree structure. Each operation involves traveling from the root to a leaf (height of tree).
+Mem Vis (BF): Sorted List: Draw a 1D array that requires element shifting on every insertion.
+Mem Vis (Opt): Priority Queue + Map: Draw a Binary Heap (Tree) and a Map to track student-to-interval links.

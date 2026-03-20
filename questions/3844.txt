@@ -1,0 +1,13 @@
+ID: 3844
+Problem Title: Longest Almost-Palindromic Substring (Med.)
+Brute Force Method: Generate all $O(N^2)$ substrings. For each, check if it can become a palindrome by changing at most K characters.
+BF Complexity Visuals: A massive collection of substrings being manually verified character-by-character.
+How to Draw BF: Draw a string. Draw brackets for every possible substring. For each bracket, run a loop from start to end comparing letters. Write $O(N^3)$.
+Optimised Pattern: Expand Around Center + Difference Count.
+Opt Vis. Technique: A series of "mirrors" placed between letters that expand outwards, stopping only when the "error budget" K is exceeded.
+Dry Run (Opt): Pick a center (or between two letters). Expand left and right. Count mismatches. While `mismatches &lt;= K`, keep expanding and track the max length.
+How to Draw (Opt): Draw a word. Put a pencil in the middle. Move left and right. Mark 'X' for a mismatch. If you hit more than K 'X's, stop. Repeat for all N centers.
+Opt Complexity Visuals: A centered-expansion sweep.
+How to Draw Opt Complexity: Draw N center points. Below each, draw an arrow of max length N. Write $O(N^2)$.
+Mem Vis (BF): $O(N)$ memory to store substring copies during checks.
+Mem Vis (Opt): $O(1)$ extra space (excluding output), just using pointers (L, R) and a mismatch counter.

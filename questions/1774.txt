@@ -1,0 +1,13 @@
+ID: 1774
+Problem Title: Closest Dessert Cost
+Brute Force Method: Try all combinations of base ice creams and all combinations of toppings (0, 1, or 2 of each). Calculate sums.
+BF Complexity Visuals: Recursive Branching (Ternary).
+How to Draw BF: Draw a root (base). From it, draw 3 branches for Topping 1 (none, one, two). From each, 3 for Topping 2. $O(B \cdot 3^T)$.
+Optimised Pattern: Backtracking with Pruning.
+Opt Vis. Technique: The "Price Ceiling" Tree.
+Dry Run (Opt): Start recursion for each base. If current cost exceeds `target + (target - min_found)`, stop branching (pruning). Track the cost with the smallest absolute difference.
+How to Draw (Opt): Draw a search tree. Draw a "red line" at a certain cost. Cross out all branches that go past that line.
+Opt Complexity Visuals: Bounded Exponential Search.
+How to Draw Opt Complexity: Draw a tree with 3^T nodes but highlight how pruning cuts off half the width. Label $O(B \cdot 3^T)$.
+Mem Vis (BF): None, just sum tracking.
+Mem Vis (Opt): Recursion stack (Topping count). $O(T)$ space.

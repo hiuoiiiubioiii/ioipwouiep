@@ -1,0 +1,13 @@
+ID: 287
+Problem Title: Find the Duplicate Number
+Brute Force Method: Sort the array $O(n \log n)$ or use a Hash Set to track seen numbers $O(n)$ space.
+BF Complexity Visuals: Sorting Slope / Hash Table Grid.
+How to Draw BF: Draw a messy list. Draw it sorted. Or draw an array pointing into a growing Hash Map.
+Optimised Pattern: Floyd’s Cycle Finding (Tortoise and Hare)
+Opt Vis. Technique: Directed Graph Lasso
+Dry Run (Opt): Treat the array as a linked list where nums[i] is the pointer to the next index. Because there's a duplicate, there *must* be a cycle. Fast moves 2, Slow moves 1. Meet at intersection, reset Slow, then both move 1.
+How to Draw (Opt): Draw indices as nodes and values as pointers. For nums = [1,3,4,2,2], draw 0 \to 1 \to 3 \to 2 \to 4 \to 2. Highlight the "cycle" at the end.
+Opt Complexity Visuals: Linear Pointer Chase: $O(n)$ Time.
+How to Draw Opt Complexity: Draw a timeline showing the two pointers moving. Mark the meeting point. No nested loops.
+Mem Vis (BF): Hash Set Table: $O(n)$ Space.
+Mem Vis (Opt): Fixed Pointer Cells: Draw exactly two variables, `slow` and `fast`. $O(1)$ extra space.

@@ -1,0 +1,13 @@
+ID: 2060
+Problem Title: Check if an Original String Exists Given Two Encoded Strings
+Brute Force Method: Expand both encoded strings into every possible combination of letters (for numbers) and compare them all. $O(\\text{text}{\text{Exponential}})$.
+BF Complexity Visuals: Exponential Expansion Tree
+How to Draw BF: Draw "a3b". Branch it into "a---b". Do the same for the second string. Cross-compare billions of literal strings.
+Optimised Pattern: Dynamic Programming (State: i, j, diff)
+Opt Vis. Technique: The Length-Delta Synchronizer
+Dry Run (Opt): Track indices `i` (string 1) and `j` (string 2) and the `diff` in their currently expanded lengths. If `diff == 0` and chars match, advance both. If numbers, add to `diff`.
+How to Draw (Opt): Draw two strings. Draw a "Delta Gauge" (a scale). Read a number? Add weight to the scale. Read a letter? Subtract weight. If the scale stays near 0 and letters match, you are valid.
+Opt Complexity Visuals: 3D DP Matrix $O(N \cdot M \cdot 2000)$
+How to Draw Opt Complexity: Draw a 3D grid: index1 x index2 x length_difference. Each cell takes constant time transitions.
+Mem Vis (BF): Massive arrays of expanded strings.
+Mem Vis (Opt): A 3D DP memoization table or Hash Set of states. $O(N \cdot M \cdot \\text{text}{\text{Diff}})$ space.

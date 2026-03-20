@@ -1,0 +1,13 @@
+ID: 2550
+Problem Title: Count Collisions of Monkeys on a Polygon
+Brute Force Method: Generate all 2^n movement combinations. For each, check if any two monkeys land on the same vertex or cross paths.
+BF Complexity Visuals: An exponential tree of 2^n binary choices (Clockwise vs. Counter-clockwise).
+How to Draw BF: Draw a triangle. Monkey 1 can go L or R. Monkey 2 can go L or R. List all 8 combinations and see which ones don't have collisions.
+Optimised Pattern: Complementary Counting + Binary Exponentiation.
+Opt Vis. Technique: A "Total minus Non-Colliding" logic where only two specific cases result in NO collisions.
+Dry Run (Opt): Total movements = 2^n. The ONLY ways monkeys *don't* collide are if all move clockwise or all move counter-clockwise (2 ways). Answer = (2^n - 2) mod10^9+7. Use pow(2, n, mod) for efficiency.
+How to Draw (Opt): Write 2^n. Subtract 2. Apply modulo. Use "Square and Multiply" to calculate 2^n on paper.
+Opt Complexity Visuals: $O(\log N)$ to calculate 2^n using modular exponentiation.
+How to Draw Opt Complexity: Draw a ladder of powers: 2^1, 2^2, 2^4, 2^8... showing that we only need log n steps to reach 2^n.
+Mem Vis (BF): Exponential space for combinations.
+Mem Vis (Opt): $O(1)$ - Just storing the result of the power function.

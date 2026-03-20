@@ -1,0 +1,13 @@
+ID: 433
+Problem Title: Minimum Genetic Mutation
+Brute Force Method: DFS (Exhaustive) Try all possible single-character mutations from the start gene, recurring until the end gene is found.
+BF Complexity Visuals: Exploding Maze
+How to Draw BF: Draw a root string. Branch into all 24 possible 1-char mutations. Show the tree expanding exponentially.
+Optimised Pattern: BFS (Shortest Path) Use a Queue. For each mutation, check if it's in the "bank". Use a visited set to avoid cycles.
+Opt Vis. Technique: Level Ripples
+Dry Run (Opt): Start gene is the center. Each step (mutation) is a new circular wave. Stop as soon as the wave hits the end gene.
+How to Draw (Opt): Draw nodes for genes. Connect genes that differ by 1 letter. Trace the shortest hop-count path from Start to End.
+Opt Complexity Visuals: Graph Layering
+How to Draw Opt Complexity: Draw levels 1, 2, 3... Complexity is $O(B \cdot L \cdot N)$ where B=bank size, L=gene length.
+Mem Vis (BF): Call Stack Recursion depth can be high with cycles.
+Mem Vis (Opt): Queue + Set Draw a Queue and a "Visited" HashSet of strings. $O(B)$.

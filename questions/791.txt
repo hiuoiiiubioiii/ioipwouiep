@@ -1,0 +1,13 @@
+ID: 791
+Problem Title: Custom Sort String
+Brute Force Method: Use a standard sorting algorithm with a custom comparator that searches for each character's index in the "order" string.
+BF Complexity Visuals: Nested Search Sort
+How to Draw BF: Draw a string being sorted. Every time two characters are compared, draw an arrow scanning the entire "order" string. $O(N \log N \\text{times} \\text{text}{\text{Order}})$.
+Optimised Pattern: Frequency Bucket Counting
+Opt Vis. Technique: Priority Sorting Bins
+Dry Run (Opt): Count occurrences of each character in `s`. Iterate through `order`; for each character, append it to the result as many times as it appeared. Append remaining characters at the end.
+How to Draw (Opt): Draw a frequency map (table). Draw the "order" string. For the first letter in "order", pull all its matches from the table into the result string.
+Opt Complexity Visuals: Two-Pass Linear Scan
+How to Draw Opt Complexity: Draw a line for the input string and a line for the order string. Show each being touched exactly once. $O(N + M)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Fixed-size frequency array (O(1) relative to alphabet).

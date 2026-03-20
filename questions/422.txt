@@ -1,0 +1,13 @@
+ID: 422
+Problem Title: Valid Word Square
+Brute Force Method: Simulation For every character at [i][j], check if it matches the character at [j][i].
+BF Complexity Visuals: Matrix Mirror
+How to Draw BF: Draw a square grid. Draw a diagonal line from top-left to bottom-right. Check if colors match across the line.
+Optimised Pattern: Direct Indexing Compare `words[i].charAt(j)` with `words[j].charAt(i)` with boundary checks.
+Opt Vis. Technique: L-Shape Reflection
+Dry Run (Opt): Highlight the i-th row. Highlight the i-th column. They must be identical strings.
+How to Draw (Opt): Write words in a grid. Use a ruler to look at the 3rd row, then rotate the ruler 90 degrees to check the 3rd column.
+Opt Complexity Visuals: Grid Scan
+How to Draw Opt Complexity: Draw a single pass through the total number of characters C. $O(C)$.
+Mem Vis (BF): Grid Copy Storing the words twice.
+Mem Vis (Opt): None In-place comparison. $O(1)$ extra space.

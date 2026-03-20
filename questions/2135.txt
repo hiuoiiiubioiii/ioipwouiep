@@ -1,0 +1,13 @@
+ID: 2135
+Problem Title: Count Words Obtained After Adding a Letter
+Brute Force Method: For each target word, remove one letter, then loop through the entire `startWords` array comparing characters.
+BF Complexity Visuals: Massive string comparison loops.
+How to Draw BF: Draw target word. Erase one letter. Draw lines checking every start word. Erase a different letter. Repeat. $O(N \cdot M \cdot K)$.
+Optimised Pattern: Bitmasking / Sorting + Hash Set.
+Opt Vis. Technique: Translating words into unique barcodes, then matching them.
+Dry Run (Opt): Convert all `startWords` to sorted strings or integer bitmasks. Add to Set. For each target word, convert to bitmask, iteratively drop exactly 1 set bit, and check if it exists in the Set.
+How to Draw (Opt): Write target word. Sort its letters. Draw lines branching down where one letter is omitted. If the resulting word is in the "Start Words Box", circle it in green.
+Opt Complexity Visuals: $O(N \log K + M \cdot K)$ string processing.
+How to Draw Opt Complexity: A funnel converting strings into pure numbers, dropping into an $O(1)$ lookup bucket.
+Mem Vis (BF): Massive nested loop string allocations.
+Mem Vis (Opt): A Hash Set containing integers (bitmasks) or strings (sorted). $O(M)$ space.

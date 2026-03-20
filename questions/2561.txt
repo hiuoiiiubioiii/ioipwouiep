@@ -1,0 +1,19 @@
+ID: 2561
+Problem Title: Rearranging Fruits
+Brute Force Method: Generate every possible sequence of swaps to make the frequency of each fruit identical in both baskets. $O(\text{Factorial}/\text{Exponential})$.
+BF Complexity Visuals: A chaotic web of fruit exchanges, trying every fruit with every other fruit.
+How to Draw BF: Draw two baskets. Try swapping Apple 1 with Orange 2. Then try Apple 1 with Banana 1. Track the cost each time.
+Optimised Pattern: Frequency Mapping + Greedy Pairing + Min-Cost Observation.
+Opt Vis. Technique: A "Difference List" visualization where only the fruits that need to move are sorted and paired with the cheapest available fruit in either basket.
+
+
+
+
+
+[Image of frequency distribution chart]
+Dry Run (Opt): Calculate target frequency (sum of counts / 2). Identify "excess" fruits in both baskets. Sort all excess fruits in one list. Pair the smallest excess fruits with the smallest from the other side. Note: you can also use the absolute minimum fruit in either basket as a "bridge" (cost = 2 * min_fruit).
+How to Draw (Opt): List the fruits that need to be moved from Basket A and those from Basket B. Sort them. Compare the cost of swapping them directly vs. using the global cheapest fruit twice. Sum the minimums.
+Opt Complexity Visuals: $O(N \log N)$ for sorting the differences.
+How to Draw Opt Complexity: Draw two frequency tables. Draw a single list of "Fruits to Swap." Show a sorting box and a final math comparison (Direct vs. Bridge).
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N)$ to store the fruit frequencies and the list of fruits to be swapped.

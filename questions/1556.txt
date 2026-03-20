@@ -1,0 +1,13 @@
+ID: 1556
+Problem Title: Thousand Separator
+Brute Force Method: Convert number to string, then use a loop to insert '.' every 3 characters from the left. $O(N^2)$ due to frequent string re-allocations/shifts.
+BF Complexity Visuals: Shifting Block Visualization
+How to Draw BF: Draw a string of numbers. Every 3 steps, draw an arrow pushing the entire remaining string to the right to make room for a dot. High friction, high cost.
+Optimised Pattern: Reverse Traversal / String Builder
+Opt Vis. Technique: The Backwards Ticker
+Dry Run (Opt): Iterate from the end of the string. Maintain a `count`. Every 3 characters, append a dot *unless* you're at the very beginning. Reverse the result at the end.
+How to Draw (Opt): Write the number: "1234567". Start at '7'. Draw a tally: 1, 2, 3... Dot! 1, 2, 3... Dot! Draw the result building up from right to left in a single pass.
+Opt Complexity Visuals: Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight horizontal line. Each digit is visited exactly once.
+Mem Vis (BF): Multiple intermediate string copies. $O(N^2)$ space in some languages.
+Mem Vis (Opt): A single StringBuilder or character array. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 467
+Problem Title: Unique Substrings in Wraparound String
+Brute Force Method: Exhaustive Substrings Generate all substrings of p. For each, check if it exists in the infinite 'abcd...z' wraparound.
+BF Complexity Visuals: Substring Grid
+How to Draw BF: Draw an N \times N grid. Each cell is a substring check. $O(N^3)$ (with check).
+Optimised Pattern: DP (Max Length per Char) Track the longest "consecutive" sequence ending at each character ('a' through 'z'). The sum of these 26 values is the result.
+Opt Vis. Technique: 26-Slot High Watermark
+Dry Run (Opt): Imagine 26 buckets labeled a-z. As you scan p, update a bucket if you find a longer consecutive sequence ending in that letter.
+How to Draw (Opt): Write the string p. Below it, write the "current run" length. Maintain an array of 26 max-lengths. Update the array only if current &gt; existing.
+Opt Complexity Visuals: Linear Pipeline
+How to Draw Opt Complexity: Draw one arrow scanning p once. Total $O(N)$.
+Mem Vis (BF): HashSet A set storing every unique substring found. $O(N^2)$.
+Mem Vis (Opt): Fixed Array Draw one 26-slot integer array. $O(1)$ extra space.

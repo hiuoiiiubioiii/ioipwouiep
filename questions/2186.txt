@@ -1,0 +1,13 @@
+ID: 2186
+Problem Title: Minimum Number of Steps to Make Two Strings Anagrams II
+Brute Force Method: Generate all character counts, then iterate and check differences by repeatedly scanning both counts.
+BF Complexity Visuals: Two separate buckets, measuring the weight of each item one by one.
+How to Draw BF: Draw two lists of characters. For every 'a' in S, look for 'a' in T. If missing, count it. $O(N + M)$.
+Optimised Pattern: Frequency Array (Counting Sort).
+Opt Vis. Technique: A balance scale comparing two sets of weights.
+Dry Run (Opt): Count frequencies of 'a'-'z' for both strings in two arrays of size 26. Sum the absolute difference: `abs(countS[i] - countT[i])`.
+How to Draw (Opt): Draw two 26-slot tables. Tally the characters of S in Table 1 and T in Table 2. Subtract the counts and sum the absolute results.
+Opt Complexity Visuals: $O(N + M)$ single pass per string.
+How to Draw Opt Complexity: Two straight horizontal lines scanning the strings, followed by a constant-time 26-step loop.
+Mem Vis (BF): $O(N + M)$ space if using frequency maps with objects.
+Mem Vis (Opt): $O(1)$ extra space (Two fixed-size arrays of 26 integers).

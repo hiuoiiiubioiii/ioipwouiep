@@ -1,0 +1,13 @@
+ID: 2552
+Problem Title: Count Increasing Quadruplets
+Brute Force Method: Four nested loops checking every combination of i &lt; j &lt; k &lt; l such that nums[i] &lt; nums[k] &lt; nums[j] &lt; nums[l]. $O(N^4)$.
+BF Complexity Visuals: A 4D hypercube of index comparisons, incredibly dense and slow.
+How to Draw BF: Write 4 indices. Manually check the "zigzag" condition (i &lt; j &lt; k &lt; l and the specific value order) for every single possible set of 4 numbers.
+Optimised Pattern: 2D Prefix Sums / Precomputation of "Smaller" and "Greater" counts.
+Opt Vis. Technique: A "Pivot-Point" visual focusing on the middle pair (j, k) and counting valid i's and l's using precomputed tables.
+Dry Run (Opt): Fix j and k. We need the count of i &lt; j where nums[i] &lt; nums[k] and the count of l &gt; k where nums[l] &gt; nums[j]. Precompute a 2D array `less[x][val]` (count of elements before index x smaller than `val`) to answer these in $O(1)$ during the $O(N^2)$ loop over j and k.
+How to Draw (Opt): Draw the array. Fix two middle fingers on j and k. Look left for small numbers and right for large numbers. Use a pre-written table to instantly get those counts instead of manual counting.
+Opt Complexity Visuals: $O(N^2)$ to precompute the prefix tables and $O(N^2)$ to iterate through all (j, k) pairs.
+How to Draw Opt Complexity: Draw an N x N grid for precomputation. Below it, draw a standard nested loop diagram (triangle) representing the j, k search.
+Mem Vis (BF): $O(1)$ extra space (excluding input).
+Mem Vis (Opt): $O(N^2)$ to store the precomputation tables (e.g., `greaterThan` or `smallerThan` arrays).

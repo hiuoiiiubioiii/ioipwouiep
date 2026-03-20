@@ -1,0 +1,13 @@
+ID: 2904
+Problem Title: Shortest and Lexicographically Smallest Beautiful String
+Brute Force Method: Generate all substrings, filter for 'k' ones, sort by length then lexicographically.
+BF Complexity Visuals: Inverted Pyramid of Substrings
+How to Draw BF: Draw a pyramid: N blocks top row (len 1), N-1 blocks second row (len 2)... summing to N(N+1)/2 substrings.
+Optimised Pattern: Sliding Window
+Opt Vis. Technique: Expanding/Contracting Bracket `[  ]`
+Dry Run (Opt): Place [ ] at index 0. Expand `]` until `1`s count == k. Then shrink `[` to minimize length while keeping `1`s count == k.
+How to Draw (Opt): Write out the binary string. Draw a physical bracket around a subset. Tally the '1's above the bracket.
+Opt Complexity Visuals: Two Independent Linear Timelines
+How to Draw Opt Complexity: Draw two parallel tracks for Left and Right pointers. Both move forward maximum N times. $O(2N)$ -&gt; $O(N)$.
+Mem Vis (BF): List of Strings: Draw a large list block containing N^2 allocated string variables in memory. $O(N^2)$ space.
+Mem Vis (Opt): Three Scalar Variables: Draw boxes for `left_ptr`, `right_ptr`, and `ones_count`. $O(1)$ aux space (excluding output).

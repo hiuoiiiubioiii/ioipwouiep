@@ -1,0 +1,13 @@
+ID: 282
+Problem Title: Expression Add Operators
+Brute Force Method: Generate every possible string by inserting '+', '-', or '*' between every digit and evaluate each using a calculator.
+BF Complexity Visuals: Operator Permutation Tree: $O(4^N)$.
+How to Draw BF: Draw a root node. Branch into 4 at every level (for each possible operator/no-operator). It becomes a dense web almost instantly.
+Optimised Pattern: Backtracking with Evaluation-on-the-fly
+Opt Vis. Technique: Recursive State Machine
+Dry Run (Opt): Recursively build the string. Keep track of current `value` and the `previousOperand` (to handle '*' precedence by reversing the previous addition).
+How to Draw (Opt): Draw the recursion tree. In each node, write three values: `current_sum`, `last_value`, and `index`. Show the multiplication branch "undoing" the last addition.
+Opt Complexity Visuals: Pruned Backtracking: $O(4^N)$ (Still high, but avoids the $O(N)$ string evaluation cost).
+How to Draw Opt Complexity: Draw the same dense tree but note that evaluation happens in $O(1)$ at each node rather than a separate pass.
+Mem Vis (BF): Massive String List: Draw a mountain of string objects.
+Mem Vis (Opt): String Builder / Recursion Stack: Draw a vertical stack of height N. Use one shared character array for the path.

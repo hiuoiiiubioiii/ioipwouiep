@@ -1,0 +1,13 @@
+ID: 3104
+Problem Title: Find Longest Self-Contained Substring
+Brute Force Method: Generate all substrings, map character counts, and scan main string to check bounds. $O(N^3)$
+BF Complexity Visuals: Triangle of all combinations overlaid with dense character frequency checks.
+How to Draw BF: Bracket a substring. Draw arrows from inside characters to matching outside characters to show failure.
+Optimised Pattern: Interval Merging / Prefix Sums
+Opt Vis. Technique: Bounding Box Overlaps
+Dry Run (Opt): Mark [First, Last] occurrences of chars. Expand substring bounds to swallow overlapping character intervals completely.
+How to Draw (Opt): Write string. Underneath, draw horizontal colored line segments spanning the [first, last] index of each character.
+Opt Complexity Visuals: Set union diagram tracking a fixed 26-character alphabet.
+How to Draw Opt Complexity: Draw the outer loop bounded to 26 characters max, and a single array pass for the inner loop. $O(26 x N)$ rightarrow $O(N)$.
+Mem Vis (BF): Huge list of frequency dictionaries for every single substring combination.
+Mem Vis (Opt): One array of size 26 for bounds, and one integer tracking max valid length.

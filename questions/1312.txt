@@ -1,0 +1,13 @@
+ID: 1312
+Problem Title: Min Insertions to Make String Palindrome
+Brute Force Method: Try inserting every possible character at every possible index and recursively check if the result is a palindrome.
+BF Complexity Visuals: Exponential Insertion Tree
+How to Draw BF: Draw string. At every gap, draw arrows outward representing 26 possible letter insertions. The tree explodes with $O(2^N)$ branching.
+Optimised Pattern: 2D DP: Longest Common Subsequence (LCS)
+Opt Vis. Technique: 2D DP LCS Matrix
+Dry Run (Opt): Reverse string `s` to get `rev_s`. Find LCS between `s` and `rev_s`. The minimum insertions required is simply `length(s) - LCS`.
+How to Draw (Opt): Draw a grid with `s` on top and `rev_s` on the left. Fill cells diagonally if chars match (+1), or take max of top/left if not. Subtract bottom-right value from N.
+Opt Complexity Visuals: N x N Matrix Fill
+How to Draw Opt Complexity: Draw a square box (N x N space). Draw a zigzag line sweeping top-left to bottom-right, showing strict $O(N²)$ calculation bounds.
+Mem Vis (BF): Heavy String Mutation Stack: Heavy recursive frames holding thousands of copied and modified string variations.
+Mem Vis (Opt): Space-Optimized DP Arrays: Draw two 1D `std::vector` arrays (`prev` and `curr`). Show data cascading down, proving $O(N)$ memory replaces the $O(N²)$ matrix.

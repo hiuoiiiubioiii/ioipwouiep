@@ -1,0 +1,13 @@
+ID: 2324
+Problem Title: Product Sales Analysis IV (SQL Premium)
+Brute Force Method: (Conceptual) Cross join all users with all products, filter out combinations they didn't buy, aggregate totals, and scan the whole list again to find the max.
+BF Complexity Visuals: Cartesian Product Explosion
+How to Draw BF: Draw two small tables multiplying into a giant grid of mostly empty or invalid relationships.
+Optimised Pattern: Window Functions (Dense_Rank / Max over Partition)
+Opt Vis. Technique: Partitioned Data Buckets
+Dry Run (Opt): Group by `user_id` and `product_id` to get total spending. Then use a Window Function to partition by `user_id` and rank the spending descending. Filter for rank 1.
+How to Draw (Opt): Draw a table. Draw thick horizontal lines separating different `user_id`s (partitions). Inside each partition, sort the rows by spending and circle the top row(s).
+Opt Complexity Visuals: Partitioned Linear Scan
+How to Draw Opt Complexity: Draw a vertical pipeline where data is grouped into distinct horizontal chunks, sorted internally, and truncated.
+Mem Vis (BF): Draw an immense temporary memory table holding a Cartesian join.
+Mem Vis (Opt): Draw a structured Result Set mapping `user_id` directly to a Hash Map of `product_id` totals.

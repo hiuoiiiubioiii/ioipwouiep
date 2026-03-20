@@ -1,0 +1,13 @@
+ID: 3066
+Problem Title: Minimum Operations to Exceed Threshold Value II
+Brute Force Method: Repeatedly sort the array, pick the two smallest elements, perform the operation (min x 2 + max), and re-insert. Repeat until all elements >= k.
+BF Complexity Visuals: Nested Sorting Loops
+How to Draw BF: Draw the array. Circle the two smallest. Draw an arrow to a "Resort" box, then back to the array. $O(N^2 \log N)$.
+Optimised Pattern: Min-Priority Queue (Heap)
+Opt Vis. Technique: Bubble Heap Up/Down
+Dry Run (Opt): Push all elements into a Min-Heap. While heap.peek() &lt; k, poll two elements, calculate the new value, and push it back. The heap automatically maintains the smallest at the top.
+How to Draw (Opt): Draw a binary tree (Heap). Show the two smallest nodes being plucked from the top and a new node "bubbling" down into its correct spot.
+Opt Complexity Visuals: $O(N \log N)$ Heap Operations
+How to Draw Opt Complexity: Draw a linear scan to build the heap $O(N)$, followed by a series of $O(\log N)$ spikes representing heapify operations.
+Mem Vis (BF): Multiple array clones created during each re-sorting phase.
+Mem Vis (Opt): A single PriorityQueue object storing the integers in a balanced binary tree structure.

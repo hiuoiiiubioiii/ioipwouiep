@@ -1,0 +1,13 @@
+ID: 521
+Problem Title: Longest Uncommon Subsequence I
+Brute Force Method: Generate every single subsequence of both strings and compare them all to find the longest unique one. $O(2^N)$.
+BF Complexity Visuals: Exploding binary tree showing every "include/exclude" character choice.
+How to Draw BF: Draw string A. Branch downwards creating every possible sub-string. Repeat for B.
+Optimised Pattern: Brain Teaser / Math (Length Comparison).
+Opt Vis. Technique: Two wooden planks side-by-side. If they aren't identical, the longer plank is the answer.
+Dry Run (Opt): Are strings identical? Return -1. Are they different? Return max(length of A, length of B).
+How to Draw (Opt): Draw two horizontal bars representing string lengths. If completely identical, write -1. If different, circle the longer bar.
+Opt Complexity Visuals: A single, instantaneous check. $O(1)$.
+How to Draw Opt Complexity: Draw two boxes (A and B) flowing into a single decision diamond.
+Mem Vis (BF): Massive arrays of strings filling up memory with $O(2^N)$ combinations.
+Mem Vis (Opt): Zero extra space. $O(1)$ auxiliary variables.

@@ -1,0 +1,13 @@
+ID: 1589
+Problem Title: Maximum Sum Obtained of Any Permutation
+Brute Force Method: For every permutation of the array, calculate the sum of all provided ranges. Find the max. $O(N! \cdot Q \cdot N)$.
+BF Complexity Visuals: Factorial Range-Sum Web
+How to Draw BF: Draw the array. Branch out N! ways. For each leaf, draw all Q range brackets and sum them. This is an algorithmic nightmare.
+Optimised Pattern: Difference Array + Greedy (Sweep Line)
+Opt Vis. Technique: The Overlap Frequency Bar-Graph
+Dry Run (Opt): 1. Use a difference array to count how many ranges cover each index in $O(Q+N)$. 2. Sort the frequencies. 3. Sort the input array. 4. Assign the largest numbers to the most frequent indices.
+How to Draw (Opt): Draw a line of indices. For each range [start, end], write +1 at start and -1 at end+1. Sweep across to get frequencies. Draw a bar chart of frequencies and a bar chart of sorted array values. Match the tallest bars.
+Opt Complexity Visuals: Sorting Bottleneck $O(N \log N + Q)$
+How to Draw Opt Complexity: Draw a linear scan for ranges, followed by a Merge Sort tree height \log N. Total time is dominated by the sort.
+Mem Vis (BF): Storing all subarray sums for N! cases.
+Mem Vis (Opt): An integer array of size N for frequencies. $O(N)$ space.

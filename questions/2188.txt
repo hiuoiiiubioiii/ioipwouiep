@@ -1,0 +1,13 @@
+ID: 2188
+Problem Title: Minimum Time to Finish the Race
+Brute Force Method: Recursively calculate the cost of doing every possible number of laps with every possible tire.
+BF Complexity Visuals: Exponential branching race track.
+How to Draw BF: Draw 10 laps. Branch into 10 choices (tires) for Lap 1, then another 10 for Lap 2. $O(T^L)$.
+Optimised Pattern: Dynamic Programming + Precomputed Best Times.
+Opt Vis. Technique: A staircase where each step looks at the best "leap" possible from previous steps.
+Dry Run (Opt): 1. Precompute `best[i]`: min time to finish `i` laps with a *single* tire. 2. `dp[i] = min(dp[i-k] + best[k] + changeTime)`.
+How to Draw (Opt): Draw a line of laps 1 to N. For each lap, draw multiple "arches" representing finishing `k` laps with one tire and then switching. Pick the path with the smallest total length.
+Opt Complexity Visuals: $O(\text{Laps} \\text{cdot MaxLapsSingleTire})$.
+How to Draw Opt Complexity: A directed graph where nodes are laps and edges are the min time for a set of laps with one tire.
+Mem Vis (BF): Deep recursive call stack.
+Mem Vis (Opt): $O(N)$ for the DP table and precomputed array.

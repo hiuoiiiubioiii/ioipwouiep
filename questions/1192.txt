@@ -1,0 +1,13 @@
+ID: 1192
+Problem Title: Critical Connections in a Network
+Brute Force Method: Remove every edge one by one and run BFS/DFS to see if the graph remains connected. $O(E \cdot (V+E)$).
+BF Complexity Visuals: Edge Deletion Trial Loop
+How to Draw BF: Draw a graph. Erase one edge. Check connectivity. Redraw edge. Repeat. Visually show massive redundant traversals.
+Optimised Pattern: Tarjan's / Bridges (DFS Discovery Time)
+Opt Vis. Technique: Discovery vs. Low-Link Depth
+Dry Run (Opt): Use DFS. For each node, track when it was first seen (`tin`) and the lowest-numbered node reachable from it (`low`). If a neighbor's `low` is greater than your `tin`, that edge is a bridge.
+How to Draw (Opt): Draw a graph. As you DFS, write two numbers inside each node (tin, low). If an edge leads to a neighbor whose low value is higher than your current tin, circle that edge as a bridge.
+Opt Complexity Visuals: Single Graph Scan $O(V + E)$
+How to Draw Opt Complexity: Draw a single DFS traversal path. Each node and edge is touched exactly once.
+Mem Vis (BF): Multiple full graph copies
+Mem Vis (Opt): Two 1D arrays of size V (`tin` and `low`). Draw two rows of V boxes.

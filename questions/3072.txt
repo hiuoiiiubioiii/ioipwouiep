@@ -1,0 +1,13 @@
+ID: 3072
+Problem Title: Distribute Elements Into Two Arrays II
+Brute Force Method: For each element, count how many elements in `arr1` and `arr2` are strictly greater than it by iterating through both full lists.
+BF Complexity Visuals: $O(N^2)$ Nested Searching
+How to Draw BF: Draw an element. Draw two arrows scanning through the entire history of `arr1` and `arr2`. Show N operations growing to N^2.
+Optimised Pattern: Fenwick Tree (BIT) / Segment Tree + Coordinate Compression
+Opt Vis. Technique: Dynamic Frequency Tree
+Dry Run (Opt): Compress all unique values to a 1-N range. Use two Fenwick Trees to track counts of values. Use `Tree.query(N) - Tree.query(compressed_val)` to get the count of greater elements in $O(\log N)$.
+How to Draw (Opt): Draw a Fenwick Tree (Binary Tree structure). Show a "Value" entering, and highlight the path of nodes being updated as it climbs. Draw a "Query" as a path down to get a sum.
+Opt Complexity Visuals: $O(N \log N)$ Tree Ops
+How to Draw Opt Complexity: Draw an $O(N \log N)$ block for sorting/compression, followed by an $O(N)$ loop with $O(\log N)$ tree spikes.
+Mem Vis (BF): Storing full array copies and re-sorting them at every single step.
+Mem Vis (Opt): Two Fenwick Tree arrays and one sorted "Compression Map" array.

@@ -1,0 +1,13 @@
+ID: 2408
+Problem Title: Design SQL
+Brute Force Method: Use nested lists to store table rows. Search through the list linearly for every 'Select' or 'Insert' operation.
+BF Complexity Visuals: Linear Table Scan
+How to Draw BF: Draw a row of boxes. Draw an arrow checking every box for an ID. Label $O(N)$ per query.
+Optimised Pattern: Hash Map of Lists (Indexed Access)
+Opt Vis. Technique: Key-Value Catalog
+Dry Run (Opt): Map table names to a List. Since IDs are auto-incrementing, use the ID as a direct index `list[ID-1]` for $O(1)$ access.
+How to Draw (Opt): Draw a Map. Key: "TableA", Value: [Row1, Row2, Row3]. Draw a finger pointing directly to Row 2 when ID=2 is asked.
+Opt Complexity Visuals: Constant Time Access
+How to Draw Opt Complexity: Draw a single box. Label $O(1)$ per operation.
+Mem Vis (BF): List storage $O(\text{Total Rows})$.
+Mem Vis (Opt): Hash Map overhead + List storage. $O(\text{Total Rows})$.

@@ -1,0 +1,13 @@
+ID: 2662
+Problem Title: Minimum Cost of a Path With Special Roads
+Brute Force Method: BFS/DFS exploring every single coordinate point on a 10^5 x 10^5 grid.
+BF Complexity Visuals: Infinite Grid Exploration
+How to Draw BF: Draw a coordinate plane. Draw a sprawling web of paths trying to visit every integer point. Complexity is effectively infinite/unbound.
+Optimised Pattern: Dijkstra's on a Coordinate Graph
+Opt Vis. Technique: Inter-Point Shortest Path
+Dry Run (Opt): Treat the start, end, and all special road endpoints as "nodes" in a graph. The distance between any two nodes is either the Manhattan distance or the special road cost. Run Dijkstra from Start to End.
+How to Draw (Opt): Draw only the relevant points (Start, End, and special road endpoints). Draw edges between every pair of points with Manhattan distance. Replace some with special road costs. Find the shortest path.
+Opt Complexity Visuals: $O(N^2 \log N)$ where N is # of special roads
+How to Draw Opt Complexity: Draw a Dijkstra block where V = 2 * number of special roads.
+Mem Vis (BF): Full grid state matrix
+Mem Vis (Opt): Priority Queue and a Map for node distances.

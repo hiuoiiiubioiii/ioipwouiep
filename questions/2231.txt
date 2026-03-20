@@ -1,0 +1,13 @@
+ID: 2231
+Problem Title: Largest Number After Digit Swaps by Parity
+Brute Force Method: Permutation GenerationGenerate every possible permutation of the digits, filter out the ones that swap odd with even, and then find the maximum value among the valid permutations.
+BF Complexity Visuals: Exploding Decision Tree
+How to Draw BF: Write the starting number. Draw branches for every possible valid swap. Continue branching until all valid arrangements are found, demonstrating $O(N!)$ factorial explosion.
+Optimised Pattern: Sorting by Parity / Max Heap
+Opt Vis. Technique: Two-Lane Sorting Funnel
+Dry Run (Opt): Separate the digits into an 'Odd' bucket and an 'Even' bucket. Sort both buckets in descending order. Reconstruct the number by pulling from the respective bucket based on the original digit's parity.
+How to Draw (Opt): Draw the number. Draw arrows dropping odd digits into a red bin and evens into a blue bin. Sort both bins. Point back to the original number spots, pulling the highest available digit from the matching color bin.
+Opt Complexity Visuals: Parallel Sorting Timeline
+How to Draw Opt Complexity: Draw an $O(N)$ string traversal. Then draw two independent $O(K \log K)$ sort operations for the two buckets. End with a final $O(N)$ reconstruction pass, proving efficiency over $O(N!)$.
+Mem Vis (BF): Massive array allocations holding every generated permutation string.
+Mem Vis (Opt): Two small arrays or priority queues holding at most 10 digits each (O(N) space).

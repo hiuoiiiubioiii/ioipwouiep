@@ -1,0 +1,13 @@
+ID: 826
+Problem Title: Most Profit Assigning Work
+Brute Force Method: For every worker, loop through the entire list of jobs to find the one they can do that yields the highest profit.
+BF Complexity Visuals: Bipartite Search Web. $O(W \\text{times} J)$.
+How to Draw BF: Draw a column of workers and a column of jobs. Draw lines from every worker to every job they are capable of doing.
+Optimised Pattern: Sorting + Two Pointers (Greedy).
+Opt Vis. Technique: Ascending Skill-to-Profit Escalator.
+Dry Run (Opt): Sort jobs by difficulty. Sort workers by skill. Move through jobs once; as worker skill increases, the "best profit seen so far" only ever goes up.
+How to Draw (Opt): Draw two parallel sorted lists. Draw a pointer on the jobs that moves forward as the worker pointer moves forward. Never move backward.
+Opt Complexity Visuals: Sorting Bottleneck. $O(J \log J + W \log W)$.
+How to Draw Opt Complexity: Draw two "Sorting Funnels" followed by a single parallel linear scan.
+Mem Vis (BF): No extra space, but visualized as highly redundant CPU cycles.
+Mem Vis (Opt): Sorted Pair Array: Draw an array where each cell is a (Difficulty, Profit) tuple.

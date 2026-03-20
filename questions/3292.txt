@@ -1,0 +1,13 @@
+ID: 3292
+Problem Title: Minimum Number of Valid Strings to Form Target II
+Brute Force Method: Same Trie + DP approach from 3291. $O(N^2)$ fails due to N=50,000.
+BF Complexity Visuals: Quadratic State Table
+How to Draw BF: Draw the DP table. Show that for a large N, the number of "jump" arrows being checked at each index becomes too large for the time limit.
+Optimised Pattern: Aho-Corasick + Greedy Jump / Segment Tree
+Opt Vis. Technique: Automaton State Jump Map
+Dry Run (Opt): Use Aho-Corasick to find the longest prefix match at each position in $O(N)$. Then, solve the "Minimum Jumps to reach the end" using a Segment Tree or monotonic queue.
+How to Draw (Opt): Draw the target string. At each index, write a number L (longest match). This turns the problem into "At index i, you can jump to any j <= i+L." Use a Segment Tree to find the min jumps in that range.
+Opt Complexity Visuals: Linearized Automaton Pipeline
+How to Draw Opt Complexity: Draw an $O(\text{Words} \cdot L)$ block for the automaton and an $O(N \log N)$ or $O(N)$ block for the greedy/queue jump. Total: $O(\text{Words} \cdot L + N \log N)$.
+Mem Vis (BF): Large 2D DP table.
+Mem Vis (Opt): Aho-Corasick state tree + Segment Tree (O(Words * L + N) space).

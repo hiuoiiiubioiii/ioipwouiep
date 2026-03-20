@@ -1,0 +1,13 @@
+ID: 2879
+Problem Title: Display the First Three Rows
+Brute Force Method: Iterate from index 0 to 2, copy each row manually into a new list or structure.
+BF Complexity Visuals: Row-by-Row Copy Trace
+How to Draw BF: Draw the first three rows of a table being moved into a separate smaller box.
+Optimised Pattern: df.head(3) (Slicing)
+Opt Vis. Technique: Buffer Slicing
+Dry Run (Opt): Visualize a "window" that only looks at the first three indices of the underlying memory buffer.
+How to Draw (Opt): Draw a vertical list of numbers. Draw a small bracket around the top 3 items.
+Opt Complexity Visuals: Constant Time $O(1)$ in terms of metadata/view creation.
+How to Draw Opt Complexity: Draw a horizontal line with a short segment at the start marked "Slice".
+Mem Vis (BF): $O(N\cdot M)$ if copying the whole structure.
+Mem Vis (Opt): $O(1)$ (View) or $O(3\cdot M)$ (Copy).

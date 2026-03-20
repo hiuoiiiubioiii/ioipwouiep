@@ -1,0 +1,13 @@
+ID: 3712
+Problem Title: Sum of Elements With Frequency Divisible by K (Easy)
+Brute Force Method: For each element, scan the whole array to count its frequency. If divisible, add it. $O(N^2)$.
+BF Complexity Visuals: Overlapping Scan Lines $O(N^2)$.
+How to Draw BF: Draw the array. Pick an element, draw a line scanning the whole array to count it. Repeat for next.
+Optimised Pattern: Hash Map Frequency Counting
+Opt Vis. Technique: Two-Pass Map Reduction
+Dry Run (Opt): Pass 1: Tally frequencies in map. Pass 2: Iterate map keys, if value % K == 0, add (key * value) to sum.
+How to Draw (Opt): Draw two columns: "Number" and "Tally Marks". Scan array, add tallies. Then circle rows where tallies divide by K.
+Opt Complexity Visuals: $O(N)$ Time, $O(U)$ Space (U = unique elements).
+How to Draw Opt Complexity: Draw two straight sequential lines (Two passes).
+Mem Vis (BF): No extra memory, N^2 time.
+Mem Vis (Opt): Hash Table memory layout (Key-Value pairs).

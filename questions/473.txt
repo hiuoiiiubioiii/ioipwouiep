@@ -1,0 +1,13 @@
+ID: 473
+Problem Title: Matchsticks to Square
+Brute Force Method: Exhaustive DFS Try placing each matchstick into one of 4 "sides". Check if all sides equal `TotalSum / 4`.
+BF Complexity Visuals: 4-ary Tree
+How to Draw BF: Draw a root. Branch into 4 directions for match 1, then 4 for match 2. Total $O(4^N)$.
+Optimised Pattern: DFS with Pruning / Bitmask DP Sort matchsticks descending. Try placing in a side; if it exceeds `target`, backtrack immediately.
+Opt Vis. Technique: Bucket Filling
+Dry Run (Opt): Imagine 4 identical buckets. Try to pour "lengths" (matchsticks) into them without any bucket overflowing.
+How to Draw (Opt): Draw 4 vertical bars. Write "Target" at the top. Draw matchsticks as blocks filling these bars. Cross out configurations that overflow.
+Opt Complexity Visuals: Pruned Search
+How to Draw Opt Complexity: Draw the 4-ary tree but show most branches ending at level 1 or 2 due to "Sum &gt; Target" checks.
+Mem Vis (BF): Call Stack Full depth N stack.
+Mem Vis (Opt): Bitmask Table Draw an array of size 2^N. $O(2^N)$ space.

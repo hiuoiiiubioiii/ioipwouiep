@@ -1,0 +1,13 @@
+ID: 1870
+Problem Title: Minimum Speed to Arrive on Time
+Brute Force Method: Linear Search: Try speed = 1, then 2, then 3... up to 10^7 until the total time is \le hour.
+BF Complexity Visuals: Linear Search brute force line.
+How to Draw BF: Draw a line from 1 to 10^7. Draw an arrow stepping through every single integer. Mark $O(N \cdot 10^7)$.
+Optimised Pattern: Binary Search on Answer.
+Opt Vis. Technique: Range Halving search.
+Dry Run (Opt): Set `low=1, high=1e7`. Calculate `time(mid)`. If `time &lt;= hour`, `high=mid` (possible answer); else `low=mid+1`.
+How to Draw (Opt): Draw a line 1 to 10^7. Mark `mid`. Calculate time. Draw a big "X" through the half that is now impossible. Repeat.
+Opt Complexity Visuals: Logarithmic search depth.
+How to Draw Opt Complexity: Draw a binary tree of height \log_2(10^7) \approx 24. Each node takes $O(N)$ time. Mark $O(N \log M)$.
+Mem Vis (BF): $O(1)$ stack space.
+Mem Vis (Opt): $O(1)$ stack space for search boundaries.

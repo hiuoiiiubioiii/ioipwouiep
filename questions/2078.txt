@@ -1,0 +1,13 @@
+ID: 2078
+Problem Title: Two Furthest Houses With Different Colors
+Brute Force Method: Nested loops comparing every house `i` with every house `j`. If `colors[i] != colors[j]`, update the max distance.
+BF Complexity Visuals: N x N Comparison Grid
+How to Draw BF: Draw the array on X and Y axes. Shade all cells where colors are different. The max distance is the cell furthest from the diagonal. $O(N^2)$.
+Optimised Pattern: Greedy Extremes Check
+Opt Vis. Technique: Two-Way Anchor Pull
+Dry Run (Opt): The max distance must involve either the first house or the last house. Check the distance from the first house to the furthest different color from the right, and vice versa.
+How to Draw (Opt): Write the array. Place your left finger on index 0. Slide your right finger from the end until it hits a different color. Repeat with right finger on N-1 and slide left.
+Opt Complexity Visuals: Single Linear Sweep
+How to Draw Opt Complexity: Draw two horizontal lines. One starts at left, one at right. Each is $O(N)$. Total Time $O(N)$.
+Mem Vis (BF): Call stack for nested loop pointers. Space $O(1)$.
+Mem Vis (Opt): Two integer variables for distances. Space $O(1)$.

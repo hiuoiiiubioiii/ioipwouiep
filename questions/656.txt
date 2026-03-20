@@ -1,0 +1,13 @@
+ID: 656
+Problem Title: Coin Path
+Brute Force Method: Recursion without memoization: explore every possible jump of length 1 to B at every index to find the cheapest path.
+BF Complexity Visuals: Broad Multi-way Decision Tree.
+How to Draw BF: Draw an array. From index 0, draw B arrows. From each of those, draw B more. Write $O(B^N)$.
+Optimised Pattern: Dynamic Programming (Right-to-Left).
+Opt Vis. Technique: Value Iteration / Reverse Path Tracing.
+Dry Run (Opt): Start from the end. Calculate the minimum cost to reach the end from the current index by looking at the next B steps. Store the "Next Step" to reconstruct the path later.
+How to Draw (Opt): Draw the array. Write costs under each index. Draw a "Best Move" arrow from each cell to its cheapest neighbor within B range.
+Opt Complexity Visuals: $O(N \cdot B)$ time.
+How to Draw Opt Complexity: Draw an N-length line where each point has a small local search of B. Write $O(\text{NB})$.
+Mem Vis (BF): Draw a massive recursion stack with duplicate paths.
+Mem Vis (Opt): Draw two 1D arrays: `minCost[]` and `nextIndex[]`. $O(N)$ space.

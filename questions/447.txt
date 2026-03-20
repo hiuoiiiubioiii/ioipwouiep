@@ -1,0 +1,13 @@
+ID: 447
+Problem Title: Number of Boomerangs
+Brute Force Method: Triple Loop For every triple (i, j, k), calculate distance dist(i,j) and dist(i,k). If equal, increment.
+BF Complexity Visuals: Nested Cubes
+How to Draw BF: Draw a 3D block representing i, j, k nested loops. $O(N^3)$.
+Optimised Pattern: Hash Map of Distances For each point i, calculate distances to all other points j. Store counts in a Map `dist: count`. Result is \sum count \times (count - 1).
+Opt Vis. Technique: Radial Grouping
+Dry Run (Opt): Imagine point i is a radar. Circles around i group points by distance. Any circle with &gt;1 point forms boomerangs.
+How to Draw (Opt): Draw points on a plane. Pick one point. Draw concentric circles passing through other points. Count points per circle and apply n(n-1).
+Opt Complexity Visuals: Quadratic Scan
+How to Draw Opt Complexity: Draw a 2D grid pass. One loop for i, one inner loop for j. $O(N^2)$ time.
+Mem Vis (BF): Register No extra space beyond loops.
+Mem Vis (Opt): Frequency Map Draw a single Map that gets cleared and reused for each point i. $O(N)$ space.

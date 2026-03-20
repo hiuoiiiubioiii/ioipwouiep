@@ -1,0 +1,13 @@
+ID: 567
+Problem Title: Permutation in String
+Brute Force Method: Generate all N! permutations of string `s1` and check if any of them exist as a substring in `s2`.
+BF Complexity Visuals: Factorial explosion $O(N! \\text{times} M)$.
+How to Draw BF: Draw `abc`. Draw a tree for `abc, acb, bac...`. For each, draw a sliding window across the second string.
+Optimised Pattern: Sliding Window + Frequency Map (Fixed Size).
+Opt Vis. Technique: Two "frequency buckets." You have a target bucket for `s1`. You slide a window of the same size across `s2`, adding a character to your current bucket and removing the oldest one.
+Dry Run (Opt): Create a frequency array (size 26) for `s1`. Slide a window of length `s1.length` over `s2`. If the frequency arrays match, return true.
+How to Draw (Opt): Write `s1`. Draw a frequency table (A:1, B:1). Write `s2`. Draw a box (window) over `s2`. As it slides, update a second frequency table and compare it to the first.
+Opt Complexity Visuals: Linear scan of both strings. $O(N + M)$.
+How to Draw Opt Complexity: Draw two strings with a fixed-width box sliding over the longer one.
+Mem Vis (BF): An array/list to store all N! permutations.
+Mem Vis (Opt): Two fixed-size arrays of length 26. $O(1)$ space.

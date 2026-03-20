@@ -1,0 +1,13 @@
+ID: 918
+Problem Title: Maximum Sum Circular Subarray
+Brute Force Method: For every possible starting position (0 to N-1), run Kadane's algorithm on the N-length sequence starting there.
+BF Complexity Visuals: $O(N^2)$. Running a linear algorithm N times.
+How to Draw BF: Draw N versions of the same array, each rotated by one index. Draw a Kadane's "sweep" arrow across every single one.
+Optimised Pattern: Kadane's (Min/Max Complement)
+Opt Vis. Technique: A "donut" logic. The max circular sum is either a normal subarray (Kadane) or the (Total Sum - Minimum Subarray Sum).
+Dry Run (Opt): Run Kadane once for `max_sum` and once for `min_sum`. Result is `max(max_sum, total_sum - min_sum)`. (Handle all-negative edge case).
+How to Draw (Opt): Draw a circle. Shade the "Max Subarray." Then, shade the "Min Subarray" and show that the remaining part of the circle is the "Circular Max."
+Opt Complexity Visuals: $O(N)$. A single pass through the array.
+How to Draw Opt Complexity: Draw a single horizontal array. Draw one arrow sweeping through it, updating four small boxes: `max_so_far`, `min_so_far`, `curr_max`, `curr_min`.
+Mem Vis (BF): Wasted space representing the N rotated array variants.
+Mem Vis (Opt): $O(1)$. Only variables to track the four Kadane states. Draw 4 small integer boxes.

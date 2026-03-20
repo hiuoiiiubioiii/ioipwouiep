@@ -1,0 +1,13 @@
+ID: 769
+Problem Title: Max Chunks To Make Sorted
+Brute Force Method: Same as 768; exhaustive search of all possible partitions.
+BF Complexity Visuals: Exponential Partitioning
+How to Draw BF: Draw a small array (0-4). List all ways to group them. Check each. $O(2^N)$.
+Optimised Pattern: Running Maximum Comparison
+Opt Vis. Technique: Index Syncing
+Dry Run (Opt): Since elements are 0 \dots n-1, if the `max_seen_so_far` at index i is equal to i, all numbers up to i must be present. A chunk can end here.
+How to Draw (Opt): Draw the array. Move a pointer. Keep track of the highest number seen. When `max == current_index`, draw a vertical "cut" line.
+Opt Complexity Visuals: Single Pass Flatline
+How to Draw Opt Complexity: Draw a line with a single pointer moving from 0 to N. $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ space (single `max` variable).

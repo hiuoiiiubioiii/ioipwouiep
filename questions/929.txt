@@ -1,0 +1,13 @@
+ID: 929
+Problem Title: Unique Email Addresses
+Brute Force Method: For every email, manually iterate through every character, build a new string by handling '.' and '+', then check if it's already in a list.
+BF Complexity Visuals: $O(N \cdot L^2)$ if using a list for uniqueness (O(L) for string building).
+How to Draw BF: Draw a mailbox. For every email, draw a factory that rebuilds the string, then a searcher that looks through every previously received email.
+Optimised Pattern: String Parsing + HashSet
+Opt Vis. Technique: A "Filter Funnel." Each email passes through a standard local-part filter and then is dropped into a "Unique Bucket" (Set).
+Dry Run (Opt): Split by '@'. In the local part: remove all '.', truncate everything after '+'. Recombine with '@domain' and add to a HashSet. Return set size.
+How to Draw (Opt): Draw an email. Draw a "Scissor" icon cutting it at '@'. Draw a "Eraser" removing dots and a "Cutter" stopping at '+'. Point the result to a Set { }.
+Opt Complexity Visuals: $O(N \cdot L)$. Every character is seen exactly once.
+How to Draw Opt Complexity: Draw a conveyor belt of emails. Each email passes through three small "cleaning stations" and lands in a bin.
+Mem Vis (BF): Multiple temporary string copies for every single email.
+Mem Vis (Opt): $O(N \cdot L)$ for the HashSet. Draw a large circular bin labeled "Unique Emails" containing unique string entries.

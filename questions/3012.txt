@@ -1,0 +1,13 @@
+ID: 3012
+Problem Title: Minimize Length of Array Using Operations
+Brute Force Method: Simulate the game: recursively try taking every pair of elements, replacing them with their modulo if it's strictly greater than zero, and branching to see which path yields the shortest array.
+BF Complexity Visuals: State Space Explosion Tree
+How to Draw BF: Draw an array. Branch it out into N^2 new arrays, showing every possible pairing and modulo result.
+Optimised Pattern: Math / Number Theory (Global Minimum modulo reduction)
+Opt Vis. Technique: Modulo Reduction Flowchart
+Dry Run (Opt): Find the absolute smallest number. If any number in the array modulo this minimum is &gt; 0, that remainder becomes the new, strictly smaller unique minimum, destroying everything else (Length = 1). Otherwise, the minimums can only cancel each other out.
+How to Draw (Opt): Draw a funnel. Throw all numbers in. The smallest number sits at the bottom. Check if any number can "chip away" at the minimum using modulo. If yes, write "Ans: 1". If no, tally the minimums and divide by 2.
+Opt Complexity Visuals: 2-Pass Scan Box
+How to Draw Opt Complexity: Draw two $O(N)$ blocks. Block 1: "Find Min". Block 2: "Check Modulos &amp; Count Min occurrences".
+Mem Vis (BF): Deep recursive call stacks holding cloned arrays of shrinking sizes.
+Mem Vis (Opt): A single integer variable tracking the global_min and another tracking its frequency_count.

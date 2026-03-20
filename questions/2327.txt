@@ -1,0 +1,13 @@
+ID: 2327
+Problem Title: Number of People Aware of a Secret
+Brute Force Method: Maintain a giant list of every individual person. Each day, loop through the entire list to update their "days known" and append new people if they fall in the sharing window.
+BF Complexity Visuals: Exponential Population List (O(2^N))
+How to Draw BF: Draw a list of stick figures that doubles or triples in size every few steps, becoming too massive to count.
+Optimised Pattern: 1D Dynamic Programming / Sliding Window
+Opt Vis. Technique: Sliding "Active Sharer" Window
+Dry Run (Opt): Use a DP array where `dp[i]` is the number of new people who found out on day `i`. The number of new people on day `i` is the sum of `dp[i - forget]` to `dp[i - delay]`. Keep a running window sum to avoid re-looping.
+How to Draw (Opt): Draw a timeline of days. Above the timeline, draw a rectangular bracket representing the "sharing window" (from delay to forget). As days pass, slide the bracket right, summing the numbers inside it to generate the next day's value.
+Opt Complexity Visuals: Linear Window Slide (O(N))
+How to Draw Opt Complexity: Draw a timeline. Draw a fixed-width block sliding smoothly from left to right along the timeline.
+Mem Vis (BF): Draw a massive, dynamically expanding Array simulating individual people.
+Mem Vis (Opt): Draw a fixed-size Circular Queue or a 1D DP Array of size N, storing counts instead of individuals.

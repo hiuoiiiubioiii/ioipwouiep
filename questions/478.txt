@@ -1,0 +1,13 @@
+ID: 478
+Problem Title: Generate Random Point in a Circle
+Brute Force Method: Rejection Sampling Generate random x, y within the bounding box of the circle. If distance from center &gt; R, discard and retry.
+BF Complexity Visuals: Dartboard Misses
+How to Draw BF: Draw a square with a circle inside. Draw random dots. Cross out dots outside the circle. $O(1)$ average time.
+Optimised Pattern: Inverse Transform (Polar) Generate \theta \in [0, 2\pi] and r = R \sqrt{\text{rand()}}. The square root is crucial for uniform density.
+Opt Vis. Technique: Expanding Ripple
+Dry Run (Opt): Imagine the circle is made of thin rings. To keep density equal, outer rings must get more points than inner ones. \sqrt{r} scales this perfectly.
+How to Draw (Opt): Draw a circle. Draw two arrows: one for angle \theta, one for radius r. Write the formula x = r \cos \theta, y = r \sin \theta.
+Opt Complexity Visuals: Pure Math
+How to Draw Opt Complexity: Draw a straight-line logic flow. Total $O(1)$.
+Mem Vis (BF): None Constant storage.
+Mem Vis (Opt): None Constant variables. $O(1)$.

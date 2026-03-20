@@ -1,0 +1,13 @@
+ID: 1927
+Problem Title: Sum Game
+Brute Force Method: Simulate every possible digit (0-9) Alice and Bob can pick for every '?' and check sums.
+BF Complexity Visuals: Recursive Minimax Tree (10-way branching)
+How to Draw BF: Draw a root. Branch 10 times (for 0-9). For each, branch another 10 times. Tree depth = total '?'. $O(10^?)$.
+Optimised Pattern: Greedy Mathematical Balancing
+Opt Vis. Technique: Scale Balance / Seesaw
+Dry Run (Opt): Calculate initial sums of Left/Right. Count '?' on each side. Every pair of '?' Bob can "cancel" Alice's move if they sum to 9.
+How to Draw (Opt): Draw a seesaw. One side has current sum + X questions marks. Draw Alice trying to tip it, and Bob trying to level it using the 9-sum rule.
+Opt Complexity Visuals: Static Expression Evaluation
+How to Draw Opt Complexity: Draw a single equation box: `Diff == (Right? - Left?) * 4.5`. If true, Bob wins. $O(N)$ scan.
+Mem Vis (BF): Massive game-state memoization table to store win/loss for every possible sum and '?' count.
+Mem Vis (Opt): Five integer variables: `sumL`, `sumR`, `qL`, `qR`, and `netDiff`. $O(1)$ extra space.

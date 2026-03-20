@@ -1,0 +1,13 @@
+ID: 3167
+Problem Title: Better Compression of String
+Brute Force Method: Decompress the string into its full raw form, then re-compress it from scratch. $O(N x \text{MaxFreq})$
+BF Complexity Visuals: Ballooning Buffer
+How to Draw BF: Write "a3". Draw a huge bubble with three 'a's. Repeat for every pair until the page is full of letters.
+Optimised Pattern: Hash Table + Alphabetical Sorting
+Opt Vis. Technique: The Sorter/Aggregator
+Dry Run (Opt): Parse the string: if it's a letter, read following digits. Add to `count[char]`. Sort keys and join.
+How to Draw (Opt): Draw an array of 26 slots. Read the string; as you find counts, add them into the corresponding slot. Write the non-zero slots in order.
+Opt Complexity Visuals: Linear Scan + Constant Sort
+How to Draw Opt Complexity: Draw a straight line $O(N)$, followed by a tiny fixed-size sort of 26 items. $O(N)$.
+Mem Vis (BF): Gigantic character array holding the uncompressed string.
+Mem Vis (Opt): Fixed array or Map of size 26. $O(1)$ auxiliary space.

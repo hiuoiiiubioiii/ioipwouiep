@@ -1,0 +1,13 @@
+ID: 2914
+Problem Title: Minimum Number of Changes to Make Binary String Beautiful
+Brute Force Method: Try flipping every character, checking if the string can be partitioned validly. (O(2^N) checks).
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a binary tree. At each depth, branch left (keep '0') and right (change to '1'). Size explodes to 2^N.
+Optimised Pattern: Greedy (Adjacent Pair Checking)
+Opt Vis. Technique: 2-Element Bounding Boxes
+Dry Run (Opt): Chunk the array strictly into pairs (index 0-1, 2-3, 4-5). If the two items in a pair are different, 1 change is needed. Count mismatches.
+How to Draw (Opt): Write out the binary string. Draw vertical walls separating every 2 characters. Circle any pair where the two bits are different.
+Opt Complexity Visuals: Single Segmented Timeline
+How to Draw Opt Complexity: Draw a line with N/2 segments. Each segment requires 1 comparison (O(1)). Total time $O(N)$.
+Mem Vis (BF): Deep recursion call stack. Depth $O(N)$.
+Mem Vis (Opt): A single integer counter box. Space strictly $O(1)$.

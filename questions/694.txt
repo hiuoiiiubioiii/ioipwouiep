@@ -1,0 +1,13 @@
+ID: 694
+Problem Title: Number of Distinct Islands
+Brute Force Method: For every island, find its coordinates, store them in a list, and try to rotate/reflect/shift them to see if they match other islands.
+BF Complexity Visuals: Coordinate transformation and set comparison.
+How to Draw BF: Draw two 'L' shapes. Write their coordinates. Manually subtract (min_x, min_y) from each to compare. $O(\text{Grid}^2)$.
+Optimised Pattern: DFS + Path Serialization.
+Opt Vis. Technique: Directional Signature / DNA Mapping.
+Dry Run (Opt): During DFS, record the direction of each move (U, D, L, R) and 'B' for backtracking. Each island gets a unique string signature. Add signatures to a Set.
+How to Draw (Opt): Draw an island. Trace it with a pen: "Down, Right, Back, Back". That string is its ID. If another island has the same ID, they are identical.
+Opt Complexity Visuals: Single pass $O(\text{Rows} \\text{cdot Cols})$.
+How to Draw Opt Complexity: Draw a scanner moving across the grid with a side-list of signatures. Write $O(R \cdot C)$.
+Mem Vis (BF): Draw a list of coordinate sets for every island.
+Mem Vis (Opt): Draw a Hash Set of strings. Space $O(R \cdot C)$.

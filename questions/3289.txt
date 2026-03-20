@@ -1,0 +1,14 @@
+ID: 3289
+Problem Title: The Two Sneaky Numbers of Digitville
+Brute Force Method: Use a nested loop to compare each number with every other number to find duplicates. $O(N^2)$.
+BF Complexity Visuals: Nested Comparison Matrix
+How to Draw BF: Draw a square grid where rows and columns are array indices. Shade every cell where i 
+eq j. Point out that each shading is a comparison.
+Optimised Pattern: XOR Math or Frequency Array
+Opt Vis. Technique: Bitwise Cancellation Map
+Dry Run (Opt): XOR all numbers from 0 to n-1, then XOR all numbers in the input array. The result is a oplus b. Use the first set bit to partition the numbers and find a and b individually.
+How to Draw (Opt): Draw two circles. In one, write 0 dots n-1. In the other, write the input. Draw lines connecting identical numbers between circles. The two "unconnected" numbers in the input are the sneaky ones.
+Opt Complexity Visuals: Single-Pass Pipeline
+How to Draw Opt Complexity: Draw a straight line for the array scan. Label it $O(N)$. Draw a small box for the XOR result.
+Mem Vis (BF): Storing counts in a large Hash Map.
+Mem Vis (Opt): Strictly $O(1)$ auxiliary space using variables for XOR sums.

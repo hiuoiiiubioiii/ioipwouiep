@@ -1,0 +1,13 @@
+ID: 1673
+Problem Title: Find the Most Competitive Subsequence
+Brute Force Method: Generate all subsequences of length K, sort them lexicographically, and pick the smallest.
+BF Complexity Visuals: Combinatorial Sorted List
+How to Draw BF: Draw a massive sorted list of all \binom{N}{K} possible combinations. $O(\\text{binom}{N}{K} \cdot K)$.
+Optimised Pattern: Monotonic Stack (Greedy)
+Opt Vis. Technique: Stack-based "Kick-out" Logic
+Dry Run (Opt): Iterate through array. While current element is smaller than stack top AND we have enough elements left to fill K, pop from stack. Push current.
+How to Draw (Opt): Draw a vertical bucket (Stack). As you process numbers, if a "smaller" number arrives, erase the "bigger" ones above it to make room, but only if the remaining numbers in the array are enough to reach K.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw one horizontal arrow scanning the array. $O(N)$.
+Mem Vis (BF): Large Subsequence Buffer: Massive memory to store all combinations.
+Mem Vis (Opt): Stack / 1D Array: Draw a single horizontal array/stack of size K. $O(K)$ space.

@@ -1,0 +1,13 @@
+ID: 281
+Problem Title: Zigzag Iterator
+Brute Force Method: Copy all elements from both lists into a single 1D list in a zigzag fashion during the constructor.
+BF Complexity Visuals: Pre-processing Block: $O(N_1 + N_2)$.
+How to Draw BF: Draw two separate lists. Draw arrows pouring them into a single long horizontal box. Shade the whole box as "Space Used."
+Optimised Pattern: Queue of Iterators
+Opt Vis. Technique: Cycling Conveyor Belt
+Dry Run (Opt): Store active iterators in a Queue. `next()` polls the front iterator, gets its value, and if it still has elements, offers it back to the end of the queue.
+How to Draw (Opt): Draw a circular queue. Put "List1 Iterator" and "List2 Iterator" inside. Draw an arrow showing one popping out to give a value, then jumping back to the end of the line.
+Opt Complexity Visuals: Lazy Evaluation: $O(1)$ per `next()`.
+How to Draw Opt Complexity: Draw a timeline with single dots for each call. No data is moved until requested.
+Mem Vis (BF): Full 1D Copy: Draw an array of size N_1 + N_2.
+Mem Vis (Opt): Active Iterators: Draw 2 small boxes holding only the current index/pointer for each list.

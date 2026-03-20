@@ -1,0 +1,13 @@
+ID: 3830
+Problem Title: Longest Alternating Subarray After Removing At Most One Element (Hard)
+Brute Force Method: Try removing each element one by one. For each altered array, run a linear scan to find the longest alternating subarray.
+BF Complexity Visuals: N separate array copies, each missing one element, being scanned sequentially.
+How to Draw BF: Draw the array. Put a finger over index 0, scan the rest. Move finger to index 1, scan the rest. Write $O(N^2)$.
+Optimised Pattern: State Machine DP / Left-Right Precomputation.
+Opt Vis. Technique: Three parallel timelines computing lengths: one moving left-to-right, one right-to-left, and a merge step bridging the gaps.
+Dry Run (Opt): Pass 1: Build `left[]` (longest alternating ending at i). Pass 2: Build `right[]` (longest starting at i). Pass 3: For each i, if `arr[i-1]` and `arr[i+1]` alternate correctly, potential length is `left[i-1] + right[i+1]`.
+How to Draw (Opt): Draw the array. Draw left-to-right growth arrows. Draw right-to-left growth arrows. For index 'i', draw an arch connecting index i-1 and i+1, skipping 'i'.
+Opt Complexity Visuals: Three sequential linear passes.
+How to Draw Opt Complexity: Draw three horizontal lines representing the array passes. Write $O(N)$ + $O(N)$ + $O(N)$ = $O(N)$.
+Mem Vis (BF): $O(N^2)$ space if creating new arrays for every removal simulation.
+Mem Vis (Opt): Two 1D arrays of size N (`left` and `right`) to store precomputed sequence lengths, taking $O(N)$ space.

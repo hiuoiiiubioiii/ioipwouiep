@@ -1,0 +1,13 @@
+ID: 1701
+Problem Title: Average Waiting Time
+Brute Force Method: Simulate timeline minute-by-minute, checking if a chef is busy or free for every single minute.
+BF Complexity Visuals: Timeline Expansion (1D Number Line with unit steps).
+How to Draw BF: Draw a long horizontal line. Make a tick for *every* minute. Shade segments where the chef works.
+Optimised Pattern: Greedy / Event Simulation (State tracking).
+Opt Vis. Technique: State Jump Timeline (jumping from event to event instead of minute to minute).
+Dry Run (Opt): Track one variable: `next_free_time`. Jump it to `max(arrival, next_free_time) + prep_time`.
+How to Draw (Opt): Draw a timeline. Only draw dots for arrival times. Draw a jumping arrow updating the `free_time` pointer.
+Opt Complexity Visuals: Linear Flowchart (Single Pass over input array).
+How to Draw Opt Complexity: Draw the array `N`. Draw an arrow passing through it exactly once. Label it $O(N)$.
+Mem Vis (BF): Array of size T (max time) to represent chef's schedule. Box grid.
+Mem Vis (Opt): Two solitary boxes: `current_time` and `total_wait`. Eraser marks updating them. $O(1)$ space.

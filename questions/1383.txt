@@ -1,0 +1,13 @@
+ID: 1383
+Problem Title: Maximum Performance of a Team
+Brute Force Method: Generate all possible subsets of engineers (up to 2^N), calculate performance for each, and find the maximum.
+BF Complexity Visuals: 2^N Subset Combination
+How to Draw BF: Draw an engineer. Branch out: "Include" or "Exclude." The tree reaches 2^N leaves, which is impossible for N=100,000.
+Optimised Pattern: Greedy + Min-Heap (Bounded Priority Queue)
+Opt Vis. Technique: Efficiency-Ordered Sliding Window
+Dry Run (Opt): Sort engineers by efficiency descending. Iterate through, adding speed to a Min-Heap. If heap size &gt; K, remove the smallest speed. Performance = `sum_of_speeds * current_efficiency`.
+How to Draw (Opt): Sort engineers by efficiency. Move a "window" down the list. Keep the fastest K engineers in a "Fastest Bucket" (Heap). Every time efficiency drops, update the performance score.
+Opt Complexity Visuals: $O(N \log N + N \log K)$
+How to Draw Opt Complexity: Draw a sorting funnel followed by a linear scan where a small Heap bucket (size K) is updated at each step.
+Mem Vis (BF): $O(2^N)$ Subset States: Storing thousands of combinations in the recursion stack.
+Mem Vis (Opt): Min-Priority Queue: Draw a heap that only grows to size K. Space is $O(N + K)$.

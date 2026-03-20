@@ -1,0 +1,13 @@
+ID: 964
+Problem Title: Least Operators to Express Number
+Brute Force Method: BFS or DFS exploring all four operators (+, -, *, /) with the base `x` to reach the target `target`.
+BF Complexity Visuals: $O(4^\text{depth})$ or higher. An infinite tree branching 4 ways at every step.
+How to Draw BF: Draw the number `x`. Branch to `x+x`, `x-x`, `x*x`, `x/x`. From those, branch again. The tree grows faster than the paper can hold.
+Optimised Pattern: Dynamic Programming (Base-X Representation)
+Opt Vis. Technique: "Working in Base X." Express the number in base `x`. At each power level `x^k`, you can either reach the remainder by adding `x^k` multiple times or by going "over" and subtracting from `x^{k+1}`.
+Dry Run (Opt): `dp(i, target)` where `i` is the current power of `x`. At each step, calculate `rem = target % x`. Compare cost of `rem * cost(x^i)` vs `(x - rem) * cost(x^i)` + recursion.
+How to Draw (Opt): Draw a number line. Mark the target. Mark the nearest powers of X (x^k and x^k+1). Draw two paths to the target: one from below and one from above.
+Opt Complexity Visuals: $O(\log_x(\text{target})$). The number of steps is proportional to the number of digits in the base-x representation.
+How to Draw Opt Complexity: Draw a horizontal line with logarithmic markers (x^1, x^2, x^3). Draw a "Decision" box at each marker.
+Mem Vis (BF): $O(4^D)$ memory in the search queue.
+Mem Vis (Opt): $O(\log_x(\text{target})$) for the memoization table. Draw a small table mapping [Power, Remainder] to [Cost].

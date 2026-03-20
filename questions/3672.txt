@@ -1,0 +1,13 @@
+ID: 3672
+Problem Title: Sum of Weighted Modes in Subarrays (Med)
+Brute Force Method: Nested loops to find every subarray (i, j), then another loop/map to find the mode (most frequent element) and its weight. $O(N^3)$.
+BF Complexity Visuals: Subarray Mode Exhaustion.
+How to Draw BF: Draw the array. For every bracket [i, j], create a frequency map, find the highest count, and add it to the total. 10^15 operations for large N.
+Optimised Pattern: Frequency Tracking with Contribution Counting. For each element, mathematically calculate how many subarrays it serves as the mode.
+Opt Vis. Technique: Element Contribution Wavefront.
+Dry Run (Opt): Instead of looking at subarrays, look at an element X. When is it the king (mode)? It stays the mode until another element's frequency exceeds its own. Track its "reign" using a sliding window.
+How to Draw (Opt): Draw an array. Highlight all "5"s. Draw boundaries showing the largest area where "5" remains the most frequent (or tied). Use precomputed index lists for each number.
+Opt Complexity Visuals: Amortized Frequency Map Scan.
+How to Draw Opt Complexity: Write $O(N √N)$ or $O(N)$ with advanced frequency buckets. Draw a timeline showing each index being processed a constant number of times.
+Mem Vis (BF): Creating millions of temporary frequency maps (HashMaps) in memory.
+Mem Vis (Opt): A global frequency map and a "frequency of frequencies" counter. Space $O(N)$.

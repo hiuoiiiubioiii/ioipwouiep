@@ -1,0 +1,13 @@
+ID: 845
+Problem Title: Longest Mountain in Array
+Brute Force Method: For every index i, expand outward to the left (decreasing) and right (decreasing) to check if it forms a mountain. Keep the max length.
+BF Complexity Visuals: Radial Expansion from every Peak. $O(N^2)$.
+How to Draw BF: Draw an array. At every single element, draw two arrows pointing outward. Note how the arrows overlap and re-scan the same values repeatedly.
+Optimised Pattern: Two-Pass Precomputation OR One-Pass State Machine.
+Opt Vis. Technique: Mountain Peak Detection (Up-Down Counter).
+Dry Run (Opt): Scan for a slope increase. Once it starts, keep going (Upwards). If you hit a peak followed by a decrease, keep going (Downwards). If it's up AND down, it's a mountain.
+How to Draw (Opt): Draw the array as a line graph. Use a highlighter to mark the "up-slope" segments and a different color for "down-slope." Mountains are where the colors touch.
+Opt Complexity Visuals: Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw one straight horizontal line with "Up" and "Down" state labels above specific segments. No backtracking.
+Mem Vis (BF): $O(1)$ pointers, but draw redundant CPU cycles as multiple overlapping scan arrows.
+Mem Vis (Opt): Two 1D Arrays (Up/Down) or $O(1)$ Space: Draw two counters that reset on flat ground.

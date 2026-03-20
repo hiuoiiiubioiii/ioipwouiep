@@ -1,0 +1,13 @@
+ID: 2099
+Problem Title: Find Subsequence of Length K With the Largest Sum
+Brute Force Method: Generate all subsequences of length K, calculate sums, find the max, and return it.
+BF Complexity Visuals: Combinatorial Power Set
+How to Draw BF: Draw a tree generating subsets. For each leaf, sum K elements. $O(N^K)$.
+Optimised Pattern: Sorting by Value + Sorting by Index
+Opt Vis. Technique: Double-Sort Pipeline
+Dry Run (Opt): Store indices with values. Sort by value descending and take top K. Then sort those K elements by their original indices to maintain "subsequence" order.
+How to Draw (Opt): Draw the array. Circle the K largest numbers regardless of position. Then, rewrite those circled numbers in the order they appeared in the original string.
+Opt Complexity Visuals: Dual Funnel Sort
+How to Draw Opt Complexity: Draw a funnel (O(N log N)). Below it, draw a smaller funnel (O(K log K)). Total time $O(N \log N)$.
+Mem Vis (BF): Storing lists of all possible sums in memory.
+Mem Vis (Opt): An array of pairs (value, index). Space $O(N)$.

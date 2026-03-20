@@ -1,0 +1,13 @@
+ID: 3414
+Problem Title: Maximum Score of Non-overlapping Intervals
+Brute Force Method: Generate all combinations of up to 4 intervals. Filter out the ones that overlap. Sum the weights and find the max. (O(N^4))
+BF Complexity Visuals: Combinatorial Explosion Tree.
+How to Draw BF: Draw the list of intervals. Draw 4 branching lines pointing to different combinations. Draw a big red X if they overlap.
+Optimised Pattern: Sort by End Time + Binary Search + 2D Dynamic Programming (dp[i][quota]). (O(N log N))
+Opt Vis. Technique: DP Table with Binary Search Jumps.
+Dry Run (Opt): At interval i with `quota`, calculate `skip` (move to i+1). For `pick`, add weight and do a binary search to jump to the first non-overlapping interval.
+How to Draw (Opt): Draw intervals sorted by end time. From one block, draw a "skip" arrow to the next, and a "pick" arrow jumping backwards to the first non-overlapping block.
+Opt Complexity Visuals: N x 4 Grid Traversal with Log N Steps.
+How to Draw Opt Complexity: Draw an N x 4 grid matrix. Inside each cell, draw a small binary search tree to indicate the log N cost per state calculation.
+Mem Vis (BF): Call stack depth up to 4, holding countless intermediate list allocations.
+Mem Vis (Opt): An N x 5 DP Memoization Table storing Tuples of `(Weight, [Indices])`.

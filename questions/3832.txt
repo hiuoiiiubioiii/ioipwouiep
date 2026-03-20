@@ -1,0 +1,13 @@
+ID: 3832
+Problem Title: Find Users with Persistent Behavior Patterns (Hard)
+Brute Force Method: For every single user event, run a nested loop scanning all other events to see if they fall into consecutive chronological sequences.
+BF Complexity Visuals: A massive N x N cross-join grid of user logs, with lines connecting matching dates.
+How to Draw BF: Draw a vertical list of dates. For the first date, draw arrows to all subsequent dates checking if they are Date+1, Date+2. Write $O(N^2)$.
+Optimised Pattern: Gaps and Islands (SQL Window Functions) / Sequence Hashing.
+Opt Vis. Technique: A mathematical subtraction timeline where consecutive days minus their row rank mathematically yield the exact same "Island ID".
+Dry Run (Opt): Sort by User, then Date. Create a ranking (1, 2, 3). Subtract rank from Date. Consecutive dates will yield the exact same base date (Island ID). Group by User + Island ID.
+How to Draw (Opt): Draw a table: Dates (Jan 1, Jan 2, Jan 4). Next column Rank (1, 2, 3). Subtract them: (Jan 0, Jan 0, Jan 1). Group identical results.
+Opt Complexity Visuals: Sorting pipeline followed by a linear grouping pass.
+How to Draw Opt Complexity: Draw a funnel "Sort $O(N \log N)$". Draw a straight pipe "Group $O(N)$". Total: $O(N \log N)$.
+Mem Vis (BF): Database TempDB blowout from quadratic cross-joins.
+Mem Vis (Opt): In-place pointer logic or window frames strictly bounded by $O(N)$ space.

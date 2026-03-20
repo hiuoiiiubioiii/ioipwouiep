@@ -1,0 +1,13 @@
+ID: 2525
+Problem Title: Categorize Box According to Criteria
+Brute Force Method: A convoluted sequence of nested if-else statements checking volume, mass, and dimension limits repeatedly in a tangled flow.
+BF Complexity Visuals: A messy, overlapping flowchart with redundant decision nodes evaluating the same math multiple times.
+How to Draw BF: Draw a flowchart. First box: "Is it Bulky?". Branch yes/no. Under *both* branches, write another box: "Is it Heavy?".
+Optimised Pattern: Pre-evaluated Boolean Variables mapping to strict logic combinations.
+Opt Vis. Technique: Two parallel logic gates evaluating independently, flowing into a final, clean 2x2 combination matrix.
+Dry Run (Opt): Calculate volume. Evaluate a strict boolean isBulky = (dim &gt;= 10^4 or vol &gt;= 10^9). Evaluate isHeavy = (mass &gt;= 100). If both are true, return "Both". If neither, "Neither". Else, return whichever is true.
+How to Draw (Opt): Write Bulky = [True/False]. Write Heavy = [True/False]. Look at the two answers and immediately pick the category based on the word combination without re-doing the math.
+Opt Complexity Visuals: $O(1)$ constant time evaluating exact mathematical limits with no loops.
+How to Draw Opt Complexity: Draw a single box representing the CPU. Draw an input going in, a single math symbol inside, and the output category coming out.
+Mem Vis (BF): $O(1)$ constant space.
+Mem Vis (Opt): $O(1)$ constant space using exactly two boolean variables.

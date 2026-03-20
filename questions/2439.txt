@@ -1,0 +1,13 @@
+ID: 2439
+Problem Title: Minimize Maximum Value in Array
+Brute Force Method: Use Binary Search on the answer. For a target 'X', iterate through the array to see if you can reduce all elements to ≤ X by moving values left.
+BF Complexity Visuals: Binary Search Range Shrinking
+How to Draw BF: Draw a number line from Min to Max. Draw a "guess" pointer moving left/right. Inside each guess, show a linear scan. Label $O(N \log(\text{Max})$).
+Optimised Pattern: Prefix Sum Average (Greedy Ceiling)
+Opt Vis. Technique: Water Levelling in Containers
+Dry Run (Opt): As you move through the array, the values can only move left. Thus, for any prefix, the best you can do is distribute the total sum evenly. Max value is `ceil(PrefixSum / (i+1))`.
+How to Draw (Opt): Draw bar charts of different heights. Draw an arrow showing "fluid" moving from right-side bars to left-side bars. The max height is the highest average seen so far.
+Opt Complexity Visuals: Single Pass Line
+How to Draw Opt Complexity: Draw a single horizontal arrow across the array. Label $O(N)$ Time.
+Mem Vis (BF): Draw binary search state variables.
+Mem Vis (Opt): Draw one `prefixSum` and one `maxResult` variable. $O(1)$ Space.

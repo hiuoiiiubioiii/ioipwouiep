@@ -1,0 +1,13 @@
+ID: 3678
+Problem Title: Smallest Absent Positive Greater Than Average (Easy)
+Brute Force Method: Calculate average, then start from ceil(avg) + 1 and check if each number exists in the array using a linear scan. $O(N \\text{cdot Range})$.
+BF Complexity Visuals: Average-to-Infinity Scan.
+How to Draw BF: Calculate avg = 5.5. Check if 6 is in array (scan N). Check if 7 is in array (scan N). If the array is empty, this works. If array has [6,7,8...1M], this is very slow.
+Optimised Pattern: Calculate average, throw array into a Hash Set, and start checking from ceil(avg) + 1.
+Opt Vis. Technique: The "Average Gate" Sieve.
+Dry Run (Opt): Visualize a gate at the "Average" value. Only numbers higher than this can pass. Throw all those "passing" numbers into a bucket (Set). The first number after the gate that *isn't* in the bucket wins.
+How to Draw (Opt): Draw a number line. Mark the 'Average'. Put all array numbers into a Hash Set. Start at the 'Average', take one step at a time. The first number not in the Set is the answer.
+Opt Complexity Visuals: Set Insertion + Linear Probe.
+How to Draw Opt Complexity: Draw an $O(N)$ arrow to build the set, then a short $O(K)$ arrow to find the gap. Total $O(N)$.
+Mem Vis (BF): Nested loops scanning the original array repeatedly.
+Mem Vis (Opt): A Hash Set containing the array elements. Space $O(N)$.

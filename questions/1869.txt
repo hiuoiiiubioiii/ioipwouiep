@@ -1,0 +1,13 @@
+ID: 1869
+Problem Title: Longer Contiguous Segments of Ones than Zeros
+Brute Force Method: Generate all possible substrings, check if they are contiguous, and track the max length for '1's and '0's.
+BF Complexity Visuals: Substring Matrix (O(N^2)).
+How to Draw BF: Draw a grid representing start and end indices of substrings. Mark valid contiguous ones. Note $O(N^2)$.
+Optimised Pattern: Single Pass Counter (Greedy).
+Opt Vis. Technique: Running tally line.
+Dry Run (Opt): Iterate through string. If s[i] == s[i-1], increment current count. Else, update max for that character and reset current count to 1.
+How to Draw (Opt): Draw the string. Write `ones=0, zeros=0` below. As you move right, increment the tally for the current char. When the char changes, "box" the max and reset.
+Opt Complexity Visuals: Linear timeline.
+How to Draw Opt Complexity: Draw an arrow from left to right. Mark $O(N)$.
+Mem Vis (BF): List of all substring strings.
+Mem Vis (Opt): Four integer variables (curr0, max0, curr1, max1).

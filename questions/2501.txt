@@ -1,0 +1,13 @@
+ID: 2501
+Problem Title: Longest Square Streak in an Array
+Brute Force Method: For every number, check if its square exists in the array. If yes, repeat with the square. Continue until no more squares found.
+BF Complexity Visuals: Recursive Square Search
+How to Draw BF: Draw a number. Draw an arrow to its square, then to its square's square. Label $O(N \cdot \log(\log(\text{MaxVal})$)).
+Optimised Pattern: Hash Set + Greedy Growth
+Opt Vis. Technique: Exponential Jump Tracking
+Dry Run (Opt): Put all numbers in a Set. For each number, if it's not a square of another number in the set, start a streak. Square it and look it up in $O(1)$.
+How to Draw (Opt): Draw a Hash Set. Point to '2'. Is '4' in? Yes. Is '16' in? Yes. Is '256' in? No. Streak = 3. Mark all as "visited" or skip to avoid redo.
+Opt Complexity Visuals: Set Build + Linear Pass
+How to Draw Opt Complexity: Draw a line for Set creation (O(N)) and a line for checks. Label $O(N)$ Time.
+Mem Vis (BF): Draw a recursion stack.
+Mem Vis (Opt): Draw a Hash Set of size N. $O(N)$ Space.

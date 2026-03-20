@@ -1,0 +1,13 @@
+ID: 3171
+Problem Title: Find Subarray With Bitwise OR Closest to K
+Brute Force Method: Generate all N^2 subarrays, calculate Bitwise AND from scratch for each, compare to K. $O(N^2)$.
+BF Complexity Visuals: Overlapping AND Brackets
+How to Draw BF: Draw the array. Draw brackets covering every possible subarray, recalculating the AND at every step.
+Optimised Pattern: Shrinking Bitwise Set
+Opt Vis. Technique: The 32-State Sieve
+Dry Run (Opt): Bitwise AND only strictly decreases or stays the same. At index `i`, the number of unique AND results ending at `i` is at most 32. Maintain a Set of current AND results. Update it with `nums[i]`, check distance to K, and carry the Set to `i+1`.
+How to Draw (Opt): Draw the array. Below current number, draw a small box of max 32 numbers. Draw an arrow pulling the *next* number in, applying `&amp;` to everything in the box, throwing out duplicates, and checking the K distance.
+Opt Complexity Visuals: Linear Scan * 32 $O(N \log(\text{Max})$)
+How to Draw Opt Complexity: Draw a single line. At each node, a tiny fixed-size loop of max 32 operations occurs.
+Mem Vis (BF): Subarray storage.
+Mem Vis (Opt): Two sets of max size 32. $O(1)$ space.

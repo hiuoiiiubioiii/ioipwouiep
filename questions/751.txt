@@ -1,0 +1,13 @@
+ID: 751
+Problem Title: IP to CIDR
+Brute Force Method: Convert IP to long, increment one by one, and for each single IP, find the largest possible valid CIDR block.
+BF Complexity Visuals: Step-by-Step Block Matching
+How to Draw BF: Draw a line of dots (IPs). Circle the first one, check size, move. Circle the next, check size. $O(N)$.
+Optimised Pattern: Greedy Bit Manipulation (Trailing Zeros)
+Opt Vis. Technique: Binary Alignment Partitioning
+Dry Run (Opt): Convert IP to `long`. Find the lowest set bit using `x &amp; -x`. This tells you the largest block size possible at that boundary. Take `min(count, bit_limit)` and move IP.
+How to Draw (Opt): Write the IP in binary. Point an arrow to the rightmost '1'. Draw a box around the trailing zeros to show the block size capacity.
+Opt Complexity Visuals: Logarithmic Jump Line
+How to Draw Opt Complexity: Draw a line from start IP to end. Draw large arcs for large blocks and small arcs for small blocks. $O(\log N)$.
+Mem Vis (BF): Array of strings for every individual IP.
+Mem Vis (Opt): List of CIDR strings (O(log N)).

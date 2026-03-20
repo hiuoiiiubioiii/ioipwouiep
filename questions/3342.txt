@@ -1,0 +1,13 @@
+ID: 3342
+Problem Title: Find Minimum Time to Reach Last Room II
+Brute Force Method: Same as 3341, but try all paths while alternating move costs (1 then 2 then 1...).
+BF Complexity Visuals: Stateful Path Branching
+How to Draw BF: Draw the same grid as 3341, but each node in your tree now needs to store a "parity" bit (is the next move 1 or 2?). Doubling the states.
+Optimised Pattern: Modified Dijkstra (State-Space Expansion)
+Opt Vis. Technique: Bicolor Wavefront
+Dry Run (Opt): Dijkstra where the state is `(time, r, c, parity)`. The cost to move depends on the parity of the current move count.
+How to Draw (Opt): Draw the grid. Use two different colored pens (e.g., Red for parity 0, Blue for parity 1). When you move from a Red state, the neighbor becomes a Blue state.
+Opt Complexity Visuals: Layered Grid Volume
+How to Draw Opt Complexity: Draw two copies of the grid (Layer 0 and Layer 1). Draw arrows jumping between layers. Total volume is 2 x N x M log(NM).
+Mem Vis (BF): Recursive stack with extra parity variables for every step.
+Mem Vis (Opt): A 3D distance array `dist[N][M][2]` to store minimum time for each parity state at each cell.

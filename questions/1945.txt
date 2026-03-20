@@ -1,0 +1,13 @@
+ID: 1945
+Problem Title: Sum of Digits of String After Convert
+Brute Force Method: Convert the string to a giant number string. Repeatedly convert that string back to a number to sum its digits K times.
+BF Complexity Visuals: Repeated String-Number Conversion
+How to Draw BF: Draw a string. Draw a long digit sequence. Draw a new shorter string below it for each K iteration. $O(K \cdot N)$.
+Optimised Pattern: Direct Integer Accumulation
+Opt Vis. Technique: In-Place Digit Summing
+Dry Run (Opt): Perform the first conversion (char to int) and sum digits immediately. For the remaining K-1 steps, sum the digits of the previous integer.
+How to Draw (Opt): Draw the string. Below each letter, write its 1-2 digit value. Draw a circle around all digits and a single sum arrow. Repeat sum for K.
+Opt Complexity Visuals: Iterative Reduction Funnel
+How to Draw Opt Complexity: Draw a wide block (string), funneling down to a smaller block (sum) K times. $O(N + K)$.
+Mem Vis (BF): Intermediate creation of multiple long string objects in memory.
+Mem Vis (Opt): A single integer accumulator variable updated through basic modulo/division. $O(1)$ space.

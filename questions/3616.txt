@@ -1,0 +1,13 @@
+ID: 3616
+Problem Title: Number of Student Replacements (Med)
+Brute Force Method: Simulating every single replacement step-by-step, physically mutating arrays and re-scanning them to check if the target configuration is met. $O(N^2)$.
+BF Complexity Visuals: Cascading Array Copies.
+How to Draw BF: Draw the original array. Cross out one element, draw a completely new array below it representing the state change. Repeat until it matches the target.
+Optimised Pattern: Frequency Maps / Discrepancy Counting. (Compare counts of what you have vs. what you need).
+Opt Vis. Technique: Bipartite Balancing Scale.
+Dry Run (Opt): Count all elements in the current array. Count all elements in the target array. Match identicals. The sum of the unmatched remaining items divided by 2 is the replacement cost.
+How to Draw (Opt): Draw two columns of numbers/letters (Current vs Target). Draw lines connecting identical pairs. Count the items left over that have no lines.
+Opt Complexity Visuals: Linear Hash Map Pass.
+How to Draw Opt Complexity: Draw one arrow scanning Current (O(N)), one arrow scanning Target (O(N)), and one scanning the Alphabet/Key space (O(26) or $O(K)$).
+Mem Vis (BF): Towers of redundant arrays piled up in memory for each replacement step.
+Mem Vis (Opt): Two small arrays of size 26 (or Hash Maps) tracking simple integer frequencies. $O(1)$ space if character set is fixed.

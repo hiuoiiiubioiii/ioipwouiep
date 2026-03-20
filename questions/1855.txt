@@ -1,0 +1,13 @@
+ID: 1855
+Problem Title: Maximum Distance Between a Pair of Values
+Brute Force Method: Nested loops: For every i in `nums1`, check every j \ge i in `nums2` and find max j-i where `nums1[i] &lt;= nums2[j]`.
+BF Complexity Visuals: Upper-triangular comparison matrix.
+How to Draw BF: Draw two arrays. Draw lines from every i to every valid j. Note the $O(N \\text{times} M)$ density.
+Optimised Pattern: Two Pointers (Greedy).
+Opt Vis. Technique: Two-lane parallel pointers.
+Dry Run (Opt): Initialize i=0, j=0. While i &lt; n and j &lt; m: if `nums1[i] &lt;= nums2[j]`, update max distance and move j; else move i.
+How to Draw (Opt): Draw two tapes. Place finger i on top and finger j on bottom. If bottom is \ge top, slide j right. Else, slide i right. Track the max gap.
+Opt Complexity Visuals: Single linear pass over both arrays.
+How to Draw Opt Complexity: Draw two arrows moving only forward. Mark as $O(N + M)$.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): $O(1)$ stack variables (pointers i, j, res).

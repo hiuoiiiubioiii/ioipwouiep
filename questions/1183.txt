@@ -1,0 +1,13 @@
+ID: 1183
+Problem Title: Maximum Number of Ones
+Brute Force Method: Try placing 1s in every possible coordinate and check the constraint for every possible subgrid. $O(2^\text{Area})$.
+BF Complexity Visuals: Backtracking Bitmask Explosion
+How to Draw BF: Draw a grid. Branch out for every cell: "Place 1" or "Place 0". Show the massive tree for a large grid.
+Optimised Pattern: Greedy + Coordinate Modulo Counting
+Opt Vis. Technique: Modulo-Space Frequency Map
+Dry Run (Opt): Observe that the subgrid constraint repeats. Calculate the frequency of each (r % side, c % side) position in the full grid. Pick the top M positions with highest frequency.
+How to Draw (Opt): Draw a mini-grid (size S x S). For each cell in the mini-grid, count how many times it appears in the big grid. Circle the M cells with the biggest counts.
+Opt Complexity Visuals: Linear Grid Scan $O(N \cdot M)$
+How to Draw Opt Complexity: Draw a single pass to count frequencies, followed by a sort of the mini-grid $O(S^2 \log S)$.
+Mem Vis (BF): Massive search space
+Mem Vis (Opt): Frequency array of size S^2. Draw a small square table.

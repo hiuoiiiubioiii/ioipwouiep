@@ -1,0 +1,13 @@
+ID: 2182
+Problem Title: Construct String With Repeat Limit
+Brute Force Method: Generate all possible permutations of characters, check repeat limits, and find the lexicographically largest.
+BF Complexity Visuals: Factorial explosion of character strings.
+How to Draw BF: Draw 'a, a, b'. List: 'aba', 'baa', 'aab'. Pick 'baa'. Write $O(N!)$.
+Optimised Pattern: Greedy + Frequency Array (Counting Sort).
+Opt Vis. Technique: A tall chimney where you always pull from the highest level (largest char).
+Dry Run (Opt): Count frequencies of 'z' down to 'a'. Take as many of the largest char as `repeatLimit` allows. If more remain, take exactly one of the next available smaller char to "break" the streak.
+How to Draw (Opt): Draw a frequency bar chart for each letter. Take 3 blocks from 'z'. If more 'z's are left, take 1 block from 'y'. Go back to 'z' and take another 3.
+Opt Complexity Visuals: $O(N)$ linear time (Max 26 iterations per append).
+How to Draw Opt Complexity: A descending scanner that jumps between the two highest non-empty buckets.
+Mem Vis (BF): Storing N! strings in a list.
+Mem Vis (Opt): $O(1)$ extra space (Frequency array of size 26).

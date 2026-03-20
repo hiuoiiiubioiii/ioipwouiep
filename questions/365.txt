@@ -1,0 +1,13 @@
+ID: 365
+Problem Title: Water and Jug Problem
+Brute Force Method: Use BFS to explore every possible state (v1, v2) where v1 is water in jug 1 and v2 in jug 2. Transitions: Fill, Empty, Pour.
+BF Complexity Visuals: State-Space BFS Graph
+How to Draw BF: Draw pairs of numbers (0,0), (x,0), (0,y), \dots with arrows connecting them. Show the graph expanding until you hit z. Label $O(x \cdot y)$.
+Optimised Pattern: Number Theory (GCD / Bézout's Identity)
+Opt Vis. Technique: Linear Diophantine Equation Visualization
+Dry Run (Opt): A volume z can be measured if and only if z is a multiple of the Greatest Common Divisor (GCD) of x and y, and z \le x + y.
+How to Draw (Opt): Draw two bars of lengths x and y. Draw a small block representing the \gcd(x, y). Show that any reachable z must be composed of an integer number of these small blocks.
+Opt Complexity Visuals: Logarithmic Euclidean Algorithm
+How to Draw Opt Complexity: Draw the Euclidean division steps. Label $O(\log(\\text{min}(x, y)$)).
+Mem Vis (BF): A Hash Set to store all visited (v1, v2) states. $O(x \cdot y)$.
+Mem Vis (Opt): Zero extra space beyond a few integer variables. Draw a single "GCD" box. $O(1)$.

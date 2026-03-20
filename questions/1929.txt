@@ -1,0 +1,13 @@
+ID: 1929
+Problem Title: Concatenation of Array
+Brute Force Method: Loop once to copy elements to a new array, then loop a second time to append them again.
+BF Complexity Visuals: Two-Stage Serial Copy
+How to Draw BF: Draw an array. Draw a new empty array double its size. Draw arrows for the first half, then a separate set for the second half.
+Optimised Pattern: Single-Pass Index Mapping
+Opt Vis. Technique: Array Duplication Mirror
+Dry Run (Opt): Loop from `i = 0` to `n-1`. In one step, set `ans[i] = nums[i]` and `ans[i + n] = nums[i]`.
+How to Draw (Opt): Draw `nums` on top. Draw `ans` (double length) below. Draw one arrow splitting into two "y-shape" paths to fill both halves simultaneously.
+Opt Complexity Visuals: Linear Block Allocation
+How to Draw Opt Complexity: Draw one straight line across the output array. $O(N)$ time.
+Mem Vis (BF): Two temporary intermediate arrays before merging into the final result.
+Mem Vis (Opt): A single pre-allocated array of size 2N. $O(1)$ extra space (excluding result).

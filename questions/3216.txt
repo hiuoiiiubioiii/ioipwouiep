@@ -1,0 +1,13 @@
+ID: 3216
+Problem Title: Lexicographically Smallest String After a Swap
+Brute Force Method: Find all valid adjacent swaps with matching parity, generate the new strings, sort them, and pick the smallest.
+BF Complexity Visuals: String Branching Tree
+How to Draw BF: Write the string. Draw branches for every possible valid swap, creating full copies of the string at the end of each branch.
+Optimised Pattern: Greedy Linear Scan
+Opt Vis. Technique: Two-Pointer Sliding Window (Size 2)
+Dry Run (Opt): Slide a window of size 2 across the string. If `parity(left) == parity(right)` AND `left_val &gt; right_val`, swap immediately and stop.
+How to Draw (Opt): Write the string. Put your index and middle fingers on the first two digits. If they match parity and the left is bigger, swap them. Otherwise, shift fingers one spot right.
+Opt Complexity Visuals: Early-Exit Pipeline
+How to Draw Opt Complexity: Draw a line of length N. Shade only the first portion of it red, stopping early with a break symbol to represent $O(N)$ worst-case but often $O(1)$ best-case.
+Mem Vis (BF): Multiple string array allocations in memory.
+Mem Vis (Opt): In-place character array modification (O(N) space for mutable string conversion).

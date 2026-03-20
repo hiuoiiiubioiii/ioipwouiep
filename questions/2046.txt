@@ -1,0 +1,13 @@
+ID: 2046
+Problem Title: Sort Linked List Already Sorted Using Absolute Values
+Brute Force Method: Copy all node values into a standard array, perform a built-in sort (e.g., Timsort), and reconstruct the linked list nodes from scratch.
+BF Complexity Visuals: List-to-Array Funnel
+How to Draw BF: Draw a linked list. Draw an array. Draw arrows from every node into the array. Then draw a sorting funnel. $O(N \log N)$ time and $O(N)$ space.
+Optimised Pattern: Head Re-linking (Two-Pointer Shift)
+Opt Vis. Technique: Needle and Thread Weaving
+Dry Run (Opt): Iterate through the list. If a node is negative, pluck it from its current position and sew it to the very front of the list (before the current head).
+How to Draw (Opt): Draw the list. When you hit a negative node, draw a dashed arrow showing it moving to the front. Draw a solid arrow updating the `previous.next` pointer.
+Opt Complexity Visuals: Single-Pass Threading
+How to Draw Opt Complexity: Draw a single horizontal line through the list. Every node is visited once and re-linked in $O(1)$. Total time $O(N)$.
+Mem Vis (BF): An auxiliary array of size N holding all node values.
+Mem Vis (Opt): Zero extra space. Only local pointers (`curr`, `prev`, `head`) are manipulated. Space $O(1)$.

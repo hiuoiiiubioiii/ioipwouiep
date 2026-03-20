@@ -1,0 +1,13 @@
+ID: 3803
+Problem Title: Count Residue Prefixes (Easy)
+Brute Force Method: Nested Loops: Calculate the sum for each possible prefix and take the modulo remainder.
+BF Complexity Visuals: Right-angled Triangle Grid showing redundant calculations.
+How to Draw BF: Draw an array. Underneath, draw brackets for [0..0], [0..1], [0..2], highlighting how earlier elements are re-added repeatedly.
+Optimised Pattern: Prefix Sums + Frequency Counting (HashMap).
+Opt Vis. Technique: Running pointer over the array + Hash Table state updates.
+Dry Run (Opt): Slide index i, update a running sum modulo M. Look up this remainder in the HashMap, add its frequency to the result, then increment the map.
+How to Draw (Opt): Draw the array. Below it, write the running sum % M. Next to it, draw a key-value table (HashMap) updating step-by-step.
+Opt Complexity Visuals: Linear timeline mapping $O(1)$ ops to array elements.
+How to Draw Opt Complexity: Draw a straight line with N nodes. Under each node, write "O(1) Map Lookup". Bracket the whole line as $O(N)$.
+Mem Vis (BF): A single variable tracking count (O(1)).
+Mem Vis (Opt): A Hash Table dynamically expanding its buckets to store up to M (modulo) different remainder keys.

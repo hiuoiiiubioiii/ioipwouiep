@@ -1,0 +1,13 @@
+ID: 2661
+Problem Title: First Completely Painted Row or Column
+Brute Force Method: For every number in the painting sequence, search the matrix, paint the cell, and then scan its entire row and column to check if they are full.
+BF Complexity Visuals: Full Matrix Re-scanning
+How to Draw BF: Draw a matrix. For every step in the 'arr', draw a cross-hair scan of the row and column. $O(K \cdot (R + C)$).
+Optimised Pattern: Hash Map + Frequency Counters
+Opt Vis. Technique: Coordinate Lookup &amp; Tally
+Dry Run (Opt): 1. Map each matrix value to its (r, c) coordinates. 2. Create two arrays: `rowCount` and `colCount`. 3. Iterate through 'arr', lookup the (r, c), and increment `rowCount[r]` and `colCount[c]`. The first time a count equals the total size, return the index.
+How to Draw (Opt): Draw a Coordinate Map (Value -&gt; R, C). Draw two tally bars (Rows, Cols). As you process 'arr', add a tick to the corresponding Row and Col bar. Return when a bar is full.
+Opt Complexity Visuals: $O(R \cdot C + K)$ Total Time
+How to Draw Opt Complexity: Draw an $O(R\cdot C)$ setup block followed by a single $O(K)$ pass.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(R\cdot C)$ for the coordinate map and $O(R + C)$ for the counters.

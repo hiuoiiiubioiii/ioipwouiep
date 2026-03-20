@@ -1,0 +1,13 @@
+ID: 80
+Problem Title: Remove Duplicates from Sorted Array II
+Brute Force Method: Frequency Map + New Array Count the frequency of every element. Iterate through the map and add each element at most twice to a new array.
+BF Complexity Visuals: The Counting Bucket
+How to Draw BF: Draw the array. Draw a "Tally" table next to it. Draw a new array below. Show elements being copied only if their tally is <= 2.
+Optimised Pattern: Two Pointers (Slow/Fast with Offset)
+Opt Vis. Technique: The Smart Overwriter
+Dry Run (Opt): A `slow` pointer marks where the next valid element goes. A `fast` pointer scans. If the current element is different from the element at `slow - 2`, it's valid.
+How to Draw (Opt): Draw an array. Place `S` at index 2, `F` at index 2. Compare `arr[F]` with `arr[S-2]`. If different, write `arr[F]` to `arr[S]` and move `S`.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single straight arrow from left to right. One pass through the data. Time: $O(N)$.
+Mem Vis (BF): A Hash Map and a new array of size N. Space: $O(N)$.
+Mem Vis (Opt): Draw the original array with two pointers. No extra structures. Space: $O(1)$.

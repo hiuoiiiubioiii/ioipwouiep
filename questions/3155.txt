@@ -1,0 +1,13 @@
+ID: 3155
+Problem Title: Maximum Number of Upgradable Servers
+Brute Force Method: Incrementally upgrade laptops 1 by 1, subtracting costs in a while loop until funds run out. $O(\text{Answer})$.
+BF Complexity Visuals: Iterative Wallet Drain
+How to Draw BF: Draw a wallet. Draw an arrow buying one upgrade, updating the wallet, and repeating until empty.
+Optimised Pattern: Binary Search on Answer / Math
+Opt Vis. Technique: The Feasibility Threshold
+Dry Run (Opt): Binary search the number of laptops `mid`. Calculate the total cost to upgrade `mid` laptops. If `cost &lt;= budget`, try a higher `mid`. Otherwise, lower `mid`.
+How to Draw (Opt): Draw a number line of possible laptop counts. Drop a pin in the middle. Calculate the cost formula. If you can afford it, shade the left half green and drop a new pin on the right.
+Opt Complexity Visuals: Logarithmic Search $O(N \log(\text{Max})$)
+How to Draw Opt Complexity: Draw a timeline cut in half repeatedly. Each check takes $O(N)$ to validate the cost.
+Mem Vis (BF): Iterative loop trackers.
+Mem Vis (Opt): Pointers for Binary Search. $O(1)$ space.

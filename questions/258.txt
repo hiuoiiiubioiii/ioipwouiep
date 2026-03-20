@@ -1,0 +1,13 @@
+ID: 258
+Problem Title: Add Digits
+Brute Force Method: Loop while number \ge 10: convert to string, sum digits, and repeat.
+BF Complexity Visuals: Iterative Reduction: $O(\log N)$.
+How to Draw BF: Draw N. Draw a smaller box below it for the first sum, then an even smaller box. Count the levels of reduction.
+Optimised Pattern: Digital Root (Mathematical Modulo 9)
+Opt Vis. Technique: Clock Arithmetic (Circle of 9)
+Dry Run (Opt): The result is 1 + (n-1) \% 9 for n &gt; 0. It follows a repeating pattern of 1-9.
+How to Draw (Opt): Draw a circle with 9 points (1 to 9). Show that adding digits is equivalent to "spinning" around this circle.
+Opt Complexity Visuals: Constant Step: $O(1)$ Time.
+How to Draw Opt Complexity: Draw a single point. No loops, no recursion. Just one math formula.
+Mem Vis (BF): String buffers for digit extraction.
+Mem Vis (Opt): Zero Extra Space: A single register for the math result.

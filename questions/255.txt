@@ -1,0 +1,13 @@
+ID: 255
+Problem Title: Verify Preorder Sequence in BST
+Brute Force Method: Reconstruct the BST from the preorder sequence and check if it’s valid.
+BF Complexity Visuals: Full Reconstruction: $O(N)$ Time &amp; Space.
+How to Draw BF: Draw an array. Draw the logic of building a tree node-by-node. Shade the memory used for the tree objects.
+Optimised Pattern: Monotonic Stack (Simulation of DFS)
+Opt Vis. Technique: Lower-Bound Barrier
+Dry Run (Opt): Traverse array. If current &lt; last, it's a left child (push to stack). If current &gt; last, it's a right child (pop to find its parent, update "low" bound).
+How to Draw (Opt): Draw the array. Draw a horizontal "Floor" line. As you pop from the stack, the floor rises. If any future number is below the floor, fail.
+Opt Complexity Visuals: Single Scan: $O(N)$ Time, $O(N)$ or $O(1)$ Space.
+How to Draw Opt Complexity: Draw a straight arrow through the array. Note the $O(1)$ work per element if using the input array as the stack.
+Mem Vis (BF): Tree Objects: Draw many circles with "left" and "right" pointers.
+Mem Vis (Opt): Stack / In-place Array: Draw a single 1D array where a pointer tracks the "top" of the stack.

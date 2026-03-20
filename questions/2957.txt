@@ -1,0 +1,13 @@
+ID: 2957
+Problem Title: Remove Adjacent Almost-Equal Characters
+Brute Force Method: Try all combinations of character changes and verify if adjacent characters are "almost equal".
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a tree where each node is a character, branching into "change" or "keep". $O(2^N)$.
+Optimised Pattern: Greedy (Pairs Comparison)
+Opt Vis. Technique: Pair-wise Bounding Box
+Dry Run (Opt): Traverse the string. If `abs(s[i] - s[i-1]) &lt;= 1`, you MUST change one. The most efficient change is to change the second character and skip the next check.
+How to Draw (Opt): Write "aaaaa". Draw a bracket over the first 'aa'. Mark the second 'a' with an 'X' (changed). Move the bracket to the next UNCHANGED pair.
+Opt Complexity Visuals: Single Linear Sweep
+How to Draw Opt Complexity: Draw a line of length N. One constant-time check per step. T = $O(N)$.
+Mem Vis (BF): Deep recursion stack.
+Mem Vis (Opt): A single integer counter for changes. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2085
+Problem Title: Count Common Words With One Occurrence
+Brute Force Method: For every word in `words1`, search for it in `words1` to ensure it's unique, then search for it in `words2` to ensure it's unique there too.
+BF Complexity Visuals: Nested Triple-Scan
+How to Draw BF: Draw two lists. For one word in List A, scan A, then scan B. Total $O(N\cdot M)$.
+Optimised Pattern: Two Hash Maps (Double Tally)
+Opt Vis. Technique: Dual Frequency Intersection
+Dry Run (Opt): Create `Map1` and `Map2` for frequencies of `words1` and `words2`. Iterate through keys of `Map1`. If `Map1[word] == 1` and `Map2[word] == 1`, increment result.
+How to Draw (Opt): Draw two Hash Maps. Fill them with tallies. Highlight keys where both maps show a count of exactly "1".
+Opt Complexity Visuals: Two Parallel Linear Scans
+How to Draw Opt Complexity: Draw two horizontal lines (O(N) and $O(M)$) followed by an $O(N)$ map key comparison. Total Time $O(N + M)$.
+Mem Vis (BF): Nested loop pointers in the call stack.
+Mem Vis (Opt): Two Hash Maps storing strings and integers. Space $O(N + M)$.

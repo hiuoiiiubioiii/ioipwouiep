@@ -1,0 +1,13 @@
+ID: 2190
+Problem Title: Most Frequent Number Following Key In an Array
+Brute Force Method: For every occurrence of `key`, iterate through the rest of the array to find what follows and count them.
+BF Complexity Visuals: A searchlight finding the `key` and then scanning everything else repeatedly.
+How to Draw BF: Draw an array. Highlight the `key`. Look at the next number. Scan and tally that number in a list. Repeat. $O(N^2)$.
+Optimised Pattern: Single-Pass Frequency Map.
+Opt Vis. Technique: A tally board updated by a single pointer.
+Dry Run (Opt): Iterate from 0 to N-2. If `nums[i] == key`, increment the count of `nums[i+1]` in a frequency map. Track the max frequency on the fly.
+How to Draw (Opt): Draw the array. Every time you see the `key`, draw an arrow to its neighbor. Circle that neighbor and add a tally mark to its name in a side-box.
+Opt Complexity Visuals: $O(N)$ single pass.
+How to Draw Opt Complexity: A single horizontal line scanning left to right, updating an $O(1)$ lookup table.
+Mem Vis (BF): $O(N^2)$ space for redundant lists.
+Mem Vis (Opt): $O(N)$ for the frequency map (worst case: all unique followers).

@@ -1,0 +1,13 @@
+ID: 3628
+Problem Title: Maximum Number of Subsequences After One Inserting (Med)
+Brute Force Method: Try inserting character '0' at every position, then '1' at every position, recounting the target subsequences from scratch each time. $O(N^2)$.
+BF Complexity Visuals: Shifting Array Matrix.
+How to Draw BF: Draw N versions of the array stacked vertically, each with the new character wedged into a different spot. Loop through all of them.
+Optimised Pattern: Prefix and Suffix Counts. Count existing '0's and '1's. Inserting '0' at the start pairs with all existing '1's. Inserting '1' at the end pairs with all existing '0's.
+Opt Vis. Technique: Balance Beam / Seesaw.
+Dry Run (Opt): You don't need to check the middle! Putting the first character at the extreme left, or the second character at the extreme right, strictly maximizes the new pairs formed.
+How to Draw (Opt): Draw the string. Count total 'char1's. Count total 'char2's. The max increase is simply max(total_char1, total_char2) added to the base subsequence count.
+Opt Complexity Visuals: Single Linear Sweep.
+How to Draw Opt Complexity: Draw an arrow sweeping left to right once to count base subsequences and frequencies. Write $O(N)$.
+Mem Vis (BF): Hundreds of modified string copies cluttering the heap memory.
+Mem Vis (Opt): Three integer variables: count_char1, count_char2, and total_subsequences. Space strictly $O(1)$.

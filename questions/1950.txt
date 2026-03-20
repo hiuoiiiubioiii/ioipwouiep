@@ -1,0 +1,13 @@
+ID: 1950
+Problem Title: Max of Min Values in All Subarrays
+Brute Force Method: For every possible subarray length L (1 to N), find every subarray of that length, find their minimums, and then find the max of those minimums.
+BF Complexity Visuals: $O(N^3)$ Nested Loop Cube
+How to Draw BF: Draw a 3D space: [Start Index] x [Length] x [Min Scan]. Total volume N^3.
+Optimised Pattern: Monotonic Stack + Range Extension
+Opt Vis. Technique: Expansion Boundary Mapping
+Dry Run (Opt): For each element, find the nearest smaller element to the left and right. This defines the largest range where this element is the minimum. Update `ans[range_len]`.
+How to Draw (Opt): Draw the array. For each number, draw "arms" reaching left and right until they hit a smaller number. The distance between arms is the "Range Length".
+Opt Complexity Visuals: $O(N)$ Amortized Pass
+How to Draw Opt Complexity: Draw one scan for "Left Smaller" and one for "Right Smaller". Then a final fill-in scan.
+Mem Vis (BF): Generating and storing all N^2 subarray minimums.
+Mem Vis (Opt): A Monotonic Stack (Array) and three 1D arrays (`left`, `right`, `ans`). $O(N)$ space.

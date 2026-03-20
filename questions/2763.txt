@@ -1,0 +1,13 @@
+ID: 2763
+Problem Title: Sum of Imbalance Numbers of All Subarrays
+Brute Force Method: For every subarray, sort it and count the number of adjacent elements with a difference &gt; 1. $O(N³ \log N)$.
+BF Complexity Visuals: N³ Sorting Trace
+How to Draw BF: Draw all possible contiguous segments of an array. For each, draw a second "Sorted" version, then count gaps.
+Optimised Pattern: Massive Sort Buffer Allocation (Drawing the memory used to sort N^2 subarrays).
+Opt Vis. Technique: Incremental HashSet / Contribution Technique
+Dry Run (Opt): Neighbor-Check Accumulator
+How to Draw (Opt): Iterate with a fixed start and move end right. Keep a Set of numbers seen. When adding x, an imbalance decreases if x-1 or x+1 was already there, but increases if it's a "new" gap. Maintain a running current_imbalance.
+Opt Complexity Visuals: Draw an empty set. Add a number. If its neighbor is already in the set, draw a line connecting them (removing an imbalance). If not, it's a new island.
+How to Draw Opt Complexity: $O(N²)$ Quadratic Pass
+Mem Vis (BF): Draw a 2D matrix representing start vs end. Each cell is $O(1)$. Label it $O(N²)$.
+Mem Vis (Opt): $O(N)$ Frequency/Set State (Draw a single hash set or boolean array updated in the inner loop).

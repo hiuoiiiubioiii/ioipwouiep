@@ -1,0 +1,13 @@
+ID: 270
+Problem Title: Closest BST Value
+Brute Force Method: In-order traversal to a list, then find the value with the minimum absolute difference.
+BF Complexity Visuals: Full Traversal: $O(n)$.
+How to Draw BF: Draw a tree. Show an arrow visiting every single node, even if they are obviously too far away.
+Optimised Pattern: Binary Search (Iterative Descent)
+Opt Vis. Technique: Descending Path Funnel
+Dry Run (Opt): Compare target with `root.val`. Update `closest`. If `target &lt; root.val`, go left; else go right. Stop at leaf.
+How to Draw (Opt): Draw a tree. Trace a single path from root to a leaf. At each node, write the current "Best Distance" in a box.
+Opt Complexity Visuals: Height-Limited: $O(h)$.
+How to Draw Opt Complexity: Draw a single line down the tree. The length is proportional to the tree's height (log n if balanced).
+Mem Vis (BF): Full Node Array: Draw an array of size n.
+Mem Vis (Opt): Constant Pointers: Draw two variables: `closest` and `curr_node`.

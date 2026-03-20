@@ -1,0 +1,13 @@
+ID: 2480
+Problem Title: Form a Chemical Bond (SQL)
+Brute Force Method: Write complex subqueries separating Metals and Non-Metals, then joining them manually. $O(N^2)$.
+BF Complexity Visuals: Manual Subquery Funnels
+How to Draw BF: Draw a table. Filter out Metals to a box. Filter Non-metals to a box. Manually draw lines between them.
+Optimised Pattern: CROSS JOIN
+Opt Vis. Technique: The Combinatorial Matrix
+Dry Run (Opt): Create two CTEs (or simple queries): one for Metals, one for Non-Metals. Use `CROSS JOIN` to generate all possible pairs.
+How to Draw (Opt): Draw a column of Metals and a row of Non-Metals. Draw a grid where they intersect, forming the bonds.
+Opt Complexity Visuals: Cartesian Product $O(N \cdot M)$
+How to Draw Opt Complexity: Draw two input lines entering a multiplication node.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Database result buffer. $O(N\cdot M)$ space.

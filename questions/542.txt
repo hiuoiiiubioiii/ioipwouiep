@@ -1,0 +1,13 @@
+ID: 542
+Problem Title: 01 Matrix
+Brute Force Method: For every cell with a 1, perform a full BFS/DFS to find the nearest 0.
+BF Complexity Visuals: N x M nodes each starting an N x M search. $O((M\cdot N)$^2).
+How to Draw BF: Draw a grid. Circle a '1'. Draw expanding circles until you hit a '0'. Repeat for every '1'.
+Optimised Pattern: Multi-Source BFS or 2-Pass DP.
+Opt Vis. Technique: A flood-fill starting from all 0s simultaneously. The "water" reaches 1s at the shortest possible time.
+Dry Run (Opt): Add all 0-coordinates to a Queue. For each, check 4 neighbors. If neighbor is 1 and unvisited, set `dist = current + 1` and push to Queue.
+How to Draw (Opt): Draw a grid. Mark all 0s. Draw arrows from all 0s to adjacent 1s at once. Label those 1s with "1". Repeat for next layer.
+Opt Complexity Visuals: Every cell is processed exactly once. $O(M \cdot N)$.
+How to Draw Opt Complexity: Draw a grid and shade it in concentric layers starting from the zeros.
+Mem Vis (BF): Redundant search paths stored in multiple recursion stacks.
+Mem Vis (Opt): A 2D distance array and a Queue holding at most M*N elements. $O(M \cdot N)$.

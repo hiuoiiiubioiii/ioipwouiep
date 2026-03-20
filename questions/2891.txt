@@ -1,0 +1,13 @@
+ID: 2891
+Problem Title: Method Chaining
+Brute Force Method: Step 1: Filter the data and save to temp_df. Step 2: Sort temp_df and save to temp_df2. Step 3: Select columns from temp_df2.
+BF Complexity Visuals: Intermediate State Pipeline
+How to Draw BF: Draw a sequence of tables with arrows between them. Each arrow represents a full stop and save operation.
+Optimised Pattern: Chained Operations: df.loc[...].sort_values(...)[['name']]
+Opt Vis. Technique: Fluid Processing Pipeline
+Dry Run (Opt): Visualize a "Stream" of data passing through various filters and sorters without ever stopping to be stored as a named variable until the very end.
+How to Draw (Opt): Draw a pipe with different filters (shapes) inside. Data goes in one end and the final result comes out the other.
+Opt Complexity Visuals: Combined $O(N \log N)$
+How to Draw Opt Complexity: Draw the bottleneck (Sorting) as the main slope. Chained filtering is just a linear subtraction before the sort.
+Mem Vis (BF): $O(N \\text{cdot Steps})$ - Multiple copies of the data are stored in temp variables.
+Mem Vis (Opt): $O(N)$ - Often allows Pandas to optimize memory by avoiding full copies between steps.

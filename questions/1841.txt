@@ -1,0 +1,13 @@
+ID: 1841
+Problem Title: League Statistics (SQL)
+Brute Force Method: Multiple nested subqueries and repeated self-joins to calculate home and away stats separately.
+BF Complexity Visuals: Nested join execution tree.
+How to Draw BF: Draw a table. Draw two separate loops scanning the matches table (one for home, one for away). Mark $O(N²)$.
+Optimised Pattern: UNION ALL within a CTE + Group By.
+Opt Vis. Technique: Data merging stream (Vertical Concatenation).
+Dry Run (Opt): Treat every match as two separate entries (Home Team entry, Away Team entry). Stack them, then run a single Group By on team_id.
+How to Draw (Opt): Draw two tables (Home results, Away results). Draw an arrow merging them into one long list. Circle teams and sum their points.
+Opt Complexity Visuals: Linear set union and scan.
+How to Draw Opt Complexity: Draw a single arrow passing through the combined list once. Mark $O(N)$.
+Mem Vis (BF): Large temporary tables for separate joins.
+Mem Vis (Opt): Hashed aggregation buckets in DB memory.

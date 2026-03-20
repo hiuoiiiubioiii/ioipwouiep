@@ -1,0 +1,13 @@
+ID: 2568
+Problem Title: Minimum Impossible OR
+Brute Force Method: Generate every possible subsequence, calculate the bitwise OR for each, and store them in a Hash Set. Then check 1, 2, 3... until one is missing. $O(2^N)$.
+BF Complexity Visuals: A massive power-set branching tree for OR combinations.
+How to Draw BF: List the array. XOR 1 with 2, 1 with 4, 1 with 2 with 4... Keep a list of all results and find the first missing integer.
+Optimised Pattern: Power of Two Check (Bit Manipulation).
+Opt Vis. Technique: A "Binary Completeness" visual: the only way to NOT be able to form a power of two (2^x) via OR is if that specific power of two is missing from the input.
+Dry Run (Opt): Store the array in a Hash Set. Check if 1 is in the set. If not, 1 is the answer. If yes, check 2. If yes, check 4, 8, 16... The first power of 2 (2^n) that is *not* in the array is the first number that cannot be formed by an OR sum.
+How to Draw (Opt): Write the array. Check: Is 1 there? Yes. Is 2 there? Yes. Is 4 there? No. Answer is 4.
+Opt Complexity Visuals: $O(N)$ - Linear pass to build the set and 30 constant-time lookups.
+How to Draw Opt Complexity: Draw a set box. Draw an arrow sweeping the array into the box. Then draw a small loop 1, 2, 4, 8... pointing into the box.
+Mem Vis (BF): Exponential space for all possible OR sums.
+Mem Vis (Opt): $O(N)$ to store the elements in a Hash Set.

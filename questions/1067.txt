@@ -1,0 +1,13 @@
+ID: 1067
+Problem Title: Digit Count in Range
+Brute Force Method: Iterate through every number from `low` to `high`. For each number, convert it to a string and count the occurrences of digit `d`.
+BF Complexity Visuals: A manual census, checking every single page of a giant book for a specific letter.
+How to Draw BF: Range 10-20, d=1. Check 10(1), 11(2), 12(1)... Total = 11. Write $O(N \log N)$ where N is high-low.
+Optimised Pattern: Math / Digit DP.
+Opt Vis. Technique: A "Slot-by-Slot" Calculation. We calculate how many times the digit `d` appears in the "ones" place, "tens" place, etc., across the whole range.
+Dry Run (Opt): Calculate `countDigit(N, d)` which returns the count of digit `d` from 1 to N. The answer is `countDigit(high, d) - countDigit(low-1, d)`. Use the math formula for each power of 10.
+How to Draw (Opt): Write the number N. For each position i (units, tens...), look at the prefix and suffix around it to determine how many times `d` rotates into that position.
+Opt Complexity Visuals: Constant time relative to the value of N (logarithmic to digits).
+How to Draw Opt Complexity: Draw a number being analyzed digit-by-digit. Write Time: $O(\log N)$.
+Mem Vis (BF): $O(1)$ space for counts, but huge time consumption.
+Mem Vis (Opt): $O(1)$ space for storing temporary math variables.

@@ -1,0 +1,13 @@
+ID: 2236
+Problem Title: Root Equals Sum of Children
+Brute Force Method: Recursive Tree TraversalPerform a full Depth First Search (DFS) to collect all node values, then check if the root matches the sum of its left and right children.
+BF Complexity Visuals: Full Tree Scan Visualization
+How to Draw BF: Draw a small 3-node tree. Draw an arrow starting at the root, visiting left, then right, then back to root. Note that you visited 3 nodes for a 3-node problem.
+Optimised Pattern: Direct Comparison / $O(1)$ Access
+Opt Vis. Technique: Constant Node Check
+Dry Run (Opt): Since the problem strictly specifies a root and two children, simply perform: `root.val == root.left.val + root.right.val`.
+How to Draw (Opt): Draw a box around the root and its two direct children. Draw two "+" arrows from the children to a sum bubble, then a "==" line to the root.
+Opt Complexity Visuals: $O(1)$ Single Step Box
+How to Draw Opt Complexity: Draw a single box labeled $O(1)$. No recursion or loops are needed as the tree size is fixed at 3 nodes by the problem constraints.
+Mem Vis (BF): Recursive call stack nodes for each tree level (O(H) space).
+Mem Vis (Opt): Direct memory reference to three existing objects; no extra structure (O(1) space).

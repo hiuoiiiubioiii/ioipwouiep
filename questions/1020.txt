@@ -1,0 +1,13 @@
+ID: 1020
+Problem Title: Number of Enclaves
+Brute Force Method: For every single land cell (1) in the grid, run a fresh DFS/BFS. If the path ever touches the grid boundary, mark it as invalid. Count the ones that never reach the edge.
+BF Complexity Visuals: Hundreds of independent squiggly lines starting from the center and trying to worm their way to the map's edge.
+How to Draw BF: Draw a matrix. Pick a '1'. Draw arrows to its neighbors until you hit an edge or run out of 1s. Repeat this for the next '1'. Write $O(V \cdot (V+E)$).
+Optimised Pattern: Multi-source DFS/BFS from Boundaries.
+Opt Vis. Technique: A flood washing in from the outer edges of the map, eroding away all connected landmasses, leaving only the safe islands untouched in the center.
+Dry Run (Opt): Scan the 4 borders of the grid. If you see a '1', start a DFS that changes it and all connected '1's to '0's (or 'visited'). After the borders are processed, just count the '1's left in the grid.
+How to Draw (Opt): Draw the grid. Trace a highlighter around the border. For any '1' touching the border, scribble it out, then scribble out its '1' neighbors. Count the clean '1's left.
+Opt Complexity Visuals: A single inward-collapsing graph traversal.
+How to Draw Opt Complexity: Draw the grid. Draw inward-pointing arrows from the four edges. Write Time: $O(M \cdot N)$ since each cell is visited at most once.
+Mem Vis (BF): Heavy recursion stack memory overlapping for multiple island checks. Space: $O(M \cdot N)$.
+Mem Vis (Opt): Recursion stack (DFS) or Queue (BFS) sized to the maximum connected landmass. Space: $O(M \cdot N)$ worst case.

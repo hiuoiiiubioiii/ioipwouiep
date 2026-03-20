@@ -1,0 +1,13 @@
+ID: 2939
+Problem Title: Maximum Xor Product
+Brute Force Method: Try all 2^n values of `x` (where n is the bit count) and find the one maximizing (a^x) * (b^x).
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a tree branching into 0 or 1 for each bit position. Depth n. Leaves 2^n.
+Optimised Pattern: Bit Manipulation (Greedy Bit-by-Bit)
+Opt Vis. Technique: Bit-wise Balance Scale
+Dry Run (Opt): Iterate bits from n-1 down to 0. If bits in `a` and `b` are same, set `x` bit to make them both 1. If different, set `x` to give the 1 to the smaller current number to keep them balanced.
+How to Draw (Opt): Write `a` and `b` in binary. For each column, decide where to put the '1' to keep the two totals close to each other (maximizing product).
+Opt Complexity Visuals: Fixed 64-bit Sweep
+How to Draw Opt Complexity: Draw a line with 50 segments. T(N) = $O(n \text{bits})$. $O(1)$ in practical terms.
+Mem Vis (BF): Recursion stack for all binary combinations.
+Mem Vis (Opt): Three 64-bit integer variables. Space $O(1)$.

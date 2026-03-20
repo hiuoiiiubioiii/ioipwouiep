@@ -1,0 +1,13 @@
+ID: 2227
+Problem Title: Encrypt and Decrypt Strings
+Brute Force Method: Combinatorial DecryptionFor decryption, generate every possible string combination using the character mapping, then check if each combination exists in the allowed dictionary.
+BF Complexity Visuals: Exploding Tree Graph
+How to Draw BF: Draw a starting encoded pair. Branch out into every valid decrypted character. Repeat for every pair in the string, resulting in an $O(2^N)$ or worse branching tree.
+Optimised Pattern: Reverse Encryption Mapping (Trie/Hash)
+Opt Vis. Technique: Precomputed Frequency Map
+Dry Run (Opt): Instead of decrypting the ciphertext, *encrypt* every word in the dictionary once during initialization. Store the encrypted strings and their frequencies in a Hash Map. Decrypt is then an $O(1)$ lookup.
+How to Draw (Opt): Draw the dictionary words passing through an "Encryption Funnel" into a bucket (Hash Map) with tally marks. For a decrypt query, draw an arrow pointing straight to the tally mark in the bucket.
+Opt Complexity Visuals: Precomputation vs Query Chart
+How to Draw Opt Complexity: Draw a large block labeled "Init: $O(\text{Dict}_\text{Size} \\text{cdot Word}_\text{Len})$". Then, draw a tiny block for "Decrypt: $O(1)$". Show how shifting the heavy lifting to initialization optimizes the query phase.
+Mem Vis (BF): A massive call stack and an array of temporary strings holding all possible permutations.
+Mem Vis (Opt): A Hash Map mapping encrypted dictionary strings to their integer frequencies (O(N) space).

@@ -1,0 +1,13 @@
+ID: 2923
+Problem Title: Find Champion I
+Brute Force Method: Nested loops comparing every team. If a team has N-1 wins (1s in its row), it is the champion. $O(N^2)$ scanning.
+BF Complexity Visuals: Full Adjacency Matrix Scan
+How to Draw BF: Draw the N x N grid. Shade every single cell to represent reading the whole matrix to count wins.
+Optimised Pattern: Graph In-Degree Counting / Row Sum Optimization
+Opt Vis. Technique: Elimination Bracket / Array Sum
+Dry Run (Opt): Since it's guaranteed one team beats all others (directly or indirectly), just find the row with a sum of N-1. The team with 0 losses (column sum = 0) is the champion.
+How to Draw (Opt): Draw the N x N matrix. Draw a vertical box around each column. Look for the column entirely filled with '0's (meaning no one beat them).
+Opt Complexity Visuals: Single Pass Vector Scan
+How to Draw Opt Complexity: Draw one straight line scanning down the columns or rows. Time $O(N)$ if columns are optimized, or $O(N^2)$ simply reading input.
+Mem Vis (BF): Two integer variables holding loops. Space $O(1)$.
+Mem Vis (Opt): A single integer holding the row sum or max-index. strictly $O(1)$ space.

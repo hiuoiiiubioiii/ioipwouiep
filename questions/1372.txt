@@ -1,0 +1,13 @@
+ID: 1372
+Problem Title: Longest ZigZag Path in a Binary Tree
+Brute Force Method: For every node, start two separate DFS paths (one starting left, one starting right) and manually count the zig-zags.
+BF Complexity Visuals: $O(N^2)$ Redundant Tree Paths
+How to Draw BF: Draw a tree. From every node, draw a jagged "Z" line downward. Note how many nodes are visited multiple times by different starting points.
+Optimised Pattern: Top-Down DFS with State Passing
+Opt Vis. Technique: Recursive State Carry-over
+Dry Run (Opt): DFS function takes `(node, direction, currentLength)`. If moving Left, next call is `(node.left, 'Right', currentLength + 1)` AND reset for the other side `(node.right, 'Left', 1)`.
+How to Draw (Opt): Draw a tree. At each node, write two numbers: `L` (length if we arrived from left) and `R` (length if we arrived from right). Carry the values down the tree.
+Opt Complexity Visuals: $O(N)$ Single Tree Traversal
+How to Draw Opt Complexity: Draw a single line snaking through the tree in a standard DFS pattern, proving each node is touched exactly once.
+Mem Vis (BF): Duplicate Call Stack: Multiple DFS entries per node causing memory bloat and redundant work.
+Mem Vis (Opt): $O(H)$ Recursion Stack: Draw a single stack trace where each frame holds only the current node and two integers.

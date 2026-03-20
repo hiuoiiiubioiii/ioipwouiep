@@ -1,0 +1,13 @@
+ID: 1875
+Problem Title: Group Employees of the Same Salary (Premium)
+Brute Force Method: Self-join the table on `salary` and filter rows where `count(salary) &gt; 1`, then manually assign IDs.
+BF Complexity Visuals: N \times N Join Interaction.
+How to Draw BF: Draw a table. Draw lines connecting every employee to every other employee with the same salary. Mark $O(N^2)$.
+Optimised Pattern: CTE with `COUNT(*) OVER(PARTITION BY salary)` + `DENSE_RANK()`.
+Opt Vis. Technique: Ranked frequency buckets.
+Dry Run (Opt): 1. Partition by salary and count. 2. Filter where count &gt; 1. 3. Use `DENSE_RANK()` on the salary to create the `team_id`.
+How to Draw (Opt): Group employees by salary. Cross out lone employees. Give the first group "Team 1", second group "Team 2", etc.
+Opt Complexity Visuals: $O(N \log N)$ for Partitioning/Ranking.
+How to Draw Opt Complexity: Draw a table divided into blocks. Draw an arrow sorting/ranking the blocks. Mark $O(N \log N)$.
+Mem Vis (BF): Massive N^2 temporary join tables.
+Mem Vis (Opt): Hashed partitioning in database memory.

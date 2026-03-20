@@ -1,0 +1,13 @@
+ID: 3763
+Problem Title: Maximum Total Sum With Threshold Constraints
+Brute Force Method: Generate all possible subsets of elements, check if they meet the threshold constraints, and track the max sum. $O(2^N)$.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw the array. Branch into "Include" or "Exclude" for every item, verifying complex math limits at the end.
+Optimised Pattern: Greedy / Sorting
+Opt Vis. Technique: The Threshold Cap Filler
+Dry Run (Opt): Sort the elements descending. Greedily pick the largest elements. Keep a running tally of constraints. If picking an element violates a threshold, skip it.
+How to Draw (Opt): Draw numbers sorted largest to smallest. Draw "buckets" representing thresholds. Drop the largest numbers into the buckets until they hit the "cap line."
+Opt Complexity Visuals: Sorting Bottleneck $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting tree, followed by a single linear pass to greedily select elements.
+Mem Vis (BF): Storing every subset combination.
+Mem Vis (Opt): In-place sorting variables. $O(1)$ space.

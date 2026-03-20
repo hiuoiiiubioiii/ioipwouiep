@@ -1,0 +1,13 @@
+ID: 3299
+Problem Title: Sum of Consecutive Subsequences
+Brute Force Method: Generate all 2^N subsequences and check if they are consecutive (x, x+1, x+2 or x, x-1, x-2). $O(N \cdot 2^N)$.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a tree branching for every element (Include/Exclude). Mark the path "Consecutive" only if the property holds. Label as $O(2^N)$.
+Optimised Pattern: Dynamic Programming (DP with Hash Table)
+Opt Vis. Technique: State-Based Accumulator Map
+Dry Run (Opt): Count subsequences ending at x using dp[x] = dp[x-1] + 1. The sum of all dp[x] gives the count. Use prefix/suffix counts to calculate the total sum contribution of each element.
+How to Draw (Opt): Draw a row of numbers. Underneath, draw a "Count Box" for each number. As you scan, update the count: "If I see a 5 and have 10 sequences ending in 4, I now have 10 new sequences ending in 5."
+Opt Complexity Visuals: Linear Scan Pipeline
+How to Draw Opt Complexity: Draw a straight line for the array scan. Label it $O(N)$ with $O(1)$ Hash Map lookups. Total: $O(N)$.
+Mem Vis (BF): Massive recursion stack for all subsequence branches.
+Mem Vis (Opt): Two Hash Tables (Prefix/Suffix) of size N (O(N) space).

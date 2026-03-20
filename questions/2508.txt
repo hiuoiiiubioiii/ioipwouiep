@@ -1,0 +1,13 @@
+ID: 2508
+Problem Title: Add Edges to Make Degrees of All Nodes Even
+Brute Force Method: Iterate through all pairs of nodes, try adding 1 or 2 edges, and run a full graph traversal each time to check if all degrees are even. $O(V^4)$ worst case.
+BF Complexity Visuals: Massive decision tree branching out for every possible edge combination.
+How to Draw BF: Draw the graph. Lightly sketch dashed lines between every non-connected pair. Methodically erase and try the next combination, checking all node degrees each time.
+Optimised Pattern: Graph Theory (Degree counting). Odd-degree nodes must total 0, 2, or 4. Check specific adjacency rules.
+Opt Vis. Technique: Bipartite matching visual focusing strictly on the isolated odd-degree nodes and their mutual/shared neighbors.
+Dry Run (Opt): Count odd-degree nodes. If 0: return True. If 2: check if they can connect directly or share a common neighbor. If 4: check if they can be paired up perfectly. Any other count is False.
+How to Draw (Opt): Extract *only* the nodes with odd degrees (ignoring the rest of the graph). Draw lines between them if they don't share an edge, or to a shared "dummy" even node.
+Opt Complexity Visuals: Linear $O(V + E)$ pass to build degrees, followed by $O(1)$ conditional logic.
+How to Draw Opt Complexity: Draw an array representing the degree of each node. Draw an arrow scanning it once to find odd numbers. Then draw a small bounded box for the maximum 3 if-statements.
+Mem Vis (BF): Deep recursive call stacks or multiple graph copies.
+Mem Vis (Opt): Adjacency Set for $O(1)$ edge lookups.

@@ -1,0 +1,13 @@
+ID: 1518
+Problem Title: Water Bottles
+Brute Force Method: Simulate exactly what a human would do in a `while` loop: drink bottles, add to empty count, divide empty by exchange rate to get new full bottles, remainder carries over.
+BF Complexity Visuals: Cyclic Loop Drain $O(\log N)$
+How to Draw BF: Draw a large block representing N bottles. Draw an arrow looping back, slicing off a fraction of the block and converting it back into a smaller block of "new" bottles. Repeat until the block vanishes.
+Optimised Pattern: Math Formula
+Opt Vis. Technique: Geometric Convergence
+Dry Run (Opt): Realize this is a math puzzle. Every time you exchange `E` bottles for 1, you effectively "spend" `E - 1` bottles to get a refill. Formula: `N + (N - 1) / (E - 1)`.
+How to Draw (Opt): Draw N bottles. Group them visually into blocks of `(E - 1)`. The number of these blocks immediately tells you how many free refills you get.
+Opt Complexity Visuals: Constant Time Block $O(1)$
+How to Draw Opt Complexity: Draw a single dot. No matter if you start with 10 bottles or 10 billion bottles, the mathematical formula calculates the answer instantly in one step.
+Mem Vis (BF): A few tracking integer variables: `full`, `empty`, `total`. $O(1)$ space.
+Mem Vis (Opt): Pure variables evaluated instantly. $O(1)$ space.

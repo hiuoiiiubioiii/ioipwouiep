@@ -1,0 +1,13 @@
+ID: 2793
+Problem Title: Status of Flight Tickets (SQL)
+Brute Force Method: Join Flights and Tickets. For each ticket, check its booking time against all other tickets for the same flight to determine its rank. Use a correlated subquery. $O(N²)$.
+BF Complexity Visuals: Correlated Subquery Scan
+How to Draw BF: Draw two tables. For one row in Table A, scan every row in Table B to see if the timestamp is earlier. Visual area is N².
+Optimised Pattern: Row-by-Row Comparison Buffer (Visualizing the SQL engine re-scanning the bookings table for every single record).
+Opt Vis. Technique: Window Function ROW_NUMBER() + Case Logic
+Dry Run (Opt): Ranked Partition Pipeline
+How to Draw (Opt): Use ROW_NUMBER() OVER(PARTITION BY flight_id ORDER BY booking_time) as rn. A ticket is 'Confirmed' if rn &lt;= capacity, otherwise 'Waitlisted'.
+Opt Complexity Visuals: Draw the table. Group rows by Flight ID. Sort rows inside groups by time. Draw a line at the "Capacity" mark. Everything above is Green; everything below is Yellow.
+How to Draw Opt Complexity: $O(N \log N)$ Sorting
+Mem Vis (BF): Draw a partition/sort block. Label it $O(N \log N)$ based on the index-backed sorting efficiency.
+Mem Vis (Opt): Partition Sort Buffer (Draw the memory structure of a sorted partition in the DB engine).

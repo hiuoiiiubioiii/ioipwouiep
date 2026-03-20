@@ -1,0 +1,13 @@
+ID: 1804
+Problem Title: Implement Trie II (Prefix Tree)
+Brute Force Method: Array of Strings. Insert = append. Count = linear scan with string matching.
+BF Complexity Visuals: Parallel string comparison bars.
+How to Draw BF: List strings. Draw an arrow sliding down each string sequentially to check prefixes.
+Optimised Pattern: Standard Trie with wordCount and prefixCount variables at each node.
+Opt Vis. Technique: Multi-way Tree (26-ary).
+Dry Run (Opt): Add word: travel nodes, increment prefixCount. At end, increment wordCount. Erase: decrement both.
+How to Draw (Opt): Draw circles containing letters. Write [wc: 0, pc: 1] next to them. Update numbers as you trace paths.
+Opt Complexity Visuals: String length path traversal.
+How to Draw Opt Complexity: Draw a sequence of nodes equal to string length L. Annotate with $O(L)$ time.
+Mem Vis (BF): Dynamic array of full strings.
+Mem Vis (Opt): Nodes with arrays of size 26 containing pointers + 2 integer counters.

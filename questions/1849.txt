@@ -1,0 +1,13 @@
+ID: 1849
+Problem Title: Splitting a String Into Descending Consecutive Values
+Brute Force Method: Generate all possible splits of the string and check if they form a descending sequence.
+BF Complexity Visuals: Exponential partition tree.
+How to Draw BF: Draw a string "123". Branch into ["1","23"], ["12","3"], ["1","2","3"]. Note $O(2^N)$ splits.
+Optimised Pattern: Backtracking with Value Pruning.
+Opt Vis. Technique: Decision Tree with early exit.
+Dry Run (Opt): Try first substring as `prev`. Recursively find `next` such that `next == prev - 1`. If we reach the end of the string, return true.
+How to Draw (Opt): Draw a tree. At each node, write the current number. Only draw branches where the next number is exactly 1 less than the current.
+Opt Complexity Visuals: Depth-limited search.
+How to Draw Opt Complexity: Draw a tree where each branch is strictly constrained. Note that the number of valid paths is very small.
+Mem Vis (BF): Massive list of all split combinations.
+Mem Vis (Opt): Recursive call stack of depth $O(N)$.

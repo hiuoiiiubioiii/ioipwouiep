@@ -1,0 +1,13 @@
+ID: 2424
+Problem Title: Longest Uploaded Prefix
+Brute Force Method: Every time a "longest" query is made, iterate from the last known prefix + 1 to see how many consecutive numbers exist in the "uploaded" set.
+BF Complexity Visuals: Step-by-step Pointer Reset
+How to Draw BF: Draw a number line. For every query, draw an arrow starting from 1. Label $O(Q \cdot N)$ worst case.
+Optimised Pattern: Persistent Pointer (Amortized Analysis)
+Opt Vis. Technique: Water Level Rising
+Dry Run (Opt): Use a boolean array for uploads. Keep a `max_prefix` variable. Only move it forward when the next number is uploaded. It never moves backward.
+How to Draw (Opt): Draw an array of boxes. When a number is uploaded, put an 'X' in its box. Keep an arrow 'P' that only slides right when the box it’s looking at gets an 'X'.
+Opt Complexity Visuals: Amortized Linear Line
+How to Draw Opt Complexity: Draw a single line 1 to N. The pointer 'P' only travels this line once across ALL queries. Label $O(N)$ total = $O(1)$ amortized.
+Mem Vis (BF): Draw a HashSet or Boolean array of size N.
+Mem Vis (Opt): Draw a single Boolean array and one integer variable. $O(N)$ Space.

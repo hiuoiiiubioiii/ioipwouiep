@@ -1,0 +1,13 @@
+ID: 2147
+Problem Title: Number of Ways to Divide a Long Corridor
+Brute Force Method: Backtracking: Try placing a divider after every possible seat pair and recursively count valid configurations.
+BF Complexity Visuals: Exponentially branching tree based on possible divider positions.
+How to Draw BF: Draw seats (S) and plants (P). Branch into 1, 2, or 3 divider spots between two S groups. $O(2^N)$.
+Optimised Pattern: Combinatorics / Greedy Math.
+Opt Vis. Technique: Counting the number of "options" (plants) between clusters of seats.
+Dry Run (Opt): Count total seats. If &lt; 2 or odd, return 0. Iterate and group seats in pairs. Count the number of plants between each pair-cluster. Multiply (plants + 1) for each gap.
+How to Draw (Opt): Draw 'S' and 'P' on a line. Circle groups of two 'S'. Look at the empty space between circles. Count the 'P's in that gap. `Ways = (P1+1) * (P2+1)...`
+Opt Complexity Visuals: $O(N)$ single linear scan.
+How to Draw Opt Complexity: A single straight line scanning left to right, updating a product variable at specific gap intervals.
+Mem Vis (BF): Deep recursion stack frames.
+Mem Vis (Opt): $O(1)$ extra space (or $O(N)$ if storing seat indices in a list).

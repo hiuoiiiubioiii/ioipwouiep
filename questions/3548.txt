@@ -1,0 +1,13 @@
+ID: 3548
+Problem Title: Equal Sum Grid Partition II (Hard)
+Brute Force Method: Try every combination of two cuts (one horizontal, one vertical) and check all four quadrants for equal sums.
+BF Complexity Visuals: Dual-Axis Permutations.
+How to Draw BF: Draw a grid. Draw all combinations of a crosshair (+) at every (i, j) intersection. Sum all 4 quadrants for each. $O(N^2 \cdot M^2)$.
+Optimised Pattern: 2D Prefix Sums + Hash Map / Binning.
+Opt Vis. Technique: Crosshair Complement Search.
+Dry Run (Opt): Fix the horizontal cut. Use 1D prefix sum logic on the row-sums to find the vertical cut that splits the total exactly in half.
+How to Draw (Opt): Draw a grid with horizontal splits. For one split, write the sums of the top and bottom halves. Search for a vertical line that bisects both.
+Opt Complexity Visuals: $O(N \cdot M)$.
+How to Draw Opt Complexity: Draw a grid. Draw one vertical sweep through rows and one horizontal sweep through columns. $O(N \cdot M)$.
+Mem Vis (BF): Nested Sum Loops: Visualizing the CPU recalculating quadrant sums for every coordinate.
+Mem Vis (Opt): 1D Row/Col Sum Arrays: Draw two small 1D arrays tracking the total mass of each row and column.

@@ -1,0 +1,13 @@
+ID: 3606
+Problem Title: Coupon Code Validator (Easy)
+Brute Force Method: Looping through the string multiple times to check individual rules (length, uppercase, digits, special chars).
+BF Complexity Visuals: Redundant String Traversal Lines.
+How to Draw BF: Draw the string 4 times. Draw an arrow traversing the whole string for Rule 1, then again for Rule 2, etc. Write $O(4N)$ ≈ $O(N)$.
+Optimised Pattern: Single-pass state machine or boolean flag tracking within a single iteration.
+Opt Vis. Technique: State Flag Switchboard.
+Dry Run (Opt): Read char by char. If it's a digit, flip the "Has_Digit" switch to ON. If it's a symbol, flip the "Has_Symbol" switch to ON. Check all switches at the end.
+How to Draw (Opt): Draw the string. Below it, draw 4 checkboxes (Length, Digit, Upper, Special). Iterate left to right, checking off boxes as conditions are met.
+Opt Complexity Visuals: Single Linear Timeline.
+How to Draw Opt Complexity: Draw an array of size N. Shade it left to right exactly once. Write strictly $O(N)$ with a single pass limit.
+Mem Vis (BF): Multiple boolean arrays or creating new substrings for regex matches.
+Mem Vis (Opt): Four boolean variables drawn as simple binary switches (0 or 1). $O(1)$ space.

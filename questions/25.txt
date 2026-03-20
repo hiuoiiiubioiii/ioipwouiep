@@ -1,0 +1,13 @@
+ID: 25
+Problem Title: Reverse Nodes in k-Group
+Brute Force Method: Array Extraction Extract K values into an array, reverse the array, put the values back into the nodes, repeat.
+BF Complexity Visuals: The Data Shuffler
+How to Draw BF: Draw an array of size K below the linked list. Draw arrows pulling values down, shuffling them, and pushing them back up into the nodes.
+Optimised Pattern: In-Place Pointer Reversal
+Opt Vis. Technique: The Segment Flipper
+Dry Run (Opt): Find the Kth node. If it exists, sever the connection, reverse the sub-list of size K using standard list reversal, then reconnect the edges.
+How to Draw (Opt): Draw a list. Put a bracket around K nodes. Reverse the arrows inside the bracket. Draw the `prevGroupTail` pointing to the new head of this bracket.
+Opt Complexity Visuals: Chunked Timeline
+How to Draw Opt Complexity: Draw a timeline. Divide it into blocks of K. Process each block linearly. Total time is exactly $O(N)$.
+Mem Vis (BF): Draw an array of size K allocating and deallocating in memory continuously. Space is $O(K)$.
+Mem Vis (Opt): Draw standard reversal pointers (`prev`, `curr`, `next`). Since we just flip existing arrows in memory, it is perfectly $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 685
+Problem Title: Redundant Connection II
+Brute Force Method: Similar to Q684, but with directed edges. Try removing every edge and check if the remaining structure is a valid rooted tree (one root, no cycles).
+BF Complexity Visuals: Exhaustive Tree Validation.
+How to Draw BF: Draw a directed graph. Remove one arrow. Check if it's a tree. Repeat for all arrows. Write $O(N^2)$.
+Optimised Pattern: DSU + In-degree Tracking.
+Opt Vis. Technique: Two-Case Anomaly Detection.
+Dry Run (Opt): Case 1: A node has two parents (in-degree 2). Case 2: A cycle exists. Track parents. If a node gets a second parent, store those two edges. Use DSU to detect which edge causes a cycle.
+How to Draw (Opt): Draw nodes. If a node gets two arrows, put a "Question Mark" on them. Use the bubble-merging (DSU) logic to see which arrow creates a loop.
+Opt Complexity Visuals: $O(N \cdot α(N)$).
+How to Draw Opt Complexity: Draw a funnel separating "Two-Parent" cases from "Cycle" cases. Write $O(N)$.
+Mem Vis (BF): Draw the whole graph in memory multiple times.
+Mem Vis (Opt): Draw a parent array and two candidate edge variables. $O(N)$.

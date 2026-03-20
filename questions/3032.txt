@@ -1,0 +1,13 @@
+ID: 3032
+Problem Title: Count Numbers With Unique Digits II
+Brute Force Method: Loop from a to b. For each number, convert it to a string or use a frequency array to check for duplicate digits.
+BF Complexity Visuals: Range Scanning List
+How to Draw BF: Draw a number line from a to b. For every tick, draw a small sub-process checking 1-10 digits.
+Optimised Pattern: Precomputation / Bitmasking
+Opt Vis. Technique: Bitmask Presence Set
+Dry Run (Opt): Represent the seen digits of a number as bits in an integer. If (mask &amp; (1 &lt;&lt; digit)) &gt; 0, it's a duplicate. Move to next number.
+How to Draw (Opt): Write a number. For each digit, flip a bit in a 10-bit sequence (0000000000). If you try to flip an already-on bit, mark the number as invalid.
+Opt Complexity Visuals: $O(N \cdot D)$ where D is number of digits
+How to Draw Opt Complexity: Draw a timeline from a to b. For each step, draw a tiny $O(\log10(N)$) loop.
+Mem Vis (BF): String conversion overhead for every single number in the range.
+Mem Vis (Opt): A single 10-bit integer mask reused for every number.

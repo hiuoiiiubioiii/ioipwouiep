@@ -1,0 +1,13 @@
+ID: 796
+Problem Title: Rotate String
+Brute Force Method: Perform all N possible rotations of string A and compare each one to string B.
+BF Complexity Visuals: Cyclic Shift Scan
+How to Draw BF: Draw string A. Draw N arrows showing the first character moving to the end repeatedly. $O(N^2)$.
+Optimised Pattern: String Concatenation (Double Check)
+Opt Vis. Technique: Infinite Loop Window
+Dry Run (Opt): Concatenate A with itself (A + A). If B is a rotation of A, it must be a substring of this doubled string. Lengths must also match.
+How to Draw (Opt): Draw A twice side-by-side: `abcdeabcde`. Draw a box of length 5 and slide it across. If the box contents match B, return true.
+Opt Complexity Visuals: Substring Search Linearization
+How to Draw Opt Complexity: Draw a single pass through the 2N length string. $O(N)$ using KMP or built-in `contains`.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): A single new string of length 2N (O(N)).

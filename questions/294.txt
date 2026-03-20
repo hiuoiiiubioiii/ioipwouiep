@@ -1,0 +1,13 @@
+ID: 294
+Problem Title: Flip Game II
+Brute Force Method: Recursively check every possible move. If you find a move that leaves the opponent with no winning moves, you win.
+BF Complexity Visuals: Minimax Decision Tree: $O(2^N)$.
+How to Draw BF: Draw a tree where each node is a string state. Branch for every possible "++" flip. Width is massive.
+Optimised Pattern: Backtracking + Memoization (Top-Down DP)
+Opt Vis. Technique: State-Space Caching Tree
+Dry Run (Opt): Use a Hash Map to store whether a string state is a "Win" or "Loss". If you see a state again, return the cached result.
+How to Draw (Opt): Draw the game tree. Color nodes "Green" (Win) or "Red" (Loss). Draw arrows from duplicate states to a single "Cache" box.
+Opt Complexity Visuals: Memoized Tree: $O(2^N)$ (Still high, but avoids redundant branches).
+How to Draw Opt Complexity: Draw the tree but cross out branches that have already been computed once.
+Mem Vis (BF): Deep Recursion Stack: $O(N)$.
+Mem Vis (Opt): Memoization Map: Draw a table of `string -&gt; boolean`. Space: $O(2^N)$ in worst case.

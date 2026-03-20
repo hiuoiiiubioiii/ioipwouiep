@@ -1,0 +1,13 @@
+ID: 3806
+Problem Title: Maximum Bitwise AND After Increment Operations (Hard)
+Brute Force Method: Recursively distribute K increments across N elements in all possible ways, calculating the AND result for every combination.
+BF Complexity Visuals: Massive N-ary branching tree where each branch represents adding +1 to a specific array element.
+How to Draw BF: Draw an array. Draw N branches coming down for every single increment operation up to K. Write $O(N^K)$ to show the combinatorial explosion.
+Optimised Pattern: Greedy Bitwise Construction (MSB to LSB).
+Opt Vis. Technique: 2D Grid mapping array elements to their binary representations (32 bits wide), scanning top-down.
+Dry Run (Opt): Start at MSB (bit 31). Calculate cost to turn this bit '1' for all elements. If total cost &lt;= K, deduct cost from K and set bit to 1. Move to next bit.
+How to Draw (Opt): Write numbers in binary stacked vertically. Circle the leftmost column (MSB). Write "Cost to make all 1s". Subtract from K.
+Opt Complexity Visuals: Linear scan of 32 bits, with an inner loop of N elements.
+How to Draw Opt Complexity: Draw a box labeled "32 (Bits)". Draw an arrow to another box "N (Array Size)". Write $O(32 \cdot N)$ = $O(N)$.
+Mem Vis (BF): Deep call stack and cloned arrays for every recursive increment step.
+Mem Vis (Opt): $O(1)$ space block. Just a few integer variables (Cost, K, Answer) running in-place.

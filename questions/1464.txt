@@ -1,0 +1,13 @@
+ID: 1464
+Problem Title: Maximum Product of Two Elements in an Array
+Brute Force Method: Nested Loops. Calculate (nums[i]-1) * (nums[j]-1) for every pair (i, j) and track the maximum value found.
+BF Complexity Visuals: All-Pairs Product Grid
+How to Draw BF: Draw a matrix where row i and col j intersect at the product. Highlight the max cell. Label $O(N^2)$.
+Optimised Pattern: Two-Pointer / Max Tracking
+Opt Vis. Technique: "Top Two" Leaderboard
+Dry Run (Opt): Iterate through the array once. Keep track of the two largest numbers seen so far (`max1` and `max2`). Result is `(max1-1) * (max2-1)`.
+How to Draw (Opt): Draw an array. Draw two podiums: "1st Place" and "2nd Place". As you scan numbers, draw them challenging the current podium holders and potentially bumping them down.
+Opt Complexity Visuals: Single-Pass Scan
+How to Draw Opt Complexity: Draw one arrow from start to end. Label $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Two integer variables. Space $O(1)$.

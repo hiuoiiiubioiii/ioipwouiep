@@ -1,0 +1,13 @@
+ID: 3116
+Problem Title: Kth Smallest Amount With Single Denomination Combination
+Brute Force Method: Generate multiples for all coins, throw them in a massive array, sort, and find the Kth element. $O(K x N \log(\text{KN})$)
+BF Complexity Visuals: Multiple endless tape measures unrolling at different speeds, merging into a chaotic pile.
+How to Draw BF: Write out the multiplication tables for each coin side-by-side. Manually circle numbers and cross out duplicates until you hit K circles.
+Optimised Pattern: Binary Search + Inclusion-Exclusion (PIE)
+Opt Vis. Technique: Venn Diagram inside a Search Space
+Dry Run (Opt): Guess a midpoint amount. Use PIE to count how many valid coin multiples exist below this amount (Add single coins, subtract pairs, add triples). Adjust bounds.
+How to Draw (Opt): Draw a number line. Pick a guess `M`. Below `M`, draw overlapping circles for coin multiples. Put `+` in single areas, `-` in overlaps.
+Opt Complexity Visuals: Binary search tree shrinking over a constant mathematical calculation.
+How to Draw Opt Complexity: Draw a timeline. Halve it. At the midpoint, draw a small $O(2^N)$ equation tree. Repeat logarithmically.
+Mem Vis (BF): A massive array holding potentially millions of generated multiples.
+Mem Vis (Opt): $O(1)$ space or small 2^N precomputed LCM array for the coin combinations.

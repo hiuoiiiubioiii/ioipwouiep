@@ -1,0 +1,13 @@
+ID: 3184
+Problem Title: Count Pairs That Form a Complete Day I
+Brute Force Method: Nested loop checking `(hours[i] + hours[j]) % 24 == 0`. $O(N^2)$
+BF Complexity Visuals: N x N Comparison Matrix
+How to Draw BF: Draw a square grid. Fill every cell (i, j) with the sum check result. $O(N^2)$.
+Optimised Pattern: Frequency Array / Hashing (Modulo 24)
+Opt Vis. Technique: 24-Slot Distribution Table
+Dry Run (Opt): For each hour, calculate `rem = x % 24`. Look for complement `(24 - rem) % 24` in a count array. Add to answer, then increment `count[rem]`.
+How to Draw (Opt): Draw 24 boxes (0-23). Read hours; for each, look in the "Complement" box. Add the number inside to your total. Put a tick in the current box.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw a single straight line of length N. Each node does $O(1)$ box lookup. $O(N)$.
+Mem Vis (BF): List of all valid pair indices.
+Mem Vis (Opt): Fixed array of size 24. $O(1)$ space.

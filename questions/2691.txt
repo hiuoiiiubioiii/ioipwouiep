@@ -1,0 +1,13 @@
+ID: 2691
+Problem Title: Immutability Helper (JS)
+Brute Force Method: Deep cloning the entire object using `JSON.parse(JSON.stringify(obj))` for every single small update.
+BF Complexity Visuals: Massive Serialized Copy
+How to Draw BF: Draw a large tree. To change one leaf, draw the entire tree being copied into a new box. $O(N)$ per update.
+Optimised Pattern: Proxy + Structural Sharing
+Opt Vis. Technique: Path-Based Cloning (Copy-on-Write)
+Dry Run (Opt): Use a Proxy to intercept set operations. When a property is changed, only clone the path from the root to that property. Unchanged branches are shared between the old and new versions.
+How to Draw (Opt): Draw a tree. Change one leaf. Draw a new root and a new path to that leaf, but draw arrows from the new path pointing to the existing, unchanged branches of the old tree.
+Opt Complexity Visuals: $O(D)$ where D is depth
+How to Draw Opt Complexity: Draw a single path from root to leaf. Only D nodes are copied. $O(D)$.
+Mem Vis (BF): Redundant heap duplicates
+Mem Vis (Opt): Structural sharing memory (only updated nodes consume new space).

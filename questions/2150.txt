@@ -1,0 +1,13 @@
+ID: 2150
+Problem Title: Find All Lonely Numbers in the Array
+Brute Force Method: Nested loops: For each number, check the rest of the array to see if it appears again or if `x+1` or `x-1` exists.
+BF Complexity Visuals: N searches over N elements.
+How to Draw BF: Draw an array. For each item, draw arrows checking every other item for three conditions. $O(N^2)$.
+Optimised Pattern: Frequency Hash Map.
+Opt Vis. Technique: A census where each number reports its presence and checks its immediate neighbors.
+Dry Run (Opt): Build a Frequency Map of all numbers. Iterate through the keys: if `map[num] == 1` AND `num-1` is not in map AND `num+1` is not in map, it's lonely.
+How to Draw (Opt): Draw a tally board. Count occurrences of each number. Then, for each number on the board with exactly 1 tally, check if the numbers immediately above/below it have any tallies.
+Opt Complexity Visuals: $O(N)$ linear time.
+How to Draw Opt Complexity: A pass to fill the bucket (map), then a pass to check the bucket.
+Mem Vis (BF): Nested loops and $O(1)$ space (at the cost of $O(N^2)$ time).
+Mem Vis (Opt): $O(N)$ to store the Frequency Map.

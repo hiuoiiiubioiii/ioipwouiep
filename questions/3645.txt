@@ -1,0 +1,13 @@
+ID: 3645
+Problem Title: Maximum Total from Optimal Activation Order (Med)
+Brute Force Method: Try every permutation of activation (N!) to find the one that yields the maximum sum.
+BF Complexity Visuals: Factorial Decision Tree.
+How to Draw BF: Start with node 1. Branch to all others. The tree height is N. Total leaves are N!. Write "Impossible to compute".
+Optimised Pattern: Greedy Algorithm with a Max-Priority Queue. At any step, activate the item that provides the highest immediate gain/value based on current state.
+Opt Vis. Technique: Highest-Value-First Plucking.
+Dry Run (Opt): Treat items like fruit on a tree. Some fruit get riper over time; some rot. Always pluck the one that currently has the highest "Value/Cost" ratio.
+How to Draw (Opt): Draw a list of items with values. Put them in a "Priority Queue" (a funnel that always puts the largest on top). Pull the top item, update world state, repeat.
+Opt Complexity Visuals: Heap-Based Sorting.
+How to Draw Opt Complexity: Draw a bar for "N insertions into Heap" (O(N log N)). Draw a bar for "N extractions" (O(N log N)). Total $O(N \log N)$.
+Mem Vis (BF): Storing all permutations in a giant list to compare them.
+Mem Vis (Opt): A Max-Heap (Binary Tree) structure. Space $O(N)$.

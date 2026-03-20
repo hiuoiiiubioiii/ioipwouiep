@@ -1,0 +1,13 @@
+ID: 1819
+Problem Title: Number of Different Subsequences GCDs
+Brute Force Method: Generate all 2^N possible subsequences, calculate the GCD for each, and store in a Set.
+BF Complexity Visuals: Exponential binary inclusion/exclusion tree.
+How to Draw BF: Draw a massive tree branching left (include) and right (exclude) for every element. $O(2^N)$ paths.
+Optimised Pattern: Math (Sieve-like approach). Check if a target GCD 'x' can be formed by iterating its multiples.
+Opt Vis. Technique: Multiplication grid overlay on a number line.
+Dry Run (Opt): Track present numbers in a boolean array. For every potential GCD x (1 to MaxNum), find all its multiples in the array. If the GCD of these multiples == x, increment answer.
+How to Draw (Opt): Draw a number line. Pick a candidate x (e.g., 3). Hop by 3s (3, 6, 9). Circle the ones present in the input. Calculate the running GCD of circled numbers.
+Opt Complexity Visuals: Harmonic series summation graph.
+How to Draw Opt Complexity: Draw bars representing N/1 + N/2 + N/3... showing the sum bounded by $O(\text{MaxNum} \cdot \log(\text{MaxNum})$).
+Mem Vis (BF): Massive call stack or arrays generating 2^N subsequences.
+Mem Vis (Opt): Single boolean array of size MaxNum (O(W) space).

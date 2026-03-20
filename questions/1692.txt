@@ -1,0 +1,13 @@
+ID: 1692
+Problem Title: Count Ways to Distribute Candies
+Brute Force Method: Backtracking to assign every candy to every possible bag, checking for empty bags at the end.
+BF Complexity Visuals: Assignment Decision Tree
+How to Draw BF: Draw a tree where each level (candy) branches into K paths (bags). $O(K^N)$.
+Optimised Pattern: DP (Stirling Numbers of Second Kind)
+Opt Vis. Technique: State Transition Table
+Dry Run (Opt): dp[n][k] = k \cdot dp[n-1][k] + dp[n-1][k-1]. Logic: Candy n either joins an existing bag (k choices) or starts a new bag.
+How to Draw (Opt): Draw a grid (Candies vs. Bags). For each cell (n, k), show it pulling values from the cell above and the cell top-left.
+Opt Complexity Visuals: 2D Matrix Fill
+How to Draw Opt Complexity: Draw a square grid of size N \times K being filled row-by-row. $O(N \cdot K)$.
+Mem Vis (BF): Recursive Call Stack: Stack of depth N tracking candy assignments.
+Mem Vis (Opt): 2D DP Table: Draw a grid of size N \times K. $O(N \cdot K)$ space (or $O(K)$ if optimized).

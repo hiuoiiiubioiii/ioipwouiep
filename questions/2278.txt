@@ -1,0 +1,13 @@
+ID: 2278
+Problem Title: Percentage of Letter in String
+Brute Force Method: Character Conversion &amp; List FilterConvert the string to a list of characters. Filter the list to keep only the target letter. Divide the length of the filtered list by the original length.
+BF Complexity Visuals: List Filtering Simulation
+How to Draw BF: Draw the string "apple". Copy only the 'p's into a new box. Count both boxes. Show the overhead of creating a new list.
+Optimised Pattern: Linear Counter + Math
+Opt Vis. Technique: Single-Pass Incrementer
+Dry Run (Opt): Iterate through the string once with a simple counter. At the end, perform: `(count * 100) / length` using integer division as per the problem.
+How to Draw (Opt): Draw the string as a sequence of characters. Point a finger at each. If it matches, click a handheld "tally counter". At the end, write the fraction and multiply by 100.
+Opt Complexity Visuals: Linear Timeline Pass
+How to Draw Opt Complexity: Draw one straight $O(N)$ arrow. No extra allocations, no sub-loops. Total time is strictly $O(N)$.
+Mem Vis (BF): Creating a new filtered string or list of characters in the heap (O(N) space).
+Mem Vis (Opt): A single integer `count` and an index variable (O(1) space).

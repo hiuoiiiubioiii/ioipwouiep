@@ -1,0 +1,13 @@
+ID: 661
+Problem Title: Image Smoother
+Brute Force Method: For every cell in an M x N matrix, scan its 8 neighbors + itself, calculate the average, and store it in a new matrix.
+BF Complexity Visuals: Nested Scanning Grid.
+How to Draw BF: Draw a large grid. In each cell, draw a small 3x3 window around it. Repeat for all cells. $O(M \cdot N)$.
+Optimised Pattern: Single-Pass Iteration / In-Place Bit Manipulation.
+Opt Vis. Technique: Sliding Kernel.
+Dry Run (Opt): Iterate through rows and columns. Use two nested loops (-1 to 1) to sum valid neighbor values. Divide by the count of neighbors. To do it in-place, store the result in higher bits.
+How to Draw (Opt): Draw a matrix. Draw a "Blur" filter box moving across each cell. Write the new number into a secondary grid.
+Opt Complexity Visuals: Strictly linear relative to grid size.
+How to Draw Opt Complexity: Draw a single sweeping arrow through the grid. Write $O(M \cdot N)$.
+Mem Vis (BF): Draw a full secondary matrix of size M x N.
+Mem Vis (Opt): Draw the original matrix. Use the upper 8 bits of each integer to store the new value. $O(1)$ extra space.

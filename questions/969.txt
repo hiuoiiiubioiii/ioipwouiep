@@ -1,0 +1,13 @@
+ID: 969
+Problem Title: Pancake Sorting
+Brute Force Method: Generate all possible sequences of "pancake flips" and for each, check if the resulting array is sorted.
+BF Complexity Visuals: $O(N!)$ or higher. Exploring an infinite number of flip combinations.
+How to Draw BF: Draw a stack of pancakes. Draw 5 different ways to flip it. For each, draw 5 more. Show a massive tree of "shuffled" pancake stacks.
+Optimised Pattern: Greedy "Largest to Back"
+Opt Vis. Technique: "The Spatula Slide." Find the largest unsorted pancake. Flip it to the top (index 1), then flip the whole stack to move it to its correct position at the bottom.
+Dry Run (Opt): For `curr_size` from N down to 1: find index of `curr_size`. Flip at `index + 1` (moves to front). Flip at `curr_size` (moves to back). Repeat.
+How to Draw (Opt): Draw a stack of pancakes of different widths. Show a spatula sliding under the widest one, flipping the top part, and then flipping the whole stack to put the wide one on the plate.
+Opt Complexity Visuals: $O(N^2)$. We perform two flips for each of the N pancakes.
+How to Draw Opt Complexity: Draw the array. Below it, draw a "Flip" icon and the resulting array. Repeat this N times, with each array having one more "sorted" element at the end.
+Mem Vis (BF): $O(N!)$ to store permutations.
+Mem Vis (Opt): $O(N)$ to store the list of flip indices. Draw a single row of "Flip" integers.

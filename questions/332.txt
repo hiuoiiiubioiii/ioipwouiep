@@ -1,0 +1,13 @@
+ID: 332
+Problem Title: Reconstruct Itinerary
+Brute Force Method: Generate all possible permutations of tickets and check if they form a continuous path starting from "JFK". Sort results to find the smallest lexicographically.
+BF Complexity Visuals: Permutation Tree (Factorial Growth)
+How to Draw BF: Draw "JFK" at the top. Draw every possible ticket as a branch. Show the tree width expanding to $O(T!)$ where T is tickets.
+Optimised Pattern: Hierholzer's Algorithm (Eulerian Path via DFS)
+Opt Vis. Technique: Backtracking Post-order Path Reversal
+Dry Run (Opt): Use an Adjacency List with Priority Queues for lexicographical order. Run DFS. When a node has no more outgoing edges, "burn" the node by adding it to the result. Reverse the result at the end.
+How to Draw (Opt): Draw the airports as circles. Draw tickets as arrows. As you traverse an arrow, put a cross on it. When stuck, write the airport name in a list and "pop" back to the previous airport.
+Opt Complexity Visuals: Linear Edge Exhaustion
+How to Draw Opt Complexity: Draw a single line that visits every edge exactly once. Mark each edge with a number representing the order it was "burned". $O(E \log E)$ due to sorting.
+Mem Vis (BF): Massive set of all possible path strings.
+Mem Vis (Opt): Adjacency List + Recursion Stack. Draw a vertical map where keys are airports and values are sorted lists of destinations. $O(V + E)$.

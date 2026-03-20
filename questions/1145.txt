@@ -1,0 +1,13 @@
+ID: 1145
+Problem Title: Binary Tree Coloring Game
+Brute Force Method: Try picking every possible node as the second player and simulate the entire game to see who wins.
+BF Complexity Visuals: Node-by-Node Game Simulation
+How to Draw BF: Draw a tree. For every node, draw a "Game Start" and color the nodes step-by-step. $O(N^2)$ complexity.
+Optimised Pattern: Tree Partitioning / Subtree Counting
+Opt Vis. Technique: Three-Way Connectivity Analysis
+Dry Run (Opt): Find the node 'X' picked by player 1. Calculate size of: 1. Left subtree of X. 2. Right subtree of X. 3. The rest of the tree (Total - Subtree_X). If any &gt; Half, Player 2 wins.
+How to Draw (Opt): Draw the tree. Circle node X. Shade its left child's subtree, its right child's subtree, and everything above X in different colors. Compare the sizes of the three shaded regions.
+Opt Complexity Visuals: Single DFS Pass $O(N)$
+How to Draw Opt Complexity: Draw a single line tracing the tree to find node X and count its children.
+Mem Vis (BF): Full state-space simulation tree
+Mem Vis (Opt): Standard DFS recursion stack $O(H)$.

@@ -1,0 +1,13 @@
+ID: 3178
+Problem Title: Find the Child Who Has the Ball After K Seconds
+Brute Force Method: Simulate the ball moving 1 step at a time, reversing direction at the ends. $O(K)$.
+BF Complexity Visuals: Linear Oscillation Graph
+How to Draw BF: Draw n dots. Draw a zig-zag line moving from dot 1 to n, then back to 1. Tally K segments.
+Optimised Pattern: Math (Modulo Arithmetic)
+Opt Vis. Technique: Reflecting Coordinate Plane
+Dry Run (Opt): The ball completes a full round-trip in 2(n-1) steps. Find `K % (2n-2)`. If result &lt; n, it's moving forward; else, backward.
+How to Draw (Opt): Draw a number line 0 to n-1. Draw a circle representing the "virtual" path of length 2n-2. Mark the K-th point on the circle.
+Opt Complexity Visuals: Constant Time Calculation
+How to Draw Opt Complexity: Draw a single dot. Label it $O(1)$.
+Mem Vis (BF): No significant memory used.
+Mem Vis (Opt): Zero auxiliary space. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1159
+Problem Title: Market Analysis II (SQL)
+Brute Force Method: For every user, find all items sold, sort by date, find the 2nd one, then check if it matches the user's favorite brand.
+BF Complexity Visuals: Procedural Sorting Scan
+How to Draw BF: Draw a user. Draw their sold items. Sort them. Point to item #2. Compare brand. Repeat for every single user.
+Optimised Pattern: Window Function (ROW_NUMBER) + CTE
+Opt Vis. Technique: Ranked Filtering Pipeline
+Dry Run (Opt): Use `ROW_NUMBER() OVER(PARTITION BY seller_id ORDER BY sale_date)` to rank sales. Filter where rank = 2. LEFT JOIN with Users to compare favorite_brand with item_brand.
+How to Draw (Opt): Draw the Sales table partitioned into "Seller Folders". Inside each folder, number the files 1, 2, 3... Pull out all files labeled "2" and compare with the User's "Favorite" note.
+Opt Complexity Visuals: $O(N \log N)$ Partition Sort
+How to Draw Opt Complexity: Draw a sorting funnel for each partition, then a flat join.
+Mem Vis (BF): Complex nested loops in memory
+Mem Vis (Opt): Partitioned sorting buffers.

@@ -1,0 +1,13 @@
+ID: 3172
+Problem Title: Second Day Verification
+Brute Force Method: Subqueries using `MIN(date)` and `NOT IN` to find the second date manually.
+BF Complexity Visuals: Exclusion Funnels
+How to Draw BF: Draw a list. Find the first date. Put it in a box. Scan the list again for the lowest date NOT in the box.
+Optimised Pattern: Window Function (DENSE_RANK)
+Opt Vis. Technique: The Ordered Podium
+Dry Run (Opt): Use `DENSE_RANK() OVER(PARTITION BY user_id ORDER BY date ASC)`. Filter for `rank = 2`.
+How to Draw (Opt): Draw buckets for users. Sort dates chronologically. Hand out medals: Gold (1), Silver (2). Keep only the Silver rows.
+Opt Complexity Visuals: Partitioned Sort $O(N \log N)$
+How to Draw Opt Complexity: Pipeline: Partition rightarrow Sort rightarrow Rank rightarrow Filter.
+Mem Vis (BF): Temp tables for exclusions.
+Mem Vis (Opt): DB Window buffer. $O(N)$ space.

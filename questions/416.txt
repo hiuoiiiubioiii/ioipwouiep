@@ -1,0 +1,13 @@
+ID: 416
+Problem Title: Partition Equal Subset Sum
+Brute Force Method: Recursive DFS For every number, choose to include it in "Subset A" or not. Check if sum == total/2.
+BF Complexity Visuals: Binary Tree
+How to Draw BF: Draw a root. Each level represents a number in the array. Draw 2 branches from every node (Include/Exclude). $O(2^N)$.
+Optimised Pattern: 0/1 Knapsack DP (1D) Use a boolean array `dp` where `dp[i]` is true if sum `i` is possible.
+Opt Vis. Technique: Staircase Filling
+Dry Run (Opt): Draw a row of boxes labeled 0 to TargetSum. Start with 0 as "True". For each number, "jump" forward and mark new boxes True.
+How to Draw (Opt): Draw a 1D horizontal grid. For each number in the input, draw arrows from existing 'T' cells to new 'T' cells. Write from right-to-left.
+Opt Complexity Visuals: Area Calculation
+How to Draw Opt Complexity: Draw a rectangle with Width = TargetSum and Height = N. Complexity is the area $O(N \\text{cdot TargetSum})$.
+Mem Vis (BF): Call Stack Deep vertical stack of recursive decisions.
+Mem Vis (Opt): Boolean Strip Draw a single 1D array of booleans. $O(\text{TargetSum})$ space.

@@ -1,0 +1,13 @@
+ID: 2943
+Problem Title: Maximize Area of Square Hole in Grid
+Brute Force Method: Check all possible k x k square combinations by removing bars.
+BF Complexity Visuals: Exhaustive Grid Search
+How to Draw BF: Draw a grid. Attempt to fit squares of size 2, 3, 4... by checking all possible row/column removals. $O(2^H \cdot 2^V)$.
+Optimised Pattern: Longest Consecutive Sequence (Greedy)
+Opt Vis. Technique: Bar Connectivity Histogram
+Dry Run (Opt): Sort the removed bars. Find the longest consecutive sequence in `hBars` (h_max) and `vBars` (v_max). The side of the largest square is min(h_max + 1, v_max + 1).
+How to Draw (Opt): Draw a line representing horizontal bars. Circle consecutive numbers (e.g., 2, 3, 4). The "gap" size is count + 1. Repeat for vertical.
+Opt Complexity Visuals: Sorting + Linear Sweep
+How to Draw Opt Complexity: Draw two lines: one for H bars, one for V bars. T = $O(H \log H + V \log V)$.
+Mem Vis (BF): Storing all subset combinations of bar removals.
+Mem Vis (Opt): Sorting the bars in place or a new list. Space $O(H + V)$.

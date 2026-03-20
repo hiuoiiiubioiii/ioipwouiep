@@ -1,0 +1,13 @@
+ID: 1313
+Problem Title: Decompress Run-Length Encoded List
+Brute Force Method: Iterate pairwise, repeatedly calling `push_back` on a dynamic array for every single frequency count, triggering multiple memory reallocations.
+BF Complexity Visuals: Staircase Array Resizing
+How to Draw BF: Draw an array growing. Show it hitting capacity, creating a larger array, copying elements over, and deleting the old one. Repeat this $O(N)$ reallocation process.
+Optimised Pattern: Pre-allocation + Linear Fill
+Opt Vis. Technique: Contiguous Memory Block Reservation
+Dry Run (Opt): Pass 1: Sum all frequencies at even indices. Pass 2: Allocate an array of exactly that total size. Fill it using a direct index pointer.
+How to Draw (Opt): Draw the input array. Circle the even indices and write their sum. Draw a final, strictly bounded output array of that exact length. Fill it left-to-right.
+Opt Complexity Visuals: Single Static Bar Graph
+How to Draw Opt Complexity: Draw a fixed-width bar representing $O(S)$ time, where S is the sum of all frequencies. No expanding bounds.
+Mem Vis (BF): Dynamic Vector: Draw a `std::vector` block that shatters and duplicates into larger sizes as capacity is breached.
+Mem Vis (Opt): Pre-sized Vector: Draw a `std::vector` initialized with `.reserve(total_size)` or a direct size constructor. No resizing occurs.

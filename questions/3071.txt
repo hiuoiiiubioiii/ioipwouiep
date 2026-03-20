@@ -1,0 +1,13 @@
+ID: 3071
+Problem Title: Minimum Operations to Write the Letter Y on a Grid
+Brute Force Method: Try every combination of values (0, 1, 2) for the "Y" cells and the "Non-Y" cells (9 combinations total). For each, count operations needed.
+BF Complexity Visuals: Permutation Decision Grid
+How to Draw BF: Draw a 3 x 3 grid of "Y-color" vs "Non-Y-color". Each cell shows the cost of that choice. $O(9 \cdot N^2)$.
+Optimised Pattern: Frequency Counting (Y vs. Non-Y)
+Opt Vis. Technique: Two-Region Histogram
+Dry Run (Opt): Count frequencies of 0s, 1s, and 2s in the "Y" region and the "Non-Y" region separately. Iterate through the 6 valid (different color) pairs and find the min cost.
+How to Draw (Opt): Draw the grid. Highlight the 'Y' shape (diagonals + vertical tail). Below, draw two tables: "Y-Counts" and "Other-Counts". Plug counts into the formula `Total - (Y_count + Other_count)`.
+Opt Complexity Visuals: $O(N^2)$ Single Pass
+How to Draw Opt Complexity: Draw one pass to identify and count region types. The final comparison takes constant time (O(6)).
+Mem Vis (BF): A copy of the grid with "Y" and "Non-Y" cells flagged separately.
+Mem Vis (Opt): Two small arrays of size 3 to store the frequencies of values 0, 1, and 2.

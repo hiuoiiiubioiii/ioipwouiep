@@ -1,0 +1,13 @@
+ID: 3297
+Problem Title: Count Substrings That Can Be Rearranged to Contain a String I
+Brute Force Method: Generate all $O(N^2)$ substrings and for each, count character frequencies to see if it contains `word2`. $O(N^3)$.
+BF Complexity Visuals: Exhaustive Substring Matrix
+How to Draw BF: Draw an N x N matrix. In each cell, draw a 26-slot frequency table. Show the massive redundant counting for overlapping substrings.
+Optimised Pattern: Sliding Window (Two-Pointers)
+Opt Vis. Technique: Dynamic Frequency Balance
+Dry Run (Opt): Use two pointers (L, R). Expand R until the window contains all characters of `word2`. For a fixed R, all substrings starting from 0 dots L and ending at R are valid.
+How to Draw (Opt): Draw the string. Place two fingers (L, R). Widen R until you have the target. Every step you can shrink L while staying valid adds a "Count" for all remaining suffixes.
+Opt Complexity Visuals: Amortized Linear Pipeline
+How to Draw Opt Complexity: Draw a line of length N. Show L and R moving only right. Label as 2N steps = $O(N)$.
+Mem Vis (BF): Storing all valid substring strings.
+Mem Vis (Opt): Two fixed-size frequency arrays (O(26) rightarrow $O(1)$ space).

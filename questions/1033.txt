@@ -1,0 +1,13 @@
+ID: 1033
+Problem Title: Moving Stones Until Consecutive
+Brute Force Method: Try all possible move combinations recursively or using BFS to find min/max steps.
+BF Complexity Visuals: An exploding state space tree of every possible stone jump.
+How to Draw BF: Draw 3 stones on a line. Draw all places stone A could jump. Repeat for B and C. Write $O(\text{Exponential})$.
+Optimised Pattern: Greedy / Case Analysis.
+Opt Vis. Technique: A gap-closing logic. You either jump into a hole (min) or slowly crawl toward the center (max).
+Dry Run (Opt): Sort positions a, b, c. **Max moves**: Just the total empty spaces between them `(c - a - 2)`. **Min moves**: If already consecutive, 0. If a gap is ≤ 2, 1 jump. Else, 2 jumps.
+How to Draw (Opt): Draw a number line with 3 dots. Count the 'empty' slots between them. Write Max = gap1 + gap2. For Min, check if stones are touching or nearly touching.
+Opt Complexity Visuals: A set of constant-time logic gates.
+How to Draw Opt Complexity: Draw a flowchart with 3-4 decision boxes. Write Time: $O(1)$.
+Mem Vis (BF): Massive state-tracking sets for BFS.
+Mem Vis (Opt): Just 3 integer variables for the stone positions. $O(1)$ space.

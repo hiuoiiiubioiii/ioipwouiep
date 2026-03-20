@@ -1,0 +1,13 @@
+ID: 2976
+Problem Title: Minimum Cost to Convert String I
+Brute Force Method: For each character change, run Dijkstra to find the minimum cost to transform char A to B.
+BF Complexity Visuals: N Separate Graph Searches
+How to Draw BF: Draw 26 nodes (a-z). For every character in source, trace a path to target. $O(N \cdot (V+E)$log V).
+Optimised Pattern: Floyd-Warshall (All-Pairs Shortest Path)
+Opt Vis. Technique: 26x26 Adjacency Matrix
+Dry Run (Opt): Precompute a 26 x 26 matrix `dist`. For each intermediate char `k`, update `dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])`. Then simply sum `dist[src[i]][tgt[i]]`.
+How to Draw (Opt): Draw a 26 x 26 grid. Fill with direct costs. Pick three nodes (i, j, k) and show how the path through 'k' might be cheaper.
+Opt Complexity Visuals: Constant Graph Size (26^3) + Linear Sweep
+How to Draw Opt Complexity: Draw a small cube (26 side). Then a single line of length N. T = $O(26^3 + N)$.
+Mem Vis (BF): Many redundant priority queues.
+Mem Vis (Opt): A 26 x 26 distance matrix. Space $O(1)$ relative to N.

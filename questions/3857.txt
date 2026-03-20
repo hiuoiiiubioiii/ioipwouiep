@@ -1,0 +1,13 @@
+ID: 3857
+Problem Title: Minimum Cost to Split into Ones (Med.)
+Brute Force Method: Recursive Backtracking: Try every possible split point for the array, calculating the cost of each split, and recursively find the minimum total cost until all segments are size 1.
+BF Complexity Visuals: A binary tree representing all possible "Split Paths," with many overlapping subproblems.
+How to Draw BF: Draw an array [4]. Split into [1,3], [2,2], [3,1]. From [3], split again. Write $O(2^N)$ or $O(N!)$.
+Optimised Pattern: Dynamic Programming (MCM - Matrix Chain Multiplication Style).
+Opt Vis. Technique: A 2D triangular table where each cell represents the minimum cost to fully split a specific range `[i...j]`.
+Dry Run (Opt): Let `dp[i][j]` be the min cost for range `[i...j]`. `dp[i][j] = cost_of_current_split + min(dp[i][k] + dp[k+1][j])` for all `k` between `i` and `j`.
+How to Draw (Opt): Draw the array. Draw a 2D grid. Fill the diagonal with 0s. Fill the rest by "combining" results from smaller sub-ranges already calculated in the grid.
+Opt Complexity Visuals: A cubic $O(N^3)$ nested loop sweep.
+How to Draw Opt Complexity: Draw a cube or a nested loop diagram: i (start), j (end), k (split point). Write $O(N^3)$.
+Mem Vis (BF): Extremely deep recursion stack, $O(N)$.
+Mem Vis (Opt): A 2D DP table taking $O(N^2)$ space.

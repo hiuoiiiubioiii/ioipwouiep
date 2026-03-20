@@ -1,0 +1,13 @@
+ID: 2952
+Problem Title: Minimum Number of Coins to be Added
+Brute Force Method: Recursive/Backtracking to find all obtainable sums for every possible coin addition.
+BF Complexity Visuals: Infinite Branching Tree
+How to Draw BF: Draw a tree where each node represents a missing sum. Branching into adding coin 1, 2, 3... to infinity.
+Optimised Pattern: Greedy Range Extension (Patching)
+Opt Vis. Technique: Expanding Interval Bar
+Dry Run (Opt): Maintain `reachable_range` [0, current_max]. If the next coin &gt; current_max + 1, "patch" the gap by adding a coin of value current_max + 1, doubling the range.
+How to Draw (Opt): Draw a horizontal number line. Shade the part you can reach. If there's a gap, draw a "patch" block and show the shaded area doubling in size.
+Opt Complexity Visuals: Sorting + Logarithmic Growth Pass
+How to Draw Opt Complexity: Draw a line of N items (coins). For each gap, draw a jump. T = $O(N \log N)$ for sorting + $O(\\text{log target})$.
+Mem Vis (BF): Deep recursion stacks tracking obtainable subsets.
+Mem Vis (Opt): Three long long variables: `max_reachable`, `count`, and `index`. Space $O(1)$.

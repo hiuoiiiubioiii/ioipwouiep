@@ -1,0 +1,13 @@
+ID: 3846
+Problem Title: Total Distance to Type a String Using One Finger (Med.)
+Brute Force Method: Recursive Backtracking: For every character in the string, calculate the distance from the previous character's coordinates on a 2D keyboard grid.
+BF Complexity Visuals: A simple linear chain of distance calculations, but easily confused with multi-finger optimization.
+How to Draw BF: Draw a keyboard grid. Map 'A' to (0,0), 'B' to (0,1), etc. Trace a line from letter to letter. Write $O(N)$ for a single finger.
+Optimised Pattern: Coordinate Geometry + Single Pass Accumulation.
+Opt Vis. Technique: A "Manhattan Distance" calculation between 2D points (x1, y1) and (x2, y2).
+Dry Run (Opt): Pre-map all 26 letters to (row, col). Iterate string: `total += abs(x2-x1) + abs(y2-y1)`. Update `(x1, y1)` to current letter.
+How to Draw (Opt): Draw a 6x5 grid. Plot "H", then "E", then "L". Draw right-angle "stairs" connecting them to show Manhattan distance. Sum the lengths.
+Opt Complexity Visuals: Linear timeline of arithmetic operations.
+How to Draw Opt Complexity: Draw a line of N characters. Under each, write "O(1) Math". Total: $O(N)$.
+Mem Vis (BF): $O(1)$ space, but potentially $O(N)$ if using recursion for simple summation.
+Mem Vis (Opt): $O(1)$ memory. Just a 2D coordinate map of size 26 and one `total_distance` variable.

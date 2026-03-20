@@ -1,0 +1,13 @@
+ID: 588
+Problem Title: Design In-Memory File System
+Brute Force Method: Use a flat Hash Map where the Key is the full path string and the Value is the content. For `ls`, scan all keys and check for prefix matches.
+BF Complexity Visuals: Full string prefix scanning for every directory listing. $O(N \\text{times} L)$.
+How to Draw BF: Draw a table with paths like "/a/b/c". For "ls /a", read every single entry in the table to see if it starts with "/a".
+Optimised Pattern: Trie-based Directory Structure.
+Opt Vis. Technique: A real filing cabinet. Every folder is a node that contains a map of its children (other folders or files). Navigating is just following the pointers.
+Dry Run (Opt): Create a `Node` class with `Map children` and `StringBuilder content`. For `ls`, traverse the path and return sorted keys of the target node's map.
+How to Draw (Opt): Draw a tree. The root is `/`. It has a branch to `a`. `a` has a branch to `b`. Inside `b` is a file node named `c`. To find `c`, you just follow the `a -&gt; b -&gt; c` path.
+Opt Complexity Visuals: Traversal proportional to path depth. $O(\\text{text}{\text{Path Depth}})$.
+How to Draw Opt Complexity: Draw a Trie (prefix tree) where each edge is a directory name.
+Mem Vis (BF): Redundant string storage for every full path.
+Mem Vis (Opt): $O(\\text{text}{\text{Total Chars in all names} + \text{Content}})$. Trie nodes minimize name redundancy.

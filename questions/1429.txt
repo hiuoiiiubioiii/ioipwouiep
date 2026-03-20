@@ -1,0 +1,13 @@
+ID: 1429
+Problem Title: First Unique Number
+Brute Force Method: List Scanning. Store numbers in a list. For `showFirstUnique()`, iterate the list and check the count of each number in a frequency map until you find one with count 1.
+BF Complexity Visuals: Linear Search on Request
+How to Draw BF: Draw a list of numbers. When "Who is first unique?" is asked, draw an arrow starting from index 0 and moving right until it hits a unique one. Label $O(N)$ per call.
+Optimised Pattern: Linked Hash Map / Queue + Hash Map
+Opt Vis. Technique: Ordered Frequency Stream
+Dry Run (Opt): Use a Queue for order and a Map for counts. `add(x)`: update Map and push to Queue. `showFirstUnique()`: peek queue; if `map[peek] &gt; 1`, pop it. Stop when front is unique or empty.
+How to Draw (Opt): Draw a Queue and a Map. When a duplicate enters, mark it in the Map. When "First Unique" is called, pop the "garbage" (duplicates) off the front of the queue until a "clean" unique number is visible.
+Opt Complexity Visuals: Amortized Constant Time
+How to Draw Opt Complexity: Draw a "Pop" operation that happens only once per element. Label $O(1)$ average.
+Mem Vis (BF): List and Map Growth
+Mem Vis (Opt): Draw a Hash Map (Frequency) and a Doubly Linked List/Queue (Order). Space $O(N)$.

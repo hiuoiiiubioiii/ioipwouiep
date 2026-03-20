@@ -1,0 +1,13 @@
+ID: 635
+Problem Title: Log Storage System
+Brute Force Method: Store all logs in a simple list. For every `retrieve` call, iterate through the entire list, parse the timestamps, and check if they fall in the range.
+BF Complexity Visuals: Full scan per query.
+How to Draw BF: Draw a pile of logs. For every question, search the whole pile. Write $O(N \cdot Q)$.
+Optimised Pattern: Ordered Map / TreeMap with Granularity Masking.
+Opt Vis. Technique: Sorted Timeline with Range Query.
+Dry Run (Opt): Convert timestamps to a standardized string format based on the given granularity (e.g., Year: "2017:00:00..."). Use a sorted map to find all logs between the start and end keys.
+How to Draw (Opt): Draw a timeline. Mark logs on it. When a range is requested, draw two vertical bars and take everything in between.
+Opt Complexity Visuals: $O(\log N)$ for search + $O(K)$ for results.
+How to Draw Opt Complexity: Draw a balanced tree (BST). Highlight a specific subtree within the range. Write $O(\log N)$.
+Mem Vis (BF): Draw the list as is.
+Mem Vis (Opt): Draw a TreeMap or SkipList storing strings. $O(N)$ space.

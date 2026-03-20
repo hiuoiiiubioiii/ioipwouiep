@@ -1,0 +1,13 @@
+ID: 2201
+Problem Title: Count Artifacts That Can Be Extracted
+Brute Force Method: Nested LoopsIterate over every cell of each artifact, and linearly search the `dig` array every time to see if the cell is excavated.
+BF Complexity Visuals: Cartesian Plane / Nested Loop Graph
+How to Draw BF: Draw a 2D matrix. For every cell inside an artifact, draw a line pointing to a linear scan of the entire `dig` array to highlight the $O(A \\text{cdot cells} \cdot D)$ multiplier.
+Optimised Pattern: Hash Set / Direct Indexing
+Opt Vis. Technique: Set Membership Diagram
+Dry Run (Opt): Create a "Dig Set" bucket. Point each cell of an artifact to the bucket. If all cells yield a "hit", tick the artifact as extracted.
+How to Draw (Opt): Draw the `dig` array being pushed into a circular "Hash Set". Draw artifacts as 2x2 blocks. Shade block cells green if they match a coordinate in the Set.
+Opt Complexity Visuals: Linear Timeline Partition
+How to Draw Opt Complexity: Draw two distinct, non-overlapping timelines: $O(D)$ to build the Set, followed by a separate $O(A \\text{cdot cells})$ timeline to query.
+Mem Vis (BF): Array Memory Map (showing repeated scans of standard linear arrays).
+Mem Vis (Opt): Hash Table Bucket Array (showing hashed coordinate tuples pointing to $O(1)$ boolean values).

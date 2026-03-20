@@ -1,0 +1,13 @@
+ID: 3380
+Problem Title: Maximum Area Rectangle With Point Constraints I
+Brute Force Method: Check every possible combination of 4 points to see if they form a valid rectangle, and check all other points to ensure they aren't inside. $O(N^5)$.
+BF Complexity Visuals: Quintic Geometry Search
+How to Draw BF: Draw a scatter plot. Pick 4 random points. Check angles. Scan all other points.
+Optimised Pattern: Diagonal Iteration + Hash Set
+Opt Vis. Technique: The Bounding Box Verifier
+Dry Run (Opt): Put all points in a Hash Set. Iterate over every pair of points, treating them as the *diagonal* of a rectangle. Check if the other two required corners exist in the Set. If they do, verify no other points fall inside their bounding box.
+How to Draw (Opt): Draw the grid. Pick two points (top-left, bottom-right). Instantly check the Map for the other two corners. If present, draw the box and quickly scan the remaining points to ensure the box is empty.
+Opt Complexity Visuals: Diagonal Pair Scan $O(N^3)$
+How to Draw Opt Complexity: Draw an N^2 loop to pick diagonals, followed by an $O(N)$ interior point check.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A Hash Set of points. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 2803
+Problem Title: Factorial Generator (JS)
+Brute Force Method: Pre-calculate all factorials up to a certain limit and store them in an array. When called, return from the array. $O(N)$ memory.
+BF Complexity Visuals: Pre-calculated Factorial Table
+How to Draw BF: Draw a giant table. Fill it with numbers 1!, 2!, 3!... up to 100!. Most of the memory is wasted if the user only asks for 5!.
+Optimised Pattern: Static Array Memory (Visualizing a large block of heap memory occupied by fixed integers).
+Opt Vis. Technique: Generator Function (yield)
+Dry Run (Opt): Lazy Infinite Sequence
+How to Draw (Opt): Use function* factorial(). Initialize res = 1 and i = 1. Inside a while(true) loop, yield res, then update res *= ++i. This computes the next value only on demand.
+Opt Complexity Visuals: Draw a "Factory Machine" with a lever. Every time the lever is pulled (.next()), the internal multiplier turns once, and a factorial drops out.
+How to Draw Opt Complexity: $O(1)$ Space, $O(1)$ Per Call
+Mem Vis (BF): Draw an infinite timeline. Label it $O(1)$ Space since only the current product is stored.
+Mem Vis (Opt): Generator State Object (Visualize a small memory cell holding res and i that persists between calls).

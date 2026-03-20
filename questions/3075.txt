@@ -1,0 +1,13 @@
+ID: 3075
+Problem Title: Maximize Happiness of Selected Children
+Brute Force Method: For k rounds, try selecting every possible child and simulate the happiness decay of all other children to see which sequence yields the max.
+BF Complexity Visuals: Permutation Selection Tree
+How to Draw BF: Draw a tree where each level represents a round. Branch N, N-1, N-2... times. Label as $O(N!)$.
+Optimised Pattern: Greedy + Decay Offset
+Opt Vis. Technique: Descending Waterfall with Floor
+Dry Run (Opt): Sort children by happiness descending. For each of the k children picked, subtract the current round number (decay) from their happiness, ensuring a minimum of 0.
+How to Draw (Opt): Draw a bar chart of happiness. For each step, shade a horizontal strip at the bottom of all remaining bars. Pick the tallest remaining bar.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Pass
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block followed by a loop that runs exactly k times.
+Mem Vis (BF): Cloning the happiness array in every round to track decay states.
+Mem Vis (Opt): A single integer decay_counter and the sorted input array.

@@ -1,0 +1,13 @@
+ID: 695
+Problem Title: Max Area of Island
+Brute Force Method: For every cell, if it is '1', run a BFS/DFS to calculate the area. Repeat even for cells that were part of previous islands.
+BF Complexity Visuals: Redundant redundant island scans.
+How to Draw BF: Draw a 5x5 island. Run a scan from the top-left cell, then the next, re-calculating the whole area every time. $O((R\cdot C)$^2).
+Optimised Pattern: DFS with In-Place Sinking (Visited marking).
+Opt Vis. Technique: Flood Fill / Area Tally.
+Dry Run (Opt): When you find '1', start DFS. Change '1' to '0' (sink it) as you visit so you don't count it again. Return count of recursion calls. Update global max.
+How to Draw (Opt): Draw a grid of land. Touch a cell. Color it and its neighbors blue. Tally the number of blue squares. Move to the next "dry" land.
+Opt Complexity Visuals: Single pass $O(\text{Rows} \\text{cdot Cols})$.
+How to Draw Opt Complexity: Draw a single scanline that "blooms" into islands occasionally. Write $O(R \cdot C)$.
+Mem Vis (BF): Draw a separate `visited` matrix of size R x C.
+Mem Vis (Opt): Modify the input grid in-place. Space $O(\text{Recursion Depth})$.

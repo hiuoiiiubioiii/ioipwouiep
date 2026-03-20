@@ -1,0 +1,13 @@
+ID: 2470
+Problem Title: Number of Subarrays With LCM Equal to K
+Brute Force Method: Nested loops to check every subarray. Calculate the LCM of each subarray iteratively. If LCM exceeds K, break early.
+BF Complexity Visuals: Pruned Iterative Search
+How to Draw BF: Draw a 2D grid. Color cells where the inner loop breaks early because LCM &gt; K. Label $O(N^2 \cdot \log(\text{max}_\text{val})$).
+Optimised Pattern: Optimized Brute Force with LCM Early Exit
+Opt Vis. Technique: LCM Accumulator Chain
+Dry Run (Opt): For each `i`, compute LCM with `nums[j]`. If `k % nums[j] != 0`, break (LCM will never be K). If `currLCM == k`, increment count.
+How to Draw (Opt): Draw the array. For each start index, draw a sequence of "LCM results." Mark an 'X' where the result becomes &gt; K or indivisible.
+Opt Complexity Visuals: Sub-Quadratic Grid
+How to Draw Opt Complexity: Draw an N x N matrix but shade only valid "factor" segments. Label $O(N^2)$.
+Mem Vis (BF): Draw one variable for current LCM.
+Mem Vis (Opt): Draw one variable for total count. $O(1)$ Space.

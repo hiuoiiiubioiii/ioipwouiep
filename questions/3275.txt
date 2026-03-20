@@ -1,0 +1,13 @@
+ID: 3275
+Problem Title: K-th Nearest Obstacle Queries
+Brute Force Method: For every query, add the new distance to a list and sort the entire list to find the K^th element. $O(Q \cdot N \log N)$.
+BF Complexity Visuals: Repeated List Sorting
+How to Draw BF: Draw a list that grows longer with every query. After each addition, draw arrows "shuffling" everything to sort it. Show the increasing time taken.
+Optimised Pattern: Fixed-Size Max-Heap
+Opt Vis. Technique: Binary Heap Limiter
+Dry Run (Opt): Maintain a Max-Heap of size K. For each query, if distance &lt; `heap.top()`, pop and push the new one. The answer is always `heap.top()` if size is K.
+How to Draw (Opt): Draw a triangle (Heap) with exactly K slots. As you process queries, show larger values being "ejected" from the top and smaller values entering the bottom.
+Opt Complexity Visuals: Logarithmic Query Pipeline
+How to Draw Opt Complexity: Draw a timeline of Q queries. Inside each, draw a small box for "Heap Push/Pop $O(\log K)$". Total: $O(Q \log K)$.
+Mem Vis (BF): A growing list of all Q obstacles.
+Mem Vis (Opt): A Max-Heap of exactly K elements ( $O(K)$ space).

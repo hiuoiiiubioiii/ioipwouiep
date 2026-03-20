@@ -1,0 +1,13 @@
+ID: 1921
+Problem Title: Eliminate Maximum Number of Monsters
+Brute Force Method: At each minute, simulate all monster movements and pick a monster to shoot based on current distance naively.
+BF Complexity Visuals: Real-time Simulation Timeline
+How to Draw BF: Draw a timeline from t=0 onwards. For each tick, redraw all monster positions closer to the origin. $O(\text{Time} \cdot N)$.
+Optimised Pattern: Greedy Sorting by "Time-to-Arrival"
+Opt Vis. Technique: Timeline Slot Booking
+Dry Run (Opt): Calculate `arrival_time = dist / speed` for each monster. Sort these times. Check if the i-th monster arrives before minute i.
+How to Draw (Opt): Draw a list of arrival times. Draw a minute-clock next to it. Compare the sorted list against the clock. If `Time[i] &lt;= i`, game over.
+Opt Complexity Visuals: Sorted Departure Queue
+How to Draw Opt Complexity: Draw a funnel (Sort) leading to a linear conveyor belt (Check). $O(N \log N)$ for sorting, $O(N)$ for scan.
+Mem Vis (BF): Large list of dynamic objects or coordinate pairs updated repeatedly in memory.
+Mem Vis (Opt): A simple 1D array of floats representing `time_to_impact` for each monster.

@@ -1,0 +1,13 @@
+ID: 3873
+Problem Title: Maximum Points Activated with One Addition (Hard)
+Brute Force Method: Brute Force: For every empty coordinate on the grid, simulate adding a point and run a full clustering or "activation" algorithm (like BFS) to count the total points.
+BF Complexity Visuals: A "What-If" simulation for every single empty cell in the grid.
+How to Draw BF: Draw a grid with points. Pick an empty cell, draw a circle/path to see what activates. Erase. Pick next cell. Write $O((\text{Grid}_\text{Size})$ * (V+E)).
+Optimised Pattern: Union-Find with Component Size Tracking + Adjacency Map.
+Opt Vis. Technique: A "Connector" strategy where you pre-calculate existing "islands" and find the one bridge that links the largest group.
+Dry Run (Opt): 1. Group existing points into components using Union-Find. 2. For each empty cell, check its 4 neighbors. 3. Use a Set to find unique component IDs among neighbors. 4. Total points = 1 + sum (sizes of unique neighbor components).
+How to Draw (Opt): Draw "islands" of points. Label each island with its total size (e.g., Island A: 5, Island B: 3). Pick an empty spot between them. Draw arrows connecting to A and B. New size = 5+3+1 = 9.
+Opt Complexity Visuals: Linear scan of points followed by a linear scan of empty neighbors.
+How to Draw Opt Complexity: Draw points N. Write "Union-Find: $O(N \text{alpha}(N)$)". Draw empty cells. Write "Neighbor Check: $O(1)$". Total: $O(N + \text{Grid})$.
+Mem Vis (BF): $O(\text{Grid})$ to store all simulation states.
+Mem Vis (Opt): $O(N)$ space for Union-Find arrays (`parent` and `size`) and a Hash Map/Set for neighbor lookups.

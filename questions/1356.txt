@@ -1,0 +1,13 @@
+ID: 1356
+Problem Title: Sort Integers by The Number of 1 Bits
+Brute Force Method: For every comparison in a sort, convert both integers to binary strings, count the '1's, and then compare.
+BF Complexity Visuals: $O(N \log N \cdot \log V)$ Redundant Computation
+How to Draw BF: Draw a sorting algorithm. Inside every "comparison" box, draw a sub-process that converts numbers to strings and scans them.
+Optimised Pattern: Custom Comparator with __builtin_popcount
+Opt Vis. Technique: Bit-Weighted Sorting
+Dry Run (Opt): Use a standard sort but define a custom rule: if `popcount(a) != popcount(b)`, sort by popcount. Otherwise, sort by value.
+How to Draw (Opt): Draw a list of numbers. Next to each, write its "Weight" (number of 1s). Group numbers by weight and then sort each group normally.
+Opt Complexity Visuals: $O(N \log N)$ with Constant Bit-Count
+How to Draw Opt Complexity: Draw a sorting funnel. The "Decision" gate uses a single CPU instruction (popcount) to compare weights, proving efficient $O(1)$ comparison.
+Mem Vis (BF): String Buffers: Temporary binary strings generated during every comparison.
+Mem Vis (Opt): In-place Sort: Draw the original array being re-ordered. No extra memory beyond the recursion stack for sorting.

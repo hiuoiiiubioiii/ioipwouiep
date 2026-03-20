@@ -1,0 +1,13 @@
+ID: 2386
+Problem Title: Find the K-Sum of an Array
+Brute Force Method: Generate all 2^N possible subsequences, sum them up, sort the massive list of sums, and pick the K-th largest. $O(2^N \log(2^N)$).
+BF Complexity Visuals: Exponential Array Explosion
+How to Draw BF: Draw an array. Branch out into every possible combination. Calculate the sum for each. Try to sort an impossibly long list.
+Optimised Pattern: Max Heap + Absolute Value Sorting
+Opt Vis. Technique: The Subtractive Max-Heap
+Dry Run (Opt): Find the absolute maximum sum by adding all positive numbers. Then, use a Min-Heap to systematically subtract the smallest possible absolute values from this maximum to find the 2nd, 3rd... Kth sums.
+How to Draw (Opt): Draw the absolute max sum in a box. Draw an array of absolute values sorted smallest to largest. Use a Priority Queue to branch out, subtracting the smallest numbers one by one to step down from the max.
+Opt Complexity Visuals: Heap Extraction $O(N \log N + K \log K)$
+How to Draw Opt Complexity: Draw a sorting pass over the array, followed by K extractions from a priority queue of size K.
+Mem Vis (BF): Memory crash from 2^N elements.
+Mem Vis (Opt): A Priority Queue of size K. $O(K)$ space.

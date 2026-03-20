@@ -1,0 +1,13 @@
+ID: 3112
+Problem Title: Minimum Time to Visit Disappearing Nodes
+Brute Force Method: Explore all possible graph paths recursively (DFS/BFS) without pruning, checking disappearance times at the end. **O(V!)**
+BF Complexity Visuals: Exploding, infinitely branching tree where branches randomly vanish or hit dead ends.
+How to Draw BF: Draw nodes. Trace every single path from 0 to target with different colored pens, manually checking a clock array at every step.
+Optimised Pattern: Modified Dijkstra's Algorithm (Min-Heap)
+Opt Vis. Technique: Expanding Wavefront with Ticking Bombs
+Dry Run (Opt): Pop closest node from Heap. If current time ≥ node's disappearance time, skip it (it exploded). Otherwise, relax neighbors.
+How to Draw (Opt): Draw nodes as circles with a "bomb timer" inside. Track a "current time" tally. Draw arrows out, immediately crossing out bombs that have exploded.
+Opt Complexity Visuals: Dynamic priority queue tree.
+How to Draw Opt Complexity: Draw a standard **O(E log V)** binary tree (heap) where subtrees are dynamically pruned/erased midway.
+Mem Vis (BF): Enormous recursive call stack storing all traversed paths.
+Mem Vis (Opt): A priority queue array and a distance array of size V. **O(V)** space.

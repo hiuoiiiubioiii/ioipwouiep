@@ -1,0 +1,13 @@
+ID: 1156
+Problem Title: Swap For Longest Repeated Character Substring
+Brute Force Method: Try every possible swap of any two characters in the string and calculate the length of the longest repeated character substring for each.
+BF Complexity Visuals: Quadratic Swap Matrix $O(N^3)$
+How to Draw BF: Draw a string. For index i, swap with every other index j. For each swap, scan the entire string to find the longest block.
+Optimised Pattern: Grouping + Sliding Window/Case Analysis
+Opt Vis. Technique: Block Compression Map
+Dry Run (Opt): Group consecutive characters (e.g., "aaabaaa" rightarrow `[[a,3], [b,1], [a,3]]`). Check if two blocks of the same char are separated by a single char, and if there's a third block to pull a swap from.
+How to Draw (Opt): Draw "Islands" of characters. Measure the gap between islands. If gap == 1, add island sizes. Draw a "Bridge" from another island if available.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass to compress blocks, then a single pass through the compressed list.
+Mem Vis (BF): Multiple full string copies
+Mem Vis (Opt): Frequency Map + List of Groups. Draw a small table of character counts.

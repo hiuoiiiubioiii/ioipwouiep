@@ -1,0 +1,13 @@
+ID: 3587
+Problem Title: Minimum Adjacent Swaps to Alternate Parity (Med)
+Brute Force Method: Generate all permutations of the array, keep those that alternate parity, and find the minimum swap distance.
+BF Complexity Visuals: Factorial Swap Tree.
+How to Draw BF: Draw a tree where each branch is an adjacent swap. Count levels to reach any valid alternating state. $O(N!)$.
+Optimised Pattern: Greedy Positioning (Two-Target Comparison).
+Opt Vis. Technique: Parity Slot Mapping.
+Dry Run (Opt): There are two targets: [Even, Odd...] or [Odd, Even...]. Calculate the total swap distance to fit the elements into these fixed slots.
+How to Draw (Opt): Draw two blank arrays with 'E' and 'O' labels. Draw arrows from original Even elements to the 'E' slots. Count the "jump" lengths.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw two linear arrays. Highlight a single pass through the original array to collect Even/Odd indices.
+Mem Vis (BF): Full Permutation Heap: Draw millions of array states being stored during BFS search.
+Mem Vis (Opt): Index Lists: Draw two small 1D arrays storing the original positions of Even and Odd numbers.

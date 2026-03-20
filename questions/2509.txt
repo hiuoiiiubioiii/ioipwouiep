@@ -1,0 +1,13 @@
+ID: 2509
+Problem Title: Cycle Length Queries in a Tree
+Brute Force Method: Construct the full explicit tree in memory. For each query, run a Breadth-First Search (BFS) to find the shortest path between u and v.
+BF Complexity Visuals: Expanding ripple (BFS frontier) moving through a massive, explicit binary tree structure.
+How to Draw BF: Draw a massive tree. Pick two nodes. Trace layer by layer outwards from node u until you bump into node v.
+Optimised Pattern: Lowest Common Ancestor (LCA) via integer division (node / 2) in a Complete Binary Tree.
+Opt Vis. Technique: Two pointers climbing up a virtual tree hierarchy simultaneously by halving their values until they collide.
+Dry Run (Opt): Compare u and v. While they aren't equal, divide the larger one by 2 (moving up one level). Add 1 to your step counter. Add 1 at the end for the query edge.
+How to Draw (Opt): Write the two numbers. Draw an upward arrow from the larger number, writing its value divided by 2. Repeat until both numbers match. Count the arrows.
+Opt Complexity Visuals: $O(\log N)$ tree height traversal per query.
+How to Draw Opt Complexity: Draw a vertical line representing the height of the tree. Show an arrow jumping upwards, halving the remaining distance each step, proving logarithmic time.
+Mem Vis (BF): $O(N)$ explicit Node objects and edge pointers.
+Mem Vis (Opt): $O(1)$ extra space (no tree is actually built in memory).

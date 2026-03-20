@@ -1,0 +1,13 @@
+ID: 3751
+Problem Title: Total Waviness of Numbers in Range I (Med)
+Brute Force Method: Iterate through every single integer from Low to High. Convert each to a string or digit list, check if it's "wavy" (alternating trends), and increment a counter. $O((\text{High}-\text{Low})$ * Digits).
+BF Complexity Visuals: Linear enumeration with internal loops.
+How to Draw BF: Write every number in the range. Under each, draw a zig-zag line. If the line goes up-down-up or down-up-down consistently, circle the number.
+Optimised Pattern: Digit DP (Dynamic Programming)
+Opt Vis. Technique: Decision State Tree (Restricted)
+Dry Run (Opt): Construct the number digit by digit. Track: current digit, previous digit, and the required trend (up or down). Store results in a DP table to avoid re-calculating sub-problems.
+How to Draw (Opt): Draw a tree where each node is a digit (0-9). Cross out branches that don't satisfy the "wavy" trend. Use a "Memo" table [Position][LastDigit][Trend] to cache counts.
+Opt Complexity Visuals: $O(\text{Digits} \cdot 10 \cdot 2)$ complexity.
+How to Draw Opt Complexity: Draw a small grid (DP table) and fill it. The width is the number of digits (log10(N)), which is very small.
+Mem Vis (BF): Minimal, but time is wasted on redundant checks.
+Mem Vis (Opt): $O(\text{Digits} \cdot 10 \cdot 2)$ Memoization table in memory.

@@ -1,0 +1,13 @@
+ID: 3611
+Problem Title: Find Overbooked Employees (Med)
+Brute Force Method: (SQL) Using nested subqueries per row to calculate the sum of meeting durations, filtering week by week iteratively.
+BF Complexity Visuals: Tangled Cartesian Join Lines.
+How to Draw BF: Draw an employee table. Draw dozens of arrows pointing from ONE employee to every single row in the meetings table. Write $O(E \cdot M)$.
+Optimised Pattern: Common Table Expressions (CTEs) to group by employee_id, year, week, aggregate sums, filter &gt; 20, then self-join.
+Opt Vis. Technique: Data Pipeline / Funnel Stages.
+Dry Run (Opt): Draw a funnel. Stage 1: Raw Meetings. Stage 2: Weekly Sums per Employee. Stage 3: Filter out sums &lt; 20. Stage 4: Count remaining weeks, keep &gt;= 2.
+How to Draw (Opt): Draw 3 boxes (representing CTE temporary tables). Draw rows of data moving between boxes, crossing out rows that don't meet the threshold.
+Opt Complexity Visuals: SQL Execution Plan Tree.
+How to Draw Opt Complexity: Draw a Hash-Aggregate node (O(M)), feeding into a Filter node (O(M)), feeding into a Hash-Join node with Employees (O(E)). Total $O(M + E)$.
+Mem Vis (BF): Draw large, unoptimized temporary tables taking up massive blocks of server RAM.
+Mem Vis (Opt): Draw a small Hash Table grouping keys (EmpID, Week) mapping to a single integer (Total_Hours).

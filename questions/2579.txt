@@ -1,0 +1,13 @@
+ID: 2579
+Problem Title: Count Total Number of Colored Cells
+Brute Force Method: Simulate the coloring process step-by-step for n minutes, tracking the coordinates of every colored cell in a set. $O(n^2)$.
+BF Complexity Visuals: A growing diamond shape on a grid where new cells are added to the perimeter every minute.
+How to Draw BF: Minute 1: 1 cell. Minute 2: Add 4 cells around it. Minute 3: Add the next layer of 8 cells. Count them manually.
+Optimised Pattern: Mathematical Progression (Sum of Arithmetic Series).
+Opt Vis. Technique: A "Geometric Expansion" visual where the diamond area is decomposed into a central square and four triangles, or simply a quadratic formula.
+Dry Run (Opt): The number of new cells added at minute k is 4 * (k-1). The total after n minutes is 1 + sum_i=1^n-1 4i. This simplifies to 1 + 4 * (n * (n-1) / 2), which is 1 + 2 * n * (n-1). Or visually, n^2 + (n-1)^2.
+How to Draw (Opt): Draw the diamond for n=3. Notice it looks like a 3 x 3 grid but with the corners missing? Or look at it as a 3 x 3 square plus a 2 x 2 square nested inside. Write the formula: 3^2 + 2^2 = 13.
+Opt Complexity Visuals: $O(1)$ - Constant time using the derived formula.
+How to Draw Opt Complexity: Draw a single box with the formula n^2 + (n-1)^2 written inside. No loops or iterations.
+Mem Vis (BF): $O(n^2)$ to store all coordinates in a Set.
+Mem Vis (Opt): $O(1)$ - Just the space for the long integer result.

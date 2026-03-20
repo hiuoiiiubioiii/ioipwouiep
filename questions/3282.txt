@@ -1,0 +1,13 @@
+ID: 3282
+Problem Title: Reach End of Array With Maximum Score
+Brute Force Method: Standard Dynamic Programming: `dp[i]` is the max score to reach `i` from any `j &lt; i`. $O(N^2)$.
+BF Complexity Visuals: Nested Dependency Graph
+How to Draw BF: Draw the array. For the last element, draw arrows from every single previous element. Show the N incoming checks for every index.
+Optimised Pattern: Greedy (Monotonic Suffix Max)
+Opt Vis. Technique: High-Point Hopping
+Dry Run (Opt): Only jump when you find a value larger than your current value. Your score is accumulated by the distance multiplied by the current "best" value you are holding.
+How to Draw (Opt): Draw the array as a bar chart. Stand on the first bar. Look right. Jump to the next bar that is *taller* than your current one. Repeat.
+Opt Complexity Visuals: Single-Pass Linear Timeline
+How to Draw Opt Complexity: Draw a straight line moving left-to-right once. Label it $O(N)$.
+Mem Vis (BF): DP array of size N.
+Mem Vis (Opt): A single variable tracking the "current max" value (Strictly $O(1)$ space).

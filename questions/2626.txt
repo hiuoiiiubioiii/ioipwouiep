@@ -1,0 +1,13 @@
+ID: 2626
+Problem Title: Array Reduce Transformation (JS)
+Brute Force Method: Recursive calls generating new arrays and tearing them down (unnecessary stack).
+BF Complexity Visuals: Deep Call Stack
+How to Draw BF: Draw $O(N)$ recursive frames stacked vertically, risking maximum call stack size exceeded.
+Optimised Pattern: Iterative Accumulator Update
+Opt Vis. Technique: Conveyor Belt Accumulator
+Dry Run (Opt): Start with `init`. Pass `init` and `arr[0]` to the function. Take the result, make it the new `init`. Move to `arr[1]`.
+How to Draw (Opt): Draw a box labeled "Accumulator". Draw array items on a conveyor belt. Each item drops into the box, changes the number, and the next item drops in.
+Opt Complexity Visuals: $O(N)$ Linear Pipeline
+How to Draw Opt Complexity: Draw a single straight arrow through N elements, $O(N)$ time.
+Mem Vis (BF): $O(N)$ Call Stack memory
+Mem Vis (Opt): $O(1)$ Constant Space variable (the accumulator).

@@ -1,0 +1,13 @@
+ID: 1303
+Problem Title: Find the Team Size (SQL)
+Brute Force Method: For every employee, run a correlated subquery that counts the number of employees sharing the same team_id.
+BF Complexity Visuals: Row-by-Row Correlation
+How to Draw BF: Draw the Employee table. For every row, draw an arrow that scans the entire table again looking for matching team_ids. Write $O(N^2)$.
+Optimised Pattern: Window Function (COUNT OVER PARTITION)
+Opt Vis. Technique: Data Partitioning Buckets
+Dry Run (Opt): Use `COUNT(employee_id) OVER(PARTITION BY team_id)`. This logic groups team_ids behind the scenes once and maps the count back to every row in that group.
+How to Draw (Opt): Draw a table. Draw boxes around rows with the same `team_id`. Count the rows in each box and write that number into a new column for every row inside that box.
+Opt Complexity Visuals: Linear Sort/Hash Aggregate
+How to Draw Opt Complexity: Draw a single pass scanning a sorted or hashed table. Write $O(N \log N)$ or $O(N)$ depending on SQL engine.
+Mem Vis (BF): Draw multiple temporary result tables created for each subquery.
+Mem Vis (Opt): Draw a single temporary Hash Map of Team IDs to Counts stored in memory.

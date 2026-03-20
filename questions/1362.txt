@@ -1,0 +1,13 @@
+ID: 1362
+Problem Title: Closest Divisors
+Brute Force Method: For both `num + 1` and `num + 2`, iterate from 1 to the number itself to find all divisor pairs and pick the one with the smallest difference.
+BF Complexity Visuals: $O(N)$ Factor Search
+How to Draw BF: Draw a number line. Scan every single number from 1 to N looking for a factor.
+Optimised Pattern: Square Root Search (Greedy)
+Opt Vis. Technique: Centric Factor Scan
+Dry Run (Opt): Start searching for divisors from √num+2 downwards to 1. The first divisor found will automatically have the smallest difference.
+How to Draw (Opt): Draw a number. Mark its square root. Draw an arrow starting at the root and moving LEFT. The first number it hits that divides the target is the winner.
+Opt Complexity Visuals: $O(√N)$ Reduced Search
+How to Draw Opt Complexity: Draw a line that only covers a tiny fraction of the number's total value (the root), proving efficiency.
+Mem Vis (BF): List of All Factors: Storing every pair found before comparing.
+Mem Vis (Opt): $O(1)$ Two-Integer Result: Only store the "current best" pair.

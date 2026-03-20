@@ -1,0 +1,13 @@
+ID: 2511
+Problem Title: Maximum Enemy Forts That Can Be Captured
+Brute Force Method: Nested loops iterating $O(N^2)$. For every command fort (1), scan the rest of the array to find every empty fort (-1), checking if exclusively enemy forts (0) exist between them.
+BF Complexity Visuals: Two nested loop pointers forming a dense network of pairwise segment boundary checks across an array.
+How to Draw BF: Draw the array. Put pointer i on a 1. Scan a second pointer j down the line to find a -1, drawing a connecting arch for every single pair checked to see if the gap is purely 0s.
+Optimised Pattern: Two Pointers / Single-Pass Array Traversal checking alternating non-zero boundary states.
+Opt Vis. Technique: Sliding window or segment highlighter bounding distinct contiguous blocks clamped by opposite non-zero integers (1 and -1).
+Dry Run (Opt): Track a starting pointer. Whenever you encounter a 1 or -1, check if it's the mathematical opposite of the last non-zero number seen. If yes, the distance between them minus 1 is your captured forts. Update the start pointer.
+How to Draw (Opt): Draw the array. Use your index finger as an anchor tracking the last seen 1 or -1. Slide another finger forward. When a new non-zero is found, calculate the gap if they have opposite signs.
+Opt Complexity Visuals: A single, continuous linear arrow scanning the array left-to-right, highlighting $O(N)$ operations.
+How to Draw Opt Complexity: Draw a number line with array indices. Draw one continuous forward-moving arrow showing no backtracking, proving linear $O(N)$ time complexity.
+Mem Vis (BF): Minimal overhead, standard array.
+Mem Vis (Opt): Constant $O(1)$ space tracking just two index integers (current anchor and iterator).

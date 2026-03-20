@@ -1,0 +1,13 @@
+ID: 3754
+Problem Title: Concatenate Non-Zero Digits and Multiply by Sum I (Easy)
+Brute Force Method: Convert the number to a string. Loop to extract non-zero digits into a new string. Parse that string back to an integer. Calculate the sum of original digits and multiply.
+BF Complexity Visuals: String manipulation pipeline.
+How to Draw BF: Write "1023". Cross "0" -&gt; "123". Sum (1+0+2+3)=6. Calc 123 * 6.
+Optimised Pattern: Single-Pass Mathematical Extraction
+Opt Vis. Technique: Digit Hopper
+Dry Run (Opt): Iterate digits using `%10` and `/10`. Sum digits on the fly. Build the "concatenated" number by adding non-zero digits to a new integer (multiplied by power of 10).
+How to Draw (Opt): Draw a number box. As digits drop out of the bottom, if digit != 0, put it in the "New Number" box. Otherwise, just add it to the "Running Sum" bucket.
+Opt Complexity Visuals: $O(\log10(N)$) which is digit count.
+How to Draw Opt Complexity: Draw a very short horizontal line with $O(\text{Digits})$ written above.
+Mem Vis (BF): String object allocations in the heap.
+Mem Vis (Opt): Two or three integer variables in CPU registers.

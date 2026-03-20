@@ -1,0 +1,13 @@
+ID: 648
+Problem Title: Replace Words
+Brute Force Method: For every word in the sentence, check every root in the dictionary to see if the word starts with that root. Pick the shortest root.
+BF Complexity Visuals: Double nested comparison (Sentence Words x Dict Roots).
+How to Draw BF: Draw a sentence word. Draw a list of roots next to it. Draw lines comparing prefixes for every pair. $O(N \cdot M \cdot L)$.
+Optimised Pattern: Trie (Prefix Tree).
+Opt Vis. Technique: Tree Path Truncation.
+Dry Run (Opt): Insert all dictionary roots into a Trie. For each word in the sentence, walk down the Trie. If you hit a "Leaf" (end of root), replace the word with that path.
+How to Draw (Opt): Draw a letter tree. Walk down the tree using letters from the word. As soon as you hit a "Root" marker, stop and chop the word.
+Opt Complexity Visuals: $O(\text{Total characters in sentence} + \text{Total characters in dictionary})$.
+How to Draw Opt Complexity: Draw a tree traversal path for each word. Write $O(N + M)$.
+Mem Vis (BF): Draw a redundant list of roots.
+Mem Vis (Opt): Draw a Trie where common prefixes are merged. $O(\text{Dictionary Size})$.

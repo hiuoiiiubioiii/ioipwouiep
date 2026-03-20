@@ -1,0 +1,13 @@
+ID: 546
+Problem Title: Remove Boxes
+Brute Force Method: Exhaustively try every possible box removal sequence, recalculating the score for each branch.
+BF Complexity Visuals: Exponentially branching tree of choices. $O(N!)$.
+How to Draw BF: Draw a row of colored boxes. Draw arrows for every possible "pop" sequence. It looks like an out-of-control bush.
+Optimised Pattern: 3D Dynamic Programming (Top-Down with Memoization).
+Opt Vis. Technique: A multi-dimensional storage locker where each state is defined by (Left, Right, Consecutive Same-Colored Boxes on the Left).
+Dry Run (Opt): State: `dp(i, j, k)`. If boxes `i` and `i+1` are same, increment `k`. Either remove `i` now ( (k+1)^2 + dp(i+1, j, 0) ) or find another box `m` of same color to merge.
+How to Draw (Opt): Draw the array. Bracket index `i` to `j`. Draw a separate box for `k` (the "bonus" count of same colors). Use arrows to show jumping over different colors to merge same ones.
+Opt Complexity Visuals: Filled 3D Cube. $O(N^4)$.
+How to Draw Opt Complexity: Draw a 3D cube grid. Shade in cells as they are computed to show the search space is bounded.
+Mem Vis (BF): Massive recursion stack without a way to "remember" already solved sub-problems.
+Mem Vis (Opt): A 3D array of size N x N x N. $O(N^3)$ space.

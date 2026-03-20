@@ -1,0 +1,13 @@
+ID: 3519
+Problem Title: Count Numbers with Non-Decreasing Digits (Hard)
+Brute Force Method: Loop from 1 to N, convert each number to string, check if digits are non-decreasing.
+BF Complexity Visuals: Number Line Filtering.
+How to Draw BF: Draw a long timeline from 1 to N. Draw checkmarks on valid numbers (e.g., 123) and cross out invalid ones (e.g., 210).
+Optimised Pattern: Digit DP (Dynamic Programming) / Combinatorics.
+Opt Vis. Technique: State Transition Grid (DAG).
+Dry Run (Opt): For D digits, transition from previous digit 'k' to next digit 'j' only where j &gt;= k.
+How to Draw (Opt): Draw a 10 x D grid (Rows 0-9, Cols = digit positions). Draw arrows connecting cells, only allowing arrows that go straight right or down-right.
+Opt Complexity Visuals: DP Table Fill.
+How to Draw Opt Complexity: Draw a 10 x log10(N) matrix. Shade cells left to right indicating constant work per state. $O(10 \cdot \log N)$.
+Mem Vis (BF): No memory, but $O(N)$ time visualizes as an endlessly spinning CPU cycle.
+Mem Vis (Opt): 2D Memoization Table: Draw a small grid `memo[position][last_digit]` caching integer counts.

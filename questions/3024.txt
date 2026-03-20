@@ -1,0 +1,13 @@
+ID: 3024
+Problem Title: Type of Triangle
+Brute Force Method: Check every possible combination of sides using complex nested if-else structures without sorting first.
+BF Complexity Visuals: Decision Tree Logic
+How to Draw BF: Draw a messy tree with many branches for `a+b&gt;c`, `b+c&gt;a`, `a+c&gt;b` and all equality checks.
+Optimised Pattern: Sorting + Comparison Math
+Opt Vis. Technique: Ascending Side-Length Bar Chart
+Dry Run (Opt): Sort the 3 sides. Check `side[0] + side[1] &gt; side[2]`. If valid, compare the number of unique elements in the set of sides.
+How to Draw (Opt): Draw three bars of increasing height. Draw a dashed line from the sum of the first two to see if it clears the third. Label as Equilateral, Isosceles, or Scalene.
+Opt Complexity Visuals: $O(1)$ Constant Time Box
+How to Draw Opt Complexity: Draw a small square labeled "O(1) Comparison". Even with sorting 3 elements, it is constant.
+Mem Vis (BF): Multiple boolean flag variables in memory.
+Mem Vis (Opt): A sorted array of size 3 and a `Set` of size up to 3.

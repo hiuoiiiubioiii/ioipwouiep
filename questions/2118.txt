@@ -1,0 +1,13 @@
+ID: 2118
+Problem Title: Build the Equation (SQL)
+Brute Force Method: Fetch all rows into application memory, sort them, and use string concatenation loops.
+BF Complexity Visuals: Data moving from database server to application server in raw, unformatted chunks.
+How to Draw BF: Draw a messy pile of database rows being dragged into a RAM stick, then sorted by hand.
+Optimised Pattern: SQL String Aggregation (`GROUP_CONCAT` / `STRING_AGG`).
+Opt Vis. Technique: A funnel taking multiple rows and squeezing them into one single text line.
+Dry Run (Opt): Format each term based on sign (e.g., `+5X^2` or `-3X`). `ORDER BY` power descending. Aggregate into one string, append `=0`.
+How to Draw (Opt): Draw a 2-column table (Power, Factor). Draw an arrow pulling the highest power row first, writing it on a line, then the next, forming an equation.
+Opt Complexity Visuals: $O(N \log N)$ database-side sorting.
+How to Draw Opt Complexity: A funnel icon with an inner sorting filter, outputting a single straight string line.
+Mem Vis (BF): High application memory overhead storing intermediate Row objects.
+Mem Vis (Opt): Database engine memory (optimized, often streamed directly to result set).

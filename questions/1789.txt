@@ -1,0 +1,13 @@
+ID: 1789
+Problem Title: Primary Department for Each Employee (SQL)
+Brute Force Method: For each employee, check if they have a 'Y' in primary. If not, re-scan the table to see if they only have one department total.
+BF Complexity Visuals: Nested Subquery Scan.
+How to Draw BF: Draw Employee list. For each, draw a line to the table to find 'Y'. If empty, draw another line to count total rows. $O(N^2)$.
+Optimised Pattern: UNION of two filtered sets.
+Opt Vis. Technique: The "Binary Filter" Set.
+Dry Run (Opt): Filter 1: All rows where `primary_flag = 'Y'`. Filter 2: All rows for employees where `COUNT(dept) = 1`. UNION these results.
+How to Draw (Opt): Draw two funnels. Funnel A catches all 'Y's. Funnel B catches "Only Children". Combine the output.
+Opt Complexity Visuals: Sequential Filtering.
+How to Draw Opt Complexity: Draw one sweep through the table rows. Label $O(N)$.
+Mem Vis (BF): Multiple memory scans for subqueries.
+Mem Vis (Opt): SQL temporary result set. $O(N)$ space.

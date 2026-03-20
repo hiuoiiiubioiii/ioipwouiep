@@ -1,0 +1,13 @@
+ID: 1477
+Problem Title: Find Two Non-overlapping Sub-arrays Each with Target Sum
+Brute Force Method: Generate all subarrays that sum to target. Check every possible pair of these subarrays to see if they overlap. If not, calculate their combined length and track the minimum.
+BF Complexity Visuals: All-Pairs Subarray Conflict Check
+How to Draw BF: Draw an array. Highlight all segments that sum to target. For every segment, compare it to all others. Label $O(N²)$ segments, $O(S²)$ comparisons.
+Optimised Pattern: Sliding Window + 1D DP (Prefix Min)
+Opt Vis. Technique: Left-to-Right Min-Length Propagation
+Dry Run (Opt): Use a sliding window/Hash Map to find subarrays summing to target. `leftMin[i]` stores the shortest subarray ending at or before `i`. For a new subarray `[i, j]`, the result is `length(i, j) + leftMin[i-1]`.
+How to Draw (Opt): Draw an array. Slide a window. As you find a match, record its length in a "Best-So-Far" array. Then, as you find the *next* match, look at the Best-So-Far array to its left to see the shortest partner.
+Opt Complexity Visuals: Two-Pass Linear Scanning
+How to Draw Opt Complexity: Draw two parallel arrows. One finds matches $O(N)$, one updates prefix minimums $O(N)$. Total $O(N)$.
+Mem Vis (BF): Large List of Subarrays
+Mem Vis (Opt): Two 1D arrays: one for Prefix Min Lengths and one for Suffix Min Lengths. Space $O(N)$.

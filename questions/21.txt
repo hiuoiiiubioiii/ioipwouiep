@@ -1,0 +1,13 @@
+ID: 21
+Problem Title: Merge Two Sorted Lists
+Brute Force Method: Array Extraction &amp; Sort Traverse both lists, put all values into an array, sort the array $O(N \log N)$, and build a brand new linked list.
+BF Complexity Visuals: The Sorting Funnel
+How to Draw BF: Draw two linked lists dumping their nodes into an unsorted bucket. Draw a sorting machine that spits out a clean, new list. Emphasize the wasted $O(N \log N)$ time.
+Optimised Pattern: Two Pointers + Dummy Node
+Opt Vis. Technique: The Zipper
+Dry Run (Opt): Create a `dummy` node. Place pointer P1 on List 1 and P2 on List 2. Compare P1 and P2. Attach the smaller node to the `dummy` tail, then advance that pointer.
+How to Draw (Opt): Draw List 1 and List 2. Draw a star (Dummy) with an arrow `current`. Point `current` to the smaller of P1/P2. Cross out the old pointer and move it forward.
+Opt Complexity Visuals: Parallel Tracks
+How to Draw Opt Complexity: Draw two parallel lines of length M and N. Draw a zipper merging them perfectly in one pass. Time is strictly $O(M + N)$.
+Mem Vis (BF): Draw a completely new array of size M+N (O(M+N) space).
+Mem Vis (Opt): Draw only a few pointer variables (Dummy, Current, P1, P2) weaving existing nodes together (O(1) space).

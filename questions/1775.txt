@@ -1,0 +1,13 @@
+ID: 1775
+Problem Title: Equal Sum Arrays With Minimum Number of Operations
+Brute Force Method: Try every possible way to change numbers in both arrays until sums are equal, perhaps using BFS or DFS.
+BF Complexity Visuals: State-Space Pathfinding.
+How to Draw BF: Draw two sums. Branch into every possible modification (1-6) for every index. $O(6^{N+M})$.
+Optimised Pattern: Greedy + Frequency Counting (Bucket Sort).
+Opt Vis. Technique: The "Gap Shrinker".
+Dry Run (Opt): Calculate `diff = abs(sum1 - sum2)`. Put potential gains (6 - val) or (val - 1) into a frequency array (buckets 0-5). Pick from the largest gain bucket (5) first.
+How to Draw (Opt): Draw two bar charts (sums). Draw the "gap" between them. Draw 5 buckets of potential "bricks" to fill the gap. Take bricks from the largest bucket until the gap is \le 0.
+Opt Complexity Visuals: Frequency-Based Greedy Scan.
+How to Draw Opt Complexity: Draw a fixed-size loop (6 iterations). Label $O(N + M)$.
+Mem Vis (BF): Deep recursion stack.
+Mem Vis (Opt): Frequency array of size 6. $O(1)$ extra space.

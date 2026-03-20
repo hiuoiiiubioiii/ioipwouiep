@@ -1,0 +1,13 @@
+ID: 2770
+Problem Title: Maximum Number of Jumps to Reach the Last Index
+Brute Force Method: Recursive Backtracking: From index i, try jumping to every index j &gt; i where abs(nums[j] - nums[i]) &lt;= target. Explore all paths. $O(2^N)$.
+BF Complexity Visuals: Exponential Jump Tree
+How to Draw BF: Draw a line of nodes. From node 0, draw arrows to every reachable node. From those, draw more. The number of paths to the end can be massive.
+Optimised Pattern: Recursive Call Stack (Visualizing deep paths and redundant calculations of the same sub-problems).
+Opt Vis. Technique: 1D Dynamic Programming (Longest Path in DAG)
+Dry Run (Opt): Optimal Jump Accumulator
+How to Draw (Opt): Let dp[i] be the max jumps to reach index i. For each i, iterate through all j &lt; i. If dp[j] != -1 and the jump condition is met, dp[i] = max(dp[i], dp[j] + 1).
+Opt Complexity Visuals: Draw the array. For each box, look back at all previous boxes. If a "valid jump" arrow exists and the source has a value, update the current box with Source + 1.
+How to Draw Opt Complexity: $O(N²)$ Quadratic DP
+Mem Vis (BF): Draw a 2D matrix representing the i vs j comparisons. Label it $O(N²)$.
+Mem Vis (Opt): 1D DP Array (Draw a single array of size N initialized to -1, storing the max jump counts).

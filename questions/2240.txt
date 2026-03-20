@@ -1,0 +1,13 @@
+ID: 2240
+Problem Title: Number of Ways to Buy Pens and Pencils
+Brute Force Method: Double Nested LoopsIterate `i` from 0 to total for pens, and an inner loop `j` from 0 to total for pencils. If `(i*cost1 + j*cost2) &lt;= total`, increment count.
+BF Complexity Visuals: 2D Coordinate Grid Search
+How to Draw BF: Draw a grid where X is "Number of Pens" and Y is "Number of Pencils". Shade every cell (i, j) that fits the budget. Show the $O(\text{Total}^2)$ area being checked.
+Optimised Pattern: Single Loop Math
+Opt Vis. Technique: Linear Budget Depletion
+Dry Run (Opt): Iterate through the number of pens you can buy (0 to `total/cost1`). For each quantity of pens, the remaining money is `rem`. The number of ways to buy pencils is simply `(rem / cost2) + 1`.
+How to Draw (Opt): Draw a vertical bar representing the "Total Budget". Chop off a piece for "Pens". Take the remaining "Pencil" piece and draw marks showing how many times the `cost2` fits into it.
+Opt Complexity Visuals: Linear Arithmetic Pass
+How to Draw Opt Complexity: Draw a single timeline representing the pen loop $O(\text{Total} / \text{Cost}1)$. Inside, show an $O(1)$ division operation. Total time $O(N)$, where N is the max number of pens.
+Mem Vis (BF): Deep nested loop counters and potentially a coordinate list of valid pairs.
+Mem Vis (Opt): A single 64-bit integer `total_ways` and one loop index `i` (O(1) space).

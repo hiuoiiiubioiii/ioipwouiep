@@ -1,0 +1,13 @@
+ID: 517
+Problem Title: Super Washing Machines
+Brute Force Method: Simulate passing items left and right iteratively until all machines match the average. Highly inefficient.
+BF Complexity Visuals: Swirling arrows randomly tossing numbers back and forth endlessly. $O(N^2)$ or worse.
+How to Draw BF: Draw an array, draw arrows shifting +1 or -1 between neighbors. Repeat until identical.
+Optimised Pattern: Math / Prefix Sum (Tracking flow and bottlenecks).
+Opt Vis. Technique: A pipeline with pressure valves. The max pressure at any single valve dictates the time required.
+Dry Run (Opt): Calculate target average. Iterate array tracking a running `balance` (prefix sum of diffs). Max of `abs(balance)` or `val - target` is the answer.
+How to Draw (Opt): Draw array of current loads. Below it, write the target. Below that, write the running balance. Circle the largest absolute balance or individual excess.
+Opt Complexity Visuals: A single, straight line passing over the array exactly once. $O(N)$.
+How to Draw Opt Complexity: Draw a timeline moving strictly left to right, processing N items.
+Mem Vis (BF): Arrays duplicating at each step of the simulation.
+Mem Vis (Opt): A couple of integer variables (running balance, max pressure). $O(1)$ space.

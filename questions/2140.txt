@@ -1,0 +1,13 @@
+ID: 2140
+Problem Title: Solving Questions With Brainpower
+Brute Force Method: Pure recursion. For each question, branch into two paths: "Solve it" or "Skip it".
+BF Complexity Visuals: Exponential branching decision tree without memory.
+How to Draw BF: Draw Question 0. Branch left (Solve -&gt; skip to Q3). Branch right (Skip -&gt; go to Q1). Continue branching until end of array. $O(2^N)$.
+Optimised Pattern: 1D Dynamic Programming (Right to Left).
+Opt Vis. Technique: An array where each cell looks forward to find the optimal path.
+Dry Run (Opt): Start from the end of the array. `dp[i] = max(dp[i+1] (skip), points[i] + dp[i + brainpower + 1] (solve))`.
+How to Draw (Opt): Draw an array. Start at the last box. Write its points. Move left. For each box, draw an arrow to the very next box, and another arched arrow skipping `brainpower` boxes. Take the max sum.
+Opt Complexity Visuals: $O(N)$ single linear pass.
+How to Draw Opt Complexity: A single horizontal arrow scanning from right to left, doing an $O(1)$ comparison at each step.
+Mem Vis (BF): $O(2^N)$ recursive call stack.
+Mem Vis (Opt): $O(N)$ 1D array to store the maximum points achievable from index `i` to the end.

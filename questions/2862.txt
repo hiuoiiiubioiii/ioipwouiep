@@ -1,0 +1,13 @@
+ID: 2862
+Problem Title: Maximum Element-Sum of a Complete Subset of Indices
+Brute Force Method: For every possible "complete subset" (where product of any two indices is a perfect square), calculate the sum of nums.
+BF Complexity Visuals: Subset Combinatorics Search
+How to Draw BF: Draw a set of indices. Check all pairs. Show the complexity of identifying valid subsets as the bottleneck.
+Optimised Pattern: Square-Free Part Grouping
+Opt Vis. Technique: Mathematical Grouping
+Dry Run (Opt): An index i and j belong to the same complete subset if their square-free parts are equal (e.g., 12 = 2^2 x 3 and 27 = 3^2 x 3; both share square-free part 3). Find the square-free part of every index and group them.
+How to Draw (Opt): Draw a list of indices 1 to N. For each, divide out all perfect square factors. Group indices that have the same remainder. Sum the values of nums within each group and take the max.
+Opt Complexity Visuals: Linear Sieve or Math Scan $O(N)$
+How to Draw Opt Complexity: Draw a line scanning indices. For each i, find its "core" in $O(\text{small})$. Alternatively, iterate all x and all perfect squares k^2 such that x * k^2 <= N. Total is $O(N)$.
+Mem Vis (BF): Visualize complex nested lists storing every potential subset.
+Mem Vis (Opt): Visualize a simple frequency map or array to store the sum for each square-free "core." Space $O(N)$.

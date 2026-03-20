@@ -1,0 +1,13 @@
+ID: 2476
+Problem Title: Closest Nodes Queries in a Binary Search Tree
+Brute Force Method: For each query, traverse the entire BST to find the closest smaller and larger values to the query integer.
+BF Complexity Visuals: Query-Wise Full Tree Search
+How to Draw BF: Draw a tree. For each query, draw an arrow visiting every single node. Label $O(Q \cdot N)$.
+Optimised Pattern: In-order Traversal + Binary Search (Sorted Array)
+Opt Vis. Technique: Tree Flattening &amp; Interval Search
+Dry Run (Opt): Convert the BST into a sorted array via in-order traversal. For each query, use binary search on the array to find indices of neighbors.
+How to Draw (Opt): Draw a tree. Below it, draw a straight line (array) where the tree nodes fall into place. Mark the query point 'x' on the line and identify neighbors.
+Opt Complexity Visuals: Linear Pre-processing + Log Query
+How to Draw Opt Complexity: Draw a single line for traversal (O(N)) and log-steps for queries. Label $O(N + Q \log N)$.
+Mem Vis (BF): Draw the tree in memory. $O(N)$.
+Mem Vis (Opt): Draw a sorted array of size N. $O(N)$ Space.

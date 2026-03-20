@@ -1,0 +1,13 @@
+ID: 3025
+Problem Title: Find the Number of Ways to Place People I
+Brute Force Method: Triple nested loop: Pick person A, pick person B, then loop through all other people to see if anyone is inside the rectangle formed by A and B.
+BF Complexity Visuals: $O(N^3)$ Cubed Loop Box
+How to Draw BF: Draw a 3D cube representing three nested iterations over the set of points.
+Optimised Pattern: Coordinate Sorting + Monotonic Optimization
+Opt Vis. Technique: Sweep-Line Rectangle Search
+Dry Run (Opt): Sort points primarily by X-coordinate (asc) and secondarily by Y (desc). For each point A, iterate through points B to its right. Track the "best" Y-coordinate seen so far to ensure no one is inside the rectangle.
+How to Draw (Opt): Draw a 2D plane with points. Draw a rectangle between two points. Draw a horizontal "ceiling" line that moves down as you check points to ensure the area stays empty.
+Opt Complexity Visuals: $O(N^2)$ Matrix Sweep
+How to Draw Opt Complexity: Draw a 2D grid representing the two nested loops over sorted points.
+Mem Vis (BF): Temporary lists of points for every rectangle check.
+Mem Vis (Opt): A single sorted list of point coordinates (x, y).

@@ -1,0 +1,13 @@
+ID: 1386
+Problem Title: Cinema Seat Allocation
+Brute Force Method: Create a full 2D Boolean matrix of size N x 10 to represent the entire cinema and iterate through every row to check for valid 4-person groups.
+BF Complexity Visuals: $O(N x 10)$ Sparse Matrix Scan
+How to Draw BF: Draw a massive grid with 10 columns and N rows. Shade only a few cells (reserved seats). Show an arrow scanning every empty cell, highlighting the waste for N=10^9.
+Optimised Pattern: Hash Map + Bitmask (Sparse Row Processing)
+Opt Vis. Technique: Compressed Row Bit-States
+Dry Run (Opt): Only process rows that have reserved seats. Represent each row as a 10-bit integer. Use bitwise AND to check if blocks [2,5], [6,9], or [4,7] are free.
+How to Draw (Opt): Draw a row of 10 boxes. For a reserved seat at 3, put a '1' in the 3rd box. Use three "transparent templates" (the bitmasks for valid blocks) to see which fits over the 0s.
+Opt Complexity Visuals: $O(\text{ReservedSeats})$ Complexity
+How to Draw Opt Complexity: Draw a small Map. Show that the total operations depend only on the number of reservations, not the total number of rows N.
+Mem Vis (BF): Massive 2D Array: A 10^9 x 10 grid in memory, causing a Memory Limit Exceeded (MLE) error.
+Mem Vis (Opt): $O(K)$ Hash Map: Draw a `std::unordered_map` where K is the number of rows with at least one reservation.

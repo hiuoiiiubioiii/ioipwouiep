@@ -1,0 +1,13 @@
+ID: 313
+Problem Title: Super Ugly Number
+Brute Force Method: Iterate integers 1, 2, 3... to infinity. For each, divide by all given primes until the remainder is 1. If it is, keep it.
+BF Complexity Visuals: Infinite Number Line Trial Division
+How to Draw BF: Draw a long number line. Below each number, draw a division symbol and the prime array. Cross out numbers that fail. Label "Extremely slow, infinite space."
+Optimised Pattern: K-way Merge (Dynamic Programming with Multiple Pointers)
+Opt Vis. Technique: Parallel Pointers Race
+Dry Run (Opt): Create an 'ugly' array starting with [1]. Create a pointer for each prime in the input. The next ugly number is the minimum of (prime[j] * ugly[pointer[j]]). Add the min to 'ugly', and advance the pointer(s) that produced it.
+How to Draw (Opt): Draw the 'ugly' array being built. Below it, draw the 'primes' array vertically. Beside each prime, draw an arrow pointing to an index in the 'ugly' array. Move the winning arrows to the right.
+Opt Complexity Visuals: Linear Multi-Pointer Sweep
+How to Draw Opt Complexity: Draw K horizontal tracks (for K primes). Draw markers advancing to the right at different speeds, merging into a single sorted output tape. $O(N \cdot K)$.
+Mem Vis (BF): No structural memory needed, just constant CPU burn.
+Mem Vis (Opt): Two 1D parallel arrays. Draw 'ugly' array of size N. Draw 'pointers' array of size K (or a Min-Heap of size K).

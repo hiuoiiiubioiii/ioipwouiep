@@ -1,0 +1,13 @@
+ID: 1698
+Problem Title: Number of Distinct Substrings in a String
+Brute Force Method: Generate every possible substring and insert them into a Hash Set. Count the size of the set.
+BF Complexity Visuals: N^2 Substring Grid
+How to Draw BF: Draw a grid of all start and end points. Each cell contains a text string. $O(N^3)$ (including hashing).
+Optimised Pattern: Suffix Automaton (SAM) or Rolling Hash
+Opt Vis. Technique: State Machine Transitions
+Dry Run (Opt): Build a Suffix Automaton. Each node represents a set of substrings. Total distinct substrings = \sum (len(node) - len(link(node))).
+How to Draw (Opt): Draw a directed graph where nodes are "states" and arrows are characters. Count the total number of unique paths from the start node.
+Opt Complexity Visuals: Linear State Building
+How to Draw Opt Complexity: Draw a single arrow building the automaton state-by-state. $O(N)$.
+Mem Vis (BF): HashSet of Strings: Draw a massive bucket overflowing with redundant text blocks. $O(N^3)$ space.
+Mem Vis (Opt): SAM Graph: Draw a clean web of nodes and transition edges. $O(N)$ space.

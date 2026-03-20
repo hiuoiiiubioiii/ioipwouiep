@@ -1,0 +1,13 @@
+ID: 647
+Problem Title: Palindromic Substrings
+Brute Force Method: Generate every possible substring (N^2) and check if each is a palindrome (N).
+BF Complexity Visuals: Nested scan volume (N x N x N).
+How to Draw BF: Draw a grid. For every cell (i, j), draw a mini-loop that checks if the characters match inwards. $O(N^3)$.
+Optimised Pattern: Expand Around Center.
+Opt Vis. Technique: Outward Ripples / Flashlight expansion.
+Dry Run (Opt): Iterate through each character (and each gap between characters). Treat it as a center and expand outwards as long as characters match. Each success is a count.
+How to Draw (Opt): Draw a string. Put a needle on a letter. Draw arrows pointing left and right simultaneously. Count how many steps you can take.
+Opt Complexity Visuals: Linear scan with local expansions.
+How to Draw Opt Complexity: Draw a straight line with "V" shapes expanding from every point. Write $O(N^2)$.
+Mem Vis (BF): Draw a list storing all substring copies.
+Mem Vis (Opt): Draw zero extra storage. $O(1)$ space.

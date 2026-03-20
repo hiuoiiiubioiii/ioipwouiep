@@ -1,0 +1,13 @@
+ID: 1542
+Problem Title: Find Longest Awesome Substring
+Brute Force Method: Generate all N^2 substrings. For each, count the frequency of digits 0-9. If at most one digit has an odd frequency, it's "awesome". $O(N^3)$.
+BF Complexity Visuals: N-Cubed Frequency Grid
+How to Draw BF: Draw the array. Draw N^2 brackets. For every bracket, draw 10 tally boxes and fill them. This is an massive waste of time.
+Optimised Pattern: Bitmask + Prefix XOR
+Opt Vis. Technique: The 10-Bit Toggle
+Dry Run (Opt): Represent the parity of digits 0-9 as a 10-bit integer (mask). A substring is awesome if the XOR sum of its prefix masks results in a mask with at most one bit set. Use a Hash Map to store the first time each mask was seen.
+How to Draw (Opt): Draw a 10-slot light switch board. As you read a digit '3', flip switch #3. Check a table to see if this exact switch configuration was seen before. Then flip each switch one by one to see if *that* configuration was seen (this handles the "one odd digit" case).
+Opt Complexity Visuals: Linear Scan with Constant Multiplier $O(10 \cdot N)$
+How to Draw Opt Complexity: Draw a line of length N. At each step, draw 11 arrows (1 for the current mask, 10 for the bit-flips) pointing to a Map of size 2^{10}.
+Mem Vis (BF): Full frequency maps for every substring. $O(N^2)$.
+Mem Vis (Opt): A Map or Array of size 1024 (representing all 2^{10} possible bitmasks). $O(1)$ space since 1024 is constant.

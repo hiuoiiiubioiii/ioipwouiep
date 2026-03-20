@@ -1,0 +1,13 @@
+ID: 2603
+Problem Title: Collect Coins in a Tree
+Brute Force Method: DFS/BFS from every single node to calculate exact distances and paths.
+BF Complexity Visuals: Multi-root Tree Expansion
+How to Draw BF: Draw N trees, each highlighting traversal paths; write $O(N^2)$ total nodes visited.
+Optimised Pattern: Topological Sorting (Peeling leaves like an onion)
+Opt Vis. Technique: Concentric Graph Layers
+Dry Run (Opt): Erase leaf nodes with no coins step-by-step, then erase remaining leaves twice to simulate the 2-jump distance.
+How to Draw (Opt): Draw the graph. Cross out 0-coin leaves. Then draw circle around remaining leaves, cross them out. Repeat once more.
+Opt Complexity Visuals: Linear Graph Reduction
+How to Draw Opt Complexity: Draw $O(N)$ linear timeline showing degree arrays dropping to zero sequentially.
+Mem Vis (BF): Recursive call stack depth visualization
+Mem Vis (Opt): Graph adjacency list (Array of lists) and a flat Degree array.

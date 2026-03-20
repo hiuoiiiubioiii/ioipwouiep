@@ -1,0 +1,13 @@
+ID: 2300
+Problem Title: Successful Pairs of Spells and Potions
+Brute Force Method: Nested Loop MultiplierFor every spell, iterate through every potion and multiply them. If the product &gt;= `success`, increment the count.
+BF Complexity Visuals: Quadratic Intersection Grid
+How to Draw BF: Draw Spells on the Y-axis and Potions on the X-axis. For every intersection, draw a multiplication sign. Note the $O(N \cdot M)$ total calculations.
+Optimised Pattern: Sorting + Binary Search
+Opt Vis. Technique: Threshold Search Space
+Dry Run (Opt): Sort the `potions` array. For each spell, calculate the `required_potion = ceil(success / spell)`. Use binary search (`lower_bound`) to find the first potion that meets this requirement.
+How to Draw (Opt): Draw a sorted line of Potions. For one Spell, calculate the "entry requirement." Draw an arrow jumping straight to the middle of the Potions line to find the cutoff point.
+Opt Complexity Visuals: Logarithmic Multi-Search
+How to Draw Opt Complexity: Draw an $O(M \log M)$ sort for potions. Draw an $O(N \log M)$ block for searching. Total complexity: $O((N+M)$ log M).
+Mem Vis (BF): No extra space, but $O(N\cdot M)$ time is too slow for 10^5 elements.
+Mem Vis (Opt): The sorted version of the potions array (O(M) space).

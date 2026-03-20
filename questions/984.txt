@@ -1,0 +1,13 @@
+ID: 984
+Problem Title: String Without AAA or BBB
+Brute Force Method: Generate all permutations of strings containing A 'a's and B 'b's and check each one for the 'AAA/BBB' condition.
+BF Complexity Visuals: $O((A+B)$! / (A!B!)). Combinatorial explosion.
+How to Draw BF: Draw all ways to arrange "AABB". Highlight the ones that don't have three-in-a-row. For A=10, B=10, there are too many to draw.
+Optimised Pattern: Greedy (Heavy-Letter Priority)
+Opt Vis. Technique: "The Depletion Strategy." Always try to use your most plentiful letter first, unless you've already used it twice in a row. This prevents getting "stuck" with 3+ of the same letter at the end.
+Dry Run (Opt): While A &gt; 0 or B &gt; 0: if `a_count &gt; b_count`, if last two were "aa", add 'b', else add 'a'. Else (if `b_count &gt;= a_count`), if last two were "bb", add 'a', else add 'b'.
+How to Draw (Opt): Draw two piles of tokens (A and B). Draw a hand reaching for the taller pile. If it already picked two from that pile, the hand is forced to reach for the shorter pile.
+Opt Complexity Visuals: $O(A + B)$. A single pass to build the string.
+How to Draw Opt Complexity: Draw a string being built character by character. Below it, draw the sizes of the two "letter piles" decreasing.
+Mem Vis (BF): $O(\text{Total}!)$ space to store permutations.
+Mem Vis (Opt): $O(A + B)$ to store the result string. Draw a single row of empty boxes.

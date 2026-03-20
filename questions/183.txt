@@ -1,0 +1,13 @@
+ID: 183
+Problem Title: Customers Who Never Order
+Brute Force Method: Iterate through every customer. For each, perform a subquery to check if their ID exists in the entire Orders table.
+BF Complexity Visuals: An $O(C x O)$ operation where C is customers and O is orders.
+How to Draw BF: Draw Table A (Customers) and Table B (Orders). For every row in A, draw a scan line through all of B.
+Optimised Pattern: LEFT JOIN where Orders.Id IS NULL (or NOT IN with subquery).
+Opt Vis. Technique: A "Ghost Match." The Customer table is matched with Orders; customers without orders appear with a "void" or "null" on the right side.
+Dry Run (Opt): Join `Customers` and `Orders` on `CustomerId`. Look for rows where the `OrderId` column is completely empty.
+How to Draw (Opt): Draw two tables. Draw connection lines for orders. Circle the customers in the first table that have no outgoing lines.
+Opt Complexity Visuals: $O(C + O)$ with proper indexing on the join key.
+How to Draw Opt Complexity: Draw two streams merging. Highlight the elements in the first stream that did not find a partner in the second.
+Mem Vis (BF): Memory spikes for C separate sub-execution plans.
+Mem Vis (Opt): A single execution hash table of Order IDs sitting in memory for a single-pass check.

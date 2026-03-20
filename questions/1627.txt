@@ -1,0 +1,13 @@
+ID: 1627
+Problem Title: Graph Connectivity With Threshold
+Brute Force Method: For every query, calculate GCD for all pairs to build a graph, then run BFS/DFS to see if a path exists.
+BF Complexity Visuals: Dense Graph Traversal
+How to Draw BF: Draw N dots. Draw lines between almost every dot (calculating GCD). Send a magnifying glass to trace paths for every query. $O(Q \cdot N^2)$.
+Optimised Pattern: Union-Find (Disjoint Set) with Math Multiples
+Opt Vis. Technique: Grouping Multiples (Forest)
+Dry Run (Opt): Loop `i` from `threshold + 1` to `n`. Loop its multiples `j = 2i, 3i...` and Union(`i`, `j`). For queries, just check if `Find(u) == Find(v)`.
+How to Draw (Opt): Draw numbers 1 to N. Circle a number (e.g., 3). Draw lines grouping 3, 6, 9 together. When queried, just check if two numbers are in the same drawn blob.
+Opt Complexity Visuals: Near-Constant Lookup
+How to Draw Opt Complexity: Draw a funnel (Union-Find setup) leading to a direct $O(1)$ straight line mapping queries to answers. $O(N \log(\log N)$ + Q).
+Mem Vis (BF): Adjacency List + Visited Array: Large web of connected edges stored in memory.
+Mem Vis (Opt): Union-Find Array: Draw a single array where indices point to their "parent" index, forming flat trees.

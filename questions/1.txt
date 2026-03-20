@@ -1,0 +1,13 @@
+ID: 1
+Problem Title: Two Sum
+Brute Force Method: Nested Loops Check every pair of numbers to see if they sum to target.
+BF Complexity Visuals: 2D Matrix of Combinations
+How to Draw BF: Draw an array. Draw an 'i' arrow pointing to index 0, and a 'j' arrow hopping from i+1 to the end. Tally the hops as N+(N-1)+(N-2)... to show $O(N²)$.
+Optimised Pattern: Hash Map (One Pass)
+Opt Vis. Technique: "Bucket Lookup" Diagram
+Dry Run (Opt): Visualize numbers dropping into a bucket one by one. As a number drops, ask the bucket: "Do you contain (Target - Current)?"
+How to Draw (Opt): Draw the array on the left and a 2-column table (Key=Num, Value=Index) on the right. Draw a line from the current array element to the table looking for its complement.
+Opt Complexity Visuals: Flat Line + Branching Node
+How to Draw Opt Complexity: Draw a single straight arrow (O(N) traversal). Draw a tiny box off each step representing the $O(1)$ map lookup. Total = $O(N)$.
+Mem Vis (BF): Just the 1D input array block (O(1) extra space).
+Mem Vis (Opt): Draw a growing rectangular grid representing the Hash Map taking up $O(N)$ space as the loop progresses.

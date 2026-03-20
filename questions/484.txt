@@ -1,0 +1,13 @@
+ID: 484
+Problem Title: Find Permutation
+Brute Force Method: Lexicographical Permutations Generate all N! permutations. Check each against the 'D' and 'I' pattern. Return the smallest.
+BF Complexity Visuals: Factorial Tree
+How to Draw BF: Draw a root branching N, N-1 \dots levels. Label the explosion as $O(N! \cdot N)$.
+Optimised Pattern: Stack-Based Reversal Use a stack to push 1, 2, 3 \dots If you see 'I', pop everything to the result. If you see 'D', keep pushing.
+Opt Vis. Technique: Elastic Snap-Back
+Dry Run (Opt): Imagine a spring. As long as you see 'D' (Decrease), you stretch the spring (push to stack). When you hit 'I', the spring snaps back into the result.
+How to Draw (Opt): Draw a line 1, 2, 3, 4, 5. Above it, draw the pattern `DDI`. Use a bucket (Stack). Push 1, 2, 3. On 'I', empty the bucket: 3, 2, 1.
+Opt Complexity Visuals: Single Pass
+How to Draw Opt Complexity: Draw one arrow scanning the pattern. Each number enters/leaves the stack once. $O(N)$.
+Mem Vis (BF): Permutation Pool Storing massive numbers of arrays.
+Mem Vis (Opt): Stack Structure Draw a vertical bucket of size N. $O(N)$ space.

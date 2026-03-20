@@ -1,0 +1,13 @@
+ID: 2282
+Problem Title: Number of People That Can Be Seen in a Grid
+Brute Force Method: 4-Directional Linear ScanFor every cell `(r, c)`, look in all 4 directions and count how many people can be seen before someone taller blocks the view.
+BF Complexity Visuals: Exhaustive Vision Check
+How to Draw BF: Draw a grid. From one cell, draw an arrow. Stop the arrow only when it hits a taller person. Repeat for every cell in all directions. Show $O(R \cdot C \cdot (R+C)$).
+Optimised Pattern: Monotonic Stack (Row/Col wise)
+Opt Vis. Technique: Descending Height Vista
+Dry Run (Opt): Process each row and each column independently using a monotonic decreasing stack. When a new person is added to the stack, they can "see" the person currently at the top of the stack.
+How to Draw (Opt): Draw a row of people. Use a stack to keep track of the "tallest seen so far." When a person is popped, increment their "seen" count. Show how each person enters and leaves the stack exactly once.
+Opt Complexity Visuals: Linear Row/Col Processing
+How to Draw Opt Complexity: Draw an $O(R\cdot C)$ line representing the scan of all rows, followed by another $O(R\cdot C)$ for all columns. Total time: $O(R\cdot C)$.
+Mem Vis (BF): Multiple lists to store the "visible" people per cell before counting.
+Mem Vis (Opt): A single monotonic stack used repeatedly across rows and columns (O(max(R,C)) auxiliary space).

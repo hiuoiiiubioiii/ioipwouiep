@@ -1,0 +1,13 @@
+ID: 1124
+Problem Title: Longest Well-Performing Interval
+Brute Force Method: Nested Loops. Check every possible subarray [i, j] and count if tiring days (&gt;8) are more than non-tiring days.
+BF Complexity Visuals: Subarray Matrix Grid
+How to Draw BF: Draw a grid of all i, j pairs. Show the $O(N^2)$ checks by shading every cell.
+Optimised Pattern: Prefix Sum + Hash Map / Monotonic Stack
+Opt Vis. Technique: Balance Beam / Coordinate Plot
+Dry Run (Opt): Transform array to +1 (tiring) and -1 (not tiring). Calculate prefix sums. If sum &gt; 0, whole interval is valid. Else, look for the earliest occurrence of sum - 1.
+How to Draw (Opt): Draw a line graph of the prefix sum. Whenever the line goes above 0, mark the interval. If it dips, find the first time it was one step lower.
+Opt Complexity Visuals: Single Pass with Lookup $O(N)$
+How to Draw Opt Complexity: Draw a horizontal timeline with a single scan and a side-table for "First Seen" indices.
+Mem Vis (BF): Storing every subarray sum
+Mem Vis (Opt): Hash Map or Monotonic Stack of indices. Draw a 1D Map for `sum -&gt; index`.

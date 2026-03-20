@@ -1,0 +1,13 @@
+ID: 1047
+Problem Title: Remove All Adjacent Duplicates In String
+Brute Force Method: Keep scanning the string from left to right. If you find "aa", remove it, and restart the scan from the beginning of the modified string.
+BF Complexity Visuals: A "Shrinking Snake" that resets its head every time it bites a duplicate pair.
+How to Draw BF: Write "abbaca". Find "bb", remove it. Rewrite "aaca". Find "aa", remove it. Rewrite "ca". Write $O(N^2)$.
+Optimised Pattern: Stack (LIFO processing).
+Opt Vis. Technique: A "Vaporizing Bucket". Characters fall in. If the falling character matches the one on top, they both explode and disappear.
+Dry Run (Opt): Loop through the string. If the stack is not empty and the current character matches `stack.top()`, pop the stack. Else, push the character.
+How to Draw (Opt): Draw a U-shape (stack). Put 'a' in. 'b' enters. Another 'b' enters? Pop 'b'. 'a' enters? Pop 'a'. Final 'c', 'a' stay.
+Opt Complexity Visuals: Single pass linear scan.
+How to Draw Opt Complexity: Draw a string with one arrow sweeping left to right. Write $O(N)$ Time.
+Mem Vis (BF): Massive string allocations for every deletion phase.
+Mem Vis (Opt): A single stack (or StringBuilder used as a stack). $O(N)$ space.

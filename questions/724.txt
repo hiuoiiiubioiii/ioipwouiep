@@ -1,0 +1,13 @@
+ID: 724
+Problem Title: Find Pivot Index
+Brute Force Method: For every index, recalculate the sum of the entire left subarray and right subarray from scratch.
+BF Complexity Visuals: Double Balance Scales
+How to Draw BF: Draw a balance scale for index 0, recalculate all blocks. Move to index 1, recalculate everything. $O(N^2)$ time.
+Optimised Pattern: Prefix Sum / Total Sum Tracking
+Opt Vis. Technique: Running Water / Transferable Weight
+Dry Run (Opt): Calculate `total_sum`. Track `left_sum = 0`. Iterate array. `right_sum = total_sum - left_sum - nums[i]`. If `left_sum == right_sum`, return index. Else `left_sum += nums[i]`.
+How to Draw (Opt): Draw an array. Write the total sum. Move an arrow `i`. Keep a running tally of the left side. Visually subtract (left + current) from total to find the right side.
+Opt Complexity Visuals: Single Pass Timeline
+How to Draw Opt Complexity: Draw an array block with a single arrow sweeping exactly once left-to-right. $O(N)$ time.
+Mem Vis (BF): $O(1)$ space, but terrible $O(N^2)$ time profile.
+Mem Vis (Opt): Two integer boxes: `left_sum` and `total_sum` (O(1) space).

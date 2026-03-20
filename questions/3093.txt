@@ -1,0 +1,13 @@
+ID: 3093
+Problem Title: Longest Common Suffix Queries
+Brute Force Method: For each query, iterate through every string in the dictionary and manually compare suffixes from right to left.
+BF Complexity Visuals: $O(Q \cdot N \cdot L)$ Brute Search
+How to Draw BF: Draw the query string. Below it, draw the dictionary. Draw arrows for every character comparison.
+Optimised Pattern: Reverse Trie (Suffix Trie) with Precomputed Min
+Opt Vis. Technique: Branching Suffix Tree
+Dry Run (Opt): Insert dictionary strings into a Trie in **reverse order**. At each node, store the index of the string that has the shortest length and smallest index. For queries, traverse reversed.
+How to Draw (Opt): Draw a tree where each node represents a character. At each node, write the ID of the "Best String" found so far. To query, follow the characters of the word from end to beginning.
+Opt Complexity Visuals: $O(\text{Total Length})$ Construction
+How to Draw Opt Complexity: Draw a single pass through all dictionary characters once, then a single pass for each query.
+Mem Vis (BF): N separate comparisons stored in the call stack for every query.
+Mem Vis (Opt): A TrieNode structure where each node has a children[26] array and a minIndex integer.

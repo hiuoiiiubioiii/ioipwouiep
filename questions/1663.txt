@@ -1,0 +1,13 @@
+ID: 1663
+Problem Title: Smallest String With A Given Numeric Value
+Brute Force Method: Backtracking/DFS to generate every possible string of length N and calculating its value until you find the lexicographical minimum.
+BF Complexity Visuals: 26-Way Decision Tree
+How to Draw BF: Draw a tree where every node has 26 branches ('a' to 'z'). $O(26^N)$.
+Optimised Pattern: Greedy (Fill from Back)
+Opt Vis. Technique: Right-to-Left "Z" Saturation
+Dry Run (Opt): Start with a string of N 'a's. Subtract their value (N) from K. Iterate from the back: add \min(25, \text{remaining } K) to each 'a'.
+How to Draw (Opt): Draw N empty slots. Fill them all with 'a'. Go to the last slot and turn it into 'z'. If you still have value, move left.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a straight arrow moving from the right end to the left. $O(N)$.
+Mem Vis (BF): Recursive Stack: Draw a vertical stack of depth N holding partial strings.
+Mem Vis (Opt): Char Array: Draw a single horizontal array of size N being modified in place.

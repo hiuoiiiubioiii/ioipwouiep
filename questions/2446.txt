@@ -1,0 +1,13 @@
+ID: 2446
+Problem Title: Determine if Two Events Have Conflict
+Brute Force Method: Convert times to minutes. Generate a list of all minutes for Event 1 and check if any exist in Event 2's list.
+BF Complexity Visuals: Set Intersection Plot
+How to Draw BF: Draw two circles with thousands of points inside. Check for common points. Label $O(\text{Time}_\text{Range})$.
+Optimised Pattern: String Comparison / Line Overlap
+Opt Vis. Technique: Segment Collision Check
+Dry Run (Opt): Events conflict if Event1_Start &lt;= Event2_End AND Event2_Start &lt;= Event1_End. String comparison works directly for "HH:MM".
+How to Draw (Opt): Draw two horizontal lines. Label Start/End for each. Check if the start of one is before the end of the other and vice-versa.
+Opt Complexity Visuals: Boolean Comparison Box
+How to Draw Opt Complexity: Draw a single decision box with 2 comparisons. Label $O(1)$ Time.
+Mem Vis (BF): Draw a boolean array of 1440 minutes.
+Mem Vis (Opt): Draw four string variables. $O(1)$ Space.

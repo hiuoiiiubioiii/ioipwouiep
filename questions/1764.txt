@@ -1,0 +1,13 @@
+ID: 1764
+Problem Title: Form Array by Concatenating Subarrays of Another Array
+Brute Force Method: Try every possible starting position in the main array for each group in the input.
+BF Complexity Visuals: Pattern Matching Backtracking.
+How to Draw BF: Draw main array. For Group 1, try all start points. If it fits, try all start points for Group 2. $O(\\text{text}{\text{Exponential}})$.
+Optimised Pattern: Greedy Pointer Matching.
+Opt Vis. Technique: Linear Progress Bar.
+Dry Run (Opt): Iterate through the main array with a pointer `idx`. For each group, search for its first occurrence starting from `idx`. If found, update `idx` to the end of that occurrence.
+How to Draw (Opt): Draw the array. Shade the area where Group 1 is found. Move the "search start" pointer just past that shaded area. Repeat for Group 2.
+Opt Complexity Visuals: Single Sequence Pass.
+How to Draw Opt Complexity: Draw one arrow passing over the array. Each group is searched linearly. Label $O(N \cdot M)$.
+Mem Vis (BF): Stack frames for backtracking.
+Mem Vis (Opt): Pointer variables. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 3135
+Problem Title: Equalize Strings by Adding or Removing Characters at Ends
+Brute Force Method: Try every possible substring of s1 and see if it is a substring of s2. Calculate costs for each. $O(N^4)$ or $O(N^3)$
+BF Complexity Visuals: Nested loops comparing all window combinations of two strings.
+How to Draw BF: Write s1 and s2. Draw brackets on s1, try to find a matching segment in s2 by scanning. Tally add/remove ops.
+Optimised Pattern: Longest Common Substring (LCS Variant)
+Opt Vis. Technique: Sliding Window Matcher
+Dry Run (Opt): Find the longest common substring between s1 and s2. The answer is (len(s1) - LCS_len) + (len(s2) - LCS_len).
+How to Draw (Opt): Draw s1 and s2 on top of each other. Slide s2 across s1 until the largest overlap is found. Box the overlap.
+Opt Complexity Visuals: 2D DP matrix or a linear sliding window comparison.
+How to Draw Opt Complexity: Draw an N x M grid for DP or a sequence of N+M slides. $O(N x M)$.
+Mem Vis (BF): Storing every substring of both strings.
+Mem Vis (Opt): An N x M DP table or $O(1)$ if using smart sliding (for space-optimized LCS). $O(N x M)$.

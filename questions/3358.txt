@@ -1,0 +1,13 @@
+ID: 3358
+Problem Title: Books with NULL Ratings
+Brute Force Method: Pull all books into application memory and use `if (rating == null)` to filter them.
+BF Complexity Visuals: App-Side Filtering Loop
+How to Draw BF: Draw all database rows transferring over a network wire to be checked one by one in code.
+Optimised Pattern: SQL IS NULL
+Opt Vis. Technique: The DB-Native Null Catcher
+Dry Run (Opt): Use `SELECT book_id FROM Books WHERE rating IS NULL`.
+How to Draw (Opt): Draw the table. The database engine drops a net that only catches rows where the rating slot is completely empty.
+Opt Complexity Visuals: Single Index Scan $O(N)$
+How to Draw Opt Complexity: Draw a direct query path through the table.
+Mem Vis (BF): Wasted network bandwidth.
+Mem Vis (Opt): DB Query Result Buffer. $O(N)$ space.

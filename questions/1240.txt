@@ -1,0 +1,13 @@
+ID: 1240
+Problem Title: Tiling a Rectangle with the Fewest Squares
+Brute Force Method: Recursively try to place every possible size of square (1x1 to min(N,M)x(N,M)) starting from the first empty cell. Explore all valid tilings and count the squares.
+BF Complexity Visuals: Exponential State Space Tree
+How to Draw BF: Draw an N x M grid. Branch out for placing a 1x1, then a 2x2. Within those, branch again. Note the massive repetition of grid states. Write $O(\text{min}(N,M)$^(N*M)).
+Optimised Pattern: Backtracking with Pruning &amp; Skyline State
+Opt Vis. Technique: Grid "Skyline" Contour Filling
+Dry Run (Opt): Find the first empty cell (lowest row, then lowest column). Try placing a square of size 'k'. Update the "skyline" (height array of the rectangle). If current count >= best found, stop this branch immediately.
+How to Draw (Opt): Draw an N x M grid. Shade the filled areas. Draw a bold line tracing the top "edge" of the filled area (the skyline). Write down a 1D array representing heights. Show squares being "dropped" into the lowest valleys of the skyline.
+Opt Complexity Visuals: Pruned Backtracking Tree
+How to Draw Opt Complexity: Draw a tree where most branches are cut very high up by a horizontal "Best Count" line. Write Exponential (Heuristic). Small constraints (N,M &lt; 14) allow this.
+Mem Vis (BF): Draw a massive stack of full 2D grid copies.
+Mem Vis (Opt): Draw a single 1D "heights" array of size M and a recursive call stack of depth N*M. Space: $O(M)$.

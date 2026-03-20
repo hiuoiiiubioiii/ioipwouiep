@@ -1,0 +1,13 @@
+ID: 3168
+Problem Title: Min Number of Chairs in a Waiting Room
+Brute Force Method: Generate all subsets of people and check if they can all sit simultaneously. $O(2^N)$
+BF Complexity Visuals: Exponential Subsets
+How to Draw BF: Draw a tree where every "E" branches into "has a chair" or "needs new chair" combinations.
+Optimised Pattern: Greedy / Simulation (Peak Tracking)
+Opt Vis. Technique: The Watermark Line
+Dry Run (Opt): Initialize `curr = 0, max_c = 0`. For 'E', `curr++`. For 'L', `curr--`. Update `max_c = max(max_c, curr)`.
+How to Draw (Opt): Draw a horizontal timeline. Draw a line going up for 'E' and down for 'L'. The highest point reached is your answer.
+Opt Complexity Visuals: 1D Linear Sweep
+How to Draw Opt Complexity: Draw a single straight arrow through the string. Label it $O(N)$.
+Mem Vis (BF): Recursive state-space stack.
+Mem Vis (Opt): Two scalar integer variables. $O(1)$.

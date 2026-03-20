@@ -1,0 +1,13 @@
+ID: 871
+Problem Title: Minimum Number of Refueling Stops
+Brute Force Method: Recursive backtracking: At every gas station, either stop to refuel or skip it. Track fuel and distance.
+BF Complexity Visuals: Decision Binary Tree. $O(2^N)$.
+How to Draw BF: Draw a car on a road. At each station icon, branch to "Fill" or "Pass". The depth is N stations.
+Optimised Pattern: Greedy with Max-Heap (Priority Queue).
+Opt Vis. Technique: "Retroactive Refueling."
+Dry Run (Opt): Drive as far as your current fuel allows. Every time you pass a station, put its fuel into a "Spare Tank" (Max-Heap). If you run out of gas before the destination, "teleport" a refuel from the biggest station you already passed.
+How to Draw (Opt): Draw a road. Draw a bucket (Heap) above the car. As the car passes a station, the gas "flies" into the bucket. When the car stops, pull the biggest gas can out of the bucket to keep moving.
+Opt Complexity Visuals: Linear Scan + Heap Ops. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a single horizontal road. Above each station, draw a small $O(\log N)$ tree icon for the Heap operation.
+Mem Vis (BF): Recursion Stack: Draw a stack N frames deep.
+Mem Vis (Opt): Max-Heap: Draw a binary tree that stores gas amounts. $O(N)$ space.

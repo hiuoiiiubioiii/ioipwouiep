@@ -1,0 +1,13 @@
+ID: 1970
+Problem Title: Last Day Where You Can Still Cross
+Brute Force Method: For every single day, rebuild the grid and run a BFS from top to bottom to check if a path exists.
+BF Complexity Visuals: $O(\text{Days} \\text{cdot Row} \\text{cdot Col})$ Grid Scanning
+How to Draw BF: Draw a sequence of grids for Day 1, Day 2, etc. For each, draw a BFS wave. $O(D \cdot R \cdot C)$.
+Optimised Pattern: Binary Search on Days + BFS/DFS
+Opt Vis. Technique: Search Space Halving (Connectivity)
+Dry Run (Opt): Binary search for the latest day D. For a mid-day, check if the grid is crossable. If yes, search later; if no, search earlier.
+How to Draw (Opt): Draw a timeline of days. Pick the middle day. Draw the grid with "water" cells filled. Use a "pathfinding snake" to check crossing.
+Opt Complexity Visuals: Logarithmic BFS Chain
+How to Draw Opt Complexity: Draw a binary search tree (log D). Inside each node, draw an $O(R\cdot C)$ grid scan. $O(R\cdot C \cdot \log(R\cdot C)$).
+Mem Vis (BF): Re-allocating the entire grid for every daily connectivity check.
+Mem Vis (Opt): A single reusable visited array/grid for the BFS/DFS checks. $O(R\cdot C)$ space.

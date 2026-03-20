@@ -1,0 +1,13 @@
+ID: 492
+Problem Title: Construct the Rectangle
+Brute Force Method: Linear Scan Iterate from W = 1 up to N. If N \% W == 0, calculate L = N/W. Keep if L \ge W.
+BF Complexity Visuals: Linear Timeline
+How to Draw BF: Draw a line from 1 to N. Show an arrow checking every single point. $O(N)$.
+Optimised Pattern: Start at Square Root Start W at \lfloor\sqrt{N}\rfloor and decrement until N \% W == 0. This ensures L and W are as close as possible.
+Opt Vis. Technique: Shrinking Area Boundary
+Dry Run (Opt): Imagine a square. Slightly stretch one side and shrink the other until the area hits N exactly.
+How to Draw (Opt): Draw a number line from \sqrt{N} down to 1. Mark the first number that divides N.
+Opt Complexity Visuals: Sqrt Boundary
+How to Draw Opt Complexity: Draw a line that only goes up to the \sqrt{N} mark. $O(\\text{sqrt}{N})$.
+Mem Vis (BF): None Constant variables.
+Mem Vis (Opt): None Two integer variables. $O(1)$.

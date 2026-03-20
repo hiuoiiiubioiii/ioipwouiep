@@ -1,0 +1,13 @@
+ID: 2883
+Problem Title: Drop Missing Data
+Brute Force Method: Iterate through every row. Check the 'name' column for None or NaN. If found, manually delete that row index from the structure.
+BF Complexity Visuals: Row-Scan Flagging
+How to Draw BF: Draw a table. Mark 'X' next to rows where the name is missing. Draw a new table without those 'X' rows.
+Optimised Pattern: df.dropna(subset=['name'])
+Opt Vis. Technique: Row Masking
+Dry Run (Opt): Visualize a "Scanner" passing over a column. When it hits a "hole" (Null), it triggers a signal to ignore that entire row's memory address.
+How to Draw (Opt): Draw a grid. Draw a red circle around empty cells. Draw an arrow showing only the "Solid" (non-empty) rows passing through a filter.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. The time spent is exactly proportional to the number of rows checked.
+Mem Vis (BF): $O(N)$ - Storing a list of indices to drop.
+Mem Vis (Opt): $O(N)$ - Highly optimized C-level masking.

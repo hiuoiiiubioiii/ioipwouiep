@@ -1,0 +1,13 @@
+ID: 2846
+Problem Title: Minimum Edge Weight Equilibrium Queries in a Tree
+Brute Force Method: For each query (u, v), find the unique path in the tree. Count the frequency of all 26 possible edge weights, then find the most frequent weight. The answer is pathLength - maxFrequency.
+BF Complexity Visuals: $O(Q \cdot N)$ Path Traversal
+How to Draw BF: Draw a tree with Q arrows connecting nodes. For each arrow, show a "Crawl" along the edges to collect weights. Total time Q x N.
+Optimised Pattern: LCA (Lowest Common Ancestor) + Binary Lifting + Prefix Frequencies
+Opt Vis. Technique: Hierarchical Prefix Counting
+Dry Run (Opt): Precompute the path from the root to every node, storing a 26-length frequency array of edge weights. For query (u, v), use LCA to find the split point. The frequency of weight W in the path is freq[u][W] + freq[v][W] - 2 * freq[LCA(u,v)][W].
+How to Draw (Opt): Draw the tree. For each node, attach a small table of 26 numbers. For a path between nodes, show a "Vector Subtraction" of these tables to find the resulting edge distribution.
+Opt Complexity Visuals: $O((N+Q)$ * 26 * log N)
+How to Draw Opt Complexity: Draw a box for Precomputation (N log N). Draw Q ticks representing LCA + Frequency math (Q * 26). Total time is logarithmic-linear.
+Mem Vis (BF): Visualize a massive memory overhead if storing full paths for every possible pair.
+Mem Vis (Opt): Visualize a 2D array freq[N][26] and a binary lifting table up[N][logN]. Space $O(26N + N \log N)$.

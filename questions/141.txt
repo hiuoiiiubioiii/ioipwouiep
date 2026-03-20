@@ -1,0 +1,13 @@
+ID: 141
+Problem Title: Linked List Cycle
+Brute Force Method: Use a Hash Set to store every node's reference. If a node is encountered that is already in the set, a cycle exists.
+BF Complexity Visuals: A growing storage bucket (Set) filling up alongside the list traversal, showing $O(N)$ space.
+How to Draw BF: Draw a list. Draw a separate "Checklist" box. For every node you visit, draw an 'X' in the box. If you ever point to a node that already has an 'X', you're done.
+Optimised Pattern: Floyd’s Cycle-Finding Algorithm (Tortoise and Hare).
+Opt Vis. Technique: A race track. Two runners move at different speeds; the faster runner will eventually lap the slower runner if the track is a loop.
+Dry Run (Opt): Pointer `slow` moves 1 step. Pointer `fast` moves 2 steps. If `slow == fast`, return true. If `fast` hits null, return false.
+How to Draw (Opt): Draw a list with a loop. Place an 'S' and an 'F' at the start. Move 'S' one node and 'F' two nodes. Repeat until they occupy the same node.
+Opt Complexity Visuals: Linear $O(N)$ timeline. Even in a cycle, the gap between pointers closes by 1 each step, bounded by the list length.
+How to Draw Opt Complexity: Draw a single line. Mark it once. Since no extra storage is created, the "work area" is just the line itself.
+Mem Vis (BF): Visualize a Hash Set in heap memory ballooning to store N memory addresses.
+Mem Vis (Opt): Visualize two single pointers (64-bit variables) in $O(1)$ stack memory. No heap usage.

@@ -1,0 +1,13 @@
+ID: 3192
+Problem Title: Minimum Operations to Make Binary Array Elements Equal to One II
+Brute Force Method: For every 0 found, flip every single element to the right of it. $O(N^2)$.
+BF Complexity Visuals: Cascading Update Wave
+How to Draw BF: Draw bits. At every 0, draw an arrow to the right and rewrite all following bits. $O(N^2)$.
+Optimised Pattern: Greedy / State-Flip Parity
+Opt Vis. Technique: The Toggle Relay
+Dry Run (Opt): Track `flips`. Current bit value is `(bit + flips) % 2`. If it's 0, increment `flips`.
+How to Draw (Opt): Draw bits. Draw a box `Flips`. If `bit` (after applying `Flips`) is 0, add 1 to box. Do NOT rewrite array.
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw a straight line 0 to N. $O(N)$.
+Mem Vis (BF): Repeatedly creating new array objects for flips.
+Mem Vis (Opt): One scalar integer `flips`. $O(1)$.

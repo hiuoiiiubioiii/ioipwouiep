@@ -1,0 +1,13 @@
+ID: 835
+Problem Title: Image Overlap
+Brute Force Method: Try every possible shift (dx, dy) in range [-N, N]. For each shift, iterate through the overlapping area and count matching 1s.
+BF Complexity Visuals: Sliding Glass Overlap. $O(N^4)$.
+How to Draw BF: Draw two N \times N squares. Shift the top one pixel by pixel. For every single pixel shift, draw a grid of dots representing the nested check loops.
+Optimised Pattern: List of Coordinates + Delta Frequency Map.
+Opt Vis. Technique: Vector Offset Tallies.
+Dry Run (Opt): Extract coordinates of all '1's in Matrix A and Matrix B. Calculate the vector distance (delta) between every pair (a, b). The delta that appears most frequently is the optimal shift.
+How to Draw (Opt): Draw two sparse grids. List coordinates of 1s. Draw arrows (vectors) connecting every point in A to every point in B. Circle the arrows that have the same length and direction.
+Opt Complexity Visuals: Coordinate Product Scan. $O(N^2 + L_A \\text{times} L_B)$.
+How to Draw Opt Complexity: Draw a timeline for extracting 1s, then a nested loop visualization restricted only to the number of 1s (L), not the grid size (N).
+Mem Vis (BF): $O(1)$ excluding input, but massive CPU cycles visualizing nested index arithmetic.
+Mem Vis (Opt): Hash Map of Deltas: Draw a map where keys are "(dx, dy)" and values are counts. $O(N^2)$ max space.

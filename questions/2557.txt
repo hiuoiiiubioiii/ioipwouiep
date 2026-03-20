@@ -1,0 +1,13 @@
+ID: 2557
+Problem Title: Maximum Number of Integers to Choose From a Range II (Premium)
+Brute Force Method: Similar to the basic version, but with N up to 10^9. Iterating 1 to 10^9 will result in Time Limit Exceeded (TLE). $O(N)$.
+BF Complexity Visuals: A billion-step loop that crashes the browser/environment.
+How to Draw BF: Draw a line from 1 to 1,000,000,000. Start counting and adding. You will run out of paper.
+Optimised Pattern: Sorting + Binary Search on Answer Space.
+Opt Vis. Technique: A "Jump Search" over the number line, using mathematical formulas (Arithmetic Progression) to skip large empty gaps.
+Dry Run (Opt): Sort the `banned` list. Binary search for the maximum integer X such that the sum of 1 to X (minus banned numbers <= X) is <= `maxSum`. The number of chosen integers is X minus the count of banned numbers <= X.
+How to Draw (Opt): Write the banned numbers. Guess a number X=100. Calculate sum 1...100 using n(n+1)/2. Subtract the sum of banned numbers &lt; 100. If too small, guess X=200. Use binary search to narrow it down.
+Opt Complexity Visuals: $O(B \log B + \log N)$ where B is the number of banned elements. Sorting takes B log B, and binary search takes log N.
+How to Draw Opt Complexity: Draw a timeline with a few "banned" clusters. Draw a large bracket jumping across the timeline, showing it lands on the optimal X in very few steps.
+Mem Vis (BF): $O(N)$ array to track used numbers.
+Mem Vis (Opt): $O(B)$ to store and sort the banned list.

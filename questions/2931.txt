@@ -1,0 +1,13 @@
+ID: 2931
+Problem Title: Maximum Spending After Buying Items
+Brute Force Method: Try every possible permutation of buying items from M shops over D days.
+BF Complexity Visuals: Factorial Permutation Tree
+How to Draw BF: Draw a root. Branch out M times for day 1, then M times for day 2. Complexity $O((M\cdot D)$!).
+Optimised Pattern: Greedy (Min-Heap / Sorting)
+Opt Vis. Technique: Sorted Linear Stream
+Dry Run (Opt): Since we want larger multipliers for larger prices, we should buy the cheapest items first. Put all items in one list, sort ascending, and multiply by 1, 2, 3...
+How to Draw (Opt): Draw all items as dots on a single line. Label them with their prices. Sort them. Draw a second line underneath showing the day number increasing.
+Opt Complexity Visuals: Standard Sorting Timeline
+How to Draw Opt Complexity: Draw a line of length N (where N=M*D). T(N) = N log N for sorting. Linear $O(N)$ for the sum.
+Mem Vis (BF): Massive recursion stack for permutations.
+Mem Vis (Opt): A single 1D array of size M*D. Space $O(M\cdot D)$.

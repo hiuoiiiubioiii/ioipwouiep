@@ -1,0 +1,13 @@
+ID: 1513
+Problem Title: Number of Substrings With Only 1s
+Brute Force Method: Generate all possible substrings with nested loops, then verify if each substring only contains '1's.
+BF Complexity Visuals: Expanding Triangle Grid $O(N^2)$
+How to Draw BF: Draw the array as the top row. Below it, draw all substrings of length 2, then length 3, forming a large downward-pointing triangle of redundant checks.
+Optimised Pattern: Math / Contiguous Counting
+Opt Vis. Technique: Length to Combination Mapping
+Dry Run (Opt): Iterate the string counting consecutive 1s. When you hit a 0, take the length `L` of the previous 1s block and add `L * (L + 1) / 2` to the total answer. Reset count.
+How to Draw (Opt): Write the binary string. Draw brackets around groups of contiguous 1s. Write the length of each bracket. Plug each length into the formula and sum the results.
+Opt Complexity Visuals: Linear Scan Segmenting $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Color the segments of '1's blue and '0's red. The work done is strictly proportional to the length of the line.
+Mem Vis (BF): A memory block for every substring generated. $O(N^2)$ space.
+Mem Vis (Opt): A single variable box `count`. Erase and rewrite the number inside as it increments, resetting to 0. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1453
+Problem Title: Maximum Number of Darts Inside of a Circular Dartboard
+Brute Force Method: Randomly sample millions of points in the plane and count how many darts are within `radius` of each point.
+BF Complexity Visuals: Monte Carlo Scatter Plot
+How to Draw BF: Draw a cloud of random dots over a 2D plane. Draw a circle at each dot. Label $O(\text{Samples} \cdot N)$.
+Optimised Pattern: Angular Sweep / Fixed Circle Centers
+Opt Vis. Technique: Circumference Intersection Points
+Dry Run (Opt): For any optimal circle, at least two points will lie on its boundary. For every pair of points, calculate the two possible centers of a circle with `radius` passing through them. Count points in these circles.
+How to Draw (Opt): Draw two points. Draw two overlapping circles of given radius that both hit those points. The centers are the candidates. Sweep an imaginary circle around each candidate.
+Opt Complexity Visuals: Geometry All-Pairs Processing
+How to Draw Opt Complexity: Draw nested loops for point pairs $O(N²)$ -&gt; inner count loop $O(N)$. Total $O(N³)$.
+Mem Vis (BF): Coordinate Arrays
+Mem Vis (Opt): Small floating point variables for circle centers. Space $O(N)$ to store input.

@@ -1,0 +1,13 @@
+ID: 3304
+Problem Title: Find the K-th Character in String Game I
+Brute Force Method: Simulate exactly: start with "a", shift characters, append, repeat until length &gt;= K.
+BF Complexity Visuals: Exponential String Doubling Tree
+How to Draw BF: Write "a". Draw an arrow to "ab". Draw arrows from "ab" to "abbc". The width doubles every line, visualizing $O(K)$ space and time.
+Optimised Pattern: Bit Manipulation (Popcount) / Math
+Opt Vis. Technique: Binary Representation Grid
+Dry Run (Opt): Convert K-1 to binary. Count the set bits (1s). Add that count to the character 'a'.
+How to Draw (Opt): Write the number K-1. Divide by 2 repeatedly to build binary. Circle every '1'. Count the circles to find the character offset.
+Opt Complexity Visuals: Logarithmic Shrinking Block
+How to Draw Opt Complexity: Draw a long bar of length K. Cut it in half, then half again, until reaching 1. This shows the $O(\log K)$ reduction.
+Mem Vis (BF): A dynamically expanding array that doubles in size repeatedly, eating $O(K)$ memory.
+Mem Vis (Opt): A single 32-bit register block showing 0s and 1s. Represents strictly $O(1)$ space.

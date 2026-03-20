@@ -1,0 +1,13 @@
+ID: 172
+Problem Title: Factorial Trailing Zeroes
+Brute Force Method: Calculate the actual factorial of n (n!), then count how many zeroes are at the end by repeatedly using modulo 10.
+BF Complexity Visuals: A "Vertical Wall" representing the massive number of digits in n! that eventually cause an integer overflow.
+How to Draw BF: Write 5! = 120. Count 1 zero. Try to write 25! and show your paper running out of space for the digits.
+Optimised Pattern: Count Factors of 5 (Legendre's Formula).
+Opt Vis. Technique: A "Sieve for 5s." Since every zero is formed by 2 x 5, and 2s are abundant, you only need to count how many 5s are in the factors.
+Dry Run (Opt): While n &gt; 0: count += n / 5; n /= 5;. This counts 5, 25, 125... contributions.
+How to Draw (Opt): Draw a number line up to n. Circle every multiple of 5. For 25, draw two circles (since it's 5^2). Count total circles.
+Opt Complexity Visuals: $O(\log_5 N)$ time. The input n is divided by 5 in each step.
+How to Draw Opt Complexity: Draw a shrinking bar. Each section is 1/5th the size of the previous, showing logarithmic decay to zero.
+Mem Vis (BF): $O(N)$ memory to store the massive string representation of the factorial.
+Mem Vis (Opt): A single integer counter in $O(1)$ stack memory.

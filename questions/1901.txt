@@ -1,0 +1,13 @@
+ID: 1901
+Problem Title: Find a Peak Element II
+Brute Force Method: Traverse every single element in the m x n matrix to find the global maximum.
+BF Complexity Visuals: 2D Grid Scanning / Area Shading
+How to Draw BF: Draw an m x n grid. Cross out cells sequentially row by row, showing $O(m\cdot n)$ coverage.
+Optimised Pattern: Binary Search on Columns/Rows
+Opt Vis. Technique: Search Space Reduction (Matrix Bisection)
+Dry Run (Opt): Highlight middle column. Find max. Check left/right neighbors. Grey out half of the matrix based on the greater neighbor.
+How to Draw (Opt): Draw a bounding box. Draw a vertical line down the middle. Draw an arrow pointing to the side with the larger neighbor. Redraw a smaller bounding box.
+Opt Complexity Visuals: Area Halving Tree
+How to Draw Opt Complexity: Draw a rectangle of size m*n. Draw an arrow to a rectangle of m*(n/2), then m*(n/4), demonstrating $O(m \log n)$ shrinkage.
+Mem Vis (BF): Single pointer `(i, j)` moving sequentially through a 2D array grid layout.
+Mem Vis (Opt): `start`, `end`, and `mid` column pointers on a 1D axis, with an auxiliary variable mapping to the row index of the column's max element.

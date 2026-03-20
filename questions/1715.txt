@@ -1,0 +1,13 @@
+ID: 1715
+Problem Title: Count Apples and Oranges (SQL)
+Brute Force Method: Write two separate queries (one for boxes only, one for boxes joined with chests), then UNION ALL and group by.
+BF Complexity Visuals: Venn Diagram Duplicate Aggregation.
+How to Draw BF: Draw Table A, Table B. Draw overlapping circles, pulling data twice and adding complexity to aggregation.
+Optimised Pattern: LEFT JOIN with COALESCE / IFNULL.
+Opt Vis. Technique: Lego Blocks with Optional Snap-ons.
+Dry Run (Opt): Select `sum(box.apple + COALESCE(chest.apple, 0))`. Every box is evaluated. If chest exists, grab those apples too. If null, grab 0.
+How to Draw (Opt): Draw two tables side-by-side. Draw linking arrows. For missing links, draw a ghost box containing '0' snapping into place.
+Opt Complexity Visuals: Parallel Stream Merge.
+How to Draw Opt Complexity: Draw two conveyor belts merging into one sum bucket in a single pass.
+Mem Vis (BF): Multiple heavy intermediate temporary tables holding UNION data.
+Mem Vis (Opt): Appending columns conceptually in-place via the SQL JOIN engine. $O(1)$ row expansion.

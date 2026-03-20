@@ -1,0 +1,13 @@
+ID: 1147
+Problem Title: Longest Chunked Palindrome Decomposition
+Brute Force Method: Recursion with all possible prefix/suffix lengths. Try every possible split point and check if strings match.
+BF Complexity Visuals: Symmetrical Branching Tree
+How to Draw BF: Draw a string. Branch out for every possible prefix length that matches a suffix length. $O(N^2)$ or $O(2^N)$ depending on implementation.
+Optimised Pattern: Greedy + Two Pointers (Rolling Hash)
+Opt Vis. Technique: Shrinking Window Matcher
+Dry Run (Opt): Use a pointer for the left prefix and right suffix. As soon as prefix == suffix, "cut" them, increment count by 2, and move inward. If you reach the middle, add 1.
+How to Draw (Opt): Draw a long rectangle. Shade a small piece at the left and right. If they match, cross them out and write "2". Move to the remaining inner part.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single line with two arrows moving from the ends toward the center meeting in the middle.
+Mem Vis (BF): Multiple String Subslices
+Mem Vis (Opt): Constant $O(1)$ if using indices or $O(N)$ if storing the current chunk string.

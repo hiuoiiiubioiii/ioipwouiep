@@ -1,0 +1,13 @@
+ID: 530
+Problem Title: Minimum Absolute Difference in BST
+Brute Force Method: Store all node values in an array. Sort the array (ignoring BST properties), then find min diff between adjacent elements. $O(N \log N)$.
+BF Complexity Visuals: Taking a perfectly structured tree, throwing it into a chaotic pile, and sorting it from scratch.
+How to Draw BF: Draw tree -&gt; draw unsorted array -&gt; draw sorting algorithm -&gt; draw linear scan.
+Optimised Pattern: In-Order Traversal (natively sorted) + Track `prev` Node.
+Opt Vis. Technique: Walking up a neatly organized staircase, only ever comparing the step you are currently on to the one immediately below it.
+Dry Run (Opt): In-order traverse (Left, Node, Right). Track `prev` node. `min_diff = min(min_diff, curr.val - prev.val)`. `prev = curr`.
+How to Draw (Opt): Draw BST. Trace in-order line left-to-right. Keep two boxes: "Prev" and "MinDiff". Erase and update them as you hit each node sequentially.
+Opt Complexity Visuals: A single smooth string pulling through the tree exactly once left to right. $O(N)$.
+How to Draw Opt Complexity: Trace the inorder path of the tree with a single, unbroken colored line.
+Mem Vis (BF): An explicit $O(N)$ list created just to hold all tree values.
+Mem Vis (Opt): $O(H)$ recursion stack depth + $O(1)$ auxiliary pointers (`prev`, `min_diff`).

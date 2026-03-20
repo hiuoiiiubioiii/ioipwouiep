@@ -1,0 +1,13 @@
+ID: 3271
+Problem Title: Hash Divided String
+Brute Force Method: Slice the string into chunks of size K. For each chunk, convert to a list of characters, sum their ASCII values, and append to a result string.
+BF Complexity Visuals: Fragmented String Slicing
+How to Draw BF: Draw the string. Draw "slashes" every K characters. Draw separate circles for each fragment. Sum them and map to a letter.
+Optimised Pattern: Single-Pass Index Traversal (Step K)
+Opt Vis. Technique: Linear Accumulator Stream
+Dry Run (Opt): Use a single loop that jumps by `K`. Inside, use a nested loop or slice to sum character values `(s[j] - 'a')`. Take `sum % 26` and convert back to a character.
+How to Draw (Opt): Draw the string as a timeline. Draw brackets of width K. For each bracket, draw an arrow pointing to a single letter result below it.
+Opt Complexity Visuals: Linear Scan Timeline
+How to Draw Opt Complexity: Draw a line of length N. Show the pointer moving in "steps" of size K. Label total work as $O(N)$.
+Mem Vis (BF): Multiple substring slices and intermediate lists.
+Mem Vis (Opt): A single result array of size N/K (O(N) space).

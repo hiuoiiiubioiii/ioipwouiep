@@ -1,0 +1,13 @@
+ID: 958
+Problem Title: Check Completeness of a Binary Tree
+Brute Force Method: For every node, check if its depth matches the expected depth for its position and if all its left-neighbors exist.
+BF Complexity Visuals: $O(N \log N)$ or $O(N^2)$. Redundant checks of structure for every node.
+How to Draw BF: Draw a tree. For every leaf, draw a path back to the root to count depth and another path leftward to check for "gaps."
+Optimised Pattern: Level-Order BFS (Null Detection)
+Opt Vis. Technique: "The Solid Wall." In a complete tree, once you encounter a "Null" (an empty spot) in a level-order scan, you should NEVER see a real node again.
+Dry Run (Opt): Perform BFS including nulls. Maintain a flag `foundNull = false`. If you pop a node and `foundNull` is true, return false. If node is null, `foundNull = true`.
+How to Draw (Opt): Draw a tree. Draw a horizontal "Scanner" line moving level by level. If the scanner sees an empty spot and then another node later, draw a red alert light.
+Opt Complexity Visuals: $O(N)$. Every node (and its null children) is put into the queue exactly once.
+How to Draw Opt Complexity: Draw a horizontal queue. Write node values in it. If a `null` appears, all boxes to its right in the queue MUST also be `null`.
+Mem Vis (BF): $O(N)$ for various structural checks.
+Mem Vis (Opt): $O(N)$ for the BFS queue. Draw a horizontal pipe containing node pointers and `None` markers.

@@ -1,0 +1,13 @@
+ID: 812
+Problem Title: Largest Triangle Area
+Brute Force Method: Generate every single possible combination of 3 points (i, j, k) and calculate the area using the Shoelace formula. Keep the maximum.
+BF Complexity Visuals: 3D Combinatorial Web. $O(N^3)$ time.
+How to Draw BF: Draw N dots. Pick one dot, draw lines to all others. Pick a second dot on that line, draw lines to all remaining dots. Draw overlapping triangles until the paper is completely black.
+Optimised Pattern: Convex Hull + 3 Pointers (Shoelace Formula).
+Opt Vis. Technique: Rubber Band Wrapping.
+Dry Run (Opt): The largest triangle MUST have its vertices on the outermost boundary of the point cloud. Wrap a "rubber band" around the outer points (Convex Hull). Now, only run the brute-force 3-point check on the points touching the rubber band.
+How to Draw (Opt): Draw a scattered cloud of dots. Draw a tight boundary line connecting only the outermost dots. Erase all dots inside the shape. Draw triangles using only the boundary dots.
+Opt Complexity Visuals: Sorting Pipeline to Reduced Cubic. $O(N \log N + H^3)$.
+How to Draw Opt Complexity: Draw a funnel (N log N sorting). Out comes a small subset H. Draw a small 3-layered nested loop block representing $O(H^3)$.
+Mem Vis (BF): Three index pointers: Draw three small arrows (i, j, k) over an array. $O(1)$ space.
+Mem Vis (Opt): Convex Hull Array: Draw a new 1D array to store the coordinates of just the boundary points. $O(N)$ space.

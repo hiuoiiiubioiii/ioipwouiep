@@ -1,0 +1,13 @@
+ID: 3435
+Problem Title: Frequencies of Shortest Supersequences
+Brute Force Method: Generate all permutations of merging strings, find the shortest, and count frequencies. $O(\text{Exponential})$.
+BF Complexity Visuals: String Merging Web
+How to Draw BF: Draw two strings. Interleave them in every possible way to find the shortest overlap.
+Optimised Pattern: DP on Strings / Bitmasking
+Opt Vis. Technique: The Character-Overlap Maximizer
+Dry Run (Opt): Find the Longest Common Subsequence (LCS). The Shortest Common Supersequence length is L_1 + L_2 - LCS. To track frequencies, trace back the DP table, tracking character choices that lead to optimal paths.
+How to Draw (Opt): Draw a 2D grid comparing String 1 and String 2. Trace the path of the LCS. Every character not in the LCS must be included exactly once. Characters in the LCS are shared. Build a frequency map from this optimal path.
+Opt Complexity Visuals: 2D Matrix Processing $O(N \cdot M)$
+How to Draw Opt Complexity: Draw an N x M matrix being filled, followed by a linear traceback path.
+Mem Vis (BF): Storing thousands of merged string variations.
+Mem Vis (Opt): A 2D DP matrix. $O(N \cdot M)$ space.

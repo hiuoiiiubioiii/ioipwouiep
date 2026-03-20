@@ -1,0 +1,13 @@
+ID: 3631
+Problem Title: Sort Threats by Severity and Exploitability (Med)
+Brute Force Method: Implementing a naive $O(N^2)$ sorting algorithm (like Bubble Sort) with messy, heavily nested if-else conditions to handle the multi-level sorting rules.
+BF Complexity Visuals: Tangled Swap Lines.
+How to Draw BF: Draw an array of items. Draw overlapping, chaotic arrows showing elements swapping places hundreds of times as different rules clash.
+Optimised Pattern: Built-in $O(N \log N)$ Sort with a strictly defined Custom Comparator function returning -1, 0, or 1 based on a prioritized rule cascade.
+Opt Vis. Technique: Decision Tree Plinko Board.
+Dry Run (Opt): Pick two items. Drop them into a funnel. Rule 1: Is Severity different? If yes, route left/right. If tie, drop to Rule 2: Exploitability. If tie, drop to Rule 3.
+How to Draw (Opt): Draw two boxes (Item A, Item B). Draw a vertical list of rules. Draw a line comparing A and B at Rule 1. If equal, draw the line down to Rule 2, until a winner is found.
+Opt Complexity Visuals: Clean N log N Block.
+How to Draw Opt Complexity: Draw a solid block labeled "Language-Native TimSort/QuickSort $O(N \log N)$". The comparator runs in $O(1)$ time per comparison, maintaining the bound.
+Mem Vis (BF): Thousands of temporary variable allocations during manual, unoptimized swaps.
+Mem Vis (Opt): In-place sorting using the language's native optimized memory management. Space $O(\log N)$ to $O(N)$ depending on the engine.

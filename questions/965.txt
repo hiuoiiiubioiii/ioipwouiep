@@ -1,0 +1,13 @@
+ID: 965
+Problem Title: Univalued Binary Tree
+Brute Force Method: Perform a full traversal of the tree, store every value in a HashSet, and at the end check if the set size is 1.
+BF Complexity Visuals: $O(N)$ Time and $O(N)$ Space. Overkill for a simple boolean property.
+How to Draw BF: Draw a tree. Draw a "Bucket" (Set) next to it. As you visit each node, draw an arrow dropping its value into the bucket. Circle the bucket showing only one number inside.
+Optimised Pattern: Recursive Logical AND
+Opt Vis. Technique: "The Chain of Trust." A node is univalued only if its value matches its children AND both subtrees are also univalued.
+Dry Run (Opt): Compare `root.val` with `root.left.val` and `root.right.val`. Recurse. If any comparison fails, the "False" signal propagates immediately up the chain.
+How to Draw (Opt): Draw a tree. Draw a green wire connecting all nodes. If a node has a different value, draw a "Cut" in the wire, showing the signal failing to reach the root.
+Opt Complexity Visuals: $O(N)$. Every node is visited once.
+How to Draw Opt Complexity: Draw a tree with a single "Checkmark" arrow moving through every node in a DFS path.
+Mem Vis (BF): $O(N)$ to store the HashSet of values.
+Mem Vis (Opt): $O(H)$ recursion stack space. Draw a thin vertical column representing the depth of the tree.

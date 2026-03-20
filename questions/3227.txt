@@ -1,0 +1,13 @@
+ID: 3227
+Problem Title: Vowels Game in a String
+Brute Force Method: Minimax game tree simulation. Recursively test all possible valid substring removals for Alice and Bob until a base case is hit. $O(N^3 \text{or worse})$.
+BF Complexity Visuals: Explosive Turn-Based Game Tree
+How to Draw BF: Draw a root node with the string. Branch out for every possible odd-vowel substring Alice can pick. From those, branch for Bob's even picks.
+Optimised Pattern: Mathematical Invariant / Game Theory
+Opt Vis. Technique: Boolean True/False Switch
+Dry Run (Opt): If the string has 0 vowels, Bob wins. If the string has 1 or more vowels, Alice can always force a win. Therefore, just check if the string contains *any* vowel.
+How to Draw (Opt): Draw the string. Sweep a scanner from left to right. Stop immediately at the first vowel and write "Alice Wins".
+Opt Complexity Visuals: Early-Exit Linear Line
+How to Draw Opt Complexity: Draw a line representing the string. Mark an 'X' early in the line indicating a break statement. Worst case $O(N)$, best case $O(1)$.
+Mem Vis (BF): Deep recursion stack storing many substring fragments.
+Mem Vis (Opt): No extra allocations (O(1) space).

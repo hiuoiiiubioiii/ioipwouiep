@@ -1,0 +1,13 @@
+ID: 2417
+Problem Title: Closest Fair Integer
+Brute Force Method: Increment 'n' one by one. For each number, count even and odd digits to see if they are equal.
+BF Complexity Visuals: Brute Force Incrementer
+How to Draw BF: Draw a number line. Tick off every number until a "fair" one is hit. Label $O(\text{Search Distance})$.
+Optimised Pattern: Digit DP / Constructive Greedy
+Opt Vis. Technique: Digit Slot Filling
+Dry Run (Opt): If 'n' has odd number of digits, the next fair integer must have one more digit (e.g., 100011). Otherwise, try modifying digits from left to right.
+How to Draw (Opt): Draw slots [ ][ ][ ][ ]. Fill half with even, half with odd. If sum of digits must be &gt;= N, find the first position to increment.
+Opt Complexity Visuals: Logarithmic Digit Scan
+How to Draw Opt Complexity: Draw a box for each digit. Label $O(Log10 N)$.
+Mem Vis (BF): $O(1)$
+Mem Vis (Opt): $O(Log10 N)$ to store digit counts.

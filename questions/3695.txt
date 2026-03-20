@@ -1,0 +1,13 @@
+ID: 3695
+Problem Title: Maximize Alternating Sum Using Swaps (Hard)
+Brute Force Method: Try every possible swap of two elements (i, j) and calculate the alternating sum for each configuration. $O(N^3)$.
+BF Complexity Visuals: Permutation Swap Matrix.
+How to Draw BF: Draw an array. Swap index 0 and 1, calculate sum. Swap 0 and 2, calculate sum... For N=10^5, this is 10^10 calculations.
+Optimised Pattern: Greedy Analysis of Parity. An alternating sum is (EvenSum - OddSum). Swapping only helps if you move a large number from an "Odd" (negative) position to an "Even" (positive) position.
+Opt Vis. Technique: The "Valuable Trade" Market.
+Dry Run (Opt): Think of Even positions as "Profit" and Odd as "Loss." To maximize net worth, you want to find your biggest "Loss" (largest value at odd index) and swap it with your biggest "Potential Profit" (largest value at even index).
+How to Draw (Opt): Find min(arr[even_indices]) and max(arr[odd_indices]). If max_odd &gt; min_even, swapping them increases the total sum by 2 * (max_odd - min_even).
+Opt Complexity Visuals: Two Linear Extremum Scans.
+How to Draw Opt Complexity: Draw one arrow finding the min of even slots, one finding the max of odd slots. Total $O(N)$.
+Mem Vis (BF): Storing all possible swapped array versions in memory.
+Mem Vis (Opt): Four variables: max_odd, min_even, max_even, min_odd. Space $O(1)$.

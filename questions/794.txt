@@ -1,0 +1,13 @@
+ID: 794
+Problem Title: Valid Tic-Tac-Toe State
+Brute Force Method: Generate every possible sequence of moves from an empty board to see if the current board is reachable.
+BF Complexity Visuals: Move Sequence Tree
+How to Draw BF: Draw an empty board. Branch into all 9 moves, then 8, then 7. $O(9!)$.
+Optimised Pattern: Win-Condition Invariance Check
+Opt Vis. Technique: Board State Audit
+Dry Run (Opt): Check counts: X must be equal to or one more than O. Check wins: if X wins, count must be O+1. If O wins, count must be equal. Both cannot win.
+How to Draw (Opt): Draw the board. Count X's and O's. Draw lines through any winning 3-in-a-row. Verify the rules against these visual tallies.
+Opt Complexity Visuals: Constant Rule Check
+How to Draw Opt Complexity: Draw a list of 5 rules. Tick each one. $O(1)$ since board size is fixed at 3x3.
+Mem Vis (BF): Massive queue for BFS.
+Mem Vis (Opt): $O(1)$ extra space.

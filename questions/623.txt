@@ -1,0 +1,13 @@
+ID: 623
+Problem Title: Add One Row to Tree
+Brute Force Method: BFS to find all nodes at depth `d-1`. Store them in a list. Then iterate through the list to insert new nodes.
+BF Complexity Visuals: Layer-by-layer scanning with a storage buffer.
+How to Draw BF: Draw a tree. Draw a circle around every node in a specific row. Draw a secondary "list" holding those nodes before acting. $O(N)$.
+Optimised Pattern: Recursive DFS with Depth Tracking.
+Opt Vis. Technique: Plugging a "Connector" into a socket.
+Dry Run (Opt): Pass `current_depth` in recursion. When `current_depth == d-1`, create new nodes, hook them to current children, and re-attach. Base case: `d=1` (special root case).
+How to Draw (Opt): Draw a tree. Trace a path down. At the target depth, draw two "interceptors" (the new nodes) and reroute the existing arrows through them.
+Opt Complexity Visuals: Direct tree traversal without auxiliary lists.
+How to Draw Opt Complexity: Draw a single line snaking through the tree until it hits the "Depth Horizon." Write $O(N)$.
+Mem Vis (BF): Draw a Queue or List holding an entire level of the tree in memory.
+Mem Vis (Opt): Draw the recursion stack. Space is $O(\text{Height})$ of the tree.

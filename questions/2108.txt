@@ -1,0 +1,13 @@
+ID: 2108
+Problem Title: Find First Palindromic String in the Array
+Brute Force Method: Iterate array, for each string reverse it using library functions and compare to original.
+BF Complexity Visuals: Reversing full string blocks in a loop.
+How to Draw BF: Draw string blocks being flipped over entirely one by one.
+Optimised Pattern: Two Pointers (String validation).
+Opt Vis. Technique: Pointers at start and end of string, moving inwards.
+Dry Run (Opt): For each string, check s[i] == s[j]. If true, i++, j--. If false, instantly move to next string.
+How to Draw (Opt): Word written out. Draw arrows pointing to first and last letter. Move them towards the center step-by-step.
+Opt Complexity Visuals: $O(N \cdot M)$ where M is max string length.
+How to Draw Opt Complexity: Grid of strings, early exit arrows stopping midway through words.
+Mem Vis (BF): Creating new reversed string objects $O(M)$ repeatedly.
+Mem Vis (Opt): Two integer variables $O(1)$ tracking indices.

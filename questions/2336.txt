@@ -1,0 +1,13 @@
+ID: 2336
+Problem Title: Smallest Number in Infinite Set
+Brute Force Method: Maintain a full list of all numbers from 1 to 1000. When a number is "popped," scan the entire list to find the next minimum.
+BF Complexity Visuals: Linear Min Search (O(N^2))
+How to Draw BF: Draw a long row of numbered boxes. Cross one out. Start at box 1 and point at every box until you find one that isn't crossed out.
+Optimised Pattern: Min-Heap + Hash Set (or Min_Tracker)
+Opt Vis. Technique: Priority Queue Overflow Catch
+Dry Run (Opt): Use a variable `smallest` starting at 1. If a number is "added back" and it's less than `smallest`, put it in a Min-Heap (and a Set to avoid duplicates). `popSmallest` checks the Heap first; if empty, it returns `smallest++`.
+How to Draw (Opt): Draw a number line with a pointer at `smallest`. Draw a small "bucket" (Heap) to the side. If someone throws a number back, it goes in the bucket. Always check the bucket for the smallest item before moving the main pointer.
+Opt Complexity Visuals: Logarithmic Extraction (O(log N))
+How to Draw Opt Complexity: Draw a vertical Heap tree. An item is pulled from the top, and the tree reshuffles itself in a few quick steps.
+Mem Vis (BF): Draw a massive Boolean array of 1000 elements.
+Mem Vis (Opt): Draw a small Tree (Heap) and a Hash Set, plus one Integer variable (`smallest`).

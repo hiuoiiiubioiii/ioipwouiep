@@ -1,0 +1,13 @@
+ID: 2542
+Problem Title: Maximum Subsequence Score
+Brute Force Method: Generate all possible subsequences of size k. For each, find the sum of elements from nums1 and multiply by the minimum element in nums2. $O(\text{Comb}(N, k)$).
+BF Complexity Visuals: A combinatorial explosion of all possible groups of k indices.
+How to Draw BF: Manually list every group of k items. For each group, calculate the sum and the min, multiply them, and write it down. Keep the biggest.
+Optimised Pattern: Sorting + Min-Heap (Sliding Window of Top K).
+Opt Vis. Technique: A "Priority Filter" that keeps the largest values of nums1 while sliding across nums2 sorted in descending order.
+Dry Run (Opt): Pair (nums2[i], nums1[i]) and sort by nums2 descending. Iterate through the pairs, pushing nums1 values into a Min-Heap. If heap size &gt; k, pop the smallest. When size == k, calculate heapSum * current_nums2.
+How to Draw (Opt): Draw the sorted pairs. Draw a "Bucket" (Min-Heap) that holds k numbers. As you slide down the list, replace the smallest number in the bucket with the new one if the bucket is full. Multiply the bucket's sum by the current row's nums2.
+Opt Complexity Visuals: $O(N \log N)$ for sorting + $O(N \log k)$ for heap operations.
+How to Draw Opt Complexity: Draw the sorted list. Draw a single arrow moving down. Beside it, show the heap shrinking/growing by exactly one element per step (log k).
+Mem Vis (BF): Exponential space for all combinations.
+Mem Vis (Opt): $O(N)$ for sorting pairs + $O(k)$ for the priority queue.

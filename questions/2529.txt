@@ -1,0 +1,13 @@
+ID: 2529
+Problem Title: Maximum Count of Positive Integer and Negative Integer
+Brute Force Method: Iterate through the array from left to right, checking each number. If it's less than 0, increment a negative counter. If greater than 0, increment a positive counter. $O(N)$ time.
+BF Complexity Visuals: A simple linear timeline checking every single item one by one.
+How to Draw BF: Put your finger on the first number. Ask "Is it positive or negative?" Tally it. Move finger to the next. Repeat until the end.
+Optimised Pattern: Two separate Binary Searches (Upper Bound for negatives, Lower Bound for positives) leveraging the sorted nature of the array.
+Opt Vis. Technique: An array split into distinct color zones (negatives, zeroes, positives) with binary search arrows targeting the exact boundary lines.
+Dry Run (Opt): Use binary search to find the index of the first number >= 0. That index tells you exactly how many negative numbers exist. Use binary search again to find the index of the first number &gt; 0. Subtract that from the array length to get the positive count. Keep the max.
+How to Draw (Opt): Draw the array. Pick the middle element. If it's negative, jump halfway to the right. If positive, jump halfway to the left. Pinpoint exactly where the numbers switch from negative to 0 to positive.
+Opt Complexity Visuals: $O(\log N)$ logarithmic steps jumping through the sorted data.
+How to Draw Opt Complexity: Draw an array. Draw a massive bracket halving the array, then halving the remaining half, demonstrating that you skip checking the vast majority of elements.
+Mem Vis (BF): $O(1)$ counter variables.
+Mem Vis (Opt): $O(1)$ pointers for the binary search bounds.

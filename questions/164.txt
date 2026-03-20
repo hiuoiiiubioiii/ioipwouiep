@@ -1,0 +1,13 @@
+ID: 164
+Problem Title: Maximum Gap
+Brute Force Method: Sort the array using $O(N \log N)$ and then perform a linear scan to find the max difference between adjacent elements.
+BF Complexity Visuals: A sorting factory diagram followed by a single measurement pass.
+How to Draw BF: Draw an unsorted pile. Draw a sorted line below it. Draw small rulers between every sorted element to find the max gap.
+Optimised Pattern: Bucket Sort (Pigeonhole Principle).
+Opt Vis. Technique: "Birdhouses." By dividing numbers into buckets smaller than the average gap, you guarantee the max gap is *between* buckets, not within them.
+Dry Run (Opt): Find min/max. Calc bucket size. Place nums into N buckets (track min/max per bucket). Max gap = `max(max_gap, curr_bucket.min - prev_bucket.max)`.
+How to Draw (Opt): Draw N-1 buckets. Place the numbers into them. Draw a large arrow between the max of one bucket and the min of the next.
+Opt Complexity Visuals: $O(N)$ linear time. The sorting is bypassed by the bucket distribution.
+How to Draw Opt Complexity: Draw a horizontal line. Mark bucket boundaries. Show that you only compare bucket edges, not every internal number.
+Mem Vis (BF): N/A (In-place sort might use $O(\log N)$).
+Mem Vis (Opt): Visualize two $O(N)$ arrays in heap memory: `bucketMin` and `bucketMax`.

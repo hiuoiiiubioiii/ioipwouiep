@@ -1,0 +1,13 @@
+ID: 1639
+Problem Title: Number of Ways to Form a Target String...
+Brute Force Method: Backtracking to try every character at every column index in the dictionary to build the target.
+BF Complexity Visuals: Recursive Decision Tree
+How to Draw BF: Draw a massive tree where each level branches out for every word in the dictionary. $O(\text{Words}^\text{TargetLength})$.
+Optimised Pattern: DP + Character Frequency Pre-computation
+Opt Vis. Technique: Columnar Selection Grid
+Dry Run (Opt): Precompute counts of each char 'a'-'z' per column. DP[i][j] = ways to form target[0...i] using dictionary columns [0...j].
+How to Draw (Opt): Draw a grid of target characters (rows) and dictionary columns (cols). Fill cells using: (Ways using current col * freq) + (Ways using previous col).
+Opt Complexity Visuals: 2D Matrix Fill
+How to Draw Opt Complexity: Draw an N (Target) x M (Columns) grid filled row-by-row. $O(N \cdot M + \text{Words} \cdot M)$.
+Mem Vis (BF): Recursive Call Stack: Stack of states representing column/target indices.
+Mem Vis (Opt): 2D Freq Array + 1D DP: Draw a 26 x M frequency table and a single rotating DP row.

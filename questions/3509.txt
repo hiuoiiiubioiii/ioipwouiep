@@ -1,0 +1,13 @@
+ID: 3509
+Problem Title: Max Product of Subsequences With an Alternating Sum Equal to K (Hard)
+Brute Force Method: Recursive combination generation, computing sum and product.
+BF Complexity Visuals: Exponential Combination Tree.
+How to Draw BF: Draw a massive tree. Each node splits into 'Include (flip sign)' or 'Exclude'.
+Optimised Pattern: 3D Dynamic Programming (Knapsack with Sign State).
+Opt Vis. Technique: State Machine DP Grid.
+Dry Run (Opt): Map transitions. If you include X, toggle between 'adding' and 'subtracting' states.
+How to Draw (Opt): Draw two parallel rows of boxes (+ state, - state). Draw crisscrossing arrows to move between them.
+Opt Complexity Visuals: 2D Grid Filling.
+How to Draw Opt Complexity: Draw a matrix of N (items) x K (sums). Shade cells left to right, constant work per cell.
+Mem Vis (BF): Huge Recursion Stack: Draw an endless stack of frames holding (index, sum, product, sign).
+Mem Vis (Opt): Rolling DP Arrays: Draw just two 1D arrays (current state, next state) overwriting each other.

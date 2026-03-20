@@ -1,0 +1,13 @@
+ID: 3487
+Problem Title: Maximum Unique Subarray Sum After Deletion
+Brute Force Method: Generate all 2^N deleted versions of the array. For each, find the max sum of a unique-element subarray. $O(2^N \cdot N)$
+BF Complexity Visuals: Subset Power Set Decision Tree.
+How to Draw BF: Draw a root. Branch into "Keep" or "Delete" for every element. For each leaf, draw a subarray scan.
+Optimised Pattern: Greedy (Sum of Unique Positive Numbers). $O(N)$
+Opt Vis. Technique: Positive-Unique Bucket Filter.
+Dry Run (Opt): Since you can delete any elements, delete all negative numbers and all duplicate occurrences of positive numbers. The answer is simply the sum of unique positive elements.
+How to Draw (Opt): Draw the array. Circle every unique positive number. Write "Delete" over all negative numbers and duplicate positives. Sum the circles.
+Opt Complexity Visuals: Single pass with a Set.
+How to Draw Opt Complexity: Draw one straight arrow moving once from index 0 to N-1.
+Mem Vis (BF): Trillions of array versions in memory.
+Mem Vis (Opt): A single Set to track seen positive integers.

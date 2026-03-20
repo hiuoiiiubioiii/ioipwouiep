@@ -1,0 +1,13 @@
+ID: 2094
+Problem Title: Finding 3-Digit Even Numbers
+Brute Force Method: Generate every possible combination of 3 indices from the array, form a number, check if even, and add to a Set.
+BF Complexity Visuals: N-choose-3 Combinatorial Grid
+How to Draw BF: Draw an N x N x N grid. Every cell is a 3-digit number. Highlight the ones that are even and have no leading zeros. $O(N^3)$.
+Optimised Pattern: Frequency Counting + Iterative Value Check
+Opt Vis. Technique: Reverse Lookup Sieve
+Dry Run (Opt): Instead of the array, iterate through all even 3-digit numbers (100 to 998). For each number, check if the original array has enough counts of each digit.
+How to Draw (Opt): Draw a list: 100, 102, 104... 998. Draw a single digit frequency tally of the input array. For '102', ask: "Do I have one 1, one 0, and one 2?".
+Opt Complexity Visuals: Constant-Time Range Scan
+How to Draw Opt Complexity: Draw a straight line from 100 to 999. Total iterations are fixed at 450. Total Time $O(N + 450)$.
+Mem Vis (BF): A huge Hash Set storing thousands of generated numbers before deduplication.
+Mem Vis (Opt): A fixed-size `int[10]` frequency array. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2426
+Problem Title: Number of Pairs Satisfying Inequality
+Brute Force Method: Nested loops to check every pair (i, j) where i &lt; j and see if nums1[i] - nums1[j] &lt;= nums2[i] - nums2[j] + diff.
+BF Complexity Visuals: Upper Triangle Matrix
+How to Draw BF: Draw a grid of pairs. Shade the top-right half. Label $O(N^2)$.
+Optimised Pattern: Merge Sort (Divide &amp; Conquer) or Fenwick Tree after transforming to (nums1[i]-nums2[i])
+Opt Vis. Technique: Sorted Segment Comparison
+Dry Run (Opt): Rearrange to: (nums1[i]-nums2[i]) &lt;= (nums1[j]-nums2[j]) + diff. While merging two sorted halves, count how many elements in the left half satisfy the condition for elements in the right.
+How to Draw (Opt): Draw two sorted blocks side by side. Draw a sliding pointer on the left block that counts how many values are &lt;= (right_val + diff).
+Opt Complexity Visuals: Recursive Tree height Log N
+How to Draw Opt Complexity: Draw a Merge Sort tree. At each level, label "O(N)". Total height is Log N. Label $O(N \log N)$.
+Mem Vis (BF): Draw a single integer result. $O(1)$.
+Mem Vis (Opt): Draw the recursion stack and temporary arrays for merging. Label $O(N)$ Space.

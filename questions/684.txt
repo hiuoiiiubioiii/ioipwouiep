@@ -1,0 +1,13 @@
+ID: 684
+Problem Title: Redundant Connection
+Brute Force Method: For every edge, try removing it and perform a full DFS/BFS to see if the graph remains connected.
+BF Complexity Visuals: Edge-by-Edge Graph Traversal.
+How to Draw BF: Draw a graph with a cycle. Cross out one edge. Run DFS to see if all nodes are reached. Repeat for every edge. Write $O(N^2)$.
+Optimised Pattern: Union-Find (Disjoint Set Union).
+Opt Vis. Technique: Group Merging / Cycle Detection.
+Dry Run (Opt): Iterate through edges. For each edge (u, v), check if u and v are already in the same set. If they are, this edge completes a cycle (it's redundant). If not, union them.
+How to Draw (Opt): Draw each node as a separate bubble. When an edge connects them, merge the bubbles. If an edge connects two nodes already in the same bubble, color it red.
+Opt Complexity Visuals: $O(N \cdot α(N)$), where α is the inverse Ackermann function (effectively constant).
+How to Draw Opt Complexity: Draw a line of edges feeding into a "DSU Machine." Write $O(N)$.
+Mem Vis (BF): Draw an adjacency list for every edge removal attempt.
+Mem Vis (Opt): Draw a single `parent` array of size N. $O(N)$.

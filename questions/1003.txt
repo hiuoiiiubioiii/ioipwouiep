@@ -1,0 +1,13 @@
+ID: 1003
+Problem Title: Check If Word Is Valid After Substitutions
+Brute Force Method: Repeatedly search the string for "abc" and replace it with an empty string until no more "abc" instances remain. Check if string is empty.
+BF Complexity Visuals: $O(N^2)$. String slicing and searching can be very slow if many small deletions happen.
+How to Draw BF: Draw a long string. Circle "abc" and cross it out. Re-write the remaining string. Repeat. Show a long stack of increasingly shorter strings.
+Optimised Pattern: Stack Simulation
+Opt Vis. Technique: "The Tetris Clear." Push characters onto a stack. Every time the top three characters form "abc", pop them all immediately. The string is valid if the stack is empty at the end.
+Dry Run (Opt): For char in S: push to stack. If `stack.suffix == "abc"`, pop 3 times. Return `stack.isEmpty()`.
+How to Draw (Opt): Draw a vertical bucket. Drop an 'a', then 'b', then 'c'. The moment 'c' hits, draw a "Clear!" flash and show the bucket becoming empty again.
+Opt Complexity Visuals: $O(N)$. Every character is pushed and popped at most once.
+How to Draw Opt Complexity: Draw a horizontal timeline. Below it, draw a stack growing and shrinking like a wave.
+Mem Vis (BF): $O(N^2)$ memory if creating new string copies for every deletion.
+Mem Vis (Opt): $O(N)$ for the stack. Draw a single vertical column of characters.

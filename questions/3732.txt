@@ -1,0 +1,13 @@
+ID: 3732
+Problem Title: Maximum Product of Three Elements After One Replacement (Med)
+Brute Force Method: Try replacing every single element with every other possible value, then check every possible triplet combination. $O(N^4)$.
+BF Complexity Visuals: Massive Combinatorial Tree.
+How to Draw BF: Draw the array. Branch off to create N new arrays for each replacement. Then draw 3-pronged branches from each to find triplets.
+Optimised Pattern: Sorting + Greedy Extremes
+Opt Vis. Technique: Top/Bottom Extractor
+Dry Run (Opt): Sort the array. The maximum product comes from either the 3 largest numbers, or the 2 smallest (most negative) numbers times the largest. Calculate the best outcome if you replaced the "worst" number with a duplicate of the "best" multiplier.
+How to Draw (Opt): Draw sorted array. Put a bracket over the 3 rightmost elements. Put a bracket over the 2 leftmost and 1 rightmost. Compare their multiplied totals.
+Opt Complexity Visuals: $O(N \log N)$ Sorting.
+How to Draw Opt Complexity: Draw a sweeping upward curve (Sort) followed by a short, flat $O(1)$ mathematical calculation.
+Mem Vis (BF): $O(1)$ simple variables.
+Mem Vis (Opt): $O(\log N)$ sorting call stack space.

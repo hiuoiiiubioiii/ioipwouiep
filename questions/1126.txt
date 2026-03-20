@@ -1,0 +1,13 @@
+ID: 1126
+Problem Title: Active Businesses
+Brute Force Method: Fetch all events, calculate the average for every event type in code, then iterate businesses to count events exceeding the average.
+BF Complexity Visuals: Multiple Application Loops
+How to Draw BF: Draw Table -&gt; App -&gt; Avg Calc -&gt; Table Rescan -&gt; App -&gt; Filter.
+Optimised Pattern: Window Functions / CTEs
+Opt Vis. Technique: The Threshold Filter
+Dry Run (Opt): Use a CTE to calculate `AVG(occurences) OVER (PARTITION BY event_type)`. Then SELECT businesses where occurrences &gt; avg, and COUNT &gt; 1.
+How to Draw (Opt): Draw events grouped by type. Draw a horizontal "Average Line" for each group. Cross out events under the line. Group remaining by business ID.
+Opt Complexity Visuals: Hash Aggregate $O(N \log N)$
+How to Draw Opt Complexity: Draw data flowing through a partition node, then a filter node.
+Mem Vis (BF): Massive in-memory sets.
+Mem Vis (Opt): SQL execution buffer. $O(N)$ space.

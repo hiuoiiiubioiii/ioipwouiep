@@ -1,0 +1,13 @@
+ID: 1440
+Problem Title: Evaluate Boolean Expression (SQL)
+Brute Force Method: Correlated Subqueries. For every row in Expressions, run two separate SELECTs on the Variables table to find the value of left_operand and right_operand.
+BF Complexity Visuals: Multi-Join Scan
+How to Draw BF: Draw the Expressions table. Draw two lines from each row to the Variables table for lookups. Label $O(E \cdot V)$.
+Optimised Pattern: Double JOIN + CASE Statement
+Opt Vis. Technique: Relational Mapping &amp; Logic Switch
+Dry Run (Opt): JOIN the Expressions table twice to the Variables table (once for left, once for right). Use a `CASE` statement to evaluate the `operator` string (&gt;, &lt;, =).
+How to Draw (Opt): Draw three tables. Expressions in the middle, Variables on both sides. Link them by name. Draw a logic gate (CASE) that takes the numbers and the symbol to output 'true' or 'false'.
+Opt Complexity Visuals: Hash Join Execution
+How to Draw Opt Complexity: Draw Join $O(E + V)$ -&gt; Logic Evaluation $O(E)$. Total $O(E + V)$.
+Mem Vis (BF): N/A (DB Engine)
+Mem Vis (Opt): Temporary Join Hash Tables in memory. Space $O(V)$.

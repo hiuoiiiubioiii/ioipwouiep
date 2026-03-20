@@ -1,0 +1,13 @@
+ID: 1090
+Problem Title: Largest Values From Labels
+Brute Force Method: Generate every possible subset of items. For each subset, check if size &lt;= numWanted and if the label frequency &lt;= useLimit. Return the max sum.
+BF Complexity Visuals: An exponential subset tree (2^N) with massive branches being pruned by constraints.
+How to Draw BF: Draw 3 items [val, label]. List subsets: {1}, {2}, {3}, {1,2}... Check label counts for each. Write $O(2^N)$.
+Optimised Pattern: Greedy (Sorting).
+Opt Vis. Technique: A "High-to-Low" Filter. We take the most valuable items first and discard any that exceed our label quota.
+Dry Run (Opt): Combine values and labels into pairs. Sort by value descending. Iterate through pairs, keeping a frequency map of labels. If `map[label] &lt; useLimit`, add value to total. Stop when `count == numWanted`.
+How to Draw (Opt): Draw a table [Value, Label]. Sort rows by Value. Have a side-table for "Label Usage". Mark checks next to rows you pick. Update label counts as you go.
+Opt Complexity Visuals: A sort followed by a single linear scan.
+How to Draw Opt Complexity: Draw a sort box $O(N \log N)$ followed by a single arrow $O(N)$. Total Time: $O(N \log N)$.
+Mem Vis (BF): $O(2^N)$ space for all subsets.
+Mem Vis (Opt): $O(N)$ space for sorted pairs and label frequency map.

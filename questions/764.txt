@@ -1,0 +1,13 @@
+ID: 764
+Problem Title: Largest Plus Sign
+Brute Force Method: For every '1' in the grid, expand in all 4 directions as far as possible to find the arm length.
+BF Complexity Visuals: Radial Cell Expansion
+How to Draw BF: Draw a grid. For every cell, draw 4 long arrows until they hit a '0' or a wall. $O(N^3)$.
+Optimised Pattern: Dynamic Programming (4-Directional Prefix)
+Opt Vis. Technique: Directional Light Casting
+Dry Run (Opt): Create 4 DP passes (L-to-R, R-to-L, T-to-B, B-to-T). `dp[r][c]` stores the min of the continuous '1's seen from all 4 directions.
+How to Draw (Opt): Draw the grid. Draw 4 versions of it. In each, fill cells with the count of consecutive 1s from that direction. Layer them and find the max cell.
+Opt Complexity Visuals: Matrix Area Scan
+How to Draw Opt Complexity: Draw the grid. Show 4 full-grid sweeps. $O(N^2)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): 2D DP matrix or 4-direction tracking in one matrix $O(N^2)$.

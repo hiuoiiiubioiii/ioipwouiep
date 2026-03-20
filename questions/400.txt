@@ -1,0 +1,13 @@
+ID: 400
+Problem Title: Nth Digit
+Brute Force Method: Form a giant string by concatenating numbers 1, 2, 3 \dots until the string length exceeds n. Return the char at index n-1.
+BF Complexity Visuals: Brute Force String Concatenation
+How to Draw BF: Draw a tape: "12345678910111213...". Draw a pointer n units long. Label $O(n)$ space and time.
+Optimised Pattern: Mathematical Interval Binary Search
+Opt Vis. Technique: Digit-Group Skipping
+Dry Run (Opt): 1. Determine how many digits the number has (1-9 is 9 digits, 10-99 is 90 \times 2 digits, etc.). 2. Find the actual number x. 3. Find the specific digit within x.
+How to Draw (Opt): Draw three horizontal bars labeled "1-digit", "2-digits", "3-digits". Show n "jumping" over the first two bars and landing in the middle of the third.
+Opt Complexity Visuals: Logarithmic Range Search
+How to Draw Opt Complexity: Draw a number line. Draw large "leaps" representing groups of 10, 100, 1000. Label $O(\log n)$.
+Mem Vis (BF): A massive string of length n. $O(n)$.
+Mem Vis (Opt): Three or four long/int variables. Draw four small boxes. $O(1)$.

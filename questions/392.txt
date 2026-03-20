@@ -1,0 +1,13 @@
+ID: 392
+Problem Title: Is Subsequence
+Brute Force Method: Generate every possible subsequence of string t (2^{|t|}) and check if s is among them.
+BF Complexity Visuals: Exponential Power Set Tree
+How to Draw BF: Draw string t. At each char, branch for "include/exclude". Label the 2^N leaves. Impossible for large strings.
+Optimised Pattern: Two Pointers (Greedy Matching)
+Opt Vis. Technique: Sequential Character Hunt
+Dry Run (Opt): Place pointer i on s and j on t. Move j forward through every character. Only move i when s[i] == t[j]. If i reaches the end of s, it's a subsequence.
+How to Draw (Opt): Draw two horizontal strings. Draw an arrow i on s and j on t. Draw a vertical "match" line only when the letters are identical, then advance both.
+Opt Complexity Visuals: Linear Single-Pass Sweep
+How to Draw Opt Complexity: Draw two parallel lines with arrows moving left-to-right. Label $O(|t|)$.
+Mem Vis (BF): All 2^N subsequences in memory.
+Mem Vis (Opt): Just two integer pointers. Draw two small boxes (i and j). $O(1)$ extra space.

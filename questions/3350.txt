@@ -1,0 +1,13 @@
+ID: 3350
+Problem Title: Adjacent Increasing Subarrays Detection II
+Brute Force Method: Try every possible K from N/2 down to 1, and for each K, run the check from 3349.
+BF Complexity Visuals: Binary Search over Linear Scan
+How to Draw BF: Draw a vertical line for K and a horizontal line for N. The grid of checks shows $O(N^2)$.
+Optimised Pattern: Two Pointers / Maximum Overlap
+Opt Vis. Technique: Peak and Valley Tracking
+Dry Run (Opt): Find all "strictly increasing" blocks. For any two adjacent blocks of size L_1 and L_2, the max K is min(L_1, L_2). Also, a single block of size L can provide K = L/2.
+How to Draw (Opt): Draw the array. Color code the increasing blocks. Write the length of each block. The answer is the maximum of min(Block_i, Block_i+1) across the whole array.
+Opt Complexity Visuals: Block-Compressed Scan
+How to Draw Opt Complexity: Draw the array. Condense increasing segments into single "super-nodes" with a length value. Total $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): A list of block lengths, taking $O(N)$ space.

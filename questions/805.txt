@@ -1,0 +1,13 @@
+ID: 805
+Problem Title: Split Array With Same Average
+Brute Force Method: Generate every single possible combination of the array (all subsets), calculate their averages, and check if it matches the remainder's average.
+BF Complexity Visuals: Complete Binary Subset Tree. $O(2^N)$ time.
+How to Draw BF: Draw a root. Branch left (Include), branch right (Exclude). Double the branches at every layer until it becomes an unreadable massive fractal at the bottom.
+Optimised Pattern: Meet-in-the-Middle + Dynamic Programming / Math Pruning.
+Opt Vis. Technique: Two Converging Triangles.
+Dry Run (Opt): Split the array physically in half. Generate subset sums for Left and Right halves. Look for a puzzle piece from the Left that perfectly fits a puzzle piece from the Right to match the target sum constraint.
+How to Draw (Opt): Draw two triangles whose points face each other in the middle. The wide bases represent the starting arrays, narrowing down to the combinations that meet in the center.
+Opt Complexity Visuals: Two Shallow Trees. $O(2^(N/2)$) time.
+How to Draw Opt Complexity: Draw two binary trees next to each other, but cut them off at half the depth of the brute force tree.
+Mem Vis (BF): Huge Call Stack/Subset List: Draw a towering inverted pyramid of memory blocks that grows exponentially.
+Mem Vis (Opt): Two Hash Maps / DP Sets: Draw two bounded rectangular boxes holding unique sum/count pairs. $O(2^(N/2)$) space.

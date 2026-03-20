@@ -1,0 +1,13 @@
+ID: 3662
+Problem Title: Filter Characters by Frequency (Easy)
+Brute Force Method: For every character in the string, loop through the entire string again to count its occurrences. $O(N^2)$.
+BF Complexity Visuals: Nested Loop Scanning.
+How to Draw BF: Draw a string "APPLE". Point to 'P'. Scan the whole string to count 'P's (2). Point to 'L'. Scan the whole string to count 'L's (1). Repeat for all.
+Optimised Pattern: Single-pass Hash Map / Frequency Array. Count all frequencies first, then perform a single pass to filter.
+Opt Vis. Technique: The "Sorting Bin" Counter.
+Dry Run (Opt): Visualize 26 bins labeled A-Z. Walk through the string once, dropping a pebble in the corresponding bin for each letter. Then, check the bins.
+How to Draw (Opt): Draw 26 small boxes. As you read the string, put a tally mark in the box. Then, read the string again and only write characters whose box has a count &gt; K.
+Opt Complexity Visuals: Two-Pass Linear Line.
+How to Draw Opt Complexity: Draw one arrow for "Count $O(N)$" and a second for "Filter $O(N)$". Total $O(N)$.
+Mem Vis (BF): Creating new substrings or arrays inside the nested loop, leading to $O(N^2)$ space.
+Mem Vis (Opt): A single fixed-size array of length 26 or 256. Space $O(1)$.

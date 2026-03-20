@@ -1,0 +1,13 @@
+ID: 1377
+Problem Title: Frog Position After T Seconds
+Brute Force Method: Use BFS to explore all possible positions at every second, but without handling the "frog stays put" rule correctly, leading to wrong probabilities.
+BF Complexity Visuals: $O(\text{Branches}^T)$ State Explosion
+How to Draw BF: Draw a frog on a tree. At each second, draw a new frog for every possible jump. The number of frogs grows exponentially.
+Optimised Pattern: DFS with Probability Propagation
+Opt Vis. Technique: Path Weight Product
+Dry Run (Opt): Trace a single path to the target. If target is reached at `t` (or reached early and has nowhere to jump), probability is `1 / product(number of children at each step)`.
+How to Draw (Opt): Draw the tree. At the root, prob = 1. Jump to a node with 3 children; each gets 1/3. If a node has 2 children, they each get (1/3 * 1/2) = 1/6. Stop at time T.
+Opt Complexity Visuals: $O(N)$ Target Path Search
+How to Draw Opt Complexity: Draw a single line from the root to the target node. Once found, calculate the probability along that specific path.
+Mem Vis (BF): Massive BFS Queue: Storing thousands of `(node, prob, time)` tuples for every possible location.
+Mem Vis (Opt): $O(H)$ Path State: Draw a single recursion stack that only keeps the probability and current time for one branch.

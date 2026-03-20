@@ -1,0 +1,13 @@
+ID: 1500
+Problem Title: Design a File Sharing System
+Brute Force Method: Use a Map to track `userID -&gt; Set of chunks`. For `request`, search every user's set for the required chunk. For `join`, find the first available integer for userID by scanning from 1 up to infinity.
+BF Complexity Visuals: Linear User ID Search
+How to Draw BF: Draw a list of active Users. When a new user joins, scan from ID 1, 2, 3... until you find a gap. When a chunk is requested, scan everyone. Label $O(N)$ per operation.
+Optimised Pattern: Min-Heap + Map of Sets
+Opt Vis. Technique: Efficient Resource Reclaiming
+Dry Run (Opt): Use a Min-Heap (or TreeSet) to store recycled User IDs. If heap is empty, next ID is `max_id++`. Use a `HashMap&gt;` for user data. Use an inverted `HashMap&gt;` for chunk locations to speed up requests.
+How to Draw (Opt): Draw a "ID Recycle Bin" (Heap). If someone leaves, their ID goes in. If someone joins, pull from the bin first. Draw a "Chunk Directory" (Map) that points directly to owners of a chunk.
+Opt Complexity Visuals: Logarithmic Management
+How to Draw Opt Complexity: Draw Heap pop/push $O(\log N)$ -&gt; Map/Set operations $O(\log C)$. Label $O(\log N + \log C)$.
+Mem Vis (BF): Repeated Linear Scans
+Mem Vis (Opt): A Min-Heap for IDs and two HashMaps for tracking. Space $O(N \cdot C)$ where C is chunks.

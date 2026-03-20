@@ -1,0 +1,13 @@
+ID: 276
+Problem Title: Paint Fence
+Brute Force Method: Recursively explore all possible color assignments (k^n), checking if more than two adjacent posts have the same color.
+BF Complexity Visuals: Exponential Branching Tree: $O(k^n)$.
+How to Draw BF: Draw a tree starting with k branches. Each level multiplies by k. Label it "The Unconstrained Combinatorial Explosion."
+Optimised Pattern: Dynamic Programming (Two-State: Same/Different)
+Opt Vis. Technique: Decision State Table
+Dry Run (Opt): Track `diff` (current color different from previous) and `same` (current color same as previous). `new_diff = (same + diff) * (k-1)`; `new_same = diff`.
+How to Draw (Opt): Draw two rows: "Same" and "Diff". For each post, draw arrows showing `new_same` comes from previous `diff`, and `new_diff` comes from the sum of both.
+Opt Complexity Visuals: Linear Pass: $O(n)$.
+How to Draw Opt Complexity: Draw a horizontal timeline of length n. Each step consists of two additions and a multiplication. $O(n)$ total.
+Mem Vis (BF): Recursion stack: $O(n)$.
+Mem Vis (Opt): Two Variables: Draw exactly two integer boxes, `same` and `diff`. Space: $O(1)$.

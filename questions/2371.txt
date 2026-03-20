@@ -1,0 +1,13 @@
+ID: 2371
+Problem Title: Minimize Maximum Value in a Grid (Premium)
+Brute Force Method: Try all possible permutations of assigning values 1 to M*N to the grid cells such that row and column order constraints are preserved.
+BF Complexity Visuals: Factorial Grid Permutations (O((M*N)!))
+How to Draw BF: Draw an M x N grid. For every cell, branch into every possible number from 1 to M*N. Check if the row/column order is still valid for every number.
+Optimised Pattern: Sorting + Greedy Row/Col Max Tracking
+Opt Vis. Technique: Value-Based Incremental Filling
+Dry Run (Opt): Store all `[value, row, col]` in a list and sort by value. Maintain `rowMax[M]` and `colMax[N]` initialized to 0. Iterate sorted cells: `newVal = max(rowMax[r], colMax[c]) + 1`. Update `rowMax[r]` and `colMax[c]` with `newVal`.
+How to Draw (Opt): Draw the grid. List all numbers in the grid from smallest to largest. Pick the smallest, look at its row and column. Give it a '1'. Pick the next smallest, look at the max value already placed in its row/column, and give it `max + 1`.
+Opt Complexity Visuals: Sorting + Linear Grid Scan (O(MN log MN))
+How to Draw Opt Complexity: Draw a sorting funnel for all cells. Below it, draw a single pass through the sorted list, updating two 1D arrays (`rowMax`, `colMax`).
+Mem Vis (BF): Draw a massive recursion stack for all possible grid numberings.
+Mem Vis (Opt): Draw two 1D Arrays (`rowMax`, `colMax`) and a sorted list of `[val, r, c]` triplets.

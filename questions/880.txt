@@ -1,0 +1,13 @@
+ID: 880
+Problem Title: Decoded String at Index
+Brute Force Method: Fully expand the string in memory. If you see "apple3", store "appleappleapple". Then simply return the character at index K-1.
+BF Complexity Visuals: Exponential String Expansion. $O(\text{Length of decoded string})$.
+How to Draw BF: Draw a small box "a". Draw it 10 times. Now draw that block of 10, 5 times. The paper runs out of space instantly because the string can be 10^18 chars.
+Optimised Pattern: Reverse Work-Backwards with Modulo.
+Opt Vis. Technique: The "Virtual Length" Unrolling.
+Dry Run (Opt): 1. Calculate the *total size* of the decoded string using a single pass (O(N)). 2. Walk backwards through the original string. If K is at the end of a repetition, K % size == 0. If you hit a digit d, the new size is size / d and K = K % size.
+How to Draw (Opt): Draw the encoded string. Below it, write the "Current Size" at each step. Draw a pointer starting at the end. Use a "Modulo" icon to show K shrinking as it "wraps around" the repeated sections.
+Opt Complexity Visuals: Two-Pass Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw two parallel horizontal lines. One pass forward to build length, one pass backward to find the char.
+Mem Vis (BF): Gigantic String Buffer: Draw a memory block that exceeds the size of the universe.
+Mem Vis (Opt): $O(1)$ Space: Draw one "Total Length" long-integer variable and one "K" variable.

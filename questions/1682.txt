@@ -1,0 +1,14 @@
+ID: 1682
+Problem Title: Longest Palindromic Subsequence II
+Brute Force Method: Exhaustive recursion to find all subsequences, checking if each is an even-length palindrome with no two adjacent identical chars.
+BF Complexity Visuals: Binary Choice Tree
+How to Draw BF: Draw a tree branching for every character (Include/Exclude). $O(2^N)$.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: Multi-Layered Grid
+Dry Run (Opt): dp[i][j][\text{last\_char}]: Max length for s[i \dots j] where the outer char is `last_char`. Base case: i, j match and 
+eq \text{prev}.
+How to Draw (Opt): Draw an N \times N grid. For each cell, draw a 26-slot vertical "depth" bar representing the possible last characters used.
+Opt Complexity Visuals: 3D Cube Fill
+How to Draw Opt Complexity: Draw a cube N \times N \times 26 being filled from small ranges to large ranges. $O(26 \cdot N^2)$.
+Mem Vis (BF): Recursive Call Stack: Deep stack of string slices.
+Mem Vis (Opt): 3D Array: Draw a block representing the N \times N \times 26 structure.

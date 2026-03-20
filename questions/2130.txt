@@ -1,0 +1,13 @@
+ID: 2130
+Problem Title: Maximum Twin Sum of a Linked List
+Brute Force Method: Convert the entire linked list into an Array/List, then use two pointers at the start and end to find the max sum.
+BF Complexity Visuals: Extracting nodes into a contiguous block before processing.
+How to Draw BF: Draw the Linked List. Draw arrows extracting the values into an array. Draw rainbow arches connecting the array ends. $O(N)$ time and space.
+Optimised Pattern: Fast/Slow Pointers + Reverse Linked List.
+Opt Vis. Technique: Folding a physical chain in half directly over itself.
+Dry Run (Opt): Use fast/slow pointers to find the middle. Reverse the second half of the list. Put one pointer at the head, one at the new middle. Sum pairs, update max, move both 1 step.
+How to Draw (Opt): Draw the list. Find the middle line. Erase the arrows in the second half and draw them pointing backward. Draw a curved line bringing the old tail directly under the head.
+Opt Complexity Visuals: $O(N)$ traversal.
+How to Draw Opt Complexity: Three straight linear passes: Find mid (fast/slow), Reverse half, Parallel sum check.
+Mem Vis (BF): $O(N)$ Array or List allocation to hold node values.
+Mem Vis (Opt): $O(1)$ auxiliary space, purely manipulating existing node pointers.

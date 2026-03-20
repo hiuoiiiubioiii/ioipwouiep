@@ -1,0 +1,13 @@
+ID: 3705
+Problem Title: Find Golden Hour Customers (Med)
+Brute Force Method: Compare every customer's timestamp with every other customer's timestamp. $O(N^2)$.
+BF Complexity Visuals: Complete Graph (Nodes and Edges).
+How to Draw BF: Draw dots for customers. Draw lines connecting EVERY dot to EVERY other dot.
+Optimised Pattern: Sorting + Sliding Window (Queue)
+Opt Vis. Technique: Expanding/Shrinking Window on Timeline
+Dry Run (Opt): Sort by time. Move Right pointer to add customers. Move Left pointer if Right-Left time diff &gt; 60 mins.
+How to Draw (Opt): Draw a horizontal timeline. Draw a bracket `[ ]` that expands to the right and drags its left tail when &gt; 60.
+Opt Complexity Visuals: $O(N \log N)$ curve for sort + $O(N)$ flat line.
+How to Draw Opt Complexity: Draw an upward curving line labeled $O(N \log N)$ (Sorting Phase), followed by a straight line $O(N)$ (Window Phase).
+Mem Vis (BF): Unordered Array memory layout.
+Mem Vis (Opt): Sorted Array layout + Left/Right index pointer variables.

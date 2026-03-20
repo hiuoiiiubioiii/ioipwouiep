@@ -1,0 +1,13 @@
+ID: 1863
+Problem Title: Sum of All Subset XOR Totals
+Brute Force Method: Generate all 2^N subsets, calculate the XOR of each, and sum the results.
+BF Complexity Visuals: Exponential Binary Tree.
+How to Draw BF: Draw a root. Branch left (include) and right (exclude) for every element. Mark all 2^N leaves.
+Optimised Pattern: Backtracking/Recursion or Bit Manipulation (Math: result is OR(all\_elements) \times 2^{n-1}).
+Opt Vis. Technique: Decision Tree of XOR states.
+Dry Run (Opt): Recursive function: `dfs(index, currentXor)`. Add `currentXor` to total. Recurse with `index+1` for both including and excluding `nums[index]`.
+How to Draw (Opt): Draw a tree. At each node, write the running XOR. Branch into "With element" and "Without element". Sum the leaf values.
+Opt Complexity Visuals: $O(2^N)$ for recursion or $O(N)$ for the bitwise math trick.
+How to Draw Opt Complexity: Draw a single arrow for the $O(N)$ math approach. Mark it as significantly faster than the $O(2^N)$ tree.
+Mem Vis (BF): Storing all subsets in a list of lists (O(N \cdot 2^N)).
+Mem Vis (Opt): $O(1)$ extra space for math; $O(N)$ depth for recursion stack.

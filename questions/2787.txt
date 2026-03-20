@@ -1,0 +1,13 @@
+ID: 2787
+Problem Title: Ways to Express an Integer as Sum of Powers
+Brute Force Method: Recursion: For each number i from 1 up to n, decide to either include i^p in the sum or not. Check if the total equals n. $O(2^n)$.
+BF Complexity Visuals: Subset Sum Decision Tree
+How to Draw BF: Draw a tree where each level represents a number. Branch "Add i^p" or "Skip". Leaves that sum to n are counted.
+Optimised Pattern: Exponential State Search (Visualizing all possible combinations of powers being summed).
+Opt Vis. Technique: 0/1 Knapsack Dynamic Programming
+Dry Run (Opt): Tabulation Row Update
+How to Draw (Opt): Create a DP array dp where dp[i] is the number of ways to sum to i. For each number v = j^p, iterate the DP array backwards: dp[i] = (dp[i] + dp[i - v]) % mod.
+Opt Complexity Visuals: Draw a row of boxes 0 to N. For a power (e.g., 8), slide a "Modifier" from right to left, adding the value from 8 steps back into the current box.
+How to Draw Opt Complexity: $O(N \cdot N^(1/P)$)
+Mem Vis (BF): Draw a grid where the number of rows is the number of available powers. Label it $O(N \cdot n^{1/p})$.
+Mem Vis (Opt): 1D DP Array (Draw a single array of size N+1 storing the counts for each sum).

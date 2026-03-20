@@ -1,0 +1,13 @@
+ID: 3559
+Problem Title: Number of Ways to Assign Edge Weights II (Hard)
+Brute Force Method: $O(N \cdot K)$ DP (as in 3558), which fails when K is very large.
+BF Complexity Visuals: Dense DP Grid (Huge Columns).
+How to Draw BF: Draw a DP grid with 10^5 columns. Shading this grid takes too much time/memory.
+Optimised Pattern: DP + Generating Functions / Polynomial Interpolation or NTT.
+Opt Vis. Technique: Coefficient Extraction from Series.
+Dry Run (Opt): Represent weight choices as polynomials. Multiplying polynomials (using NTT) represents combining ways across edges.
+How to Draw (Opt): Draw two polynomials being merged into one large polynomial. Use a "Fast Fourier" box to speed up the multiplication.
+Opt Complexity Visuals: $O(N \log N \log K)$ or $O(N \log^2 N)$.
+How to Draw Opt Complexity: Draw a recursion tree (Divide &amp; Conquer) where at each level you perform an NTT (N log N).
+Mem Vis (BF): Massive DP Tables: Draw the RAM being choked by a 2D array of size N x 100,000.
+Mem Vis (Opt): Coefficient Vectors: Draw small, dense arrays of coefficients being transformed in-place via NTT.

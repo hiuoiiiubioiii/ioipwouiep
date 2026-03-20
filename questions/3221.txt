@@ -1,0 +1,13 @@
+ID: 3221
+Problem Title: Maximum Array Hopping Score II
+Brute Force Method: DFS trying every single valid forward jump combination. $O(2^N)$.
+BF Complexity Visuals: Exponential Path Tree
+How to Draw BF: Draw the array indices as nodes. Draw lines from index 0 to every index &gt; 0. From index 1, draw lines to &gt; 1. Label leaves to show explosion.
+Optimised Pattern: Monotonic Stack / Greedy Suffix Max
+Opt Vis. Technique: Mountain Peak Hopping
+Dry Run (Opt): Traverse strictly backwards. Keep track of the highest peak seen so far. At each step, add the current highest peak to your running total score.
+How to Draw (Opt): Draw the array elements as a bar chart. Trace a line backwards from the right, extending horizontally to create a "staircase" covering the bars. Jump only to these step edges.
+Opt Complexity Visuals: Single Sweep Array Scan
+How to Draw Opt Complexity: Draw a single finger sliding exactly once from right-to-left across the array, assigning $O(1)$ ops per step. $O(N)$.
+Mem Vis (BF): Deep recursion call stack $O(N)$.
+Mem Vis (Opt): A single scalar variable tracking max peak (O(1) space).

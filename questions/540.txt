@@ -1,0 +1,13 @@
+ID: 540
+Problem Title: Single Element in a Sorted Array
+Brute Force Method: Linear scan through the array, checking pairs. If `nums[i] != nums[i+1]`, `nums[i]` is the single element. $O(N)$.
+BF Complexity Visuals: A single, long arrow scanning from left to right.
+How to Draw BF: Draw the array. Draw brackets under every two elements. Stop when a bracket contains different numbers.
+Optimised Pattern: Binary Search on Even Indices.
+Opt Vis. Technique: A balance scale. By checking an even index, you can tell if the "hitch" (the single element) occurred before or after your midpoint.
+Dry Run (Opt): `mid = left + (right-left)/2`. Ensure `mid` is even. If `nums[mid] == nums[mid+1]`, left = mid+2. Else, right = mid.
+How to Draw (Opt): Draw array. Point to middle even index. Check if it matches its neighbor. If yes, the single element is to the right. Narrow the search space.
+Opt Complexity Visuals: Logarithmic halving of the array. $O(\log N)$.
+How to Draw Opt Complexity: Draw the array, cut in half, cut in half again.
+Mem Vis (BF): $O(1)$ auxiliary space.
+Mem Vis (Opt): $O(1)$ auxiliary space (pointers).

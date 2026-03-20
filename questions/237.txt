@@ -1,0 +1,13 @@
+ID: 237
+Problem Title: Delete Node in a Linked List
+Brute Force Method: Traverse from head to find the node, but since head isn't given, this is "impossible" via traditional traversal.
+BF Complexity Visuals: Linear Scan: $O(N)$.
+How to Draw BF: Draw a chain. Draw a finger scanning from start to finish looking for the target.
+Optimised Pattern: Value Overwriting / "Node Identity Theft"
+Opt Vis. Technique: Leapfrog Pointer Swap
+Dry Run (Opt): You only have access to the node itself. Copy the value of the *next* node into the current node, then delete the next node.
+How to Draw (Opt): Draw two nodes. Write '5' and '1'. Copy '1' over '5'. Erase the 'Next' arrow of node 1 and point it to node 3.
+Opt Complexity Visuals: Instant Execution: $O(1)$ Time.
+How to Draw Opt Complexity: Draw a single dot. No loops, just two assignment operations.
+Mem Vis (BF): No extra memory.
+Mem Vis (Opt): No extra memory.

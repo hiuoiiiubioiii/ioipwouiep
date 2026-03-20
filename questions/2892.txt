@@ -1,0 +1,13 @@
+ID: 2892
+Problem Title: Minimizing Array After Replacing Pairs With Their Product
+Brute Force Method: Try multiplying every possible adjacent pair using backtracking to find the sequence that yields the shortest array. $O(2^N)$.
+BF Complexity Visuals: Recursive Array Collapse
+How to Draw BF: Draw the array. Pick a pair, multiply, branch. Pick a different pair, multiply, branch. Track the shortest branch.
+Optimised Pattern: Greedy Array Compression
+Opt Vis. Technique: The Running-Product Accumulator
+Dry Run (Opt): Iterate linearly. Maintain a `current_product`. If `current_product * nums[i] &lt;= k`, update the product (they fuse). Otherwise, the fusion breaks; reset `current_product = nums[i]` and increment the final array length counter.
+How to Draw (Opt): Draw the numbers. Roll a snowball left to right. As it rolls over a number, multiply it. If the snowball gets bigger than k, it shatters. Start rolling a new snowball and add 1 to your count.
+Opt Complexity Visuals: Single Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Each element undergoes one $O(1)$ multiplication and comparison.
+Mem Vis (BF): Storing thousands of array variations.
+Mem Vis (Opt): A single `current_product` variable. $O(1)$ space.

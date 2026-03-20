@@ -1,0 +1,13 @@
+ID: 582
+Problem Title: Kill Process
+Brute Force Method: For the target PID, scan the entire `ppid` list to find children. For each child found, repeat the scan to find grandchildren.
+BF Complexity Visuals: Recursive list scanning. $O(N^2)$.
+How to Draw BF: Draw a list of IDs. For ID 5, look at every other ID to see if its parent is 5. Repeat for every result.
+Optimised Pattern: Hash Map Adjacency List + BFS/DFS.
+Opt Vis. Technique: A family tree. You convert the flat list into a proper tree structure using a Map, then simply "prune" the branch starting at the target PID.
+Dry Run (Opt): Build Map: `parent -&gt; [children]`. Use a Queue (BFS) starting with `kill` PID. While queue not empty, pop PID, add to result, and push all its children from the Map to the queue.
+How to Draw (Opt): Draw a Map: `3: [1, 5], 5: [10]`. Draw a circle around 5. Follow the arrow to 10. All circled items are part of the "kill list."
+Opt Complexity Visuals: Single pass to build Map + single traversal. $O(N)$.
+How to Draw Opt Complexity: Draw a tree and shade an entire branch starting from a specific node downward.
+Mem Vis (BF): Large recursion stack with repeated full-list iterations.
+Mem Vis (Opt): Hash Map and a Queue/Stack. $O(N)$ space.

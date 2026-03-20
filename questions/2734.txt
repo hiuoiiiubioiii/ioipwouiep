@@ -1,0 +1,13 @@
+ID: 2734
+Problem Title: Lexicographically Smallest String After Substring Operation
+Brute Force Method: Try every possible substring. For each, decrement all characters (a → z). Compare all results to find the lexicographically smallest. $O(N³)$.
+BF Complexity Visuals: $O(N³)$ Comparison Matrix
+How to Draw BF: Draw a string. List every substring below it. Change the letters in each. Compare them all like a dictionary.
+Optimised Pattern: Exponential String Allocation (Visualize the heap filling with modified versions of the string).
+Opt Vis. Technique: Greedy Leading "a" Avoidance
+Dry Run (Opt): First-Non-'a' Segment Flip
+How to Draw (Opt): Find the first character that is NOT 'a'. Start the operation there. Continue the operation until you hit the next 'a' or the end of the string. If the string is all 'a's, flip only the very last 'a' to 'z'.
+Opt Complexity Visuals: Draw a string. Draw a "Flip Zone" box that starts at the first non-'a' and stops at the next 'a'. Draw arrows showing letters moving one step back (b → a).
+How to Draw Opt Complexity: Single Pass $O(N)$
+Mem Vis (BF): Draw a single arrow moving left to right. It stops or passes over 'a's. Label it $O(N)$.
+Mem Vis (Opt): In-place Character Array (Draw the string being converted to an array, modified, and joined. Space $O(N)$).

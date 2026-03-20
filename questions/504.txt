@@ -1,0 +1,13 @@
+ID: 504
+Problem Title: Base 7
+Brute Force Method: Repeated division by 7, storing remainders, handling negative sign manually. (Basically the optimal approach).
+BF Complexity Visuals: Division cascading downwards. $O(\log7 N)$.
+How to Draw BF: Draw the number, divide by 7, draw arrow to remainder. Repeat until quotient is 0.
+Optimised Pattern: Math / Simulation (Repeated Division and Modulo).
+Opt Vis. Technique: A factory machine splitting a number into quotient (recycled) and remainder (output string).
+Dry Run (Opt): Take N, N % 7 prepends to string, N = N / 7. Stop at 0. Add '-' if originally negative.
+How to Draw (Opt): Write number. Box the Modulo 7 result. Draw line connecting boxes bottom-up to form the final string.
+Opt Complexity Visuals: Logarithmic scale shrinking rapidly by factor of 7. $O(\log7 N)$.
+How to Draw Opt Complexity: Draw a block of N size, next block is 1/7th the size, next is 1/49th, showing rapid collapse.
+Mem Vis (BF): List of string fragments forming in memory.
+Mem Vis (Opt): String Builder / Array of characters dynamically growing up to log7(N) length.

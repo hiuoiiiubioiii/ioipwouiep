@@ -1,0 +1,13 @@
+ID: 721
+Problem Title: Accounts Merge
+Brute Force Method: Compare every account against every other account for common emails, repeatedly until no more merges occur.
+BF Complexity Visuals: Complete Bipartite Graph
+How to Draw BF: Draw N account boxes. Draw messy overlapping lines checking every string against every other string. $O(N^2 \cdot M^2)$ time.
+Optimised Pattern: Disjoint Set Union (DSU) / Union-Find
+Opt Vis. Technique: Connected Components Forest
+Dry Run (Opt): Map every email to an integer ID. Iterate accounts: union all emails in the same account. Group all emails by their DSU root, sort them, and attach the account name.
+How to Draw (Opt): Draw emails as circular nodes. Draw edges connecting emails from the same account. Circle the resulting disconnected clusters (components) to represent merged accounts.
+Opt Complexity Visuals: Inverse Ackermann Flatline
+How to Draw Opt Complexity: Draw a nearly flat horizontal line for DSU operations, followed by an $O(\text{NK} \\text{log NK})$ sorting funnel for the final grouping.
+Mem Vis (BF): Massive nested arrays duplicating strings.
+Mem Vis (Opt): Hash Maps for `email -&gt; ID` and DSU parent arrays (O(NK)).

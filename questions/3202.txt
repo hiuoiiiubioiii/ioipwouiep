@@ -1,0 +1,13 @@
+ID: 3202
+Problem Title: Find the Maximum Length of Valid Subsequence II
+Brute Force Method: Backtracking to build subsets, checking every pair's modulo sum (a+b)%k == val.
+BF Complexity Visuals: N-ary Branching Tree
+How to Draw BF: Draw the array. Pick an element, then draw K possible branches based on the target modulo, demonstrating factorial/exponential explosion.
+Optimised Pattern: 2D Dynamic Programming (Tracking mod pairs)
+Opt Vis. Technique: K x K Grid Mapping
+Dry Run (Opt): Draw a grid of size K by K. For each number, update cell (prev%k, curr%k) using the value from (curr%k, prev%k) + 1.
+How to Draw (Opt): Draw a matrix. Point a directional arrow from the incoming element to specific row/col index intersections and update the max lengths.
+Opt Complexity Visuals: Matrix Fill Animation
+How to Draw Opt Complexity: Draw an outer loop representing N, pointing to an inner loop block of size K. Write $O(N \cdot K)$ next to the nested block.
+Mem Vis (BF): Massive memory tree showing array subset duplications.
+Mem Vis (Opt): A K x K spatial matrix diagram proving $O(K^2)$ fixed space.

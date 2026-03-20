@@ -1,0 +1,13 @@
+ID: 3214
+Problem Title: Year on Year Growth Rate (SQL)
+Brute Force Method: Self-joins or Cartesian products matching records from year N to year N-1.
+BF Complexity Visuals: Relational Algebra Explosion
+How to Draw BF: Draw two massive tables side-by-side. Draw lines connecting every row in Table A to every row in Table B to show the $O(N^2)$ join penalty before filtering.
+Optimised Pattern: Window Functions (LAG / LEAD)
+Opt Vis. Technique: Rolling Window Table
+Dry Run (Opt): Draw a single table sorted by date. Point a downward arrow from the 'Current Year' row to a new column in the *same* row pulling data from 'Previous Year'.
+How to Draw (Opt): Sketch a table column. Draw an arrow curling backwards from index `i` to index `i-1` indicating the LAG operation pulling the previous value locally.
+Opt Complexity Visuals: Single-Pass Table Scan
+How to Draw Opt Complexity: Draw one large rectangular block representing the sorted table. Draw a single straight horizontal arrow passing through it, signifying an $O(N)$ sequential read.
+Mem Vis (BF): Duplicated temporary tables holding intermediate joins.
+Mem Vis (Opt): In-memory sorting buffer + sliding row pointers (O(1) extra space).

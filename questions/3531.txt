@@ -1,0 +1,13 @@
+ID: 3531
+Problem Title: Count Covered Buildings (Med)
+Brute Force Method: Iterate through all buildings, and for each, check against every single coverage interval.
+BF Complexity Visuals: Many-to-Many Overlap Grid.
+How to Draw BF: Draw N buildings as vertical bars. Draw M intervals above them. Draw lines from every interval down to every building it covers. $O(N \cdot M)$.
+Optimised Pattern: Difference Array / Line Sweep.
+Opt Vis. Technique: Sweeping Vertical Scanner.
+Dry Run (Opt): Sweep left to right. Add +1 to a running total when an interval starts, -1 when it ends. If total &gt; 0 at a building, it's covered.
+How to Draw (Opt): Draw a number line. Mark +1 at start coordinates and -1 at end coordinates. Plot a staircase graph showing the running sum going up and down.
+Opt Complexity Visuals: Linear Scan on Sorted Points.
+How to Draw Opt Complexity: Draw an array of sorted coordinates. Draw a single straight arrow sweeping across it, updating one variable. $O(N \log N)$.
+Mem Vis (BF): Boolean Arrays/Hash Sets: Draw a massive boolean array storing the covered state individually for every coordinate point.
+Mem Vis (Opt): Event Array + Counter: Draw an array of `[coordinate, +1/-1]` tuples, and a single integer variable for the active count.

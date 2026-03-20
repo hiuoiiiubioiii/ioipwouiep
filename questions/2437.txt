@@ -1,0 +1,13 @@
+ID: 2437
+Problem Title: Number of Valid Clock Times
+Brute Force Method: Iterate through all 1440 possible minutes in a 24h day (00:00 to 23:59). For each, check if it matches the pattern with '?'.
+BF Complexity Visuals: Complete Search Timeline
+How to Draw BF: Draw a clock face with a sweep line covering all 1440 ticks. Label $O(1440)$ which is $O(1)$.
+Optimised Pattern: Rule-Based Combinatorics (Independent Slots)
+Opt Vis. Technique: Permutation Slots
+Dry Run (Opt): Break the time into HH and MM. Calculate options for HH based on '?' positions (taking 24 into account) and MM (60). Multiply the two results.
+How to Draw (Opt): Draw 4 empty slots: [ ][ ] : [ ][ ]. Write the number of possibilities in each box based on the characters. Draw an 'X' (multiply) between them.
+Opt Complexity Visuals: Decision Tree (Fixed Depth)
+How to Draw Opt Complexity: Draw a small tree with 4 levels. Label $O(1)$ Time as it depends only on 5 characters.
+Mem Vis (BF): Draw a string buffer for pattern matching.
+Mem Vis (Opt): Draw 2-3 integer variables. $O(1)$ Space.

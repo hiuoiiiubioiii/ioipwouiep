@@ -1,0 +1,13 @@
+ID: 1129
+Problem Title: Shortest Path with Alternating Colors
+Brute Force Method: Modified BFS/DFS without state tracking. May result in infinite loops or missing the shortest "alternating" path.
+BF Complexity Visuals: Cyclic Graph Maze
+How to Draw BF: Draw a graph with red and blue edges. Try to find a path by hand, getting stuck in a loop of the same color.
+Optimised Pattern: BFS with Multi-State Tracking
+Opt Vis. Technique: Layered Graph Expansion
+Dry Run (Opt): Queue stores `(node, color_of_last_edge)`. Distance is tracked separately for "Reaching Node via Red" and "Reaching Node via Blue".
+How to Draw (Opt): Draw the graph twice (Red layer and Blue layer). An edge in the Red layer takes you to the Blue layer of the destination node. Run standard BFS on this "Split-Node" graph.
+Opt Complexity Visuals: Graph Traversal $O(V+E)$
+How to Draw Opt Complexity: Draw two parallel lines (Red/Blue). Trace a zigzag line jumping between the two. Total steps = sum of edges.
+Mem Vis (BF): Exponential path storage if DFS
+Mem Vis (Opt): Distance array `dist[N][2]` (size 2 x N).

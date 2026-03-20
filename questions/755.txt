@@ -1,0 +1,13 @@
+ID: 755
+Problem Title: Pour Water
+Brute Force Method: Simulate water movement by checking every possible position in the array for every single drop.
+BF Complexity Visuals: Exhaustive Scan Simulation
+How to Draw BF: Draw the heights. For each drop, draw an arrow scanning the entire array twice (left then right). $O(\text{Drops} \cdot N)$.
+Optimised Pattern: Two-Pointer Greedy Simulation
+Opt Vis. Technique: Gravity Pathfinding
+Dry Run (Opt): For each drop: 1. Move left as far as possible (downhill or flat). 2. If left is same as start, move right as far as possible. 3. Place drop at the best index found.
+How to Draw (Opt): Draw a bar chart. Use a pen to "trace" the path of a drop: slide down left slopes, if stuck, slide down right slopes. If trapped, stay.
+Opt Complexity Visuals: Linear Scan Per Drop
+How to Draw Opt Complexity: Draw a bar chart with an arrow moving left then right for each drop. $O(\text{Drops} \cdot N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ auxiliary space beyond the input array.

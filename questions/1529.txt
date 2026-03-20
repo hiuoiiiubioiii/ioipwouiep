@@ -1,0 +1,13 @@
+ID: 1529
+Problem Title: Minimum Suffix Flips (Bulb Switcher IV)
+Brute Force Method: When encountering a mismatch between current state and target, actually iterate through the rest of the string (the suffix) and flip all the bits physically. $O(N^2)$.
+BF Complexity Visuals: Massive Bit-Flipping Waves $O(N^2)$
+How to Draw BF: Draw a row of 0s. When a 1 is needed, draw an arrow physically flipping all remaining numbers to 1. Then when a 0 is needed later, draw an arrow flipping them all back. Huge redundant writes.
+Optimised Pattern: State Tracking / Greedy
+Opt Vis. Technique: The Virtual Toggle Switch
+Dry Run (Opt): Realize you don't need to physically flip anything. Just track the *current state* of the bulbs (starts at '0'). Iterate through the target string. If `target[i]` differs from `state`, increment a flip counter and toggle `state`.
+How to Draw (Opt): Draw the target string. Hold a token labeled '0'. Slide along the string. When the token doesn't match the current character, add a tally mark, flip the token over to '1', and keep sliding.
+Opt Complexity Visuals: Single State Scan $O(N)$
+How to Draw Opt Complexity: Draw a single timeline. Above the line, draw a toggle switch that flips its state whenever a mismatch is detected. No nested loops.
+Mem Vis (BF): An array of length N constantly being mutated. $O(N)$ space.
+Mem Vis (Opt): Two single variables: `flips` and `current_state`. $O(1)$ space.

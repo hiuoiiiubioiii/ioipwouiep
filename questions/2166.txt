@@ -1,0 +1,13 @@
+ID: 2166
+Problem Title: Design Bitset
+Brute Force Method: Actually flip every bit in an array when `flip()` is called.
+BF Complexity Visuals: $O(N)$ for every single flip operation.
+How to Draw BF: Draw a row of 100 boxes. For every 'flip' command, draw a hand manually changing every 0 to 1. $O(F \cdot N)$.
+Optimised Pattern: Lazy Flipping (Flag + Two Arrays).
+Opt Vis. Technique: A mirror that you can choose to look through or not.
+Dry Run (Opt): Maintain a `flipped` boolean. If true, interpret 0 as 1 and 1 as 0. Maintain two strings (one normal, one flipped) for `toString()`.
+How to Draw (Opt): Draw two bit-rows (Original vs. Inverted). Draw a toggle switch labeled "View". If switched to Inverted, read the second row. `flip()` just flips the switch.
+Opt Complexity Visuals: $O(1)$ for all operations (except toString).
+How to Draw Opt Complexity: A single dot representing instant toggle, with a one-time linear line for string conversion.
+Mem Vis (BF): A single integer array or boolean array.
+Mem Vis (Opt): Two separate BitSet arrays or strings + 1 boolean flag (O(N)).

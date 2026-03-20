@@ -1,0 +1,13 @@
+ID: 2418
+Problem Title: Sort the People
+Brute Force Method: Use a basic Bubble Sort or Selection Sort. Find the tallest height, swap it to the front of the heights array, and simultaneously swap the corresponding names in the names array.
+BF Complexity Visuals: Parallel Array Swapping
+How to Draw BF: Draw two arrays side-by-side (names, heights). Draw looping crossing lines over them indicating $O(N^2)$ nested swaps across both structures.
+Optimised Pattern: Hash Map Binding / Array of Objects + Sort
+Opt Vis. Technique: Key-Value Zipper
+Dry Run (Opt): Zip the names and heights together into a Map or pairs. Sort these pairs based on the height value in descending order. Unzip the sorted names into a final array.
+How to Draw (Opt): Draw a 2-column table (Height, Name). Draw a big downward arrow on the Height column labeled "Sort Descending", pulling the attached Names along with it.
+Opt Complexity Visuals: Standard Sorting Block
+How to Draw Opt Complexity: Draw a single large block labeled "Sort Algorithm". Label $O(N \log N)$ Time.
+Mem Vis (BF): Draw $O(1)$ space, as swaps happen in-place within the existing arrays.
+Mem Vis (Opt): Draw an array of Tuple/Pair objects or a Hash Map. Label $O(N)$ extra Space for the mapping.

@@ -1,0 +1,13 @@
+ID: 563
+Problem Title: Binary Tree Tilt
+Brute Force Method: For every node, perform a full DFS to calculate the sum of its left subtree and another for the right. Calculate difference.
+BF Complexity Visuals: N nodes each performing a subtree sum scan. $O(N^2)$.
+How to Draw BF: Draw a tree. For each node, draw two large circles around its subtrees to sum them up.
+Optimised Pattern: Post-order Traversal (Bottom-Up Summing).
+Opt Vis. Technique: A "weight-lifter" reporting back. Each child tells the parent their total weight. The parent calculates the "imbalance" (tilt) and reports the new total weight up.
+Dry Run (Opt): DFS returns the sum of the subtree. `tilt = abs(left_sum - right_sum)`. `total_tilt += tilt`. Return `node.val + left_sum + right_sum`.
+How to Draw (Opt): Draw a tree. Start at leaves. Write the sum of the subtree inside the node and the absolute difference (tilt) in a box next to it.
+Opt Complexity Visuals: Every node visited exactly once. $O(N)$.
+How to Draw Opt Complexity: Draw the tree and trace a single "U-shaped" path from bottom to top.
+Mem Vis (BF): Heavy recursion stack from repeated nested traversals.
+Mem Vis (Opt): Recursion stack proportional to tree height. $O(H)$.

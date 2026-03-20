@@ -1,0 +1,13 @@
+ID: 2017
+Problem Title: Grid Game
+Brute Force Method: Simulate every single path for Robot 1 (DFS), then for *each* path, simulate every possible path for Robot 2.
+BF Complexity Visuals: Exponential Branching Trees (Nested)
+How to Draw BF: Draw a massive binary tree of all paths. For *every single leaf node*, draw another entire binary tree representing Robot 2's choices. $O(2^N \cdot 2^N)$.
+Optimised Pattern: Prefix Sum &amp; Suffix Sum Arrays (Minimax pattern)
+Opt Vis. Technique: Pivoting Seesaw Balance
+Dry Run (Opt): Robot 1 goes down at column `i`. Robot 2 is forced to take either the top-right remainder or bottom-left remainder. Calculate both via prefix/suffix sums and minimize the max.
+How to Draw (Opt): Draw a 2xN grid. Draw a solid line going right, then dropping at column `i`. Shade the remaining top-right and bottom-left cells. Compare their sums.
+Opt Complexity Visuals: Three Parallel Array Scans
+How to Draw Opt Complexity: Draw two arrays representing $O(N)$ prefix/suffix buildup, followed by one more $O(N)$ scan to find the optimal pivot `i`. Total $O(N)$.
+Mem Vis (BF): Gigantic recursion stack frames copying the grid state at every single node.
+Mem Vis (Opt): Two 1D arrays of size N holding cumulative sums. Space $O(N)$ (can be optimized to $O(1)$ keeping running sums).

@@ -1,0 +1,13 @@
+ID: 2995
+Problem Title: Viewers Turned Streamers
+Brute Force Method: Use subqueries to find the first session of every user, then filter the original table in another pass to find streamers.
+BF Complexity Visuals: Two-Pass Scan Web
+How to Draw BF: Draw a table. Scan once for "Firsts", then again for "Streamers". $O(N^2)$.
+Optimised Pattern: Window Function (`FIRST_VALUE`) / `RANK()`
+Opt Vis. Technique: Attribute Tagging
+Dry Run (Opt): Assign a "first session type" to every row using `FIRST_VALUE() OVER(...)`. Filter for rows where `first_type = 'Viewer'` and current is `Streamer`.
+How to Draw (Opt): Draw a table. Add a "First Type" column. Fill it by looking at the earliest session for each ID. Circle rows that are 'Streamer' but have 'Viewer' in the new column.
+Opt Complexity Visuals: Sorted Linear Pass
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ for the window function.
+Mem Vis (BF): Multiple intermediate CTE tables.
+Mem Vis (Opt): One augmented data frame in memory. Space $O(N)$.

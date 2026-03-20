@@ -1,0 +1,13 @@
+ID: 963
+Problem Title: Minimum Area Rectangle II
+Brute Force Method: Try every combination of 4 points. For each set, check if they form a rectangle (even if rotated) using dot products and calculate area.
+BF Complexity Visuals: $O(N^4)$. Checking all quartets of points.
+How to Draw BF: Draw a scatter plot. Draw four lines connecting four dots in various orientations. The paper becomes a chaotic mess of tilted squares.
+Optimised Pattern: Center Point + Diagonal Property
+Opt Vis. Technique: "Matching Diagonals." A rectangle's diagonals have the same length and the same midpoint. Group all pairs of points by their (midpoint, length).
+Dry Run (Opt): 1. Map `(midpoint, length)` to a list of point-pairs. 2. For each list, any two pairs (P1, P2) and (P3, P4) form a rectangle. 3. Calculate areas and find the minimum.
+How to Draw (Opt): Draw two lines that cross exactly in the middle and are of equal length. Draw "Ghost" lines connecting the four endpoints to show the resulting rectangle.
+Opt Complexity Visuals: $O(N^2)$ to find all pairs, plus the complexity of checking pairs within the same group (usually small).
+How to Draw Opt Complexity: Draw a coordinate plane. Use a "Search" icon pointing to a Hash Map where the keys are `(x_mid, y_mid, dist)`.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): $O(N^2)$ to store all pair diagonals in the map. Draw a multi-column table: [(Midpoint, Length) -&gt; List of Pairs].

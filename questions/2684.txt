@@ -1,0 +1,13 @@
+ID: 2684
+Problem Title: Maximum Number of Moves in a Grid
+Brute Force Method: DFS from every cell in the first column, exploring all paths through the grid.
+BF Complexity Visuals: Redundant DFS Paths
+How to Draw BF: Draw a grid. From the first column, draw three branching arrows (up-right, right, down-right) for every step. $O(3^N)$.
+Optimised Pattern: DP / BFS (Visited Grid)
+Opt Vis. Technique: Frontier Expansion
+Dry Run (Opt): Iterate column by column. For each cell in column `j`, check if any of the three reachable cells in column `j-1` were "reachable" and had a smaller value. Track the furthest column reached.
+How to Draw (Opt): Draw a grid. Mark column 0 as "active". For column 1, mark cells that can be reached from active cells in column 0 with a strictly larger value. Move to column 2.
+Opt Complexity Visuals: $O(R \cdot C)$ Matrix Scan
+How to Draw Opt Complexity: Draw a block representing R * C. Each cell is processed exactly once per column.
+Mem Vis (BF): Deep recursive stack
+Mem Vis (Opt): $O(R)$ to store the current reachable "frontier" in the current column.

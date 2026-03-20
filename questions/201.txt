@@ -1,0 +1,13 @@
+ID: 201
+Problem Title: Bitwise AND of Numbers Range
+Brute Force Method: Iterate from left to right, applying bitwise AND iteratively to an accumulator.
+BF Complexity Visuals: Linear Timeline Line Graph: $O(N)$ where N is the difference between left and right.
+How to Draw BF: Draw a number line. Mark start and end. Draw an arrow connecting each integer, writing "T=1 unit" per step to show linear growth.
+Optimised Pattern: Bit Manipulation (Common Prefix Match)
+Opt Vis. Technique: Bit-shift Grid / Binary Tree Masking
+Dry Run (Opt): Write left and right in binary stacked vertically. Highlight the leftmost matching bits. Shift both right until they equal, then shift left.
+How to Draw (Opt): Draw two 32-bit arrays on top of each other. Box the identical bits on the left. Cross out differing bits on the right. Replace crossed out with 0s.
+Opt Complexity Visuals: Constant Time Block Diagram: $O(1)$ or $O(\log2(\text{max}_\text{val})$).
+How to Draw Opt Complexity: Draw a fixed box containing 32 slots. Show a loop arrow that maxes out at 32 iterations, concluding T ≤ 32 (O(1)).
+Mem Vis (BF): Single Accumulator Box: Erase and rewrite the integer state inside a single square.
+Mem Vis (Opt): Two Register Boxes: Show `m` and `n` shifting their bits simultaneously until equal.

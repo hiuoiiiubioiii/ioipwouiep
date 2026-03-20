@@ -1,0 +1,13 @@
+ID: 2830
+Problem Title: Maximize the Profit as the Salesman
+Brute Force Method: Recursively try every possible combination of house offers, skipping those that overlap, to find the maximum possible profit.
+BF Complexity Visuals: Overlapping Intervals Search Tree
+How to Draw BF: Draw a horizontal line representing houses. Draw brackets above for offers. Show the recursive tree branching for "Accept Offer" vs "Reject Offer," illustrating exponential overlap.
+Optimised Pattern: DP with Interval Grouping (Bucket Sort style)
+Opt Vis. Technique: DP State Transition
+Dry Run (Opt): Create a 1D DP array where dp[i] is max profit using houses up to i-1. Group all offers by their end position. For each house i, dp[i] = max(dp[i-1], ...dp[start] + gold) for all offers ending at i.
+How to Draw (Opt): Draw the DP array. For each index i, draw arrows coming from dp[i-1] and from dp[start] of any offer ending at i. Label arrows with profit values.
+Opt Complexity Visuals: Linear DP with Pre-processing
+How to Draw Opt Complexity: Draw a box for "Grouping Offers" $O(N + M)$ and a box for "DP Sweep" $O(N + M)$. Total complexity is linear with respect to houses and offers.
+Mem Vis (BF): Visualize a massive recursion stack with $O(2^M)$ potential states.
+Mem Vis (Opt): Visualize a 1D DP array of size n+1 and a list of lists (the buckets) for offers. Space is $O(n + m)$.

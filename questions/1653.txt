@@ -1,0 +1,13 @@
+ID: 1653
+Problem Title: Minimum Deletions to Make String Balanced
+Brute Force Method: Try every possible split point i. For each i, count 'b's on the left and 'a's on the right to delete.
+BF Complexity Visuals: N^2 Partition Search
+How to Draw BF: Draw a string. Draw a vertical line moving across it. At each position, draw two arrows scanning the whole string. $O(N^2)$.
+Optimised Pattern: Dynamic Programming / Greedy Tally
+Opt Vis. Technique: Balancing Scales
+Dry Run (Opt): Maintain a count of 'b's seen. If you encounter an 'a', you can either delete the current 'a' (cost +1) or delete all previous 'b's. Take the minimum.
+How to Draw (Opt): Draw a string. As you move right, keep a tally of 'b's. When an 'a' appears, decide: "Keep a and pay in B's" or "Drop a". Write the cost underneath each char.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single horizontal arrow moving left to right. $O(N)$.
+Mem Vis (BF): Prefix/Suffix Arrays: Draw two full arrays of size N storing counts.
+Mem Vis (Opt): Two Variables: Draw two boxes: `b_count` and `deletions`. $O(1)$ aux space.

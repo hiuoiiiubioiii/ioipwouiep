@@ -1,0 +1,13 @@
+ID: 3864
+Problem Title: Minimum Cost to Partition a Binary String (Hard)
+Brute Force Method: Backtracking: Try every possible split point in the binary string. For each segment, check if it's a power of 5 (or other rule) and calculate cost recursively.
+BF Complexity Visuals: An exponential recursion tree with overlapping sub-segments.
+How to Draw BF: Draw "1011". Split into "1"|"011", "10"|"11", etc. Write $O(2^N)$.
+Optimised Pattern: Dynamic Programming (1D).
+Opt Vis. Technique: A "Step-by-Step" build where each index i stores the minimum cost to partition the prefix S[0...i].
+Dry Run (Opt): Let `dp[i]` be min cost for S[0...i]. `dp[i] = min(dp[j] + 1)` for all j &lt; i where S[j+1...i] is a valid segment. Initialize `dp[0] = 0`, others as infty.
+How to Draw (Opt): Draw a string. Below it, draw a DP array. For each cell, look back at all previous cells. If the string between them is a power of 5, "jump" and add 1 to the cost.
+Opt Complexity Visuals: A nested loop $O(N^2)$ sweep.
+How to Draw Opt Complexity: Draw a line of N. Under each, draw arrows looking back to all previous indices. Write $O(N^2)$.
+Mem Vis (BF): Deep recursion stack, $O(N)$.
+Mem Vis (Opt): A 1D DP array of size N+1. Space $O(N)$.

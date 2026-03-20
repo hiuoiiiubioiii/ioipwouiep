@@ -1,0 +1,13 @@
+ID: 558
+Problem Title: Logical OR of Two Quadtrees
+Brute Force Method: Convert both Quadtrees into full N x N grids, perform a cell-by-cell OR operation, and then re-construct a Quadtree from the result.
+BF Complexity Visuals: Matrix explosion. $O(N^2)$ where N is the side length.
+How to Draw BF: Draw two 4x4 grids. Draw a third grid representing the OR result. Show the effort of checking 16 cells.
+Optimised Pattern: Recursive Tree Merging (Divide &amp; Conquer).
+Opt Vis. Technique: Merging two square maps. If one map is "solid color" (leaf), the result for that whole area is immediately determined without looking at the other map's details.
+Dry Run (Opt): If `t1.isLeaf`: return `t1.val ? t1 : t2`. If `t2.isLeaf`: return `t2.val ? t2 : t1`. Else, recurse on all 4 children. If all 4 children are leaves and same value, merge them into one leaf.
+How to Draw (Opt): Draw two Quadtrees (squares divided into 4). Overlay them. If a solid-1 square hits a divided square, color the whole area 1. If two divided squares hit, divide the result square too.
+Opt Complexity Visuals: Traversal bounded by the number of nodes in the trees. $O(N)$ where N is total nodes.
+How to Draw Opt Complexity: Draw two tree structures merging into one at the same depth levels.
+Mem Vis (BF): An N x N matrix in memory.
+Mem Vis (Opt): Recursion stack proportional to the depth of the Quadtree. $O(Log N)$.

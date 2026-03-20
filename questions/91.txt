@@ -1,0 +1,14 @@
+ID: 91
+Problem Title: Decode Ways
+Brute Force Method: Pure Recursion At each index, branch into two paths: one taking a single digit, and one taking two digits (if valid). Count total leaf nodes.
+BF Complexity Visuals: The Binary Branching Tree
+How to Draw BF: Draw a string like "121". Branch into '1' and '12'. From '1', branch into '2' and '21'. Note how many paths repeat the same sub-string calculations. $O(2^N)$.
+Optimised Pattern: 1D Dynamic Programming (Fibonacci-like)
+Opt Vis. Technique: The Staircase with Conditions
+Dry Run (Opt): dp[i] is the number of ways to decode the prefix of length i. It’s the sum of dp[i-1] (if the last digit is 
+eq 0) and dp[i-2] (if the last two digits form a number 10-26).
+How to Draw (Opt): Draw a line of cells. For each cell, look back at the previous one and the one before that. Draw arrows showing the "flow" of counts, but only if the decoding rules allow it.
+Opt Complexity Visuals: Single Forward Scan
+How to Draw Opt Complexity: Draw a straight arrow from index 0 to N. One pass, constant work per step. $O(N)$ time.
+Mem Vis (BF): A massive recursion stack with 2^N calls.
+Mem Vis (Opt): Draw just two variables (`prev1`, `prev2`) storing the counts of the last two states. $O(1)$ auxiliary space.

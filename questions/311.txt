@@ -1,0 +1,13 @@
+ID: 311
+Problem Title: Sparse Matrix Multiplication
+Brute Force Method: Standard matrix multiplication (Dot Product). Iterate all rows of A, all cols of B, multiplying every single element regardless of whether it is zero.
+BF Complexity Visuals: Triple Nested Loop Cube
+How to Draw BF: Draw Matrix A and Matrix B. Highlight a full row in A and a full col in B. Draw arrows combining them into a single cell in Matrix C. Label it $O(M \cdot K \cdot N)$.
+Optimised Pattern: Zero-Skipping Sparse Traversal / Compressed Sparse Row (CSR)
+Opt Vis. Technique: Bipartite Graph / Sparse Pointer Jump
+Dry Run (Opt): Iterate through A. If A[i][k] is zero, skip it immediately. If it's non-zero, iterate through row k of Matrix B. Multiply A[i][k] by B[k][j] and add to C[i][j].
+How to Draw (Opt): Draw Matrix A and B. Circle only the non-zero numbers. Draw a targeted arrow from a circled number in A straight to the corresponding row in B. Cross out the rows filled with zeros entirely.
+Opt Complexity Visuals: Pruned Volume (Sparse Grid)
+How to Draw Opt Complexity: Draw a 3D cube representing the $O(M\cdot K\cdot N)$ operations, but heavily shade/cross out 90% of the volume to show the time saved by skipping zeros.
+Mem Vis (BF): 3 full massive 2D matrix grids (A, B, and C) taking $O(M\cdot K + K\cdot N + M\cdot N)$ space.
+Mem Vis (Opt): Matrix C grid. For A and B, either the full grids or an Array of Lists where each list stores (col_index, non_zero_value) to drastically compress $O(\text{Memory})$.

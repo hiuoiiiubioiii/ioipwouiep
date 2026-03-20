@@ -1,0 +1,13 @@
+ID: 3601
+Problem Title: Find Drivers with Improved Fuel Efficiency (Med)
+Brute Force Method: (SQL/Data) Nested subqueries for every single driver row to calculate half-year averages, filtering line by line.
+BF Complexity Visuals: Relational Algebra Tree / Nested Loop join visualization.
+How to Draw BF: Draw a massive "for loop" box. Inside, draw an arrow pulling ONE driver out, then an arrow iterating over EVERY trip to filter by month. Write $O(N \cdot M)$ beside it.
+Optimised Pattern: Common Table Expressions (CTEs) + GROUP BY aggregation + Self JOIN.
+Opt Vis. Technique: Data Flow Pipeline / Table Funneling.
+Dry Run (Opt): Draw the base `trips` table. Draw a funnel showing `CASE WHEN month &lt;= 6` splitting data into two buckets (Half 1, Half 2). Draw a combine step averaging each bucket.
+How to Draw (Opt): Draw two separate mini-tables (CTE1: first_half, CTE2: second_half). Draw a line matching `driver_id` between them, crossing out rows where `H1_avg &gt;= H2_avg`.
+Opt Complexity Visuals: Pipeline Stage Complexity Map.
+How to Draw Opt Complexity: Draw 3 horizontal blocks: "Scan/Group Trips $O(T)$", "Scan/Join Drivers $O(D)$", "Sort $O(K \log K)$". Add them up sequentially.
+Mem Vis (BF): Draw RAM holding copies of the entire table multiple times for subqueries.
+Mem Vis (Opt): Draw RAM holding a hash map: Keys are driver_ids, Values are [Sum_H1, Cnt_H1, Sum_H2, Cnt_H2]. Shows exact space efficiency.

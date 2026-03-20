@@ -1,0 +1,13 @@
+ID: 3700
+Problem Title: Number of ZigZag Arrays II (Hard)
+Brute Force Method: Same as part I, but with N=10^5, making the $O(N^2)$ DP solution far too slow.
+BF Complexity Visuals: N^2 DP Time Limit Exceeded.
+How to Draw BF: Draw the N^2 grid from 3699. Imagine N is so large that filling the grid takes hours. Each cell requires a loop back over all previous cells.
+Optimised Pattern: DP + Segment Tree or Fenwick Tree. Use a coordinate-compressed Segment Tree to query the sum of `Up/Down` counts for all values smaller/larger than the current element in $O(\log N)$.
+Opt Vis. Technique: The "Rank-Based" Tree Query.
+Dry Run (Opt): Instead of scanning all previous j, "ask" a Segment Tree: "What is the sum of all 'Down' counts for elements with values between 0 and arr[i]-1?" The tree gives you the answer in logarithmic time.
+How to Draw (Opt): Draw a Segment Tree where the leaf nodes represent the sorted values of the array. As you process each arr[i], query the tree, update your current count, and then "insert" your new result back into the tree.
+Opt Complexity Visuals: N log N Data Structure Pass.
+How to Draw Opt Complexity: Draw an arrow for the array scan $O(N)$. Above each step, draw a small $O(\log N)$ tree traversal. Total $O(N \log N)$.
+Mem Vis (BF): A full N x N matrix.
+Mem Vis (Opt): A Segment Tree or Fenwick Tree structure. Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1293
+Problem Title: Shortest Path in a Grid with Obstacles Elimination
+Brute Force Method: Standard BFS exploring only `(row, col)`. This fails because you might need to take a longer path to save an "elimination" for later.
+BF Complexity Visuals: Missing Path State
+How to Draw BF: Draw a grid with obstacles. Draw a BFS that stops at an obstacle. Draw a red "X" showing the path blocked despite having elimination power.
+Optimised Pattern: BFS on 3D State (row, col, k)
+Opt Vis. Technique: Layered Grid Exploration
+Dry Run (Opt): The state is `(row, col, remaining_k)`. You can visit the same `(row, col)` multiple times as long as you have a different number of `k`. A queue manages the shortest path (distance) layer by layer.
+How to Draw (Opt): Draw 3 identical grids stacked like floors in a building. Floor 0: k=0 left. Floor 1: k=1 left. If you hit an obstacle on Floor 1, draw an arrow moving to a regular cell on Floor 0.
+Opt Complexity Visuals: Bounded 3D State BFS
+How to Draw Opt Complexity: Draw a cube representing M x N x K. Shade the BFS expansion inside it. Write $O(M \cdot N \cdot K)$.
+Mem Vis (BF): Draw a simple 2D visited array that leads to infinite loops or wrong answers.
+Mem Vis (Opt): Draw a 3D boolean array `visited[m][n][k]` or a Set of 3-tuples, plus a BFS Queue. Space: $O(M \cdot N \cdot K)$.

@@ -1,0 +1,13 @@
+ID: 399
+Problem Title: Evaluate Division
+Brute Force Method: For every query a/b, search through all given equations and try to find a chain of multiplications/divisions that links a to b.
+BF Complexity Visuals: Exhaustive Path Search
+How to Draw BF: Draw variables as nodes and ratios as edges. For each query, draw an arrow trying every possible neighbor. Label $O(Q \cdot E)$.
+Optimised Pattern: Graph + BFS/DFS or Disjoint Set Union (DSU) with Weights
+Opt Vis. Technique: Weighted Directed Graph Traversal
+Dry Run (Opt): Represent a/b = k as a directed edge a \xrightarrow{k} b and b \xrightarrow{1/k} a. Use DFS to find a path between query nodes, multiplying weights along the way.
+How to Draw (Opt): Draw nodes (A, B, C). Draw an edge A \to B with weight 2.0. Draw B \to C with weight 3.0. To find A/C, draw a path A \to B \to C and write 2.0 \times 3.0 = 6.0.
+Opt Complexity Visuals: Linear Graph Traversal per Query
+How to Draw Opt Complexity: Draw the graph once. For each query, draw a single highlighted path from start to end. $O(Q \cdot (V+E)$).
+Mem Vis (BF): A list of all possible intermediate string combinations.
+Mem Vis (Opt): Adjacency List + Visited Set. Draw a table mapping strings to lists of (string, double) pairs. $O(V+E)$.

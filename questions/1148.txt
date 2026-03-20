@@ -1,0 +1,13 @@
+ID: 1148
+Problem Title: Article Views I (SQL)
+Brute Force Method: Fetch all rows, loop through in Python, check `if author_id == viewer_id`, then put result in a set to handle duplicates and sort.
+BF Complexity Visuals: Row-by-Row Comparison
+How to Draw BF: Draw the table. For each row, circle the two columns `author_id` and `viewer_id`. If they are the same, write the ID on a side list.
+Optimised Pattern: SELECT DISTINCT + ORDER BY
+Opt Vis. Technique: Filter and Deduplication Funnel
+Dry Run (Opt): Use `WHERE author_id = viewer_id`. Then use `DISTINCT` to remove users who viewed multiple of their own articles. Sort the final output by ID.
+How to Draw (Opt): Draw a "Filter Gate" where only rows with matching IDs pass through. Then draw a "Sieve" (Distinct) that only lets one instance of each ID through.
+Opt Complexity Visuals: Linear Scan + Sort $O(N \log N)$
+How to Draw Opt Complexity: Draw a single pass scan followed by a small sorting tree for the unique IDs.
+Mem Vis (BF): Unbounded Python Set
+Mem Vis (Opt): Database-level Hash Set/Sorting buffer.

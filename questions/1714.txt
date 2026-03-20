@@ -1,0 +1,13 @@
+ID: 1714
+Problem Title: Sum Of Special Evenly-Spaced Elements In Array
+Brute Force Method: For every query, jump through the array step by step (by size `y`), summing the values on the fly.
+BF Complexity Visuals: Frog Jumping Loop.
+How to Draw BF: Draw array. For a query, draw a frog doing jumps of size `y` repeatedly until the end. $O(Q \cdot N)$.
+Optimised Pattern: Square Root Decomposition (Block separation).
+Opt Vis. Technique: Two-Lane Highway Routing.
+Dry Run (Opt): Threshold = `sqrt(N)`. If step size `y &lt;= sqrt(N)`, do an $O(1)$ lookup in a precomputed suffix array. If `y &gt; sqrt(N)`, do the manual frog jump (takes at most `sqrt(N)` jumps).
+How to Draw (Opt): Draw queries hitting a toll booth. "Small" queries route to a precomputed lookup table. "Large" queries route to a manual loop.
+Opt Complexity Visuals: Capped Funnel Limit.
+How to Draw Opt Complexity: Draw queries passing through a funnel constrained to a max width of `sqrt(N)`. Label $O(Q \\text{cdot sqrt}(N)$).
+Mem Vis (BF): Variables for summing on the fly. $O(1)$ extra space.
+Mem Vis (Opt): Wide but shallow 2D array: `suf[sqrt(N)][N]`. $O(N \\text{cdot sqrt}(N)$) space.

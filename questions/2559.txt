@@ -1,0 +1,13 @@
+ID: 2559
+Problem Title: Count Vowel Strings in Ranges
+Brute Force Method: For every query [l, r], loop through the array from l to r and check each string if it starts and ends with a vowel. $O(Q x N)$.
+BF Complexity Visuals: A searchlight scanning over the same parts of the array over and over for different queries.
+How to Draw BF: Draw the list of strings. For Query A, count the vowels from index 2 to 10. For Query B, count from 3 to 11. Notice you are counting index 3 to 10 twice.
+Optimised Pattern: Prefix Sum Array.
+Opt Vis. Technique: A "Cumulative Scorecard" where the answer for any range is found by subtracting two pre-calculated values.
+Dry Run (Opt): Create a binary array where 1 means "vowel string" and 0 means "not." Build a prefix sum array P where P[i] is the total vowel strings from index 0 to i. For any query [l, r], the answer is P[r] - P[l-1] in $O(1)$.
+How to Draw (Opt): Draw the strings. Below them, write '1' or '0'. Below that, write the running total (e.g., 0, 1, 1, 2, 3...). To find the count between two points, just subtract the two numbers at those points.
+Opt Complexity Visuals: $O(N + Q)$. Linear time to build the prefix sum, then constant time per query.
+How to Draw Opt Complexity: Draw an array of strings. Draw one single arrow sweeping across to build the sum array. Then draw Q small dots representing the instant lookups.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N)$ to store the prefix sum array.

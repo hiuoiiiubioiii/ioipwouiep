@@ -1,0 +1,13 @@
+ID: 1024
+Problem Title: Video Stitching
+Brute Force Method: Generate all possible subsets of the clips. For each subset, check if it perfectly covers the interval [0, T] without gaps. Return the minimum size subset that works.
+BF Complexity Visuals: An exploding decision tree of include/exclude operations, checking for continuous coverage only at the very bottom.
+How to Draw BF: Write all clips. Draw branching paths including or excluding clip 1, clip 2, etc. Write Time: $O(2^N)$.
+Optimised Pattern: Greedy (Interval Scheduling / Jump Game logic).
+Opt Vis. Technique: A series of overlapping searchlights. From your current position, look at all available searchlights and always pick the one that casts light the furthest to the right.
+Dry Run (Opt): Sort clips by start time. Track `current_end` and `farthest_reach`. Iterate clips that start before or at `current_end`, constantly updating `farthest_reach`. When you run out of clips in that range, increment your clip count and set `current_end = farthest_reach`.
+How to Draw (Opt): Draw a number line 0 to T. Draw clips as horizontal lines above it. Put a marker at 0. Find all clips starting &lt;= 0. Pick the one that goes furthest right. Move marker to its end. Repeat.
+Opt Complexity Visuals: Sort block followed by a single sweep.
+How to Draw Opt Complexity: Draw a sorting box `O(N log N)`. Then draw the array of intervals with one sweep arrow `O(N)`. Total Time: $O(N \log N)$.
+Mem Vis (BF): Massive exponential memory for tracking subsets or deep recursion stacks.
+Mem Vis (Opt): $O(1)$ space for tracking variables (`end`, `farthest`, `count`), plus $O(N)$ or $O(\log N)$ implicit space for the sorting algorithm.

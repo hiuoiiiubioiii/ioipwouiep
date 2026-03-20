@@ -1,0 +1,13 @@
+ID: 1906
+Problem Title: Minimum Absolute Difference Queries
+Brute Force Method: For each query, slice the sub-array, sort it, and compare adjacent elements to find the minimum difference.
+BF Complexity Visuals: Array Slicing &amp; Sorting Timeline
+How to Draw BF: Draw an array. Draw a bracket for the query range, extract it into a new box, sort it, and draw loops connecting adjacent elements. $O(Q \cdot N \log N)$.
+Optimised Pattern: Prefix Sums over Frequency Array
+Opt Vis. Technique: Frequency Prefix Matrix Subtraction
+Dry Run (Opt): Subtract prefix frequencies at `L-1` from `R` to get counts of numbers in the range. Iterate 1 to 100 to find the minimum difference between present numbers.
+How to Draw (Opt): Draw a 100-column matrix. Highlight row R and row L-1. Draw an arrow subtracting them to create a single 1D array of active frequencies. Find gaps.
+Opt Complexity Visuals: Constant Operations per Query Graph
+How to Draw Opt Complexity: Draw N blocks representing prefix building. Then draw Q blocks, each containing exactly 100 constant steps. $O(N\cdot 100 + Q\cdot 100)$.
+Mem Vis (BF): Dynamically allocated sub-arrays constructed and discarded on the heap for every single query.
+Mem Vis (Opt): A contiguous 2D array `prefix[N][100]` storing integer counts.

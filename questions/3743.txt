@@ -1,0 +1,13 @@
+ID: 3743
+Problem Title: Maximize Cyclic Partition Score (Hard)
+Brute Force Method: Try all N possible rotations of the array. For each, try all possible partition boundaries to find the max score. $O(N^3)$.
+BF Complexity Visuals: Rotating Ring + Combinatorial Cuts.
+How to Draw BF: Draw a circle of numbers. Spin it 1 step. Draw lines cutting it into partitions. Sum them. Spin again.
+Optimised Pattern: Double Array Concatenation + Monotonic Queue/DP
+Opt Vis. Technique: Unrolled Circle Sliding Window
+Dry Run (Opt): Concatenate array to itself `(arr + arr)` to simulate rotation. Use a sliding window of size N with DP to find the optimal partition score within any N-length segment.
+How to Draw (Opt): Draw the array twice side-by-side. Slide a bracket of length N across it. Apply partitioning math only inside the bracket using looking-back arrows.
+Opt Complexity Visuals: $O(N)$ single pass on 2N array.
+How to Draw Opt Complexity: Draw a line of length 2N with a sliding fixed-width box moving across it.
+Mem Vis (BF): $O(N)$ arrays generated repeatedly.
+Mem Vis (Opt): Array of length 2N + 1D DP Array.

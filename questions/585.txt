@@ -1,0 +1,13 @@
+ID: 585
+Problem Title: Investments in 2016 (SQL)
+Brute Force Method: For every investment, scan the whole table to check if its `TIV_2015` matches someone else, and then scan again to check if its location is unique.
+BF Complexity Visuals: Nested loop scans $O(N^2)$ or $O(N^3)$.
+How to Draw BF: Draw the table. For Row 1, search the whole table for a matching 2015 value. Then search the whole table again to ensure no one has the same Lat/Lon.
+Optimised Pattern: Window Functions or Subqueries with Group By.
+Opt Vis. Technique: Two checklists. Checklist 1: Is your 2015 value "popular" (shared by others)? Checklist 2: Is your location "exclusive" (held by only you)? If both are YES, you are counted.
+Dry Run (Opt): `WHERE TIV_2015 IN (SELECT TIV_2015 FROM insurance GROUP BY TIV_2015 HAVING COUNT(*) &gt; 1) AND (LAT, LON) IN (SELECT LAT, LON FROM insurance GROUP BY LAT, LON HAVING COUNT(*) = 1)`.
+How to Draw (Opt): Draw a tally sheet for TIV_2015 and a tally sheet for (Lat, Lon). Circle IDs that have a count &gt; 1 in the first sheet and a count = 1 in the second.
+Opt Complexity Visuals: Hash-based grouping and filtering. $O(N \log N)$.
+How to Draw Opt Complexity: Draw the main table flowing into two separate "Filter Bins," then joining back to the original.
+Mem Vis (BF): $O(1)$ extra space but very high time complexity.
+Mem Vis (Opt): Hash Map for grouping counts. $O(N)$.

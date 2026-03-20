@@ -1,0 +1,13 @@
+ID: 550
+Problem Title: Game Play Analysis IV (SQL)
+Brute Force Method: Find the first login for every player, then for each player, scan the whole table again to see if they logged in on `first_login + 1`.
+BF Complexity Visuals: N users each scanning an N-row table. $O(N^2)$.
+How to Draw BF: Draw the table. For each unique ID, draw an arrow searching every other row for a specific date match.
+Optimised Pattern: Subquery / CTE with Date Arithmetic.
+Opt Vis. Technique: Two filter screens. The first catches "First Logins." The second catches "Day After First Login." The ratio of the two is the result.
+Dry Run (Opt): 1. Find `MIN(event_date)` per player. 2. Join this with the original table on `player_id` and `event_date = min_date + 1`. 3. Count matching players / Count total players.
+How to Draw (Opt): Draw two tables side-by-side. Table A has only (ID, FirstDay). Table B has all data. Draw lines from Table A to Table B only if `B.Date = A.FirstDay + 1`.
+Opt Complexity Visuals: Sorting/Hashing by the database engine. $O(N \log N)$.
+How to Draw Opt Complexity: Draw two lists being zipped together based on a common key.
+Mem Vis (BF): Massive temporary cross-join table. $O(N^2)$.
+Mem Vis (Opt): Small intermediate tables for the CTE/Subquery. $O(N)$.

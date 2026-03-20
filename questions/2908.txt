@@ -1,0 +1,13 @@
+ID: 2908
+Problem Title: Minimum Sum of Mountain Triplets I
+Brute Force Method: Three nested loops checking all triplets for the `i &lt; j &gt; k` mountain condition.
+BF Complexity Visuals: Overlapping Triangles
+How to Draw BF: Draw three points forming a mountain peak. Draw multiple nested instances representing N^3 checks.
+Optimised Pattern: Prefix Min &amp; Suffix Min Arrays
+Opt Vis. Technique: Valley &amp; Peak Overlays
+Dry Run (Opt): Precalculate the minimums from the left up to `i`, and minimums from the right up to `i`. Check if current `j` forms a peak over both.
+How to Draw (Opt): Draw original array. Below it, draw LeftMin array (values drop or stay flat). Below that, RightMin array. Stack them to visually compare.
+Opt Complexity Visuals: Three Sequential Passes
+How to Draw Opt Complexity: Draw 3 distinct, non-overlapping straight horizontal lines. Time = $O(N)$ + $O(N)$ + $O(N)$ = $O(N)$.
+Mem Vis (BF): Three integer variables for loops. Space $O(1)$.
+Mem Vis (Opt): Two linear 1D arrays (`left_min`, `right_min`) alongside the input. Space $O(N)$.

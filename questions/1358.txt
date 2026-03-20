@@ -1,0 +1,13 @@
+ID: 1358
+Problem Title: Number of Substrings Containing All Three Characters
+Brute Force Method: Generate every possible substring $O(N^2)$ and check if each contains 'a', 'b', and 'c' $O(N)$.
+BF Complexity Visuals: $O(N³)$ Substring Sifting
+How to Draw BF: Draw a string. Draw every possible bracket. For each bracket, draw a magnifying glass looking for 'a', 'b', and 'c'.
+Optimised Pattern: Sliding Window (Two-Pointer / At-Most)
+Opt Vis. Technique: Shrinking Valid Window
+Dry Run (Opt): Move `right` pointer to include chars. Once you have all three, every substring starting at or before `left` and ending at `right` is valid. Add `left + 1` to total and move `left`.
+How to Draw (Opt): Draw a string. Slide `right` until you have 'a,b,c'. Note that everything to the left of the current `left` pointer *also* makes a valid string when combined with the current window.
+Opt Complexity Visuals: $O(N)$ Linear Slide
+How to Draw Opt Complexity: Draw two pointers moving together from left to right. They never go backward, proving exactly 2N steps.
+Mem Vis (BF): $O(N²)$ Substring Pool: Storing or processing every variation of the string.
+Mem Vis (Opt): Fixed Frequency Tracker: Draw a 3-slot array (or 3 integers) tracking counts of 'a', 'b', and 'c'. $O(1)$ space.

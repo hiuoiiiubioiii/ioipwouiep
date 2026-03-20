@@ -1,0 +1,13 @@
+ID: 1535
+Problem Title: Find the Winner of an Array Game
+Brute Force Method: Physically simulate the game by moving the loser to the end of the array (using `list.pop(0)` and `list.append()`) until someone wins K times. $O(N \cdot K)$.
+BF Complexity Visuals: Queue Rotation $O(N \cdot K)$
+How to Draw BF: Draw a circle of numbers. Two numbers fight, the loser moves to the back of the line. The numbers keep spinning in a circle until a winner is found.
+Optimised Pattern: One-Pass Greedy / Simulation
+Opt Vis. Technique: The King of the Hill
+Dry Run (Opt): Don't actually move any elements. Just keep track of the `current_winner`. Iterate through the array once. If the next element is bigger, it becomes the `new_winner` and the win-streak resets to 1. If you finish the array without a K-streak, the max element is the winner.
+How to Draw (Opt): Draw a line of people. The first person stands on a pedestal. They fight the next person in line. If they win, draw a tally mark on their chest. If they lose, they step down and the winner takes the pedestal.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Each element is compared exactly once. The game ends either when someone hits K wins or we reach the end of the line.
+Mem Vis (BF): Constant array re-allocations or shifts. $O(N^2)$ in some languages.
+Mem Vis (Opt): Two variables: `curr_winner` and `streak`. $O(1)$ space.

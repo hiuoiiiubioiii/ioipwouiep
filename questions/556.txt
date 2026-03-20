@@ -1,0 +1,13 @@
+ID: 556
+Problem Title: Next Greater Element III
+Brute Force Method: Generate all permutations of the digits of the given number, sort them, and find the one immediately larger than the input.
+BF Complexity Visuals: Factorial growth of digit permutations. $O(D!)$.
+How to Draw BF: Draw the number (e.g., 123). Draw a tree branching into 132, 213, 231, 312, 321. Circle the one just above 123.
+Optimised Pattern: Next Permutation Algorithm (Linear Scan).
+Opt Vis. Technique: A mountain range. You walk from right-to-left looking for the first "dip" (decrease), then swap and reverse the "slope" to make it as small as possible.
+Dry Run (Opt): 1. Find first digit `i` from right where `arr[i] &lt; arr[i+1]`. 2. Find digit `j` from right where `arr[j] &gt; arr[i]`. 3. Swap `i` and `j`. 4. Reverse everything after index `i`.
+How to Draw (Opt): Write the digits (e.g., 1 5 8 4 7 6 5 3 1). Draw a left-arrow until you hit 4. Draw a circle around 4 and the smallest number to its right that is larger (5). Swap them, then draw a "reverse" arc over the remaining tail.
+Opt Complexity Visuals: Two linear scans of the digits. $O(Log N)$ where N is the value (number of digits).
+How to Draw Opt Complexity: Draw a straight line of digits with two or three pointers moving across it.
+Mem Vis (BF): An array/list to store all D! permutations.
+Mem Vis (Opt): A small array of digits. $O(Log N)$ space.

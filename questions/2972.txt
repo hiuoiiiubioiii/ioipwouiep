@@ -1,0 +1,13 @@
+ID: 2972
+Problem Title: Count the Number of Incremovable Subarrays II
+Brute Force Method: Same as 2970 (Brute force removal and verification). $O(N^3)$.
+BF Complexity Visuals: Subarray Removal Grid
+How to Draw BF: Draw an N x N grid of shaded removal segments. Label "TLE" for N=10^5.
+Optimised Pattern: Two Pointers (Optimized Prefix/Suffix)
+Opt Vis. Technique: Dual-End Increasing Anchors
+Dry Run (Opt): Find the max increasing prefix [0, i] and suffix [j, N-1]. For each prefix index, binary search or use a second pointer to find the valid suffix start.
+How to Draw (Opt): Draw the array. Shade the "Head" and "Tail" that are increasing. Draw a sliding window between them that "skips" the middle junk.
+Opt Complexity Visuals: Two Sequential Scans
+How to Draw Opt Complexity: Draw a line of length N. The two pointers move towards each other once. T = $O(N)$.
+Mem Vis (BF): Storing all subarray configurations.
+Mem Vis (Opt): Standard integer pointers. Space $O(1)$.

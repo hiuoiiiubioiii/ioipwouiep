@@ -1,0 +1,13 @@
+ID: 2392
+Problem Title: Build a Matrix With Conditions
+Brute Force Method: Generate every possible K x K matrix. For each matrix, check if the row and column order constraints are satisfied for all numbers from 1 to K.
+BF Complexity Visuals: Exhaustive Matrix Permutations (O((K^2)!))
+How to Draw BF: Draw a K x K grid. Branch out by placing '1' in every possible cell, then '2' in every remaining cell. Check constraints at every leaf.
+Optimised Pattern: Topological Sort (Kahn's Algorithm)
+Opt Vis. Technique: Directed Acyclic Graph (DAG) Sequencing
+Dry Run (Opt): Treat row and column constraints as directed graphs. Perform Topological Sort on the row graph to get row indices, and on the column graph to get column indices. If a cycle exists, return empty. Otherwise, place i at `(row_idx[i], col_idx[i])`.
+How to Draw (Opt): Draw two sets of nodes (1 to K). Draw arrows for "Before/After" rules. Flatten the arrows into a straight line. Use the position in the "Row Line" as the vertical coordinate and the "Column Line" as the horizontal coordinate.
+Opt Complexity Visuals: Linear Graph Traversal (O(K + E))
+How to Draw Opt Complexity: Draw two separate DAGs being flattened into linear sequences. No 2D grid searching; just two 1D sorts.
+Mem Vis (BF): Draw a massive recursion stack for all possible grid placements.
+Mem Vis (Opt): Draw two Adjacency Lists and two 1D "Index Maps" of size K.

@@ -1,0 +1,13 @@
+ID: 356
+Problem Title: Line Reflection
+Brute Force Method: For every point (x, y), calculate its potential reflection across every possible vertical line and check if the reflected point exists in the input set.
+BF Complexity Visuals: Exhaustive Symmetric Search
+How to Draw BF: Draw a set of random dots. Pick a random vertical line. For every dot, draw a horizontal dashed line across the vertical line to see if it "hits" another dot. Repeat for all dots. $O(N^2)$.
+Optimised Pattern: Hash Set + Extremity Midpoint
+Opt Vis. Technique: Symmetry Axis Projection
+Dry Run (Opt): Find the minimum and maximum x-coordinates (minX, maxX). The only possible reflection line is x = (minX + maxX) / 2. Store all points in a Hash Set. For every point (x, y), check if (minX + maxX - x, y) is in the set.
+How to Draw (Opt): Draw a scatter plot. Identify the leftmost and rightmost points. Draw a bold dotted line exactly in the middle. Use arrows to "pair up" dots from the left and right.
+Opt Complexity Visuals: Linear Set Membership Check
+How to Draw Opt Complexity: Draw a horizontal line. Draw two dots at the ends and one in the middle. Label the middle 'S' and the ends 'x1' and 'x2' where x1 + x2 = S. $O(N)$.
+Mem Vis (BF): A 2D matrix or list of points requiring redundant comparisons.
+Mem Vis (Opt): Hash Set of Strings/Tuples. Draw a single hash table where each key is a string "x,y". $O(N)$ space.

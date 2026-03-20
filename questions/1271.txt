@@ -1,0 +1,13 @@
+ID: 1271
+Problem Title: Hexspeak
+Brute Force Method: Convert the decimal string to a hex string. Then, manually iterate through every hex character and check if it's in the valid set {A, B, C, D, E, F, I, O}.
+BF Complexity Visuals: Character-by-Character Mapping
+How to Draw BF: Draw the hex string. Above each character, draw a magnifying glass. If it's '1', write 'I'. If '0', write 'O'. If '2-9', draw a red "ERROR". Write $O(\log₁₆N)$.
+Optimised Pattern: Direct String Transformation + Regex
+Opt Vis. Technique: Lookup Table / Filter Funnel
+Dry Run (Opt): Convert the entire number to uppercase Hex. Replace '1' with 'I' and '0' with 'O'. Use a filter to see if any remaining characters are digits '2-9'. If yes, it's "ERROR".
+How to Draw (Opt): Draw a box labeled "Hex Converter". Feed the number in. Output a string. Draw a "Validator" box that checks for digits 2-9. If the validator is green, replace 1-&gt;I and 0-&gt;O.
+Opt Complexity Visuals: Constant-Time String Scan
+How to Draw Opt Complexity: Draw a single arrow scanning the hex string once. Write $O(\log₁₆N)$.
+Mem Vis (BF): Draw a temporary list of individual characters.
+Mem Vis (Opt): Draw a single string builder or modified string object. Space: $O(\log₁₆N)$.

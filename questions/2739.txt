@@ -1,0 +1,13 @@
+ID: 2739
+Problem Title: Total Distance Traveled
+Brute Force Method: Use a while loop to decrement the main tank. Every time the "liters used" reaches 5, check the additional tank and move 1 liter if available. $O(\text{MainTank})$.
+BF Complexity Visuals: Simulation Step Trace
+How to Draw BF: Draw two tanks with fuel units. Cross out 5 from tank A, move 1 from tank B to A. Repeat until tank A is empty.
+Optimised Pattern: Integer State Mutation (Visualizing the variables main and additional changing over time).
+Opt Vis. Technique: Mathematical Simulation (Math-Based)
+Dry Run (Opt): Cycle-Based Calculation
+How to Draw (Opt): Total distance is (mainTank + min((mainTank - 1) / 4, additionalTank)) * 10. This formula accounts for the "bonus" liters earned every 5 liters used.
+Opt Complexity Visuals: Draw a timeline of 5km blocks. For every 5 blocks, draw a tiny "+1" liter icon appearing above the line, up to the limit of the second tank.
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single calculation box. Write $O(1)$ because no loops are required.
+Mem Vis (Opt): Zero Extra Space (Draw a single ans variable).

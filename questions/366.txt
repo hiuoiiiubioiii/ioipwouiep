@@ -1,0 +1,13 @@
+ID: 366
+Problem Title: Find Leaves of Binary Tree
+Brute Force Method: Repeatedly traverse the tree, find all current leaf nodes, add them to a list, and remove them. Repeat until the root is removed.
+BF Complexity Visuals: Iterative Tree Pruning (Multi-pass)
+How to Draw BF: Draw a tree. Circle the leaves and "pluck" them. Redraw the remaining tree. Repeat. Label it $O(N^2)$ in the worst case (skewed tree).
+Optimised Pattern: DFS with Height-Based Grouping
+Opt Vis. Technique: Inverse Height Mapping
+Dry Run (Opt): Use DFS to calculate the distance from the furthest leaf (height). Leaves have height 0. Their parents have height 1. Use the height as an index to a list of lists to group nodes.
+How to Draw (Opt): Draw a tree. At each node, write its height (Max(Left, Right) + 1). Draw arrows pointing from nodes to a vertical list of "buckets" indexed by those height numbers.
+Opt Complexity Visuals: Single-Pass DFS Traversal
+How to Draw Opt Complexity: Draw a single DFS path through the tree. Label it $O(N)$.
+Mem Vis (BF): Creating new tree objects or list of lists per iteration.
+Mem Vis (Opt): Recursion stack + Result list of lists. Draw a vertical stack and a set of growing horizontal tapes. $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1971
+Problem Title: Find if Path Exists in Graph
+Brute Force Method: Try every possible path from source to destination using simple recursion without tracking visited nodes (leads to infinite cycles).
+BF Complexity Visuals: Infinite Cyclic Graph Walk
+How to Draw BF: Draw a source node. Draw arrows moving back and forth between two nodes indefinitely, showing a path that never ends. $O(\text{Infinite})$.
+Optimised Pattern: Union-Find (Disjoint Set Union)
+Opt Vis. Technique: Disjoint Set Forest
+Dry Run (Opt): For each edge, connect the two nodes in the DSU structure. Finally, check if find(source) == find(destination).
+How to Draw (Opt): Draw dots for nodes. For each edge, draw a line. Use "clouds" to circle connected components. Check if source/dest are in the same cloud.
+Opt Complexity Visuals: Path Compression Tree Flatting
+How to Draw Opt Complexity: Draw a deep tree. Draw an arrow bypassing intermediate nodes to point directly to the root. $O(E α(V)$).
+Mem Vis (BF): Deep recursive stack that crashes on large graphs.
+Mem Vis (Opt): A 1D array `parent[N]` representing the forest structure. $O(V)$ space.

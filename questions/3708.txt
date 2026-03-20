@@ -1,0 +1,13 @@
+ID: 3708
+Problem Title: Longest Fibonacci Subarray (Med)
+Brute Force Method: For every pair (i, j), scan forward to see how long the Fibonacci sequence continues.
+BF Complexity Visuals: Triple nested loops $O(N^3)$.
+How to Draw BF: Draw array. Pick two numbers. Draw an arrow to their sum. Repeat until the chain breaks. Restart with new pair.
+Optimised Pattern: Dynamic Programming / Hash Map
+Opt Vis. Technique: 2D DP State Matrix
+Dry Run (Opt): Map value to index. For each pair, look up the previous required number in map. DP[i][j] = DP[prev][i] + 1.
+How to Draw (Opt): Draw a 2D table where rows/cols are indices. Fill cells with sequence lengths, tracing back via map lookups.
+Opt Complexity Visuals: $O(N^2)$ Matrix fill.
+How to Draw Opt Complexity: Draw a square grid and shade it in row by row to signify $O(N^2)$ time.
+Mem Vis (BF): Call stack frames for recursion.
+Mem Vis (Opt): 2D Array (DP Table) + Hash Map.

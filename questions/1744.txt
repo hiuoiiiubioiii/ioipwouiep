@@ -1,0 +1,13 @@
+ID: 1744
+Problem Title: Can You Eat Your Favorite Candy on Your Favorite Day?
+Brute Force Method: For every query, simulate eating candies day-by-day until the favorite day. Check if the candy eaten is of the target type.
+BF Complexity Visuals: Daily Consumption Simulation.
+How to Draw BF: Draw days. Draw eating 1 candy, then 2, etc. Repeat for every query. $O(Q \\text{cdot TotalCandies})$.
+Optimised Pattern: Prefix Sums + Range Intersection (Inequality Check).
+Opt Vis. Technique: Overlapping Temporal Windows.
+Dry Run (Opt): Precompute Prefix Sums of candy counts. For each query, calculate the min candies needed (day + 1) and max candies possible ((day + 1) * cap). Check if this range overlaps with the range of the target candy type.
+How to Draw (Opt): Draw a long bar of candies colored by type. Below it, draw a "Day Range" bracket. If the bracket touches the target color, it's true.
+Opt Complexity Visuals: Preprocessing + $O(1)$ Query.
+How to Draw Opt Complexity: Draw a prefix sum array $O(N)$. Draw Q checkmarks $O(Q)$. Total $O(N + Q)$.
+Mem Vis (BF): Variables for current candy type and day.
+Mem Vis (Opt): Prefix sum array of size N. $O(N)$ space.

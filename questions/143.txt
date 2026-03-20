@@ -1,0 +1,13 @@
+ID: 143
+Problem Title: Reorder List
+Brute Force Method: Copy all nodes into an array/list. Use two pointers on the array (start and end) to reconstruct the list by re-assigning next pointers.
+BF Complexity Visuals: An $O(N)$ array buffer sitting parallel to the original list.
+How to Draw BF: Draw the list. Draw an array below it and copy the node values. Draw arrows from array index 0 to index N, then index N to index 1, etc.
+Optimised Pattern: Find Middle + Reverse Second Half + Interweave.
+Opt Vis. Technique: A deck of cards being split in half, the second half flipped, and then a "riffle shuffle" performed.
+Dry Run (Opt): 1. Find mid (slow/fast). 2. Reverse list from mid.next. 3. Merge two halves (Node1 rightarrow NodeN rightarrow Node2 rightarrow NodeN-1...).
+How to Draw (Opt): Draw the list. Draw a line through the middle. Draw arrows reversing the second half. Then draw zigzag lines connecting nodes from the first and second sections.
+Opt Complexity Visuals: $O(N)$ time across three distinct linear phases (Find, Reverse, Merge).
+How to Draw Opt Complexity: Draw the list as three segments. Show that each segment is processed once, resulting in 3 x $O(N)$ approx $O(N)$.
+Mem Vis (BF): An auxiliary array or list in heap memory taking $O(N)$ space.
+Mem Vis (Opt): Visualize $O(1)$ auxiliary space. The pointers are re-wired in place; only a few temporary variables exist in the stack.

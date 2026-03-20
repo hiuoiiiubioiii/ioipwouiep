@@ -1,0 +1,13 @@
+ID: 1163
+Problem Title: Last Substring in Lexicographical Order
+Brute Force Method: Generate all possible substrings, sort them, and return the last one.
+BF Complexity Visuals: Massive Dictionary List
+How to Draw BF: Draw a string. List every possible starting point and every possible length. $O(N^2)$ substrings, sorting takes $O(N^2 \log N \cdot N)$.
+Optimised Pattern: Two Pointers (Optimal Suffix Comparison)
+Opt Vis. Technique: Pointer Competition / Race
+Dry Run (Opt): Set i=0, j=1. Compare chars at i+k and j+k. If S[i+k] &lt; S[j+k], i is no longer a candidate for the start; move i past k and restart comparison.
+How to Draw (Opt): Draw a string. Place two arrows i and j. If i loses the comparison, jump it ahead. The arrow that survives the longest is the start of the lexicographical max.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw two arrows moving forward. They never look back, ensuring total time is $O(N)$.
+Mem Vis (BF): Storage of all substrings $O(N^3)$
+Mem Vis (Opt): Constant $O(1)$ extra space (just pointers).

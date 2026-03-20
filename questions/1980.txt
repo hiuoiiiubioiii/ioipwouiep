@@ -1,0 +1,13 @@
+ID: 1980
+Problem Title: Find Unique Binary String
+Brute Force Method: Generate all 2^n binary strings of length n and check which one is not present in the input list.
+BF Complexity Visuals: Exhaustive Permutation Grid
+How to Draw BF: Draw a table with 2^n rows. Cross out the n rows provided. Show the massive number of remaining candidates. $O(2^N)$.
+Optimised Pattern: Cantor's Diagonalization
+Opt Vis. Technique: Diagonal Bit Toggling
+Dry Run (Opt): For the i-th binary string in the input, pick its i-th character and flip it (0 to 1, or 1 to 0). The resulting string is guaranteed to be unique.
+How to Draw (Opt): Draw an n \times n matrix of the input strings. Circle the diagonal from top-left to bottom-right. Write the flipped bits below.
+Opt Complexity Visuals: Single-Pass Diagonal Scan
+How to Draw Opt Complexity: Draw a line slicing through the input matrix diagonally. One operation per string. $O(N)$.
+Mem Vis (BF): A Hash Set containing up to 2^n binary strings.
+Mem Vis (Opt): A single StringBuilder or character array of length N. $O(N)$ space.

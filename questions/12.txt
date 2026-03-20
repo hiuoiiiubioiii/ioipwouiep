@@ -1,0 +1,13 @@
+ID: 12
+Problem Title: Integer to Roman
+Brute Force Method: Massive If/Else Chains Hardcode conditions for every specific range (if &gt; 1000, else if &gt; 900...).
+BF Complexity Visuals: Tangled Flowchart
+How to Draw BF: Draw a giant, messy decision tree checking value ranges, visually representing ugly and hard-to-maintain code.
+Optimised Pattern: Greedy Subtraction (Coin Change)
+Opt Vis. Technique: The Greedy Cashier
+Dry Run (Opt): Treat Roman symbols as coin denominations (1000, 900, 500...). Always hand back the largest "coin" possible until the number hits 0.
+How to Draw (Opt): Draw two parallel lists: Values [1000, 900, 500...] and Symbols [M, CM, D...]. Point at the largest value &lt;= num. Subtract value, append symbol.
+Opt Complexity Visuals: Fixed-Length Steps
+How to Draw Opt Complexity: Draw a loop executing at most 13 times (the number of specific Roman numeral symbols/combos). Constant time loop = $O(1)$ time complexity.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw two fixed-size arrays (size 13) acting as lookup tables. Because their size never changes regardless of input, space is $O(1)$.

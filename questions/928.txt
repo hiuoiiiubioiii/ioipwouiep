@@ -1,0 +1,13 @@
+ID: 928
+Problem Title: Minimize Malware Spread II
+Brute Force Method: For each malware node, remove it AND all its edges, run BFS to count total infections, and pick the one that results in the lowest count.
+BF Complexity Visuals: $O(M \cdot (V + E)$). Repeated graph traversals for every malware node.
+How to Draw BF: Draw the graph. Draw 'M' different versions of the graph, each with one malware node and its connections erased. Color the remaining infections.
+Optimised Pattern: Graph Connectivity (Unique Source Tracking)
+Opt Vis. Technique: "Safe Zones." Identify components that are connected to exactly ONE malware node. Removing that specific node saves the entire component.
+Dry Run (Opt): 1. Ignore all malware and find "clean" components. 2. For each clean component, count which malware nodes can reach it. 3. If a component is reachable by ONLY one malware node, add its size to that node's "saved" score.
+How to Draw (Opt): Draw clean node clusters as bubbles. Draw malware nodes outside. Draw lines from malware into bubbles. Highlight bubbles that have only one line entering them.
+Opt Complexity Visuals: $O(N^2)$. Building the graph and analyzing components once.
+How to Draw Opt Complexity: Draw a bipartite graph mapping Malware Nodes to Component IDs. Count the "degree" of each Component node.
+Mem Vis (BF): Deep recursion or large queues for multiple BFS runs.
+Mem Vis (Opt): $O(N)$ for component mapping and malware source lists. Draw a table mapping `Component_ID -&gt; List of Malware Sources`.

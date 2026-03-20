@@ -1,0 +1,13 @@
+ID: 41
+Problem Title: First Missing Positive
+Brute Force Method: Sort &amp; Scan Sort the array first, then scan from left to right looking for the number 1, then 2, then 3, until a gap is found.
+BF Complexity Visuals: The Snail Sort
+How to Draw BF: Draw an array. Draw a massive $O(N \log N)$ sorting machine above it, taking up unnecessary time. Below it, draw a scanner looking for a gap.
+Optimised Pattern: Cyclic Sort (Index as Map)
+Opt Vis. Technique: The Rightful Chair
+Dry Run (Opt): Every number `x` belongs in index `x-1` (e.g., the number 5 belongs at index 4). Swap numbers into their "rightful chairs" until they are out of bounds or already correct. Then find the first empty chair.
+How to Draw (Opt): Draw an array. Point at number '3' in index 0. Draw a curved arrow picking up '3' and swapping it with whatever is at index 2. Repeat until index 0 holds '1' or a useless number (like -5).
+Opt Complexity Visuals: The Swapping Chain
+How to Draw Opt Complexity: Draw a timeline where each step is a swap. Emphasize that every number is swapped at most ONCE into its correct place. Total time strictly bounded to $O(N)$.
+Mem Vis (BF): Requires $O(N \log N)$ time overhead or an $O(N)$ Hash Set.
+Mem Vis (Opt): Draw the original array shuffling elements in-place. Because we hijack the array's own indices to act as our Hash Map, space is $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2638
+Problem Title: Count the Number of K-Free Subsets
+Brute Force Method: Generate all 2^N subsets and check the condition for each.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw a binary tree of depth N where each path is a subset. Total nodes = 2^N.
+Optimised Pattern: Sorting + DP on Chains
+Opt Vis. Technique: Connected Chain DP
+Dry Run (Opt): Group numbers by their remainders mod `K`. In each group, sort numbers. If two numbers differ by `K`, they are "conflicting". Use DP (like House Robber) to count valid subsets for each group.
+How to Draw (Opt): Draw chains of numbers: e.g., (1 -&gt; 3 -&gt; 5) if K=2. For each chain, calculate subset counts using `dp[i] = dp[i-1] + dp[i-2]`. Multiply results.
+Opt Complexity Visuals: Linear Sorting Block
+How to Draw Opt Complexity: Draw sorting $O(N \log N)$ followed by a linear $O(N)$ pass for DP calculations.
+Mem Vis (BF): Massive subset storage
+Mem Vis (Opt): Frequency map + DP array or constant space variables per chain.

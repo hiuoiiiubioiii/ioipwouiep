@@ -1,0 +1,13 @@
+ID: 124
+Problem Title: Binary Tree Maximum Path Sum
+Brute Force Method: For every node in the tree, find the max path that *ends* at that node, then try to join them to form the max path *through* that node.
+BF Complexity Visuals: $O(N²)$ or $O(N \log N)$ overlapping height/path calculations for every subtree root.
+How to Draw BF: Draw a tree. For every node, draw all possible paths that could pass through it. Show the messy overlaps.
+Optimised Pattern: Bottom-Up DFS (Post-order Traversal) with a Global Max tracker.
+Opt Vis. Technique: A "heartbeat" monitor. Each node calculates its best "branch" to offer its parent, while secretly checking if the path *through* itself beats the global record.
+Dry Run (Opt): Recurse to leaves. A node returns node.val + max(left_gain, right_gain, 0). Inside the function, update global_max with node.val + left_gain + right_gain.
+How to Draw (Opt): Draw a tree. Write the "contribution" value (best path up) next to each node. Use a "Global Max" box in the corner to update as you see bigger combined paths.
+Opt Complexity Visuals: $O(N)$ single-pass traversal. Every node is visited once and its values are processed in constant time.
+How to Draw Opt Complexity: Trace the post-order path (left, right, root). Cross out nodes as they return their single integer value to their parent.
+Mem Vis (BF): Multiple redundant recursive stacks or deep path-list storage.
+Mem Vis (Opt): Visualize the $O(H)$ call stack where each frame only stores one or two integer variables and the return value.

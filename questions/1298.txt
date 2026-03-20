@@ -1,0 +1,13 @@
+ID: 1298
+Problem Title: Maximum Candies You Can Get from Boxes
+Brute Force Method: Recursively open boxes. If you find a box you can't open (no key), store it and check back every time you find a new key.
+BF Complexity Visuals: Unstructured Recursive Search
+How to Draw BF: Draw a tree of boxes. Draw lines looping back from keys to previously locked boxes. Write $O(N^2)$ due to repeated re-scanning of "waiting" boxes.
+Optimised Pattern: BFS with Two-Condition Entry (Keys + Possession)
+Opt Vis. Technique: The "Ready-to-Open" Queue
+Dry Run (Opt): Maintain three states: `HasBox` (Boolean array), `HasKey` (Boolean array), and `Visited`. When you get a box, mark `HasBox`. When you get a key, mark `HasKey`. A box enters the BFS queue only if `HasBox AND HasKey AND !Visited`.
+How to Draw (Opt): Draw a "Holding Area" for locked boxes and a "Keychain". When a new key comes, check the Holding Area. If the box is there, move it to the "Open Queue". When a new box comes, check the Keychain.
+Opt Complexity Visuals: Single-Pass State Graph
+How to Draw Opt Complexity: Draw a directed graph where nodes are boxes. Write $O(N + K)$ where N is boxes and K is total keys/contained boxes.
+Mem Vis (BF): Draw many nested lists representing recursive calls.
+Mem Vis (Opt): Draw two boolean arrays of size N and a Queue. Space: $O(N)$.

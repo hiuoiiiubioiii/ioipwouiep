@@ -1,0 +1,13 @@
+ID: 1581
+Problem Title: Customer Who Visited but Did Not Make Any Transactions (SQL)
+Brute Force Method: For every visit record, scan the entire transactions table to see if a matching `visit_id` exists. $O(V \cdot T)$.
+BF Complexity Visuals: Nested Loop Scanning Grid
+How to Draw BF: Draw a list of visits. For each visit, draw a search arrow that scans every single row of the transaction table. A massive amount of redundant effort.
+Optimised Pattern: LEFT JOIN / WHERE IS NULL
+Opt Vis. Technique: The Exclusion Funnel
+Dry Run (Opt): Perform a `LEFT JOIN` on `visit_id`. Any visit that doesn't have a transaction will result in a `NULL` for the transaction columns. Filter for these `NULL`s and group by customer.
+How to Draw (Opt): Draw two overlapping circles (Visits and Transactions). Shade the area in the Visit circle that *doesn't* overlap with Transactions. Group the customer IDs in that shaded area and count them.
+Opt Complexity Visuals: Hash/Merge Join Aggregation $O(V + T)$
+How to Draw Opt Complexity: Draw a single flow line where both tables are hashed and compared in a single internal pass.
+Mem Vis (BF): Application-side tracking of all IDs in memory.
+Mem Vis (Opt): Zero application memory; DB handles grouping in its internal buffer. $O(V)$ space.

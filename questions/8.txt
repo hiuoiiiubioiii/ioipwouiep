@@ -1,0 +1,13 @@
+ID: 8
+Problem Title: String to Integer (atoi)
+Brute Force Method: Regex / Multi-pass Filter Run multiple passes: strip whitespace, extract sign, extract valid digits into a new string, then parse.
+BF Complexity Visuals: Conveyor Belt Filters
+How to Draw BF: Draw a string on a conveyor belt passing through three separate machines (Space Remover -&gt; Sign Checker -&gt; Number Extractor).
+Optimised Pattern: Deterministic One-Pass (DFA)
+Opt Vis. Technique: State Machine
+Dry Run (Opt): Read left to right. Maintain a "state" (1. Skipping spaces, 2. Reading sign, 3. Reading digits). Once in state 3, any non-digit stops the machine.
+How to Draw (Opt): Draw a timeline. Place a pointer moving left to right. Draw bubbles above it representing the current state transitioning: [Start] -&gt; [Sign] -&gt; [Digit Accumulation] -&gt; [Done].
+Opt Complexity Visuals: Single Scan Line
+How to Draw Opt Complexity: Draw a single straight arrow from index 0 to N. Emphasize that we never step backward. $O(N)$ time.
+Mem Vis (BF): Draw intermediate string arrays being created for every filtering step (O(N) space).
+Mem Vis (Opt): Draw a single integer accumulator and a few boolean flags (O(1) space).

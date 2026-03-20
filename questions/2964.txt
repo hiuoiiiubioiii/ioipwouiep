@@ -1,0 +1,13 @@
+ID: 2964
+Problem Title: Number of Divisible Triplets
+Brute Force Method: Triple nested loops (i, j, k) to check if sum is divisible by d. $O(N^3)$.
+BF Complexity Visuals: 3D Coordinate Cube
+How to Draw BF: Draw an isometric cube. Shade the region where i &lt; j &lt; k. Area N^3/6.
+Optimised Pattern: Prefix Sum Hash Map / Two-Sum Pattern
+Opt Vis. Technique: Complementary Modulo Lookup
+Dry Run (Opt): Fix j. We need (nums[i] + nums[j] + nums[k]) equiv 0 mod d. Pre-calculate counts of nums[i] for i &lt; j and look up required nums[k] for k &gt; j.
+How to Draw (Opt): Draw a line. Put a "divider" at j. On the left, maintain a frequency map of mods. For each k on the right, calculate required mod.
+Opt Complexity Visuals: Quadratic Loop with Map
+How to Draw Opt Complexity: Draw a square of size N. Inside, $O(1)$ map lookups. T = $O(N^2)$.
+Mem Vis (BF): Three scalar counters.
+Mem Vis (Opt): A Hash Map of size d. Space $O(d)$.

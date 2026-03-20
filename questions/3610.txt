@@ -1,0 +1,13 @@
+ID: 3610
+Problem Title: Minimum Number of Primes to Sum to Target (Med)
+Brute Force Method: Deep backtracking recursion. Try subtracting every prime number smaller than the target, branching out infinitely.
+BF Complexity Visuals: Infinite Branching Recursion Tree.
+How to Draw BF: Write Target. Branch down with `-2`, `-3`, `-5`... For each child, repeat. The tree becomes infinitely wide and recalculates identical subproblems.
+Optimised Pattern: Sieve of Eratosthenes (precompute primes) + Unbounded Knapsack Dynamic Programming (Coin Change variant).
+Opt Vis. Technique: DP Look-Back Array.
+Dry Run (Opt): Precompute primes. To find answer for N, look at the answers for `N - prime1`, `N - prime2`, etc. Take the minimum of those answers and add 1.
+How to Draw (Opt): Draw a row of boxes from 0 to Target. Fill `dp[0]=0`. For `dp[i]`, draw arrows pointing back to `i - prime` boxes. Pick the smallest, add 1.
+Opt Complexity Visuals: Nested Loop Coverage Grid.
+How to Draw Opt Complexity: Draw an array of length Target. For each cell, draw P arrows pointing back (P = number of primes). Time complexity is strictly $O(\text{Target} \cdot P)$.
+Mem Vis (BF): Call Stack Overflow due to millions of redundant recursive frames.
+Mem Vis (Opt): Two 1D arrays: `is_prime` (boolean array from Sieve) and `dp` (integer array of size Target). Space $O(\text{Target})$.

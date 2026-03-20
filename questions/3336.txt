@@ -1,0 +1,13 @@
+ID: 3336
+Problem Title: Find the Number of Subsequences With Equal GCD
+Brute Force Method: Generate all possible pairs of subsequences (S_1, S_2) and compute GCD for each to check equality.
+BF Complexity Visuals: Dual Subset Power Set
+How to Draw BF: Draw two separate power set trees. Draw lines connecting every leaf in Tree A to every leaf in Tree B. Proves $O(2^N \cdot 2^N)$ impossibility.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: Layered GCD Slices
+Dry Run (Opt): `dp[i][g1][g2]` tracks ways to form two subsequences with GCDs `g1` and `g2` using elements up to `i`.
+How to Draw (Opt): Draw a 3D cube. Each horizontal slice is an element index. Each cell in the slice represents a coordinate (g1, g2). Draw arrows "falling" from the previous slice to the current one as you include or skip numbers.
+Opt Complexity Visuals: State-Space Volume
+How to Draw Opt Complexity: Draw a box with dimensions N x 100 x 100. The total volume represents the $O(N \\text{cdot MaxGCD}^2)$ complexity.
+Mem Vis (BF): Two massive lists of all subsequence GCDs stored in memory simultaneously.
+Mem Vis (Opt): A 2D integer array (using space optimization to discard the `i` dimension), size 101 x 101.

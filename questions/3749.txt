@@ -1,0 +1,13 @@
+ID: 3749
+Problem Title: Evaluate Valid Expressions (Hard)
+Brute Force Method: Use recursive `eval()` functions or split the string repeatedly by operators, creating a massive tree of sub-expressions. $O(N^2)$ or worse if unbalanced.
+BF Complexity Visuals: Fractal Expression Tree.
+How to Draw BF: Write the equation. Draw lines breaking it at every `+` or `-`, then break those at every `*` or `/`, solving from the bottom up.
+Optimised Pattern: Shunting Yard Algorithm / Two Stacks (Operands &amp; Operators)
+Opt Vis. Technique: Dual-Stack Machine
+Dry Run (Opt): Read left to right. Push numbers to an Operand Stack. Push operators to an Operator Stack based on precedence. If precedence is lower, pop and calculate before pushing.
+How to Draw (Opt): Draw two boxes: "Numbers" and "Math Signs". Push items in. If a `*` is in the Math box and a `+` comes along, pop the `*`, pop two numbers, do the math, and push the result back.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight line scanning right, with quick vertical loops symbolizing stack reductions.
+Mem Vis (BF): Deep recursive call stack frames parsing strings.
+Mem Vis (Opt): Two array-backed Stacks (O(N) space).

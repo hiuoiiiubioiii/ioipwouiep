@@ -1,0 +1,13 @@
+ID: 2854
+Problem Title: Rolling Average Steps (SQL)
+Brute Force Method: For every row in the user activity table, run a subquery that looks back 2 days and calculates the average, manually checking if those dates exist.
+BF Complexity Visuals: $O(N2)$ Self-Join Map
+How to Draw BF: Draw a table. For row 3, draw arrows to rows 1 and 2. For row 4, draw arrows to 2 and 3. Show the quadratic increase in "lookback" arrows as N grows.
+Optimised Pattern: Window Functions (AVG ... OVER ROWS BETWEEN 2 PRECEDING)
+Opt Vis. Technique: Sliding Window Frame
+Dry Run (Opt): Partition by user_id and order by activity_date. Use AVG(steps) OVER(PARTITION BY user_id ORDER BY activity_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW). Check COUNT(*) OVER(...) to ensure exactly 3 days exist.
+How to Draw (Opt): Draw a table with a sliding 3-row box. Move the box down one row at a time. Write the average of the box contents in a new "Result" column.
+Opt Complexity Visuals: Linear Window Scan $O(N \log N)$ (due to Sort)
+How to Draw Opt Complexity: Draw a "Sorting" box followed by a "Sliding Window" box. Sorting is the bottleneck, followed by a single linear pass for the window.
+Mem Vis (BF): Visualize massive temporary join tables if using a self-join approach.
+Mem Vis (Opt): Visualize a small "buffer" in memory that only holds the last 3 rows for the current partition.

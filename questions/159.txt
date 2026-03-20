@@ -1,0 +1,13 @@
+ID: 159
+Problem Title: Longest Substring with At Most Two Distinct Characters
+Brute Force Method: Nested loops to check every single possible substring (i, j) and verify if it contains <= 2 distinct characters.
+BF Complexity Visuals: An $O(N³)$ complexity cube (Subarrays x Distinct Count check).
+How to Draw BF: Draw a string. Draw brackets for every possible start and end point. For each bracket, draw a Hash Set to count unique letters.
+Optimised Pattern: Sliding Window with Hash Map (Frequency Counter).
+Opt Vis. Technique: An "Expanding/Contracting Caterpillar." The head moves right to add characters; the tail moves right to remove them if unique count &gt; 2.
+Dry Run (Opt): Maintain Map. Move right pointer. If Map.size() &gt; 2, increment left and decrement count until a key is removed.
+How to Draw (Opt): Draw a string. Draw a sliding box over it. Below, draw a small table. As the box expands, add letters to the table. If size &gt; 2, shrink the box from the left.
+Opt Complexity Visuals: $O(N)$ time. Each character is visited by the left and right pointers at most once.
+How to Draw Opt Complexity: Draw the string. Draw two parallel arrows (L and R). Both move only from left to right, never back, proving $O(N)$.
+Mem Vis (BF): Creating new substring copies or full sets for every window position.
+Mem Vis (Opt): Visualize a Hash Map that never exceeds 3 entries (O(1) additional space if alphabet is constant).

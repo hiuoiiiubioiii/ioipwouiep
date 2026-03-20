@@ -1,0 +1,13 @@
+ID: 1063
+Problem Title: Number of Valid Subarrays
+Brute Force Method: Check every possible subarray [i, j]. If for all elements in the subarray, the first element is the smallest, increment the count.
+BF Complexity Visuals: A nested loop scanning every possible sub-segment of the array.
+How to Draw BF: Draw [1, 4, 2, 5]. Subarrays: [1], [1,4], [1,4,2]... [4], [4,2] (invalid). Write $O(N^2)$.
+Optimised Pattern: Monotonic Stack.
+Opt Vis. Technique: A "Wall Finder". For each number, we find the first number to its right that is smaller (the "wall"). Every element before that wall forms a valid subarray.
+Dry Run (Opt): Iterate through the array. Keep a stack of indices in increasing order. When you see a number smaller than `stack.top()`, it means the current number is a "wall" for the numbers in the stack. Calculate `current_idx - stack.pop()` and add to total.
+How to Draw (Opt): Draw the array. Put indices on a stack. When a "smaller" number appears, pop the stack and draw an arrow from the popped index to the current. Add the distance.
+Opt Complexity Visuals: Single pass through the array.
+How to Draw Opt Complexity: Draw an array with one arrow and a vertical stack growing/shrinking. Write Time: $O(N)$.
+Mem Vis (BF): No extra memory besides loops.
+Mem Vis (Opt): A stack storing up to N indices. $O(N)$ space.

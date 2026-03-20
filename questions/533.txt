@@ -1,0 +1,13 @@
+ID: 533
+Problem Title: Lonely Pixel II
+Brute Force Method: For every cell, check "Lonely Pixel I" conditions AND check every other row to see if they have the same 'B' pattern.
+BF Complexity Visuals: Exponential scanning. $O(N^2 \cdot M)$ or worse.
+How to Draw BF: Draw a grid. For every 'B', compare its entire row string against every other row string in the grid.
+Optimised Pattern: Hash Map for Row Patterns.
+Opt Vis. Technique: A fingerprint scanner. Rows with the same sequence of 'B's are grouped together under a single "pattern" key.
+Dry Run (Opt): Map row strings to their frequency. Also track 'B' counts in columns. A pixel (r, c) is "Lonely II" if `col_count[c] == Target` and `row_map[row_str] == Target`.
+How to Draw (Opt): Draw the matrix. Write out each row as a string (e.g., "WBBW"). Put these strings in a Map tally. Below each column, write its total 'B' count.
+Opt Complexity Visuals: Grid traversal + string hashing. $O(M \cdot N)$.
+How to Draw Opt Complexity: Draw the matrix being converted into a Map of row-strings, then a single scan of the columns.
+Mem Vis (BF): $O(1)$ excluding the input matrix.
+Mem Vis (Opt): Map storing row strings. In worst case, $O(M \cdot N)$ space for string storage.

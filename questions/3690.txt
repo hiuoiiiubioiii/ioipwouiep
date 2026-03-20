@@ -1,0 +1,13 @@
+ID: 3690
+Problem Title: Split and Merge Array Transformation (Med)
+Brute Force Method: Recursively simulating every possible split point and every merge result to find the target transformation. $O(2^N)$.
+BF Complexity Visuals: Split-and-Merge Tree.
+How to Draw BF: Start with the array. Split at index 1, 2, 3... For each result, split again. The number of possible resulting configurations is exponential.
+Optimised Pattern: Dynamic Programming (Interval DP). `dp[i][j]` stores whether the subarray from i to j can be transformed into the target.
+Opt Vis. Technique: The "Puzzle Piece" Assembler.
+Dry Run (Opt): Instead of breaking it down, think of building it up. Can two smaller pieces (sub-transformations) be merged into this larger target piece?
+How to Draw (Opt): Draw a 2D grid. The cell (i, j) represents the range [i, j]. Build the grid diagonally, starting from length 1 up to N, checking if sub-ranges can merge.
+Opt Complexity Visuals: N^2 Grid Fill.
+How to Draw Opt Complexity: Draw a square grid of size N x N. Shade the upper triangle. Write $O(N^3)$ (since each cell takes $O(N)$ to split).
+Mem Vis (BF): Massive recursive stack with duplicate sub-problem calculations.
+Mem Vis (Opt): A 2D boolean array dp[N][N]. Space $O(N^2)$.

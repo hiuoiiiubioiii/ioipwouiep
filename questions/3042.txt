@@ -1,0 +1,13 @@
+ID: 3042
+Problem Title: Count Prefix and Suffix Pairs I
+Brute Force Method: Nested loops (i, j) where i &lt; j. For each pair, check if words[i] is both a prefix and a suffix of words[j].
+BF Complexity Visuals: $O(N^2 \cdot L)$ Pairwise Check
+How to Draw BF: Draw the list of words. Draw arrows from every word to every word that follows it, labeling each check with its string length.
+Optimised Pattern: Brute Force (Small Constraints) / Trie (Optimal)
+Opt Vis. Technique: String Matching Visual
+Dry Run (Opt): For each word j, check if words[i] matches the start and end of words[j]. Since N is small, simple string methods work.
+How to Draw (Opt): Write word[i]. Write word[j] below it. Highlight the first len(i) characters and last len(i) characters of word[j] to see if they match.
+Opt Complexity Visuals: Quadratic Loop
+How to Draw Opt Complexity: Draw a nested loop diagram showing i from 0 to N and j from i+1 to N.
+Mem Vis (BF): Temporary substrings created during prefix/suffix checks.
+Mem Vis (Opt): Constant extra space beyond the input list.

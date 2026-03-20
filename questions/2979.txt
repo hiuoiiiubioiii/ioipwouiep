@@ -1,0 +1,13 @@
+ID: 2979
+Problem Title: Most Expensive Item That Cannot Be Bought
+Brute Force Method: Try representing every number from 1 to N as a * x + b * y using two loops.
+BF Complexity Visuals: Nested Coefficient Search
+How to Draw BF: Draw a grid of possible x, y values. Check if they sum to target. $O(\text{Target}^2)$.
+Optimised Pattern: Frobenius Coin Problem (Math)
+Opt Vis. Technique: Gaps in the Number Line
+Dry Run (Opt): The largest number that cannot be represented as ax + by for coprime a, b is exactly a * b - a - b.
+How to Draw (Opt): Draw a number line. Mark multiples of a and b. Show the "holes" where you can't reach. Highlight the last hole.
+Opt Complexity Visuals: Constant Time Calculation
+How to Draw Opt Complexity: Draw a single dot. Write the formula: a x b - a - b. T = $O(1)$.
+Mem Vis (BF): Storing a "reachable" boolean array.
+Mem Vis (Opt): No extra memory. Space $O(1)$.

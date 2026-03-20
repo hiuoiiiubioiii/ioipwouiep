@@ -1,0 +1,13 @@
+ID: 3327
+Problem Title: Check if DFS Strings Are Palindromes
+Brute Force Method: Run a full DFS from every single node, construct its specific string, and manually run a two-pointer palindrome check.
+BF Complexity Visuals: Redundant String Building
+How to Draw BF: Draw the tree N times. Extract N different strings. Draw crossing arrows on each string to check if it's a palindrome. Visualizes $O(N^2)$ work.
+Optimised Pattern: DFS Tree Flattening + Manacher's Algorithm
+Opt Vis. Technique: 1D Array Expansion Bubbles
+Dry Run (Opt): Run DFS once to flatten the tree into a single string, recording the start/end index of each subtree. Run Manacher's Algorithm to precompute palindrome radii in $O(N)$. Check if a node's boundaries fit within the radius.
+How to Draw (Opt): Draw the tree. Below it, draw a straight 1D array representing the flattened DFS string. Draw brackets denoting a node's boundaries. Draw a "Manacher radius" expanding from the center of those brackets.
+Opt Complexity Visuals: Linear Contiguous Track
+How to Draw Opt Complexity: Draw the flattened string of length 2N (with delimiters). Sweep one arrow across it from left to right, representing the strict $O(N)$ linear time of Manacher's.
+Mem Vis (BF): Thousands of fragmented, duplicated string objects existing in memory simultaneously.
+Mem Vis (Opt): Three flat 1D arrays of size N (start indices, end indices, Manacher radii) representing tightly packed $O(N)$ memory.

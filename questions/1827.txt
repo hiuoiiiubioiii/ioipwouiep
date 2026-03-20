@@ -1,0 +1,13 @@
+ID: 1827
+Problem Title: Minimum Operations to Make the Array Increasing
+Brute Force Method: For each element i, if a[i] \le a[i-1], use a while loop to increment a[i] one by one until a[i] &gt; a[i-1].
+BF Complexity Visuals: Stepping-stone bar chart.
+How to Draw BF: Draw a bar chart. For a low bar following a high bar, draw tiny blocks being added one by one until it's taller. $O(N \\text{times} \\text{text}{\text{max}\_\text{diff}})$.
+Optimised Pattern: Greedy Math (Single Pass).
+Opt Vis. Technique: Fill-to-level line.
+Dry Run (Opt): If current \le prev, calculate needed = prev + 1 - current. Add needed to total and update current = prev + 1.
+How to Draw (Opt): Draw the array. For each mismatch, write the math: diff = (prev + 1) - curr. Cross out curr, write the new value, and tally the diff.
+Opt Complexity Visuals: Linear traversal timeline.
+How to Draw Opt Complexity: Draw an arrow from left to right. Label it $O(N)$ with a single constant time operation at each step.
+Mem Vis (BF): No extra data structures, but highly inefficient time usage.
+Mem Vis (Opt): Two variables: `total_ops` and `prev_val` (O(1) space).

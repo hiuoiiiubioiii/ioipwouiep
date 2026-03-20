@@ -1,0 +1,13 @@
+ID: 1439
+Problem Title: Find the Kth Smallest Sum of a Matrix With Sorted Rows
+Brute Force Method: Generate all possible row combinations and their sums. Sort the massive list of sums and pick the Kth one.
+BF Complexity Visuals: Exponential Sum Combinations
+How to Draw BF: Draw a matrix. Branch out every choice: Row1[0]+Row2[0]..., Row1[0]+Row2[1]... Massive tree. Label $O(M^N)$.
+Optimised Pattern: Max Heap / Binary Search on Sums
+Opt Vis. Technique: Bounded Row-by-Row Merging
+Dry Run (Opt): Merge rows one by one. After merging Row A and Row B, keep only the smallest K sums. Use these K sums to merge with Row C, and repeat.
+How to Draw (Opt): Draw Row 1. Add Row 2 to it to get all sums. Draw a "K-Filter" box that only lets the smallest K sums through. Feed those into Row 3.
+Opt Complexity Visuals: K-Bounded Merge Sort
+How to Draw Opt Complexity: Draw a loop for M rows. Inside, a merge operation of size (K*N). Label $O(M \cdot K \cdot \log K)$.
+Mem Vis (BF): Recursive Call Stack (M^N)
+Mem Vis (Opt): A Min-Heap or sorted list of size K. Space $O(K)$.

@@ -1,0 +1,13 @@
+ID: 369
+Problem Title: Plus One Linked List
+Brute Force Method: Reverse the linked list, add one (handling carries), then reverse it back.
+BF Complexity Visuals: Double Reversal Sweep
+How to Draw BF: Draw a list: 1 \rightarrow 2 \rightarrow 9. Draw it reversed: 9 \rightarrow 2 \rightarrow 1. Add 1 to get 0 \rightarrow 3 \rightarrow 1. Reverse again. $O(N)$.
+Optimised Pattern: Two-Pointer (Sentinel + Last Non-9)
+Opt Vis. Technique: Iterative Static Point Tracking
+Dry Run (Opt): Use a dummy head. Find the rightmost node that is not a 9. Increment its value by 1, and set all nodes to its right (which are all 9s) to 0.
+How to Draw (Opt): Draw a list like 1 \rightarrow 2 \rightarrow 9 \rightarrow 9. Place a "Point" arrow on the '2'. Change 2 to 3, and then change all 9s after it to 0s in one pass.
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw a single arrow moving left to right once. $O(N)$.
+Mem Vis (BF): Recursive stack for reversing or temporary lists.
+Mem Vis (Opt): Two pointer variables. Draw two small pointer boxes. $O(1)$.

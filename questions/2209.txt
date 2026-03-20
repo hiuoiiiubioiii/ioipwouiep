@@ -1,0 +1,13 @@
+ID: 2209
+Problem Title: Minimum White Tiles After Covering With Carpets
+Brute Force Method: Backtracking / CombinationsAt every white tile, recursively branch into two choices: place a carpet here or skip it and leave it visible.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a node representing the current tile. Draw two branching arrows: "Cover (skip L tiles)" and "Skip (add 1 visible)". Show the tree exploding in width.
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: 2D DP Grid / Matrix
+Dry Run (Opt): State is `(tile_index, carpets_left)`. Fill a table where each cell takes the minimum of skipping the tile `(val + DP[i-1][c])` or covering it `(DP[i-L][c-1])`.
+How to Draw (Opt): Draw a grid with `tiles` on the X-axis and `carpets` on the Y-axis. Fill cells left-to-right, drawing arrows to show a cell pulling data from the left (skip) or jumping left by `L` (cover).
+Opt Complexity Visuals: Matrix Fill Process
+How to Draw Opt Complexity: Draw the DP grid and shade it in row by row. Label the dimensions `N` and `C`. Write $O(N \cdot C)$ to show every state is computed exactly once.
+Mem Vis (BF): Massive deep call stack with repeated identical states (overlapping subproblems).
+Mem Vis (Opt): 2D Array / Matrix of size `N x C` storing integer minimums.

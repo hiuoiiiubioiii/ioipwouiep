@@ -1,0 +1,13 @@
+ID: 3013
+Problem Title: Divide an Array Into Subarrays With Minimum Cost II
+Brute Force Method: Generate all possible combinations of selecting k-1 starting indices within the distance constraint dist.
+BF Complexity Visuals: Windowed Combinatorics
+How to Draw BF: Draw a sliding window over the array. Inside the window, draw branching lines selecting every valid combination of k-1 elements.
+Optimised Pattern: Sliding Window + Two Heaps (or Balanced BST)
+Opt Vis. Technique: Dynamic Top-K Window
+Dry Run (Opt): Fix nums[0]. Slide a window of size dist + 1 over the rest of the array. Inside this window, you need to track the sum of the k-1 smallest elements. As the window moves, add the new element to the active set and remove the outgoing element, rebalancing the heaps.
+How to Draw (Opt): Draw the array with a sliding bracket. Below it, draw a line splitting elements into two boxes: "Active (k-1 smallest)" and "Reserve". When moving the bracket, show elements swapping between Active and Reserve to maintain the smallest sum.
+Opt Complexity Visuals: Logarithmic Shift Wave
+How to Draw Opt Complexity: Draw a horizontal line for the sliding window $O(N)$. For every step, draw a small vertical wave representing the $O(\log N)$ heap rebalancing.
+Mem Vis (BF): A brute-force array subset that gets fully re-sorted $O(N \log N)$ every time the window shifts by one.
+Mem Vis (Opt): Two Priority Queues (Min-Heap and Max-Heap) or an Indexed Tree managing the sliding subset.

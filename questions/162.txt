@@ -1,0 +1,13 @@
+ID: 162
+Problem Title: Find Peak Element
+Brute Force Method: Linear scan through the array to find an element that is strictly greater than its neighbors.
+BF Complexity Visuals: An $O(N)$ horizontal sweep across a mountain range.
+How to Draw BF: Draw a line of numbers. Draw a finger visiting every single box until it finds a "summit."
+Optimised Pattern: Binary Search on Slope.
+Opt Vis. Technique: "Flashlight on a Ridge." You check the slope at your current position (Mid). If it's going up, the peak must be to the right; if down, to the left.
+Dry Run (Opt): Set `low`, `high`. If `nums[mid] &lt; nums[mid+1]`, move `low = mid + 1`. Else, `high = mid`. Result is `low`.
+How to Draw (Opt): Draw a line chart. Mark L, R, and M. Draw an uphill arrow based on the comparison of M and M+1 to show the direction of search.
+Opt Complexity Visuals: $O(\log N)$ tree search. The search space is halved every time.
+How to Draw Opt Complexity: Draw a binary tree. Shade only a single path from root to leaf to show that only log N elements are touched.
+Mem Vis (BF): N/A (Constant space).
+Mem Vis (Opt): Visualize two pointers (`low`, `high`) in $O(1)$ stack memory.

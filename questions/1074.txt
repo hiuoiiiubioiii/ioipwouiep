@@ -1,0 +1,13 @@
+ID: 1074
+Problem Title: Number of Submatrices That Sum to Target
+Brute Force Method: Check every possible submatrix (defined by top-left and bottom-right corners). Calculate the sum of each and compare to target.
+BF Complexity Visuals: Four nested loops to define boundaries (N^4) plus two loops to sum (N^6). Even with 2D prefix sums, it is $O(N^4)$.
+How to Draw BF: Draw a grid. Pick any box inside it. Sum the numbers. Is it Target? Repeat for all boxes. Write $O(N^4)$.
+Optimised Pattern: 2D-to-1D Reduction + Subarray Sum Logic.
+Opt Vis. Technique: A "Scanning Bar". We fix the top and bottom rows, compress the values between them into a 1D array, and solve the "Subarray Sum Equals K" problem.
+Dry Run (Opt): For every pair of rows (i, j), calculate the 1D prefix sums of the columns. Use a HashMap to find how many horizontal segments in this "compressed row" sum to target in $O(\text{Cols})$.
+How to Draw (Opt): Draw the grid. Pick row 1 and 2. Sum them vertically into a single row. On that single row, run the "Subarray Sum" algorithm using a HashMap. Repeat for all row pairs.
+Opt Complexity Visuals: Three nested loops (Row1, Row2, Cols).
+How to Draw Opt Complexity: Draw a 2D grid being squashed into a 1D line, followed by a HashMap lookup. Write Time: $O(\text{Rows}^2 \\text{cdot Cols})$.
+Mem Vis (BF): $O(N^4)$ or $O(N^2)$ space for storing all possible submatrix sums.
+Mem Vis (Opt): A 2D prefix sum array or just the current compressed row. $O(\text{Rows} \\text{cdot Cols})$ space.

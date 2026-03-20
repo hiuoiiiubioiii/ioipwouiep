@@ -1,0 +1,13 @@
+ID: 2032
+Problem Title: Two Out of Three
+Brute Force Method: Use nested loops to check every element of nums1 against nums2 and nums3, then repeat for the others.
+BF Complexity Visuals: Three-Way Cartesian Web
+How to Draw BF: Draw 3 separate lists. Draw lines connecting every item in list 1 to every item in lists 2 and 3. Extremely messy $O(N^2)$ visual.
+Optimised Pattern: Frequency Hash Map or Bitmasking on an Array
+Opt Vis. Technique: Bitwise Venn Diagram
+Dry Run (Opt): Use an array of size 101. For a number in nums1, OR its index with 1. For nums2, OR with 2. For nums3, OR with 4. Check which numbers have a value of 3, 5, 6, or 7.
+How to Draw (Opt): Draw a table from 1 to 100. Make three columns (A, B, C) with checkboxes. Tick the boxes as you iterate. Pick rows with at least 2 ticks.
+Opt Complexity Visuals: Three Sequential Fast-Forwards
+How to Draw Opt Complexity: Draw 3 separate straight lines representing the $O(N)$ iteration of the three arrays, dumping data into a central bucket. Total time $O(N)$.
+Mem Vis (BF): Three distinct dynamic lists repeatedly checked via linear scans.
+Mem Vis (Opt): A fixed-size integer array `int[101]` storing bitmasks. Space $O(1)$ relative to input size constraints.

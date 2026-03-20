@@ -1,0 +1,13 @@
+ID: 2207
+Problem Title: Maximize Number of Subsequences in a String
+Brute Force Method: Insertion SimulationTry inserting `pattern[0]` and `pattern[1]` at every possible index in the string, then run a full subsequence count for every variation.
+BF Complexity Visuals: Branching Combinations
+How to Draw BF: Draw the string multiple times, inserting the character at a new spot each time. Below each, draw lines connecting matching character pairs.
+Optimised Pattern: Greedy / Prefix Counters
+Opt Vis. Technique: Accumulator Flow
+Dry Run (Opt): Traverse string once. Maintain counts of `pattern[0]` and `pattern[1]`. If you see `pattern[1]`, add the current count of `pattern[0]` to your total. Add the max of the two counts at the end.
+How to Draw (Opt): Draw the string. Write `count0` and `count1` below it. As you move left to right, update the counts and draw an arrow to a "Total Subsequences" bucket whenever a valid pairing occurs.
+Opt Complexity Visuals: Linear Single-Pass Timeline
+How to Draw Opt Complexity: Draw one straight arrow from start to end of the string, labeling it $O(N)$. Show variables updating in strictly $O(1)$ time at each step.
+Mem Vis (BF): Multiple string copies held in memory for each insertion state.
+Mem Vis (Opt): Three scalar integer variables (`ans`, `count0`, `count1`) representing $O(1)$ space.

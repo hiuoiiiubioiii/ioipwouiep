@@ -1,0 +1,13 @@
+ID: 2293
+Problem Title: Min Max Game
+Brute Force Method: Recursive Array SlicingWhile the array length &gt; 1, create a brand new array half the size. Manually populate it by alternating between `min()` and `max()` of pairs.
+BF Complexity Visuals: Shrinking Layer Simulation
+How to Draw BF: Draw an array of 8 numbers. Below it, draw 4 numbers (the results of pairs). Below that, 2, then 1. Show the repeated memory allocation for each new array.
+Optimised Pattern: In-Place Iterative Reduction
+Opt Vis. Technique: Half-Length Compression
+Dry Run (Opt): Use a single array. In each round, update the first `n/2` elements using the values from the current array. Reduce the "active" size of the array by half until only index 0 remains.
+How to Draw (Opt): Draw one array. Draw arrows from `nums[0], nums[1]` to `nums[0]`. Then from `nums[2], nums[3]` to `nums[1]`. Show the data "collapsing" toward the left side of the same array.
+Opt Complexity Visuals: Logarithmic Reduction Timeline
+How to Draw Opt Complexity: Draw a loop that runs log(N) times. Inside, show an $O(N)$ pass. The total work is N + N/2 + N/4... which converges to $O(N)$.
+Mem Vis (BF): Allocating log(N) different arrays, totaling $O(N)$ extra space.
+Mem Vis (Opt): Mutating the original array in place (O(1) extra space).

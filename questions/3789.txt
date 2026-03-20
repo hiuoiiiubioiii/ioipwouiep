@@ -1,0 +1,13 @@
+ID: 3789
+Problem Title: Minimum Cost to Acquire Required Items (Med)
+Brute Force Method: Try every subset of available items and check if the subset contains all "required" items. Calculate the total cost for each valid subset and pick the minimum. $O(2^N)$.
+BF Complexity Visuals: Power Set Selection.
+How to Draw BF: List all items and their costs. Write every combination of items. Check if "Required Items" are inside each combo. Find the cheapest one.
+Optimised Pattern: Bitmask Dynamic Programming (Knapsack Variant)
+Opt Vis. Technique: State-Space Masking
+Dry Run (Opt): Represent the "Required Items" as bits in an integer (Bitmask). dp[mask] is the min cost to acquire the items represented by that mask. For each new item, update the DP table: dp[mask | item_mask] = min(dp[mask | item_mask], dp[mask] + item_cost).
+How to Draw (Opt): Draw a table where the header is bitmasks (001, 010, 011...). For each item, draw arrows showing how it "flips" the bits and updates the cost in the table.
+Opt Complexity Visuals: $O(N \cdot 2^K)$, where K is the number of required items.
+How to Draw Opt Complexity: Draw a DP grid being filled row by row (Items) and column by column (Masks).
+Mem Vis (BF): Recursive stack for all 2^N combinations.
+Mem Vis (Opt): 1D DP array of size 2^K.

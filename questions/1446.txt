@@ -1,0 +1,13 @@
+ID: 1446
+Problem Title: Consecutive Characters
+Brute Force Method: Generate all possible substrings of the input string. For each substring, check if it consists of only one unique character. Return the length of the longest such substring.
+BF Complexity Visuals: Quadratic Substring Scan
+How to Draw BF: Draw a string. Draw brackets for every possible start and end index. For each bracket, draw a loop checking for character equality. Label $O(N³)$.
+Optimised Pattern: Single-Pass Greedy Counter
+Opt Vis. Technique: Running Streak Tracker
+Dry Run (Opt): Iterate through the string. If the current character is the same as the previous one, increment a `count`. Otherwise, reset `count` to 1. Track the `max_count` seen so far.
+How to Draw (Opt): Draw the string. Place a pointer that moves index by index. Above it, draw a "Streak" box that ticks up as you hit same letters and resets to 1 when a new letter appears.
+Opt Complexity Visuals: Linear String Traversal
+How to Draw Opt Complexity: Draw a single arrow moving left to right. Label $O(N)$.
+Mem Vis (BF): List of all substrings
+Mem Vis (Opt): Two integer variables: `current_streak` and `max_streak`. Space $O(1)$.

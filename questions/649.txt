@@ -1,0 +1,13 @@
+ID: 649
+Problem Title: Dota2 Senate
+Brute Force Method: Repeatedly scan the string, marking "banned" senators, until only one party remains. Use a boolean array for "active" status.
+BF Complexity Visuals: Circular multi-pass scan.
+How to Draw BF: Draw a circle of 'R' and 'D'. Cross one out, move forward, repeat until only one color is left. Write $O(N^2)$ for many passes.
+Optimised Pattern: Two Queues (R_index, D_index).
+Opt Vis. Technique: Queue-based Race / Index Bumping.
+Dry Run (Opt): Put indices of 'R' in `queueR` and 'D' in `queueD`. Compare front of both. Smaller index "wins" and is re-added to its queue with index + N. The loser is discarded.
+How to Draw (Opt): Draw two separate lines (Radiant and Dire). The person at the front of line R battles person at front of line D. The winner goes to the back of their line.
+Opt Complexity Visuals: Single pass through elements, re-queuing each at most once.
+How to Draw Opt Complexity: Draw two parallel lines merging/looping. Write $O(N)$.
+Mem Vis (BF): Draw multiple copies of the string for state tracking.
+Mem Vis (Opt): Draw two Queues storing integers (indices). $O(N)$ space.

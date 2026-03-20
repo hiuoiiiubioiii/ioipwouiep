@@ -1,0 +1,13 @@
+ID: 1014
+Problem Title: Best Sightseeing Pair
+Brute Force Method: Compare every pair (i, j) where i &lt; j. Calculate `values[i] + values[j] + i - j` and track the maximum.
+BF Complexity Visuals: A measuring tape dragging from every starting point to every subsequent point.
+How to Draw BF: Draw array. From index 0, draw arcs to 1, 2, 3... Calculate formula for each arc. Repeat from index 1. Write $O(N^2)$.
+Optimised Pattern: Dynamic Programming / 1D State Tracking.
+Opt Vis. Technique: A decaying battery (max previous score) moving forward and comparing itself to the current spot.
+Dry Run (Opt): Split the formula: `(values[i] + i)` + `(values[j] - j)`. Track the maximum `(values[i] + i)` seen so far. At each step `j`, add it to `(values[j] - j)`, then update the max for the next step.
+How to Draw (Opt): Draw array. Keep a side-box called `Max_I`. At index `j`, write down `Max_I + values[j] - j`. Then update `Max_I` if `values[j] + j` is bigger. Move right.
+Opt Complexity Visuals: A single forward pass with a memory variable.
+How to Draw Opt Complexity: Draw the array. Draw one arrow sweeping right, dragging a "highest value" block behind it that updates dynamically. Write $O(N)$.
+Mem Vis (BF): Strictly $O(1)$ conceptually.
+Mem Vis (Opt): Two small boxes tracking `max_score` and `max_i`. Perfect $O(1)$ representation.

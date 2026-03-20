@@ -1,0 +1,13 @@
+ID: 2321
+Problem Title: Maximum Score Of Spliced Array
+Brute Force Method: Try swapping every possible subarray `(left, right)` between `nums1` and `nums2`, then calculate the sum of both arrays to find the maximum.
+BF Complexity Visuals: Cubic Loop Blocks (O(N^3))
+How to Draw BF: Draw two parallel arrays. Draw a box selecting a segment in array 1, draw a box in array 2, swap them, and then draw a line scanning the whole array to sum it.
+Optimised Pattern: Kadane's Algorithm on Difference Array
+Opt Vis. Technique: Max Contiguous Delta Peak
+Dry Run (Opt): Create a difference array `diff[i] = nums2[i] - nums1[i]`. Run Kadane's to find the max subarray sum of `diff`. Add this to the total sum of `nums1`. Repeat for `nums1 - nums2`.
+How to Draw (Opt): Draw three arrays: `nums1`, `nums2`, and `diff`. In `diff`, draw a sliding bracket that expands as long as the running sum is positive, capturing the highest peak of "gain".
+Opt Complexity Visuals: Three Parallel Lines (O(N))
+How to Draw Opt Complexity: Draw three straight, non-overlapping horizontal lines representing the independent linear passes over the arrays.
+Mem Vis (BF): Draw overlapping brackets for `L` and `R` repeatedly overwriting a dummy sum variable.
+Mem Vis (Opt): Draw a single Integer variable (`current_sum`, `max_sum`) updating iteratively without altering the original arrays.

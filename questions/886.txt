@@ -1,0 +1,13 @@
+ID: 886
+Problem Title: Possible Bipartition
+Brute Force Method: Generate every possible division of people into two groups (2^N). For each division, check all "dislikes" to see if any pair is in the same group.
+BF Complexity Visuals: Exponential Grouping. $O(2^N)$.
+How to Draw BF: Draw N people. Branch out to group everyone into "Team A" or "Team B". For every leaf, draw lines representing dislikes to check for conflicts.
+Optimised Pattern: Graph Coloring (Bipartite Graph Check).
+Opt Vis. Technique: The "Red vs. Blue" Conflict Sieve.
+Dry Run (Opt): Represent people as nodes and dislikes as edges. Color a person Red. All their "dislikes" must be Blue. All their dislikes must be Red. If you ever try to color a person Red who is already Blue, bipartition is impossible.
+How to Draw (Opt): Draw the graph. Pick a node, color it Red. Trace edges and color neighbors Blue. If you find an edge connecting two nodes of the same color, draw a big red 'X' over it.
+Opt Complexity Visuals: Graph Traversal (DFS/BFS). $O(V + E)$.
+How to Draw Opt Complexity: Draw the graph and put a checkmark on every dislike edge. Every edge is checked exactly once.
+Mem Vis (BF): Subset List: Draw a list with 2^N potential group configurations.
+Mem Vis (Opt): Color Array: Draw a 1D strip of size N storing 0 (none), 1 (Red), or -1 (Blue).

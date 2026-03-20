@@ -1,0 +1,13 @@
+ID: 3785
+Problem Title: Minimum Swaps to Avoid Forbidden Values (Hard)
+Brute Force Method: Generate all N! permutations of the array and check each one to see if any element at index i is a forbidden value for that index. Pick the one with the fewest swaps from the original. $O(N! \cdot N)$.
+BF Complexity Visuals: Permutation Validation Tree.
+How to Draw BF: Draw the array. Draw all ways to rearrange it. Cross out any arrangement where a "forbidden" number lands in a "forbidden" spot. Count swaps for the survivors.
+Optimised Pattern: Min-Cost Flow / Hungarian Algorithm
+Opt Vis. Technique: Bipartite Matching with Weights
+Dry Run (Opt): Model this as a Bipartite Graph: Left side is original values, Right side is indices. Edge weight is 0 if val == original_at_index, and 1 otherwise. Delete edges where val is forbidden for that index. Find the Minimum Weight Perfect Matching.
+How to Draw (Opt): Draw two columns of dots. Draw lines between them. Put an 'X' on forbidden lines. Give each line a cost (0 or 1). Find the set of lines that connects every dot with the lowest total cost.
+Opt Complexity Visuals: $O(N^3)$ or $O(E\cdot V)$.
+How to Draw Opt Complexity: Draw a bipartite grid being resolved by augmenting paths.
+Mem Vis (BF): N! storage for permutations.
+Mem Vis (Opt): $O(N^2)$ for the adjacency matrix or cost graph.

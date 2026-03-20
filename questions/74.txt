@@ -1,0 +1,13 @@
+ID: 74
+Problem Title: Search a 2D Matrix
+Brute Force Method: Linear Search Treat the 2D matrix like a list and check every single element one-by-one until the target is found.
+BF Complexity Visuals: The Snaking Arrow
+How to Draw BF: Draw a grid. Draw a single long arrow snaking through every row from top to bottom. Time: $O(M x N)$.
+Optimised Pattern: Binary Search (Flattened Index)
+Opt Vis. Technique: The Virtual 1D Array
+Dry Run (Opt): Since the matrix is sorted, treat it as a single 1D array of size M x N. Use `mid / cols` for row and `mid % cols` for column index. Perform standard binary search.
+How to Draw (Opt): Draw a grid. Label cells from 0 to 11. Pick `mid = 5`. Draw the math: 5 / 4 = Row  1, 5 % 4 = Col  1. Target the cell `(1,1)` and split the virtual array.
+Opt Complexity Visuals: Halving Block
+How to Draw Opt Complexity: Draw a line representing M x N elements. Show it being cut in half repeatedly. Time: $O(\log(M x N)$).
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Draw three pointers (`low`, `high`, `mid`) and the column count variable. Space: $O(1)$.

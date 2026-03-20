@@ -1,0 +1,13 @@
+ID: 472
+Problem Title: Concatenated Words
+Brute Force Method: Nested Search For each word, try to split it into all possible prefixes and suffixes. Check if each exists in the original list.
+BF Complexity Visuals: Factorial Splits
+How to Draw BF: Draw a word. Draw every possible "cut" line. For each cut, repeat. Total $O(N \cdot 2^L)$ where L is length.
+Optimised Pattern: Trie + DFS/Memoization Sort words by length. Insert into a Trie. For each word, use DFS to see if it can be formed by existing Trie words.
+Opt Vis. Technique: Prefix Tree Pathing
+Dry Run (Opt): Walk down the Trie. When you hit a "Word End," split and start a new walk from the root for the remainder.
+How to Draw (Opt): Draw a Trie. Trace a path for "catsdogcats". When you hit 'cats', circle the node and draw a second arrow starting back at the root for 'dog'.
+Opt Complexity Visuals: Pruned Graph
+How to Draw Opt Complexity: Draw the Trie nodes visited. Complexity $O(N \cdot L^2)$ with memoization.
+Mem Vis (BF): HashSet Large set of all words.
+Mem Vis (Opt): Trie Map Draw a tree of characters. $O(N \cdot L)$ space.

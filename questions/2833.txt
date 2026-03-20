@@ -1,0 +1,13 @@
+ID: 2833
+Problem Title: Furthest Point From Origin
+Brute Force Method: Recursively simulate every possible choice for each underscore ('_'), choosing either 'L' or 'R', and track the max absolute distance.
+BF Complexity Visuals: Decision Tree Explosion
+How to Draw BF: Draw a tree where each '_' node branches into 'L' and 'R'. For a string of N underscores, show the tree reaching 2^N leaves.
+Optimised Pattern: Greedy Absolute Displacement
+Opt Vis. Technique: Vector Summation
+Dry Run (Opt): Count fixed 'L's and 'R's. Calculate the net displacement abs(countL - countR). Treat all underscores as moving in the *same* direction that currently has the lead to maximize the distance.
+How to Draw (Opt): Draw a number line. Draw arrows for 'L' and 'R'. Group all '_' into a single large arrow pointing toward the furthest side. Total distance = abs(L - R) + underscoreCount.
+Opt Complexity Visuals: Single Pass Counting
+How to Draw Opt Complexity: Draw a single horizontal arrow for the string scan. Each character is a $O(1)$ increment. Total $O(n)$.
+Mem Vis (BF): Visualize a massive call stack holding 2^N recursive states.
+Mem Vis (Opt): Visualize three integer counters: l, r, and blank. $O(1)$ auxiliary space.

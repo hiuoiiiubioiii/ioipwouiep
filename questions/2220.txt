@@ -1,0 +1,13 @@
+ID: 2220
+Problem Title: Minimum Bit Flips to Convert Number
+Brute Force Method: String Conversion &amp; PaddingConvert `start` and `goal` to binary strings. Pad the shorter one with leading zeroes. Iterate through and count mismatching characters.
+BF Complexity Visuals: String Alignment &amp; Comparison
+How to Draw BF: Write out the binary string for `start`. Right below it, write the string for `goal`. Draw vertical lines connecting them. Circle the pairs that do not match.
+Optimised Pattern: Bitwise XOR + Brian Kernighan's Alg
+Opt Vis. Technique: Bitwise XOR Gate Filter
+Dry Run (Opt): `xor_result = start ^ goal`. An XOR outputs a `1` only where the bits differ. The answer is simply the number of set bits (1s) in `xor_result`.
+How to Draw (Opt): Write the two binary numbers. Draw a line underneath. Do the XOR: 1^0=1, 0^1=1, 1^1=0, 0^0=0. Finally, draw circles around all the 1s in the result to count them.
+Opt Complexity Visuals: Bit Shifting Timeline
+How to Draw Opt Complexity: Draw the XOR result. Draw an arrow looping while `n &gt; 0`, showing `n = n &amp; (n-1)` to clear the lowest set bit. Label time as $O(\text{Set Bits})$.
+Mem Vis (BF): Allocating strings or character arrays to hold the binary representations (O(log(max_val)) space).
+Mem Vis (Opt): A single integer holding the XOR result, manipulated in place (O(1) space).

@@ -1,0 +1,13 @@
+ID: 2500
+Problem Title: Delete Greatest Value in Each Row
+Brute Force Method: In each iteration, scan every row manually to find the max, remove it, find the max of those removed values, and repeat.
+BF Complexity Visuals: Iterative Matrix Reduction
+How to Draw BF: Draw a grid. Circle the biggest number in each row. Cross them out. Label $O(N \cdot M^2)$.
+Optimised Pattern: Sorting Rows
+Opt Vis. Technique: Vertical Maximum Column Sweep
+Dry Run (Opt): Sort every row individually. Now the "greatest values" are all in the last column. Iterate through columns from end to start, taking max of each.
+How to Draw (Opt): Draw a grid. Show arrows sorting each row. Draw a vertical box over the last column and pick the largest number. Move the box one column left.
+Opt Complexity Visuals: Row Sorting + Grid Scan
+How to Draw Opt Complexity: Draw M rows being sorted. Label $O(M \cdot N \log N)$. Label scan $O(M \cdot N)$.
+Mem Vis (BF): Draw the result sum.
+Mem Vis (Opt): Draw the original grid. $O(1)$ extra Space if sorting in-place.

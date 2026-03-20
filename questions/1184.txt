@@ -1,0 +1,13 @@
+ID: 1184
+Problem Title: Distance Between Bus Stops
+Brute Force Method: Use a general graph algorithm like BFS/Dijkstra to find the shortest path between two nodes.
+BF Complexity Visuals: Graph Path Search
+How to Draw BF: Draw stops as nodes in a circle. Draw a wave expanding from the start stop until it hits the destination.
+Optimised Pattern: Two-Way Summation (Circular Array)
+Opt Vis. Technique: Clockwise vs Counter-Clockwise Comparison
+Dry Run (Opt): Sum the distances from `start` to `destination` (clockwise). The other path is just `Total_Sum - Clockwise_Sum`. Return the minimum.
+How to Draw (Opt): Draw a circle of numbers. Highlight the segment between start and end. Shade the remaining part of the circle in a different color. Compare the two.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass to calculate the total sum and one partial pass for the segment.
+Mem Vis (BF): Graph Adjacency List
+Mem Vis (Opt): Constant $O(1)$ extra space using two sum variables.

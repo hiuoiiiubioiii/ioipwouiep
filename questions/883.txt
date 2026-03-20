@@ -1,0 +1,13 @@
+ID: 883
+Problem Title: Projection Area of 3D Shapes
+Brute Force Method: Build a 3D coordinate model of all the cubes. Project points onto xy, yz, xz planes and count unique occupied coordinates.
+BF Complexity Visuals: 3D Voxel Scanning. $O(N^2 x \text{max}(\text{Height})$).
+How to Draw BF: Draw a 3D grid. Fill in blocks. For each side, look through the grid and count how many "filled" spots you see.
+Optimised Pattern: Row Max, Column Max, and Non-Zero Count.
+Opt Vis. Technique: Shadow Profiles (Top, Front, Side).
+Dry Run (Opt): 1. Top view (xy): Total count of cells where grid[i][j] &gt; 0. 2. Front view (yz): Sum of maximum heights of each row. 3. Side view (xz): Sum of maximum heights of each column.
+How to Draw (Opt): Draw a 2D grid of numbers. 1. Put a dot in every cell &gt;0. 2. Circle the biggest number in each row. 3. Circle the biggest number in each column. Add it all up.
+Opt Complexity Visuals: Single Grid Pass. $O(N^2)$.
+How to Draw Opt Complexity: Draw the grid being scanned once. No complex logic or 3D math required.
+Mem Vis (BF): 3D Boolean Array: Draw a cubic memory block of size N x N x H.
+Mem Vis (Opt): $O(1)$ Accumulators: Draw three integer variables: top, front, side.

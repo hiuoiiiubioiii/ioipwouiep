@@ -1,0 +1,13 @@
+ID: 2856
+Problem Title: Minimum Array Length After Pair Removals
+Brute Force Method: Use a greedy approach with a Max-Heap to always remove the two most frequent elements until no two distinct elements remain.
+BF Complexity Visuals: Priority Queue Simulation
+How to Draw BF: Draw a frequency map. Put frequencies into a Max-Heap. Pop two, decrement, and push back. Show the heap operations repeating until the heap is empty. $O(N \log N)$.
+Optimised Pattern: Frequency Dominance / Median Comparison
+Opt Vis. Technique: Frequency Bar Chart
+Dry Run (Opt): In a sorted array, the most frequent element's count maxFreq determines everything. If maxFreq &lt;= n/2, we can pair everything (result 0 or 1). If maxFreq &gt; n/2, the remaining elements are maxFreq - (n - maxFreq).
+How to Draw (Opt): Draw the array. Find the middle element. Count how many times it appears. If it's more than half the array, it's the "Boss." The result is the Boss's count minus everyone else's count.
+Opt Complexity Visuals: Binary Search for Median Frequency $O(\log N)$
+How to Draw Opt Complexity: Draw a box for Binary Search. Since the array is sorted, we can find the frequency of the median element in $O(\log N)$ to determine if it dominates.
+Mem Vis (BF): Visualize a Max-Heap or Hash Map storing all unique elements $O(N)$.
+Mem Vis (Opt): Visualize zero extra data structures. Using only pointers on the sorted array, space is $O(1)$.

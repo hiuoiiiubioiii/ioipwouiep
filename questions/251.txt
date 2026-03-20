@@ -1,0 +1,13 @@
+ID: 251
+Problem Title: Flatten 2D Vector
+Brute Force Method: Copy all elements from the 2D vector into a 1D list during initialization.
+BF Complexity Visuals: Linear Block Allocation: $O(N)$ Space.
+How to Draw BF: Draw a big 2D grid. Draw an arrow pouring all contents into a single long horizontal line. Shade the entire horizontal line as "Memory Used."
+Optimised Pattern: Two-Pointer Iterators (Row &amp; Col)
+Opt Vis. Technique: Coordinate Crosshair
+Dry Run (Opt): Maintain `i` (row) and `j` (column). `next()` returns `vec[i][j]` and moves `j`. If `j` hits the end of a row, skip empty rows and reset `j=0`, `i++`.
+How to Draw (Opt): Draw the 2D grid. Place a "Pen" at `(0,0)`. Draw a dotted path moving right, then jumping down to the start of the next non-empty row.
+Opt Complexity Visuals: State-Based Pointer Move: $O(1)$ average for `next`.
+How to Draw Opt Complexity: Draw a timeline. Mark small dots for `next()` calls. Show that the work is just an index increment.
+Mem Vis (BF): Full 1D List: Draw an N-length array box in memory.
+Mem Vis (Opt): Zero Extra Structure: Draw just two small integer boxes, `r` and `c`.

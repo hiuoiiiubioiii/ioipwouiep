@@ -1,0 +1,13 @@
+ID: 1128
+Problem Title: Number of Equivalent Domino Pairs
+Brute Force Method: Nested Loops (O(N^2)). For every domino `(a, b)`, scan the rest of the array to find `(a, b)` or `(b, a)`.
+BF Complexity Visuals: Full Comparison Matrix
+How to Draw BF: Draw a square grid. Mark the diagonal. Show that every cell above the diagonal must be checked manually.
+Optimised Pattern: Key Normalization + Frequency Map
+Opt Vis. Technique: Canonical Form Bucketing
+Dry Run (Opt): For each domino, sort the pair so `(a, b)` becomes `(min(a,b), max(a,b))`. Use a hash map or 2D frequency array to store counts. Total pairs = sum fracn(n-1)2.
+How to Draw (Opt): Draw a set of buckets labeled by sorted pairs (e.g., "1-2", "2-3"). Drop dominoes into buckets. Write the count next to the bucket.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight arrow sweeping through the input array once.
+Mem Vis (BF): Brute force requires no extra storage besides input
+Mem Vis (Opt): Fixed-size 2D array `int[10][10]` or Hash Map.

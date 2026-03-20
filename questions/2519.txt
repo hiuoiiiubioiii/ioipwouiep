@@ -1,0 +1,13 @@
+ID: 2519
+Problem Title: Count the Number of K-Big Indices
+Brute Force Method: For every single index `i`, loop from 0 to `i-1` to count smaller elements, and loop from `i+1` to N-1 to count smaller elements. If both counts >= K, tally it. $O(N^2)$ time.
+BF Complexity Visuals: Nested loops where each node sends scanning rays spanning outwards to the left and right ends of the array.
+How to Draw BF: Put your finger on an index. Point your other finger left and count strictly smaller numbers. Then point right and count strictly smaller numbers. Repeat for every single number.
+Optimised Pattern: Two Passes (Prefix and Suffix) using Max-Heaps of size K.
+Opt Vis. Technique: Two separate arrays accumulating boolean valid states (Left valid, Right valid) populated by a bounding priority queue.
+Dry Run (Opt): Create a Left-Valid array. Sweep left-to-right pushing elements into a Max-Heap. If the heap size exceeds K, pop the max. If the heap has exactly K elements and the current number is strictly greater than the heap's max, mark Left-Valid as true. Repeat backwards for Right-Valid. Count where both are true.
+How to Draw (Opt): Draw the array. Draw a "Heap Box" that holds max K items. Sweep left-to-right. Write the max item in the box above the current array number. Sweep right-to-left doing the same. Circle indices where the array number is larger than both written maxes.
+Opt Complexity Visuals: Two linear passes $O(N)$, with each step doing an $O(\log K)$ heap insertion. Overall $O(N \log K)$.
+How to Draw Opt Complexity: Draw the array. Draw an arrow sweeping left-to-right, and another right-to-left. Beside each step, draw a mini tree of size K showing a push/pop operation.
+Mem Vis (BF): $O(1)$ auxiliary space, but terrible time complexity overhead.
+Mem Vis (Opt): Two boolean arrays of size N, and a Max-Heap of max size K. $O(N + K)$ space.

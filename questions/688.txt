@@ -1,0 +1,13 @@
+ID: 688
+Problem Title: Knight Probability in Chessboard
+Brute Force Method: Use recursion to simulate every possible sequence of K knight moves. Count how many end up inside the board.
+BF Complexity Visuals: Exponential Branching (8^K).
+How to Draw BF: Draw a board. From one square, draw 8 arrows. From each of those, 8 more. After 3 moves, it's a mess of 512 lines. $O(8^K)$.
+Optimised Pattern: Dynamic Programming (2D/3D).
+Opt Vis. Technique: Probability Distribution Heatmap.
+Dry Run (Opt): Create a grid `dp[i][j]` representing the probability of being on that square. For each step, a square's probability is distributed equally (1/8) to its 8 legal knight-move neighbors.
+How to Draw (Opt): Draw a grid. Put "1.0" on the starting square. For step 1, erase it and put "0.125" on the 8 squares a knight reaches. Sum probabilities for squares that go off-board.
+Opt Complexity Visuals: $O(K \cdot N^2)$ time.
+How to Draw Opt Complexity: Draw a stack of K grids. Write $O(K \cdot N^2)$.
+Mem Vis (BF): Draw an 8-way branching tree in memory.
+Mem Vis (Opt): Draw two N x N matrices (Current and Next state). $O(N^2)$ space.

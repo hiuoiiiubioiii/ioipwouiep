@@ -1,0 +1,13 @@
+ID: 3217
+Problem Title: Delete Nodes From Linked List Present in Array
+Brute Force Method: For every node in the linked list, iterate through the entire array to check if it exists. $O(N \cdot M)$.
+BF Complexity Visuals: Nested Traversal Lines
+How to Draw BF: Draw the Linked List. From the first node, draw M arrows pointing to every element in the array. Repeat for the next node.
+Optimised Pattern: HashSet + Dummy Node 1-Pass
+Opt Vis. Technique: Hash-Backed Pointer Jump
+Dry Run (Opt): Dump the array into a HashSet. Create a dummy node pointing to head. Traverse the list; if `next.val` is in the set, bypass it (`curr.next = curr.next.next`).
+How to Draw (Opt): Draw a Linked List. Draw a box labeled "O(1) Set". Trace over the nodes. When reaching a target node, draw an arched arrow skipping completely over it to the next valid node.
+Opt Complexity Visuals: Two Sequential Blocks
+How to Draw Opt Complexity: Draw a block labeled "Build Set" $O(M)$. Draw a second, non-overlapping block labeled "List Scan" $O(N)$. Result: $O(N + M)$.
+Mem Vis (BF): No extra space, but huge time penalty.
+Mem Vis (Opt): A HashSet structure containing up to M elements (O(M) space).

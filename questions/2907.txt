@@ -1,0 +1,13 @@
+ID: 2907
+Problem Title: Maximum Profitable Triplets With Increasing Prices I
+Brute Force Method: Three nested loops to test every combination of i &lt; j &lt; k ensuring prices increase.
+BF Complexity Visuals: 3D Cubic Grid
+How to Draw BF: Draw an isometric cube showing X(i), Y(j), Z(k) axes. Represents $O(N^3)$ combinations checked.
+Optimised Pattern: Middle Element Fix + Left/Right Max Search
+Opt Vis. Technique: Center Pivot with Left/Right Scanners
+Dry Run (Opt): Fix 'j'. Scan all elements to the left for max profit where price &lt; price[j]. Scan all right for max profit where price &gt; price[j].
+How to Draw (Opt): Draw array. Circle a middle element `j`. Draw a left-pointing cone to find max valid `i`, and right-pointing cone for valid `k`.
+Opt Complexity Visuals: N independent $O(N)$ tasks
+How to Draw Opt Complexity: Draw a horizontal timeline of length N. Under each point, draw a vertical line of length N. Area = $O(N^2)$.
+Mem Vis (BF): Three scalar boxes for loop variables i, j, k. Space $O(1)$.
+Mem Vis (Opt): Standard variables. $O(1)$ space if re-scanning, $O(N)$ if using Fenwick Trees (for harder constraints).

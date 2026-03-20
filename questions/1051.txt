@@ -1,0 +1,13 @@
+ID: 1051
+Problem Title: Height Checker
+Brute Force Method: Generate all possible permutations of the heights and see which one is perfectly non-decreasing. Compare it to the original.
+BF Complexity Visuals: An N! (factorial) explosion of reordering possibilities.
+How to Draw BF: Draw [1, 1, 4, 2, 1]. Draw all 120 ways to reorder it. Pick the sorted one. Compare element by element. Write $O(N!)$.
+Optimised Pattern: Sorting Comparison or Counting Sort.
+Opt Vis. Technique: A "Shadow Array". You create the "perfect" version of the line and see who is standing in the wrong spot.
+Dry Run (Opt): Copy the array and sort it. Iterate through both arrays simultaneously. If `original[i] != sorted[i]`, increment the count.
+How to Draw (Opt): Draw the Input Array. Directly below it, draw the Sorted Array. Circle the indices where the numbers don't match. Count the circles.
+Opt Complexity Visuals: A sort followed by a single linear scan.
+How to Draw Opt Complexity: Draw a sort box $O(N \log N)$ followed by a single arrow $O(N)$. Total Time: $O(N \log N)$.
+Mem Vis (BF): $O(N!)$ storage for permutations.
+Mem Vis (Opt): $O(N)$ space for the sorted copy of the array.

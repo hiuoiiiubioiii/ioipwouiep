@@ -1,0 +1,13 @@
+ID: 1196
+Problem Title: How Many Apples Can You Put into the Basket
+Brute Force Method: Try all possible subsets of apples and check if their sum is <= 5000. Return the size of the largest valid subset.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw 3 apples. Branch into 2^3 = 8 possible bags. For N apples, show 2^N branches. $O(2^N)$.
+Optimised Pattern: Greedy (Sorting)
+Opt Vis. Technique: Fill-to-Capacity Bar
+Dry Run (Opt): Sort apple weights. Add apples one by one starting from the lightest until the total weight exceeds 5000.
+How to Draw (Opt): Draw an empty box labeled "5000g". List sorted weights. Draw an arrow moving through the list, "dropping" apples into the box until it's full.
+Opt Complexity Visuals: Sorting $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting funnel followed by a single linear pass.
+Mem Vis (BF): None
+Mem Vis (Opt): In-place sorting of input array.

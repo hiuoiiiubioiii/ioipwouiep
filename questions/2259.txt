@@ -1,0 +1,13 @@
+ID: 2259
+Problem Title: Remove Digit From Number to Maximize Result
+Brute Force Method: String ReconstructionFind every occurrence of the digit. For each, create a new string with that instance removed, convert to a BigInt, and compare to find the max.
+BF Complexity Visuals: Branching String Copies
+How to Draw BF: Draw the number "1231". Draw two branches: "231" and "123". Compare them as strings. Note the cost of $O(N^2)$ for many large string allocations.
+Optimised Pattern: Greedy One-Pass Comparison
+Opt Vis. Technique: Peak-Drop Scanning
+Dry Run (Opt): Traverse the string. If `current_digit == target` and the `next_digit &gt; current_digit`, remove it immediately (greedy). If no such case exists, remove the *last* occurrence.
+How to Draw (Opt): Draw the string. Point to the target digit. Look at its right neighbor. If the neighbor is "higher", draw a "Delete" X over the current digit and stop. Otherwise, keep moving.
+Opt Complexity Visuals: Linear Scan with Early Exit
+How to Draw Opt Complexity: Draw a single $O(N)$ line. Inside, show a simple $O(1)$ comparison `s[i] &lt; s[i+1]`. This avoids building multiple temporary strings until the very end.
+Mem Vis (BF): Multiple large string objects (N strings of length N-1) held in the heap.
+Mem Vis (Opt): A single pass with two pointers and one final substring operation (O(N) space).

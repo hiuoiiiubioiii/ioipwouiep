@@ -1,0 +1,13 @@
+ID: 1647
+Problem Title: Minimum Deletions to Make Character Frequencies Unique
+Brute Force Method: Generate every possible combination of deletions and check if character frequencies are unique for each.
+BF Complexity Visuals: Subsets of Frequencies
+How to Draw BF: Draw 26 bars. For each bar, branch out into all possible shorter heights. $O(2^{26})$ or $O(\\text{text}{\text{TotalChars}}^2)$.
+Optimised Pattern: Greedy + Frequency Sorting / Hash Set
+Opt Vis. Technique: Frequency Staircase Smoothing
+Dry Run (Opt): Count frequencies. Sort them descending. If a frequency is already in the "Used" set, decrement it until it's unique or zero.
+How to Draw (Opt): Draw a bar chart of frequencies. If two bars are the same height, "shave" the second bar down until it is shorter than any existing unique height.
+Opt Complexity Visuals: Log-Linear Funnel
+How to Draw Opt Complexity: Draw a funnel (sorting 26 chars) leading to a short linear pipe. $O(n + 26 \log 26)$.
+Mem Vis (BF): Recursion Tree: A chaotic web of deletion states.
+Mem Vis (Opt): Frequency Array + Set: A fixed-size array of 26 and a small bucket (set) for unique counts.

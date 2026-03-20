@@ -1,0 +1,13 @@
+ID: 2076
+Problem Title: Process Restricted Friend Requests
+Brute Force Method: For each request, check if adding the edge creates a path between any restricted pair using BFS or DFS from scratch.
+BF Complexity Visuals: Repetitive Connectivity Matrix
+How to Draw BF: Draw a graph. For every new edge, draw a full BFS search to see if "Restricted Person A" can now reach "Restricted Person B". $O(\text{Requests} \\text{cdot Restrictions} \cdot (V+E)$).
+Optimised Pattern: Disjoint Set Union (DSU) with Restrictions Check
+Opt Vis. Technique: Dynamic Bubble Merging with Forbidden Lists
+Dry Run (Opt): For request (u, v), find their root parents P_u, P_v. Check if merging P_u and P_v violates any of the given restrictions (x, y). If safe, merge the components.
+How to Draw (Opt): Draw circles (components). For each request, draw a "tentative bridge". Check the "Forbidden List". If no forbidden pair exists across the bridge, solidify the line.
+Opt Complexity Visuals: Log-Linear Union-Find
+How to Draw Opt Complexity: Draw the DSU tree structure. Each operation is near-constant due to path compression. Total Time $O(\text{Requests} \\text{cdot Restrictions} \cdot α(N)$).
+Mem Vis (BF): Multiple temporary adjacency lists or full connectivity matrices for every query.
+Mem Vis (Opt): A `parent` array of size N and a `rank` array. Space $O(N + \text{Restrictions})$.

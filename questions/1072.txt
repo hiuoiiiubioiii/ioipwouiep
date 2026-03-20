@@ -1,0 +1,13 @@
+ID: 1072
+Problem Title: Flip Columns For Maximum Number of Equal Rows
+Brute Force Method: Try every possible subset of columns to flip (2^C combinations). For each subset, count how many rows become all 0s or all 1s.
+BF Complexity Visuals: A massive explosion of 2^100 possibilities. Impossible to finish.
+How to Draw BF: Draw a 3x3 grid. Try flipping col 1. Then col 2. Then col 1&amp;2. For each, check if rows are uniform. Write $O(2^C \cdot R \cdot C)$.
+Optimised Pattern: Pattern Canonicalization / Hashing.
+Opt Vis. Technique: A "Mirror Image" sorter. Two rows can become equal if they are identical OR perfect opposites.
+Dry Run (Opt): For each row, if it starts with 1, flip all its bits (canonical form). Use a HashMap to count occurrences of these canonical patterns. The answer is the highest frequency.
+How to Draw (Opt): Draw the grid. For each row, if it starts with '1', write its flipped version next to it. If it starts with '0', write it as is. Group the identical strings and count.
+Opt Complexity Visuals: Single pass through the matrix.
+How to Draw Opt Complexity: Draw the matrix being converted into a frequency map of strings. Write Time: $O(R \cdot C)$.
+Mem Vis (BF): 2^C search space storage.
+Mem Vis (Opt): A HashMap storing R strings of length C. $O(R \cdot C)$ space.

@@ -1,0 +1,13 @@
+ID: 3766
+Problem Title: Minimum Operations to Make Binary Palindrome (Med)
+Brute Force Method: Generate every possible palindrome of the same length and count the number of bit flips (Hamming distance) required to reach each. Pick the minimum. $O(2^(N/2)$).
+BF Complexity Visuals: Exhaustive Palindrome Search.
+How to Draw BF: Write the binary string. Draw every possible palindrome. Count bit differences between the original and each candidate. Circle the smallest count.
+Optimised Pattern: Two Pointers / Mirror Matching
+Opt Vis. Technique: Centripetal Pointer Comparison
+Dry Run (Opt): Place pointers at index i and n-1-i. If str[i] != str[n-1-i], you MUST flip one of them. Count these mismatches to get the total operations.
+How to Draw (Opt): Draw the binary string. Draw arcs connecting mirror indices. If the bits at the end of an arc are different, put a tally mark in the "Flip" box.
+Opt Complexity Visuals: Single Pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight horizontal line with an $O(N)$ label.
+Mem Vis (BF): Recursive stack for string generation.
+Mem Vis (Opt): $O(1)$ extra space (just a counter).

@@ -1,0 +1,13 @@
+ID: 486
+Problem Title: Predict the Winner
+Brute Force Method: Minimax Recursion Try picking from both ends, calculating max score diff for current player.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a root. Branch left (pick front) and right (pick end). Show expansion to $O(2^n)$.
+Optimised Pattern: DP (1D/2D) `dp[i][j]` stores max score diff from subarray i...j. `dp[i][j] = max(nums[i]-dp[i+1][j], nums[j]-dp[i][j-1])`.
+Opt Vis. Technique: Interval DP Table
+Dry Run (Opt): Imagine a 2D table. Fill it diagonally starting from the main diagonal (length 1 arrays). Each cell depends on the cell below and to the left.
+How to Draw (Opt): Draw an n \times n grid. Fill `dp[i][i] = nums[i]`. Calculate `dp[i][i+1]` using neighboring cells until top-right corner is reached.
+Opt Complexity Visuals: Table Area
+How to Draw Opt Complexity: Draw the upper triangle of a grid. Show total $O(n^2)$ cells.
+Mem Vis (BF): Call Stack Vertical stack of depth n.
+Mem Vis (Opt): 1D/2D Array One single array row. $O(n)$.

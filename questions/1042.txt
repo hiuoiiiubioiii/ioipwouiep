@@ -1,0 +1,13 @@
+ID: 1042
+Problem Title: Flower Planting With No Adjacent
+Brute Force Method: Try all 4^N combinations of flower types for the N gardens. For each combination, check all paths to ensure no two connected gardens have the same flower.
+BF Complexity Visuals: A massive 4-ary tree of choices where most branches are pruned.
+How to Draw BF: Draw 3 gardens. Branch into [1,2,3,4] for garden 1. Then [1,2,3,4] for garden 2... Check constraints. Write $O(4^N)$.
+Optimised Pattern: Greedy Coloring.
+Opt Vis. Technique: A "Neighborhood Exclusion" map. You look at your neighbors, see what they picked, and take the first thing left.
+Dry Run (Opt): Initialize a result array of 0s. For each garden, check its adjacent neighbors. Mark their flower types as "used" in a boolean array of size 5. Pick the first unused color for the current garden.
+How to Draw (Opt): Draw the graph (dots and lines). At each dot, write "Available: 1, 2, 3, 4". Cross out colors used by connected neighbors. Write the first remaining number.
+Opt Complexity Visuals: A single pass through the vertices and their limited edges.
+How to Draw Opt Complexity: Draw the adjacency list and one arrow through the gardens. Write $O(V + E)$. Since max 3 edges per garden, it's effectively $O(V)$.
+Mem Vis (BF): Exponential recursion stack for backtracking.
+Mem Vis (Opt): An adjacency list $O(V+E)$ and a small boolean array per vertex. $O(V)$ space.

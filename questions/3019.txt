@@ -1,0 +1,13 @@
+ID: 3019
+Problem Title: Number of Changing Keys
+Brute Force Method: Convert the entire string to lowercase first, then loop through comparing index `i` with `i-1` and incrementing a counter.
+BF Complexity Visuals: Two-Step Array Transformation
+How to Draw BF: Draw the original string. Below it, draw the fully lowercased string. Draw looping arrows between adjacent characters counting the differences.
+Optimised Pattern: Single-Pass Constant Space Scan
+Opt Vis. Technique: In-Place Sliding Window (Size 2)
+Dry Run (Opt): Read the string left to right. Convert characters to lowercase on the fly. Compare the current lowercase character strictly to the previous lowercase character.
+How to Draw (Opt): Write the original string. Use a two-finger sliding window. If the letters under your fingers differ (ignoring case), put a tally mark above them.
+Opt Complexity Visuals: Single $O(N)$ Timeline
+How to Draw Opt Complexity: Draw one straight arrow across the string. Label it $O(N)$ Time, $O(1)$ Space.
+Mem Vis (BF): A newly allocated full string in memory to hold the lowercase version, taking $O(N)$ space.
+Mem Vis (Opt): A single character variable `prev_char` and an integer `count` taking $O(1)$ space.

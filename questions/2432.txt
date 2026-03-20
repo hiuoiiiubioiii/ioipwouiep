@@ -1,0 +1,13 @@
+ID: 2432
+Problem Title: The Employee That Worked on the Longest Task
+Brute Force Method: For every log entry, subtract the previous entry's time from the current. Store all durations, then sort to find the max.
+BF Complexity Visuals: Interval Mapping List
+How to Draw BF: Draw a timeline. Mark points. Draw segments between points. Label $O(N \log N)$ if sorting, $O(N)$ if scanning.
+Optimised Pattern: Single Pass Tracking (Max/Min Greedy)
+Opt Vis. Technique: Running Record Holder
+Dry Run (Opt): Keep track of `lastStartTime` (starts at 0). For each log: calculate `duration = time - lastStartTime`. Update global max and ID. Update `lastStartTime`.
+How to Draw (Opt): Draw a table with columns: ID, Duration, MaxDuration, BestID. Fill row by row as you read logs.
+Opt Complexity Visuals: Single Horizontal Arrow
+How to Draw Opt Complexity: Draw a line from 0 to N logs. Label $O(N)$ Time.
+Mem Vis (BF): Draw an array storing all durations. $O(N)$ Space.
+Mem Vis (Opt): Draw two variables: `maxDur` and `resultID`. $O(1)$ Space.

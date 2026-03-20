@@ -1,0 +1,13 @@
+ID: 3335
+Problem Title: Total Characters in String After Transformations I
+Brute Force Method: Generate the massive string by actually replacing 'z' with 'ab' repeatedly. $O(2^T)$.
+BF Complexity Visuals: String Explosion Simulator
+How to Draw BF: Draw the string. After 50 transformations, the string is billions of characters long and crashes memory.
+Optimised Pattern: Frequency Array / Matrix Exponentiation
+Opt Vis. Technique: The 26-Bucket Shift
+Dry Run (Opt): Keep an array of size 26 for frequencies. In each step, everything shifts right. The value at 'z' goes to 'a' AND gets added to 'b'. Loop this T times.
+How to Draw (Opt): Draw 26 buckets. Pick up the contents, move them one bucket right. Take the 'z' bucket, dump it into 'a', and also dump a copy into 'b'.
+Opt Complexity Visuals: Fixed Size Simulation $O(T \cdot 26)$
+How to Draw Opt Complexity: Draw a loop running T times, updating a tiny, fixed 26-element array.
+Mem Vis (BF): Massive string allocations.
+Mem Vis (Opt): Two arrays of size 26. $O(1)$ space.

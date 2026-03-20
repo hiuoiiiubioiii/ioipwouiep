@@ -1,0 +1,13 @@
+ID: 888
+Problem Title: Fair Candy Swap
+Brute Force Method: For every candy in Alice's box, try swapping it with every candy in Bob's box. After each swap, recalculate both totals and see if they are equal.
+BF Complexity Visuals: Nested Comparative Sums. $O(A x B)$.
+How to Draw BF: Draw two boxes of candies. Draw a line from every candy in Box 1 to every candy in Box 2. Calculate the "New Total" for every line.
+Optimised Pattern: Hash Set (Target Difference math).
+Opt Vis. Technique: The "Specific Missing Piece" Search.
+Dry Run (Opt): Find the difference between Alice and Bob's totals. To be fair, Alice must give x and receive y such that y - x = (BobSum - AliceSum) / 2. Put Bob's candies in a Set. For every candy Alice has, check if `candy + target_diff` is in Bob's Set.
+How to Draw (Opt): Calculate the "Gap" between the two friends. Draw Alice's candies. Next to each, draw a "Puzzle Piece" shape of size `gap/2`. Search Bob's "Inventory Box" (Set) for that exact shape.
+Opt Complexity Visuals: Linear Scan with Set Lookups. $O(A + B)$.
+How to Draw Opt Complexity: Draw two parallel timelines. One pass for Alice, one pass for Bob's Set construction.
+Mem Vis (BF): $O(1)$ extra space but visualized as extremely slow, redundant looping.
+Mem Vis (Opt): Hash Set: Draw a bucket containing Bob's unique candy sizes. $O(B)$ space.

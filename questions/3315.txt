@@ -1,0 +1,13 @@
+ID: 3315
+Problem Title: Construct the Minimum Bitwise Array II
+Brute Force Method: Same as 3314, but because constraints are massive, the linear loop will result in Time Limit Exceeded (TLE).
+BF Complexity Visuals: Infinite Loop Track
+How to Draw BF: Draw a timeline line that extends off the page and into the distance, representing a loop that takes too long to finish.
+Optimised Pattern: Bitwise Shift &amp; Subtract
+Opt Vis. Technique: Bitmask Isolation Diagram
+Dry Run (Opt): Count the trailing ones algebraically (e.g., using `~p &amp; (p+1)` logic to find the flip bit). Subtract exactly that power of 2: `p - (1 &lt;&lt; (trailing_ones - 1))`.
+How to Draw (Opt): Write the large prime in binary. Below it, write a binary mask that has a '1' only at the highest trailing one's position. Draw a minus sign and subtract them.
+Opt Complexity Visuals: Single Math Operation Node
+How to Draw Opt Complexity: Draw one circle containing the bitwise subtraction formula. This emphasizes that large constraints don't change the $O(1)$ time.
+Mem Vis (BF): Large iterative states attempting to count up to 10^9.
+Mem Vis (Opt): A 64-bit integer (Long) register, strictly requiring $O(1)$ space.

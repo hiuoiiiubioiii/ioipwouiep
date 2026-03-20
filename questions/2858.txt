@@ -1,0 +1,13 @@
+ID: 2858
+Problem Title: Minimum Edge Reversals So Every Node Is Reachable
+Brute Force Method: For every node i in the graph, perform a BFS/DFS to count how many edges must be reversed to reach all other N-1 nodes.
+BF Complexity Visuals: $O(N^2)$ Repeated Traversal
+How to Draw BF: Draw a tree. For node 1, draw arrows to everyone, counting reversals. For node 2, start over. Show the total work as N x (Edges).
+Optimised Pattern: Tree DP / Re-rooting Technique
+Opt Vis. Technique: Directional Influence Shift
+Dry Run (Opt): 1. Pick an arbitrary root (node 0) and find the cost for it. 2. Use a second DFS to "shift" the root. If moving from parent u to child v, the reversal count changes based on whether the original edge was u to v or v to u.
+How to Draw (Opt): Draw a tree. At node 0, write its total cost. For its child, calculate the cost using the parent's cost: subtract 1 if the edge needs to be reversed for the child, add 1 otherwise.
+Opt Complexity Visuals: Two-Pass DFS $O(N)$
+How to Draw Opt Complexity: Draw two lines tracing the tree. Pass 1: Bottom-up. Pass 2: Top-down. Total time is strictly linear.
+Mem Vis (BF): Visualize a massive call stack and redundant traversal paths in memory.
+Mem Vis (Opt): Visualize an adjacency list with "weighted" directions and two integer arrays for DP states. Space $O(N)$.

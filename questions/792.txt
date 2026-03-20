@@ -1,0 +1,13 @@
+ID: 792
+Problem Title: Number of Matching Subsequences
+Brute Force Method: For every word in the dictionary, perform a full two-pointer subsequence check against the string `s`.
+BF Complexity Visuals: Repeated Subsequence Scan
+How to Draw BF: Draw `s`. For every word, draw an arrow scanning `s` from start to finish. $O(\\text{text}{\text{Words}} \\text{times} S)$.
+Optimised Pattern: Bucket Sort of Iterators / Waiting Lists
+Opt Vis. Technique: Multi-Word Parallel Scan
+Dry Run (Opt): Create 26 buckets. Put each word into the bucket of its first character. Iterate through `s`; for each char, move all words in that bucket to the bucket of their next character.
+How to Draw (Opt): Draw 26 alphabet buckets. Write words inside. As you move through `s`, "jump" words from bucket to bucket like a race. If a word finishes, increment count.
+Opt Complexity Visuals: Single String Pass
+How to Draw Opt Complexity: Draw the string `s`. Show a single arrow moving left-to-right, processing groups of words at each step. $O(S + \\text{sum} \\text{text}{\text{word}\_\text{lengths}})$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): A list of word iterators/pointers organized by starting character $O(\\text{text}{\text{Words}})$.

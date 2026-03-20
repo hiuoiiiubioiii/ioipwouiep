@@ -1,0 +1,13 @@
+ID: 1450
+Problem Title: Number of Students Doing Homework at a Given Time
+Brute Force Method: Nested Loops. For every integer time point from 1 to max(endTime), check which students were active. If the query time matches, return the count.
+BF Complexity Visuals: Time-Point Scanning
+How to Draw BF: Draw a timeline. For every tick on the timeline, scan the student arrays. Label $O(\text{MaxTime} \cdot N)$.
+Optimised Pattern: Single-Pass Range Intersection
+Opt Vis. Technique: Direct Interval Validation
+Dry Run (Opt): Iterate through the students once. For each student `i`, check if `startTime[i] &lt;= queryTime` AND `endTime[i] &gt;= queryTime`.
+How to Draw (Opt): Draw the queryTime as a vertical line. Draw each student's homework as a horizontal bar from startTime to endTime. Count how many horizontal bars the vertical line passes through.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw a single arrow left-to-right through the input arrays. Label $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A single integer `count`. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2104
+Problem Title: Sum of Subarray Ranges
+Brute Force Method: $O(N^2)$ nested loops, tracking running max/min for each subarray.
+BF Complexity Visuals: Upper-triangular matrix traversal.
+How to Draw BF: Draw an N x N grid, shade the top right half to show $O(N^2)$ combinations.
+Optimised Pattern: Monotonic Stack (O(N)).
+Opt Vis. Technique: Stack of blocks maintaining strictly increasing/decreasing sizes.
+Dry Run (Opt): Push elements. If new element breaks monotonicity, pop and calculate contribution.
+How to Draw (Opt): Draw a U-shape (stack). Draw numbers dropping in. If a smaller number drops in, draw the larger ones getting kicked out.
+Opt Complexity Visuals: Amortized $O(N)$ step function.
+How to Draw Opt Complexity: Draw an array. Draw exactly one "push" arrow and one "pop" arrow for every element.
+Mem Vis (BF): Two variables (min/max) overwritten in a loop.
+Mem Vis (Opt): Two Stack arrays storing indices, growing/shrinking dynamically.

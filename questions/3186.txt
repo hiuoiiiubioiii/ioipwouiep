@@ -1,0 +1,13 @@
+ID: 3186
+Problem Title: Maximum Total Damage With Spell Casts
+Brute Force Method: Generate all subsets of spells and check if any two spells have damage d1, d2 such that |d1 - d2| <= 2. $O(2^N)$.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a tree starting with no spells. For each spell, branch into "take" and "don't take," pruning branches that violate the distance-2 rule.
+Optimised Pattern: DP + Freq Map + Two Pointers
+Opt Vis. Technique: House Robber with Variable Gaps
+Dry Run (Opt): Count spell frequencies. Sort unique damage values. `dp[i]` is max damage using first i unique values. Look back to the largest index j where val[i] - val[j] &gt; 2 using two pointers.
+How to Draw (Opt): Draw unique spell damages on a number line. At each point, draw an arrow to the furthest valid "previous" spell that can be combined. Tally the running max.
+Opt Complexity Visuals: Linear Scan with Two-Pointer Look-back
+How to Draw Opt Complexity: Draw an $O(N)$ timeline. Above each node, draw an arrow jumping back a small variable distance. $O(N \log N)$ (due to sort).
+Mem Vis (BF): Recursive call stack for all valid combinations.
+Mem Vis (Opt): Frequency map and a 1D DP array of size N. $O(N)$.

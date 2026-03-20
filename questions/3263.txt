@@ -1,0 +1,13 @@
+ID: 3263
+Problem Title: Convert Doubly Linked List to Array II
+Brute Force Method: Traverse the list, store values in an array, then sort the array. $O(N \log N)$.
+BF Complexity Visuals: Collect and Sort Map
+How to Draw BF: Draw the linked list. Draw an array. Show nodes being moved into the array and then "shuffled" into sorted order.
+Optimised Pattern: Linear Traversal (Bidirectional)
+Opt Vis. Technique: Pointer-Follow Stream
+Dry Run (Opt): If the list is already sorted or if the problem requires a specific order (like original sequence), simply follow the `next` pointers once and store values.
+How to Draw (Opt): Draw the DLL. Put a pen on the head. Move the pen following `next` arrows, writing the value in an array at each step.
+Opt Complexity Visuals: Single-Pass Pipeline
+How to Draw Opt Complexity: Draw a single line for the traversal. Label it $O(N)$ because each node is visited exactly once.
+Mem Vis (BF): Temporary sorting buffers.
+Mem Vis (Opt): An array of size N to hold the result (O(N) space).

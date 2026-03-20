@@ -1,0 +1,13 @@
+ID: 3593
+Problem Title: Minimum Increments to Equalize Leaf Paths (Med)
+Brute Force Method: Try every possible increment value for every edge in the tree to make all root-to-leaf paths equal.
+BF Complexity Visuals: Exhaustive Path Testing.
+How to Draw BF: Draw a tree. Branch for every possible "+1" on every edge. Check all path sums. Stop at the minimum total. $O(\text{Val}^E)$.
+Optimised Pattern: Bottom-Up Tree DP (Post-order Traversal).
+Opt Vis. Technique: Level Balancing.
+Dry Run (Opt): At each node, find the max path sum from its children. Increment the shorter branches to match the maximum. Propagate the sum upward.
+How to Draw (Opt): Draw a tree. Start at the leaves. Write the max path sum at each parent. Add the "diff" to the edges to make them match.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single DFS traversal (bottom-up arrow). Each node is visited exactly once. $O(N)$.
+Mem Vis (BF): Full Path Permutation Map: Draw lists of every path sum for every possible increment combination.
+Mem Vis (Opt): Recursion Stack: Draw a single call stack of depth H (height of tree).

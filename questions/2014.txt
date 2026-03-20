@@ -1,0 +1,13 @@
+ID: 2014
+Problem Title: Longest Subsequence Repeated k Times
+Brute Force Method: Generate all possible string combinations, check if each is a valid subsequence that appears `k` times.
+BF Complexity Visuals: Massive Exponential Tree
+How to Draw BF: Draw a tree generating every combination of letters. $O(2^N)$. It becomes impossible to draw past level 3.
+Optimised Pattern: Breadth-First Search (BFS) String Building + Frequency Pruning
+Opt Vis. Technique: Pruned BFS Queue
+Dry Run (Opt): Filter chars appearing &gt;= k times. Put them in a queue. Pop string, append valid chars, check if valid subsequence `k` times. Keep track of longest.
+How to Draw (Opt): Draw a queue. Start with single valid letters. Branch out to 2-letter combos. Cross out branches that fail the subsequence check immediately.
+Opt Complexity Visuals: Bounded BFS Tree
+How to Draw Opt Complexity: Draw a tree, but severely limit the branches to only characters that passed the `count &gt;= k` threshold. Max depth is 7.
+Mem Vis (BF): Massive arrays storing all generated combinations before validation.
+Mem Vis (Opt): A Queue holding valid prefixes, and a 26-slot integer array for initial frequency filtering.

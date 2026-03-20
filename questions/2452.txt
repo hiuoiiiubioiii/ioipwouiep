@@ -1,0 +1,13 @@
+ID: 2452
+Problem Title: Words Within Two Edits of Dictionary
+Brute Force Method: For every query word, iterate through every dictionary word. Manually count the number of differing characters between them.
+BF Complexity Visuals: Nested Search Matrix (M x N)
+How to Draw BF: Draw a grid where rows are queries and columns are dictionary words. Label each cell "O(L)" where L is word length. Total $O(M \cdot N \cdot L)$.
+Optimised Pattern: Optimized Linear Scan (Early Exit)
+Opt Vis. Technique: Char-by-Char Comparison Pipeline
+Dry Run (Opt): For each query, scan dictionary words. While comparing, if differences exceed 2, stop immediately and move to the next dictionary word.
+How to Draw (Opt): Write two words vertically aligned. Draw a line between differing characters. Use a counter (1, 2, STOP) to show the early exit logic.
+Opt Complexity Visuals: Bounded Nested Loop
+How to Draw Opt Complexity: Draw a grid. Shade only the first few characters of failed matches. Label $O(M \cdot N \cdot L)$ worst case, but $O(M \cdot N)$ average.
+Mem Vis (BF): Draw a results list.
+Mem Vis (Opt): Draw a single integer `diffCount` variable. $O(1)$ Space beyond output.

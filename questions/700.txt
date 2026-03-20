@@ -1,0 +1,13 @@
+ID: 700
+Problem Title: Search in a Binary Search Tree
+Brute Force Method: Perform a full tree traversal (DFS/BFS) without utilizing the BST property, checking every single node.
+BF Complexity Visuals: Exhaustive Search.
+How to Draw BF: Draw a tree. Draw a circle around every single node. Write $O(N)$.
+Optimised Pattern: BST Property Navigation (Binary Search).
+Opt Vis. Technique: Directional Descent.
+Dry Run (Opt): If `val == root.val`, return root. If `val &lt; root.val`, move to the left child. If `val &gt; root.val`, move to the right child. Repeat until found or NULL.
+How to Draw (Opt): Draw a tree. Draw a single path from the root downwards. You only ever pick one branch at each step.
+Opt Complexity Visuals: $O(\text{Height})$ — $O(\log N)$ for balanced trees.
+How to Draw Opt Complexity: Draw a single line diving into a tree. Write $O(H)$.
+Mem Vis (BF): Draw the recursion stack for all nodes.
+Mem Vis (Opt): Draw a single recursion path or a single loop variable. $O(H)$ or $O(1)$.

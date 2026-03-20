@@ -1,0 +1,13 @@
+ID: 1476
+Problem Title: Subrectangle Queries
+Brute Force Method: Literal Matrix Update. For every `updateSubrectangle` call, use a nested loop to iterate through every cell in the defined range and update its value in the original 2D array.
+BF Complexity Visuals: 2D Grid Re-writing
+How to Draw BF: Draw a grid. Draw a rectangle inside it. Draw arrows filling every single box in that rectangle with a new number. Label $O(R \cdot C)$ per update.
+Optimised Pattern: Update-History Log (Inverse Search)
+Opt Vis. Technique: Reverse-Chronological Log Scan
+Dry Run (Opt): Store updates in a list of `[r1, c1, r2, c2, newValue]`. For `getValue(r, c)`, scan the list from the end (most recent). If the coordinate falls within an update range, return that value.
+How to Draw (Opt): Draw a timeline of update stickers. Instead of applying stickers to the board, just look at the stack of stickers. Pick the one on top that covers your target (r, c).
+Opt Complexity Visuals: Linear History Scan
+How to Draw Opt Complexity: Draw a vertical list of update commands. Draw an arrow starting from the bottom moving up. Label $O(\text{updates})$ per query, $O(1)$ per update.
+Mem Vis (BF): Full Matrix Copy
+Mem Vis (Opt): A dynamic list (vector) of 5-element arrays. Space $O(\text{updates})$.

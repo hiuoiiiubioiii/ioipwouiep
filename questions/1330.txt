@@ -1,0 +1,13 @@
+ID: 1330
+Problem Title: Reverse Subarray To Maximize Array Value
+Brute Force Method: Generate all possible subarray combinations [L, R]. Physically reverse each subarray, calculate the absolute differences of the entire array, and track the maximum.
+BF Complexity Visuals: $O(N³)$ Brute Force Array Reversals
+How to Draw BF: Draw an array. Underneath it, draw N² different variations of the array with different chunks reversed. Draw a magnifying glass iterating $O(N)$ times over every single variation to calculate sums.
+Optimised Pattern: Math / Edge-Delta Optimization
+Opt Vis. Technique: Boundary Severing and Reattachment
+Dry Run (Opt): Reversing [L, R] only changes the connections at `L-1` and `R+1`. The delta is `abs(A[L] - A[R+1]) + abs(A[R] - A[L-1]) - abs(A[L-1] - A[L]) - abs(A[R] - A[R+1])`. Maximize this in $O(N)$.
+How to Draw (Opt): Draw an array. Draw a box around a subarray. The internal links don't change absolute sum. Draw scissors cutting the left and right edges of the box, and draw them crossing over to attach to opposite ends.
+Opt Complexity Visuals: Single-Pass Min/Max Tracking
+How to Draw Opt Complexity: Draw an array. Draw exactly one arrow moving left-to-right, keeping track of 4 mathematical variables in constant time, proving $O(N)$ logic.
+Mem Vis (BF): $O(N²)$ Array Copies: Allocating a brand new `std::vector` for every theoretical reversal check.
+Mem Vis (Opt): Four Constant Registers: Draw a CPU. Only 4 integer registers are used to track `max_min_edge`, `min_max_edge`, and boundary deltas. $O(1)$ space.

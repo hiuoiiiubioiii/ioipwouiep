@@ -1,0 +1,13 @@
+ID: 590
+Problem Title: N-ary Tree Postorder Traversal
+Brute Force Method: Traverse the tree and store nodes in a list, then use a custom sorting algorithm based on depth and position to order them.
+BF Complexity Visuals: Complex sorting logic after traversal. $O(N \log N)$.
+How to Draw BF: Draw a tree. Tag each node with a number, then sort those numbers based on postorder rules.
+Optimised Pattern: Recursive DFS or Iterative "Reverse Preorder".
+Opt Vis. Technique: A "Bottom-Up" finish. No parent is finished until all its children are completely done. It's like a supervisor who only signs off after all subordinates finish.
+Dry Run (Opt): Recursive: For each `child` in `root.children`, `DFS(child)`. `Visit(root)`. Iterative: Do Preorder (Root, Right, Left) and then reverse the final result list.
+How to Draw (Opt): Draw the tree. Start at the bottom-left leaf. Move to its siblings, then to their parent. Always finish the "floor" before the "ceiling."
+Opt Complexity Visuals: Single visit to every node. $O(N)$.
+How to Draw Opt Complexity: Draw a tree and follow an arrow that loops under the bottom of the leaves before pointing to the parent.
+Mem Vis (BF): The overhead of sorting a full tree list.
+Mem Vis (Opt): Recursion stack. $O(H)$ where H is the height of the tree.

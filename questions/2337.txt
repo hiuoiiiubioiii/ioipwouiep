@@ -1,0 +1,13 @@
+ID: 2337
+Problem Title: Move Pieces to Obtain a String
+Brute Force Method: Use BFS to generate every possible string configuration by moving 'L' and 'R' into adjacent '_' spaces until you reach the target.
+BF Complexity Visuals: State Space Explosion (O(3^N))
+How to Draw BF: Draw a string. Draw branches for every possible single move of an 'L' or 'R'. Each branch creates a new string that branches again.
+Optimised Pattern: Two Pointers (Relative Order &amp; Constraints)
+Opt Vis. Technique: Zipped Character Alignment
+Dry Run (Opt): Ignore '_' and check if 'L' and 'R' appear in the same relative order in both strings. Then, ensure each 'L' in `start` is at an index &gt;= its index in `target`, and each 'R' is at an index &lt;= its index in `target`.
+How to Draw (Opt): Draw two strings. Draw lines connecting the 1st 'L' in start to the 1st 'L' in target, 2nd to 2nd, etc. Check if the lines slant in the correct direction (L can only move left, R only right).
+Opt Complexity Visuals: Single Linear Pass (O(N))
+How to Draw Opt Complexity: Draw two parallel timelines. Two arrows move forward together, stopping only when they hit a letter to compare positions.
+Mem Vis (BF): Draw a massive Queue holding thousands of string copies.
+Mem Vis (Opt): Draw two Integer pointers (`i`, `j`) moving across the original strings.

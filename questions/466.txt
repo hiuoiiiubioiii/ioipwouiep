@@ -1,0 +1,13 @@
+ID: 466
+Problem Title: Count The Repetitions
+Brute Force Method: Linear Scan Construct strings s_1 \times n_1 and s_2 \times n_2 and use two pointers to count matches.
+BF Complexity Visuals: Mega-String Scan
+How to Draw BF: Draw two massive horizontal lines representing 10^6 characters. Show a pointer crawling $O(n_1 \cdot |s_1|)$.
+Optimised Pattern: Cycle Detection (Pigeonhole) Record the `index` in s_2 after each s_1. If the same index repeats, a cycle is found. Calculate remainder math.
+Opt Vis. Technique: Loop with Remainder
+Dry Run (Opt): Visualize a circle where each lap covers a fixed amount of s_2. Calculate full laps plus the final "broken" lap.
+How to Draw (Opt): Draw a timeline. Mark points where s_1 ends. Note the pointer position in s_2. Circle the repeating sequence of positions.
+Opt Complexity Visuals: Compressed Scan
+How to Draw Opt Complexity: Draw a line that "short-circuits" once it hits a loop. $O(|s_1| \cdot |s_2|)$ to find the loop.
+Mem Vis (BF): String Buffer Massive memory for the giant concatenated string.
+Mem Vis (Opt): State Map A small Map storing `index -&gt; (countS1, countS2)`. $O(|s_2|)$ space.

@@ -1,0 +1,13 @@
+ID: 2172
+Problem Title: Maximum AND Sum of Array
+Brute Force Method: Try every permutation of putting N numbers into M slots (max 2 per slot) and calculate total AND sum.
+BF Complexity Visuals: Massive factorial/exponential tree of assignments.
+How to Draw BF: Draw N numbers and M slots. Draw lines connecting numbers to slots. Branch into every valid mapping. $O(M^N)$.
+Optimised Pattern: Bitmask DP (Ternary/Base-3 or Base-2 with double slots).
+Opt Vis. Technique: A puzzle board where each cell represents a state of "slots filled".
+Dry Run (Opt): `dp[mask]` = max sum for assigned numbers. Mask tracks how many items are in each slot (0, 1, or 2). Use memoization.
+How to Draw (Opt): Draw a grid. Let each column represent a slot. Use a 2-bit counter for each column. Iterate through numbers and "fill" the counters, updating a max_sum table.
+Opt Complexity Visuals: $O(N \cdot 3^M)$.
+How to Draw Opt Complexity: A lattice of states where each layer represents the number of elements processed.
+Mem Vis (BF): $O(M^N)$ recursive state storage.
+Mem Vis (Opt): $O(3^M)$ DP array/memoization table.

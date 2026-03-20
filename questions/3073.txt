@@ -1,0 +1,13 @@
+ID: 3073
+Problem Title: Maximum Increasing Triplet Value
+Brute Force Method: Three nested loops to check i &lt; j &lt; k and arr[i] &lt; arr[j] &lt; arr[k]. $O(N^3)$.
+BF Complexity Visuals: Cubic Triplet Hunting
+How to Draw BF: Draw the array. Pick an element. Draw lines to every future element, and from those, to every future element.
+Optimised Pattern: Right Max Array + Sorted Set
+Opt Vis. Technique: The Peak-and-Valley Tracker
+Dry Run (Opt): To maximize arr[i] - arr[j] + arr[k], we want a large arr[i], small arr[j], and large arr[k]. Precompute the maximum valid elements to the right. Use a Sorted Set while iterating to find the optimal valid arr[i] strictly smaller than arr[j].
+How to Draw (Opt): Draw the array. Above it, track the maximum elements to the right. Below it, maintain a sliding "Best Left" box. Combine Top, Middle, and Bottom for the max score.
+Opt Complexity Visuals: Set Insertion + Scan $O(N \log N)$
+How to Draw Opt Complexity: Draw a linear scan. At each step, do an $O(\log N)$ lookup/insertion in a Tree/Set.
+Mem Vis (BF): None.
+Mem Vis (Opt): A suffix max array and a balanced BST (Set). $O(N)$ space.

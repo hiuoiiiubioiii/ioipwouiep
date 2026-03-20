@@ -1,0 +1,13 @@
+ID: 3244
+Problem Title: Shortest Distance After Road Addition Queries II
+Brute Force Method: Run BFS or Dijkstra after every query. Since edges are weight 1, $O(Q \cdot (N+E)$).
+BF Complexity Visuals: Repeated Wavefront Propagation
+How to Draw BF: Draw the graph. For each query, shade the entire reachable area layer-by-layer. Repeat Q times to show the redundant $O(Q\cdot N)$ overlap.
+Optimised Pattern: Greedy Range Removal (Set/Segment Tree)
+Opt Vis. Technique: Path Compression Timeline
+Dry Run (Opt): Use an ordered Set (or Segment Tree) to track active nodes. When a "shortcut" from U to V is added, remove all intermediate nodes between U and V. The distance is always the current size of the Set - 1.
+How to Draw (Opt): Draw nodes 0 to N on a line. Draw a big arched arrow from 2 to 7. Erase nodes 3, 4, 5, and 6. The "path" now jumps straight. Count the remaining "hops".
+Opt Complexity Visuals: Logarithmic Range Update Block
+How to Draw Opt Complexity: Draw a timeline. For each query, draw an $O(\log N)$ "Erase" operation. Total: $O(N \log N + Q \log N)$.
+Mem Vis (BF): Multiple BFS queues in memory.
+Mem Vis (Opt): A single Ordered Set or Segment Tree structure (O(N) space).

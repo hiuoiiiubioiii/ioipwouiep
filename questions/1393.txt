@@ -1,0 +1,13 @@
+ID: 1393
+Problem Title: Capital Gain/Loss (SQL)
+Brute Force Method: Using correlated subqueries to find the 'Buy' price for every 'Sell' row individually and subtracting them.
+BF Complexity Visuals: $O(N²)$ Row-by-Row Search
+How to Draw BF: Draw a table. For every "Sell" row, draw an arrow searching through all previous rows to find a matching "Buy". Massive overlapping reads.
+Optimised Pattern: Conditional Aggregation (SUM + IF/CASE)
+Opt Vis. Technique: Value Polarized Tallying
+Dry Run (Opt): Treat 'Buy' as negative and 'Sell' as positive. Group by `stock_name` and simply sum the prices: `SUM(IF(action='Buy', -price, price))`.
+How to Draw (Opt): Draw two columns: Buy and Sell. Put a minus sign next to Buy prices and a plus next to Sell. Group by stock name and add all numbers in the group.
+Opt Complexity Visuals: $O(N)$ Single Table Scan
+How to Draw Opt Complexity: Draw a single arrow moving down the table once. Each row is processed and added to a running group total, proving linear time.
+Mem Vis (BF): Massive Temp Tables: Database engines generating huge intermediate sets for subquery matching.
+Mem Vis (Opt): Hash Map Aggregator: Draw an in-memory Hash Map keyed by stock name, holding a single running integer sum.

@@ -1,0 +1,13 @@
+ID: 793
+Problem Title: Preimage Size of Factorial Zeroes Function
+Brute Force Method: Iteratively calculate the number of trailing zeros for factorials 1!, 2!, 3! \dots until reaching K.
+BF Complexity Visuals: Linear Zero Counting
+How to Draw BF: Draw a number line. At each step, count multiples of 5. $O(N \\text{times} \log N)$.
+Optimised Pattern: Binary Search on Answer Range
+Opt Vis. Technique: Zero-Count Threshold Search
+Dry Run (Opt): The number of trailing zeros is monotonic. Use binary search to find the smallest number with K zeros and the smallest with K+1 zeros. The answer is their difference (always 5 or 0).
+How to Draw (Opt): Draw a coordinate graph where X is the number and Y is the zero count. Use binary search brackets to home in on the X value where Y=K.
+Opt Complexity Visuals: Logarithmic Convergence
+How to Draw Opt Complexity: Draw a range [0, 10^{10}]. Show it halving about 60 times. $O(\log^2 K)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ space (just mathematical bounds).

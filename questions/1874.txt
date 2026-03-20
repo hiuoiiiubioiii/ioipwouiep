@@ -1,0 +1,13 @@
+ID: 1874
+Problem Title: Minimize Product Sum of Two Arrays (Premium)
+Brute Force Method: Generate all N! permutations of one array and multiply by the other array index-by-index.
+BF Complexity Visuals: Factorial Combination Grid.
+How to Draw BF: Draw a root node branching into N! leaves. Calculate sum for each leaf. Mark $O(N!)$.
+Optimised Pattern: Greedy Algorithm (Rearrangement Inequality): Sort one ascending, one descending.
+Opt Vis. Technique: Opposing Sorting Scales.
+Dry Run (Opt): Sort `nums1` [1, 2, 3]. Sort `nums2` [5, 4, 1]. Multiply smallest by largest: (1 \cdot 5) + (2 \cdot 4) + (3 \cdot 1).
+How to Draw (Opt): Draw two arrays. Sort them. Draw arrows connecting the smallest of A to largest of B, second smallest to second largest, etc.
+Opt Complexity Visuals: $O(N \log N)$ Sorting.
+How to Draw Opt Complexity: Draw two Merge Sort trees. Mark $O(N \log N)$.
+Mem Vis (BF): Large list of all possible sums.
+Mem Vis (Opt): $O(1)$ extra space (if sorted in-place) or $O(N)$ for copies.

@@ -1,0 +1,13 @@
+ID: 180
+Problem Title: Consecutive Numbers
+Brute Force Method: Self-join the table three times to find rows where `Id`, `Id+1`, and `Id+2` all have the same value.
+BF Complexity Visuals: A "Triple-Layer Table" visualization where the table is copied and shifted against itself.
+How to Draw BF: Draw Table T1. Draw T2 (shifted up 1). Draw T3 (shifted up 2). Draw a vertical line through them to find matching values.
+Optimised Pattern: Window Functions: LEAD() or LAG().
+Opt Vis. Technique: "Ghost Rows." Every row "carries" the values of the row after it and the row after that, allowing for a single-pass check.
+Dry Run (Opt): For each row, look at the `Value` of the next 2 rows using `LEAD`. If `Val = Lead1 = Lead2`, it's a consecutive triplet.
+How to Draw (Opt): Draw the table columns. Add two virtual columns labeled "Next" and "Next+1". Fill them and circle rows where all three match.
+Opt Complexity Visuals: $O(N)$ linear scan after the data is sorted by ID.
+How to Draw Opt Complexity: Draw a single arrow moving down the table. Show the "view" of the arrow covering 3 rows at a time.
+Mem Vis (BF): Massive Cartesian product overhead from triple joins (O(N^3) conceptual if not indexed).
+Mem Vis (Opt): $O(N)$ memory for the result set and the temporary window function buffer.

@@ -1,0 +1,13 @@
+ID: 2647
+Problem Title: Color the Triangle Red
+Brute Force Method: Try every possible coloring combination and check if it follows the "triangle sum" rule.
+BF Complexity Visuals: Recursive Grid Permutation
+How to Draw BF: Draw a triangle of size N. Branch out every cell into "Red" or "Blue". $O(2^(N^2)$).
+Optimised Pattern: Constructive Pattern / Mathematical Observation
+Opt Vis. Technique: Geometric Grid Tiling
+Dry Run (Opt): Notice the pattern for small N. The coloring follows a specific modular pattern based on the row index. Usually, it involves filling the base and working upward with specific offsets.
+How to Draw (Opt): Draw a triangle of rows. Label rows 1 to N. Fill the cells according to the observed pattern (e.g., specific cells in the last row, then every few cells in higher rows).
+Opt Complexity Visuals: $O(N)$ Construction
+How to Draw Opt Complexity: Draw a single pass that iterates through rows to generate coordinates. $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): List to store result coordinates.

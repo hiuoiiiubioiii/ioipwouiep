@@ -1,0 +1,13 @@
+ID: 1444
+Problem Title: Number of Ways of Cutting a Pizza
+Brute Force Method: Backtracking with slicing simulation. Try every possible horizontal and vertical cut. Check if the remaining piece has at least one apple. Repeat K-1 times.
+BF Complexity Visuals: Exponential Slice Tree
+How to Draw BF: Draw a grid. Branch into all possible horizontal cuts, then all vertical cuts. Label $O((R+C)$^K).
+Optimised Pattern: 2D DP + 2D Prefix Sum (Suffix Sum)
+Opt Vis. Technique: Sub-Grid State Memoization
+Dry Run (Opt): `dp[k][r][c]` is ways to cut a pizza starting at `(r,c)` with `k` cuts left. Use a 2D Suffix Sum to instantly check if a piece contains apples.
+How to Draw (Opt): Draw a pizza. Represent a cut as a state transition from a large rectangle `(r,c,R,C)` to a smaller one. Use the DP table to store the results of these smaller rectangles.
+Opt Complexity Visuals: Tabulated State Space
+How to Draw Opt Complexity: Draw 3 nested loops: K, Rows, Cols, plus an inner loop for the cut position. Label $O(K \cdot R \cdot C \cdot (R+C)$).
+Mem Vis (BF): Recursion stack
+Mem Vis (Opt): A 3D DP table of size K * R * C. Space $O(K \cdot R \cdot C)$.

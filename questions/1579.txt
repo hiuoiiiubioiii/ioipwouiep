@@ -1,0 +1,13 @@
+ID: 1579
+Problem Title: Remove Max Number of Edges to Keep Graph Fully Traversable
+Brute Force Method: Try removing every possible subset of edges and run BFS/DFS for both Alice and Bob to check connectivity. $O(2^E \cdot (V+E)$).
+BF Complexity Visuals: Exponential Edge-Subset Tree
+How to Draw BF: Draw a graph. Branch out for every edge: "Keep" or "Discard". For each leaf, run two separate connectivity checks.
+Optimised Pattern: Union Find (DSU) / Greedy
+Opt Vis. Technique: The Common-Edge Priority Viz
+Dry Run (Opt): 1. Process Type 3 edges (Alice &amp; Bob) first. Use DSU to connect nodes. 2. Then, independently process Type 1 (Alice) and Type 2 (Bob) using separate DSU states. 3. If an edge connects two already-connected nodes, discard it.
+How to Draw (Opt): Draw two blank graphs (Alice's and Bob's). Pick Type 3 edges first. Draw them on both graphs. If they merge components, count as "Used". Then draw Alice's specific edges only on her graph and Bob's only on his.
+Opt Complexity Visuals: Union-Find with Path Compression $O(E \cdot \\text{alpha}(V)$)
+How to Draw Opt Complexity: Draw a single scan of the edge list. Above each edge, draw a tiny "Find/Union" tree operation (\alpha(V) is nearly constant).
+Mem Vis (BF): Storing every subset of edges in memory.
+Mem Vis (Opt): Two DSU integer arrays (parent/rank) of size V. $O(V)$ space.

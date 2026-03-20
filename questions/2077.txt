@@ -1,0 +1,13 @@
+ID: 2077
+Problem Title: Paths in Maze That Lead to Same Room
+Brute Force Method: Generate all possible paths of length 3 starting from every room and check if the start room equals the end room.
+BF Complexity Visuals: Exponential Path Tree (Depth 3)
+How to Draw BF: Draw a root room. Draw all neighbors. For each neighbor, draw all its neighbors. Check if any hit the root room. $O(V \\text{cdot Degree}^3)$.
+Optimised Pattern: Adjacency Set Intersection (Triangle Counting)
+Opt Vis. Technique: Neighbor Intersection Venn Diagram
+Dry Run (Opt): For every edge (u, v), count how many neighbors they have in common. Each common neighbor w forms a triangle (u, v, w). Total count divided by 3 (or only iterate u &lt; v &lt; w).
+How to Draw (Opt): Draw an adjacency list as sets. For edge (u, v), highlight the overlap between `Set(u)` and `Set(v)`. Every highlighted number is a valid 3-cycle.
+Opt Complexity Visuals: $O(E \\text{cdot AverageDegree})$ Search
+How to Draw Opt Complexity: Draw the edges. For each edge, show a set intersection operation. Total time $O(E \\text{cdot min}(V^1/2, \text{max}_\text{degree})$).
+Mem Vis (BF): Storing full path histories for every search branch.
+Mem Vis (Opt): A List of Sets (Adjacency List). Space $O(V + E)$.

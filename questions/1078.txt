@@ -1,0 +1,13 @@
+ID: 1078
+Problem Title: Occurrences After Bigram
+Brute Force Method: Use a sliding window of size 3. For every window, check if word 1 and word 2 match the bigram. If yes, take word 3.
+BF Complexity Visuals: A three-word "frame" sliding across the text.
+How to Draw BF: "alice is a good girl". Bigram: "a good". Window 1: [alice, is, a]. Window 2: [is, a, good]. Window 3: [a, good, girl] -&gt; Match! Output "girl". Write $O(N)$.
+Optimised Pattern: Linear Scan / String Splitting.
+Opt Vis. Technique: A "Pattern Sniffer". We scan the list of words and every time we see the first two pieces of the puzzle, we grab the piece that comes next.
+Dry Run (Opt): Split the text into an array of words. Loop from index 0 to length - 3. If `words[i] == first` and `words[i+1] == second`, add `words[i+2]` to the result list.
+How to Draw (Opt): Write the words in a horizontal line. Draw a rectangle covering the first two words. If they match the targets, circle the third word. Slide the rectangle one word at a time.
+Opt Complexity Visuals: Single pass through the word array.
+How to Draw Opt Complexity: Draw a word array with a single arrow and a "check" bracket. Write Time: $O(N)$.
+Mem Vis (BF): Multiple substring allocations during window sliding.
+Mem Vis (Opt): An array of words. $O(N)$ space where N is text length.

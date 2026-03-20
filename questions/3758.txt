@@ -1,0 +1,13 @@
+ID: 3758
+Problem Title: Convert Number Words to Digits (Med)
+Brute Force Method: Split string by spaces. Use a large switch-case or nested if-statements to handle "thousand", "million", etc., manually managing a current total.
+BF Complexity Visuals: Conditional Branching Tree.
+How to Draw BF: Draw the sentence. Above each word, write its value. Draw circles around "million" to group previous words.
+Optimised Pattern: Stack-Based Parsing / Grammar state machine
+Opt Vis. Technique: Multiplier-Triggered Accumulation
+Dry Run (Opt): Maintain a `current` and `total` variable. Numbers add to `current`. Multipliers ("thousand") multiply `current` and add to `total`, then reset `current`.
+How to Draw (Opt): Draw two boxes: "Temp" and "Total". Write numbers in Temp. When "million" appears, multiply Temp by 1M, move to Total, clear Temp.
+Opt Complexity Visuals: $O(N)$ linear scan of words.
+How to Draw Opt Complexity: Draw a flat timeline with dots representing word processing steps.
+Mem Vis (BF): Heavy string splitting and array creation.
+Mem Vis (Opt): $O(1)$ integer variables + a small static Map for lookups.

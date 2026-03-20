@@ -1,0 +1,13 @@
+ID: 54
+Problem Title: Spiral Matrix
+Brute Force Method: Simulation with Visited Matrix Move right until a wall or visited cell, then down, then left, then up. Repeat. Use a boolean matrix to track visited cells.
+BF Complexity Visuals: The Redundancy Grid
+How to Draw BF: Draw an N×M matrix and an identical boolean "Visited" matrix. Show the pointer checking the Visited matrix before every single move. $O(N\cdot M)$ space.
+Optimised Pattern: Boundary Shrinking
+Opt Vis. Technique: The Closing Walls
+Dry Run (Opt): Define four boundaries: `top`, `bottom`, `left`, `right`. Traverse the top row, then increment `top`. Traverse the right col, then decrement `right`. Repeat until boundaries cross.
+How to Draw (Opt): Draw a grid. Draw four thick lines representing the borders. After each side is traversed, draw an arrow showing that border line physically moving inward.
+Opt Complexity Visuals: Total Cell Count
+How to Draw Opt Complexity: Draw an N×M rectangle. Shade every cell exactly once in a spiral pattern. Time is strictly $O(N\cdot M)$.
+Mem Vis (BF): Draw an extra boolean matrix of size N*M. $O(N\cdot M)$ space.
+Mem Vis (Opt): Draw exactly four integer variables representing the boundaries. No extra 2D arrays. $O(1)$ auxiliary space.

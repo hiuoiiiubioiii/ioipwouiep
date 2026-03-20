@@ -1,0 +1,13 @@
+ID: 3101
+Problem Title: Count Alternating Subarrays
+Brute Force Method: Nested loops (i, j) to generate all subarrays. For each, iterate through all elements to verify if every adjacent pair differs.
+BF Complexity Visuals: $O(N³)$ Brute Checker
+How to Draw BF: Draw a triangle of all pairs. From each cell, draw a horizontal sub-scan. Label as $O(N^3)$.
+Optimised Pattern: One-Pass DP / Sliding Window (Arithmetic Progressions)
+Opt Vis. Technique: Consecutive Streak Counter
+Dry Run (Opt): Traverse once. If nums[i] != nums[i-1], your current "alternating streak" increases by 1. Add the current streak length to the total answer.
+How to Draw (Opt): Write the array. Draw a bracket that grows as long as numbers alternate. When they repeat, "break" the bracket. The count is the sum of the bracket lengths.
+Opt Complexity Visuals: $O(N)$ Linear Pass
+How to Draw Opt Complexity: Draw one straight arrow across the array. Label it $O(N)$.
+Mem Vis (BF): Storing every valid alternating subarray in a list.
+Mem Vis (Opt): A long variable for the total count and an int for the current streak.

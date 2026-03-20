@@ -1,0 +1,13 @@
+ID: 291
+Problem Title: Word Pattern II
+Brute Force Method: Try every possible substring mapping for every character in the pattern using standard backtracking without early pruning.
+BF Complexity Visuals: Exploding Permutation Tree: $O(N^M)$ where M is pattern length.
+How to Draw BF: Draw a root. Branch out for every possible substring of the input. Each branch splits again. Label it "The Recursive Maze."
+Optimised Pattern: Backtracking with Bi-directional Mapping
+Opt Vis. Technique: Recursive Match-and-Prune Tree
+Dry Run (Opt): If pattern char is mapped, check if substring matches. If not mapped, try all possible substrings, check if they are already used. Backtrack if dead end.
+How to Draw (Opt): Draw pattern "abab". Draw string "redblueredblue". Draw arrows mapping 'a' to "red". Check if second 'a' matches. If not, erase and try 'a' to "redblue".
+Opt Complexity Visuals: Search Space Reduction Graph.
+How to Draw Opt Complexity: Draw a tree. Show branches being cut (Pruning) the moment a mapping conflict occurs.
+Mem Vis (BF): Full stack of string copies.
+Mem Vis (Opt): Two Hash Maps / Sets: Draw a map box for `char -&gt; string` and a set for `seen_strings`.

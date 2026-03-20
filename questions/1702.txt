@@ -1,0 +1,13 @@
+ID: 1702
+Problem Title: Maximum Binary String After Change
+Brute Force Method: BFS/Backtracking. Try applying rules (00-&gt;10, 10-&gt;01) on every possible index, generating a tree of strings.
+BF Complexity Visuals: State-Space Search Tree.
+How to Draw BF: Draw a root circle with the starting string. Draw branches for every valid rule application. Grows exponentially.
+Optimised Pattern: Greedy / Math (Zero Counting).
+Opt Vis. Technique: Block Shifting / Swapping visual.
+Dry Run (Opt): Push all '1's after the first '0' to the right. Convert all '0's to '1's except one '0'.
+How to Draw (Opt): Draw string. Circle the first '0'. Cross out remaining '0's, write '1'. Move the circled '0' right by (zero_count - 1).
+Opt Complexity Visuals: Two-Pass Array Scan.
+How to Draw Opt Complexity: Draw array. Arrow 1: Find first zero. Arrow 2: Count zeroes. Write $O(N)$.
+Mem Vis (BF): Call Stack / Queue representation holding multiple string permutations (huge memory).
+Mem Vis (Opt): Three integer boxes: `first_zero_idx`, `zero_count`. $O(1)$ space visual.

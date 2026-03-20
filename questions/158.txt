@@ -1,0 +1,13 @@
+ID: 158
+Problem Title: Read N Characters Given Read4 II
+Brute Force Method: Re-reading from the source file for every call, ignoring the fact that previous calls might have left unused characters in the read4 buffer.
+BF Complexity Visuals: A "Data Loss" diagram where characters 5-8 are discarded because the user only asked for 1-4.
+How to Draw BF: Draw a stream: [1,2,3,4,5,6,7,8]. Draw a call for 2 chars. Show 3,4 being "skipped" and the next call starting at 5.
+Optimised Pattern: Global State Buffer (Persistent Pointer/Counter).
+Opt Vis. Technique: A "Reservoir." The read4 fills a small tank. Calls from the user take from the tank. If empty, the tank refills from the source.
+Dry Run (Opt): Store internalBuffer, bufPtr, and bufSize as class members. Use these to track leftover data between method calls.
+How to Draw (Opt): Draw a persistent 4-slot box. Mark where the "last read" ended with a pointer. Show the next call starting from that exact pointer.
+Opt Complexity Visuals: $O(N)$ total across all calls; each character is read from the source exactly once.
+How to Draw Opt Complexity: Draw a timeline. Mark segments of different lengths representing different calls, all fitting together into a single linear read.
+Mem Vis (BF): Creating new buffer arrays for every single class instance call.
+Mem Vis (Opt): Visualize a single, static 4-byte buffer and two integer pointers sitting in the object's heap space.

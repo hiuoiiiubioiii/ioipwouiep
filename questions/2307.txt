@@ -1,0 +1,13 @@
+ID: 2307
+Problem Title: Check for Contradictions in Equations
+Brute Force Method: Assign a random value to the first variable, then recursively substitute values into all other equations to see if a mathematical contradiction occurs.
+BF Complexity Visuals: Exponential Substitution Tree
+How to Draw BF: Draw a branching tree where every equation substitution creates a new path of dependent variable resolutions.
+Optimised Pattern: Union-Find with Weights / Directed Graph DFS
+Opt Vis. Technique: Directed Weighted Graph
+Dry Run (Opt): For `A / B = V`, map a directed edge `A -&gt; B` with weight `V`. If `A` and `B` already share a root (or path), traverse the path and multiply weights. If the product != `V`, it's a contradiction.
+How to Draw (Opt): Draw nodes (variables) and directed arrows (equations). Write the multiplier on the arrow. Draw a dashed arrow for the new equation to see if it closes the loop cleanly.
+Opt Complexity Visuals: Forest of Trees (O(N * α(N)))
+How to Draw Opt Complexity: Draw separate clusters of connected nodes. Each cluster flattens out into a shallow star shape due to path compression.
+Mem Vis (BF): Draw a 2D adjacency matrix storing direct equation values.
+Mem Vis (Opt): Draw two parallel 1D Arrays: `parent[]` and `weight[]`.

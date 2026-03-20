@@ -1,0 +1,13 @@
+ID: 3251
+Problem Title: Find the Count of Monotonic Pairs II
+Brute Force Method: Standard 2D DP $O(N \\text{cdot Max}^2)$ as in the previous version, which is too slow for the increased constraints.
+BF Complexity Visuals: Redundant Range Summation
+How to Draw BF: Draw the DP grid. For a single cell in row `i`, draw 1000 arrows from row `i-1`. Show that the next cell in row `i` recalculates 999 of those same arrows.
+Optimised Pattern: DP + Prefix Sum Optimization
+Opt Vis. Technique: Sliding Sum Window
+Dry Run (Opt): Observe that the valid range of `prev_v` is a continuous interval. Instead of a loop, use a prefix sum of the previous row to get the sum of the interval in $O(1)$.
+How to Draw (Opt): Draw the DP row. Below it, draw a "Prefix Sum" row where each cell is the cumulative sum of the one above. Use one subtraction to find the value for the next DP row.
+Opt Complexity Visuals: Linearized Nested Loop
+How to Draw Opt Complexity: Draw two non-nested blocks: "Build Prefix Sum" and "Update DP Row". Show that $O(N \cdot (\text{Max} + \text{Max})$) = $O(N \\text{cdot Max})$.
+Mem Vis (BF): Large 2D DP table.
+Mem Vis (Opt): Two 1D arrays (DP row and Prefix Sum row) of size Max_val (O(Max_val) space).

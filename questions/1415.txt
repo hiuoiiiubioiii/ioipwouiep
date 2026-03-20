@@ -1,0 +1,13 @@
+ID: 1415
+Problem Title: The k-th Lexicographical String of All Happy Strings
+Brute Force Method: Generate All &amp; Sort. Use backtracking to build every single valid happy string of length n. Store them all in an array, sort alphabetically, and return the k-th index.
+BF Complexity Visuals: Full Generation &amp; Sort Pipeline
+How to Draw BF: Draw a tree generating 3 * 2^(n-1) strings. Dump them into a large bucket, draw a sorting machine, and pull out the k-th item. $O(2^N \cdot N \log(2^N)$).
+Optimised Pattern: Math / Permutation Pruning (Binary Search style)
+Opt Vis. Technique: Directed Path Traversal
+Dry Run (Opt): Total possible strings = `3 * 2^(n-1)`. If k is larger, return "". Otherwise, calculate which main branch (a, b, c) k falls into. For subsequent characters, halve the search space to pick the next valid char.
+How to Draw (Opt): Draw 3 large buckets (a, b, c). If k belongs in 'b', cross out 'a' and 'c'. Zoom into 'b' and split it into its 2 sub-buckets. Repeat this zooming process down to depth n.
+Opt Complexity Visuals: Single Path Tree Descent
+How to Draw Opt Complexity: Draw a tree, but highlight only ONE single path going straight down from the root to the leaf. Label $O(N)$.
+Mem Vis (BF): Massive Array $O(2^N)$
+Mem Vis (Opt): Draw a single dynamically growing StringBuilder/String variable. Space is $O(N)$.

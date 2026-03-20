@@ -1,0 +1,13 @@
+ID: 2665
+Problem Title: Counter II (JS)
+Brute Force Method: Using a global variable and separate functions that don't share a state correctly.
+BF Complexity Visuals: Fragmented Global State
+How to Draw BF: Draw three separate functions and a global `n`. Any function can mess with `n` at any time. $O(1)$.
+Optimised Pattern: Closures / Factory Pattern
+Opt Vis. Technique: Encapsulated State Object
+Dry Run (Opt): Create a function that takes `init`. Declare a local `currentCount`. Return an object with three methods: `increment`, `decrement`, and `reset` that all reference `currentCount`.
+How to Draw (Opt): Draw a "Container" (the closure). Put `init` and `val` inside. Draw three buttons on the container: (+), (-), and (Reset). All buttons change the same `val` inside the container.
+Opt Complexity Visuals: $O(1)$ per method
+How to Draw Opt Complexity: Write $O(1)$ for each property access.
+Mem Vis (BF): Global scope pollution
+Mem Vis (Opt): Persistent closure memory for the `val` variable.

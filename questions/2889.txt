@@ -1,0 +1,13 @@
+ID: 2889
+Problem Title: Reshape Data: Pivot
+Brute Force Method: Create a dictionary where keys are "month" and values are "city". Manually iterate through the original data and populate the dictionary to build a wide-format table.
+BF Complexity Visuals: Manual Data Restructuring
+How to Draw BF: Draw a long table. Draw a new square grid. For every row in the long table, find its "Coordinates" (City, Month) in the square grid and write the value.
+Optimised Pattern: df.pivot(index='month', columns='city', values='temperature')
+Opt Vis. Technique: Pivot Table Transformation
+Dry Run (Opt): Visualize a single column (e.g., 'city') "rotating" 90 degrees to become headers, while the values "unfold" to fill the newly created intersections.
+How to Draw (Opt): Draw a 3-column table. Draw an arrow to a wide 2D grid. Show how the unique values of one column become the new column names.
+Opt Complexity Visuals: $O(N)$ - Linear pass to distribute values.
+How to Draw Opt Complexity: Draw a line. Every row is touched once to be placed in its new (row, col) slot.
+Mem Vis (BF): $O(N)$ - High overhead due to dictionary nested structures.
+Mem Vis (Opt): $O(N)$ - Optimized sparse-to-dense memory mapping.

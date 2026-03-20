@@ -1,0 +1,13 @@
+ID: 3237
+Problem Title: Alt and Tab Simulation
+Brute Force Method: Simulate the stack: for every query, find the window in the list, remove it, and move it to the front. $O(N \cdot M)$.
+BF Complexity Visuals: Array Shifting Animation
+How to Draw BF: Draw an array. Circle element 'X'. Erase it. Shift all elements to the right of 'X' one spot left. Re-insert 'X' at index 0. Repeat for every query.
+Optimised Pattern: Reverse Traversal + HashSet
+Opt Vis. Technique: Latest-First Order Stream
+Dry Run (Opt): The most recently queried window always ends up on top. Process queries from last-to-first. If a window hasn't been seen, it's next in the final order.
+How to Draw (Opt): Write queries in reverse. Cross out duplicates. Then list any remaining original windows that weren't in the query set.
+Opt Complexity Visuals: Linear Timeline Pass
+How to Draw Opt Complexity: Draw a line for M queries (reverse) and a line for N windows. Label as $O(N + M)$. No nested work.
+Mem Vis (BF): $O(N)$ array being shifted millions of times.
+Mem Vis (Opt): HashSet of size N (O(N) space) to track "seen" windows.

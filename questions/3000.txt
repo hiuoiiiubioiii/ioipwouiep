@@ -1,0 +1,13 @@
+ID: 3000
+Problem Title: Maximum Area of Longest Diagonal Rectangle
+Brute Force Method: Calculate diagonal for all rectangles, sort them by diagonal, then pick the one with max area among ties.
+BF Complexity Visuals: Sort-based Selection
+How to Draw BF: Draw N rectangles. Rearrange them by size. $O(N \log N)$.
+Optimised Pattern: Single Pass Comparison (Pythagorean Theorem)
+Opt Vis. Technique: Max-Tracker Variable
+Dry Run (Opt): Iterate through rectangles. Compute L^2 + W^2. If &gt; currentMax, update maxDiagonal and maxArea. If == currentMax, update maxArea = max(maxArea, L * W).
+How to Draw (Opt): Draw rectangles. Write L^2+W^2 inside each. Maintain two scalar boxes: "Best Diagonal" and "Best Area". Cross them out and update as you scan.
+Opt Complexity Visuals: Single Pass Timeline
+How to Draw Opt Complexity: Draw a straight line of length N. One constant-time math check per item. T = $O(N)$.
+Mem Vis (BF): Storing a sorted list of all rectangle data.
+Mem Vis (Opt): Two integer variables for tracking. Space $O(1)$.

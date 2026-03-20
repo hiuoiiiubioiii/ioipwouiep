@@ -1,0 +1,13 @@
+ID: 2265
+Problem Title: Count Nodes Equal to Average of Subtree
+Brute Force Method: Recursive Re-calculationFor every node in the tree, initiate a separate DFS to calculate the sum and count of all nodes in its subtree. Then check if `node.val == sum/count`.
+BF Complexity Visuals: Redundant Tree Traversals
+How to Draw BF: Draw a tree. For the root, highlight the whole tree. For the left child, highlight its subtree. Note that nodes at the bottom are counted many times (O(N^2)).
+Optimised Pattern: Post-order Traversal (Bottom-Up DP)
+Opt Vis. Technique: State-Passing Recursion
+Dry Run (Opt): Perform a single DFS where each node returns a pair: `{sum_of_subtree, count_of_nodes}`. Use these values at the parent to check the condition in $O(1)$ and return the updated pair.
+How to Draw (Opt): Draw a node. It receives `(sum: 10, count: 2)` from left and `(sum: 5, count: 1)` from right. It adds its own value (e.g., 5). New state: `(sum: 20, count: 4)`. Average is 5. Matches! Increment global counter.
+Opt Complexity Visuals: Single-Pass Tree Sweep
+How to Draw Opt Complexity: Draw the tree with arrows starting from leaves and moving upward. Label it $O(N)$. Each node is visited exactly once, and its subtree stats are built incrementally.
+Mem Vis (BF): No extra data structures, but $O(N^2)$ time causes performance lag on deep trees.
+Mem Vis (Opt): A recursion stack of height H and a pair of integers per recursive call (O(H) space).

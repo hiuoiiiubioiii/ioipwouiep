@@ -1,0 +1,13 @@
+ID: 2679
+Problem Title: Sum in a Matrix
+Brute Force Method: Exhaustively search for the maximum in every row, add the global max to score, and delete those elements.
+BF Complexity Visuals: Iterative Row Searching
+How to Draw BF: Draw a grid. Circle the max in row 1, then row 2... Repeat this N times. $O(C \cdot R^2)$.
+Optimised Pattern: Row Sorting + Column Maximums
+Opt Vis. Technique: Aligned Sorted Matrix
+Dry Run (Opt): Sort every row individually. Now, for each column (from 0 to C-1), the maximum value must be the "score contribution" for that round. Sum these column maximums.
+How to Draw (Opt): Draw a matrix. Sort the numbers in each row. Now look at the vertical columns. Pick the biggest number in each column and add them up.
+Opt Complexity Visuals: $O(R \cdot C \log C)$ Row Sorting
+How to Draw Opt Complexity: Draw R blocks of $O(C \log C)$ sorting, followed by one $O(R \cdot C)$ pass to find column maximums.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ if sorting in place, or $O(R\cdot C)$ for a copy.

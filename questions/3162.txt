@@ -1,0 +1,13 @@
+ID: 3162
+Problem Title: Find the Number of Good Pairs I
+Brute Force Method: Nested loop checking if nums1[i] is divisible by nums2[j] x k. $O(N x M)$
+BF Complexity Visuals: A grid where every element of A "talks" to every element of B.
+How to Draw BF: Draw two columns of numbers. Draw a line for every "good" connection and count them.
+Optimised Pattern: Simple Iteration (Small Constraints)
+Opt Vis. Technique: The Multiplier Matcher
+Dry Run (Opt): Since N, M <= 50, brute force is sufficient. Simply multiply nums2[j] by k and check divisibility.
+How to Draw (Opt): Write nums2 as x * k. For each nums1[i], check if any x * k divides it perfectly.
+Opt Complexity Visuals: Single N x M matrix scan.
+How to Draw Opt Complexity: Draw a grid N x M and fill all cells. $O(N x M)$.
+Mem Vis (BF): None (direct scalar count).
+Mem Vis (Opt): Zero auxiliary space. $O(1)$.

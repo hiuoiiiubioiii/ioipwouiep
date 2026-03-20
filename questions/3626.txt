@@ -1,0 +1,13 @@
+ID: 3626
+Problem Title: Find Stores with Inventory Imbalance (Med)
+Brute Force Method: Nested loops comparing every store's inventory items against a global target, re-calculating sums constantly. $O(N \cdot M)$.
+BF Complexity Visuals: Redundant Loop Arrows.
+How to Draw BF: Draw Store 1. Draw arrows to every single item to sum them. Draw Store 2. Draw arrows to every single item again. Write $O(\text{Stores} \\text{cdot Items})$.
+Optimised Pattern: Hash Map Aggregation / Group By (if SQL). Accumulate counts in a single pass, then compare against the precomputed average.
+Opt Vis. Technique: Map-Reduce Funnel.
+Dry Run (Opt): Draw raw items flowing into individual "Store Buckets". Once all items are sorted, place each bucket on a balance scale against the "Target Weight".
+How to Draw (Opt): Draw an array of items. Below it, draw a few boxes (Stores). Draw lines funneling items into their respective boxes. Compare final box numbers to the target.
+Opt Complexity Visuals: Two-Phase Linear Pipeline.
+How to Draw Opt Complexity: Draw one long arrow for "Scan &amp; Group $O(N)$". Draw a second shorter arrow for "Filter Stores $O(K)$". Total time $O(N)$.
+Mem Vis (BF): In-memory copies of filtered arrays created for every single store check.
+Mem Vis (Opt): A single Hash Map where Keys are store_id and Values are current_inventory_sum. Space $O(\text{Unique}_\text{Stores})$.

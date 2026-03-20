@@ -1,0 +1,13 @@
+ID: 3773
+Problem Title: Maximum Number of Equal Length Runs (Med)
+Brute Force Method: Generate all possible ways to partition the array into "runs" (consecutive equal elements). Count how many have the same length. $O(2^N)$.
+BF Complexity Visuals: Recursive Partitioning.
+How to Draw BF: Write the array. Draw lines between numbers to create segments. Count segments of equal size. Repeat for every possible line placement.
+Optimised Pattern: Hash Map + Grouping (Run-Length Encoding)
+Opt Vis. Technique: Frequency of Frequencies
+Dry Run (Opt): Perform Run-Length Encoding (e.g., [1,1,2,2,2,3] becomes lengths: [2, 3, 1]). Put these lengths into a Hash Map to count their occurrences. Return the max value in the map.
+How to Draw (Opt): Draw the array. Bracket identical neighbors (e.g., "Two 1s", "Three 2s"). Write the lengths in a list. Tally how many times each length appears in a frequency table.
+Opt Complexity Visuals: Single Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight timeline with a "Bucket" for each run length found.
+Mem Vis (BF): $O(2^N)$ partition combinations.
+Mem Vis (Opt): Hash Map of size proportional to number of unique run lengths.

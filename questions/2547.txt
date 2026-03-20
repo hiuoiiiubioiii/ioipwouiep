@@ -1,0 +1,13 @@
+ID: 2547
+Problem Title: Minimum Cost to Split an Array
+Brute Force Method: Try every possible way to partition the array (2^N) and calculate the cost for each partition by checking trimmed lengths.
+BF Complexity Visuals: A binary tree of "cut" decisions at every index, leading to exponential leaf nodes.
+How to Draw BF: Draw the array. Draw a vertical line at every possible gap. Calculate the "trimmed" cost of each segment. Sum them up for every combination.
+Optimised Pattern: 1D Dynamic Programming with Frequency Map optimization.
+Opt Vis. Technique: A linear array of "best prices" where each index i stores the minimum cost to split the prefix nums[0...i].
+Dry Run (Opt): Let dp[i] be the min cost for first i elements. For each j &lt; i, dp[i] = min(dp[i], dp[j] + cost(j, i)). To compute cost(j, i) efficiently, use a frequency map to track how many elements appear more than once in the subarray.
+How to Draw (Opt): Draw an array of boxes for dp. At box i, look back at all previous boxes j. Calculate the cost of the segment from j to i, add it to dp[j], and pick the smallest result for dp[i].
+Opt Complexity Visuals: $O(N^2)$ - Nested loops where the outer loop iterates through the array and the inner loop calculates the segment cost.
+How to Draw Opt Complexity: Draw a matrix-like structure of look-backs. Show that for each element, you only look back at previous elements once.
+Mem Vis (BF): Exponential recursion stack.
+Mem Vis (Opt): $O(N)$ for the DP table and a frequency array/map.

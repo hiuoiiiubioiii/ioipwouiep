@@ -1,0 +1,13 @@
+ID: 3290
+Problem Title: Maximum Multiplication Score
+Brute Force Method: Recursive backtracking trying all possible indices i_0 &lt; i_1 &lt; i_2 &lt; i_3 in array b. $O(N^4)$.
+BF Complexity Visuals: Explosive 4-Level Decision Tree
+How to Draw BF: Draw a root node. Branch it N times for the first index, then N-1 for the second. Label as "Combinatorial Explosion."
+Optimised Pattern: 1D Rolling DP (4 Stages)
+Opt Vis. Technique: Layered State Transition
+Dry Run (Opt): Maintain four DP variables/arrays representing the max score using the first 1, 2, 3, and 4 elements of a. At each element in b, update states from right to left.
+How to Draw (Opt): Draw 4 slots labeled dp1, dp2, dp3, dp4. As you slide your finger over array b, update dp4 using dp3, then dp3 using dp2, and so on.
+Opt Complexity Visuals: Linear Progression Block
+How to Draw Opt Complexity: Draw a single pass of length N. Inside, draw 4 constant-time update boxes. Total: $O(N)$.
+Mem Vis (BF): Massive recursion stack and path history.
+Mem Vis (Opt): Four scalar variables or a small array of size 4 (O(1) space).

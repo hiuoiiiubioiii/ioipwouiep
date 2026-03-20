@@ -1,0 +1,13 @@
+ID: 1203
+Problem Title: Sort Items by Groups Respecting Dependencies
+Brute Force Method: Generate all N! possible orderings of the items. Check each ordering linearly to see if it satisfies both the group constraints and the item-dependency constraints.
+BF Complexity Visuals: Factorial Explosion Diagram
+How to Draw BF: Draw slots 1 to N. Below slot 1, draw branches for N choices. Below slot 2, draw N-1 choices. End with a giant red X indicating the $O(N!)$ timeout failure.
+Optimised Pattern: Double Topological Sort (Kahn's Algorithm)
+Opt Vis. Technique: Two separate Directed Acyclic Graphs (DAGs): Macro (Groups) and Micro (Items)
+Dry Run (Opt): Build a graph of just the groups. Build a graph of just the items. Find groups with no incoming prerequisites (indegree 0). Process that group. Inside that group, process items with no prerequisites. Use queues to process level-by-level.
+How to Draw (Opt): Draw large circles representing "Groups" with directional arrows between them. Inside each large circle, draw smaller circles representing "Items" with arrows between them. Cross out nodes with 0 incoming arrows one by one, writing the crossed-out nodes into an output list.
+Opt Complexity Visuals: Graph Edge-Trimming Progression
+How to Draw Opt Complexity: Draw a set of nodes V and edges E. Show a linear scan bar wiping across them to represent Kahn's algorithm visiting each node/edge exactly once: $O(V + E)$.
+Mem Vis (BF): Draw a single large array storing the current permutation, alongside a call stack of size N to track the backtracking state.
+Mem Vis (Opt): Draw an Adjacency List (Array of Lists) for 'groupGraph' and 'itemGraph'. Next to them, draw two 1D integer arrays for 'groupIndegree' and 'itemIndegree'. Draw two separate Queue structures for Kahn's algorithm BFS state.

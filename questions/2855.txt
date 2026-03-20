@@ -1,0 +1,13 @@
+ID: 2855
+Problem Title: Minimum Right Shifts to Sort the Array
+Brute Force Method: Try every possible number of right shifts from 0 to N-1. After each shift, check if the resulting array is sorted.
+BF Complexity Visuals: Rotational Simulation Loop
+How to Draw BF: Draw the array. Draw an arrow showing one rotation. Re-draw the array. Check if sorted. Repeat N times. Total $O(N^2)$.
+Optimised Pattern: Single-Pivot Circularity Check
+Opt Vis. Technique: Circular Array Breakdown
+Dry Run (Opt): Find the "dip" where nums[i] &gt; nums[i+1]. There should be at most one such dip for the array to be a rotated sorted array. If a dip exists, check if nums[last] &lt;= nums[0]. The answer is n - 1 - i.
+How to Draw (Opt): Draw the array. Find the only point where the numbers go "down." If you find more than one, return -1. Count how many numbers are to the right of that "down" point.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight line scanning the array once. Each comparison is $O(1)$. Total $O(N)$.
+Mem Vis (BF): Visualize repeated array cloning or re-allocation for each shift.
+Mem Vis (Opt): Visualize exactly one index pointer and a "dip" counter. Pure $O(1)$ space.

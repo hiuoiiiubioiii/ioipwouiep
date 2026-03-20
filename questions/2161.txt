@@ -1,0 +1,13 @@
+ID: 2161
+Problem Title: Partition Array According to Given Pivot
+Brute Force Method: Scan array multiple times: once for elements &lt; pivot, once for = pivot, once for &gt; pivot. Concatenate results.
+BF Complexity Visuals: Multiple linear sweeps across the same track.
+How to Draw BF: Draw an array. Draw three separate lines underneath it, each picking only specific elements to form new arrays. $O(N)$.
+Optimised Pattern: Three-Pointer Simulation (Single-Pass Result Array).
+Opt Vis. Technique: Three distinct funnels feeding into a single sorted conveyor belt.
+Dry Run (Opt): Initialize result array. Use `low` pointer at start, `mid` count for pivots, and `high` for greater elements. Or simply iterate and fill in order.
+How to Draw (Opt): Draw the original array. Draw an empty target array. Draw arrows for all elements &lt; pivot first, then all pivots, then all elements &gt; pivot.
+Opt Complexity Visuals: $O(N)$ single linear pass.
+How to Draw Opt Complexity: A single horizontal line moving left to right once.
+Mem Vis (BF): Temporary sub-lists for each partition $O(N)$.
+Mem Vis (Opt): Single pre-allocated result array $O(N)$.

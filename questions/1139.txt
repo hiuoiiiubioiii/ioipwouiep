@@ -1,0 +1,13 @@
+ID: 1139
+Problem Title: Largest 1-Bordered Square
+Brute Force Method: Nested loops for every possible (i, j) top-left corner and every possible side length k. Manually check all 4 borders of each square.
+BF Complexity Visuals: Quadratic Square Sampling $O(N^4)$
+How to Draw BF: Draw a grid. Draw a square. For that square, draw 4 arrows tracing the perimeter. Repeat for every size.
+Optimised Pattern: 2D Prefix Sums (Left and Up counts)
+Opt Vis. Technique: Horizontal/Vertical Continuity Map
+Dry Run (Opt): Pre-compute two 2D arrays: `left[i][j]` (consecutive 1s to the left) and `up[i][j]` (consecutive 1s above). For a square of size k, just check 4 pre-computed values.
+How to Draw (Opt): Draw the grid. In each cell, write two numbers (L, U). To verify a square, look at the bottom-right and check if L and U >= k, then check the top-right and bottom-left cells.
+Opt Complexity Visuals: Cubic Scan $O(N^3)$
+How to Draw Opt Complexity: Draw 3 nested loops: Row, Col, and then a shrinking Size check. Show the $O(1)$ lookup inside the third loop.
+Mem Vis (BF): None (Input grid only)
+Mem Vis (Opt): Two N x N auxiliary matrices.

@@ -1,0 +1,13 @@
+ID: 219
+Problem Title: Contains Duplicate II
+Brute Force Method: For each element, iterate through the next K elements to look for a match.
+BF Complexity Visuals: Stepped Triangle: $O(N \cdot K)$ Time.
+How to Draw BF: Draw an array. Under the first element, draw a line covering K steps. Repeat for every element, overlapping heavily.
+Optimised Pattern: Sliding Window + Hash Set
+Opt Vis. Technique: Fixed-Width Sliding Frame
+Dry Run (Opt): Place a cardboard frame of width K over the array. Slide it right. Check if the newly entering number is already inside the frame.
+How to Draw (Opt): Draw an array. Draw a bracket `[` and `]` enclosing K elements. Shift both brackets right by 1. Keep a mini-list of what's inside the brackets.
+Opt Complexity Visuals: Linear Scan Line: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a straight line from start to end of the array, showing constant time $O(1)$ checks per step.
+Mem Vis (BF): Just loop pointers, $O(1)$ space.
+Mem Vis (Opt): Hash Set Ring Buffer: Draw a circular array of size K. When full, overwrite the oldest element as the window moves.

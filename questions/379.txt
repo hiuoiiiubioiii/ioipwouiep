@@ -1,0 +1,13 @@
+ID: 379
+Problem Title: Design Phone Directory
+Brute Force Method: Use a boolean array to track if a number is used. For `get()`, iterate from 0 to max to find the first `false` value.
+BF Complexity Visuals: Linear Membership Scan
+How to Draw BF: Draw a list of numbers. For `get()`, draw an arrow starting at 0 and checking every box until it finds an empty one. $O(N)$.
+Optimised Pattern: Queue + HashSet (Available Pool)
+Opt Vis. Technique: Recycled Resource Pool
+Dry Run (Opt): Initialize a Queue with all available numbers. For `get()`, pop from Queue and add to HashSet. For `release()`, remove from HashSet and push back to Queue. For `check()`, look in HashSet.
+How to Draw (Opt): Draw a "Waiting Line" (Queue) of numbers. Draw a "Busy Room" (HashSet). Show a number moving from the line to the room and back.
+Opt Complexity Visuals: Constant-Time Operation Set
+How to Draw Opt Complexity: Draw a single box representing the operation. No loops. $O(1)$.
+Mem Vis (BF): Only the boolean array. $O(N)$.
+Mem Vis (Opt): Queue and HashSet. Draw a horizontal tape and a scattered box. Both of size N. $O(N)$.

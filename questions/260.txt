@@ -1,0 +1,13 @@
+ID: 260
+Problem Title: Single Number III
+Brute Force Method: Use a Hash Map to count occurrences. Return keys with value 1.
+BF Complexity Visuals: Frequency Map: $O(N)$ Time, $O(N)$ Space.
+How to Draw BF: Draw a table. List every number. Increment tallies. Shade the table to show $O(N)$ space usage.
+Optimised Pattern: Bit Manipulation (XOR + Rightmost Set Bit)
+Opt Vis. Technique: Bitmask Partitioning
+Dry Run (Opt): XOR all numbers to get A \oplus B. Find the rightmost set bit in the result (this bit is different between A and B). Split array into two groups based on this bit; XOR each group.
+How to Draw (Opt): Draw the array. XOR everyone into one "Blob". Find a bit like `0010`. Separate the array into two piles: those with that bit and those without. XOR each pile to find A and B.
+Opt Complexity Visuals: Two-Pass Linear Scan: $O(N)$ Time.
+How to Draw Opt Complexity: Draw two horizontal arrows across the array. Pass 1 finds the mask. Pass 2 finds the two numbers.
+Mem Vis (BF): Full Map Storage: Draw an expanding dictionary.
+Mem Vis (Opt): Register Boxes: Draw exactly two variables, `x` and `y`, to hold the results. $O(1)$ extra space.

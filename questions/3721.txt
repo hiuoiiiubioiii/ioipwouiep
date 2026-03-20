@@ -1,0 +1,13 @@
+ID: 3721
+Problem Title: Longest Balanced Subarray II (Hard)
+Brute Force Method: Generate all possible subarrays, manually checking complex balance conditions for every single one. $O(N^3)$ or $O(N^2)$.
+BF Complexity Visuals: Dense Overlapping Sub-segments.
+How to Draw BF: Draw the array. Bracket every possible subarray starting from index 0, then index 1, tallying internal counts for each.
+Optimised Pattern: State Encoding (Bitmask) + Hash Map
+Opt Vis. Technique: State-Transition Map
+Dry Run (Opt): Encode the "balance" as a single integer (e.g., bitmask of odd/even counts). If you hit a state you've seen before, the items between are perfectly balanced.
+How to Draw (Opt): Write the array. Below it, write the running "state code". When you write a code you've written before, draw a wide arc connecting them.
+Opt Complexity Visuals: Single linear scan $O(N)$.
+How to Draw Opt Complexity: Draw a straight timeline left to right, placing dots for state checks.
+Mem Vis (BF): Constant space if counting in-place, but very slow execution.
+Mem Vis (Opt): Hash Table storing (Encoded State Integer -&gt; First Seen Index).

@@ -1,0 +1,13 @@
+ID: 2167
+Problem Title: Minimum Time to Remove All Cars Containing Illegal Goods
+Brute Force Method: Try every possible combination of removing from the left, removing from the right, and removing from the middle.
+BF Complexity Visuals: Exponential branching of removal choices.
+How to Draw BF: Draw a train. Branch into: "Remove head", "Remove tail", or "Remove inner car at cost 2". $O(3^N)$.
+Optimised Pattern: Dynamic Programming / Prefix-Suffix Min.
+Opt Vis. Technique: A water level rising from both ends.
+Dry Run (Opt): `left[i]` = min cost to clear illegal cars from start to `i`. `right[i]` = min cost from end back to `i`. Answer is `min(left[i] + right[i+1])`.
+How to Draw (Opt): Draw the train. Underneath, write the cost of deleting everything from the left. Do the same from the right. At each car, sum the two costs and find the lowest.
+Opt Complexity Visuals: $O(N)$ single linear pass.
+How to Draw Opt Complexity: Two straight horizontal arrows (Left-to-Right and Right-to-Left) followed by a final comparison sweep.
+Mem Vis (BF): Deep recursive stack frames (O(N)).
+Mem Vis (Opt): Two 1D arrays of size N for prefix and suffix costs.

@@ -1,0 +1,13 @@
+ID: 658
+Problem Title: Find K Closest Elements
+Brute Force Method: Sort the array based on absolute difference from `x`, then pick the first `k` elements and sort them again by value.
+BF Complexity Visuals: Double-Sort Filter.
+How to Draw BF: Draw the array. Annotate each number with its distance to X. Re-sort the entire list. Write $O(N \log N)$.
+Optimised Pattern: Binary Search + Two Pointers.
+Opt Vis. Technique: Concentric Expansion / Range Squeeze.
+Dry Run (Opt): Use binary search to find the index of the element closest to `x`. Use two pointers (left and right) to expand outwards, picking the closer element until `k` elements are found.
+How to Draw (Opt): Draw a number line. Place a "Pin" at X. Place two fingers near the pin and move them apart like a set of calipers until they span k items.
+Opt Complexity Visuals: $O(\log N + k)$ time.
+How to Draw Opt Complexity: Draw a small "Zoom" into a point on a line, followed by a local spread. Write $O(\log N + k)$.
+Mem Vis (BF): Draw a copy of the entire array with distance labels.
+Mem Vis (Opt): Draw zero extra data structures beyond the output list. $O(1)$ auxiliary space.

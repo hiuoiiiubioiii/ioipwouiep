@@ -1,0 +1,13 @@
+ID: 2944
+Problem Title: Minimum Number of Coins for Fruits
+Brute Force Method: Recursion with all choices: pay for fruit i, which gives the next i fruits for free.
+BF Complexity Visuals: Recursive Choice Tree
+How to Draw BF: Draw a tree where each node branches into many possible "next paid fruit" indices. $O(2^N)$.
+Optimised Pattern: Dynamic Programming + Monotonic Queue (Sliding Window)
+Opt Vis. Technique: DP Value Lookback Window
+Dry Run (Opt): dp[i] is the min cost for first i fruits. To get dp[i], look back at all j such that paying for j covers i. dp[i] = prices[j-1] + dp[j-1].
+How to Draw (Opt): Draw the `prices` array. Below it, draw the `dp` array. For index i, draw a bracket showing the range of "ancestors" that could have covered it.
+Opt Complexity Visuals: Linear DP with Deque Optimization
+How to Draw Opt Complexity: Draw a line for N. If using a simple loop, $O(N^2)$. If optimized with a Deque, $O(N)$.
+Mem Vis (BF): Deep recursion call stack.
+Mem Vis (Opt): A 1D DP array of size N+1. Space $O(N)$.

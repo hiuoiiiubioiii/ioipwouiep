@@ -1,0 +1,13 @@
+ID: 1006
+Problem Title: Clumsy Factorial
+Brute Force Method: Build the entire math expression as a giant string ("10 * 9 / 8 + 7 - 6..."), then parse and evaluate it observing standard order of operations.
+BF Complexity Visuals: A massive string builder followed by an expression tree parser (two heavy phases).
+How to Draw BF: Write out the full string equation. Draw parenthesis around all the * and / groups, then evaluate them one by one. Write Time: $O(N)$.
+Optimised Pattern: Stack (Simulation of BODMAS/PEMDAS).
+Opt Vis. Technique: A vertical processing tube with a 4-step cyclical engine (*, /, +, -).
+Dry Run (Opt): Push numbers into a tube. For * or /, immediately pop the top number, calculate, and push the result back. For + or -, just push the number (use negatives for -). Sum the tube at the end.
+How to Draw (Opt): Draw a tall U-shape (stack). Push N. For *, pop N, write (N * N-1) and push it. For +, push (N-3). Finally, add all numbers inside the U-shape.
+Opt Complexity Visuals: Single pass inserting and collapsing elements in a cylinder.
+How to Draw Opt Complexity: Draw a straight line from N down to 1. Write $O(N)$. The operations inside are $O(1)$ constant time.
+Mem Vis (BF): A massive string allocation holding N characters/numbers before it even gets calculated. $O(N)$ space.
+Mem Vis (Opt): A Stack structure. Show how the stack never grows past N/4 items because * and / immediately collapse elements. $O(N)$ space.

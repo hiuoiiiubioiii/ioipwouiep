@@ -1,0 +1,13 @@
+ID: 212
+Problem Title: Word Search II
+Brute Force Method: DFS from every board cell for every individual word in the dictionary independently.
+BF Complexity Visuals: Exploding Star Graph: $O(W \cdot M \cdot N \cdot 4^L)$.
+How to Draw BF: Draw a grid. Draw multiple huge, tangled branching trees (DFS) exploding out of every cell for each separate word.
+Optimised Pattern: Trie + Backtracking DFS on Grid
+Opt Vis. Technique: Grid Overlay with Trie Traversal
+Dry Run (Opt): Keep one finger traversing the 2D matrix (Up/Down/Left/Right) and the other finger simultaneously moving down the Trie. Prune path if Trie branch ends.
+How to Draw (Opt): Draw the matrix on the left, Trie on the right. Draw a path in the matrix. Draw a parallel path descending the Trie. X out the matrix path if Trie hits a dead end.
+Opt Complexity Visuals: Pruned DFS Tree: $O(M \cdot N \cdot 4^L)$ Time.
+How to Draw Opt Complexity: Draw a 4-ary tree representing grid directions. Draw thick red 'X's cutting off branches early when the Trie doesn't contain that prefix.
+Mem Vis (BF): Call Stack Tower: Draw an infinitely deep stack frame for unpruned paths.
+Mem Vis (Opt): Matrix + Trie Map: Draw a 2D array next to a Tree map. Draw `#` signs overwriting matrix cells temporarily for visited states.

@@ -1,0 +1,13 @@
+ID: 3506
+Problem Title: Find Time Required to Eliminate Bacterial Strains (Hard)
+Brute Force Method: Simulate spread step-by-step for every node/strain without caching.
+BF Complexity Visuals: Multi-stage Graph Collapse.
+How to Draw BF: Draw original graph. Redraw the entire graph for time T=1, T=2, crossing out nodes.
+Optimised Pattern: Multi-source BFS + Priority Queue (Dijkstra Variant).
+Opt Vis. Technique: Wavefront Expansion on Graph.
+Dry Run (Opt): Color infected source nodes red. Draw expanding "ripples" to neighbors, writing timestamps.
+How to Draw (Opt): Draw nodes. Draw concentric dashed circles outward from sources, labeling each ring with time +T.
+Opt Complexity Visuals: Queue Processing Timeline.
+How to Draw Opt Complexity: Draw a funnel (Priority Queue). N nodes go in, log(N) cost per node. Total: $O(V + E \log V)$.
+Mem Vis (BF): Deep Call Stack / Graph Copies: Draw multiple identical network graphs stacked on each other.
+Mem Vis (Opt): Distance Array + Min-Heap: Draw a flat array of integers and a small binary tree (Heap).

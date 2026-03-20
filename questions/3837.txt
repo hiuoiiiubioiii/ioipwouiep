@@ -1,0 +1,13 @@
+ID: 3837
+Problem Title: Delayed Count of Equal Elements (Med.)
+Brute Force Method: For every single element in the array, run a nested loop looking backwards to count how many equal elements exist before the "delay" threshold.
+BF Complexity Visuals: Horizontal arrows shooting backwards from every index, scanning overlapping sections repeatedly.
+How to Draw BF: Draw an array. Point to index 5. Draw an arrow pointing to indices 0, 1, 2 (assuming delay is 3) to count matches. Repeat for index 6. Write $O(N^2)$.
+Optimised Pattern: Two Pointers (Sliding Window) + Frequency Map.
+Opt Vis. Technique: Two pointers moving at a fixed distance (the delay). The trailing pointer adds to a bucket; the leading pointer checks the bucket.
+Dry Run (Opt): Set a trailing pointer at `i - delay`. As `i` moves forward, add `arr[i - delay]` to a HashMap. Then, check the HashMap for `arr[i]` and add to the total count.
+How to Draw (Opt): Draw an array. Draw pointer 'A' at index 0 and 'B' at index 3. 'A' drops a number into a bucket. 'B' looks into the bucket to see if it matches. Shift both right.
+Opt Complexity Visuals: Two parallel timelines moving perfectly in sync.
+How to Draw Opt Complexity: Draw a line. Draw two arrows separated by a gap sliding left-to-right. Write $O(N)$.
+Mem Vis (BF): $O(1)$ memory space but $O(N^2)$ CPU time wasted.
+Mem Vis (Opt): A HashMap tracking the frequencies of the "available" delayed elements, taking $O(N)$ space.

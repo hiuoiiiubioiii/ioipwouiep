@@ -1,0 +1,13 @@
+ID: 3479
+Problem Title: Fruits Into Baskets III
+Brute Force Method: Identical to Part II, but with N=10^5, the $O(N^2)$ approach will time out. $O(N^2)$
+BF Complexity Visuals: Dense Search Matrix.
+How to Draw BF: Draw the same search arrows as Part II, but note that for 10^5 fruits, you would need 10^10 comparisons.
+Optimised Pattern: Segment Tree (Max-Range) + Binary Search for First Index. $O(N \log N)$
+Opt Vis. Technique: Binary Range "Fit" Tree.
+Dry Run (Opt): Build a Max-Segment Tree of basket capacities. For fruit X, if `tree.root.max &lt; X`, it's unplaced. Otherwise, walk down the tree to find the leftmost child with `max &gt;= X`.
+How to Draw (Opt): Draw a binary tree. Each node stores the max of its children. For a fruit, highlight the path to the leftmost leaf that is >= fruit size. Then set that leaf to 0.
+Opt Complexity Visuals: Tree Traversal per Fruit.
+How to Draw Opt Complexity: Draw N paths down a tree of height log N, showing $O(N \log N)$ total time.
+Mem Vis (BF): Trillions of CPU comparisons.
+Mem Vis (Opt): A 1D array of size 4N representing the Segment Tree structure.

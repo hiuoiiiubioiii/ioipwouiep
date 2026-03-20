@@ -1,0 +1,13 @@
+ID: 1768
+Problem Title: Merge Strings Alternately
+Brute Force Method: Convert both strings to arrays. Use a loop to pick one from A, one from B, and repeat. Use string concatenation inside the loop.
+BF Complexity Visuals: Iterative String Stitching.
+How to Draw BF: Draw string A and B. Draw lines pulling letters one-by-one into a new string. $O(N + M)$.
+Optimised Pattern: Two Pointers (Parallel Pointers).
+Opt Vis. Technique: Zipper Merging.
+Dry Run (Opt): Maintain `i` for `word1` and `j` for `word2`. While either is valid, append `word1[i]` then `word2[j]`. If one finishes, append the remainder of the other.
+How to Draw (Opt): Draw two horizontal strings. Place two fingers at the start. Move them together to the right, picking letters like a zipper closing.
+Opt Complexity Visuals: Single Concurrent Sweep.
+How to Draw Opt Complexity: Draw two parallel arrows moving together. Label $O(N + M)$.
+Mem Vis (BF): $O((N+M)$^2) due to repeated string immutability re-allocations in some languages.
+Mem Vis (Opt): String builder or character array. $O(N + M)$ space.

@@ -1,0 +1,13 @@
+ID: 1396
+Problem Title: Design Underground System
+Brute Force Method: Maintain a massive list of every completed trip. For `getAverageTime`, filter the entire list for matching start/end stations and sum their durations.
+BF Complexity Visuals: $O(N)$ Query Filtering
+How to Draw BF: Draw a logbook with thousands of entries. For every query, draw a hand scanning every single page to find specific station pairs.
+Optimised Pattern: Dual Hash Maps (In-Transit &amp; Completed)
+Opt Vis. Technique: Aggregated Buffer Lookup
+Dry Run (Opt): Map 1: `id -&gt; {station, time}` for active trips. Map 2: `(start, end) -&gt; {totalTime, count}`. Update Map 2 immediately upon checkout.
+How to Draw (Opt): Draw two boxes. Box A stores people currently on trains. When they step off, move their time to Box B, which already has the "Running Total" and "Count" for that specific route.
+Opt Complexity Visuals: $O(1)$ Constant Lookup
+How to Draw Opt Complexity: Draw a direct arrow to a specific slot in a Hash Map, proving that average time is just one division away.
+Mem Vis (BF): Unstructured History: A single list that grows infinitely, consuming more memory and time.
+Mem Vis (Opt): $O(S²)$ Station Map: Draw a Map of pairs where the memory depends on the number of unique routes, not the number of passengers.

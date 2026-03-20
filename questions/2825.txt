@@ -1,0 +1,13 @@
+ID: 2825
+Problem Title: Make String a Subsequence Using Cyclic Increments
+Brute Force Method: Try every possible combination of incrementing or not incrementing each character in str1, then check if str2 is a subsequence of any resulting string.
+BF Complexity Visuals: Binary Choice Decision Tree
+How to Draw BF: For a string of length N, draw a tree that splits twice at every character (Stay vs. Increment). The tree has 2^N leaves.
+Optimised Pattern: Two Pointers (Greedy Subsequence Match)
+Opt Vis. Technique: Parallel Pointer Sync
+Dry Run (Opt): Pointer i on str1 and j on str2. If str1[i] == str2[j] OR (str1[i] + 1) % 26 == str2[j], move both. Otherwise, only move i. If j reaches the end, return true.
+How to Draw (Opt): Draw two strings one above the other. Draw arrows from str2 characters to str1 characters, showing either a direct match or a "+1" cyclic match.
+Opt Complexity Visuals: Linear Comparison Line
+How to Draw Opt Complexity: Draw a single line of length N (length of str1). Each step is a constant time comparison. $O(N)$.
+Mem Vis (BF): Visualize massive memory usage from storing 2^N temporary string variations.
+Mem Vis (Opt): Visualize exactly two integer variables (the pointers i and j). $O(1)$ auxiliary space.

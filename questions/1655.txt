@@ -1,0 +1,13 @@
+ID: 1655
+Problem Title: Distribute Repeating Integers
+Brute Force Method: Backtracking to assign every single integer to a customer, checking if their requirements are met.
+BF Complexity Visuals: Factorial Complexity Tree
+How to Draw BF: Draw a tree where each node branches for every possible customer. $O(N^M)$.
+Optimised Pattern: Bitmask DP (Submask Iteration)
+Opt Vis. Technique: Tetris Block Matching
+Dry Run (Opt): Calculate frequency of numbers. DP[i][mask] = can first i frequencies satisfy customer subset 'mask'. For each frequency, iterate through submasks.
+How to Draw (Opt): Draw a binary bitmask (e.g., 1011). Underneath, draw frequency "buckets". Try to fit the requirements of the 1-bits into the buckets.
+Opt Complexity Visuals: Submask Iteration Sum
+How to Draw Opt Complexity: Draw a tree where each level has 3^M states (due to submask iteration math). $O(N \cdot 3^M)$.
+Mem Vis (BF): Deep Backtracking: Massive stack of partial assignments.
+Mem Vis (Opt): 2D/1D DP Array: Draw a grid of size [FreqCount][2^M].

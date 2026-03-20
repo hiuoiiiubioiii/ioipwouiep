@@ -1,0 +1,13 @@
+ID: 2760
+Problem Title: Longest Even Odd Subarray With Threshold
+Brute Force Method: Check every possible subarray [i, j] (O(N²)). For each, verify if it starts with even, elements are <= threshold, and parity alternates. Total $O(N³)$.
+BF Complexity Visuals: Nested Interval Verification
+How to Draw BF: Draw a string of numbers. Use two pointers to define a window. For every window, scan it to check conditions. Area grows as $O(N³)$.
+Optimised Pattern: Intermediate Subarray Slices (Visualizing the heap filling with transient array segments).
+Opt Vis. Technique: Sliding Window / Two-Pointer Pass
+Dry Run (Opt): Continuous Condition Sweep
+How to Draw (Opt): Scan the array. When you find an even number nums[i] &lt;= threshold and nums[i] % 2 != nums[i-1] % 2. Update max length and jump the start pointer to the end of the failed condition.
+Opt Complexity Visuals: Draw the array. Shade a region that follows the rule. When the rule breaks, immediately jump the shading start to the next valid starting point.
+How to Draw Opt Complexity: Linear Amortized $O(N)$
+Mem Vis (BF): Draw a single horizontal line. Note that the pointer only moves forward. Label it $O(N)$.
+Mem Vis (Opt): $O(1)$ Pointers (Draw two integer variables: left and right).

@@ -1,0 +1,13 @@
+ID: 1345
+Problem Title: Jump Game IV
+Brute Force Method: DFS with recursion to find all paths to the last index, exploring all same-value jumps without a visited set.
+BF Complexity Visuals: Exponential Cyclic Tree
+How to Draw BF: Draw a graph where nodes jump to `i+1`, `i-1`, or any index with the same value. Show paths looping back and forth infinitely.
+Optimised Pattern: BFS with Multi-Value Jump Optimization
+Opt Vis. Technique: Shortest Path Level-Expansion
+Dry Run (Opt): Use BFS to find the shortest path. Store indices of same values in a Map. **Crucial:** Once you jump to all indices of value `X`, clear the map entry for `X` so you don't re-process those jumps.
+How to Draw (Opt): Draw nodes. Draw edges for neighbors and same-value groups. Start a BFS "wave". Once a value-group is visited, "cut" those edges so the wave doesn't look back.
+Opt Complexity Visuals: Level-Order Search (Wavefront)
+How to Draw Opt Complexity: Draw concentric circles from the start node. Show the wave hitting the end node, proving $O(N)$ because each node and edge is processed once.
+Mem Vis (BF): Unbounded Recursion: Stack overflow from massive cyclic paths.
+Mem Vis (Opt): Queue + Visited Set + Value Map: Draw a `std::queue` and a `std::unordered_map&gt;` for value-to-index lookups.

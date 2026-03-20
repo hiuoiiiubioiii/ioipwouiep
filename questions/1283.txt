@@ -1,0 +1,13 @@
+ID: 1283
+Problem Title: Find the Smallest Divisor Given a Threshold
+Brute Force Method: Try every possible divisor starting from 1 up to the maximum number in the array. For each divisor, calculate the sum of divisions and check against the threshold.
+BF Complexity Visuals: Brute Force Divisor Scan
+How to Draw BF: Draw a number line for divisors: 1, 2, 3... Max. For each divisor, draw a full scan of the array. Write $O(\text{Max} \cdot N)$.
+Optimised Pattern: Binary Search on Answer Range
+Opt Vis. Technique: The "Sum-Divisor" Seesaw
+Dry Run (Opt): Divisors have a monotonic property: a larger divisor results in a smaller sum. Binary Search between `low=1` and `high=max(nums)`. If `sum(mid) &gt; threshold`, the divisor is too small; move `low` to `mid+1`.
+How to Draw (Opt): Draw a range [1, Max]. Pick a `mid`. Below it, show the array values being divided by `mid` and summed. If the sum is "too heavy" (over threshold), push the search range to the right.
+Opt Complexity Visuals: Logarithmic Search + Linear Summation
+How to Draw Opt Complexity: Draw a range being halved repeatedly. Inside each half, draw a single linear scan. Write $O(N \log(\text{Max})$).
+Mem Vis (BF): Draw no extra memory but massive CPU cycles for the linear scan.
+Mem Vis (Opt): Draw 3 integer variables: `low`, `high`, `mid`. Space: $O(1)$.

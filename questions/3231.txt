@@ -1,0 +1,13 @@
+ID: 3231
+Problem Title: Minimum Number of Increasing Subsequence to Be Removed
+Brute Force Method: Generate all combinations of subsequences. Recursively remove valid ones and track the minimum count. $O(\text{Exponential})$.
+BF Complexity Visuals: Explosive Subset Tree
+How to Draw BF: Draw the array. Branch out to pick every possible increasing combination, creating massive duplication of remaining elements.
+Optimised Pattern: Patience Sorting / Segment Tree (LIS variant)
+Opt Vis. Technique: Card Solitaire Stacks
+Dry Run (Opt): Iterate through the array. Place each element on the leftmost possible "stack" where it is smaller than the top element. The number of stacks needed is the answer.
+How to Draw (Opt): Draw open buckets. Take the first number, put it in bucket 1. Take the next; if it's smaller, put it on top. If it's strictly larger than all tops, open a new bucket.
+Opt Complexity Visuals: Binary Search Pipeline
+How to Draw Opt Complexity: Draw an outer loop line (O(N)). Inside, draw a smaller block labeled `Binary Search $O(\log N)$`. Result: $O(N \log N)$.
+Mem Vis (BF): Deep recursive stack storing partial arrays.
+Mem Vis (Opt): A 1D array representing the top of each stack (O(N) space).

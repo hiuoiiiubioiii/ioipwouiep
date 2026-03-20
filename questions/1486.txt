@@ -1,0 +1,13 @@
+ID: 1486
+Problem Title: XOR Operation in an Array
+Brute Force Method: Literal Array Construction. Create an array of size n, fill each index i with `start + 2*i`, then iterate through the array to XOR all elements.
+BF Complexity Visuals: Linear Iteration Scan
+How to Draw BF: Draw an array of n slots. Write numbers in each. Draw an XOR accumulator box and move through the array. Label $O(n)$.
+Optimised Pattern: Direct Accumulation (Math optional)
+Opt Vis. Technique: Running Bitwise Accumulator
+Dry Run (Opt): Initialize `res = 0`. Loop from 0 to n-1, calculating `start + 2*i` on the fly and XORing it into `res`. (Note: $O(1)$ math pattern exists based on 4k XOR cycle).
+How to Draw (Opt): Draw a single variable "Result". Draw a loop that calculates a value and immediately merges it into "Result" using an XOR gate. No array needed.
+Opt Complexity Visuals: Single-Pass Loop
+How to Draw Opt Complexity: Draw an arrow moving from 0 to n. Label $O(n)$ time.
+Mem Vis (BF): Full Array Storage $O(n)$
+Mem Vis (Opt): Single integer variable. Space $O(1)$.

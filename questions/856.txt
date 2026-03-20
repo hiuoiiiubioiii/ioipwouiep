@@ -1,0 +1,13 @@
+ID: 856
+Problem Title: Score of Parentheses
+Brute Force Method: Find matching pairs recursively. Split the string into (A) and AB components and calculate score for each sub-problem independently.
+BF Complexity Visuals: Deep Recursive Tree. $O(N^2)$.
+How to Draw BF: Draw the string. Circle a group. Draw a branch to a new line for that group. Redundantly re-calculate scores for identical inner nested structures.
+Optimised Pattern: Stack or "Core Value" Summation.
+Opt Vis. Technique: Depth-Based Multiplier.
+Dry Run (Opt): The only parentheses that actually add value are the "cores" like (). Every ( you enter doubles the power of future cores. Every ) halves it. Total score = Sum of 2^{\text{depth}} for every () found.
+How to Draw (Opt): Draw the string. Below it, draw a "Power" variable. When you see (, Power \times 2. When you see ), Power / 2. When you see (), add the current Power to Total.
+Opt Complexity Visuals: Single Pass Scan. $O(N)$.
+How to Draw Opt Complexity: Draw a straight timeline. Mark points where () occurs and note the multiplier at that specific timestamp.
+Mem Vis (BF): Recursion Stack: Draw a stack N/2 frames deep storing partial strings.
+Mem Vis (Opt): $O(1)$ Variable: Draw two small boxes: "Current Power" and "Total Score."

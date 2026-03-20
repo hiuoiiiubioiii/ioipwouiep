@@ -1,0 +1,13 @@
+ID: 3465
+Problem Title: Find Products with Valid Serial Numbers
+Brute Force Method: Manually scan every substring of the description to check if it follows the SNXXXX-XXXX pattern. $O(N x L^2)$
+BF Complexity Visuals: Nested String Scanning Brackets.
+How to Draw BF: Draw the description. Draw a sliding bracket of length 11, checking every possible starting position manually.
+Optimised Pattern: Regular Expression (Regex) Matching. $O(N)$
+Opt Vis. Technique: Finite Automata (FSM) State Map.
+Dry Run (Opt): Apply the pattern `SN[0-9]{4}-[0-9]{4}`. The engine scans the string once, transitioning through "S", then "N", then 4 digits, etc.
+How to Draw (Opt): Draw the pattern components in boxes: [SN] -&gt; [4 Digits] -&gt; [-] -&gt; [4 Digits]. Highlight matching text in the string.
+Opt Complexity Visuals: Single Linear Pass.
+How to Draw Opt Complexity: Draw a single horizontal line across the description string representing the one-pass Regex scan.
+Mem Vis (BF): Multiple temporary substring copies in memory.
+Mem Vis (Opt): $O(1)$ auxiliary space beyond the string storage.

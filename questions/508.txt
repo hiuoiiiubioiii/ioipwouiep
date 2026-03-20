@@ -1,0 +1,13 @@
+ID: 508
+Problem Title: Most Frequent Subtree Sum
+Brute Force Method: For every node, initiate a full DFS to calculate its subtree sum. High redundancy. $O(N^2)$.
+BF Complexity Visuals: Overlapping triangles (subtrees) evaluated repeatedly inside a larger triangle.
+How to Draw BF: Draw a tree, and draw circles around subtrees, showing how the root's circle fully overlaps the children's circles.
+Optimised Pattern: Post-order Traversal (Bottom-Up DFS) + Hash Map.
+Opt Vis. Technique: Water bubbles forming at the leaves and merging/growing as they float up to the root.
+Dry Run (Opt): Go left -&gt; Go right -&gt; Node sum = Left + Right + Node.val. Add sum to Hash Map, update global max frequency. Return sum to parent.
+How to Draw (Opt): Draw the BST. Start at leaves, write their sums beside them. Draw arrows pointing up to parents, adding the sums together. Keep a Map tally side-box.
+Opt Complexity Visuals: A single pass lighting up every node exactly once. $O(N)$.
+How to Draw Opt Complexity: Draw the tree and shade every node a single color to represent one-time visitation.
+Mem Vis (BF): Massive call stack overhead due to redundant nested DFS.
+Mem Vis (Opt): A Hash Map (Key=Sum, Val=Freq) expanding up to N entries, plus recursion stack of height H.

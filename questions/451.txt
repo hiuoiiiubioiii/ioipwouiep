@@ -1,0 +1,13 @@
+ID: 451
+Problem Title: Sort Characters By Frequency
+Brute Force Method: Global Sort Count frequencies in a Map, convert Map entries to a List, and sort the list by frequency descending.
+BF Complexity Visuals: Sorting Funnel
+How to Draw BF: Draw a Map. Show it dumping into a List. Draw the $O(N \log N)$ sorting block. Total $O(N \log N)$.
+Optimised Pattern: Bucket Sort Use an array where the index is the frequency. Put characters into the bucket at `frequency[char]` index.
+Opt Vis. Technique: Frequency Pigeonholes
+Dry Run (Opt): Imagine a shelf with numbered bins. If 'e' appears 3 times, toss it in Bin 3. Read bins from highest to lowest.
+How to Draw (Opt): Draw an array where indices are 0, 1, \dots, N. Write chars inside the boxes. Scan the array backwards to build the string.
+Opt Complexity Visuals: Linear Pipeline
+How to Draw Opt Complexity: Draw one arrow for counting $O(N)$, one for bucketing $O(N)$, and one for building $O(N)$. Total $O(N)$.
+Mem Vis (BF): List of Tuples Draw a separate array of length N containing object pairs.
+Mem Vis (Opt): Bucket Array Draw an array of Lists. The sum of lengths of all lists is $O(N)$.

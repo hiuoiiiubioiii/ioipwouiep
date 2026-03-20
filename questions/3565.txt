@@ -1,0 +1,13 @@
+ID: 3565
+Problem Title: Sequential Grid Path Cover (Med)
+Brute Force Method: Try every possible path starting from (0,0) that covers every cell in sequence, backtracking on dead ends.
+BF Complexity Visuals: Path Exploration Tree.
+How to Draw BF: Draw a grid. From (0,0), draw every possible winding path. Count how many reach the end covering all nodes.
+Optimised Pattern: BFS / Dijkstra on State Space (Grid + Bitmask).
+Opt Vis. Technique: Breadth-First Front.
+Dry Run (Opt): The state is (Current Cell, Mask of Visited Cells). Use BFS to find the shortest sequence that visits all cells.
+How to Draw (Opt): Draw a grid. Shade cells as they are visited. Show multiple "ghost" paths expanding until one covers the whole grid.
+Opt Complexity Visuals: $O(N \cdot M \cdot 2^(N\cdot M)$).
+How to Draw Opt Complexity: Draw a tree of depth N*M. Branching is limited to 4 neighbors. State compression limits re-work.
+Mem Vis (BF): Path History Stacks: Draw endless lists of coordinate pairs for every path being explored.
+Mem Vis (Opt): Bitmask Visited Array: Draw a 1D array of size 2^(N*M) storing boolean "visited" states.

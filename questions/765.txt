@@ -1,0 +1,13 @@
+ID: 765
+Problem Title: Couples Holding Hands
+Brute Force Method: Try every possible swap in every possible order to find the minimum to pair everyone.
+BF Complexity Visuals: State Space Search Tree
+How to Draw BF: Draw the array. Each node branches into N^2 possible swaps. $O(N!)$ or exponential BFS.
+Optimised Pattern: Greedy / Cycle Decomposition (DSU)
+Opt Vis. Technique: Chain Snapping
+Dry Run (Opt): Look at pairs (2i, 2i+1). If they aren't a couple, swap the second person's partner into that spot. Alternatively, use DSU to find cycles; min swaps = (Total Couples - Number of Cycles).
+How to Draw (Opt): Draw people as nodes. Connect people sitting together. Draw a separate circle for the "ideal" couple. Count how many "seats" are incorrectly connected.
+Opt Complexity Visuals: Linear Grouping pass
+How to Draw Opt Complexity: Draw the array of seats. Show one pass moving pair-by-pair and swapping. $O(N)$.
+Mem Vis (BF): Massive graph of all seat combinations.
+Mem Vis (Opt): Position map or DSU parent array $O(N)$.

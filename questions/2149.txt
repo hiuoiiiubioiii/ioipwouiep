@@ -1,0 +1,13 @@
+ID: 2149
+Problem Title: Rearrange Array Elements by Sign
+Brute Force Method: Extract all positives into one list, all negatives into another, then merge them alternatingly into a new array.
+BF Complexity Visuals: Diverting a stream into two separate buckets, then pouring them back into a third bucket.
+How to Draw BF: Draw input array. Draw two separate side-arrays (Pos/Neg). Draw arrows from side-arrays into a final interleaved array. $O(N)$.
+Optimised Pattern: Two Pointers (One-Pass).
+Opt Vis. Technique: A single stream being split by a switch into two target slots.
+Dry Run (Opt): Initialize a result array of size N. Use `posIdx = 0` and `negIdx = 1`. Iterate input: if positive, place at `posIdx` and `posIdx += 2`. If negative, place at `negIdx` and `negIdx += 2`.
+How to Draw (Opt): Draw the empty result array with indices 0, 1, 2, 3... Point a finger at 0 (for Pos) and 1 (for Neg). Move through input; fill the slot your finger is on, then hop that finger two spaces right.
+Opt Complexity Visuals: $O(N)$ single pass.
+How to Draw Opt Complexity: A single horizontal arrow reading the input, with two jumping "write" pointers on the output array.
+Mem Vis (BF): $O(N)$ for two intermediate lists + $O(N)$ for result.
+Mem Vis (Opt): $O(N)$ for the result array only (O(1) auxiliary if you don't count the output).

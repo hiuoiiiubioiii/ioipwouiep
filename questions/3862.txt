@@ -1,0 +1,13 @@
+ID: 3862
+Problem Title: Find the Smallest Balanced Index (Med.)
+Brute Force Method: Nested Loops: For every index i, run a loop to calculate the sum of elements to the left and another loop to calculate the sum to the right.
+BF Complexity Visuals: A "Butterfly" scan where arrows extend from every point to both ends of the array.
+How to Draw BF: Draw an array. Point to index 3. Draw arrows to [0,1,2] and [4,5,6]. Sum them. Move to index 4, repeat. Write $O(N^2)$.
+Optimised Pattern: Prefix Sums / Running Totals.
+Opt Vis. Technique: A "Weight Scale" where you subtract from one side and add to the other in a single motion.
+Dry Run (Opt): 1. Calculate total sum of array as `rightSum`. 2. Maintain `leftSum = 0`. 3. Iterate i: if `leftSum == rightSum - arr[i] - leftSum` (or appropriate balance logic), return i. Else, add `arr[i]` to `leftSum`.
+How to Draw (Opt): Draw a seesaw. All numbers are on the right. As you move the pointer, move one number at a time to the left. Stop when the seesaw is level.
+Opt Complexity Visuals: A single linear timeline.
+How to Draw Opt Complexity: Draw a line of N nodes. Draw one arrow crossing from left to right. Write $O(N)$.
+Mem Vis (BF): $O(1)$ space but $O(N^2)$ time wasted.
+Mem Vis (Opt): $O(1)$ memory. Only two or three `long long` variables for the sums.

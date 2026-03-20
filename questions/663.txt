@@ -1,0 +1,13 @@
+ID: 663
+Problem Title: Equal Tree Partition
+Brute Force Method: Try cutting every edge one by one. For each cut, perform a full tree traversal to sum the two resulting subtrees and check if they are equal.
+BF Complexity Visuals: Edge-by-Edge Amputation.
+How to Draw BF: Draw a tree with N edges. Pick an edge, "cut" it, and sum the pieces. Repeat N times. $O(N^2)$.
+Optimised Pattern: Post-order Subtree Sums + Hash Set.
+Opt Vis. Technique: Subtree Accumulation.
+Dry Run (Opt): Calculate the total sum of the tree. Perform a DFS to find the sum of every possible subtree. Store these sums in a Hash Set. If `totalSum / 2` exists in the set, a partition is possible.
+How to Draw (Opt): Draw a tree. Write the sum of everything below it inside each node. Circle any node where the value is exactly half of the Root's value.
+Opt Complexity Visuals: Single pass through the tree.
+How to Draw Opt Complexity: Draw a single scanline through the tree. Write $O(N)$.
+Mem Vis (BF): Draw N different copies of subtree structures during sum checks.
+Mem Vis (Opt): Draw a Hash Set or List containing N integers. $O(N)$ space.

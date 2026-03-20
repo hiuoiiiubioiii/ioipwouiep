@@ -1,0 +1,13 @@
+ID: 2068
+Problem Title: Check Whether Two Strings are Almost Equivalent
+Brute Force Method: Nested loops: for every character 'a'-'z', scan through string1 to count it, then scan through string2 to count it, then compare.
+BF Complexity Visuals: 26 x (2 x N) Scan Matrix
+How to Draw BF: Draw a table with letters 'a' through 'z'. For 'a', draw a line scanning string1, then string2. Repeat for all 26. $O(26 \cdot N)$.
+Optimised Pattern: Dual Frequency Array Comparison
+Opt Vis. Technique: Letter Balance Scales
+Dry Run (Opt): Create two arrays of size 26. In one pass, populate frequencies for both strings. Iterate 0 to 25 and check if `abs(freq1[i] - freq2[i]) &gt; 3`.
+How to Draw (Opt): Draw two 26-slot boxes labeled A-Z. As you read string1, tally marks in box 1. For string2, tally in box 2. Finally, subtract the tallies for each slot.
+Opt Complexity Visuals: Single Pass + Constant Loop
+How to Draw Opt Complexity: Draw one straight line (O(N)) followed by a tiny 26-step dot (O(1)). Total Time $O(N)$.
+Mem Vis (BF): Temporary objects or sorting the strings (O(N log N)) to compare.
+Mem Vis (Opt): Two fixed-size `int[26]` arrays. Space $O(1)$.

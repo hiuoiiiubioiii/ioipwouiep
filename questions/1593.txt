@@ -1,0 +1,13 @@
+ID: 1593
+Problem Title: Split a String Into the Max Number of Unique Substrings
+Brute Force Method: Generate every possible way to partition the string and check if all resulting substrings in each partition are unique. $O(2^N)$.
+BF Complexity Visuals: Partitioning Subset Tree
+How to Draw BF: Draw the string. At every gap between letters, draw two branches: "Split" or "Don't Split". For each leaf, check uniqueness using a Set.
+Optimised Pattern: Backtracking / Set
+Opt Vis. Technique: The Greedy Partition with Pruning
+Dry Run (Opt): Try splitting at every index from the current start. If the current substring is not in the Set, add it and recurse. If the remaining characters are fewer than the current max count improvement needed, prune the branch.
+How to Draw (Opt): Draw the string. Use a vertical bar to represent a split. Move the bar one letter at a time. If the left side is "New", add to a "Seen" list and move to the right side. If you hit a duplicate, backtrack the bar.
+Opt Complexity Visuals: Pruned Backtracking $O(2^N)$
+How to Draw Opt Complexity: Draw a decision tree. Shade the branches that are "pruned" to show reduced work compared to brute force.
+Mem Vis (BF): A list of lists storing all valid partitions.
+Mem Vis (Opt): A Hash Set and recursion stack of depth N. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 1428
+Problem Title: Leftmost Column with at Least a One
+Brute Force Method: Exhaustive Grid Search. Scan every single cell row by row, column by column using `BinaryMatrix.get(r, c)`. Keep track of the first column index where you see a 1.
+BF Complexity Visuals: Full Matrix Scan Graph
+How to Draw BF: Draw a grid. Draw an arrow snaking through every single cell from top-left to bottom-right. Label $O(R \cdot C)$.
+Optimised Pattern: Staircase Search (Top-Right Start)
+Opt Vis. Technique: Path of Least Resistance
+Dry Run (Opt): Start at the top-right corner. If current is 0, move DOWN (this row is useless). If current is 1, move LEFT (searching for a better leftmost 1). Stop when out of bounds.
+How to Draw (Opt): Draw the grid. Start at [0][Cols-1]. Draw a "staircase" line: left, left, down, left, down, down. The path only moves left or down, never back.
+Opt Complexity Visuals: Linear Perimeter Scan
+How to Draw Opt Complexity: Draw a line tracing the top and side edge of the matrix. Label $O(R + C)$.
+Mem Vis (BF): Heavy API Call Stack
+Mem Vis (Opt): Draw two variables: `curr_row` and `curr_col`. $O(1)$ space.

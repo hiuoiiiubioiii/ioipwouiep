@@ -1,0 +1,13 @@
+ID: 3174
+Problem Title: Clear Digits
+Brute Force Method: Find a digit, scan left for a char, delete both, and shift the string. $O(N^2)$.
+BF Complexity Visuals: The Eraser Shift
+How to Draw BF: Write the string. Find a digit. Use an eraser to rub it and the char to its left out. Close the gap. Repeat.
+Optimised Pattern: Stack (LIFO)
+Opt Vis. Technique: The Character Sieve
+Dry Run (Opt): Iterate through the string. If char, `push`. If digit, `pop`. The stack content at the end is the result.
+How to Draw (Opt): Draw a vertical tube. Drop letters in. When a digit appears, "blow" the top letter out of the tube.
+Opt Complexity Visuals: Single-Pass Buffer
+How to Draw Opt Complexity: Draw a straight line 0 rightarrow N. $O(N)$.
+Mem Vis (BF): Recursive string manipulation stack.
+Mem Vis (Opt): A single character array or stack of size N. $O(N)$.

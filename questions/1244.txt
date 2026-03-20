@@ -1,0 +1,13 @@
+ID: 1244
+Problem Title: Design A Leaderboard
+Brute Force Method: Store everything in a simple List. For `top(K)`, sort the entire list and sum the first K elements. For `addScore`, find the player in the list and update.
+BF Complexity Visuals: Global Sorting Scan
+How to Draw BF: Draw a long list of players. For every `top(K)` call, draw a "Sorting Machine" processing the whole list. Write $O(N \log N)$ per query.
+Optimised Pattern: Hash Map + Balanced BST (or TreeMap/SortedSet)
+Opt Vis. Technique: Frequency-Ordered Tree
+Dry Run (Opt): Use a HashMap for `O(1)` access to player scores. Use a TreeMap (or similar) where the Key is the `Score` and the Value is the `Count` of players with that score. For `top(K)`, iterate backwards through the tree.
+How to Draw (Opt): Draw a HashMap: [ID -&gt; Score]. Next to it, draw a Binary Search Tree where nodes are sorted by Score. For `addScore`, update the Map and move the node in the Tree. For `top(K)`, trace the right-most (largest) nodes.
+Opt Complexity Visuals: Logarithmic Updates + K-Step Fetch
+How to Draw Opt Complexity: Draw a tree of height log N. Show an update path going down one branch. Write $O(\log N)$ for updates and $O(K)$ for top scores.
+Mem Vis (BF): Draw a simple array of objects.
+Mem Vis (Opt): Draw a HashMap and a TreeMap (Red-Black Tree structure). Space: $O(N)$.

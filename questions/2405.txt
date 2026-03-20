@@ -1,0 +1,13 @@
+ID: 2405
+Problem Title: Optimal Partition of String
+Brute Force Method: Generate all possible string partitions (recursive backtracking) and check which one yields minimum partitions with unique chars.
+BF Complexity Visuals: Explosive Decision Tree
+How to Draw BF: Draw a root node. Branch out 2^N paths showing every "cut or don't cut" decision. Label: $O(2^N)$.
+Optimised Pattern: Greedy + Bitmask (or HashSet)
+Opt Vis. Technique: Typewriter Carriage Return
+Dry Run (Opt): Read characters one by one. If char exists in current "memory", "hit return" (add to partition count) and clear memory.
+How to Draw (Opt): Write string out. Draw vertical lines '|' the moment you spot a duplicate letter. Reset your mental "seen" list at each line.
+Opt Complexity Visuals: Single Pass Line with check marks
+How to Draw Opt Complexity: Draw a line 0 to N. Above it, draw small constant $O(1)$ lookup circles. Label: $O(N)$ total.
+Mem Vis (BF): Draw deep call stack frames showing $O(N)$ recursive depth and string substrings being held in memory.
+Mem Vis (Opt): Draw a 26-bit integer box (or boolean array size 26). Shade bits for 'seen' chars. Erase all on duplicate. $O(1)$ space.

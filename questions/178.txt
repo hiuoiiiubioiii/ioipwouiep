@@ -1,0 +1,13 @@
+ID: 178
+Problem Title: Rank Scores
+Brute Force Method: For every score, perform a subquery to count how many unique scores are greater than or equal to it (O(N^2)).
+BF Complexity Visuals: A "Cross-Check Matrix" where every row looks at every other row to find its relative rank.
+How to Draw BF: Draw 5 scores. For the first score, draw 5 checkmarks. For the second, 5 more. Show the N^2 work.
+Optimised Pattern: Window Function: DENSE_RANK() OVER(ORDER BY Score DESC).
+Opt Vis. Technique: A "Grouped Podium." Identical scores stand on the same level, and the next unique score is exactly one level below them.
+Dry Run (Opt): Sort scores. Assign '1' to the highest. If next score is same, keep '1'. If different, increment to '2'.
+How to Draw (Opt): Draw the scores. Group identical values with a circle. Assign a rank number to each circle.
+Opt Complexity Visuals: $O(N \log N)$ due to the internal sorting required by the window function.
+How to Draw Opt Complexity: Draw a sort-then-scan timeline. One pass to sort, one pass to assign ranks.
+Mem Vis (BF): Nested loops creating a massive N x N logical comparison space.
+Mem Vis (Opt): A single sorted copy of the unique scores stored in the database's temporary working memory.

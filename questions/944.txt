@@ -1,0 +1,13 @@
+ID: 944
+Problem Title: Delete Columns to Make Sorted
+Brute Force Method: Generate all possible combinations of column deletions (2^C) and for each, check if the remaining columns are individually sorted.
+BF Complexity Visuals: $O(2^C \cdot R)$. Exponential search for a simple property.
+How to Draw BF: Draw a grid of letters. Cross out one column, check the rest. Cross out two, check the rest. Show the massive number of "what-if" scenarios.
+Optimised Pattern: Greedy Column-wise Scan
+Opt Vis. Technique: "The Independent Inspector." Each column's sorted status is independent of others. Just check each column once; if it's not sorted, increment the delete count.
+Dry Run (Opt): Iterate through columns j. For each column, iterate through rows i. If `grid[i][j] &gt; grid[i+1][j]`, this column must be deleted. Break and move to next column.
+How to Draw (Opt): Draw a 2D grid. Draw a vertical magnifying glass moving from the first column to the last. Inside the glass, draw a tiny arrow checking if the letter below is &gt;= the letter above.
+Opt Complexity Visuals: $O(R \cdot C)$. You look at every character in the grid exactly once.
+How to Draw Opt Complexity: Draw the grid. Draw a single horizontal arrow above the grid, with vertical "check-mark" or "X" arrows pointing down into each column.
+Mem Vis (BF): Storing 2^C modified grid versions.
+Mem Vis (Opt): $O(1)$. Only one integer counter variable. Draw a small box labeled `deleteCount`.

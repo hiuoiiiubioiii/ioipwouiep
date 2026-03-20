@@ -1,0 +1,13 @@
+ID: 405
+Problem Title: Convert a Number to Hexadecimal
+Brute Force Method: Math Div/Mod Repeatedly modulo by 16 and divide by 16 (fails on negatives without offset).
+BF Complexity Visuals: Loop Flowchart
+How to Draw BF: Draw a loop. Inside, write N / 16. Show it looping Log_16(N) times. $O(Log N)$.
+Optimised Pattern: Bit Manipulation Group every 4 bits using bitwise AND (num &amp; 15), then right shift by 4 (num &gt;&gt;&gt; 4).
+Opt Vis. Technique: Sliding Window over Bits
+Dry Run (Opt): Draw a 32-bit binary sequence. Put a 4-bit wide "window" over the rightmost bits. Map to hex, then slide window left.
+How to Draw (Opt): Draw 32 boxes (bits). Bracket them in groups of 4. Draw arrows from each group pointing to a Hex character.
+Opt Complexity Visuals: Fixed Loop
+How to Draw Opt Complexity: Draw exactly 8 iterations (since 32 bits / 4 = 8 max iterations). Write $O(1)$ time.
+Mem Vis (BF): String Builder Draw a growing string.
+Mem Vis (Opt): Char Array Draw an array of max 8 characters $O(1)$ space.

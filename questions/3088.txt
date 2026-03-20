@@ -1,0 +1,13 @@
+ID: 3088
+Problem Title: Make String Anti-palindrome
+Brute Force Method: Generate all permutations of the string and check each one to see if it is "anti-palindrome" (no s[i] == s[n-1-i]).
+BF Complexity Visuals: $O(N!)$ Permutation Tree
+How to Draw BF: Draw a tree branching for every character placement. $O(N!)$.
+Optimised Pattern: Sorting + Greedy Swapping
+Opt Vis. Technique: Mirror Conflict Resolution
+Dry Run (Opt): Sort the string. Check the middle where conflicts (s[i] == s[n-1-i]) are most likely. If they occur, swap the conflicting characters with the next available different characters.
+How to Draw (Opt): Write the sorted string. Draw a mirror line in the center. Use arrows to compare opposite characters. If they match, draw a swap arrow to the first character to the right that is different.
+Opt Complexity Visuals: $O(N \log N)$ Sorting
+How to Draw Opt Complexity: Draw an $O(N \log N)$ block for sorting followed by a linear $O(N)$ scan for conflicts.
+Mem Vis (BF): Full set of string permutations in memory.
+Mem Vis (Opt): In-place character array swaps $O(1)$ extra space beyond input.

@@ -1,0 +1,13 @@
+ID: 2968
+Problem Title: Apply Operations to Maximize Frequency Score
+Brute Force Method: Generate all $O(N^2)$ subarrays and find the min operations to make all elements equal to some value in the range.
+BF Complexity Visuals: Quadratic Subarray Scan
+How to Draw BF: Draw a triangle N^2/2. Label "TLE" for N=10^5.
+Optimised Pattern: Sorting + Sliding Window + Prefix Sums
+Opt Vis. Technique: Expanding Centered Window
+Dry Run (Opt): Sort array. In a window `[L, R]`, the optimal value to match is the median. Use prefix sums to calculate total operations in $O(1)$. If operations <= k, expand; else shrink.
+How to Draw (Opt): Draw a sorted bar chart. Draw a sliding bracket. Calculate the area between the median bar and other bars in the bracket using prefix sum subtraction.
+Opt Complexity Visuals: Sorting + Linear Window Pass
+How to Draw Opt Complexity: Draw a timeline. T = $O(N \log N)$ for sort + $O(N)$ for sliding window.
+Mem Vis (BF): Storing cost maps for all subarrays.
+Mem Vis (Opt): A prefix sum array of size N. Space $O(N)$.

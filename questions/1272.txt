@@ -1,0 +1,13 @@
+ID: 1272
+Problem Title: Remove Interval
+Brute Force Method: Iterate through every interval in the list and check if it overlaps with the "To-be-removed" interval. If it overlaps, manually calculate the new fragmented pieces.
+BF Complexity Visuals: Interval Collision Check
+How to Draw BF: Draw a timeline. Draw the removal interval as a red block. Draw the input intervals as blue blocks. For every collision, draw a "Splitting" symbol. Write $O(N)$.
+Optimised Pattern: Linear Boundary Comparison
+Opt Vis. Technique: The "Cookie Cutter" Slice
+Dry Run (Opt): For each interval `[start, end]`: 1. If it's entirely before the removal, keep it. 2. If it's entirely after, keep it. 3. If it overlaps, keep the part from `start` to `remove_start` (if valid) and `remove_end` to `end` (if valid).
+How to Draw (Opt): Draw a long horizontal line. Draw two markers for the removal range. For each input interval, drop it onto the line. If it hits the markers, show it being "cut" and only the outside pieces falling into the result bucket.
+Opt Complexity Visuals: Single-Pass Sweep-line
+How to Draw Opt Complexity: Draw an array. Draw a single arrow scanning it. Write $O(N)$.
+Mem Vis (BF): Draw a list of all potential fragments, including duplicates.
+Mem Vis (Opt): Draw a single result list to store the final intervals. Space: $O(N)$.

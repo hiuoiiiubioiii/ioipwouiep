@@ -1,0 +1,13 @@
+ID: 3642
+Problem Title: Find Books with Polarized Opinions (Med)
+Brute Force Method: For every book, count 5-star reviews and 1-star reviews. If the difference or ratio exceeds a threshold, mark it. $O(\text{Books} \\text{cdot Reviews})$.
+BF Complexity Visuals: Nested Loop Aggregation.
+How to Draw BF: Draw a list of Books. For each book, draw an arrow to a massive list of Reviews to filter by BookID. Repeat. Write $O(B \cdot R)$.
+Optimised Pattern: Hash Map Aggregation / SQL Group By with HAVING clause. Compute statistics for all books in one pass.
+Opt Vis. Technique: Review Sorting Funnel.
+Dry Run (Opt): Pour all reviews into a funnel. The funnel sorts them into bins based on `BookID`. Once the bin for "Book A" is full, calculate its polarization instantly.
+How to Draw (Opt): Draw a box for each Book. Read through the review list once. Drop a tally mark in the corresponding Book box for either "1-star" or "5-star". Calculate final ratios from the tallies.
+Opt Complexity Visuals: Linear Scan Pipeline.
+How to Draw Opt Complexity: Draw one arrow for "Scan Reviews $O(R)$". Draw one arrow for "Filter Books $O(B)$". Total $O(R + B)$.
+Mem Vis (BF): Creating temporary filtered lists for every single book evaluation.
+Mem Vis (Opt): A Hash Map where Keys are book_id and Values are [count1, count5]. Space $O(\text{Unique}_\text{Books})$.

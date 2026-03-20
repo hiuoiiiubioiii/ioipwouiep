@@ -1,0 +1,13 @@
+ID: 3686
+Problem Title: Number of Stable Subsequences (Hard)
+Brute Force Method: Generate all 2^N subsequences and check stability (e.g., frequency of all elements must be equal) for each. $O(N \cdot 2^N)$.
+BF Complexity Visuals: Subsequence Combinatorial Explosion.
+How to Draw BF: Draw an array. Branch out into every subset. For each subset, build a frequency map. If all values in the map aren't the same, discard. 2^100 paths.
+Optimised Pattern: Dynamic Programming with Frequency Maps or Combinatorics. Calculate combinations of each element frequency F independently and sum them.
+Opt Vis. Technique: The "Frequency Pillar" Combinations.
+Dry Run (Opt): If a stable subsequence has frequency F=2, you need to pick exactly 2 of every number you include. Total ways = sum (Ways to pick  F  items of value  X).
+How to Draw (Opt): Draw columns for each unique number. For a target frequency F, count how many ways to pick F items from each column using nCr. Multiply the (ways + 1 for excluding) across all numbers and subtract 1 (empty set).
+Opt Complexity Visuals: Frequency-Space Summation.
+How to Draw Opt Complexity: Write $O(N \log N)$ to count frequencies, then $O(N)$ to iterate through possible frequencies F. Total $O(N \log N)$ or $O(N)$.
+Mem Vis (BF): Storing millions of frequency maps in a global list.
+Mem Vis (Opt): A frequency map of the original array and a precomputed Pascal's Triangle (nCr) table. Space $O(N)$.

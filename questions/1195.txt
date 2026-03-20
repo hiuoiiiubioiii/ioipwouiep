@@ -1,0 +1,13 @@
+ID: 1195
+Problem Title: Fizz Buzz Multithreaded
+Brute Force Method: Use 4 threads with busy-waiting loops checking `if (i % 3 == 0 &amp;&amp; i % 5 == 0)`.
+BF Complexity Visuals: Spinlock Congestion Diagram
+How to Draw BF: Draw 4 gears spinning independently. Only one gear can "catch" a number at a time, but all 4 are spinning 100% of the time. Wasted CPU.
+Optimised Pattern: Synchronization (Semaphores / Mutex + Conditions)
+Opt Vis. Technique: Gated Execution Relay
+Dry Run (Opt): Use a shared counter. Each thread (Fizz, Buzz, FizzBuzz, Number) waits on a condition that matches its math logic. When a thread finishes, it increments the counter and notifies others.
+How to Draw (Opt): Draw 4 parallel tracks. Draw a "Traffic Guard" in front of each. The guard only lets the thread through if the current number is theirs. Then the thread shouts "Next!" to everyone.
+Opt Complexity Visuals: Linear Output $O(N)$
+How to Draw Opt Complexity: Draw a single timeline with perfectly synchronized, non-overlapping blocks of execution.
+Mem Vis (BF): Global atomic integers
+Mem Vis (Opt): Wait Queues (OS-managed). Draw threads "sleeping" until signaled.

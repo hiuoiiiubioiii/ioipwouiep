@@ -1,0 +1,13 @@
+ID: 230
+Problem Title: Kth Smallest Element in a BST
+Brute Force Method: Perform a full In-order traversal, store in a list, and return list[k-1].
+BF Complexity Visuals: Flattening Transformation: $O(N)$ Time and Space.
+How to Draw BF: Draw a tree. Draw an arrow flattening it into a sorted horizontal 1D array. Space used = N nodes.
+Optimised Pattern: Iterative In-order Traversal with Early Stop
+Opt Vis. Technique: Left-Leaning Stack Probe
+Dry Run (Opt): Go as far left as possible, pushing to stack. Pop, decrement K. If K=0, you found it. Else, move to the right child and repeat.
+How to Draw (Opt): Draw a tree. Draw a stack on the side. Trace the path: "Down-left, pop, check K, one-step-right." Stop the moment K hits 0.
+Opt Complexity Visuals: Partial Tree Coverage: $O(H + K)$ Time.
+How to Draw Opt Complexity: Draw a tree. Shade only the leftmost "spine" and the first K nodes visited. Show that the right half of the tree is never touched.
+Mem Vis (BF): Full Array Copy: Draw an N-slot array.
+Mem Vis (Opt): Recursive/Iterative Stack: Draw a vertical stack of height H (log N for balanced trees).

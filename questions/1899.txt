@@ -1,0 +1,13 @@
+ID: 1899
+Problem Title: Merge Triplets to Form Target Triplet
+Brute Force Method: Try all possible combinations of triplets (subsets) and calculate the component-wise maximum for each.
+BF Complexity Visuals: 2^N subset combination tree.
+How to Draw BF: Draw a root. Branch "Include/Exclude" for every triplet. Check final max for all 2^N leaves.
+Optimised Pattern: Greedy Filtering (One Pass).
+Opt Vis. Technique: Requirement checklist.
+Dry Run (Opt): Iterate through triplets. If a triplet has any element greater than the target's corresponding element, discard it. For the rest, check if you hit each target value.
+How to Draw (Opt): Draw the target [a, b, c]. List triplets. Cross out any triplet where t[0]&gt;a or t[1]&gt;b or t[2]&gt;c. Of the remaining, check if the max of all indices equals the target.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw an arrow from 0 \to N. Mark $O(N)$.
+Mem Vis (BF): List to store all possible merged results.
+Mem Vis (Opt): Three boolean flags or a single 3-element integer array.

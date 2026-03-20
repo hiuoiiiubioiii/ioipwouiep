@@ -1,0 +1,13 @@
+ID: 1508
+Problem Title: Range Sum of Sorted Subarray Sums
+Brute Force Method: Generate all N^2 subarray sums with nested loops, store them, sort the giant array, then sum indices left to right. $O(N^2 \log N^2)$.
+BF Complexity Visuals: Giant Funnel Sorting
+How to Draw BF: Draw an array expanding into a massive N^2 grid, followed by a chaotic sorting bracket encompassing the whole grid.
+Optimised Pattern: Min-Heap / Priority Queue (Multi-way Merge)
+Opt Vis. Technique: Multi-way Expansion
+Dry Run (Opt): Push the start of every subarray into a Min-Heap. Pop the smallest sum, add to result if in range, then expand that specific subarray (current sum + next element) and push it back.
+How to Draw (Opt): Draw a triangle (Heap). Pop the top node, draw an arrow adding it to the result. Draw another arrow fetching the next element from the array, adding it to the popped sum, and pushing it back into the triangle.
+Opt Complexity Visuals: Heap Operations $O(N^2 \log N)$
+How to Draw Opt Complexity: Draw a long line of N^2 steps. At each step, draw a small tree of height logN representing the heap push/pop cost.
+Mem Vis (BF): A massive, continuous array block of size $O(N^2)$.
+Mem Vis (Opt): A small bounded triangle (Heap) that never exceeds width N. $O(N)$ space.

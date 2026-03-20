@@ -1,0 +1,13 @@
+ID: 1280
+Problem Title: Students and Examinations (SQL)
+Brute Force Method: Join the Students and Examinations table directly. This fails to account for students who attended zero exams for a specific subject, leaving gaps in the output.
+BF Complexity Visuals: Fragmented Result Set
+How to Draw BF: Draw two lists: Students and Exams. Draw lines between them only where data exists. Point to the missing subjects and write "NULL/GAPS". Write $O(N)$.
+Optimised Pattern: CROSS JOIN (Cartesian Base) + LEFT JOIN
+Opt Vis. Technique: The "Grid Completion" Master Table
+Dry Run (Opt): First, force every student to be paired with every subject using a CROSS JOIN. Then, LEFT JOIN that "perfect grid" with the actual Examinations table to fill in the counts. Use `COALESCE` to turn NULLs into 0.
+How to Draw (Opt): Draw a Table A (Students) and Table B (Subjects). Draw arrows from every row in A to every row in B to create a full grid. Overlay a "Checked-in" list from the Exams table. Count occurrences within each grid cell.
+Opt Complexity Visuals: Cartesian Expansion + Hash Join
+How to Draw Opt Complexity: Draw a rectangle representing S x Subj. Show a scan of the Exams table filling this rectangle. Write $O(S \\text{cdot Subj} + \text{Exams})$.
+Mem Vis (BF): Draw a list of only successful exam entries.
+Mem Vis (Opt): Draw a 2D Matrix visualization where every cell is initialized to 0 before the count begins.

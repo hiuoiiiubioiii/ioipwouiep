@@ -1,0 +1,13 @@
+ID: 2721
+Problem Title: Execute Asynchronous Functions in Parallel (JS)
+Brute Force Method: Execute each function one after another in a for...of loop with await, pushing results to an array. This is sequential, not parallel.
+BF Complexity Visuals: Sequential Timeline
+How to Draw BF: Draw a timeline. Draw "Task 1", then "Task 2" starting only after Task 1 finishes. Total length is the sum of all task times.
+Optimised Pattern: Blocking Execution Context (One task occupies the stack while others wait in the queue).
+Opt Vis. Technique: Promise.all Manual Implementation (Counter Pattern)
+Dry Run (Opt): Parallel Racing Gates
+How to Draw (Opt): Start all functions immediately. Maintain a resolvedCount and a results array. Each time a promise resolves, place the result at its specific index and increment the count. If count equals the total, resolve the main promise.
+Opt Complexity Visuals: Draw a vertical starting line with N arrows firing simultaneously. Draw a "Finish Line" bucket. When an arrow hits, increment a tally mark. When tally = N, the bucket is full.
+How to Draw Opt Complexity: $O(N)$ Event Loop Management
+Mem Vis (BF): Draw a fan-out shape from one point to N points, then a fan-in shape back to one resolution point.
+Mem Vis (Opt): Resolution Buffer (Draw a fixed-size array in the heap being filled non-sequentially as promises finish).

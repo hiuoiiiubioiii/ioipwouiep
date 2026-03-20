@@ -1,0 +1,13 @@
+ID: 1761
+Problem Title: Minimum Degree of a Connected Trio in a Graph
+Brute Force Method: Iterate through every combination of three nodes (u, v, w). Check if all three pairs (u,v), (v,w), and (u,w) exist in the edge list.
+BF Complexity Visuals: Combination Exhaustion.
+How to Draw BF: Draw a set of N dots. Circle every possible group of 3. For each group, check for a triangle. $O(N^3)$.
+Optimised Pattern: Adjacency Matrix + Degree Precomputation.
+Opt Vis. Technique: The "Triangle Filter".
+Dry Run (Opt): Use an N \times N adjacency matrix for $O(1)$ edge lookups. Precompute the degree of each node. Only check trios (u, v, w) where u &lt; v &lt; w. Result is deg(u) + deg(v) + deg(w) - 6.
+How to Draw (Opt): Draw an adjacency matrix grid. Highlight cells (u,v), (v,w), (u,w). Write down node degrees and subtract 6 (the 3 internal edges).
+Opt Complexity Visuals: Cubic Pruning.
+How to Draw Opt Complexity: Draw a cube and slice it into N \times N \times N blocks. Label it $O(N^3)$. Note: Pruned loops don't change complexity but reduce constant factors.
+Mem Vis (BF): Edge list or adjacency list. $O(E)$.
+Mem Vis (Opt): N \times N Boolean Matrix. $O(N^2)$ space visual.

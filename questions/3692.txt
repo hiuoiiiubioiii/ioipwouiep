@@ -1,0 +1,13 @@
+ID: 3692
+Problem Title: Majority Frequency Characters (Easy)
+Brute Force Method: Double nested loop: For every character, count its frequency, then find the max frequency, then loop again to find characters matching it. $O(N^2)$.
+BF Complexity Visuals: Multi-Pass Frequency Scan.
+How to Draw BF: Draw "AABBC". Loop 1: Find 'A' count (2). Loop 2: Find 'B' count (2). Loop 3: Find 'C' count (1). Find max is 2. Loop 4: Output A and B.
+Optimised Pattern: Single-pass Frequency Array (size 26) + Max Frequency tracking.
+Opt Vis. Technique: The "Alphabet Bucket" Race.
+Dry Run (Opt): Imagine 26 buckets. Toss characters in. Keep a "Leaderboard" variable for the highest bucket level. At the end, just announce everyone tied for first.
+How to Draw (Opt): Draw 26 small squares. As you scan, tally them. Keep max_freq updated. At the end, iterate the 26 squares and print those equal to max_freq.
+Opt Complexity Visuals: Two-Pass Linear Time.
+How to Draw Opt Complexity: Draw one arrow for "Count $O(N)$" and one for "Identify $O(26)$". Total $O(N)$.
+Mem Vis (BF): Creating new lists or strings for every character's frequency count.
+Mem Vis (Opt): An array of 26 integers. Space $O(1)$.

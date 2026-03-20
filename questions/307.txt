@@ -1,0 +1,13 @@
+ID: 307
+Problem Title: Range Sum Query - Mutable
+Brute Force Method: Update index in $O(1)$ by modifying the array. Sum range in $O(N)$ by looping from L to R.
+BF Complexity Visuals: Linear Array Sweep
+How to Draw BF: Draw an array. Draw a pointer starting at L, stepping one box at a time to R. Label "O(N) Sum".
+Optimised Pattern: Segment Tree or Binary Indexed Tree (Fenwick Tree)
+Opt Vis. Technique: Hierarchical Tree over Array Ranges
+Dry Run (Opt): For Segment Tree: Array is at the bottom. Parents hold the sum of two children. To update, change leaf and walk up to root adding differences. To sum, pick the minimal set of parent nodes covering the range.
+How to Draw (Opt): Draw an array. Above it, draw a binary tree where each node has lines connecting it to its two child ranges. Shade the specific nodes needed to cover a query range [L, R].
+Opt Complexity Visuals: Logarithmic Tree Traversal Path
+How to Draw Opt Complexity: Draw a Binary Tree. Highlight a single path from a leaf to the root (Update $O(\log N)$), or a few paths from root to mid-level nodes (Query $O(\log N)$).
+Mem Vis (BF): A single 1D array tape. $O(N)$.
+Mem Vis (Opt): Segment Tree Array: Draw an array of size 4N. Draw curved "jump" arrows from index `i` to `2i` and `2i+1` to show the implicit tree structure in memory.

@@ -1,0 +1,13 @@
+ID: 177
+Problem Title: Nth Highest Salary
+Brute Force Method: Generalization of Q176: Use a loop or a script to sort and offset by N-1.
+BF Complexity Visuals: A "Linear Ranking" where you must scan N deep into a sorted set.
+How to Draw BF: Draw a ladder. Mark the N-th rung. Show the searcher climbing from the top down to rung N.
+Optimised Pattern: Function with Local Variable Offset (N-1) and LIMIT.
+Opt Vis. Technique: A "Slotted Viewport." A window that is exactly one row tall, positioned N-1 rows from the top of the sorted data.
+Dry Run (Opt): Set M = N-1. Run: SELECT DISTINCT Salary FROM Employee ORDER BY Salary DESC LIMIT 1 OFFSET M.
+How to Draw (Opt): Draw a vertical sorted list. Draw a sliding window box that stops exactly at the N-th position.
+Opt Complexity Visuals: $O(N \log N)$ for the sort, or $O(N)$ if the database uses a heap-based selection.
+How to Draw Opt Complexity: Draw the sort timeline. Mark a single point on the timeline representing the "pick" operation.
+Mem Vis (BF): Heap memory spikes as the database buffers the sorted results.
+Mem Vis (Opt): Efficient index usage visualized by the database only loading the relevant block into buffer cache.

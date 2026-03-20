@@ -1,0 +1,13 @@
+ID: 1560
+Problem Title: Most Visited Sector in a Circular Track
+Brute Force Method: Simulate every single lap and every single sector visit, incrementing a frequency array. $O(\text{Laps} \cdot N)$.
+BF Complexity Visuals: Circular Lap Counter
+How to Draw BF: Draw a circle. Draw an arrow spinning around the circle multiple times, leaving a tally mark on every sector it passes.
+Optimised Pattern: Math (Observation)
+Opt Vis. Technique: Start-End Range Selection
+Dry Run (Opt): Because it's a circular track, only the path from the *first* sector to the *last* sector matters. Intermediate full laps visit every sector equally. If `start &lt;= end`, the answer is `[start...end]`. If `start &gt; end`, the answer is `[1...end] + [start...n]`.
+How to Draw (Opt): Draw a circle with 1 at the top. Mark the 'Start' and 'End' points. Color the path from Start to End clockwise. Those colored numbers are the sectors that were visited one extra time.
+Opt Complexity Visuals: Constant/Linear Range Logic $O(N)$
+How to Draw Opt Complexity: Draw a single straight line from 1 to N. Highlight one or two segments of that line based on the start/end values.
+Mem Vis (BF): A frequency array of size N and full simulation variables.
+Mem Vis (Opt): A single list to hold the result range. $O(N)$ space.

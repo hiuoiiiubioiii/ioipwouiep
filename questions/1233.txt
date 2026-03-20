@@ -1,0 +1,13 @@
+ID: 1233
+Problem Title: Remove Sub-Folders from the Filesystem
+Brute Force Method: For every folder, compare it with every other folder in the list. If folder A starts with folder B followed by a '/', folder A is a sub-folder and should be removed.
+BF Complexity Visuals: Nested String Prefix Matching
+How to Draw BF: Draw a list of strings. Draw an arrow from string 1 to every other string. Draw an arrow from string 2 to every other string. Write $O(N^2 \cdot L)$ where L is max path length.
+Optimised Pattern: Sort + Prefix Check (or Trie)
+Opt Vis. Technique: Alphabetical Path Pruning
+Dry Run (Opt): Sort the folders alphabetically. Sub-folders will now always appear immediately after their parent folder. Scan the sorted list; if the current folder starts with the "last saved parent" + '/', skip it.
+How to Draw (Opt): Draw a sorted list of paths. Draw a "Last_Parent" box. Move an arrow down the list. If the arrow points to a string containing "Last_Parent/", draw a red line through it. If not, update "Last_Parent".
+Opt Complexity Visuals: Sorted Linear Scan
+How to Draw Opt Complexity: Draw a sorting block followed by a single linear scan arrow. Write $O(N \cdot L \log N)$.
+Mem Vis (BF): Draw multiple temporary sub-string copies being created for comparisons.
+Mem Vis (Opt): Draw a single Result List and one string variable for the `last_parent`. Space: $O(N \cdot L)$ for output.

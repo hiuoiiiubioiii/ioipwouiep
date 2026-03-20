@@ -1,0 +1,13 @@
+ID: 1420
+Problem Title: Build Array Where You Can Find The Maximum Exactly K Comparisons
+Brute Force Method: Backtracking / Brute Force Generation. Generate all possible arrays of length N where elements are 1 to M. Run the search cost algorithm on each. If cost == K, increment answer.
+BF Complexity Visuals: Exponential Array Generation
+How to Draw BF: Draw a tree generating an array element by element. Each node has M branches. At the leaves (depth N), draw a calculator checking the cost. Label $O(M^N)$.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: State Transition Cube
+Dry Run (Opt): `dp[i][j][c]` = ways to build array of length `i`, max value `j`, cost `c`. If we append `x &lt;= j`, cost stays `c` (j choices). If we append `x &gt; j`, cost becomes `c+1` (transition to new max).
+How to Draw (Opt): Draw a 3D grid. The x-axis is array length (N), y-axis is max value (M), z-axis is cost (K). Draw an arrow staying on the same z-plane (x &lt;= j), and an arrow jumping up a z-plane (x &gt; j).
+Opt Complexity Visuals: 3D Nested Loop Execution
+How to Draw Opt Complexity: Draw 3 nested `for` loops. Add an inner loop for transitions (summing previous maxes). Time $O(N \cdot M^2 \cdot K)$.
+Mem Vis (BF): Massive Recursion Stack
+Mem Vis (Opt): Draw a 3D Array `dp[N+1][M+1][K+1]`. Space $O(N \cdot M \cdot K)$.

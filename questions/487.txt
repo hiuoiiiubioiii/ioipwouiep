@@ -1,0 +1,13 @@
+ID: 487
+Problem Title: Max Consecutive Ones II
+Brute Force Method: Nested Search For every index, try "flipping" it if it's a 0, then scan to find the longest streak.
+BF Complexity Visuals: Repeated Scan Line
+How to Draw BF: Draw the array n times. For each, draw a line showing the scan. $O(n^2)$.
+Optimised Pattern: Sliding Window (Expandable) Maintain a window with at most one '0'. If zeros &gt; 1, shrink left pointer.
+Opt Vis. Technique: Inchworm stretch
+Dry Run (Opt): A window [L, R] moves. It can "swallow" one zero. If it hits a second, the tail L must hop past the first zero.
+How to Draw (Opt): Draw an array. Draw bracket [L, R]. Keep a `zeroCount`. Shift R until `zeroCount &gt; 1`, then move L.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw one arrow passing over the array. $O(n)$.
+Mem Vis (BF): Variables Just L and R pointers.
+Mem Vis (Opt): Registers Two integers for pointers. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2805
+Problem Title: Custom Interval
+Brute Force Method: Use JavaScript's native setInterval, relying on the browser's engine to handle timing, which drifts and overlaps if callbacks take longer than the interval delay.
+BF Complexity Visuals: Overlapping Timelines Diagram
+How to Draw BF: Draw a horizontal timeline axis. Draw blocks representing execution time. Show blocks stacking on top of each other at fixed intervals, illustrating a clogged call stack.
+Optimised Pattern: Recursive setTimeout via Closure
+Opt Vis. Technique: Event Loop Macrotask Pipeline
+Dry Run (Opt): Trace the execution: Function runs -&gt; finishes -&gt; schedules a *new* setTimeout for the next delay. This guarantees strict spacing regardless of callback execution time.
+How to Draw (Opt): Draw a circle. Label the top "Execute Callback". Draw an arrow to the bottom labeled "Wait Delay". Draw an arrow back to the top. This forms a controlled loop.
+Opt Complexity Visuals: Constant Time Step Chart
+How to Draw Opt Complexity: Draw a flat horizontal line at y=1. Each tick marks a scheduling operation $O(1)$, independent of how long the callback runs.
+Mem Vis (BF): Visualize multiple orphaned timer IDs floating in memory, causing potential memory leaks if clearInterval fails.
+Mem Vis (Opt): Visualize a single, isolated closure environment holding exactly one active timerId, easily garbage-collected when cleared.

@@ -1,0 +1,13 @@
+ID: 2970
+Problem Title: Count the Number of Incremovable Subarrays I
+Brute Force Method: Try removing every possible subarray and check if the remaining array is strictly increasing.
+BF Complexity Visuals: Nested Loop Verification
+How to Draw BF: Draw a line. Shade a segment to "remove". Check the rest. Repeat N^2 times. $O(N^3)$.
+Optimised Pattern: Two Pointers (Prefix/Suffix Scan)
+Opt Vis. Technique: Mirror-Image Increasing Segments
+Dry Run (Opt): Find the longest increasing prefix and suffix. For each prefix index, find the first suffix index that can be appended to keep the array strictly increasing.
+How to Draw (Opt): Draw array. Highlight the increasing head and tail. Draw a "bridge" between them that skips a middle section. Count valid bridges.
+Opt Complexity Visuals: Single Linear Pass (After head/tail scan)
+How to Draw Opt Complexity: Draw a line of length N. The two pointers move towards each other. T = $O(N)$.
+Mem Vis (BF): Storing all subarray copies.
+Mem Vis (Opt): Standard variables. Space $O(1)$ or $O(N)$ depending on implementation style.

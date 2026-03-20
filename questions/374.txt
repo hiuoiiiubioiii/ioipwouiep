@@ -1,0 +1,13 @@
+ID: 374
+Problem Title: Guess Number Higher or Lower
+Brute Force Method: Iterate through every number from 1 to n and call the `guess(i)` API for each.
+BF Complexity Visuals: Linear Search Sweep
+How to Draw BF: Draw a line of numbers. Draw an arrow checking them one by one. $O(n)$.
+Optimised Pattern: Binary Search
+Opt Vis. Technique: Decision Tree Halving
+Dry Run (Opt): Check the middle number. If the API says the target is lower, throw away the right half. If higher, throw away the left half.
+How to Draw (Opt): Draw a bar. Cut it in half. Shade the rejected half. Repeat until only one number remains.
+Opt Complexity Visuals: Logarithmic Depth Traversal
+How to Draw Opt Complexity: Draw a tree of depth \log n. Label each level as one API call. $O(\log n)$.
+Mem Vis (BF): Constant-time variable.
+Mem Vis (Opt): Three integer boxes (low, mid, high). Draw them side-by-side. $O(1)$.

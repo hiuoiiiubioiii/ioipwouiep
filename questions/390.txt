@@ -1,0 +1,13 @@
+ID: 390
+Problem Title: Elimination Game
+Brute Force Method: Simulate the entire process using a list of numbers. In each step, remove every other element, alternating directions, until only one is left.
+BF Complexity Visuals: Shrinking List Simulation
+How to Draw BF: Draw an array [1, 2, 3... n]. Draw "X" marks over every second number. Redraw the list with the remaining numbers and repeat. $O(N \log N)$.
+Optimised Pattern: Recursive Pattern / Head-Pointer Tracking
+Opt Vis. Technique: Logarithmic Range Folding
+Dry Run (Opt): Track the `head` of the remaining sequence, the `step` size, and the `remaining` count. Move the `head` forward when: 1. Moving left-to-right. 2. Moving right-to-left and the remaining count is odd. Double the `step` and halve the `remaining` count in each round.
+How to Draw (Opt): Draw a number line. Mark the `head` with an arrow. In each step, show the `head` jumping or staying put, while the distance between potential numbers (the step) doubles.
+Opt Complexity Visuals: Binary Logarithmic Reduction
+How to Draw Opt Complexity: Draw a tree with \log N levels. Each level represents one elimination round. $O(\log N)$.
+Mem Vis (BF): An array of size N. $O(N)$.
+Mem Vis (Opt): Three or four integer variables (`head`, `step`, `remaining`, `left`). Draw four small boxes. $O(1)$.

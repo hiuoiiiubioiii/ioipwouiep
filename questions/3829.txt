@@ -1,0 +1,13 @@
+ID: 3829
+Problem Title: Design Ride Sharing System (Med.)
+Brute Force Method: Store all drivers in a flat list. For every ride request, iterate through the entire list to find the closest available driver.
+BF Complexity Visuals: A linear scanner checking every single dot on a map to see if it's close to the target.
+How to Draw BF: Draw a map with dots. Draw a request. Draw lines connecting the request to EVERY single dot, calculating distance. Write $O(N \cdot Q)$.
+Optimised Pattern: Spatial Hashing / Grid-based Priority Queues.
+Opt Vis. Technique: A map divided into a grid. You only look in the grid cell where the request happened, or its immediate neighbors.
+Dry Run (Opt): Divide map into zones. Each zone has a Min-Heap of available drivers. Find request zone, pop closest driver from that zone's heap.
+How to Draw (Opt): Draw a Tic-Tac-Toe grid over the map. Put driver dots in cells. A request lands in cell 5. Draw a magnifying glass only looking inside cell 5's bucket.
+Opt Complexity Visuals: Direct grid coordinate math followed by a logarithmic heap pop.
+How to Draw Opt Complexity: Draw an arrow to a grid box: $O(1)$. Inside box, draw a tree pop: $O(\log D)$. Total per query: $O(\log D)$.
+Mem Vis (BF): $O(N)$ contiguous array of drivers constantly being searched.
+Mem Vis (Opt): A Hash Map of Priority Queues mapping `(X_grid, Y_grid) -&gt; MinHeap(Drivers)`. Space $O(N)$ for drivers, grouped efficiently.

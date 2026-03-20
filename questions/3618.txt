@@ -1,0 +1,13 @@
+ID: 3618
+Problem Title: Split Array by Prime Indices (Med)
+Brute Force Method: Iterating through the array, and for every index, running a `for(i=2 to sqrt(index))` loop to check if it's prime. $O(N \\text{cdot sqrt}(N)$).
+BF Complexity Visuals: Redundant Division Trees.
+How to Draw BF: Draw an array. For index 7, write "7%2, 7%3". For index 11, write "11%2, 11%3". Notice how you keep recalculating primes.
+Optimised Pattern: Sieve of Eratosthenes (precompute primes up to N) + Single Pass Prefix/Suffix sums.
+Opt Vis. Technique: Boolean Sieve Overlay Mask.
+Dry Run (Opt): Generate a True/False list of primes up to N. "Overlay" this list on top of your array indices. Only add values to your running sums where the overlay says "True".
+How to Draw (Opt): Draw an array of indices 0 to N. Highlight the prime ones. Below it, draw the actual array. Only pull down the values that sit under a highlighted index.
+Opt Complexity Visuals: Two-Phase Segmented Line.
+How to Draw Opt Complexity: Draw a small block labeled "Sieve: $O(N \log \log N)$". Draw a long straight line labeled "Array Pass: $O(N)$". Add them together.
+Mem Vis (BF): Variables created inside nested loops losing scope and recalculating math constantly.
+Mem Vis (Opt): A simple boolean array isPrime[N] where true means prime. Space $O(N)$.

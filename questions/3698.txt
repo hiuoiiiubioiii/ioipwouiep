@@ -1,0 +1,13 @@
+ID: 3698
+Problem Title: Split Array With Minimum Difference (Med)
+Brute Force Method: Try every possible split point (O(N)) and for each, calculate the sums of both halves (O(N)). Total $O(N^2)$.
+BF Complexity Visuals: Cut-and-Sum Simulation.
+How to Draw BF: Draw an array. Draw a vertical line at index 1. Sum left, sum right. Erase. Draw a line at index 2. Repeat. $O(N^2)$ is slow for N=10^6.
+Optimised Pattern: Prefix Sums. Calculate all cumulative sums once. Sum of right half = TotalSum - PrefixSum[i].
+Opt Vis. Technique: The "Sliding Fulcrum".
+Dry Run (Opt): Imagine a balance scale. Instead of re-weighing everything, just move the center point. As you slide the point right, you subtract weight from the right side and add it to the left.
+How to Draw (Opt): Precompute total_sum. Draw an arrow through the array. At index i, left_sum += arr[i] and right_sum = total_sum - left_sum. Find the i where abs(left - right) is smallest.
+Opt Complexity Visuals: Single-Pass Prefix Summation.
+How to Draw Opt Complexity: Draw one arrow for "Total Sum $O(N)$" and one for "Find Split $O(N)$". Total $O(N)$.
+Mem Vis (BF): Storing N separate sub-arrays in memory to calculate sums.
+Mem Vis (Opt): Two long variables: left_sum and right_sum. Space $O(1)$.

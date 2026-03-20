@@ -1,0 +1,13 @@
+ID: 3835
+Problem Title: Count Subarrays With Cost Less Than or Equal to K (Med.)
+Brute Force Method: Generate all $O(N^2)$ possible subarrays. For each one, run a loop to calculate the cost. Keep a tally of those under K.
+BF Complexity Visuals: A massive triangular matrix representing all subarray start/end combinations, with $O(N)$ work done inside each cell.
+How to Draw BF: Draw an array. Draw brackets for [0,0], [0,1], [0,2], [1,1], [1,2]. Calculate the sum for each bracket independently. Write $O(N^3)$ or $O(N^2)$.
+Optimised Pattern: Variable-Size Sliding Window (Caterpillar Method).
+Opt Vis. Technique: A stretchy window (caterpillar) moving right. It stretches until it eats too much (cost &gt; K), then shrinks its tail until it's valid again.
+Dry Run (Opt): Pointer L=0, R=0. Expand R, adding to `current_cost`. While `current_cost &gt; K`, subtract `arr[L]` and increment L. At each valid step, add `(R - L + 1)` to total subarrays.
+How to Draw (Opt): Draw array. Put L and R fingers on index 0. Move R right. When sum &gt; K, move L right. For every valid stretch, draw a vertical line adding `R-L+1` to a total score box.
+Opt Complexity Visuals: Two pointers moving purely forward.
+How to Draw Opt Complexity: Draw an array line. Draw L arrow and R arrow strictly moving left-to-right. Neither ever goes backward. Write $O(N)$.
+Mem Vis (BF): Memory exhaustion if subarrays are physically sliced out and stored.
+Mem Vis (Opt): $O(1)$ memory. Only variable pointers (L, R, current_cost, total_count) are required.

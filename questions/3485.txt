@@ -1,0 +1,13 @@
+ID: 3485
+Problem Title: Longest Common Prefix of K Strings After Removal
+Brute Force Method: Generate all combinations of removing characters, and check the common prefix for each. $O(\text{Exponential})$.
+BF Complexity Visuals: Combinatorial Deletion Forest
+How to Draw BF: Cross out characters randomly in K strings. Compare their prefixes.
+Optimised Pattern: Trie + Dynamic Programming
+Opt Vis. Technique: The Pruned Prefix Tree
+Dry Run (Opt): Insert all strings into a Trie. Use DP on the Trie to calculate the minimum removals required to make a specific Trie node (representing a prefix) common among K strings.
+How to Draw (Opt): Draw a Trie. To make the prefix "APP" common across 3 strings, look at how many letters you have to delete from strings that diverge from the "APP" path. Use DP to find the cheapest way to force K strings down that exact path.
+Opt Complexity Visuals: Trie Traversal + DP $O(\text{Total Chars} \cdot K)$
+How to Draw Opt Complexity: Draw a Trie. At each node, compute a small DP state merging child costs.
+Mem Vis (BF): Storing modified strings.
+Mem Vis (Opt): A Trie data structure and DP state arrays. $O(\text{Total Chars})$ space.

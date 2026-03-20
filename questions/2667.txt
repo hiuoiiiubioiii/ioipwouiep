@@ -1,0 +1,13 @@
+ID: 2667
+Problem Title: Create Hello World Function
+Brute Force Method: Hardcoding a function that ignores all inputs and returns a string.
+BF Complexity Visuals: Static Return
+How to Draw BF: Draw a box that always spits out "Hello World" regardless of what is put inside. $O(1)$.
+Optimised Pattern: Higher-Order Function (Factory)
+Opt Vis. Technique: Function Factory
+Dry Run (Opt): Define a function that returns another function. The inner function, when invoked, returns "Hello World". This demonstrates the fundamental JS pattern of returning executable code.
+How to Draw (Opt): Draw a machine (Outer) that builds a smaller machine (Inner). The Inner machine's only job is to say "Hello World".
+Opt Complexity Visuals: $O(1)$
+How to Draw Opt Complexity: Write $O(1)$. It is a constant time operation.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Minimal memory for the function reference in the heap.

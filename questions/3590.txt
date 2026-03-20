@@ -1,0 +1,13 @@
+ID: 3590
+Problem Title: Kth Smallest Path XOR Sum (Hard)
+Brute Force Method: Use DFS to find all possible paths from (0,0) to (N,M), calculate the XOR sum for each, sort them, and pick Kth.
+BF Complexity Visuals: Path Permutation Explosion.
+How to Draw BF: Draw a grid. Branch into "Right" or "Down" at every cell. Count paths (up to 2^N+M). Sort the huge result list.
+Optimised Pattern: Meet-in-the-Middle + Binary Search / Trie.
+Opt Vis. Technique: Midpoint Collision.
+Dry Run (Opt): Calculate all path XORs from (0,0) to the diagonal, and from (N,M) back to the diagonal. Use a Trie or Binary Search to count pairs that sum to X.
+How to Draw (Opt): Draw a grid. Draw a diagonal line. Shade paths from Top-Left to Diagonal, and Bottom-Right to Diagonal. Compare at the meeting line.
+Opt Complexity Visuals: $O(2^(N+M)$/2 * log(MaxXOR)).
+How to Draw Opt Complexity: Draw two smaller exponential trees (depth (N+M)/2) and a binary search step over the Trie.
+Mem Vis (BF): Full Path Result List: Draw a massive list of path XORs taking up gigabytes of memory.
+Mem Vis (Opt): Mid-Diagonal Maps: Draw two hash maps/Tries storing XOR counts for only the half-paths.

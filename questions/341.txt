@@ -1,0 +1,13 @@
+ID: 341
+Problem Title: Flatten Nested List Iterator
+Brute Force Method: Recursively traverse the entire nested list at the start and store all integers in a flat queue or list.
+BF Complexity Visuals: Pre-computed Flat Array Tape
+How to Draw BF: Draw the nested structure like `[1, [4, [6]]]`. Draw an arrow to a flat array `[1, 4, 6]`. Label this $O(N)$ pre-processing.
+Optimised Pattern: Lazy Iterator with Stack (Depth-First Search)
+Opt Vis. Technique: Stack-Based Depth Navigation
+Dry Run (Opt): Push the list into a stack. In `hasNext()`, peek the top. If it's a list, pop it, and push its elements back onto the stack in reverse order. Repeat until the top is an integer.
+How to Draw (Opt): Draw a vertical stack. Put the initial list inside. Show the list "expanding" into its components within the stack. Use a "Pointer" arrow at the top of the stack.
+Opt Complexity Visuals: On-demand Recursive Expansion
+How to Draw Opt Complexity: Draw a stack that grows and shrinks as you dive into brackets. Label the complexity as $O(1)$ per `next()` amortized.
+Mem Vis (BF): A complete copy of the flattened list. $O(N)$.
+Mem Vis (Opt): A stack of iterators/lists. Draw a vertical column of boxes where each box is a reference to a nested level. $O(D)$ where D is depth.

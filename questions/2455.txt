@@ -1,0 +1,13 @@
+ID: 2455
+Problem Title: Average Value of Even Numbers Divisible by Three
+Brute Force Method: Iterate through the array, check each number for `n % 2 == 0` and `n % 3 == 0`. Store matches in a list, then calculate average.
+BF Complexity Visuals: Linear Filter and Sum
+How to Draw BF: Draw a line with a "Filter" box. Show numbers passing through or being blocked. Label $O(N)$.
+Optimised Pattern: Single Pass (Running Sum and Count)
+Opt Vis. Technique: Accumulator Funnel
+Dry Run (Opt): Condition `n % 2 == 0 &amp;&amp; n % 3 == 0` is equivalent to `n % 6 == 0`. One pass, track `sum` and `count`. Answer is `sum / count`.
+How to Draw (Opt): Draw a single loop. Inside, draw two boxes: `S` (sum) and `C` (count). Add to them only if `n % 6 == 0`.
+Opt Complexity Visuals: Single Linear Line
+How to Draw Opt Complexity: Draw a straight arrow from start to finish. Label $O(N)$ Time.
+Mem Vis (BF): Draw a temporary list to store filtered numbers. $O(N)$.
+Mem Vis (Opt): Draw two integer variables: `sum` and `count`. $O(1)$ Space.

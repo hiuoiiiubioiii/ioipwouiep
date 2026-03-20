@@ -1,0 +1,13 @@
+ID: 1125
+Problem Title: Smallest Sufficient Team
+Brute Force Method: Brute Force / Backtracking. Try every combination of people (2^N combinations) and see which one covers all skills with the fewest people.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw a list of people. Branch out: "Include Person" or "Exclude Person". Show 2^60 possible teams.
+Optimised Pattern: Bitmask DP
+Opt Vis. Technique: State-Space Compression Table
+Dry Run (Opt): Represent required skills as bits in an integer. `dp[mask]` stores the smallest list of people to achieve that skill combination. Update: `dp[mask | person_skills] = min(current, dp[mask] + person)`.
+How to Draw (Opt): Draw a table where the index is a binary bitmask (e.g., `1011`). Show the bitwise OR operation merging a person's skills into the current mask.
+Opt Complexity Visuals: $O(\text{People} x 2^\text{Skills})$ Map
+How to Draw Opt Complexity: Draw a grid with 2^S rows. Each person updates the grid. Shows high complexity but significantly less than 2^P.
+Mem Vis (BF): Storing all possible team combinations
+Mem Vis (Opt): 1D DP array of size 2^S. Each cell holds a list/vector of indices.

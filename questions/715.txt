@@ -1,0 +1,13 @@
+ID: 715
+Problem Title: Range Module
+Brute Force Method: A massive boolean array mapping out up to 10^9 values. True = tracked, False = not tracked.
+BF Complexity Visuals: Infinite Tape
+How to Draw BF: Draw a giant array block. Shading/erasing ranges requires touching every index sequentially. $O(N)$ per query.
+Optimised Pattern: Interval Merging / Segment Tree (TreeMap)
+Opt Vis. Technique: Sweep Line / Overlapping Bars
+Dry Run (Opt): Use an Ordered Map (BST) where keys=left bound, values=right bound. On `add`, find overlapping intervals and merge left/right limits. On `remove`, split overlapping limits.
+How to Draw (Opt): Draw a number line. Draw horizontal bars for tracked ranges. When a new range is added, draw it overlapping, then erase the inner lines to merge them into one solid bar.
+Opt Complexity Visuals: Logarithmic Tree Update
+How to Draw Opt Complexity: Draw a balanced Binary Search Tree. Highlight a path from root to node showing $O(\log N)$ lookup and update times.
+Mem Vis (BF): Memory Limit Exceeded (Boolean array of 10^9).
+Mem Vis (Opt): Tree nodes representing disjoint intervals $O(K)$.

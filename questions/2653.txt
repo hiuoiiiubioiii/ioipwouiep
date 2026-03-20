@@ -1,0 +1,13 @@
+ID: 2653
+Problem Title: Sliding Subarray Beauty
+Brute Force Method: For every window of size K, sort the elements and pick the X-th smallest negative number.
+BF Complexity Visuals: Nested Sort Window
+How to Draw BF: Draw a sliding bracket. Inside the bracket, draw a sorting tree. Label $O((N-K)$ * K log K).
+Optimised Pattern: Sliding Window + Frequency Array (Counting Sort)
+Opt Vis. Technique: Sliding Frequency Bucket
+Dry Run (Opt): Since values are limited (-50 to 50), use an array of size 101 to track frequencies in the current window. Move window: add new element to freq, remove old. Iterate freq array to find X-th smallest.
+How to Draw (Opt): Draw a small array of 101 buckets. As the window slides, increment/decrement buckets. To find beauty, count buckets from the left (index 0) until reaching X.
+Opt Complexity Visuals: Linear Window Scan
+How to Draw Opt Complexity: Draw an $O(N)$ loop. Inside it, draw a small $O(101)$ constant scan of the frequency array.
+Mem Vis (BF): Copied sub-arrays for sorting
+Mem Vis (Opt): $O(\text{Range})$ space for the frequency bucket array (constant size 101).

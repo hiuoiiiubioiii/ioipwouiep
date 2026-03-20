@@ -1,0 +1,13 @@
+ID: 2718
+Problem Title: Sum of Matrix After Queries
+Brute Force Method: Allocate an N×N matrix. Iterate through all queries in order, looping $O(N)$ times to overwrite rows/cols. Sum the final matrix. $O(Q\cdot N + N^2)$.
+BF Complexity Visuals: Overwriting 2D Grid
+How to Draw BF: Draw a grid. Shade a row. Shade a column over it (overwriting). Shade another row. Highly redundant work.
+Optimised Pattern: $O(N^2)$ 2D Array Allocation (Massive memory waste for large N).
+Opt Vis. Technique: Reverse Query Processing with Seen Sets
+Dry Run (Opt): Reverse Timeline Shadowing
+How to Draw (Opt): Process queries from last to first. The last query applied to a row/col is the one that survives. Maintain a count of available rows/cols. If processing a new row, add `val * available_cols` to total, and mark row as seen. Decrement available rows.
+Opt Complexity Visuals: Draw the queries array and a backwards arrow. Draw two buckets: `seen_rows`, `seen_cols`. If a row is NOT in `seen_rows`, add it, and tally its score based on remaining available columns.
+How to Draw Opt Complexity: $O(Q)$ Backwards Scan
+Mem Vis (BF): Draw an arrow going right-to-left through the queries array. Write $O(Q)$.
+Mem Vis (Opt): Two Boolean Arrays/Sets (Draw two 1D arrays of size N for rows and columns. Reduces space from $O(N^2)$ to $O(N)$).

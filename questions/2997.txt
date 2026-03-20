@@ -1,0 +1,13 @@
+ID: 2997
+Problem Title: Minimum Number of Operations to Make Array XOR Equal to K
+Brute Force Method: Try flipping every possible bit in every element recursively to see if the resulting XOR equals k.
+BF Complexity Visuals: Exponential Bit-flip Tree
+How to Draw BF: Draw a tree where each node branches 32 times (bits) for each array element. Depth N. $O(2^N \cdot 32)$.
+Optimised Pattern: Bitwise XOR Properties + Hamming Distance
+Opt Vis. Technique: Binary Column Summation
+Dry Run (Opt): XOR all elements to get `totalXOR`. The number of flips is the number of bits where `totalXOR` differs from k. Use `totalXOR ^ k` and count set bits.
+How to Draw (Opt): Write all numbers and k in binary stacked vertically. XOR the columns. Circle the columns where the result doesn't match k. Count circles.
+Opt Complexity Visuals: Single Linear XOR Reduction
+How to Draw Opt Complexity: Draw a straight line of length N. One XOR operation per number. T = $O(N)$.
+Mem Vis (BF): Deep recursion stack for all flip combinations.
+Mem Vis (Opt): One or two 32-bit integer variables. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1191
+Problem Title: K-Concatenation Maximum Sum
+Brute Force Method: Actually concatenate the array k times and run standard Kadane's algorithm. $O(N \cdot K)$.
+BF Complexity Visuals: Giant Array Expansion
+How to Draw BF: Draw an array. Copy it K times to the right. Show the pointer moving through the entire massive length. $O(N \cdot K)$.
+Optimised Pattern: Kadane's + Total Sum Logic
+Opt Vis. Technique: Modular Segment Analysis
+Dry Run (Opt): If k=1, run Kadane. If k >= 2, run Kadane on the array concatenated twice. If the total array sum is positive, add (k-2) x TotalSum to the result.
+How to Draw (Opt): Draw two copies of the array. Run Kadane across the seam. Draw a "Multiplier" box for the remaining (k-2) middle copies if the array sum is &gt; 0.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw an arrow through exactly two copies of the array. Total $O(2N)$ = $O(N)$.
+Mem Vis (BF): $O(N \cdot K)$ space for concatenated array
+Mem Vis (Opt): Constant $O(1)$ extra space using a few sum variables.

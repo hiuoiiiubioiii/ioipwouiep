@@ -1,0 +1,13 @@
+ID: 2478
+Problem Title: Number of Beautiful Partitions
+Brute Force Method: Use recursion to try every possible partition point that meets the "prime start/non-prime end" criteria.
+BF Complexity Visuals: Decision Tree Branching
+How to Draw BF: Draw a root. At each beautiful split point, branch into all remaining split possibilities. Label $O(2^N)$.
+Optimised Pattern: 2D Dynamic Programming with Prefix Sum Optimization
+Opt Vis. Technique: Layered Split-Grid
+Dry Run (Opt): `dp[i][j]` is ways to split prefix `i` into `j` parts. Use a prefix sum to calculate `dp[i][j]` from `dp[k][j-1]` in $O(1)$ time.
+How to Draw (Opt): Draw a grid (Indices x Number of Splits). Fill each cell by referencing a running sum of the previous split count row.
+Opt Complexity Visuals: Quadratic DP Surface
+How to Draw Opt Complexity: Draw an N x K matrix. Label $O(N \cdot K)$. Each cell is filled in $O(1)$ via prefix sums.
+Mem Vis (BF): Draw a massive call stack.
+Mem Vis (Opt): Draw a 2D DP array (or 1D space-optimized). $O(N \cdot K)$ Space.

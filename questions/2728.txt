@@ -1,0 +1,13 @@
+ID: 2728
+Problem Title: Count Houses in a Circular Street
+Brute Force Method: Walk in one direction counting houses. Without a "stopping" condition, you will loop infinitely.
+BF Complexity Visuals: Infinite Loop Spiral
+How to Draw BF: Draw a circle. Draw a person walking around it, passing the same house over and over while the counter keeps going up.
+Optimised Pattern: Unbounded Integer Accumulator (Memory usage of the counter variable growing as it fails to terminate).
+Opt Vis. Technique: State Marking (Two-Pass Reset)
+Dry Run (Opt): Reset and Count Cycle
+How to Draw (Opt): Loop 1000 times (max possible n) and close all doors. Then open the door at the current house. Walk and count until you hit an open door.
+Opt Complexity Visuals: Draw a circle of houses. Draw a hand closing every door in one lap. Open one door. Walk until you find that "Flag" door again.
+How to Draw Opt Complexity: Linear $O(k)$ Sweep
+Mem Vis (BF): Draw two circles representing the two laps. Label it $O(k)$ where k is the maximum possible houses.
+Mem Vis (Opt): $O(1)$ Auxiliary Space (Draw one integer count and one iterator i).

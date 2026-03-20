@@ -1,0 +1,13 @@
+ID: 3218
+Problem Title: Minimum Cost for Cutting Cake I
+Brute Force Method: Recursively simulate cutting the cake horizontally and vertically in every possible order. $O(\text{Exponential})$.
+BF Complexity Visuals: Matrix Partition Tree
+How to Draw BF: Draw a grid. Branch it into two smaller grids (horizontal cut) and two others (vertical cut). Continue branching indefinitely until 1x1 pieces remain.
+Optimised Pattern: Greedy Sorting (Largest Cost First)
+Opt Vis. Technique: Cost-Weighted Grid Slicing
+Dry Run (Opt): Sort horizontal and vertical cut costs descending. Always pick the most expensive available cut. Multiply its cost by the number of existing perpendicular pieces.
+How to Draw (Opt): Draw two descending lists of numbers (H and V). Track two variables: `h_pieces = 1`, `v_pieces = 1`. Cross off the highest number. If it's H, add `val * v_pieces` to total, and `h_pieces++`.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw two blocks labeled "Sort H" and "Sort V". Draw a linear merge process after. Label the whole diagram $O(N \log N + M \log M)$.
+Mem Vis (BF): Massive recursion stack holding grid states.
+Mem Vis (Opt): In-place sorted arrays (O(1) to $O(\log N)$ space depending on sort).

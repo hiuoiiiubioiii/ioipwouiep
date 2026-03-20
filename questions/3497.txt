@@ -1,0 +1,13 @@
+ID: 3497
+Problem Title: Analyze Subscription Conversion
+Brute Force Method: Join the UserActivity table with itself multiple times to find 'paid' after 'free_trial' for every user in a nested loop. $O(N^2)$
+BF Complexity Visuals: Self-Join Cartesian Product.
+How to Draw BF: Draw the table. Draw lines connecting every row to every other row to find chronological matches.
+Optimised Pattern: SQL Common Table Expression (CTE) with Filtering and Grouping. $O(N)$
+Opt Vis. Technique: User Conversion Funnel.
+Dry Run (Opt): Filter for users who have a 'paid' record. Group by `user_id` and `activity_type`. Calculate `AVG(duration)` for 'free_trial' and 'paid' separately.
+How to Draw (Opt): Draw three boxes: "Activity Pool" to "Converted Users" to "Avg Metrics". Use arrows to show the filtering and aggregation flow.
+Opt Complexity Visuals: Hashed/Grouped Scan.
+How to Draw Opt Complexity: Draw a database index scan (B-Tree traversal) to show $O(\log N)$ or $O(N)$ row-level processing.
+Mem Vis (BF): Massive temporary tables for the cross-joins.
+Mem Vis (Opt): $O(U)$ memory where U is the number of unique converted users.

@@ -1,0 +1,13 @@
+ID: 1178
+Problem Title: Number of Valid Words for Each Puzzle
+Brute Force Method: For every puzzle, iterate through every word in the dictionary. Check if the word satisfies both constraints (contains first char, all word chars are in puzzle).
+BF Complexity Visuals: Brute Force Cartesian Match
+How to Draw BF: Draw Puzzles on the left, Words on the right. Draw lines from every puzzle to every word. Check constraints for every line. $O(P \cdot W \cdot L)$.
+Optimised Pattern: Bitmasking + Subset Enumeration
+Opt Vis. Technique: Sub-mask Iteration Loop
+Dry Run (Opt): Represent words as bitmasks in a frequency map. For each puzzle, iterate only through its 2^6 possible sub-masks that include the first character's bit. Look up sub-masks in the map.
+How to Draw (Opt): Draw a puzzle mask. Draw a tree branching into its sub-masks. For each leaf, draw a pointer to a Hash Map to get the count.
+Opt Complexity Visuals: $O(W \cdot L + P \cdot 2^6)$
+How to Draw Opt Complexity: Draw a linear pass for words and a fixed-depth branching diagram for puzzles.
+Mem Vis (BF): None
+Mem Vis (Opt): Hash Map `int -&gt; frequency` for word masks.

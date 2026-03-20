@@ -1,0 +1,13 @@
+ID: 3761
+Problem Title: Minimum Absolute Distance Between Mirror Pairs (Med)
+Brute Force Method: Iterate through all possible swaps of elements to find a configuration where the sum of absolute differences between arr[i] and arr[n-1-i] is minimized. $O(N!)$.
+BF Complexity Visuals: Permutation Tree.
+How to Draw BF: Draw the array. Draw lines connecting mirror positions (start and end). Swap two elements, redraw lines, and recalculate total distance. Repeat for all pairings.
+Optimised Pattern: Greedy / Sorting Mirror Elements
+Opt Vis. Technique: Bilateral Sorting
+Dry Run (Opt): To minimize |a - b|, a and b should be as close as possible. Treat each pair of mirror indices as a bucket. Collect all elements, sort them, and place the two closest remaining elements into mirror positions.
+How to Draw (Opt): Draw the array. Draw arrows connecting i and N-1-i. Sort the entire array. Take the two middle-most elements and place them in the first mirror pair, then the next two, and so on.
+Opt Complexity Visuals: $O(N \log N)$ for sorting.
+How to Draw Opt Complexity: Draw a sorting curve followed by a single pass filling mirror slots.
+Mem Vis (BF): $O(N!)$ storage for permutations.
+Mem Vis (Opt): $O(1)$ auxiliary space (if sorting in-place).

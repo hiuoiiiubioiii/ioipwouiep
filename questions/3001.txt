@@ -1,0 +1,13 @@
+ID: 3001
+Problem Title: Minimum Moves to Capture The Queen
+Brute Force Method: BFS/DFS to explore all valid Rook and Bishop moves on the board until the Queen is captured (up to depth 2).
+BF Complexity Visuals: State-Space Search Tree
+How to Draw BF: Draw the root node as the initial board. Branch out 14 lines for all Rook moves and 13 for Bishop moves. Label tree depth.
+Optimised Pattern: Math / Geometry (Line of Sight checks)
+Opt Vis. Technique: 8x8 Coordinate Grid
+Dry Run (Opt): Plot coordinates. Trace straight horizontal/vertical lines for the Rook and diagonal lines for the Bishop. Check if the Queen is hit and if the other piece blocks the path.
+How to Draw (Opt): Sketch an 8x8 square grid. Mark R, B, Q. Draw solid arrows for lines of sight and an 'X' if a piece blocks the line.
+Opt Complexity Visuals: $O(1)$ Constant Time Box
+How to Draw Opt Complexity: Draw a single, solid square box labeled "O(1) Math Operations". No loops, just conditional variable checks.
+Mem Vis (BF): Call Stack or Queue, drawn as a list of state tuples: [(rx, ry, bx, by, depth)].
+Mem Vis (Opt): Six isolated memory cells (small boxes) holding the integer coordinates: rx, ry, bx, by, qx, qy.

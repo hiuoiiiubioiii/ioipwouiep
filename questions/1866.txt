@@ -1,0 +1,13 @@
+ID: 1866
+Problem Title: Number of Ways to Rearrange Sticks With K Sticks Visible
+Brute Force Method: Generate all n! permutations. For each, count visible sticks by scanning from left to right.
+BF Complexity Visuals: Factorial Permutation Tree.
+How to Draw BF: Draw a root node branching into N children, then N-1, etc. Label the leaves with "Count Visible". Mark $O(N \cdot N!)$.
+Optimised Pattern: Dynamic Programming (Stirling Numbers of the First Kind).
+Opt Vis. Technique: State Transition Grid (N \times K).
+Dry Run (Opt): dp[i][j] is ways to arrange i sticks with j visible. If tallest is last, dp[i-1][j-1]. If tallest is not last, (i-1) \times dp[i-1][j].
+How to Draw (Opt): Draw an N \times K table. Fill cells using the formula. Draw two arrows pointing to dp[i][j] from its two dependency states in the previous row.
+Opt Complexity Visuals: Rectangle Area calculation.
+How to Draw Opt Complexity: Draw an N \times K rectangle. Shade the whole area to show all N \cdot K states are visited. Mark $O(\text{NK})$.
+Mem Vis (BF): Recursion stack of depth N plus N! result storage.
+Mem Vis (Opt): 2D array of size N \times K (or 1D array for space-optimized DP).

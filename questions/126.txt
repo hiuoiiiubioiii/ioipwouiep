@@ -1,0 +1,13 @@
+ID: 126
+Problem Title: Word Ladder II
+Brute Force Method: DFS to find all possible transformation paths from start to end, checking for the shortest length at the end.
+BF Complexity Visuals: An exponential $O(N^L)$ decision tree where every word choice branches into N other words.
+How to Draw BF: Draw the start word. Draw arrows to every word in the dictionary that differs by one letter. Repeat until you hit the end. Show the chaos.
+Optimised Pattern: BFS (to find shortest distances) + DFS/Backtracking (to reconstruct paths).
+Opt Vis. Technique: A two-stage engine. BFS maps the terrain (distances), and DFS follows the map backward to find all "ideal" routes.
+Dry Run (Opt): Run BFS once to store the distance of each word from the start. Then, use DFS to find paths where each step W moves to a word V such that dist(V) = dist(W) + 1.
+How to Draw (Opt): Draw a level-order graph. Label each word with its level (0, 1, 2...). Only draw arrows that move from level k to k+1.
+Opt Complexity Visuals: $O(N \cdot 26 \cdot L + \text{paths})$ complexity showing localized work per word.
+How to Draw Opt Complexity: Draw the graph once. Circle the shortest path segments and highlight the "backtracking" arrows that don't satisfy the level-up rule.
+Mem Vis (BF): Visualize millions of redundant path strings clogging the heap.
+Mem Vis (Opt): Visualize an adjacency list (Graph) and a single Map (Distances) occupying $O(N \cdot L)$ space.

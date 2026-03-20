@@ -1,0 +1,13 @@
+ID: 3742
+Problem Title: Maximum Path Score in a Grid (Med)
+Brute Force Method: DFS exploring all possible paths moving right and down to calculate every possible score. $O(2^(R+C)$).
+BF Complexity Visuals: Exploding binary tree of paths.
+How to Draw BF: Draw grid. Draw branching arrows down and right from every single cell.
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: Matrix Accumulation
+Dry Run (Opt): `DP[r][c]` = cell value + `max(DP[r-1][c], DP[r][c-1])`. Build the max score iteratively from top-left to bottom-right.
+How to Draw (Opt): Draw blank grid. Fill top row and left col. For middle cells, point arrows from top and left neighbors, pick the bigger number, add current cell, and write it down.
+Opt Complexity Visuals: $O(R\cdot C)$ Matrix fill.
+How to Draw Opt Complexity: Draw a square grid and shade it row by row, left to right.
+Mem Vis (BF): $O(R+C)$ Call stack.
+Mem Vis (Opt): 2D Array or optimized 1D row array $O(C)$.

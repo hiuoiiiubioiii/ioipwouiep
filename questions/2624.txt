@@ -1,0 +1,13 @@
+ID: 2624
+Problem Title: Snail Traversal (JS)
+Brute Force Method: Manually tracking exact x,y coordinates with a complex direction-switching state machine.
+BF Complexity Visuals: Chaotic Coordinate Tracking
+How to Draw BF: Draw a matrix. Scribble numbers trying to keep track of boundaries, `x`, `y`, and `direction` variables simultaneously.
+Optimised Pattern: Math-based column parity (Odd/Even columns)
+Opt Vis. Technique: Up/Down Alternating Matrix Columns
+Dry Run (Opt): Iterate 1D array. Column = `Math.floor(i / rows)`. If column is even, row = `i % rows` (down). If odd, row = `rows - 1 - (i % rows)` (up).
+How to Draw (Opt): Draw an empty grid. Draw arrows: Column 0 points DOWN. Column 1 points UP. Column 2 points DOWN. Fill array numbers strictly along the arrows.
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw a single straight line representing 1D array length N being mapped directly to a 2D space.
+Mem Vis (BF): Complex state objects
+Mem Vis (Opt): Pre-allocated 2D Result Array.

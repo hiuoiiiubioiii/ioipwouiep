@@ -1,0 +1,13 @@
+ID: 2994
+Problem Title: Friday Purchases II
+Brute Force Method: Same as 2993 but use complex joins to include Fridays with zero purchases.
+BF Complexity Visuals: Join against Constant List
+How to Draw BF: Draw a table of all 30 days. Join with your purchase data. $O(30 \cdot N)$.
+Optimised Pattern: Recursive CTE (Date Generation) + Left Join
+Opt Vis. Technique: Timeline Filling Diagram
+Dry Run (Opt): Generate all 4 Fridays in November 2023 using a Recursive CTE. `LEFT JOIN` these against the `Purchases` table. Use `COALESCE(sum, 0)`.
+How to Draw (Opt): Draw 4 empty boxes (Fridays). Pour purchase data into them. If a box stays empty, write "0".
+Opt Complexity Visuals: Constant-Time Generation + Linear Join
+How to Draw Opt Complexity: Draw a line of 4 items. T = $O(N)$.
+Mem Vis (BF): Redundant row storage for zero-purchase days.
+Mem Vis (Opt): A small fixed-size date table. Space $O(1)$.

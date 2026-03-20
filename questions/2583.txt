@@ -1,0 +1,13 @@
+ID: 2583
+Problem Title: Kth Largest Sum in a Binary Tree
+Brute Force Method: Traverse the tree and find every possible subset of nodes that could form a "level." Sum them and sort. $O(N \log N)$.
+BF Complexity Visuals: A chaotic collection of node sums before they are organized by level.
+How to Draw BF: List every node. Manually figure out which nodes are on level 1, 2, 3... Sum them up. Sort the sums.
+Optimised Pattern: Level Order Traversal (BFS) + Sorting/Min-Heap.
+Opt Vis. Technique: A "Horizontal Slice" visual where the tree is cut into layers, each layer's sum is calculated, and then ranked.
+Dry Run (Opt): Use a queue for BFS. For each level, process all current nodes in the queue, add their values to a `levelSum`, and push their children. Store all `levelSums` in a list. Sort the list descending and return the k-th element.
+How to Draw (Opt): Draw a tree. Draw horizontal lines through each level. Add the numbers on each line. Write the sums in a list. Sort the list and pick the k-th largest.
+Opt Complexity Visuals: $O(N + L \log L)$ where N is nodes and L is number of levels. BFS is $O(N)$.
+How to Draw Opt Complexity: Draw the tree. Draw a vertical arrow pointing to each level. Next to the tree, draw a small sorted list of the level sums.
+Mem Vis (BF): Recursive stack memory for all paths.
+Mem Vis (Opt): $O(W + L)$ where W is the max width of the tree (queue size) and L is number of levels.

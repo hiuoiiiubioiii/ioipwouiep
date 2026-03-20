@@ -1,0 +1,13 @@
+ID: 3078
+Problem Title: Match Alphanumerical Pattern in Matrix I
+Brute Force Method: For every cell in the 2D grid, overlay the pattern and do a full character-by-character validation loop. $O(R \cdot C \cdot P_R \cdot P_C)$.
+BF Complexity Visuals: Brute Force Stamping
+How to Draw BF: Draw the grid. Take the pattern "stamp" and press it onto every single cell, checking every pixel under the stamp.
+Optimised Pattern: 2D Sliding Window / Submatrix Hashing
+Opt Vis. Technique: The Consistent-Mapping Window
+Dry Run (Opt): Treat the pattern as a 2D window. As you slide it over the board, verify that letters in the pattern consistently map to single digits in the board. Reset the bijection map for each window shift.
+How to Draw (Opt): Draw the pattern matrix. Slide it over the main grid. When a letter touches a number, draw a string attaching them. If a letter tries to attach to *two different* numbers in the same window, snap the string and slide forward.
+Opt Complexity Visuals: Optimized Window Scan
+How to Draw Opt Complexity: Draw a window moving across a grid. Inside the window, constant-time Hash Map checks occur.
+Mem Vis (BF): Massive deep copies of sub-matrices.
+Mem Vis (Opt): Two small arrays (size 26 and 10) for character mapping. $O(1)$ space.

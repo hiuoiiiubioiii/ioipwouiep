@@ -1,0 +1,13 @@
+ID: 2089
+Problem Title: Find Target Indices After Sorting Array
+Brute Force Method: Sort the array using a standard library sort, then iterate through the sorted array to find and collect target indices.
+BF Complexity Visuals: Sorting Funnel to Linear Search
+How to Draw BF: Draw the array. Funnel it through a sort (O(N log N)). Then draw a single scan searching for the target.
+Optimised Pattern: Counting / Frequency (Linear Scan)
+Opt Vis. Technique: Rank Calculation
+Dry Run (Opt): Count how many numbers are strictly smaller than `target` (this gives the starting index) and how many numbers are equal to `target`.
+How to Draw (Opt): Draw the array. Draw two boxes: `countSmaller` and `countEqual`. Every number increments one of them. The result is `[smaller, smaller + 1, ... , smaller + equal - 1]`.
+Opt Complexity Visuals: Single Horizontal Sweep
+How to Draw Opt Complexity: Draw one straight line (O(N)). Total Time $O(N)$.
+Mem Vis (BF): Memory for the sorted copy of the array.
+Mem Vis (Opt): Two integer counters. Space $O(1)$ (excluding output).

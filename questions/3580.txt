@@ -1,0 +1,13 @@
+ID: 3580
+Problem Title: Find Consistently Improving Employees (Med)
+Brute Force Method: For every employee, sort their performance reviews by date and check if the scores are strictly increasing.
+BF Complexity Visuals: Per-Employee Linear Scan.
+How to Draw BF: Draw a list of Employees. For each, draw a graph of their scores. Manually check if the line always goes up. $O(E \cdot R \log R)$.
+Optimised Pattern: Hash Map Grouping + Single Pass Validation.
+Opt Vis. Technique: Slope Direction Check.
+Dry Run (Opt): Group data by Employee ID. Sort reviews by timestamp. Iterate once: if `Score[i] &lt;= Score[i-1]`, mark as "Not Improving."
+How to Draw (Opt): Draw buckets for each employee. Put review pairs (Date, Score) inside. Draw a green checkmark only if every score is &gt; the previous.
+Opt Complexity Visuals: $O(N \log N)$ where N is total reviews.
+How to Draw Opt Complexity: Draw a single sort arrow for the entire dataset, then a linear sweep.
+Mem Vis (BF): Grouped Sub-lists: Draw multiple newly created list objects for every employee.
+Mem Vis (Opt): In-Place Grouped Scan: Draw the original table sorted by (ID, Date), scanning it in one pass.

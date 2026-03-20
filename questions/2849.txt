@@ -1,0 +1,13 @@
+ID: 2849
+Problem Title: Determine if a Cell Is Reachable at a Given Time
+Brute Force Method: Perform a Breadth-First Search (BFS) from the starting cell (sx, sy) to find if the target (fx, fy) can be reached in exactly t seconds.
+BF Complexity Visuals: Exponential BFS Expansion
+How to Draw BF: Draw a grid. Start at a cell. Draw 8 arrows to neighbors for second 1. Draw 64 arrows for second 2. Show the expansion area growing as a square, becoming massive for large t.
+Optimised Pattern: Chebyshev Distance (Math/Geometry)
+Opt Vis. Technique: 8-Directional Bound Box
+Dry Run (Opt): In a grid where you can move diagonally, the minimum time to reach (fx, fy) is max(abs(sx-fx), abs(sy-fy)). If minTime &lt;= t, it's reachable, unless minTime == 0 and t == 1 (cannot leave and return in 1 second).
+How to Draw (Opt): Plot start and finish on a grid. Draw a square boundary centered at start that expands by 1 unit per second. Check if the finish point is inside or on the boundary of the square at time t.
+Opt Complexity Visuals: Constant Time $O(1)$ Logic
+How to Draw Opt Complexity: Draw a single decision box. Calculation involves 3 subtractions and 1 comparison. $O(1)$ time.
+Mem Vis (BF): Visualize a BFS Queue potentially storing millions of coordinates for large time values.
+Mem Vis (Opt): Visualize exactly zero extra data structures. Pure $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 3442
+Problem Title: Max Diff Between Even and Odd Frequencies I
+Brute Force Method: Nested loops to compare every character's frequency with every other character's frequency. $O(26^2)$
+BF Complexity Visuals: All-Pairs Comparison Matrix.
+How to Draw BF: Draw a 26x26 grid of letters. Draw a line between every possible pair of letters to compare their counts.
+Optimised Pattern: Extreme Frequency Identification. $O(N)$
+Opt Vis. Technique: Bucket Sorting for Max/Min.
+Dry Run (Opt): Count all characters. Filter into "Odd Bucket" and "Even Bucket". Pick the highest from Odd and lowest from Even.
+How to Draw (Opt): Draw two boxes: "Odd" and "Even". Put frequencies in them. Circle the biggest in Odd and smallest in Even.
+Opt Complexity Visuals: Single Scan Line.
+How to Draw Opt Complexity: Draw one straight line for the string scan, and a small dot representing the 26-element loop.
+Mem Vis (BF): Storing all frequency differences in a list.
+Mem Vis (Opt): A fixed-size array of 26 integers.

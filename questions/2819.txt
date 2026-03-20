@@ -1,0 +1,13 @@
+ID: 2819
+Problem Title: Minimum Relative Loss After Buying K Items
+Brute Force Method: For each query, sort the available items or use a heap to pick K items and calculate the relative loss based on the given rules for every possible combination.
+BF Complexity Visuals: Query-by-Query Re-sorting
+How to Draw BF: Draw Q query boxes. For each box, draw a full sorting process of the N items. Show the $O(Q \cdot N \log N)$ repetitiveness.
+Optimised Pattern: Sorting + Prefix Sums + Binary Search (Two-Pointer Optimization)
+Opt Vis. Technique: Loss Function Inflection Point
+Dry Run (Opt): Sort items once. Realize loss depends on whether price is <= 2 x m. For each query, use binary search to find the split point and use prefix sums to calculate the total loss of the K cheapest/most expensive items in $O(1)$ or $O(\log N)$.
+How to Draw (Opt): Draw a sorted bar chart of prices. Draw a vertical line representing the "relative loss" threshold. Shade the areas representing prefix sums to show how $O(1)$ math replaces $O(N)$ summation.
+Opt Complexity Visuals: Precomputed Cumulative Sum Chart
+How to Draw Opt Complexity: Draw a single large $O(N \log N)$ block for sorting. Then draw Q tiny $O(\log N)$ ticks. Total: $O(N \log N + Q \log N)$.
+Mem Vis (BF): Visualize repeated memory allocation for sorted subarrays during each query.
+Mem Vis (Opt): Visualize one sorted array and one prefix sum array. Total $O(N)$ persistent space.

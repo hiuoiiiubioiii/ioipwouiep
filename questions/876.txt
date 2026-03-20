@@ -1,0 +1,13 @@
+ID: 876
+Problem Title: Middle of the Linked List
+Brute Force Method: Traverse the entire list once to count the total number of nodes N. Then traverse again and stop at N/2.
+BF Complexity Visuals: Two-Pass Count and Scan. $O(N)$.
+How to Draw BF: Draw a linked list. Trace your finger to the end, counting. Go back to the start and trace exactly halfway.
+Optimised Pattern: Tortoise and Hare (Slow &amp; Fast Pointers).
+Opt Vis. Technique: The "Double-Speed Lead."
+Dry Run (Opt): Start two pointers at the head. 'Slow' moves 1 step. 'Fast' moves 2 steps. When 'Fast' hits the end, 'Slow' is guaranteed to be exactly at the middle.
+How to Draw (Opt): Draw a linked list. Place 'S' and 'F' at the start. Draw arrows: S jumps 1 node, F jumps 2. When F hits the wall, circle the node where S is standing.
+Opt Complexity Visuals: Single Pass Scan. $O(N)$.
+How to Draw Opt Complexity: Draw a single straight timeline. 'F' reaches the end at time N/2.
+Mem Vis (BF): $O(1)$ space, but with two full linear pass overheads.
+Mem Vis (Opt): $O(1)$ Pointers: Draw two small arrow icons labeled 'Slow' and 'Fast' hovering over the list.

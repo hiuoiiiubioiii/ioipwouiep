@@ -1,0 +1,13 @@
+ID: 1694
+Problem Title: Reformat Phone Number
+Brute Force Method: Manual string concatenation with complex if-else logic for every possible remainder (2, 3, 4).
+BF Complexity Visuals: Conditional Splicing
+How to Draw BF: Draw a string. Draw multiple branching arrows for each "if" condition during parsing. $O(N)$.
+Optimised Pattern: Iterative Cleanup + Block Processing
+Opt Vis. Technique: Pointer-based Grouping
+Dry Run (Opt): Remove spaces/dashes. While length &gt; 4, take 3 digits. Handle the last 2, 3, or 4 digits specifically (2-2 or 3).
+How to Draw (Opt): Draw a digit string. Draw vertical "cut" lines every 3 digits. If the tail has 4 digits, erase the last cut and draw one in the middle (2-2).
+Opt Complexity Visuals: Linear Stream Arrow
+How to Draw Opt Complexity: Draw a single straight arrow moving left to right once. $O(N)$.
+Mem Vis (BF): Temp String Fragments: Draw multiple floating small text blocks.
+Mem Vis (Opt): StringBuilder / Result Array: Draw a single growing horizontal box. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 1759
+Problem Title: Count Number of Homogenous Substrings
+Brute Force Method: Generate every possible substring (O(N^2)). For each, check if all characters are identical (O(N)).
+BF Complexity Visuals: Triple-Nested Loop Matrix.
+How to Draw BF: Draw array. Draw brackets for every possible start and end. For each bracket, scan all inside. $O(N^3)$.
+Optimised Pattern: Two Pointers (Sliding Window) + Arithmetic Progression.
+Opt Vis. Technique: Chunking / Grouping by Color.
+Dry Run (Opt): Find consecutive identical characters of length k. A group of length k contributes k \times (k+1) / 2 substrings.
+How to Draw (Opt): Draw a string like "aaabb". Group them: [aaa], [bb]. Write 3(4)/2 = 6 for first, 2(3)/2 = 3 for second. Total 9.
+Opt Complexity Visuals: Linear Chunk Scan.
+How to Draw Opt Complexity: Draw an arrow jumping from the start of a char-group to the start of the next. Label $O(N)$.
+Mem Vis (BF): Storing all substrings in a list.
+Mem Vis (Opt): One variable for current group length. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 391
+Problem Title: Perfect Rectangle
+Brute Force Method: Check every pair of rectangles (N^2) for any overlap. Then, calculate the total area and compare it to the bounding box area.
+BF Complexity Visuals: Pairwise Overlap Matrix
+How to Draw BF: Draw N rectangles. For each one, draw arrows to all others checking if their (x1, y1, x2, y2) boundaries cross. $O(N^2)$.
+Optimised Pattern: Corner Count Set + Area Summation
+Opt Vis. Technique: Boundary Corner Parity
+Dry Run (Opt): If it forms a perfect rectangle: 1. Total area of small rectangles = Area of the large bounding box. 2. All internal corners must appear an even number of times (canceling out), leaving only the 4 exterior corners of the bounding box.
+How to Draw (Opt): Draw 4 small rectangles forming one large one. Circle the points where they meet. Show that the meeting points have 2 or 4 corners overlapping, while the 4 outside corners only have 1.
+Opt Complexity Visuals: Linear Set State Tracking
+How to Draw Opt Complexity: Draw a single pass through the rectangles. Above it, draw a "HashSet" where corners are added/removed. $O(N)$.
+Mem Vis (BF): N^2 comparison results.
+Mem Vis (Opt): A HashSet of corner strings and 4 boundary variables. Draw a small table (the set) and 4 integer boxes. $O(N)$ space.

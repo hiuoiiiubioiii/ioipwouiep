@@ -1,0 +1,13 @@
+ID: 3405
+Problem Title: Count the Number of Arrays with K Matching Adjacent Elements
+Brute Force Method: Recursively generate all valid arrays of length n, then iterate through each to count if exactly k adjacent pairs match. (O(m^n))
+BF Complexity Visuals: Exponential N-ary Decision Tree.
+How to Draw BF: Draw a root node branching into m choices, each of those branching m times up to depth n, creating a massive explosion of paths.
+Optimised Pattern: Combinatorics (nCr) + Fast Power Math. (O(N))
+Opt Vis. Technique: Combinatorial "Slots and Dividers" Block Grouping.
+Dry Run (Opt): Group the k matching pairs into joined blocks. Fill the first block with m options, and the remaining blocks with (m-1) options to avoid matching.
+How to Draw (Opt): Draw an array of n boxes. Draw connecting bridges between k pairs of boxes. Write 'm' in the first group, and 'm-1' in the rest. Multiply them.
+Opt Complexity Visuals: Math Formula Evaluation Timeline.
+How to Draw Opt Complexity: Draw a linear array showing $O(N)$ precomputation of factorials, leading directly into an $O(1)$ math equation box.
+Mem Vis (BF): Extremely deep call stack storing the current array state being generated.
+Mem Vis (Opt): Two 1D arrays of size N caching precomputed factorials and inverse factorials.

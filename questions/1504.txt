@@ -1,0 +1,13 @@
+ID: 1504
+Problem Title: Count Submatrices With All Ones
+Brute Force Method: 4 nested loops to select top-left and bottom-right corners, then 2 nested loops to check if all cells inside are '1'. $O(N^6)$.
+BF Complexity Visuals: 6-Dimensional Loop Hierarchy
+How to Draw BF: Draw 6 nested concentric squares. The innermost square represents the area check, highlighting the massive redundant work done for overlapping submatrices.
+Optimised Pattern: Monotonic Stack / Histogram
+Opt Vis. Technique: Dynamic Histogram Shrinking
+Dry Run (Opt): Treat each row as a base. Build a histogram of contiguous 1s going upwards. Use a monotonic stack to calculate combinations of rectangles formed by the current histogram bars.
+How to Draw (Opt): Draw a 2D grid. For row `i`, draw vertical bars going up representing the number of 1s above it. Then sweep left-to-right, drawing expanding horizontal rectangles clamped by the shortest vertical bar.
+Opt Complexity Visuals: 2D Sweep Line $O(R \cdot C)$
+How to Draw Opt Complexity: Draw a 2D matrix. Draw a single arrow sweeping down row by row, and another sweeping left to right. Mark a constant amount of work per cell.
+Mem Vis (BF): No extra memory, but massive redundant pointer variables.
+Mem Vis (Opt): A 1D array representing the 'height' of the histogram for the current row, and a Stack box beside it pushing/popping indices. $O(C)$ space.

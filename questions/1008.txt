@@ -1,0 +1,13 @@
+ID: 1008
+Problem Title: Construct BST from Preorder Traversal
+Brute Force Method: Take the first element as root. For every following element, start from the root and traverse down to find its correct empty spot (standard BST insertion).
+BF Complexity Visuals: Repeated falling balls. Every new number drops from the very top of the tree, bouncing left or right until it hits the floor.
+How to Draw BF: Draw a root node. Take the next number, draw a line from root to left/right. Take the third, trace from root again. Write $O(N^2)$ for a worst-case skewed tree.
+Optimised Pattern: Recursion with Valid Range (Upper/Lower Bounds).
+Opt Vis. Technique: A funnel dynamically narrowing its walls as you move deeper into the tree.
+Dry Run (Opt): Keep a "maximum allowed value". If the next number in the array is smaller than the current node, make it the left child. If it's bigger but within the max allowed, attach it to the right.
+How to Draw (Opt): Draw a node. Write `(-∞, ∞)` next to it. Draw a left child, update the text to `(-∞, ParentValue)`. Draw a right child, update to `(ParentValue, GrandparentValue)`.
+Opt Complexity Visuals: Single pass consumption of an array.
+How to Draw Opt Complexity: Draw the input array with a single pointer moving strictly left to right. Write $O(N)$ time.
+Mem Vis (BF): $O(N)$ recursion stack memory. Visualized as a tall, leaning tower of function calls.
+Mem Vis (Opt): $O(N)$ recursion stack memory (or explicit stack). Visualized as an expanding and contracting vertical column representing tree depth.

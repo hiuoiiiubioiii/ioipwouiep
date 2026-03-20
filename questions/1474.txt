@@ -1,0 +1,13 @@
+ID: 1474
+Problem Title: Delete N Nodes After M Nodes of a Linked List
+Brute Force Method: Convert the linked list to an array. Create a new linked list by picking M elements, skipping N, and repeating until the end.
+BF Complexity Visuals: List-to-Array Transformation
+How to Draw BF: Draw a chain of nodes. Draw an array. Copy nodes into array. Draw a second array with skips. Build a new chain. Label $O(N)$.
+Optimised Pattern: In-Place Link Manipulation
+Opt Vis. Technique: Jump-and-Stitch Traversal
+Dry Run (Opt): Traverse M nodes using a pointer `curr`. From `curr`, find the next node after skipping N steps. Set `curr.next` to that node. Repeat until the end of the list.
+How to Draw (Opt): Draw a linked list. Draw a solid line over M nodes, then a dashed "jumping" line over the next N nodes. Show the "stitch" where the last solid node points to the end of the dashed jump.
+Opt Complexity Visuals: Single-Pass Linear Traversal
+How to Draw Opt Complexity: Draw a single arrow jumping across the list. Label $O(N)$ where N is total nodes.
+Mem Vis (BF): New Linked List Copy
+Mem Vis (Opt): No extra space except for temporary pointers. Space $O(1)$.

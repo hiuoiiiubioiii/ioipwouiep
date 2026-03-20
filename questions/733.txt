@@ -1,0 +1,13 @@
+ID: 733
+Problem Title: Flood Fill
+Brute Force Method: Iterate through every single pixel in the grid. If it has the starting color and is "reachable," change it.
+BF Complexity Visuals: Full Grid Exhaustion
+How to Draw BF: Draw a grid. Draw an arrow touching every single cell (R*C) to check connectivity.
+Optimised Pattern: Depth-First Search (DFS) / BFS
+Opt Vis. Technique: Spreading Ripple / Infection
+Dry Run (Opt): Start at `(sr, sc)`. Visit 4-way neighbors. If neighbor color == original color, change it and recurse. Use a "visited" check.
+How to Draw (Opt): Draw a grid. Start at a cell. Draw arrows to neighbors. Color the cells as you go. Use an "X" for cells that don't match.
+Opt Complexity Visuals: Connected Component Traversal
+How to Draw Opt Complexity: Draw an irregular shape within the grid. Trace a single path that visits each cell in the shape once. $O(N)$.
+Mem Vis (BF): Implicitly large grid copies.
+Mem Vis (Opt): Recursion Stack frames (DFS) or Queue (BFS) - $O(N)$ where N is pixels.

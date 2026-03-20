@@ -1,0 +1,13 @@
+ID: 655
+Problem Title: Print Binary Tree
+Brute Force Method: Trial and error: place the root in the middle, then try to calculate the padding for each child level-by-level using multiple passes.
+BF Complexity Visuals: Greedy placement with constant recalculation.
+How to Draw BF: Draw a grid. Draw the root. Try to guess where the children go. Erase and move when they overlap. $O(H \cdot 2^H)$.
+Optimised Pattern: Recursive Matrix Filling (Height-based).
+Opt Vis. Technique: Geometric Grid Subdivision.
+Dry Run (Opt): First, find height `H`. Create a matrix of size `H x (2^H - 1)`. Recursively place roots at `(low + high) / 2` and split the range for children.
+How to Draw (Opt): Draw a wide rectangle. Split it in half vertically. Put the root in the middle. Split the two halves into quarters. Put children in the quarter-midpoints.
+Opt Complexity Visuals: Filling every cell in the output matrix.
+How to Draw Opt Complexity: Draw an H x W grid and a "Fill" motion. Write $O(H \cdot 2^H)$.
+Mem Vis (BF): Draw several temporary strings and buffers during layout attempts.
+Mem Vis (Opt): Draw the final 2D result matrix. $O(H \cdot 2^H)$ space.

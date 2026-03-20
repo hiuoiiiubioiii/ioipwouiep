@@ -1,0 +1,13 @@
+ID: 2837
+Problem Title: Total Traveled Distance (SQL)
+Brute Force Method: For every user, run a subquery that sums all distances in the Rides table. Handle the null cases manually by checking if a user exists in the rides table.
+BF Complexity Visuals: Nested Loop Join Plan
+How to Draw BF: Draw a "Users" table and "Rides" table. For every row in Users, scan every row in Rides looking for a match.
+Optimised Pattern: LEFT JOIN with COALESCE / IFNULL
+Opt Vis. Technique: Relationship Mapping
+Dry Run (Opt): Join Users to Rides on user_id. Group by user_id. Use SUM(distance) and wrap it in COALESCE(..., 0) to ensure users with no rides show 0 instead of NULL.
+How to Draw (Opt): Draw two circles (Users and Rides) overlapping. Color the entire Users circle. Write "Sum" in the overlap and "0" in the non-overlapping User section.
+Opt Complexity Visuals: Hash Join / Index Scan
+How to Draw Opt Complexity: Draw a Hash Map where keys are user_id and values are summed distances. Total time $O(\text{Users} + \text{Rides})$.
+Mem Vis (BF): Visualize temporary disk storage for huge intermediate join results.
+Mem Vis (Opt): Visualize a Hash Aggregate table in memory during the GROUP BY phase.

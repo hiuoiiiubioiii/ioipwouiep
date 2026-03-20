@@ -1,0 +1,13 @@
+ID: 2040
+Problem Title: Kth Smallest Product of Two Sorted Arrays
+Brute Force Method: Multiply every element in nums1 by every element in nums2, store all results in an array, sort the array, and pick the Kth element.
+BF Complexity Visuals: Massive Cartesian Matrix
+How to Draw BF: Draw an N x M grid. Fill every single cell with the product. Then draw a massive sorting funnel. $O(N\cdot M \log(N\cdot M)$). Memory limit exceeded for size 10^5.
+Optimised Pattern: Binary Search on Answer Range + Two Pointers/Binary Search for Counting
+Opt Vis. Technique: Searching the Value Axis
+Dry Run (Opt): The answer lies between -10^10 and 10^10. Binary search this range. For a `mid` value, count how many products are &lt;= `mid` using two pointers (or binary search) on the arrays. Adjust range based on `k`.
+How to Draw (Opt): Draw a massive number line from -10^10 to 10^10. Place a pin at `mid`. Below it, draw the two sorted arrays and show pointers sliding to count valid pairs without generating them.
+Opt Complexity Visuals: Logarithmic Zoom with Linear Counting
+How to Draw Opt Complexity: Draw an overarching $O(\log(\text{Range})$) binary search loop. Inside it, draw two arrays sweeping in $O(N+M)$ or $O(N \log M)$ to count pairs. Total Time $O((N+M)$ * log(10^10)).
+Mem Vis (BF): A colossal array of size N*M (e.g., 10^10 elements) trying to hold all possible products in memory.
+Mem Vis (Opt): Zero extra space. Only pointers and the two original input arrays are used. Space $O(1)$.

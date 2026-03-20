@@ -1,0 +1,13 @@
+ID: 510
+Problem Title: Inorder Successor in BST II
+Brute Force Method: Navigate to root using parent pointers, run full In-Order Traversal into an array, find target, get next. $O(N)$.
+BF Complexity Visuals: Flattening a 2D tree into a 1D line completely.
+How to Draw BF: Draw the tree projecting downward into a horizontal array of size N.
+Optimised Pattern: BST Traversal leveraging Parent Pointers.
+Opt Vis. Technique: Following physical pipes: If right pipe exists, go down-right then slide all the way left. Else, climb up until turning right.
+Dry Run (Opt): If node has right child: step right, then while left child exists, go left. If no right child: while node is a right child, step to parent.
+How to Draw (Opt): Draw a tree. For Case 1, draw a blue zigzag going down-right-left-left. For Case 2, draw a red zigzag climbing up-left-up-left.
+Opt Complexity Visuals: Path strictly bounded by the height of the tree. $O(H)$.
+How to Draw Opt Complexity: Draw a vertical zigzag line spanning from the root to the deepest leaf to represent height H.
+Mem Vis (BF): An Array of size N storing all traversed nodes.
+Mem Vis (Opt): A single pointer. $O(1)$ auxiliary space.

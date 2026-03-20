@@ -1,0 +1,13 @@
+ID: 1013
+Problem Title: Partition Array Into Three Parts With Equal Sum
+Brute Force Method: Place two dividers (i and j) to split the array into 3 parts. Check all possible combinations of i and j to see if sums match.
+BF Complexity Visuals: Two sliding walls moving through the array in a nested fashion.
+How to Draw BF: Draw the array. Put a vertical line after index 0. Put a second vertical line moving from index 1 to end. Then move the first line to index 1... Write $O(N^2)$.
+Optimised Pattern: Greedy Accumulation (Target Sum Matching).
+Opt Vis. Technique: Three identical measuring cups. Pour elements in linearly until cup 1 is full, then cup 2, etc.
+Dry Run (Opt): Sum the whole array. Divide by 3 to find Target. March left to right, adding to a running total. When total == Target, "seal" the first part and reset to 0. Repeat for part 2.
+How to Draw (Opt): Draw array. Calculate `Target = Total/3`. Write running sum below elements. When sum hits Target, draw a vertical slash `|`. Do it again. Ensure elements remain for part 3.
+Opt Complexity Visuals: A single continuous sweep with conditional checkpoints.
+How to Draw Opt Complexity: Draw an array with an arrow moving left to right. Mark two 'flags' on the arrow's path. Write $O(N)$.
+Mem Vis (BF): No extra space conceptually, just two pointers.
+Mem Vis (Opt): Three variables: TotalSum, CurrentSum, and PartsFound. $O(1)$ space visualised as three small boxes.

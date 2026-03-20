@@ -1,0 +1,13 @@
+ID: 2414
+Problem Title: Length of the Longest Alphabetical Continuous Substring
+Brute Force Method: Nested loops starting at every character, iterating forward to check if the subsequent characters form an alphabetical sequence.
+BF Complexity Visuals: Expanding Substring Triangle
+How to Draw BF: Draw the string. Under index 0, draw lines checking 1, 2, 3. Under index 1, lines to 2, 3. Label $O(N^2)$.
+Optimised Pattern: Single Pass / State Tracking (Current Streak)
+Opt Vis. Technique: Broken Chain Link
+Dry Run (Opt): Walk through the string. If the current char's ASCII value is exactly previous + 1, increment your streak. Otherwise, "break the chain" and reset streak to 1.
+How to Draw (Opt): Write the string. Draw a solid line under consecutive characters. Break the line when the sequence fails. Write the length above each line segment.
+Opt Complexity Visuals: Linear Line with Checkmarks
+How to Draw Opt Complexity: Draw a single straight line from 0 to N. Above it, draw small constant time checkmarks. Label $O(N)$ Time.
+Mem Vis (BF): Draw overlapping string allocations for every substring checked. $O(N)$ or $O(1)$ depending on implementation.
+Mem Vis (Opt): Draw two small boxes: `max_len` and `curr_len`. $O(1)$ Space.

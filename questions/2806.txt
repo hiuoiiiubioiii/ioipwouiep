@@ -1,0 +1,13 @@
+ID: 2806
+Problem Title: Account Balance After Rounded Purchase
+Brute Force Method: Use multiple if/else statements to check the last digit of the purchase amount (e.g., if ending in 1-4, round down; if 5-9, round up) and subtract from 100.
+BF Complexity Visuals: Branching Decision Tree
+How to Draw BF: Draw a root node with the amount. Draw 10 branches (one for each possible last digit 0-9). Group them into two buckets: "Round Up" and "Round Down".
+Optimised Pattern: Arithmetic Snapping / Modulo Math
+Opt Vis. Technique: Number Line Snapping
+Dry Run (Opt): Take amount + 5. Divide by 10 (floor it) to shift the decimal. Multiply by 10 to snap to the nearest decade. Subtract this from 100.
+How to Draw (Opt): Draw a number line with multiples of 10. Plot the purchase amount X. Draw an arc moving X exactly 5 units right, then an arrow pointing to the nearest multiple of 10 below it.
+Opt Complexity Visuals: Single Constant Node
+How to Draw Opt Complexity: Write down $O(1)$. Draw a single box representing the 1-step math formula. There is no scaling with input size.
+Mem Vis (BF): Visualize scattered boolean flags and temporary variables in the stack to track the conditions.
+Mem Vis (Opt): Visualize exactly two 32-bit integers in memory: the input amount and the output balance. No extra overhead.

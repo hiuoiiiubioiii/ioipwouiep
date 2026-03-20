@@ -1,0 +1,13 @@
+ID: 2812
+Problem Title: Find the Safest Path in a Grid
+Brute Force Method: Find every single possible path from top-left to bottom-right. For each path, calculate the safeness factor. Find the max.
+BF Complexity Visuals: Maze Path Combinatorics
+How to Draw BF: Draw a grid. Draw dozens of distinct squiggly lines from start to finish. Show how the number of paths grows factorially/exponentially with grid size.
+Optimised Pattern: Multi-source BFS + Max-Heap/Dijkstra (or Binary Search + BFS)
+Opt Vis. Technique: Topological Heatmap &amp; Max-Spanning Tree
+Dry Run (Opt): Step 1: Multi-source BFS from all thieves to compute the "safeness" (distance) of every cell. Step 2: Use a Max-Heap to traverse the grid from (0,0), always picking the adjacent cell with the highest safeness factor until reaching the end.
+How to Draw (Opt): Draw the grid. Shade the "thief" cells dark. Draw expanding ripples (numbers 1, 2, 3) from the thieves to fill the grid. Next, draw a path from (0,0) prioritizing the highest numbers possible.
+Opt Complexity Visuals: Two-Stage Network Flow
+How to Draw Opt Complexity: Draw two boxes. Box 1: Multi-source BFS taking $O(N^2)$ time. Box 2: Dijkstra using a priority queue taking $O(N^2 \log N)$ time. Sum them up to show the bottleneck is the priority queue.
+Mem Vis (BF): Visualize infinite path arrays being stored in memory simultaneously, causing immediate Out-of-Memory errors.
+Mem Vis (Opt): Visualize a 2D integer array (the safeness grid) of size N x N, and a Max-Heap queue storing coordinate tuples. Max space is strictly bounded to $O(N^2)$.

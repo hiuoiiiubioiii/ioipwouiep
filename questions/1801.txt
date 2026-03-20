@@ -1,0 +1,13 @@
+ID: 1801
+Problem Title: Number of Orders in the Backlog
+Brute Force Method: Array insertion and linear scan for matching best prices.
+BF Complexity Visuals: Linear timeline graph.
+How to Draw BF: Draw an array, use arrows to simulate a full scan for each new order, noting $O(N)$ per step.
+Optimised Pattern: Two Priority Queues (Min-Heap for Sell, Max-Heap for Buy).
+Opt Vis. Technique: Dual Pyramids (Heaps).
+Dry Run (Opt): Place buys in max-heap, sells in min-heap. If max top &gt;= min top, cross out quantities and update.
+How to Draw (Opt): Draw two triangles (heaps). Write values at the top. Draw arrows matching top nodes, cross out matched amounts.
+Opt Complexity Visuals: Logarithmic tree traversal paths.
+How to Draw Opt Complexity: Draw a binary tree path, highlight $O(\log N)$ swaps down the tree per insertion/deletion.
+Mem Vis (BF): Contiguous array blocks shifting elements.
+Mem Vis (Opt): Array-backed binary tree blocks (heap array mapping).

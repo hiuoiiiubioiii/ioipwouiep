@@ -1,0 +1,13 @@
+ID: 2202
+Problem Title: Maximize the Topmost Element After K Moves
+Brute Force Method: Simulation / BacktrackingRecursively simulate every possible valid combination of popping and pushing elements up to K moves to find the max top.
+BF Complexity Visuals: Decision Tree (N-ary)
+How to Draw BF: Draw a tree where each node branches into two choices: "Pop" or "Push". Count the depth up to K to show the exponential $O(2^K)$ explosion.
+Optimised Pattern: Greedy / Math Analysis
+Opt Vis. Technique: Array Indexing &amp; Boundary Pointers
+Dry Run (Opt): Place a pointer over the array. Check the max of elements from index 0 to K-2. Then check the element at index K. Pick the maximum.
+How to Draw (Opt): Draw the array. Put a bracket over elements `[0` to `k-2]`. Circle the element at `[k]`. Cross out element `[k-1]`. Pick the largest circled/bracketed number.
+Opt Complexity Visuals: Single Pass Window Line
+How to Draw Opt Complexity: Draw a single straight line spanning from index 0 to min(K, N). Write $O(K)$ above the line to show the time bounded strictly by K or N.
+Mem Vis (BF): Deep Call Stack Diagram (showing multiple recursive states pushing to stack memory).
+Mem Vis (Opt): Single State Variables (showing a single `max_val` register updating in memory; $O(1)$ space).

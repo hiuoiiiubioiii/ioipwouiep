@@ -1,0 +1,13 @@
+ID: 306
+Problem Title: Additive Number
+Brute Force Method: Pure backtracking: recursively split the string into every possible combination of 3 or more numbers to check validity.
+BF Complexity Visuals: Deep N-ary Recursion Tree
+How to Draw BF: Draw a root node with the full string. Draw branches representing the first split. From each, draw more branches for the second split. Show exponential explosion.
+Optimised Pattern: Backtracking with Pruning / Iterative Prefix Checking
+Opt Vis. Technique: State-Space Tree with Heavy Pruning
+Dry Run (Opt): Pick the 1st number. Pick the 2nd number. The 3rd number is mathematically locked (num1 + num2). Simply check if the remaining string starts with that sum. If yes, slide the window. If no, immediately prune.
+How to Draw (Opt): Draw an array of characters. Place 3 pointers: i, j, k. Lock i and j. Draw a curved arrow for k that jumps forward exactly by the length of (string[i] + string[j]).
+Opt Complexity Visuals: Narrow Linear Path (Bounding Box)
+How to Draw Opt Complexity: Draw an N-ary tree, but immediately cross out 90% of the branches on the second level. Highlight a single straight path shooting down to the bottom.
+Mem Vis (BF): Deep vertical stacked boxes representing the recursive call stack for string subsets. $O(N)$ space.
+Mem Vis (Opt): String slice allocation blocks, or $O(1)$ space if using index variables without creating substrings. Draw 3 small integer boxes for i, j, k.

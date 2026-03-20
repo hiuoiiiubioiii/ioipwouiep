@@ -1,0 +1,13 @@
+ID: 757
+Problem Title: Set Intersection Size At Least Two
+Brute Force Method: Generate all possible subsets of the total range and check the intersection with every interval.
+BF Complexity Visuals: Power Set Scan
+How to Draw BF: Draw a range [0, Max]. List every combination of numbers. Check against intervals. $O(2^\text{Range})$.
+Optimised Pattern: Greedy (Interval Sorting)
+Opt Vis. Technique: Right-Edge Pinning
+Dry Run (Opt): Sort intervals by end time. Pick the two largest points from the first interval. For subsequent intervals, check how many points you already have; add 1 or 2 as needed.
+How to Draw (Opt): Draw horizontal bars (intervals) on a timeline. Draw two red dots at the end of the first bar. Move to the next; if it covers the dots, do nothing. Else, add dots at the end.
+Opt Complexity Visuals: Single Pass with Sort
+How to Draw Opt Complexity: Draw a timeline. Show one pass through sorted intervals. $O(N \log N)$.
+Mem Vis (BF): Massive lists of integer subsets.
+Mem Vis (Opt): A simple list/array of the chosen "set" points (O(N)).

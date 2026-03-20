@@ -1,0 +1,13 @@
+ID: 386
+Problem Title: Lexicographical Numbers
+Brute Force Method: Generate all numbers from 1 to n as strings, put them in a list, and sort them lexicographically.
+BF Complexity Visuals: Global String Sorting Funnel
+How to Draw BF: Draw a box representing a list of numbers. Draw a "Sort" funnel that takes the list and reorders them like words in a dictionary. $O(N \log N)$.
+Optimised Pattern: DFS (Pre-order Traversal of a 10-ary Tree)
+Opt Vis. Technique: 10-Way Digital Search Tree
+Dry Run (Opt): Visualize a tree where the root has 9 children (1-9). Each node has 10 children (0-9). Traverse the tree in pre-order (Node, then Child 0, then Child 1...). Stop when a number exceeds n.
+How to Draw (Opt): Draw a root node. Draw branches 1, 2, 3... Under 1, draw branches 0, 1, 2... (forming 10, 11, 12). Under 10, draw 0, 1... (forming 100, 101). Show the "DFS Path" line.
+Opt Complexity Visuals: Single-Pass Tree Depth Scan
+How to Draw Opt Complexity: Draw a single line tracing the path through the 10-ary tree. Label it $O(N)$ since every number is visited exactly once.
+Mem Vis (BF): A list of N string objects. $O(N \cdot \\text{text}{\text{digits}})$.
+Mem Vis (Opt): Recursion stack depth. Draw a vertical stack of boxes representing the "current prefix". $O(\log_{10} N)$ space.

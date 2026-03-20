@@ -1,0 +1,13 @@
+ID: 1538
+Problem Title: Guess the Majority Element in a Hidden Array (Interactive)
+Brute Force Method: Query every possible subset of 4 elements to determine parities. $O(N^4)$.
+BF Complexity Visuals: Complete Subgraph Querying
+How to Draw BF: Draw N dots. Draw a circle around every possible group of 4. The lines overlap until the page is completely black.
+Optimised Pattern: Relative Parity / Math
+Opt Vis. Technique: The Pivot Reference
+Dry Run (Opt): Use two constant pivots. Compare `query(0,1,2,3)` with `query(1,2,3,4)` to see if element 0 and 4 are the same. By shifting the "window" of the query, you can determine if every element `i` is the same as element 0 or not.
+How to Draw (Opt): Draw a line of mystery boxes. Query the first 4. Then drop the first and add the 5th. If the result is the same, box 1 and box 5 are identical. Use this to mark boxes with 'A' or 'B'. Count which letter appears more.
+Opt Complexity Visuals: Linear Query Limit $O(N)$
+How to Draw Opt Complexity: Draw a line of length N. At each step, draw a single query box. The number of queries is exactly N+1.
+Mem Vis (BF): Storing every query result in a map. $O(N)$.
+Mem Vis (Opt): Two counters (`countA`, `countB`) and one index `lastIndex`. $O(1)$ space.

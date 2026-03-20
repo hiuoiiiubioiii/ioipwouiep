@@ -1,0 +1,13 @@
+ID: 320
+Problem Title: Generalized Abbreviation
+Brute Force Method: Generate every possible combination of letters and numbers that could represent the string, then validate them.
+BF Complexity Visuals: Unconstrained String Permutation
+How to Draw BF: Draw a tree where every character can be itself, a '1', a '2', etc. Massive overlap and redundant strings.
+Optimised Pattern: Backtracking (Keep or Abbreviate)
+Opt Vis. Technique: Binary Decision Tree (Decision per Character)
+Dry Run (Opt): At each character, you have two choices: 1) Keep the character as is (and append any pending count). 2) Abbreviate it (increment current count).
+How to Draw (Opt): Draw a tree. At each node, branch left for "Letter" and right for "Number +1". At the bottom, write the resulting strings (e.g., "word", "wor1", "wo1d"...).
+Opt Complexity Visuals: Exponential State Space (Systematic)
+How to Draw Opt Complexity: Draw a binary tree of depth n. Label the total leaves as 2^n. $O(2^n)$.
+Mem Vis (BF): Large set of strings and massive recursion depth.
+Mem Vis (Opt): Recursion stack (O(N)) + StringBuilder/Buffer. Draw a single vertical stack and one horizontal buffer being modified.

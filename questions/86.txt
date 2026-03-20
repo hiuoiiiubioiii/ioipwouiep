@@ -1,0 +1,13 @@
+ID: 86
+Problem Title: Partition List
+Brute Force Method: Array Extraction Traverse the list, extract all values into an array, filter them into two lists (less than x and greater/equal to x), then rebuild the linked list.
+BF Complexity Visuals: Two Parallel Buckets
+How to Draw BF: Draw a linked list. Draw two empty boxes labeled "Small" and "Large". Draw arrows moving numbers from the list into these boxes. Note the $O(N)$ extra space for the new nodes.
+Optimised Pattern: Two Dummy Nodes (Merging Streams)
+Opt Vis. Technique: The Hairline Splitter
+Dry Run (Opt): Create two dummy nodes: `lessHead` and `greaterHead`. Iterate through the list, attaching nodes to either the `less` tail or `greater` tail. Connect the `less` tail to `greaterHead.next` at the end.
+How to Draw (Opt): Draw the original list. Draw two stars (Dummies). As you move through the list, "sever" the arrow of the current node and point it to the tail of the appropriate dummy list.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single straight line representing the list. Every node is visited once and its `next` pointer updated once. $O(N)$ time.
+Mem Vis (BF): Creating an intermediate array and brand new nodes. Space: $O(N)$.
+Mem Vis (Opt): Draw the original nodes only. Emphasize that we are just rearranging existing memory links. Space: $O(1)$.

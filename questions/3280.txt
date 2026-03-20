@@ -1,0 +1,13 @@
+ID: 3280
+Problem Title: Convert Date to Binary
+Brute Force Method: Manually divide the year, month, and day integers by 2 repeatedly to build binary strings. $O(L)$.
+BF Complexity Visuals: Manual Bit-Stream Building
+How to Draw BF: Write "2024". Do the long division by 2 multiple times. Repeat for month and day. Label the effort for each part.
+Optimised Pattern: Standard Library formatting (bin/format)
+Opt Vis. Technique: String Split-Transform-Join
+Dry Run (Opt): Split the string by '-', convert each component to binary using built-in methods (removing '0b'), and join them back with '-'.
+How to Draw (Opt): Draw the string "2024-08-25". Draw scissors cutting it into three blocks. Pass each block through a "Binary Converter" box. Glue them back together.
+Opt Complexity Visuals: Linear String Transformation
+How to Draw Opt Complexity: Draw a timeline of the input string length. Label the split, conversion, and join as $O(L)$.
+Mem Vis (BF): Multiple intermediate string fragments.
+Mem Vis (Opt): Temporary list of 3 strings (effectively $O(L)$ space).

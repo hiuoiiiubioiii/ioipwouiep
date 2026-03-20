@@ -1,0 +1,13 @@
+ID: 2420
+Problem Title: Find All Good Indices
+Brute Force Method: For every index 'i', run two loops: one 'k' steps back to check if non-increasing, and one 'k' steps forward to check if non-decreasing.
+BF Complexity Visuals: Double-Sided Search Arms
+How to Draw BF: Draw an index 'i'. Draw two long arrows extending k units in both directions. Repeat for all N indices. Label $O(N \cdot K)$.
+Optimised Pattern: Prefix/Suffix Dynamic Programming (Precomputation)
+Opt Vis. Technique: Dual Waveform Precomputation
+Dry Run (Opt): Pre-calculate `left[i]` (streak of non-increasing ending at i) and `right[i]` (streak of non-decreasing starting at i). An index is 'good' if left[i-1] &gt;= k and right[i+1] &gt;= k.
+How to Draw (Opt): Draw two arrays below the original. One fills streaks left-to-right, one right-to-left. Highlight indices where both corresponding cells are &gt;= k.
+Opt Complexity Visuals: Parallel Precompute Blocks
+How to Draw Opt Complexity: Draw two horizontal bars (prefix and suffix). Label "Precompute: $O(N)$". Label "Final Scan: $O(N)$". Total $O(N)$.
+Mem Vis (BF): Draw a simple results list. $O(1)$ extra beyond output.
+Mem Vis (Opt): Draw two auxiliary arrays of size N. Label $O(N)$ Space.

@@ -1,0 +1,13 @@
+ID: 122
+Problem Title: Best Time to Buy and Sell Stock II
+Brute Force Method: Recursion to explore every possible combination of buying, selling, or holding on every single day.
+BF Complexity Visuals: A massive branching decision tree with $O(2^N)$ states.
+How to Draw BF: Draw a decision tree: "Day 1: Buy or Skip?", "Day 2: Sell, Hold, or Skip?". Show it exploding exponentially.
+Optimised Pattern: Greedy Algorithm (Summing Positive Slopes).
+Opt Vis. Technique: A mountain climber collecting only the upward inclines. If tomorrow is higher than today, take the profit immediately.
+Dry Run (Opt): Traverse prices from index 1. If prices[i] &gt; prices[i-1], add the difference to total profit.
+How to Draw (Opt): Draw a price graph. Circle every upward-sloping line segment. Draw "+" signs over them and a total sum box at the end.
+Opt Complexity Visuals: Linear scan with no nested dependencies.
+How to Draw Opt Complexity: Draw the array. Draw a single pass. Highlight only the adjacent pairs where the second element is larger. $O(N)$ time.
+Mem Vis (BF): $O(2^N)$ recursive call stack frames leading to total system exhaustion.
+Mem Vis (Opt): A single $O(1)$ accumulator variable updating as you step through the list.

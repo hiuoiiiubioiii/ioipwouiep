@@ -1,0 +1,13 @@
+ID: 3839
+Problem Title: Number of Prefix Connected Groups (Med.)
+Brute Force Method: For every prefix length (1 to N), build an adjacency list from scratch and run a full DFS/BFS to count the number of separate components.
+BF Complexity Visuals: Building and tearing down a graph N times, traversing the entire thing from scratch every time.
+How to Draw BF: Draw 3 nodes, connect 1 edge, run DFS. Erase. Draw 3 nodes, connect 2 edges, run DFS. Write $O(N \cdot (V+E)$).
+Optimised Pattern: Union-Find (Disjoint Set) with Dynamic Group Tracking.
+Opt Vis. Technique: Droplets of water (nodes) merging together instantly when a pipe (edge) connects them.
+Dry Run (Opt): Start with V isolated groups. As you iterate through the edges of the prefix, use Union-Find. If two nodes have different parents, link them and decrement the total group count. Record the count.
+How to Draw (Opt): Draw isolated dots. Draw a line connecting two dots, circle them together into one blob. Note the total number of blobs left. Add next line, update blobs.
+Opt Complexity Visuals: Nearly constant time operations per edge added.
+How to Draw Opt Complexity: Draw N edge additions. Write $O(N \cdot α(V)$) next to it, noting that the Inverse Ackermann function α makes it practically $O(N)$.
+Mem Vis (BF): Massive graph allocations, taking $O(V+E)$ space and re-allocating it N times.
+Mem Vis (Opt): Two 1D arrays (`parent` and `rank`) taking exactly $O(V)$ space.

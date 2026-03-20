@@ -1,0 +1,13 @@
+ID: 993
+Problem Title: Cousins in Binary Tree
+Brute Force Method: For every node in the tree, find its depth and its parent. Then, specifically check the target nodes `x` and `y` to see if they meet the criteria.
+BF Complexity Visuals: $O(N)$ but involves multiple full traversals or storing a lot of redundant parent/depth info.
+How to Draw BF: Draw a tree. For every node, draw two arrows: one pointing to the root (depth) and one pointing to its parent. It's a lot of extra lines.
+Optimised Pattern: Level-Order BFS (Same Level, Different Parent)
+Opt Vis. Technique: "The School Grade." Nodes in the same "grade" (level) are candidates. If `x` and `y` are in the same grade but have different "Parents" (teachers), they are cousins.
+Dry Run (Opt): Use a Queue for BFS. In each level-step, check if `x` and `y` both exist in the current level. Before pushing children, check if a parent has both `x` and `y` as children (not cousins).
+How to Draw (Opt): Draw a tree. Draw horizontal "Level" lines. Circle `x` and `y`. If they are on the same line, look up one level; if they don't share the same parent node, draw a "Cousins" link between them.
+Opt Complexity Visuals: $O(N)$. Each node is visited exactly once.
+How to Draw Opt Complexity: Draw a tree with horizontal dashed lines. Below it, draw a queue containing pairs of `(node, parent_val)`.
+Mem Vis (BF): $O(N)$ to store parent/depth maps.
+Mem Vis (Opt): $O(W)$ where W is the maximum width of the tree. Draw a horizontal pipe (Queue).

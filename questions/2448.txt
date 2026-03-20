@@ -1,0 +1,13 @@
+ID: 2448
+Problem Title: Minimum Cost to Make Array Equal
+Brute Force Method: Try making all elements equal to every possible value between min(nums) and max(nums). Calculate total cost for each.
+BF Complexity Visuals: Cost Function Curve (Convex)
+How to Draw BF: Draw a U-shaped curve. Label the x-axis as "Target Value". Label $O(N \\text{cdot Range})$.
+Optimised Pattern: Weighted Median / Binary Search on Answer
+Opt Vis. Technique: Gravity Center (Balance Point)
+Dry Run (Opt): Sort pairs (val, cost). Find the "weighted median"—the point where the cumulative cost weight reaches half of the total cost weight.
+How to Draw (Opt): Draw a number line with "weights" (costs) hanging off each number. Find the point where the scale balances.
+Opt Complexity Visuals: Sort + Single Pass
+How to Draw Opt Complexity: Draw a sorting block (N log N) followed by a line (N). Label $O(N \log N)$ Time.
+Mem Vis (BF): Draw cost variables for every target.
+Mem Vis (Opt): Draw an array of pairs (val, cost). $O(N)$ Space.

@@ -1,0 +1,13 @@
+ID: 1652
+Problem Title: Defuse the Bomb
+Brute Force Method: For every index i, run a loop to sum the next (or previous) k elements.
+BF Complexity Visuals: Nested Loop Grid
+How to Draw BF: Draw an array. For every element, draw k arrows pointing to its neighbors. $O(N \cdot K)$.
+Optimised Pattern: Fixed Size Sliding Window
+Opt Vis. Technique: Rotating Circular Tape
+Dry Run (Opt): Calculate the initial sum of the first window. For the next element, add the "new" neighbor and subtract the "old" neighbor. Handle circularity with modulo.
+How to Draw (Opt): Draw the array as a circle. Draw a highlighter "window" of size k. Rotate the highlighter while updating the running sum.
+Opt Complexity Visuals: Linear Sweep
+How to Draw Opt Complexity: Draw a single straight arrow circling the array exactly once. $O(N)$.
+Mem Vis (BF): Two Loop Counters: Simple floating pointers i and j.
+Mem Vis (Opt): Sliding Window Sum: Draw a single box holding the current sum that updates N times. $O(1)$ aux space.

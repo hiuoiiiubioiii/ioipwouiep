@@ -1,0 +1,13 @@
+ID: 3596
+Problem Title: Minimum Cost Path with Alternating Directions I (Med)
+Brute Force Method: Standard BFS/Dijkstra that ignores the "alternating" rule, checking only for minimum weight.
+BF Complexity Visuals: Blind Graph Flood.
+How to Draw BF: Draw a grid. Draw arrows in all directions. Trace the shortest path without regard for the previous move. $O(N \cdot M)$.
+Optimised Pattern: State-Layered Dijkstra (BFS with 2-Layer States).
+Opt Vis. Technique: Parallel Directional Layers.
+Dry Run (Opt): Create two "ghost" grids: Layer H (arrived horizontally) and Layer V (arrived vertically). You can only move from H to V or V to H.
+How to Draw (Opt): Draw two stacked grids. Draw "downward" arrows from the top grid to the bottom grid, and "upward" arrows vice-versa. Label with costs.
+Opt Complexity Visuals: $O(N \cdot M)$.
+How to Draw Opt Complexity: Draw a graph where each (r, c) has two nodes. Total nodes = 2NM. Draw a single shortest-path search.
+Mem Vis (BF): One-dimensional Visited Set: Draw a 1D boolean array that only tracks coordinates, losing the directional context.
+Mem Vis (Opt): 3D Distance Array: Draw a `dist[N][M][2]` array representing cost at each coordinate for both incoming directions.

@@ -1,0 +1,13 @@
+ID: 2602
+Problem Title: Minimum Operations to Make All Array Elements Equal
+Brute Force Method: Iterate array for each query and sum absolute differences.
+BF Complexity Visuals: Bipartite mapping (Queries to Array)
+How to Draw BF: Draw lines from one query to every single array element, label $O(N\cdot Q)$ total lines.
+Optimised Pattern: Sorting + Prefix Sums + Binary Search
+Opt Vis. Technique: Area Under Curve / Prefix Sum Blocks
+Dry Run (Opt): Slide a divider (binary search point) in a sorted array; calculate left side cost and right side cost using prefix blocks.
+How to Draw (Opt): Draw sorted array and prefix sum array. Draw a vertical line for the query value; compute differences using block sums.
+Opt Complexity Visuals: Logarithmic scale tree
+How to Draw Opt Complexity: Draw sort cost $O(N \log N)$ + Q queries tracing down a binary tree $O(Q \log N)$.
+Mem Vis (BF): Call stack layout
+Mem Vis (Opt): Two parallel contiguous block arrays (Sorted Nums, Prefix Sums).

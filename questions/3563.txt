@@ -1,0 +1,13 @@
+ID: 3563
+Problem Title: Lexicographically Smallest String After Adjacent Removals (Hard)
+Brute Force Method: Generate all possible removal sequences and compare the final strings to find the smallest one.
+BF Complexity Visuals: Permutation Ranking.
+How to Draw BF: Draw a tree of strings. Each branch is a different removal choice. N! leaves at the bottom.
+Optimised Pattern: Greedy + Monotonic Stack + Frequency Counting.
+Opt Vis. Technique: Monotonic "Cleanup" Scanner.
+Dry Run (Opt): Keep a stack of characters. If current char is smaller than stack top and stack top can be removed later, pop.
+How to Draw (Opt): Draw a horizontal line. Place characters. If a 'smaller' char arrives, erase the 'larger' ones to its left if they appear again later.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single arrow with a "Backtrack/Erase" condition. Every char is pushed/popped at most once.
+Mem Vis (BF): Massive String List: Draw memory blocks for every possible resulting string.
+Mem Vis (Opt): Fixed Size Array: Draw one 1D array for the result and one size-26 array for character counts.

@@ -1,0 +1,13 @@
+ID: 2604
+Problem Title: Minimum Time to Eat All Grains
+Brute Force Method: Simulate all permutations of hen-to-grain assignments.
+BF Complexity Visuals: Combinatorial Explosion Tree
+How to Draw BF: Draw a massive branching tree of choices (O(N!)) fading into ellipses.
+Optimised Pattern: Binary Search on Answer + Greedy
+Opt Vis. Technique: Sliding Window / Interval Checking
+Dry Run (Opt): Assume a max time T. See how far the first hen can sweep left/right. If grains remain, pass to next hen.
+How to Draw (Opt): Draw a 1D number line. Plot hens (H) and grains (G). Draw brackets [ ] around the range each hen covers in time T.
+Opt Complexity Visuals: Red/Blue Binary Search Domain
+How to Draw Opt Complexity: Draw a timeline of Time limits; color left half red (fail), right half blue (pass). Cost per check is $O(N+M)$.
+Mem Vis (BF): Heap memory allocation diagram
+Mem Vis (Opt): Two pointers on sorted arrays visualization blocks.

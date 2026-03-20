@@ -1,0 +1,13 @@
+ID: 3089
+Problem Title: Find Bursty Behavior (SQL)
+Brute Force Method: Self-join the table on the condition that abs(t1.date - t2.date) &lt;= 6 and count entries for every user across all possible 7-day windows.
+BF Complexity Visuals: Nested Interval Overlap
+How to Draw BF: Draw a calendar. For every day, draw a 7-day bracket. Show the engine re-scanning every bracket for every user. $O(N^2)$.
+Optimised Pattern: Window Functions (COUNT with Range)
+Opt Vis. Technique: Sliding Window Frame
+Dry Run (Opt): Use COUNT(*) OVER(PARTITION BY user_id ORDER BY date RANGE BETWEEN INTERVAL 6 DAY PRECEDING AND CURRENT ROW). Filter users where the max count is >= 2 x their avg weekly count.
+How to Draw (Opt): Draw a timeline. Move a "7-Day" box across it. In each step, write the number of dots inside the box. Compare this to a "Global Average" line drawn below.
+Opt Complexity Visuals: $O(N \log N)$ Sorting Pass
+How to Draw Opt Complexity: Draw one vertical pass over sorted user data. The database engine calculates running counts in a single stream.
+Mem Vis (BF): Temporary tables containing millions of joined rows.
+Mem Vis (Opt): Memory-efficient frame buffer (sliding window internal state).

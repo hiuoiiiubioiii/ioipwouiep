@@ -1,0 +1,13 @@
+ID: 423
+Problem Title: Reconstruct Digits from English
+Brute Force Method: Backtracking Try all combinations of number-words to see which matches the input string's character counts.
+BF Complexity Visuals: Permutation Tree
+How to Draw BF: Draw a tree branching into 10 directions (0-9) at every step. Total $O(10^\text{StringLength}/3)$.
+Optimised Pattern: Unique Char Counting Observe unique identifiers: 'z' is only in zero, 'w' in two, 'x' in six. Subtract counts in a specific order.
+Opt Vis. Technique: Process of Elimination
+Dry Run (Opt): Imagine a bucket of letters. Pick out all 'z's and take their corresponding 'e', 'r', 'o' with them. Move to the next unique char.
+How to Draw (Opt): List numbers 0-9. Next to each, write its "Unique Character" (e.g., 0: 'z', 2: 'w', 4: 'u'). Draw arrows "subtracting" counts from a master frequency map.
+Opt Complexity Visuals: Dual Scan
+How to Draw Opt Complexity: Draw a line over the input string (count chars) + a fixed 10-step loop. $O(N)$.
+Mem Vis (BF): Call Stack Massive recursion for string permutations.
+Mem Vis (Opt): Count Array Draw a small 26-slot integer array. $O(1)$ space.

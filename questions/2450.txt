@@ -1,0 +1,13 @@
+ID: 2450
+Problem Title: Number of Distinct Binary Strings After Operations
+Brute Force Method: Manually simulate flipping substrings of length 'k' and store all resulting strings in a Set.
+BF Complexity Visuals: Set-based Simulation (2^N)
+How to Draw BF: Draw a binary string. Branch for every possible 'flip' at every index. Label $O(2^N)$.
+Optimised Pattern: Mathematical Observation (Powers of 2)
+Opt Vis. Technique: Independent Decision Slots
+Dry Run (Opt): Each operation at index `i` is independent. There are `n - k + 1` possible starting positions for the flip. Each position doubles the unique combinations. Answer: `2^(n-k+1) % MOD`.
+How to Draw (Opt): Draw a string. Draw a sliding box of length K. Count how many positions the box can start in. Each position is a bit in a new virtual string.
+Opt Complexity Visuals: Logarithmic Exponentiation
+How to Draw Opt Complexity: Draw a `pow(2, x)` box. Label $O(\log N)$.
+Mem Vis (BF): Set storage of $O(2^N)$.
+Mem Vis (Opt): $O(1)$ extra space.

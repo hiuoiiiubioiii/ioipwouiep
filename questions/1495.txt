@@ -1,0 +1,13 @@
+ID: 1495
+Problem Title: Friendly Movies Streamed Last Month (SQL)
+Brute Force Method: Multiple Joins with String Filtering. Join TVProgram, Content, and filter by `program_date` (June 2020) and `Kids_Friendly = 'Y'` and `content_type = 'Movies'`.
+BF Complexity Visuals: Multi-Join Row-by-Row Scan
+How to Draw BF: Draw three tables. Draw lines connecting Program to Content. Filter by Date. Filter by "Kids". Filter by "Movies". Label $O(n)$.
+Optimised Pattern: JOIN + Distinct Filtering
+Opt Vis. Technique: Relational Intersection
+Dry Run (Opt): `JOIN TVProgram p ON c.content_id = p.content_id`. Use `WHERE` clause for the date range (June 2020) and flags. Use `DISTINCT` to avoid duplicate movie titles.
+How to Draw (Opt): Draw two tables side-by-side. Connect matching IDs. Shade only the rows that satisfy the June date, Movie type, and Kids-Friendly flag. Extract the Titles.
+Opt Complexity Visuals: Index-Optimized Join
+How to Draw Opt Complexity: Draw a Join $O(n)$ -&gt; Filter $O(n)$ -&gt; Distinct $O(n \log n)$. Total $O(n \log n)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Temporary hash table for distinct values. Space $O(n)$.

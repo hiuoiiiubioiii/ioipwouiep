@@ -1,0 +1,13 @@
+ID: 2527
+Problem Title: Find Xor-Beauty of Array
+Brute Force Method: Generate all possible triplets (i, j, k) using three nested loops. Compute ((nums[i] | nums[j]) &amp; nums[k]) for each, and bitwise XOR the massive resulting list together. $O(N^3)$ time.
+BF Complexity Visuals: A dense 3D cubic matrix of combinations where every point calculates a bitwise operation.
+How to Draw BF: Write the array three times. Pick one number from the first, one from the second, one from the third. Do the math. Repeat this exhausting process for every combination.
+Optimised Pattern: Mathematical Bitwise Cancellation (Symmetry). The expression simplifies to just XORing all elements in the array.
+Opt Vis. Technique: A funnel taking all array elements, canceling out duplicates via symmetry, leaving just a single XOR aggregate at the bottom.
+Dry Run (Opt): Ignore the complex triplet formula. Mathematical symmetry dictates that all cross-terms cancel out to 0. Simply iterate through the array once, keeping a running XOR of all numbers.
+How to Draw (Opt): Write the array of numbers. Put a `^` (XOR) symbol between all of them. Calculate them left to right like a simple chain of dominoes.
+Opt Complexity Visuals: A single, continuous $O(N)$ linear pass performing an $O(1)$ bitwise operation per element.
+How to Draw Opt Complexity: Draw the array. Draw a single, unbroken arrow from left to right representing the single sweep required to get the final answer.
+Mem Vis (BF): Variables to store combinations, though theoretically $O(1)$ if computed on the fly.
+Mem Vis (Opt): Constant $O(1)$ space tracking a single integer for the running XOR result.

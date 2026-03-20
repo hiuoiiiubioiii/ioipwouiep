@@ -1,0 +1,13 @@
+ID: 2615
+Problem Title: Sum of Distances
+Brute Force Method: Nested loops. For each `nums[i]`, scan the array for matching values and sum distances.
+BF Complexity Visuals: N x N Scanning Grid
+How to Draw BF: Draw the array. Draw arrows from index `i` looping all the way through the array to find matches. $O(N^2)$.
+Optimised Pattern: Hash Map + Prefix Sum
+Opt Vis. Technique: Running Prefix / Suffix Balance
+Dry Run (Opt): Group indices by value. Calculate total distance for the 1st index. As you slide to the next index, the left side distances grow longer, right side distances grow shorter by the exact gap size.
+How to Draw (Opt): Draw grouped indices on a line (e.g., [0, 2, 5]). Draw a fulcrum moving left to right. Write equations showing Left side += (gap * count), Right side -= (gap * count).
+Opt Complexity Visuals: Parallel $O(N)$ Timelines
+How to Draw Opt Complexity: Draw an $O(N)$ grouping operation block, followed directly by an $O(N)$ prefix sliding window block.
+Mem Vis (BF): Isolated variables tracking sums
+Mem Vis (Opt): Hash Map pointing to dynamically sized lists of Indices.

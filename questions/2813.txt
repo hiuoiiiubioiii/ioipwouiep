@@ -1,0 +1,13 @@
+ID: 2813
+Problem Title: Maximum Elegance of a K-Length Subsequence
+Brute Force Method: Generate all possible combinations of size K using recursion. Calculate the total profit and distinct categories squared for each, keeping track of the absolute maximum.
+BF Complexity Visuals: Combinatorial Explosion Tree
+How to Draw BF: Draw a massive binary tree where every node is a choice to "include" or "skip" an item. Show the tree width expanding drastically to $O(2N)$ or $O(N \text{choose} K)$.
+Optimised Pattern: Greedy Sorting + Stack-based Substitution
+Opt Vis. Technique: Stack Replacement Diagram
+Dry Run (Opt): Sort by profit descending. Greedily pick the top K. For items beyond K, if it's a new category, pop the lowest-profit item from the "duplicate categories" stack and replace it.
+How to Draw (Opt): Draw the sorted array. Circle the first K items. Draw a bucket (stack) holding items that share a category. When a new category item appears, cross out the bottom of the bucket and swap it in.
+Opt Complexity Visuals: Linear Scan after Sorting Box
+How to Draw Opt Complexity: Draw a large box labeled $O(N \log N)$ for the initial sort, followed by a straight, flat arrow labeled $O(N)$ representing the single substitution pass.
+Mem Vis (BF): Visualize hundreds of temporary arrays holding K-length combinations, eating up $O(N \text{choose} K)$ memory in the heap.
+Mem Vis (Opt): Visualize exactly one HashSet for tracking unique categories and one Stack for duplicate-category profits. Space is strictly bounded to $O(N)$.

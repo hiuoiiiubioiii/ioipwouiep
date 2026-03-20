@@ -1,0 +1,13 @@
+ID: 2174
+Problem Title: Remove All Ones With Row and Column Flips II
+Brute Force Method: BFS/DFS to try flipping every possible row and column containing a '1' in every possible order.
+BF Complexity Visuals: State space tree of grid transformations.
+How to Draw BF: Draw a 2D grid. Branch into R+C new grids for every '1' you encounter. $O(2^(R\cdot C)$).
+Optimised Pattern: Bitmask DP / Backtracking with State Compression.
+Opt Vis. Technique: An "On/Off" switchboard for the whole grid.
+Dry Run (Opt): Represent grid as a bitmask. For each '1' at (r, c), generate a new mask where row `r` and col `c` are all 0. Find min steps to reach mask 0.
+How to Draw (Opt): Draw the grid. For a '1' at (0,0), draw a horizontal and vertical "eraser" line. Repeat until the page is blank. Count the number of eraser lines used.
+Opt Complexity Visuals: $O(2^(R\cdot C)$ * R * C).
+How to Draw Opt Complexity: A directed graph of grid states moving toward the "all-zero" sink node.
+Mem Vis (BF): Huge queue of matrix objects.
+Mem Vis (Opt): $O(2^15)$ (max grid size 15) memoization table.

@@ -1,0 +1,13 @@
+ID: 1409
+Problem Title: Queries on a Permutation With Key
+Brute Force Method: Array shifting. For each query, do a linear search to find the element, then shift all elements before it one position right, placing it at index 0.
+BF Complexity Visuals: Array Shifting Avalanche
+How to Draw BF: Draw an array. Circle the target element. Draw arrows shifting every element to its left one step right. Move the target to index 0. $O(M \cdot N)$.
+Optimised Pattern: Fenwick Tree (Binary Indexed Tree)
+Opt Vis. Technique: Prefix Sum Coordinate Compression
+Dry Run (Opt): Create an array of size `2M + N`. Place permutation at the end. Use a BIT to track active positions (1=present). To move an item, query prefix sum for its index, set old position to 0, place at new front, set to 1.
+How to Draw (Opt): Draw a wide array with empty slots on the left. Draw a binary tree above it tracking the sum of 1s. Show an element moving from the right side to an empty left slot, updating the tree path.
+Opt Complexity Visuals: Logarithmic Tree Traversal
+How to Draw Opt Complexity: Draw a tree path update. Label depth as $O(\log(N+M)$). Total time $O(M \log(N+M)$).
+Mem Vis (BF): Single Contiguous Array
+Mem Vis (Opt): Draw an oversized Array and a Fenwick Tree array, both of size `2M + N`.

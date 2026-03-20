@@ -1,0 +1,13 @@
+ID: 2843
+Problem Title: Count Symmetric Integers
+Brute Force Method: Iterate through every integer from low to high, convert to string, check if length is even, and then manually sum the first half and second half of characters.
+BF Complexity Visuals: Integer-to-String Pipeline
+How to Draw BF: Draw a number line. For each number, draw a "Magnifying Glass" showing the string conversion, the split, and two "Summation" boxes. Note the overhead of $O(\log N)$ string work per number.
+Optimised Pattern: Direct Digit Extraction (Modulo/Div)
+Opt Vis. Technique: Digit Balance Scale
+Dry Run (Opt): For each number, determine its length. If length is odd, skip. If even (e.g., 4 digits), use num % 100 to get the last two and num / 100 to get the first two. Sum the digits of these components using a simple while loop.
+How to Draw (Opt): Write a 4-digit number. Draw a vertical dashed line in the middle. Write the math operations (%100, /100) above each half. Add arrows pointing to a central "Equals?" check.
+Opt Complexity Visuals: Linear Arithmetic Scan
+How to Draw Opt Complexity: Draw a straight line $O(N)$. Each step involves a fixed number of arithmetic operations (max 6 digits), making it extremely efficient.
+Mem Vis (BF): Visualize repeated heap allocations for string objects for every single integer in the range.
+Mem Vis (Opt): Visualize $O(1)$ auxiliary space—purely stack-allocated integers.

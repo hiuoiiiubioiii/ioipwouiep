@@ -1,0 +1,13 @@
+ID: 2703
+Problem Title: Return Length of Arguments Passed
+Brute Force Method: Iterate through the arguments object using a for loop and increment a counter.
+BF Complexity Visuals: Linear Iterator Trace
+How to Draw BF: Draw a contiguous block representing arguments. Draw a pointer starting at index 0 moving to N, keeping a tally +1 for each move.
+Optimised Pattern: Call Stack &amp; Arguments Object frame allocation.
+Opt Vis. Technique: Rest Operator (...args) and .length property lookup
+Dry Run (Opt): Pointer to Array Metadata
+How to Draw (Opt): Visualize args as an array object containing a metadata header. Read the .length property directly without looping.
+Opt Complexity Visuals: Draw a single box labeled args with items inside. Point an arrow labeled .length to a sub-box holding the integer size.
+How to Draw Opt Complexity: Constant Time Box
+Mem Vis (BF): Draw a single node or state representing the .length property lookup. Write $O(1)$ inside it to show no scaling with input size.
+Mem Vis (Opt): Array Object Header visualization (Draw the hidden class/metadata showing the length property, avoiding a full array copy).

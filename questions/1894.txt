@@ -1,0 +1,13 @@
+ID: 1894
+Problem Title: Find the Student that Will Replace the Chalk
+Brute Force Method: Simulate the process: repeatedly subtract chalk[i] from k in a loop until k &lt; chalk[i].
+BF Complexity Visuals: Spiral decrement timeline.
+How to Draw BF: Draw students in a circle. Draw an arrow circling them, subtracting values from k until k hits 0. Mark $O(k/N)$ passes.
+Optimised Pattern: Prefix Sum + Modulo Arithmetic + Binary Search.
+Opt Vis. Technique: One-pass modulo reduction.
+Dry Run (Opt): 1. Calculate `totalSum`. 2. Set k = k \pmod{totalSum}. 3. Use binary search on the prefix sum array to find the first index i where prefix[i] &gt; k.
+How to Draw (Opt): Draw the students' chalk on a tape. Calculate the total. "Cut" the k tape into pieces of `totalSum` length. Look at the leftover piece and find where it stops on the student tape.
+Opt Complexity Visuals: $O(N)$ for prefix sums + $O(\log N)$ search.
+How to Draw Opt Complexity: Draw an arrow for prefix sum, then a binary search tree of height \log N. Mark $O(N)$.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): One prefix sum array of size N in memory.

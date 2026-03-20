@@ -1,0 +1,19 @@
+ID: 2543
+Problem Title: Check if Point Is Reachable
+Brute Force Method: Simulate all possible moves (x, y+x), (x, y-x), (2x, y), (x, 2y) using BFS/DFS until (1, 1) is reached or coordinates exceed bounds.
+BF Complexity Visuals: An infinite grid expansion where every coordinate pair can trigger four new paths.
+How to Draw BF: Start at (x, y). Draw arrows for all 4 operations. Follow every path. If you hit (1, 1), stop.
+Optimised Pattern: Number Theory (GCD + Power of Two).
+Opt Vis. Technique: A reverse-engineered math puzzle where the core components are stripped away until only powers of 2 remain.
+
+
+
+
+
+[Image of Greatest Common Divisor calculation]
+Dry Run (Opt): The only way to reach (1, 1) using these specific moves is if the GCD(targetX, targetY) is a power of 2. Simply calculate g = GCD(x, y) and check if (g &amp; (g-1)) == 0.
+How to Draw (Opt): Write down x and y. Perform the Euclidean algorithm (repeated subtraction/modulo) to find the GCD. Once you have the GCD, check if it can be repeatedly divided by 2 until it becomes 1.
+Opt Complexity Visuals: $O(\log(\text{min}(x, y)$)) due to the efficiency of the Euclidean algorithm.
+How to Draw Opt Complexity: Draw a division ladder (Euclidean algorithm). Show that the number of steps is very small relative to the size of the coordinates.
+Mem Vis (BF): Massive recursion stack or queue for BFS.
+Mem Vis (Opt): $O(1)$ - Just the space needed to store the GCD result.

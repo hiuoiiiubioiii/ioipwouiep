@@ -1,0 +1,13 @@
+ID: 974
+Problem Title: Subarray Sums Divisible by K
+Brute Force Method: Nested loops checking every possible subarray (i, j) and calculating (sum(A[i...j]) mod K). Count how many are 0.
+BF Complexity Visuals: $O(N^2)$. Summing and checking a quadratic number of subarrays.
+How to Draw BF: Draw an array. Draw overlapping brackets for every possible range. Write the "remainder" inside each bracket.
+Optimised Pattern: Prefix Sums + Frequency Map (Remainder Counting)
+Opt Vis. Technique: "The Remainder Matchmaker." If the remainder of the sum up to index i is the same as the remainder up to index j, then the sum of the subarray between i and j must be exactly divisible by K.
+Dry Run (Opt): Maintain `runningSum`. For each element: `rem = (runningSum + x) % K` (handle negatives). Total count += `map[rem]`. `map[rem]++`.
+How to Draw (Opt): Draw a timeline of cumulative sums. Below it, write the remainder when divided by K. Draw arrows connecting two points that have the same remainder value.
+Opt Complexity Visuals: $O(N)$. A single linear sweep with constant time map updates.
+How to Draw Opt Complexity: Draw a straight arrow. Below it, draw a small fixed-size array of size K (the map) that increments its values as the arrow passes.
+Mem Vis (BF): $O(1)$ extra space but unusable time.
+Mem Vis (Opt): $O(K)$ for the remainder frequency table. Draw a row of K boxes labeled 0 to K-1.

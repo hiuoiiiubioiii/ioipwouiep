@@ -1,0 +1,13 @@
+ID: 169
+Problem Title: Majority Element
+Brute Force Method: Sort the array and pick the middle element (O(N log N)) or use a Hash Map to count frequencies of all elements (O(N) space).
+BF Complexity Visuals: A sorting tree or a large "T-account" table taking up $O(N)$ space.
+How to Draw BF: Draw the array. Draw a Map table. Count every single number, then scan the table for the one with Count &gt; N/2.
+Optimised Pattern: Boyer-Moore Voting Algorithm.
+Opt Vis. Technique: "The Last Man Standing." A battle where different numbers "fight" each other. The majority element has enough "soldiers" to outlast everyone else combined.
+Dry Run (Opt): Keep `candidate` and `count`. If `count == 0`, `candidate = num`. If `num == candidate`, `count++`, else `count--`.
+How to Draw (Opt): Draw the array. Use a "Battle Box." Put the first number in. If the next is same, add a +1. If different, do a -1. If box hits 0, clear and put the next number in.
+Opt Complexity Visuals: $O(N)$ linear time. A single pass with no extra data structures.
+How to Draw Opt Complexity: Draw a single arrow through the array. Note that you never look back and never store more than two variables.
+Mem Vis (BF): A Hash Map ballooning in heap memory to store every unique number's frequency.
+Mem Vis (Opt): Visualize two single integer variables (`candidate`, `count`) in $O(1)$ stack memory.

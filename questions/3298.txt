@@ -1,0 +1,13 @@
+ID: 3298
+Problem Title: Count Substrings That Can Be Rearranged to Contain a String II
+Brute Force Method: Same sliding window as 3297, but with tighter memory/time constraints (e.g., N = 10^6).
+BF Complexity Visuals: High-Performance Window Map
+How to Draw BF: Draw the window moving. Highlight that even a Hash Map might be slow; use a fixed integer array `int[26]` for speed.
+Optimised Pattern: Optimized Sliding Window (Variable Frequency)
+Opt Vis. Technique: Rolling Delta Tracker
+Dry Run (Opt): Instead of checking the whole frequency map at each step, maintain a "Needs" counter. Decrement it when a required character count is met. This makes the inner check $O(1)$ instead of $O(26)$.
+How to Draw (Opt): Draw the 26-slot array. Circle the "Needs" counter. As you slide R, update a slot and, if it hits zero, decrement the counter. When the counter is zero, you've hit a "Good Window."
+Opt Complexity Visuals: Strictly Linear Timeline
+How to Draw Opt Complexity: Draw a straight line. Label the work at each node as exactly $O(1)$. Total: $O(N)$.
+Mem Vis (BF): Standard Map overhead memory.
+Mem Vis (Opt): Single integer array of size 26 (Strictly $O(1)$ auxiliary space).

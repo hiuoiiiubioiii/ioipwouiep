@@ -1,0 +1,13 @@
+ID: 3737
+Problem Title: Count Subarrays With Majority Element I (Med)
+Brute Force Method: Generate all $O(N^2)$ subarrays. For each, count frequencies of all elements to check if the max frequency is &gt; length / 2.
+BF Complexity Visuals: Overlapping brackets with internal tallies.
+How to Draw BF: Draw the array. Draw brackets for every subarray combination. Next to each bracket, draw a mini histogram of counts to check for a majority.
+Optimised Pattern: Prefix Sums + Relative State Tracking (+1/-1)
+Opt Vis. Technique: Balance Altitude Graph
+Dry Run (Opt): For a candidate majority element, treat it as +1 and all others as -1. Track the prefix sum. A valid subarray occurs when the current prefix sum is strictly greater than a previous prefix sum.
+How to Draw (Opt): Draw the array. Pick a target number. Write +1 under it, -1 under others. Plot a running sum on a line graph. Valid subarrays are paths between a lower dot and a higher dot.
+Opt Complexity Visuals: $O(N)$ per candidate or $O(N \log N)$ total.
+How to Draw Opt Complexity: Draw a timeline moving right, with dots above it representing Hash Map/Tree lookups.
+Mem Vis (BF): $O(1)$ auxiliary space, purely computational.
+Mem Vis (Opt): Hash Map or Fenwick Tree array layout (O(N) space).

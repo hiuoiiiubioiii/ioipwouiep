@@ -1,0 +1,13 @@
+ID: 1230
+Problem Title: Toss Strange Coins
+Brute Force Method: Generate all 2^N possible outcomes (Heads/Tails) for N coins. For each outcome, calculate its probability and sum the probabilities where exactly 'target' coins are Heads.
+BF Complexity Visuals: Binary Decision Tree Explosion
+How to Draw BF: Draw a root. Branch out H and T for coin 1. For each, branch out H and T for coin 2. Continue for N coins. Write $O(2^N)$ to show the geometric growth of leaves.
+Optimised Pattern: Dynamic Programming (Linear State)
+Opt Vis. Technique: Probability Distribution Layering
+Dry Run (Opt): Use a DP array where `dp[i]` is the probability of getting i heads. For each new coin with probability p, the new `dp[i]` is: (Prob it was already i and this coin is Tails) + (Prob it was i-1 and this coin is Heads).
+How to Draw (Opt): Draw a row of N coins. Below, draw an array of size `target + 1`. For each coin, draw arrows from `dp[i]` and `dp[i-1]` to a new row, representing the "contribution" of the current coin's P(H) and P(T).
+Opt Complexity Visuals: 2D Grid Reduction
+How to Draw Opt Complexity: Draw an N x Target grid. Show each cell being computed from two cells in the previous row. Write $O(N \\text{cdot Target})$.
+Mem Vis (BF): Draw a massive list of 2^N strings or sequences in memory.
+Mem Vis (Opt): Draw a single 1D array of size `Target + 1`. Show values updating in-place. Space: $O(\text{Target})$.

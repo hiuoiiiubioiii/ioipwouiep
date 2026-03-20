@@ -1,0 +1,13 @@
+ID: 629
+Problem Title: K Inverse Pairs Array
+Brute Force Method: Generate all permutations of numbers 1 to N. For each permutation, count inverse pairs and check if they equal K.
+BF Complexity Visuals: Explosive Permutation Tree (N!).
+How to Draw BF: Draw the number 1. Branch to (1,2) and (2,1). Branch again for 3. The tree becomes a chaotic mess of N! nodes. $O(N! \cdot N)$.
+Optimised Pattern: DP with Sliding Window Sum.
+Opt Vis. Technique: 2D Grid Filling with Prefix Sum Optimization.
+Dry Run (Opt): `dp[i][j]` is the number of ways to arrange `i` numbers with `j` inverse pairs. Use the result of `dp[i-1]` to calculate `dp[i]` by adding a range of values (Sliding Window).
+How to Draw (Opt): Draw an N x K grid. To fill a cell, draw a bracket over a segment of the row above it. Slide the bracket to fill the next cell.
+Opt Complexity Visuals: $O(N \cdot K)$ time.
+How to Draw Opt Complexity: Draw a grid and an arrow filling it row by row, with a small "Window" moving along each row. $O(\text{NK})$.
+Mem Vis (BF): Draw an N x K 2D array.
+Mem Vis (Opt): Draw two rows of length K (Current and Previous). Space reduces to $O(K)$.

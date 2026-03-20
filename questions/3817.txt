@@ -1,0 +1,13 @@
+ID: 3817
+Problem Title: Good Indices in a Digit String (Med.)
+Brute Force Method: For every single index 'i', run two separate loops scanning left and right to check the "good" condition requirements.
+BF Complexity Visuals: Overlapping horizontal arrows sweeping back and forth across the string repeatedly for every single index.
+How to Draw BF: Draw an array. Pick index 3, draw arrows left and right. Pick index 4, draw same arrows. Show $O(N^2)$ redundant scans.
+Optimised Pattern: Prefix and Suffix Precomputation Arrays.
+Opt Vis. Technique: Two separate shadow arrays, one building valid states left-to-right, the other right-to-left.
+Dry Run (Opt): Pass 1: Build left_valid[] array. Pass 2: Build right_valid[] array. Pass 3: If left_valid[i-1] AND right_valid[i+1] are true, index i is good.
+How to Draw (Opt): Draw string. Above it, draw right-pointing arrows computing prefix states. Below it, draw left-pointing arrows. Circle indices where both overlap validly.
+Opt Complexity Visuals: Three parallel 1D lines representing sequential passes.
+How to Draw Opt Complexity: Draw 3 horizontal lines. Write "O(N) + $O(N)$ + $O(N)$ = $O(N)$".
+Mem Vis (BF): Memory is actually $O(1)$ but CPU stack handles $O(N^2)$ repetitive state variables.
+Mem Vis (Opt): Two boolean/integer arrays of size N running parallel to the original string, taking $O(N)$ space.

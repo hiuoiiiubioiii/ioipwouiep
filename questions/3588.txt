@@ -1,0 +1,13 @@
+ID: 3588
+Problem Title: Find Maximum Area of a Triangle (Med)
+Brute Force Method: Three nested loops to try every combination of three points (P_1, P_2, P_3) and calculate the area.
+BF Complexity Visuals: $O(N^3)$ Triple Loop.
+How to Draw BF: Draw N points. Draw every possible triangle connecting them. Calculate Area = 0.5 * |x_1(y_2 - y_3) + ...|.
+Optimised Pattern: Convex Hull + Rotating Calipers.
+Opt Vis. Technique: Bounding Polygon Expansion.
+Dry Run (Opt): The max area triangle always has vertices on the convex hull. Use rotating calipers to find the max area in near-linear time.
+How to Draw (Opt): Draw a "rubber band" around the points (Convex Hull). Pick one base edge. Move the third point until area stops increasing. Rotate the base.
+Opt Complexity Visuals: $O(N \log N)$ or $O(N)$ on Hull.
+How to Draw Opt Complexity: Draw a sorted hull. Show the three pointers moving in one direction around the perimeter.
+Mem Vis (BF): Triangle List: Draw a list of every calculated area for every possible triplet of points.
+Mem Vis (Opt): Hull Points Array: Draw a small array of only the outer boundary points of the set.

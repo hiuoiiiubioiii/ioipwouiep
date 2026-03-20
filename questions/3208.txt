@@ -1,0 +1,13 @@
+ID: 3208
+Problem Title: Alternating Groups II
+Brute Force Method: Check every window of size K independently. $O(N \cdot K)$ time.
+BF Complexity Visuals: Nested Loop Grid
+How to Draw BF: Draw N rows. In each row, draw K boxes. Shade the boxes to show the inner loop repeating work that the previous row already did.
+Optimised Pattern: Variable Sliding Window / State Counting
+Opt Vis. Technique: Accordion Sliding Window
+Dry Run (Opt): Start at index 0. Move right pointer. If colors alternate, expand window. If not, snap left pointer to right pointer. When length &gt;= K, increment count.
+How to Draw (Opt): Draw array with virtual appended elements to simulate the circle. Use two fingers (L, R). Widen fingers if alternating. If not, jump L to R.
+Opt Complexity Visuals: Amortized Pointer Movement
+How to Draw Opt Complexity: Draw the array. Draw arrows showing the Left and Right pointers *only* moving rightwards. Conclude that 2N steps = $O(N)$ time.
+Mem Vis (BF): Redundant substrings held in memory.
+Mem Vis (Opt): Two pointers (L, R) and a counter (O(1) space).

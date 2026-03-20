@@ -1,0 +1,13 @@
+ID: 3825
+Problem Title: Longest Strictly Increasing Subsequence With Non-Zero Bitwise AND (Med.)
+Brute Force Method: Generate all 2^N subsequences. Filter out those that aren't strictly increasing. For the remaining, calculate the total bitwise AND and check if &gt; 0. Keep the longest.
+BF Complexity Visuals: Explosive binary tree (include/exclude) generating every possible subset.
+How to Draw BF: Draw array. Draw branches splitting into 2^N paths. Write "O(2^N)" and draw a skull to show it will Time Out.
+Optimised Pattern: 1D DP + Bitmasking (State tracking per bit).
+Opt Vis. Technique: Parallel timelines tracking the Longest Increasing Subsequence (LIS) specifically anchored to one of the 32 bit positions.
+Dry Run (Opt): Let dp[i] = length of LIS ending at index i. For each bit position (0-31), if current num has that bit set, look back at previous numbers with that bit set that are strictly smaller, and extend their DP sequence.
+How to Draw (Opt): Write numbers. Beside them, write their 32-bit binary. Draw vertical columns for Bits 0, 1, 2. Draw LIS chain arrows that only connect if the specific column has a '1'.
+Opt Complexity Visuals: Classic LIS double loop optimized by grouping.
+How to Draw Opt Complexity: Draw array N. Inner loop checks previous elements. Write $O(N^2 \cdot 32)$. (Can be optimized to $O(N \log N)$ using segment trees if needed).
+Mem Vis (BF): Memory crashing from $O(2^N)$ subsequence combinations.
+Mem Vis (Opt): A 1D DP array of size N. Optionally, an array of size 32 tracking the best tail for each bit position to optimize the inner loop. Space $O(N)$ or $O(32)$.

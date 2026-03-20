@@ -1,0 +1,13 @@
+ID: 1097
+Problem Title: Game Play Analysis V
+Brute Force Method: (SQL) For every user, find their install date. For each date, find users who installed on that date and check if they logged in the next day.
+BF Complexity Visuals: Nested self-joins and subqueries for every unique date.
+How to Draw BF: Date 1: Find installs. Check retention. Date 2: Repeat. Write $O(\text{Dates} \\text{cdot Users})$.
+Optimised Pattern: Join + Group By (Install Date Logic).
+Opt Vis. Technique: A "Cohorts Table". Group users by their first seen date and check the "Day 1" retention rate for each cohort.
+Dry Run (Opt): `SELECT install_dt, COUNT(*) AS installs, ROUND(COUNT(next_day)/COUNT(*), 2) AS Day1_retention FROM (SELECT player_id, MIN(event_date) AS install_dt FROM Activity GROUP BY player_id) ... LEFT JOIN Activity ON ...`
+How to Draw (Opt): Draw the Activity table. Create a side table for "First Login". Join them. Count how many users have a login exactly 1 day after their first. Group by first date.
+Opt Complexity Visuals: Two-pass aggregation.
+How to Draw Opt Complexity: Draw a table collapsing into cohorts, then a join. Write Time: $O(\text{ActivityRows})$.
+Mem Vis (BF): Expensive temporary tables for every install date check.
+Mem Vis (Opt): Hash map for the first-login lookup. $O(\text{UniquePlayers})$ space.

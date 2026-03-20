@@ -1,0 +1,13 @@
+ID: 2317
+Problem Title: Maximum XOR After Operations
+Brute Force Method: Attempt to simulate the bitwise operation with all possible values of 'x' for every element to find the max combination.
+BF Complexity Visuals: Infinite State Tree
+How to Draw BF: Draw an array branching out infinitely, as 'x' can theoretically be any number, creating endless array states.
+Optimised Pattern: Bitwise OR (Math / Bit Manipulation Insight)
+Opt Vis. Technique: Vertical Bit Stacking Funnel
+Dry Run (Opt): Realize the operation `nums[i] AND (nums[i] XOR x)` just allows you to arbitrarily turn any '1' bit into a '0'. To maximize XOR, we just need one '1' in each bit position across the whole array. So, just Bitwise OR all numbers.
+How to Draw (Opt): Write all numbers in binary, stacked vertically. Draw a vertical box around each column. If a column has at least one '1', write '1' at the bottom. Otherwise, write '0'.
+Opt Complexity Visuals: Single Line Pass (O(N))
+How to Draw Opt Complexity: Draw a straight, horizontal timeline passing through the array exactly once.
+Mem Vis (BF): Draw an exponentially growing list of intermediate Array states.
+Mem Vis (Opt): Draw a single Integer variable (`res`) acting as a bitmask accumulator.

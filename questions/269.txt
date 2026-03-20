@@ -1,0 +1,13 @@
+ID: 269
+Problem Title: Alien Dictionary
+Brute Force Method: Check every possible alphabet permutation (26!) against the word list until one works.
+BF Complexity Visuals: Alphabet Permutation: $O(26! \cdot L)$.
+How to Draw BF: Draw 26 letters. Show an infinite loop trying to arrange them. It’s a cosmic-scale nightmare.
+Optimised Pattern: Topological Sort (Kahn's or DFS)
+Opt Vis. Technique: Directed Acyclic Graph (DAG)
+Dry Run (Opt): Compare adjacent words to find the first differing char (edge: a \to b). Run BFS on nodes with 0 in-degree.
+How to Draw (Opt): Draw letters as circles. Draw arrows based on word order (e.g., "wrt" &lt; "wrf" means t \to f). Cross out nodes with no arrows pointing to them.
+Opt Complexity Visuals: Edge-Vertex Scan: $O(C)$ where C is total chars.
+How to Draw Opt Complexity: Draw a graph. Shade each edge and vertex once to represent the $O(V+E)$ traversal.
+Mem Vis (BF): List of all 26! strings.
+Mem Vis (Opt): Adjacency List + In-degree Array: Draw a map where letters point to lists of other letters.

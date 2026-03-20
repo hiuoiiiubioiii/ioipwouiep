@@ -1,0 +1,13 @@
+ID: 1872
+Problem Title: Stone Game VIII
+Brute Force Method: Standard Minimax recursion: Alice tries to maximize score, Bob tries to minimize, exploring all possible stone pick counts.
+BF Complexity Visuals: Game State Decision Tree.
+How to Draw BF: Draw a tree with Alice/Bob levels. Each node has N-1 branches. Mark $O(N!)$ or $O(2^N)$.
+Optimised Pattern: Prefix Sum + Dynamic Programming (Suffix Max).
+Opt Vis. Technique: Backward accumulation tape.
+Dry Run (Opt): Calculate prefix sums. Alice's best score at index i is \max(dp[i+1], prefixSum[i] - dp[i+1]). Work backward from N-1 to 1.
+How to Draw (Opt): Write prefix sums. Start from the right. At each step, compare current sum minus previous best. Keep the maximum as you move left.
+Opt Complexity Visuals: Single Reverse Linear Pass.
+How to Draw Opt Complexity: Draw an arrow from N-1 back to 1. Mark as $O(N)$.
+Mem Vis (BF): Massive recursion stack and state-memoization map.
+Mem Vis (Opt): $O(1)$ extra space (if using a single variable to track the running suffix max).

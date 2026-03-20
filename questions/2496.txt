@@ -1,0 +1,13 @@
+ID: 2496
+Problem Title: Maximum Value of a String in an Array
+Brute Force Method: For each string, try to parse it as an integer using a try-catch block. If it fails, take the length of the string. Compare all to find max.
+BF Complexity Visuals: Iterative Exception Scan
+How to Draw BF: Draw a list of strings. For each, draw a "Parse Gate". If it passes, value is N. If it crashes, value is Length. Label $O(N \cdot L)$.
+Optimised Pattern: Linear Scan (Manual Digit Check)
+Opt Vis. Technique: Character Class Filter
+Dry Run (Opt): Loop through each string. Check if every character is a digit. If yes, convert to int. If not, use length. Track max.
+How to Draw (Opt): Draw a string. Check each character '0'-'9'. If any char is 'a'-'z', immediately draw a line to "Length". Otherwise, draw to "Value".
+Opt Complexity Visuals: Linear Iteration
+How to Draw Opt Complexity: Draw one horizontal line through the array. Label $O(N \cdot L)$ Time.
+Mem Vis (BF): Draw a temporary string for parsing.
+Mem Vis (Opt): Draw one integer variable `maxVal`. $O(1)$ Space.

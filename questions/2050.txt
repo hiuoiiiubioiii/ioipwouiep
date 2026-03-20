@@ -1,0 +1,13 @@
+ID: 2050
+Problem Title: Parallel Courses III
+Brute Force Method: Simulate month by month. Check which courses have all prerequisites finished, start them, and track their remaining time until 0.
+BF Complexity Visuals: Chronological Step-by-Step Simulation
+How to Draw BF: Draw a calendar. For month 1, list available courses. For month 2, update their timers. Very slow if course durations are large.
+Optimised Pattern: Topological Sort (Kahn's) + Dynamic Programming
+Opt Vis. Technique: Gantt Chart with Critical Path Analysis
+Dry Run (Opt): Use Kahn's Algorithm. Maintain a `max_time[i]` representing the earliest possible start time for course `i`. `max_time[next] = max(max_time[next], completion_time_of_current)`.
+How to Draw (Opt): Draw nodes with their individual times. Draw arrows (prereqs). For each node, calculate: `StartTime = Max(Prereq Finish Times)`. The answer is `Max(StartTime + Duration)`.
+Opt Complexity Visuals: In-Degree Reduction + Linear Array Update
+How to Draw Opt Complexity: Draw the graph once (O(V+E)). Draw a single sweep through the queue. Total Time $O(V+E)$.
+Mem Vis (BF): Heavy state-tracking objects for every ongoing "simulated" course.
+Mem Vis (Opt): An `in-degree` array and a `max_time` array of size V. Space $O(V+E)$.

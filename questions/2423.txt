@@ -1,0 +1,13 @@
+ID: 2423
+Problem Title: Remove Letter To Equalize Frequency
+Brute Force Method: Try removing every single character one by one. For each removal, recount all frequencies and check if they are all equal.
+BF Complexity Visuals: N-Iteration Brute Check
+How to Draw BF: Draw the string. Under each char, draw a "check" arrow to a full frequency-count operation. Label $O(N \cdot 26)$.
+Optimised Pattern: Frequency of Frequencies (Count Map)
+Opt Vis. Technique: Frequency Histogram Levelling
+Dry Run (Opt): Count character frequencies. Then, count the frequency of those counts. There are only a few cases (e.g., all same, one char occurs once, one char occurs one more time than others) where removing one char works.
+How to Draw (Opt): Draw a frequency map (a:2, b:2, c:3). Draw a secondary map (2:2, 3:1). See if adjusting one "3" to a "2" makes the map uniform.
+Opt Complexity Visuals: Constant Constant Scan
+How to Draw Opt Complexity: Draw a 26-slot array. Label $O(26)$ or $O(1)$ Time since alphabet size is fixed.
+Mem Vis (BF): Draw a new frequency array for every iteration. $O(26)$.
+Mem Vis (Opt): Draw two small 26-slot arrays/hash maps. $O(1)$ Space.

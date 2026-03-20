@@ -1,0 +1,13 @@
+ID: 2536
+Problem Title: Increment Submatrices by One
+Brute Force Method: For each query [r1, c1, r2, c2], use nested loops to iterate through every cell from r1 to r2 and c1 to c2, adding 1 to each. $O(Q \cdot N^2)$.
+BF Complexity Visuals: A grid being repeatedly colored in with overlapping brushstrokes, where each brushstroke requires checking every pixel.
+How to Draw BF: Draw a 5x5 grid. For query 1, shade a 3x3 area. For query 2, shade a different 2x2 area. Count the overlapping shades in each box at the end.
+Optimised Pattern: 2D Difference Array (Prefix Sums).
+Opt Vis. Technique: A grid where only the corners of the query rectangles are marked with +1 or -1, later "melting" to fill the entire area.
+Dry Run (Opt): For each query, mark grid[r1][c1]++, grid[r1][c2+1]--, grid[r2+1][c1]--, and grid[r2+1][c2+1]++. After all queries, compute 2D prefix sums by sweeping rows then columns.
+How to Draw (Opt): Draw a grid. Put a '+1' at the top-left of the query box and a '-1' just outside the top-right. Do a running sum across the row to "fill" it, then a running sum down the columns.
+Opt Complexity Visuals: $O(Q + N^2)$. $O(Q)$ to mark corners and $O(N^2)$ for the final sweep.
+How to Draw Opt Complexity: Draw a grid with 4 dots. Draw a single horizontal arrow filling the row, then vertical arrows filling the columns, proving we only touch each cell once after marking.
+Mem Vis (BF): N/A (No extra per-query storage).
+Mem Vis (Opt): $O(N^2)$ space for the 2D grid/difference array.

@@ -1,0 +1,13 @@
+ID: 2535
+Problem Title: Difference Between Element Sum and Digit Sum of an Array
+Brute Force Method: Convert every number to a string, split the string into characters, parse characters back to integers to get digit sums, then calculate the total.
+BF Complexity Visuals: Multiple type-conversion steps (Int -&gt; String -&gt; List[Char] -&gt; Int) for every element.
+How to Draw BF: Write a number like 123. Draw a circle around it (Element). Then draw a box around '1', '2', and '3' (Digits). Add the digits. Subtract the totals at the end.
+Optimised Pattern: Single-Pass Accumulation with Modulo Digit Extraction.
+Opt Vis. Technique: Two running counters (Sum A, Sum B) updated in a single linear loop.
+Dry Run (Opt): Iterate through the array. Add nums[i] to elementSum. While nums[i] &gt; 0, add nums[i] % 10 to digitSum and divide nums[i] by 10. Return the absolute difference.
+How to Draw (Opt): Draw two columns: "Element Sum" and "Digit Sum". For each number in the array, write the full number in column 1, and write its individual digits in column 2. Add both columns and subtract.
+Opt Complexity Visuals: $O(N \\text{cdot average}_\text{digits})$ which is effectively $O(N)$ since digits are capped by the 32-bit integer limit.
+How to Draw Opt Complexity: Draw an array. Draw a single arrow passing over it. Above the arrow, show a "peeling" animation where digits fall off the numbers into the sum.
+Mem Vis (BF): Extra string/char array memory for every number.
+Mem Vis (Opt): Constant $O(1)$ space for two sum variables.

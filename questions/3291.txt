@@ -1,0 +1,13 @@
+ID: 3291
+Problem Title: Minimum Number of Valid Strings to Form Target I
+Brute Force Method: Try every possible prefix of 'target' against every string in 'words' using recursion. $O(\text{Exponential})$.
+BF Complexity Visuals: Recursive String Branching Web
+How to Draw BF: Draw the target string. Under index 0, draw arrows for every word that matches a prefix. Label the depth as target length.
+Optimised Pattern: Trie-Based Dynamic Programming
+Opt Vis. Technique: Prefix-Jump Timeline
+Dry Run (Opt): Build a Trie of all words. Let `dp[i]` be the min strings to form `target[0...i]`. At each `i`, use the Trie to find all matching prefixes of `target[i...]` and update future DP states.
+How to Draw (Opt): Draw a 1D DP array. Under each index, draw "jump" arrows of various lengths based on the Trie matches found at that index. Pick the path with the fewest jumps.
+Opt Complexity Visuals: Trie-Search Bottleneck
+How to Draw Opt Complexity: Draw a block for Trie construction $O(\text{Words} x \text{Length})$. Draw a nested loop block for DP $O(N^2)$. Total: $O(\text{Words} \cdot L + N^2)$.
+Mem Vis (BF): Deep recursion stack with multiple string slices.
+Mem Vis (Opt): Trie structure + DP array of size N (O(Words * L + N) space).

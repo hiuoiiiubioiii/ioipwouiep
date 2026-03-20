@@ -1,0 +1,13 @@
+ID: 840
+Problem Title: Magic Squares In Grid
+Brute Force Method: Iterate through every possible 3x3 subgrid. For each, use nested loops to calculate row sums, column sums, and diagonal sums. Also check if digits 1-9 are unique.
+BF Complexity Visuals: Overlapping Sliding Window Scan. $O(R \\text{times} C)$.
+How to Draw BF: Draw a large grid. Draw a small 3x3 red square. Shift it right one pixel at a time. Inside each square, draw 8 arrows (3 horizontal, 3 vertical, 2 diagonal).
+Optimised Pattern: Pruning + Constant-Time Symmetry Check.
+Opt Vis. Technique: Center-Outward Filtering.
+Dry Run (Opt): A magic square's center MUST be 5. Scan the grid for 5s. For every 5 found, check if its 8 neighbors contain only digits 1-9 (excluding 5) and if the corners are even/edges are odd.
+How to Draw (Opt): Draw the grid. Circle every '5'. Draw a crosshair (+) and an 'X' over the 5 to quickly sum the opposing neighbors. They must all sum to 10 (5 \times 2).
+Opt Complexity Visuals: Filtered Linear Scan. $O(R \\text{times} C)$.
+How to Draw Opt Complexity: Draw a grid. Draw a single path that only "pauses" and does work when it hits a cell containing 5.
+Mem Vis (BF): $O(1)$ extra variables, but visualized as heavy repetitive arithmetic overhead.
+Mem Vis (Opt): $O(1)$ Checksum: Draw a boolean array of size 10 to track digits 1-9.

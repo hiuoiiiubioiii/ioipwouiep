@@ -1,0 +1,13 @@
+ID: 481
+Problem Title: Magical String
+Brute Force Method: Manual String Build Use string concatenation to build the "12211..." sequence by checking the tail of the string repeatedly.
+BF Complexity Visuals: Incremental Growth
+How to Draw BF: Draw a string. For every new char, draw an arrow back to an earlier index to see "how many" to add. $O(N^2)$ due to string immutability.
+Optimised Pattern: Two Pointers (Generator/Consumer) Use an `int[]` or `char[]` and two pointers: `head` (reading how many) and `tail` (writing what's next).
+Opt Vis. Technique: Self-Consuming Belt
+Dry Run (Opt): Imagine a conveyor belt. The "head" is a sensor reading a number, and the "tail" is a stamper adding that many 1s or 2s further down the belt.
+How to Draw (Opt): Draw a long horizontal array. Mark 'head' at index 2 and 'tail' at the end. Move 'head' forward, look at its value, and write that many characters at 'tail'.
+Opt Complexity Visuals: Linear Pipeline
+How to Draw Opt Complexity: Draw a single pass from 1 to N. Each step is $O(1)$. Total $O(N)$.
+Mem Vis (BF): String Pool Massive overhead for immutable string objects.
+Mem Vis (Opt): Fixed Array Draw one array of size N. $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 1241
+Problem Title: Number of Comments per Post (SQL)
+Brute Force Method: Using correlated subqueries in the SELECT clause to count comments for every unique parent_id found in the submissions table.
+BF Complexity Visuals: Repeated Table Scans (O(N*M))
+How to Draw BF: Draw two copies of the Submissions table. For every row in Table A, draw an arrow scanning the entire Table B. Write $O(N^2)$.
+Optimised Pattern: LEFT JOIN + GROUP BY + DISTINCT
+Opt Vis. Technique: Relational Set Intersection
+Dry Run (Opt): Create a set of unique "Posts" (parent_id is null). Create a set of "Comments" (parent_id is not null). Left Join them on post_id = parent_id. Group by post_id and count unique comment_ids.
+How to Draw (Opt): Draw two circles (Sets). Circle 1: Unique Post IDs. Circle 2: Comment rows. Draw arrows from Circle 2 entries to Circle 1. Group the arrows by their target. Use a "Distinct" filter on the arrows.
+Opt Complexity Visuals: Sorted/Hash Join Projection
+How to Draw Opt Complexity: Draw a sort-merge symbol (two sorted lists merging) or a hash-map scan. Write $O(N \log N)$.
+Mem Vis (BF): Draw multiple temporary result sets for each sub-query.
+Mem Vis (Opt): Draw a single Hash Table in memory storing Post IDs as keys and counters as values.

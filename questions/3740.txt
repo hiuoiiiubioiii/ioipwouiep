@@ -1,0 +1,13 @@
+ID: 3740
+Problem Title: Minimum Distance Between Three Equal Elements I (Easy)
+Brute Force Method: Triple nested loop (i, j, k) to find three identical elements. Calculate the distance `k - i` and keep the minimum. $O(N^3)$.
+BF Complexity Visuals: 3-Point Anchoring Loops.
+How to Draw BF: Pick an element. Scan forward for a second match. Scan forward for a third match. Measure the span from first to third.
+Optimised Pattern: Hash Map with Index Lists / Sliding Window of Size 3
+Opt Vis. Technique: 3-Element Queue / Index Memory
+Dry Run (Opt): Iterate through the array. Store indices of elements in a Hash Map. If a number's list of indices reaches size 3, calculate `index[last] - index[first]`. Keep a running minimum.
+How to Draw (Opt): Draw the array. Draw buckets for each unique number. Drop indices into their specific buckets. When a bucket gets 3 numbers, subtract the first from the last. Keep the smallest result.
+Opt Complexity Visuals: Single Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight, flat timeline left to right. $O(1)$ time per element.
+Mem Vis (BF): $O(1)$ space.
+Mem Vis (Opt): Hash Map with dynamic arrays for indices (O(N) space).

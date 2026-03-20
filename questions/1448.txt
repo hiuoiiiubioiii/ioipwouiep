@@ -1,0 +1,13 @@
+ID: 1448
+Problem Title: Count Good Nodes in Binary Tree
+Brute Force Method: Generate all paths from the root to every node. For each node, check all ancestors in its path to see if any are greater than the current node.
+BF Complexity Visuals: Path Ancestor Validation
+How to Draw BF: Draw a tree. For a node at depth 4, draw arrows pointing to its 3 ancestors. Check each. Repeat for all nodes. Label $O(N \cdot H)$ where H is height.
+Optimised Pattern: DFS with Max-So-Far Parameter
+Opt Vis. Technique: Top-Down Threshold Propagation
+Dry Run (Opt): Perform a DFS. Pass a `max_val` parameter to child calls. A node is "good" if its value &gt;= `max_val`. Update `max_val` for children: `max(max_val, current_node.val)`.
+How to Draw (Opt): Draw a tree. At the root, write "Max=RootVal". As you move down a branch, draw an "Envelope" being passed to the child containing the updated Max. If node &gt;= Envelope, it's a "Good Node".
+Opt Complexity Visuals: Single DFS Traversal
+How to Draw Opt Complexity: Draw a tree with a single DFS path visiting each node once. Label $O(N)$.
+Mem Vis (BF): List of all path nodes
+Mem Vis (Opt): Recursion stack (height of the tree). Space $O(H)$.

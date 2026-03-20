@@ -1,0 +1,13 @@
+ID: 2575
+Problem Title: Find the Divisibility Array of a String
+Brute Force Method: For every prefix of the string, convert it to a BigInteger and check if `prefix % m == 0`. $O(N^2)$ due to string/BigInt handling.
+BF Complexity Visuals: A growing list of massive numbers being re-calculated and re-parsed.
+How to Draw BF: String "121", m=3. Check 1%3. Then check 12%3. Then check 121%3.
+Optimised Pattern: Modular Arithmetic (Iterative Remainder).
+Opt Vis. Technique: A "Rolling Remainder" visual: building a number one digit at a time and only keeping the remainder to prevent overflow.
+Dry Run (Opt): Initialize `currentRemainder = 0`. For each character `c` in the string: `currentRemainder = (currentRemainder * 10 + digit(c)) % m`. If the remainder is 0, the answer for that index is 1, otherwise 0.
+How to Draw (Opt): Write "121", m=3. Start with 0. 1st digit: (0 x 10 + 1) % 3 = 1. 2nd digit: (1 x 10 + 2) % 3 = 0. 3rd digit: (0 x 10 + 1) % 3 = 1. Result: `[0, 1, 0]`.
+Opt Complexity Visuals: $O(N)$ - A single pass through the string with constant-time math at each step.
+How to Draw Opt Complexity: Draw the string. Draw an arrow moving left to right. Above the arrow, show a small "box" that only ever holds a number smaller than m.
+Mem Vis (BF): $O(N^2)$ for substring and BigInt allocations.
+Mem Vis (Opt): $O(N)$ for the final result array (O(1) extra space excluding result).

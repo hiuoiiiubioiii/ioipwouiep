@@ -1,0 +1,13 @@
+ID: 1843
+Problem Title: Suspicious Bank Accounts (SQL)
+Brute Force Method: Self-join the transactions table on account_id and check for matches where month = current_month + 1.
+BF Complexity Visuals: Cross-product grid of transactions.
+How to Draw BF: Draw a list of transactions. For every row, draw a line to every other row to find consecutive months. $O(N²)$.
+Optimised Pattern: Window Function (LEAD/LAG) or PERIOD_DIFF.
+Opt Vis. Technique: Row-shifting frames.
+Dry Run (Opt): Group by account and month. Use `LEAD` to compare the current month's total income with the next month's total income. Filter where both exceed limit.
+How to Draw (Opt): Draw a table. Draw an arrow from one row to the next. Write "Suspicious" if both rows have income &gt; limit and are 1 month apart.
+Opt Complexity Visuals: Single pass partition scan.
+How to Draw Opt Complexity: Draw a single arrow sliding down the rows within each account partition. Mark $O(N)$.
+Mem Vis (BF): N x N result set in disk/memory.
+Mem Vis (Opt): In-memory partitioned window frames.

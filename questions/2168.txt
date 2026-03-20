@@ -1,0 +1,13 @@
+ID: 2168
+Problem Title: Unique Substrings With Equal Digit Frequency
+Brute Force Method: Generate all substrings, count frequencies for each, check equality, and add to a Set.
+BF Complexity Visuals: Redundant frequency counting and string hashing.
+How to Draw BF: Draw a string. For every substring, draw a separate frequency table. $O(N^3)$.
+Optimised Pattern: Rolling Hash (Rolling Frequencies) + Trie.
+Opt Vis. Technique: A tree where each path is a unique substring being counted on the fly.
+Dry Run (Opt): Iterate from each starting index. As you extend the substring, update the digit frequency map and verify the "Equal Frequency" condition in $O(1)$.
+How to Draw (Opt): Draw a "Root" node. For "1212", draw a path 1 -&gt; 2 -&gt; 1 -&gt; 2. At each node, check if all digits seen so far have the same count. Circle valid nodes.
+Opt Complexity Visuals: $O(N^2)$ double-loop with $O(1)$ checks.
+How to Draw Opt Complexity: An upper-triangular matrix of checks performed in a single sweep.
+Mem Vis (BF): $O(N^3)$ memory for millions of stored substring strings in a Set.
+Mem Vis (Opt): A Trie structure or a Set of Longs (Hashes) to store uniqueness (O(N^2)).

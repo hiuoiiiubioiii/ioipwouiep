@@ -1,0 +1,13 @@
+ID: 2396
+Problem Title: Strictly Palindromic Number
+Brute Force Method: For every base b from 2 to n-2, convert n to base b, store it as a string, and check if it's a palindrome.
+BF Complexity Visuals: Base Conversion + Palindrome Scan (O(N * log N))
+How to Draw BF: Draw the number n. For every base (2, 3, 4...), draw a sub-process that divides n repeatedly to build a string, then scans that string from both ends.
+Optimised Pattern: Mathematical Insight (Constant Return)
+Opt Vis. Technique: Boolean False Logic
+Dry Run (Opt): For any n &gt; 4, the number n in base n-2 is always "12", which is never a palindrome. Therefore, no number n &gt; 4 can be strictly palindromic. Simply return `false`.
+How to Draw (Opt): Draw the number n. Write its representation in base n-2 (it's always 12). Since '1' != '2', it fails immediately. No need to check any other bases.
+Opt Complexity Visuals: Constant Time (O(1))
+How to Draw Opt Complexity: Draw a single, fixed "Return False" block. The input size n does not change the visual complexity.
+Mem Vis (BF): Draw numerous temporary strings created for each base conversion.
+Mem Vis (Opt): Draw zero extra memory (no data structures used).

@@ -1,0 +1,13 @@
+ID: 1349
+Problem Title: Maximum Students Taking Exam
+Brute Force Method: Try every possible combination of seating (2^NM) and check if each seat is broken or has a student cheating diagonally/horizontally.
+BF Complexity Visuals: 2^NM Brute Force Subsets
+How to Draw BF: Draw a grid. Show a binary tree where each seat is a "Yes/No" branch. The leaves are astronomical (2^64 for an 8x8).
+Optimised Pattern: Dynamic Programming with Bitmask
+Opt Vis. Technique: Row-by-Row State Compression
+Dry Run (Opt): `dp[row][mask]` = max students for first `row` with current row's seating pattern `mask`. Check `mask` against the previous row's mask for cheating.
+How to Draw (Opt): Draw a grid row. Represent the row as a 0101 bitmask. Compare it with the row above. If a '1' is diagonally adjacent to a '1' above, cross out the pattern.
+Opt Complexity Visuals: $O(\text{Rows} \cdot 2^2 \\text{cdot Cols})$ Complexity
+How to Draw Opt Complexity: Draw a matrix where rows are grid rows and columns are all possible 2^Cols bitmasks. Show data flowing only from the previous row to the current.
+Mem Vis (BF): Global State Stack: Recursive frames trying to track every individual seat's choice.
+Mem Vis (Opt): 2D Bitmask Table: Draw a table of size `M x (1 &lt;&lt; N)`. Show it being filled row-by-row, usually only keeping two rows in memory.

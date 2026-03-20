@@ -1,0 +1,13 @@
+ID: 2044
+Problem Title: Count Number of Maximum Bitwise-OR Subsets
+Brute Force Method: Generate every single subset explicitly, store them in a massive list, loop through the list to calculate the OR of each, find the max, recount. $O(N \cdot 2^N)$.
+BF Complexity Visuals: Massive Power Set Array
+How to Draw BF: Draw an array containing all 2^N subsets. Draw a separate loop calculating the OR for every single array. Space and time explosion.
+Optimised Pattern: Backtracking (DFS) / Pick &amp; Skip State Tracking
+Opt Vis. Technique: Binary Decision Tree with Carried State
+Dry Run (Opt): First, find the `max_or` by ORing all elements. Then, DFS: at each element, branch left (include: `curr_or | nums[i]`) and branch right (exclude: `curr_or`). If leaf equals `max_or`, add 1.
+How to Draw (Opt): Draw a binary tree. Each node is a decision (Take/Skip). Carry the accumulated OR value down the branches. At the bottom leaves, check if the value matches `max_or`.
+Opt Complexity Visuals: Bounded DFS Traversal Paths
+How to Draw Opt Complexity: Draw a tree expanding to depth N. Trace paths from root to leaf. Time complexity is strictly $O(2^N)$ but with $O(1)$ internal work.
+Mem Vis (BF): Gigantic 2D arrays storing all 2^N possible array combinations in memory. Space $O(2^N)$.
+Mem Vis (Opt): Only the recursion call stack proportional to the array length. Space $O(N)$.

@@ -1,0 +1,13 @@
+ID: 2758
+Problem Title: Next Day (JS)
+Brute Force Method: Manually calculate the next day by checking if current day is 28, 30, or 31, then checking leap years for February, then rolling over months and years. Extremely error-prone.
+BF Complexity Visuals: Heuristic Decision Tree
+How to Draw BF: Draw a massive "If/Else" forest: Is it February? Is it a leap year? Is it December 31st? The logic is a mess.
+Optimised Pattern: Multiple Boolean Flags (Visualizing all the manual state variables needed for date math).
+Opt Vis. Technique: Epoch Timestamp Offset / Date Constructor
+Dry Run (Opt): Linear Timeline Shift
+How to Draw (Opt): Get the current date time, add 24 * 60 * 60 * 1000 milliseconds, and create a new Date object. The built-in engine handles all roll-overs and leap years automatically.
+Opt Complexity Visuals: Draw a timeline. Mark "Today". Draw a single arrow of size "1 Day" pointing to "Tomorrow".
+How to Draw Opt Complexity: Constant Time $O(1)$
+Mem Vis (BF): Draw a single box for the Date API. Write $O(1)$.
+Mem Vis (Opt): Date Object frame (Visualize a single object in the heap storing the internal UTC timestamp).

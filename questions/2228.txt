@@ -1,0 +1,13 @@
+ID: 2228
+Problem Title: Users With Two Purchases Within Seven Days
+Brute Force Method: Nested Cross-Join (SQL)Join the purchases table to itself. For every single transaction a user made, compare it against every other transaction they ever made to check the 7-day window.
+BF Complexity Visuals: N x N Cartesian Grid
+How to Draw BF: Draw a grid with User 1's dates on the X and Y axes. Draw an intersection point for every comparison, showing $O(N^2)$ checks per user.
+Optimised Pattern: Window Function / LAG (SQL)
+Opt Vis. Technique: Sliding Window Timeline
+Dry Run (Opt): Sort purchases by user and date. Use a `LAG` window function to look at the exact previous purchase row for that user. Check if the difference is &lt;= 7 days.
+How to Draw (Opt): Draw a timeline of dates. Draw a small window grouping exactly two adjacent dates. Slide the window right by one step, calculating the difference instantly.
+Opt Complexity Visuals: Sorting and Single Pass Arrow
+How to Draw Opt Complexity: Draw an $O(N \log N)$ step for the required chronological sorting. Then draw a single arrow representing the $O(N)$ linear scan using the Window function.
+Mem Vis (BF): Massive intermediate join tables held in memory during query execution.
+Mem Vis (Opt): In-place pointer tracking for the previous row during the DB engine's sequential scan.

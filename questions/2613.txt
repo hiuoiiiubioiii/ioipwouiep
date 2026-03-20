@@ -1,0 +1,13 @@
+ID: 2613
+Problem Title: Beautiful Pairs
+Brute Force Method: Nested loops comparing the Manhattan distance of every single pair.
+BF Complexity Visuals: Complete Graph Network
+How to Draw BF: Draw N dots. Draw lines connecting every single dot to every other dot, labeling $O(N^2)$.
+Optimised Pattern: Divide and Conquer / Sweep Line
+Opt Vis. Technique: 2D Plane Partitioning Strip
+Dry Run (Opt): Sort by X. Divide in half. Find min distance `d` on left and right. Check the middle "strip" of width `2d` for closer points across the boundary.
+How to Draw (Opt): Plot points on an X/Y axis. Draw a solid vertical line down the middle. Draw dashed lines at `mid - d` and `mid + d`. Only compare points inside the dashed strip.
+Opt Complexity Visuals: Master Theorem Recursion Tree
+How to Draw Opt Complexity: Draw a binary tree. At each level, write $O(N)$ for merge work. Total height log N, overall $O(N \log N)$.
+Mem Vis (BF): Two looping variables (i, j)
+Mem Vis (Opt): Point objects sorted in separate Left and Right contiguous arrays.

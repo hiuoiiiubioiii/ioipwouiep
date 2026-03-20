@@ -1,0 +1,13 @@
+ID: 104
+Problem Title: Maximum Depth of Binary Tree
+Brute Force Method: Maintain a global max_depth variable. Do a DFS starting from root to every leaf, calculating path length and updating the global variable.
+BF Complexity Visuals: Highlighting every single root-to-leaf path independently to show the aggregate search space.
+How to Draw BF: Draw separate lines tracing from every single leaf node all the way back up to the root.
+Optimised Pattern: Post-order Traversal (Bottom-Up DFS). 1 + max(left, right)
+Opt Vis. Technique: Integer values "bubbling up" from the leaf nodes to the root, combining at each parent.
+Dry Run (Opt): Start at leaves (return 1). Move to parent: take the max of the left and right returned values, add 1, and return up.
+How to Draw (Opt): Write '1' next to all leaf nodes. Draw arrows pointing up to parents, crossing out the parent and writing the max(children) + 1.
+Opt Complexity Visuals: Call stack depth matching the physical height of the tree.
+How to Draw Opt Complexity: Trace the absolute longest path in the tree with a thick highlighter to represent the $O(N)$ time and $O(h)$ space bottleneck.
+Mem Vis (BF): Global heap variable alongside call stack frames for every possible path.
+Mem Vis (Opt): Visualize call stack frames cleanly winding down to a leaf and immediately unwinding optimally $O(h)$.

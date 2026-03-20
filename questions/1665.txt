@@ -1,0 +1,13 @@
+ID: 1665
+Problem Title: Minimum Initial Energy to Finish Tasks
+Brute Force Method: Try every permutation of task orders (N!) to find the one that requires the least starting energy.
+BF Complexity Visuals: Factorial Order Tree
+How to Draw BF: Draw a tree that branches N times, then N-1, etc. Total N! leaves.
+Optimised Pattern: Greedy (Sort by Difference)
+Opt Vis. Technique: Critical Margin Sorting
+Dry Run (Opt): Sort tasks by the difference between `minimum` and `actual` energy (descending). Process tasks that "save" the most margin first.
+How to Draw (Opt): Draw tasks as boxes with two numbers. Subtract the small number from the big one. Sort the tasks so the biggest gap comes first.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw a funnel (O(N log N)) leading to a straight linear execution pipe.
+Mem Vis (BF): Permutation List: Draw a massive storage of all possible task sequences.
+Mem Vis (Opt): Sorted Array: Draw the original array rearranged into a specific order. $O(1)$ or $O(N)$.

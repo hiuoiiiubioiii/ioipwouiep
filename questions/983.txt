@@ -1,0 +1,13 @@
+ID: 983
+Problem Title: Minimum Cost For Tickets
+Brute Force Method: Recursive DFS trying all 3 ticket types at every single travel day without caching the results.
+BF Complexity Visuals: $O(3^N)$. A tree that triples in size for every travel day in the year.
+How to Draw BF: Draw a calendar. From Day 1, draw 3 branches. From Day 2, 9 branches. The tree covers the entire calendar like an overgrown vine.
+Optimised Pattern: DP (1D Calendar / Days-based)
+Opt Vis. Technique: "The Daily Budget." For each day, your minimum cost is the best of three "What Ifs": 1. Bought a 1-day yesterday, 2. Bought a 7-day a week ago, 3. Bought a 30-day a month ago.
+Dry Run (Opt): `dp[i]` = min cost for day `i`. If not a travel day, `dp[i] = dp[i-1]`. Else, `dp[i] = min(dp[i-1]+c[0], dp[max(0,i-7)]+c[1], dp[max(0,i-30)]+c[2])`.
+How to Draw (Opt): Draw a row of 365 boxes. For box 30, draw three "look-back" arrows pointing to box 29, box 23, and box 0.
+Opt Complexity Visuals: $O(W)$ where W is the travel window (max 365). Linear time relative to the number of days.
+How to Draw Opt Complexity: Draw a horizontal timeline. Shade each day as you calculate it, using previous shaded values as inputs.
+Mem Vis (BF): Massive recursion depth and exponential state space.
+Mem Vis (Opt): $O(W)$ for the DP array. Draw a single row of 365 boxes labeled 'Cost'.

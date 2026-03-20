@@ -1,0 +1,13 @@
+ID: 604
+Problem Title: Design Compressed String Iterator
+Brute Force Method: Uncompress the entire string into a massive character array in memory upon initialization.
+BF Complexity Visuals: Memory expansion chart (Small input -&gt; Massive output block).
+How to Draw BF: Draw a short word "a10b5". Draw a diverging arrow expanding out to a massive, long array of individual characters [a,a,a...b,b]. Mark $O(\text{Total Chars})$.
+Optimised Pattern: Lazy Evaluation / Two Pointers / State Machine.
+Opt Vis. Technique: State Machine with Pointer &amp; Counter.
+Dry Run (Opt): Given "L1e2t1". Pointer points to 'L', counter is 1. Call next(): return 'L', counter becomes 0. Pointer moves to 'e', reads counter 2. Call next(): return 'e', counter becomes 1.
+How to Draw (Opt): Write the compressed string. Draw an 'Up Arrow' under the current char. Write a floating box above it saying "Remaining: X". Erase and update X on each call.
+Opt Complexity Visuals: Step-function graph. State changes take $O(1)$, no massive pre-computation.
+How to Draw Opt Complexity: Draw a simple dot with an arrow looping back to itself, labeling it $O(1)$ for next() and hasNext() operations.
+Mem Vis (BF): Draw a giant contiguous block of RAM boxes, completely filled with duplicate characters.
+Mem Vis (Opt): Draw just two small variables in memory: [Char pointer_index] and [Integer current_count]. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 3081
+Problem Title: Replace Question Marks in String to Minimize Its Value
+Brute Force Method: Generate all possible character substitutions for '?' and calculate the total "cost" (frequency-based) for each to find the minimum.
+BF Complexity Visuals: Exponential Choice Tree
+How to Draw BF: Draw the string with '?' gaps. Branch out 26 ways for every gap. Show the 26^count explosion.
+Optimised Pattern: Greedy Frequency Counting + Min-Heap
+Opt Vis. Technique: Balanced Bucket Filling
+Dry Run (Opt): Count current frequencies of a-z. Put all counts into a Min-Heap. For each '?', pick the top (lowest frequency) char, increment its count, and push back. Sort the final chosen chars to maintain lexicographical order.
+How to Draw (Opt): Draw 26 buckets (a-z) with different water levels (frequencies). Pour "extra water" (the '?' marks) into the lowest buckets first until they all level out.
+Opt Complexity Visuals: $O(N + (Q \log 26)$ + Q log Q)
+How to Draw Opt Complexity: Draw an $O(N)$ frequency pass, a small $O(Q \log 26)$ heap loop, and a sorting block for the Q question mark replacements.
+Mem Vis (BF): Massive recursive state space storing all possible string permutations.
+Mem Vis (Opt): An integer array of size 26 and a list of characters to be inserted.

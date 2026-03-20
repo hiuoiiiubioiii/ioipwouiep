@@ -1,0 +1,13 @@
+ID: 3787
+Problem Title: Find Diameter Endpoints of a Tree (Med)
+Brute Force Method: For every node, run a BFS/DFS to find the distance to every other node. Record the two nodes that have the maximum possible distance between them. $O(N^2)$.
+BF Complexity Visuals: All-Pairs Pathfinding.
+How to Draw BF: Draw a tree. Pick node 1, find furthest node. Pick node 2, find furthest node. Repeat for every node in the tree until you find the global maximum distance.
+Optimised Pattern: Double BFS / DFS
+Opt Vis. Technique: Furthest-Point Traversal
+Dry Run (Opt): 1) Start BFS from an arbitrary node X to find the furthest node A. 2) Start a second BFS from A to find the furthest node B. A and B are the endpoints of the diameter.
+How to Draw (Opt): Draw a tree. Start at the root. Draw an arrow to the leaf furthest away (Node A). Now, starting from Node A, draw a long arrow to the leaf furthest from it (Node B).
+Opt Complexity Visuals: Two Linear Passes $O(N)$.
+How to Draw Opt Complexity: Draw two sequential tree-contour scans.
+Mem Vis (BF): $O(N^2)$ distance matrix.
+Mem Vis (Opt): $O(N)$ for adjacency list and BFS queue.

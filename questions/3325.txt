@@ -1,0 +1,13 @@
+ID: 3325
+Problem Title: Count Substrings With K-Frequency Characters I
+Brute Force Method: Generate all possible $O(N^2)$ substrings. Scan each one individually to see if any character count is &gt;= K.
+BF Complexity Visuals: Substring Triangle Cross-out
+How to Draw BF: Write every single substring combo in a pyramid shape. Manually count the chars in every single word and cross out the invalid ones. $O(N^3)$ total work.
+Optimised Pattern: Sliding Window (Monotonic Property)
+Opt Vis. Technique: Expanding Right, Trailing Left (Caterpillar)
+Dry Run (Opt): Expand `r` to add characters. When ANY char hits frequency `k`, the window is valid. Because it's valid, ALL substrings ending at `r` and starting anywhere up to `l` are also valid. Shrink `l` to find the bound.
+How to Draw (Opt): Draw the string. Place [ and ] brackets. When a letter hits count `k`, draw arrows from index 0 pointing to your left bracket. The number of arrows is the number of valid substrings you just found.
+Opt Complexity Visuals: Parallel Pointer Tracks
+How to Draw Opt Complexity: Draw a line. Draw an 'r' arrow moving right. Draw an 'l' arrow trailing behind it. Since neither ever moves left, it proves strict $O(N)$ time.
+Mem Vis (BF): $O(1)$ space, but $O(N)$ time spent constantly slicing identical substrings into memory just to read them.
+Mem Vis (Opt): A Hash Map or a flat integer array of size 26, requiring strictly $O(1)$ space to maintain window state.

@@ -1,0 +1,13 @@
+ID: 621
+Problem Title: Task Scheduler
+Brute Force Method: Simulate every single unit of time. Maintain a list of tasks and their cooldowns. At each second, pick the task with the highest frequency that isn't on cooldown.
+BF Complexity Visuals: Timeline with many "Idle" gaps and repeated frequency scans.
+How to Draw BF: Draw a horizontal line. For every tick, draw a vertical line and search your "Task List" to see which is ready. Write $O(\text{TotalTime} \cdot 26)$.
+Optimised Pattern: Greedy (Math-based Calculation).
+Opt Vis. Technique: Box Filling / Slot Allocation.
+Dry Run (Opt): Find the max frequency (f). Create (f-1) groups. Each group has size (n+1). Total slots = (f-1)*(n+1) + number of tasks with max frequency. If result &lt; tasks.length, return tasks.length.
+How to Draw (Opt): Draw a grid with (f-1) rows and (n+1) columns. Fill the first column with the most frequent task. Count the remaining empty cells. See if other tasks can fit.
+Opt Complexity Visuals: Single pass to count frequencies.
+How to Draw Opt Complexity: Draw a frequency bar chart (A:3, B:3). Circle the max bars. Write $O(N)$ where N is number of tasks.
+Mem Vis (BF): Draw a list of all tasks plus a "cooldown" status for each task being tracked in real-time.
+Mem Vis (Opt): Draw a small fixed-size array/map of size 26 to store counts. $O(1)$ auxiliary space.

@@ -1,0 +1,13 @@
+ID: 3788
+Problem Title: Maximum Score of a Split (Med)
+Brute Force Method: Try splitting the array/string at every possible index. Calculate the score of the left part and the right part independently. Find the index that maximizes the sum. $O(N^2)$.
+BF Complexity Visuals: Exhaustive Split-Point Search.
+How to Draw BF: Write the array. Draw a vertical line at index 1, calculate score. Move the line to index 2, calculate score. Repeat until the end.
+Optimised Pattern: Prefix and Suffix Accumulators
+Opt Vis. Technique: Dual-Pass Balance
+Dry Run (Opt): Precalculate a prefix_score array (left-to-right) and a suffix_score array (right-to-left). The total score at any index i is simply prefix[i] + suffix[i+1].
+How to Draw (Opt): Draw the array. Above it, write the "running score" from left to right. Below it, write the "running score" from right to left. Find the column where the top and bottom numbers add up to the highest total.
+Opt Complexity Visuals: Three Linear Passes $O(N)$.
+How to Draw Opt Complexity: Draw three parallel horizontal lines (Prefix, Suffix, Comparison).
+Mem Vis (BF): Repeatedly calculating scores from scratch.
+Mem Vis (Opt): Two 1D arrays of size N.

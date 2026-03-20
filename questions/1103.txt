@@ -1,0 +1,13 @@
+ID: 1103
+Problem Title: Distribute Candies to People
+Brute Force Method: Simulate the distribution process step by step, one person at a time, until the candy bag is empty.
+BF Complexity Visuals: A "Round Robin" loop running until exhaustion.
+How to Draw BF: N=7, C=4. P1: 1. P2: 2. P3: 3. P4: 1 (left). Result: [1, 2, 3, 1]. Write $O(\text{sqrt}(C)$).
+Optimised Pattern: Simulation or Mathematical Arithmetic Progression.
+Opt Vis. Technique: A "Growing Pour". Each step adds exactly one more candy than the previous step.
+Dry Run (Opt): Keep a pointer `i = 0` and `candies_to_give = 1`. While `total_candies &gt; 0`, give `min(candies_to_give, total_candies)` to `person[i % n]`. Increment `i` and `candies_to_give`.
+How to Draw (Opt): Draw N empty buckets. Write the numbers 1, 2, 3... and "pour" them into the buckets sequentially. If the last number is bigger than what's left, pour the remainder.
+Opt Complexity Visuals: Linear simulation proportional to the number of distribution steps.
+How to Draw Opt Complexity: Draw N buckets with a spiraling arrow filling them. Write Time: $O(\text{max}(N, \text{sqrt}(C)$)).
+Mem Vis (BF): $O(1)$ if just tracking, but $O(N)$ for the result.
+Mem Vis (Opt): A single array of size N. $O(N)$ space.

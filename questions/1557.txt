@@ -1,0 +1,13 @@
+ID: 1557
+Problem Title: Minimum Number of Vertices to Reach All Nodes
+Brute Force Method: Run a full DFS/BFS starting from every single node to see which ones can cover the entire graph. $O(V \cdot (V + E)$).
+BF Complexity Visuals: Massive Overlapping Search Trees
+How to Draw BF: Draw a graph. From node A, draw a shaded area for its reach. From node B, draw another. Many areas will overlap, showing redundant computation.
+Optimised Pattern: Graph Theory (In-Degree Zero)
+Opt Vis. Technique: The Source Identification
+Dry Run (Opt): In a Directed Acyclic Graph (DAG), any node with an in-degree of 0 *must* be part of the result, as no other node can reach it. Any node with in-degree &gt; 0 can be reached by a source.
+How to Draw (Opt): Draw the nodes. For every edge `u -&gt; v`, draw a red "X" on node `v` (the target). After processing all edges, circle the nodes that don't have an "X". These are your sources.
+Opt Complexity Visuals: Edge List Scan $O(E)$
+How to Draw Opt Complexity: Draw a line representing the edge list. Each edge is processed once to update a boolean array.
+Mem Vis (BF): Storing full adjacency lists and multiple "visited" sets. $O(V + E)$.
+Mem Vis (Opt): A single boolean array of size V. $O(V)$ space.

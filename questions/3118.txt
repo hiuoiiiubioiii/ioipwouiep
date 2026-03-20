@@ -1,0 +1,13 @@
+ID: 3118
+Problem Title: Friday Purchase III (SQL)
+Brute Force Method: Cartesian product of all dates and all users, followed by heavy row-by-row filtering. (Inefficient DB Execution)
+BF Complexity Visuals: Massive N x M matrix where 99% of the cells are blanked out sequentially.
+How to Draw BF: Draw every user connected to every day in November with string. Cut the strings that aren't Fridays or specific memberships.
+Optimised Pattern: Recursive CTE + LEFT JOIN
+Opt Vis. Technique: Assembly Line / Data Pipeline
+Dry Run (Opt): Generate a strict list of 4 Fridays. Generate a strict list of 2 Memberships. Cross join them into a perfect 8-row base. Left Join actual sales onto this base.
+How to Draw (Opt): Draw 3 separate mini-tables (Fridays, Members, Sales). Draw clean arrows routing from the Sales table into the perfectly pre-structured base table.
+Opt Complexity Visuals: Pipeline / Directed Acyclic Graph (DAG)
+How to Draw Opt Complexity: Draw three parallel data streams merging cleanly into one output node.
+Mem Vis (BF): Temporary memory holding an unindexed Cartesian explosion.
+Mem Vis (Opt): Tight, 8-row temporary table stored in cache before the final JOIN.

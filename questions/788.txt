@@ -1,0 +1,13 @@
+ID: 788
+Problem Title: Rotated Digits
+Brute Force Method: For every number from 1 to N, check if it is "good" by rotating each digit.
+BF Complexity Visuals: Number Line Transformation
+How to Draw BF: Draw numbers 1 to N. Check each digit in each number. $O(N \log N)$.
+Optimised Pattern: Digit Dynamic Programming
+Opt Vis. Technique: State-Based Digit Stringing
+Dry Run (Opt): Count "good" numbers digit by digit. State: `(index, isLess, hasDifferentDigit)`. Avoid re-calculating sub-problems for similar number prefixes.
+How to Draw (Opt): Draw a decision tree for digits 0-9. Mark "invalid" digits (3, 4, 7). Mark "identity" digits (0, 1, 8). Mark "rotating" digits (2, 5, 6, 9).
+Opt Complexity Visuals: Logarithmic Digit Depth
+How to Draw Opt Complexity: Draw a tree with depth equal to the number of digits in N. $O(\log N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Small memoization table $O(\\text{text}{\text{digits}} \\text{times} 2 \\text{times} 2)$.

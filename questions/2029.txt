@@ -1,0 +1,13 @@
+ID: 2029
+Problem Title: Stone Game IX
+Brute Force Method: Minimax tree simulating every possible sequence of valid stone removals for Alice and Bob. $O(N!)$.
+BF Complexity Visuals: Factorial Game State Tree
+How to Draw BF: Draw a starting state. Branch out for every single valid stone you can pick. Tree fan-out decreases by 1 each step but remains massive.
+Optimised Pattern: Math (Modulo 3 Categorization) &amp; Case Analysis
+Opt Vis. Technique: Three Buckets (0, 1, 2) Strategy
+Dry Run (Opt): The absolute values don't matter, only `val % 3`. Count stones that leave remainder 0, 1, and 2. Alice wins based on whether counts of 1s and 2s are balanced, altered by parity of 0s.
+How to Draw (Opt): Draw 3 buckets labeled 0, 1, and 2. Tally the stones into them. Follow a simple 3-branch flowchart rule based on the tally counts to declare Alice or Bob the winner.
+Opt Complexity Visuals: Constant Time Decision Matrix
+How to Draw Opt Complexity: Draw a linear scan (O(N) to populate the 3 buckets), followed by a simple $O(1)$ mathematical check. Total Time $O(N)$.
+Mem Vis (BF): Huge memoization hash map storing exact array states to avoid duplicate game branches.
+Mem Vis (Opt): A 3-element integer array tracking the counts of modulo 0, 1, and 2. Space $O(1)$.

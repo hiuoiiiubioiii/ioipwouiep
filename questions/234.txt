@@ -1,0 +1,13 @@
+ID: 234
+Problem Title: Palindrome Linked List
+Brute Force Method: Copy the linked list into an array and use two pointers to check if the array is a palindrome.
+BF Complexity Visuals: Array Copy Mirror: $O(N)$ Time, $O(N)$ Space.
+How to Draw BF: Draw a linked list. Draw an array below it. Show arrows copying values. Draw two pointers at the ends of the array moving inward.
+Optimised Pattern: Slow/Fast Pointers + In-Place Reversal of Second Half
+Opt Vis. Technique: Tortoise and Hare Halfway Split
+Dry Run (Opt): Use Slow/Fast pointers to find the middle. Reverse the second half of the list. Compare the first half and the reversed second half.
+How to Draw (Opt): Draw a long chain. Use a 'S' and 'F' pointer. At the midpoint, draw the arrows of the second half turning 180 degrees.
+Opt Complexity Visuals: Linear Pass with Constant Space: $O(N)$ Time, $O(1)$ Space.
+How to Draw Opt Complexity: Draw a timeline showing 3 passes: 1. Find Mid, 2. Reverse, 3. Compare. Total is $O(1.5N)$ -&gt; $O(N)$.
+Mem Vis (BF): Array Buffer: Draw an N-slot array in memory.
+Mem Vis (Opt): Pointer Manipulation: Draw three small boxes for the `prev`, `curr`, and `next` pointers during reversal.

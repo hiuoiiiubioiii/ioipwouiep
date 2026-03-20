@@ -1,0 +1,13 @@
+ID: 3391
+Problem Title: Design a 3D Binary Matrix with Efficient Layer Tracking
+Brute Force Method: Iteratively subtract 1 or try random divisions to reach the target from max value. $O(\text{Target})$.
+BF Complexity Visuals: Linear Countdown
+How to Draw BF: Draw a number line. Start at target, draw a million tiny -1 arrows backwards.
+Optimised Pattern: Greedy / Math (Reverse Operations)
+Opt Vis. Technique: The Halving Shortcut
+Dry Run (Opt): Work backwards from the target to the start. If the target is even, divide by 2 (costs 1 operation). If it's odd, subtract 1 to make it even. This optimally minimizes operations.
+How to Draw (Opt): Draw the target number. If it ends in an even digit, cut the block in half. If odd, shave off 1 block, then cut the rest in half. Continue until you hit the start score.
+Opt Complexity Visuals: Logarithmic Reduction $O(\log N)$
+How to Draw Opt Complexity: Draw a tree plunging straight down, halving at almost every step.
+Mem Vis (BF): Tracking all states in a BFS queue.
+Mem Vis (Opt): A single integer variable. $O(1)$ space.

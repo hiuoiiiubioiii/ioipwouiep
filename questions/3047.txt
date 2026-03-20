@@ -1,0 +1,13 @@
+ID: 3047
+Problem Title: Find the Largest Area of Square Inside Two Rectangles
+Brute Force Method: Iterate through all pairs of rectangles. Find their geometric intersection, calculate the max square that fits, and track the global max.
+BF Complexity Visuals: Pairwise Intersection Grid
+How to Draw BF: Draw a matrix where each cell (i, j) represents the overlap calculation of two rectangles.
+Optimised Pattern: Coordinate Min-Max Comparison
+Opt Vis. Technique: Overlapping Interval Mapping
+Dry Run (Opt): For rectangles i and j, width = min(x2_i, x2_j) - max(x1_i, x1_j). height = min(y2_i, y2_j) - max(y1_i, y1_j). Side = min(width, height). Area = side^2.
+How to Draw (Opt): Draw two overlapping rectangles. Shade the overlapping region. Draw a square inside and label its side as min(w, h).
+Opt Complexity Visuals: $O(N^2)$ Nested Loop
+How to Draw Opt Complexity: Draw two nested loops (i, j) with $O(1)$ math operations inside.
+Mem Vis (BF): Geometric objects or temporary coordinate arrays.
+Mem Vis (Opt): A few long integer variables for maxSide and currentSide.

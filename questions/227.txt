@@ -1,0 +1,13 @@
+ID: 227
+Problem Title: Basic Calculator II
+Brute Force Method: Iterate multiple times: first pass for all multiplication/division, second pass for addition/subtraction.
+BF Complexity Visuals: Multi-Pass Scan Lines: $O(2N)$ -&gt; $O(N)$.
+How to Draw BF: Draw a string. Draw an arrow scanning it once. Draw a second arrow scanning the "intermediate" string. Total length = 2 scans.
+Optimised Pattern: Single-Pass Stack (Precedence Handling)
+Opt Vis. Technique: Value Accumulator &amp; Sign State
+Dry Run (Opt): Keep a `currentNumber`. When you hit an operator, apply the *previous* operator to the `currentNumber` and push to stack. Sum stack at end.
+How to Draw (Opt): Draw the expression. Draw a stack. When you see '*' or '/', pop the top, multiply/divide with current, and push back. Addition just pushes the number.
+Opt Complexity Visuals: Single Linear Pass: $O(N)$ Time.
+How to Draw Opt Complexity: Draw one straight line across the string. Mark $O(1)$ for each stack operation to show $O(N)$ total.
+Mem Vis (BF): String Buffers: Draw multiple copies of substrings.
+Mem Vis (Opt): Integer Stack: Draw a vertical tube containing only calculated numbers (e.g., [10, -5, 12]).

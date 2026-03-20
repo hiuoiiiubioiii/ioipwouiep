@@ -1,0 +1,13 @@
+ID: 834
+Problem Title: Sum of Distances in Tree
+Brute Force Method: For every node i, run a full BFS or DFS to calculate the distance to every other node j, and sum them.
+BF Complexity Visuals: Repetitive Graph Traversal. $O(N^2)$.
+How to Draw BF: Draw a tree. Pick node 1, highlight the whole tree. Pick node 2, highlight the whole tree again. Repeat N times.
+Optimised Pattern: Re-rooting DP (Post-order + Pre-order DFS).
+Opt Vis. Technique: Centrifugal Force / Balancing Scales.
+Dry Run (Opt): 1. Bottom-up: Count subtree sizes and sum distances for root. 2. Top-down: As you move from parent to child, `Dist(child) = Dist(parent) - Count(child_subtree) + (N - Count(child_subtree))`.
+How to Draw (Opt): Draw a tree. Calculate total distance for the Root. As you "slide" the root to a child, visualize the child's side getting closer (-1 per node) and the rest of the tree getting further (+1 per node).
+Opt Complexity Visuals: Two-Pass DFS. $O(N)$.
+How to Draw Opt Complexity: Draw the tree with one green arrow going UP (post-order) and one blue arrow going DOWN (pre-order).
+Mem Vis (BF): Adjacency List + BFS Queues: Draw a large graph structure plus N separate queue frames.
+Mem Vis (Opt): Two Result Arrays + Recursion Stack: Draw three N-sized strips (Count, Sum, Result) and a stack of height H.

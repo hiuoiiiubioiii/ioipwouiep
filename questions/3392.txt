@@ -1,0 +1,13 @@
+ID: 3392
+Problem Title: Count Subarrays of Length Three With a Condition
+Brute Force Method: Nested loops to extract every subarray of length 3 and check if 2 x (nums[i] + nums[i+2]) == nums[i+1].
+BF Complexity Visuals: Sliding Window Matrix
+How to Draw BF: Draw the array. Bracket the first 3 elements. Check. Move the bracket 1 step. Check. $O(N x 3)$.
+Optimised Pattern: Linear Scan / Fixed Sliding Window
+Opt Vis. Technique: The 3-Slot Viewfinder
+Dry Run (Opt): Iterate from index 1 to N-2. Treat i as the center. Check the neighbors i-1 and i+1 against the condition.
+How to Draw (Opt): Draw the array. Place a "3-cell" physical paper template over the array. Slide it. Write "Match" or "No" under each center element.
+Opt Complexity Visuals: Single-Pass Linear Arrow
+How to Draw Opt Complexity: Draw a straight line N. One pass, $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ auxiliary space (just a counter).

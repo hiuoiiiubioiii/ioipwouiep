@@ -1,0 +1,13 @@
+ID: 333
+Problem Title: Largest BST Subtree
+Brute Force Method: For every node in the tree, run a separate function `isBST(node)` and `countNodes(node)`. Keep track of the maximum count found.
+BF Complexity Visuals: Top-Down Redundant Scanning
+How to Draw BF: Draw a tree. Circle the root, scan all children. Circle the left child, scan all its children again. Draw overlapping circles to show $O(N^2)$.
+Optimised Pattern: Post-order Traversal (Bottom-Up Information Passing)
+Opt Vis. Technique: Hierarchical Property Propagation
+Dry Run (Opt): Each node returns four values to its parent: `[isBST, size, min_val, max_val]`. A parent is a BST only if both children are BSTs and `left_max &lt; parent_val &lt; right_min`.
+How to Draw (Opt): Draw a tree. Start at the leaves. Write the 4-tuple `[T, 1, val, val]` next to them. Move up to the parent and show the math comparing the tuples to form a new tuple.
+Opt Complexity Visuals: Single-Pass Tree Depth Scan
+How to Draw Opt Complexity: Draw one large arrow starting from the bottom-left leaf, zig-zagging to the bottom-right, and ending at the root. $O(N)$.
+Mem Vis (BF): No extra memory besides the tree itself (recursion stack ignored).
+Mem Vis (Opt): Recursion stack (O(H) where H is height). Draw a vertical column of "Return Tuple" boxes. $O(H)$.

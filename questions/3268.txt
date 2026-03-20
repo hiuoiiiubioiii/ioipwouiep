@@ -1,0 +1,13 @@
+ID: 3268
+Problem Title: Find Overlapping Shifts II
+Brute Force Method: Try every pair of people (top-left, bottom-right). For each pair, scan all other people to see if they are inside the box. $O(N^3)$.
+BF Complexity Visuals: Quadratic Box Checking
+How to Draw BF: Draw pairs. Draw a box. Scan the entire grid for trapped points.
+Optimised Pattern: Sorting + Sweeping Max-Y
+Opt Vis. Technique: The Descending Ceiling Check
+Dry Run (Opt): Sort points by X (ascending), then Y (descending). Iterate `i` (top-left). Iterate `j` from `i+1` (bottom-right). To ensure the box is empty, maintain a `max_y` of any point seen between `i` and `j`. If `points[j].y &lt; points[i].y` AND `points[j].y &gt; max_y`, it's a valid empty box! Update `max_y`.
+How to Draw (Opt): Plot points on a graph. Lock a top-left point. Scan rightwards. Track the "highest point seen so far." If the next point is below your top-left but *above* the highest point seen, the box between them is empty.
+Opt Complexity Visuals: Nested Linear Pass $O(N^2)$
+How to Draw Opt Complexity: Draw a sorting pass, followed by an NxN loop with $O(1)$ interior checks.
+Mem Vis (BF): Storing lists of box contents.
+Mem Vis (Opt): In-place sorting. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 1876
+Problem Title: Substrings of Size Three with Distinct Characters
+Brute Force Method: Iterate through every substring of length 3 and use a Set to check if size is 3.
+BF Complexity Visuals: Nested loop scan blocks.
+How to Draw BF: Draw a string. Draw brackets for [0,2], [1,3], [2,4]... list characters in each and circle the ones with no repeats. $O(3N)$.
+Optimised Pattern: Fixed Sliding Window (No Set).
+Opt Vis. Technique: 3-digit sliding frame.
+Dry Run (Opt): Check s[i] != s[i+1] and s[i] != s[i+2] and s[i+1] != s[i+2]. Return count of true.
+How to Draw (Opt): Draw the string. Place a 3-slot window. Move it right one char at a time, checking the internal 3-way inequality.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw an arrow from 0 \to N. Mark $O(N)$.
+Mem Vis (BF): Multiple temporary Sets/Hash structures in heap memory.
+Mem Vis (Opt): $O(1)$ stack memory (just the input string and a counter).

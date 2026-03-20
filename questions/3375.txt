@@ -1,0 +1,13 @@
+ID: 3375
+Problem Title: Minimum Operations to Make Array Values Equal to K
+Brute Force Method: Repeatedly find the maximum value in the array and reduce it to some value x >= K until all elements are K.
+BF Complexity Visuals: Iterative Reduction Steps
+How to Draw BF: Draw the array as bars of different heights. Pick the tallest bar, lower it to the next tallest. Repeat until they hit floor K. $O(N^2)$.
+Optimised Pattern: Set-Based Unique Value Counting
+Opt Vis. Technique: Step-Down Staircase
+Dry Run (Opt): Each operation can reduce ALL instances of the current maximum value. The number of operations is the count of unique values strictly greater than K.
+How to Draw (Opt): Draw a staircase where each step is a unique number from the array. Count the number of steps above the "K-line". If any value is &lt; K, draw a big red X (return -1).
+Opt Complexity Visuals: Linear Set Construction
+How to Draw Opt Complexity: Draw a number line. Mark the unique values with dots. One pass to count dots. $O(N)$.
+Mem Vis (BF): Multiple copies of the array created during sorting or reduction steps.
+Mem Vis (Opt): A single Hash Set to store unique values. $O(N)$.

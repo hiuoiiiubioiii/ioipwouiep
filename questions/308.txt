@@ -1,0 +1,13 @@
+ID: 308
+Problem Title: Range Sum Query 2D - Mutable
+Brute Force Method: Update cell in $O(1)$. Sum 2D range in $O(M\cdot N)$ by iterating through the sub-grid.
+BF Complexity Visuals: 2D Sub-matrix Iteration
+How to Draw BF: Draw a grid. Outline a smaller target rectangle. Draw a snake-like line traversing every cell inside the target rectangle.
+Optimised Pattern: 2D Binary Indexed Tree (Fenwick Tree)
+Opt Vis. Technique: Hierarchical 2D Jump Pointers
+Dry Run (Opt): To update (r,c), add value, then jump right/down by adding the Least Significant Bit (LSB) to r and c. To query, start at bottom-right of range and jump up/left by subtracting LSB.
+How to Draw (Opt): Draw a matrix. From cell (3,3), draw an arrow jumping to (4,4), then (8,8) to represent binary jumps covering larger blocks of areas.
+Opt Complexity Visuals: 2D Logarithmic Steps
+How to Draw Opt Complexity: Draw a path on a grid starting at a cell, taking a small step of 1, then a step of 2, then 4, towards the origin (0,0). $O(\log M \cdot \log N)$.
+Mem Vis (BF): Standard 2D matrix block in memory.
+Mem Vis (Opt): 2D Matrix of exact same dimensions (M*N). Draw it as a grid, but shade it to indicate it holds cumulative BIT sums, not raw values.

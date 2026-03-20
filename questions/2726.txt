@@ -1,0 +1,13 @@
+ID: 2726
+Problem Title: Calculator with Method Chaining
+Brute Force Method: Create a class where every method performs an operation and stores the result, but doesn't return this, forcing the user to call calc.add(5); calc.sub(2); on separate lines.
+BF Complexity Visuals: Disconnected Command Sequence
+How to Draw BF: Draw a box (the object). Draw separate arrows for each operation, each returning to the start before the next can begin.
+Optimised Pattern: Multiple Statement Contexts (Each call is a separate statement in the execution stack).
+Opt Vis. Technique: Fluent Interface (Method Chaining)
+Dry Run (Opt): Pipeline Flow
+How to Draw (Opt): In every method (add, subtract, etc.), perform the math and then return this;. This allows the output of one method to be the context for the next.
+Opt Complexity Visuals: Draw a horizontal pipeline. Elements enter "Add", flow directly into "Subtract", then into "Multiply", without ever leaving the object's context.
+How to Draw Opt Complexity: $O(1)$ Per Operation
+Mem Vis (BF): Draw a chain of circles. Each circle is $O(1)$. The total time is $O(\text{number of operations})$.
+Mem Vis (Opt): Persistent Object State (Draw one "Result" variable in the object's heap space that is updated in place during the chain).

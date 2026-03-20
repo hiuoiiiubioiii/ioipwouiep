@@ -1,0 +1,13 @@
+ID: 3413
+Problem Title: Maximum Coins From K Consecutive Bags
+Brute Force Method: Test every start position on the number line from `min(li)` to `max(ri)` and sum coins within the `k` window. (O(Max_Coordinate))
+BF Complexity Visuals: Dense Sliding Window over Sparse Line.
+How to Draw BF: Draw a massive 1..10^9 number line. Draw a `k` sized bracket sliding exactly 1 unit right repeatedly, calculating empty spaces needlessly.
+Optimised Pattern: Sort Intervals + Sliding Window snapped to Interval Boundaries (Two passes: Left/Right). (O(N log N))
+Opt Vis. Technique: Interval Snapping Window.
+Dry Run (Opt): Sort intervals. Snap window's left edge to an interval's left edge. Sum fully enclosed intervals. Add partial overlap of the rightmost interval. Repeat reversed.
+How to Draw (Opt): Draw intervals as horizontal blocks. Draw a rigid bracket of length `k`. Snap the bracket's edge perfectly to the start of a block and shade the contents.
+Opt Complexity Visuals: Two Pointers on Array Timeline.
+How to Draw Opt Complexity: Draw a sorting step tree, followed by two pointers (j chasing i) sliding over an array of size N, proving linear traversal post-sort.
+Mem Vis (BF): A massive dense array of size 10^9 representing the whole number line.
+Mem Vis (Opt): An $O(N)$ array holding the parsed `[left, right, coins]` intervals.

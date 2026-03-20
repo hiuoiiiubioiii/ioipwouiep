@@ -1,0 +1,13 @@
+ID: 1332
+Problem Title: Remove Palindromic Subsequences
+Brute Force Method: Generate all possible subsequences $O(2^N)$, check each for being a palindrome $O(N)$, remove valid ones, and recurse on the remainder.
+BF Complexity Visuals: Exponential Subsequence Tree
+How to Draw BF: Draw a string. Branch out with every possible character exclusion combination. The tree explodes exponentially, showing massive redundant palindrome checks.
+Optimised Pattern: Brainteaser / Logical Deduction
+Opt Vis. Technique: Binary State Check
+Dry Run (Opt): Notice the string ONLY contains 'a' and 'b'. If it's already a palindrome, it takes 1 step. If not, remove all 'a's (which is a palindrome), then all 'b's. Always takes 2 steps max.
+How to Draw (Opt): Draw the string. Check if it reads the same backwards. If yes, write '1'. If no, cross out every 'a' (step 1), then cross out every 'b' (step 2). Write '2'.
+Opt Complexity Visuals: $O(N)$ Two-Pointer Sweep
+How to Draw Opt Complexity: Draw a string. Place an arrow at the start and end. Move them towards the center. If they mismatch even once, immediately stop and return 2.
+Mem Vis (BF): Unbounded Call Stack: Thousands of string permutations held in recursive memory frames.
+Mem Vis (Opt): Two Integer Pointers: Draw two variables (`left` and `right`) traversing the single existing string in memory. $O(1)$ space.

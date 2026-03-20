@@ -1,0 +1,13 @@
+ID: 666
+Problem Title: Path Sum IV
+Brute Force Method: Reconstruct the entire tree into a nested object/pointer structure using the 3-digit coordinates, then run a standard Root-to-Leaf DFS.
+BF Complexity Visuals: Layered Construction &amp; Traversal.
+How to Draw BF: Draw the coordinates. For each, draw a new node circle and manually connect parents to children based on the (d, p) logic. $O(N)$.
+Optimised Pattern: Hash Map Traversal / Parent-Child Mapping.
+Opt Vis. Technique: Virtual Tree Traversal.
+Dry Run (Opt): Store data in a Map where Key = `depth*10 + position`. Start DFS at 11 (Root). Left child is at `(d+1, 2*p - 1)`, Right at `(d+1, 2*p)`. If neither exists, it's a leaf; add current sum to total.
+How to Draw (Opt): Write the numbers in a grid based on depth and position. Draw arrows directly on the grid following the 2p-1/2p formula without creating objects.
+Opt Complexity Visuals: Single DFS pass through the Map.
+How to Draw Opt Complexity: Draw a single line snaking through the "Virtual" tree nodes. Write $O(N)$.
+Mem Vis (BF): Draw complex Node objects with Left/Right pointers and associated overhead.
+Mem Vis (Opt): Draw a single Hash Map (Integer -&gt; Integer). $O(N)$.

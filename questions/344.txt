@@ -1,0 +1,13 @@
+ID: 344
+Problem Title: Reverse String
+Brute Force Method: Create a new array/string. Iterate from the end of the input and append each character to the new array.
+BF Complexity Visuals: Parallel Array Copy
+How to Draw BF: Draw the original array. Below it, draw a second empty array. Draw arrows from original end to new start. $O(N)$.
+Optimised Pattern: Two Pointers (In-place Swap)
+Opt Vis. Technique: Converging Boundary Pointers
+Dry Run (Opt): Place a `left` pointer at 0 and a `right` pointer at n-1. Swap the characters and move pointers toward each other until they meet.
+How to Draw (Opt): Draw an array. Place two arrows at the ends. Draw a curved "swap" arrow between the letters they point to. Move arrows inward.
+Opt Complexity Visuals: Linear Convergence Scan
+How to Draw Opt Complexity: Draw a single line. Draw two arrows moving toward the center point. $O(N/2)$ → $O(N)$.
+Mem Vis (BF): A secondary array of size N. $O(N)$.
+Mem Vis (Opt): In-place modification. Draw the original array and two small integer boxes for the pointer indices. $O(1)$.

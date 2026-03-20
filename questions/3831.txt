@@ -1,0 +1,13 @@
+ID: 3831
+Problem Title: Median of a Binary Search Tree Level (Med.)
+Brute Force Method: Level-order BFS pulling all nodes into arrays per level, then running a sorting algorithm on every level's array before finding the median.
+BF Complexity Visuals: Trees dropping nodes chaotically into buckets, followed by expensive sorting cycles inside each bucket.
+How to Draw BF: Draw a tree. Draw buckets for levels 1, 2, 3. Draw nodes falling into buckets out of order. Write $O(L \log L)$ per bucket for sorting.
+Optimised Pattern: In-Order DFS Traversal with Level Grouping.
+Opt Vis. Technique: A left-to-right sweep of the tree that naturally drops elements into their respective level arrays in perfect sorted order.
+Dry Run (Opt): Run DFS(node, level). Because it's an In-Order traversal (Left, Node, Right) on a BST, as nodes are appended to `level_arrays[level]`, they are automatically sorted. Find median by index.
+How to Draw (Opt): Draw a BST. Draw a curved line weaving left-to-right through the nodes. Draw buckets below. Drop numbers into buckets; observe they magically land sorted.
+Opt Complexity Visuals: Single graph sweep with $O(1)$ mathematical lookups.
+How to Draw Opt Complexity: Draw the tree. Write "O(N) Traversal". Next to buckets, write "O(1) Median Lookup". Total: $O(N)$.
+Mem Vis (BF): $O(N)$ memory for BFS Queue plus N array allocations that require shifting during sorts.
+Mem Vis (Opt): A Hash Map of dynamic arrays `Map&lt;Integer, List&gt;` tracking levels, strictly taking $O(N)$ space, zero sorting memory overhead.

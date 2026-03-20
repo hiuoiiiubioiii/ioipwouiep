@@ -1,0 +1,13 @@
+ID: 3572
+Problem Title: Maximize Y‑Sum by Picking a Triplet of Distinct X‑Values (Med)
+Brute Force Method: Generate all combinations of three distinct X-values, sum their corresponding Y-values, and track the maximum.
+BF Complexity Visuals: N^3 Combinatorial Grid.
+How to Draw BF: Draw three nested loops. For every triplet (x_i, x_j, x_k), check if they are distinct and sum y_i, y_j, y_k.
+Optimised Pattern: Sorting + Greedy / Two-Pass Max Search.
+Opt Vis. Technique: Top-K Filtering.
+Dry Run (Opt): For each distinct X, keep only the highest Y-value. Sort these top Y-values and simply pick the top three.
+How to Draw (Opt): Draw a table of (X, Y) pairs. Group by X. Highlight the "champion" Y in each group. Sort the champions and circle the top three.
+Opt Complexity Visuals: $O(N \log N)$.
+How to Draw Opt Complexity: Draw an arrow sorting the N points, then a single pass through the top-three list.
+Mem Vis (BF): Full Triplet List: Draw a massive array storing every possible triplet sum calculated.
+Mem Vis (Opt): Frequency Map + Top-3 Array: Draw a map (X -&gt; MaxY) and three integer variables representing the leaderboard.

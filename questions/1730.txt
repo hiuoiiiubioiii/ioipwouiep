@@ -1,0 +1,13 @@
+ID: 1730
+Problem Title: Shortest Path to Get Food
+Brute Force Method: DFS (Depth First Search) exploring every possible path to find food, keeping track of the minimum path length. Re-evaluating cells.
+BF Complexity Visuals: Blind Snake Winding.
+How to Draw BF: Draw grid. Draw a line wandering randomly into dead ends, backtracking, and trying again until it finds food. Extremely slow.
+Optimised Pattern: BFS (Breadth First Search) for Unweighted Shortest Path.
+Opt Vis. Technique: Water Ripple Expansion.
+Dry Run (Opt): Push starting position to Queue. Expand out 1 step in all 4 valid directions. Mark visited. Repeat level by level. The first time you hit 'Food', that's guaranteed the shortest path.
+How to Draw (Opt): Draw grid. Place a dot at start. Draw concentric rings expanding outwards by 1 cell per step, ignoring walls. Stop when a ring touches food.
+Opt Complexity Visuals: Level-Order Grid Traversal.
+How to Draw Opt Complexity: Draw grid mapping M x N. Highlight cells progressively. Worst case touches all cells once. $O(M \cdot N)$.
+Mem Vis (BF): Deep recursion stack. $O(M \cdot N)$.
+Mem Vis (Opt): Queue storing the "frontier" of the current ripple. Max size is the grid diagonal. $O(M \cdot N)$ space.

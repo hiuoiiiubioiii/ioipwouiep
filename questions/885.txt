@@ -1,0 +1,13 @@
+ID: 885
+Problem Title: Spiral Matrix III
+Brute Force Method: Build a full coordinate grid that contains the spiral. Move step by step. After every single move, check if the current coordinate is within the boundaries of the input matrix.
+BF Complexity Visuals: Expanding Circular Scan. $O(\text{max}(R, C)$^2).
+How to Draw BF: Draw a small grid. Draw a spiral starting from the center that gets larger and larger. For every single dot in the spiral, draw a question mark: "Is this dot inside the grid?"
+Optimised Pattern: Simulation with Step Increment (Greedy Walking).
+Opt Vis. Technique: The "Square-Spiral Length" Tracker.
+Dry Run (Opt): The spiral pattern is: East 1, South 1, West 2, North 2, East 3, South 3... Notice that the step length increases every two directions. Maintain (r, c) and only add to result if 0 <= r &lt; R and 0 <= c &lt; C.
+How to Draw (Opt): Draw a small matrix. Draw a spiral path. Every two turns, increase the number of steps by 1. Use a "Filter Gate" icon at each step to see if the coordinate enters the final list.
+Opt Complexity Visuals: Proportional to Spiral Area. $O(\text{max}(R, C)$^2).
+How to Draw Opt Complexity: Draw an Archimedean spiral. Each segment of the spiral is visited exactly once.
+Mem Vis (BF): Full Coordinate Cache: Draw a list storing thousands of "Out of Bounds" points.
+Mem Vis (Opt): Result List: Draw a single 1D array of size R x C. $O(R x C)$ space.

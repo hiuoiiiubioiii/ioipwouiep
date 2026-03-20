@@ -1,0 +1,13 @@
+ID: 1689
+Problem Title: Partitioning Into Minimum Deci-Binary Numbers
+Brute Force Method: Backtracking or greedy subtraction: find the largest deci-binary possible and subtract until zero.
+BF Complexity Visuals: Successive Subtraction Flow
+How to Draw BF: Draw the number. Subtract 111... repeatedly. Draw an arrow for every subtraction. $O(N \\text{times} \\text{text}{\text{Value}})$.
+Optimised Pattern: Greedy (Maximum Digit)
+Opt Vis. Technique: Peak Digit Identification
+Dry Run (Opt): A deci-binary number uses only 0s and 1s. To satisfy a digit '9', you need at least nine 1s in that position. Thus, the answer is just the max digit in the string.
+How to Draw (Opt): Write the string (e.g., "3271"). Scan every character. Circle the largest digit.
+Opt Complexity Visuals: Single Linear Scan
+How to Draw Opt Complexity: Draw a straight arrow through the string. $O(N)$ where N is string length.
+Mem Vis (BF): Recursive State: Deep stack of subtraction results.
+Mem Vis (Opt): Variable: One small box labeled `maxDigit`. $O(1)$ space.

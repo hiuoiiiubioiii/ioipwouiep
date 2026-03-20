@@ -1,0 +1,13 @@
+ID: 2173
+Problem Title: Longest Winning Streak (SQL)
+Brute Force Method: For each player, fetch all matches, find all contiguous subsegments of 'Win', and find max length.
+BF Complexity Visuals: Row-by-row nested scanning for every player.
+How to Draw BF: Draw player names. For each, scan their match list. Find 'W, W, L'. Reset counter. Find 'W, W, W'. $O(\text{Players} \\text{cdot Matches})$.
+Optimised Pattern: Window Functions (Gaps and Islands).
+Opt Vis. Technique: Grouping "islands" of wins by subtracting row numbers.
+Dry Run (Opt): Assign `ROW_NUMBER()` to all matches. Assign `ROW_NUMBER()` only to wins. `Island_ID = All_RN - Win_RN`. Wins with the same ID belong to the same streak.
+How to Draw (Opt): Draw two columns of numbers. Col A: 1,2,3,4,5. Col B (only for wins): 1,2,4,5. Subtract B from A: 0,0,1,0. Identical 0s form a streak.
+Opt Complexity Visuals: $O(N \log N)$ database sorting.
+How to Draw Opt Complexity: Parallel tracks being compared to find where the "synchronization" breaks.
+Mem Vis (BF): Application-side processing of large result sets.
+Mem Vis (Opt): $O(N)$ database memory for window sorting.

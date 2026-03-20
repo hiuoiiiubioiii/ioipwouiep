@@ -1,0 +1,13 @@
+ID: 1799
+Problem Title: Maximize Score After N Operations
+Brute Force Method: Recursive backtracking: Pick any 2 numbers, calculate score, and repeat for the remaining numbers. Try all possible pairings.
+BF Complexity Visuals: Recursive Pairwise Combinations.
+How to Draw BF: Draw numbers. Branch for every possible first pair. Branch for second pair. $O((2N)$! / (2^N * N!)).
+Optimised Pattern: Bitmask Dynamic Programming + GCD Precomputation.
+Opt Vis. Technique: Binary Toggle Switches.
+Dry Run (Opt): Use an integer `mask` where the i-th bit is 1 if nums[i] is used. `dp[mask]` stores the max score for that state. Transition by picking two unset bits i, j and recurse.
+How to Draw (Opt): Draw 14 light switches. Show a "State" where switches 1 and 4 are ON. Show arrows leading to new states where 2 more switches are flipped ON.
+Opt Complexity Visuals: State-Space Exploration with Pruning.
+How to Draw Opt Complexity: Draw a graph of bitmasks. Label $O(2^{2N} \cdot (2N)$^2). For N=7, 2^{14} = 16,384 states.
+Mem Vis (BF): Deep recursion stack with duplicated arrays.
+Mem Vis (Opt): 1D DP array of size 2^{2N} + 2D GCD table. $O(2^2N)$ space.

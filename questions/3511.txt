@@ -1,0 +1,13 @@
+ID: 3511
+Problem Title: Make a Positive Array (Med)
+Brute Force Method: Simulate all possible operations step-by-step to maintain positivity.
+BF Complexity Visuals: Branching State Tree.
+How to Draw BF: Draw a tree where each node is an array state. Branch for every valid operation. Count leaf nodes.
+Optimised Pattern: Greedy Accumulation / Prefix Sum tracking.
+Opt Vis. Technique: Water Level Graph.
+Dry Run (Opt): Plot array values as a line graph. Identify 'dips' below zero. Add operation value to lift the entire curve above the x-axis.
+How to Draw (Opt): Draw an x-y axis. Plot a running sum line. Mark lowest negative peaks. Draw an upward arrow showing the greedy 'lift' needed.
+Opt Complexity Visuals: Single Linear Sweep.
+How to Draw Opt Complexity: Draw a straight horizontal line of length N. Write $O(1)$ ops below each segment.
+Mem Vis (BF): Array Copies: Draw multiple identical array blocks stacked vertically, representing memory-heavy state copies.
+Mem Vis (Opt): Running Counters: Draw two integer variables (Current Sum, Min Dip) updating in place.

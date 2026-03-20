@@ -1,0 +1,13 @@
+ID: 2682
+Problem Title: Find the Losers of the Circular Game
+Brute Force Method: Simulate the game with a large array, but use a set and check for collisions manually without a clear exit condition.
+BF Complexity Visuals: Unbounded Simulation
+How to Draw BF: Draw a circle of people. Show an arrow jumping around indefinitely until you manually stop it. $O(N\cdot K)$.
+Optimised Pattern: Boolean Array + Step Increment
+Opt Vis. Technique: Modular Circular Traversal
+Dry Run (Opt): Use a `visited` boolean array. Current position starts at 0. In round `i`, move `i * k` steps forward using `(pos + i * k) % n`. Stop when you land on a `true` value. Return all indices that remain `false`.
+How to Draw (Opt): Draw a clock with N numbers. Start at 0. Jump 1k, then 2k, then 3k. Mark the numbers you land on. Stop when you hit a marked one. List the unmarked ones.
+Opt Complexity Visuals: $O(N)$ Total Jumps
+How to Draw Opt Complexity: Draw a single loop that runs at most N times before hitting a repeat. $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(N)$ for the boolean visited array.

@@ -1,0 +1,13 @@
+ID: 979
+Problem Title: Distribute Coins in Binary Tree
+Brute Force Method: Try every possible sequence of moving coins between adjacent nodes until every node has exactly one coin, and count the total steps.
+BF Complexity Visuals: $O(N!)$. Factorial search for the optimal movement sequence.
+How to Draw BF: Draw a tree with coins. Draw an arrow moving a coin from A to B. Start over. Try moving from A to C. It’s a massive web of "what-if" moves.
+Optimised Pattern: Post-Order Traversal (Excess/Deficit Flow)
+Opt Vis. Technique: "Balancing the Books." Each node calculates its "balance": `Coins_it_has + Balances_from_children - 1`. The absolute value of this balance is the number of coins that MUST cross the edge to its parent.
+Dry Run (Opt): Recursive `dfs(node)`: returns `balance`. `ans += abs(left_bal) + abs(right_bal)`. Return `node.val + left_bal + right_bal - 1`.
+How to Draw (Opt): Draw a tree. At each node, write the number of coins it has. Use red arrows (deficit) and green arrows (excess) to show "flow" moving up to the parent.
+Opt Complexity Visuals: $O(N)$. A single bottom-up traversal of the tree.
+How to Draw Opt Complexity: Draw a tree. Draw arrows pointing UP from leaves to root. Write a "Net Balance" number (+2, -1, 0) next to each arrow.
+Mem Vis (BF): Stack overflow or massive memory from factorial path search.
+Mem Vis (Opt): $O(H)$ recursion stack space. Draw a vertical column of function calls.

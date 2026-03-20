@@ -1,0 +1,13 @@
+ID: 3312
+Problem Title: Sorted GCD Pair Queries
+Brute Force Method: Iterate all N^2 pairs, compute GCD for each, store in an array, sort the array, and answer queries.
+BF Complexity Visuals: Complete Graph Edge Matrix
+How to Draw BF: Draw N points. Draw lines connecting every single point to every other point. Write the GCD on each line. Visualizes $O(N^2 \log N)$.
+Optimised Pattern: Divisor Counting + Inclusion-Exclusion
+Opt Vis. Technique: Overlapping Frequency Buckets
+Dry Run (Opt): Count multiples of `x`. Pairs with `x` as a common divisor = `count * (count-1) / 2`. Subtract pairs where GCD is `2x, 3x...` to get exact GCD counts. Prefix sum for queries.
+How to Draw (Opt): Draw overlapping Venn diagrams. One circle is "Divisible by 2", another "Divisible by 4". Subtract the inner circle to find exactly GCD=2.
+Opt Complexity Visuals: Harmonic Series Bar Chart
+How to Draw Opt Complexity: Draw bars of decreasing height: N/1, N/2, N/3... The area under these bars visually sums to $O(N \log N)$.
+Mem Vis (BF): A massive array storing $O(N^2)$ integers simultaneously before sorting.
+Mem Vis (Opt): A frequency array of size M (where M is the maximum value in the input) and a prefix sum array. $O(M)$ space.

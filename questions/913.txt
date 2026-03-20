@@ -1,0 +1,13 @@
+ID: 913
+Problem Title: Cat and Mouse
+Brute Force Method: Standard DFS or BFS simply moving the cat and mouse. Fails due to infinite loops when they chase each other.
+BF Complexity Visuals: Infinite time. A circular graph where nodes point back to each other in a death spiral.
+How to Draw BF: Draw a circle of nodes. Draw arrows from Mouse -&gt; Cat -&gt; Mouse -&gt; Cat going around endlessly.
+Optimised Pattern: Minimax / Topological Sort on States
+Opt Vis. Technique: A massive board game where you work backward from the "Game Over" squares to figure out if the starting square is a guaranteed win.
+Dry Run (Opt): Define state as `(mouse, cat, turn)`. Find all known Game Over states (mouse=0, cat=mouse). Put them in a queue. Propagate the win/loss backward to previous states.
+How to Draw (Opt): Draw a grid. Mark the edges green (Mouse wins) and red (Cat wins). Draw arrows flowing backward from the edges to color the inner, unknown squares.
+Opt Complexity Visuals: $O(V \cdot E)$ where states are 2 * N^2. A 3D grid where each cell is resolved exactly once.
+How to Draw Opt Complexity: Draw a cube representing the 3D state space `(mouse, cat, turn)`. Shade blocks as they are popped from the queue.
+Mem Vis (BF): Stack overflow from deep recursive cycles.
+Mem Vis (Opt): A 3D array `color[50][50][2]` and a queue. Draw a Rubik's cube-like structure holding state integers.

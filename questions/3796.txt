@@ -1,0 +1,13 @@
+ID: 3796
+Problem Title: Find Maximum Value in a Constrained Sequence (Med)
+Brute Force Method: Generate all possible sequences that satisfy the local constraints (e.g., |a_i - a_i-1| <=q K) and track the maximum value reached in any valid sequence. $O(\text{Branch}^N)$.
+BF Complexity Visuals: Explosive Constraint Tree.
+How to Draw BF: Draw a starting number. Branch out to all numbers within distance K. From those, branch again. Follow all paths to length N and find the highest number in the entire tree.
+Optimised Pattern: Dynamic Programming / Greedy Range Extremes
+Opt Vis. Technique: Maximum Reachable Ceiling
+Dry Run (Opt): Calculate the maximum possible value at each index i by taking max_val[i] = min(upper_bound[i], max_val[i-1] + K). Then perform a backward pass to ensure the sequence can also satisfy constraints relative to future bounds.
+How to Draw (Opt): Draw the constraints as a set of "ceiling" bars. At each step, draw a point as high as possible, but no more than K units higher than the previous point and no higher than the current bar.
+Opt Complexity Visuals: Two Linear Passes $O(N)$.
+How to Draw Opt Complexity: Draw two parallel horizontal lines (Forward and Backward constraint propagation).
+Mem Vis (BF): Deep recursive call stack.
+Mem Vis (Opt): 1D array of size N to store reachable maximums.

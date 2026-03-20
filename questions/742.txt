@@ -1,0 +1,13 @@
+ID: 742
+Problem Title: Closest Leaf in a Binary Tree
+Brute Force Method: Find the target node, then search all children for a leaf. For parent paths, re-traverse from root for every node.
+BF Complexity Visuals: Multi-pass Tree Traversal
+How to Draw BF: Draw a tree. From target, draw arrows down. Then go back to root and scan other branches. $O(N^2)$.
+Optimised Pattern: Graph Conversion + BFS
+Opt Vis. Technique: Undirected Web Expansion
+Dry Run (Opt): Convert the tree into an undirected graph (nodes point to children AND parents). Start a BFS from the target node. The first leaf node reached is the closest.
+How to Draw (Opt): Draw the tree. Add "upward" arrows to parents. Start a "circular ripple" from the target node that expands to neighbors until it hits a leaf.
+Opt Complexity Visuals: Radial Ripple Search
+How to Draw Opt Complexity: Draw the graph. Draw concentric circles around the target. Each circle represents a BFS level. $O(N)$.
+Mem Vis (BF): Adjacency list plus multiple recursion stacks.
+Mem Vis (Opt): Adjacency Map + Queue for BFS (O(N)).

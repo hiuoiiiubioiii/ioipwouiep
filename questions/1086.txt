@@ -1,0 +1,13 @@
+ID: 1086
+Problem Title: High Five
+Brute Force Method: Store all scores for each student in a list. Sort the list of scores for every single student and take the top five to average them.
+BF Complexity Visuals: Multiple independent sorting bins for every student ID found.
+How to Draw BF: ID 1: [90, 80, 70, 100, 95, 60]. Sort: [100, 95, 90, 80, 70, 60]. Take first 5. Avg. Write $O(N \log N)$.
+Optimised Pattern: TreeMap + Max-Heap (or Sorting).
+Opt Vis. Technique: A "Top-Tier Filter". Each student has a small 5-slot priority queue that only keeps the best performances.
+Dry Run (Opt): Use a `Map&gt;`. For each score, push to student's min-heap. If heap size &gt; 5, pop the smallest. Finally, calculate averages from the remaining heaps.
+How to Draw (Opt): Draw a Map with IDs. Next to each ID, draw a small box (Heap) with 5 slots. Every time a score comes in, if it's bigger than the smallest in the box, swap it.
+Opt Complexity Visuals: Single pass through scores + constant time heap operations.
+How to Draw Opt Complexity: Draw the score list being streamed into student-specific buckets. Write $O(N \log K)$ where K=5.
+Mem Vis (BF): Huge lists of all scores for every student.
+Mem Vis (Opt): A map of fixed-size heaps. $O(\text{Students})$ space.

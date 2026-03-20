@@ -1,0 +1,13 @@
+ID: 1917
+Problem Title: Leetcodify Friends Recommendations (SQL)
+Brute Force Method: Cross-join all users with all users for all days, then filter for ≥ 3 common songs and no existing friendship.
+BF Complexity Visuals: Multi-dimensional Cartesian Cube
+How to Draw BF: Draw a cube representing Users x Users x Songs x Days. Cross out invalid combinations. Massive $O(U^2 \cdot S \cdot D)$ scale.
+Optimised Pattern: Self-Join with Anti-Join (NOT IN)
+Opt Vis. Technique: Relational Venn Diagram Filtering
+Dry Run (Opt): Self-join the Listens table on day and song_id. Group by user pairs. Count distinct songs ≥ 3. Exclude existing friends via LEFT JOIN or NOT IN.
+How to Draw (Opt): Draw the Listens table joining itself. Draw an arrow to an aggregate funnel (Count ≥ 3). Draw a filter blocking pairs that already appear in the Friends table.
+Opt Complexity Visuals: Hash Join &amp; Aggregate Pipeline
+How to Draw Opt Complexity: Draw two cylinders (tables) feeding into a "Hash Join" gear, then a "Group By" gear, ending in a filtered result set.
+Mem Vis (BF): Giant intermediate spool space / temp tables created on the database disk to hold Cartesian products.
+Mem Vis (Opt): In-memory Hash Tables built internally by the SQL engine for efficient group-by aggregations.

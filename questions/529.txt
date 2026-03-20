@@ -1,0 +1,13 @@
+ID: 529
+Problem Title: Minesweeper
+Brute Force Method: Whenever a click happens, blindly scan the entire board or do unconstrained recursion across all tiles. $O(M \cdot N)$ repeatedly.
+BF Complexity Visuals: Scanning every single tile on the board top-to-bottom regardless of the click location.
+How to Draw BF: Draw grid, iterate row 0 to M, col 0 to N checking everything unnecessarily.
+Optimised Pattern: DFS / BFS from the click point with strict boundary/number checks.
+Opt Vis. Technique: A ripple effect in a pond. The water spreads outward but instantly stops expanding the moment it hits a rock (a number &gt; 0).
+Dry Run (Opt): If click is 'M', change to 'X'. Else, count adjacent mines. If count &gt; 0, write count and STOP. If 0, write 'B' and recurse/queue to 8 neighbors.
+How to Draw (Opt): Draw 3x3 grid. Click center. Count mines. If 0, write 'B', draw 8 arrows outwards. If &gt;0, write number, draw NO arrows.
+Opt Complexity Visuals: Bounded expansion filling only the empty 'B' space and its perimeter. $O(M \cdot N)$.
+How to Draw Opt Complexity: Draw a grid with a localized shaded region that expands but stops firmly at a boundary of numbered cells.
+Mem Vis (BF): Duplicating the board or a huge, untracked call stack.
+Mem Vis (Opt): Recursion stack or BFS Queue taking up to $O(M \cdot N)$ in the worst case (all 'B's).

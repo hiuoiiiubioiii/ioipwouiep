@@ -1,0 +1,13 @@
+ID: 1662
+Problem Title: Check If Two String Arrays are Equivalent
+Brute Force Method: Concatenate all strings in Array1 into String A, do the same for Array2 into String B, then compare A == B.
+BF Complexity Visuals: Memory-Heavy Construction
+How to Draw BF: Draw multiple small boxes (strings) being glued into one giant, long box. $O(N + M)$ space.
+Optimised Pattern: Two Pointers (Nested Indexing)
+Opt Vis. Technique: Dual-Cursor Tape Read
+Dry Run (Opt): Pointer `p1` for array index, `i1` for char index. Pointer `p2` and `i2` for the second array. Compare char-by-char without joining.
+How to Draw (Opt): Draw two rows of boxes. Place two "needles" (pointers) at the start. Move the needles char-by-char. If a needle reaches the end of a box, jump it to the next box.
+Opt Complexity Visuals: In-Place Linear Scan
+How to Draw Opt Complexity: Draw two parallel arrows moving across the original data structure without creating new ones. $O(N+M)$.
+Mem Vis (BF): Giant Strings: Draw two massive horizontal bars in memory.
+Mem Vis (Opt): Four Integer Variables: Draw four small boxes: `arrIdx1, charIdx1, arrIdx2, charIdx2`. $O(1)$ space.

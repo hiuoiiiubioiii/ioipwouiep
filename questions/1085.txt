@@ -1,0 +1,13 @@
+ID: 1085
+Problem Title: Sum of Digits in the Minimum Number
+Brute Force Method: Sort the entire array to find the minimum element. Convert that number to a string and iterate through its characters to sum the digits.
+BF Complexity Visuals: A heavy sorting funnel followed by a string-conversion factory.
+How to Draw BF: Draw [34, 23, 12, 45]. Sort it. Pick 12. Convert to "1", "2". Sum = 3. Check 3 % 2. Write $O(N \log N)$.
+Optimised Pattern: Linear Scan + Digit Math.
+Opt Vis. Technique: A "Lowest-Bar Search". Scan once for the min value, then use math to peel off its digits.
+Dry Run (Opt): Initialize `minVal = infinity`. Loop through array: `minVal = min(minVal, current)`. Then, use `while(minVal &gt; 0) { sum += minVal % 10; minVal /= 10; }`. Return `sum % 2 == 0 ? 1 : 0`.
+How to Draw (Opt): Draw array. Point at each number. Circle the smallest. Draw a box for that number and use arrows to "extract" the last digit one by one.
+Opt Complexity Visuals: Single pass through the array.
+How to Draw Opt Complexity: Draw an array with one arrow sweeping right. Write $O(N)$ Time.
+Mem Vis (BF): Full sorted copy of the array stored in memory.
+Mem Vis (Opt): Two variables: `minVal` and `digitSum`. $O(1)$ space.

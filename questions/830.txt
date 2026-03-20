@@ -1,0 +1,13 @@
+ID: 830
+Problem Title: Positions of Large Groups
+Brute Force Method: Check every possible substring to see if it consists of the same character and has a length \ge 3.
+BF Complexity Visuals: Nested Range Scanner. $O(N^2)$.
+How to Draw BF: Draw a string. Draw brackets of size 3, 4, 5... starting at every index, checking each letter inside.
+Optimised Pattern: Two Pointers (Start and End of Run).
+Opt Vis. Technique: Accordion Stretch.
+Dry Run (Opt): Place a 'start' pointer at index 0. Move an 'end' pointer forward until the character changes. If `end - start &gt;= 3`, record the group. Jump 'start' to 'end'.
+How to Draw (Opt): Draw a string. Draw a bracket that expands as long as letters match. When it hits a different letter, "snip" the bracket and start a new one.
+Opt Complexity Visuals: Single Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw one straight horizontal line that never backtracks, with markers where groups are found.
+Mem Vis (BF): Intermediate strings: Draw multiple copies of substrings being stored in memory temporarily.
+Mem Vis (Opt): $O(1)$ Pointers: Draw two small arrow icons (i and j) hovering over the original string.

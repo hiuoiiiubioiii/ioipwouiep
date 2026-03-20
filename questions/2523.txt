@@ -1,0 +1,13 @@
+ID: 2523
+Problem Title: Closest Prime Numbers in Range
+Brute Force Method: Iterate from left to right. For every number, run a manual $O(\text{sqrt}(N)$) primality check. Keep track of the last seen prime to measure the gap.
+BF Complexity Visuals: Dense looping timeline over the range with heavy square-root mathematical operations embedded inside every step.
+How to Draw BF: Write numbers Left to Right. Check each one manually for prime status. Circle the primes. Draw arches between adjacent circles and calculate the mathematical gap.
+Optimised Pattern: Sieve of Eratosthenes (Precomputation) + Linear Array Scan.
+Opt Vis. Technique: A number grid with multiples systematically crossed out, leaving a clean list of primes to measure sequentially.
+Dry Run (Opt): Create a boolean array up to right. Cross out all multiples of 2, 3, 5, etc. Extract the remaining 'true' numbers that are >= left. Scan this extracted list, comparing the gap between index i and i-1.
+How to Draw (Opt): Write numbers 1 to right in a grid. Cross out multiples. Write the remaining uncrossed primes in a list. Draw a jumping arrow between them, writing down the difference. Keep the smallest difference.
+Opt Complexity Visuals: $O(R \log \log R)$ precomputation sweep followed by a rapid $O(R)$ linear scan.
+How to Draw Opt Complexity: Draw a massive grid representing the Sieve. Beside it, draw a straight timeline representing the final quick scan, showing the heavy lifting is done efficiently upfront.
+Mem Vis (BF): No extra memory, but massive Time Limit Exceeded (TLE) risk.
+Mem Vis (Opt): $O(R)$ Boolean Array for the Sieve logic.

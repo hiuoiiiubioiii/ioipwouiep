@@ -1,0 +1,13 @@
+ID: 499
+Problem Title: The Maze III
+Brute Force Method: DFS (Exhaustive) Explore all paths to the hole. Keep track of current min-distance. (Too slow for large grids).
+BF Complexity Visuals: Exploding State Space
+How to Draw BF: Draw a grid. From start, branch in 4 directions. Show recursive explosion. $O(4^{\text{MN}})$.
+Optimised Pattern: Dijkstra with String Priority Use a Priority Queue. Store `(distance, path_string, x, y)`. Only update if distance is smaller OR distance is equal but string is lexicographically smaller.
+Opt Vis. Technique: Shortest Labeling Tree
+Dry Run (Opt): Imagine every node in the maze has a "sticky note" with the shortest path and the word (e.g., "dlur"). Only overwrite if you find a "better" word.
+How to Draw (Opt): Draw a grid. At stop points, draw boxes with `(dist, path)`. Draw arrows representing "slides" and update boxes using Priority Queue rules.
+Opt Complexity Visuals: Log-Weighted Graph
+How to Draw Opt Complexity: Draw nodes (stop points) and edges (paths). Complexity $O(\text{MN} \log(\text{MN})$).
+Mem Vis (BF): Call Stack Vertical stack of size MN.
+Mem Vis (Opt): Priority Queue + 2D Dist Map Draw a PQ and a 2D grid of "Min Distances". $O(\text{MN})$.

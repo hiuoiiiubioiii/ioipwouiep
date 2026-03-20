@@ -1,0 +1,13 @@
+ID: 637
+Problem Title: Average of Levels in Binary Tree
+Brute Force Method: DFS to visit every node, storing values in a Map where Key=Level and Value=List of nodes. Then iterate the map to calculate averages.
+BF Complexity Visuals: Scattered data collection into a growing buffer.
+How to Draw BF: Draw a tree. Draw arrows from every node to a side-table. Write $O(N)$ to visit + $O(N)$ to store.
+Optimised Pattern: BFS (Level Order Traversal).
+Opt Vis. Technique: Layered Wavefront / Scanline.
+Dry Run (Opt): Use a Queue. While Queue is not empty, get current size (nodes in current level). Sum them up, divide by count, and move to next level.
+How to Draw (Opt): Draw a tree. Draw horizontal "water levels" cutting through it. Write the average value on each line.
+Opt Complexity Visuals: Single pass linear traversal.
+How to Draw Opt Complexity: Draw a vertical arrow pointing down, crossing horizontal level lines. Write $O(N)$.
+Mem Vis (BF): Draw a Map containing every single node value organized by key.
+Mem Vis (Opt): Draw a Queue that at most holds the width of the tree (O(W)).

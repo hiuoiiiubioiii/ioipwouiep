@@ -1,0 +1,13 @@
+ID: 851
+Problem Title: Loud and Rich
+Brute Force Method: For every person i, run a full DFS to find every person richer than them. Among all those found, look up their quietness and pick the minimum.
+BF Complexity Visuals: Independent Redundant DFS. $O(N^2)$.
+How to Draw BF: Draw a graph of people. For Person A, trace all paths "upwards." For Person B, trace all paths "upwards." Notice how you traverse the same "Rich" nodes repeatedly.
+Optimised Pattern: Topological Sort (Kahn’s) or Memoized DFS.
+Opt Vis. Technique: Waterfall Inheritance.
+Dry Run (Opt): Start with the richest people (those with no one richer). Their "quietest richer person" is themselves. Pass this information down to everyone they are directly richer than. Keep the min of all incoming "quietest" values.
+How to Draw (Opt): Draw the graph with arrows from rich to poor. Color nodes from top to bottom. As color flows down, it carries the "minimum quietness" value like a liquid filling containers.
+Opt Complexity Visuals: Directed Acyclic Graph (DAG) Traversal. $O(V + E)$.
+How to Draw Opt Complexity: Draw the graph and put a single checkmark on every edge. Every edge is processed exactly once.
+Mem Vis (BF): Multiple separate recursion stacks: Draw N vertical towers side-by-side.
+Mem Vis (Opt): Answer Array (Memo): Draw a single strip of N boxes that store the final quietest ID once computed.

@@ -1,0 +1,13 @@
+ID: 2809
+Problem Title: Minimum Time to Make Array Sum At Most x
+Brute Force Method: Recursively simulate every possible combination of setting an element to 0 at every second `t`. This explodes exponentially as `t` increases.
+BF Complexity Visuals: Exploding Recursive Tree
+How to Draw BF: Draw a starting node (time 0). Branch out N times for second 1 (representing choosing index i to clear). From each of those N nodes, branch N times again. Show how quickly the tree width becomes unmanageable: $O(N^t)$.
+Optimised Pattern: Sorting + 1D Dynamic Programming (Knapsack variant)
+Opt Vis. Technique: 1D DP Array Progression
+Dry Run (Opt): Sort arrays by `nums2` (growth rate). Visualize a 1D DP array where `dp[j]` is the max reduction possible using exactly `j` operations. Iterate through the sorted elements and update the DP table from right to left.
+How to Draw (Opt): Draw a row of N+1 boxes (your DP array). Underneath, write the sorted pairs of `(nums1, nums2)`. Draw arrows pointing from `dp[j-1]` to `dp[j]` showing how adding the current element's reduction updates the max value.
+Opt Complexity Visuals: Nested Loop Bounding Box
+How to Draw Opt Complexity: Draw an outer loop representing N elements. Inside, draw an inner loop progressing up to N. The total area is an N x N square, proving $O(N^2)$ time complexity.
+Mem Vis (BF): Visualize a massive, deep call stack holding the state of the arrays at every second, consuming $O(N \cdot t)$ memory.
+Mem Vis (Opt): Visualize exactly one 1D Array of size N+1 holding integer reduction values. Memory is strictly bounded to $O(N)$.

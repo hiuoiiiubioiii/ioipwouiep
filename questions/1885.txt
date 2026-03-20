@@ -1,0 +1,13 @@
+ID: 1885
+Problem Title: Count Pairs in Two Arrays
+Brute Force Method: Nested loops: For every pair (i, j), check if nums1[i] + nums1[j] &gt; nums2[i] + nums2[j].
+BF Complexity Visuals: N \times N comparison grid.
+How to Draw BF: Draw two arrays. Draw lines connecting every index pair. Mark $O(N^2)$.
+Optimised Pattern: Two Pointers on Difference Array.
+Opt Vis. Technique: Opposing sorting pointers.
+Dry Run (Opt): Rearrange: (nums1[i] - nums2[i]) + (nums1[j] - nums2[j]) &gt; 0. Let diff[i] = nums1[i] - nums2[i]. Sort diff. Use L and R pointers to count valid pairs where diff[L] + diff[R] &gt; 0.
+How to Draw (Opt): Draw the diff array. Sort it. Place L at start, R at end. If L+R &gt; 0, then R can pair with all elements between L and R-1. Add (R-L) to count.
+Opt Complexity Visuals: $O(N \log N)$ Sorting + $O(N)$ Two Pointers.
+How to Draw Opt Complexity: Draw a sorting tree followed by a single linear pass with two arrows meeting. Mark $O(N \log N)$.
+Mem Vis (BF): $O(1)$ besides input.
+Mem Vis (Opt): One auxiliary diff array of size N in memory.

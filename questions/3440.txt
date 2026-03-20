@@ -1,0 +1,13 @@
+ID: 3440
+Problem Title: Reschedule Meetings for Max Free Time II
+Brute Force Method: For each meeting, try moving it to every possible empty millisecond in the entire event duration. $O(N x \text{eventTime})$
+BF Complexity Visuals: Dense Pixel-by-Pixel Grid.
+How to Draw BF: Draw a timeline. For one meeting block, draw thousands of tiny arrows pointing to every single empty spot on the line.
+Optimised Pattern: Top-3 Largest Gaps + Prefix/Suffix Max Gaps. $O(N)$
+Opt Vis. Technique: Gap "Podium" and Sliding Window.
+Dry Run (Opt): List all gaps. Keep the 3 largest. For meeting i, merge the gap before and after it. Check if meeting i fits into any OTHER large gap.
+How to Draw (Opt): Draw the gaps as circles. Write the sizes inside. Circle the 3 biggest. Draw a "Bridge" over meeting i connecting its adjacent gaps.
+Opt Complexity Visuals: Constant-Lookback Linear Pass.
+How to Draw Opt Complexity: Draw a timeline of N meetings. At each meeting, draw a single arrow checking a "Top 3" list (O(1) check).
+Mem Vis (BF): Minimal, but huge overhead from nested loops.
+Mem Vis (Opt): A small array of size 3 (the "Podium") tracking the largest gap sizes and their indices.

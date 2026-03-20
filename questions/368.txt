@@ -1,0 +1,13 @@
+ID: 368
+Problem Title: Largest Divisible Subset
+Brute Force Method: Generate every possible subset of the given numbers and check if every pair in the subset satisfies the divisibility condition.
+BF Complexity Visuals: Exponential Power Set Explosion
+How to Draw BF: Draw a root. Branch for every element (include/exclude). Label the width $O(2^N)$.
+Optimised Pattern: Dynamic Programming (Sort + Longest Path in DAG)
+Opt Vis. Technique: Divisibility Dependency Chain
+Dry Run (Opt): Sort the array. dp[i] stores the size of the largest divisible subset ending with nums[i]. For each j &lt; i, if nums[i] \% nums[j] == 0, dp[i] = \max(dp[i], dp[j] + 1). Track parent indices to reconstruct the set.
+How to Draw (Opt): Draw a sorted array. Draw arrows from each number to its divisors on the left. Write the length of the longest chain above each number.
+Opt Complexity Visuals: Quadratic Comparison Matrix
+How to Draw Opt Complexity: Draw a nested loop structure. Label it $O(N^2)$.
+Mem Vis (BF): Massive collection of subset lists.
+Mem Vis (Opt): Two 1D arrays: dp\_sizes and parent\_pointers. Draw two horizontal tapes of size N. $O(N)$.

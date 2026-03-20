@@ -1,0 +1,13 @@
+ID: 3468
+Problem Title: Find the Number of Copy Arrays
+Brute Force Method: Pick every possible value for copy[0] in its range, generate the whole array, and check if every element fits in its bounds. $O(\text{Range} x N)$
+BF Complexity Visuals: Multiple Number Line Probes.
+How to Draw BF: Draw N number lines. For every value in the first range, draw a path through the other N-1 ranges.
+Optimised Pattern: Range Narrowing (Iterative Intersection). $O(N)$
+Opt Vis. Technique: Squeezing Sliding Range.
+Dry Run (Opt): Maintain a possible range [L, R] for copy[i]. Update it using the difference from `original` and intersecting it with the bounds for the next element.
+How to Draw (Opt): Draw a horizontal bar representing the current valid range. As you move to the next index, shift the bar and "trim" it where it overflows the new bounds.
+Opt Complexity Visuals: Single Linear Array Pass.
+How to Draw Opt Complexity: Draw one straight arrow moving once from index 1 to N-1.
+Mem Vis (BF): N/A - Primarily excessive time complexity.
+Mem Vis (Opt): $O(1)$ auxiliary space (just 2 variables for `currentL` and `currentR`).

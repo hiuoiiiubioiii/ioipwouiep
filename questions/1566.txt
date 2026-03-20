@@ -1,0 +1,13 @@
+ID: 1566
+Problem Title: Detect Pattern of Length M Repeated K or More Times
+Brute Force Method: Check every possible starting index i. For each i, slice the pattern of length m and check if the next k-1 blocks are identical. $O(N \cdot M \cdot K)$.
+BF Complexity Visuals: Redundant String Comparison Grid
+How to Draw BF: Draw a string. For index 0, draw k identical brackets. Shift to index 1, draw another k brackets. The overlapping brackets create a massive mess.
+Optimised Pattern: Single Pass / Offset Comparison
+Opt Vis. Technique: The Parallel Offset Scanner
+Dry Run (Opt): If a pattern of length m repeats, then arr[i] must equal arr[i+m]. Keep a counter of how many consecutive indices satisfy this. If the counter reaches (k-1) \cdot m, a pattern is found.
+How to Draw (Opt): Draw an array. Draw two pointers: i and i+m. Slide them together. Every time they match, draw a tick mark. If you get enough ticks in a row, you've found the repeat.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw one straight line across the array. Each element is looked at once relative to its offset. No nested loops.
+Mem Vis (BF): Storing multiple string slices in a list. $O(N \cdot M)$.
+Mem Vis (Opt): Two pointer variables and one integer counter. $O(1)$ space.

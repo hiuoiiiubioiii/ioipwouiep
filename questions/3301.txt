@@ -1,0 +1,13 @@
+ID: 3301
+Problem Title: Maximize the Total Height of Unique Towers
+Brute Force Method: Try all permutations of heights within the given limits and check for uniqueness. $O(N! \\text{cdot MaxHeight})$.
+BF Complexity Visuals: Permutation Search Web
+How to Draw BF: Draw the towers. Try every possible height for Tower A, then B. Cross out paths where heights are not unique. Label as exponential.
+Optimised Pattern: Greedy (Sort + Boundary Cap)
+Opt Vis. Technique: Descending Constraint Ladder
+Dry Run (Opt): Sort the maximum allowed heights descending. Assign the largest possible height to the first tower. For each subsequent tower, assign `min(limit, previous_height - 1)`. If height hits 0, return -1.
+How to Draw (Opt): Draw a sorted list of limits. Place a "Cap" variable. For each limit, update `Cap = min(limit, Cap - 1)`. Tally these `Cap` values into your total sum.
+Opt Complexity Visuals: Sorting Bottleneck Pipeline
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block, followed by an $O(N)$ linear pass. Total: $O(N \log N)$.
+Mem Vis (BF): Multiple copies of the height array for permutation checks.
+Mem Vis (Opt): In-place sorted array or a single copy (O(N) space).

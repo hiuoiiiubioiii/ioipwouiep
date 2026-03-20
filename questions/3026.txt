@@ -1,0 +1,13 @@
+ID: 3026
+Problem Title: Maximum Good Subarray Sum
+Brute Force Method: Nested loops to find all possible subarrays `[i...j]`. Check if `abs(nums[i] - nums[j]) == k`, then calculate the sum.
+BF Complexity Visuals: $O(N^2)$ Triangular Iteration
+How to Draw BF: Draw a triangle where the base is the array. Show lines connecting every pair of elements.
+Optimised Pattern: Prefix Sum + Hash Map (Minimum Prefix Tracking)
+Opt Vis. Technique: Prefix Sum Number Line
+Dry Run (Opt): As you traverse, store the current Prefix Sum in a Hash Map indexed by the value of the current number. If `nums[i] - k` or `nums[i] + k` exists in the map, the subarray sum is `current_prefix_sum - min_prefix_sum_at_that_value`.
+How to Draw (Opt): Draw a running total line graph. Below it, draw a Hash Map table. When you hit a value `X`, look up `X-k` and `X+k` in the table to find the lowest previous "floor" to subtract.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw one straight horizontal arrow across the array.
+Mem Vis (BF): $O(N^2)$ summation variables and subarray copies.
+Mem Vis (Opt): A Hash Map mapping Value -&gt; Minimum Prefix Sum.

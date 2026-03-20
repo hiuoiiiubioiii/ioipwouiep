@@ -1,0 +1,13 @@
+ID: 2877
+Problem Title: Create a DataFrame from List (Pandas)
+Brute Force Method: Manually iterate through the 2D list and create a dictionary for each row, then convert that list of dictionaries into a table-like structure.
+BF Complexity Visuals: Row-by-Row Object Creation
+How to Draw BF: Draw a 2D grid of data. Draw arrows converting each row into a `{key: value}` pair. Show the overhead of creating N dictionary objects.
+Optimised Pattern: Native Pandas Constructor (Vectorized Internal Logic)
+Opt Vis. Technique: Columnar Data Storage
+Dry Run (Opt): Pass the 2D list and a list of column names directly into pd.DataFrame(data, columns=['name', 'age']). Pandas handles the memory allocation and alignment efficiently in C/Cython.
+How to Draw (Opt): Draw a 2D list of values. Draw a single large "Constructor" box that takes the list and outputs a structured table with headers.
+Opt Complexity Visuals: Linear Construction $O(N \cdot M)$
+How to Draw Opt Complexity: Draw a single pass that moves data from the list into the DataFrame's internal block manager. Total time $O(\text{Total Elements})$.
+Mem Vis (BF): Visualize N small dictionary objects scattered in memory.
+Mem Vis (Opt): Visualize a single contiguous block of memory managed by Pandas/NumPy.

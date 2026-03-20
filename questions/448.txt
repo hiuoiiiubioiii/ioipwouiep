@@ -1,0 +1,13 @@
+ID: 448
+Problem Title: Find All Numbers Disappeared in an Array
+Brute Force Method: Sorting / HashSet Sort and find gaps, or add all to a HashSet and check for 1 to N.
+BF Complexity Visuals: Sorting Wall
+How to Draw BF: Draw the sorting process $O(N \log N)$ or a large HashSet bucket $O(N)$.
+Optimised Pattern: In-place Negation For each value x, treat |x|-1 as an index and make the value at that index negative. Positives remaining are the gaps.
+Opt Vis. Technique: Internal Flagging
+Dry Run (Opt): Imagine the array is a row of lockers. Each number is a key. Go to the locker number on the key and "paint it red" (negative).
+How to Draw (Opt): Draw an array. For index 0, read value 4. Go to index 3 (4-1). Add a minus sign. Repeat. Circle indices that stay positive.
+Opt Complexity Visuals: Linear Pipeline
+How to Draw Opt Complexity: Draw a single pass through the array. $O(N)$ time.
+Mem Vis (BF): HashSet Draw a second auxiliary structure of size N.
+Mem Vis (Opt): None No extra space except result list. $O(1)$ (in-place).

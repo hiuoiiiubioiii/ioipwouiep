@@ -1,0 +1,13 @@
+ID: 3693
+Problem Title: Climbing Stairs II (Med)
+Brute Force Method: Recursion without memoization: ways(n) = ways(n-1) + ways(n-2) + ways(n-3). $O(3^N)$.
+BF Complexity Visuals: Tri-Branching Decision Tree.
+How to Draw BF: Start at N. Branch to N-1, N-2, N-3. Each of those branches 3 ways. The tree width triples at every level. 3^100 is impossible.
+Optimised Pattern: Iterative Dynamic Programming (Bottom-Up). `dp[i] = dp[i-1] + dp[i-2] + dp[i-3]`.
+Opt Vis. Technique: The "Three-Day Window" Slide.
+Dry Run (Opt): To know today's ways, you only need the totals from the last three steps. Like a sliding glass door that only covers three slots on a track.
+How to Draw (Opt): Draw a row of boxes. Fill boxes 1, 2, 3 with base cases. Box 4 is the sum of 1+2+3. Box 5 is the sum of 2+3+4. Keep sliding.
+Opt Complexity Visuals: Linear Step-by-Step Flow.
+How to Draw Opt Complexity: Draw a straight arrow through N boxes. Write $O(N)$.
+Mem Vis (BF): A recursion stack reaching depth N with massive redundant subproblems.
+Mem Vis (Opt): Three variables: a, b, c to store the last 3 steps. Space $O(1)$.

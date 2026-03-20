@@ -1,0 +1,13 @@
+ID: 3179
+Problem Title: Find the N-th Value After K Seconds
+Brute Force Method: Simulate the prefix sum array update K times. $O(N \cdot K)$.
+BF Complexity Visuals: Layered Prefix Sum Waves
+How to Draw BF: Draw an array of 1s. Below it, write the prefix sums. Repeat K times, stacking the arrays like a cake.
+Optimised Pattern: Combinatorics (Stars and Bars)
+Opt Vis. Technique: Pascal's Triangle Slice
+Dry Run (Opt): The value at index n after k seconds corresponds to the binomial coefficient (n+k-1 Choose k) or (n+k-1 Choose n-1).
+How to Draw (Opt): Draw Pascal's Triangle. Circle the value that corresponds to your N and K coordinates.
+Opt Complexity Visuals: Logarithmic Modular Inverse Math
+How to Draw Opt Complexity: Draw a single formula box. Label it $O(N)$ or $O(1)$ with precomputation.
+Mem Vis (BF): Storing K copies of the N-length array.
+Mem Vis (Opt): Factorial and Inverse Factorial arrays. $O(N)$.

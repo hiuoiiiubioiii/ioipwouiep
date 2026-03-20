@@ -1,0 +1,13 @@
+ID: 58
+Problem Title: Length of Last Word
+Brute Force Method: Trim &amp; Split Trim the string, split it by spaces into an array of strings, and return the length of the last element in that array.
+BF Complexity Visuals: The Array Funnel
+How to Draw BF: Draw a long string. Draw a "Split" machine that breaks it into many smaller boxes. Point to the last box. Note the $O(N)$ space for the array.
+Optimised Pattern: Backward Pointer Scan
+Opt Vis. Technique: The Reverse Scanner
+Dry Run (Opt): Start a pointer at the end of the string. Move it left to skip any trailing spaces. Then, count characters until you hit a space or the start of the string.
+How to Draw (Opt): Draw the string with an arrow at the very end pointing left. Draw the arrow hopping over empty spaces, then dragging through the letters of the last word.
+Opt Complexity Visuals: Partial Scan Line
+How to Draw Opt Complexity: Draw a line representing the string length N. Draw a shorter arrow starting from the end and stopping early. $O(N)$ worst case.
+Mem Vis (BF): Draw an array of all words in the string occupying heap memory. $O(N)$ space.
+Mem Vis (Opt): Draw exactly one integer variable `length`. No extra arrays or strings. $O(1)$ space.

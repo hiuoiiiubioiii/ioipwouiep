@@ -1,0 +1,13 @@
+ID: 3363
+Problem Title: Find the Maximum Number of Fruits Collected
+Brute Force Method: Generate all possible paths for the three children (one on diagonal, one in top-right, one in bottom-left) and find the max sum.
+BF Complexity Visuals: 3D Path Spaghetti
+How to Draw BF: Draw a grid. Draw three different colored paths. The number of combinations for three independent paths is massive (O(3^N * 3^N)).
+Optimised Pattern: Dynamic Programming (State Independence)
+Opt Vis. Technique: Grid-Slicing Heatmap
+Dry Run (Opt): The diagonal path is fixed. The other two children move in restricted triangles. Solve two independent 2D DP problems for the two triangles.
+How to Draw (Opt): Draw the grid. Color the diagonal. Shade the top-right triangle and bottom-left triangle separately. Write DP transitions (max of 3 neighbors) inside the cells.
+Opt Complexity Visuals: Triangle Area Fill
+How to Draw Opt Complexity: Draw two triangles within an N x N box. Shading the triangles proves $O(N^2)$.
+Mem Vis (BF): Deep recursion stack for three concurrent pathing states.
+Mem Vis (Opt): Two 2D arrays (or optimized 1D rows) of size N x N for the two triangles.

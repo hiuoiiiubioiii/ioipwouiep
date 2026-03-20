@@ -1,0 +1,13 @@
+ID: 1726
+Problem Title: Tuple with Same Product
+Brute Force Method: Four nested loops picking every possible combination of 4 distinct numbers (a,b,c,d) and checking if a*b == c*d.
+BF Complexity Visuals: 4-Dial Combination Lock.
+How to Draw BF: Draw array. Draw 4 nested brackets mapping every 4-element subset. Calculate and compare. $O(N^4)$.
+Optimised Pattern: Hash Map (Frequency Counting) + Math Combinatorics.
+Opt Vis. Technique: Product Sorting Buckets.
+Dry Run (Opt): Two nested loops to calculate products of all pairs. Drop pair into a Hash Map keyed by the product. If a bucket has `k` pairs, they can form `(k * (k-1) / 2) * 8` valid tuples.
+How to Draw (Opt): Draw pairs `(a,b)` mapping to a bucket labeled `Product X`. If two pairs land in the same bucket, draw arrows linking them into 8 different tuple arrangements.
+Opt Complexity Visuals: Double For-Loop Pair Generation.
+How to Draw Opt Complexity: Draw an N x N matrix grid, filling only the upper triangle. Label $O(N^2)$.
+Mem Vis (BF): None, just loop pointers. $O(1)$ space.
+Mem Vis (Opt): Hash Map dynamically scaling with the number of unique pair products. $O(N^2)$ space.

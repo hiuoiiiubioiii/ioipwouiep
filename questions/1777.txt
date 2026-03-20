@@ -1,0 +1,13 @@
+ID: 1777
+Problem Title: Product's Price for Each Store (SQL)
+Brute Force Method: Use 3 separate SELECT queries (one for each store) and UNION them together using multiple joins or subqueries.
+BF Complexity Visuals: Vertical-to-Horizontal Join.
+How to Draw BF: Draw Table A, Table B, Table C. Use arrows to link Product IDs across all three. $O(N)$.
+Optimised Pattern: Pivot Table (CASE WHEN + GROUP BY).
+Opt Vis. Technique: Sorting into Vertical Columns.
+Dry Run (Opt): Group by `product_id`. For each group, use `SUM(CASE WHEN store = 'store1' THEN price ELSE NULL END)` to "lift" the price into the correct column.
+How to Draw (Opt): Draw a narrow, tall table. Draw 3 buckets labeled Store1, Store2, Store3. Tally prices into the buckets for each ID.
+Opt Complexity Visuals: Single Pass Aggregation.
+How to Draw Opt Complexity: Draw one sweep through the table rows. Label $O(N)$.
+Mem Vis (BF): 3 temporary tables in memory.
+Mem Vis (Opt): In-memory grouping hash table. $O(\text{Unique}\_\text{Products})$ space.

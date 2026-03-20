@@ -1,0 +1,13 @@
+ID: 1211
+Problem Title: Queries Quality and Percentage (SQL)
+Brute Force Method: Run three separate subqueries: one to count total queries, one to sum the ratings/positions, and one to count poor queries. Join all three together by query_name.
+BF Complexity Visuals: Redundant Table Scans
+How to Draw BF: Draw the same table three times side-by-side. Draw an arrow scanning down the first table, then the second, then the third. Write $O(3N)$ representing wasted I/O reads.
+Optimised Pattern: Single-Pass Aggregation with CASE/IF statements
+Opt Vis. Technique: Multi-lane Data Funnel
+Dry Run (Opt): Group the rows by query_name. As you process each row in the group, simultaneously add its (rating/position) to a "Quality" bucket, and if rating &lt; 3, add a 1 to a "Poor" bucket. Divide buckets by total rows at the end.
+How to Draw (Opt): Draw a table. Circle rows with the same query_name. Next to the circle, draw two buckets: 'Sum(rating/pos)' and 'Count(rating &lt; 3)'. Draw arrows from each row dropping values directly into both buckets simultaneously.
+Opt Complexity Visuals: Single Linear Scan Bar
+How to Draw Opt Complexity: Draw one table. Draw a single thick arrow scanning from top to bottom exactly once. Write $O(N)$.
+Mem Vis (BF): Draw three large temporary tables floating in memory.
+Mem Vis (Opt): Draw a HashMap-style structure where Keys are `query_name` and Values are two small integer accumulators taking up minimal memory.

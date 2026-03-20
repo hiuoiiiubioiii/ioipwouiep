@@ -1,0 +1,13 @@
+ID: 1735
+Problem Title: Count Ways to Make Array With Product
+Brute Force Method: Recursive partitioning: find all ways to split factor `k` into `n` parts, accounting for order and empty slots.
+BF Complexity Visuals: Product Partition Tree.
+How to Draw BF: Draw `k`. Draw branches for every possible factor split. For k=6, branches for (1,6), (2,3), (3,2)... Grows exponentially.
+Optimised Pattern: Prime Factorization + Stars and Bars (Combinatorics).
+Opt Vis. Technique: Dividers and Marbles.
+Dry Run (Opt): Find prime factors of `k` (e.g., 12 = 2^2 * 3^1). For each prime factor power `p`, count ways to put `p` items in `n` bins using `comb(n+p-1, p)`. Multiply results.
+How to Draw (Opt): Draw a Factor Tree for `k`. For each factor power, draw `p` stars and `n-1` bars. Draw the combinatorial formula next to it.
+Opt Complexity Visuals: Precomputed Sieve + Combinations.
+How to Draw Opt Complexity: Draw a Sieve $O(\text{MaxK} \log \\text{log MaxK})$ + Q queries of $O(\log K)$ factorizing. Label $O(K + Q \log K)$.
+Mem Vis (BF): Deep recursion stack.
+Mem Vis (Opt): Factor list + Precomputed Pascal's Triangle (Combinations table). $O(N + \text{MaxK})$ space.

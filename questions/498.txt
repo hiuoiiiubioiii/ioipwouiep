@@ -1,0 +1,13 @@
+ID: 498
+Problem Title: Diagonal Traverse
+Brute Force Method: Diagonal Collection Group all elements where i+j is the same. Reverse every second group.
+BF Complexity Visuals: Bucketing Map
+How to Draw BF: Draw a grid. Draw arrows for each diagonal. Collect into lists. $O(M \cdot N)$ plus extra space for lists.
+Optimised Pattern: Simulation (Direction Flag) Use a direction flag (Up/Down). Calculate new i, j based on boundaries (e.g., if at last column, move down and flip direction).
+Opt Vis. Technique: Bouncing Laser
+Dry Run (Opt): A laser beam moves diagonally. When it hits a "wall" (grid edge), it bounces off at a 90-degree angle and flips direction.
+How to Draw (Opt): Draw a grid. Draw a continuous zig-zag path. Label the "bounce" points where row or column boundaries are reached.
+Opt Complexity Visuals: Grid Pass
+How to Draw Opt Complexity: Draw a single arrow visiting every cell exactly once. $O(M \cdot N)$.
+Mem Vis (BF): Map of Lists Draw a map where each key is a diagonal index. $O(M \cdot N)$.
+Mem Vis (Opt): None Direct array result placement. $O(1)$ extra (ignoring output).

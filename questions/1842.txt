@@ -1,0 +1,13 @@
+ID: 1842
+Problem Title: Next Palindrome Using Same Digits (Premium)
+Brute Force Method: Generate all permutations of the digits, check if each is a palindrome, sort them, and pick the next one.
+BF Complexity Visuals: Factorial permutation tree (O(N!)).
+How to Draw BF: Draw a tree branching into every possible digit arrangement. Mark it as "Impractical to finish."
+Optimised Pattern: Next Permutation Algorithm on the first half.
+Opt Vis. Technique: Peak and Valley pointer swap.
+Dry Run (Opt): Take the first n/2 digits. Find the rightmost dip i. Find smallest digit larger than s[i] to its right. Swap and reverse suffix. Mirror back.
+How to Draw (Opt): Draw the first half of the string. Draw a "dip" in the numbers. Swap two numbers. Draw a "Reverse" arrow for the tail. Mirror it for the second half.
+Opt Complexity Visuals: Single pass index jumps.
+How to Draw Opt Complexity: Draw an arrow scanning the half-string twice. Mark $O(N)$.
+Mem Vis (BF): Massive list of all string permutations.
+Mem Vis (Opt): Fixed-size character array (O(N) space).

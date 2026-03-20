@@ -1,0 +1,13 @@
+ID: 1217
+Problem Title: Minimum Cost to Move Chips to The Same Position
+Brute Force Method: Pick every single position as a potential target. Loop through all chips, calculating the cost to move them to that target (cost 1 for odd distance, 0 for even). Find the minimum total cost.
+BF Complexity Visuals: Many-to-One Arrow Fan
+How to Draw BF: Draw a number line with chips on it. Pick target '1', and draw sweeping arrows from all chips to 1. Then pick target '2' and redraw all arrows. Write $O(N^2)$.
+Optimised Pattern: Parity Counting (Math/Greedy)
+Opt Vis. Technique: Two Buckets Parity Sorting
+Dry Run (Opt): Recognize that moving a chip an even distance (cost 0) means all even positions are effectively the same spot, and all odd positions are the same spot. Just count how many chips are at even vs. odd positions. The answer is the smaller count.
+How to Draw (Opt): Draw two large circles labeled "Evens" and "Odds". Go through the array and draw tally marks inside the respective circles. Count the tallies. Circle the smaller number—that's your answer.
+Opt Complexity Visuals: Single Pass Splitter
+How to Draw Opt Complexity: Draw an array. Draw one single straight arrow sweeping purely left-to-right. Write $O(N)$.
+Mem Vis (BF): Draw a basic array with an integer variable for 'min_cost'.
+Mem Vis (Opt): Draw exactly two integer variables: `even_count` and `odd_count`. Representing absolute $O(1)$ auxiliary space.

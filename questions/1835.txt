@@ -1,0 +1,13 @@
+ID: 1835
+Problem Title: Find XOR Sum of All Pairs Bitwise AND
+Brute Force Method: Nested loops: For every element in arr1 and every element in arr2, calculate (a AND b) and XOR them into a result.
+BF Complexity Visuals: N x M cross-product grid.
+How to Draw BF: Draw a grid. Fill every cell with (row AND col). XOR all cells. Mark $O(N \cdot M)$.
+Optimised Pattern: Math (Distributive Law): (a^b) AND (c^d).
+Opt Vis. Technique: Logic Gate Distributivity.
+Dry Run (Opt): XOR all elements in arr1 to get X. XOR all elements in arr2 to get Y. Final answer is X AND Y.
+How to Draw (Opt): Write arr1. XOR them to one number. Write arr2. XOR them to one number. Draw an AND gate connecting the two results.
+Opt Complexity Visuals: Parallel linear scans.
+How to Draw Opt Complexity: Draw two independent horizontal lines (arr1 and arr2). Mark each as $O(N)$ and $O(M)$. Total $O(N+M)$.
+Mem Vis (BF): Large intermediate result matrix.
+Mem Vis (Opt): Two integer registers for cumulative XORs.

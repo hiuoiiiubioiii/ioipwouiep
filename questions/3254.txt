@@ -1,0 +1,13 @@
+ID: 3254
+Problem Title: Find the Power of K-Size Subarrays I
+Brute Force Method: Iterate through every subarray of size K and check if all elements are consecutive and sorted. $O(N \cdot K)$.
+BF Complexity Visuals: Sliding Fixed-Window Check
+How to Draw BF: Draw the array. Draw a box of size K. Scan inside the box to check `A[i] == A[i-1] + 1`. Slide the box one step and repeat the scan.
+Optimised Pattern: Linear Count Tracker
+Opt Vis. Technique: Consecutive Streak Counter
+Dry Run (Opt): Maintain a variable `consecutive_count`. As you move the right pointer, if `A[r] == A[r-1] + 1`, increment the count; otherwise, reset it to 1. If `consecutive_count &gt;= k`, the subarray power is `A[r]`.
+How to Draw (Opt): Draw the array. Place a finger on the start. Move right; if the next number is +1, draw a "+" above it. When you have K-1 "+" marks in a row, circle the current number as the result.
+Opt Complexity Visuals: Single-Pass Timeline
+How to Draw Opt Complexity: Draw a straight line for N elements. Draw a single arrow moving left-to-right. Label it $O(N)$ because each element is visited once and the "check" is $O(1)$.
+Mem Vis (BF): Multiple temporary copies of subarrays (O(N*K) space).
+Mem Vis (Opt): A single integer `consecutive_count` (O(1) auxiliary space).

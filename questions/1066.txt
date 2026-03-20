@@ -1,0 +1,13 @@
+ID: 1066
+Problem Title: Campus Bikes II
+Brute Force Method: Generate every possible assignment of bikes to workers (Permutations) and calculate the Manhattan distance sum for each. Return the minimum.
+BF Complexity Visuals: A factorial tree of all worker-bike pairings.
+How to Draw BF: W1: B1, B2. W2: B1, B2. List: (W1B1, W2B2), (W1B2, W2B1). Write $O(\text{Bikes}! / (\text{Bikes}-\text{Workers})$!).
+Optimised Pattern: DP with Bitmasking.
+Opt Vis. Technique: A "Reservation Ledger". A bitmask represents which bikes are already taken, and we solve for the best way to assign the remaining workers.
+Dry Run (Opt): `dp(worker_idx, bike_mask)` returns the min distance for remaining workers. For each bike j not in the mask, calculate `dist(worker, bike_j) + dp(worker+1, mask | (1 &lt;&lt; j))`. Use memoization.
+How to Draw (Opt): Draw a table where rows are workers and columns are bitmasks (e.g., 0110). Fill the table by trying each available bike for the current worker.
+Opt Complexity Visuals: A state-space traversal where each state is (worker, mask).
+How to Draw Opt Complexity: Draw a grid of size Workers x 2^Bikes. Write Time: $O(\text{Workers} \cdot 2^\text{Bikes})$.
+Mem Vis (BF): Large recursion depth and factorial storage.
+Mem Vis (Opt): A memoization table or array of size 2^Bikes. $O(2^\text{Bikes})$ space.

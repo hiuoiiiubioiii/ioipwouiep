@@ -1,0 +1,13 @@
+ID: 413
+Problem Title: Arithmetic Slices
+Brute Force Method: All Subarrays Generate all $O(N^2)$ subarrays. Scan each to see if differences are uniform. $O(N^3)$.
+BF Complexity Visuals: Nested Cubes
+How to Draw BF: Draw a 3D block representing i, j, and k nested loops. Huge $O(N^3)$ volume.
+Optimised Pattern: 1D DP / Two Pointers If arr[i]-arr[i-1] == arr[i-1]-arr[i-2], current slices = prev slices + 1. Add to total sum.
+Opt Vis. Technique: Expanding Differences Window
+Dry Run (Opt): Look at the gaps between numbers. If you see consecutive identical gaps, your "combo multiplier" increases by 1 each step.
+How to Draw (Opt): Write the array. Draw 'V' shapes between numbers with the difference. When 'V' numbers match consecutively, underline them and write "+1, +2, +3".
+Opt Complexity Visuals: Single Array Scan
+How to Draw Opt Complexity: Draw one continuous arrow left-to-right over the array. $O(N)$.
+Mem Vis (BF): Subarray Memory Large chunks of duplicated array slices.
+Mem Vis (Opt): Two Variables Draw two small boxes: `curr` and `total`. $O(1)$ space.

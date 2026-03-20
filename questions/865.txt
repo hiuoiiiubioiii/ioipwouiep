@@ -1,0 +1,13 @@
+ID: 865
+Problem Title: Smallest Subtree with all the Deepest Nodes
+Brute Force Method: 1. Find the max depth. 2. For every node, check if its subtree contains all nodes at that max depth. 3. Return the lowest such node.
+BF Complexity Visuals: Two-Pass Redundant DFS. $O(N^2)$.
+How to Draw BF: Draw a tree. Highlight nodes at max depth. For every node in the tree, draw a circle encompassing its children to see if all highlighted nodes are inside.
+Optimised Pattern: Post-Order DFS (Depth-Pair Return).
+Opt Vis. Technique: The "Highest Common Parent" Beacon.
+Dry Run (Opt): Each node returns a pair: {MaxDepthFound, SubtreeRoot}. If LeftChild.depth == RightChild.depth, this node is the new SubtreeRoot. If one is deeper, pass that child's result up.
+How to Draw (Opt): Draw a tree. At the bottom, nodes report their depth (e.g., 3). As info moves up, if a node sees 3 from both sides, it circles itself. If only from one side, it points an arrow to that child.
+Opt Complexity Visuals: Single Pass DFS. $O(N)$.
+How to Draw Opt Complexity: Draw a single continuous line that traces the perimeter of the tree, visiting each node exactly once.
+Mem Vis (BF): $O(H)$ recursion stack but with redundant global set storage for deepest nodes.
+Mem Vis (Opt): $O(H)$ Recursion Stack: Draw a vertical stack of boxes representing the call depth.

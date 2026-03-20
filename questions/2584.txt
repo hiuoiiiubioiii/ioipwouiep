@@ -1,0 +1,13 @@
+ID: 2584
+Problem Title: Split the Array to Make Coprime Products
+Brute Force Method: For every possible split point i, calculate the product of the left and right parts. Calculate their GCD. $O(N^2 \log(\text{Product})$). (Product will overflow 64-bit).
+BF Complexity Visuals: A massive multiplication operation that crashes due to number size, followed by a GCD check.
+How to Draw BF: Split after index 0. Multiply left, multiply right. Find GCD. If 1, success. Else, move to index 1.
+Optimised Pattern: Prime Factorization + Range Merging / Interval Coverage.
+Opt Vis. Technique: A "Prime Span" visual: for every prime factor, we find its first and last occurrence in the array. A split is only valid if it doesn't "cut" through any prime's span.
+Dry Run (Opt): 1. For each number, find its prime factors. 2. For each prime, record its first index (`left[p]`) and last index (`right[p]`). 3. This creates a set of intervals `[left, right]`. We need to find the first index i that is not inside any interval that started before i and ends after i. This is a "Gap" in the overlapping intervals.
+How to Draw (Opt): Write the array. Below each number, list its primes. For each prime (like 2), draw a line from the first time it appears to the last. Look for a vertical gap where no lines are crossing.
+Opt Complexity Visuals: $O(N √\text{max}(\text{nums})$) to factorize and $O(N)$ to find the gap.
+How to Draw Opt Complexity: Draw a horizontal line for the array. Above it, draw "arches" for each prime factor. Find the first point where no arches are "flying" over.
+Mem Vis (BF): Number overflow issues and $O(N^2)$ GCD checks.
+Mem Vis (Opt): $O(N + \text{Unique Primes})$ to store the first/last occurrences and factor counts.

@@ -1,0 +1,13 @@
+ID: 2320
+Problem Title: Count Number of Ways to Place Houses
+Brute Force Method: Backtracking: Generate every possible combination of house placements on both sides of the street simultaneously, checking adjacent rules.
+BF Complexity Visuals: 2^(2N) Branching Tree
+How to Draw BF: Draw a timeline of length 2N, branching into two parallel universes ("House" or "No House") at every single step.
+Optimised Pattern: 1D DP (Fibonacci) + Math Independence
+Opt Vis. Technique: Two Parallel Fibonacci Timelines
+Dry Run (Opt): Because the two sides of the street don't interact, solve for one side using DP: `ways[i] = ways[i-1] + ways[i-2]` (Fibonacci). The total answer is `ways[N] * ways[N]`.
+How to Draw (Opt): Draw a single 1D array. Fill it out using Fibonacci addition (like jumping 1 step or 2 steps). Take the final number in the array, multiply it by itself, and box the result.
+Opt Complexity Visuals: Single Straight Line (O(N))
+How to Draw Opt Complexity: Draw one timeline of length N. The math multiplication at the end takes zero visual space.
+Mem Vis (BF): Draw a massive Call Stack representing the simultaneous street state.
+Mem Vis (Opt): Draw two simple Integer variables (`prev1`, `prev2`) carrying the Fibonacci state forward (O(1) memory).

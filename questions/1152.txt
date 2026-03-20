@@ -1,0 +1,13 @@
+ID: 1152
+Problem Title: Analyze User Website Visit Pattern
+Brute Force Method: Generate all possible 3-sequence combinations for all users, regardless of timestamp order. $O(U \cdot N^3)$.
+BF Complexity Visuals: Combinatorial Explosion Grid
+How to Draw BF: Draw all visits. Draw messy overlapping lines forming random triangles of 3 websites.
+Optimised Pattern: Sorting + Combinatorics + Hash Map
+Opt Vis. Technique: The Ordered Triplet Generator
+Dry Run (Opt): Sort visits by time. For each user, use 3 nested loops to extract all valid chronologically ordered 3-sequences. Store in a Set to ensure unique counts per user, then aggregate globally.
+How to Draw (Opt): Draw a user's timeline. Drop 3 pointers (i, j, k) moving left-to-right. Every valid triplet drops a "coin" into a global bucket labeled with that triplet pattern.
+Opt Complexity Visuals: Polynomial Scan per User $O(N \log N + U \cdot V^3)$
+How to Draw Opt Complexity: Draw a timeline. For each user's segment, draw a small 3D cube representing the loop volume.
+Mem Vis (BF): Lists of all sequences.
+Mem Vis (Opt): Hash Map for scores. $O(N^3)$ space in worst case.

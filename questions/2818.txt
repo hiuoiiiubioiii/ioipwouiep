@@ -1,0 +1,13 @@
+ID: 2818
+Problem Title: Apply Operations to Maximize Score
+Brute Force Method: Generate all possible subarrays, calculate the prime score for each element, find the maximum prime score in each subarray, and perform K operations by exhaustively searching the highest scores.
+BF Complexity Visuals: Subarray Combinatorics Map
+How to Draw BF: Draw an array of size N. Draw all possible brackets representing subarrays. For each bracket, draw a list of prime factors for every number. Show the $O(N^3)$ or $O(N^2 √M)$ overlap.
+Optimised Pattern: Monotonic Stack + Sieve of Eratosthenes + Greedy (Contribution Technique)
+Opt Vis. Technique: Contribution Range Visualization
+Dry Run (Opt): 1. Precompute prime counts using a Sieve. 2. Use a Monotonic Stack to find the 'left' and 'right' boundaries where the current element is the "king" (max prime score). 3. Calculate how many subarrays it dominates: (i - left) x (right - i). 4. Greedily multiply the largest values.
+How to Draw (Opt): Draw the array. Under each element, write its prime score. Draw "expansion arrows" left and right from each number until they hit a number with a higher/equal prime score. Use these boundaries to calculate subarray counts.
+Opt Complexity Visuals: Multi-Stage Pipeline (Sieve → Stack → Sort)
+How to Draw Opt Complexity: Draw three sequential boxes: $O(M \log \log M)$ for Sieve, $O(N)$ for Stack, $O(N \log N)$ for sorting elements by value. Total time is dominated by the Sieve or Sort.
+Mem Vis (BF): Visualize nested loops causing redundant calculations and large temporary lists of subarrays in memory.
+Mem Vis (Opt): Visualize three linear arrays: prime_counts, left_boundaries, and right_boundaries. $O(N + M)$ space.

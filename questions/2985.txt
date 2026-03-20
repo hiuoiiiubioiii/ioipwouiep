@@ -1,0 +1,13 @@
+ID: 2985
+Problem Title: Calculate Compressed Mean
+Brute Force Method: Expand the compressed data into individual rows (e.g., generating 5 rows if count=5), then running `AVG()`.
+BF Complexity Visuals: Row-Unrolling Explosion
+How to Draw BF: Draw a compressed row `[Value: 10, Count: 5]`. Draw a machine blowing it up into 5 separate `[10]` rows before averaging.
+Optimised Pattern: Weighted Average Formula
+Opt Vis. Technique: The Weighted Math Node
+Dry Run (Opt): Do the math directly on the compressed data: `SUM(item_value * count) / SUM(count)`. Round the result as needed.
+How to Draw (Opt): Draw a row. Multiply the two columns to get a "Total Weight". Sum all weights, sum all counts, and divide the two giant numbers.
+Opt Complexity Visuals: Single Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight line through the rows applying constant $O(1)$ math.
+Mem Vis (BF): Massive RAM to hold unrolled rows.
+Mem Vis (Opt): Two running sum variables in the DB engine. $O(1)$ space.

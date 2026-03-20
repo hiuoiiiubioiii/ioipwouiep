@@ -1,0 +1,13 @@
+ID: 1225
+Problem Title: Report Contiguous Dates (SQL)
+Brute Force Method: Using a recursive CTE or a nested subquery to check the day before and day after for every single row to see if the status (failed/succeeded) changes.
+BF Complexity Visuals: Double-Ended Date Scanning
+How to Draw BF: Draw a calendar. For every date, draw two magnifying glasses looking at the previous and next days. Write $O(N^2)$ due to row-by-row comparisons.
+Optimised Pattern: Gaps and Islands (Row Number Difference)
+Opt Vis. Technique: Floating Island Groups
+Dry Run (Opt): Assign a row number to all dates. Assign a second row number to dates within each category (succeeded/failed). Subtract the two row numbers. Dates in the same contiguous block will have the same "Difference Constant". Group by this constant.
+How to Draw (Opt): Draw a table with columns: Date, Status, RowNum_Total, RowNum_Group. Create a new column "Diff" (Total - Group). Circle all rows where the "Diff" value is identical—these are your islands.
+Opt Complexity Visuals: Linear Partitioning
+How to Draw Opt Complexity: Draw a straight timeline. Draw vertical bars at every date change. Write $O(N \log N)$ (due to sorting by date).
+Mem Vis (BF): Draw a deep stack of recursive pointers checking neighboring rows.
+Mem Vis (Opt): Draw a single temporary table with 3 additional integer columns used for the subtraction logic.

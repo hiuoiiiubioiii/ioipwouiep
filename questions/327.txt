@@ -1,0 +1,13 @@
+ID: 327
+Problem Title: Count of Range Sum
+Brute Force Method: Calculate all prefix sums, then use two nested loops to check every pair (i, j) to see if `sum[j] - sum[i]` falls within [lower, upper].
+BF Complexity Visuals: Triangular Matrix Comparison
+How to Draw BF: Draw a prefix sum array. Draw two pointers, i and j. For every i, sweep j to the end. $O(N²)$.
+Optimised Pattern: Modified Merge Sort (Divide &amp; Conquer)
+Opt Vis. Technique: Recursive Split and Range-Count Merge
+Dry Run (Opt): During the merge step of Merge Sort on the prefix sum array, for each element in the left half, find the range of indices in the right half that satisfy the sum condition. Since both halves are sorted, you can use two pointers to find this range in linear time.
+How to Draw (Opt): Draw two sorted blocks. For an element L in the left block, draw two arrows into the right block pointing to the "start" and "end" of the valid range. Total count = end - start.
+Opt Complexity Visuals: Log-Linear Recursion Tree
+How to Draw Opt Complexity: Draw a standard Merge Sort tree. At each "Merge" node, write "Two-Pointer Sweep" to show the $O(N)$ work at that level. $O(N \log N)$.
+Mem Vis (BF): $O(1)$ space if not counting the prefix sum array.
+Mem Vis (Opt): Recursion stack + temporary merge array. Draw a vertical stack of boxes and a horizontal "buffer" tape. $O(N)$.

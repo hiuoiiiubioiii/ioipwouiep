@@ -1,0 +1,13 @@
+ID: 1237
+Problem Title: Find Positive Integer Solution for a Given Equation
+Brute Force Method: Nested loops iterating x from 1 to 1000 and y from 1 to 1000. Calculate f(x, y) for every pair and check if it equals z.
+BF Complexity Visuals: Full Grid Scan
+How to Draw BF: Draw a 1000x1000 grid. Color every single cell to show it was checked. Write $O(X \cdot Y)$.
+Optimised Pattern: Two Pointers on Monotonic Surface
+Opt Vis. Technique: Staircase Descent
+Dry Run (Opt): Start at (x=1, y=1000). If f(x, y) &gt; z, y must decrease. If f(x, y) &lt; z, x must increase. This traces a single path from top-left toward bottom-right.
+How to Draw (Opt): Draw a coordinate axis. Start a point at top-left. Draw a jagged line moving only Right or Down. If you hit a solution, mark with a star. Write $O(X + Y)$.
+Opt Complexity Visuals: Boundary Trace Line
+How to Draw Opt Complexity: Draw a square. Draw a single diagonal-like line cutting through it. Write $O(1000 + 1000)$.
+Mem Vis (BF): Draw a basic list of solutions.
+Mem Vis (Opt): Draw two integer variables (x and y). Space: $O(1)$ (excluding output).

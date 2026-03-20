@@ -1,0 +1,13 @@
+ID: 2042
+Problem Title: Check if Numbers Are Ascending in a Sentence
+Brute Force Method: Split the sentence into an array of words. Loop through, try to parse every word as an integer. Store integers in a new array. Loop again to check if sorted.
+BF Complexity Visuals: Multi-Pass Array Transformation
+How to Draw BF: Write the sentence. Draw an array below it containing extracted numbers. Draw a loop iterating over that new array checking `arr[i] &lt; arr[i+1]`.
+Optimised Pattern: Single Pass Tokenization / On-the-fly Parsing
+Opt Vis. Technique: Scanning Playhead
+Dry Run (Opt): Read string left to right. When a digit is found, parse the full number. Compare it immediately to a `prev_num` variable. If valid, update `prev_num`.
+How to Draw (Opt): Write the sentence. Use your finger as a playhead. Stop at a number. Compare it to a single sticky note labeled `prev`. Overwrite the sticky note and keep moving.
+Opt Complexity Visuals: Single Horizontal Timeline
+How to Draw Opt Complexity: Draw one continuous line from index 0 to N. Mark $O(1)$ integer comparisons at specific points. Total Time $O(N)$.
+Mem Vis (BF): An array of strings (for words) and another array of integers (for numbers). Space $O(N)$.
+Mem Vis (Opt): A single integer variable `prev_num` (initialized to -1) and a current parsing variable. Space $O(1)$.

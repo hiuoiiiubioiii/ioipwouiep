@@ -1,0 +1,13 @@
+ID: 3424
+Problem Title: Minimum Cost to Make Arrays Identical
+Brute Force Method: Generate all N! permutations of pairings between the two arrays to find the absolute minimum cost mapping. $O(N!)$
+BF Complexity Visuals: Bipartite Graph with Exploding Mappings.
+How to Draw BF: Draw Array A and Array B. Draw criss-crossing lines from every element in A to every element in B, creating an unreadable web.
+Optimised Pattern: Sort Both Arrays + Sequential Pairing. $O(N \log N)$
+Opt Vis. Technique: Parallel Sorted Arrays with Vertical Zippers.
+Dry Run (Opt): Sort both arrays independently in ascending order. Pair the smallest with the smallest, the second smallest with the second smallest, etc., zipping them together.
+How to Draw (Opt): Draw Array A and Array B. Write 'SORT' and redraw them ordered. Then, draw straight vertical lines connecting index 0 to 0, 1 to 1, etc.
+Opt Complexity Visuals: Sort Trees followed by Linear Match.
+How to Draw Opt Complexity: Draw two parallel merge-sort trees to represent the $O(N \log N)$ step, funneling into a single $O(N)$ flat array comparison step.
+Mem Vis (BF): N! permutations overwhelming the memory stack.
+Mem Vis (Opt): In-place sorting modifies the original arrays, requiring only $O(1)$ or $O(\log N)$ auxiliary space.

@@ -1,0 +1,13 @@
+ID: 573
+Problem Title: Squirrel Simulation
+Brute Force Method: Try every possible permutation of nut-gathering orders (which nut to get first, which second, etc.).
+BF Complexity Visuals: Factorial explosion $O(N!)$.
+How to Draw BF: Draw a squirrel and 5 nuts. Draw every possible path connecting the squirrel to all nuts and the tree.
+Optimised Pattern: Greedy Distance Calculation (Total Distance - Max Saving).
+Opt Vis. Technique: A delivery truck. The truck always goes from Tree to Nut and back (2 \times distance). The only "saving" is on the very first trip from the Squirrel's starting spot.
+Dry Run (Opt): Total Dist = \sum (2 \times \text{Dist(Nut, Tree)}). For each nut, calculate the "Saving": \text{Dist(Nut, Tree)} - \text{Dist(Nut, Squirrel)}. Subtract the max saving from Total Dist.
+How to Draw (Opt): Draw a map. Draw double-arrows between every nut and the tree. Then draw one single arrow from the squirrel to one nut. Calculate which nut makes that first trip shortest relative to the tree.
+Opt Complexity Visuals: Single pass through the nuts. $O(N)$.
+How to Draw Opt Complexity: Draw a central hub (Tree) with spokes to all nuts. One spoke is replaced by a squirrel-to-nut path.
+Mem Vis (BF): Storing all path permutations in a list.
+Mem Vis (Opt): $O(1)$ auxiliary space.

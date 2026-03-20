@@ -1,0 +1,13 @@
+ID: 908
+Problem Title: Smallest Range I
+Brute Force Method: Simulate adding/subtracting every value from -k to k for every element to generate all possible arrays, then calculate max-min for each.
+BF Complexity Visuals: $O(X^N)$ exponential explosion. A massive decision tree of every possible modified array.
+How to Draw BF: Draw a single array element branching out into 2K+1 paths. Repeat for every element, showing a chaotic web of possibilities.
+Optimised Pattern: Math / Greedy / Min-Max
+Opt Vis. Technique: Two endpoints on a 1D number line (the min and max of the array) stretching toward each other by exactly distance K.
+Dry Run (Opt): Find the absolute minimum and maximum values in the array. If (max - K) &lt;= (min + K), the answer is 0. Otherwise, the gap is (max - K) - (min + K).
+How to Draw (Opt): Draw a number line. Plot `MIN` and `MAX`. Draw an arrow starting at `MIN` moving right by K. Draw an arrow from `MAX` moving left by K. Measure the remaining gap.
+Opt Complexity Visuals: $O(N)$ single pass. A straight line scanning the array exactly once.
+How to Draw Opt Complexity: Draw a horizontal array. Draw a single arrow sweeping from left to right, updating two small boxes labeled 'Min' and 'Max'.
+Mem Vis (BF): Thousands of temporary arrays drawn taking up $O(N \cdot X^N)$ memory space.
+Mem Vis (Opt): Just two small integer variables. Draw two tiny boxes for $O(1)$ space: `min_val` and `max_val`.

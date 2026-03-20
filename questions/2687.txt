@@ -1,0 +1,13 @@
+ID: 2687
+Problem Title: Bikes Last Time Used
+Brute Force Method: Join the table to itself to compare times, or pull all data into the app to sort and slice. $O(N^2)$.
+BF Complexity Visuals: App-Side Sorting
+How to Draw BF: Draw all bike logs poured into application memory to sort by time and filter manually.
+Optimised Pattern: Window Function (MAX) / GROUP BY
+Opt Vis. Technique: The Group-and-Grab
+Dry Run (Opt): Simply `GROUP BY bike_id` and select the `MAX(end_time)`. If location is needed, use `ROW_NUMBER() OVER(PARTITION BY bike_id ORDER BY end_time DESC)` and filter for rank 1.
+How to Draw (Opt): Draw buckets for each Bike ID. Toss all ride logs into their buckets. Pull out the log with the highest timestamp from each bucket.
+Opt Complexity Visuals: Partitioned Sort $O(N \log N)$
+How to Draw Opt Complexity: Draw data flowing through a grouping node and outputting the max.
+Mem Vis (BF): Application-side memory.
+Mem Vis (Opt): DB internal sort/group buffer. $O(N)$ space.

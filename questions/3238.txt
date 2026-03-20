@@ -1,0 +1,13 @@
+ID: 3238
+Problem Title: Find the Number of Winning Players
+Brute Force Method: For every pick, re-scan the entire pick history to check if that player now has enough same-colored balls. $O(P²)$.
+BF Complexity Visuals: Redundant Pick Scanner
+How to Draw BF: Draw the list of picks. For the 100th pick, draw 99 arrows looking back at previous picks. Repeat for every pick.
+Optimised Pattern: 2D Frequency Matrix (Counting)
+Opt Vis. Technique: Player-Color Grid Tally
+Dry Run (Opt): Create a grid where rows = players and columns = colors. Increment cell (player, color). If cell &gt; player_id, they win.
+How to Draw (Opt): Draw a small table (Rows 0-N). As you read `[player, color]`, put a tally mark in that cell. If a cell reaches `player_id + 1`, circle the row.
+Opt Complexity Visuals: One-Pass Hash Mapping
+How to Draw Opt Complexity: Draw a single line for the 'P' picks. Draw an $O(N)$ scan of the summary grid. Total $O(P + N\\text{cdot Colors})$.
+Mem Vis (BF): Massive log of all raw pick events.
+Mem Vis (Opt): A small 2D array of size N x 11 (O(N) space, as colors are fixed at 0-10).

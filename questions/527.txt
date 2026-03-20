@@ -1,0 +1,13 @@
+ID: 527
+Problem Title: Word Abbreviation
+Brute Force Method: Create base abbreviations (e.g., i18n). If conflicts exist, expand prefix by 1 for all conflicts. Repeat until unique. $O(N^2 \cdot L)$.
+BF Complexity Visuals: A chaotic room where everyone shouts their name, then repeatedly shouts a slightly longer version until distinct.
+How to Draw BF: List words, write "a2e", cross out duplicates, rewrite as "ap1e", cross out again, etc.
+Optimised Pattern: Group by Length/Last Char + Trie for Longest Common Prefix (LCP).
+Opt Vis. Technique: A filing cabinet grouping words into folders, inside which a Trie finds the exact diverging letter for each word.
+Dry Run (Opt): Group words. For each group, build a Trie. To abbreviate a word, traverse its Trie path until `node.count == 1`. That depth is the required prefix length.
+How to Draw (Opt): Draw buckets (groups). Inside a bucket, draw a Trie. Trace a word down the Trie until the node count is 1. Box that prefix.
+Opt Complexity Visuals: Parallel Tries processing small subsets independently. $O(N \cdot L)$.
+How to Draw Opt Complexity: Draw multiple small trees instead of one giant nested loop structure.
+Mem Vis (BF): Arrays of strings continuously being overwritten and re-checked.
+Mem Vis (Opt): Trie nodes storing character counts, bounded by total characters. $O(N \cdot L)$.

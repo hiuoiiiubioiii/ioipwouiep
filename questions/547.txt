@@ -1,0 +1,13 @@
+ID: 547
+Problem Title: Number of Provinces
+Brute Force Method: For every person, scan the entire matrix to find friends, then friends-of-friends, without tracking who you've already visited.
+BF Complexity Visuals: Infinite cycles or redundant path traversals. $O(N^3)$.
+How to Draw BF: Draw dots and lines. Trace paths that go in circles (A-B, B-A) indefinitely.
+Optimised Pattern: DFS / BFS or Union-Find (Disjoint Set Union).
+Opt Vis. Technique: A social network being grouped into "circles." Once you join a circle, everyone in it is colored the same.
+Dry Run (Opt): Iterate through each node. If unvisited, start a DFS/BFS to mark all reachable nodes as visited. Count how many times you had to start a new search.
+How to Draw (Opt): Draw dots (cities). Connect them based on the matrix. Use a highlighter to color each "island" of connected dots. The number of colors used is the answer.
+Opt Complexity Visuals: Single pass through the adjacency list/matrix. $O(N^2)$.
+How to Draw Opt Complexity: Draw a matrix and a single arrow that visits each row once, triggering a localized "flare" (DFS).
+Mem Vis (BF): Deep recursion without a "visited" set.
+Mem Vis (Opt): A "visited" array of size N and the recursion stack. $O(N)$.

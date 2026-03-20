@@ -1,0 +1,13 @@
+ID: 1713
+Problem Title: Minimum Operations to Make a Subsequence
+Brute Force Method: Standard Longest Common Subsequence (LCS) 2D Dynamic Programming.
+BF Complexity Visuals: 2D Grid DP.
+How to Draw BF: Draw an N x M grid mapping `target` vs `arr`. Fill out every cell. $O(N \cdot M)$.
+Optimised Pattern: Target Index Mapping + Longest Increasing Subsequence (LIS) via Patience Sorting.
+Opt Vis. Technique: Patience Sorting (Deck of Cards).
+Dry Run (Opt): Map `target` elements to their indices. Replace `arr` elements with these indices. Run $O(N \log K)$ LIS algorithm on the index array. Answer is `len(target) - LIS`.
+How to Draw (Opt): Write target map. Rewrite `arr`. Draw "piles" of numbers. Place new numbers on leftmost valid pile (Binary Search). Count piles.
+Opt Complexity Visuals: Linear Sweep with Binary Placement.
+How to Draw Opt Complexity: Draw arrow sweeping array, dropping items down into Log K height piles. Label $O(N \log K)$.
+Mem Vis (BF): Massive 2D Matrix of size N * M.
+Mem Vis (Opt): Hash Map for indices + 1D `tails` array for piles. $O(N)$ space.

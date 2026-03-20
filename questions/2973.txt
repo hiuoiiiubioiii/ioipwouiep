@@ -1,0 +1,13 @@
+ID: 2973
+Problem Title: Find Number of Coins to Place in Tree Nodes
+Brute Force Method: For each node, find all subtree nodes, try all triplets, and calculate products.
+BF Complexity Visuals: Nested DFS + Triplet Search
+How to Draw BF: Draw a tree. From each node, draw a web to all descendants. $O(N^2 \\text{cdot descendants})$.
+Optimised Pattern: Tree DP (Post-order Traversal)
+Opt Vis. Technique: Bottom-Up Value Filtering
+Dry Run (Opt): Each node returns the top 3 largest and top 2 smallest (most negative) values from its subtree. Calculate max product using `max3` or `max1 * min2`.
+How to Draw (Opt): Draw a tree. At each node, draw a small "box" holding 5 numbers. Show children passing their boxes up to the parent to be merged.
+Opt Complexity Visuals: Linear Tree Traversal
+How to Draw Opt Complexity: Draw a tree and trace a single line visiting every node and edge once. T = $O(N \cdot 5 \log 5)$ approx $O(N)$.
+Mem Vis (BF): Storing full descendant lists at each node.
+Mem Vis (Opt): Each node stores exactly 5 integers in the recursion stack. Space $O(N)$.

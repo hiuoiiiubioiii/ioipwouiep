@@ -1,0 +1,13 @@
+ID: 2705
+Problem Title: Compact Object
+Brute Force Method: Iterate over all keys. If truthy, push to a new array/object. If it's a nested object, make a full recursive copy, repeating the truthy check.
+BF Complexity Visuals: Deep Recursive Copy Tree
+How to Draw BF: Draw a large tree where every node is duplicated onto the right side of the paper. Cross out the duplicated nodes that hold falsy values. Visually bulky.
+Optimised Pattern: Call Stack &amp; Redundant Object Allocation (Draw stacked boxes for deep recursion + identical clone structures in heap).
+Opt Vis. Technique: Recursive Depth-First Search (DFS) with In-Place Deletion / Array Filtering
+Dry Run (Opt): Graph Traversal with Pruning
+How to Draw (Opt): Start at the root JSON node. If a branch leads to a falsy value (0, false, null), visually cut the branch. If it leads to an array/object, traverse deeper before filtering.
+Opt Complexity Visuals: Draw the JSON object as a tree graph. Draw scissors cutting the edges to leaf nodes that evaluate to falsy.
+How to Draw Opt Complexity: Post-order Traversal Complexity (O(N))
+Mem Vis (BF): Draw the tree structure. Write $O(1)$ next to each node, and write Σ = $O(N)$ at the bottom, indicating time scales linearly with the total number of keys/values.
+Mem Vis (Opt): Call Stack Depth Map (Draw a stack of frames. The maximum height is exactly the deepest nested level of the JSON object: $O(D)$ Space).

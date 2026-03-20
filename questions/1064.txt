@@ -1,0 +1,13 @@
+ID: 1064
+Problem Title: Fixed Point
+Brute Force Method: Iterate through the array from index 0 to N-1. Check if `arr[i] == i`. Return the first such index found.
+BF Complexity Visuals: A linear scan of the array.
+How to Draw BF: Draw [-10, -5, 2, 3, 7]. Check index 0: -10 != 0. Index 2: 2 == 2. Answer is 2. Write $O(N)$.
+Optimised Pattern: Binary Search.
+Opt Vis. Technique: A "Balance Check". Since the array is sorted, we can determine which side a fixed point might be on by comparing `arr[mid]` to `mid`.
+Dry Run (Opt): Standard Binary Search. If `arr[mid] &gt;= mid`, a fixed point could be at `mid` or to its left, so `R = mid`. Otherwise, `L = mid + 1`.
+How to Draw (Opt): Draw the array. Compare `mid` to its index. If `arr[mid] &lt; mid`, the "fix" must be to the right. Use arrows to narrow the search.
+Opt Complexity Visuals: Logarithmic search.
+How to Draw Opt Complexity: Draw a standard Binary Search tree. Write Time: $O(\log N)$.
+Mem Vis (BF): $O(1)$ space with a simple loop.
+Mem Vis (Opt): $O(1)$ space with Binary Search pointers.

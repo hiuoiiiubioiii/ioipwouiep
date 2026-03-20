@@ -1,0 +1,13 @@
+ID: 2453
+Problem Title: Destroy Sequential Targets
+Brute Force Method: For every number in the array, treat it as the starting point. Count how many other numbers 'x' satisfy (x - start) % space == 0.
+BF Complexity Visuals: Quadratic Web of Modulo Checks
+How to Draw BF: Draw points on a line. From each point, draw arrows to all subsequent points checking the modulo condition. Label $O(N^2)$.
+Optimised Pattern: Hash Map (Remainder Frequency)
+Opt Vis. Technique: Modulo Remainder Bucketing
+Dry Run (Opt): Groups are formed by `nums[i] % space`. Map each remainder to its frequency and the minimum starting number found for that remainder.
+How to Draw (Opt): Draw a set of buckets labeled 0, 1, ... (space-1). Drop each number into the bucket corresponding to its remainder. The largest bucket wins.
+Opt Complexity Visuals: Two Linear Passes
+How to Draw Opt Complexity: Draw one line for counting (O(N)) and one for finding the min element (O(N)). Label $O(N)$ Total.
+Mem Vis (BF): Draw a maxCount variable.
+Mem Vis (Opt): Draw a Hash Map `{remainder: [count, min_val]}`. Label $O(N)$ Space.

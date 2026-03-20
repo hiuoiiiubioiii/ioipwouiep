@@ -1,0 +1,13 @@
+ID: 2025
+Problem Title: Maximum Number of Ways to Partition an Array
+Brute Force Method: For every element, change it to `k`. Then, recalculate prefix/suffix sums to count valid partitions. $O(N^2)$.
+BF Complexity Visuals: N Arrays x N Partitions
+How to Draw BF: Draw N different copies of the array (each with one element changed). For each copy, draw a sliding partition line to check sums. Massive duplicate work.
+Optimised Pattern: Prefix Sums + Hash Maps for Difference Tracking
+Opt Vis. Technique: Balance Scale with Shifting Weights
+Dry Run (Opt): Calculate prefix sums and the `diff` (Left Sum - Right Sum) at every partition. When you change `nums[i]` to `k`, the difference changes by `d = k - nums[i]`. Use Hash Maps to find how many partitions now have a diff of 0.
+How to Draw (Opt): Draw a balance scale. The left side is Prefix, right is Suffix. When you change a number, write `+d` on the left side and `-d` on the right side. Check Hash Maps to re-balance.
+Opt Complexity Visuals: Three Linear Sweeps
+How to Draw Opt Complexity: Draw three parallel lines: one for initial prefix sums, one for populating the right-side Hash Map, and one moving the pivot left-to-right updating maps. Time $O(N)$.
+Mem Vis (BF): A new cloned array and new prefix sum array created for every single element change.
+Mem Vis (Opt): Two Hash Maps (Left Map and Right Map) tracking the frequencies of sum differences dynamically. Space $O(N)$.

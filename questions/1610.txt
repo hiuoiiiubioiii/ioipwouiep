@@ -1,0 +1,13 @@
+ID: 1610
+Problem Title: Maximum Number of Visible Points
+Brute Force Method: Calculate the angle between every possible pair of points to find the densest cluster.
+BF Complexity Visuals: Complete Graph (N^2 Angle Checks)
+How to Draw BF: Draw N points in a circle. Draw a line from every point to every other point. $O(N^2)$.
+Optimised Pattern: Polar Angle Sorting + Sliding Window
+Opt Vis. Technique: Radar Sweep
+Dry Run (Opt): Calculate polar angles (atan2) of all points from your location. Sort them. Append points + 360 to handle wraparound. Slide a window of size 'angle'.
+How to Draw (Opt): Draw a circle with dots. Draw a pizza slice (wedge) representing the viewing angle. Rotate the slice around the circle, counting dots inside.
+Opt Complexity Visuals: Sorting Bottleneck
+How to Draw Opt Complexity: Draw a funnel (O(N log N) sorting) leading into a straight pipe (O(N) sliding window). Overall $O(N \log N)$.
+Mem Vis (BF): 2D Matrix: Array of N arrays holding angle differences.
+Mem Vis (Opt): Extended 1D Array + Two Pointers: Draw an array of sorted angles, doubled in length, with a bracket [L, R] sliding across.

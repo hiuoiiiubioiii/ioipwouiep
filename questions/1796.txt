@@ -1,0 +1,13 @@
+ID: 1796
+Problem Title: Second Largest Digit in a String
+Brute Force Method: Extract all digits into a list, remove duplicates by converting to a set, sort the list in descending order, and pick the second element.
+BF Complexity Visuals: Multi-Stage Data Filtering.
+How to Draw BF: Draw a string. Draw a sieve that only lets digits through. Draw a sorting funnel. Pick the 2nd item. $O(N \log N)$.
+Optimised Pattern: Single-Pass Scalar Tracking.
+Opt Vis. Technique: The "Runner-Up" Podium.
+Dry Run (Opt): Iterate through characters. Maintain two variables: `first` and `second`. If digit &gt; `first`, `second = first`, `first = digit`. If digit &lt; `first` but &gt; `second`, update `second`.
+How to Draw (Opt): Draw two podium steps labeled 1st and 2nd. When a new number arrives, show it bumping the 1st place holder down to 2nd.
+Opt Complexity Visuals: Linear Scan.
+How to Draw Opt Complexity: Draw one straight arrow over the string. Label $O(N)$.
+Mem Vis (BF): A list/set storing all digits in the string. $O(N)$.
+Mem Vis (Opt): Two integer variables. $O(1)$ space.

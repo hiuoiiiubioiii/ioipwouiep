@@ -1,0 +1,13 @@
+ID: 848
+Problem Title: Shifting Letters
+Brute Force Method: For every shift at index i, run a loop from 0 to i and shift each character by the given amount.
+BF Complexity Visuals: Nested Prefix Shifts. $O(N^2)$.
+How to Draw BF: Draw a string. For the first shift, update 1 char. For the second, update 2. For the N-th, update N. Draw the overlapping work as a triangle of arrows.
+Optimised Pattern: Suffix Sum of Shifts.
+Opt Vis. Technique: Cumulative Downstream Force.
+Dry Run (Opt): The total shift for character i is the sum of all shifts from i to N-1. Calculate these sums from right to left (Suffix Sum), then apply them in one pass.
+How to Draw (Opt): Draw the string. Above it, draw the "Shifts" array. Draw a "Rolling Total" bubble that moves from right to left, picking up shift values and adding them to the total.
+Opt Complexity Visuals: Two Linear Passes. $O(N)$.
+How to Draw Opt Complexity: Draw two straight parallel timelines. One for the suffix sum, one for the character rotation.
+Mem Vis (BF): $O(1)$ space but high repetitive modification cycles.
+Mem Vis (Opt): $O(1)$ variable (for suffix sum): Draw one "Current Shift" box that overwrites itself N times.

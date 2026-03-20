@@ -1,0 +1,13 @@
+ID: 3444
+Problem Title: Min Increments for Target Multiples
+Brute Force Method: Exhaustively try every combination of `nums` elements to cover the `target` array. $O(N^\text{target}_\text{len})$
+BF Complexity Visuals: Bipartite Matching Expansion.
+How to Draw BF: Draw `nums` on left and `target` on right. Draw lines from every `num` to every `target`, then try all subsets of lines.
+Optimised Pattern: Bitmask DP over Target Array + LCM. $O(N x 2^|\text{target}|)$
+Opt Vis. Technique: State Transition Lattice.
+Dry Run (Opt): For each `num`, calculate cost to cover any subset of `target` (using LCM). Update `dp[mask]` with the min cost.
+How to Draw (Opt): Draw 16 nodes (for bitmask 0000 to 1111). Draw arrows between nodes representing adding a new `num` to cover more targets.
+Opt Complexity Visuals: 2D DP Grid (N x 16).
+How to Draw Opt Complexity: Draw a table with N rows and 16 columns. Shade it row by row to show the bounded complexity.
+Mem Vis (BF): Huge recursion stack depth from exploring all possible pairings.
+Mem Vis (Opt): A 1D array of size 16 (or 2^|target|) to store current min costs for each mask.

@@ -1,0 +1,13 @@
+ID: 3621
+Problem Title: Number of Integers With Popcount-Depth Equal to K I (Hard)
+Brute Force Method: Iterate from 1 to N, calculate the popcount recursively for every single number, and count how many hit exactly depth K. $O(N \log N)$.
+BF Complexity Visuals: Endless Number Crunching Grid.
+How to Draw BF: Draw a massive grid of numbers 1 to N. Next to each, write its binary form, then count the 1s, write that number, count its 1s... cross out the ones that don't match K.
+Optimised Pattern: Digit DP / Combinatorics. Precompute valid target "set bit counts", then build valid numbers bit by bit using combinations (nCr).
+Opt Vis. Technique: Binary Prefix Tree Branching.
+Dry Run (Opt): Look at the binary string of N. Scan left to right. Every time you see a '1', imagine a branch where you put a '0' instead. In that '0' branch, you can freely place any remaining bits using combinations.
+How to Draw (Opt): Draw the binary string of N. Under every '1', drop a vertical arrow down, write a '0', and next to it write the combination formula nCr for the remaining slots.
+Opt Complexity Visuals: State Space Matrix.
+How to Draw Opt Complexity: Draw a matrix of length log(N) (bits) by log(N) (possible set bits). Write $O(\log^2 N)$ to show we only process combinations of bits, not the numbers themselves.
+Mem Vis (BF): Arrays holding step-by-step depth calculations for millions of individual numbers.
+Mem Vis (Opt): A small 1D array DP mapping [number_of_set_bits] -&gt; depth. Max size is 32 or 64. $O(1)$ space.

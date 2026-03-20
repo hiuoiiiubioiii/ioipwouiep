@@ -1,0 +1,13 @@
+ID: 1055
+Problem Title: Shortest Way to Form String
+Brute Force Method: Generate all possible subsequences of `source` and try to concatenate them in all possible ways to match `target`.
+BF Complexity Visuals: A massive branching tree where each node is a subsequence choice.
+How to Draw BF: Write target "abcabc". List all source subsequences. Try matching "a", "ab", "abc"... then recurse. Write $O(2^S \cdot T)$.
+Optimised Pattern: Greedy (Two Pointers / Multi-Pass).
+Opt Vis. Technique: A "Looping Scanner". You scan the source repeatedly; each pass consumes as many characters of the target as possible.
+Dry Run (Opt): Point at target[0]. Scan source from left to right. If characters match, move target pointer. If you hit end of source, increment "count" and reset source pointer.
+How to Draw (Opt): Draw target on top, source below. Draw an arrow moving through target. Each time source finishes, draw a vertical line in target to show one "pass".
+Opt Complexity Visuals: A target-driven linear scan with repeated source passes.
+How to Draw Opt Complexity: Draw target length T with segments of source length S. Write Time: $O(S \cdot T)$.
+Mem Vis (BF): Exponential storage for all source subsequences.
+Mem Vis (Opt): Two integer pointers (i, j) and a counter. $O(1)$ space.

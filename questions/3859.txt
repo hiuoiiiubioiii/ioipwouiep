@@ -1,0 +1,13 @@
+ID: 3859
+Problem Title: Count Subarrays With K Distinct Integers (Hard)
+Brute Force Method: Nested Loops: Generate all $O(N^2)$ subarrays. For each, use a Set to count distinct integers. If the count equals K, increment the total.
+BF Complexity Visuals: A massive triangular matrix of checks, with a Set operation (O(N)) inside each.
+How to Draw BF: Draw an array. Draw brackets for [0,0], [0,1], [0,2]... Inside each, write down the unique numbers. Write $O(N^3)$ or $O(N^2)$.
+Optimised Pattern: Sliding Window (At Most K) Transformation.
+Opt Vis. Technique: Two "stretchy" windows that calculate `AtMost(K) - AtMost(K-1)` to isolate subarrays with *exactly* K distinct elements.
+Dry Run (Opt): Define a function `atMost(K)`. Use a sliding window with a Frequency Map. If `map.size() &gt; K`, shrink the tail. Total subarrays = sum of all `(right - left + 1)`. Result is `atMost(K) - atMost(K-1)`.
+How to Draw (Opt): Draw the array. Draw a window expanding. When distinct count &gt; K, shrink. Note the length at each step. Repeat for K-1. Subtract the two final sums.
+Opt Complexity Visuals: Two independent linear sweeps.
+How to Draw Opt Complexity: Draw two horizontal lines. Write $O(N)$ for each pass. Total: $O(N)$.
+Mem Vis (BF): Creating $O(N^2)$ sets or lists in memory.
+Mem Vis (Opt): Two Frequency Maps taking $O(N)$ or $O(K)$ space.

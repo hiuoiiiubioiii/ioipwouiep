@@ -1,0 +1,13 @@
+ID: 2611
+Problem Title: Mice and Cheese
+Brute Force Method: Combinatorial backtracking to test all possible choices of picking K cheeses.
+BF Complexity Visuals: Combinatorial Decision Tree
+How to Draw BF: Draw a branching tree where each node splits into "Mouse 1 eats" or "Mouse 2 eats". Write $O(N \text{choose} K)$.
+Optimised Pattern: Greedy Algorithm + Sorting
+Opt Vis. Technique: Sorted Differential Bar Chart
+Dry Run (Opt): Compute `reward1[i] - reward2[i]`. Sort these differences descending. Give the top K to Mouse 1, and the rest to Mouse 2.
+How to Draw (Opt): Write Row 1, Row 2, and Row 3 (Diff). Sort columns by the Diff row. Draw a box around the first K items for Mouse 1.
+Opt Complexity Visuals: Sorting Timeline Block
+How to Draw Opt Complexity: Draw a large $O(N \log N)$ sorting block, followed by a smaller $O(N)$ array summation block.
+Mem Vis (BF): Deep recursive call stack
+Mem Vis (Opt): 1D Difference Array and Sorted Indices Array.

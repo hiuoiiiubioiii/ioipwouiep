@@ -1,0 +1,13 @@
+ID: 387
+Problem Title: First Unique Character in a String
+Brute Force Method: For every character at index i, scan the rest of the string to see if that character appears again.
+BF Complexity Visuals: Nested Pointer Sweep
+How to Draw BF: Draw a string. Place pointer i at the first char. Use a second pointer j to check all other positions. If no match, i is the answer. $O(N^2)$.
+Optimised Pattern: Frequency Array (Hash Map Pattern)
+Opt Vis. Technique: Character Histogram Bucket
+Dry Run (Opt): Perform two passes. Pass 1: Count occurrences of each character in an array of size 26. Pass 2: Iterate through the string again and return the index of the first character whose count in the array is 1.
+How to Draw (Opt): Draw a 26-slot array (a-z). As you scan the string, increment the counts. Then draw a pointer moving through the string again, checking the count in the array for each character.
+Opt Complexity Visuals: Dual-Pass Linear Scan
+How to Draw Opt Complexity: Draw two parallel horizontal lines representing the two passes over the string. Label it $O(N)$.
+Mem Vis (BF): Constant time variables.
+Mem Vis (Opt): A fixed-size integer array of size 26. Draw a small horizontal tape with 26 slots. $O(1)$ auxiliary space.

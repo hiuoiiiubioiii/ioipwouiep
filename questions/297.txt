@@ -1,0 +1,13 @@
+ID: 297
+Problem Title: Serialize and Deserialize Binary Tree
+Brute Force Method: Level-order traversal (BFS) that includes "null" markers for every possible missing child in a full binary tree.
+BF Complexity Visuals: Expanding Level-Order Map: $O(2^H)$.
+How to Draw BF: Draw a tree. Draw boxes for every null spot. In a skewed tree, show the empty space growing exponentially.
+Optimised Pattern: Pre-Order Traversal (DFS) with Sentinel Markers
+Opt Vis. Technique: Recursive String Ribbon
+Dry Run (Opt): Serialize: Pre-order DFS, appending values and '#' for nulls. Deserialize: Use a queue to pull the "front" of the string and build nodes recursively.
+How to Draw (Opt): Draw a tree. Trace the path (Root-Left-Right). Write values in a line. Use '#' for nulls. To rebuild, read the first value as root, then repeat for children.
+Opt Complexity Visuals: Single Tree Traversal: $O(N)$.
+How to Draw Opt Complexity: Draw a single line snaking through the tree. Every node and null marker is visited exactly once.
+Mem Vis (BF): Array of pointers for all levels.
+Mem Vis (Opt): Recursion Stack / String Queue: Draw a vertical stack of height H and a single queue of tokens.

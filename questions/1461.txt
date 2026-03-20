@@ -1,0 +1,13 @@
+ID: 1461
+Problem Title: Check If a String Contains All Binary Codes of Size K
+Brute Force Method: Generate all 2^K possible binary strings. For each one, use a string search function to see if it exists in the input string S.
+BF Complexity Visuals: Exhaustive Search / Pattern Matching
+How to Draw BF: Draw a list of 2^K codes. For each code, draw an arrow scanning the entire string S. Label $O(2^K \cdot N)$.
+Optimised Pattern: Sliding Window + Hash Set (or Rolling Hash)
+Opt Vis. Technique: Bitmask Presence Tracking
+Dry Run (Opt): Slide a window of size K over S. Convert each substring to its integer value and add it to a Hash Set. Finally, check if `set.size() == 1 &lt;&lt; K`.
+How to Draw (Opt): Draw the binary string. Slide a window of size K. As the window moves, draw the bits being "shifted in" and "shifted out". Drop the resulting value into a "Unique Values" bucket.
+Opt Complexity Visuals: Single-Pass Constant Lookup
+How to Draw Opt Complexity: Draw one arrow left-to-right. Label $O(N)$ assuming K is small.
+Mem Vis (BF): Full list of 2^K strings
+Mem Vis (Opt): A Hash Set of integers (or a boolean array) of size 2^K. Space $O(2^K)$.

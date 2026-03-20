@@ -1,0 +1,13 @@
+ID: 3139
+Problem Title: Minimum Cost to Make Array Elements Equal
+Brute Force Method: Try all possible target values T from `max(nums)` to 2 x max, and for each, calculate $O(1)$ cost using greedy pairs. $O(N \\text{cdot Range})$
+BF Complexity Visuals: A parabolic cost curve calculated point-by-point.
+How to Draw BF: Draw a number line. Pick a height. Calculate total gaps. Try to "fill" gaps using pairs (cost c2) or singles (cost c1). Repeat for every height.
+Optimised Pattern: Greedy Math + Case Analysis
+Opt Vis. Technique: Gap Filling / Water Leveling
+Dry Run (Opt): Target = Max. Calculate total "gap" to fill. If 2 x c1 <= c2, only use c1. Otherwise, use as many c2 pairs as possible. Check Target and Target+1.
+How to Draw (Opt): Draw bars of different heights. Shade the empty space. Use "2-cell bricks" for c2 and "1-cell bricks" for c1. Solve like a puzzle.
+Opt Complexity Visuals: Constant-time math after a linear scan.
+How to Draw Opt Complexity: Draw a single straight line to find Max/Min, followed by a single math equation. $O(N)$.
+Mem Vis (BF): Recursive tree of all possible cost combinations.
+Mem Vis (Opt): Two scalar variables: `sum`, `max_val`. $O(1)$.

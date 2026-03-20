@@ -1,0 +1,13 @@
+ID: 3779
+Problem Title: Minimum Number of Operations to Have Distinct Elements (Med)
+Brute Force Method: Iteratively remove elements from the start of the array one by one until all remaining elements are unique. $O(N^2)$.
+BF Complexity Visuals: Sequential Shifting and Set Checks.
+How to Draw BF: Draw the array. Check if unique. If not, erase the first element. Check again. Repeat until the "Seen" set doesn't have duplicates.
+Optimised Pattern: Reverse Scan + Hash Set
+Opt Vis. Technique: Suffix Uniqueness Boundary
+Dry Run (Opt): Scan the array from *right to left*. Keep track of elements in a Hash Set. The moment you hit an element already in the set, the boundary for "distinct elements" is just to the right of that position.
+How to Draw (Opt): Draw the array. Start at the end. Move left, adding numbers to a circle. Stop when you try to add a number that is already in the circle. Everything to the left of your finger must be removed.
+Opt Complexity Visuals: Single Linear Pass $O(N)$.
+How to Draw Opt Complexity: Draw a timeline from Right to Left with $O(1)$ Set lookups.
+Mem Vis (BF): Repeated array slicing and set creation.
+Mem Vis (Opt): $O(N)$ Hash Set.

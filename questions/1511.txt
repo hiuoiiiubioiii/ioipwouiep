@@ -1,0 +1,13 @@
+ID: 1511
+Problem Title: Customer Order Frequency (Premium SQL)
+Brute Force Method: Using multiple subqueries or a Cartesian Product (Cross Join) without proper index filtering, scanning tables repeatedly for June and July.
+BF Complexity Visuals: Nested Loop Join Grid (O(N*M))
+How to Draw BF: Draw a massive grid multiplying every row in the `Customers` table by every row in `Orders` and `Product`. Shade in the massive amount of wasted space where IDs don't match.
+Optimised Pattern: JOIN + Conditional Aggregation
+Opt Vis. Technique: The Filtering Funnel
+Dry Run (Opt): Join the 3 tables. Funnel the data by dropping any rows not in June or July. Use a `GROUP BY` customer, and run two separate `SUM(CASE WHEN...)` checks to see if both months &gt; 100.
+How to Draw (Opt): Draw 3 separate boxes (Tables). Draw connecting lines (JOINs) between matching IDs. Draw a funnel shape. Push rows through it. At the bottom, draw a scale checking if the June pile and July pile both weigh &gt; 100.
+Opt Complexity Visuals: Hash Join &amp; Pipeline (O(N+M))
+How to Draw Opt Complexity: Draw parallel lines representing the tables flowing into a single merge node (Hash Join), then immediately passing through a filter node, ending in a tiny output box.
+Mem Vis (BF): Massive temporary tables written to disk to hold un-indexed Cross Joins.
+Mem Vis (Opt): A small Hash Map in memory. Keys are `customer_id`, and values are just two running integer sums (June Total, July Total).

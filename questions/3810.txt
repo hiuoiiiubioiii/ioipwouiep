@@ -1,0 +1,13 @@
+ID: 3810
+Problem Title: Minimum Operations to Reach Target Array (Med.)
+Brute Force Method: Simulate every possible increment/decrement operation on subarrays until matching the target, using BFS on the array state.
+BF Complexity Visuals: Massive state-space graph where nodes are entire array combinations.
+How to Draw BF: Draw array [0,0,0]. Draw arrows to [1,0,0], [1,1,0], [1,1,1]. Exponential branching factor.
+Optimised Pattern: Difference Array + Greedy Peak Tracking.
+Opt Vis. Technique: Bar chart showing the required differences, tracking height changes between adjacent elements.
+Dry Run (Opt): Compute diff array. If diff[i] &gt; diff[i-1], we need diff[i] - diff[i-1] new operations. Accumulate these positive step-ups.
+How to Draw (Opt): Draw target array as a histogram. Draw the step-ups. Only the "upward steps" add to the total operation count.
+Opt Complexity Visuals: A single linear loop over the array.
+How to Draw Opt Complexity: Draw array of length N. Draw a single arrow reading left to right. Write $O(N)$.
+Mem Vis (BF): Queue storing hundreds of intermediate array states.
+Mem Vis (Opt): $O(1)$ extra space just tracking the previous element's difference integer.

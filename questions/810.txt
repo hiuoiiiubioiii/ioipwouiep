@@ -1,0 +1,13 @@
+ID: 810
+Problem Title: Chalkboard XOR Game
+Brute Force Method: Minimax Algorithm. Recursively simulate the game tree by having Alice and Bob try removing every single valid element one by one to find a forced win.
+BF Complexity Visuals: Massive Game Decision Tree. $O(N!)$ time.
+How to Draw BF: Draw a root node (the whole array). Draw N branches for the first move. Then N-1 branches from each of those. The tree instantly becomes an unreadable, tangled mess of permutations.
+Optimised Pattern: Mathematical Proof / Bit Manipulation (XOR properties).
+Opt Vis. Technique: A Binary Toggle Switch &amp; A Balancing Scale.
+Dry Run (Opt): Don't play the game. Just look at the board. If the total XOR of all numbers is exactly 0, Alice wins before touching anything. If it's not 0, count the numbers. If there's an EVEN amount of numbers, Alice is mathematically guaranteed to win.
+How to Draw (Opt): Draw an XOR logic gate. Feed all array elements into it. Draw a line out. If 0 -&gt; Win. Next to it, draw a simple box that says "N % 2 == 0 -&gt; Win".
+Opt Complexity Visuals: Single Linear Scan. $O(N)$ time.
+How to Draw Opt Complexity: Draw a single, straight horizontal arrow piercing through all N elements of the array exactly once to calculate the XOR sum.
+Mem Vis (BF): Call Stack Tower: Draw a stack of memory frames N levels deep, representing the current game state at each turn.
+Mem Vis (Opt): $O(1)$ Accumulator: Draw a single small box representing the running XOR sum that overwrites itself.

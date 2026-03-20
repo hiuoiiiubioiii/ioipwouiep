@@ -1,0 +1,13 @@
+ID: 912
+Problem Title: Sort an Array
+Brute Force Method: Bubble, Selection, or Insertion sort. Repeatedly sweeping the array to swap adjacent or min/max elements.
+BF Complexity Visuals: $O(N^2)$ Quadratic. A dense triangle of nested loop iterations comparing almost every pair.
+How to Draw BF: Draw an array. Draw looping arcs connecting index 0 to every other element, then index 1 to the rest, creating a chaotic scribble.
+Optimised Pattern: Merge Sort / Quick Sort / Heap Sort (Divide &amp; Conquer)
+Opt Vis. Technique: Splitting a thick deck of cards in half repeatedly until you have single cards, then meticulously weaving them back together in order.
+Dry Run (Opt): (Merge Sort) Split array down to size 1. Compare elements of two sorted sub-arrays with two pointers, placing the smaller into a new merged array.
+How to Draw (Opt): Draw the array splitting into branches like an upside-down tree until individual elements remain. Then draw branches merging back up, sorting at each junction.
+Opt Complexity Visuals: $O(N \log N)$. A tree graph of depth log(N) where work N is done at each horizontal level.
+How to Draw Opt Complexity: Draw a grid. Height is log(N) splits. Width is N elements. Every level requires one full pass of N elements.
+Mem Vis (BF): $O(1)$ in-place swapping space, but $O(N^2)$ Time Limit Exceeded.
+Mem Vis (Opt): $O(N)$ auxiliary array for Merge Sort. Draw an empty array of equal length positioned directly below the main array to hold the merged results.

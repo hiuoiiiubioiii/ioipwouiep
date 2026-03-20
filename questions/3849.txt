@@ -1,0 +1,13 @@
+ID: 3849
+Problem Title: Maximum Bitwise XOR After Rearrangement (Med.)
+Brute Force Method: Try every permutation of the input array. For each permutation, calculate the prefix XORs and find the maximum value encountered.
+BF Complexity Visuals: N! array configurations being fully scanned for XOR peaks.
+How to Draw BF: Draw [A, B, C]. Draw [A, C, B], [B, A, C], etc. For each, calculate A, A oplus B, A oplus B oplus C. Write $O(N! \cdot N)$.
+Optimised Pattern: Greedy Bit-Construction + Trie.
+Opt Vis. Technique: Building the number bit-by-bit from MSB to LSB to ensure the largest possible value.
+Dry Run (Opt): Rearrangement usually implies we want the largest numbers to affect the highest bits. Sort or use a Trie to pick the best "next" number to XOR with the current prefix to keep it high.
+How to Draw (Opt): Draw binary numbers. Pick the one with the leftmost '1'. Then pick the next one that flips a '0' to a '1' in the highest possible position.
+Opt Complexity Visuals: Linear or Log-Linear sorting and scanning.
+How to Draw Opt Complexity: Draw N elements. Write "Sort $O(N \log N)$". Write "Scan $O(N)$". Total: $O(N \log N)$.
+Mem Vis (BF): Massive memory used to store permutation copies.
+Mem Vis (Opt): $O(1)$ or $O(N)$ depending on if you sort in-place or use a Trie.

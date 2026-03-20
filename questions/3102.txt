@@ -1,0 +1,13 @@
+ID: 3102
+Problem Title: Minimize Manhattan Distances
+Brute Force Method: Nested loop to calculate Manhattan distance |x1-x2| + |y1-y2| for all N^2 pairs of points. Find the max, then try removing each point one by one.
+BF Complexity Visuals: $O(N³)$ Point Removal Search
+How to Draw BF: Draw a grid with points. Show N different "missing point" scenarios, each requiring an $O(N^2)$ scan.
+Optimised Pattern: Coordinate Rotation (Chebyshev Transformation)
+Opt Vis. Technique: 45-Degree Axis Pivot
+Dry Run (Opt): Transform (x, y) to (u, v) where u = x+y and v = x-y. The max Manhattan distance is max(max(u)-min(u), max(v)-min(v)). Use a Multiset to efficiently find the new max after removing a point.
+How to Draw (Opt): Draw a standard X-Y grid. Draw a second grid rotated 45 degrees. Show how a diamond-shaped distance becomes a square-shaped distance (Chebyshev).
+Opt Complexity Visuals: $O(N \log N)$ with Multiset
+How to Draw Opt Complexity: Draw a linear pass to transform points, then show N operations of $O(\log N)$ for removing/re-inserting from the Multiset.
+Mem Vis (BF): Large 2D distance matrix storing all pairwise results.
+Mem Vis (Opt): Two TreeMap or Multiset structures to track x+y and x-y values.

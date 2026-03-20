@@ -1,0 +1,13 @@
+ID: 2597
+Problem Title: The Number of Beautiful Subsets
+Brute Force Method: Generate every possible subset (2^N). For each subset, check every pair of elements to see if their absolute difference is k. $O(2^N x N^2)$.
+BF Complexity Visuals: A massive power-set tree where most branches are pruned by a "difference" constraint.
+How to Draw BF: List the array. Try picking subsets. If you pick '5' and k=2, you can't pick '3' or '7'. Count all valid combinations.
+Optimised Pattern: Recursive Backtracking with Frequency Map (or House Robber DP).
+Opt Vis. Technique: A "Conditional Selection" tree where the path to include an element is blocked if its "forbidden partner" (val - k) was already chosen.
+Dry Run (Opt): Sort the array (optional but helps). Use recursion: dfs(index). At each step, you can either skip the element or include it. You can only include it if count[nums[index] - k] == 0 and count[nums[index] + k] == 0. Return the total count minus 1 (for the empty subset).
+How to Draw (Opt): Draw a decision tree. At each number, draw two branches: "Pick" and "Don't Pick." If you "Pick," check your "Already Picked" list to see if the forbidden partner is there. If yes, that branch dies.
+Opt Complexity Visuals: $O(2^N)$ in worst case, but significantly faster with pruning. Can be $O(N \log N)$ if modeled as a DP problem grouped by remainders of k.
+How to Draw Opt Complexity: Draw a recursion tree with limited depth. Highlight the "invalid" branches with an 'X' to show pruning.
+Mem Vis (BF): $O(2^N)$ to store all subsets.
+Mem Vis (Opt): $O(N)$ for the recursion stack and the frequency map.

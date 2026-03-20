@@ -1,0 +1,13 @@
+ID: 597
+Problem Title: Friend Requests I: Overall Acceptance Rate (SQL)
+Brute Force Method: Count every row in the Request table and every row in the Accept table, including duplicates, and divide.
+BF Complexity Visuals: Overcounting due to re-sent or duplicate requests. $O(N)$.
+How to Draw BF: Draw two tables. Count 10 requests and 5 accepts. Get 0.50. (But what if the same person requested twice?)
+Optimised Pattern: Distinct Counting + Null Handling.
+Opt Vis. Technique: A "Unique Connection" tally. You only care about unique pairs of people. A request from A to B only counts once, no matter how many times it was sent.
+Dry Run (Opt): `SELECT ROUND(IFNULL(COUNT(DISTINCT requester_id, accepter_id) / COUNT(DISTINCT sender_id, send_to_id), 0), 2) AS accept_rate`.
+How to Draw (Opt): Draw two lists. Cross out any duplicate pairs. Count the unique pairs in the "Accept" list and divide by unique pairs in the "Request" list. Use `IFNULL` to handle the "0 requests" case.
+Opt Complexity Visuals: Linear scan with a Hash Set for duplicates. $O(N)$.
+How to Draw Opt Complexity: Draw two streams flowing into two separate "Unique Sets," then a single division box.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): Two Hash Sets to store unique pairs. $O(N)$.

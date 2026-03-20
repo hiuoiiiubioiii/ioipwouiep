@@ -1,0 +1,13 @@
+ID: 15
+Problem Title: 3Sum
+Brute Force Method: Generate All Triplets Use three nested loops to check every possible combination of three numbers.
+BF Complexity Visuals: 3D Cube of Combinations
+How to Draw BF: Draw three nested rotating gears (i, j, k). Write out the formula N * (N-1) * (N-2) to explicitly show the disastrous $O(N³)$ complexity.
+Optimised Pattern: Sort + Anchor &amp; Squeeze
+Opt Vis. Technique: The Pinned Thumbtack
+Dry Run (Opt): Sort the array. Pin pointer 'i' (the anchor). Use standard 2Sum II (L and R pointers squeezing inward) on the remaining right side of the array. Skip duplicates!
+How to Draw (Opt): Draw a sorted array. Stick a thumbtack on 'i'. Bracket the rest of the array. Put 'L' at the start of the bracket, 'R' at the end. Move L/R based on the sum.
+Opt Complexity Visuals: N * (Squeezing Line)
+How to Draw Opt Complexity: Draw an $O(N \log N)$ box for sorting. Below it, draw an outer loop (N times). Inside it, draw a straight line representing the $O(N)$ L/R squeeze. Total = $O(N²)$.
+Mem Vis (BF): Generates massive duplicate sets in memory requiring expensive deduplication.
+Mem Vis (Opt): Draw just three pointer variables (i, L, R) scanning the array in place. Space complexity is $O(1)$ or $O(N)$ depending purely on the sorting algorithm used.

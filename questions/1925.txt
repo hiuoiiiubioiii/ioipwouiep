@@ -1,0 +1,13 @@
+ID: 1925
+Problem Title: Count Square Sum Triples
+Brute Force Method: Use three nested loops for a, b, and c (from 1 to n) and check if a^2 + b^2 = c^2.
+BF Complexity Visuals: Triple-Nested Loop Cube
+How to Draw BF: Draw a 3D cube of size n x n x n. Every cell in the cube is a check operation. $O(n^3)$.
+Optimised Pattern: Double Loop with Square Root Check
+Opt Vis. Technique: 2D Grid with Perfect Square Probe
+Dry Run (Opt): Loop a and b from 1 to n. Calculate val = a^2 + b^2. Check if val \le n^2 and if \sqrt{val} is an integer.
+How to Draw (Opt): Draw a 2D grid (a vs b). For each cell, calculate the hypotenuse and check if it’s a "clean" integer within bounds.
+Opt Complexity Visuals: Quadratic Area Scan
+How to Draw Opt Complexity: Draw a 2D square of size n \times n. Every cell is one operation. $O(n^2)$ total time.
+Mem Vis (BF): $O(1)$ - Three integer counters in a loop.
+Mem Vis (Opt): $O(1)$ - Two integer counters and one math check variable.

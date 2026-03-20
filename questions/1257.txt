@@ -1,0 +1,13 @@
+ID: 1257
+Problem Title: Smallest Common Region
+Brute Force Method: For two regions, find every "ancestor" region (parent, grandparent, etc.) by searching the hierarchy. Store all ancestors of Region 1 in a list, then scan Region 2's ancestors for the first match.
+BF Complexity Visuals: Exhaustive Parent Search
+How to Draw BF: Draw a tree. Pick Region 1, draw arrows to root. Pick Region 2, draw arrows to root. Check every pair of arrows for equality. Write $O(N^2)$.
+Optimised Pattern: Hash Map (Parent Pointer) + Set Intersection
+Opt Vis. Technique: The "Ancestry Trace" Path
+Dry Run (Opt): Build a Map where Key = Child and Value = Parent. Trace the path from Region 1 to the root and put it in a Set. Then trace Region 2 up; the first node you find already in the Set is the answer.
+How to Draw (Opt): Draw a Map table: [Child | Parent]. Trace Region 1 up, circling nodes in blue. Trace Region 2 up, circling nodes in red. The first node with both colors is your Smallest Common Region.
+Opt Complexity Visuals: Two Linear Path Scans
+How to Draw Opt Complexity: Draw a hierarchy tree. Draw two lines moving upward from different leaves to the root. Write $O(N)$.
+Mem Vis (BF): Draw multiple lists of all regions in the system.
+Mem Vis (Opt): Draw a HashMap for child-parent relationships and a HashSet for the first path. Space: $O(N)$.

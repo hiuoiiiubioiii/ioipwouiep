@@ -1,0 +1,13 @@
+ID: 1019
+Problem Title: Next Greater Node In Linked List
+Brute Force Method: For each node, traverse the rest of the linked list forward to find the first larger value.
+BF Complexity Visuals: Nested loops; for every step forward, a "scout" runs all the way to the end of the line.
+How to Draw BF: Draw linked list. From node 1, draw an arrow checking node 2, 3, 4. From node 2, draw arrow to 3, 4. Write $O(N^2)$.
+Optimised Pattern: Monotonic Stack.
+Opt Vis. Technique: A waiting room (stack) of unresolved nodes. When a tall person (larger value) walks in, everyone shorter than them gets their answer and leaves.
+Dry Run (Opt): Push pairs of (index, value) onto a stack. If current value &gt; stack top, pop stack top and set its result array index to current value. Push current.
+How to Draw (Opt): Draw list. Draw a U-shape (stack). Put index 0 in. If node 1 &gt; node 0, cross out 0, write node 1's value in result array at index 0.
+Opt Complexity Visuals: A single linear sweep with a stack growing and shrinking.
+How to Draw Opt Complexity: Draw an array creation, then a single pass line through the list. Write Time: $O(N)$.
+Mem Vis (BF): $O(1)$ pointers for the linked list search, plus $O(N)$ for the output array.
+Mem Vis (Opt): A stack structure peaking at $O(N)$ size for strictly descending lists.

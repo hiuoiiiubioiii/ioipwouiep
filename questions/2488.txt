@@ -1,0 +1,13 @@
+ID: 2488
+Problem Title: Count Subarrays With Median K
+Brute Force Method: Find the index of 'k'. Generate all subarrays containing that index. For each, check if the count of elements &gt; k and &lt; k satisfies the median condition.
+BF Complexity Visuals: Nested Subarray Scan
+How to Draw BF: Draw the array. Circle 'k'. Draw brackets of all sizes expanding around 'k'. Label $O(N^2)$.
+Optimised Pattern: Prefix Sums + Frequency Map (Balance Tracking)
+Opt Vis. Technique: Balance Beam Accumulator
+Dry Run (Opt): Replace numbers &gt; k with +1, &lt; k with -1. Calculate prefix sums. Count subarrays ending after 'k' where the sum is 0 or 1.
+How to Draw (Opt): Draw a line of numbers. Write +1, 0, -1 above them. Create a Map. On the left of 'k', store prefix sum frequencies. On the right, check for matching sums.
+Opt Complexity Visuals: Two-Pass Linear Scan
+How to Draw Opt Complexity: Draw two arrows moving out from index 'k'. Label $O(N)$ Time.
+Mem Vis (BF): Draw a results variable.
+Mem Vis (Opt): Draw a Hash Map storing up to N prefix sum counts. $O(N)$ Space.

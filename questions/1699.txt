@@ -1,0 +1,13 @@
+ID: 1699
+Problem Title: Number of Calls Between Two Persons (SQL)
+Brute Force Method: Self-join the table to find (A, B) and (B, A) pairs, then use UNION to combine and group them.
+BF Complexity Visuals: Redundant Cartesian Join
+How to Draw BF: Draw a table joined to itself, creating a massive matrix of duplicate calls. $O(N^2)$.
+Optimised Pattern: SQL LEAST() and GREATEST() Functions
+Opt Vis. Technique: Sorted Key Normalization
+Dry Run (Opt): Transform every row so `person1` is always the smaller ID and `person2` is the larger. `GROUP BY LEAST(p1, p2), GREATEST(p1, p2)`.
+How to Draw (Opt): Draw a table with two columns. For each row, write the smaller ID on the left and larger on the right. Group the identical rows.
+Opt Complexity Visuals: Single Table Pass
+How to Draw Opt Complexity: Draw a straight arrow through the table once. $O(N)$.
+Mem Vis (BF): Temp Union Tables: Multiple redundant copies of the dataset in memory.
+Mem Vis (Opt): Hash Grouping Buffer: Draw a single aggregate table in RAM. $O(N)$.

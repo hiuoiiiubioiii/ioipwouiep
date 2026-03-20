@@ -1,0 +1,13 @@
+ID: 3688
+Problem Title: Bitwise OR of Even Numbers in an Array (Easy)
+Brute Force Method: Iterate through the array, if the number is even, add it to a list. Then loop through the list to calculate the OR. $O(N)$.
+BF Complexity Visuals: Two-Pass Filter and Accumulate.
+How to Draw BF: Draw an array. Loop 1: Find evens and put in new array. Loop 2: XOR the new array. If N is large, the temporary array wastes space.
+Optimised Pattern: Single-pass iteration with a running bitwise OR variable and a parity check.
+Opt Vis. Technique: The "Even Filter" Funnel.
+Dry Run (Opt): Imagine the array falling through a screen. The screen only lets "Even" numbers pass (those with bit 0 as '0'). The numbers that pass fall into a single "OR Bucket".
+How to Draw (Opt): Initialize res = 0. Draw an arrow through the array. At each step, if num % 2 == 0, res |= num.
+Opt Complexity Visuals: Single Horizontal Timeline.
+How to Draw Opt Complexity: Draw one arrow scanning the array once. $O(N)$.
+Mem Vis (BF): Creating a new list to store all even numbers found.
+Mem Vis (Opt): A single integer variable res. Space $O(1)$.

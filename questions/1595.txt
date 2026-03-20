@@ -1,0 +1,13 @@
+ID: 1595
+Problem Title: Minimum Cost to Connect Two Groups of Points
+Brute Force Method: Try every possible subset of edges that connects both groups and find the minimum cost. $O(2^{N \cdot M})$.
+BF Complexity Visuals: Edge-Subset Power Set
+How to Draw BF: Draw two groups of points. Draw all lines between them. Branch out for every line: "Include" or "Exclude". The complexity is astronomical.
+Optimised Pattern: DP + Bitmask
+Opt Vis. Technique: The Connectivity Mask Matrix
+Dry Run (Opt): Define `dp[i][mask]` as the min cost to connect the first i items of Group 1, where `mask` represents the set of Group 2 items already connected. Use bitwise OR to update the mask.
+How to Draw (Opt): Draw Group 1 on the left and Group 2 on the right. Group 2 nodes are "lights" that can be ON or OFF. For the 1st node of Group 1, try connecting it to every light. Write down the cost and the configuration of ON lights. Move to node 2.
+Opt Complexity Visuals: State-Space Product $O(N \cdot 2^M \cdot M)$
+How to Draw Opt Complexity: Draw a 2D table where rows are Group 1 (N) and columns are 2^M possible binary states. Each cell's update involves a loop of size M.
+Mem Vis (BF): Massive recursive tree with redundant state paths.
+Mem Vis (Opt): A 2D DP table of size N \times 2^M. $O(N \cdot 2^M)$ space.

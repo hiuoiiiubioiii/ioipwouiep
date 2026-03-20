@@ -1,0 +1,13 @@
+ID: 1852
+Problem Title: Distinct Numbers in Each Subarray (Premium)
+Brute Force Method: For every possible window of size k, create a new Hash Set and count its elements.
+BF Complexity Visuals: Sliding window "Flashlight" view.
+How to Draw BF: Draw an array. Draw a box of size k. Move it one by one. For each position, list all unique numbers inside. Mark $O(N \\text{times} k)$.
+Optimised Pattern: Sliding Window + Frequency Array/Map.
+Opt Vis. Technique: Sliding frame with a tally board.
+Dry Run (Opt): Initialize window of size k. Move window: add `new_item` to map (increment count), remove `old_item` (decrement count). If count becomes 0, remove key. Map size is the answer.
+How to Draw (Opt): Draw the array and a tally table below. As the window moves, update tally marks. Count the number of rows in the table with non-zero marks.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw an arrow from 0 \dots N. Mark each step as $O(1)$ hash map update. Total $O(N)$.
+Mem Vis (BF): Multiple Hash Sets (one per window) causing GC pressure.
+Mem Vis (Opt): A single Frequency Array (size MaxVal) or a Hash Map in heap memory.

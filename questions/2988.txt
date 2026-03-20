@@ -1,0 +1,13 @@
+ID: 2988
+Problem Title: Manager of the Largest Department
+Brute Force Method: Find department sizes using `GROUP BY`, then use a subquery with `MAX()` to find the ID, then join to find the manager.
+BF Complexity Visuals: Multi-Join Hub
+How to Draw BF: Draw three interconnected circles representing three separate query steps. $O(N^2)$.
+Optimised Pattern: Window Function (`DENSE_RANK()`)
+Opt Vis. Technique: Department Size Ranking
+Dry Run (Opt): Count employees per department. Use `DENSE_RANK()` to rank these counts. Filter where `rank = 1` and `position = 'Manager'`.
+How to Draw (Opt): Draw a bar chart of department sizes. Order them from tallest to shortest. Assign '1' to the tallest bar.
+Opt Complexity Visuals: Sorted Aggregation Timeline
+How to Draw Opt Complexity: Draw a timeline of N employees. Sorting into departments takes $O(N \log N)$. T = $O(N \log N)$.
+Mem Vis (BF): Multiple intermediate result sets stored on disk.
+Mem Vis (Opt): A single grouped data frame in memory. Space $O(\text{Departments})$.

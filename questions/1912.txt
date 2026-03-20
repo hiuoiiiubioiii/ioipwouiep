@@ -1,0 +1,13 @@
+ID: 1912
+Problem Title: Design Movie Rental System
+Brute Force Method: Store all movie copies in a standard list. Scan the entire list linearly to find unrented movies, cheapest movies, or to drop off.
+BF Complexity Visuals: Unsorted Array Scanning
+How to Draw BF: Draw a massive array. Draw a magnifying glass starting at index 0 and sliding all the way to N for every single query. $O(N)$ per operation.
+Optimised Pattern: Multiple TreeSets / Priority Queues + HashMaps
+Opt Vis. Technique: Connected Multi-Index Routing
+Dry Run (Opt): Keep an `unrented` sorted set and a `rented` sorted set. Use HashMaps to instantly find a movie's node, then move it between the sets.
+How to Draw (Opt): Draw two large bins (TreeSets). Draw a movie item. Draw an arrow moving the item instantly from 'unrented' to 'rented', preserving its sorted rank.
+Opt Complexity Visuals: Logarithmic Branch Lookup
+How to Draw Opt Complexity: Draw a balanced tree. Highlight a single path from root to leaf to represent the $O(\log N)$ lookup and insertion time.
+Mem Vis (BF): A massive flat array or list taking up continuous heap memory.
+Mem Vis (Opt): Complex web of balanced Binary Search Trees nodes and Hash Map buckets linking to the same memory addresses.

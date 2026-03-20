@@ -1,0 +1,13 @@
+ID: 2700
+Problem Title: Differences Between Two Objects
+Brute Force Method: Flat comparison loops that fail on nested structures, requiring messy `JSON.stringify` hacks that break on unordered keys.
+BF Complexity Visuals: Stringified Mismatch Mess
+How to Draw BF: Draw two giant JSON strings. Try to draw lines between matching properties. The lines become a chaotic web due to key ordering.
+Optimised Pattern: Recursive DFS (Object Traversal)
+Opt Vis. Technique: The Deep-Diff Tree Walker
+Dry Run (Opt): Recursively walk both objects simultaneously. If types differ or they are primitives, return the difference array. If they are arrays/objects, recurse into matching keys. Ignore keys not present in both.
+How to Draw (Opt): Draw two matching tree structures (Objects/Arrays). Trace down both simultaneously with two fingers. If a leaf node differs, circle it and write `[val1, val2]`.
+Opt Complexity Visuals: Node Traversal $O(N)$
+How to Draw Opt Complexity: Draw a tree representing the object structure. A single line traces through all shared nodes.
+Mem Vis (BF): Deep copies of objects via JSON parsing.
+Mem Vis (Opt): Call stack depth matching object nesting. $O(\text{Depth})$ space.

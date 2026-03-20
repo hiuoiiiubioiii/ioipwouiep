@@ -1,0 +1,13 @@
+ID: 2146
+Problem Title: K Highest Ranked Items Within a Price Range
+Brute Force Method: Perform a BFS to find all reachable items, store them in a list, and sort the entire list by the 4-tier ranking criteria.
+BF Complexity Visuals: A wave expanding from a point, followed by a massive, disorganized sorting block.
+How to Draw BF: Draw a grid with a ripple. Then draw a huge list of items with arrows pointing to a sorted list. $O(R\cdot C + N \log N)$.
+Optimised Pattern: BFS + Priority Queue (Min-Heap / Max-Heap).
+Opt Vis. Technique: A radar sweeping the grid and dropping items into a small, sorted "top-K" bucket.
+Dry Run (Opt): Use BFS to explore by distance. For each item in price range, add to a Priority Queue of size K. Stop BFS early if current distance &gt; distance of last item in K.
+How to Draw (Opt): Draw a grid. Mark 'Start'. Draw concentric squares (distance 1, 2, 3). For items found, write their (dist, price, r, c) in a "Top K" table, replacing entries as higher ranks appear.
+Opt Complexity Visuals: $O(R\cdot C)$ traversal + $O(\log K)$ heap ops.
+How to Draw Opt Complexity: A grid ripple feeding into a small fixed-size vertical stack (the heap).
+Mem Vis (BF): Massive List storing every single grid cell as an object.
+Mem Vis (Opt): BFS Queue (frontier) + Priority Queue of size K. $O(R\cdot C)$.

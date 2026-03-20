@@ -1,0 +1,13 @@
+ID: 1146
+Problem Title: Snapshot Array
+Brute Force Method: Every time `snap()` is called, copy the entire array into a new list. $O(N x \text{Snaps})$.
+BF Complexity Visuals: Layered Memory Slices
+How to Draw BF: Draw a thick array. For every snap, draw an identical thick array below it. Show the massive space waste.
+Optimised Pattern: History Tracking (Binary Search on Versions)
+Opt Vis. Technique: Versioned Timeline Log
+Dry Run (Opt): Instead of copying the array, each index stores a list of `(snap_id, value)`. `set()` appends to the log. `get(index, snap_id)` uses binary search to find the latest value <= snap_id.
+How to Draw (Opt): Draw an array of buckets. Inside each bucket, draw a list of pairs like `[(0,5), (2,10)]`. For a query at snap 1, show a pointer moving to (0,5).
+Opt Complexity Visuals: Logarithmic Search $O(\log S)$
+How to Draw Opt Complexity: Draw a horizontal array of N size. Above each index, draw a vertical log curve representing the binary search depth.
+Mem Vis (BF): Exponential $O(N x S)$
+Mem Vis (Opt): Sparse Memory $O(\text{Sets} + \text{Snaps})$. Only store changes.

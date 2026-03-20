@@ -1,0 +1,13 @@
+ID: 3455
+Problem Title: Shortest Matching Substring
+Brute Force Method: Generate all substrings and check if each matches the pattern with wildcards using nested loops. $O(N^3)$
+BF Complexity Visuals: Triangular Pattern Search.
+How to Draw BF: Draw the string. Below it, draw brackets for every substring and a "Wildcard Checker" box for each.
+Optimised Pattern: KMP (LPS Array) + Three-Pointer Greedy Slide. $O(N + M)$
+Opt Vis. Technique: Split Pattern Matching Tracks.
+Dry Run (Opt): Split pattern into 3 fixed parts. Use KMP to find all occurrences of each. Use three pointers to find the smallest range [i, k] that contains all parts in order.
+How to Draw (Opt): Draw 3 horizontal lines below the string. Mark the indices where part A, B, and C start. Draw a bracket encompassing one of each in sequence.
+Opt Complexity Visuals: Multi-Linear Pass Timeline.
+How to Draw Opt Complexity: Draw 3 parallel lines for KMP scans, followed by a single combined line for the sliding window.
+Mem Vis (BF): Large intermediate substring copies for pattern validation.
+Mem Vis (Opt): Three 1D LPS arrays and three integer lists of match indices.

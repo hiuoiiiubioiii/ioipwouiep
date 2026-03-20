@@ -1,0 +1,13 @@
+ID: 300
+Problem Title: Longest Increasing Subsequence
+Brute Force Method: Generate all possible subsequences (2^N) and check each for the "increasing" property.
+BF Complexity Visuals: Subsequence Explosion: $O(2^N)$.
+How to Draw BF: Draw a root. For every number, branch "Include" or "Exclude". It forms a massive binary tree.
+Optimised Pattern: Patience Sorting (Binary Search + Tails Array)
+Opt Vis. Technique: Deck of Cards Stacks
+Dry Run (Opt): Maintain a `tails` list. For each x, find the smallest element in `tails` \ge x using binary search and replace it. If no such element exists, append x.
+How to Draw (Opt): Draw several piles of cards. If a new card is smaller than a pile's top, put it there. If larger than all, start a new pile on the right. Length = number of piles.
+Opt Complexity Visuals: Log-Linear Scan: $O(N \log N)$.
+How to Draw Opt Complexity: Draw a timeline. Above it, draw a height-line representing the binary search ( \log N) for each of the N elements.
+Mem Vis (BF): Recursion stack for all subsets.
+Mem Vis (Opt): Tails Array: Draw a single 1D array that stays sorted. Space: $O(N)$.

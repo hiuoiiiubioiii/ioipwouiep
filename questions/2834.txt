@@ -1,0 +1,13 @@
+ID: 2834
+Problem Title: Find the Minimum Possible Sum of a Beautiful Array
+Brute Force Method: (Identical logic to 2829 with different constraints). Start from 1, use a set to avoid pairs that sum to k, and stop when the set has n elements.
+BF Complexity Visuals: Sequential Search Map
+How to Draw BF: Draw a "Checked Numbers" box. For each number, show a lookup to see if (k - current) exists. Show the $O(n)$ search time.
+Optimised Pattern: Arithmetic Series Segmentation (Modulo Math)
+Opt Vis. Technique: Mathematical Summation
+Dry Run (Opt): Split the array into two segments: 1 to min(n, k/2) and then jumping to k and continuing until n elements are reached. Use (n * (a + l) / 2) % mod.
+How to Draw (Opt): Draw two separate arithmetic progression bars. Label the first "Lower Half" and the second "Upper Offset". Use the formula to calculate the sum of each in one step.
+Opt Complexity Visuals: Constant Time $O(1)$ Calculation
+How to Draw Opt Complexity: Draw a single math formula block. No loops are required if utilizing direct summation formulas.
+Mem Vis (BF): Visualize a HashSet consuming $O(n)$ memory.
+Mem Vis (Opt): Visualize a single long variable for the result. Pure $O(1)$ space.

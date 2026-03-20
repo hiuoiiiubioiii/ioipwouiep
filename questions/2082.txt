@@ -1,0 +1,13 @@
+ID: 2082
+Problem Title: The Number of Rich Customers (SQL)
+Brute Force Method: Select all rows where amount &gt; 500, then read into a set in Python/Java to count unique customer IDs.
+BF Complexity Visuals: Full Row Retrieval Funnel
+How to Draw BF: Draw a massive database table. Draw an arrow pulling every single "rich" transaction into an application-side bucket.
+Optimised Pattern: COUNT(DISTINCT customer_id)
+Opt Vis. Technique: Unique Filter Sieve
+Dry Run (Opt): Perform a single SQL query: `SELECT COUNT(DISTINCT customer_id) FROM Store WHERE amount &gt; 500`. The DB engine does the deduplication.
+How to Draw (Opt): Draw the table. Cross out rows &lt;= 500. Highlight the IDs in the remaining rows, but only circle each unique ID once. Write the total count at the bottom.
+Opt Complexity Visuals: Single Filtered Scan
+How to Draw Opt Complexity: Draw one straight line (O(N) scan). Data passes through a "Distinct" filter. Total Time $O(N)$.
+Mem Vis (BF): A huge list or set in application memory holding duplicate IDs.
+Mem Vis (Opt): In-memory Hash Set handled by the database engine. Space $O(\text{Unique Customers})$.

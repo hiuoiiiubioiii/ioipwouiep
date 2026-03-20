@@ -1,0 +1,13 @@
+ID: 489
+Problem Title: Robot Room Cleaner
+Brute Force Method: Random Walk Move the robot randomly and turn when hitting a wall. (No guarantee of completion).
+BF Complexity Visuals: Messy Scribble
+How to Draw BF: Draw a grid. Draw a chaotic, overlapping line. Inefficient and non-deterministic.
+Optimised Pattern: Backtracking with Coordinate Set Maintain a `visited` Set of `(row, col)`. Always try to clean, move, recurse, then return and face original direction.
+Opt Vis. Technique: Blind Explorer's Map
+Dry Run (Opt): Imagine the robot is in the dark. It leaves a "trail of breadcrumbs" (Set) and always follows its "right hand" (rotation logic) to return home.
+How to Draw (Opt): Draw a grid. Mark robot at (0,0). For each move, write the new relative coord. Use an "Undo" arrow showing the robot turning 180 and moving back.
+Opt Complexity Visuals: Grid Coverage
+How to Draw Opt Complexity: Draw the grid. Show the robot visits each reachable cell once. $O(N)$ where N is total cells.
+Mem Vis (BF): None Constant variables.
+Mem Vis (Opt): HashSet + Stack Draw a Set of coordinates and a recursive stack of size N. $O(N)$.

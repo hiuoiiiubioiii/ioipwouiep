@@ -1,0 +1,13 @@
+ID: 3447
+Problem Title: Assign Elements to Groups with Constraints
+Brute Force Method: For each group size G, iterate through every element E to find the first divisor. $O(G \cdot E)$
+BF Complexity Visuals: Dense Connection Web.
+How to Draw BF: Draw Groups on the left and Elements on the right. Draw lines from every group to every element to test divisibility.
+Optimised Pattern: Sieve of Eratosthenes / Harmonic Series Mapping. $O(M \log M + N)$
+Opt Vis. Technique: Number Line Multiples Marking.
+Dry Run (Opt): For each unique element X, jump along a number line at 2X, 3X, etc., marking the first index of X that hits that multiple.
+How to Draw (Opt): Draw a 1D array of size Max(Groups). For element '2' at index '0', write '0' at indices 2, 4, 6, 8... across the array.
+Opt Complexity Visuals: Harmonic Progression Curve.
+How to Draw Opt Complexity: Draw a sequence of decreasing jumps (N/2, N/3, N/4...) to illustrate the log N summation of work.
+Mem Vis (BF): Negligible, but extremely high CPU time due to redundant division checks.
+Mem Vis (Opt): A single "Best Index" array of size Max_Value (10^5).

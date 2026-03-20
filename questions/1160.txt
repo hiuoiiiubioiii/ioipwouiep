@@ -1,0 +1,13 @@
+ID: 1160
+Problem Title: Find Words That Can Be Formed by Characters
+Brute Force Method: For every word, sort the word and the `chars` string, then use two pointers to see if the word is a subset.
+BF Complexity Visuals: Sorting Comparison Matrix $O(W \cdot N \log N)$
+How to Draw BF: Draw a word. Sort it: "apple" rightarrow "aelpp". Sort chars: "aelppz". Compare. Repeat for 1000 words.
+Optimised Pattern: Frequency Array (Hash Buckets)
+Opt Vis. Technique: Inventory Check Visualization
+Dry Run (Opt): Count frequencies of `chars` in an array of size 26. For each word, count its frequencies. If word-count <= char-count for all 26 letters, add length to sum.
+How to Draw (Opt): Draw a "Pantry" with 26 jars labeled A-Z. Put the number of available letters in each jar. For a word, check if you have enough "ingredients" in each jar to cook it.
+Opt Complexity Visuals: Linear Scan $O(\text{Words} x \text{Length})$
+How to Draw Opt Complexity: Draw a single pass through `chars`, then a single pass through each word. No sorting needed.
+Mem Vis (BF): Multiple sorted string copies
+Mem Vis (Opt): Two fixed-size arrays `int[26]`. Draw two small rows of 26 boxes.

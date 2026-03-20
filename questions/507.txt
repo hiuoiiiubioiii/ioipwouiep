@@ -1,0 +1,13 @@
+ID: 507
+Problem Title: Perfect Number
+Brute Force Method: Iterate from 1 to N-1. Check if N % i == 0. If so, add to sum. Compare sum to N. $O(N)$.
+BF Complexity Visuals: A long, flat number line iterating through every single integer up to N.
+How to Draw BF: Draw a line from 1 to N, placing a checkmark on every single number that divides evenly.
+Optimised Pattern: Math / Pair Divisors up to Square Root of N.
+Opt Vis. Technique: Folding a number line in half at the square root, where left factors instantly reveal right factors.
+Dry Run (Opt): Loop i from 1 to sqrt(num). If num % i == 0, sum += i. If i * i != num, sum += num / i.
+How to Draw (Opt): Draw a box for `num`. Draw a small loop 1 to sqrt(N). Connect factor pairs with an arc, dropping them into a "Sum Bucket".
+Opt Complexity Visuals: A line abruptly truncated at the square root. $O(\text{sqrt}(N)$).
+How to Draw Opt Complexity: Draw a timeline, but cut it off very early (at the square root mark), indicating massive time saved.
+Mem Vis (BF): Just a single integer tracking the sum. $O(1)$.
+Mem Vis (Opt): Just a single integer tracking the sum. $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2401
+Problem Title: Longest Nice Subarray
+Brute Force Method: Nested loops checking all possible subarrays; bitwise ANDing every pair inside to ensure it equals 0.
+BF Complexity Visuals: N x N Iteration Grid / Nested Tree
+How to Draw BF: Draw a 2D matrix of indices (i, j). Shade cells where j &gt;= i. Write $O(N^3)$ next to it since verifying each pair takes $O(N)$.
+Optimised Pattern: Sliding Window / Two Pointers with Bitmask Running OR
+Opt Vis. Technique: Expanding/Contracting Window over Binary Grids
+Dry Run (Opt): Imagine a window. Keep a running 'OR' integer. If new num AND running OR != 0, shrink window from left, XORing out left elements until AND == 0.
+How to Draw (Opt): Draw array as a tape. Write binary representations above each number. Draw a bracket [ ] for the window. Cross out bits as L pointer moves right.
+Opt Complexity Visuals: Two-Pointer Timeline Array
+How to Draw Opt Complexity: Draw a number line 0 to N. Draw an 'R' arrow moving monotonically right N times. Draw an 'L' arrow moving right at most N times. Label: 2N steps total = $O(N)$.
+Mem Vis (BF): Draw an array of size N allocated for every subarray check to store pairs, showing $O(1)$ extra but heavy pointer reuse.
+Mem Vis (Opt): Draw a single 32-bit block. Shade in 1s and erase them to represent the single integer running bitmask. (O(1) space).

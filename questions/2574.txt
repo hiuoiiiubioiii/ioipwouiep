@@ -1,0 +1,13 @@
+ID: 2574
+Problem Title: Left and Right Sum Differences
+Brute Force Method: For every index i, run one loop from 0 to i-1 for the left sum and another loop from i+1 to N-1 for the right sum. $O(N^2)$.
+BF Complexity Visuals: An array where every element triggers two full scans of its neighbors.
+How to Draw BF: Write [10, 4, 8]. For 4: Left is 10, Right is 8. Diff is 2. Repeat for 10 and 8.
+Optimised Pattern: Prefix and Suffix Running Totals.
+Opt Vis. Technique: A "Total Balance" visual: subtracting the current prefix sum from the total sum to find the suffix sum in $O(1)$.
+Dry Run (Opt): Calculate the total sum of the array first. Iterate through the array, maintaining a `leftSum`. The `rightSum` is simply `totalSum - leftSum - nums[i]`. Calculate the absolute difference and update `leftSum` for the next step.
+How to Draw (Opt): Write the array. Calculate the total. Start a "Running Left Sum" at 0. At each number, calculate `Total - LeftSum - Current`. Write the result. Add `Current` to `LeftSum`.
+Opt Complexity Visuals: $O(N)$ - One pass to get the total, one pass to calculate the differences.
+How to Draw Opt Complexity: Draw the array. Draw one arrow getting the total sum. Draw a second arrow moving through, with a "running tally" counter updating as it goes.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N)$ to store the result array.

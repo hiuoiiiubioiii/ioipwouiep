@@ -1,0 +1,13 @@
+ID: 250
+Problem Title: Count Univalue Subtrees
+Brute Force Method: For every node in the tree, start a new DFS to check if all its descendants have the same value.
+BF Complexity Visuals: Quadratic Tree Scan: $O(N^2)$.
+How to Draw BF: Draw a tree. Draw a circle around every node. Inside each circle, draw a small sub-tree search.
+Optimised Pattern: Post-Order DFS (Bottom-Up Flagging)
+Opt Vis. Technique: Status Bubble-Up
+Dry Run (Opt): Each node asks its children: "Are you univalue and do you match my value?" If both say yes, the current node is univalue. Increment global counter.
+How to Draw (Opt): Draw a tree. Use green/red "up" arrows. Green means "I am univalue", Red means "I am not". A node is Green if its children are Green and match.
+Opt Complexity Visuals: Single Tree Traversal: $O(N)$.
+How to Draw Opt Complexity: Draw a single continuous line snaking around the tree (Euler Tour), touching each node exactly once.
+Mem Vis (BF): Deep recursive calls for every node's sub-search.
+Mem Vis (Opt): Implicit Recursion Stack: Draw a vertical stack of height H. Space: $O(H)$.

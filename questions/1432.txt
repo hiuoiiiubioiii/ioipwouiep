@@ -1,0 +1,13 @@
+ID: 1432
+Problem Title: Max Difference You Can Get From Changing an Integer
+Brute Force Method: Try every possible digit (0-9) to replace every other digit (0-9) in the number. Generate all possible numbers, store them, and find (max - min).
+BF Complexity Visuals: Exhaustive Permutation Search
+How to Draw BF: Draw the number. Branch into 10 options for replacing '1', 10 for '2', etc. Draw a massive list of results and a sorting machine. Label $O(100 \\text{cdot Digits})$.
+Optimised Pattern: Greedy Digit Substitution
+Opt Vis. Technique: Priority Placement (Most Significant Digit)
+Dry Run (Opt): To Maximize: Replace the first digit that isn't '9' with '9'. To Minimize: If first digit &gt; 1, replace it with '1'. Else, replace the first digit (after first) that isn't '0' or '1' with '0'.
+How to Draw (Opt): Draw the digits as slots. For MAX, look left-to-right for the first "weak" slot (not 9) and fill it/all its twins with 9s. For MIN, look for the first slot to force toward 0 or 1.
+Opt Complexity Visuals: Constant-Time String Scan
+How to Draw Opt Complexity: Draw a single arrow over the digits. Label $O(\log N)$ where N is the number (digits count).
+Mem Vis (BF): List of all possible transformed numbers
+Mem Vis (Opt): Two string copies of the original number. Space $O(\log N)$.

@@ -1,0 +1,13 @@
+ID: 1338
+Problem Title: Reduce Array Size to The Half
+Brute Force Method: Generate subsets, physically remove them from the array, and recalculate frequencies manually inside a nested loop.
+BF Complexity Visuals: Redundant Array Shifting
+How to Draw BF: Draw an array. Pick a number, erase all its occurrences, shift the remaining elements to fill gaps, and check the size. Highly inefficient $O(N²)$.
+Optimised Pattern: Frequency Map + Greedy Sort
+Opt Vis. Technique: Tally and Greedily Consume
+Dry Run (Opt): Count frequencies using a Hash Map. Extract just the frequency values into an array. Sort descending. Greedily subtract frequencies from `total_size` until `&lt;= half`.
+How to Draw (Opt): Draw an array. Dump it into buckets based on value. Measure bucket weights. Sort buckets by weight. Pick the heaviest bucket, subtract its weight from N. Repeat until half.
+Opt Complexity Visuals: Map -&gt; Value Sort -&gt; Linear Scan
+How to Draw Opt Complexity: Draw an array tunneling into a Hash Map $O(N)$. Draw the values flowing into a sorting funnel $O(U \log U)$. Draw a single arrow ticking down a counter until half.
+Mem Vis (BF): Mutated Cloned Arrays: Thousands of array copies with elements physically removed.
+Mem Vis (Opt): Hash Map + Value Vector: Draw a `std::unordered_map` for counting, and a compact `std::vector` holding just the frequencies for sorting.

@@ -1,0 +1,13 @@
+ID: 3630
+Problem Title: Partition Array for Maximum XOR and AND (Hard)
+Brute Force Method: Backtracking to find all 2^(N-1) possible array partitions, calculating the XOR and AND for every single configuration.
+BF Complexity Visuals: Binary Partition Tree.
+How to Draw BF: Draw the array. At every gap between numbers, branch left ("Split Here") and right ("Don't Split"). The tree width explodes exponentially. Write $O(2^N)$.
+Optimised Pattern: Greedy Bit-by-Bit Construction (from MSB to LSB). Check if a partition can satisfy the current bit mask using a linear scan.
+Opt Vis. Technique: Bit-by-Bit Sieve/Filter.
+Dry Run (Opt): Build the answer one bit at a time, starting from the 30th bit down to 0. "Can I partition this array such that the 30th bit stays a 1?" If yes, lock it in. If no, accept a 0 and move to the 29th bit.
+How to Draw (Opt): Draw 30 horizontal layers (bits). Pour the array through the top layer. Run a quick greedy check to see if it "passes" the bit test. If it does, keep that bit 1 in your result tally.
+Opt Complexity Visuals: Constant Factor Loop.
+How to Draw Opt Complexity: Draw a loop running exactly 30 times (for 32-bit integers). Inside, draw an $O(N)$ array scan. Write strictly $O(30 \cdot N)$ ≈ $O(N)$.
+Mem Vis (BF): Massive recursive call stacks attempting to hold the state of thousands of sub-arrays.
+Mem Vis (Opt): A few integer variables for bitmasks (target, current_mask) and an $O(1)$ space linear scan.

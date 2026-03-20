@@ -1,0 +1,13 @@
+ID: 2153
+Problem Title: The Number of Passengers in Each Bus II (SQL)
+Brute Force Method: Recursive CTE or nested subqueries to simulate bus arrivals and passenger boarding one by one.
+BF Complexity Visuals: A sequential dependency chain where Bus N depends on Bus N-1's remaining capacity.
+How to Draw BF: Draw Bus 1. Calculate boarders. Draw Bus 2. Subtract Bus 1's boarders from total passengers, then calculate. $O(B \cdot P)$.
+Optimised Pattern: Iterative Simulation with Window Functions.
+Opt Vis. Technique: A conveyor belt with fixed-size buckets and a spillover mechanic.
+Dry Run (Opt): Join passengers to buses by time. Use a recursive variable to track: `Boarded = min(Capacity, WaitingAtStation + NewArrivals - PrevBoarded)`.
+How to Draw (Opt): Draw a table with columns: Bus Time, Capacity, New Arrivals, Waiting, Boarded. Fill row-by-row, carrying the "Waiting" value down to the next row.
+Opt Complexity Visuals: $O(B + P)$ linear processing.
+How to Draw Opt Complexity: A single pass through the sorted bus and passenger events.
+Mem Vis (BF): Large intermediate join tables in the DB buffer.
+Mem Vis (Opt): Temp tables or variables to hold the "waiting" state across rows.

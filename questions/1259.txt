@@ -1,0 +1,13 @@
+ID: 1259
+Problem Title: Handshakes That Don't Cross
+Brute Force Method: Recursively try every possible person for the first person to shake hands with. For each choice, count how many ways the remaining people (divided into two separate groups) can shake hands.
+BF Complexity Visuals: Recursive Catalan Branching
+How to Draw BF: Draw 6 people in a circle. Draw a line between 1-2, then recurse for 3-4-5-6. Then 1-4, recurse for (2-3) and (5-6). Write $O(N!)$.
+Optimised Pattern: Dynamic Programming (Catalan Number Variation)
+Opt Vis. Technique: Dividing the Circle
+Dry Run (Opt): If person 1 shakes hands with person i, the circle is split into two independent groups of size (i-2) and (N-i). Both must be even. DP[N] = sum (DP[i-2] x DP[N-i]).
+How to Draw (Opt): Draw a circle with N points. Draw a line connecting two points, effectively cutting the circle into two halves. Write the number of ways for the left half x number of ways for the right. Sum these for all valid cuts.
+Opt Complexity Visuals: 1D State Accumulation
+How to Draw Opt Complexity: Draw an array of size N/2. For each element, draw arrows showing it summing products of previous elements. Write $O(N^2)$.
+Mem Vis (BF): Draw an enormous recursive tree with repeated subproblems.
+Mem Vis (Opt): Draw a single 1D DP array of size N/2 + 1. Space: $O(N)$.

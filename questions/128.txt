@@ -1,0 +1,13 @@
+ID: 128
+Problem Title: Longest Consecutive Sequence
+Brute Force Method: Sort the array and scan for the longest consecutive run of numbers.
+BF Complexity Visuals: A sorting tree (like Merge Sort) showing $O(N \log N)$ overhead before the linear scan even starts.
+How to Draw BF: Draw the unsorted array. Draw the sorted array below it. Draw a single arrow scanning the sorted array to find sequences.
+Optimised Pattern: Hash Set (Intelligent Starting Points).
+Opt Vis. Technique: A series of islands. You only start building a bridge if there is no land immediately to your left.
+Dry Run (Opt): Add all numbers to a Set. For each X: if X-1 is NOT in the set, it's the start. Count X+1, X+2... until the run ends.
+How to Draw (Opt): Draw a number line. Circle the numbers you have. Put a "Start Here" flag only on the left-most number of each clustered island.
+Opt Complexity Visuals: $O(N)$ time. Each number is visited exactly twice (once to check if it's a start, once as part of a run).
+How to Draw Opt Complexity: Draw the array. Draw a dot above each number. Draw a second dot only when that number is part of a "counting" sequence. No number has 3 dots.
+Mem Vis (BF): $O(N \log N)$ stack space for sorting algorithms like QuickSort.
+Mem Vis (Opt): Visualize a Hash Set (Hash Map structure) taking up $O(N)$ heap space to facilitate instant lookups.

@@ -1,0 +1,13 @@
+ID: 919
+Problem Title: Complete Binary Tree Inserter
+Brute Force Method: For every `insert(val)`, perform a full BFS search starting from the root to find the first node with an empty child.
+BF Complexity Visuals: $O(N)$ per insertion. Re-scanning the entire tree for every new node.
+How to Draw BF: Draw a tree. For the 1st node, scan level 0, 1. For the 2nd node, scan 0, 1 again. The search area grows every time.
+Optimised Pattern: Queue-based Level Order State
+Opt Vis. Technique: A "waiting room" (Queue). Only nodes that are still looking for children (i.e., have &lt; 2 children) stay in the queue.
+Dry Run (Opt): During init, BFS once and store all nodes with &lt; 2 children in a queue. On `insert`, peek queue front, add child. If parent now has 2 children, pop it. Push new child to queue.
+How to Draw (Opt): Draw a tree. Draw a horizontal pipe (Queue) below it containing only the leaf nodes and nodes with one child. Use arrows to show the "active" insertion point.
+Opt Complexity Visuals: $O(N)$ init, $O(1)$ per insert. Instant access to the target parent.
+How to Draw Opt Complexity: Draw a single "Jump" arrow from the new value directly to its parent, skipping the rest of the tree.
+Mem Vis (BF): $O(1)$ per insert but $O(N)$ total if you count the BFS call stack.
+Mem Vis (Opt): $O(N)$ to store the queue of eligible parents. Draw a persistent list of node references.

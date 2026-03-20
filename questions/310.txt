@@ -1,0 +1,13 @@
+ID: 310
+Problem Title: Minimum Height Trees
+Brute Force Method: For every single node (1 to N), run a full BFS/DFS to find the tree height. Return the nodes with the minimum height.
+BF Complexity Visuals: Repeated Graph Flooding
+How to Draw BF: Draw a graph. Draw a BFS wave expanding from node A. Then redraw the graph and show the wave expanding from node B. Repeat N times. $O(N^2)$.
+Optimised Pattern: Topological Sort / BFS from Leaves (Peeling the Onion)
+Opt Vis. Technique: Concentric Graph Peeling
+Dry Run (Opt): Find all leaf nodes (degree == 1). Enqueue them. Dequeue leaves, remove them from the graph (update neighbor degrees). The new degree-1 nodes are the new leaves. Stop when 1 or 2 nodes remain.
+How to Draw (Opt): Draw an unrooted tree/graph. Circle the outermost layer of nodes (leaves) and cross them out. Circle the next newly exposed layer. Repeat until only the center is left.
+Opt Complexity Visuals: Linear Shrinking Space
+How to Draw Opt Complexity: Draw a large blob. Inside it, draw a slightly smaller blob, and another smaller one inside that, converging on a center dot. Label it $O(N)$ Total Time.
+Mem Vis (BF): N separate Visited arrays or a huge queue accumulating N full traversals. $O(N^2)$ space overhead.
+Mem Vis (Opt): Adjacency List + Degree Array + Queue. Draw a vertical array mapping to linked lists (Graph). Draw a 1D horizontal array for degrees. Draw a Queue tape holding leaf nodes.

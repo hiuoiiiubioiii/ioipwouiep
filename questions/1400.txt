@@ -1,0 +1,13 @@
+ID: 1400
+Problem Title: Construct K Palindrome Strings
+Brute Force Method: Generate all permutations of the string and try to split them into k parts, checking each part for the palindrome property.
+BF Complexity Visuals: $O(N! \cdot N)$ Combinatorial Hell
+How to Draw BF: Draw the string. Branch out into every possible reordering. For each reorder, draw k-1 "cutting" lines in every possible gap. Exponentially impossible.
+Optimised Pattern: Odd Frequency Character Counting
+Opt Vis. Technique: Parity Constraint Logic
+Dry Run (Opt): A palindrome can have at most one character with an odd frequency. If the number of characters with odd frequencies is &gt; k, or if k &gt; length of string, it's impossible.
+How to Draw (Opt): Draw characters as dots. Group them in pairs. Any dot without a pair is "lonely" (odd). Each lonely dot *must* be the center of its own palindrome. If you have more lonely dots than k slots, you fail.
+Opt Complexity Visuals: $O(N)$ Frequency Scan
+How to Draw Opt Complexity: Draw a single pass through the string to count letters, followed by a comparison of two integers (k and odd_count).
+Mem Vis (BF): Permutation Buffer: Storing billions of string variations in memory.
+Mem Vis (Opt): 26-Slot Tally Array: Draw a simple frequency array. Space is $O(1)$ relative to the input size.

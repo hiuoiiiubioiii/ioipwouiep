@@ -1,0 +1,13 @@
+ID: 3054
+Problem Title: Binary Tree Nodes (SQL)
+Brute Force Method: Run three separate queries to find Roots (P is null), then Leaves (N not in P), then Inner (everything else). Union them.
+BF Complexity Visuals: Disjoint Set Buckets
+How to Draw BF: Draw three separate circles for Root, Leaf, and Inner. Show the engine scanning the whole table three times.
+Optimised Pattern: Case When + Correlated Subquery (or In/Not In)
+Opt Vis. Technique: Vertical Node Classification
+Dry Run (Opt): Scan each node N once. Check: Is P null? (Root). Is N found in the P column of any row? (Inner). Otherwise, it's a Leaf.
+How to Draw (Opt): Draw a simple tree. For each node, look at its parent and children. Write 'R', 'I', or 'L' next to it based on its connections in the adjacency list.
+Opt Complexity Visuals: $O(N \log N)$ with Indexing
+How to Draw Opt Complexity: Draw a single vertical pass through the table. Label it $O(N)$ for the scan + $O(\log N)$ for the index lookup on the Parent column.
+Mem Vis (BF): Temporary tables for each subset (Root, Leaf, Inner).
+Mem Vis (Opt): Zero extra structure; classification happens on-the-fly during a single scan.

@@ -1,0 +1,13 @@
+ID: 862
+Problem Title: Shortest Subarray with Sum at Least K
+Brute Force Method: Generate every possible subarray (N^2) and sum them to check if they are >= K. Keep the minimum length.
+BF Complexity Visuals: All-Subarrays Scan. $O(N^2)$.
+How to Draw BF: Draw an array. Draw brackets of all sizes. For each bracket, draw a running sum calculation.
+Optimised Pattern: Monotonic Deque + Prefix Sums.
+Opt Vis. Technique: The "Sliding Window with a Memory."
+Dry Run (Opt): Use Prefix Sums. Maintain a Deque of indices where Prefix Sums are strictly increasing. If the current sum - sum at Deque head >= K, pop the head and update length. Pop the tail if the current sum is smaller than the tail's sum (since current is a "better" start).
+How to Draw (Opt): Draw a line of Prefix Sums. Use a "Snake" (Deque) that eats indices from the back if they are bigger than the current value, and sheds its tail from the front if the K condition is met.
+Opt Complexity Visuals: Amortized Linear Scan. $O(N)$.
+How to Draw Opt Complexity: Draw a timeline where each index enters and exits the Deque exactly once. Total work is 2N.
+Mem Vis (BF): $O(1)$ excluding input, but visualized as redundant CPU loops.
+Mem Vis (Opt): Deque + Prefix Sum Array: Draw a horizontal strip (Sums) and a double-ended queue box.

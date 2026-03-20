@@ -1,0 +1,13 @@
+ID: 3677
+Problem Title: Count Binary Palindromic Numbers (Hard)
+Brute Force Method: Iterate from 1 to N, convert each to a binary string, and check if it reads the same forwards and backwards. $O(N \log N)$.
+BF Complexity Visuals: Binary String Brute Force.
+How to Draw BF: Draw a number line. For each number, write its binary form. 5 -&gt; 101 (Yes), 6 -&gt; 110 (No). For N=10^12, this takes centuries.
+Optimised Pattern: Combinatorial Construction. Generate palindromes directly by mirroring the "first half" of the binary bits.
+Opt Vis. Technique: The "Binary Mirror" Fold.
+Dry Run (Opt): A binary palindrome of length 5 is always 1_ _ _1. Since the first bit must be 1, you only have 2 free bits to choose (the middle). Total = 2^( (L-1)/2 ).
+How to Draw (Opt): Draw bit slots: [1][ ][ ][ ][1]. Note that the middle bits can be any combination. Use a loop to count combinations for each possible bit-length up to N.
+Opt Complexity Visuals: Logarithmic Length Summation.
+How to Draw Opt Complexity: Draw an arrow representing the number of bits in N (e.g., 64). Write $O(\log N)$. You only calculate one formula per bit-length.
+Mem Vis (BF): Massive string objects created for every single integer up to N.
+Mem Vis (Opt): A few integer variables for bit-math. Space $O(1)$.

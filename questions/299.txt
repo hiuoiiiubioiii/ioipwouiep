@@ -1,0 +1,13 @@
+ID: 299
+Problem Title: Bulls and Cows
+Brute Force Method: Nested loops: For each character in the secret, search the entire guess for a match, then track used indices.
+BF Complexity Visuals: Quadratic Comparison: $O(N^2)$.
+How to Draw BF: Draw two strings. Draw arrows from every char in top to every char in bottom. The intersection of arrows shows the N^2 work.
+Optimised Pattern: Single-Pass Frequency Array
+Opt Vis. Technique: Digit Bucket Balance
+Dry Run (Opt): If `secret[i] == guess[i]`, Bull++. Else, increment secret digit count and decrement guess digit count in an array. If counts cross, Cow++.
+How to Draw (Opt): Draw an array of 10 boxes (0-9). As you scan, put a '+' in the secret's box and a '-' in the guess's box. If you try to put a '-' where a '+' exists, it's a cow.
+Opt Complexity Visuals: Linear Scan: $O(N)$.
+How to Draw Opt Complexity: Draw one straight arrow through both strings. No nested operations.
+Mem Vis (BF): Index tracking arrays.
+Mem Vis (Opt): Fixed Frequency Map: Draw a static box of 10 integers. Space: $O(1)$ (constant for digits 0-9).

@@ -1,0 +1,13 @@
+ID: 1404
+Problem Title: Number of Steps to Reduce a Number in Binary Representation to One
+Brute Force Method: Parse string to BigInt. While &gt; 1: check if even (divide by 2) or odd (add 1). Convert back to string if simulating manually.
+BF Complexity Visuals: String Reallocation Cycle
+How to Draw BF: Draw a long binary string. Draw an arrow pointing to a newly allocated string for the next step, repeating until "1". Label as $O(N^2)$ due to string shifting.
+Optimised Pattern: Right-to-Left Carry Simulation (Greedy)
+Opt Vis. Technique: Bitwise Carry Propagation
+Dry Run (Opt): Traverse string right to left. If bit + carry == 1 (odd), step=step+2, carry=1. If bit + carry == 0 (even), step=step+1. Special case for the MSB.
+How to Draw (Opt): Draw the binary string in individual cells. Place a pointer at the far right. Draw a small "Carry" flag floating above the current cell. Move pointer left, updating steps and carry.
+Opt Complexity Visuals: Single Pass Array Traversal
+How to Draw Opt Complexity: Draw a 1D array with an arrow moving strictly right-to-left. Label with $O(N)$ time.
+Mem Vis (BF): Multiple String Allocations in Heap
+Mem Vis (Opt): Draw a single integer "Carry" (0 or 1) and a "Steps" counter. Point to the original immutable string. Space is $O(1)$.

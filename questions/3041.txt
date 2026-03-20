@@ -1,0 +1,13 @@
+ID: 3041
+Problem Title: Maximize Consecutive Elements in an Array After Modifications
+Brute Force Method: Generate all 2^N possible arrays by either adding 1 or 0 to each element, then find the longest consecutive sequence in each.
+BF Complexity Visuals: Binary Power Set Tree
+How to Draw BF: Draw the array. For each element, branch into "+0" and "+1". Show the exponential growth of possible resulting arrays.
+Optimised Pattern: Sorting + Dynamic Programming
+Opt Vis. Technique: Staircase DP Table
+Dry Run (Opt): Sort the array. Let dp[x] be the longest consecutive sequence ending with the value x. For each num, update dp[num+1] and dp[num] based on dp[num] and dp[num-1].
+How to Draw (Opt): Draw the sorted array. Below it, draw a frequency-like table for DP values. Show arrows jumping from v-1 to v as you process each element.
+Opt Complexity Visuals: $O(N \log N)$ Sorting + $O(N)$ Scan
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block followed by a single linear $O(N)$ pass.
+Mem Vis (BF): A massive list of all 2^N generated array permutations.
+Mem Vis (Opt): A Hash Map or a large array dp[max_val] to store sequence lengths.

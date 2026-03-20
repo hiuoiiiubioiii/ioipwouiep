@@ -1,0 +1,13 @@
+ID: 321
+Problem Title: Create Maximum Number
+Brute Force Method: Exhaustively try every possible way to pick i elements from array1 and k-i elements from array2, then merge them into all possible permutations to find the max.
+BF Complexity Visuals: Exponential Permutation Tree
+How to Draw BF: Draw a split point i. For each i, draw branches representing every possible interleaving of the two sub-sequences. Label it $O(2^{n+m})$.
+Optimised Pattern: Monotonic Stack + Lexicographical Merge
+Opt Vis. Technique: Parallel Monotonic Pipelines
+Dry Run (Opt): 1. For each possible i, find the max sub-sequence of length i from nums1 and k-i from nums2 using a monotonic stack. 2. Merge these two sequences greedily (comparing suffixes). 3. Keep the overall maximum.
+How to Draw (Opt): Draw two horizontal stacks. Show elements being "kicked out" if a larger number appears. Draw a "Merge" box below with two pointers comparing the remainder of the strings at each step.
+Opt Complexity Visuals: Iterative Optimization Sweep
+How to Draw Opt Complexity: Draw k horizontal bars, each representing a "try". Inside each, show two $O(N)$ operations. $O(k \cdot (n+m)$^2).
+Mem Vis (BF): Massive collection of string/array objects in a list.
+Mem Vis (Opt): Two 1D arrays for stacks + one 1D array for the merged result. Draw three horizontal tape segments. $O(k)$.

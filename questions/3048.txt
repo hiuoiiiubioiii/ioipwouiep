@@ -1,0 +1,13 @@
+ID: 3048
+Problem Title: Earliest Second to Mark Indices I
+Brute Force Method: Try every possible sequence of "Decrement" or "Mark" actions second by second using recursion.
+BF Complexity Visuals: State-Space Search Tree
+How to Draw BF: Draw a tree branching at every second. Depth equals total time, width equals actions.
+Optimised Pattern: Binary Search on Answer + Greedy Verification
+Opt Vis. Technique: Timeline Reverse Marking
+Dry Run (Opt): Binary search for time T. To verify T: Work backwards from T to 1. The first time you see an index, it MUST be marked then. Calculate if you have enough prior seconds to decrement all values to 0.
+How to Draw (Opt): Draw a timeline from 1 to T. Mark "M" at the last occurrence of each index. Check if available slots before each "M" can cover the required decrements.
+Opt Complexity Visuals: $O((N + T)$ log T)
+How to Draw Opt Complexity: Draw the binary search range halving. Inside, draw a linear scan across the timeline of length T.
+Mem Vis (BF): Recursive stack frames storing array states at each second.
+Mem Vis (Opt): An array of size N to store the last_occurrence of each index.

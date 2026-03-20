@@ -1,0 +1,13 @@
+ID: 1783
+Problem Title: Grand Slam Titles (SQL)
+Brute Force Method: Use 4 separate SELECT statements for each Grand Slam (Wimbledon, US_Open, etc.), count titles per player, and then JOIN them manually.
+BF Complexity Visuals: Multi-Source Vertical Join.
+How to Draw BF: Draw 4 separate winner tables. Manually tally Player ID occurrences across all four. $O(N)$.
+Optimised Pattern: UNION ALL + GROUP BY.
+Opt Vis. Technique: The "Funnel Merge".
+Dry Run (Opt): `SELECT Wimbledon AS id FROM Championships UNION ALL SELECT Fr_Open...` Group the result of the UNION by `id` and count. Join with the `Players` table.
+How to Draw (Opt): Draw 4 streams flowing into one vertical pipe. At the bottom of the pipe, a machine groups identical IDs and prints a tally.
+Opt Complexity Visuals: Single Pass Aggregation.
+How to Draw Opt Complexity: Draw one sweep through the aggregated ID list. Label $O(N)$.
+Mem Vis (BF): Multiple temp tables for each slam.
+Mem Vis (Opt): One temporary hash table for grouping. $O(\text{Unique}\_\text{Winners})$ space.

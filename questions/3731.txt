@@ -1,0 +1,13 @@
+ID: 3731
+Problem Title: Find Missing Elements (Easy)
+Brute Force Method: Iterate through all numbers in the expected range. For each number, scan the entire array to see if it exists. $O(N^2)$.
+BF Complexity Visuals: Multiple parallel scan lines.
+How to Draw BF: Draw the array. Write `1`, scan the whole array. Write `2`, scan the whole array below it. Cross out missing ones.
+Optimised Pattern: Hash Set or Boolean Array Check
+Opt Vis. Technique: Direct Lookup Bucket
+Dry Run (Opt): Throw all array numbers into a Set. Loop through the expected range (e.g., 1 to N). If a number is not in the Set, add it to the result list.
+How to Draw (Opt): Draw a big circle (Hash Set). Write array numbers inside it. Write a list 1 to N. Put a checkmark if the number is in the circle, X if it's missing.
+Opt Complexity Visuals: Two separate linear passes $O(N)$.
+How to Draw Opt Complexity: Draw two horizontal timelines: one for "Building Set", one for "Checking Missing".
+Mem Vis (BF): $O(1)$ extra space, strictly in-place.
+Mem Vis (Opt): Hash Set memory layout (scattered allocations).

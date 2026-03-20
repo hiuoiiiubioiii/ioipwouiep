@@ -1,0 +1,13 @@
+ID: 957
+Problem Title: Prison Cells After N Days
+Brute Force Method: Simulate the state of the 8 cells day by day for all N days, manually updating based on neighbors.
+BF Complexity Visuals: $O(N)$. If N is 10^9, this will take years to run.
+How to Draw BF: Draw 8 boxes. Draw an arrow to Day 1, then Day 2... draw a very, very long line of boxes that goes out the door.
+Optimised Pattern: Cycle Detection (Hash Map)
+Opt Vis. Technique: "The Loop-the-Loop." There are only 2^6 (64) possible states for the inner cells. The sequence *must* repeat. Find the cycle and skip the middle 10^9 days.
+Dry Run (Opt): Store each state in a Map: `Map[State -&gt; Day]`. When you see a state twice, calculate `CycleLength = CurrentDay - FirstSeenDay`. Then `N = N % CycleLength`.
+How to Draw (Opt): Draw a circular track. Each point on the track is a cell configuration. Draw a "Jump" arrow that skips many laps around the track to land near the finish.
+Opt Complexity Visuals: $O(2^K)$ where K is number of cells (here 2^6 = 64). Constant time relative to N.
+How to Draw Opt Complexity: Draw a few states in a line, then an arrow looping back to an earlier state, with a "Math Shortcut" box next to it.
+Mem Vis (BF): $O(1)$ if simulating, but time is the bottleneck.
+Mem Vis (Opt): $O(2^K)$ to store the states in a map for cycle detection. Draw a small table mapping [Bitmask -&gt; Day Number].

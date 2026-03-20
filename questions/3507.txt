@@ -1,0 +1,13 @@
+ID: 3507
+Problem Title: Minimum Pair Removal to Sort Array I (Easy)
+Brute Force Method: Generate all subsequences, check if sorted, find minimum removals.
+BF Complexity Visuals: Power Set Generation Tree.
+How to Draw BF: Draw a binary tree. Each level adds/drops an element. Check all 2^N leaf nodes.
+Optimised Pattern: Dynamic Programming (LIS Variant).
+Opt Vis. Technique: Bar Chart with Ascending Envelopes.
+Dry Run (Opt): Draw array as a bar chart. Draw a line connecting strictly increasing peaks. Removals = N - LIS.
+How to Draw (Opt): Write array. Draw arrows backward from current element to smaller previous elements.
+Opt Complexity Visuals: $O(N^2)$ Matrix Scan.
+How to Draw Opt Complexity: Draw a 1D array. Under each cell, draw a line scanning all previous cells. Area of a triangle.
+Mem Vis (BF): Massive Subsequence Lists: Draw thousands of small arrays floating in memory.
+Mem Vis (Opt): 1D DP Array: Draw a single horizontal array tracking the max length ending at each index.

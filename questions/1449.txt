@@ -1,0 +1,13 @@
+ID: 1449
+Problem Title: Form Largest Integer With Digits That Add up to Target
+Brute Force Method: Backtracking / Exhaustive Search. Try adding every possible digit (1-9) repeatedly until the cost equals the target. Store all valid strings and sort them to find the "largest".
+BF Complexity Visuals: Exponential String Generation
+How to Draw BF: Draw a tree where each node has 9 branches (digits 1-9). Depth is `target / min_cost`. Label $O(9^(\text{Target}/\text{MinCost})$).
+Optimised Pattern: 1D Dynamic Programming (Knapsack Variation)
+Opt Vis. Technique: Value-Length Optimization
+Dry Run (Opt): `dp[t]` stores the maximum string (or max length) achievable with cost `t`. Since we want the largest number, prioritize longer strings, then lexicographical order.
+How to Draw (Opt): Draw an array of size `Target + 1`. Fill it from left to right. For each cell `i`, look back at `i - cost[digit]` and append the digit to that previous string if it makes the result "larger".
+Opt Complexity Visuals: Linear DP with Digit Scans
+How to Draw Opt Complexity: Draw a loop from 1 to Target. Inside, a loop for 9 digits. Label $O(9 \\text{cdot Target})$.
+Mem Vis (BF): Deep Recursion Call Stack
+Mem Vis (Opt): A 1D DP array of strings (or lengths + backtracking info). Space $O(\text{Target})$.

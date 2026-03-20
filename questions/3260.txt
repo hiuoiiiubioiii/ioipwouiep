@@ -1,0 +1,13 @@
+ID: 3260
+Problem Title: Find the Largest Palindrome Divisible by K
+Brute Force Method: Generate all palindromes of length N in descending order and check divisibility by K. $O(10^(N/2)$).
+BF Complexity Visuals: Palindromic Search Space
+How to Draw BF: Draw a number line. Mark all palindromes. Show the massive gaps between them and the time wasted checking each one for divisibility.
+Optimised Pattern: Greedy + Remainder DP
+Opt Vis. Technique: Symmetry State Grid
+Dry Run (Opt): For a palindrome of length N, only the middle digits are "free". Use DP where `dp[i][rem]` is whether a prefix of length `i` can result in a total remainder `rem`. Fill greedily from largest digit (9 to 0).
+How to Draw (Opt): Draw a table where rows are "digit positions from edges" and columns are "remainders 0 to K-1". Mark 'True' if a remainder is reachable. Trace back from `dp[mid][0]` to find the digits.
+Opt Complexity Visuals: Remainder Transition Block
+How to Draw Opt Complexity: Draw a block for N positions. Inside, draw a loop for 10 digits and a loop for K remainders. Label as $O(N \cdot 10 \cdot K)$.
+Mem Vis (BF): Storing all N-digit palindromes as strings.
+Mem Vis (Opt): A DP table of size (N/2) x K (O(N * K) space).

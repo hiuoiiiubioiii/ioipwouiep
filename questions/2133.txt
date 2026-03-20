@@ -1,0 +1,13 @@
+ID: 2133
+Problem Title: Check if Every Row and Column Contains All Numbers
+Brute Force Method: Extract every row and every column into a 1D array, sort it, and check if it equals [1, 2, ... n].
+BF Complexity Visuals: Extracting, sorting, and throwing away data repeatedly.
+How to Draw BF: Draw the grid. Yank out Row 1, sort it, verify. Yank out Col 1, sort it, verify. Write $O(N^2 \log N)$.
+Optimised Pattern: Hash Set Validation (or Boolean Array Tracking).
+Opt Vis. Technique: A bingo card tracking seen numbers per row and column.
+Dry Run (Opt): Iterate through every cell `grid[r][c]`. Attempt to add the value to `rowSet[r]` and `colSet[c]`. If it's already there, return false immediately.
+How to Draw (Opt): Draw the grid. Next to Row 1, draw a box checking off numbers 1-N. Above Col 1, draw another box. If you write the same number twice in a box, draw a red X.
+Opt Complexity Visuals: $O(N^2)$ single matrix traversal.
+How to Draw Opt Complexity: A single scanner scanning the matrix row by row, updating side and top tally boards simultaneously.
+Mem Vis (BF): $O(N^2)$ memory allocating temporary arrays for sorting.
+Mem Vis (Opt): Two arrays of HashSets or N x N boolean matrix tracker (O(N^2)).

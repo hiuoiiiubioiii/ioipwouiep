@@ -1,0 +1,13 @@
+ID: 2305
+Problem Title: Fair Distribution of Cookies
+Brute Force Method: Generate all possible permutations of assigning N bags of cookies to K children.
+BF Complexity Visuals: K-ary Tree (O(K^N))
+How to Draw BF: Draw a massive tree where each node has K branches, going N levels deep.
+Optimised Pattern: Backtracking with Pruning
+Opt Vis. Technique: Trimmed Recursion Tree
+Dry Run (Opt): Assign a bag to a child. If a child's current total exceeds the best minimum maximum found so far, immediately stop exploring that path (prune).
+How to Draw (Opt): Draw a tree, but place a large red "X" on branches that get cut off early to visualize the saved computation.
+Opt Complexity Visuals: Asymmetric Pruned Tree
+How to Draw Opt Complexity: Draw an unbalanced tree that starts wide at the top but abruptly narrows down on the right side where pruning occurs.
+Mem Vis (BF): Draw a deep Call Stack + a size K array representing the kids' current cookie counts.
+Mem Vis (Opt): Draw the identical Call Stack + size K array, but with a global `best_ans` variable box that dictates the pruning.

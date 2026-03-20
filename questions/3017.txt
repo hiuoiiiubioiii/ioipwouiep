@@ -1,0 +1,13 @@
+ID: 3017
+Problem Title: Count the Number of Houses at a Certain Distance II
+Brute Force Method: Apply Floyd-Warshall or BFS. (This results in Time Limit Exceeded because N is 10^5, leading to $O(N^3)$ or $O(N^2)$ complexity).
+BF Complexity Visuals: Explosion Graphic
+How to Draw BF: Draw a clock on fire. A 10^5 matrix requires 10 billion operations, making brute force impossible.
+Optimised Pattern: Prefix Sums / Difference Array (Line Sweep)
+Opt Vis. Technique: Overlapping 1D Intervals
+Dry Run (Opt): Instead of checking node by node, identify ranges of distances affected by the extra edge. Add `+1` at the start of an affected distance interval and `-1` right after it ends, then sweep across to calculate actual counts.
+How to Draw (Opt): Draw a horizontal number line representing distances. Draw brackets `[start, end]` for paths. Write `+1` on the start tick and `-1` on the end tick. Sweep left-to-right to accumulate the running sum.
+Opt Complexity Visuals: Linear Pass Arrow
+How to Draw Opt Complexity: Draw a single straight arrow sweeping across an array representing strictly $O(N)$ operations.
+Mem Vis (BF): A memory-crashing 10^5 x 10^5 2D matrix (exceeds heap space).
+Mem Vis (Opt): A 1D integer Difference Array `diff[N+1]` resolving the overlapping ranges.

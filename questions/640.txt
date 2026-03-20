@@ -1,0 +1,13 @@
+ID: 640
+Problem Title: Solve the Equation
+Brute Force Method: Brute force checking every possible value of 'x' (from -infinity to infinity) to see which one makes the equation balanced.
+BF Complexity Visuals: Infinite or very large range linear search.
+How to Draw BF: Draw a number line. Draw a pointer moving through every single integer. Write $O(\text{Range})$.
+Optimised Pattern: Linear Expression Reduction (Parsing).
+Opt Vis. Technique: Balance Scale Simplification.
+Dry Run (Opt): Split string by '='. For each side, parse terms. Sum coefficients of 'x' into `total_x` and constants into `total_val`. Subtract right side from left. Result is `x = -total_val / total_x`.
+How to Draw (Opt): Draw a balance scale. Move all 'x' terms to the left and all numbers to the right. Cross them out as you "move" them.
+Opt Complexity Visuals: Linear scan of the string $O(N)$.
+How to Draw Opt Complexity: Draw a scanner moving across the string once, sorting terms into two "bins": X-bin and Num-bin. Write $O(N)$.
+Mem Vis (BF): Draw a list of all possible 'x' values being tested.
+Mem Vis (Opt): Draw two integer variables for each side: `coeff` and `const`. $O(N)$ for string splitting.

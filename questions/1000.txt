@@ -1,0 +1,13 @@
+ID: 1000
+Problem Title: Minimum Cost to Merge Stones
+Brute Force Method: Try every possible combination of merging `K` adjacent piles. Use recursion to explore all paths to a single pile and find the minimum cost.
+BF Complexity Visuals: $O(\text{Exponential})$. Similar to Matrix Chain Multiplication but with a K-pile constraint.
+How to Draw BF: Draw a row of stones. Draw brackets around any K stones. From that new state, draw more brackets. It becomes a massive tree of "what-if" merges.
+Optimised Pattern: DP (Interval 3D)
+Opt Vis. Technique: "The Sub-problem Pyramid." To merge a large range [i, j], you must first have merged it into some number of smaller piles. The state tracks the range and the number of piles it currently represents.
+Dry Run (Opt): `dp[i][j][k]` is the min cost to merge range `[i, j]` into `k` piles. Transition: `dp[i][j][k] = min(dp[i][mid][1] + dp[mid+1][j][k-1])`. If `k == 1`, add the total sum of the range.
+How to Draw (Opt): Draw a triangle (pyramid) over the array. Each block in the pyramid represents a range. Color a block when it successfully merges into 1 pile.
+Opt Complexity Visuals: $O(N^3 / K)$. While it's 3D, the range constraints and K-step jumps reduce the actual work.
+How to Draw Opt Complexity: Draw a 2D grid of ranges [i, j]. For each cell, show a "Splitter" moving through all possible `mid` points to find the best merge.
+Mem Vis (BF): Massive recursion stack and repeated calculations of the same intervals.
+Mem Vis (Opt): $O(N^3)$ for the 3D DP table. Draw a "Cube" of memory cells where the axes are Left, Right, and PileCount.

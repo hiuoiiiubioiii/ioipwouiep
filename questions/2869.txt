@@ -1,0 +1,13 @@
+ID: 2869
+Problem Title: Minimum Operations to Collect Elements
+Brute Force Method: In each operation, remove the last element. After each removal, check the entire "collected" list to see if it contains all numbers from 1 to k.
+BF Complexity Visuals: $O(N^2)$ Repeated Search
+How to Draw BF: Draw an array. Draw an arrow removing the last item. Below, draw a "Search" box that scans a set for numbers 1 to k. Show this search happening after every pop.
+Optimised Pattern: Backward Scan + Boolean Frequency Array
+Opt Vis. Technique: Suffix Checklist Search
+Dry Run (Opt): Start from the end of the array. Use a boolean array of size k+1 (or a Set) to mark numbers as you see them if they are <= k. Count unique sightings. Stop when the count reaches k.
+How to Draw (Opt): Draw the array. Write numbers 1 to k on a separate "Checklist." Move from right-to-left in the array. Every time you hit a number on your checklist, cross it off. The index where you finish is your answer.
+Opt Complexity Visuals: Single Pass Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line from the end of the array moving left. Each check is $O(1)$. Total $O(N)$.
+Mem Vis (BF): Visualize a growing "Collection" list and redundant $O(k)$ searches inside a loop.
+Mem Vis (Opt): Visualize a fixed-size boolean array (size k). Space $O(k)$.

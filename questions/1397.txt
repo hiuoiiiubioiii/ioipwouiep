@@ -1,0 +1,13 @@
+ID: 1397
+Problem Title: Find All Good Strings
+Brute Force Method: Generate all possible strings lexicographically between s1 and s2 and use `string.find()` to check if the 'evil' pattern exists.
+BF Complexity Visuals: $O(26^N \cdot M)$ Exponential Search
+How to Draw BF: Draw a massive tree where each level has 26 branches. Mark paths that fall outside [s1, s2] as dead, but note the billions of valid paths still requiring pattern checks.
+Optimised Pattern: Digit DP + KMP (Automata State)
+Opt Vis. Technique: State-Transition Matrix
+Dry Run (Opt): Use DP to count strings. State: `(index, evil_match_len, is_less, is_greater)`. Use KMP's failure function to jump to the next matching state for the 'evil' string.
+How to Draw (Opt): Draw a grid: String index vs. KMP state. Draw arrows showing how adding a character 'c' moves you to a new KMP state. If you hit the end of 'evil', that state is a "Dead Zone."
+Opt Complexity Visuals: $O(N \cdot M \cdot 26)$
+How to Draw Opt Complexity: Draw a 4D box (N x M x 2 x 2). Show data flowing layer by layer from index i to i+1, proving linear time relative to length N.
+Mem Vis (BF): $O(26^N)$ String Pool: Millions of strings stored or checked in a massive recursion stack.
+Mem Vis (Opt): 4D DP Table: Draw a compact multidimensional array `dp[501][51][2][2]` storing long integers.

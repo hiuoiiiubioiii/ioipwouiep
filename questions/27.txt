@@ -1,0 +1,13 @@
+ID: 27
+Problem Title: Remove Element
+Brute Force Method: Filter to New Array Create a brand new array of the same size, loop through the original, and only copy elements that don't match the `val`.
+BF Complexity Visuals: The Sieve
+How to Draw BF: Draw a sieve or filter. Drop the array elements through it. Watch the target `val` get stuck while the rest fall into a new array block.
+Optimised Pattern: Two Pointers (In-Place Write)
+Opt Vis. Technique: The Garbage Compactor
+Dry Run (Opt): Similar to Q26. A 'Fast' pointer reads every element. If it's NOT the target value, the 'Slow' pointer writes it down and increments. The target values simply get left behind/overwritten.
+How to Draw (Opt): Draw the array. Put `S` and `F` at index 0. If `arr[F] == val`, move `F` right. If `arr[F] != val`, draw an arrow copying `arr[F]` to `arr[S]`, then move both right.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a single straight arrow from left to right. We look at each element exactly once. $O(N)$ time complexity.
+Mem Vis (BF): Draw a new array allocated in memory (O(N) space).
+Mem Vis (Opt): Draw the original array with a physical line drawn at index `S` at the end, showing where the "valid" array stops. $O(1)$ space.

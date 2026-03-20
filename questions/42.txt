@@ -1,0 +1,13 @@
+ID: 42
+Problem Title: Trapping Rain Water
+Brute Force Method: Look Left, Look Right For every single bar, scan all the way to the left to find the max height, and all the way to the right to find the max height.
+BF Complexity Visuals: The Exhaustive Radar
+How to Draw BF: Draw a bar chart. From the middle bar, draw a radar wave scanning all the way left, then all the way right. Repeat this for every single bar to show $O(N²)$ wasted time.
+Optimised Pattern: Two Pointers (Inward Squeeze)
+Opt Vis. Technique: The Leaking Buckets
+Dry Run (Opt): Maintain `left_max` and `right_max` variables. Place L and R pointers at the ends. Whichever max is smaller dictates the water level for its side. Calculate water for the smaller side, then move that pointer inward.
+How to Draw (Opt): Draw a bar chart. Put L on the left, R on the right. If L's max is shorter than R's max, draw a blue water block above L, and move L inward. Erase and redraw the max line as they climb.
+Opt Complexity Visuals: Squeezing Timeline
+How to Draw Opt Complexity: Draw a horizontal line of length N. Draw arrows from both ends moving strictly inward until they collide. Exactly N steps = $O(N)$ time.
+Mem Vis (BF): Draw separate left_max and right_max arrays of size N taking up memory.
+Mem Vis (Opt): Draw exactly four pointer variables (L, R, left_max, right_max). No arrays needed. Perfectly $O(1)$ space.

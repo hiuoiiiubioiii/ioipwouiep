@@ -1,0 +1,13 @@
+ID: 2410
+Problem Title: Maximum Matching of Players With Trainers
+Brute Force Method: For each player, scan the entire trainer array to find the smallest capacity trainer that meets their needs. Mark trainer as used.
+BF Complexity Visuals: Bipartite Spiderweb
+How to Draw BF: Draw two columns: Players and Trainers. Draw lines from every player to multiple trainers checking validity. Label $O(N \cdot M)$.
+Optimised Pattern: Sorting + Two Pointers (Greedy)
+Opt Vis. Technique: Parallel Conveyor Belts
+Dry Run (Opt): Sort both arrays. Point to weakest player and weakest trainer. If trainer fits, both move forward. If not, only trainer moves forward.
+How to Draw (Opt): Draw two sorted arrays, one above the other. Draw pointer 'i' on top, 'j' on bottom. Draw a checkmark if Top[i] &lt;= Bottom[j] and advance both. Cross if not, advance j.
+Opt Complexity Visuals: Logarithmic sorting blocks + Linear scan
+How to Draw Opt Complexity: Draw two big blocks labeled "O(N log N)" and "O(M log M)". Next to it, draw parallel straight lines labeled "O(N+M)". Total = $O(N \log N + M \log M)$.
+Mem Vis (BF): Draw a boolean array "used_trainers[]" of size M.
+Mem Vis (Opt): Draw two pointer variables i, j. Assuming in-place sort, $O(1)$ extra space.

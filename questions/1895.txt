@@ -1,0 +1,13 @@
+ID: 1895
+Problem Title: Largest Magic Square
+Brute Force Method: Iterate through every possible square in the grid (Row x Col x SideLength) and check if all row/col/diag sums are equal.
+BF Complexity Visuals: N \times M \times S \times S quadruple scan.
+How to Draw BF: Draw a grid. Outline a square. Draw arrows for every row, column, and two diagonals. Mark $O(\text{min}(R,C)$^4).
+Optimised Pattern: 2D Prefix Sums (Rows, Cols, and Diagonals).
+Opt Vis. Technique: Sub-grid sum lookup table.
+Dry Run (Opt): Precompute prefix sums for rows, columns, and two diagonal directions. Check if a square of side k is magic in $O(k)$ time by comparing these sums.
+How to Draw (Opt): Draw four grids representing the running sums in four directions. For a candidate square, pick the boundaries and subtract endpoint values to get the sums instantly.
+Opt Complexity Visuals: $O(R \cdot C \cdot \\text{min}(R,C)$).
+How to Draw Opt Complexity: Draw a rectangle R \times C. At each cell, mark a loop of size \min(R,C). Mark $O(R \cdot C \cdot \\text{min}(R,C)$).
+Mem Vis (BF): None (besides input).
+Mem Vis (Opt): Four auxiliary 2D arrays of size R \times C in heap memory.

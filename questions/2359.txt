@@ -1,0 +1,13 @@
+ID: 2359
+Problem Title: Find Closest Node to Given Two Nodes
+Brute Force Method: From node 1, explore all paths to find all reachable nodes. Repeat for node 2. For every node, calculate the maximum of the two distances and pick the minimum.
+BF Complexity Visuals: BFS/DFS from Every Node (O(N^2))
+How to Draw BF: Draw a graph. Color all nodes reachable from node 1. Color all nodes reachable from node 2. For the overlapping nodes, compare their "distance" labels.
+Optimised Pattern: Two Independent BFS/DFS Passes
+Opt Vis. Technique: Parallel Distance Maps
+Dry Run (Opt): Run one BFS starting from `node1` to fill a `dist1` array. Run another BFS from `node2` to fill a `dist2` array. Iterate through all nodes i and find the one that minimizes \max(\text{dist1}[i], \text{dist2}[i]).
+How to Draw (Opt): Draw a graph. Trace a path from node 1 and write the step count on each node. Trace a path from node 2 and do the same. Compare the two numbers on each node and pick the best one.
+Opt Complexity Visuals: Two Linear Graph Traversals (O(V+E))
+How to Draw Opt Complexity: Draw two separate, non-nested timelines (one for each BFS). No re-scanning of the graph for every node.
+Mem Vis (BF): Draw a massive 2D matrix storing distances between all pairs of nodes.
+Mem Vis (Opt): Draw two 1D Arrays (`dist1`, `dist2`) of size N.

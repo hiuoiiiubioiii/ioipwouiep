@@ -1,0 +1,13 @@
+ID: 72
+Problem Title: Edit Distance
+Brute Force Method: Brute Force Recursion For every character mismatch, recursively try all three operations: Insert, Delete, and Replace. Pick the path with the minimum count.
+BF Complexity Visuals: The Ternary Explosion Tree
+How to Draw BF: Draw a root node. From it, draw 3 branches. From each of those, draw 3 more. Label branches as "Ins", "Del", "Rep". Highlight the overlapping subproblems. Time: $O(3^N)$.
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: The Alignment Grid
+Dry Run (Opt): Create an (M+1) x (N+1) matrix. `dp[i][j]` represents the distance between `word1[0...i]` and `word2[0...j]`. If chars match, take diagonal value. If not, take `1 + min(top, left, diagonal)`.
+How to Draw (Opt): Draw a grid with "horse" on top and "ros" on left. Fill cell by cell. Show how each cell "looks" at its 3 neighbors to the top and left to find the cheapest path.
+Opt Complexity Visuals: Matrix Area Shade
+How to Draw Opt Complexity: Draw a rectangle of size M x N. Shade every cell once. Time: $O(M x N)$.
+Mem Vis (BF): A massive recursion stack with 3^max(M,N) potential calls.
+Mem Vis (Opt): Draw the (M x N) table. Note that you only need the previous row to calculate the current one, so space can be optimized to $O(\text{min}(M, N)$).

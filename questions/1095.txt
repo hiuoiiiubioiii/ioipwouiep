@@ -1,0 +1,13 @@
+ID: 1095
+Problem Title: Find in Mountain Array
+Brute Force Method: Scan the entire array from left to right using `get(index)` until you find the target.
+BF Complexity Visuals: A linear probe checking every single index in the mountain.
+How to Draw BF: Draw a peak. Start an arrow at index 0 and move one step at a time up and down the mountain. Write $O(N)$.
+Optimised Pattern: Binary Search (Triple Pass).
+Opt Vis. Technique: A "Three-Step Expedition". First find the peak, then search the ascending slope, then the descending slope.
+Dry Run (Opt): 1. Binary search to find `peak` (where `arr[i] &lt; arr[i+1]`). 2. Binary search for `target` in `[0, peak]`. 3. If not found, binary search `target` in `[peak+1, n-1]` with reversed comparison logic.
+How to Draw (Opt): Draw a mountain shape. Divide into two zones at the peak. Draw two Binary Search trees (one for each side). Use `target` to narrow the range.
+Opt Complexity Visuals: Logarithmic search with limited API calls.
+How to Draw Opt Complexity: Draw three Binary Search trees. Write Time: $O(\log N)$.
+Mem Vis (BF): No extra memory.
+Mem Vis (Opt): $O(1)$ space for pointers (left, right, mid).

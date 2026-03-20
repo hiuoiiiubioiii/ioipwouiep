@@ -1,0 +1,16 @@
+ID: 349
+Problem Title: Intersection of Two Arrays
+Brute Force Method: For every element in `nums1`, check if it exists in `nums2` by iterating through `nums2` entirely. Add matches to a set to handle uniqueness.
+BF Complexity Visuals: Nested Membership Search
+How to Draw BF: Draw two arrays. Draw an arrow from the first element of `nums1` and point it at every element of `nums2` sequentially. Repeat for all. $O(N \cdot M)$.
+Optimised Pattern: Two HashSets (Unique Intersection)
+Opt Vis. Technique: [Image of Venn Diagram Intersection]
+
+
+ Set Membership Filtering
+Dry Run (Opt): Convert `nums1` into a HashSet. Iterate through `nums2`, and if an element exists in the set, add it to the result set and remove it from the first set (to avoid duplicates).
+How to Draw (Opt): Draw two circles (Sets). Show elements being moved from the arrays into the circles, then highlight the overlapping area.
+Opt Complexity Visuals: Dual-Pass Linear Scan
+How to Draw Opt Complexity: Draw one arrow through `nums1` and one arrow through `nums2`. $O(N + M)$.
+Mem Vis (BF): A large result list that may contain many duplicates before the set handles them.
+Mem Vis (Opt): A HashSet for one of the arrays. Draw a hash table with unique keys. $O(\\text{min}(N, M)$).

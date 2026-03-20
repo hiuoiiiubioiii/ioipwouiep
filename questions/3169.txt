@@ -1,0 +1,13 @@
+ID: 3169
+Problem Title: Count Days Without Meetings
+Brute Force Method: Create a boolean array of size `days` (10^9) and mark every meeting day as true. $O(\text{Days})$ - Memory TLE.
+BF Complexity Visuals: Memory Overflow Grid
+How to Draw BF: Draw a grid of a billion squares. Try to shade each square covered by a meeting. Hand will cramp before finishing.
+Optimised Pattern: Interval Merging
+Opt Vis. Technique: Overlapping Shingles
+Dry Run (Opt): Sort meetings by start time. Merge overlapping intervals. Total free days = Total days - Total covered days.
+How to Draw (Opt): Draw a ruler from 1 to 10. Draw colored bars for meeting intervals. Merge overlapping bars. Count the white space left.
+Opt Complexity Visuals: Sort Funnel + Linear Pass
+How to Draw Opt Complexity: Draw an $O(M \log M)$ sorting tree (where M is number of meetings), followed by a linear merge scan.
+Mem Vis (BF): A massive bitset/boolean array of size 10^9.
+Mem Vis (Opt): The sorted meetings array or a few interval variables. $O(M)$ or $O(1)$.

@@ -1,0 +1,13 @@
+ID: 266
+Problem Title: Palindrome Permutation
+Brute Force Method: Generate all possible permutations of the string and check if any of them are palindromes.
+BF Complexity Visuals: Factorial Explosion: $O(n!)$.
+How to Draw BF: Draw a root node. Branch it n times, then (n-1) times. Label it "The Permutation Tree of Doom."
+Optimised Pattern: Frequency Counting (Odd Count Limit)
+Opt Vis. Technique: Toggle-Switch Logic
+Dry Run (Opt): Iterate through chars. Add to a set if not present; remove if it is. At the end, the set size must be \le 1.
+How to Draw (Opt): Draw a string. Below it, draw a small box (Set). For each char, "drop" it in or "kick" it out. Check if 0 or 1 item remains.
+Opt Complexity Visuals: Linear Scan: $O(n)$.
+How to Draw Opt Complexity: Draw a single straight line through the string. Mark each step as $O(1)$ set operation.
+Mem Vis (BF): Permutation List: Draw a massive pile of strings.
+Mem Vis (Opt): Small Hash Set: Draw a box that holds at most 26 unique characters.

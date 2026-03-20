@@ -1,0 +1,13 @@
+ID: 3029
+Problem Title: Minimum Time to Revert Word to Initial State I
+Brute Force Method: Repeatedly slice the string by k characters and use a string comparison function to see if the suffix matches the original prefix.
+BF Complexity Visuals: Staggered String Alignment
+How to Draw BF: Draw the word on a strip of paper. Draw the same word on a strip below it, but shifted by k. Check if overlapping parts match. Repeat until match.
+Optimised Pattern: KMP Prefix Function (LPS Array)
+Opt Vis. Technique: LPS Chain Linkage
+Dry Run (Opt): Construct the LPS array. The longest suffix that is also a prefix gives us the "overlap". If that overlap is at a multiple of k, we find the answer.
+How to Draw (Opt): Draw the word. Below it, write the LPS values. Draw an arrow from the end of the string jumping back to the prefix length.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw one straight line across the string length. Label it $O(N)$.
+Mem Vis (BF): Creation of multiple new string objects via slicing s[k:] in memory.
+Mem Vis (Opt): An integer array LPS[N] and a single integer k.

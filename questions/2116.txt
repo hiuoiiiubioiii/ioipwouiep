@@ -1,0 +1,13 @@
+ID: 2116
+Problem Title: Check if a Parentheses String Can Be Valid
+Brute Force Method: Recursively branch on every 'unlocked' character, trying both '(' and ')', and check validity.
+BF Complexity Visuals: Massive binary decision tree exploring every wildcard.
+How to Draw BF: Draw a root node branching into 2 choices for every '0' in the lock string. Write $O(2^N)$.
+Optimised Pattern: Greedy (Two-Pass Scanning).
+Opt Vis. Technique: A sliding balance scale that allows a range of values.
+Dry Run (Opt): Pass 1 (Left to Right): Treat unlocked as '('. If balance &lt; 0, fail. Pass 2 (Right to Left): Treat unlocked as ')'. If balance &lt; 0, fail.
+How to Draw (Opt): Write the string. Below it, write a running sum tracking `minOpen` and `maxOpen`. Cross out invalid paths if `maxOpen` drops below 0.
+Opt Complexity Visuals: $O(N)$ linear time, two distinct sweeps.
+How to Draw Opt Complexity: Two long horizontal arrows passing over an array, one facing right, one facing left.
+Mem Vis (BF): Deep recursion stack frames (O(N)).
+Mem Vis (Opt): Two simple $O(1)$ integer counters.

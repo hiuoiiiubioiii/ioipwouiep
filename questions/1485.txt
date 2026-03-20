@@ -1,0 +1,13 @@
+ID: 1485
+Problem Title: Clone Binary Tree With Random Pointer
+Brute Force Method: Two-Pass Recursion. Pass 1: Clone the tree structure (left/right) and store the mapping of `OldNode -&gt; NewNode` in a Hash Map. Pass 2: Iterate through both trees and set the `random` pointers using the map.
+BF Complexity Visuals: Structure-First Mirroring
+How to Draw BF: Draw the original tree. Draw a second blank tree. Copy nodes one by one. Then draw a mapping table. Finally, draw the random arrows on the second tree. Label $O(N)$.
+Optimised Pattern: DFS / BFS with Node Mapping (Memoization)
+Opt Vis. Technique: Identity-Preserving Deep Copy
+Dry Run (Opt): Use a Hash Map to store `OldNode -&gt; NewNode`. Run a single DFS. For each node, if it's already in the map, return it. Else, create it, add to map, and recursively clone left, right, and random.
+How to Draw (Opt): Draw the tree. When you visit a node, "stamp" a copy and record it in a ledger. If you see a random pointer to a node you've already stamped, just check the ledger and point to that copy.
+Opt Complexity Visuals: Single Linear Traversal
+How to Draw Opt Complexity: Draw a DFS arrow visiting each node exactly once. Label $O(N)$.
+Mem Vis (BF): Deep Recursion + Mapping Table
+Mem Vis (Opt): A Hash Map storing N entries and the recursion stack. Space $O(N)$.

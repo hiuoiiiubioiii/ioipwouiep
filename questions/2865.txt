@@ -1,0 +1,13 @@
+ID: 2865
+Problem Title: Beautiful Towers I
+Brute Force Method: For every possible "peak" index i, iterate outwards to calculate the maximum heights possible while maintaining the mountain shape (height[j-1] <= height[j] for left, etc.).
+BF Complexity Visuals: $O(N2)$ Peak Simulation
+How to Draw BF: Draw the array. Pick a peak. Draw a mountain shape by trimming neighbors. Repeat for every single element in the array as the potential peak.
+Optimised Pattern: Monotonic Stack + Prefix/Suffix DP
+Opt Vis. Technique: Mountain Slope Area
+Dry Run (Opt): 1. Use a monotonic stack to find the nearest smaller element to the left for every index, calculating a running sum leftSum[i]. 2. Repeat for the right to get rightSum[i]. 3. The total height for peak i is leftSum[i] + rightSum[i] - maxHeights[i].
+How to Draw (Opt): Draw a bar chart. For each bar, find the nearest bar to the left that is shorter. Everything between them is "capped" at the current bar's height. Sum these "capped" values using a DP array.
+Opt Complexity Visuals: Three Linear Passes $O(N)$
+How to Draw Opt Complexity: Draw three horizontal arrows. Pass 1: Left DP. Pass 2: Right DP. Pass 3: Maximize sum. All $O(N)$.
+Mem Vis (BF): Visualize $O(1)$ auxiliary space but redundant $O(N^2)$ math steps.
+Mem Vis (Opt): Visualize two DP arrays of size N and a stack. Space $O(N)$.

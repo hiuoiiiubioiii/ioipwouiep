@@ -1,0 +1,13 @@
+ID: 2041
+Problem Title: Accepted Candidates From the Interviews (SQL)
+Brute Force Method: Extract both tables entirely into memory, loop over all candidates, find their interviews, manually sum the scores, and check conditions.
+BF Complexity Visuals: Full Cartesian Cross-Reference
+How to Draw BF: Draw two separate tables. Draw a line from every candidate to every interview to check if IDs match. Highly inefficient.
+Optimised Pattern: SQL JOIN + GROUP BY + HAVING
+Opt Vis. Technique: Data Pipeline Funnel
+Dry Run (Opt): Inner Join Candidates and Rounds. Group by candidate ID. Sum the scores. Filter with HAVING `years_of_exp &gt;= 2` AND `SUM(score) &gt; 15`.
+How to Draw (Opt): Draw two tables merging into a smaller third table (JOIN). Draw a funnel at the bottom catching only candidates passing the `&gt;15` and `&gt;=2` filters.
+Opt Complexity Visuals: Sequential Filtering Blocks
+How to Draw Opt Complexity: Draw horizontal blocks: JOIN -&gt; GROUP -&gt; HAVING. Show rows decreasing as they pass through each block. Time $O(N \log N)$ or $O(N)$ depending on DB index.
+Mem Vis (BF): Massive array of Candidate and Interview objects stored in application RAM.
+Mem Vis (Opt): Streamed directly by the DB engine; minimal application memory needed.

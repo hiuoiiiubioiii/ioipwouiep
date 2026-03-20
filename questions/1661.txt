@@ -1,0 +1,13 @@
+ID: 1661
+Problem Title: Average Time of Process per Machine (SQL)
+Brute Force Method: For every 'start' row, run a correlated subquery to find its matching 'end' row and subtract times.
+BF Complexity Visuals: Row-by-Row Search Grid
+How to Draw BF: Draw a table. For every row, draw an arrow scanning the entire table again looking for a match. $O(N^2)$.
+Optimised Pattern: Self-Join / Aggregate CASE WHEN
+Opt Vis. Technique: Pivoted Timeline Alignment
+Dry Run (Opt): Group by machine_id. Use `AVG(CASE WHEN type='end' THEN timestamp ELSE -timestamp END * 2)`.
+How to Draw (Opt): Draw a table where each machine has two values: a negative 'start' and a positive 'end'. Sum them and divide by count.
+Opt Complexity Visuals: Single Table Scan
+How to Draw Opt Complexity: Draw a straight arrow moving top-to-bottom through the table once. $O(N)$.
+Mem Vis (BF): Subquery Cache: Draw multiple redundant data buffers in RAM.
+Mem Vis (Opt): Hash Aggregate Table: Draw a small summary table (MachineID | RunningSum) that fills in one pass.

@@ -1,0 +1,13 @@
+ID: 3264
+Problem Title: Final Array State After K Multiplication Operations I
+Brute Force Method: Iterate K times: scan the array for the minimum value (O(N)), multiply it, and update. $O(K \cdot N)$.
+BF Complexity Visuals: Nested Loop Timeline
+How to Draw BF: Draw a list of N elements. Circle the smallest. Cross it out and write the new value. Draw the entire list K times to show the redundant $O(K\cdot N)$ scans.
+Optimised Pattern: Min-Priority Queue (Heap)
+Opt Vis. Technique: Binary Heap Tree
+Dry Run (Opt): Store all (value, index) pairs in a Min-Heap. Pop the top, multiply, and push it back K times.
+How to Draw (Opt): Draw a triangle (Heap). Point to the root (min). Show it being removed and replaced by the last node. Draw arrows for the "bubble down" and "bubble up" logic.
+Opt Complexity Visuals: Logarithmic Scaling Chart
+How to Draw Opt Complexity: Draw a block representing K iterations. Inside, draw a smaller box labeled $O(\log N)$. Result: $O(K \log N)$.
+Mem Vis (BF): Multiple modified copies of the array.
+Mem Vis (Opt): Priority Queue internal array of size N (O(N) space).

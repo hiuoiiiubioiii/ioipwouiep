@@ -1,0 +1,13 @@
+ID: 77
+Problem Title: Combinations
+Brute Force Method: Permutation Filtering Generate all n! permutations of numbers 1 dots n, then filter out duplicates and keep only those of length k.
+BF Complexity Visuals: The Factorial Filter
+How to Draw BF: Draw a massive tree of all permutations. Draw a "Sieve" at the bottom that only lets through unique combinations. Time: $O(N!)$.
+Optimised Pattern: Backtracking (DFS + Lexicographic)
+Opt Vis. Technique: The Growing Chain
+Dry Run (Opt): Build the combination one number at a time. To avoid duplicates, only pick numbers *larger* than the last one picked. If length hits k, save the result.
+How to Draw (Opt): Draw a tree starting at root. Branch to 1, 2, 3... From 1, branch only to 2, 3... (skipping 1). From 2, branch only to 3... (skipping 1, 2).
+Opt Complexity Visuals: Binomial Coefficient Tree
+How to Draw Opt Complexity: Draw a tree where each level adds a digit. The number of leaf nodes is exactly (n Choose k). Time: $O((n \text{Choose} k)$ x k).
+Mem Vis (BF): Massive $O(N!)$ lists stored before filtering.
+Mem Vis (Opt): Draw the recursion stack (depth k) and a single array `path` that is modified in-place. Space: $O(k)$.

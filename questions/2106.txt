@@ -1,0 +1,13 @@
+ID: 2106
+Problem Title: Maximum Fruits Harvested After at Most K Steps
+Brute Force Method: Simulate walking left/right for every possible combination of K steps.
+BF Complexity Visuals: Massive branching decision tree (Left/Right at each step).
+How to Draw BF: Draw a binary tree of depth K, branching left and right. Write $O(2^K)$.
+Optimised Pattern: Prefix Sum + Binary Search (or Sliding Window).
+Opt Vis. Technique: 1D Number line with shaded intervals.
+Dry Run (Opt): Fix a turnaround point, calculate remaining steps to walk in the opposite direction, query prefix sum for that range.
+How to Draw (Opt): Draw a number line. Mark starting point. Draw an arched arrow going left, then turning back right, highlighting the covered segment.
+Opt Complexity Visuals: $O(N \log N)$ prefix sum queries or $O(N)$ sliding window.
+How to Draw Opt Complexity: Line representing N iterations, each branching to a shrinking log(N) search space.
+Mem Vis (BF): Deep recursion stack frames.
+Mem Vis (Opt): Flat continuous Prefix Sum array.

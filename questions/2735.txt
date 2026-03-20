@@ -1,0 +1,13 @@
+ID: 2735
+Problem Title: Collecting Chocolates
+Brute Force Method: Simulate every possible number of rotations (0 to N-1). For each rotation count, calculate the total cost by iterating over all chocolates. $O(N³)$.
+BF Complexity Visuals: Triple Nested Loop Grid
+How to Draw BF: Draw a 3D cube of operations. For each "rotation" layer, draw a 2D scan of the array. Very dense and slow.
+Optimised Pattern: Redundant Array Rotation Buffers (Storing the state of the array for every single shift).
+Opt Vis. Technique: Rotation-Minimizing DP (O(N²) Time)
+Dry Run (Opt): Row-wise Minimum Tracking
+How to Draw (Opt): Iterate k from 0 to N-1 (rotations). Maintain an array min_costs where min_costs[i] is the minimum price found for chocolate i across all rotations so far. Sum min_costs at each k and add the shifting cost k * x.
+Opt Complexity Visuals: Draw a grid where rows are rotations. For each column, highlight the smallest value seen from the top down to the current row. Tally the sum of highlighted values.
+How to Draw Opt Complexity: $O(N²)$ Area Sweep
+Mem Vis (BF): Draw a 2D square (N x N). Label it $O(N²)$ to show we visit each rotation/chocolate pair exactly once.
+Mem Vis (Opt): 1D Running Minimum Array (Draw a single array of size N that is updated in-place at each rotation step).

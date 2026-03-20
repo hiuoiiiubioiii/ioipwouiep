@@ -1,0 +1,13 @@
+ID: 3136
+Problem Title: Valid Word
+Brute Force Method: For each requirement (length, vowel, consonant), run a full independent scan of the string. $O(3N)$ rightarrow $O(N)$
+BF Complexity Visuals: Parallel linear scans checking distinct conditions.
+How to Draw BF: Draw three horizontal lines representing the string. On line 1, mark length. On line 2, circle vowels. On line 3, circle consonants.
+Optimised Pattern: Single-Pass Flagging
+Opt Vis. Technique: Logic Gate / Status LED Board
+Dry Run (Opt): Iterate once. Set `hasVowel`, `hasConsonant`, and `isInvalid` flags. Check all flags at the end.
+How to Draw (Opt): Draw three checkboxes labeled 'V', 'C', 'ValidChars'. Walk through the word; check the box as soon as the condition is met.
+Opt Complexity Visuals: Linear sequence of constant-time operations.
+How to Draw Opt Complexity: Draw one straight line with a single "Check" box at the end. $O(N)$.
+Mem Vis (BF): Multiple boolean arrays storing the status of every character.
+Mem Vis (Opt): Three boolean flags (1 bit each). $O(1)$.

@@ -1,0 +1,13 @@
+ID: 295
+Problem Title: Find Median from Data Stream
+Brute Force Method: Store all numbers in a list, sort it every time a new number is added (O(N \log N) per add).
+BF Complexity Visuals: Sorting Staircase: $O(N^2 \log N)$ total.
+How to Draw BF: Draw an array growing. For every new element, draw a "Sorting" cloud above it. Shade the increasing work.
+Optimised Pattern: Two Heaps (Min-Heap &amp; Max-Heap)
+Opt Vis. Technique: Balanced Balanced-Scales
+Dry Run (Opt): Use a Max-Heap for the smaller half and a Min-Heap for the larger half. Keep their sizes balanced (difference \le 1). Median is the top(s).
+How to Draw (Opt): Draw two triangles (Heaps) facing each other. Max-Heap on left, Min-Heap on right. Numbers enter Max, bubble to top, jump to Min. Median is where they meet.
+Opt Complexity Visuals: Heap Balancing: $O(\log N)$ per Add, $O(1)$ per Find.
+How to Draw Opt Complexity: Draw a height-line ( \log N) representing the bubble-up/down cost for each addition.
+Mem Vis (BF): One long sorted array.
+Mem Vis (Opt): Two Binary Tree Heaps: Draw two complete binary trees. Total space: $O(N)$.

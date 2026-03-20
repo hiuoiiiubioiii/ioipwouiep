@@ -1,0 +1,13 @@
+ID: 3674
+Problem Title: Minimum Operations to Equalize Array (Easy)
+Brute Force Method: Trying to change every element to a specific target value, iterating through all possible target values (min to max). $O(N \\text{cdot Range})$.
+BF Complexity Visuals: Target Value Brute Force.
+How to Draw BF: Draw an array: [1, 5, 10]. Try making them all 1. Calculate cost. Try making them all 2. Repeat until 10. If the range is 1 billion, it fails.
+Optimised Pattern: Median-Based Greedy approach. The total cost is minimized when all elements are changed to the median of the array.
+Opt Vis. Technique: The "Central Gravity" Point.
+Dry Run (Opt): Imagine the numbers as houses on a street. You want to build a post office. To minimize everyone's walking distance, you should put it exactly at the middle house (the median).
+How to Draw (Opt): Sort the array. Pick the middle element. Calculate `abs(arr[i] - median)` for every element and sum them up.
+Opt Complexity Visuals: Sorting-Bounded Line.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort block followed by a single $O(N)$ summation pass. Total $O(N \log N)$.
+Mem Vis (BF): Allocating a 2D matrix to store costs for every possible target value.
+Mem Vis (Opt): A single sorted copy of the input array. Space $O(1)$ or $O(N)$ depending on sort.

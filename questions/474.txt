@@ -1,0 +1,13 @@
+ID: 474
+Problem Title: Ones and Zeroes
+Brute Force Method: Subset Generation Generate all 2^N subsets of strings. Count total 0s and 1s for each. Keep the largest valid subset.
+BF Complexity Visuals: Exponential Tree
+How to Draw BF: Draw a binary decision tree (Pick/Don't Pick) for each string. $O(2^N)$.
+Optimised Pattern: 2D Knapsack DP `dp[i][j]` is max strings using `i` zeros and `j` ones. Update backwards to save space.
+Opt Vis. Technique: Constraint Matrix
+Dry Run (Opt): Imagine a 2D grid where X-axis is "Zeros Available" and Y-axis is "Ones Available." Each string is a "Cost" that lets you move in the grid.
+How to Draw (Opt): Draw a 2D grid (e.g., 5 \times 3). For a string "001", show moving from `dp[2][1]` to `dp[0][0]` and adding +1 to the count.
+Opt Complexity Visuals: Triple Loop Area
+How to Draw Opt Complexity: Draw a 3D block: Strings \times MaxZeros \times MaxOnes. $O(L \cdot M \cdot N)$.
+Mem Vis (BF): Subsets Massive memory for all string combinations.
+Mem Vis (Opt): 2D Integer Grid Draw a single M \times N matrix of integers. $O(M \cdot N)$ space.

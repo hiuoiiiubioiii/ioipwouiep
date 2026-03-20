@@ -1,0 +1,13 @@
+ID: 1224
+Problem Title: Maximum Equal Frequency
+Brute Force Method: For every possible prefix of the array, calculate the frequencies of all elements from scratch. Then check if removing exactly one element makes all remaining non-zero frequencies identical.
+BF Complexity Visuals: Repeated Prefix Scanning
+How to Draw BF: Draw the array. Bracket the first 2 elements, count frequencies. Bracket the first 3, count from scratch. Bracket first 4, count from scratch. Write $O(N^2)$.
+Optimised Pattern: Double Hash Maps (Count of Counts)
+Opt Vis. Technique: Frequency Grouping Bins
+Dry Run (Opt): Maintain one map of 'Number -&gt; Frequency' and another of 'Frequency -&gt; Count of Numbers with that Frequency'. Update both dynamically as you read each number. Check 3 simple mathematical conditions at each step to see if a valid removal exists.
+How to Draw (Opt): Draw two tables side-by-side. Table 1: [Num: Freq]. Table 2: [Freq: How Many]. Read a number. Add 1 to Table 1. In Table 2, subtract 1 from the old Freq and add 1 to the new Freq. Check if Table 2 has exactly 1 or 2 entries that fit the rules.
+Opt Complexity Visuals: Parallel Synchronized Hashing
+How to Draw Opt Complexity: Draw an array. Draw a single horizontal arrow scanning right. Draw two boxes below it updating instantly on each step. Write $O(N)$.
+Mem Vis (BF): Draw a completely new Hash Map being created and destroyed for every single prefix check.
+Mem Vis (Opt): Draw exactly two Hash Maps (or fixed-size Arrays if max value is known) taking up $O(N)$ space, updated in-place.

@@ -1,0 +1,13 @@
+ID: 575
+Problem Title: Distribute Candies
+Brute Force Method: Generate every possible combination of N/2 candies and count the number of unique types in each combination.
+BF Complexity Visuals: Combinatorial explosion O\binom{N}{N/2}.
+How to Draw BF: Draw 6 candies. List every possible set of 3 you could pick (1-2-3, 1-2-4, etc.) and count types in each.
+Optimised Pattern: Set Size vs. Half-Length Comparison.
+Opt Vis. Technique: A collector's limit. You want as many unique stamps as possible, but your album only holds N/2 pages. Your variety is limited by either the total stamps you own or the pages available.
+Dry Run (Opt): `UniqueTypes = count(Set(candies))`. `Result = min(UniqueTypes, candies.length / 2)`.
+How to Draw (Opt): Draw a pile of candies. Put one of each type into a "Unique Box." If the box size is bigger than half the total candies, cross out the extras until it fits.
+Opt Complexity Visuals: Single pass to count unique elements. $O(N)$.
+How to Draw Opt Complexity: Draw a bag of candies flowing into a Set, then a comparison to a "Max Allowed" box.
+Mem Vis (BF): A list of all combinations in memory.
+Mem Vis (Opt): A Hash Set to store unique types. $O(N)$.

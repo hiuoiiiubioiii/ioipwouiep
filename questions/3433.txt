@@ -1,0 +1,13 @@
+ID: 3433
+Problem Title: Count Mentions Per User
+Brute Force Method: For every message event, iterate through all users to check if they are "online" and increment their mention count. $O(M \cdot N)$
+BF Complexity Visuals: Global User Status Matrix.
+How to Draw BF: Draw a table with Users as columns and Events as rows. For every message row, fill in status for every single user column.
+Optimised Pattern: Sorting Events + Lazy Counter for "ALL" mentions. $O(M \log M + N)$
+Opt Vis. Technique: Event Simulation Timeline.
+Dry Run (Opt): Sort all events by timestamp. Process "offline" events to update user online-status. For "ALL" mentions, increment a global counter instead of updating every user.
+How to Draw (Opt): Draw a horizontal timeline. Place 'M' (Message) and 'O' (Offline) marks. Below, draw a single "Global Counter" box that increments on 'ALL'.
+Opt Complexity Visuals: Sorted Timeline Traversal.
+How to Draw Opt Complexity: Draw a sorting tree followed by a single line with M segments, proving $O(M \log M + M)$ complexity.
+Mem Vis (BF): N x M matrix holding the history of user statuses.
+Mem Vis (Opt): Two 1D arrays of size N: `mentions_count` and `next_online_time`.

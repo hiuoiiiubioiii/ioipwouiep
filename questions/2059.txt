@@ -1,0 +1,13 @@
+ID: 2059
+Problem Title: Minimum Operations to Convert Number
+Brute Force Method: Recursive DFS exploring every possible addition, subtraction, and XOR until the target is reached.
+BF Complexity Visuals: Infinite Unbounded Tree
+How to Draw BF: Draw a root node. Branch 3*N ways. For each child, branch again. Without state tracking, this loops forever and grows infinitely.
+Optimised Pattern: BFS (Breadth-First Search) + Visited Array (0-1000)
+Opt Vis. Technique: Expanding Wavefront on Fixed Range
+Dry Run (Opt): Use a Queue for BFS. Only push numbers between 0 and 1000 into the Queue and mark them in a `visited` boolean array. If the result equals `goal`, return current steps.
+How to Draw (Opt): Draw a number line 0 to 1000. Start a ripple at `start`. Show the ripple expanding to new numbers each step. If a ripple hits `goal`, stop.
+Opt Complexity Visuals: State-Space BFS
+How to Draw Opt Complexity: Draw a graph where nodes are 0-1000. Time $O(1000 \cdot N)$ because each number in the 0-1000 range is processed at most once.
+Mem Vis (BF): Recursion stack with massive redundant state storage.
+Mem Vis (Opt): A Queue and a boolean array of size 1001. Space $O(1000)$.

@@ -1,0 +1,13 @@
+ID: 324
+Problem Title: Wiggle Sort II
+Brute Force Method: Sort the entire array. Then, create a new array and pick elements from the first and second halves to interleave them (small, large, small, large...).
+BF Complexity Visuals: Full Sort &amp; Interleave
+How to Draw BF: Draw an unsorted array. Draw a "Sorted" array below it. Draw zig-zag arrows moving elements from the sorted array into a third "Result" array. $O(n \log n)$.
+Optimised Pattern: Quickselect + Virtual Indexing (3-way Partition)
+Opt Vis. Technique: Median-Relative Color Sort
+Dry Run (Opt): Find the median in $O(n)$ using Quickselect. Use "Virtual Indexing" to map indices 0, 1, 2... to wiggle positions. Perform a 3-way partition (Dutch National Flag) to put numbers &gt; median at odd slots and &lt; median at even slots.
+How to Draw (Opt): Draw an array. Label indices with "Virtual" names (1, 3, 5... then 0, 2, 4...). Use three pointers (i, j, k) to swap elements into their virtual positions relative to the median.
+Opt Complexity Visuals: Linear Partitioning Wave
+How to Draw Opt Complexity: Draw a single horizontal line representing the array. Mark the median point. Show three pointers moving inward. $O(n)$ time.
+Mem Vis (BF): A complete copy of the array for sorting. $O(n)$.
+Mem Vis (Opt): In-place variables. Draw the original array memory block and 3 tiny integer boxes (L, M, R pointers). $O(1)$ extra space.

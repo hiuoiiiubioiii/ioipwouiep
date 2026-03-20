@@ -1,0 +1,13 @@
+ID: 2585
+Problem Title: Number of Ways to Earn Points
+Brute Force Method: Recursively try taking 0, 1, 2... up to count[i] items of the current type to reach the target. $O(\text{count}^\text{types})$.
+BF Complexity Visuals: An enormous multi-way decision tree where each node branches out many times based on the item count.
+How to Draw BF: Target 6. Item 1 (val 2, count 2). Try taking zero 2s, one 2, or two 2s. From each, repeat for the next item type.
+Optimised Pattern: Bounded Knapsack Dynamic Programming.
+Opt Vis. Technique: A "Grid-Filling" visual where we build up the number of ways to reach every score from 0 to target using one item type at a time.
+Dry Run (Opt): Let `dp[i]` be the ways to get `i` points. For each item type `(count, val)`: update the `dp` table backwards (from `target` down to 0). For a score `s`, `new_dp[s] = dp[s] + dp[s - 1*val] + dp[s - 2*val] ...` up to `count`.
+How to Draw (Opt): Draw a row of boxes 0 to `target`. Start with box 0 = 1. For each item type, update the boxes by adding values from "backwards" boxes that are a multiple of `val` away.
+Opt Complexity Visuals: $O(\text{Types} x \text{Target} x \text{AvgCount})$. Triple nested loop (Items, Score, Count).
+How to Draw Opt Complexity: Draw a 1D array. Draw multiple "jump" arrows from previous cells into the current cell, representing the different counts of the same item type.
+Mem Vis (BF): Exponential recursion stack.
+Mem Vis (Opt): $O(\text{Target})$ - We only need a 1D array to store the current ways to reach each score.

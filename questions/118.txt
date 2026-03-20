@@ -1,0 +1,13 @@
+ID: 118
+Problem Title: Pascal's Triangle
+Brute Force Method: Calculate the mathematical combination formula (nCr) using factorials for every single cell independently.
+BF Complexity Visuals: An $O(N^3)$ explosion of redundant factorial calculations overlapping wildly for the center elements.
+How to Draw BF: Write out the full factorial expansion `n! / (r! * (n-r)!)` for a cell in row 5, showing the massive redundant arithmetic.
+Optimised Pattern: Dynamic Programming (Tabulation). Building the current row iteratively from the directly previous row.
+Opt Vis. Technique: Falling sand accumulating. Each block rests perfectly on the shoulders of the two blocks directly beneath it in the previous layer.
+Dry Run (Opt): Initialize a nested list. First row `[1]`. For row `i`: create array of size `i+1`, set ends to 1. For middle elements, `curr[j] = prev[j-1] + prev[j]`.
+How to Draw (Opt): Draw a staggered grid. Fill the edges with 1s. To fill an empty cell, draw two V-shaped arrows coming from the top-left and top-right cells, adding them together.
+Opt Complexity Visuals: $O(N^2)$ grid filling exactly one time per cell, representing the absolute minimum work required to generate the shape.
+How to Draw Opt Complexity: Draw the triangle. Cross out each cell with a single slash as you calculate its sum, proving each of the N^2/2 cells is touched exactly once.
+Mem Vis (BF): Call stacks overflowing or massive integer overflows calculating factorials.
+Mem Vis (Opt): An expanding array of arrays in heap memory, perfectly matching the physical geometry of the $O(N^2)$ triangle.

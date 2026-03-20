@@ -1,0 +1,13 @@
+ID: 2194
+Problem Title: Cells in a Range on an Excel Sheet
+Brute Force Method: Parse the string, then use nested loops with string conversions and character math to build every coordinate.
+BF Complexity Visuals: A grid-filling simulation.
+How to Draw BF: Draw 'A1:B2'. Draw a 2x2 grid. Manually write A1, A2, B1, B2. $O(\text{Rows} \\text{cdot Cols})$.
+Optimised Pattern: Nested Char Loops.
+Opt Vis. Technique: A nested scanner moving through a spreadsheet.
+Dry Run (Opt): Extract startCol, endCol, startRow, endRow. Outer loop `c` from startCol to endCol. Inner loop `r` from startRow to endRow. Append `c + r`.
+How to Draw (Opt): Write the start 'K' and end 'L'. Write the numbers 1 to 3. Draw a table. Fill 'K' column first (K1, K2, K3), then move to 'L' column.
+Opt Complexity Visuals: $O(\text{Total Cells})$ linear to output size.
+How to Draw Opt Complexity: A single horizontal line that "steps" into a vertical loop at each increment.
+Mem Vis (BF): Intermediate string parsing and type casting.
+Mem Vis (Opt): $O(N)$ to store the list of resulting coordinate strings.

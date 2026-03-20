@@ -1,0 +1,13 @@
+ID: 1972
+Problem Title: First and Last Call On the Same Day (SQL)
+Brute Force Method: For every user and every day, use separate subqueries to find the MIN(time) and MAX(time) and join them back.
+BF Complexity Visuals: Multi-Scan Row Correlation
+How to Draw BF: Draw a row. Draw two magnifying glasses: one scanning the table for the earliest call, one for the latest. $O(N^2)$.
+Optimised Pattern: Window Functions (ROW_NUMBER/RANK)
+Opt Vis. Technique: Temporal Partitioning Buckets
+Dry Run (Opt): Partition data by user and day. Sort by time. Pick rows where rank=1 (first) and rank=N (last). Compare caller/receiver IDs.
+How to Draw (Opt): Draw columns of rows. Group them into boxes by "User-Day". Circle the very top and very bottom row in each box.
+Opt Complexity Visuals: Sorted Stream Processing
+How to Draw Opt Complexity: Draw a sorted table. Show a single pass that identifies the boundaries of each user-day group. $O(N \log N)$.
+Mem Vis (BF): Temporary tables generated for every individual row comparison.
+Mem Vis (Opt): Internal Hash partitions used by the SQL engine for partitioning.

@@ -1,0 +1,13 @@
+ID: 3420
+Problem Title: Count Non-Decreasing Subarrays After K Operations
+Brute Force Method: Generate all subarrays, determine operations needed to make each non-decreasing, and sum. $O(N^3)$.
+BF Complexity Visuals: Sliding Re-Calculation Window
+How to Draw BF: Bracket every subarray. Traverse the bracket to calculate leveling costs.
+Optimised Pattern: Monotonic Stack + Two Pointers
+Opt Vis. Technique: The Bounded Leveling Tool
+Dry Run (Opt): Use a monotonic decreasing stack to efficiently calculate the cost to "level up" elements in a sliding window to maintain a non-decreasing order. If the cost exceeds K, shrink the window from the left and update the cost dynamically.
+How to Draw (Opt): Draw the array. Slide a window right. If a number dips, you must "fill" that dip with operations to match the previous max. Track these filling costs in a stack. If you run out of K operations, move the left bound forward and refund the operations.
+Opt Complexity Visuals: Amortized Two-Pointer $O(N)$
+How to Draw Opt Complexity: Draw two pointers moving strictly left-to-right. Stack pushes/pops are $O(1)$ amortized.
+Mem Vis (BF): Tracking costs for all N^2 subarrays independently.
+Mem Vis (Opt): A Monotonic Stack storing indices and costs. $O(N)$ space.

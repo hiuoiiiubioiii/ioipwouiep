@@ -1,0 +1,13 @@
+ID: 3097
+Problem Title: Shortest Subarray With OR at Least K II
+Brute Force Method: Identical to 3095 but with N=10^5. Brute force $O(N^2)$ will fail.
+BF Complexity Visuals: Clock on Fire (TLE)
+How to Draw BF: Draw an exploding timer. 10^10 operations exceed the 1s limit.
+Optimised Pattern: Sliding Window + Bit Count Array
+Opt Vis. Technique: Frequency-based Bit Register
+Dry Run (Opt): Maintain a 32-element array tracking the frequency of each bit in the current window. When adding/removing numbers, update the bit counts. If a count &gt; 0, that bit is "active" in the OR sum.
+How to Draw (Opt): Draw the array. Below it, draw 32 vertical "tally boxes." When a number enters the window, add its bits to the boxes. When it leaves, subtract. If a box has &gt;0 tallies, that bit is 1.
+Opt Complexity Visuals: $O(N \cdot 32)$ Window
+How to Draw Opt Complexity: Draw a linear scan $O(N)$. Inside each step, show a constant-time bit-count update (32 operations).
+Mem Vis (BF): Deep recursion for move combinations.
+Mem Vis (Opt): An integer array bitCounts[32] and two window pointers.

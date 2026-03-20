@@ -1,0 +1,13 @@
+ID: 3100
+Problem Title: Water Bottles II
+Brute Force Method: Recursive simulation: for every possible step, calculate whether to drink, exchange, or wait. (Though a simple greedy loop is almost BF here).
+BF Complexity Visuals: State-Transition Flowchart
+How to Draw BF: Draw boxes for "Full", "Empty", and "Exchange Rate". Draw arrows showing the movement of units between them.
+Optimised Pattern: Greedy Simulation (While Loop)
+Opt Vis. Technique: Resource Depletion Tank
+Dry Run (Opt): Maintain full, empty, and total_drunk. Drink all full, add to empty. While empty &gt;= numExchange, swap for 1 bottle and increment numExchange.
+How to Draw (Opt): Draw three buckets. Mark tallies as you "drink" from one to the other. Draw a "Price Tag" next to the exchange bucket that increases by 1 each time.
+Opt Complexity Visuals: $O(\text{sqrt}(N)$) Arithmetic Series
+How to Draw Opt Complexity: Draw a shrinking bar. Because the exchange cost increases by 1 each time, the number of swaps is bounded by $O(√N)$.
+Mem Vis (BF): Call stack frames tracking the "state" of bottles at each exchange.
+Mem Vis (Opt): Zero extra structure; just four integer counters.

@@ -1,0 +1,13 @@
+ID: 2204
+Problem Title: Distance to a Cycle in Undirected Graph
+Brute Force Method: DFS per NodeFor every single node in the graph, run a full DFS/BFS to find the shortest path to any node that belongs to a cycle.
+BF Complexity Visuals: Repeated Graph Traversal Grids
+How to Draw BF: Draw the graph N times. For each drawing, start at a different node and trace the path to a cycle. Sum the operations to show $O(N \cdot (V+E)$).
+Optimised Pattern: Kahn's Algorithm (Topological Sort) + Multi-source BFS
+Opt Vis. Technique: Degree Trimming &amp; Expanding Waves
+Dry Run (Opt): Peel away nodes with degree 1 until only the cycle remains. Then push all cycle nodes into a queue and run BFS outward to calculate distances.
+How to Draw (Opt): Draw a graph with "leaves". Erase leaves one by one until a loop remains (Kahn's). Mark loop nodes as "0". Draw concentric circles outward marking distances 1, 2, 3...
+Opt Complexity Visuals: Two-Phase Pipeline Graph
+How to Draw Opt Complexity: Draw Phase 1: Degree Array elimination -&gt; $O(V+E)$. Draw Phase 2: Multi-source BFS -&gt; $O(V+E)$. Total time is linear.
+Mem Vis (BF): N separate Queue states initialized inside an outer loop.
+Mem Vis (Opt): Degree Array (Integers) and a single global Queue pushing outward from cycle nodes.

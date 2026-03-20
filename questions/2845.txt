@@ -1,0 +1,13 @@
+ID: 2845
+Problem Title: Count Interesting Subarrays
+Brute Force Method: Use nested loops to find every possible subarray. For each, count how many elements satisfy nums[i] % modulo == value and check if that count % modulo == k.
+BF Complexity Visuals: $O(N^2)$ Nested Scan
+How to Draw BF: Draw the array. Draw all possible brackets. Inside each bracket, draw a loop that counts "Interesting" elements. Area = N^2.
+Optimised Pattern: Prefix Sums + Hash Map (Frequency of remainders)
+Opt Vis. Technique: Remainder Offset Logic
+Dry Run (Opt): Transform the array into 0s and 1s (1 if nums[i] % modulo == value). Calculate prefix sums of this 0/1 array. The problem becomes finding pairs (i, j) such that (prefix[j] - prefix[i]) % modulo == k. This rearranges to prefix[i] % modulo == (prefix[j] - k) % modulo.
+How to Draw (Opt): Draw a "Remainder Tracker" Hash Map. As you scan the array, calculate current prefix % modulo. Look in the map for (current - k + modulo) % modulo and add its count to the answer.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw a linear scan line. Each map lookup and update is $O(1)$. Total $O(N)$.
+Mem Vis (BF): Visualize the CPU stalling as it performs billions of redundant sum operations.
+Mem Vis (Opt): Visualize a Hash Map that stores at most modulo keys. Space $O(N)$ in the worst case (if modulo is large).

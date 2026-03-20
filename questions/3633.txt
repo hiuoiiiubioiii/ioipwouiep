@@ -1,0 +1,13 @@
+ID: 3633
+Problem Title: Earliest Finish Time for Land and Water Rides I (Easy)
+Brute Force Method: Trying every single permutation of land and water rides to see which ordering finishes first. $O(N!)$.
+BF Complexity Visuals: Factorial Branching Tree.
+How to Draw BF: Write Ride 1. Branch to Ride 2 or Ride 3. Branch again. The tree explodes instantly even for small arrays.
+Optimised Pattern: Greedy Algorithm / Sorting. Match the longest land rides with the shortest water rides (or vice versa, depending on exact problem constraints) to minimize the maximum bottleneck.
+Opt Vis. Technique: Interlocking Gantt Chart Blocks.
+Dry Run (Opt): Think of rides as physical wooden blocks. You want to stack one Land block and one Water block. To keep the tallest stack as short as possible, pair your tallest Land block with your shortest Water block.
+How to Draw (Opt): Draw two arrays of numbers. Sort one ascending, sort the other descending. Draw straight vertical lines connecting index 0 to index 0, index 1 to 1. Find the max sum.
+Opt Complexity Visuals: Sorting Bottleneck Line.
+How to Draw Opt Complexity: Draw two long blocks labeled "Sort $O(N \log N)$". Draw one short block labeled "Linear Pair Scan $O(N)$". Dominant time is sorting.
+Mem Vis (BF): Call stack overflow from recursive permutation generation.
+Mem Vis (Opt): In-place sorting of the two input arrays. Space $O(1)$ or $O(\log N)$.

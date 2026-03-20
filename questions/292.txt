@@ -1,0 +1,13 @@
+ID: 292
+Problem Title: Nim Game
+Brute Force Method: Use recursion to check every possible move (taking 1, 2, or 3 stones) and see if any leads to a win.
+BF Complexity Visuals: Game State Tree: $O(3^N)$.
+How to Draw BF: Draw a tree starting with N. Level 1 has N-1, N-2, N-3. It expands exponentially.
+Optimised Pattern: Mathematical Modulo (Game Theory)
+Opt Vis. Technique: Cycle of Four Pattern
+Dry Run (Opt): If the number of stones is a multiple of 4, you will always lose if the opponent plays optimally. Result: n \% 4 != 0.
+How to Draw (Opt): Draw numbers 1, 2, 3 (Win), 4 (Loss), 5, 6, 7 (Win), 8 (Loss). Circle the multiples of 4 to show the "Trap" states.
+Opt Complexity Visuals: Instant Logic: $O(1)$ Time.
+How to Draw Opt Complexity: Draw a single dot. No loops, just a division check.
+Mem Vis (BF): Recursion stack: $O(N)$.
+Mem Vis (Opt): Zero Extra Space: A single arithmetic operation.

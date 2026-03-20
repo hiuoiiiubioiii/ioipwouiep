@@ -1,0 +1,13 @@
+ID: 1131
+Problem Title: Maximum of Absolute Value Expression
+Brute Force Method: Nested loops $O(N^2)$. Calculate the formula |arr1[i] - arr1[j]| + |arr2[i] - arr2[j]| + |i - j| for all pairs (i, j).
+BF Complexity Visuals: Grid Comparison Matrix
+How to Draw BF: Draw an N x N grid. Show that every cell must be calculated. Highlight the diagonal to show redundant work.
+Optimised Pattern: Math (Expression Expansion / 8 Scenarios)
+Opt Vis. Technique: Coordinate Transform Plot
+Dry Run (Opt): Expand the absolute values into 4 (or 8) combinations of pm. For each scenario, find the max and min of the resulting expression. The answer is max(max_val - min_val).
+How to Draw (Opt): Draw 4 number lines. For each, plot the value of (arr1[i] pm arr2[i] pm i). Circle the furthest two points on each line.
+Opt Complexity Visuals: Multiple Linear Scans $O(N)$
+How to Draw Opt Complexity: Draw 4 parallel horizontal arrows. Each scans the array once. Total time is 4 x N.
+Mem Vis (BF): None (In-place loops)
+Mem Vis (Opt): Constant variables (max1, min1... max4, min4).

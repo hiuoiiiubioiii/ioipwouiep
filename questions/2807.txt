@@ -1,0 +1,13 @@
+ID: 2807
+Problem Title: Insert Greatest Common Divisors in Linked List
+Brute Force Method: Iterate the linked list, extract all values to an array. Iterate the array to compute GCDs and build a completely new array. Convert the new array back into a linked list.
+BF Complexity Visuals: Array Extraction Flowchart
+How to Draw BF: Draw a Linked List. Draw a downward arrow creating an Array. Draw another Array inserting GCDs between elements. Draw an upward arrow building a brand new Linked List.
+Optimised Pattern: In-Place Pointer Splicing + Euclidean Algorithm
+Opt Vis. Technique: In-Place Pointer Splicing Diagram
+Dry Run (Opt): Place curr and next pointers. Calculate GCD of their values. Create a new node. Point curr.next to the new node, and new_node.next to the next pointer. Advance curr.
+How to Draw (Opt): Draw two circles (Node A and Node B) connected by an arrow. Erase the arrow. Draw a third circle (Node C) below them. Draw arrows A → C and C → B.
+Opt Complexity Visuals: Linear Traversal with Cyclic Math Steps
+How to Draw Opt Complexity: Draw a line of N nodes. Under each gap, write $O(\log(\text{min}(a,b)$)) representing the Euclidean step. Total time is $O(N \cdot \log M)$.
+Mem Vis (BF): Visualize heavy heap allocation: $O(N)$ extra memory allocated for the temporary dynamic arrays.
+Mem Vis (Opt): Visualize $O(1)$ auxiliary stack space for pointers, plus the exact memory needed for the N-1 newly allocated Node objects on the heap.

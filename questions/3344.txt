@@ -1,0 +1,13 @@
+ID: 3344
+Problem Title: Maximum Sized Array
+Brute Force Method: Generate all possible combinations of removing N/2 elements from both arrays and calculate the distinct union for each. $O(\text{Exponential})$.
+BF Complexity Visuals: Combinatorial Deletion Tree
+How to Draw BF: Draw two arrays. Branch out for every possible combination of crossing out half the numbers.
+Optimised Pattern: Greedy / Set Intersection
+Opt Vis. Technique: The Venn Diagram Filler
+Dry Run (Opt): Find unique elements in A, unique in B, and their intersection. Greedily keep elements unique to A up to N/2, then unique to B up to N/2. Fill any remaining quota from the intersection.
+How to Draw (Opt): Draw a Venn Diagram (A, B, Shared). Pick dots from the "A-only" crescent until you hit N/2. Do the same for "B-only". If you still need dots, grab them from the "Shared" middle.
+Opt Complexity Visuals: Hash Set Operations $O(N)$
+How to Draw Opt Complexity: Draw two arrays pouring into three buckets (Unique A, Unique B, Shared).
+Mem Vis (BF): Generating thousands of arrays.
+Mem Vis (Opt): Three Hash Sets. $O(N)$ space.

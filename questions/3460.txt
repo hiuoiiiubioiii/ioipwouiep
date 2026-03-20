@@ -1,0 +1,13 @@
+ID: 3460
+Problem Title: Longest Common Prefix After at Most One Removal
+Brute Force Method: Iterate through string s and for each index i, create a new string with s[i] removed, then find LCP with t. $O(N^2)$
+BF Complexity Visuals: N-Line Character Matching Grid.
+How to Draw BF: Draw string s. Below it, draw N different versions of s (each missing one char) and a matching arrow for each against t.
+Optimised Pattern: Two Pointers with "Skip" Flag. $O(N)$
+Opt Vis. Technique: Staggered Parallel Pointers.
+Dry Run (Opt): Place pointer i on s and j on t. If s[i] == t[j], increment both. If not and flag is false, skip s[i] (inc i only) and set flag true.
+How to Draw (Opt): Draw s and t as parallel arrays. Draw an arrow i and j. If a mismatch occurs, "bend" the i arrow to the next cell while keeping j still.
+Opt Complexity Visuals: Single Pass Timeline.
+How to Draw Opt Complexity: Draw one straight line above the arrays to show a single $O(N)$ pass.
+Mem Vis (BF): $O(N^2)$ storage if all modified strings are saved; otherwise high heap churn.
+Mem Vis (Opt): $O(1)$ extra space using only two integer pointers and one boolean flag.

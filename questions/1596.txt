@@ -1,0 +1,13 @@
+ID: 1596
+Problem Title: Most Frequently Ordered Products for Each Customer (SQL)
+Brute Force Method: For every customer, calculate order counts for every product they bought, then scan that list to find the maximum count. $O(C \cdot P)$.
+BF Complexity Visuals: Nested Aggregation Grid
+How to Draw BF: Draw a list of Customers. For each, draw a sub-table of Products with tally marks. Find the max tally in each sub-table. Highly redundant.
+Optimised Pattern: Window Functions (RANK / CTE)
+Opt Vis. Technique: The Frequency-Ranked Partition
+Dry Run (Opt): Use a Common Table Expression (CTE) to count `customer_id` and `product_id`. Then apply `RANK() OVER (PARTITION BY customer_id ORDER BY cnt DESC)` to pick the top-ordered items.
+How to Draw (Opt): Draw a table with columns: Customer, Product, Count. Draw horizontal dividers between customers. In each section, write "Rank 1" next to the highest count(s). Circle the Rank 1 rows.
+Opt Complexity Visuals: Partitioned Hash-Agg $O(N \log N)$
+How to Draw Opt Complexity: Draw a single pipeline. Data flows into a "Grouping Node," then a "Sorting Node," and finally a "Filter Node."
+Mem Vis (BF): Application-side memory to store product-customer counts.
+Mem Vis (Opt): Database internal sort/hash buffer. $O(N)$ space.

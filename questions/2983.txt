@@ -1,0 +1,13 @@
+ID: 2983
+Problem Title: Palindrome Rearrangement Queries
+Brute Force Method: For each query, try all permutations of the specified ranges to see if the resulting string is a palindrome.
+BF Complexity Visuals: Factorial Range Permutations
+How to Draw BF: Draw a string. Highlight two ranges. Show them branching into (R-L)! variants. $O(Q \cdot N!)$.
+Optimised Pattern: Prefix Sums + Parity Symmetry Check
+Opt Vis. Technique: Mirror-Image Frequency Balance
+Dry Run (Opt): A string is a palindrome if character counts in S[i dots j] match those in the "mirror" range in the second half. Use 2D prefix sums (26 chars) to verify range counts in $O(1)$.
+How to Draw (Opt): Draw the string with a center line. For a query, compare the char-count "boxes" of the left range and its corresponding mirror on the right.
+Opt Complexity Visuals: Preprocessing (26N) + Constant Query (26Q)
+How to Draw Opt Complexity: Draw a line for N, then a line for Q. T = $O(26(N+Q)$).
+Mem Vis (BF): Storing permutation copies for every query.
+Mem Vis (Opt): 2D Prefix Sum array [26][N]. Space $O(26N)$.

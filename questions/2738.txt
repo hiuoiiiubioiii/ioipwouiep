@@ -1,0 +1,13 @@
+ID: 2738
+Problem Title: Count Occurrences in Text (SQL)
+Brute Force Method: Use a LIKE or REGEXP join for every word in a provided list against the entire text column. $O(\text{Words} \\text{cdot Rows})$.
+BF Complexity Visuals: Cross-Join String Matching
+How to Draw BF: Draw a table of words and a table of text. Draw lines from every word to every row, checking for a match. Visual area is W * R.
+Optimised Pattern: Buffer Scan (Visualizing the database engine reading the text column repeatedly for each word).
+Opt Vis. Technique: String Concatenation + Pattern Aggregation
+Dry Run (Opt): Unionized Pattern Scanning
+How to Draw (Opt): Use a CASE statement or UNION ALL to check for " bull " and " bear " within spaces to avoid partial matches. Group by the word name and sum the counts.
+Opt Complexity Visuals: Draw a funnel. Text goes in; two counters ("Bull", "Bear") increment as the text flows through filters.
+How to Draw Opt Complexity: $O(N)$ Text Scan
+Mem Vis (BF): Draw a single horizontal line through the data. Label it $O(N)$ to indicate a single pass per word type.
+Mem Vis (Opt): Aggregation Hash Table (Draw two small memory slots for the counts of the two specific words).

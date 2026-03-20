@@ -1,0 +1,13 @@
+ID: 1725
+Problem Title: Number Of Rectangles That Can Form The Largest Square
+Brute Force Method: Calculate max square `min(L, W)` for all rectangles and store in a new array. Sort or scan the array to find max, then scan again to count.
+BF Complexity Visuals: Multi-Pass Array Processing.
+How to Draw BF: Draw rectangles. Write square sizes in a list. Scan list for the max number. Scan list again tallying occurrences. $O(N)$.
+Optimised Pattern: Single Pass Streaming Maximum (King of the Hill).
+Opt Vis. Technique: Throne and Tally Board.
+Dry Run (Opt): Iterate once. `side = min(l, w)`. If `side &gt; max_len`, new king: `max_len = side`, reset `count = 1`. If `side == max_len`, increment tally: `count++`.
+How to Draw (Opt): Draw a throne (`max`) and a tally board. If bigger square arrives, kick out king, erase tally, sit down. If equal square arrives, add a tick mark.
+Opt Complexity Visuals: Single Left-to-Right Sweep.
+How to Draw Opt Complexity: Draw array. One arrow passes over from start to finish. $O(N)$.
+Mem Vis (BF): $O(N)$ new array to store square dimensions.
+Mem Vis (Opt): Two integer variables: `max_len`, `count`. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 687
+Problem Title: Longest Univalue Path
+Brute Force Method: For every node, start a new DFS to find the longest path of identical values passing through that specific node.
+BF Complexity Visuals: Redundant Nested Tree Scans.
+How to Draw BF: Draw a tree. From every node, draw separate "Search Rays" branching out to its neighbors. Write $O(N^2)$.
+Optimised Pattern: Post-order DFS (Bottom-Up).
+Opt Vis. Technique: Recursive Path Contribution.
+Dry Run (Opt): Visit children first. Each node returns the longest univalue leg it can provide to its parent. At each node, check if `left_child.val == node.val` and update the global max with (left_leg + right_leg).
+How to Draw (Opt): Draw a tree. Write "Leg Length" numbers next to edges. At each node, sum the matching legs and update a "High Score" on the side of the paper.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a single unbroken line tracing the tree's perimeter. Write $O(N)$.
+Mem Vis (BF): Draw multiple recursive call stacks for each starting node.
+Mem Vis (Opt): Draw a single recursion stack with depth $O(\text{Height})$.

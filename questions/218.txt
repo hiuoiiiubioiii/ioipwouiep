@@ -1,0 +1,13 @@
+ID: 218
+Problem Title: The Skyline Problem
+Brute Force Method: Array representing every single X-coordinate. Iterate over all buildings and update the max height at every point.
+BF Complexity Visuals: Overlapping Area Fill: $O(N \cdot W)$ where W is max width.
+How to Draw BF: Draw a long number line. For each building, heavily shade the entire interval. Multiple overlapping shades represent redundant work.
+Optimised Pattern: Sweep Line Algorithm + Max Heap / TreeMap
+Opt Vis. Technique: Vertical Scan Line
+Dry Run (Opt): Slide a vertical ruler left to right across building edges. When hitting a left edge, add height to heap. Right edge, remove. Record max height changes.
+How to Draw (Opt): Draw overlapping rectangles. Draw vertical dashed lines ONLY at the start and end of buildings. Put a dot wherever the highest active line changes horizontally.
+Opt Complexity Visuals: Event Sorting Line: $O(N \log N)$ Time.
+How to Draw Opt Complexity: Draw a timeline. Plot N dots on it (events). Show a logarithmic sorting curve above it representing the event processing overhead.
+Mem Vis (BF): Massive 1D Array spanning the entire X-axis domain.
+Mem Vis (Opt): Max Heap Tree: Draw a pyramid of active heights. Cross out heights when buildings end, bubble up new maxes.

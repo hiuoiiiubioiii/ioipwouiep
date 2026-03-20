@@ -1,0 +1,13 @@
+ID: 2067
+Problem Title: Number of Equal Count Substrings
+Brute Force Method: Generate all possible substrings. For each substring, count character frequencies and check if every present character appears exactly `count` times.
+BF Complexity Visuals: N x N Substring Grid
+How to Draw BF: Draw an N x N triangle for all substrings. Inside each cell, draw a 26-slot frequency map. Very slow $O(26 \cdot N^2)$.
+Optimised Pattern: Fixed-Window Sliding (Multiple Passes)
+Opt Vis. Technique: Multi-Level Sliding Brackets
+Dry Run (Opt): The window size must be `v * count`, where `v` is the number of unique characters (1 to 26). Iterate `v` from 1 to 26, sliding a window of that fixed size.
+How to Draw (Opt): Write the string. For `v=1`, slide a bracket of size `count`. For `v=2`, slide a bracket of size `2*count`. Check counts in the bracket.
+Opt Complexity Visuals: 26 x $O(N)$ Linear Passes
+How to Draw Opt Complexity: Draw 26 horizontal lines, each with a sliding bracket moving from left to right. Total Time $O(26 \cdot N)$.
+Mem Vis (BF): Newly created substring copies in the heap for every combination.
+Mem Vis (Opt): A single `int[26]` array used to keep track of characters within the current window. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 3747
+Problem Title: Count Distinct Integers After Removing Zeros (Med)
+Brute Force Method: Convert every number to a string, manually iterate to strip out '0' characters, convert back to an integer, and append to a list. Finally, count distincts in the list. $O(N \\text{cdot Digits})$.
+BF Complexity Visuals: Array of Shrinking Strings.
+How to Draw BF: Draw an array of numbers. Cross out '0's inside each cell. Rewrite the array, then draw connecting lines between duplicates to count uniques.
+Optimised Pattern: Mathematical Digit Extraction + Hash Set
+Opt Vis. Technique: Zero-Skipping Reconstruction
+Dry Run (Opt): Process each number mathematically: modulo 10 to extract digits. If digit != 0, add it to a new reconstructed number using powers of 10. Toss the result directly into a Hash Set.
+How to Draw (Opt): Draw a number. Drop its digits one by one into a sieve. Zeros fall through; other numbers build a new integer. Drop the new integer into a Set bucket.
+Opt Complexity Visuals: $O(N \cdot \log10(\text{MaxVal})$).
+How to Draw Opt Complexity: Draw a flat horizontal timeline (array scan) with tiny, uniform loops at each step (digit processing).
+Mem Vis (BF): Heavy string creation and garbage collection.
+Mem Vis (Opt): Hash Set in memory, purely $O(1)$ integer variables for math.

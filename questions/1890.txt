@@ -1,0 +1,13 @@
+ID: 1890
+Problem Title: The Latest Login in 2020 (SQL)
+Brute Force Method: Pull all records into application logic, filter by year, and find the max date for each user.
+BF Complexity Visuals: Full table-to-app data stream.
+How to Draw BF: Draw a table. Draw an arrow to a code block. Show a dictionary mapping `user_id` to `max_date`.
+Optimised Pattern: GROUP BY + MAX() + EXTRACT/LIKE/YEAR().
+Opt Vis. Technique: Hashed Aggregation.
+Dry Run (Opt): Filter rows where `time_stamp` is in 2020. Group by `user_id`. Select `MAX(time_stamp)`.
+How to Draw (Opt): Draw a table. Highlight rows from 2020. Group those with same ID. Circle the row with the latest time.
+Opt Complexity Visuals: Linear table scan (or index seek).
+How to Draw Opt Complexity: Draw an arrow passing through the column once. Mark $O(N)$.
+Mem Vis (BF): Massive array of login objects in app RAM.
+Mem Vis (Opt): Zero extra application memory; handled by DB engine.

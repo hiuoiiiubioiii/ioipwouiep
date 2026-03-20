@@ -1,0 +1,13 @@
+ID: 3137
+Problem Title: Minimum Number of Operations to Make Word K-Periodic
+Brute Force Method: Generate every possible K-periodic string, compare it against the original, and count differences. $O(N \\text{cdot Variations})$.
+BF Complexity Visuals: Infinite Periodic Generation
+How to Draw BF: Draw the string. Below it, draw 50 different repeating patterns, scanning character by character to find the best match.
+Optimised Pattern: Hash Map / Chunk Frequency
+Opt Vis. Technique: The Block Dominance Grab
+Dry Run (Opt): Slice the word into chunks of size K. Use a Hash Map to count chunk frequencies. The optimal strategy is to keep the most frequent chunk and replace all other chunks with it. Operations = `Total Chunks - Max Chunk Frequency`.
+How to Draw (Opt): Draw the string. Slice it with vertical lines every K letters. Stack identical slices into piles. Find the tallest pile. The answer is the number of slices in all the *other* shorter piles combined.
+Opt Complexity Visuals: Linear Chunking $O(N)$
+How to Draw Opt Complexity: Draw a single pass that hops by K steps at a time, updating a hash map in $O(1)$.
+Mem Vis (BF): Millions of generated strings.
+Mem Vis (Opt): A Hash Map holding N/K strings. $O(N)$ space.

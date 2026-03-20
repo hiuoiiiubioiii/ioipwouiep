@@ -1,0 +1,13 @@
+ID: 2680
+Problem Title: Maximum OR After Operations
+Brute Force Method: Try every possible `(num &lt;&lt; k)` for every single number and calculate the global OR.
+BF Complexity Visuals: Exponential Combination Search
+How to Draw BF: Draw a list of N numbers. Branch each one out with "Shifted" or "Not Shifted". Label $O(2^N)$.
+Optimised Pattern: Prefix/Suffix OR + Greedy Power of 2
+Opt Vis. Technique: Bitwise Cumulative Coverage
+Dry Run (Opt): 1. Precalculate `prefixOR` (OR of 0 to i-1) and `suffixOR` (OR of i+1 to N-1). 2. For each number `i`, calculate `(nums[i] &lt;&lt; k) | prefixOR[i] | suffixOR[i]`. The max is your answer.
+How to Draw (Opt): Draw three rows. Row 1: OR sum from left. Row 2: OR sum from right. Row 3: Current number shifted by K. Combine all three for each index and find the peak.
+Opt Complexity Visuals: $O(N)$ Linear Passes
+How to Draw Opt Complexity: Draw three sequential $O(N)$ arrows (Prefix, Suffix, Comparison).
+Mem Vis (BF): Combinatorial state recursion
+Mem Vis (Opt): Two $O(N)$ arrays for Prefix and Suffix OR values.

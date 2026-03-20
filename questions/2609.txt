@@ -1,0 +1,13 @@
+ID: 2609
+Problem Title: Find the Longest Balanced Substring of a Binary String
+Brute Force Method: Extract every substring, count 0s and 1s, verify format.
+BF Complexity Visuals: Nested String Slices
+How to Draw BF: Draw brackets under the string extracting increasingly smaller chunks, label $O(N^3)$ or $O(N^2)$.
+Optimised Pattern: Two Variables / Counting Consecutive Blocks
+Opt Vis. Technique: Step Function / Bar Chart
+Dry Run (Opt): Scan left to right. Count consecutive 0s. When 1s start, count them. The valid length is 2 * min(zeros, ones). Reset on a new 0.
+How to Draw (Opt): Draw the string. Below the 0s, draw ascending steps (1, 2, 3). Below the 1s, draw ascending steps (1, 2). Box the matching pair and compute length.
+Opt Complexity Visuals: Single Scan Arrow
+How to Draw Opt Complexity: Draw a one-directional arrow across the array length N, labeling $O(N)$.
+Mem Vis (BF): Sub-array memory allocations
+Mem Vis (Opt): Two integer variable boxes (zerosCount, onesCount). Space is $O(1)$.

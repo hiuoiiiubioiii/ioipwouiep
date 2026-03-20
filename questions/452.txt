@@ -1,0 +1,13 @@
+ID: 452
+Problem Title: Minimum Number of Arrows to Burst Balloons
+Brute Force Method: Exhaustive Subsets Try every possible x-coordinate for an arrow and check how many balloons it hits. Combinatorial explosion.
+BF Complexity Visuals: Infinite Laser Grid
+How to Draw BF: Draw a set of intervals. Show arrows being shot at every possible integer point. Infinite/Exponential search space.
+Optimised Pattern: Greedy (Sort by End) Sort balloons by their end coordinates. Shoot one arrow at the end of the first balloon; skip all that overlap.
+Opt Vis. Technique: Interval Overlap Strike
+Dry Run (Opt): Imagine horizontal bars on a graph. A vertical line (arrow) hits as many as possible. Always shoot at the "deadline" (end).
+How to Draw (Opt): Draw bars on a timeline. Sort by end. Draw a vertical line at the end of the first bar. Circle all bars hit. Repeat for the next uncircled bar.
+Opt Complexity Visuals: Sort + Scan
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block + one $O(N)$ horizontal scan line. Total $O(N \log N)$.
+Mem Vis (BF): None No extra space beyond pointers.
+Mem Vis (Opt): None Just one integer for arrow count and one for the current arrow position. $O(1)$ space.

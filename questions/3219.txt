@@ -1,0 +1,13 @@
+ID: 3219
+Problem Title: Minimum Cost for Cutting Cake II
+Brute Force Method: Recursive matrix partitioning (trying every possible cut order horizontally and vertically).
+BF Complexity Visuals: Exponential Grid Split Tree
+How to Draw BF: Draw a single grid. Branch into two smaller subgrids representing a horizontal cut, and two representing a vertical cut. Branch indefinitely.
+Optimised Pattern: Greedy Sorting / Two Pointers
+Opt Vis. Technique: Cost-Weighted Axis Slicing
+Dry Run (Opt): Sort cut costs descending. Compare the top remaining Horizontal and Vertical cuts. Take the larger. Multiply its cost by the number of perpendicular pieces already formed.
+How to Draw (Opt): Draw two sorted arrays (H and V). Track two multipliers (H_pieces=1, V_pieces=1). Cross off the highest element, add (value * opposite_multiplier) to total, increment your multiplier.
+Opt Complexity Visuals: Linear Merge Timeline
+How to Draw Opt Complexity: Draw two $O(N \log N)$ / $O(M \log M)$ sort blocks. Draw a single sweeping line merging them in $O(N+M)$ time.
+Mem Vis (BF): Massive call stack proportional to grid permutations.
+Mem Vis (Opt): In-place sorted array (O(1) auxiliary space).

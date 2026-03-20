@@ -1,0 +1,13 @@
+ID: 78
+Problem Title: Subsets
+Brute Force Method: Recursion (All Paths) For every element, branch the recursion: "Include this element" vs "Exclude this element."
+BF Complexity Visuals: The Power Set Tree
+How to Draw BF: Draw a binary tree. At each level, the tree doubles in size. By level N, there are 2^N nodes. Time: $O(2^N)$.
+Optimised Pattern: Cascading / Bitmasking
+Opt Vis. Technique: The Doubling List
+Dry Run (Opt): Start with an empty set `[[]]`. For every new number, take all existing subsets, add the new number to them, and merge them back into the list.
+How to Draw (Opt): Start: `[[]]`. Next (1): `[[], [1]]`. Next (2): Take existing, add 2: `[2], [1, 2]`. Result: `[[], [1], [2], [1, 2]]`.
+Opt Complexity Visuals: Exponential Growth Bar
+How to Draw Opt Complexity: Draw a bar that doubles in length for every step. Total operations: 2^0 + 2^1 + dots + 2^N-1. Time: $O(N x 2^N)$.
+Mem Vis (BF): Recursive call stack depth of N.
+Mem Vis (Opt): Draw the output list growing exponentially. Auxiliary space is just the current path: $O(N)$.

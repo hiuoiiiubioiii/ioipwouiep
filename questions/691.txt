@@ -1,0 +1,13 @@
+ID: 691
+Problem Title: Stickers to Spell Word
+Brute Force Method: Exhaustive Backtracking: Try applying every sticker in every possible sequence until all letters of the target word are covered.
+BF Complexity Visuals: Explosive Multi-way Decision Tree.
+How to Draw BF: Draw target "BASIC". Branch for Sticker 1 (B,A), Sticker 2 (S,I,C). From (B,A), branch again. Tree width = number of stickers. $O(S^T)$.
+Optimised Pattern: DP with Bitmask / Memoization.
+Opt Vis. Technique: State Compression / Power Set Reduction.
+Dry Run (Opt): Represent the target word as a bitmask (11111). Each sticker used flips some bits from 1 to 0. Use a Map to store "min stickers for mask X". If you reach 00000, you're done.
+How to Draw (Opt): Draw a row of 5 bits. For a sticker, show it "blocking out" specific bits. Use arrows to link bit patterns to their minimum sticker count.
+Opt Complexity Visuals: $O(2^T \cdot S \cdot T)$ where T is target length and S is stickers.
+How to Draw Opt Complexity: Draw a lattice (like a Hasse diagram) of all possible bitmasks. Write $O(2^T)$.
+Mem Vis (BF): Draw a recursion stack exploring millions of redundant character combinations.
+Mem Vis (Opt): Draw a Hash Map storing 2^T possible state values. $O(2^T)$.

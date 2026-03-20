@@ -1,0 +1,13 @@
+ID: 722
+Problem Title: Remove Comments
+Brute Force Method: Regex replacements or splitting the entire string by comment tags, which fails on complex overlapping cases.
+BF Complexity Visuals: Text Block Blackout
+How to Draw BF: Draw a massive block of text. Draw thick black marker strokes aggressively crossing out chunks, missing overlapping edge cases.
+Optimised Pattern: State Machine / Deterministic Parsing
+Opt Vis. Technique: Toggle Switch State Diagram
+Dry Run (Opt): Read char by char. Track boolean `in_block`. If false, check for `//` (skip line) or `/*` (set `in_block = true`). If true, check for `*/` (set `in_block = false`). Else, append char.
+How to Draw (Opt): Draw two circles: "Normal" and "In Comment". Draw arrows between them triggered by `/*` and `*/`. Draw a trash can for the `//` line skip.
+Opt Complexity Visuals: Linear Tape Reading
+How to Draw Opt Complexity: Draw a straight line representing the source code length. An arrow moves purely left-to-right representing $O(N)$ strict time.
+Mem Vis (BF): Deep copies of the entire file string per pass.
+Mem Vis (Opt): Output string builder array and one boolean variable (O(N) space).

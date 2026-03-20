@@ -1,0 +1,13 @@
+ID: 2926
+Problem Title: Maximum Balanced Subsequence Sum
+Brute Force Method: Generate all 2^N subsequences, check the balance condition (nums[i] - i &lt;= nums[j] - j), and find max sum.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw a binary tree of depth N. Each level is an index. Left = Skip, Right = Take if balanced. Leaves = 2^N.
+Optimised Pattern: LIS-style DP + Coordinate Compression + Fenwick Tree
+Opt Vis. Technique: Sorted Value Mapping (Coordinate Compression)
+Dry Run (Opt): Transform condition to B[i] = nums[i] - i. Sort all B[i]. As you iterate, query the Fenwick Tree for the max sum ending at a value ≤ B[i] and update.
+How to Draw (Opt): Draw a 1D array of original values. Below it, draw a "Compressed Map" (Sorted indices 0, 1, 2...). Draw arrows from the array to the Fenwick Tree blocks.
+Opt Complexity Visuals: N Queries against a Log(N) Structure
+How to Draw Opt Complexity: Draw N dots on a line. From each dot, draw a line segment of length Log(N) representing the tree traversal. Total $O(N \log N)$.
+Mem Vis (BF): Recursion stack depth N.
+Mem Vis (Opt): 1D array for Fenwick Tree (O(N)) + Hash map for coordinate mapping (O(N)).

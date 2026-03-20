@@ -1,0 +1,13 @@
+ID: 362
+Problem Title: Design Hit Counter
+Brute Force Method: Store every single "hit" timestamp in a dynamic list. To count hits in the last 5 minutes, iterate through the whole list and filter.
+BF Complexity Visuals: Unbounded Timeline Array
+How to Draw BF: Draw a long line. Mark every hit as a dot. For a query, draw a 300-unit bracket and count the dots inside. Label $O(N)$ per query.
+Optimised Pattern: Circular Buffer (Fixed-size Array)
+Opt Vis. Technique: 300-Slot Time-Bucketed Wheel
+Dry Run (Opt): Use an array of size 300. Each index i represents a second (timestamp \% 300). Store the timestamp and the hit count at that index. If the timestamp at that index is old, reset the count.
+How to Draw (Opt): Draw a circle divided into 300 segments. As a "second" pointer moves around, show old data being erased and replaced by the current second's hits.
+Opt Complexity Visuals: Constant-Time Bucketed Summation
+How to Draw Opt Complexity: Draw a small fixed-size box (300 cells). Show a single loop through it. $O(300)$ \rightarrow $O(1)$.
+Mem Vis (BF): A list that grows infinitely with every hit. $O(N)$.
+Mem Vis (Opt): Two arrays of size 300 (`times` and `counts`). Draw two small horizontal tapes. $O(1)$ auxiliary space.

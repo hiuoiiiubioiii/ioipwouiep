@@ -1,0 +1,13 @@
+ID: 2876
+Problem Title: Count Visited Nodes in a Directed Graph
+Brute Force Method: For every node i, start a traversal (DFS/BFS) and follow the single outgoing edge until you hit a node you've already visited in that specific path.
+BF Complexity Visuals: $O(N2)$ Path Traversal
+How to Draw BF: Draw N nodes. From each node, draw a long chain of arrows. Show that you might traverse the same long paths thousands of times.
+Optimised Pattern: Functional Graph Decomposition (Cycles &amp; Tails)
+Opt Vis. Technique: Cycle-Base Detection
+Dry Run (Opt): In a graph where each node has exactly one outgoing edge, every component consists of a cycle with some trees (tails) rooted on the cycle. Find cycles using 2-pointers (Floyd's) or DFS. All nodes in a cycle have a visit count equal to cycle length. Tail nodes = distance to cycle + cycle length.
+How to Draw (Opt): Draw a "Lollipop" shape (a circle with a stick). Any node on the circle gets a number equal to the circle's size. Any node on the stick gets that number plus its distance from the circle.
+Opt Complexity Visuals: Linear Component Scan $O(N)$
+How to Draw Opt Complexity: Draw two passes. Pass 1: Detect cycles and their sizes. Pass 2: Calculate distances for "tail" nodes using memoization/DP. Total $O(N)$.
+Mem Vis (BF): Visualize a deep recursion stack that could cause a stack overflow for large linear chains.
+Mem Vis (Opt): Visualize three arrays of size N: visited, distance, and result. Space $O(N)$.

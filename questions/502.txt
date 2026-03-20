@@ -1,0 +1,13 @@
+ID: 502
+Problem Title: IPO
+Brute Force Method: For K steps, iterate through all projects, find the maximum profit project where capital ≤ current capital.
+BF Complexity Visuals: Nested loop grid: K rows multiplied by N columns per row. $O(K \cdot N)$.
+How to Draw BF: Draw K large horizontal boxes, inside each draw N smaller boxes showing a full scan.
+Optimised Pattern: Two Heaps (Min-Heap for Capital, Max-Heap for Profit) / Greedy.
+Opt Vis. Technique: Two funnels: Capital filters into Min-Heap, viable ones pour into Max-Heap.
+Dry Run (Opt): Pop from Min-Heap if capital affordable -&gt; Push to Max-Heap -&gt; Pop Max-Heap -&gt; add to total capital -&gt; Repeat K times.
+How to Draw (Opt): Draw two triangles (heaps). Write available projects in Min triangle. Draw arrows moving items to Max triangle when capital allows.
+Opt Complexity Visuals: Sorting phase followed by Heap operations. $O(N \log N + K \log N)$.
+How to Draw Opt Complexity: Draw a sorting timeline, then K discrete steps pulling from a balanced tree (log N height).
+Mem Vis (BF): Array of N elements scanned repeatedly, static array size in memory.
+Mem Vis (Opt): Two binary tree structures (Heaps) re-balancing as nodes transfer between them.

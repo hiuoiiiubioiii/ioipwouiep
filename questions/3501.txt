@@ -1,0 +1,13 @@
+ID: 3501
+Problem Title: Maximize Active Section with Trade II (Hard)
+Brute Force Method: Generate all subsets of valid sections &amp; test trades.
+BF Complexity Visuals: Exponential Call Tree (Recursion).
+How to Draw BF: Draw a binary tree. Each node branches into 'Keep' or 'Trade'. Count total leaf nodes.
+Optimised Pattern: Line Sweep Algorithm + DP with Segment Tree.
+Opt Vis. Technique: 1D Timeline Sweeping with active intervals.
+Dry Run (Opt): Slide a vertical ruler left-to-right over horizontal interval blocks, updating max values.
+How to Draw (Opt): Draw a horizontal axis. Stack intervals vertically. Draw dashed vertical lines at start/end events.
+Opt Complexity Visuals: Event-Sorting Pipeline (Linear array of events).
+How to Draw Opt Complexity: Draw an array of N events. Next to it, draw a Segment Tree update taking log(N) steps. N * log(N).
+Mem Vis (BF): Call Stack Tower: Draw deep, nested boxes showing overlapping state frames.
+Mem Vis (Opt): Array mapping: Draw a flat array for DP and a binary tree diagram for the Segment Tree memory.

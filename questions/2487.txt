@@ -1,0 +1,13 @@
+ID: 2487
+Problem Title: Remove Nodes From Linked List
+Brute Force Method: For every node, iterate through all following nodes to check if any have a strictly greater value. If so, remove the current node.
+BF Complexity Visuals: N-Squared Lookahead Scan
+How to Draw BF: Draw a linked list. From each node, draw arrows to all subsequent nodes. Label $O(N^2)$.
+Optimised Pattern: Monotonic Stack or Reverse Recursion
+Opt Vis. Technique: Right-to-Left Wavefront Removal
+Dry Run (Opt): Reverse the list. Keep track of the maximum value seen so far. If a node is less than the max, remove it. Reverse back.
+How to Draw (Opt): Draw a linked list. Imagine a wall moving from right to left. The wall height is the max value seen. If a node is shorter than the wall, it gets crushed (removed).
+Opt Complexity Visuals: Linear Multi-Pass
+How to Draw Opt Complexity: Draw three linear passes (Reverse, Scan, Reverse). Label $O(N)$ Time.
+Mem Vis (BF): Draw a pointer variable.
+Mem Vis (Opt): Draw a stack structure (if using stack) or recursion frames (O(N)). $O(N)$ Space.

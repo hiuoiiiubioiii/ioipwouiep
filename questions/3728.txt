@@ -1,0 +1,13 @@
+ID: 3728
+Problem Title: Stable Subarrays With Equal Boundary and Interior Sum (Med)
+Brute Force Method: Nested loops to generate all subarrays. For each, sum the interior elements and compare to the sum of the two boundary elements. $O(N^3)$.
+BF Complexity Visuals: Overlapping loops with internal scans.
+How to Draw BF: Draw array. Pick L and R boundaries. Bracket the middle, sum it up manually, and check if it equals L+R.
+Optimised Pattern: Prefix Sums + Hash Map
+Opt Vis. Technique: Equation Rearrangement Mapping
+Dry Run (Opt): Interior sum is `Pref[R-1] - Pref[L]`. We need this to equal `arr[L] + arr[R]`. Rearrange to group L terms and R terms. Store L terms in a map to match with R terms.
+How to Draw (Opt): Draw array and Prefix Array below it. Draw a Hash Map bucket. Calculate the "target" math for L and drop it in the bucket. As R moves, check the bucket for matches.
+Opt Complexity Visuals: Linear Scan $O(N)$.
+How to Draw Opt Complexity: Draw a straight timeline with dictionary lookups represented as fast instant drops.
+Mem Vis (BF): $O(1)$ auxiliary space, but terrible time complexity.
+Mem Vis (Opt): Hash Map &amp; Prefix Sum array (O(N) space).

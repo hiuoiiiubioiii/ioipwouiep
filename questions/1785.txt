@@ -1,0 +1,13 @@
+ID: 1785
+Problem Title: Minimum Elements to Add to Form a Given Sum
+Brute Force Method: While the current sum != goal, add `limit` or a fraction of it to the sum and increment a counter.
+BF Complexity Visuals: Linear Simulation.
+How to Draw BF: Draw a number line. Start at `sum`. Draw jumps of size `limit` until you hit `goal`. $O(\\text{text}{\text{Diff}/\text{Limit}})$.
+Optimised Pattern: Mathematical Ceiling Division.
+Opt Vis. Technique: The "Greedy Bridge".
+Dry Run (Opt): Calculate `diff = abs(goal - current_sum)`. The answer is `(diff + limit - 1) // limit`.
+How to Draw (Opt): Calculate the gap. Divide the gap by the maximum possible step size. Round up.
+Opt Complexity Visuals: Constant Time Calculation.
+How to Draw Opt Complexity: Write the math formula. Label $O(1)$ for query, $O(N)$ for the initial sum.
+Mem Vis (BF): None.
+Mem Vis (Opt): Single float/int variables. $O(1)$ space.

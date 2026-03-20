@@ -1,0 +1,13 @@
+ID: 1375
+Problem Title: Number of Times Binary String Is Prefix-Aligned
+Brute Force Method: For every step `i`, iterate from 1 to `i` to check if all bits are set to 1.
+BF Complexity Visuals: $O(N^2)$ Repeated Prefix Checks
+How to Draw BF: Draw a binary string growing. At step 3, check bits 1, 2, 3. At step 4, check bits 1, 2, 3, 4. Note the overlap.
+Optimised Pattern: Max-Value Tracking (Greedy)
+Opt Vis. Technique: Running Peak Alignment
+Dry Run (Opt): Observe that the string is prefix-aligned if and only if the maximum index seen so far equals the number of bits flipped so far (`max_pos == current_step`).
+How to Draw (Opt): Draw a sequence: `[3, 1, 2, 5, 4]`. Track `max` at each step. Step 1: max=3. Step 2: max=3. Step 3: max=3 (Step matches Max! Count++).
+Opt Complexity Visuals: $O(N)$ Single Scan
+How to Draw Opt Complexity: Draw a single arrow moving through the input array, comparing two integers at each step.
+Mem Vis (BF): Full Bitset: Maintaining a physical bit array and scanning it repeatedly.
+Mem Vis (Opt): $O(1)$ Two-Integer State: Only store `max_seen` and `count`.

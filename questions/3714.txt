@@ -1,0 +1,13 @@
+ID: 3714
+Problem Title: Longest Balanced Substring II (Med)
+Brute Force Method: Same as I, generating all substrings. (If it has more variables, $O(N^3)$).
+BF Complexity Visuals: Nested brackets.
+How to Draw BF: Similar to 3713, exhaustive checking.
+Optimised Pattern: Bitmasking + Hash Map / Advanced State Tracking
+Opt Vis. Technique: Bitmask Toggle Box
+Dry Run (Opt): Track parity (even/odd) of character counts using bits. Store bitmask in map. Same bitmask means balanced difference!
+How to Draw (Opt): Write string. Keep a tally of even/odd (E/O). E.g., E,O -&gt; O,O. Store the E/O state. Find matching past states.
+Opt Complexity Visuals: Linear Scan $O(N)$.
+How to Draw Opt Complexity: Draw a timeline with state labels. Match identical labels.
+Mem Vis (BF): String generation.
+Mem Vis (Opt): Hash Map storing (Bitmask Integer -&gt; Index).

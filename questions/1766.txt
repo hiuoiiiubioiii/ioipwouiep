@@ -1,0 +1,13 @@
+ID: 1766
+Problem Title: Tree of Coprimes
+Brute Force Method: For every node, traverse upwards towards the root. Calculate GCD of current node and every ancestor until you find a coprime or hit the root.
+BF Complexity Visuals: Recursive Ancestor Crawl.
+How to Draw BF: Draw a tree. From a leaf, draw a line all the way to the root. Repeat for every leaf. $O(N \cdot H)$ where H is tree height.
+Optimised Pattern: DFS + Ancestor Value Tracking (Value-based Map).
+Opt Vis. Technique: The "Last Seen" Value Tally.
+Dry Run (Opt): Since node values are small (1-50), keep a dictionary `ancestors[val] = (depth, node_id)`. During DFS, check all 50 values; if `gcd(current_val, v) == 1`, pick the one with max depth.
+How to Draw (Opt): Draw a tree. Next to it, draw a table with 50 rows. As you go down a path, update row `X` with the current node's depth. When backtracking, erase it.
+Opt Complexity Visuals: DFS with Constant-Width Lookups.
+How to Draw Opt Complexity: Draw one DFS traversal arrow. At each node, draw a small box representing 50 parallel checks. Label $O(N \cdot 50)$.
+Mem Vis (BF): None, just recursion stack.
+Mem Vis (Opt): A dictionary of size 50 + Recursion stack. $O(N + 50)$ space.

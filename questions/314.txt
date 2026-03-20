@@ -1,0 +1,13 @@
+ID: 314
+Problem Title: Binary Tree Vertical Order Traversal
+Brute Force Method: Find the min and max column indices using DFS. Then, for every column from min to max, do a full DFS traversal just to pick out nodes in that column.
+BF Complexity Visuals: Repeated Tree Scanning
+How to Draw BF: Draw the tree. Highlight column -2, scan whole tree. Highlight col -1, scan whole tree. Draw loop arrows to show $O(N^2)$ redundant scanning.
+Optimised Pattern: Breadth-First Search (BFS) with Column Tracking (Hash Map)
+Opt Vis. Technique: Orthogonal Projection / Plumb Line Drop
+Dry Run (Opt): Push (root, col=0) to a Queue. As you pop, add node to map[col]. Push left child (col-1) and right child (col+1). BFS naturally guarantees top-to-bottom row order within the same column.
+How to Draw (Opt): Draw a tree. Draw vertical dashed lines down through the nodes. Label root's line 0, left -1, right +1. Underneath the tree, draw buckets (Hash Map) collecting the nodes as they drop straight down.
+Opt Complexity Visuals: Single Sweep Linear Hash
+How to Draw Opt Complexity: Draw a single wide arrow sweeping over the tree once, dropping nodes into a row of buckets below. $O(N)$ time complexity.
+Mem Vis (BF): Tall call stack box for recursive DFS.
+Mem Vis (Opt): Hash Map of Lists + Queue: Draw a horizontal tape for the Queue. Draw vertical bucket columns (Hash Map) mapping to horizontal linked lists (the nodes). $O(N)$ space.

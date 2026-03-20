@@ -1,0 +1,13 @@
+ID: 494
+Problem Title: Target Sum
+Brute Force Method: Exhaustive DFS Try adding '+' and '-' for every number in the input. Count paths that reach `target`.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a tree with 2^N leaves. Each branch is a + or - operation.
+Optimised Pattern: DP (Subset Sum) Transform to finding a subset with sum (S + \text{target})/2. Solve using 1D Knapsack DP.
+Opt Vis. Technique: Staircase Filling
+Dry Run (Opt): Imagine a row of buckets labeled from 0 to NewTarget. Each number helps you "unlock" new bucket sums.
+How to Draw (Opt): Draw a 1D grid. For each number, show how it "activates" new sums by adding it to previous "True" or "Counted" cells.
+Opt Complexity Visuals: Area calculation
+How to Draw Opt Complexity: Draw a grid of size N \times \text{TargetSum}. $O(N \cdot \\text{text}{\text{Sum}})$.
+Mem Vis (BF): Call Stack $O(N)$ depth.
+Mem Vis (Opt): 1D Array Draw a single 1D array of counts. $O(\\text{text}{\text{Sum}})$.

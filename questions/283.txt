@@ -1,0 +1,13 @@
+ID: 283
+Problem Title: Move Zeroes
+Brute Force Method: Create a new array. Copy all non-zero elements over, then fill the remainder of the new array with zeros.
+BF Complexity Visuals: Double Array Copy: $O(N)$ Time, $O(N)$ Space.
+How to Draw BF: Draw the original array on top and a blank array below. Draw arrows for each non-zero. Shade the second array.
+Optimised Pattern: Two Pointers (Read &amp; Write)
+Opt Vis. Technique: Snowball / Sliding Wall
+Dry Run (Opt): One pointer `i` scans all elements. If `nums[i]` is non-zero, swap it with the element at the `lastNonZeroFoundAt` index.
+How to Draw (Opt): Draw an array. Place a 'Read' finger and a 'Write' finger. If Read finds a non-zero, it "throws" it to Write and both move. If zero, only Read moves.
+Opt Complexity Visuals: In-Place Linear Scan: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a single straight arrow. Note that each element is visited exactly once.
+Mem Vis (BF): Extra Buffer: Draw a second array of size N in memory.
+Mem Vis (Opt): In-Place: Draw the original array with no extra structures. Space: $O(1)$.

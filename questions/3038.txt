@@ -1,0 +1,13 @@
+ID: 3038
+Problem Title: Maximum Number of Operations With the Same Score I
+Brute Force Method: Use recursion to try taking any two elements, but realize the problem forces taking only the first two. (Even BF is simple here).
+BF Complexity Visuals: Linear Simulation
+How to Draw BF: Draw the array. Circle the first two elements. If sum equals score, cross them out and repeat. Stop when sum differs.
+Optimised Pattern: Greedy Simulation
+Opt Vis. Technique: Iterative Queue Processing
+Dry Run (Opt): Calculate the sum of the first two elements. Keep a loop running while the array has >= 2 elements and the next two elements equal the initial sum.
+How to Draw (Opt): Draw the array. Draw a bracket over the first pair, write the sum. Move the bracket to the next pair. If the sum changes, draw a red "Stop" line.
+Opt Complexity Visuals: Single Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a straight arrow through the array. It terminates as soon as a sum mismatch occurs.
+Mem Vis (BF): Sub-array slicing or copying in every step.
+Mem Vis (Opt): A simple pointer or index variable i moving in increments of 2.

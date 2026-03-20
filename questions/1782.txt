@@ -1,0 +1,13 @@
+ID: 1782
+Problem Title: Count Pairs Of Nodes
+Brute Force Method: Iterate through every possible pair of nodes (u, v). Calculate their combined incident edges (subtracting the shared edge) and compare to queries.
+BF Complexity Visuals: All-Pairs Edge Inspection.
+How to Draw BF: Draw N nodes. Draw lines connecting every node to every other node. Count incident edges for each pair. $O(N^2 + Q \cdot N^2)$.
+Optimised Pattern: Two Pointers on Sorted Degrees + Shared Edge Subtraction.
+Opt Vis. Technique: The "Sort and Correct" Pivot.
+Dry Run (Opt): 1. Get degrees of all nodes and sort them. 2. Use two pointers to count pairs where deg(u) + deg(v) &gt; query. 3. Iterate through actual edges and subtract those where deg(u) + deg(v) - shared\_edge drops below the query threshold.
+How to Draw (Opt): Draw a list of sorted degrees. Use two pointers moving inward. Then, draw a hash map of edge counts and cross out pairs that fall below the limit after subtraction.
+Opt Complexity Visuals: Sorting + Pointer Convergence.
+How to Draw Opt Complexity: Draw sorting $O(N \log N)$ + Two pointers $O(N)$ + Edge Correction $O(E)$. Label $O(Q \cdot (N+E)$).
+Mem Vis (BF): Adjacency matrix. $O(N^2)$.
+Mem Vis (Opt): Hash map for edges + Sorted degree array. $O(N + E)$ space.

@@ -1,0 +1,13 @@
+ID: 1868
+Problem Title: Product of Two Run-Length Encoded Arrays (Premium)
+Brute Force Method: Expand both RLE arrays into full arrays, multiply index by index, then compress the result back to RLE.
+BF Complexity Visuals: Expanded Tape Expansion.
+How to Draw BF: Draw two short compressed arrays. Draw long "unrolled" versions below them. Draw multiplication lines between every index. $O(\text{Expanded Length})$.
+Optimised Pattern: Two Pointers on compressed segments.
+Opt Vis. Technique: Sliding segment overlaps.
+Dry Run (Opt): Move p1 and p2 on encoded arrays. Multiply values. Take the min frequency f = \min(f1, f2). Append [val1 \cdot val2, f] to result. Subtract f from both pointers.
+How to Draw (Opt): Draw two bars of different lengths. Align them. Draw a vertical line at the shorter bar's end. Multiply the overlapping part. Slide to the next boundary.
+Opt Complexity Visuals: Linear walk of segment boundaries.
+How to Draw Opt Complexity: Draw two parallel lines with arrows jumping from one segment boundary to the next. Mark $O(N+M)$.
+Mem Vis (BF): Massive uncompressed arrays (potential Memory Limit Exceeded).
+Mem Vis (Opt): A single list of compressed [val, freq] pairs (O(N+M) space).

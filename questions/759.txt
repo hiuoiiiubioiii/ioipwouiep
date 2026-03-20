@@ -1,0 +1,13 @@
+ID: 759
+Problem Title: Employee Free Time
+Brute Force Method: Merge all employee intervals into one massive list, sort them, and then check gaps.
+BF Complexity Visuals: Flat Interval Merge
+How to Draw BF: Draw all intervals on one line. Sort them. Find spaces between the end of one and start of next. $O(N \log N)$.
+Optimised Pattern: Min-Heap (K-Way Merge)
+Opt Vis. Technique: Timeline Sweep with Priority Queue
+Dry Run (Opt): Keep a pointer for each employee. Push the first interval of each into a Min-Heap. Pop the earliest, update "latest end time," and find gaps.
+How to Draw (Opt): Draw a row for each employee. Place a marker at their first interval. Use a "Time Line" moving right, always picking the marker that is furthest left.
+Opt Complexity Visuals: Efficient Heap Stream
+How to Draw Opt Complexity: Draw a heap with K elements (K=employees). Total time $O(N \log K)$.
+Mem Vis (BF): List of all intervals (O(N)).
+Mem Vis (Opt): Min-Heap of size K (O(K)).

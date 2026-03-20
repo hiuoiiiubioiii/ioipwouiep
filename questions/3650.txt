@@ -1,0 +1,13 @@
+ID: 3650
+Problem Title: Minimum Cost Path with Edge Reversals (Med)
+Brute Force Method: Standard BFS/Dijkstra that fails because it doesn't account for the cost of "flipping" an edge to go the wrong way.
+BF Complexity Visuals: Disconnected Component Island.
+How to Draw BF: Draw a graph. If the destination isn't reachable via directed edges, BFS says "Cost: Infinity". This is the brute force failure.
+Optimised Pattern: 0-1 BFS or Dijkstra's Algorithm on a modified graph where every directed edge (u -&gt; v) with weight 0 has a "ghost" edge (v -&gt; u) with weight 1.
+Opt Vis. Technique: Ghost Edge Overlay.
+Dry Run (Opt): Visualize the graph where every one-way street has a hidden "reverse" lane that costs 1 toll to enter. Now, just find the shortest path from start to end using Dijkstra.
+How to Draw (Opt): Draw a graph with solid arrows (cost 0). Draw dotted arrows in the reverse direction (cost 1). Use a Deque: push 0-cost edges to the front, 1-cost to the back.
+Opt Complexity Visuals: Weighted BFS Timeline.
+How to Draw Opt Complexity: Write $O(V + E)$. Draw a queue where 0-cost nodes are processed instantly, and 1-cost nodes wait their turn. Total time is linear.
+Mem Vis (BF): Adjacency matrix (O(V^2)) taking up massive space for sparse graphs.
+Mem Vis (Opt): Adjacency list with pairs (neighbor, weight). Space $O(V + E)$.

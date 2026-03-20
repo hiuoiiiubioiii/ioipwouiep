@@ -1,0 +1,13 @@
+ID: 3727
+Problem Title: Maximum Alternating Sum of Squares (Med)
+Brute Force Method: Generate all possible subsequences, calculate their alternating sum of squares (+a² -b² +c²...), and find the maximum. $O(2^N)$.
+BF Complexity Visuals: Binary Decision Tree.
+How to Draw BF: Draw a tree branching at every number: Include as positive square, Include as negative square, or Skip entirely.
+Optimised Pattern: Dynamic Programming (State Machine)
+Opt Vis. Technique: Parallel State Tracks
+Dry Run (Opt): Maintain two running maximums: one if the *next* operation is addition, one if the *next* operation is subtraction. Update them cross-wise.
+How to Draw (Opt): Draw two horizontal tracks (Top: Add, Bottom: Sub). Write numbers along the top. Draw zig-zag arrows between tracks updating the max possible sum at each step.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight horizontal line spanning the array length.
+Mem Vis (BF): Deep recursive call stack.
+Mem Vis (Opt): Two simple integer variables (O(1) space).

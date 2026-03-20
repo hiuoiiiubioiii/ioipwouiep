@@ -1,0 +1,13 @@
+ID: 2217
+Problem Title: Find Palindrome With Fixed Length
+Brute Force Method: Iterative CountingStart from the lowest number of length L (e.g., 100 for L=3). Increment by 1, check if it's a palindrome, and stop when you reach the K-th one.
+BF Complexity Visuals: Endless Number Line
+How to Draw BF: Write out numbers sequentially (100, 101, 102...). Cross out the non-palindromes. Circle the valid ones and count them until you hit K.
+Optimised Pattern: Math / Half-String Mirroring
+Opt Vis. Technique: Mirror Reflection
+Dry Run (Opt): A palindrome is determined entirely by its first half. The lowest half for length L is `10^(half_length - 1)`. Add `(K - 1)` to this base. Mirror this half to form the answer.
+How to Draw (Opt): Draw a dashed vertical "mirror" line. Calculate the left half (Base + K - 1). Write it on the left of the line. Draw arrows physically reflecting the digits to the right side of the line.
+Opt Complexity Visuals: Direct Formula Mapping
+How to Draw Opt Complexity: Draw an input K. Draw a single arrow through a "Math Formula" box mapping directly to the output. Label it $O(L)$ time per query (for string creation).
+Mem Vis (BF): Massive loop counters and string allocations for checking every single number.
+Mem Vis (Opt): A small string builder holding only the left half of the characters before appending the reverse.

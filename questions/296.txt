@@ -1,0 +1,13 @@
+ID: 296
+Problem Title: Best Meeting Point
+Brute Force Method: Iterate through every single cell in the grid. For each cell, calculate the Manhattan distance to all 1s.
+BF Complexity Visuals: Grid Surface Map: $O(M^2 N^2)$.
+How to Draw BF: Draw a grid. Pick a point. Draw lines from it to all '1's. Repeat for every point. The "ink" density shows the complexity.
+Optimised Pattern: Median Property (Independent Dimensions)
+Opt Vis. Technique: Projected Number Lines
+Dry Run (Opt): Collect X-coordinates and Y-coordinates of all 1s separately. Sort them. The meeting point's X and Y are the medians of their respective lists.
+How to Draw (Opt): Draw a horizontal line for X and a vertical line for Y. Mark dots where houses are. The "Best X" is the middle dot on the horizontal line.
+Opt Complexity Visuals: Linear Sorting Pass: $O(\text{MN} \\text{log MN})$ or $O(\text{MN})$ with selection.
+How to Draw Opt Complexity: Draw two separate timelines (one for sorting X, one for Y). Total work is the sum of these linear-logarithmic steps.
+Mem Vis (BF): Full Grid Copy: $O(\text{MN})$.
+Mem Vis (Opt): Two Coordinate Lists: Draw two small 1D arrays for X and Y coordinates. Space: $O(\\text{text}{\text{Number of Houses}})$.

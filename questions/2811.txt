@@ -1,0 +1,13 @@
+ID: 2811
+Problem Title: Check if it is Possible to Split Array
+Brute Force Method: Recursively try splitting the array at every valid position, computing the sum of the subarrays to ensure they meet the >= m requirement.
+BF Complexity Visuals: Overlapping Subproblems Tree
+How to Draw BF: Draw the full array. Draw branches showing all valid split points. For each subarray, draw further splits. Highlight identical subarrays being calculated multiple times.
+Optimised Pattern: Greedy / Math Observation
+Opt Vis. Technique: Adjacent Pair Highlight
+Dry Run (Opt): Realize that if you can find just *one* adjacent pair whose sum is >= m, you can peel off elements one by one until you reach that pair. The problem reduces to finding a valid adjacent pair.
+How to Draw (Opt): Write out the array. Draw a sliding bracket of size 2 moving left to right. Write the sum above each pair. Stop and circle the pair if the sum >= m.
+Opt Complexity Visuals: Single Pass Scan
+How to Draw Opt Complexity: Draw an array of length N. Draw an arrow moving strictly from index 0 to N-1. Note that checking the sum takes $O(1)$, so total is $O(N)$.
+Mem Vis (BF): Visualize a recursion tree call stack depth of $O(N)$, potentially storing subarray copies or indices at each level.
+Mem Vis (Opt): Visualize a purely $O(1)$ memory footprint. No extra structures needed, just an index pointer and a sum variable traversing the input.

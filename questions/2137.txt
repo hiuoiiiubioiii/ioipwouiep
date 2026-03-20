@@ -1,0 +1,13 @@
+ID: 2137
+Problem Title: Pour Water Between Buckets to Make Water Levels Equal
+Brute Force Method: Simulate pouring water drop by drop from the fullest bucket to the emptiest until they balance.
+BF Complexity Visuals: An infinite loop of tiny subtractions and additions.
+How to Draw BF: Draw buckets. Erase one drop from a full bucket, draw it in an empty bucket, subtract the spill percentage. Repeat forever. $O(\text{WaterAmount})$.
+Optimised Pattern: Binary Search on Answer.
+Opt Vis. Technique: A horizontal laser sweeping up and down to find the perfect equilibrium line.
+Dry Run (Opt): Guess a target water level `mid`. Calculate total water spilled to bring high buckets down to `mid`. Check if remaining water is enough to bring low buckets up to `mid`. Adjust `low` and `high` bounds.
+How to Draw (Opt): Draw an uneven bar chart. Draw a horizontal line across the middle. Shade the tops of bars above the line (water to pour) and the empty space below the line (water needed). Balance the shaded areas.
+Opt Complexity Visuals: $O(N \log(\text{Max} - \text{Min})$) search space.
+How to Draw Opt Complexity: A binary search tree curve shrinking down to a single horizontal float value.
+Mem Vis (BF): Deep iteration counters.
+Mem Vis (Opt): $O(1)$ extra space. Just a few float variables.

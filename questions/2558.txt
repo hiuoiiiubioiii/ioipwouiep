@@ -1,0 +1,13 @@
+ID: 2558
+Problem Title: Take Gifts From the Richest Pile
+Brute Force Method: For each of the k seconds, sort the entire array to find the maximum, square root it, and replace it. $O(k x N \log N)$.
+BF Complexity Visuals: Repeatedly shuffling a deck of cards just to find the top card, k times.
+How to Draw BF: Write 5 numbers. Sort them. Square root the biggest. Re-write the list. Sort again. Repeat k times.
+Optimised Pattern: Max-Heap (Priority Queue).
+Opt Vis. Technique: A "King of the Hill" structure where the largest value is always at the top and easily replaceable.
+Dry Run (Opt): Convert the array into a Max-Heap (O(N)). Repeat k times: Pop the largest value, calculate its square root, and push it back (O(log N)). After k steps, sum all values in the heap.
+How to Draw (Opt): Draw a triangle (heap). Put the biggest number at the top. Remove it, root it, put the smaller result back. Watch it "sink" into the triangle. Repeat k times.
+Opt Complexity Visuals: $O(N + k \log N)$. Heapify is linear, and k extractions/insertions are logarithmic.
+How to Draw Opt Complexity: Draw a tree of height log N. Show k arrows traveling down the height of the tree.
+Mem Vis (BF): New sorted array copies.
+Mem Vis (Opt): $O(N)$ to store the elements in the priority queue.

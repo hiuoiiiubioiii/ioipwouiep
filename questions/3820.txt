@@ -1,0 +1,13 @@
+ID: 3820
+Problem Title: Pythagorean Distance Nodes in a Tree (Med.)
+Brute Force Method: Calculate the exact shortest path distance between every single pair of nodes (u, v) using N separate BFS traversals, then check if distance forms a valid Pythagorean triplet.
+BF Complexity Visuals: Dense N x N distance matrix being fully populated by repeated graph traversals.
+How to Draw BF: Draw tree. Pick node A, BFS everywhere. Pick node B, BFS everywhere. Write $O(N^2)$ for distance generation.
+Optimised Pattern: Tree DFS/BFS Depth Mapping + Frequency Hashing + Mathematical Convolution/Lookup.
+Opt Vis. Technique: Convert the tree into a histogram of depths, then use algebra/hashing to find pairs that satisfy a^2 + b^2 = c^2.
+Dry Run (Opt): Run one BFS to get depth of all nodes from root. Count frequencies of distances. Loop through valid Pythagorean triples (a, b, c) within max depth, multiply frequencies.
+How to Draw (Opt): Draw tree. Next to it, draw a bar chart showing how many nodes are at distance 1, 2, 3. Draw a math formula matching the bar chart bins.
+Opt Complexity Visuals: Single graph traversal followed by an algebraic loop bounded by Max Depth.
+How to Draw Opt Complexity: Draw tree -&gt; $O(N)$. Draw Math Formula -&gt; $O(\text{Max}_D^2)$. Total time $O(N + D^2)$.
+Mem Vis (BF): $O(N^2)$ matrix to store all-pairs shortest paths.
+Mem Vis (Opt): A Frequency/Hash Map storing the count of nodes at specific distance intervals. Space $O(N)$ or $O(\text{Max Depth})$.

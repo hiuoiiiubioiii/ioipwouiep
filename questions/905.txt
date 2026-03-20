@@ -1,0 +1,13 @@
+ID: 905
+Problem Title: Sort Array By Parity
+Brute Force Method: Iterate the array twice: first extract all even numbers into a new array, then extract all odd numbers, and concatenate them.
+BF Complexity Visuals: $O(N)$ Time, $O(N)$ Space. A conveyor belt sorting items into two separate bins, then dumping the bins in sequence.
+How to Draw BF: Draw the main array splitting into two separate smaller arrays (evens, odds), which then funnel into a brand new full-sized array.
+Optimised Pattern: Two Pointers (In-place Swap)
+Opt Vis. Technique: Two inspectors at opposite ends of a hallway. The left looks for odds, the right looks for evens. When both find targets, they swap them.
+Dry Run (Opt): Left pointer starts at 0, Right at end. Left moves if even. Right moves if odd. If Left is odd AND Right is even, swap them. Repeat until pointers cross.
+How to Draw (Opt): Draw the array. Place 'L' below index 0, 'R' below the last index. Draw high sweeping arches connecting elements when a swap occurs.
+Opt Complexity Visuals: $O(N)$ linear time, $O(1)$ space. A classic inward-colliding pointer model.
+How to Draw Opt Complexity: Draw a horizontal line representing the array. Draw two arrows starting at the ends, pointing inward until they meet in the exact middle.
+Mem Vis (BF): Three full-length array blocks drawn side-by-side (Original, Temporary Evens, Temporary Odds).
+Mem Vis (Opt): Just the single original array block. No extra storage boxes drawn.

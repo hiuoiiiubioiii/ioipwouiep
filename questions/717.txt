@@ -1,0 +1,13 @@
+ID: 717
+Problem Title: 1-bit and 2-bit Characters
+Brute Force Method: Backtracking to generate all valid groupings of `0`, `10`, and `11` to see if the string can end perfectly on a `0`.
+BF Complexity Visuals: Decision Tree
+How to Draw BF: Draw a tree branching into 1-step (if 0) and 2-step (if 1) paths. Time: $O(2^N)$.
+Optimised Pattern: Greedy Pointer / Linear Jump
+Opt Vis. Technique: Array Hopping
+Dry Run (Opt): Start `i = 0`. If `arr[i] == 1`, jump `i += 2` (must be a 2-bit char). If `arr[i] == 0`, jump `i += 1`. Stop when `i &gt;= n - 1`. If `i == n - 1`, the last char is isolated.
+How to Draw (Opt): Draw the array. Draw arcs hopping from index to index. A jump from '1' covers two boxes; a jump from '0' covers one box. Target the last index.
+Opt Complexity Visuals: Single Pass Flatline
+How to Draw Opt Complexity: Draw a straight horizontal line touching indices sequentially, representing strict $O(N)$ time.
+Mem Vis (BF): Call stack memory for recursion $O(N)$.
+Mem Vis (Opt): Single index pointer variable `i` (O(1)).

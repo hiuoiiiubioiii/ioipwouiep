@@ -1,0 +1,13 @@
+ID: 3126
+Problem Title: Server Utilization Time (SQL)
+Brute Force Method: Self-joining the table on every possible pair of timestamps and manually checking if they are adjacent "start" and "stop" events. $O(N^2)$
+BF Complexity Visuals: N-to-N connectivity graph where most lines are invalid.
+How to Draw BF: Draw two columns of timestamps. Draw lines between every timestamp in col 1 and every timestamp in col 2. Cross out 99% of them.
+Optimised Pattern: Window Function (LEAD) + CTE
+Opt Vis. Technique: Ordered Sequence Pairing
+Dry Run (Opt): Sort by `server_id` and `timestamp`. Use `LEAD()` to "peek" at the next row. If current is 'start', subtract current from peek. Sum the results.
+How to Draw (Opt): Draw a vertical list of rows. Draw a small arrow from row i to row i+1. Label the difference in seconds next to the arrow.
+Opt Complexity Visuals: Single-pass linear scan on sorted data.
+How to Draw Opt Complexity: Draw a single straight line representing the sorted index. $O(N \log N)$ due to sorting, then $O(N)$ scan.
+Mem Vis (BF): Massive temporary table containing all N^2 row combinations.
+Mem Vis (Opt): One sorted cursor and a running `sum` variable.

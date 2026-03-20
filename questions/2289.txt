@@ -1,0 +1,13 @@
+ID: 2289
+Problem Title: Steps to Make Array Non-decreasing
+Brute Force Method: Iterative SimulationScan the array and delete every element `nums[i]` where `nums[i] &lt; nums[i-1]`. Repeat the entire scan until no more deletions occur.
+BF Complexity Visuals: Repeated Deletion Rounds
+How to Draw BF: Draw the array. Cross out elements in the first pass. Redraw the shortened array. Cross out elements in the second pass. Repeat. Show the $O(N^2)$ complexity.
+Optimised Pattern: Monotonic Stack (Time-to-Die)
+Opt Vis. Technique: Eat-Left Influence Chain
+Dry Run (Opt): Use a monotonic stack to store elements and the "time" (number of steps) they will survive. An element dies if there is a larger element to its left. Its "time to die" is the max of the die-times of the elements it "eats" + 1.
+How to Draw (Opt): Draw the array. Use a stack to track how long each element survives. When an element is blocked by a larger one to its left, calculate its "survival duration" based on the neighbors it outlasted.
+Opt Complexity Visuals: Linear Stack Sweep
+How to Draw Opt Complexity: Draw an $O(N)$ timeline. Show each element being pushed/popped from the stack exactly once. The answer is the maximum "survival time" found.
+Mem Vis (BF): Storing multiple full copies of the array for each step of the simulation.
+Mem Vis (Opt): An integer array to store survival times and a monotonic stack (O(N) space).

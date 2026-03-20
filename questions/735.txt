@@ -1,0 +1,13 @@
+ID: 735
+Problem Title: Asteroid Collision
+Brute Force Method: Repeatedly scan the array for any `[positive, negative]` adjacent pairs and simulate their collision. Repeat until no pairs left.
+BF Complexity Visuals: Scanning Collision Ripples
+How to Draw BF: Draw an array. Circle a pair, erase it, re-scan from the beginning. $O(N^2)$.
+Optimised Pattern: Monotonic Stack
+Opt Vis. Technique: One-Way Tunnel Simulation
+Dry Run (Opt): Iterate asteroids. If moving right (+), push to stack. If moving left (-), collide with stack top until stack is empty or asteroid explodes.
+How to Draw (Opt): Draw a vertical stack. Show asteroids entering. If a "left" asteroid hits a "right" asteroid on the stack, show one (or both) disappearing.
+Opt Complexity Visuals: Single Pass Amortized
+How to Draw Opt Complexity: Draw a line of asteroids. Show each asteroid being "pushed" or "popped" exactly once. $O(N)$.
+Mem Vis (BF): Multiple temporary arrays for each "round" of collisions.
+Mem Vis (Opt): A single stack storing the surviving asteroids (O(N)).

@@ -1,0 +1,13 @@
+ID: 2206
+Problem Title: Divide Array Into Equal Pairs
+Brute Force Method: Nested Loops / SortingSort the array, then iterate through checking if `nums[i] == nums[i+1]`. If not, return false.
+BF Complexity Visuals: Linear Scan Ribbon
+How to Draw BF: Draw the unsorted array, draw a downward arrow to a sorted array, then draw brackets grouping every 2 adjacent elements to check for equality.
+Optimised Pattern: Frequency Map / Hash Table
+Opt Vis. Technique: Bucket / Frequency Chart
+Dry Run (Opt): Create a tally chart. For each number, add a tally mark. At the end, scan the buckets to check if every single one has an even number of tallies.
+How to Draw (Opt): Draw empty buckets labeled with unique numbers. Drop array elements into their matching buckets. Visually cross out pairs within each bucket.
+Opt Complexity Visuals: Single Pass Line with Lookups
+How to Draw Opt Complexity: Draw a single timeline for the array traversal representing $O(N)$. Below it, draw a secondary, shorter timeline for verifying the hash map values $O(U)$, where U is unique elements.
+Mem Vis (BF): Sorting space (usually $O(\log N)$ or $O(N)$ depending on language implementation) with mutated array blocks.
+Mem Vis (Opt): Hash Map showing Key-Value pairs (where the Value is the frequency integer).

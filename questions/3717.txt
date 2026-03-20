@@ -1,0 +1,13 @@
+ID: 3717
+Problem Title: Minimum Operations to Make the Array Beautiful (Med)
+Brute Force Method: Iterate array. If an even index matches the next element, delete it and physically shift all remaining elements left. Restart.
+BF Complexity Visuals: Block Shifting Cascade $O(N^2)$.
+How to Draw BF: Draw the array. Cross out a matching element, then draw arrows shifting every subsequent element one step to the left.
+Optimised Pattern: Greedy Virtual Deletion (Two Pointers)
+Opt Vis. Technique: Skipping Read Pointer
+Dry Run (Opt): Keep a "deletions" counter. Use it to calculate the *virtual* index. If a match occurs, increment counter instead of shifting array.
+How to Draw (Opt): Draw array. Move a finger (pointer) left to right. When pairs match on a virtual even index, tally a mark on a "Deletes" scoreboard and skip ahead.
+Opt Complexity Visuals: Single Linear Scan $O(N)$.
+How to Draw Opt Complexity: Draw a single straight horizontal arrow passing over the array blocks.
+Mem Vis (BF): Constant memory reallocation or deep recursive array copies.
+Mem Vis (Opt): Two simple integer variables (Index, DeletionCount).

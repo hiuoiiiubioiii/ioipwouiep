@@ -1,0 +1,13 @@
+ID: 23
+Problem Title: Merge k Sorted Lists
+Brute Force Method: Extract All &amp; Sort Dump every single node from all K lists into one massive array, sort it, and recreate the list.
+BF Complexity Visuals: The Giant Blender
+How to Draw BF: Draw K separate lists pouring into one massive array. Write $O(N \log N)$ where N is the TOTAL number of nodes across all lists.
+Optimised Pattern: Min-Heap (Priority Queue)
+Opt Vis. Technique: The Vending Machine
+Dry Run (Opt): Put the head node of all K lists into a Min-Heap. Pop the smallest node, attach it to the result, and push that node's `next` into the heap.
+How to Draw (Opt): Draw a funnel (Heap) holding K items. Drop the smallest item out the bottom. Immediately replace it with the next item from the list it came from.
+Opt Complexity Visuals: Logarithmic Extraction
+How to Draw Opt Complexity: Draw an N-length timeline. At each step, draw a small $O(\log K)$ box representing the heap push/pop operation. Total Time: $O(N \log K)$.
+Mem Vis (BF): Draw a massive array of size N (Total nodes). $O(N)$ space.
+Mem Vis (Opt): Draw a fixed-size Triangle (Min-Heap) that never holds more than K elements. Space is $O(K)$ for the heap.

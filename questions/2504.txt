@@ -1,0 +1,13 @@
+ID: 2504
+Problem Title: Concatenate the Name and the Profession (SQL)
+Brute Force Method: Fetch all database rows into application-level memory and use a loop to format strings line-by-line.
+BF Complexity Visuals: Loop iteration sequence over an active list of objects in RAM.
+How to Draw BF: Draw a table, draw a looping arrow pulling out each row, applying a string function manually, and appending the result to a new list.
+Optimised Pattern: SQL String Functions (CONCAT, LEFT) running directly on the database engine.
+Opt Vis. Technique: Relational Database Projection visually mapping two distinct columns merging into one.
+Dry Run (Opt): Look at the name and profession columns. Isolate the first letter of profession, wrap it in parentheses visually, and glue it next to name.
+How to Draw (Opt): Draw a table with name and profession. Draw a funnel that takes name and profession[0], outputting the merged string into a new output column.
+Opt Complexity Visuals: Database table sequential scan visualization.
+How to Draw Opt Complexity: Draw a downward arrow traversing alongside the table representing a single $O(N)$ database engine table scan.
+Mem Vis (BF): In-memory arrays holding duplicated string data.
+Mem Vis (Opt): Database engine cursor pointing to the active memory row (minimal footprint).

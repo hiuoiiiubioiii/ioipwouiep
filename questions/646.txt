@@ -1,0 +1,13 @@
+ID: 646
+Problem Title: Maximum Length of Pair Chain
+Brute Force Method: Recursion/Backtracking: For every pair, try either including it in the chain or skipping it, checking validity at each step.
+BF Complexity Visuals: Exponential decision tree branches.
+How to Draw BF: Draw a list of pairs. Branch for "Take" and "Skip" for every pair. The tree explodes. Write $O(2^N)$.
+Optimised Pattern: Greedy (Sort by End Time).
+Opt Vis. Technique: Interval Scheduling / Timeline Stacking.
+Dry Run (Opt): Sort pairs by their second element. Pick the first pair. For every subsequent pair, if its start &gt; the end of the last picked pair, add it to the chain.
+How to Draw (Opt): Draw a timeline. Place pairs as intervals. Always pick the interval that "finishes" earliest to leave the most room for others.
+Opt Complexity Visuals: $O(N \log N)$ for sorting, $O(N)$ for the scan.
+How to Draw Opt Complexity: Draw a funnel (sort) followed by a straight line with "Check" marks. Write $O(N \log N)$.
+Mem Vis (BF): Draw a massive recursion stack.
+Mem Vis (Opt): Draw the sorted array and one "Current End" variable. $O(1)$ extra space.

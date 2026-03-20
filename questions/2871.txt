@@ -1,0 +1,13 @@
+ID: 2871
+Problem Title: Split Array Into Maximum Number of Subarrays
+Brute Force Method: Try every possible way to partition the array into subarrays, calculating the Bitwise AND of each and checking if the sum of these ANDs is minimized.
+BF Complexity Visuals: $O(2N)$ Partition Combinatorics
+How to Draw BF: Draw the array with "Divider" slots between numbers. Show 2^N-1 ways to place dividers. For each, calculate the AND-Sum.
+Optimised Pattern: Greedy AND-Reset Logic
+Opt Vis. Technique: Bitwise Minimal Segmenting
+Dry Run (Opt): The minimum possible score is the AND of the whole array. If that score is &gt;0, the max subarrays is 1. If it's 0, greedily close a subarray as soon as its AND becomes 0, then start a new one.
+How to Draw (Opt): Write the numbers. Keep a "Current AND" variable starting at the first number. Move right, ANDing each number. As soon as the result hits 0, draw a vertical line (split) and reset the AND to the next number.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw a straight line through the array. Each bitwise operation is $O(1)$. Total $O(N)$.
+Mem Vis (BF): Visualize the heap clogging with all possible partition results.
+Mem Vis (Opt): Visualize one integer variable (the running AND). Space $O(1)$.

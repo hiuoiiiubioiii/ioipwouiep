@@ -1,0 +1,13 @@
+ID: 3532
+Problem Title: Path Existence Queries in a Graph I (Med)
+Brute Force Method: Run a BFS or DFS from the start node to the destination for every single query.
+BF Complexity Visuals: Repeated Graph Flooding.
+How to Draw BF: Draw a graph. For query 1, color a path red. Erase it. For query 2, color a path blue. Repeat Q times. $O(Q \cdot (V + E)$).
+Optimised Pattern: Disjoint Set Union (DSU) / Connected Components.
+Opt Vis. Technique: Merging Component Bubbles.
+Dry Run (Opt): Process all edges once. If two nodes connect, put them in the same "bubble". For queries, just check if start and end are in the same bubble.
+How to Draw (Opt): Draw nodes as scattered dots. Draw circles around connected dots, merging circles as you add edges. Queries just check if two dots share a circle.
+Opt Complexity Visuals: Near $O(1)$ Query Lookups.
+How to Draw Opt Complexity: Draw edges funnelling into a setup box (O(V+E)). Then draw queries instantly hitting an $O(1)$ check.
+Mem Vis (BF): Call Stack/Queue Overload: Draw deep recursion stacks or long queue arrays for each individual graph search.
+Mem Vis (Opt): Parent Pointer Array: Draw a single 1D array of size V, where each index points to its component's "root" node.

@@ -1,0 +1,13 @@
+ID: 3211
+Problem Title: Generate Binary Strings Without Adjacent Zeros
+Brute Force Method: Generate all 2^N binary strings, then linearly scan each to filter out "00". $O(N \cdot 2^N)$.
+BF Complexity Visuals: Full Binary Tree + Filter Layer
+How to Draw BF: Draw a complete binary tree of depth N. Cross out all entire branches that contain "00". Show the massive wasted work.
+Optimised Pattern: Constrained Backtracking / DFS
+Opt Vis. Technique: Pruned Decision Tree
+Dry Run (Opt): Start at empty string. If last char is '1', branch to '0' and '1'. If last char is '0', ONLY branch to '1'.
+How to Draw (Opt): Draw the root. Draw a branch to '1' and '0'. From '0', draw a single straight line to '1'. From '1', draw a fork to '0' and '1'.
+Opt Complexity Visuals: Fibonacci Sequence Growth Chart
+How to Draw Opt Complexity: Draw the number of nodes at each level. Write the sequence: 2, 3, 5, 8... Write $O(\text{Fibonacci}(N)$) to show sub-exponential growth compared to 2^N.
+Mem Vis (BF): List storing all 2^N strings before filtering.
+Mem Vis (Opt): Recursion call stack of depth N + List of valid strings.

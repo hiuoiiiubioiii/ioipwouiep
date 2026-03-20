@@ -1,0 +1,13 @@
+ID: 2560
+Problem Title: House Robber IV
+Brute Force Method: Find all possible combinations of non-adjacent houses to rob such that you pick at least k houses, then find the minimum of the maximum values in those combinations. $O(2^N)$.
+BF Complexity Visuals: An enormous decision tree where every branch checks non-adjacency constraints.
+How to Draw BF: Draw the houses. Try picking every possible group of k houses that aren't neighbors. Write down the highest value in each group.
+Optimised Pattern: Binary Search on Answer Space + Greedy Counting.
+Opt Vis. Technique: A "Threshold Filter" - picking a maximum capability and seeing if you can still rob k houses under that limit.
+Dry Run (Opt): Binary search for the "minimum maximum capability" X. For a fixed X, use a greedy approach: walk through the houses and rob every house = k houses, try a smaller X.
+How to Draw (Opt): Write the house values. Pick a target X=10. Go through the list: "Can I rob this house? (Is it = k, try X=5.
+Opt Complexity Visuals: $O(N \log(\text{Max}_\text{Value})$). Linear check inside a logarithmic search.
+How to Draw Opt Complexity: Draw a range from min to max house value. Draw brackets halving the range. Inside each bracket, draw a quick linear arrow under the houses.
+Mem Vis (BF): Exponential space for combinations.
+Mem Vis (Opt): $O(1)$ extra space (excluding input).

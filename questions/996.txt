@@ -1,0 +1,13 @@
+ID: 996
+Problem Title: Number of Squareful Arrays
+Brute Force Method: Generate all N! permutations of the array. For each, check if the sum of every adjacent pair is a perfect square.
+BF Complexity Visuals: $O(N! \cdot N)$. Factorial explosion. For N=12, this is 479 million checks.
+How to Draw BF: Draw a tree that branches N times at the root. Most paths will fail the square check immediately, but you still have to explore the "what-ifs."
+Optimised Pattern: Hamiltonian Path (Backtracking + Pruning)
+Opt Vis. Technique: "Selective Building." Only place a number next to another if their sum is squareful. This prunes the search tree significantly. Use a frequency map to handle duplicates.
+Dry Run (Opt): 1. Build a graph where an edge exists between `u` and `v` if `sqrt(u+v)` is an integer. 2. Use DFS to find all paths of length N that visit each element's frequency count correctly.
+How to Draw (Opt): Draw numbers as nodes. Draw lines only between numbers that sum to a square. Your task is to find all ways to draw a single continuous line through every node.
+Opt Complexity Visuals: $O(N \cdot 2^N)$ or better depending on graph density. Much smaller than N!.
+How to Draw Opt Complexity: Draw a graph with very few edges. Show a "Path-Finder" moving only along these specific lines.
+Mem Vis (BF): $O(N!)$ to store permutations.
+Mem Vis (Opt): $O(N^2)$ for the adjacency list and $O(N)$ for recursion. Draw a small graph connectivity matrix.

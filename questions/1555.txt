@@ -1,0 +1,13 @@
+ID: 1555
+Problem Title: Bank Account Summary II (SQL)
+Brute Force Method: Select all users, and for each user, run a subquery that sums their transactions and then filters. $O(U \cdot T)$.
+BF Complexity Visuals: Correlated Subquery Scan
+How to Draw BF: Draw a user list. For every user, draw a magnifying glass that scans the entire transaction table. Redundant and slow.
+Optimised Pattern: JOIN + GROUP BY + HAVING
+Opt Vis. Technique: The Aggregate Funnel
+Dry Run (Opt): Join the `Users` and `Transactions` tables on `account`. Group by the user's name. Use `SUM(amount)` and filter using `HAVING sum &gt; 10000`.
+How to Draw (Opt): Draw two tables. Draw lines connecting account IDs. Group the connected rows into "buckets" by name. Draw a scale under each bucket; only keep those weighing over 10,000.
+Opt Complexity Visuals: Hash Aggregate Scan $O(N)$
+How to Draw Opt Complexity: Draw a pipeline where data flows through a join and into a hash table for grouping, finishing with a single filter pass.
+Mem Vis (BF): Application-side memory for calculating sums manually.
+Mem Vis (Opt): Database internal buffer for grouping. $O(U)$ space for the result set.

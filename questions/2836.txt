@@ -1,0 +1,13 @@
+ID: 2836
+Problem Title: Maximize Value of Function in a Ball Passing Game
+Brute Force Method: For each starting player, simulate k passes by following the receiver array and summing up the IDs.
+BF Complexity Visuals: $O(n \cdot k)$ Simulation Trace
+How to Draw BF: Draw n players. For each, draw a path of k arrows. Show the massive overlap where paths merge but are still recalculated.
+Optimised Pattern: Binary Lifting (Sparse Table)
+Opt Vis. Technique: Jump Table Power-of-2
+Dry Run (Opt): Precompute jumps for 2^0, 2^1, 2^2... steps. Each entry stores (destination, sum_of_ids). To find k steps, decompose k into powers of 2 (binary) and "jump" through the table.
+How to Draw (Opt): Draw a table where rows are players and columns are powers of 2 (1, 2, 4, 8). In each cell, write the destination and the score. To move 13 steps, jump 8 rightarrow 4 rightarrow 1.
+Opt Complexity Visuals: $O(n \log k)$ Table Construction
+How to Draw Opt Complexity: Draw a grid of size n x log k. Construction is $O(n \log k)$ and each query is $O(\log k)$. Total $O(n \log k)$.
+Mem Vis (BF): Visualize $O(1)$ extra space but timeout on time complexity.
+Mem Vis (Opt): Visualize a 2D matrix of size n x log k. Space is $O(n \log k)$.

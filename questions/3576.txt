@@ -1,0 +1,13 @@
+ID: 3576
+Problem Title: Transform Array to All Equal Elements (Med)
+Brute Force Method: Try every value currently in the array as the "target," calculating total operations for each.
+BF Complexity Visuals: Iterative Target Testing.
+How to Draw BF: Draw an array. Pick element 1, draw arrows from every other element to it. Pick element 2, repeat. $O(N^2)$.
+Optimised Pattern: Median-based Greedy.
+Opt Vis. Technique: Geometric Center Minimization.
+Dry Run (Opt): Sort the array. The value that minimizes the sum of absolute differences is the median. Operations = sum |x_i - median|.
+How to Draw (Opt): Draw dots on a number line. Draw a central line (median). Draw arcs from every dot to that central line.
+Opt Complexity Visuals: $O(N \log N)$ or $O(N)$ with QuickSelect.
+How to Draw Opt Complexity: Draw an arrow for the sort step, then a single pass summing differences.
+Mem Vis (BF): Operation Logs: Draw a list of every subtraction/addition step taken for every possible target.
+Mem Vis (Opt): In-Place Sort: Draw the array being rearranged, using only logarithmic stack space.

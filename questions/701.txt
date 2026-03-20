@@ -1,0 +1,13 @@
+ID: 701
+Problem Title: Insert into a Binary Search Tree
+Brute Force Method: Level-order traversal to find the first valid empty spot (not strictly BST rule compliant, but absolute brute).
+BF Complexity Visuals: Breadth-First Expansion Tree
+How to Draw BF: Draw a tree, circle nodes level-by-level, showing $O(N)$ worst-case time to touch all nodes.
+Optimised Pattern: BST Traversal (Iterative)
+Opt Vis. Technique: Pointer Tracing on Binary Tree
+Dry Run (Opt): Draw the tree. Place a token (curr) at root. Move token Left if val &lt; curr, Right if val &gt; curr until hitting null.
+How to Draw (Opt): Draw circles for nodes. Use a colored arrow for `curr` jumping downwards. Draw dashed circle for the newly inserted node.
+Opt Complexity Visuals: Depth/Height Vector Path
+How to Draw Opt Complexity: Draw a straight line downwards representing $O(H)$ time. Label nodes visited as steps 1 to H.
+Mem Vis (BF): Queue Array Blocks (for BFS level traversal memory).
+Mem Vis (Opt): Single Variable Box for `curr` pointer (O(1) space).

@@ -1,0 +1,14 @@
+ID: 3800
+Problem Title: Minimum Cost to Make Two Binary Strings Equal (Med)
+Brute Force Method: Try every combination of bit-flips and adjacent swaps to transform String A into String B, tracking the total cost. $O(2^N \cdot N!)$.
+BF Complexity Visuals: State-Space Search (Dijkstra).
+How to Draw BF: Write String A. Draw arrows for "Flip" (Cost X) and "Swap" (Cost Y). Follow all paths until String B is reached. Pick the cheapest path.
+Optimised Pattern: Dynamic Programming / Greedy Matching
+Opt Vis. Technique: Mismatch Pairing
+Dry Run (Opt): Identify indices where A[i] 
+eq B[i]. To fix these, you can either flip them individually (Cost X x count) or "swap" a '0' and '1' from two different mismatch positions (Cost Y x distance). Use DP to find the cheapest way to pair up or flip mismatches.
+How to Draw (Opt): Draw two strings. Mark the "Mismatched" spots with 'X'. Draw lines connecting pairs of 'X's. Below each line, write min(2X, Y * distance). Sum the costs of the cheapest pairings.
+Opt Complexity Visuals: $O(N^2)$ or $O(N)$ depending on swap constraints.
+How to Draw Opt Complexity: Draw a 1D DP array tracking the cost to resolve the first i mismatches.
+Mem Vis (BF): Massive reachability graph.
+Mem Vis (Opt): $O(M)$ where M is the number of mismatches.

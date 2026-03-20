@@ -1,0 +1,13 @@
+ID: 841
+Problem Title: Keys and Rooms
+Brute Force Method: Start in room 0. For every key you find, restart a full scan of the rooms array to see if you can now enter any previously locked room. Repeat until no new rooms are found.
+BF Complexity Visuals: Restarted Linear Scans. $O(N^2)$.
+How to Draw BF: Draw rooms as boxes. Draw an arrow from room 0 to its keys. Then redraw the whole diagram from scratch for the next key found.
+Optimised Pattern: Graph Traversal (BFS or DFS) with Visited Set.
+Opt Vis. Technique: Unlocking a Chain Reaction.
+Dry Run (Opt): Start at Room 0. Put keys into a Stack. Pop a key, enter that room. If not visited, mark visited and add its keys to the Stack. At the end, check if Visited Count == Total Rooms.
+How to Draw (Opt): Draw a line of rooms. Draw a "Visited" checkbox under each. Draw arrows from room-to-room representing the keys. Color a room green once visited.
+Opt Complexity Visuals: Single Pass Traversal. $O(N + E)$ where E is keys.
+How to Draw Opt Complexity: Draw the graph. Trace each edge (key) exactly once. No backtracks or restarts.
+Mem Vis (BF): List of lists: Draw multiple overlapping lists of "newly opened" rooms.
+Mem Vis (Opt): Stack + Visited Set: Draw a vertical "Key Bucket" (Stack) and a bit-strip (Visited) of size N.

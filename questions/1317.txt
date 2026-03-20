@@ -1,0 +1,13 @@
+ID: 1317
+Problem Title: Convert Integer to the Sum of Two No-Zero Integers
+Brute Force Method: Convert numbers A and B to strings and run string search algorithms to check for '0' inside a heavy iteration loop.
+BF Complexity Visuals: String Conversion Overhead
+How to Draw BF: Draw an integer passing through a "toString()" factory, then a magnifying glass scanning the characters for '0'. Note the extreme $O(Log N)$ string allocation overhead per loop.
+Optimised Pattern: Math/Modulo Zero-Check Loop
+Opt Vis. Technique: Base-10 Digit Extraction
+Dry Run (Opt): Loop A from 1 to N. Set B = N - A. Check if A or B contains zero by repeatedly doing `val % 10 == 0` and `val /= 10`. Return the first valid pair.
+How to Draw (Opt): Draw integer N. Split into A and B. Draw a division bracket showing `modulo 10` popping off the last digit. If it's a zero, cross out the pair and try the next.
+Opt Complexity Visuals: Logarithmic Digit Peeling
+How to Draw Opt Complexity: Draw a number. Draw arrows peeling off digits right-to-left. Show that checking a number takes strictly $O(\log10(N)$) integer math operations.
+Mem Vis (BF): String Allocation Trashing: Heap memory fragmentation from repeatedly allocating and destroying small string objects.
+Mem Vis (Opt): $O(1)$ Register Variables: Draw a CPU register holding simple integer values `A`, `B`, and `temp`. No heap allocations required.

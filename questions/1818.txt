@@ -1,0 +1,13 @@
+ID: 1818
+Problem Title: Minimum Absolute Sum Difference
+Brute Force Method: Try replacing every nums1[i] with every nums1[j], recalculate the entire sum difference, and track the minimum.
+BF Complexity Visuals: Combinatorial replacement matrix.
+How to Draw BF: Draw the array. Pick one element, draw N arrows replacing it with every other element. Repeat for all N elements. $O(N^2)$.
+Optimised Pattern: Binary Search (bisect) on a sorted copy of nums1 to find the closest value to nums2[i].
+Opt Vis. Technique: Number line with jump distances.
+Dry Run (Opt): Calculate base diff sum. Sort a copy of nums1. For each i, binary search nums2[i] in sorted_nums1. Find closest value. Maximize (old_diff - new_diff).
+How to Draw (Opt): Draw original arrays and their vertical differences. Draw a sorted nums1. Pick a nums2 target, binary search the sorted array, draw a new shorter difference line.
+Opt Complexity Visuals: $O(N \log N)$ sorting + N * $O(\log N)$ search operations.
+How to Draw Opt Complexity: Draw N distinct binary search trees branching off a main iteration line.
+Mem Vis (BF): $O(1)$ memory if mutating original array to check differences, but computationally heavy.
+Mem Vis (Opt): One duplicated sorted array $O(N)$ for binary search reference.

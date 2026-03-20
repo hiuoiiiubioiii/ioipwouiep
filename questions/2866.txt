@@ -1,0 +1,13 @@
+ID: 2866
+Problem Title: Beautiful Towers II
+Brute Force Method: (Identical problem to 2865 but with N = 10^5). The $O(N^2)$ brute force will now Time Limit Exceeded (TLE).
+BF Complexity Visuals: $O(N2)$ Overlap Chart
+How to Draw BF: Draw a grid 10^5 x 10^5. Shade the area being processed. 10^10 operations is too many for any standard CPU.
+Optimised Pattern: Optimised Monotonic Stack + Dynamic Programming
+Opt Vis. Technique: Slope Aggregation
+Dry Run (Opt): Same logic as 2865: maintain a stack of indices st such that maxHeights[st] is increasing. When processing i, pop elements &gt; maxHeights[i]. The new sum is (i - st.top) * maxHeights[i] + leftSum[st.top].
+How to Draw (Opt): Draw the bars. Use the stack to "flatten" preceding bars that are taller than the current one. The stack allows you to calculate the new total sum in $O(1)$ by referencing the previous DP state.
+Opt Complexity Visuals: Amortized Linear Time $O(N)$
+How to Draw Opt Complexity: Draw a single pass through the array. Although there are while loops inside, each element is pushed and popped from the stack exactly once.
+Mem Vis (BF): Visualize memory fragmentation from billions of temporary sum variables.
+Mem Vis (Opt): Visualize two long DP arrays (e.g., 64-bit integers) and a stack. Space $O(N)$.

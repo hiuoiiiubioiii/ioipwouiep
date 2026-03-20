@@ -1,0 +1,13 @@
+ID: 3157
+Problem Title: Find the Level of Tree with Minimum Sum
+Brute Force Method: Recursive DFS that explores every path, storing all sums in a dictionary or deep list. $O(N)$ but higher overhead.
+BF Complexity Visuals: Branching tree where every node carries its depth "weight" to the root.
+How to Draw BF: Draw a tree. Next to every node, write its depth. Then make a list of depths and sum all nodes for each depth manually.
+Optimised Pattern: BFS (Level Order Traversal)
+Opt Vis. Technique: Horizontal Slicing
+Dry Run (Opt): Use a queue to process the tree level by level. Sum all nodes in the queue before moving to the next level. Track the min sum.
+How to Draw (Opt): Draw a tree. Draw horizontal "cut" lines between levels. Sum the nodes on each "shelf" and write the total at the end of the line.
+Opt Complexity Visuals: Discrete level-by-level progression.
+How to Draw Opt Complexity: Draw an $O(N)$ straight line split into H (height) segments.
+Mem Vis (BF): Call stack memory proportional to tree height H.
+Mem Vis (Opt): A Queue holding at most the width of the tree W. $O(W)$.

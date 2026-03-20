@@ -1,0 +1,13 @@
+ID: 1577
+Problem Title: Number of Ways Where Square of One Number Equals Product of Two Numbers
+Brute Force Method: For every number in array 1, calculate its square. Then, use nested loops to find every pair in array 2 and check the product. Repeat for the other direction. $O(N \cdot M^2 + M \cdot N^2)$.
+BF Complexity Visuals: Cubic Nested Grid Scan
+How to Draw BF: Draw array 1. For each element, draw a 2D matrix representing all pairs in array 2. Highlight the matching products. Massive redundancy.
+Optimised Pattern: Hash Map / Frequency Counting
+Opt Vis. Technique: The Square-to-Pair Map Matcher
+Dry Run (Opt): 1. Count frequencies of all numbers in both arrays. 2. For each array, calculate squares. 3. For the other array, iterate through pairs in the frequency map to find products that match the square.
+How to Draw (Opt): Draw two frequency tables. Draw a square (e.g., 10^2 = 100). Now look at the other table. Find pairs like (2, 50) or (4, 25). Multiply their frequencies and add to total.
+Opt Complexity Visuals: Frequency Pair Scan $O(N^2 + M^2)$
+How to Draw Opt Complexity: Draw two separate grids for calculating all possible products in each array. The work is proportional to the number of *unique* product combinations.
+Mem Vis (BF): Storing every pair explicitly. $O(N^2)$.
+Mem Vis (Opt): Two frequency Hash Maps. $O(N + M)$ space.

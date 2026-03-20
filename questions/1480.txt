@@ -1,0 +1,13 @@
+ID: 1480
+Problem Title: Running Sum of 1d Array
+Brute Force Method: Nested Loops. For every index i, run a second loop from 0 to i to sum up all elements and store in the result array.
+BF Complexity Visuals: Redundant Summation Scan
+How to Draw BF: Draw an array. For index 3, draw arrows to indices 0, 1, 2, 3. For index 4, redraw all those arrows plus one more. Label $O(N²)$.
+Optimised Pattern: Prefix Sum (In-place)
+Opt Vis. Technique: Cumulative Accumulator
+Dry Run (Opt): Iterate from index 1 to N-1. Add the value of the previous element to the current element: `nums[i] = nums[i] + nums[i-1]`.
+How to Draw (Opt): Draw a row of numbers. As you move right, draw an arrow pulling the "Total-So-Far" from the left and merging it into the current box.
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw one arrow moving left-to-right once. Label $O(N)$.
+Mem Vis (BF): Result Array $O(N)$
+Mem Vis (Opt): No extra space if modifying the input array in place. Space $O(1)$ auxiliary.

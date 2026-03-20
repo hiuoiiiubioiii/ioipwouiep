@@ -1,0 +1,13 @@
+ID: 1459
+Problem Title: Rectangles Area (SQL)
+Brute Force Method: Join Points table with itself twice. For every pair, manually calculate `abs(x1-x2) * abs(y1-y2)`. Filter out results where the area is 0.
+BF Complexity Visuals: Self-Cross Join Grid
+How to Draw BF: Draw the Points table. Draw lines connecting every point to every other point. Label $O(N²)$.
+Optimised Pattern: Self-Join with Inequality Constraints
+Opt Vis. Technique: Coordinate Geometry Filtering
+Dry Run (Opt): `JOIN Points p1, Points p2 ON p1.id &lt; p2.id`. Calculate `Area = ABS(p1.x_value - p2.x_value) * ABS(p1.y_value - p2.y_value)`. Use `WHERE p1.x_value != p2.x_value AND p1.y_value != p2.y_value`.
+How to Draw (Opt): Draw two identical point sets. Link Point A to Point B ONLY if A's ID is smaller. Filter out any horizontal or vertical links. The remaining links are diagonals of valid rectangles.
+Opt Complexity Visuals: Nested Loop Join Plan
+How to Draw Opt Complexity: Draw a Join $O(N²)$ -&gt; Math/Filter $O(1)$. Label $O(N²)$.
+Mem Vis (BF): N/A (DB Level)
+Mem Vis (Opt): A result set containing pairs and their areas. Space $O(N²)$.

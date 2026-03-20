@@ -1,0 +1,13 @@
+ID: 455
+Problem Title: Assign Cookies
+Brute Force Method: Recursive Match Try every possible pairing of children and cookies to find the maximum satisfaction.
+BF Complexity Visuals: Bipartite Matching Tree
+How to Draw BF: Draw children on left, cookies on right. Draw every possible line. Show $O(2^N)$ or factorial search.
+Optimised Pattern: Two Pointers + Greedy Sort both arrays. Give the smallest cookie that satisfies the child with the smallest greed factor.
+Opt Vis. Technique: Dual Ladder Climb
+Dry Run (Opt): Two lists. Two arrows. If the cookie arrow value \ge child arrow value, both move up. If not, only the cookie arrow moves to find a bigger one.
+How to Draw (Opt): Write both arrays. Sort them. Draw an arrow c (child) and k (cookie). Move them and tally matches.
+Opt Complexity Visuals: Sort + Scan
+How to Draw Opt Complexity: Draw two $O(N \log N)$ sorting blocks followed by a single $O(N)$ scan. Total $O(N \log N)$.
+Mem Vis (BF): Call Stack High recursion depth.
+Mem Vis (Opt): None Just two integer pointers. $O(1)$ space.

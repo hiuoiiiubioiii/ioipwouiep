@@ -1,0 +1,13 @@
+ID: 1327
+Problem Title: List the Products Ordered in a Period (SQL)
+Brute Force Method: Run a correlated subquery fetching SUM of units for each product ID, row by row, while filtering dates.
+BF Complexity Visuals: N x M Cross Join Iteration
+How to Draw BF: Draw the Products table. For every single row, draw an arrow to the Orders table that scans the entire orders list to match dates and IDs, demonstrating $O(N\cdot M)$ disk reads.
+Optimised Pattern: INNER JOIN with GROUP BY and HAVING
+Opt Vis. Technique: Filtered Set Aggregation
+Dry Run (Opt): Filter Orders table for dates in Feb 2020. INNER JOIN with Products table. GROUP BY `product_name`. HAVING `SUM(unit) &gt;= 100`.
+How to Draw (Opt): Draw two tables side-by-side. Draw a funnel filtering out non-Feb orders. Draw matching lines linking the remaining rows by ID. Group identical names into a bucket and sum. Discard buckets &lt; 100.
+Opt Complexity Visuals: Pipelined Relational Algebra
+How to Draw Opt Complexity: Draw a flowchart: Filter Node -&gt; Join Node -&gt; Aggregate/Hash Node -&gt; Output. Shows $O(N \log N)$ or $O(N)$ hash-based execution.
+Mem Vis (BF): Massive Temporary Tables: Database spinning up unindexed intermediate result sets in memory.
+Mem Vis (Opt): Hash Map Aggregation: Draw an in-memory Hash Table using `product_id` as the key and a running integer sum as the value.

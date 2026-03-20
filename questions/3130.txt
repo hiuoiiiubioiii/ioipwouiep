@@ -1,0 +1,13 @@
+ID: 3130
+Problem Title: Find All Possible Stable Binary Arrays II
+Brute Force Method: Same as 3129, using the $O(Z x O x \text{limit})$ transition. Under high constraints, this TLEs.
+BF Complexity Visuals: DP grid where each cell transition involves a long loop back of size `limit`.
+How to Draw BF: In the DP grid, draw an arrow that sums the last `limit` cells for every single transition.
+Optimised Pattern: DP + Prefix Sum Optimization
+Opt Vis. Technique: Sliding Window Sum in DP State
+Dry Run (Opt): Optimize the "Limit subtraction" by observing that the sum needed is a range of previous DP values. Use a running prefix sum to calculate the subtraction in $O(1)$.
+How to Draw (Opt): Draw the DP table. Beside it, draw a "Prefix Sum" version of the table. Show that calculating a cell only requires 2-3 lookups in the prefix table.
+Opt Complexity Visuals: Flattened $O(1)$ transition DP.
+How to Draw Opt Complexity: Draw the same Z x O table as 3129, but mark each cell calculation as a constant number of lookups. $O(Z x O)$.
+Mem Vis (BF): Same as 3129.
+Mem Vis (Opt): 3D array of size Z x O x 2, plus auxiliary prefix sum tables. $O(Z x O)$.

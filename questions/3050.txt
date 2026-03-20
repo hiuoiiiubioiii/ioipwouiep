@@ -1,0 +1,13 @@
+ID: 3050
+Problem Title: Pizza Toppings Cost Analysis (SQL)
+Brute Force Method: Use a triple cross join (Topping1 x Topping2 x Topping3) and then apply filters to exclude duplicates and handle alphabetical sorting.
+BF Complexity Visuals: 3D Cartesian Product Cube
+How to Draw BF: Draw a 3D grid where axes are T1, T2, and T3. Every cell represents a triplet, showing the massive redundant search space.
+Optimised Pattern: Join Filtering + Order By Clause
+Opt Vis. Technique: Venn Diagram (Self-Joins)
+Dry Run (Opt): Join the table to itself twice. Use conditions like T1.name &lt; T2.name and T2.name &lt; T3.name to automatically eliminate permutations and identical pairings.
+How to Draw (Opt): Draw three identical overlapping circles. Shade only the intersection where Name A &lt; Name B &lt; Name C. Write the price sum formula: P1+P2+P3.
+Opt Complexity Visuals: $O(N³)$ Joins (Reduced by B-Trees)
+How to Draw Opt Complexity: Draw a nested loop flow where each inner loop is smaller than the outer one due to the "less than" sorting constraint.
+Mem Vis (BF): Temporary tables containing every possible triplet combination.
+Mem Vis (Opt): Database Index (B-Tree) on the Topping Name to speed up comparison filters.

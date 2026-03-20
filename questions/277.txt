@@ -1,0 +1,13 @@
+ID: 277
+Problem Title: Find the Celebrity
+Brute Force Method: Check every person against everyone else using N^2 queries to `knows(a, b)`.
+BF Complexity Visuals: N \times N Query Grid: $O(n^2)$.
+How to Draw BF: Draw a grid of all people. Shade every cell to represent asking "Does Person A know Person B?" for every pair.
+Optimised Pattern: Greedy Elimination (Two Pointers)
+Opt Vis. Technique: Tournament Elimination Bracket
+Dry Run (Opt): Assume Person 0 is the celebrity. If 0 \text{ knows } 1, 0 cannot be the celebrity, so candidate becomes 1. Continue until only one candidate remains. Verify the candidate at the end.
+How to Draw (Opt): Draw n circles. Use a "Pointer" finger to jump from one to the next based on the `knows` result. The person you end on is the only "possible" star.
+Opt Complexity Visuals: Linear Query Scan: $O(n)$.
+How to Draw Opt Complexity: Draw a line of n people. Show the pointer moving exactly n times to find the candidate, plus one pass to verify. Total: $O(3n)$ \rightarrow $O(n)$.
+Mem Vis (BF): None (just loops).
+Mem Vis (Opt): Single Integer Variable: Draw a box labeled `candidate`.

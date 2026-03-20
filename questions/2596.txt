@@ -1,0 +1,13 @@
+ID: 2596
+Problem Title: Check Knight Tour Configuration
+Brute Force Method: For every number k from 0 to n^2-2, search the entire grid to find where k and k+1 are located, then check if the distance between them is a valid knight move. $O(N^4)$.
+BF Complexity Visuals: A "Where's Waldo" search for every sequential number in a grid, repeated N^2 times.
+How to Draw BF: Draw the grid. Find '0'. Then scan the whole grid for '1'. Check the L-shape. Then scan the whole grid for '2'. Repeat until N^2-1.
+Optimised Pattern: Coordinate Mapping (Direct Indexing).
+Opt Vis. Technique: A "Jump Tracker" visual where we store the coordinates of each number in an array first, then simply verify the jumps between adjacent array indices.
+Dry Run (Opt): Create an array pos of size N^2. Iterate through the grid and set pos[grid[r][c]] = (r, c). Then, iterate from i=0 to N^2-2: calculate the row difference dr = |pos[i].r - pos[i+1].r| and column difference dc = |pos[i].c - pos[i+1].c|. Valid if (dr*dc == 2). Also, ensure grid[0][0] == 0.
+How to Draw (Opt): Write a list of numbers 0, 1, 2... Next to each, write its (row, col). Check the "L-step" (2 squares one way, 1 square the other) between each pair in the list.
+Opt Complexity Visuals: $O(N^2)$ - One pass to map the coordinates and one pass to check the moves.
+How to Draw Opt Complexity: Draw a list of coordinates. Draw a single arrow jumping from one coordinate to the next, with a small "L-shape" icon above each jump.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(N^2)$ to store the coordinate map.

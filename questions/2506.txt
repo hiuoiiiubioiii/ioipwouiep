@@ -1,0 +1,13 @@
+ID: 2506
+Problem Title: Count Pairs Of Similar Strings
+Brute Force Method: Compare every single string with every other string using a nested loop, converting each to a set of characters to check equality. $O(N^2 \cdot L)$
+BF Complexity Visuals: Complete graph where every node (string) has a directed edge pointing to every subsequent node.
+How to Draw BF: Draw the list of strings. Draw lines connecting the first string to all strings below it, then the second string to all below it, forming a dense web.
+Optimised Pattern: Bitmasking for character presence + Hash Map frequency counting.
+Opt Vis. Technique: Strings funneling into a 26-bit integer representation, dropping into Hash Map buckets.
+Dry Run (Opt): Convert "aba" to a 26-bit binary where 'a' and 'b' bits are 1. Look up this integer in a hash map. Add the current count to your answer, then increment the map count.
+How to Draw (Opt): Write out a string. Below it, write a 26-slot array of 0s and 1s. Convert that array to a single decimal number. Group matching numbers together and use the formula n*(n-1)/2.
+Opt Complexity Visuals: Single linear timeline for $O(N\cdot L)$ traversal, followed by an $O(1)$ hash map lookup.
+How to Draw Opt Complexity: Draw a single arrow scanning down the list of strings. Beside each string, write its bitmask. Show that you only scan the list exactly once.
+Mem Vis (BF): Array of HashSets for every string.
+Mem Vis (Opt): Integer-to-Integer Hash Map.

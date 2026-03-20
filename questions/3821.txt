@@ -1,0 +1,13 @@
+ID: 3821
+Problem Title: Find Nth Smallest Integer With K One Bits (Hard)
+Brute Force Method: Linear count: Start an integer at 1, increment indefinitely. Convert each to binary, count the 1s. Stop when you find the Nth match.
+BF Complexity Visuals: Endless horizontal timeline checking every single integer up to infinity.
+How to Draw BF: Draw numbers 1, 2, 3, 4, 5. Under each, draw its binary form. Circle the ones with K bits. Write $O(\text{Answer})$ which could be billions.
+Optimised Pattern: Combinatorics (nCr) + Bit-by-Bit Construction.
+Opt Vis. Technique: A decision tree predicting the size of subtrees using combinations, bypassing thousands of numbers at once.
+Dry Run (Opt): Find the required bit length by checking nCr(length, K) &gt;= N. Then, starting from MSB, if placing a '0' leaves fewer than N combinations, place a '1' and subtract combinations from N.
+How to Draw (Opt): Draw empty bit slots _ _ _ _. Write combinations (nCr) available if the first slot is 0. If N &gt; combinations, write '1' and deduct. Otherwise, write '0'.
+Opt Complexity Visuals: Logarithmic descent.
+How to Draw Opt Complexity: Draw ~60 binary slots. Under them, write "O(1) Math". Total time: $O(60)$ = $O(1)$ conceptually for 64-bit ints.
+Mem Vis (BF): $O(1)$ space, but high CPU cycles checking millions of numbers.
+Mem Vis (Opt): $O(1)$ variables storing N, K, and current answer, alongside a precomputed Pascal's Triangle (Combinations matrix) up to 60x60.

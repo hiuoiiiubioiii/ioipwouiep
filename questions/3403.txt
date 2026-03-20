@@ -1,0 +1,13 @@
+ID: 3403
+Problem Title: Find the Lexicographically Largest String From the Box I
+Brute Force Method: Generate all valid string partitions, isolate substrings, and compare them lexicographically (O(N^3)).
+BF Complexity Visuals: Substring Generation Tree.
+How to Draw BF: Write the string, draw brackets for every single start/end index combo, and list all combinations below.
+Optimised Pattern: Two Pointers / Suffix Analysis / Greedy Char Selection.
+Opt Vis. Technique: Pointer Sliding on a 1D Array.
+Dry Run (Opt): Place pointer `i` at the largest char found. Slide pointer `j` to compare subsequent chars. Update `i` if a larger sequence is found.
+How to Draw (Opt): Draw the string in array boxes. Draw arrows `i` and `j` below. Shift `j` right sequentially.
+Opt Complexity Visuals: Linear Scan Timeline.
+How to Draw Opt Complexity: Draw a horizontal timeline of length N. Mark it with a single continuous forward line to show $O(N)$ execution.
+Mem Vis (BF): A massive table/list storing every newly generated string allocation.
+Mem Vis (Opt): Two distinct dot-markers (integers `i`, `j`) pointing strictly to indices on the original string array.

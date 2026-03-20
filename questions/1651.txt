@@ -1,0 +1,13 @@
+ID: 1651
+Problem Title: Hopper Company Queries III (SQL)
+Brute Force Method: Run 10 separate queries for each 3-month rolling window (Jan-Mar, Feb-Apr, etc.).
+BF Complexity Visuals: Sequential Window Scan
+How to Draw BF: Draw 10 distinct SQL result sets being calculated one-by-one. $O(10 \cdot N)$.
+Optimised Pattern: Recursive CTE + Window Function (ROWS BETWEEN)
+Opt Vis. Technique: Sliding Window Overlay
+Dry Run (Opt): Generate 12 months. Join with monthly sums. Apply `AVG(...) OVER(ORDER BY month ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING)`.
+How to Draw (Opt): Draw a table with 12 rows. Draw a physical bracket covering rows 1, 2, and 3. Slide it down row by row to show the average calculation.
+Opt Complexity Visuals: Single Linear Aggregation
+How to Draw Opt Complexity: Draw a single pass through the month-summary table. $O(N)$.
+Mem Vis (BF): Temp Table Buffer: Draw multiple redundant copies of table segments.
+Mem Vis (Opt): Aggregate Cache: Draw a single clean output table with a "lookahead" pointer.

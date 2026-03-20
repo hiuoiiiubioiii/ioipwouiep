@@ -1,0 +1,13 @@
+ID: 1249
+Problem Title: Minimum Remove to Make Valid Parentheses
+Brute Force Method: Generate all possible subsequences of the string. For each, check if it's a valid parenthetical string. Pick the longest one.
+BF Complexity Visuals: Subsequence Power Set
+How to Draw BF: Draw a string. Branch for "Keep" or "Remove" for every character. Check the validity of every leaf. Write $O(2^N)$.
+Optimised Pattern: Stack / Two-Pass Filtering
+Opt Vis. Technique: Balance Counter / Redundant Marker
+Dry Run (Opt): Scan left-to-right: Keep a balance of open `(`. If `)` appears when balance is 0, mark it for removal. Scan right-to-left: Do the same for `(`. Combine markers to build the final string.
+How to Draw (Opt): Draw the string. Sweep an arrow rightarrow. If you hit a `)` and have no `(`, draw a red 'X' over it. Sweep <=ftarrow. If you have extra `(`, draw a red 'X' over them. Reconstruct from the remaining characters.
+Opt Complexity Visuals: Linear Scan &amp; Reconstruction
+How to Draw Opt Complexity: Draw two horizontal arrows (Forward and Backward). Show a third pass for the final build. Write $O(N)$.
+Mem Vis (BF): Draw a massive list of strings in memory.
+Mem Vis (Opt): Draw a Stack (storing indices) or a Character Array (same size as input). Space: $O(N)$.

@@ -1,0 +1,13 @@
+ID: 1633
+Problem Title: Percentage of Users Attended a Contest (SQL)
+Brute Force Method: For every contest ID, run a subquery to count all users in the Users table.
+BF Complexity Visuals: Nested Loop Subquery
+How to Draw BF: Draw a Contest table row. Inside, draw a separate magnifying glass scanning the entire User table. $O(C \cdot U)$.
+Optimised Pattern: Group By + Scalar Subquery / Cross Join
+Opt Vis. Technique: Bucket aggregation with Shared Total
+Dry Run (Opt): Group the Register table by contest_id. Divide the count(user_id) by a single pre-calculated (select count(*) from Users).
+How to Draw (Opt): Draw a table split into contest-ID buckets. Draw one big box representing the Total User Count. Draw arrows from buckets to the big box.
+Opt Complexity Visuals: Single Linear Table Scan
+How to Draw Opt Complexity: Draw a straight arrow through the Register table once. $O(R + U)$.
+Mem Vis (BF): Temporary Results Matrix: Draw multiple temporary tables for each subquery execution.
+Mem Vis (Opt): Hash Aggregate Buffer: Draw a small table in RAM where contest counts are incremented as the table is read.

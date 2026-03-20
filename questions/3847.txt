@@ -1,0 +1,13 @@
+ID: 3847
+Problem Title: Find the Score Difference in a Game (Med.)
+Brute Force Method: Minimax Recursion: Simulate every possible move for Player A and Player B, exploring the entire game tree to find the final score difference.
+BF Complexity Visuals: An exponential game tree where branches represent every valid move choice at each turn.
+How to Draw BF: Draw a root node. Branch out for every possible first move. Branch again for every second move. Write $O(2^N)$ or $O(N!)$.
+Optimised Pattern: Dynamic Programming (Interval DP).
+Opt Vis. Technique: A 2D "Score Table" where each cell represents the best relative score difference for a specific range of the array.
+Dry Run (Opt): Let `dp[i][j]` be the max score lead a player can get from subarray `[i...j]`. `dp[i][j] = max(arr[i] - dp[i+1][j], arr[j] - dp[i][j-1])`.
+How to Draw (Opt): Draw the array. Below it, draw a 2D grid. Fill the diagonal (single elements). Fill the rest by looking at the neighbors "below" and to the "left".
+Opt Complexity Visuals: A steady triangular sweep of a 2D matrix.
+How to Draw Opt Complexity: Draw a square N x N. Shade in half (the triangle). Write $O(N^2)$.
+Mem Vis (BF): Massive recursion stack for the game tree, $O(N)$.
+Mem Vis (Opt): A 2D DP table taking $O(N^2)$ space, which can be optimized to 1D (O(N)) by rolling rows.

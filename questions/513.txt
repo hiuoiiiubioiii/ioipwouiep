@@ -1,0 +1,13 @@
+ID: 513
+Problem Title: Find Bottom Left Tree Value
+Brute Force Method: DFS recording depth. Constantly update a global "max depth" and "value" variable (Left traversed first).
+BF Complexity Visuals: Deep plunging lines going down the left edges of subtrees. $O(N)$.
+How to Draw BF: Draw a tree. Trace the path deeply. Keep an eraser handy to constantly update the "max depth" box as you go deeper.
+Optimised Pattern: BFS (Level Order Traversal) but strictly Right-to-Left.
+Opt Vis. Technique: A sweeping laser beam scanning horizontally, dropping nodes onto a conveyor belt from right to left.
+Dry Run (Opt): Queue root. Pop. Push right child, then push left child. Repeat until queue is empty. Return the very last node popped.
+How to Draw (Opt): Draw tree. Draw a queue box. Put root in, take out, put Right child then Left child. Circle the final item remaining.
+Opt Complexity Visuals: Flat linear queue processing. $O(N)$.
+How to Draw Opt Complexity: Draw N boxes uniformly entering and exiting a horizontal tube.
+Mem Vis (BF): Deep call stack representing tree height. Space $O(H)$.
+Mem Vis (Opt): A wide horizontal queue holding at most N/2 nodes (the leaf level). Space $O(N)$.

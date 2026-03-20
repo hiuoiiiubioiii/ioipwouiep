@@ -1,0 +1,13 @@
+ID: 2954
+Problem Title: Count the Number of Infection Sequences
+Brute Force Method: Generate all possible permutations of the infection order using backtracking and check if they are valid. $O(N!)$.
+BF Complexity Visuals: Factorial Infection Tree
+How to Draw BF: Draw a line of healthy/infected nodes. Branch out for every possible "next infected" node. The tree grows infinitely.
+Optimised Pattern: Combinatorics + Modular Inverse
+Opt Vis. Technique: The Gap Permutation Math
+Dry Run (Opt): Identify "gaps" of uninfected people. For a gap bounded by two infected people, there are 2^length-1 ways to infect them. Multiply these variations and use combinations (nCr) to interleave the different gap sequences.
+How to Draw (Opt): Draw the array. Bracket the "gaps" of healthy nodes. Write a math formula under each gap, and multiply them together using a large combinatorial equation.
+Opt Complexity Visuals: Linear Scan + Fast Math $O(N \\text{log MOD})$
+How to Draw Opt Complexity: Draw a single pass to find gaps, followed by fast modular exponentiation.
+Mem Vis (BF): Storing millions of sequence arrays.
+Mem Vis (Opt): A few integer variables. $O(1)$ space.

@@ -1,0 +1,13 @@
+ID: 119
+Problem Title: Pascal's Triangle II
+Brute Force Method: Generate the entire Pascal's Triangle up to row `k` using the $O(N^2)$ space method from Q118, then just return the last row.
+BF Complexity Visuals: A massive 2D pyramid built in memory just to extract the final base layer, wasting $O(k^2)$ space.
+How to Draw BF: Draw the full triangle. Box the final row. Erase the rest of the triangle to illustrate the wasted computation and memory.
+Optimised Pattern: 1D Dynamic Programming (Rolling Array) calculated strictly from right-to-left.
+Opt Vis. Technique: A single row of blocks magically morphing its values in place to become the next row without needing a second canvas.
+Dry Run (Opt): Initialize array of size `k+1` with 1s. Loop rows 1 to `k`. Inner loop from `j = row_index - 1` down to 1: `arr[j] = arr[j] + arr[j-1]`.
+How to Draw (Opt): Draw a single 1D array. Update the values strictly from right to left using the old left value and the current value. Show how left-to-right overwrites data prematurely.
+Opt Complexity Visuals: $O(k^2)$ time with strictly $O(k)$ space. The in-place mutation graph loops back onto itself.
+How to Draw Opt Complexity: Draw a single row of boxes. Draw curved arrows looping out of a box and back into itself, adding the neighbor's value, completing the $O(k)$ space proof.
+Mem Vis (BF): $O(k^2)$ full 2D array matrix allocated in heap.
+Mem Vis (Opt): Visualize a single 1D $O(k)$ array constantly overwriting its own values backwards, maintaining an ultra-lean memory profile.

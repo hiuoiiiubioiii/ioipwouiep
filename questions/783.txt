@@ -1,0 +1,13 @@
+ID: 783
+Problem Title: Minimum Distance Between BST Nodes
+Brute Force Method: Calculate the difference between every single pair of nodes in the tree.
+BF Complexity Visuals: Pairwise Nested Loop
+How to Draw BF: Draw a BST. Draw lines connecting every node to every other node. $O(N^2)$.
+Optimised Pattern: In-Order Traversal (Sorted Property)
+Opt Vis. Technique: Flattened Number Line
+Dry Run (Opt): An in-order traversal of a BST yields a sorted array. The minimum difference must be between two adjacent elements in the sorted sequence.
+How to Draw (Opt): Draw the BST. Draw a single snake-like arrow passing through nodes in order (Left -&gt; Root -&gt; Right). Record the "previous" node's value.
+Opt Complexity Visuals: Single Tree Sweep
+How to Draw Opt Complexity: Draw the tree and trace the in-order path. $O(N)$.
+Mem Vis (BF): Full array of all node pairs.
+Mem Vis (Opt): Recursive stack $O(H)$ and one variable for `prev_val`.

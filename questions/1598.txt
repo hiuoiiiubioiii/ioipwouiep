@@ -1,0 +1,13 @@
+ID: 1598
+Problem Title: Crawler Log Folder
+Brute Force Method: Split the full path string by '/' and simulate the navigation using a list, adding or removing elements. $O(N \cdot L)$.
+BF Complexity Visuals: String-Splitting Navigation
+How to Draw BF: Draw a list of folder names. For "../", cross out the last name. For "./", do nothing. For "dir/", add a name.
+Optimised Pattern: Stack / Integer Counter
+Opt Vis. Technique: The Depth Gauge
+Dry Run (Opt): Treat the folder structure as a depth level. Start at 0. "../" means `depth = max(0, depth - 1)`. "x/" means `depth++`. "./" means do nothing.
+How to Draw (Opt): Draw a vertical line (y-axis). A pointer starts at 0. For each log, move the pointer up or down. The final y-value is the answer.
+Opt Complexity Visuals: Single-Pass Linear $O(N)$
+How to Draw Opt Complexity: Draw a single horizontal line. Each log entry is checked once with a constant $O(1)$ arithmetic update.
+Mem Vis (BF): Storing the full path as an array of strings. $O(N)$.
+Mem Vis (Opt): A single integer variable `ans`. $O(1)$ space.

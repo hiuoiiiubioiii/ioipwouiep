@@ -1,0 +1,13 @@
+ID: 1838
+Problem Title: Frequency of the Most Frequent Element
+Brute Force Method: For every element i, try using k operations to make other elements equal to nums[i]. Check max count.
+BF Complexity Visuals: N x N growth matrix.
+How to Draw BF: Draw an array. Pick one element. Draw arrows showing other elements "growing" to its height. $O(N^2)$.
+Optimised Pattern: Sorting + Sliding Window.
+Opt Vis. Technique: Growing window on a sorted bar chart.
+Dry Run (Opt): Sort. Use window (L, R). Total operations needed = nums[R] \times (R - L + 1) - \text{current\_sum}. If &gt; k, move L.
+How to Draw (Opt): Draw bars in increasing order. Draw a rectangle (L, R) with height nums[R]. Empty space in rectangle must be \le k.
+Opt Complexity Visuals: $O(N \log N)$ Sort + Linear Scan.
+How to Draw Opt Complexity: Draw a merge-sort tree followed by a single line with two pointers (L, R).
+Mem Vis (BF): No extra structure, but repeated sum calculations.
+Mem Vis (Opt): Sorting overhead + sliding window variables (O(1) or $O(N)$ space).

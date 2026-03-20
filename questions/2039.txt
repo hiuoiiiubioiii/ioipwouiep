@@ -1,0 +1,13 @@
+ID: 2039
+Problem Title: The Time When the Network Becomes Idle
+Brute Force Method: Simulate every single second of the network. Track every individual message traveling back and forth along the edges.
+BF Complexity Visuals: Chaotic Particle Simulation
+How to Draw BF: Draw a graph. For every tick of a clock, draw little dots (messages) moving along edges. The number of dots grows massively due to retries. Time Limit Exceeded.
+Optimised Pattern: Breadth-First Search (BFS) + Mathematical Formula
+Opt Vis. Technique: Concentric Ripple Expansion
+Dry Run (Opt): Use BFS from the master node (0) to find the shortest path (distance * 2 = round trip time) for each node. Use math `(round_trip - 1) / patience * patience + round_trip` to find when the last message arrives. Find max.
+How to Draw (Opt): Draw the graph with node 0 at the top. Draw downward layers (Level 1, Level 2). Write the round-trip time next to each node, then apply the math formula to find its specific "idle time".
+Opt Complexity Visuals: BFS Tree to Array Max
+How to Draw Opt Complexity: Draw a BFS traversal touching all V vertices and E edges $O(V+E)$. Then draw an $O(V)$ scan across an array of calculated idle times.
+Mem Vis (BF): Heavy object-oriented queues tracking the exact location and timer of thousands of simulated packets.
+Mem Vis (Opt): A standard BFS Queue, a `visited` array, and a `distances` array. Space $O(V)$.

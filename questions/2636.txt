@@ -1,0 +1,13 @@
+ID: 2636
+Problem Title: Promise Pool
+Brute Force Method: Launch all promises simultaneously using `Promise.all()`.
+BF Complexity Visuals: Exploding Parallel Spikes
+How to Draw BF: Draw a single point in time and N arrows shooting out at once. No limit/control. $O(N)$.
+Optimised Pattern: Recursive Chain / Worker Pool
+Opt Vis. Technique: Moving Window of Concurrency
+Dry Run (Opt): Start `n` promises. When one finishes, immediately start the next pending function from the list. Maintain exactly `n` active workers.
+How to Draw (Opt): Draw a pipe with width `n`. Draw functions entering the pipe. As one exits (resolves), another enters the other side.
+Opt Complexity Visuals: Parallel Execution Timeline
+How to Draw Opt Complexity: Draw N blocks of varying lengths packed into `n` horizontal rows. Total time = sum(durations) / n.
+Mem Vis (BF): Memory spike for N promises
+Mem Vis (Opt): $O(n)$ active promise handles in the heap at any given time.

@@ -1,0 +1,13 @@
+ID: 1771
+Problem Title: Maximize Palindrome Length From Subsequences
+Brute Force Method: Generate all subsequences of word1 and word2. Concatenate them and check if the result is a palindrome. Track the max length.
+BF Complexity Visuals: Power Set Generation &amp; Symmetry Check.
+How to Draw BF: Draw two sets of branching paths (2^N and 2^M). For every leaf in A, combine with every leaf in B. $O(2^{N+M})$.
+Optimised Pattern: 2D Dynamic Programming (LPS on word1 + word2).
+Opt Vis. Technique: The "Bridged" DP Grid.
+Dry Run (Opt): Concatenate S = word1 + word2. Run Longest Palindromic Subsequence (LPS). Only update max length if the palindrome characters chosen span across the boundary of word1 and word2.
+How to Draw (Opt): Draw an (N+M) \times (N+M) grid. Mark the boundary line. Only "count" cells where the indices i and j are on opposite sides of the line and S[i] == S[j].
+Opt Complexity Visuals: Diagonal Matrix Fill.
+How to Draw Opt Complexity: Draw the square matrix and draw diagonal arrows representing the state transitions. Label $O((N+M)$^2).
+Mem Vis (BF): Huge list of subsequence strings.
+Mem Vis (Opt): 2D array of size (N+M) \times (N+M). $O((N+M)$^2) space.

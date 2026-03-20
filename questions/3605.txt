@@ -1,0 +1,13 @@
+ID: 3605
+Problem Title: Minimum Stability Factor of Array (Hard)
+Brute Force Method: Generate all possible contiguous subarrays (O(N^2)) and calculate stability for each (O(N)), tracking the minimum.
+BF Complexity Visuals: Subarray Triangle Grid.
+How to Draw BF: Draw an N x N grid. Shade the upper triangle. For each cell (i, j), draw a loop inside it. Write $O(N^3)$ or $O(N^2)$ if optimized slightly.
+Optimised Pattern: Sliding Window with Monotonic Deque OR Segment Tree (depending on exact stability constraint).
+Opt Vis. Technique: Caterpillar/Inchworm Movement.
+Dry Run (Opt): Draw a bracket [ ] over the array. Expand the right side until stability is achieved. Shrink the left side to minimize the factor.
+How to Draw (Opt): Draw the array. Keep two pointers (L, R). Below it, draw a Monotonic Queue tracking max/min in current window. Cross out elements as they fall out of window.
+Opt Complexity Visuals: Two-Pointer Timeline / Amortized Analysis graph.
+How to Draw Opt Complexity: Draw an axis from 0 to N. Plot the L pointer and R pointer. Show that neither pointer EVER moves backwards. Thus, 2N total steps = $O(N)$.
+Mem Vis (BF): Draw a massive 2D array storing intermediate states of every possible subarray.
+Mem Vis (Opt): Draw a Double-Ended Queue (Deque). Show numbers entering the back, and older/smaller numbers getting "popped" out to maintain strict order.

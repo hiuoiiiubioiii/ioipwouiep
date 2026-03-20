@@ -1,0 +1,13 @@
+ID: 2119
+Problem Title: A Number After a Double Reversal
+Brute Force Method: Convert integer to string, reverse it, parse to int. Repeat the process. Compare results.
+BF Complexity Visuals: String allocation, character shifting, and type-casting loops.
+How to Draw BF: Draw a number, convert to a text box, flip the text box backwards, convert back to number.
+Optimised Pattern: Math / Observation (O(1)).
+Opt Vis. Technique: A simple logic gate.
+Dry Run (Opt): Check if the number is exactly 0. If yes, True. Otherwise, check if `num % 10 == 0`. If yes, False. Else, True.
+How to Draw (Opt): Draw a number. Look at the last digit. If it's a '0' (and the number isn't just '0'), draw a red 'X' because the zero will vanish when reversed.
+Opt Complexity Visuals: $O(1)$ constant time modulo operation.
+How to Draw Opt Complexity: A single dot representing instant evaluation.
+Mem Vis (BF): Multiple intermediate String and StringBuilder allocations.
+Mem Vis (Opt): No extra memory. Pure $O(1)$ integer evaluation.

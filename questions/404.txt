@@ -1,0 +1,13 @@
+ID: 404
+Problem Title: Sum of Left Leaves
+Brute Force Method: DFS Traversal Visit every node, pass a flag if it's a left child, sum if it's a leaf.
+BF Complexity Visuals: Tree Traversal
+How to Draw BF: Draw a binary tree. Trace a line visiting every single node exactly once. $O(N)$.
+Optimised Pattern: DFS/BFS Traversal (Same as Brute force, as you must visit every node to check).
+Opt Vis. Technique: Flagged Tree
+Dry Run (Opt): Color left branches green and right branches red. If a node has a green incoming branch AND no children, circle it.
+How to Draw (Opt): Draw a binary tree. Mark left edges with 'L'. Circle nodes that have an incoming 'L' edge and no outgoing edges.
+Opt Complexity Visuals: Tree Traversal
+How to Draw Opt Complexity: Draw a binary tree. Draw an arrow entering and leaving every node to show $O(N)$ time.
+Mem Vis (BF): Call Stack Draw stack frames equal to the height of the tree $O(H)$.
+Mem Vis (Opt): Call Stack Draw stack frames equal to the height of the tree $O(H)$.

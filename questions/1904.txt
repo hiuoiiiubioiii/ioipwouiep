@@ -1,0 +1,13 @@
+ID: 1904
+Problem Title: The Number of Full Rounds You Have Played
+Brute Force Method: Step minute by minute from start time to end time, checking if a 15-minute interval is completed.
+BF Complexity Visuals: Minute-by-Minute Tick Line
+How to Draw BF: Draw a clock face or timeline. Put tick marks for every single minute passed, accumulating $O(\text{Total Minutes})$ steps.
+Optimised Pattern: Math / Modular Arithmetic
+Opt Vis. Technique: Interval Snapping / Step Functions
+Dry Run (Opt): Convert times to minutes. Snap start time to the next 15-min mark (ceil). Snap end time to the previous 15-min mark (floor). Subtract.
+How to Draw (Opt): Draw a timeline. Plot start and end. Draw curved arrows pushing "start" forward to a 15-min notch and "end" backward to a 15-min notch. Count blocks.
+Opt Complexity Visuals: $O(1)$ Constant Calculation Box
+How to Draw Opt Complexity: Draw a single input box mapping to an equation `(end - start) / 15`, resulting in a single output box. $O(1)$ time.
+Mem Vis (BF): A `while` loop accumulating a counter integer in the stack.
+Mem Vis (Opt): Just 4 simple integer variables in the call stack (`start_mins`, `end_mins`, `rounded_start`, `rounded_end`).

@@ -1,0 +1,13 @@
+ID: 2459
+Problem Title: Sort Array by Moving Items to Empty Space
+Brute Force Method: Standard BFS to find shortest path to target state. $O(N!)$.
+BF Complexity Visuals: Factorial Graph Search
+How to Draw BF: Draw an array. Branch out to every possible array state achievable by swapping with 0.
+Optimised Pattern: Graph Cycle Decomposition
+Opt Vis. Technique: The Permutation Loop Tracker
+Dry Run (Opt): Treat the array as a graph of indices pointing to where elements *should* be. Find cycles. A cycle of length L takes L-1 swaps if 0 is inside it, or L+1 swaps if 0 must be brought in. Check two targets: 0 at start vs 0 at end.
+How to Draw (Opt): Draw the array. Draw an arrow from `nums[i]` to where it belongs. The arrows form loops. Count the nodes in each closed loop.
+Opt Complexity Visuals: Linear Cycle Tracing $O(N)$
+How to Draw Opt Complexity: Draw a single straight line visiting each element. Once an element is part of a cycle, mark it seen.
+Mem Vis (BF): Queue holding millions of array states.
+Mem Vis (Opt): A single boolean 'visited' array. $O(N)$ space.

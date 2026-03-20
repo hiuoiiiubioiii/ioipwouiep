@@ -1,0 +1,13 @@
+ID: 1223
+Problem Title: Dice Roll Simulation
+Brute Force Method: Generate all possible dice roll sequences of length 'n' (6^n possibilities). Then loop through each sequence and discard it if it violates the `rollMax` constraints.
+BF Complexity Visuals: 6-ary Combinatorial Tree
+How to Draw BF: Draw a root node. Branch it out 6 ways (dice faces 1-6). From each, branch out 6 ways again. Mark entire subtrees with a red 'X' if they break the rules. Write $O(6^N)$.
+Optimised Pattern: 3D Dynamic Programming
+Opt Vis. Technique: Constrained Stacking Blocks
+Dry Run (Opt): Track three things: `(current_roll_length, last_face_rolled, consecutive_count)`. To build the next roll, you can pick any face 1-6. If it's the same as `last_face`, increment `consecutive_count`. If `consecutive_count` exceeds `rollMax`, that move is blocked.
+How to Draw (Opt): Draw a 3D grid or a set of tables. Rows are 'n' (rolls), Columns are 'dice faces' (1-6). Inside each cell, write an array representing 'consecutive counts' (up to 15). Draw arrows from row i to row i+1 adding up the valid previous states.
+Opt Complexity Visuals: 3D Bounded Matrix Fill
+How to Draw Opt Complexity: Draw a 3D rectangular prism with dimensions N x 6 x 15. Shade it in progressively layer by layer. Write $O(N \cdot 6 \cdot 15)$ which simplifies to $O(N)$.
+Mem Vis (BF): Draw an enormous Call Stack block representing depth 'N' recursion with 6 branches each.
+Mem Vis (Opt): Draw a 3D integer array `dp[N][6][15]` or optimize to just two 2D arrays `curr[6][15]` and `prev[6][15]` for $O(1)$ space.

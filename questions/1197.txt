@@ -1,0 +1,13 @@
+ID: 1197
+Problem Title: Minimum Knight Moves
+Brute Force Method: BFS from (0,0) to all directions until target (x, y) is found.
+BF Complexity Visuals: Radial Explosion (Infinite Grid)
+How to Draw BF: Draw a grid. From (0,0), draw 8 arrows. From each of those, draw 8 more. Show the massive number of cells visited far away from target.
+Optimised Pattern: BFS with Symmetry + Pruning (or Math)
+Opt Vis. Technique: Quadrant-Mapped Target Search
+Dry Run (Opt): Use the absolute value of x, y to focus on the first quadrant. Prune BFS to stay within a small buffer area around the target. Use a hash set for visited states.
+How to Draw (Opt): Draw only one quadrant of the grid. Mark the target. Use a "Compass" showing the 8 moves but cross out moves that go significantly away from (0,0) or target.
+Opt Complexity Visuals: Layered Search $O(|x| \cdot |y|)$
+How to Draw Opt Complexity: Draw a series of concentric "Knight-Move" shapes expanding toward the target.
+Mem Vis (BF): Massive state map
+Mem Vis (Opt): Hash Set of visited (x, y) coordinates. Draw a small 2D table of seen points.

@@ -1,0 +1,13 @@
+ID: 2196
+Problem Title: Create Binary Tree From Descriptions
+Brute Force Method: For every description, scan all previously created nodes to find the parent and child. If not found, create them.
+BF Complexity Visuals: $O(N^2)$ search through a growing list of orphan nodes.
+How to Draw BF: Draw a list of nodes. For a new description, draw arrows checking every node in the list. Write $O(N^2)$.
+Optimised Pattern: Hash Map (Val -&gt; Node) + Set (Child Tracking).
+Opt Vis. Technique: A central warehouse (Map) that instantly retrieves any part needed for the machine.
+Dry Run (Opt): Iterate descriptions. Store nodes in a Map. Map `[parentVal] -&gt; Node(parentVal)`. Link child to parent based on `isLeft`. Add child values to a 'Children' Set. The Root is the only parent not in the Children Set.
+How to Draw (Opt): Draw a Map box. For `[20, 15, 1]`, write 20 and 15 in the box. Draw an arrow from 20 to 15. Write "15" in a "Not Root" bucket. After the loop, pick the only number not in the bucket.
+Opt Complexity Visuals: $O(N)$ single pass.
+How to Draw Opt Complexity: A straight horizontal line scanning descriptions, feeding into a single Map lookup.
+Mem Vis (BF): $O(N)$ search logic variables.
+Mem Vis (Opt): $O(N)$ for the Hash Map and Child Set.

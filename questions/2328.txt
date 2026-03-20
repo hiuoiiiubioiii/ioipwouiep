@@ -1,0 +1,13 @@
+ID: 2328
+Problem Title: Number of Increasing Paths in a Grid
+Brute Force Method: Run a standard DFS from every single cell in the grid, exploring all possible strictly increasing paths without saving previous results.
+BF Complexity Visuals: Explosive Overlapping Trees (O(4^(M*N)))
+How to Draw BF: Draw a grid. From every single cell, draw branching arrows to neighbors, which branch to their neighbors, creating an unreadable tangled web.
+Optimised Pattern: DFS + Memoization (or Sorting + DP)
+Opt Vis. Technique: Directed Acyclic Graph (DAG) Flow
+Dry Run (Opt): Create a `memo` matrix. Run DFS from a cell. If a neighbor is strictly greater, add its DFS result to the current path count. Save the total in `memo`. If a cell has a `memo` value, return it instantly.
+How to Draw (Opt): Draw a grid with numbers. Draw arrows strictly pointing from smaller numbers to adjacent larger numbers. Write the total path count in each cell as you backtrack, preventing you from ever tracing the same arrow twice.
+Opt Complexity Visuals: Flat Matrix Fill (O(M * N))
+How to Draw Opt Complexity: Draw the matrix. Draw a single dot in each cell appearing exactly once as the memo table gets populated.
+Mem Vis (BF): Draw an astronomically deep Call Stack that repeatedly visits the same cells.
+Mem Vis (Opt): Draw a 2D `memo` Matrix storing integers, and a bounded Call Stack (max depth M*N).

@@ -1,0 +1,13 @@
+ID: 980
+Problem Title: Unique Paths III
+Brute Force Method: Standard DFS/Backtracking that counts all paths from start to end without checking if all empty squares were visited.
+BF Complexity Visuals: $O(4^(R\cdot C)$). A sprawling tree where paths loop and miss squares, leading to incorrect counts.
+How to Draw BF: Draw a grid. Draw a line from start to end that skips the middle. Draw a red 'X' over it because it didn't touch every cell.
+Optimised Pattern: Backtracking with State (Hamiltonian Path)
+Opt Vis. Technique: "The Greedy Roomba." You must "vacuum" every single empty square exactly once before reaching the finish line.
+Dry Run (Opt): 1. Count total empty squares. 2. DFS from start. 3. Mark current cell as visited. 4. If current is end and `remain == 0`, `count++`. 5. Backtrack (unmark cell).
+How to Draw (Opt): Draw a maze. Use a highlighter to trace a path. The path is only valid if there is no white space left in the "empty" zones when you reach the end.
+Opt Complexity Visuals: $O(3^N)$ where N is the number of empty cells. At each step, you have at most 3 choices (can't go back).
+How to Draw Opt Complexity: Draw a decision tree where each node represents a `(row, col, remaining_squares)` state. Show branches dying if they reach the end too early.
+Mem Vis (BF): Deep recursion stack, but functionally incorrect results.
+Mem Vis (Opt): $O(R\cdot C)$ for the recursion stack. Draw a vertical column of grid coordinates.

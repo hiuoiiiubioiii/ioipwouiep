@@ -1,0 +1,13 @@
+ID: 216
+Problem Title: Combination Sum III
+Brute Force Method: Generate all possible subsets of numbers 1-9, then filter for length K and sum N.
+BF Complexity Visuals: Full Binary Decision Tree: $O(2^9)$ Time.
+How to Draw BF: Draw a complete binary tree where every level (1 to 9) has a "take" or "skip" branch, exploding into 512 leaves.
+Optimised Pattern: Backtracking with Early Pruning
+Opt Vis. Technique: Pruned N-ary Tree
+Dry Run (Opt): Pick a number. If the sum exceeds N or the count exceeds K, immediately stop and draw an 'X'. Move back up the tree.
+How to Draw (Opt): Draw a root node. Branch out to valid next numbers. Red cross out branches where `current_sum &gt; N` or `depth &gt; K`. Circle leaves that perfectly match.
+Opt Complexity Visuals: Bounded Depth Tree: $O(9! / (9-K)$!) Time.
+How to Draw Opt Complexity: Draw a tree that strictly stops at depth K. Show the branching factor decreasing (9, then 8, then 7...) at each step.
+Mem Vis (BF): Call stack array copying every possible combination.
+Mem Vis (Opt): Single Mutable Array (Path): Draw one array box. Write numbers in, erase the last number when backtracking, and write the next.

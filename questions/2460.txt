@@ -1,0 +1,13 @@
+ID: 2460
+Problem Title: Apply Operations to an Array
+Brute Force Method: Iterate and modify. Then, create a new array and loop through the original twice: once to pick non-zeros and once to fill with zeros.
+BF Complexity Visuals: Two-Pass Auxiliary Copy
+How to Draw BF: Draw two arrays. Show arrows moving non-zero elements to the top array. Label $O(N)$.
+Optimised Pattern: In-Place Two-Pointer Swap
+Opt Vis. Technique: Snowball/Zero-Bubble Pushing
+Dry Run (Opt): Step 1: If `nums[i] == nums[i+1]`, double `nums[i]` and zero `nums[i+1]`. Step 2: Use a write-pointer to overwrite non-zeros and fill the rest with zero.
+How to Draw (Opt): Draw the array. Use an 'R' (Read) and 'W' (Write) arrow. If R sees a number, move it to W and increment both. If R sees 0, only R moves.
+Opt Complexity Visuals: Single Pass Pointer Line
+How to Draw Opt Complexity: Draw one line with two pointers moving left-to-right. Label $O(N)$ Time.
+Mem Vis (BF): Draw a second array of size N. $O(N)$.
+Mem Vis (Opt): Draw the original array with two pointers. $O(1)$ extra Space.

@@ -1,0 +1,13 @@
+ID: 2035
+Problem Title: Partition Array Into Two Arrays to Minimize Sum Difference
+Brute Force Method: Generate every single possible combination of picking exactly N elements out of 2N elements. $O(2^(2N)$).
+BF Complexity Visuals: Exploding N-Choose-K Tree
+How to Draw BF: Draw a root. Branch out 2N ways. Then 2N-1 ways. The tree becomes completely unmanageable to draw after 3 levels. Time Limit Exceeded.
+Optimised Pattern: Meet in the Middle + Binary Search
+Opt Vis. Technique: Bridge Connecting Two Islands
+Dry Run (Opt): Split array into Left and Right halves. Calculate all subset sums for both (categorized by how many elements were picked). To find best match for Left subset of size `k`, binary search the Right subsets of size `N-k`.
+How to Draw (Opt): Draw two islands (Left and Right). On each island, sort subsets into buckets labeled by size (0 to N). Draw a bridge connecting a bucket of size `k` on the left to `N-k` on the right.
+Opt Complexity Visuals: Two Small Trees + Sorting/Binary Search
+How to Draw Opt Complexity: Draw two separate $O(2^N)$ trees (much smaller than $O(2^(2N)$)). Followed by sorting arrays and drawing $O(\log 2^N)$ binary search arcs between them.
+Mem Vis (BF): A massive recursive call stack holding every possible N-length combination before validation.
+Mem Vis (Opt): Arrays of Lists (`List[]`) storing all possible subset sums for the Left and Right halves. Space $O(2^N)$.

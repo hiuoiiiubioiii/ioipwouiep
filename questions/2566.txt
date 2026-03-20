@@ -1,0 +1,13 @@
+ID: 2566
+Problem Title: Maximum Difference by Remapping a Digit
+Brute Force Method: Try remapping every digit (0-9) to 9 to find the maximum, and remapping every digit to 0 to find the minimum. Compare all results. $O(10 \cdot 10 \\text{cdot Digits})$.
+BF Complexity Visuals: A "Brute Force Replacement" table where every digit takes a turn being swapped out and tested.
+How to Draw BF: Write the number. Change all '1's to '9's, then all '2's to '9's. Pick the biggest. Then change all '1's to '0's, then '2's to '0's. Pick the smallest. Subtract.
+Optimised Pattern: Greedy First-Digit Replacement.
+Opt Vis. Technique: A "Priority Swap" visual where we target the leftmost non-9 digit for the max and the leftmost digit for the min.
+Dry Run (Opt): To Maximize: Find the first digit that is not '9' and replace all occurrences of that digit with '9'. To Minimize: Take the very first digit and replace all occurrences of it with '0'. Subtract the two resulting numbers.
+How to Draw (Opt): Write the number. For Max: Circle the first digit that isn't a 9. Turn every digit like it into a 9. For Min: Circle the first digit. Turn every digit like it into a 0. Subtract the results.
+Opt Complexity Visuals: $O(\text{Digits})$ - A single pass to find the target digit and another to replace.
+How to Draw Opt Complexity: Draw a horizontal line of digits. Draw one arrow to find the "target" and another arrow to perform the swap.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(\text{Digits})$ to store the number as a string for easy replacement.

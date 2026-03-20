@@ -1,0 +1,13 @@
+ID: 3222
+Problem Title: Find the Winning Player in Coin Game
+Brute Force Method: Recursive Game Tree simulation tracking whose turn it is and subtracting coins until one loses.
+BF Complexity Visuals: Minimax Decision Tree
+How to Draw BF: Draw a root node with (Coins X, Coins Y). Draw a branch subtracting (1, 4). Label nodes Alice and Bob alternately until failure.
+Optimised Pattern: Mathematical Parity / Bottleneck Check
+Opt Vis. Technique: Bottleneck Resource Graph
+Dry Run (Opt): Since exactly 115 must be made (1x75 + 4x10), calculate maximum possible turns: min(x, y // 4). If turns is odd, Alice wins. Even, Bob wins.
+How to Draw (Opt): Draw two buckets (X and Y). Write the formula min(X, floor(Y/4)). Write the result modulo 2 to determine the winner without simulating turns.
+Opt Complexity Visuals: $O(1)$ Constant Time Block
+How to Draw Opt Complexity: Draw a single box containing a basic division and modulo operation, labeling it strictly $O(1)$ time.
+Mem Vis (BF): Call stack matching the number of turns.
+Mem Vis (Opt): $O(1)$ constant scalar variables.

@@ -1,0 +1,13 @@
+ID: 3664
+Problem Title: Two-Letter Card Game (Med)
+Brute Force Method: Simulate every possible turn and every possible card combination to find the winning strategy. $O(N^2)$.
+BF Complexity Visuals: Game-State Decision Tree.
+How to Draw BF: Draw two hands of cards. Branch out: "If I play card A, what can they play?" "If I play card B..." The tree depth is the number of cards.
+Optimised Pattern: Greedy Sorting / Hash Map counting. Pair cards based on their first and second letters to maximize your "counter-plays".
+Opt Vis. Technique: Matching Letter Hubs.
+Dry Run (Opt): Think of cards as "connectors". A card 'AB' can only be played after a card ending in 'A'. Group cards by their starting and ending letters.
+How to Draw (Opt): Draw 26 nodes (letters). Draw an arrow for each card (e.g., 'AB' is an arrow from A to B). The game is about finding paths or cycles in this letter graph.
+Opt Complexity Visuals: Graph Traversal / Map Lookup.
+How to Draw Opt Complexity: Write $O(N + 26^2)$. N to build the graph, then a constant time to check the 26x26 letter combinations.
+Mem Vis (BF): Storing every possible sequence of cards played in a list.
+Mem Vis (Opt): A 2D array `counts[26][26]` representing all possible two-letter combinations. Space $O(1)$ relative to N.

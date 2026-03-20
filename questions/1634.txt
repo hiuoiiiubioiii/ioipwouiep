@@ -1,0 +1,13 @@
+ID: 1634
+Problem Title: Add Two Polynomials Represented as Linked Lists
+Brute Force Method: Merge both lists into one, then sort by exponent and combine terms with the same power.
+BF Complexity Visuals: Unstructured Merge + Sort
+How to Draw BF: Draw two chains merging into a messy pile, then passing through an $O(N \log N)$ sorting funnel.
+Optimised Pattern: Two Pointers (Merge Sort Style)
+Opt Vis. Technique: Synchronized Zipper Traversal
+Dry Run (Opt): Place a pointer on both heads. If exp1 &gt; exp2, add term1 and move p1. If exp2 &gt; exp1, add term2 and move p2. If equal, add coefficients.
+How to Draw (Opt): Draw two parallel chains. Move two arrows left-to-right. Draw a new chain forming underneath as the arrows move.
+Opt Complexity Visuals: Linear Simultaneous Scan
+How to Draw Opt Complexity: Draw two parallel horizontal arrows moving at the same speed. $O(N+M)$.
+Mem Vis (BF): Temporary Array/Map: Draw a separate data structure storing all nodes for sorting.
+Mem Vis (Opt): In-place / Single Chain: Draw a single new chain being linked node-by-node using existing values. $O(1)$ auxiliary space (excluding result).

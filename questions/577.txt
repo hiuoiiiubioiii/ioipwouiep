@@ -1,0 +1,13 @@
+ID: 577
+Problem Title: Employee Bonus (SQL)
+Brute Force Method: For every employee in the Employee table, search the entire Bonus table to see if they have a bonus entry and if it's less than 1000.
+BF Complexity Visuals: Nested loop search across two tables. $O(E \\text{times} B)$.
+How to Draw BF: Draw two tables. Pick an ID from Table 1. Scan every row of Table 2 to find a match. Repeat.
+Optimised Pattern: Left Join with Null/Value Filtering.
+Opt Vis. Technique: A "Master List" where you attach sticky notes (bonuses) to names. You keep everyone who has a note &lt; 1000 AND everyone who doesn't have a note at all.
+Dry Run (Opt): `SELECT name, bonus FROM Employee LEFT JOIN Bonus ON Employee.empId = Bonus.empId WHERE bonus &lt; 1000 OR bonus IS NULL`.
+How to Draw (Opt): Draw the Employee table. Draw the Bonus table. Draw lines connecting matching IDs. If an Employee has no line, or the line leads to a value &lt; 1000, circle them.
+Opt Complexity Visuals: Index-based join or Hash join. $O(E + B)$.
+How to Draw Opt Complexity: Draw two tables being merged into one based on a shared ID column.
+Mem Vis (BF): $O(1)$ extra space but very slow execution.
+Mem Vis (Opt): Temporary join buffer in memory. $O(E + B)$.

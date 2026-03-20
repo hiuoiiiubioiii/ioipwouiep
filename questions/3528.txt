@@ -1,0 +1,13 @@
+ID: 3528
+Problem Title: Unit Conversion I (Med)
+Brute Force Method: Run a BFS or DFS graph traversal for every single conversion query to find the multiplier path.
+BF Complexity Visuals: Wandering Graph Search.
+How to Draw BF: Draw nodes (units) and edges (rates). For each query, trace a winding path from start to target multiplying edges.
+Optimised Pattern: Floyd-Warshall (Precomputation) or Weighted Disjoint Set Union (DSU).
+Opt Vis. Technique: Precomputed Conversion Matrix / Star Graph.
+Dry Run (Opt): Precalculate all pairs or relate everything to a single "base unit". To convert A to B, calculate (A to Base) * (Base to B).
+How to Draw (Opt): Draw a grid with units on X and Y axes. Point your finger to cell (A, B) to instantly get the multiplier value.
+Opt Complexity Visuals: $O(1)$ Matrix Lookup / Tree Jump.
+How to Draw Opt Complexity: Draw a query instantly pointing to a 2D matrix coordinate. $O(1)$ per query after $O(V^3)$ or $O(V)$ setup.
+Mem Vis (BF): Deep Recursion Call Stack: Draw deep stack frames for DFS paths holding intermediate conversion floats.
+Mem Vis (Opt): Dense 2D Matrix: Draw a compact N x N grid populated with precomputed floating-point rates.

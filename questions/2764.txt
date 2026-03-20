@@ -1,0 +1,13 @@
+ID: 2764
+Problem Title: Is Array a Preorder of Some Binary Tree
+Brute Force Method: Recursively attempt to build every possible valid BST shape from the array. $O(\text{Exponential})$.
+BF Complexity Visuals: Tree Shape Permutations
+How to Draw BF: Draw the root. Branch out trying to fit the next number as a left child, then a right child. Backtrack constantly.
+Optimised Pattern: Monotonic Stack (Parent Tracking)
+Opt Vis. Technique: The Right-Branch Verifier
+Dry Run (Opt): In a preorder traversal represented as nodes with depths, the depth must increment by exactly 1 (going left) or decrease/stay same (going right up the tree). Use a stack to track the path. Pop the stack if the next node's depth is <= the stack top's depth.
+How to Draw (Opt): Draw a vertical tube (stack). Push the root. Read the next node. If its depth is deeper, push it. If it's shallower, pop the tube until you find its parent depth. If the parent doesn't exist, it's invalid.
+Opt Complexity Visuals: Single Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw an array timeline. Show $O(1)$ amortized stack push/pop operations at each step.
+Mem Vis (BF): Generating physical tree nodes in memory.
+Mem Vis (Opt): A stack storing node depths. $O(H)$ space.

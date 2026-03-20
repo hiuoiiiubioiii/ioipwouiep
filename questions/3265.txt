@@ -1,0 +1,13 @@
+ID: 3265
+Problem Title: Count Almost Equal Pairs I
+Brute Force Method: For every pair (i, j), check if swapping two digits in one number makes it equal to the other. $O(N² \cdot D²)$.
+BF Complexity Visuals: Quadratic Pair Matrix
+How to Draw BF: Draw an N x N grid. In each cell, draw a nested loop checking all possible digit swaps for that pair. Label as "Computationally Heavy."
+Optimised Pattern: Hash Map + Digit Perturbation
+Opt Vis. Technique: Set-Based Collision Map
+Dry Run (Opt): For each number, generate all possible "almost equal" variations (by swapping two digits). Store the original in a map. Count how many times each variation exists in the map.
+How to Draw (Opt): Draw a number "123". Draw lines to its neighbors: "213", "321", "132". Store these in a box (HashMap). Check if the target number is already in that box.
+Opt Complexity Visuals: Linearized Frequency Pass
+How to Draw Opt Complexity: Draw one block for $O(N \cdot D²)$ to generate variations. Draw a second $O(N)$ pass to tally results. Result: $O(N \cdot D²)$.
+Mem Vis (BF): $O(N²)$ temporary string storage.
+Mem Vis (Opt): A HashMap storing N entries and their variations (O(N * D²) space).

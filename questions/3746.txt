@@ -1,0 +1,13 @@
+ID: 3746
+Problem Title: Minimum String Length After Balanced Removals (Med)
+Brute Force Method: Repeatedly scan the string, using `.replace()` to remove adjacent pairs (e.g., "AB" or "CD"). Start over from the beginning each time a removal happens until no more pairs exist. $O(N^2)$.
+BF Complexity Visuals: Cascading String Replacements.
+How to Draw BF: Write the full string. Cross out a pair, rewrite the newly squished string on the line below. Repeat until stuck.
+Optimised Pattern: Stack / Amortized Character Matching
+Opt Vis. Technique: Vertical Push/Pop Cylinder
+Dry Run (Opt): Push characters onto a stack one by one. Before pushing, check if the incoming character and the top of the stack form a valid pair. If they do, pop the stack instead of pushing.
+How to Draw (Opt): Draw an open-top box (Stack). Write incoming letters top-down. If a new letter makes a pair with the top one, violently cross them both out.
+Opt Complexity Visuals: Linear Amortized $O(N)$.
+How to Draw Opt Complexity: Draw a timeline with up-arrows (push) and immediate down-arrows (pop) that cancel out, scanning left to right once.
+Mem Vis (BF): Multiple immutable string allocations on the heap.
+Mem Vis (Opt): A single contiguous character array or Stack structure.

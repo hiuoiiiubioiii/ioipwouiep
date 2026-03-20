@@ -1,0 +1,13 @@
+ID: 699
+Problem Title: Falling Squares
+Brute Force Method: For every new square, check every previous square to see if they overlap horizontally. If they do, the new height is `max(prev_height) + size`.
+BF Complexity Visuals: Iterative Overlap Check.
+How to Draw BF: Draw a line. Add a square. Add a second. Check if it sits on the first. Add a third, check against 1 and 2. Write $O(N^2)$.
+Optimised Pattern: Coordinate Compression + Segment Tree / Sparse Map.
+Opt Vis. Technique: Skyline Profile Update.
+Dry Run (Opt): Map unique x-coordinates to integers. Use a Segment Tree to perform "Range Max" queries (what is the highest point between L and R?) and "Range Update" (set new height).
+How to Draw (Opt): Draw a skyline. When a block falls, look at the highest horizontal line beneath it. "Lift" that segment of the skyline to the new height.
+Opt Complexity Visuals: $O(N \log N)$.
+How to Draw Opt Complexity: Draw a balanced tree (Segment Tree) with height values. Write $O(N \log N)$.
+Mem Vis (BF): Draw a list of all overlap results.
+Mem Vis (Opt): Draw a Segment Tree or a TreeMap of intervals. $O(N)$.

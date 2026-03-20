@@ -1,0 +1,13 @@
+ID: 3004
+Problem Title: Maximum Subtree of the Same Color
+Brute Force Method: For every single node in the tree, launch a fresh DFS to check if all nodes in its subtree match its color. Track the maximum size found.
+BF Complexity Visuals: Nested Trees (Tree inside a Tree)
+How to Draw BF: Draw the main tree. Next to each node, draw a mini-version of its subtree to represent the $O(N^2)$ repetitive traversal.
+Optimised Pattern: Bottom-Up Post-Order DFS (Tree DP)
+Opt Vis. Technique: Upward Propagation Tree
+Dry Run (Opt): Start at the leaf nodes. Pass up a tuple: [size, is_valid, color]. If children match the parent's color and are valid, combine their sizes. If not, mark is_valid=False but keep tracking the global max.
+How to Draw (Opt): Draw the tree. Write [size, T/F, color] next to each node. Draw thick arrows pointing upward from children to parents, showing how the tuples merge.
+Opt Complexity Visuals: Single-Pass Node Highlighting
+How to Draw Opt Complexity: Draw the tree. Highlight each node exactly once with a highlighter, writing $O(N)$ next to the root.
+Mem Vis (BF): A deep Call Stack representing DFS(node) triggering repeatedly inside an outer loop over all nodes.
+Mem Vis (Opt): A single Call Stack where each frame holds an array [size, is_valid] immediately returning its memory to the parent caller.

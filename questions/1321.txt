@@ -1,0 +1,13 @@
+ID: 1321
+Problem Title: Restaurant Growth (SQL)
+Brute Force Method: Use Correlated Subqueries. For every single date in the table, scan the entire table again to find rows within the last 6 days and sum them up.
+BF Complexity Visuals: Overlapping Full Table Scans
+How to Draw BF: Draw a table. For row 10, draw an arrow scanning rows 4-10. For row 11, draw an arrow scanning rows 5-11. Highlight the heavily overlapping $O(N^2)$ disk reads.
+Optimised Pattern: Window Functions (Sliding Window)
+Opt Vis. Technique: Sliding Partition Frame
+Dry Run (Opt): First, aggregate sales by day. Then apply `SUM(amount) OVER (ORDER BY visited_on ROWS BETWEEN 6 PRECEDING AND CURRENT ROW)` to get the moving sum in $O(N)$.
+How to Draw (Opt): Draw the dates stacked vertically. Draw a rectangular box capturing 7 days. Slide the box down one row at a time, keeping a running total inside the box.
+Opt Complexity Visuals: Linear Single-Pass Tape
+How to Draw Opt Complexity: Draw a dataset as a tape. Show one read head sliding down, maintaining a running total buffer of 7 items, proving $O(N)$ sequential reads.
+Mem Vis (BF): Massive Temp Tables: Database engines generating huge intermediate N x N row sets in memory.
+Mem Vis (Opt): In-Memory Queue Buffer: The DB engine uses a fixed 7-row memory buffer sliding down the sorted cursor.

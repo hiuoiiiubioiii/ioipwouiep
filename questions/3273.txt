@@ -1,0 +1,13 @@
+ID: 3273
+Problem Title: Minimum Amount of Damage Dealt to Bob
+Brute Force Method: Recursive simulation trying every possible sequence of attacking enemies to find the minimum damage. $O(N!)$.
+BF Complexity Visuals: Full Factorial Permutation Tree
+How to Draw BF: Draw a root. Branch out for N enemies. From each, branch for N-1. Label as "O(N!)" to show the combinatorial explosion.
+Optimised Pattern: Greedy Sorting (Smith's Rule)
+Opt Vis. Technique: Ratio-Weighted Priority Map
+Dry Run (Opt): Define "Time to Kill" as `ceil(health / power)`. Sort enemies by the ratio `damage / time_to_kill` in descending order. Kill the "highest damage per unit of time" enemy first.
+How to Draw (Opt): Draw a table with columns: Damage, Time. Add a third column: Ratio (D/T). Sort the table. Highlight that killing the top row first minimizes the damage Bob takes from them while fighting others.
+Opt Complexity Visuals: Sorting Bottleneck Pipeline
+How to Draw Opt Complexity: Draw a block labeled "Calculate Ratios $O(N)$". Draw a second block "Sort $O(N \log N)$". Draw a third "Simulation $O(N)$". Total: $O(N \log N)$.
+Mem Vis (BF): Massive recursion stack for permutations.
+Mem Vis (Opt): Storage for calculated ratios and sorted indices (O(N) space).

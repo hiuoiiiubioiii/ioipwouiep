@@ -1,0 +1,13 @@
+ID: 1466
+Problem Title: Reorder Routes to Make All Paths Lead to the City Zero
+Brute Force Method: Backtracking. For every city, check if there is a path to city 0. If not, try reversing one edge and check again. Repeat until all cities can reach 0.
+BF Complexity Visuals: Exponential Reconfiguration Tree
+How to Draw BF: Draw a directed graph. For every edge, branch into "Keep" or "Reverse". Label $O(2^E)$.
+Optimised Pattern: BFS / DFS with Edge Direction Tracking
+Opt Vis. Technique: Outward Flow Detection
+Dry Run (Opt): Start a traversal from city 0. Treat the graph as undirected but keep track of the original directions. If you traverse an edge in its *original* direction (away from 0), you must flip it.
+How to Draw (Opt): Draw city 0 in the center. Draw neighbors. If an original arrow points AWAY from city 0, circle it in red (requires flip). If it points TOWARD 0, it's safe.
+Opt Complexity Visuals: Single Traversal (Undirected)
+How to Draw Opt Complexity: Draw a standard BFS/DFS visiting each node and edge once. Label $O(V + E)$.
+Mem Vis (BF): List of all paths $O(E!)$
+Mem Vis (Opt): Adjacency list storing pairs: {neighbor, is_original_direction}. Space $O(V + E)$.

@@ -1,0 +1,13 @@
+ID: 3370
+Problem Title: Smallest Number With All Set Bits
+Brute Force Method: Start from N, increment by 1, and check if the binary representation consists only of '1's.
+BF Complexity Visuals: Incremental Binary Search
+How to Draw BF: Write N. Convert to binary. Increment N to N+1 dots. Check for '0's in each binary string. Stop when none are left.
+Optimised Pattern: Bit Manipulation (Power of 2 - 1)
+Opt Vis. Technique: Binary Bit-Filling
+Dry Run (Opt): Find the number of bits in N. The answer is 2^bit_count - 1. Alternatively, keep shifting N right and count.
+How to Draw (Opt): Write N in binary. Count the digits. Draw that many empty boxes square square square. Fill them all with '1's. Calculate the decimal value.
+Opt Complexity Visuals: Constant Time/Log-Bits
+How to Draw Opt Complexity: Draw a single bitwise operation box. Even for a 64-bit number, this takes 1-2 steps. $O(\log N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Exactly one integer register. $O(1)$ space.

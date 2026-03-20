@@ -1,0 +1,13 @@
+ID: 149
+Problem Title: Max Points on a Line
+Brute Force Method: Triple nested loop: Pick two points to define a line (O(N^2)), then iterate through all other points to see if they lie on that line (O(N)).
+BF Complexity Visuals: A massive $O(N^3)$ computational cube showing every possible combination of three points.
+How to Draw BF: Draw 4 points. Draw lines between all pairs (6 lines). For each line, check if the other points touch it. Count the checks.
+Optimised Pattern: Hash Map for Slopes (per starting point).
+Opt Vis. Technique: A "Radar Sweep." From one point, you look at every other point and categorize them by the angle (slope) they make with you.
+Dry Run (Opt): For each point P1: use a Map to count slopes (y2-y1)/(x2-x1) for all P2. The max count in the Map (+1 for P1) is the max for that point.
+How to Draw (Opt): Draw a central point. Draw rays coming out of it to other points. Group the rays that have the same angle. Write the count next to each group.
+Opt Complexity Visuals: $O(N^2)$ time. A 2D grid where every point is compared to every other point exactly once.
+How to Draw Opt Complexity: Draw an N x N grid. Cross out each cell as you calculate the slope, proving you only touch each pair once.
+Mem Vis (BF): N/A (Nested loops only).
+Mem Vis (Opt): A Hash Map that resets for every starting point, storing at most N slope-count pairs.

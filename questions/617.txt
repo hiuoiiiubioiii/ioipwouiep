@@ -1,0 +1,13 @@
+ID: 617
+Problem Title: Merge Two Binary Trees
+Brute Force Method: Create a completely new third tree by traversing both trees simultaneously and copying values.
+BF Complexity Visuals: Two source trees pointing to a third growing tree.
+How to Draw BF: Draw Tree A and Tree B. Draw a large empty space where you redraw every single node again from scratch. $O(N+M)$.
+Optimised Pattern: Recursive In-Place Merge.
+Opt Vis. Technique: Overlapping Transparency / Layer Merging.
+Dry Run (Opt): Imagine Tree A is on a transparency sheet. Lay it over Tree B. If nodes overlap, sum them. If only one exists, keep that branch. Update Tree A's pointers directly.
+How to Draw (Opt): Draw Tree A and Tree B. Use a red pen to write Tree B's values into Tree A's nodes. Draw arrows from Tree A to Tree B's "dangling" branches.
+Opt Complexity Visuals: Single traversal of the smaller/overlapping structure.
+How to Draw Opt Complexity: Draw two trees with a single "Scanner" line moving through both in sync. $O(\text{min}(N, M)$).
+Mem Vis (BF): Draw a full set of new nodes in memory for the third tree, doubling the space requirement.
+Mem Vis (Opt): Draw Tree A's existing nodes being updated. Memory only used for the recursion stack $O(\text{height})$.

@@ -1,0 +1,13 @@
+ID: 2346
+Problem Title: Compute the Rank as a Percentage (SQL Premium)
+Brute Force Method: (Conceptual) For every student in a department, run a subquery to count how many students have a higher mark, then divide by the total count of students in that department minus one.
+BF Complexity Visuals: Nested Departmental Scans
+How to Draw BF: Draw a table of students. For each student, draw an arrow that scans only the rows belonging to the same department to find their rank.
+Optimised Pattern: Window Functions (RANK() / PERCENT_RANK())
+Opt Vis. Technique: Partitioned Score Tiers
+Dry Run (Opt): Use `PERCENT_RANK() OVER (PARTITION BY dept_id ORDER BY mark DESC)`. This calculates `(rank - 1) / (total_rows - 1)` automatically for each row within its group.
+How to Draw (Opt): Draw a table with students grouped by department. Inside each group, sort by marks. Write a "1, 2, 3" rank next to each, then convert that rank to a decimal (0.0 to 1.0) based on group size.
+Opt Complexity Visuals: Single Pass Window Sort
+How to Draw Opt Complexity: Draw a vertical stream of data being split into parallel departmental pipes, sorted, and tagged with a percentage.
+Mem Vis (BF): Draw multiple temporary tables for each department calculation.
+Mem Vis (Opt): Draw one Result Set stream with an added "Percentage" column.

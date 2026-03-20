@@ -1,0 +1,13 @@
+ID: 689
+Problem Title: Maximum Sum of 3 Non-Overlapping Subarrays
+Brute Force Method: Check every possible triplet of indices (i, j, k) that start 3 non-overlapping subarrays of length K. Sum them and find the max.
+BF Complexity Visuals: Triple Nested Window Search.
+How to Draw BF: Draw an array. Draw 3 brackets. Slide them in all possible valid configurations. $O(N^3)$.
+Optimised Pattern: DP with Sliding Window / Prefix-Suffix Max.
+Opt Vis. Technique: Interval Partitioning.
+Dry Run (Opt): Pre-calculate all possible window sums of size K. For each middle window starting at `j`, pick the best left window in `[0...j-k]` and the best right window in `[j+k...end]`.
+How to Draw (Opt): Draw an array of window sums. For each "Middle" choice, look at a "Left-Max" table and a "Right-Max" table to instantly pick the best partners.
+Opt Complexity Visuals: Single pass after pre-processing $O(N)$.
+How to Draw Opt Complexity: Draw three parallel data streams (Left, Mid, Right) merging. Write $O(N)$.
+Mem Vis (BF): Draw all triplet combinations in memory.
+Mem Vis (Opt): Draw three 1D arrays of size N. $O(N)$ space.

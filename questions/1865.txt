@@ -1,0 +1,13 @@
+ID: 1865
+Problem Title: Finding Pairs With a Certain Sum
+Brute Force Method: In `count()`, use nested loops to check every pair from `nums1` and `nums2` that sums to `tot`.
+BF Complexity Visuals: N x M cross-product query matrix.
+How to Draw BF: Draw two arrays. Draw lines from every element in A to every element in B. Mark $O(N \\text{times} M)$ per query.
+Optimised Pattern: Hash Map Frequency Tracking.
+Opt Vis. Technique: Value-to-Frequency Lookup.
+Dry Run (Opt): Store `nums2` frequencies in a Map. `add(index, val)`: Update `nums2` and the Map. `count(tot)`: Iterate `nums1`, for each x, add `Map.getOrDefault(tot - x, 0)` to the result.
+How to Draw (Opt): Draw `nums1`. Next to it, draw a Map (frequency table) for `nums2`. For each number in `nums1`, calculate `tot - num`, and look it up in the table.
+Opt Complexity Visuals: $O(N)$ for `count` and $O(1)$ for `add`.
+How to Draw Opt Complexity: Draw an arrow through `nums1` (O(N)) pointing to a single Map access (O(1)).
+Mem Vis (BF): No extra memory besides original arrays.
+Mem Vis (Opt): Hash Map containing up to M unique values from `nums2`.

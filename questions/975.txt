@@ -1,0 +1,13 @@
+ID: 975
+Problem Title: Odd-Even Jump
+Brute Force Method: For every index, simulate the odd and even jumps manually until you either hit the end or get stuck.
+BF Complexity Visuals: $O(N^2)$. Each starting point can trigger a full $O(N)$ traversal of the remaining array.
+How to Draw BF: Draw an array. From each element, draw a "Zig-Zag" path that jumps forward based on complex rules. Most paths end in a dead-end "X".
+Optimised Pattern: Monotonic Stack + DP (Suffix Jump Mapping)
+Opt Vis. Technique: "Pre-calculating the Rails." First, use a sorted list and a stack to find the "next jump target" for every index (odd and even). Then, use DP to propagate "reachability" backwards from the end.
+Dry Run (Opt): 1. Sort indices by value. 2. Use a Monotonic Stack to find `nextHigher[i]` and `nextLower[i]`. 3. `odd[i] = even[nextHigher[i]]`, `even[i] = odd[nextLower[i]]`. Count `odd[i] == true`.
+How to Draw (Opt): Draw the array twice (one for Odd jumps, one for Even). Draw fixed arrows from each index to its target. Then, shade the "End" and trace the arrows backwards to see which starting points are colored.
+Opt Complexity Visuals: $O(N \log N)$ for sorting/finding targets, $O(N)$ for DP.
+How to Draw Opt Complexity: Draw two parallel 1D DP arrays (Odd/Even). Draw a single sweep line from Right to Left, updating the booleans.
+Mem Vis (BF): $O(1)$ if simulating, but $O(N^2)$ time is the blocker.
+Mem Vis (Opt): $O(N)$ for the jump maps and DP arrays. Draw four horizontal strips: `nextH`, `nextL`, `canReachOdd`, `canReachEven`.

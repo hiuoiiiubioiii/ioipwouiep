@@ -1,0 +1,13 @@
+ID: 1803
+Problem Title: Count Pairs With XOR in a Range
+Brute Force Method: Nested loops $O(N^2)$ calculating XOR for every pair.
+BF Complexity Visuals: N x N grid matrix.
+How to Draw BF: Draw an N x N matrix. Cross out the lower triangle. Mark cells where XOR is within [low, high].
+Optimised Pattern: 0-1 Trie (Binary Trie).
+Opt Vis. Technique: Binary Decision Tree.
+Dry Run (Opt): Insert numbers bit by bit. For counting, traverse based on XOR logic comparing with high+1 and low.
+How to Draw (Opt): Draw a binary tree with 0 and 1 edges. Track count at each node. Traverse down matching bits.
+Opt Complexity Visuals: Constant depth tree paths (Depth 15).
+How to Draw Opt Complexity: Draw a single downward path of length 15. Annotate with $O(1)$ constant time max-depth per number.
+Mem Vis (BF): $O(1)$ loop variables in stack.
+Mem Vis (Opt): Nodes with 2 children mapped as a DAG/Tree in heap memory.

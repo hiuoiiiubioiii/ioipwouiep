@@ -1,0 +1,13 @@
+ID: 1704
+Problem Title: Determine if String Halves Are Alike
+Brute Force Method: Split string. Loop over half 1, check if char in 'aeiouAEIOU' string. Loop over half 2. Compare.
+BF Complexity Visuals: Split Array &amp; Linear Scan.
+How to Draw BF: Draw string cut in half. Draw tick marks under vowels in left, then right.
+Optimised Pattern: Two Pointers (Left &amp; Right) converging to center, using a Hash Set for vowels.
+Opt Vis. Technique: Two Pointers converging.
+Dry Run (Opt): Pointer L starts 0, Pointer R starts end. Move inwards. If L sees vowel, `count++`. If R sees vowel, `count--`.
+How to Draw (Opt): Draw string. `L -&gt;` at start, `&lt;- R` at end. Tally marks in the center (+1 for L, -1 for R). Target is 0.
+Opt Complexity Visuals: Converging Arrows.
+How to Draw Opt Complexity: Draw array. Arrow from left, Arrow from right meeting in the middle. $O(N)$.
+Mem Vis (BF): Two new string allocations for `half1` and `half2` (O(N) space).
+Mem Vis (Opt): A small HashSet box containing 10 vowels. $O(1)$ space.

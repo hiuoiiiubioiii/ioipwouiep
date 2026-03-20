@@ -1,0 +1,13 @@
+ID: 329
+Problem Title: Longest Increasing Path in a Matrix
+Brute Force Method: Start a DFS from every single cell (r, c). Explore all increasing paths without remembering previous results.
+BF Complexity Visuals: Brute Force Exhaustive DFS Tree
+How to Draw BF: Draw a grid. Pick a cell. Draw a tree of all possible paths. Redraw for every cell. Show the exponential overlap. $O(4^{\text{MN}})$.
+Optimised Pattern: DFS + Memoization (Topological Sort Pattern)
+Opt Vis. Technique: Memoized Grid Heatmap
+Dry Run (Opt): Perform DFS from each cell. If a cell's longest path is already computed, return it from the `memo` table. Only move to neighbors with a strictly greater value.
+How to Draw (Opt): Draw a grid. In each cell, write the length of the longest path starting there. Use a different color to show "cached" values being pulled instead of re-calculating.
+Opt Complexity Visuals: State-Space Matrix Coverage
+How to Draw Opt Complexity: Draw a grid. Draw a single arrow through each cell once. Label $O(\text{MN})$.
+Mem Vis (BF): Massive recursion depth boxes with redundant path strings.
+Mem Vis (Opt): 2D Memoization Matrix: Draw a grid of the same size as the input. Shade it as it fills with integers. $O(\text{MN})$.

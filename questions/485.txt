@@ -1,0 +1,13 @@
+ID: 485
+Problem Title: Max Consecutive Ones
+Brute Force Method: All Subarrays Identify every subarray of 1s. Measure their lengths and find the max.
+BF Complexity Visuals: Nested Subarray Scan
+How to Draw BF: Draw an array. Draw all possible brackets [i, j]. Check if all are 1. $O(N^2)$.
+Optimised Pattern: Single Pass Counter Iterate through the array. Increment `count` if 1; if 0, update `max` and reset `count`.
+Opt Vis. Technique: Streak Tracker
+Dry Run (Opt): Imagine a runner. Every '1' is a successful step. Every '0' is a trip where they have to start their "streak" over.
+How to Draw (Opt): Draw an array. Draw an arrow moving left-to-right. Write the current streak count below each element. Circle the largest number.
+Opt Complexity Visuals: Linear Scan
+How to Draw Opt Complexity: Draw a straight line from 0 to N. $O(N)$.
+Mem Vis (BF): None Constant counters.
+Mem Vis (Opt): Registers Two variables: `max` and `current`. $O(1)$ space.

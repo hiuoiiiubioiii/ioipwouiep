@@ -1,0 +1,13 @@
+ID: 445
+Problem Title: Add Two Numbers II
+Brute Force Method: Reverse and Add Reverse both linked lists, perform addition (like Q2), and reverse the result back.
+BF Complexity Visuals: Tri-Phase Loop
+How to Draw BF: Draw two lists being flipped. Then added. Then flipped again. Total 3 passes. $O(N)$.
+Optimised Pattern: Two Stacks Push all nodes of both lists onto two stacks. Pop from both to add from right-to-left.
+Opt Vis. Technique: Vertical Collapsing
+Dry Run (Opt): Imagine the lists are being fed into two vertical "wells" (stacks). The numbers at the bottom of the wells are added first.
+How to Draw (Opt): Draw two vertical buckets. Fill them with numbers. Draw arrows popping from the top and summing them into a new Linked List.
+Opt Complexity Visuals: Linear Stack Flow
+How to Draw Opt Complexity: Draw two passes to fill stacks, then one pass to empty. $O(N+M)$.
+Mem Vis (BF): Pointer Swap Very little extra space (if modifying input).
+Mem Vis (Opt): Call Stack/Stack Structure Draw two vertical arrays of size N and M. $O(N+M)$.

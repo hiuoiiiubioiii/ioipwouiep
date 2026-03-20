@@ -1,0 +1,13 @@
+ID: 2969
+Problem Title: Minimum Number of Coins for Fruits II
+Brute Force Method: Same as 2944 (Recursion + Memoization). TLE due to N=10^5 and $O(N^2)$ DP.
+BF Complexity Visuals: Dense DP Grid
+How to Draw BF: Draw a square N x N. Shade it to show lookback for each i. $O(N^2)$.
+Optimised Pattern: DP + Monotonic Queue (Deque)
+Opt Vis. Technique: Sliding Window Minimum
+Dry Run (Opt): Optimize 2944. Instead of searching $O(i)$ for the min dp[j], use a Deque to maintain the minimum of the range that can cover the current fruit in $O(1)$.
+How to Draw (Opt): Draw the dp array. Below it, draw a Deque box. Show values entering the right and "best" values popping off the left as they fall out of range.
+Opt Complexity Visuals: Single Linear DP Pass
+How to Draw Opt Complexity: Draw a straight line of length N. Each element is added/removed from Deque once. T = $O(N)$.
+Mem Vis (BF): Deep recursion call stack.
+Mem Vis (Opt): A 1D DP array and a Deque. Space $O(N)$.

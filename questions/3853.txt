@@ -1,0 +1,13 @@
+ID: 3853
+Problem Title: Merge Close Characters (Med.)
+Brute Force Method: Iterative string mutation: Find two characters where |char1 - char2| <=q 1, merge them into a new character/symbol, and repeat until no more can be merged.
+BF Complexity Visuals: A string that constantly shrinks, requiring a full re-scan after every single merge.
+How to Draw BF: Write "aacb". Merge "aa" -&gt; "A". String is "Acb". Merge "cb" -&gt; "B". Write $O(N^2)$ due to repeated string slicing.
+Optimised Pattern: Frequency Array + Greedy Consolidation.
+Opt Vis. Technique: A "Bucket Sort" style approach where we count the alphabet and resolve neighbors mathematically.
+Dry Run (Opt): Count frequencies in an array of size 26. Iterate from 'a' to 'z'. If `count[i]` and `count[i+1]` meet the merge criteria, combine them into the next bucket.
+How to Draw (Opt): Draw 26 buckets labeled A-Z. Put marbles in buckets. Pour marbles from bucket 'A' into 'B' if they are "close."
+Opt Complexity Visuals: A fixed-length scan of 26 characters.
+How to Draw Opt Complexity: Draw 26 boxes. Draw one arrow passing through them. Write $O(N + 26)$ = $O(N)$.
+Mem Vis (BF): Creating new string objects for every merge operation (O(N^2) space).
+Mem Vis (Opt): $O(1)$ extra space: just an array of size 26 to hold counts.

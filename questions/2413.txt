@@ -1,0 +1,13 @@
+ID: 2413
+Problem Title: Smallest Even Multiple
+Brute Force Method: Loop from n up to 2n, checking at every step if the current number is divisible by both 2 and n.
+BF Complexity Visuals: Linear Step Ladder
+How to Draw BF: Draw a number line starting at 'n'. Draw steps forward, writing modulo checks at each step. Label $O(N)$ worst case.
+Optimised Pattern: Math (Modulo Arithmetic / Bitwise)
+Opt Vis. Technique: Branching Decision Node
+Dry Run (Opt): Check if 'n' is even. If it is, the answer is 'n'. If it is odd, the answer is 'n * 2'. (e.g., n &lt;&lt; 1 if n &amp; 1).
+How to Draw (Opt): Draw a diamond (decision box) containing "n % 2 == 0?". Draw a "Yes" arrow pointing to 'n', and a "No" arrow pointing to '2n'.
+Opt Complexity Visuals: Constant Time $O(1)$ Box
+How to Draw Opt Complexity: Draw a single square box representing one mathematical operation. Label it $O(1)$ Time.
+Mem Vis (BF): Draw a single loop counter variable in memory.
+Mem Vis (Opt): Draw a single integer block. $O(1)$ Space.

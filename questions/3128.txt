@@ -1,0 +1,13 @@
+ID: 3128
+Problem Title: Right Triangles
+Brute Force Method: Iterate through all combinations of 3 cells in the matrix where each cell is '1' and check if they form a right triangle. $O(N^6)$ or $O((N^2)$^3)
+BF Complexity Visuals: Combinatorial explosion graph connecting every triple of '1's.
+How to Draw BF: Draw a grid with '1's. Try every possible group of 3 '1's, drawing a triangle and checking the angle at each vertex.
+Optimised Pattern: Precomputation / Combinatorics
+Opt Vis. Technique: Cross-Hair Counting
+Dry Run (Opt): Count total '1's in each row and column. For every '1' at (r, c), the number of right triangles with (r, c) as the vertex is (row_count[r]-1) x (col_count[c]-1).
+How to Draw (Opt): Draw the grid. Next to rows, write the sum of 1s. Below columns, write the sum of 1s. At a '1', multiply the neighboring sums (minus 1).
+Opt Complexity Visuals: Two linear scans + one matrix pass.
+How to Draw Opt Complexity: Draw a horizontal sweep arrow (rows), a vertical sweep arrow (cols), and a final grid traversal. $O(R x C)$.
+Mem Vis (BF): List of all valid coordinate triples.
+Mem Vis (Opt): Two 1D arrays of size R and C respectively. $O(R+C)$.

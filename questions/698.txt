@@ -1,0 +1,13 @@
+ID: 698
+Problem Title: Partition to K Equal Sum Subsets
+Brute Force Method: Generate every possible combination of elements into K buckets and check if all buckets have equal sums.
+BF Complexity Visuals: Exponential Subsets (K^N).
+How to Draw BF: Draw N numbers. Branch K ways for the first, K for the second... it becomes a massive K-ary tree. Write $O(K^N)$.
+Optimised Pattern: Backtracking with Pruning + State Compression.
+Opt Vis. Technique: Bucket Filling / Bin Packing.
+Dry Run (Opt): Calculate `target = total/k`. Sort numbers descending. Try placing each number into a bucket. If a bucket exceeds target, backtrack. Use a bitmask to track used numbers.
+How to Draw (Opt): Draw K "Buckets." Pick the largest number, drop it in Bucket 1. Pick the next, try Bucket 1, if full, move to Bucket 2. Draw an "X" when a path fails.
+Opt Complexity Visuals: $O(K \cdot 2^N)$ with memoization.
+How to Draw Opt Complexity: Draw a decision tree with many pruned (cut) branches. Write $O(K \cdot 2^N)$.
+Mem Vis (BF): Draw the entire K^N state tree.
+Mem Vis (Opt): Draw the recursion stack and a bitmask/memo table. $O(2^N)$.

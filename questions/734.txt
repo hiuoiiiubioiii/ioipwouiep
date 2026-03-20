@@ -1,0 +1,13 @@
+ID: 734
+Problem Title: Sentence Similarity
+Brute Force Method: For every word pair in the sentences, iterate through the entire similarity list to find a match.
+BF Complexity Visuals: Nested Search Loop
+How to Draw BF: Draw two sentences. For word index `i`, draw a loop searching through the whole dictionary. $O(N \cdot S)$.
+Optimised Pattern: Hash Set of Pair Strings
+Opt Vis. Technique: Instant Lookup Table
+Dry Run (Opt): Store all similar pairs in a HashSet as "word1#word2". For each index `i` in the sentences, check if `s1[i]==s2[i]` or if the set contains the pair.
+How to Draw (Opt): Draw two lists (sentences). Draw a "Black Box" (Set). Point word pairs to the box; it returns a green check or red X instantly.
+Opt Complexity Visuals: Parallel Linear Scan
+How to Draw Opt Complexity: Draw two parallel lines (sentences). Draw vertical "lookups" at each point. Total time $O(N + S)$.
+Mem Vis (BF): Multiple copies of similarity lists.
+Mem Vis (Opt): A single HashSet containing all unique similarity pairs (O(S)).

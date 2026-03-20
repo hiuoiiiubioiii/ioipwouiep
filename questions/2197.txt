@@ -1,0 +1,13 @@
+ID: 2197
+Problem Title: Replace Non-Coprime Numbers in Array
+Brute Force Method: Keep scanning the array from left to right. If two neighbors are non-coprime, replace them with their LCM. Repeat the entire scan until no more changes occur.
+BF Complexity Visuals: A bubbling effect where a single change can trigger a chain reaction, requiring a full re-scan.
+How to Draw BF: Draw an array. Circle two items. Replace them. Go back to the very start of the array and check again. Write $O(N^2)$.
+Optimised Pattern: Stack (Greedy Simplification).
+Opt Vis. Technique: A chemical reaction where adding a drop triggers an immediate merge with the surface.
+Dry Run (Opt): Iterate through `nums`. Push `num` to a stack. While `stack.top()` and the new `num` are non-coprime, pop, compute `lcm`, and repeat the check with the new `top`.
+How to Draw (Opt): Draw a vertical stack. Drop a number in. If it reacts (GCD &gt; 1) with the number below it, erase both and write their LCM. Repeat until no reaction occurs.
+Opt Complexity Visuals: Amortized $O(N \log(\text{MaxVal})$).
+How to Draw Opt Complexity: A horizontal line with a vertical "pop-off" valve that runs in log time.
+Mem Vis (BF): Repeated array copies and multiple $O(N)$ passes.
+Mem Vis (Opt): $O(N)$ for the result stack.

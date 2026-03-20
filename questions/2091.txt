@@ -1,0 +1,13 @@
+ID: 2091
+Problem Title: Removing Minimum and Maximum From Array
+Brute Force Method: Generate every possible combination of deletions from both ends that would include the min and max, then pick the smallest.
+BF Complexity Visuals: Combination Search Tree
+How to Draw BF: Draw the array. Branch out into every "Delete from Left" and "Delete from Right" sequence until both Min and Max are gone. $O(2^N)$.
+Optimised Pattern: Three-Case Greedy Analysis
+Opt Vis. Technique: Triple Path Selection
+Dry Run (Opt): Find indices of min and max (i, j). Calculate 3 costs: 1) Both from front, 2) Both from back, 3) One from front and one from back. Take `min`.
+How to Draw (Opt): Draw the array. Mark indices i and j. Draw three arrows: one from left to the furthest index, one from right to the furthest, and two shorter arrows from both ends.
+Opt Complexity Visuals: Constant Time Decision (O(1))
+How to Draw Opt Complexity: Draw a single pass (O(N)) to find indices, followed by three $O(1)$ math boxes. Total Time $O(N)$.
+Mem Vis (BF): Recursion stack holding various array states.
+Mem Vis (Opt): Four integer variables: `minIdx`, `maxIdx`, `n`, and `result`. Space $O(1)$.

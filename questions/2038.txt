@@ -1,0 +1,13 @@
+ID: 2038
+Problem Title: Remove Colored Pieces if Both Neighbors are the Same Color
+Brute Force Method: Simulate the game exactly. Find a valid piece, remove it, create a new shortened string, and rescan from the beginning for the next player. $O(N^2)$.
+BF Complexity Visuals: Shrinking String Tape
+How to Draw BF: Draw the string. Erase one character, rewrite the whole shorter string. Repeat until no moves are left. Massive string copying overhead.
+Optimised Pattern: Single Pass Counting (Independent Moves)
+Opt Vis. Technique: Consecutive Block Highlighting
+Dry Run (Opt): Alice and Bob's moves are completely independent (removing 'A' doesn't create new 'B's). Just count consecutive 'A's &gt;= 3 and consecutive 'B's &gt;= 3. Compare totals.
+How to Draw (Opt): Write the string. Circle blocks of 'A's. If a block has length L &gt; 2, write L-2 below it for Alice. Do the same for Bob's 'B' blocks. See who has a higher total score.
+Opt Complexity Visuals: Linear Scan Checkpoint Line
+How to Draw Opt Complexity: Draw one continuous line across the string. Time is strictly $O(N)$ as it requires only a single forward pass.
+Mem Vis (BF): Multiple newly allocated string copies representing the board state after every single move.
+Mem Vis (Opt): Two simple integer counters: `alice_moves` and `bob_moves`. Space $O(1)$.

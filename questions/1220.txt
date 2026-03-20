@@ -1,0 +1,13 @@
+ID: 1220
+Problem Title: Count Vowels Permutation
+Brute Force Method: Recursively generate all possible strings of length 'n'. For each character added, verify if it follows the vowel transition rules.
+BF Complexity Visuals: Exponential Branching Tree
+How to Draw BF: Draw a root. Branch out to a, e, i, o, u. From 'a', branch only to 'e'. From 'e', branch to 'a' and 'i'. Continue for 'n' levels. Write $O(5^N)$ to show the massive explosion.
+Optimised Pattern: Dynamic Programming (State Transitions)
+Opt Vis. Technique: State Machine / Directed Graph Flow
+Dry Run (Opt): Imagine 5 buckets (a, e, i, o, u). In step 1, each has 1 token. In step 2, pour the 'a' tokens into the 'e' bucket, the 'e' tokens into 'a' and 'i', etc. Add up all tokens after 'n' steps.
+How to Draw (Opt): Draw 5 nodes labeled a, e, i, o, u. Draw directed arrows between them based on the rules (e.g., arrow from 'a' to 'e'). Next to each node, write the number of paths ending there. Update the numbers level by level using the arrows.
+Opt Complexity Visuals: Linear State Progression
+How to Draw Opt Complexity: Draw a horizontal timeline of length 'N'. Above it, draw a constant height block representing 5 states. Write $O(N)$.
+Mem Vis (BF): Draw a deep recursive Call Stack of height 'N', holding millions of string prefixes.
+Mem Vis (Opt): Draw exactly two 1D arrays of size 5: `prev_dp[]` and `curr_dp[]`. Space is strictly $O(1)$.

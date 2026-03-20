@@ -1,0 +1,13 @@
+ID: 602
+Problem Title: Friend Requests II: Who Has the Most Friends (SQL)
+Brute Force Method: Subquery for requesters, subquery for accepters, Full Outer Join, then sum.
+BF Complexity Visuals: Two disconnected lists mapped to a massive combined hash map.
+How to Draw BF: Draw list A and list B. Draw many tangled, crisscrossing lines connecting every ID to a central tally board.
+Optimised Pattern: UNION ALL followed by GROUP BY and ORDER BY LIMIT 1.
+Opt Vis. Technique: Data Funnel / Pipeline.
+Dry Run (Opt): Take 'requester_id' column, stack 'accepter_id' column directly underneath it. Group identical IDs into buckets. Count bucket sizes. Pick the biggest bucket.
+How to Draw (Opt): Draw two arrays vertically. Draw an arrow merging them into one long array. Draw circles around identical numbers, writing a tally count next to the circles.
+Opt Complexity Visuals: Two parallel lines merging into one, then a compression node.
+How to Draw Opt Complexity: Draw two parallel arrows of length N and M joining into a single arrow (O(N+M)). Draw a funnel shape for the Group By step.
+Mem Vis (BF): Draw two separate memory blocks for intermediate tables, then a third larger block for the join results before aggregation.
+Mem Vis (Opt): Draw a single stream of data flowing into a Hash Map (Key=ID, Value=Count), showing space is only proportional to unique users $O(U)$.

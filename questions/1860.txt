@@ -1,0 +1,13 @@
+ID: 1860
+Problem Title: Incremental Memory Leak
+Brute Force Method: Simulate second-by-second memory allocation until both memory sticks cannot satisfy the current requirement.
+BF Complexity Visuals: Linear timeline simulation.
+How to Draw BF: Draw two bars (Memory1, Memory2). Every second, subtract i. Show the subtraction until numbers go negative.
+Optimised Pattern: Standard Simulation (Loop) or Math (Square root approach).
+Opt Vis. Technique: Draining buckets.
+Dry Run (Opt): Use a while loop. At time t, if `m1 &gt;= m2`, subtract t from `m1`; else subtract t from `m2`. Stop when t &gt; \max(m1, m2).
+How to Draw (Opt): Write M1 and M2. For t=1, 2, 3 \dots, perform subtraction on the larger number. Stop when current t is bigger than both remaining values.
+Opt Complexity Visuals: Square root time complexity.
+How to Draw Opt Complexity: Note that the sum 1+2+ \dots + t \approx t^2/2. Thus t \approx \sqrt{2M}. Mark $O(\\text{sqrt}{M1+M2})$.
+Mem Vis (BF): $O(1)$ stack variables.
+Mem Vis (Opt): $O(1)$ stack variables (three integers: t, m1, m2).

@@ -1,0 +1,13 @@
+ID: 3141
+Problem Title: Maximum Hamming Distances
+Brute Force Method: Actually physically flip all elements from `i` to the end of the array every time you see a 0. $O(N^2)$.
+BF Complexity Visuals: Cascading Array Waves
+How to Draw BF: Draw the array. When hitting a 0, draw a massive wave flipping every single element to the right. Do this repeatedly.
+Optimised Pattern: State Tracking (Parity / Flip Count)
+Opt Vis. Technique: The Virtual Toggle Switch
+Dry Run (Opt): Don't physically flip anything. Track the total `flip_count`. The *actual* value of `nums[i]` is `(nums[i] + flip_count) % 2`. If the actual value is 0, increment `flip_count`.
+How to Draw (Opt): Draw the array. Hold a physical "Toggle Switch" in your hand (starts at 0). As you walk, mentally apply the switch to the number. If the result is 0, flip the switch in your hand and add a tally mark.
+Opt Complexity Visuals: Strict Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. Each element checked with a single $O(1)$ modulo operation.
+Mem Vis (BF): Continuous full-array rewrites.
+Mem Vis (Opt): A single integer `flip_count`. $O(1)$ space.

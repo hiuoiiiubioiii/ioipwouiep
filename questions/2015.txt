@@ -1,0 +1,13 @@
+ID: 2015
+Problem Title: Average Height of Buildings in Each Segment
+Brute Force Method: Create an array representing every coordinate point. Loop over buildings and add height to every point in range.
+BF Complexity Visuals: Dense 1D Array Painting
+How to Draw BF: Draw a massive number line. For a building spanning [1, 1000], physically draw 1000 "+H" marks. $O(N \\text{cdot Range})$.
+Optimised Pattern: Line Sweep Algorithm + TreeMap (Event Sorting)
+Opt Vis. Technique: Timeline Event Flags
+Dry Run (Opt): Record events: `start_point` (+height, +1 building), `end_point` (-height, -1 building). Sort events. Sweep left to right keeping a running average.
+How to Draw (Opt): Draw a number line. Drop a green flag at a building's start, a red flag at its end. Walk the line, updating your "current total height" only at the flags.
+Opt Complexity Visuals: Sorting Funnel to $O(N)$ Sweep
+How to Draw Opt Complexity: Draw a funnel (O(N log N) sorting events) flowing into a straight timeline (O(N) processing).
+Mem Vis (BF): A huge integer array spanning the maximum coordinate `10^8`. Space Limit Exceeded.
+Mem Vis (Opt): A balanced Binary Search Tree (TreeMap) or Sorted Array storing exactly 2N event objects.

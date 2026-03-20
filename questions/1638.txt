@@ -1,0 +1,13 @@
+ID: 1638
+Problem Title: Count Substrings That Differ by One Character
+Brute Force Method: Generate every possible substring pair from S and T, and check each pair for exactly one mismatch.
+BF Complexity Visuals: Combinatorial Matrix Check
+How to Draw BF: Draw a 2D matrix of substrings of S vs substrings of T. Magnifying glass checks every cell. $O(N^4)$ or $O(N^3)$.
+Optimised Pattern: DP / Central Expansion (Mismatch Count)
+Opt Vis. Technique: Diagonal Expansion Tally
+Dry Run (Opt): Pick starting points (i, j). Expand while characters match. When a mismatch occurs, continue expanding until a second mismatch hits.
+How to Draw (Opt): Draw S horizontally and T vertically. Draw diagonal arrows. Mark a '1' when you hit a mismatch and keep counting until you hit a '2'.
+Opt Complexity Visuals: Triangular DP Grid
+How to Draw Opt Complexity: Draw an N x M grid. Draw single arrows sliding down the diagonals. $O(N \cdot M)$.
+Mem Vis (BF): Substring List: Draw two massive buckets of all possible string slices.
+Mem Vis (Opt): 3D/2D DP Matrix: Draw a static grid where each cell holds two integers: prefix_match and suffix_match.

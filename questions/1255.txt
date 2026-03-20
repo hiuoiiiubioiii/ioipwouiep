@@ -1,0 +1,13 @@
+ID: 1255
+Problem Title: Maximum Score Words Formed by Letters
+Brute Force Method: Try every possible subset of the given words (Power Set). For each subset, check if it can be formed using the provided letters and calculate the score.
+BF Complexity Visuals: Exhaustive Decision Tree
+How to Draw BF: Draw a root node. For Word 1, branch "Include" or "Exclude". For each leaf, branch for Word 2. Repeat for all words. Write $O(2^N)$.
+Optimised Pattern: Backtracking with Frequency State Management
+Opt Vis. Technique: Resource Depletion Tracker
+Dry Run (Opt): Start with a pool of letters (frequency array). Recursively decide to pick a word. If you pick it, subtract its letters from the pool. If pool goes negative, backtrack (prune). Keep track of the highest score achieved.
+How to Draw (Opt): Draw a "Vault" containing letter counts. Draw a path representing a word choice. If the word takes more letters than the vault has, draw a red "STOP" sign. If it fits, update the vault and move to the next word. Undo (add letters back) when moving up.
+Opt Complexity Visuals: Pruned Recursive Forest
+How to Draw Opt Complexity: Draw a tree where many branches end prematurely with "X" because the letter pool is empty. Write $O(2^N \cdot L)$ where L is word length.
+Mem Vis (BF): Draw a list of all 2^N word combinations stored in memory.
+Mem Vis (Opt): Draw one 1D frequency array of size 26 and a recursive call stack of depth N. Space: $O(N)$.

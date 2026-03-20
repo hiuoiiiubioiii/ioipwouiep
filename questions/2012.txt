@@ -1,0 +1,13 @@
+ID: 2012
+Problem Title: Sum of Beauty in the Array
+Brute Force Method: For every index i, loop all the way to 0 to check the left, and all the way to N to check the right. $O(N^2)$.
+BF Complexity Visuals: Double-Sided Radar Sweeps
+How to Draw BF: Draw the array. For every element, draw two long scanning arrows going left and right.
+Optimised Pattern: Prefix Max and Suffix Min Arrays
+Opt Vis. Technique: The Pre-calculated Boundary Walls
+Dry Run (Opt): Pre-calculate the max value seen from the left (`prefix_max`) and min value seen from the right (`suffix_min`). At index i, a beauty of 2 exists if `prefix_max[i-1] &lt; nums[i] &lt; suffix_min[i+1]`.
+How to Draw (Opt): Draw the array. Above it, draw the "Max Wall" growing left-to-right. Below, draw the "Min Wall" growing right-to-left. To check i, just look at the two walls directly above and below it.
+Opt Complexity Visuals: Three Linear Passes $O(N)$
+How to Draw Opt Complexity: Draw 3 parallel lines. Two for building the walls, one for the final check.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Two arrays of size N. $O(N)$ space.

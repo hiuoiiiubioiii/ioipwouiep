@@ -1,0 +1,13 @@
+ID: 911
+Problem Title: Online Election
+Brute Force Method: For every query `t`, iterate through the `persons` array from time 0 up to time `t`, counting votes manually every time.
+BF Complexity Visuals: $O(Q \cdot N)$. A windshield wiper that repeatedly sweeps from the start of the array to a specific point and back.
+How to Draw BF: Draw a timeline. For each query point, draw an arrow originating from zero, sweeping forward to `t`, and calculating the sum over and over.
+Optimised Pattern: Precomputation + Binary Search
+Opt Vis. Technique: A dynamic leaderboard that only records a snapshot when a new vote is cast, ignoring the dead time in between.
+Dry Run (Opt): Pre-calculate the winner at every given time using a hashmap. For a query `t`, binary search the `times` array to find the closest recorded snapshot &lt;= `t`.
+How to Draw (Opt): Draw a timeline with distinct "vote" markers. Write the current winner below each marker. When a query lands between markers, draw an arrow snapping back to the closest left marker.
+Opt Complexity Visuals: $O(N)$ precomputation, $O(\log N)$ per query. A tree dividing a pre-calculated timeline.
+How to Draw Opt Complexity: Draw a balanced binary search tree dropping down onto the timeline, zeroing in on the correct timestamp in logarithmic steps.
+Mem Vis (BF): $O(1)$ space if recounting, but wastes massive time.
+Mem Vis (Opt): Two parallel $O(N)$ arrays: `times` and `winners`. Draw them stacked on top of each other like a lookup table.

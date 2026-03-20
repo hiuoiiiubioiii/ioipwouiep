@@ -1,0 +1,13 @@
+ID: 3062
+Problem Title: Winner of the Linked List Game
+Brute Force Method: Traverse the linked list and store every pair into an array or list, then iterate through the array to compare elements.
+BF Complexity Visuals: Array Mirroring
+How to Draw BF: Draw a Linked List. Below it, draw an Array with the same values. Show the pointer moving through the array to compare pairs.
+Optimised Pattern: Two-Pointer Jump (Step of 2)
+Opt Vis. Technique: Pointer Leapfrog
+Dry Run (Opt): Maintain a pointer curr. In each step, compare curr.val with curr.next.val. Increment a "Even" or "Odd" score. Move curr by two nodes: curr = curr.next.next.
+How to Draw (Opt): Draw the nodes with arrows. Draw a loop around pairs of nodes. Write the score (+1 for Even, +1 for Odd) next to each loop. Use a "skip" arrow to move to the next pair.
+Opt Complexity Visuals: $O(N)$ Single Pass
+How to Draw Opt Complexity: Draw one straight arrow jumping over the Linked List nodes in pairs. Label as $O(N/2)$.
+Mem Vis (BF): $O(N)$ space to store the copy of the Linked List in an array.
+Mem Vis (Opt): $O(1)$ auxiliary space; only two integer variables even_score and odd_score.

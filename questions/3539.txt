@@ -1,0 +1,13 @@
+ID: 3539
+Problem Title: Find Sum of Array Product of Magical Sequences (Hard)
+Brute Force Method: Generate every valid magical subsequence, calculate their products iteratively, and sum them up.
+BF Complexity Visuals: Combinatorial Power Set.
+How to Draw BF: Draw an expanding binary tree deciding to include/exclude elements to form valid sequences. Calculate product at each of the 2^N leaves.
+Optimised Pattern: Dynamic Programming with Mathematical Contribution (Prefix Arrays).
+Opt Vis. Technique: State Transition Multipliers.
+Dry Run (Opt): Track the sum of products of sequences ending at index `i`. Current state = `Previous Sum * Current Element + Current Element`.
+How to Draw (Opt): Draw a 1D DP array. Draw an arrow from `DP[i-1]` to `DP[i]`, writing the formula `(val * DP[i-1]) + val` on the arrow to show the math cascade.
+Opt Complexity Visuals: Linear Sweep with Modulo Math.
+How to Draw Opt Complexity: Draw an array of size N. Draw a straight arrow left to right, performing constant $O(1)$ math at each step. $O(N)$.
+Mem Vis (BF): Massive Subsequence Lists: Draw gigabytes of memory storing millions of individual arrays before doing the math.
+Mem Vis (Opt): Rolling Variable DP: Draw just two integer variables (Previous Sum, Current Sum) overwriting themselves.

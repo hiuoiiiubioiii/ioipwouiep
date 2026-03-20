@@ -1,0 +1,13 @@
+ID: 2731
+Problem Title: Movement of Robots
+Brute Force Method: Simulate second by second. When two robots share a position, swap their directions. $O(T \cdot N)$. For large T, this is impossible.
+BF Complexity Visuals: Step-by-Step Collision Trace
+How to Draw BF: Draw robots on a line. Move them 1 unit. If they touch, draw arrows reversing. Repeat T times. Very cluttered.
+Optimised Pattern: Temporal State Snapshots (Visualizing the position of every robot at every tick of time).
+Opt Vis. Technique: Collision Transparency + Prefix Sums
+Dry Run (Opt): Independent Particle Flow
+How to Draw (Opt): Key Insight: Robots "passing through" each other is mathematically identical to bouncing. Calculate final positions: `pos + (dir * d)`. Sort them. Use Prefix Sums to calculate all-pairs distances in $O(N)$.
+Opt Complexity Visuals: Draw two robots moving toward each other. Instead of bouncing, draw them ghosting through. Mark final spots. Draw a "Sum of Distances" formula triangle.
+How to Draw Opt Complexity: Sorting $O(N \log N)$ + Linear Sum
+Mem Vis (BF): Draw a sorting block followed by a single linear pass. Label the bottleneck as $O(N \log N)$.
+Mem Vis (Opt): Sorted Position Array (Draw a 1D array of long integers representing the final coordinates).

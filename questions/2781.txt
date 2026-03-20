@@ -1,0 +1,13 @@
+ID: 2781
+Problem Title: Length of the Longest Valid Substring
+Brute Force Method: Generate every substring $O(N²)$. For each, check if it contains any of the forbidden strings as a substring. Total $O(N³)$.
+BF Complexity Visuals: N³ Forbidden Search
+How to Draw BF: Draw a string. Highlight a segment. Run a search for every forbidden word within that segment. Repeat for every possible segment.
+Optimised Pattern: Redundant String Slicing (Visualizing thousands of temporary substring copies being checked against a HashSet).
+Opt Vis. Technique: Sliding Window + Right-Side Constraint
+Dry Run (Opt): Truncated Right-to-Left Check
+How to Draw (Opt): Move right pointer. For the new character at right, check only the last 10 characters (since forbidden strings length right - k, update left to right - k + 1.
+Opt Complexity Visuals: Draw the string. Slide the right edge. At each step, peek back only a small fixed distance (10 steps). If you see a "Danger" word, pull the left edge past the danger.
+How to Draw Opt Complexity: Linear $O(N \\text{cdot MaxForbiddenLen})$
+Mem Vis (BF): Draw a single arrow. Above it, draw a small "Scanner" box of size 10 moving with the arrow. Label it $O(N)$.
+Mem Vis (Opt): HashSet of Forbidden Words (Draw a set in memory containing only the strings that are illegal).

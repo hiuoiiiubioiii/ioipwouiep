@@ -1,0 +1,13 @@
+ID: 3356
+Problem Title: Zero Array Transformation II
+Brute Force Method: For every possible number of queries k (from 1 to Q), apply the first k queries to the array and check if all elements become <= 0.
+BF Complexity Visuals: Query-Level Sequential Scan
+How to Draw BF: Draw the array. Below it, draw the first query. Check. Erase. Draw first two queries. Check. Total work $O(Q \cdot (Q + N)$).
+Optimised Pattern: Binary Search on Answer + Difference Array
+Opt Vis. Technique: Pass/Fail Number Line
+Dry Run (Opt): Binary search for the minimum k. For a mid-point k, use a Difference Array to apply k queries in $O(N+k)$ and verify.
+How to Draw (Opt): Draw a line 1 dots Q. Mark k in the middle. Below, draw a Difference Array (markers for +v and -v). Compute prefix sums. If array is zeroed, mark k "Green" and move Left.
+Opt Complexity Visuals: Log-Linear Grid Block
+How to Draw Opt Complexity: Draw a horizontal line N. Draw a vertical logarithmic tower (log Q). The rectangle represents $O((N+Q)$ log Q).
+Mem Vis (BF): Multiple 2D query-application matrices stored in memory.
+Mem Vis (Opt): A single 1D Difference Array of size N. $O(N)$.

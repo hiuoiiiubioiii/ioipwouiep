@@ -1,0 +1,13 @@
+ID: 1305
+Problem Title: All Elements in Two Binary Search Trees
+Brute Force Method: DFS traverse both trees, append all nodes into a single unorganized array, and run QuickSort on the combined array.
+BF Complexity Visuals: Array Concatenation + Sorting Funnel Graph
+How to Draw BF: Draw two trees pointing into two messy arrays. Join them into one large array, and draw a massive sorting algorithm funnel processing $O(K \log K)$ steps.
+Optimised Pattern: In-order DFS + Two-Pointer Merge
+Opt Vis. Technique: Two Parallel Sorted Streams
+Dry Run (Opt): Extract Tree 1 into Array A, Tree 2 into Array B. Place pointer `i` at start of A and `j` at start of B. Point to smaller item, copy to Result, advance that pointer.
+How to Draw (Opt): Draw two arrays, A and B. Draw two distinct arrows (i and j). Compare the values they point to. Write the smaller value into a new output array at the bottom.
+Opt Complexity Visuals: Dual Linear Progression Rails
+How to Draw Opt Complexity: Draw two horizontal bars of length N and M. Draw an arrow sweeping smoothly from left to right across both, proving strictly $O(N+M)$ steps.
+Mem Vis (BF): Dynamic Expanding Array: Draw a single block expanding unpredictably as nodes are discovered, before a massive memory shuffle (sorting).
+Mem Vis (Opt): Three Contiguous Blocks: Draw two size-bound arrays (N and M) and one final output array (N+M) with static memory boundaries.

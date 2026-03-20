@@ -1,0 +1,13 @@
+ID: 3794
+Problem Title: Reverse String Prefix (Easy)
+Brute Force Method: Iterate through the string to find the first occurrence of character ch. Create a new string by manually copying the characters backward up to that index, then copy the rest. $O(N)$.
+BF Complexity Visuals: Find and Slice.
+How to Draw BF: Write "abcdefd" and target "d". Find the first 'd'. Write the letters before it backwards: "dcba". Then write the rest: "efd". Result: "dcbaefd".
+Optimised Pattern: Two Pointers (In-place Swap)
+Opt Vis. Technique: Mirror Swap Segment
+Dry Run (Opt): Find the index i of the first ch. Use two pointers (start=0, end=i) to swap characters in the original array until they meet in the middle.
+How to Draw (Opt): Draw the string. Circle the first target character. Draw arcs between the start and that character, showing them swapping places. The tail of the string stays untouched.
+Opt Complexity Visuals: Single Pass $O(N)$.
+How to Draw Opt Complexity: Draw a flat timeline with a single $O(N)$ search and a small $O(i/2)$ swap loop.
+Mem Vis (BF): Creating multiple substring objects.
+Mem Vis (Opt): $O(1)$ extra space (if modifying character array in-place).

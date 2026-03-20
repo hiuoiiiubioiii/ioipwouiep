@@ -1,0 +1,13 @@
+ID: 2081
+Problem Title: Sum of k-Mirror Numbers
+Brute Force Method: Iterate through all integers starting from 1. For each, check if it is a palindrome in base-10, then convert to base-k and check again.
+BF Complexity Visuals: Infinite Linear Trial-and-Error
+How to Draw BF: Draw a number line. At every integer, draw two check-boxes (Base-10? Base-K?). Shade the thousands of failed checks before hitting one "true". $O(\text{NumberValue})$.
+Optimised Pattern: Palindrome Generation (Length-based)
+Opt Vis. Technique: Mirror Reflection Growth
+Dry Run (Opt): Instead of checking all numbers, generate base-10 palindromes of increasing length (1, 2, 3...). For each generated palindrome, convert to base-k and check mirror property.
+How to Draw (Opt): Draw a "root" half-number (e.g., '12'). Fold it over a dashed line to get '1221'. Immediately convert '1221' to base-k and verify the string.
+Opt Complexity Visuals: Bounded Search Space Sweep
+How to Draw Opt Complexity: Draw a small tree generating palindromes. The search space is logarithmic relative to the brute force. Time $O(\text{Total Palindromes Checked})$.
+Mem Vis (BF): String conversions for every single integer in memory.
+Mem Vis (Opt): Only the current candidate string and the total sum accumulator. Space $O(Log N)$.

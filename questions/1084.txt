@@ -1,0 +1,13 @@
+ID: 1084
+Problem Title: Sales Analysis III
+Brute Force Method: (SQL) For every product, find all its sales dates. If every date is within Q1 2019, include the product.
+BF Complexity Visuals: Correlated subqueries checking dates for every product row.
+How to Draw BF: Product 1: Sale 2019-01, Sale 2019-02. OK. Product 2: Sale 2019-01, Sale 2019-05. Fail. Write $O(\text{Products} \\text{cdot Sales})$.
+Optimised Pattern: Group By + Having (Min/Max Dates).
+Opt Vis. Technique: A "Date Boundary Check". For each product, we only care about its earliest and latest sale. If both fall in the window, all sales fall in the window.
+Dry Run (Opt): `SELECT product_id, product_name FROM Sales JOIN Product USING(product_id) GROUP BY product_id HAVING MIN(sale_date) &gt;= '2019-01-01' AND MAX(sale_date) &lt;= '2019-03-31'`.
+How to Draw (Opt): Draw the table. Group by Product. For each group, find the earliest and latest date. If both are in Q1, circle the product name.
+Opt Complexity Visuals: Single pass join and group.
+How to Draw Opt Complexity: Draw a table collapsing into min/max dates. Write Time: $O(\text{Sales})$.
+Mem Vis (BF): Expensive subqueries for every row.
+Mem Vis (Opt): A hash map for grouping. $O(\text{UniqueProducts})$ space.

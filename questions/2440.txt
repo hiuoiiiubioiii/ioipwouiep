@@ -1,0 +1,13 @@
+ID: 2440
+Problem Title: Create Components With Same Value
+Brute Force Method: Try every possible way to delete edges from the tree and check if all resulting components have the same sum.
+BF Complexity Visuals: Exponential Edge Cutting (2^E)
+How to Draw BF: Draw a tree. Draw scissors cutting different combinations of edges. Label $O(2^N)$.
+Optimised Pattern: Divisor Search + Post-order DFS
+Opt Vis. Technique: Subtree Sum Sieve
+Dry Run (Opt): Total sum must be divisible by the component sum `S`. For each divisor `S`, run a DFS. If a subtree sum equals `S`, "cut" the edge (reset sum to 0). Check if all pieces = `S`.
+How to Draw (Opt): Draw the tree. Write subtree sums at each node. If a node hits the target `S`, draw a big 'X' on its parent edge and write '0' for the node's contribution upward.
+Opt Complexity Visuals: Factor-Count DFS
+How to Draw Opt Complexity: Draw one DFS arrow. Label $O(\text{Divisors} \cdot N)$.
+Mem Vis (BF): Recursion stack $O(N)$.
+Mem Vis (Opt): Adjacency list. $O(N)$ Space.

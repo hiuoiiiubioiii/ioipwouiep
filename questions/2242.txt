@@ -1,0 +1,13 @@
+ID: 2242
+Problem Title: Maximum Score of a Node Sequence
+Brute Force Method: DFS for Path Length 4Run a Depth First Search from every node to find all possible simple paths of length 4, calculating the score for each and keeping the maximum.
+BF Complexity Visuals: Exponential Path Exploration
+How to Draw BF: Draw a graph. From a starting node, draw 3 branches, then 3 more from each. Show how the search space explodes to $O(V \cdot E^3)$ or worse.
+Optimised Pattern: Edge-Centric + Top 3 Neighbors
+Opt Vis. Technique: Middle-Edge Pivot Map
+Dry Run (Opt): Iterate through every edge `(u, v)` as the middle of the 4-node sequence. To complete the sequence `(a-u-v-b)`, pick the best neighbor `a` of `u` and `b` of `v` that are not `u`, `v`, or each other. Store only the top 3 neighbors per node.
+How to Draw (Opt): Draw an edge between `U` and `V`. Next to `U`, list its 3 highest-value friends. Next to `V`, list its 3 highest-value friends. Draw lines connecting a friend from `U` and a friend from `V` to form a chain of 4.
+Opt Complexity Visuals: Linear Edge Sweep
+How to Draw Opt Complexity: Draw an $O(E)$ timeline representing the edge loop. Inside, show a small constant number of checks (3x3 = 9 combinations). Total complexity: $O(E + V \log 3)$.
+Mem Vis (BF): Massive recursion stack and path-history sets to prevent cycles during DFS.
+Mem Vis (Opt): An adjacency list where each node only stores a list of its top 3 weighted neighbors (O(V) space).

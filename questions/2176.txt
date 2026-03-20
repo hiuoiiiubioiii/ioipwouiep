@@ -1,0 +1,13 @@
+ID: 2176
+Problem Title: Count Equal and Divisible Pairs in an Array
+Brute Force Method: Nested loops checking every pair (i, j) where i &lt; j. Check if nums[i] == nums[j] and (i * j) % k == 0.
+BF Complexity Visuals: An upper-triangular matrix of pair comparisons.
+How to Draw BF: Draw an N x N grid. Shade the top-right triangle. Each cell check is one $O(1)$ condition. Write $O(N^2)$.
+Optimised Pattern: Frequency Hash Map (Value -&gt; List of Indices).
+Opt Vis. Technique: Grouping same-colored balls into buckets before checking internal connections.
+Dry Run (Opt): Group indices by value. For each group, perform a nested loop over the indices list. If index_i * index_j % k == 0, increment count.
+How to Draw (Opt): Draw buckets for each unique number. Put indices 0, 2, 5 into Bucket "3". Draw lines between 0, 2, and 5. Check the math (0*2%k, 0*5%k, etc.) only for these connected lines.
+Opt Complexity Visuals: $O(N^2)$ worst case (if all numbers same), but $O(N)$ average case with distinct values.
+How to Draw Opt Complexity: A collection of small, isolated star-graphs (cliques) within the array.
+Mem Vis (BF): No extra memory (in-place nested loops).
+Mem Vis (Opt): Hash Map mapping Integer -&gt; List of Integers (O(N) space).

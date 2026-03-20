@@ -1,0 +1,13 @@
+ID: 429
+Problem Title: N-ary Tree Level Order Traversal
+Brute Force Method: DFS with Depth Use DFS and pass a 'depth' variable. Add node to the corresponding sub-list in results.
+BF Complexity Visuals: Scattered Traversal
+How to Draw BF: Draw a tree. Show an arrow jumping deep, then back up, then deep again, filling buckets at the bottom.
+Optimised Pattern: BFS (Queue) Use a Queue. Process all nodes in the current queue (one level) before moving to the next.
+Opt Vis. Technique: Ripple Effect
+Dry Run (Opt): Imagine a stone dropped at the root. The "waves" move outward level by level.
+How to Draw (Opt): Draw a tree. Circle the root (Level 0). Draw a horizontal line. Circle all its children (Level 1). Draw another line.
+Opt Complexity Visuals: Level Scan
+How to Draw Opt Complexity: Draw horizontal layers. Each node is touched exactly once. $O(N)$.
+Mem Vis (BF): Call Stack Stack depth equal to tree height. $O(H)$.
+Mem Vis (Opt): Queue Buffer Draw a horizontal queue holding the widest level of the tree. $O(W)$.

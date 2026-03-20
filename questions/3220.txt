@@ -1,0 +1,13 @@
+ID: 3220
+Problem Title: Odd and Even Transactions (SQL)
+Brute Force Method: Self joins or multiple heavy subqueries filtering individually for odd and even amounts.
+BF Complexity Visuals: Relational Cartesian Product
+How to Draw BF: Draw a giant table intersecting with itself, showing rows exponentially expanding before filtering by modulo operations.
+Optimised Pattern: Conditional Aggregation (SUM + IF/CASE)
+Opt Vis. Technique: Split-Stream Pipeline
+Dry Run (Opt): Group by date. For each row, check modulo parity. If odd, add to 'Odd' bucket. If even, add to 'Even' bucket.
+How to Draw (Opt): Draw a row moving through a diamond decision node. Draw an arrow routing it to an "Odd Sum" box or an "Even Sum" box based on amount % 2.
+Opt Complexity Visuals: Single-Pass MapReduce
+How to Draw Opt Complexity: Draw a timeline of $O(N)$ row scanning, feeding directly into a constant $O(1)$ mathematical routing operation per row.
+Mem Vis (BF): Duplicate temporary tables stacking up in memory.
+Mem Vis (Opt): $O(N)$ Hash map space for the Group By result set.

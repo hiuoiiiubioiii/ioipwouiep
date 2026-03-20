@@ -1,0 +1,13 @@
+ID: 1011
+Problem Title: Capacity To Ship Packages Within D Days
+Brute Force Method: Start with ship capacity = max weight in array. Simulate loading. If it takes &gt; D days, increment capacity by 1 and try again.
+BF Complexity Visuals: A ship expanding its hull pixel by pixel, attempting the same full journey repeatedly.
+How to Draw BF: Draw a number line starting at Max_Weight. For every tick mark, draw a sub-loop simulating the array iteration. Write $O(N \\text{cdot SumOfWeights})$.
+Optimised Pattern: Binary Search on Answer Range.
+Opt Vis. Technique: A number line from `Max(weights)` to `Sum(weights)` where you chop the line in half based on a simulation test.
+Dry Run (Opt): Pick the middle capacity. Run through the conveyor belt of packages. If days &gt; D, chop off the left half. If days &lt;= D, chop off the right half to find a tighter fit.
+How to Draw (Opt): Draw a number line. Mark L = Max(arr) and R = Sum(arr). Put 'Mid' in the middle. Do a quick tally of days needed for 'Mid'. Cross out one half.
+Opt Complexity Visuals: A logarithmic zoom-in layered over a linear scan.
+How to Draw Opt Complexity: Draw a logarithmic tree shrinking a range, where each node contains an $O(N)$ array scan. Write $O(N \log(\text{Sum})$).
+Mem Vis (BF): $O(1)$ space variables.
+Mem Vis (Opt): $O(1)$ space variables: just L, R, Mid, and a day counter box.

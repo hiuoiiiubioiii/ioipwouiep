@@ -1,0 +1,13 @@
+ID: 3337
+Problem Title: Total Characters in String After Transformations II
+Brute Force Method: Simulate each of the T transformations by replacing every character with its nums[i] successors.
+BF Complexity Visuals: Exponential String Growth
+How to Draw BF: Write "a". Draw nums[0] arrows to new letters. Repeat T times. The paper fills up instantly, showing $O(\text{Length} \cdot 2^T)$.
+Optimised Pattern: Matrix Exponentiation
+Opt Vis. Technique: Character Transition Graph
+Dry Run (Opt): Build a 26 x 26 adjacency matrix where M[i][j]=1 if char i transforms into char j. Compute M^T using binary exponentiation.
+How to Draw (Opt): Draw 26 dots in a circle. Draw arrows showing char transitions. Then draw the 26 x 26 grid. Shade the cells that have a '1'. Highlight the squaring process (M^2, M^4, M^8).
+Opt Complexity Visuals: Logarithmic Step Timeline
+How to Draw Opt Complexity: Draw a line of length T. Mark only the powers of 2 (1, 2, 4, 8...). The few marks prove $O(26^3 \log T)$ efficiency.
+Mem Vis (BF): Gigabytes of string data expanding and being re-allocated in the heap.
+Mem Vis (Opt): A single 26 x 26 integer matrix (strictly constant auxiliary space $O(1)$ relative to T).

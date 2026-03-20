@@ -1,0 +1,13 @@
+ID: 1873
+Problem Title: Calculate Special Bonus (SQL)
+Brute Force Method: Pull all records into Python/Java. Iterate rows, use `if/else` for naming/ID conditions, and sort the list.
+BF Complexity Visuals: Application-side data processing flow.
+How to Draw BF: Draw a database table and an arrow to a code loop. Inside the loop, draw branches for `id % 2 != 0` and `name not like 'M%'`.
+Optimised Pattern: `CASE` statement or `IF` function + `MOD()` + `LIKE`.
+Opt Vis. Technique: Conditional Field Mapping.
+Dry Run (Opt): The SQL engine evaluates `id % 2 != 0 AND name NOT LIKE 'M%'` for each row. If true, `bonus = salary`; else `0`. Sort by `employee_id`.
+How to Draw (Opt): Draw the input table. For each row, check the two conditions. Write the bonus in a new column. Cross-reference with the original salary.
+Opt Complexity Visuals: $O(N \log N)$ for Sorting (or $O(N)$ scan).
+How to Draw Opt Complexity: Draw a vertical arrow through the table. Mark as $O(N)$.
+Mem Vis (BF): Full result set storage in application RAM.
+Mem Vis (Opt): Negligible (processed in SQL engine stream).

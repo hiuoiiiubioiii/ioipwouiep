@@ -1,0 +1,13 @@
+ID: 1867
+Problem Title: Orders With Maximum Quantity Above Average (SQL)
+Brute Force Method: Use subqueries to calculate the average of max quantities for all orders, then filter original table.
+BF Complexity Visuals: Multi-stage data scan.
+How to Draw BF: Draw a table. Draw an arrow scanning for averages, then another arrow scanning to filter based on that global value. $O(N^2)$.
+Optimised Pattern: Window Functions or Common Table Expressions (CTEs) with MAX() and AVG().
+Opt Vis. Technique: Data Filtering Pipeline.
+Dry Run (Opt): Group by `order_id`. Calculate `MAX(quantity)` for each. Find the `MAX` of those `AVG(quantity)` across the whole result set and filter.
+How to Draw (Opt): Draw a table grouped by ID. Draw a funnel that calculates a single global threshold, then discards rows below it.
+Opt Complexity Visuals: Linear record processing.
+How to Draw Opt Complexity: Draw a single vertical arrow through the data. Mark $O(N)$.
+Mem Vis (BF): Large temporary tables on disk.
+Mem Vis (Opt): Hash-based aggregation in RAM.

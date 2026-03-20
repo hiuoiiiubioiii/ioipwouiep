@@ -1,0 +1,13 @@
+ID: 2360
+Problem Title: Longest Cycle in a Graph
+Brute Force Method: For every node, start a DFS to see if it eventually leads back to itself. Keep track of the path length and the maximum cycle found.
+BF Complexity Visuals: Exhaustive Path Searching (O(N^2))
+How to Draw BF: Draw a graph. From every node, draw a long arrow following the edges until it hits a dead end or circles back. Repeat for every single node.
+Optimised Pattern: DFS with Timestamping (Kahn’s or Visited Array)
+Opt Vis. Technique: Cycle Entry-Point Tracking
+Dry Run (Opt): Run DFS and mark each node with a "time" it was visited. If you hit a node already visited *in the current path*, the cycle length is `currentTime - startTime`. Use a global `visited` array to avoid re-processing nodes.
+How to Draw (Opt): Draw a graph. Move along the edges, writing "1, 2, 3..." on the nodes. If you land on a node that already has a number from your *current* trip, subtract the numbers to find the cycle length.
+Opt Complexity Visuals: Single Graph Pass (O(V+E))
+How to Draw Opt Complexity: Draw a line that visits every node exactly once. When it hits a "tail," it stops; when it hits itself, it records a cycle.
+Mem Vis (BF): Draw an immense number of redundant path arrays for every node's DFS.
+Mem Vis (Opt): Draw one `visited` Boolean Array and one `time_visited` Integer Array.

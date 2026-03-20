@@ -1,0 +1,13 @@
+ID: 3675
+Problem Title: Minimum Operations to Transform String (Med)
+Brute Force Method: Breadth-First Search (BFS) on all possible string transformations to find the shortest path from A to B. $O(2^N)$.
+BF Complexity Visuals: State-Space String Tree.
+How to Draw BF: Start with String A. Draw arrows to every string you can reach in 1 move. From those, draw more arrows. The number of strings explodes.
+Optimised Pattern: Two-Pointer Greedy Scan or Edit Distance variant. If only specific operations are allowed (like moving to front), focus on the "Longest Matching Suffix".
+Opt Vis. Technique: The "Solid Foundation" Suffix.
+Dry Run (Opt): Look at the end of both strings. How many characters already match in order? These don't need to be moved. Everything else must be "plucked" and rearranged.
+How to Draw (Opt): Draw String A and String B. Place pointer `i` at the end of A and `j` at the end of B. If `A[i] == B[j]`, move both left. If not, only move `i` left. The remaining `j` count is the number of moves.
+Opt Complexity Visuals: Linear Reverse Scan.
+How to Draw Opt Complexity: Draw one arrow scanning from Right to Left once. $O(N)$.
+Mem Vis (BF): A massive `visited` set in BFS storing every string permutation.
+Mem Vis (Opt): Two pointers and a few character variables. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 1491
+Problem Title: Average Salary Excluding the Minimum and Maximum Salary
+Brute Force Method: Sort the array. Iterate from index 1 to n-2, summing the values. Divide the sum by n-2.
+BF Complexity Visuals: Sorting Bottleneck Scan
+How to Draw BF: Draw an array. Sort it. Cross out the first and last boxes. Draw an arrow through the middle boxes into a sum box. Label $O(n \log n)$.
+Optimised Pattern: One-Pass Min-Max Tracking
+Opt Vis. Technique: Extreme Value Filtering
+Dry Run (Opt): Iterate once. Keep track of the `total_sum`, `min_val`, and `max_val`. Result is `(total_sum - min_val - max_val) / (n - 2)`.
+How to Draw (Opt): Draw an array. As you scan, update three small chalkboards: "Running Total", "Current Min", "Current Max". At the end, perform one subtraction and division.
+Opt Complexity Visuals: Single-Pass Linear Scan
+How to Draw Opt Complexity: Draw one arrow from start to end. Label $O(n)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Three integer/float variables. Space $O(1)$.

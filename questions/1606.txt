@@ -1,0 +1,13 @@
+ID: 1606
+Problem Title: Find Servers That Handled Most Number of Requests
+Brute Force Method: Linear scan of k servers for every incoming request to find the first free one.
+BF Complexity Visuals: 2D Grid Traversal
+How to Draw BF: Draw a grid: N rows (requests) and K columns (servers). Draw a horizontal line scanning across columns for every row. $O(N \cdot K)$.
+Optimised Pattern: Two Heaps (Priority Queues) / TreeSet
+Opt Vis. Technique: Dual Funnel System
+Dry Run (Opt): Incoming request pops busy servers whose time expired, pushes them to free heap. Assign request to smallest free server ID.
+How to Draw (Opt): Draw two pyramids (heaps): "Free" and "Busy". Draw arrows moving numbers between them as time progresses.
+Opt Complexity Visuals: Logarithmic Rebalancing
+How to Draw Opt Complexity: Draw a funnel where data passes through quickly. Write $O(N \log K)$ next to it.
+Mem Vis (BF): 1D Array: Draw an array of size K storing end-times for each server.
+Mem Vis (Opt): Two Min-Heaps: Draw two tree-like structures mapping available IDs and busy end-times.

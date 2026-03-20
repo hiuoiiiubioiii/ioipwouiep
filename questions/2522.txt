@@ -1,0 +1,13 @@
+ID: 2522
+Problem Title: Partition String Into Substrings With Values at Most K
+Brute Force Method: Recursive backtracking to generate every single possible way to slice the string, validating at the end if all slices are strictly less than or equal to K.
+BF Complexity Visuals: Exponential decision tree of knife cuts occurring sequentially between characters.
+How to Draw BF: Write the string. Draw a line after the 1st character and branch. Draw another line after the 2nd character and branch. Repeat until you have drawn every combination of cuts.
+Optimised Pattern: Greedy Algorithm / String Parsing with continuous accumulation.
+Opt Vis. Technique: A sliding window expanding like a pac-man, eating digits left-to-right until it "gags" (exceeds K), making a cut and starting fresh.
+Dry Run (Opt): Start a running value at 0. Read the next digit. Multiply running value by 10 and add the digit. If the new value exceeds K, increment your "cut" tally and reset the running value to just the new digit.
+How to Draw (Opt): Write the string. Slide your finger over the numbers, reading the growing number aloud. When the spoken number is bigger than K, draw a vertical line before the last digit, tally 1, and resume reading from the line.
+Opt Complexity Visuals: A single, continuous $O(N)$ linear pass with constant-time math checks.
+How to Draw Opt Complexity: Draw the string of numbers. Draw a single, unbroken arrow from left to right, making quick vertical tick marks whenever a cut is triggered.
+Mem Vis (BF): $O(N)$ recursive call stack frames.
+Mem Vis (Opt): Constant $O(1)$ memory, tracking just the running value and cut tally.

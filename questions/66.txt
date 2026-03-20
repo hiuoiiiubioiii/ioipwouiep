@@ -1,0 +1,13 @@
+ID: 66
+Problem Title: Plus One
+Brute Force Method: Int Conversion Convert the array of digits into a large integer, add 1, then convert it back into an array of digits.
+BF Complexity Visuals: The Overflow Funnel
+How to Draw BF: Draw an array. Draw a funnel turning it into a single huge number. Note that for large arrays (100+ digits), this exceeds standard integer limits, causing a crash.
+Optimised Pattern: Reverse Linear Scan
+Opt Vis. Technique: The Ripple Effect
+Dry Run (Opt): Start from the last digit. If it's less than 9, increment and return. If it's 9, turn it to 0 and move left. If you reach the front and it's still 9, prepend a 1.
+How to Draw (Opt): Draw the array `[9, 9, 9]`. Start at the end. Change 9 to 0, move left. Change 9 to 0, move left. Change 9 to 0. Draw a "New Box" at the front and put '1' inside.
+Opt Complexity Visuals: Single Backward Arrow
+How to Draw Opt Complexity: Draw a line of length N. Draw an arrow moving right-to-left. In the best case, it stops at the first step. Worst case, it touches every element once. $O(N)$.
+Mem Vis (BF): Allocating a massive BigInt or string to hold the intermediate number.
+Mem Vis (Opt): Draw the original array. In most cases, it is modified in-place (O(1)). Only in the "all nines" case is a new array of size N+1 created (O(N)).

@@ -1,0 +1,13 @@
+ID: 3429
+Problem Title: Paint House IV
+Brute Force Method: Try every possible color combination for every house, checking constraints for adjacent houses and the "equidistant" house from the end. $O(3^N)$
+BF Complexity Visuals: Decision Tree with Constraint Pruning.
+How to Draw BF: Draw a row of houses. At house 1, branch into 3 colors. At house 2, branch again, crossing out paths that violate the adjacency or "House IV" rule.
+Optimised Pattern: Dynamic Programming (State: index, last_color_left, last_color_right). $O(N)$
+Opt Vis. Technique: 2D DP Table of color pairs.
+Dry Run (Opt): Process houses from outside-in (pairs i and n-i-1). DP state stores the min cost for the current pair given the colors of the previous outer pair.
+How to Draw (Opt): Draw the row of houses. Draw arrows pointing from both ends toward the middle. In the middle, draw a 3x3 grid of possible color pairings.
+Opt Complexity Visuals: Linear Progress toward Center.
+How to Draw Opt Complexity: Draw a line of length N/2. Shade it block by block to show $O(N)$ total complexity.
+Mem Vis (BF): Recursive call stack depth N.
+Mem Vis (Opt): A 3D DP table or memoization map of size [N/2][3][3].

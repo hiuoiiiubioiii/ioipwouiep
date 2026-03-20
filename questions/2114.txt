@@ -1,0 +1,13 @@
+ID: 2114
+Problem Title: Maximum Number of Words Found in Sentences
+Brute Force Method: Split each string by space into a new array of words, count the length of the array, find max.
+BF Complexity Visuals: Chopping blocks of text into smaller blocks.
+How to Draw BF: Draw a sentence, draw scissors cutting at every space, count the resulting pieces.
+Optimised Pattern: String Iteration / Character Counting.
+Opt Vis. Technique: Highlighting only the spaces in a continuous string.
+Dry Run (Opt): For each sentence, count ' ' (spaces). Words = spaces + 1. Update global max.
+How to Draw (Opt): Write the sentences. Put a dot under every space. Tally the dots + 1.
+Opt Complexity Visuals: $O(N \cdot M)$ single pass per character.
+How to Draw Opt Complexity: A single continuous line scanning through all characters of all sentences.
+Mem Vis (BF): Array of Strings (Allocating new memory for every word $O(N\cdot M)$).
+Mem Vis (Opt): $O(1)$ running counter variable.

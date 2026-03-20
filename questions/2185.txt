@@ -1,0 +1,13 @@
+ID: 2185
+Problem Title: Counting Words With a Given Prefix
+Brute Force Method: Loop through the array. For each word, use `word.substring(0, pref.length())` and compare it to the prefix.
+BF Complexity Visuals: Linear scan with substring allocations.
+How to Draw BF: Draw words. Draw a "lens" of length K. Look through the lens at the start of each word. Circle if match. $O(N \cdot M)$.
+Optimised Pattern: String Comparison (In-place `startsWith`).
+Opt Vis. Technique: A sliding filter that only looks at the first few characters.
+Dry Run (Opt): For each word, check if `word[i] == pref[i]` for all `i` up to `pref.length`. If any character mismatches or word is too short, skip.
+How to Draw (Opt): Write words in a list. Write prefix on a separate card. Slide the card over the start of each word. Tally the perfect overlaps.
+Opt Complexity Visuals: $O(N \cdot L)$ where L is prefix length.
+How to Draw Opt Complexity: A single horizontal arrow scanning the words, with a small vertical comparison at the start of each.
+Mem Vis (BF): $O(N \cdot L)$ space due to many temporary substring objects.
+Mem Vis (Opt): $O(1)$ auxiliary space (using direct character comparison).

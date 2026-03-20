@@ -1,0 +1,13 @@
+ID: 736
+Problem Title: Parse Lisp Expression
+Brute Force Method: String replacement of variables followed by multiple passes of evaluation.
+BF Complexity Visuals: Recursive String Mutation
+How to Draw BF: Draw a string physically expanding and contracting as variables are "pasted" in. $O(N^2)$ or worse.
+Optimised Pattern: Recursive Descent Parser + Scoped Symbol Table
+Opt Vis. Technique: Abstract Syntax Tree (AST) with Scopes
+Dry Run (Opt): Parse tokens. Maintain a stack of HashMaps (scopes). If `let`, add to current map. If `evaluate`, look up in stack from top to bottom.
+How to Draw (Opt): Draw a tree of nodes (add, mult, let). Next to each node, draw a small box (HashMap) for variables valid only in that branch.
+Opt Complexity Visuals: Tree Traversal Linearization
+How to Draw Opt Complexity: Draw a line through the expression. Each character is visited once by the parser. $O(N)$ time.
+Mem Vis (BF): Deep copies of strings for every sub-expression.
+Mem Vis (Opt): Stack of Map objects representing lexical scoping (O(N)).

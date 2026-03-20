@@ -1,0 +1,13 @@
+ID: 2124
+Problem Title: Check if All A's Appears Before All B's
+Brute Force Method: Nested loops comparing every 'a' to ensure no 'b' came before it.
+BF Complexity Visuals: Backwards pointing arrows checking past characters.
+How to Draw BF: Draw a string. For every 'a', draw lines checking every single letter before it to make sure it's not a 'b'.
+Optimised Pattern: Linear Scan / Substring Search.
+Opt Vis. Technique: A single trap-detector sliding over a string.
+Dry Run (Opt): Iterate string. If you see 'b', set a flag `seen_b = true`. If you see 'a' AND `seen_b` is true, return false. Or simply check if string contains "ba".
+How to Draw (Opt): Write the string. Slide a box of size 2 across it. If the box ever contains "ba", draw a red X and stop.
+Opt Complexity Visuals: $O(N)$ single pass.
+How to Draw Opt Complexity: A single straight line scanning left to right.
+Mem Vis (BF): $O(1)$ extra space.
+Mem Vis (Opt): $O(1)$ extra space, single boolean variable `seen_b`.

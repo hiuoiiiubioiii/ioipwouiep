@@ -1,0 +1,13 @@
+ID: 3651
+Problem Title: Minimum Cost Path with Teleportations (Hard)
+Brute Force Method: Standard Dijkstra's ignoring teleportation rules or treating every teleport as a standard edge (causing $O(V^2)$ edges if everyone can teleport to everyone).
+BF Complexity Visuals: Dense Spaghetti Graph.
+How to Draw BF: Draw nodes. Draw lines from EVERY node to EVERY other node to represent teleport possibilities. The paper is solid black ink. $O(V^2)$.
+Optimised Pattern: Dijkstra + Auxiliary "Teleport Hub" nodes. Instead of V \times V edges, connect all nodes to one "Hub" with specific entry/exit costs.
+Opt Vis. Technique: Star-Network Hub/Spoke.
+Dry Run (Opt): Visualize a central "Warp Zone" node. Every city has a one-way road *into* the Warp Zone and a one-way road *out*. This reduces N^2 edges to 2N edges.
+How to Draw (Opt): Draw 5 nodes in a circle. Draw one big node in the center. Draw arrows from outer nodes to the center (Cost X) and from center to outer (Cost Y). Run Dijkstra.
+Opt Complexity Visuals: Linearized Edge Chart.
+How to Draw Opt Complexity: Draw V nodes and E edges. Show that adding the hub node only adds V more edges. Total time $O((E+V)$ \log V).
+Mem Vis (BF): A massive adjacency matrix taking $O(V^2)$ space to store every possible jump.
+Mem Vis (Opt): Adjacency list including the auxiliary hub node. Space $O(V+E)$.

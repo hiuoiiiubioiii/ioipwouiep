@@ -1,0 +1,13 @@
+ID: 704
+Problem Title: Binary Search
+Brute Force Method: Linear Scan (for loop from start to end).
+BF Complexity Visuals: Linear Tape Reading
+How to Draw BF: Draw an array. Point an arrow at index 0, cross it out, move to index 1, repeat. Time: $O(N)$.
+Optimised Pattern: Two-Pointer Binary Search
+Opt Vis. Technique: Shrinking Window / Pincers
+Dry Run (Opt): Draw array. Place L at start, R at end. Calculate M. If target &gt; arr[M], move L to M+1. Keep halving the visual space.
+How to Draw (Opt): Draw array boxes. Use brackets [ ] for L and R, and an arrow pointing down at M. Cross out the discarded half.
+Opt Complexity Visuals: Halving Segment Lines
+How to Draw Opt Complexity: Draw a line of length N. Below it, a line of N/2. Below that, N/4, until length 1. Write $O(\log N)$.
+Mem Vis (BF): Single variable box for the loop counter.
+Mem Vis (Opt): Three variable boxes: L, R, M. (O(1) space).

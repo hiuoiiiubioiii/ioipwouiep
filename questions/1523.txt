@@ -1,0 +1,13 @@
+ID: 1523
+Problem Title: Count Odd Numbers in an Interval Range
+Brute Force Method: A `for` loop iterating from `low` to `high`, doing an `if (i % 2 != 0)` check and incrementing a counter. $O(N)$ where N is the range size.
+BF Complexity Visuals: Linear Hash Marks $O(N)$
+How to Draw BF: Draw a number line. Draw a tally mark on every single odd number between the start and end bounds, counting them manually one by one.
+Optimised Pattern: Math
+Opt Vis. Technique: Bounding Box Formula
+Dry Run (Opt): The number of odds between any two numbers is roughly half the distance. Formula: `(high - low) / 2`. If either `low` or `high` is odd, add 1.
+How to Draw (Opt): Draw a block representing the range. Split the block perfectly in half visually. Check the edges of the block; if an edge lands on an odd number, add a single dot to the final sum.
+Opt Complexity Visuals: Instant Calculation $O(1)$
+How to Draw Opt Complexity: Draw a single dot. The math formula executes instantly regardless of whether the range spans 10 numbers or 10 billion numbers.
+Mem Vis (BF): A single counter variable. $O(1)$.
+Mem Vis (Opt): A single equation evaluated in CPU registers. $O(1)$ space.

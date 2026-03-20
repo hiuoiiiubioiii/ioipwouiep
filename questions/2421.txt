@@ -1,0 +1,13 @@
+ID: 2421
+Problem Title: Number of Good Paths
+Brute Force Method: From every node, run a DFS/BFS to find all paths where all nodes in the path have values less than or equal to the endpoints.
+BF Complexity Visuals: Recursive Spiderweb Growth
+How to Draw BF: Draw a graph. From every node, draw paths branching out. Label $O(N^2)$ or $O(N \cdot (N+E)$).
+Optimised Pattern: Disjoint Set Union (DSU) + Sorting by Value
+Opt Vis. Technique: Bottom-Up Graph Construction
+Dry Run (Opt): Sort nodes by value. Add nodes and their edges to the DSU one by one. When connecting two components, the number of "good paths" is the product of how many nodes in each component have that current max value.
+How to Draw (Opt): Draw nodes in clusters. As you add a node, draw lines to neighbors with smaller/equal values. Inside each DSU bubble, track `[maxValue: count]`.
+Opt Complexity Visuals: DSU Union-Find Path
+How to Draw Opt Complexity: Draw N nodes. Label sorting $O(N \log N)$. Draw edges being added with α(N) complexity. Total $O(N \log N)$.
+Mem Vis (BF): Draw deep recursion stacks for DFS on every node. $O(N)$ Depth.
+Mem Vis (Opt): Draw the DSU `parent` array and a `count` map/array. Label $O(N)$ Space.

@@ -1,0 +1,13 @@
+ID: 861
+Problem Title: Score After Flipping Matrix
+Brute Force Method: Try every combination of flipping rows and columns (2^(R+C)) and calculate the matrix score for each to find the maximum.
+BF Complexity Visuals: Exponential Transformation Tree. $O(2^(R+C)$ x RC).
+How to Draw BF: Draw a matrix. Branch out to "Flip Row 1" vs "Don't Flip." Repeat for every row and col. The tree becomes massive.
+Optimised Pattern: Greedy Property (Row Head + Column Max).
+Opt Vis. Technique: Binary Magnitude Prioritization.
+Dry Run (Opt): 1. Ensure the first column is all '1's by flipping any row that starts with '0'. 2. For every other column, count 0s and 1s. If 0s &gt; 1s, flip the column. Calculating the score is just powers of 2.
+How to Draw (Opt): Draw a matrix. Draw a vertical line through column 0; all cells must be 1. For other columns, draw a "Weight" icon at the bottom. Flip if it increases the 1-count.
+Opt Complexity Visuals: Double Pass Grid Scan. $O(R x C)$.
+How to Draw Opt Complexity: Draw the grid being scanned once horizontally (rows) and then once vertically (columns).
+Mem Vis (BF): Full Grid Copies: Draw multiple R x C matrices for every recursive state.
+Mem Vis (Opt): In-Place Modification: Draw one grid with small toggle switches on the side.

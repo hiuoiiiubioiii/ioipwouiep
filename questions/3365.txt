@@ -1,0 +1,13 @@
+ID: 3365
+Problem Title: Rearrange K Subsets to Form Target String
+Brute Force Method: Generate all K! permutations of the split subsets of the first string and compare each to the target string.
+BF Complexity Visuals: Permutation Factorial Tree
+How to Draw BF: Draw K boxes. Draw arrows showing all ways to arrange them. K=10 leads to 3.6 million leaves. $O(K! \cdot N/K)$.
+Optimised Pattern: Hash Map (Frequency Counting)
+Opt Vis. Technique: Multi-Box Matching
+Dry Run (Opt): Split both strings into K equal parts. Use a Hash Map to count the frequency of each "chunk" in string s and compare it to string t.
+How to Draw (Opt): Draw two rows of boxes. In row 1, label each box with its string chunk. In row 2, do the same. Use lines to connect identical boxes. If all find a pair, return true.
+Opt Complexity Visuals: Linear Chunk Scan
+How to Draw Opt Complexity: Draw the string length N. Divide it into K blocks. One pass through blocks proves $O(N)$.
+Mem Vis (BF): Large list of all possible K! string permutations.
+Mem Vis (Opt): A Hash Map containing K strings of length N/K, taking $O(N)$ space.

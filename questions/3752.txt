@@ -1,0 +1,13 @@
+ID: 3752
+Problem Title: Lexicographically Smallest Negated Permutation that Sums to Target (Med)
+Brute Force Method: Generate all possible permutations of the numbers. For each, try all 2^N combinations of signs (+/-). Sort the results and pick the smallest that hits the Target sum. $O(N! \cdot 2^N)$.
+BF Complexity Visuals: Explosive Permutation-Sign Forest.
+How to Draw BF: Draw every permutation. For each, draw a branching tree of +/- signs. Tally sums and look for the target.
+Optimised Pattern: Greedy Selection with Math Constraints
+Opt Vis. Technique: Range Bound Checking
+Dry Run (Opt): Sort input numbers ascending. At each step, decide whether to negate the number. Check if the remaining "best-case" sum can still hit the Target. Always pick the choice that results in the lexicographically smaller sequence.
+How to Draw (Opt): List the numbers. At each number, calculate: "If I pick '-', can the rest of the numbers still reach the Target?" If yes, pick '-' and move right. If no, pick '+'.
+Opt Complexity Visuals: $O(N \log N)$ Sort + $O(N)$ Greedy pass.
+How to Draw Opt Complexity: Draw a straight timeline with a binary choice (High/Low) at each node, guided by a range check.
+Mem Vis (BF): Massive arrays of all possible combinations.
+Mem Vis (Opt): Simple array of size N for the result.

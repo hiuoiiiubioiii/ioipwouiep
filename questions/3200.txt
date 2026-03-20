@@ -1,0 +1,13 @@
+ID: 3200
+Problem Title: Maximum Height of a Triangle
+Brute Force Method: Recursively try building the triangle using every possible permutation of red and blue balls. $O(2^N)$.
+BF Complexity Visuals: Branching Tower Tree
+How to Draw BF: Draw a ball tower. Branch left to use Red, right to use Blue. Stop when count exceeds availability.
+Optimised Pattern: Greedy Simulation (Two Cases)
+Opt Vis. Technique: The Alternating Layer Stack
+Dry Run (Opt): Try two starting scenarios: 1) Red at top, 2) Blue at top. In each, subtract the required balls for each row (1, 2, 3 dots) alternating colors.
+How to Draw (Opt): Draw two triangles. Start Triangle A with 1 Red. Start Triangle B with 1 Blue. Keep adding rows until you run out of balls. Compare heights.
+Opt Complexity Visuals: Linear Loop with Early Exit
+How to Draw Opt Complexity: Draw a short vertical line representing the height. $O(√N)$.
+Mem Vis (BF): Deep recursion stack for ball placements.
+Mem Vis (Opt): Four integer variables (counts and height). $O(1)$.

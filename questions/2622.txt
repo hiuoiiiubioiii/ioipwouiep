@@ -1,0 +1,13 @@
+ID: 2622
+Problem Title: Cache With Time Limit (JS)
+Brute Force Method: Array storing `{key, value, expiry}`. Scan the whole array on every single `get()` or `count()`.
+BF Complexity Visuals: Linear Array Scan
+How to Draw BF: Draw a long list. Draw a pointer checking every single row's timestamp against `Date.now()`. $O(N)$ per operation.
+Optimised Pattern: Hash Map + clearTimeout
+Opt Vis. Technique: Hash Map with Attached Timer Threads
+Dry Run (Opt): `set(key)`: If key exists, clear its old timer. Save new value and new `setTimeout` ID in Map. `get()`: Direct $O(1)$ lookup. `count()`: $O(1)$ using Map.size.
+How to Draw (Opt): Draw a Hash Map box. Next to each key-value pair, draw a little ticking stopwatch. If a key is overwritten, cross out the old stopwatch and draw a new one.
+Opt Complexity Visuals: Constant Time Lookup Diagram
+How to Draw Opt Complexity: Write $O(1)$. Draw a single straight arrow pointing directly from the Key to the Value in the Map.
+Mem Vis (BF): Unbounded array size (if no cleanup)
+Mem Vis (Opt): Map holding keys, values, and timeout IDs.

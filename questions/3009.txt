@@ -1,0 +1,13 @@
+ID: 3009
+Problem Title: Maximum Number of Intersections on the Chart
+Brute Force Method: Test every single Y-coordinate where a line segment starts or ends, and for each one, iterate through all line segments to count intersections.
+BF Complexity Visuals: Horizontal Scan-Lines
+How to Draw BF: Draw a jagged line chart. Draw dense horizontal lines crossing through every peak and valley. Draw circles everywhere these horizontal lines intersect the chart lines.
+Optimised Pattern: Line Sweep Algorithm / Difference Array
+Opt Vis. Technique: Vertical Event Sorting
+Dry Run (Opt): Sweep a horizontal line from bottom to top. When the line hits the lower bound of a segment, add 1. When it hits the upper bound, subtract 1. Track the running maximum.
+How to Draw (Opt): Draw the jagged chart. On the Y-axis, write '+1' where a segment goes up through a point, and '-1' where it stops. Keep a running tally as you point your pencil up the axis.
+Opt Complexity Visuals: 1D Event Array Timeline
+How to Draw Opt Complexity: Draw an array of events sorted by Y-coordinate. Show a single forward-moving arrow calculating the prefix sum in $O(N \log N)$.
+Mem Vis (BF): A massive 2D matrix or map testing every Y-value against an array of all line segments.
+Mem Vis (Opt): A 1D array of Tuples [(y_coord, +1), (y_coord, -1)] sorted sequentially in memory.

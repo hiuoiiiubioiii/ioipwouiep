@@ -1,0 +1,13 @@
+ID: 1447
+Problem Title: Simplified Fractions
+Brute Force Method: Generate all possible fractions `i/j` where `1 &lt;= i &lt; j &lt;= n`. Convert each fraction to a decimal (floating point) and store in a Set to ensure uniqueness. Return simplified forms.
+BF Complexity Visuals: Floating Point Set Filter
+How to Draw BF: Draw nested loops generating i and j. Draw a "Black Box" (Set) that filters out fractions that result in the same decimal. Label $O(N²)$.
+Optimised Pattern: Greatest Common Divisor (GCD) Filter
+Opt Vis. Technique: Co-prime Mathematical Filtering
+Dry Run (Opt): Iterate `j` from 2 to `n` and `i` from 1 to `j-1`. A fraction `i/j` is in its simplest form if and only if `gcd(i, j) == 1`.
+How to Draw (Opt): Draw a grid of `i` vs `j`. In each cell, write the GCD. Circle only the cells where GCD = 1. These circled cells form your output list.
+Opt Complexity Visuals: Nested GCD Computation
+How to Draw Opt Complexity: Draw nested loops. Inside, draw a Euclidean Algorithm flowchart. Label $O(N² \log N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A list of strings to store the result. Space $O(N²)$ in terms of output size.

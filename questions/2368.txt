@@ -1,0 +1,13 @@
+ID: 2368
+Problem Title: Reachable Nodes With Restrictions
+Brute Force Method: From node 0, run a full DFS/BFS. For every edge, check if the neighbor is in the `restricted` list by scanning the list repeatedly.
+BF Complexity Visuals: Graph Search + List Scanning (O(V * R))
+How to Draw BF: Draw a graph. From node 0, draw arrows to neighbors. For every arrow, draw a separate line scanning the entire "Restricted" list to see if you can pass.
+Optimised Pattern: Hash Set + Single BFS/DFS
+Opt Vis. Technique: Blocked Edge Pruning
+Dry Run (Opt): Convert the `restricted` list into a Hash Set for $O(1)$ lookup. Run a standard BFS/DFS starting from node 0, but never move into a node that exists in the Hash Set.
+How to Draw (Opt): Draw a graph. Color the "Restricted" nodes red. Start at node 0 and "flood" the graph with blue paint. The paint can't enter red nodes. Count the blue nodes.
+Opt Complexity Visuals: Linear Graph Traversal (O(V + E))
+How to Draw Opt Complexity: Draw a single traversal path that visits each non-restricted node and edge exactly once.
+Mem Vis (BF): Draw a massive call stack that repeatedly re-checks the restricted list for the same nodes.
+Mem Vis (Opt): Draw an Adjacency List (Array of Lists) and one Hash Set for restricted nodes.

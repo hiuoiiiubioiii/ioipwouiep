@@ -1,0 +1,13 @@
+ID: 2562
+Problem Title: Find the Array Concatenation Value
+Brute Force Method: While the array is not empty, convert the first and last elements to strings, concatenate them, convert back to integer, and add to sum. Remove the elements. $O(N^2)$ due to array resizing.
+BF Complexity Visuals: A shrinking array where the middle is repeatedly re-indexed and strings are constantly created.
+How to Draw BF: Write [10, 5, 3]. Pick 10 and 3. Write "103". Delete 10 and 3. Now you have [5].
+Optimised Pattern: Two-Pointer Iteration + Mathematical Concatenation.
+Opt Vis. Technique: Two pointers closing in on the center of the array, calculating concatenation values without string conversion.
+Dry Run (Opt): Set i = 0, j = N-1. While i &lt; j, calculate concatenation: nums[i] * 10^(digits in nums[j]) + nums[j]. Add to sum. Increment i, decrement j. If i == j, add the remaining middle element.
+How to Draw (Opt): Draw the array. Put left and right fingers on the ends. Calculate the "merged" value. Move fingers inward. If they meet on one number, just add that number.
+Opt Complexity Visuals: $O(N)$ - Single pass over the array with constant time math per step.
+How to Draw Opt Complexity: Draw an array. Draw two arrows starting at the ends and meeting in the middle. Show a "Concatenation" box above them.
+Mem Vis (BF): $O(N)$ for string copies and array slicing.
+Mem Vis (Opt): $O(1)$ - Just pointers and a sum variable.

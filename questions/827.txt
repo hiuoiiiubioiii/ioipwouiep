@@ -1,0 +1,13 @@
+ID: 827
+Problem Title: Making A Large Island
+Brute Force Method: For every '0' in the grid, flip it to '1' and run a full BFS/DFS to calculate the size of the resulting island.
+BF Complexity Visuals: Grid-wide Flood Fill per Cell. $O(N^4)$.
+How to Draw BF: Draw a grid. For every empty cell, draw a "splash" that fills the whole grid. Do this for every single empty cell.
+Optimised Pattern: Component Labeling (Island ID) + Hash Map.
+Opt Vis. Technique: Color-Coded Map Regions.
+Dry Run (Opt): Pre-calculate all island sizes and give each a unique ID (Color). Then, for each '0', check its 4 neighbors, sum the sizes of *unique* adjacent colors, plus 1.
+How to Draw (Opt): Draw a grid with clusters colored Red, Blue, Green. Pick a '0'. If it touches Red and Blue, Result = Size(Red) + Size(Blue) + 1.
+Opt Complexity Visuals: Two-Pass Linear Scan. $O(N^2)$.
+How to Draw Opt Complexity: Draw the grid once with a highlighter (labeling) and a second time with a pen (checking zeros).
+Mem Vis (BF): Recursive Stack: Draw a stack depth of N^2 for every single '0' cell.
+Mem Vis (Opt): ID Map: Draw a 2D grid storing integers (IDs) and a Map storing `ID -&gt; Size`.

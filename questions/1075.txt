@@ -1,0 +1,13 @@
+ID: 1075
+Problem Title: Project Employees I
+Brute Force Method: (SQL) For every project row, run a subquery to look up the experience years for all its employees and calculate the average.
+BF Complexity Visuals: A "Lookup and Scan" repeated for every project.
+How to Draw BF: Project 1: Find emp A, B, C. Scan Employee table for years. Sum and divide. Write $O(\text{Projects} \\text{cdot Employees})$.
+Optimised Pattern: Join + Group By + AVG.
+Opt Vis. Technique: A "Table Merge and Collapse". Align the project and employee data, then squish each project group into a single average value.
+Dry Run (Opt): `SELECT p.project_id, ROUND(AVG(e.experience_years), 2) FROM Project p JOIN Employee e ON p.employee_id = e.employee_id GROUP BY p.project_id`.
+How to Draw (Opt): Draw the Project table and Employee table. Connect IDs with lines. Group the resulting rows by project_id and write the calculated average next to each group.
+Opt Complexity Visuals: Single pass join and aggregation.
+How to Draw Opt Complexity: Draw two tables merging, then a single aggregation box. Write Time: $O(\text{Projects} + \text{Employees})$.
+Mem Vis (BF): Many temporary sub-queries residing in memory.
+Mem Vis (Opt): An internal hash map for grouping and summing. $O(\text{UniqueProjects})$ space.

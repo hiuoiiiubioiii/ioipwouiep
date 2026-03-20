@@ -1,0 +1,13 @@
+ID: 1567
+Problem Title: Maximum Length of Subarray With Positive Product
+Brute Force Method: Generate all N^2 subarrays. For each, multiply all elements and check if the product is positive. $O(N^3)$ or $O(N^2)$ with prefix products.
+BF Complexity Visuals: Nested Triangle Expansion
+How to Draw BF: Draw a 2D matrix where (i, j) is the product of arr[i \dots j]. You must fill the whole upper triangle of the matrix.
+Optimised Pattern: Dynamic Programming / Greedy State
+Opt Vis. Technique: Dual Tracking (Positive/Negative Lengths)
+Dry Run (Opt): At each index, track two values: `pos_len` (max length ending here with positive product) and `neg_len` (max length ending here with negative product). Switch them when you hit a negative number. Reset on zero.
+How to Draw (Opt): Draw the array. Below it, draw two rows labeled '+' and '-'. When you hit a positive, increment the '+' row. When you hit a negative, cross-swap the values from the previous step and add 1.
+Opt Complexity Visuals: Linear State Transition $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. At each step, show two small boxes updating based on the previous two boxes.
+Mem Vis (BF): A 2D matrix of products. $O(N^2)$.
+Mem Vis (Opt): Two integer variables: `pos` and `neg`. $O(1)$ space.

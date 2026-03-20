@@ -1,0 +1,13 @@
+ID: 1218
+Problem Title: Longest Arithmetic Subsequence of Given Difference
+Brute Force Method: Use a standard LIS (Longest Increasing Subsequence) $O(N^2)$ DP approach. For every element at index 'i', look back at all elements at index 'j' (where j &lt; i) to see if arr[i] - arr[j] == difference.
+BF Complexity Visuals: Backward-Looking Arcs
+How to Draw BF: Draw an array. Start at the last element. Draw curved arrows pointing backward to every single preceding element. Move one step left and repeat. Write $O(N^2)$.
+Optimised Pattern: Dynamic Programming + Hash Map
+Opt Vis. Technique: Hash Map Look-behind Chain
+Dry Run (Opt): As you read a number X, ask a Dictionary: "Do you have the length for (X - diff)?". If yes, take that length, add 1, and save it under X in the Dictionary. Keep track of the maximum length seen.
+How to Draw (Opt): Draw the array of numbers. Below it, draw a 2-column Hash Map table (Number -&gt; Length). As you process 'arr[i]', draw an arrow pointing into the Hash Map to `arr[i] - diff`, pull its value out, add 1, and write the new row.
+Opt Complexity Visuals: Linear Array to HashMap Mapping
+How to Draw Opt Complexity: Draw a straight horizontal arrow scanning the array. From the arrow head, draw a short line dropping directly down into a Map block. Write $O(N)$.
+Mem Vis (BF): Draw a 1D DP Array of size N.
+Mem Vis (Opt): Draw a HashMap (Dictionary) where keys are the array integers and values are the current max subsequence lengths. Takes $O(N)$ space.

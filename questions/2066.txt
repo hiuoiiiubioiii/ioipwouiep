@@ -1,0 +1,13 @@
+ID: 2066
+Problem Title: Account Balance After Transactions (SQL)
+Brute Force Method: Iterate through every row in the Transactions table, update the corresponding account in the Accounts table one by one.
+BF Complexity Visuals: Row-by-Row Update Loop
+How to Draw BF: Draw an Accounts table and a Transactions table. For every row in Transactions, draw an arrow to Accounts, erase the old value, and write a new one. $O(T \cdot A)$.
+Optimised Pattern: SQL Common Table Expressions (CTE) + SUM() Aggregate
+Opt Vis. Technique: Ledger Balance Sheet
+Dry Run (Opt): Sum all `amount` values (deposits as +, withdrawals as -) grouped by `account_id` in a temporary table. JOIN this with the original balances.
+How to Draw (Opt): Draw a table of transactions. Group them by ID. Calculate a "Net Change" column. Draw an arrow merging this with the original "Starting Balance".
+Opt Complexity Visuals: Single Grouped Scan + Hash Join
+How to Draw Opt Complexity: Draw two parallel lines (Transactions scan $O(T)$, Accounts scan $O(A)$). Merge them at a single Join point. Total Time $O(T + A)$.
+Mem Vis (BF): Hundreds of individual update queries hitting the database disk.
+Mem Vis (Opt): A single set-based calculation performed in the database's memory/buffer.

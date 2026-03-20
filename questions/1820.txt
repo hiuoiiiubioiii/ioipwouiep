@@ -1,0 +1,16 @@
+ID: 1820
+Problem Title: Maximum Number of Accepted Invitations (Premium)
+Brute Force Method: Generate all permutations of boy-girl pairings and count valid invitations. $O(N!)$.
+BF Complexity Visuals: Factorial explosion of pairing combinations.
+How to Draw BF: Draw a set of Boys and Girls. Draw every possible tangled web of matching lines, generating millions of invalid graphs.
+Optimised Pattern: Bipartite Graph Maximum Matching (Kuhn's Algorithm / DFS with Backtracking).
+Opt Vis. Technique: [Image of Bipartite Graph Matching]
+
+
+ Bipartite Graph with Augmenting Paths.
+Dry Run (Opt): For each boy, run DFS to find a willing girl. If she is unmatched, pair them. If matched, ask her current partner to recursively find someone else.
+How to Draw (Opt): Draw two columns (Boys, Girls). Draw valid invite lines. Trace a path: B1-&gt;G1. Then B2-&gt;G1 (conflict!). B2 asks B1 to move. B1 moves to G2. Both matched!
+Opt Complexity Visuals: Graph traversal with V * E paths.
+How to Draw Opt Complexity: Draw a bipartite graph bounding box, noting $O(V \cdot E)$ where V is vertices and E is edges.
+Mem Vis (BF): Memory limits exceeded tracking all permutation states.
+Mem Vis (Opt): Adjacency list/matrix + a `match` array mapping Girls to Boys.

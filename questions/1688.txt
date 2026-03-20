@@ -1,0 +1,13 @@
+ID: 1688
+Problem Title: Count of Matches in Tournament
+Brute Force Method: Recursive simulation: if N is even, N/2 matches; if odd, (N-1)/2 matches. Update N until N=1.
+BF Complexity Visuals: Tournament Bracket Tree
+How to Draw BF: Draw a standard tournament bracket (pyramid). Count the horizontal lines (matches). $O(\log N)$.
+Optimised Pattern: Mathematical Insight (Elimination)
+Opt Vis. Technique: Single Match Winner Logic
+Dry Run (Opt): Every match eliminates exactly one team. To get 1 winner from N teams, you must eliminate N-1 teams. Result is always N-1.
+How to Draw (Opt): Draw N dots. Circle two dots and draw an 'X' over one. Continue until only one dot is left without an 'X'.
+Opt Complexity Visuals: Constant Time
+How to Draw Opt Complexity: Draw a single calculation box. $O(1)$.
+Mem Vis (BF): Recursive Stack: Stack of depth \log N.
+Mem Vis (Opt): Variables: One box holding the result. $O(1)$ space.

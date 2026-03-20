@@ -1,0 +1,13 @@
+ID: 462
+Problem Title: Min Moves to Equal Elements II
+Brute Force Method: Exhaustive Check Try every element in the array as the target value. Calculate total distance for each.
+BF Complexity Visuals: Distance Matrix
+How to Draw BF: Draw an N \times N grid of distances. For each row (target), sum the columns. $O(N^2)$.
+Optimised Pattern: Median Target (Greedy) The point that minimizes the sum of absolute differences is the median. Sort and find the middle.
+Opt Vis. Technique: Central Convergence
+Dry Run (Opt): Visualize points on a number line. Moving toward the center reduces total distance until you hit the median.
+How to Draw (Opt): Draw a number line with dots. Draw arrows from outermost dots toward the center. Where they meet (median) is the goal.
+Opt Complexity Visuals: Sorting funnel
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sorting block + one $O(N)$ sum pass. Total $O(N \log N)$.
+Mem Vis (BF): None Constant variables.
+Mem Vis (Opt): None In-place sort. $O(1)$ or $O(\log N)$ depending on sort.

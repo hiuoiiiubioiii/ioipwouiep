@@ -1,0 +1,13 @@
+ID: 763
+Problem Title: Partition Labels
+Brute Force Method: Generate all possible partitions and check if any character appears in more than one partition.
+BF Complexity Visuals: Exhaustive Split Search
+How to Draw BF: Draw a string. Draw scissors at every possible index. $O(2^N)$ combinations.
+Optimised Pattern: Greedy (Last Occurrence Map)
+Opt Vis. Technique: Stretching Elastic Bands
+Dry Run (Opt): Pre-record the last index of every character. Iterate through the string; the current partition must extend to the "last index" of any character found within it.
+How to Draw (Opt): Draw the string. For the first letter, draw a line to its last occurrence. As you move, if you hit a letter whose "last" is further, stretch your boundary line. Cut when you reach the boundary.
+Opt Complexity Visuals: Two-Pass Linear Sweep
+How to Draw Opt Complexity: Draw an array. Show one pass to build a map, one pass to partition. $O(N)$.
+Mem Vis (BF): List of all partition combinations.
+Mem Vis (Opt): Hash Map/Array of size 26 (O(1) constant space).

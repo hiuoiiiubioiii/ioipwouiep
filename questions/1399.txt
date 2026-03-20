@@ -1,0 +1,13 @@
+ID: 1399
+Problem Title: Count Largest Group
+Brute Force Method: For every number, convert it to a string, split the characters, parse back to integers, sum them, and store in a list of lists.
+BF Complexity Visuals: $O(N \log N)$ String Manipulation
+How to Draw BF: Draw an integer entering a "String Factory." It comes out as characters, goes through a "Summer," and then gets sorted. High overhead for simple math.
+Optimised Pattern: Integer Modulo Sum + Frequency Bucket
+Opt Vis. Technique: Digit Peeling Tally
+Dry Run (Opt): Sum digits using `n % 10` and `n / 10`. Use an array to count how many numbers share the same digit sum. Find the max frequency and count how many sums hit that max.
+How to Draw (Opt): Draw a line of numbers. Peel off their digits using modulo 10. Write the sum. Drop a pebble into a bucket labeled with that sum. Find the fullest bucket.
+Opt Complexity Visuals: $O(N \log₁₀ N)$
+How to Draw Opt Complexity: Draw a single loop from 1 to N. Each step involves a small nested loop that runs exactly as many times as there are digits (very small constant).
+Mem Vis (BF): Nested List Buffers: Storing every number categorized by its sum in dynamic lists.
+Mem Vis (Opt): Fixed Size Array: Draw an array of size 37 (max digit sum for 10000). Space is strictly $O(1)$ relative to input size.

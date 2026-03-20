@@ -1,0 +1,13 @@
+ID: 3624
+Problem Title: Number of Integers With Popcount-Depth Equal to K II (Hard)
+Brute Force Method: Same as part I, but N is given as a massive string (up to 10^5 bits). Attempting standard iteration results in an instant Time Limit Exceeded.
+BF Complexity Visuals: Heat Death Timeline.
+How to Draw BF: Draw a string of 100,000 ones. Attempt to draw a loop that runs 2^100000 times. Cross the entire page out.
+Optimised Pattern: Advanced Digit DP + Precomputed Combinatorics Modulo 10^9+7. Find valid popcounts up to Length L, then use nCr to place bits.
+Opt Vis. Technique: Bounded String Slicing.
+Dry Run (Opt): The max popcount is the string length L (10^5). Find which target popcounts `p &lt;= L` take exactly K-1 steps to reach 1. Then find how many numbers `&lt;= N` have exactly `p` set bits.
+How to Draw (Opt): Draw a long binary string. Scan left to right. When you hit a '1', add the mathematical combination of (Remaining Length) choose (Target Bits - Current Bits).
+Opt Complexity Visuals: Length-Bounded Pascal's Triangle.
+How to Draw Opt Complexity: Draw a matrix for precomputing nCr up to L. Time is dominated by the string scan and combination lookups. Write $O(L^2)$ or $O(L)$ if combinations are precomputed $O(1)$.
+Mem Vis (BF): Infinite recursion stack crashing the program.
+Mem Vis (Opt): Arrays of size L (10^5) for factorials, inverse factorials, and DP states. Space strictly bounded to $O(L)$.

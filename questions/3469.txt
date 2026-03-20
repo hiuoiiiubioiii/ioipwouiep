@@ -1,0 +1,13 @@
+ID: 3469
+Problem Title: Find Minimum Cost to Remove Array Elements
+Brute Force Method: Try every possible pair from the first 3 elements in a recursive tree without saving results. $O(3^N)$
+BF Complexity Visuals: Tri-branching Recursion Tree.
+How to Draw BF: Draw a root. Branch it 3 times (choosing pairs (1,2), (1,3), or (2,3)). Repeat at each level.
+Optimised Pattern: DP with State (lastRemainingIndex, nextIndex). $O(N^2)$
+Opt Vis. Technique: 2D Grid of Remaining Elements.
+Dry Run (Opt): Use DP to store the min cost to finish if element X is currently the "orphan" and the next available elements are at index i, i+1.
+How to Draw (Opt): Draw a 2D table where rows are "last leftover" and columns are "current start." Trace a path through the table.
+Opt Complexity Visuals: Matrix Shading (N^2 states).
+How to Draw Opt Complexity: Draw a square matrix of size N x N and shade it cell by cell to show polynomial complexity.
+Mem Vis (BF): Massive recursion stack depth with redundant calculations.
+Mem Vis (Opt): A 2D memoization array of size N x N.

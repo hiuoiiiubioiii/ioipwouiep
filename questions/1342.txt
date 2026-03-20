@@ -1,0 +1,13 @@
+ID: 1342
+Problem Title: Number of Steps to Reduce to Zero
+Brute Force Method: Standard iterative simulation: check even/odd, divide or subtract until zero.
+BF Complexity Visuals: Linear Step Log
+How to Draw BF: Draw a number. Subtract 1. Divide by 2. Repeat. Each operation is one step. Linear visualization of work.
+Optimised Pattern: Bit Manipulation (Popcount + Bit Length)
+Opt Vis. Technique: Binary Bit-Strip Transition
+Dry Run (Opt): Total steps = `(total_bits - 1) + (count_of_set_bits)`. Every '0' is 1 step (div), every '1' is 2 steps (sub then div), except the last '1'.
+How to Draw (Opt): Write the number in binary. Count the length. Count the '1's. Add them and subtract 1. That is your total steps.
+Opt Complexity Visuals: $O(\log N)$ or $O(1)$
+How to Draw Opt Complexity: Draw a 32-bit register. Show an arrow scanning the bits once. $O(\log_10 N)$ complexity since we process bits.
+Mem Vis (BF): Variable Stack: Simple loop variables.
+Mem Vis (Opt): Register Operation: Draw a CPU performing `CLZ` (Count Leading Zeros) and `POPCNT`.

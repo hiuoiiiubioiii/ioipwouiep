@@ -1,0 +1,13 @@
+ID: 2451
+Problem Title: Odd String Difference
+Brute Force Method: For every string, calculate its difference array. Store all arrays in a list. Run nested loops to compare every array with every other array to find the one that is different.
+BF Complexity Visuals: Difference Array Comparison Matrix
+How to Draw BF: Draw strings. Next to them, draw their [n-1] diff arrays. Draw lines comparing every array. Label $O(N^2 \cdot L)$.
+Optimised Pattern: Hash Map Counting (Frequency of Arrays)
+Opt Vis. Technique: Pattern Bucketing
+Dry Run (Opt): Convert each string to a difference string (comma-separated). Put them in a Map: `{diff_pattern: [count, original_string]}`. The one with count 1 is the answer.
+How to Draw (Opt): Draw a bucket for each unique pattern you see. Drop the strings into the buckets. Pick the string from the bucket that has only one occupant.
+Opt Complexity Visuals: Linear Pass + Map Ops
+How to Draw Opt Complexity: Draw a line through N strings. Above it, show a Map lookup. Label $O(N \cdot L)$ Time.
+Mem Vis (BF): Draw massive lists of integer arrays.
+Mem Vis (Opt): Draw a Map storing string keys. $O(N \cdot L)$ Space.

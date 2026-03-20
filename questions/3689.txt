@@ -1,0 +1,13 @@
+ID: 3689
+Problem Title: Maximum Total Subarray Value I (Med)
+Brute Force Method: Nested loops to find every subarray (i, j) and a third loop to calculate its "Value" (e.g., sum * length). $O(N^3)$.
+BF Complexity Visuals: Subarray Triple Loop.
+How to Draw BF: Draw an array. Draw brackets for every [L, R]. Calculate total value for each. With N=5000, this is 125 billion operations.
+Optimised Pattern: Kadane's Algorithm or Sliding Window with Prefix Sums. If Value = Sum, it's strictly Kadane's.
+Opt Vis. Technique: The "Rolling Snowball".
+Dry Run (Opt): As you move through the array, keep adding to your snowball (current sum). If the snowball becomes a "rock" (negative), throw it away and start a new one.
+How to Draw (Opt): Draw an array. Keep current_sum and max_sum. If current_sum &lt; 0, reset it to 0. Always update max_sum with the current peak.
+Opt Complexity Visuals: Linear Cumulative Graph.
+How to Draw Opt Complexity: Draw a single arrow moving left to right. $O(N)$.
+Mem Vis (BF): A 2D matrix storing values for every (i, j) pair.
+Mem Vis (Opt): Two or three variables. Space $O(1)$.

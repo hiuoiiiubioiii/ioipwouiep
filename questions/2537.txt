@@ -1,0 +1,13 @@
+ID: 2537
+Problem Title: Count the Number of Good Subarrays
+Brute Force Method: Generate every possible subarray (i, j). For each, count the number of pairs (a, b) where nums[a] == nums[b]. $O(N^3)$.
+BF Complexity Visuals: A nested loop within a nested loop, creating a "scanning beam" that restarts and re-counts from scratch constantly.
+How to Draw BF: Draw an array. Use two bookmarks to mark a start and end. For every possible position of the bookmarks, list all matching pairs inside.
+Optimised Pattern: Sliding Window with Frequency Map.
+Opt Vis. Technique: An elastic window expanding until it finds k pairs, then shrinking from the left while "collecting" all possible rightward extensions.
+Dry Run (Opt): Expand right pointer. New pairs added = count[nums[right]]. While pairs &gt;= k, every index from right to N-1 is a valid endpoint. Shrink left, removing count[nums[left]]-1 pairs.
+How to Draw (Opt): Draw the array. Slide a bracket `[ ]`. Keep a tally of pairs. When tally >= k, calculate (N - right) and add to total. Move the left bracket and repeat.
+Opt Complexity Visuals: $O(N)$ - Each element is visited by the left and right pointers exactly once.
+How to Draw Opt Complexity: Draw the array with two arrows (Left, Right). Show both moving only forward, never backward, proving linear time.
+Mem Vis (BF): $O(1)$ if not counting the frequency map.
+Mem Vis (Opt): $O(N)$ for the frequency map of element counts in the current window.

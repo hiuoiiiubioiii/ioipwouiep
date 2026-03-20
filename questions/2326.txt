@@ -1,0 +1,13 @@
+ID: 2326
+Problem Title: Spiral Matrix IV
+Brute Force Method: Simulate the spiral by hardcoding boundary checks (if top, if right, etc.) repeatedly and popping from the Linked List until empty, filling a pre-sized grid.
+BF Complexity Visuals: Grid Collision Path (O(M * N))
+How to Draw BF: Draw a matrix. Draw an arrow starting top-left, moving right until it hits the edge, then abruptly drawing a new arrow down, repeating until trapped.
+Optimised Pattern: Direction Array + Matrix Simulation
+Opt Vis. Technique: Concentric Spiraling Inward
+Dry Run (Opt): Use a `[row, col]` direction matrix: `[[0,1], [1,0], [0,-1], [-1,0]]`. Walk the Linked List. If the next cell is out of bounds or already filled (!= -1), change direction by rotating the index `(dir + 1) % 4`.
+How to Draw (Opt): Draw a matrix filled with -1. Draw a continuous, looping line that curls inward like a snail shell, writing the Linked List values along the line.
+Opt Complexity Visuals: Single Continuous Thread (O(M * N))
+How to Draw Opt Complexity: Draw a single, unbranching line that coils up tightly. Even though it turns, it never overlaps itself.
+Mem Vis (BF): Draw the original Linked List being modified/destroyed as nodes are pulled.
+Mem Vis (Opt): Draw an M x N Matrix pre-filled with -1, and two simple pointers `(r, c)` tracking position.

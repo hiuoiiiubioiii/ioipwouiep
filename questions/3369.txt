@@ -1,0 +1,13 @@
+ID: 3369
+Problem Title: Design an Array Statistics Tracker
+Brute Force Method: Maintain a simple list. For every `getMedian` or `getMode` call, sort the list or build a frequency map from scratch.
+BF Complexity Visuals: On-Demand Sorting Plot
+How to Draw BF: Draw the array. For every request, draw a sorting diagram (bubbles or branches). Total work $O(Q \cdot N \log N)$.
+Optimised Pattern: Two Heaps (Median) + Hash Map &amp; Treap/SortedSet (Mode)
+Opt Vis. Technique: Balanced Balancing Act
+Dry Run (Opt): Use a Max-Heap and Min-Heap for $O(1)$ median. Use a Hash Map for frequencies and a `SortedSet` of `(freq, value)` for $O(\log N)$ mode.
+How to Draw (Opt): Draw two triangles (Heaps) meeting at the tips. Draw a "Balance Scale" between them. Next to it, draw a "Leaderboard" (SortedSet) for the mode.
+Opt Complexity Visuals: Logarithmic Update Timeline
+How to Draw Opt Complexity: Draw a line of Q queries. At each point, draw a small log N staircase. Total complexity $O(Q \log N)$.
+Mem Vis (BF): N/A (Repeated allocations).
+Mem Vis (Opt): $O(N)$ space to store the heaps, maps, and the raw element list.

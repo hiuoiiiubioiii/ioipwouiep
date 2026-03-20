@@ -1,0 +1,13 @@
+ID: 674
+Problem Title: Longest Continuous Increasing Subsequence
+Brute Force Method: Check every possible subarray (i, j) to see if it is increasing, and track the maximum length.
+BF Complexity Visuals: Subarray Scan Volume.
+How to Draw BF: Draw an array. Draw brackets of all lengths. For each, scan to check "increasing." Write $O(N^2)$.
+Optimised Pattern: Sliding Window / Greedy.
+Opt Vis. Technique: Unbroken Streak Tracking.
+Dry Run (Opt): Iterate once. If `arr[i] &gt; arr[i-1]`, increment the current streak. If not, reset the streak to 1. Track the max streak encountered.
+How to Draw (Opt): Draw an array. Draw a single arrow moving left to right. If the next number is higher, extend the arrow. If lower, start a new arrow.
+Opt Complexity Visuals: Single pass $O(N)$.
+How to Draw Opt Complexity: Draw a straight arrow through the array. Write $O(N)$.
+Mem Vis (BF): Draw a list of all increasing subarrays.
+Mem Vis (Opt): Draw exactly two integer variables: `current` and `max`. $O(1)$ space.

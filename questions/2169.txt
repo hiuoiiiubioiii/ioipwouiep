@@ -1,0 +1,13 @@
+ID: 2169
+Problem Title: Count Operations to Obtain Zero
+Brute Force Method: Simulation: Use a `while` loop to subtract the smaller from the larger until one is zero.
+BF Complexity Visuals: A staircase of subtractions.
+How to Draw BF: Draw two bars (Num1, Num2). Chop the shorter bar off the taller one. Repeat until a bar disappears. $O(\text{Num}1 + \text{Num}2)$.
+Optimised Pattern: Math (Euclidean-like division).
+Opt Vis. Technique: A fast-forward button on the subtraction process.
+Dry Run (Opt): `count += num1 / num2`. `num1 %= num2`. This jumps multiple subtractions in one step.
+How to Draw (Opt): Draw 100 and 7. Instead of 7+7+7..., draw a box labeled "14" and write "14 times". Use the remainder for the next step.
+Opt Complexity Visuals: $O(\log(\text{min}(\text{num}1, \text{num}2)$)) - logarithmic time.
+How to Draw Opt Complexity: A steep curve dropping rapidly toward zero.
+Mem Vis (BF): No significant memory.
+Mem Vis (Opt): $O(1)$ space, single counter variable.

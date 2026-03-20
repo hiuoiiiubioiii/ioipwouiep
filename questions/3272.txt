@@ -1,0 +1,13 @@
+ID: 3272
+Problem Title: Find the Count of Good Integers
+Brute Force Method: Iterate from 10^n-1 to 10^n - 1. For each, check if it's a palindrome and divisible by k. If so, check all its permutations for divisibility. $O(\text{Range} \cdot n!)$.
+BF Complexity Visuals: Exhaustive Permutation Web
+How to Draw BF: Draw a number line. At each number, draw a "flower" of branches representing every possible digit permutation. Label as "Computationally Impossible."
+Optimised Pattern: Palindrome Generation + Combinatorial Counting
+Opt Vis. Technique: Symmetry-Based Search Tree
+Dry Run (Opt): Only generate palindromes (half the digits). For each valid palindrome (divisible by k), count its unique anagrams using the formula: fracn!f_1! f_2! dots where f_i is digit frequency. Subtract cases with leading zeros.
+How to Draw (Opt): Draw half the digits (e.g., N=4, draw slots 1 and 2). Branch digits 0-9. Reflect to form a palindrome. If divisible by K, list its digit frequencies (e.g., {1:2, 2:2}). Use the formula to count unique arrangements.
+Opt Complexity Visuals: Factorial-Based Complexity Map
+How to Draw Opt Complexity: Draw a block for Palindrome generation $O(10^n/2)$. Draw a second block for Frequency Math $O(n)$. Result: $O(10^n/2 \cdot n)$.
+Mem Vis (BF): Factorial permutations stored as strings.
+Mem Vis (Opt): A HashSet to store unique digit-frequency sorted strings of valid palindromes (O(10^{n/2}) space).

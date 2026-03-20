@@ -1,0 +1,13 @@
+ID: 752
+Problem Title: Open the Lock
+Brute Force Method: DFS to explore every single possible combination of dials, ignoring dead-ends, to find the shortest path.
+BF Complexity Visuals: Exponential Depth Tree
+How to Draw BF: Draw a tree starting at "0000". Each level branches into 8 possibilities (up/down for 4 dials). $O(10^4)$.
+Optimised Pattern: Breadth-First Search (BFS) / Bidirectional BFS
+Opt Vis. Technique: Radial Expansion Wavefront
+Dry Run (Opt): Start BFS from "0000". Add neighbors to queue. If neighbor is in `deadends`, skip. First time hitting `target` is the shortest path.
+How to Draw (Opt): Draw a circle "0000". Draw 8 lines out to level 1. From each, draw more lines. Cross out "dead" circles. Shade the layers until target hit.
+Opt Complexity Visuals: Level-Order Growth
+How to Draw Opt Complexity: Draw concentric circles around the start. Each circle represents one "move." $O(10^D + B)$ where D is dials.
+Mem Vis (BF): Recursion stack frames (could hit limit).
+Mem Vis (Opt): Queue for BFS + HashSet for visited/deadends (O(10,000)).

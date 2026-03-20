@@ -1,0 +1,13 @@
+ID: 2890
+Problem Title: Reshape Data: Melt
+Brute Force Method: Iterate through each wide row. For every column (Quarter), create a new row entry containing the Quarter name and the corresponding value.
+BF Complexity Visuals: Column Unrolling
+How to Draw BF: Draw a wide row with 4 quarter columns. Draw 4 narrow rows. Show an arrow from the wide row generating 4 distinct narrow rows.
+Optimised Pattern: df.melt(id_vars=['product'], ...)
+Opt Vis. Technique: Data Melting
+Dry Run (Opt): Visualize a wide table being "liquefied" and poured into a long, thin vertical container. Column names become values in a new 'variable' column.
+How to Draw (Opt): Draw a wide horizontal rectangle. Draw a vertical downward arrow. Draw a long, thin vertical rectangle.
+Opt Complexity Visuals: $O(N \cdot C)$ where C is number of columns.
+How to Draw Opt Complexity: Draw a line that gets longer as you add more columns to "unroll." Total work is the size of the final long table.
+Mem Vis (BF): $O(N \cdot C)$ - Massive object creation in Python loops.
+Mem Vis (Opt): $O(N \cdot C)$ - Vectorized expansion in C.

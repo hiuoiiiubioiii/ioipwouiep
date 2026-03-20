@@ -1,0 +1,13 @@
+ID: 766
+Problem Title: Toeplitz Matrix
+Brute Force Method: For every element (r, c), find the start of its diagonal at the top/left edge and scan the entire diagonal to check for equality.
+BF Complexity Visuals: Repeated Diagonal Scan
+How to Draw BF: Draw a grid. For every cell, draw a long diagonal arrow. Many arrows will overlap the same cells. $O(R \\text{times} C \\text{times} \\text{min}(R,C)$).
+Optimised Pattern: One-Pass Neighbor Comparison
+Opt Vis. Technique: Diagonal Shifting Match
+Dry Run (Opt): Iterate through the matrix from top-left. For each cell (r, c), simply check if it equals its top-left neighbor (r-1, c-1).
+How to Draw (Opt): Draw a grid. Draw small arrows from (0,0) to (1,1), (0,1) to (1,2), etc. Each cell is checked against exactly one neighbor.
+Opt Complexity Visuals: Grid Area Coverage
+How to Draw Opt Complexity: Draw a grid and shade it in one single sweep. $O(R \\text{times} C)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ extra space beyond input.

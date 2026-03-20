@@ -1,0 +1,13 @@
+ID: 301
+Problem Title: Remove Invalid Parentheses
+Brute Force Method: Generate all possible subsets of the string by removing varying numbers of parentheses and checking validity.
+BF Complexity Visuals: N-ary Recursion Tree (Exponential Growth)
+How to Draw BF: Draw a root node with the full string. Draw N branches downwards, each representing the string with one character removed. Label the depth to show 2^N growth.
+Optimised Pattern: Breadth-First Search (BFS) / Level-order traversal with a Visited HashSet.
+Opt Vis. Technique: State-Space Graph with Level Pruning
+Dry Run (Opt): Imagine a queue. Enqueue the starting string. Dequeue, check if valid. If valid, don't generate children (pruning). If not, generate all strings with 1 less char, check if in 'visited' set, and enqueue.
+How to Draw (Opt): Draw a Queue horizontally (boxes). Below it, draw strings in horizontal layers (levels). Circle the first valid string you hit; cross out branches that produce duplicate strings.
+Opt Complexity Visuals: Pruned Recursion Tree (Bounding Box)
+How to Draw Opt Complexity: Draw the same N-ary tree, but put a large red "X" through branches that are stopped early due to the visited set or because a valid string was already found at an earlier level.
+Mem Vis (BF): Deep Call Stack visual: Draw tall, vertical stacked boxes representing recursive function calls, plus a giant unstructured box for the string pool.
+Mem Vis (Opt): Queue Array + Hash Set Array: Draw a horizontal tape for the Queue. Draw a grid of hashed slots for the Visited Set to show $O(N)$ space constraint.

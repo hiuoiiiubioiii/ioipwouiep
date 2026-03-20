@@ -1,0 +1,13 @@
+ID: 3553
+Problem Title: Min Weighted Subgraph With Required Paths II (Hard)
+Brute Force Method: Generate all possible subgraphs and check if the three specific nodes (s1, s2, dest) are connected.
+BF Complexity Visuals: Combinatorial Edge Selection.
+How to Draw BF: Draw a graph. Draw every possible combination of 2^E subgraphs. Check connectivity for each.
+Optimised Pattern: Dijkstra's x3 (Steiner Tree on 3 Nodes variant).
+Opt Vis. Technique: Triple Source Intersection.
+Dry Run (Opt): Run Dijkstra from S1, S2, and Dest (on reversed graph). The optimal meeting point 'M' is where `Dist(S1,M) + Dist(S2,M) + Dist(M,Dest)` is minimum.
+How to Draw (Opt): Draw three "ripples" (contour lines) starting from S1, S2, and Dest. Mark the point where the sum of distances to all three is smallest.
+Opt Complexity Visuals: $O(E \log V)$.
+How to Draw Opt Complexity: Draw three Dijkstra runs sequentially. Then a linear scan over all nodes to find the minimum sum.
+Mem Vis (BF): Multiple Adjacency Matrix Copies: Draw several full graph matrices in memory.
+Mem Vis (Opt): Three Distance Arrays: Draw three 1D arrays (size V) storing min-distances from each source.

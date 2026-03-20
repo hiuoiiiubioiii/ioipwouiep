@@ -1,0 +1,13 @@
+ID: 1114
+Problem Title: Print in Order
+Brute Force Method: Busy Waiting. Use infinite `while` loops checking a shared boolean flag to see if it's a thread's turn.
+BF Complexity Visuals: Spinning Gears (CPU Waste)
+How to Draw BF: Draw thread blocks continuously looping, reading a variable, doing nothing. Draw lightning bolts to show wasted CPU cycles.
+Optimised Pattern: Concurrency: Mutexes / Semaphores / Promises
+Opt Vis. Technique: Gated Checkpoints
+Dry Run (Opt): Thread 1 runs, unlocks Gate A. Thread 2 waits at Gate A, then runs, unlocks Gate B. Thread 3 waits at Gate B, then runs.
+How to Draw (Opt): Draw three parallel tracks. Draw a locked gate on Track 2 and 3. Draw a "key" passing from Track 1 to 2, then 2 to 3.
+Opt Complexity Visuals: Sequential Dependency Graph
+How to Draw Opt Complexity: Draw 3 blocks connected by directed arrows (1 rightarrow 2 rightarrow 3). $O(1)$ time per thread.
+Mem Vis (BF): Shared global boolean variables
+Mem Vis (Opt): OS-level Wait Queues (Threads are put to sleep, using 0 CPU).

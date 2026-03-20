@@ -1,0 +1,13 @@
+ID: 1941
+Problem Title: Check if All Characters Have Equal Number of Occurrences
+Brute Force Method: For each character in the string, scan the entire string again to count its occurrences.
+BF Complexity Visuals: Nested Scanning Grid
+How to Draw BF: Draw a string. For each character, draw a full scan line below it. $O(N^2)$.
+Optimised Pattern: Hash Map / Frequency Array
+Opt Vis. Technique: Histogram Leveling
+Dry Run (Opt): Iterate once to build a frequency map. Check if all values in the map are equal.
+How to Draw (Opt): Draw 26 buckets. Drop letters into buckets. Check if all non-empty buckets are filled to the same height.
+Opt Complexity Visuals: Linear Scan Bar
+How to Draw Opt Complexity: Draw one straight line across the string. $O(N)$ time.
+Mem Vis (BF): Constant repeated scans without extra storage (except the loop index).
+Mem Vis (Opt): A fixed-size integer array of length 26. $O(1)$ extra space.

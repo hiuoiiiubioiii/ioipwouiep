@@ -1,0 +1,13 @@
+ID: 469
+Problem Title: Convex Polygon
+Brute Force Method: Angle Summation Calculate all internal angles of the polygon. If sum is (n-2) \times 180^\circ and no angle &gt; 180^\circ, it's convex.
+BF Complexity Visuals: Trigonometric Grid
+How to Draw BF: Draw a polygon. Draw arcs for every angle. Label $O(N)$ with heavy floating-point math.
+Optimised Pattern: Cross Product (Orientation) For every three consecutive points, calculate the cross product. All cross products must have the same sign (all positive or all negative).
+Opt Vis. Technique: Consistent Turning
+Dry Run (Opt): Imagine driving a car around the polygon. To be convex, you must only ever turn "Left" or only ever turn "Right." Never both.
+How to Draw (Opt): Draw a polygon. Draw arrows between vertices. At each vertex, draw a small arc showing the "turn" direction. All arcs should curve the same way.
+Opt Complexity Visuals: Vector Scan
+How to Draw Opt Complexity: Draw an arrow moving from vertex to vertex calculating a simple determinant. $O(N)$.
+Mem Vis (BF): Register Storing floating-point angles.
+Mem Vis (Opt): None Just three integer variables for current/prev cross products. $O(1)$.

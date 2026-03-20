@@ -1,0 +1,13 @@
+ID: 2498
+Problem Title: Frog Jump II
+Brute Force Method: Try every possible combination of stones for the path forward and back. Use recursion to find the minimum possible maximum jump.
+BF Complexity Visuals: Exponential Path Search
+How to Draw BF: Draw stones. Draw every possible jump sequence forward/back. Label $O(2^N)$.
+Optimised Pattern: Greedy (Skipping Alternate Stones)
+Opt Vis. Technique: Alternating Path Interleaving
+Dry Run (Opt): To minimize the max jump, jump to every second stone on the way there, and the missed stones on the way back. Max jump is `max(stones[i+2] - stones[i])`.
+How to Draw (Opt): Draw a line of stones. Draw blue arcs over the top skipping one stone each. Draw red arcs underneath filling in the gaps.
+Opt Complexity Visuals: Single Pass Line
+How to Draw Opt Complexity: Draw a single straight line from stone 0 to N. Label $O(N)$ Time.
+Mem Vis (BF): Draw a results variable.
+Mem Vis (Opt): Draw one `maxDiff` variable. $O(1)$ extra Space.

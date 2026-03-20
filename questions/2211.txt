@@ -1,0 +1,13 @@
+ID: 2211
+Problem Title: Count Collisions on a Road
+Brute Force Method: Step-by-step SimulationSimulate each unit of time. Move every 'L' left and 'R' right, checking adjacent indices for collisions, and updating states to 'S'.
+BF Complexity Visuals: Multi-Step State Grid
+How to Draw BF: Draw the string of cars. Below it, draw the string again for time t=1, shifting characters. Draw explosion markers where 'L' and 'R' swap indices or hit 'S'.
+Optimised Pattern: Two Pointers / String Trimming
+Opt Vis. Technique: Boundary Trimming &amp; Inclusion Zone
+Dry Run (Opt): Ignore cars on the far left moving left (they escape). Ignore cars on the far right moving right. Every other moving car in the middle will eventually collide.
+How to Draw (Opt): Draw the string. Cross out all consecutive 'L's from the left end. Cross out all consecutive 'R's from the right end. Draw a box around the remaining characters and count all non-'S' cars inside.
+Opt Complexity Visuals: Two-Pointer Inward Shift
+How to Draw Opt Complexity: Draw an array. Draw a left pointer skipping 'L's and a right pointer skipping 'R's. Write $O(N)$ showing a single pass to count the bounded region.
+Mem Vis (BF): Multiple string/array copies representing the road at different time steps.
+Mem Vis (Opt): Two integer pointers (`left` and `right`) and a single `count` variable (O(1) space).

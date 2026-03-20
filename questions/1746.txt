@@ -1,0 +1,13 @@
+ID: 1746
+Problem Title: Maximum Subarray Sum After One Operation
+Brute Force Method: Generate all subarrays. For each, try squaring every element one by one and find the max sum.
+BF Complexity Visuals: Triple-Nested Loop (Subarray Start, End, and Square index).
+How to Draw BF: Draw array. Draw two brackets for subarray. Inside, highlight one element to square. Repeat for all. $O(N^3)$.
+Optimised Pattern: Dynamic Programming (State Machine Kadane's).
+Opt Vis. Technique: Switching Tracks (Train Track).
+Dry Run (Opt): Maintain two states: `s0` (max sum ending at `i` without any squares) and `s1` (max sum ending at `i` with exactly one square already used).
+How to Draw (Opt): Draw two parallel horizontal lines (tracks). If you stay on Track 0, add `num`. If you jump to Track 1, you can either square `num` or add `num` to a previous square.
+Opt Complexity Visuals: Parallel State Progression.
+How to Draw Opt Complexity: Draw two arrows moving together over the array. Label $O(N)$.
+Mem Vis (BF): None, just sum variables.
+Mem Vis (Opt): Two variables per iteration (or two 1D DP arrays). $O(N)$ or $O(1)$ space.

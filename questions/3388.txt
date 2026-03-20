@@ -1,0 +1,13 @@
+ID: 3388
+Problem Title: Count Beautiful Splits in an Array
+Brute Force Method: Try every possible pair of split indices (i, j) and physically compare the resulting substrings. $O(N^3)$.
+BF Complexity Visuals: Nested Split String Comparisons
+How to Draw BF: Draw the array. Put two dividers. Run a loop to compare slice 1 to slice 2, and slice 2 to slice 3.
+Optimised Pattern: LCP Array (Longest Common Prefix) / Z-Algorithm
+Opt Vis. Technique: The Precomputed Prefix Matcher
+Dry Run (Opt): Precompute an `lcp[i][j]` table: the length of the longest common prefix starting at indices i and j in $O(N^2)$. To check if `str1` is a prefix of `str2`, simply check if `lcp[start1][start2] &gt;= length(str1)` in $O(1)$ time.
+How to Draw (Opt): Draw the string. Build a 2D matrix storing how many letters match starting from any two points. Put two dividers in the string. Instead of comparing letters, instantly look up the matrix cell to see if the prefix condition holds.
+Opt Complexity Visuals: $O(N^2)$ Precompute + $O(N^2)$ Checks
+How to Draw Opt Complexity: Draw a 2D matrix fill, followed by a double loop (i, j) checking conditions in $O(1)$.
+Mem Vis (BF): Generating thousands of substrings.
+Mem Vis (Opt): A 2D integer array `lcp`. $O(N^2)$ space.

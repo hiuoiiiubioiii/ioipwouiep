@@ -1,0 +1,13 @@
+ID: 2921
+Problem Title: Maximum Profitable Triplets With Increasing Prices II
+Brute Force Method: Three nested loops checking every combination of i &lt; j &lt; k ensuring prices increase. (TLE due to N=50,000 constraint).
+BF Complexity Visuals: 3D Cubic Grid
+How to Draw BF: Draw an isometric cube (X=i, Y=j, Z=k axes). Shade it red to represent Time Limit Exceeded at $O(N^3)$.
+Optimised Pattern: Binary Indexed Tree (Fenwick Tree) / Segment Tree
+Opt Vis. Technique: Two-Way Range Maximum Queries
+Dry Run (Opt): Fix 'j'. Use a Segment Tree to query the max profit on the left where price &lt; price[j]. Use a second tree to query max profit on the right where price &gt; price[j]. Add them up.
+How to Draw (Opt): Draw the `prices` array. Circle pivot `j`. Draw a tree above the left side querying for max valid profit, and a tree above the right side.
+Opt Complexity Visuals: N queries against Log(N) Depth Trees
+How to Draw Opt Complexity: Draw a horizontal line of N items. From each item, draw an arrow going up into a tree of height Log(N). Total Area = $O(N \log N)$.
+Mem Vis (BF): Three scalar boxes for nested loops. Space $O(1)$.
+Mem Vis (Opt): Two 1D arrays of size max(prices) for Fenwick Trees. Space $O(\text{Max}_\text{Price})$ or $O(N)$ with coordinate compression.

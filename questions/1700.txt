@@ -1,0 +1,13 @@
+ID: 1700
+Problem Title: Number of Students Unable to Eat Lunch
+Brute Force Method: Simulate the queue: if the front student doesn't want the top sandwich, move them to the back. Repeat until no one takes the top sandwich.
+BF Complexity Visuals: Cyclic Queue Rotation
+How to Draw BF: Draw a circle of students and a stack of sandwiches. Draw an arrow circling the students repeatedly. $O(N^2)$.
+Optimised Pattern: Frequency Counting (Greedy)
+Opt Vis. Technique: Student Type Bucketing
+Dry Run (Opt): Count students who want type 0 and type 1. Iterate through sandwiches. If a sandwich of type X is on top and `count[X] == 0`, no more sandwiches can be eaten.
+How to Draw (Opt): Draw two buckets: "Wants 0" and "Wants 1". As you go down the sandwich stack, decrement the corresponding bucket. Stop when a bucket hits zero.
+Opt Complexity Visuals: Linear Sandwich Scan
+How to Draw Opt Complexity: Draw a single horizontal arrow through the sandwich array. $O(N)$.
+Mem Vis (BF): Queue + Stack: Two full data structures tracking order.
+Mem Vis (Opt): Two Integer Variables: Draw two small boxes: `count0` and `count1`. $O(1)$ space.

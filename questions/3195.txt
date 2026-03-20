@@ -1,0 +1,13 @@
+ID: 3195
+Problem Title: Find the Minimum Area to Cover All 1s I
+Brute Force Method: Generate every possible rectangular subgrid and check if it contains all 1s. $O((M x N)$^2).
+BF Complexity Visuals: Quad-Loop Bounding Box Search
+How to Draw BF: Draw a grid with 1s. Try drawing every possible box. Check if any 1s are left outside.
+Optimised Pattern: Min-Max Coordinate Tracking
+Opt Vis. Technique: The Elastic Bounding Box
+Dry Run (Opt): Find global minRow, maxRow, minCol, maxCol. Area = (maxRow - minRow + 1) x (maxCol - minCol + 1).
+How to Draw (Opt): Draw a grid. Circle the 1s. Draw a tight box touching the outermost 1s on all 4 sides. Measure height and width.
+Opt Complexity Visuals: Single Matrix Scan
+How to Draw Opt Complexity: Draw a snake-path through the grid. $O(M x N)$.
+Mem Vis (BF): List of all possible rectangular objects.
+Mem Vis (Opt): Four integer variables for boundaries. $O(1)$.

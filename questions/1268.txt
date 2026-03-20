@@ -1,0 +1,13 @@
+ID: 1268
+Problem Title: Search Suggestions System
+Brute Force Method: For every character typed, scan the entire list of products. Filter those that match the current prefix, sort them alphabetically, and pick the top 3.
+BF Complexity Visuals: Repeated Sorting &amp; Filtering
+How to Draw BF: Draw the word "mouse". For "m", draw a sorting box for 1000 words. For "mo", draw another sorting box. For "mou", draw another. Write $O(L \cdot N \log N)$ where L is word length.
+Optimised Pattern: Sort + Binary Search (Two Pointers)
+Opt Vis. Technique: Alphabetical Range Narrowing
+Dry Run (Opt): Sort the products once. For each typed character, use two pointers (`left`, `right`) to shrink the range in the sorted list that matches the prefix. The first 3 elements from `left` are your suggestions.
+How to Draw (Opt): Draw a sorted list of words. Draw two pointers at the very top and bottom. As you type "m", move `left` down and `right` up. As you type "o", move them further inward. Circle the 3 items starting at `left`.
+Opt Complexity Visuals: Binary Search Halving
+How to Draw Opt Complexity: Draw a sorting block followed by a sequence of L binary search operations. Write $O(N \log N + L \log N)$.
+Mem Vis (BF): Draw multiple temporary sorted lists being created in memory for every keystroke.
+Mem Vis (Opt): Draw one sorted list and two integer pointers. Space: $O(N \cdot \\text{text}{\text{avg}_\text{len}})$.

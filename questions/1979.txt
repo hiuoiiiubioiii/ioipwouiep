@@ -1,0 +1,13 @@
+ID: 1979
+Problem Title: Find Greatest Common Divisor of Array
+Brute Force Method: Sort the array, take the first and last elements, and then loop from 1 to the smaller number to find the max divisor.
+BF Complexity Visuals: Linear Factor Scan
+How to Draw BF: Draw the small number X. Draw a line from 1 to X. Check every tick mark. $O(N \log N + X)$.
+Optimised Pattern: Euclidean Algorithm (Recursive/Iterative)
+Opt Vis. Technique: Subtraction/Modulo Reduction
+Dry Run (Opt): Find min/max in one pass. Apply `gcd(a, b) = gcd(b, a % b)` until `b == 0`.
+How to Draw (Opt): Draw two bars of lengths A and B. "Cut" the longer bar by the length of the shorter one repeatedly until only the GCD length remains.
+Opt Complexity Visuals: Logarithmic Descent
+How to Draw Opt Complexity: Draw a pair of numbers shrinking rapidly. Show that they reach zero in log(min(A,B)) steps. $O(N + \log(\text{min}(A,B)$)).
+Mem Vis (BF): A full copy of the sorted array in memory.
+Mem Vis (Opt): Two primitive integer variables for min/max and the recursion stack (depth $O(\log N)$).

@@ -1,0 +1,13 @@
+ID: 3067
+Problem Title: Count Pairs of Connectable Servers in a Weighted Tree
+Brute Force Method: For every node, use BFS to find all other nodes. Then, for every pair of nodes, find their lowest common ancestor and check path weights.
+BF Complexity Visuals: All-Pairs Tree Traversal
+How to Draw BF: Draw a tree. From every node, draw lines to every other node. Label as $O(N^3)$ or $O(N^2 \\text{cdot Path})$.
+Optimised Pattern: DFS + Combinatorics (Product of Subtree Counts)
+Opt Vis. Technique: Tree Splitting Centroids
+Dry Run (Opt): For each node i, treat it as the root. For each neighbor j, run a DFS to count nodes whose distance from i is divisible by signalSpeed. Multiply counts from different branches to find pairs.
+How to Draw (Opt): Draw a node as a "hub". Draw its subtrees as separate bubbles. Write the count of "Valid Nodes" inside each bubble. Show Count_A x Count_B for all bubble pairs.
+Opt Complexity Visuals: $O(N^2)$ DFS Matrix
+How to Draw Opt Complexity: Draw a nested loop: Outer loop N (for each node) x Inner DFS $O(N)$. Total $O(N^2)$.
+Mem Vis (BF): Large adjacency matrix or deep recursion stack for every pair check.
+Mem Vis (Opt): A List&gt; adjacency list and a single recursion stack of max depth H (tree height).

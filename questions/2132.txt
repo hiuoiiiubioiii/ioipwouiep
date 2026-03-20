@@ -1,0 +1,13 @@
+ID: 2132
+Problem Title: Stamping the Grid
+Brute Force Method: For every empty cell, try placing a stamp. Loop over the stamp's area to verify no blocked cells, mark cells as stamped.
+BF Complexity Visuals: Nested loops inside nested loops scanning patches of a grid.
+How to Draw BF: Draw a large grid. Draw a small stamp box. Move the stamp one cell right, color underneath it, repeat. Write $O(R \cdot C \\text{cdot stampR} \\text{cdot stampC})$.
+Optimised Pattern: 2D Prefix Sum + 2D Difference Array.
+Opt Vis. Technique: Two separate translucent overlays on top of the original grid.
+Dry Run (Opt): Pass 1: Prefix sum of blocked cells to $O(1)$ verify if a stamp fits. Pass 2: If it fits, use Difference Array to mark stamp boundaries. Pass 3: Prefix sum of Difference Array to check if all empty cells are covered.
+How to Draw (Opt): Draw the grid. Draw an overlay calculating blocked sums. If sum == 0 for a stamp area, draw +1 at top-left and -1 just outside bottom-right. Resolve the +1s and -1s to shade covered areas.
+Opt Complexity Visuals: $O(R \cdot C)$ multi-pass scanning.
+How to Draw Opt Complexity: Three distinct, flat grid layers being processed one after another in straight horizontal sweeps.
+Mem Vis (BF): Deep iteration counters, possible boolean matrix replication.
+Mem Vis (Opt): Two extra 2D integer arrays of size (R+1) x (C+1).

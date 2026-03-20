@@ -1,0 +1,13 @@
+ID: 3368
+Problem Title: First Letter Capitalization I (SQL)
+Brute Force Method: (Imperative) Iterate through every character of every word, check if it follows a space, and change its case.
+BF Complexity Visuals: Char-by-Char Scanner
+How to Draw BF: Draw a string. Draw an arrow pointer moving through it. At every space, circle the next character for a "Transformation". $O(N x L)$.
+Optimised Pattern: SQL String Functions (INITCAP / Regex)
+Opt Vis. Technique: Pattern-Matching Funnel
+Dry Run (Opt): Use `INITCAP()` or a combination of `UPPER(SUBSTR)` and `LOWER(SUBSTR)` to transform words based on space boundaries.
+How to Draw (Opt): Draw a column of messy text. Draw it passing through a "Sieve" (SQL function). The output is a column of clean, capitalized text.
+Opt Complexity Visuals: Single-Pass Stream
+How to Draw Opt Complexity: Draw a horizontal arrow $O(N)$. As data flows, it's transformed in-place by the engine's internal string processor.
+Mem Vis (BF): Repeated string buffer reallocations.
+Mem Vis (Opt): $O(1)$ auxiliary space (stream processing by the DB engine).

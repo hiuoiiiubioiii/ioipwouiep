@@ -1,0 +1,13 @@
+ID: 562
+Problem Title: Longest Line of Consecutive One in Matrix
+Brute Force Method: For every cell `(i, j)`, if it is 1, scan in all 8 directions to count consecutive ones.
+BF Complexity Visuals: Grid scan where each cell triggers 4-8 linear scans. $O(M \cdot N \\text{cdot max}(M, N)$).
+How to Draw BF: Draw a grid. Pick a '1'. Draw lines extending horizontally, vertically, and diagonally until hitting a '0'. Repeat for all.
+Optimised Pattern: 3D Dynamic Programming (Spatial State).
+Opt Vis. Technique: A radar screen tracking 4 different "streaks" simultaneously as it sweeps across the grid.
+Dry Run (Opt): State `dp[i][j][4]` stores max length for (Horiz, Vert, Diag, Anti-Diag) ending at `(i, j)`. `dp[i][j][dir] = dp[prev_i][prev_j][dir] + 1`.
+How to Draw (Opt): Draw the matrix. At each '1', write a small 4-tuple: `(H, V, D, AD)`. Calculate these based on the values of the neighbors above, left, and diagonally.
+Opt Complexity Visuals: Single pass over the grid. $O(M \cdot N)$.
+How to Draw Opt Complexity: Draw a grid with a single arrow weaving through every cell once.
+Mem Vis (BF): Large recursion stack if using DFS or $O(1)$ space but very high time.
+Mem Vis (Opt): A 3D DP array of size M x N x 4 (can be optimized to 2D). $O(M \cdot N)$.

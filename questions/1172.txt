@@ -1,0 +1,13 @@
+ID: 1172
+Problem Title: Dinner Plate Stacks
+Brute Force Method: Use a list of stacks. When pushing, iterate through all stacks from index 0 to find the first one with space.
+BF Complexity Visuals: Linear Search through Buckets
+How to Draw BF: Draw a row of buckets. For every "push", draw an arrow starting from the first bucket checking "is full?". $O(N)$ per push.
+Optimised Pattern: Min-Heap + List of Stacks
+Opt Vis. Technique: Available-Slot Tracker
+Dry Run (Opt): Maintain a Min-Heap of indices of stacks that are not full. `push` always uses `heap.top()`. `popAtStack` adds that index back to the heap if it was full.
+How to Draw (Opt): Draw a row of stacks. Draw a small "Priority Queue" triangle on the side containing numbers (indices). Take the smallest number to know where to drop the plate.
+Opt Complexity Visuals: Logarithmic Operations $O(\log N)$
+How to Draw Opt Complexity: Draw a log curve for heap rebalancing after every push or pop.
+Mem Vis (BF): Unordered list of arrays
+Mem Vis (Opt): Min-Heap (Tree) + List of Stacks. Draw a binary tree and a 2D grid of plates.

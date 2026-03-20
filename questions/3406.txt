@@ -1,0 +1,13 @@
+ID: 3406
+Problem Title: Find the Lexicographically Largest String From the Box II
+Brute Force Method: Generate all valid partitions of the string into numFriends parts, extract all substrings, and find the lexicographical max. (O(N^3))
+BF Complexity Visuals: Partition Generation Tree + Sorting List.
+How to Draw BF: Draw the string, mark combinations of cut points, and list every resulting chunk beneath to be evaluated.
+Optimised Pattern: Largest Suffix Algorithm (Two Pointers) + Substring Truncation. (O(N))
+Opt Vis. Technique: Two-Pointer Race on a 1D String Array.
+Dry Run (Opt): Place pointers i and j. Compare characters at offset k. If one sequence is smaller, jump the losing pointer completely past the overlapping prefix.
+How to Draw (Opt): Draw the string as a char array. Place arrows i, j, and k below it. Cross out the losing pointer and redraw it jumped forward.
+Opt Complexity Visuals: Linear Progression Line with Skips.
+How to Draw Opt Complexity: Draw a horizontal timeline of length N. Draw curved jumps skipping over chunks of the line to prove no character is checked more than twice.
+Mem Vis (BF): A massive 2D array or list storing every generated substring partition allocation.
+Mem Vis (Opt): Three distinct dot-markers (integers i, j, k) pointing strictly to indices on the string array.

@@ -1,0 +1,13 @@
+ID: 1171
+Problem Title: Remove Zero Sum Consecutive Nodes from Linked List
+Brute Force Method: Nested loops $O(N^2)$. For every node, start a new sum and scan forward. If sum hits 0, delete all nodes between start and current.
+BF Complexity Visuals: Sub-segment Scanning Waterfall
+How to Draw BF: Draw a linked list. From each node, draw arrows of increasing length checking for a sum of zero. $O(N^2)$ traversal.
+Optimised Pattern: Prefix Sum + Hash Map (One/Two Pass)
+Opt Vis. Technique: Pointer Redirection Map
+Dry Run (Opt): Store `prefix_sum -&gt; node` in a map. If a sum repeats, it means the nodes in between summed to zero. Point the first occurrence's `next` to the second's `next`.
+How to Draw (Opt): Draw the list. Below each node, write the running sum. If you see a sum twice (e.g., '7'), draw a long "bridge" arrow skipping everything between the two '7's.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass through the list. Each node is visited twice (once to map, once to redirect).
+Mem Vis (BF): None (In-place pointer logic)
+Mem Vis (Opt): Hash Map `int -&gt; ListNode`. Draw a small 2-column table mapping sums to node references.

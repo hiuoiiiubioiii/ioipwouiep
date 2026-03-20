@@ -1,0 +1,13 @@
+ID: 2841
+Problem Title: Maximum Sum of Almost Unique Subarray
+Brute Force Method: Generate all subarrays of length K. For each, use a Set to check uniqueness and a loop to calculate the sum. $O(N \cdot K)$.
+BF Complexity Visuals: Redundant Subarray Re-checking
+How to Draw BF: Draw the array. Draw a box of size K. Recalculate everything. Slide box by 1. Recalculate everything from scratch.
+Optimised Pattern: Sliding Window + Hash Map (Frequencies)
+Opt Vis. Technique: The State-Preserving Window
+Dry Run (Opt): Maintain a window of size K, a running sum, and a frequency Map. When sliding: Add the new right element (update sum &amp; map). Remove the old left element (update sum &amp; map). If `Map.size &gt;= M`, update `max_sum`.
+How to Draw (Opt): Draw a window frame over the array. Slide it right. Take the exiting number, subtract from total, remove from Map. Take entering number, add to total, add to Map. Check Map size.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw a single timeline. $O(1)$ math and Map updates at each step.
+Mem Vis (BF): Creating new Set objects for every subarray.
+Mem Vis (Opt): A Hash Map holding at most K elements. $O(K)$ space.

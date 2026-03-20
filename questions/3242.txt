@@ -1,0 +1,13 @@
+ID: 3242
+Problem Title: Design Neighbor Sum Service
+Brute Force Method: For every `adjacentSum` or `diagonalSum` query, scan the entire grid to find the value `v`, then check its neighbors. $O(Q \cdot R \cdot C)$.
+BF Complexity Visuals: Scan-Search Loop
+How to Draw BF: Draw a grid. For a query "Sum(5)", draw a search path through every cell until you find '5', then look at its 4 neighbors. Repeat Q times.
+Optimised Pattern: Coordinate Mapping (Precomputation)
+Opt Vis. Technique: Hash-Linked Grid Map
+Dry Run (Opt): Store the (r, c) coordinates of each value in a Hash Map or array during initialization. During queries, jump directly to the neighbors using these coordinates.
+How to Draw (Opt): Draw a Hash Map on the left and a grid on the right. Draw an arrow from a query "5" to its map entry (row 1, col 1), then circle the adjacent cells in the grid.
+Opt Complexity Visuals: Amortized Constant Query Block
+How to Draw Opt Complexity: Draw a large block for "Initialization $O(R\cdot C)$" and small tiny dots for "Queries $O(1)$". Label total $O(R\cdot C + Q)$.
+Mem Vis (BF): No extra space, just nested pointers (O(1)).
+Mem Vis (Opt): A coordinate array/map of size N² (O(R*C) space).

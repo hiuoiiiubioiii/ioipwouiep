@@ -1,0 +1,13 @@
+ID: 1200
+Problem Title: Minimum Absolute Difference
+Brute Force Method: Nested loops $O(N^2)$. Calculate difference for every possible pair and find the minimum.
+BF Complexity Visuals: Full Comparison Matrix
+How to Draw BF: Draw the array. Draw lines connecting every number to every other number. Circle the ones with the smallest gaps.
+Optimised Pattern: Sorting + Adjacent Comparison
+Opt Vis. Technique: Sorted Gap Scan
+Dry Run (Opt): Sort the array. The minimum difference must exist between adjacent elements. Find the min diff in one pass, then collect all pairs with that diff in a second pass.
+How to Draw (Opt): Draw a sorted array. Draw brackets between adjacent numbers. Write the difference above each bracket. Circle the smallest difference and collect those pairs.
+Opt Complexity Visuals: Sorting $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting funnel followed by two linear passes.
+Mem Vis (BF): None
+Mem Vis (Opt): List of pairs. Draw a table of two-element rows.

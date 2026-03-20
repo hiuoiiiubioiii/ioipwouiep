@@ -1,0 +1,13 @@
+ID: 3797
+Problem Title: Count Routes to Climb a Rectangular Grid (Hard)
+Brute Force Method: Use recursion with DFS to count every path from the bottom row to the top row, moving only to adjacent higher cells. $O(3^N)$.
+BF Complexity Visuals: Recursive Path Enumeration.
+How to Draw BF: Draw a grid. Start at a bottom cell. Draw arrows to the 3 cells above it (Left-Diag, Up, Right-Diag). Repeat until you hit the top. Count every single line.
+Optimised Pattern: 2D Dynamic Programming (Layered)
+Opt Vis. Technique: Pascal's Triangle on a Grid
+Dry Run (Opt): The number of ways to reach cell (r, c) is the sum of ways to reach its three predecessors in the row below: (r+1, c-1), (r+1, c), (r+1, c+1).
+How to Draw (Opt): Draw a grid. Fill the bottom row with 1s. For the next row up, each cell's value is the sum of the three values directly below/diagonal to it. Continue to the top.
+Opt Complexity Visuals: $O(R \cdot C)$ Matrix fill.
+How to Draw Opt Complexity: Draw a square grid and shade it row-by-row from bottom to top.
+Mem Vis (BF): Massive recursion tree.
+Mem Vis (Opt): One or two 1D arrays of size C (current row and previous row).

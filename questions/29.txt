@@ -1,0 +1,13 @@
+ID: 29
+Problem Title: Divide Two Integers
+Brute Force Method: Repeated Subtraction Subtract the divisor from the dividend in a `while` loop, keeping a tally. Will Time Limit Exceed (TLE) for huge numbers (e.g., 2^31 / 1).
+BF Complexity Visuals: The Tally Counter
+How to Draw BF: Draw a massive pile of blocks (Dividend). Draw a tiny bucket (Divisor) scooping them away one by one. Write out $O(N)$ where N is the final quotient.
+Optimised Pattern: Bit Manipulation (Exponential Subtraction)
+Opt Vis. Technique: The Doubling Scooper
+Dry Run (Opt): Shift the divisor left (`&lt;&lt; 1`), effectively doubling it, until it's larger than the dividend. Subtract that massive chunk, add the corresponding power of 2 to the quotient, and repeat with the remainder.
+How to Draw (Opt): Draw the Dividend block. Draw a Divisor block that visually doubles in size (1x, 2x, 4x, 8x) until it almost overflows the Dividend. Subtract the largest chunk, write down the multiplier, and restart.
+Opt Complexity Visuals: Logarithmic Steps
+How to Draw Opt Complexity: Draw a timeline. At each step, cross out half of the remaining dividend. Time complexity is $O(\log(\text{Dividend})$^2) due to the inner doubling loop.
+Mem Vis (BF): $O(1)$ space, but functionally broken for extreme 32-bit limits.
+Mem Vis (Opt): Draw two variables accumulating the quotient and the current power of 2. $O(1)$ extra space.

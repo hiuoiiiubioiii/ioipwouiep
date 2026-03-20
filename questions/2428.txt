@@ -1,0 +1,13 @@
+ID: 2428
+Problem Title: Maximum Sum of an Hourglass
+Brute Force Method: Iterate through every possible 3x3 center. For each, manually add all 7 elements that form the hourglass shape.
+BF Complexity Visuals: Scanning Window Mesh
+How to Draw BF: Draw a grid. Draw an 'I' shape and show it shifting cell by cell. Label $O(R \cdot C)$.
+Optimised Pattern: Sliding Window (Optimised Summing)
+Opt Vis. Technique: Template Overlay Scan
+Dry Run (Opt): Since the hourglass is small (7 cells), a direct sum is essentially $O(1)$ per center. Standard iteration is already optimal at $O(R \cdot C)$.
+How to Draw (Opt): Draw the grid. Draw one hourglass. Use an arrow to show it shifting one column. Show which cells are "dropped" and which are "added".
+Opt Complexity Visuals: Grid Traversal Area
+How to Draw Opt Complexity: Draw a rectangle with area R*C. Label $O(R \cdot C)$.
+Mem Vis (BF): Draw the input matrix in memory. $O(R\cdot C)$.
+Mem Vis (Opt): Draw only one `maxSum` variable. $O(1)$ extra Space.

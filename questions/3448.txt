@@ -1,0 +1,13 @@
+ID: 3448
+Problem Title: Count Substrings Divisible By Last Digit
+Brute Force Method: Check every substring (i, j) by converting to a number and dividing by digit at j. $O(N²)$ with BigInt handling.
+BF Complexity Visuals: Triangular State Matrix.
+How to Draw BF: Draw a triangle of substring results. Each cell requires a division operation on a potentially large number.
+Optimised Pattern: DP with Remainder State for each Divisor (1-9). $O(10 \cdot 10 \cdot N)$
+Opt Vis. Technique: Rolling Remainder Frequency Table.
+Dry Run (Opt): For current digit X and divisor D, update counts: `new_rem = (old_rem * 10 + X) % D`. Add count of `rem == 0`.
+How to Draw (Opt): Draw 9 rows (for divisors 1-9). Each row has boxes for remainders. Update box counts as you scan each digit.
+Opt Complexity Visuals: 9-Layer Linear Scanning.
+How to Draw Opt Complexity: Draw 9 parallel tracks. Move a single cursor across the string, updating all 9 tracks simultaneously.
+Mem Vis (BF): Massive string slicing or BigInt objects filling the heap.
+Mem Vis (Opt): A fixed-size 9x10 2D array of integers to store remainder counts.

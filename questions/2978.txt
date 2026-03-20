@@ -1,0 +1,13 @@
+ID: 2978
+Problem Title: Symmetric Coordinates
+Brute Force Method: A raw Cartesian self-join checking every row against every other row, leading to massive duplicate pairs. $O(N^2)$.
+BF Complexity Visuals: Unfiltered Cartesian Web
+How to Draw BF: Draw Table A. Draw lines from every row in A to every row in a copy of Table A, circling matches but capturing duplicates.
+Optimised Pattern: Self-Join with ROW_NUMBER()
+Opt Vis. Technique: The Unique-ID Matcher
+Dry Run (Opt): Assign a unique ID (ROW_NUMBER) to each coordinate. Join the table to itself where `A.X = B.Y` and `A.Y = B.X`, but enforce `A.ID != B.ID` and `A.X &lt;= A.Y` to prevent reverse duplicates.
+How to Draw (Opt): Draw the table. Add a unique "ID" sticker to each row. Draw a selective bridge only between rows that mirror each other AND have different ID stickers.
+Opt Complexity Visuals: Indexed Join $O(N \log N)$
+How to Draw Opt Complexity: Draw an index lookup tree feeding into a filtered join node.
+Mem Vis (BF): Massive temporary memory for N^2 joins.
+Mem Vis (Opt): Database Hash/Merge join buffer. $O(N)$ space.

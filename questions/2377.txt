@@ -1,0 +1,13 @@
+ID: 2377
+Problem Title: Sort the Olympic Table (SQL Premium)
+Brute Force Method: (Conceptual) Manually compare every country's gold medals. If equal, compare silver, then bronze, and then alphabetical names.
+BF Complexity Visuals: Manual Multi-Level Comparison
+How to Draw BF: Draw the medal table. Pick two rows. Compare Gold. If tie, compare Silver. Repeat until a winner is found for that pair.
+Optimised Pattern: ORDER BY Multiple Columns
+Opt Vis. Technique: Relational Multi-Key Sorting
+Dry Run (Opt): `SELECT * FROM Olympic ORDER BY gold_medals DESC, silver_medals DESC, bronze_medals DESC, country_name ASC`.
+How to Draw (Opt): Draw a table. Sort by the first column. For rows that are identical, sort only those rows by the second column. Repeat for third and fourth.
+Opt Complexity Visuals: Log-Linear Database Sort
+How to Draw Opt Complexity: Draw a data stream entering a multi-stage sorting funnel (Gold -&gt; Silver -&gt; Bronze -&gt; Name).
+Mem Vis (BF): Draw multiple intermediate table copies for each sorting criteria.
+Mem Vis (Opt): Draw one Result Set stream with all columns sorted.

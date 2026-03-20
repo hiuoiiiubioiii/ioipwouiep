@@ -1,0 +1,13 @@
+ID: 3649
+Problem Title: Number of Perfect Pairs (Med)
+Brute Force Method: Nested loops comparing every pair (arr[i], arr[j]) to check if they satisfy the "Perfect" math property (e.g., |a-b| &lt;= min(a, b)). $O(N^2)$.
+BF Complexity Visuals: Double Loop Intersection.
+How to Draw BF: Draw an array. For index 0, check every other index. For index 1, check every other index. Write $O(N^2)$.
+Optimised Pattern: Algebraic Simplification + Binary Search / Fenwick Tree. Re-write the property as a range: arr[j] must be in [arr[i]/2, 2*arr[i]].
+Opt Vis. Technique: Sorted Range Sliding.
+Dry Run (Opt): Sort the array. For each number x, you now just need to find how many numbers in the sorted list fall between x/2 and 2x. This is two simple binary searches.
+How to Draw (Opt): Draw a sorted number line. Mark x. Draw a bracket from x/2 to 2x. Count the dots inside the bracket using bisect_right - bisect_left.
+Opt Complexity Visuals: Sorting + N Binary Searches.
+How to Draw Opt Complexity: Draw a block for "Sort $O(N \log N)$". Draw a line with N dots, each with a small "Search $O(\log N)$" overhead. Total $O(N \log N)$.
+Mem Vis (BF): A massive list of all valid pairs found before counting them.
+Mem Vis (Opt): In-place sorted array. Space $O(1)$ or $O(N)$.

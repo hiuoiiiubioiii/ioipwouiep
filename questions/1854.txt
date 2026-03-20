@@ -1,0 +1,13 @@
+ID: 1854
+Problem Title: Maximum Population Year
+Brute Force Method: For each person, iterate through every year from `birth` to `death - 1` and increment a counter in a year-indexed array.
+BF Complexity Visuals: N \times Year increment grid.
+How to Draw BF: Draw a grid where rows are people and columns are years. For each person, shade their living years. Sum the shaded cells in each column. $O(N \\text{times} 100)$.
+Optimised Pattern: Difference Array / Prefix Sum (Line Sweep).
+Opt Vis. Technique: Step-function accumulation.
+Dry Run (Opt): At `birth`, add +1. At `death`, add -1. Then, calculate prefix sum of years. The year with the maximum sum is the result.
+How to Draw (Opt): Draw a number line for years. For each person, draw a '+' at birth and a '-' at death. Walk the line, keeping a running total.
+Opt Complexity Visuals: Two linear passes (Logs then Years).
+How to Draw Opt Complexity: Draw two arrows: one for $O(N)$ log updates, one for $O(100)$ year scan. Total $O(N)$.
+Mem Vis (BF): $O(1)$ extra if years are fixed range, but inefficient updates.
+Mem Vis (Opt): A single array of size 101 (years 1950 to 2050).

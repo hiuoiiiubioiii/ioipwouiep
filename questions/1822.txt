@@ -1,0 +1,13 @@
+ID: 1822
+Problem Title: Sign of the Product of an Array
+Brute Force Method: Multiply all numbers together to get the final product, then check if it's positive, negative, or zero. (Causes integer overflow).
+BF Complexity Visuals: Accumulator variable exploding in size.
+How to Draw BF: Write the numbers out. Draw multiplication signs. Draw a giant resulting number that exceeds the 32-bit limit.
+Optimised Pattern: Math (Parity tracking). Count negative numbers and check for zeros.
+Opt Vis. Technique: Toggle switch (positive/negative).
+Dry Run (Opt): Start sign = 1. Read num. If num == 0, return 0. If num &lt; 0, flip sign to -sign. Return sign.
+How to Draw (Opt): Draw the array. Write `sign = 1`. Hop to each number. If negative, cross out 1, write -1, and vice versa.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw an arrow traversing the array from index 0 to N-1. Mark $O(N)$.
+Mem Vis (BF): Large Number object / BigInt in heap memory.
+Mem Vis (Opt): Single 32-bit integer register.

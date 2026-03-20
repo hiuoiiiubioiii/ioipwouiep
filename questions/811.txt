@@ -1,0 +1,13 @@
+ID: 811
+Problem Title: Subdomain Visit Count
+Brute Force Method: For every string, parse it, split the domains, and linearly scan an accumulator array to see if the domain exists to update the count.
+BF Complexity Visuals: Nested Linear Scanning. $O(N \cdot L^2)$.
+How to Draw BF: Draw a word splitting into 3 pieces. Draw arrows from each piece that must scan across a long, growing list of previously seen domains, getting slower over time.
+Optimised Pattern: String Parsing + Hash Map (Frequency Counter).
+Opt Vis. Technique: Sorting Mail into Pigeonhole Bins.
+Dry Run (Opt): Read "9001 discuss.leetcode.com". Split at spaces and dots. You have 9001. Drop 9001 into the "com" bin, the "leetcode.com" bin, and the "discuss.leetcode.com" bin. Add to whatever is already there.
+How to Draw (Opt): Draw a funnel at the top. Drop the full string in. Inside the funnel, it breaks into 2 or 3 substrings. Draw pipes routing these strings directly into Hash Map bucket squares, adding the integer value.
+Opt Complexity Visuals: Parallel $O(1)$ Lookups. $O(N \cdot L)$ time.
+How to Draw Opt Complexity: Draw N timelines. Each timeline does 2 or 3 $O(1)$ hash jumps. Draw short, curved arrows representing instant teleportation to memory buckets.
+Mem Vis (BF): Unordered Array of Objects: Draw a long sequence of interconnected boxes.
+Mem Vis (Opt): Hash Map: Draw a grid with random slots filled, labeled with domains and integer counts. $O(N)$ space.

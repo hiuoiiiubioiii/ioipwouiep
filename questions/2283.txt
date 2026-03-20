@@ -1,0 +1,13 @@
+ID: 2283
+Problem Title: Check if Number Has Equal Digit Count and Digit Value
+Brute Force Method: Nested CountingFor every index `i`, run an inner loop over the string to count how many times the digit `i` appears. Compare that count to the value at `num[i]`.
+BF Complexity Visuals: Digit-by-Digit Verification
+How to Draw BF: Write "1210". For index 0, count how many '0's are in the string. For index 1, count how many '1's. Note the $O(N^2)$ redundancy.
+Optimised Pattern: Frequency Array / Hash Map
+Opt Vis. Technique: Single-Pass Tally
+Dry Run (Opt): Traverse the string once and store the count of each digit in a frequency array of size 10. Then, traverse the string again to compare `freq[i]` with the value at `num[i]`.
+How to Draw (Opt): Draw 10 buckets (0-9). Drop each digit of the string into its bucket. Then, walk through the buckets and check if the number of items in bucket `i` matches the character at `num[i]`.
+Opt Complexity Visuals: Two Sequential Linear Passes
+How to Draw Opt Complexity: Draw one $O(N)$ arrow to fill the buckets and a second $O(N)$ arrow to verify the counts. Total time: $O(N)$.
+Mem Vis (BF): No extra space, but $O(N^2)$ time creates a bottleneck for very long strings.
+Mem Vis (Opt): A fixed-size integer array of size 10 (O(1) auxiliary space).

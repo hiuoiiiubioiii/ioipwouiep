@@ -1,0 +1,13 @@
+ID: 1805
+Problem Title: Number of Different Integers in a String
+Brute Force Method: Replace non-digits with space, split string, parse to integer, add to Set.
+BF Complexity Visuals: Multi-pass string transformation pipeline.
+How to Draw BF: Draw the string. Cross out letters. Write new string. Circle segments. Map to integers.
+Optimised Pattern: Two Pointers + Hash Set (skip leading zeros directly).
+Opt Vis. Technique: Sliding window pointers moving on a tape.
+Dry Run (Opt): Move i to digit. Move j to end of digits. Strip leading '0's. Add to Hash Set. Update i = j.
+How to Draw (Opt): Draw string as a tape. Draw arrow i scanning. When digit found, draw j jumping ahead.
+Opt Complexity Visuals: Single pass linear tape.
+How to Draw Opt Complexity: Draw an arrow traversing a line from 0 to N. Mark $O(N)$.
+Mem Vis (BF): Intermediate string arrays + Hash Set buckets.
+Mem Vis (Opt): Hash Set containing substring pointers/references.

@@ -1,0 +1,13 @@
+ID: 2441
+Problem Title: Largest Positive Integer That Exists With Its Negative
+Brute Force Method: Nested loops: for every positive number, search the rest of the array for its negative counterpart. Track the max positive found.
+BF Complexity Visuals: All-Pairs Matching
+How to Draw BF: Draw nodes representing numbers. Draw lines connecting every 'x' to every 'y'. Label $O(N^2)$.
+Optimised Pattern: Hash Set / Two Pointers (after Sort)
+Opt Vis. Technique: Mirror Search in a Set
+Dry Run (Opt): Add all numbers to a Hash Set. Iterate through the array again; if `num &gt; 0` and `-num` is in the set, update the max.
+How to Draw (Opt): Draw an array and a "Bucket" (Set). Drop all numbers into the bucket. Then, point at a number in the array and "look inside" the bucket for its mirror.
+Opt Complexity Visuals: Parallel Scan &amp; Lookup
+How to Draw Opt Complexity: Draw a line for the set build and a line for the lookup. Label $O(N)$ Time.
+Mem Vis (BF): Draw a max_val variable.
+Mem Vis (Opt): Draw a Hash Set structure containing N elements. $O(N)$ Space.

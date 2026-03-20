@@ -1,0 +1,13 @@
+ID: 3098
+Problem Title: Find the Sum of Subsequences Powers
+Brute Force Method: Generate every possible subsequence of size k (O(2^N) or (N Choose k)), find the minimum difference in each, and sum them.
+BF Complexity Visuals: Combinatorial Decision Tree
+How to Draw BF: Draw a root branching 2^N times. At each leaf, draw a nested loop for min-diff. $O(2^N \cdot k^2)$.
+Optimised Pattern: 5D Dynamic Programming + Sorting
+Opt Vis. Technique: State Transition Hypercube
+Dry Run (Opt): Sort the array. Let dp[index][count][last_val][min_diff] be the count of subsequences. Since min_diff is large, use a Map or coordinate compress the potential differences.
+How to Draw (Opt): Draw a complex grid where axes are Index and Count. Each cell contains a Map of "Difference -&gt; Frequency." Show arrows adding new elements and updating the "Global Min" of the subsequence.
+Opt Complexity Visuals: $O(N³ \cdot K)$ DP Grid
+How to Draw Opt Complexity: Draw a grid of size N x K. Each cell represents a complex update. Label as $O(N^3 \cdot K)$ depending on state reduction.
+Mem Vis (BF): Exponential state space tracking every subsequence.
+Mem Vis (Opt): A 3D or 4D DP table (with space optimization) or a nested HashMap.

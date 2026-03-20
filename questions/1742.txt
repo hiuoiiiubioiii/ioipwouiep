@@ -1,0 +1,13 @@
+ID: 1742
+Problem Title: Maximum Number of Balls in a Box
+Brute Force Method: For every number in range, convert to string, split into chars, parse back to int, sum them, and update a frequency map.
+BF Complexity Visuals: String Conversion Overhead.
+How to Draw BF: Draw a ball. Draw a text bubble converting `123` to `"123"`. Draw arrows splitting it to `"1", "2", "3"`. $O(N \\text{cdot NumDigits})$.
+Optimised Pattern: Mathematical Digit Summing + Array Frequency Map.
+Opt Vis. Technique: Rolling Modulo Tally.
+Dry Run (Opt): Loop from `low` to `high`. For each `i`, use `while i &gt; 0: sum += i % 10; i //= 10`. Increment `boxes[sum]`. Keep track of the max frequency.
+How to Draw (Opt): Draw a sequence of numbers. Below each, draw a small machine that spits out a single sum (e.g., 15). Point an arrow to Box 15 and add a tick mark.
+Opt Complexity Visuals: Direct Integer Arithmetic Sweep.
+How to Draw Opt Complexity: Draw an arrow over the number line. Label $O(N \cdot \log(\text{maxVal})$).
+Mem Vis (BF): String buffer overhead for every number.
+Mem Vis (Opt): A fixed-size array of 46 (max sum for 99999 is 45). $O(1)$ space.

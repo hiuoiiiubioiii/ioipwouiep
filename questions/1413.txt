@@ -1,0 +1,13 @@
+ID: 1413
+Problem Title: Min Value to Get Positive Step by Step Sum
+Brute Force Method: Simulation. Start by guessing `startValue = 1`. Run through the array calculating the sum. If it ever hits 0 or less, stop, increment `startValue` to 2, and try again.
+BF Complexity Visuals: Iterative Simulation Timeline
+How to Draw BF: Draw a timeline for start=1. If it hits &lt;=0, draw a red X and draw a whole new timeline below it for start=2. Repeat until a timeline survives to the end. $O(N \\text{cdot min}_\text{val})$.
+Optimised Pattern: Prefix Sum / Minimum Running Sum
+Opt Vis. Technique: Line Chart Trough Finding
+Dry Run (Opt): Calculate the running sum of the array. Track the absolute minimum value reached at any point. The required start value is simply `1 - minimum_running_sum` (if min &lt; 0), else 1.
+How to Draw (Opt): Draw a line graph dipping below the x-axis. Circle the lowest point (the trough). Draw an arrow from the trough up to the +1 line. The length of that arrow is the answer.
+Opt Complexity Visuals: Single Pass Array Traversal
+How to Draw Opt Complexity: Draw an array with a single pointer sliding left to right. Label $O(N)$ time.
+Mem Vis (BF): $O(1)$ Auxiliary Space
+Mem Vis (Opt): Draw two integer variables: `running_sum` and `min_sum` updating as the array is read. Space $O(1)$.

@@ -1,0 +1,13 @@
+ID: 350
+Problem Title: Intersection of Two Arrays II
+Brute Force Method: Same as Q349, but don't use a set for the final result. If an element matches, "mark" it in `nums2` so it isn't used again.
+BF Complexity Visuals: Nested Loop with Depletion
+How to Draw BF: Draw two arrays. When a match is found, draw an "X" over the element in `nums2`. $O(N \cdot M)$.
+Optimised Pattern: Frequency Map or Sort + Two Pointers
+Opt Vis. Technique: Multiplicity Alignment
+Dry Run (Opt): Use a Map to store frequencies of elements in `nums1`. Iterate through `nums2`; if an element is in the Map and count &gt; 0, add to result and decrement the count in the Map.
+How to Draw (Opt): Draw a Frequency Map. For `nums2`, draw an arrow. If it hits a key in the map, "eat" one count from that key and add the number to the result tape.
+Opt Complexity Visuals: Sorted Linear Convergence
+How to Draw Opt Complexity: (If using sorting) Draw two sorted arrays with pointers i and j. If nums[i] == nums[j], move both. Else, move the smaller one. $O(N \log N + M \log M)$.
+Mem Vis (BF): Nested loop overhead.
+Mem Vis (Opt): Frequency Map. Draw a table with counts that decrease over time. $O(\\text{min}(N, M)$).

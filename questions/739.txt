@@ -1,0 +1,13 @@
+ID: 739
+Problem Title: Daily Temperatures
+Brute Force Method: For each day, use a nested loop to look forward until a warmer temperature is found.
+BF Complexity Visuals: Nested Forward Scanning
+How to Draw BF: Draw a temperature list. For the first item, draw an arrow looking right until a hit. Repeat for all items. $O(N^2)$.
+Optimised Pattern: Monotonic Decreasing Stack
+Opt Vis. Technique: Wait-List Management
+Dry Run (Opt): Iterate temperatures. While current temp &gt; stack top, pop stack top and calculate difference (today - day_it_was_recorded). Push current day to stack.
+How to Draw (Opt): Draw a vertical stack. Place colder days inside. When a "hot" day comes, show it "kicking out" the colder days below it and writing the result.
+Opt Complexity Visuals: Amortized Linear Flow
+How to Draw Opt Complexity: Draw a line of numbers. Show each number being pushed/popped once. Total time $O(N)$.
+Mem Vis (BF): N/A (Standard nested loop overhead).
+Mem Vis (Opt): Stack of indices (O(N) worst case for strictly decreasing temps).

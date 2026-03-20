@@ -1,0 +1,13 @@
+ID: 55
+Problem Title: Jump Game
+Brute Force Method: Backtracking / Recursion From index 0, try every possible jump distance. If any path reaches the end, return true.
+BF Complexity Visuals: The Recursive Spiderweb
+How to Draw BF: Draw a tree where each node has `nums[i]` branches. Many branches overlap, leading to $O(2^N)$ or $O(N!)$ complexity.
+Optimised Pattern: Greedy (Max Reach)
+Opt Vis. Technique: The Moving Horizon
+Dry Run (Opt): Iterate through the array. Keep a variable `farthest`. At each step, if `i &gt; farthest`, you're stuck (return false). Otherwise, update `farthest = max(farthest, i + nums[i])`.
+How to Draw (Opt): Draw the array. Draw a flag representing the `farthest` reachable point. As you walk forward, push the flag as far as the current spot allows. If you ever walk past the flag, you lose.
+Opt Complexity Visuals: Single Linear Pass
+How to Draw Opt Complexity: Draw a straight arrow from 0 to N. One pass, constant work at each step. $O(N)$ time.
+Mem Vis (BF): Draw a massive recursion stack reaching depth N.
+Mem Vis (Opt): Draw a single integer variable `farthest`. $O(1)$ space.

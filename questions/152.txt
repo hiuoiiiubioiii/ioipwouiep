@@ -1,0 +1,13 @@
+ID: 152
+Problem Title: Maximum Product Subarray
+Brute Force Method: Nested loops to calculate the product of every possible subarray (i, j) and track the maximum found.
+BF Complexity Visuals: An upper-triangular grid (N x N) where each cell represents a multiplication operation.
+How to Draw BF: Draw the array. For the first element, draw arrows for all subarrays starting there. For the second, do the same. Show the $O(N^2)$ density.
+Optimised Pattern: Dynamic Programming (Kadane's variation with Min/Max tracking).
+Opt Vis. Technique: A "Dual Tracker." Since two negatives make a positive, you track both the "current best" and the "current worst" (minimum) simultaneously.
+Dry Run (Opt): Maintain currMax and currMin. If number is negative, swap them. Update both using num and curr*num.
+How to Draw (Opt): Draw the array. Below it, draw two rows: 'Max' and 'Min'. Fill them as you move right. Use a swap arrow whenever you hit a negative number.
+Opt Complexity Visuals: A single $O(N)$ pass. The work is perfectly linear.
+How to Draw Opt Complexity: Draw a single arrow moving left to right once. Highlight the cells where the max product is updated.
+Mem Vis (BF): $O(1)$ extra space logic, but $O(N^2)$ time results in significant CPU cycle overhead visualized by redundant math.
+Mem Vis (Opt): Visualize three static integer variables in $O(1)$ stack memory: max_so_far, min_so_far, and result.

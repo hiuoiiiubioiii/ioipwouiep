@@ -1,0 +1,13 @@
+ID: 3381
+Problem Title: Maximum Subarray Sum With Length Divisible by K
+Brute Force Method: Generate all subarrays. Check if length is divisible by k. Calculate sum. $O(N^2)$.
+BF Complexity Visuals: Modulo Subarray Brackets
+How to Draw BF: Draw the array. Bracket lengths of K, 2K, 3K. Sum everything from scratch.
+Optimised Pattern: Prefix Sum + Hash Map (Modulo Tracking)
+Opt Vis. Technique: The Modulo-K Minimizer
+Dry Run (Opt): Maintain a running prefix sum. To find a subarray of length divisible by k ending at i, we need a previous prefix sum at index j where j mod k == i mod k. Keep a Map storing the *minimum* prefix sum seen so far for each index modulo k.
+How to Draw (Opt): Draw the array. As you walk, keep a tally. Put the tally in one of k buckets based on your step number. To maximize your score, subtract the smallest tally sitting in your current modulo bucket.
+Opt Complexity Visuals: Single Linear Pass $O(N)$
+How to Draw Opt Complexity: Draw a single straight line. $O(1)$ map lookup and update at each step.
+Mem Vis (BF): Storing sums for all N^2 subarrays.
+Mem Vis (Opt): An array/map of size K. $O(K)$ space.

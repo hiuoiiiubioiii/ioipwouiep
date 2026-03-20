@@ -1,0 +1,13 @@
+ID: 285
+Problem Title: Inorder Successor in BST
+Brute Force Method: Perform a full Inorder traversal, store in a list, and find the element appearing immediately after the target.
+BF Complexity Visuals: Traversal Flat-Map: $O(N)$ Time and Space.
+How to Draw BF: Draw a tree. Show an arrow visiting every node and writing values into an array. Circle the target and its neighbor.
+Optimised Pattern: BST Property Navigation (Succ = smallest of right subtree)
+Opt Vis. Technique: Binary Search Descent
+Dry Run (Opt): If `target.right` exists, successor is the leftmost node of the right child. Else, start from root; if `target &lt; root`, root is a potential successor, move left. If `target &gt; root`, move right.
+How to Draw (Opt): Draw a BST. Trace a path from root. If you turn Left, mark the current node as "Best So Far." The last marked node is your successor.
+Opt Complexity Visuals: Height-Limited Search: $O(H)$ Time.
+How to Draw Opt Complexity: Draw a single path from the root to a leaf. Length is height H (log N if balanced).
+Mem Vis (BF): Full Node List: Draw an array of size N.
+Mem Vis (Opt): Constant Pointers: Draw two variables: `successor` and `curr`. Space: $O(1)$.

@@ -1,0 +1,13 @@
+ID: 2237
+Problem Title: Count Positions on Street With Required Brightness
+Brute Force Method: For every lamp, iterate through its entire range [pos - range, pos + range] and add +1 to an array. $O(N \cdot R)$.
+BF Complexity Visuals: Overlapping Paint Strokes
+How to Draw BF: Draw a street. For each lamp, physically color in the blocks it lights. Overlap colors. Slow for huge ranges.
+Optimised Pattern: Difference Array (Sweep Line)
+Opt Vis. Technique: The Entry/Exit Tally
+Dry Run (Opt): Instead of painting the whole range, mark +1 at the start of the light and -1 just after the light ends. Do a single prefix sum sweep to calculate actual brightness at each spot.
+How to Draw (Opt): Draw the street. Place a '+1' token where a lamp's light starts. Place a '-1' token where it ends. Sweep left-to-right, keeping a running total of tokens to reveal the true brightness.
+Opt Complexity Visuals: Two-Pass Linear $O(N + L)$
+How to Draw Opt Complexity: Draw one pass to place boundary tokens, and one sweep pass to accumulate.
+Mem Vis (BF): Massive array re-allocations.
+Mem Vis (Opt): A difference array of size N+1. $O(N)$ space.

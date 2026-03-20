@@ -1,0 +1,13 @@
+ID: 3245
+Problem Title: Alternating Groups III
+Brute Force Method: Generate all substrings, build frequency maps, and check if one map contains the other. $O(N^3)$.
+BF Complexity Visuals: Sliding Frequency Grids
+How to Draw BF: Draw overlapping brackets. Count everything inside from scratch repeatedly.
+Optimised Pattern: Sliding Window + Deficit Counter
+Opt Vis. Technique: The Missing-Chars Debt Tracker
+Dry Run (Opt): Count required chars in target. Use a sliding window. Track `deficit` (how many required chars are still missing). As window expands, reduce deficit. When `deficit == 0`, ALL substrings ending from `right` to the end of the string are valid. Add `N - right` to total, then shrink `left`.
+How to Draw (Opt): Draw the string. A window slides right. A "Debt" counter ticks down. When Debt hits 0, freeze the right pointer. Draw a giant bracket covering the rest of the string—count them all! Slide left to re-trigger debt.
+Opt Complexity Visuals: Two Pointer Pass $O(N)$
+How to Draw Opt Complexity: Draw two arrows sliding left-to-right exactly once.
+Mem Vis (BF): N^2 frequency maps.
+Mem Vis (Opt): Two frequency arrays (size 26). $O(1)$ space.

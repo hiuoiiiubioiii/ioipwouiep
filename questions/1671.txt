@@ -1,0 +1,13 @@
+ID: 1671
+Problem Title: Minimum Number of Removals to Make Mountain Array
+Brute Force Method: Check every possible peak index i, then for each peak, try every subset of elements to form a mountain.
+BF Complexity Visuals: Power Set Explosion
+How to Draw BF: Draw a massive branching tree for every element (include/exclude). $O(2^N)$.
+Optimised Pattern: LIS (Longest Increasing Subsequence) + LDS (Decreasing)
+Opt Vis. Technique: Bidirectional Wavefront
+Dry Run (Opt): Calculate LIS from left-to-right and LDS from right-to-left. A "mountain" at i is `LIS[i] + LDS[i] - 1`. Find the max such value.
+How to Draw (Opt): Draw the array. Below it, draw two rows of numbers. One shows "longest climb" to that point, the other "longest descent" from that point. Look for the highest sum.
+Opt Complexity Visuals: Dual-Pass Linear / Log-Linear
+How to Draw Opt Complexity: Draw two arrows: one moving L-to-R, one R-to-L. $O(N \log N)$ if using binary search for LIS.
+Mem Vis (BF): Recursive Call Stack: Stack of depth N storing all subsets.
+Mem Vis (Opt): Two 1D Arrays: Draw two horizontal arrays of size N storing subsequence lengths.

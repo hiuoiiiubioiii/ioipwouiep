@@ -1,0 +1,13 @@
+ID: 2429
+Problem Title: Minimize XOR
+Brute Force Method: Check every number 'x' from 0 upwards. Calculate its set bits. If set bits match nums2, calculate x XOR nums1. Keep the minimum.
+BF Complexity Visuals: Exhaustive Number Line Search
+How to Draw BF: Draw a number line. Draw a checkmark at every integer up to a very large N. Label $O(\text{Brute Search})$.
+Optimised Pattern: Greedy Bit Construction
+Opt Vis. Technique: Bitwise Priority Fill
+Dry Run (Opt): Count set bits in nums2 (say 'k'). To minimize XOR with nums1, try to copy '1's from nums1 to 'x' from MSB to LSB. If you have bits left, fill from LSB to MSB in empty spots.
+How to Draw (Opt): Draw 32 boxes for bits. Write binary of nums1. Below it, place '1's in 'x' wherever nums1 has '1' (starting from left). If you run out of 'k', stop. If you have extra 'k', fill from right.
+Opt Complexity Visuals: Constant 32-Bit Scan
+How to Draw Opt Complexity: Draw a box with 32 slots. Label $O(32)$ or $O(\log N)$.
+Mem Vis (BF): Draw multiple tracking variables. $O(1)$.
+Mem Vis (Opt): Draw one 32-bit integer. $O(1)$ Space.

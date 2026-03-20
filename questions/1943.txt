@@ -1,0 +1,13 @@
+ID: 1943
+Problem Title: Describe the Painting
+Brute Force Method: Initialize a massive array for the entire range. For each segment, loop through its range and add its color value to every index.
+BF Complexity Visuals: Brute Force Range Filling
+How to Draw BF: Draw a long number line. For every segment, draw a horizontal bar covering the range, adding numbers to every point. $O(N \\text{cdot Range})$.
+Optimised Pattern: Sweep Line / Difference Array
+Opt Vis. Technique: Point-of-Change (Delta) Tracking
+Dry Run (Opt): Store changes at `start` (+val) and `end` (-val). Sort the points. Traverse the sorted points to calculate prefix sums for each interval.
+How to Draw (Opt): Draw a number line. Mark only the start and end points of segments with their + and - values. Sum them up as you move left to right.
+Opt Complexity Visuals: Sorted Point Traversal
+How to Draw Opt Complexity: Draw N points. Sort them (log N). Scan them (linear). Total $O(N \log N)$.
+Mem Vis (BF): A dense array of size 10^5, even if segments are sparse.
+Mem Vis (Opt): A TreeMap or a sorted list of "Change" objects. Space proportional to N, not the range.

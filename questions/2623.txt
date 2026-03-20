@@ -1,0 +1,13 @@
+ID: 2623
+Problem Title: Memoize (JS)
+Brute Force Method: Execute the heavy function every single time, regardless of whether the inputs have been seen before.
+BF Complexity Visuals: Redundant Execution Trees
+How to Draw BF: Draw a function call `f(2,2)` computing steps. Draw `f(2,2)` again right next to it doing the exact same math steps. $O(N)$ redundant work.
+Optimised Pattern: Closure + Hash Map (Caching)
+Opt Vis. Technique: Look-Up Table (LUT) Gateway
+Dry Run (Opt): Stringify arguments. Check if string exists in Map. If yes, return stored result immediately. If no, run function, store result in Map, then return.
+How to Draw (Opt): Draw a toll booth (the Map). Car (args) arrives. Toll booth checks list. If on list, gate opens instantly. If not, car goes to factory, gets a product, toll booth writes it down, gate opens.
+Opt Complexity Visuals: Amortized $O(1)$ Timeline
+How to Draw Opt Complexity: Draw a high spike for the first call (O(Work)), then a flat $O(1)$ baseline for all subsequent identical calls.
+Mem Vis (BF): Zero extra memory used
+Mem Vis (Opt): Growing Hash Map strictly contained inside a closure.

@@ -1,0 +1,13 @@
+ID: 1035
+Problem Title: Uncrossed Lines
+Brute Force Method: Generate all possible combinations of lines between matching numbers and check if any two lines `(i1, j1)` and `(i2, j2)` intersect.
+BF Complexity Visuals: A tangled mess of "yarn" connecting two parallel boards, where you try to untangle them by hand.
+How to Draw BF: Draw two rows of numbers. Draw every possible line. Cross out intersections. Write $O(2^\text{min}(M,N)$).
+Optimised Pattern: Dynamic Programming (Longest Common Subsequence).
+Opt Vis. Technique: A grid-based strategy game where you move from Top-Left to Bottom-Right.
+Dry Run (Opt): If `A[i] == B[j]`, you take a diagonal step and add 1. If not, you take the maximum of moving either Right or Down.
+How to Draw (Opt): Draw an (M+1) x (N+1) grid. At each cell `(i, j)`, if numbers match, `dp[i][j] = dp[i-1][j-1] + 1`. Else, `max(dp[i-1][j], dp[i][j-1])`.
+Opt Complexity Visuals: A wave of calculation filling a 2D matrix.
+How to Draw Opt Complexity: Draw a matrix with a single arrow sweeping from top-left to bottom-right. Write $O(M \cdot N)$ Time.
+Mem Vis (BF): Exponential stack space or massive list of line objects.
+Mem Vis (Opt): A 2D array of integers, or a 1D array if space-optimized. $O(M \cdot N)$ or $O(N)$ space.

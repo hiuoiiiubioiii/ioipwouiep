@@ -1,0 +1,13 @@
+ID: 1532
+Problem Title: The Most Recent Three Orders (SQL)
+Brute Force Method: For every user, select all orders, sort them by date descending in the application, and slice the first 3. $O(U \cdot O \log O)$.
+BF Complexity Visuals: User-by-User Sorting $O(U \cdot O \log O)$
+How to Draw BF: Draw a list of users. For each user, draw a separate sorting funnel that takes all their orders and outputs just three. Highly inefficient for large databases.
+Optimised Pattern: Window Function (ROW_NUMBER)
+Opt Vis. Technique: The Partitioned Ranker
+Dry Run (Opt): Use `ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date DESC)`. This assigns a 1, 2, 3... to each customer's orders internally. Then just filter for `rank &lt;= 3`.
+How to Draw (Opt): Draw a table of orders. Draw horizontal dividers grouping orders by `customer_id`. Inside each group, draw an arrow sorting the dates and writing "1", "2", "3" next to them. Circle the rows with numbers 1-3.
+Opt Complexity Visuals: Partitioned Scan $O(N \log N)$
+How to Draw Opt Complexity: Draw a single line of data being sorted once globally within its partitions, then a quick linear filter pass.
+Mem Vis (BF): Loading tens of thousands of rows into server memory for manual sorting.
+Mem Vis (Opt): The database's internal sort buffer. $O(N)$ space to hold the ranking metadata.

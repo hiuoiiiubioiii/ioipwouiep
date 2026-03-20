@@ -1,0 +1,13 @@
+ID: 2528
+Problem Title: Maximize the Minimum Powered City
+Brute Force Method: Iteratively pick the city with the lowest power, place one power station there, update the power of all cities in its range, and repeat k times. $O(k \cdot N \cdot R)$ time.
+BF Complexity Visuals: Repeatedly dropping a single pebble into a shallow pool and recalculating the ripple effect across the entire surface.
+How to Draw BF: Draw the cities as a bar chart. Find the lowest bar. Add 1 to it and its neighbors. Recalculate everything. Repeat this `k` times.
+Optimised Pattern: Binary Search on the Answer Space + Greedy Sliding Window.
+Opt Vis. Technique: A binary search tree zooming in on a target minimum power, validated by a moving sliding window covering the cities.
+Dry Run (Opt): Guess a "target minimum power" using binary search. Use a sliding window to calculate current power at each city. If a city is below the target, greedily place required stations at the furthest right possible edge of its range. If total stations used <= k, guess higher.
+How to Draw (Opt): Draw a number line for the possible answers. Pick a middle number. Do a linear sweep across the cities, adding "temporary" stations when needed. If you run out of stations, cross out the right half of the number line.
+Opt Complexity Visuals: $O(N \log(\text{Max Power})$) combining a logarithmic search space with a linear validation sweep.
+How to Draw Opt Complexity: Draw a timeline of possible answers halving repeatedly. Inside each halving step, draw a quick linear arrow under the array representing the greedy check.
+Mem Vis (BF): Array mutation overhead.
+Mem Vis (Opt): $O(N)$ space for a difference array or sliding window tracking states.

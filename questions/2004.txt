@@ -1,0 +1,13 @@
+ID: 2004
+Problem Title: The Number of Seniors and Juniors to Join the Company (SQL)
+Brute Force Method: Cross-join tables and use correlated subqueries to calculate running totals for each row individually.
+BF Complexity Visuals: Cartesian Product Grid
+How to Draw BF: Draw Table A and Table B intersecting. Shade every cell to represent the $O(N^2)$ row-by-row correlation checks.
+Optimised Pattern: SQL Window Functions (Cumulative Sum/Running Total) + CTEs
+Opt Vis. Technique: Waterfall Budget Pipeline
+Dry Run (Opt): List seniors ordered by salary. Keep a running total column. Draw a line where total &gt; 70000. Use remainder for juniors.
+How to Draw (Opt): Draw two sequential spreadsheets. Sheet 1: Seniors with a `SUM() OVER()` column. Sheet 2: Juniors using the leftover budget calculated from Sheet 1.
+Opt Complexity Visuals: Two Sequential Linear Scans
+How to Draw Opt Complexity: Draw two separate arrays. Scan the first for $O(S)$, calculate remainder, then scan the second for $O(J)$. Time $O(S \log S + J \log J)$ due to sorting.
+Mem Vis (BF): Redundant intermediate temporary tables created for every subquery.
+Mem Vis (Opt): Two distinct CTE (Common Table Expression) blocks sitting in memory before final projection.

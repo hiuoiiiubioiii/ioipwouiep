@@ -1,0 +1,13 @@
+ID: 1687
+Problem Title: Delivering Boxes from Storage to Ports
+Brute Force Method: Backtracking to try every possible split point for the truck's trips.
+BF Complexity Visuals: Partition Tree
+How to Draw BF: Draw a string of boxes. Branch for every possible number of boxes the truck can take in trip 1. $O(2^N)$.
+Optimised Pattern: DP + Monotonic Queue (Sliding Window)
+Opt Vis. Technique: Sliding Trip Window
+Dry Run (Opt): Use DP[i] to store min trips for i boxes. Optimize the range [j, i] using a queue to keep track of the best j that fits truck limits.
+How to Draw (Opt): Draw a line of boxes. Draw a "Truck Window" sliding over them. Maintain a "Trip Counter" that increments when consecutive boxes go to different ports.
+Opt Complexity Visuals: Linear Optimized Scan
+How to Draw Opt Complexity: Draw a single horizontal arrow through the boxes with a "look-back" window. $O(N)$.
+Mem Vis (BF): Call Stack: Stack of partial trip counts.
+Mem Vis (Opt): 1D DP Array + Deque: Draw a horizontal array and a small "Tube" (Queue) with elements sorted by value.

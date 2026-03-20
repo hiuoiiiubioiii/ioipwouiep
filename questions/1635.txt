@@ -1,0 +1,13 @@
+ID: 1635
+Problem Title: Hopper Company Queries I (SQL)
+Brute Force Method: Complex nested joins between Months, Drivers, and Rides for every month individually.
+BF Complexity Visuals: Correlated Monthly Subqueries
+How to Draw BF: Draw 12 separate SQL query boxes, each scanning the entire Rides and Drivers tables for that specific month.
+Optimised Pattern: Recursive CTE (Month Generator) + LEFT JOIN + Window Functions
+Opt Vis. Technique: Timeline Stencil Overlay
+Dry Run (Opt): Generate 12 months using a CTE. Left join Drivers (on join month &lt;= current month) and Rides (on join month = current month). Count and SUM.
+How to Draw (Opt): Draw a vertical timeline 1-12. Layer Driver data over it (cumulative) and Ride data (individual month snapshots).
+Opt Complexity Visuals: Full Table Scan with Aggregation
+How to Draw Opt Complexity: Draw a single pass through the Driver and Ride tables to populate the monthly buckets. $O(D + R)$.
+Mem Vis (BF): Subquery Cache: Draw multiple redundant copies of table segments in memory.
+Mem Vis (Opt): Virtual Timeline CTE: Draw a small, temporary 12-row table that acts as the "skeleton" for the join.

@@ -1,0 +1,13 @@
+ID: 1824
+Problem Title: Minimum Sideway Jumps
+Brute Force Method: Recursive DFS/BFS exploring every possible forward move and sideways jump.
+BF Complexity Visuals: Huge exponential decision tree.
+How to Draw BF: Draw a frog at pos 0. Branch paths for jumping left, right, or forward. Mark redundant overlapping paths. $O(3^N)$.
+Optimised Pattern: Dynamic Programming (State Machine) / Greedy.
+Opt Vis. Technique: 3xN Grid tracking minimum jumps.
+Dry Run (Opt): Keep an array of 3 lanes. For each position, if there's a rock, that lane = infinity. Update other lanes: `dp[lane] = min(dp[lane], min_of_other_lanes + 1)`.
+How to Draw (Opt): Draw a 3-row grid. Move column by column. Write min jumps in each cell. If rock, write X. If hopping lanes, add 1 to the minimum of that column.
+Opt Complexity Visuals: $O(N)$ matrix column traversal.
+How to Draw Opt Complexity: Draw a box around a single column, showing it shifts right exactly N times.
+Mem Vis (BF): $O(N)$ call stack for recursion depth.
+Mem Vis (Opt): $O(1)$ space: just an array of size 3 for the current column's states.

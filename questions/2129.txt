@@ -1,0 +1,13 @@
+ID: 2129
+Problem Title: Capitalize the Title
+Brute Force Method: Split string by spaces, loop over each word, lowercase/uppercase characters, and concatenate strings in a loop.
+BF Complexity Visuals: Chopping a block into pieces, altering them, and gluing them back together, leaving debris.
+How to Draw BF: Sentence -&gt; Array of Words -&gt; Array of Modified Words -&gt; New Sentence.
+Optimised Pattern: String Builder / Two Pointers (In-place if allowed).
+Opt Vis. Technique: A sliding window moving across a string, highlighting word boundaries.
+Dry Run (Opt): Convert whole string to lowercase. Iterate with pointers to find words. If word length &gt; 2, uppercase the first character. Append to result.
+How to Draw (Opt): Write the string. Box each word. If the box length is 1 or 2, do nothing. If &gt; 2, circle the first letter and write its capital above it.
+Opt Complexity Visuals: $O(N)$ single linear scan.
+How to Draw Opt Complexity: Straight horizontal line scanning left to right, occasionally pinging the first character of a sequence.
+Mem Vis (BF): $O(N)$ memory wasted generating intermediate String arrays from `split()`.
+Mem Vis (Opt): A single StringBuilder or Character Array of size $O(N)$.

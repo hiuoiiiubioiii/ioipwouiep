@@ -1,0 +1,13 @@
+ID: 483
+Problem Title: Smallest Good Base
+Brute Force Method: Exhaustive Base Search Try every base k from 2 to n-1. For each k, check if n can be represented as 1+k+k^2...
+BF Complexity Visuals: Linear Search Space
+How to Draw BF: Draw a line from 2 to n. Show a loop checking every single base. $O(N \log N)$. (Too slow for 10^{18}).
+Optimised Pattern: Binary Search on Length The number of '1's can only be between 2 and 64. For each fixed length m, binary search for base k.
+Opt Vis. Technique: Inverted Search Space
+Dry Run (Opt): Instead of searching millions of bases, search 60 possible lengths. For each length, the base k is found via binary search.
+How to Draw (Opt): Draw a column 2 to 64. For each row, draw a horizontal number line (Binary Search) to find k.
+Opt Complexity Visuals: Log-Squared Complexity
+How to Draw Opt Complexity: Draw 60 small binary search trees. Total $O(\log^2 n)$.
+Mem Vis (BF): None Constant variables.
+Mem Vis (Opt): None Constant variables. $O(1)$.

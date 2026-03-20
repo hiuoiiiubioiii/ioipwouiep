@@ -1,0 +1,13 @@
+ID: 2967
+Problem Title: Minimum Cost to Make Array Equalindromic
+Brute Force Method: Check every possible palindrome number from 1 to max(nums) and calculate the cost for each.
+BF Complexity Visuals: Infinite Linear Search
+How to Draw BF: Draw a number line. At every integer, calculate sum |nums[i] - p|. $O(\text{Range} \cdot N)$.
+Optimised Pattern: Median + Palindrome Generation
+Opt Vis. Technique: Mountain Peak Targeting
+Dry Run (Opt): The optimal target must be near the median. Find the median M. Generate the closest palindromes above and below M. Calculate costs for both and take min.
+How to Draw (Opt): Draw a bell curve of costs. Mark the median M at the bottom. Draw two nearby points (palindromes) and compare their "heights" (costs).
+Opt Complexity Visuals: Sorting + Constant Search
+How to Draw Opt Complexity: Draw a line of length N. T = $O(N \log N)$ to find the median. Palindrome generation is $O(\text{digits})$.
+Mem Vis (BF): No extra memory.
+Mem Vis (Opt): A few long long variables for median and palindromes. Space $O(1)$.

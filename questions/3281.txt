@@ -1,0 +1,13 @@
+ID: 3281
+Problem Title: Maximize Score of Numbers in Ranges
+Brute Force Method: Try every possible integer value for the "minimum absolute difference" and use backtracking to see if it can be achieved. $O(\text{Range}^N)$.
+BF Complexity Visuals: Exhaustive Interval Search
+How to Draw BF: Draw three intervals on a line. Try placing a point in each such that the gap is 10. Then try 11. Show the exponential number of placements to check.
+Optimised Pattern: Binary Search on Answer + Greedy
+Opt Vis. Technique: Feasibility Boundary Test
+Dry Run (Opt): Binary search for the largest possible "score" X. For a fixed X, greedily place the first number at the start of the first interval and each subsequent number as early as possible (but at least X away).
+How to Draw (Opt): Draw a horizontal number line with intervals. Pick a "Score" X. Place a pin in the first interval. Measure X distance with a ruler. If the next interval starts after the ruler ends, place the next pin at the interval start. Otherwise, place it exactly where the ruler ends.
+Opt Complexity Visuals: Logarithmic Search over Linear Check
+How to Draw Opt Complexity: Draw a Binary Search tree for the answer range. At each node, draw an $O(N)$ linear scan block. Total: $O(N \log N + N \log(\text{MaxRange})$).
+Mem Vis (BF): Massive recursion stack for backtracking placements.
+Mem Vis (Opt): Sorted input array of intervals (O(N) space).

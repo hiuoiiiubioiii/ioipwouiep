@@ -1,0 +1,13 @@
+ID: 440
+Problem Title: K-th Smallest in Lexicographical Order
+Brute Force Method: String Sort Generate all numbers from 1 to N, convert them to strings, and sort them lexicographically.
+BF Complexity Visuals: Sorting Wall
+How to Draw BF: Draw a massive list of numbers. Show the $O(N \log N)$ sorting process.
+Optimised Pattern: Denary Tree Traversal Visualize numbers as a 10-ary tree (1, 10, 100...). Calculate "steps" between prefixes to skip whole subtrees.
+Opt Vis. Technique: Pyramid Skipping
+Dry Run (Opt): Imagine a 10-level pyramid. If K is larger than the number of nodes in a subtree, "jump" over the pyramid to the next sibling.
+How to Draw (Opt): Draw a root '1'. Draw 10 children. Label how many nodes are under '1' (e.g., 10, 11, 100...). Use subtraction to "jump" K across siblings.
+Opt Complexity Visuals: Logarithmic Tree Path
+How to Draw Opt Complexity: Draw a path down a tree. $O(\log N \cdot \log N)$ as you traverse the depth and calculate widths.
+Mem Vis (BF): Full Number List Massive $O(N)$ space to hold all numbers.
+Mem Vis (Opt): None Just a few integer variables (current, k, steps). $O(1)$.

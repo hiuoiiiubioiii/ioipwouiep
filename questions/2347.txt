@@ -1,0 +1,13 @@
+ID: 2347
+Problem Title: Best Poker Hand
+Brute Force Method: Generate every possible combination of 5 cards to see if any subset forms a flush, three-of-a-kind, or a pair.
+BF Complexity Visuals: Sub-Hand Combinations (O(2^5))
+How to Draw BF: Draw 5 cards. Draw arrows showing every way to pick 2, 3, 4, or 5 cards to check for matching patterns.
+Optimised Pattern: Frequency Counting (Hash Map/Array)
+Opt Vis. Technique: Bucket Category Priority
+Dry Run (Opt): Check if all suits are the same (Flush). If not, count rank frequencies. If any rank count &gt;= 3 (Three-of-a-Kind), if &gt;= 2 (Pair), else (High Card).
+How to Draw (Opt): Draw 4 "Suit" boxes and 13 "Rank" boxes. Toss the 5 cards into them. If one Suit box has all 5, call "Flush". Otherwise, check the Rank box with the most cards.
+Opt Complexity Visuals: Fixed Constant Pass (O(1))
+How to Draw Opt Complexity: Draw a tiny, 5-step timeline that ends at a simple "If-Else" decision tree.
+Mem Vis (BF): Draw a list of all possible poker hand permutations.
+Mem Vis (Opt): Draw a 4-element Suit Array and a 13-element Rank Array.

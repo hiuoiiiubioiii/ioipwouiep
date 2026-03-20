@@ -1,0 +1,13 @@
+ID: 475
+Problem Title: Heaters
+Brute Force Method: Nested Scan For each house, find the distance to every heater. Take the min distance for that house. Then take the max of all those mins.
+BF Complexity Visuals: Comparison Matrix
+How to Draw BF: Draw an H \times G grid (Houses \times Heaters). Show checking every pair. $O(H \cdot G)$.
+Optimised Pattern: Binary Search (Sorted Heaters) Sort heaters. For each house, binary search for the two closest heaters (one left, one right).
+Opt Vis. Technique: Proximity Tethers
+Dry Run (Opt): Draw dots for houses and stars for heaters on a number line. For each dot, draw an elastic tether to the nearest star. The longest tether is the answer.
+How to Draw (Opt): Draw a number line. Mark Heaters. For a House X, find the heater index i such that `Heaters[i]` is just above X. Compare with `Heaters[i-1]`.
+Opt Complexity Visuals: Search-per-House
+How to Draw Opt Complexity: Draw H small binary search trees of height \log G. Total $O((H+G)$ \log G).
+Mem Vis (BF): Distance Array Storing all min-distances.
+Mem Vis (Opt): None In-place sorting. $O(1)$ extra space.

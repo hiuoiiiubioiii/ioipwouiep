@@ -1,0 +1,13 @@
+ID: 2750
+Problem Title: Ways to Split Array Into Good Subarrays
+Brute Force Method: Backtracking: Explore every possible split point in the array. Check if each resulting subarray contains exactly one '1'. $O(2^N)$.
+BF Complexity Visuals: Exponential Partition Tree
+How to Draw BF: Draw the array. Draw a binary tree where each node decides to "split" or "not split" after the current element. Cross out branches with &gt;1 or 0 ones.
+Optimised Pattern: Recursive Call Stack (Visualizing the depth-first search through all valid and invalid partition combinations).
+Opt Vis. Technique: Product of Gaps (Combinatorics)
+Dry Run (Opt): Slot-and-Multiplier Timeline
+How to Draw (Opt): Find indices of all '1's. The number of ways to split between two '1's at indices i and j is the number of zeros between them + 1 (j - i). Multiply all these "gap counts" together.
+Opt Complexity Visuals: Draw the array. Circle the '1's. Draw a double-headed arrow between each adjacent pair of '1's. Write the distance (index difference) above each arrow and multiply them.
+How to Draw Opt Complexity: Linear Pass $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow passing through the array. Label it $O(N)$ as you only need to find indices of '1's once.
+Mem Vis (Opt): $O(1)$ Accumulator (Draw a single ans variable being updated by multiplication and a prev_idx variable).

@@ -1,0 +1,13 @@
+ID: 2214
+Problem Title: Minimum Health to Beat Game
+Brute Force Method: Simulation with Binary SearchBinary search the starting health. For each midpoint, simulate the whole game and greedily use armor on the first fatal hit.
+BF Complexity Visuals: Binary Search Space + Inner Loops
+How to Draw BF: Draw a number line of possible health values. Pick a middle number. Draw a simulation scanning the damage array to see if you survive. Show $O(N \log(\text{Sum})$).
+Optimised Pattern: Greedy Math / Total Sum
+Opt Vis. Technique: Bar Chart with Armor "Cutoff"
+Dry Run (Opt): Find the level with the highest damage. Your armor is best used here. Total health needed is the sum of all damage, minus the damage your armor actually absorbed, plus 1 (to stay alive).
+How to Draw (Opt): Draw the damage array as vertical bars. Find the tallest bar. Draw a dashed horizontal line showing the armor "shaving off" the top of that bar. Sum the remaining areas and add 1.
+Opt Complexity Visuals: Two-Pass Line Diagram
+How to Draw Opt Complexity: Draw an array. Draw one arrow sweeping left-to-right to find the max value. Draw another sweeping to sum the values. Label the total time as exactly $O(N)$.
+Mem Vis (BF): Excessive recursive states or tracking arrays if simulated dynamically.
+Mem Vis (Opt): Two scalar integer variables (`total_sum` and `max_damage`) calculated in place (O(1) space).

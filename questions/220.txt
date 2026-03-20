@@ -1,0 +1,13 @@
+ID: 220
+Problem Title: Contains Duplicate III
+Brute Force Method: Nested loops checking the next K elements to see if the absolute difference is &lt;= T.
+BF Complexity Visuals: Stepped Triangle: $O(N \cdot K)$ Time.
+How to Draw BF: Draw an array. For each element, draw an arrow to the next K elements, checking the math difference each time.
+Optimised Pattern: Bucket Sort / Sliding Window
+Opt Vis. Technique: Categorization Bins
+Dry Run (Opt): Divide numbers by (T+1) to assign a bucket. Slide a window of size K. If a bucket is already occupied, or adjacent buckets have close values, return true.
+How to Draw (Opt): Draw a row of open boxes (buckets). Read a number, map it to a box. Check if the box has an item, or if immediate left/right neighbor boxes have close items.
+Opt Complexity Visuals: Constant Bin Lookups: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a straight timeline. At each step, draw 3 small arrows (checking current, left, and right buckets) to show $O(1)$ work per element.
+Mem Vis (BF): Loop pointers, $O(1)$ space.
+Mem Vis (Opt): Hash Map of Buckets: Draw a dictionary mapped by Bucket ID. Erase keys when the sliding window moves past K elements.

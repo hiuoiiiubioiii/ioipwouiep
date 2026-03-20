@@ -1,0 +1,13 @@
+ID: 3730
+Problem Title: Maximum Calories Burnt from Jumps (Med)
+Brute Force Method: Recursively try every valid jump length from every position to find the path that yields the absolute highest calorie sum. $O(\text{Branch}^N)$.
+BF Complexity Visuals: Exploding Pathing Tree.
+How to Draw BF: Draw a staircase. Draw lines jumping 1 step, 2 steps, etc. From each landing spot, branch out again until the end.
+Optimised Pattern: 1D Dynamic Programming
+Opt Vis. Technique: Look-Back Max Array
+Dry Run (Opt): `dp[i]` represents max calories to reach index `i`. For each step, look back at all valid previous jump positions, pick the max `dp` value, and add current calories.
+How to Draw (Opt): Draw an empty array. Fill left to right. To fill a box, draw arrows looking back at allowed jump ranges. Pick the highest number, add current box's calories, write it down.
+Opt Complexity Visuals: $O(N \cdot J)$ where J is max jump range.
+How to Draw Opt Complexity: Draw a linear sequence of boxes with short look-back arrows looping over previous items.
+Mem Vis (BF): Massive recursive call stack.
+Mem Vis (Opt): 1D DP Array memory block (O(N) space).

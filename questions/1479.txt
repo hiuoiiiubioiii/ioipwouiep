@@ -1,0 +1,13 @@
+ID: 1479
+Problem Title: Sales by Day of the Week (SQL)
+Brute Force Method: Multiple Joins and Filters. Run 7 separate queries (one for each day) and UNION them together, or JOIN the Items table with 7 filtered versions of the Orders table.
+BF Complexity Visuals: Multi-Scan Union Pipeline
+How to Draw BF: Draw an Items table. Draw 7 arrows pointing to the Orders table, each filtering for a specific `DAYOFWEEK`. Label $O(7 \cdot N)$.
+Optimised Pattern: CASE WHEN + SUM (Pivoting)
+Opt Vis. Technique: Categorical Pivot Table
+Dry Run (Opt): Select `item_category`. Use `SUM(CASE WHEN day='Monday' THEN quantity ELSE 0 END)` for each day of the week. Left Join Items with Orders to ensure categories with no sales show 0.
+How to Draw (Opt): Draw a table with 8 columns (Category + 7 Days). As you scan the orders, drop the quantity into the specific day-column that matches the date.
+Opt Complexity Visuals: Single-Scan Aggregation
+How to Draw Opt Complexity: Draw one scan $O(N)$ -&gt; Grouping $O(\text{Categories})$. Total $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Temporary Hash Table for grouping category names. Space $O(\text{Categories})$.

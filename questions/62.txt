@@ -1,0 +1,13 @@
+ID: 62
+Problem Title: Unique Paths
+Brute Force Method: Pure Recursion (DFS) From `(0,0)`, recursively call `moveRight()` and `moveDown()` until you hit the bottom-right corner.
+BF Complexity Visuals: The Binary Explosion Tree
+How to Draw BF: Draw a root node `(0,0)`. It splits into two branches: `(0,1)` and `(1,0)`. Each of those splits again. Highlight the massive number of overlapping subproblems. Time: $O(2^m+n)$.
+Optimised Pattern: Dynamic Programming (1D/2D)
+Opt Vis. Technique: The Pascal Triangle Map
+Dry Run (Opt): The number of ways to reach a cell is the sum of ways to reach the cell above it and the cell to its left. Fill the grid row by row.
+How to Draw (Opt): Draw an M x N grid. Fill the first row and column with 1s. For cell `(1,1)`, look at the 1 above and 1 to the left; write '2' in the cell. Continue summing neighbors.
+Opt Complexity Visuals: Matrix Fill Area
+How to Draw Opt Complexity: Draw a rectangle. Shade it in row by row. The time complexity is exactly the area of the rectangle. Time: $O(M x N)$.
+Mem Vis (BF): A massive recursion stack with 2^m+n calls.
+Mem Vis (Opt): Draw a single 1D array (row) that gets updated M times. Space: $O(N)$.

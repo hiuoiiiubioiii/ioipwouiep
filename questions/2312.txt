@@ -1,0 +1,13 @@
+ID: 2312
+Problem Title: Selling Pieces of Wood
+Brute Force Method: Recursively try every possible horizontal and vertical cut on the current piece of wood, calculating the max price for all combinations.
+BF Complexity Visuals: Dense Branching Recursion
+How to Draw BF: Draw a rectangle. Draw lines showing it splitting into two smaller rectangles in every possible position, then repeat for the smaller ones.
+Optimised Pattern: 2D Dynamic Programming
+Opt Vis. Technique: Bottom-Up Grid Merging
+Dry Run (Opt): Initialize a DP grid with base prices. For cell (i, j), the max money is the best of its base price, or splitting it horizontally `dp[k][j] + dp[i-k][j]`, or vertically `dp[i][k] + dp[i][j-k]`.
+How to Draw (Opt): Draw a grid. Pick a cell. Draw horizontal and vertical arrows pointing to pairs of previous cells in the same row/column that sum up to the current dimensions.
+Opt Complexity Visuals: 3D Nested Loop Block (O(M*N*(M+N)))
+How to Draw Opt Complexity: Draw an M x N grid on the floor, and from each cell, draw a vertical bar representing the (M+N) iterations to find the max cut.
+Mem Vis (BF): Draw an immense, repetitive Call Stack representing overlapping subproblems.
+Mem Vis (Opt): Draw a single 2D Matrix (the DP table) getting filled systematically from top-left to bottom-right.

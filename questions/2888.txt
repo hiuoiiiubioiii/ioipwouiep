@@ -1,0 +1,13 @@
+ID: 2888
+Problem Title: Reshape Data: Concatenate
+Brute Force Method: Create a new list. Loop through all rows of df1 and append them, then loop through df2 and append them. Convert the final list back to a DataFrame.
+BF Complexity Visuals: Sequential Row Copying
+How to Draw BF: Draw two separate boxes. Draw a third long box and show arrows moving rows from the first two into the third, one by one.
+Optimised Pattern: pd.concat([df1, df2])
+Opt Vis. Technique: Vertical Stacking
+Dry Run (Opt): Visualize two memory blocks being "glued" together vertically. The column headers are aligned, and df2 is simply appended to the end of df1's address space.
+How to Draw (Opt): Draw two rectangles. Draw a "Plus" sign between them. Draw a single long rectangle as the result.
+Opt Complexity Visuals: Linear $O(N + M)$
+How to Draw Opt Complexity: Draw two line segments end-to-end. The total length is the sum of both table lengths.
+Mem Vis (BF): $O(N + M)$ - Storing every row in a Python list before conversion.
+Mem Vis (Opt): $O(N + M)$ - One-shot block allocation in memory.

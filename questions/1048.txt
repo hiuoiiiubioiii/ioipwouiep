@@ -1,0 +1,13 @@
+ID: 1048
+Problem Title: Longest String Chain
+Brute Force Method: Generate every possible sequence of strings from the list and check if they form a valid chain (word B is word A + one letter).
+BF Complexity Visuals: A massive "forest" of all possible word combinations, checking validity at every branch.
+How to Draw BF: Write words. Draw lines between all pairs. Check if `word2` can be formed by adding 1 char to `word1`. Write $O(2^N)$.
+Optimised Pattern: Dynamic Programming + Hashing (Sorting by Length).
+Opt Vis. Technique: A "Building Block" approach. Solve for short words first and use those results for longer words.
+Dry Run (Opt): Sort words by length. Use a HashMap `dp` where `dp[word]` is the longest chain ending at `word`. For each word, try removing one letter at a time to find its potential "parent" in the map.
+How to Draw (Opt): Draw words sorted by length. For "abcd", check "bcd", "acd", "abd", "abc" in your DP map. Chain length = `max(parents) + 1`.
+Opt Complexity Visuals: Linear scan with a small inner loop (word length).
+How to Draw Opt Complexity: Draw a sorting box $O(N \log N)$ followed by an $O(N \cdot L^2)$ loop. Write Time: $O(N \log N + N \cdot L^2)$.
+Mem Vis (BF): $O(2^N)$ memory for tracking all possible path combinations.
+Mem Vis (Opt): A HashMap storing N entries. $O(N \cdot L)$ space.

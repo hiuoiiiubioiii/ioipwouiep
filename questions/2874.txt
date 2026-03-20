@@ -1,0 +1,13 @@
+ID: 2874
+Problem Title: Maximum Value of an Ordered Triplet II
+Brute Force Method: (Identical problem to 2873 but with N = 10^5). The $O(N^3)$ brute force will now Time Limit Exceeded (TLE).
+BF Complexity Visuals: $O(N3)$ Volume Scan
+How to Draw BF: Draw a cube labeled 10^5 on each side. Note that 10^15 operations would take years on a standard PC.
+Optimised Pattern: Dynamic Prefix Maximum &amp; Max-Difference Tracking
+Opt Vis. Technique: Incremental State Update
+Dry Run (Opt): Maintain two variables while scanning: max_val (max nums[i] seen so far) and max_diff (max nums[i] - nums[j] seen so far). At each step k, the potential triplet value is max_diff * nums[k].
+How to Draw (Opt): Write the numbers. Carry two "Running Max" boxes. As you move to the next number, update the "Max Single" box. Use that to update the "Max Difference" box (Single - Current). Use that to calculate the final answer.
+Opt Complexity Visuals: Single Pass $O(N)$
+How to Draw Opt Complexity: Draw one straight line through the array. Each step is $O(1)$ logic with no precomputed arrays needed. Total $O(N)$.
+Mem Vis (BF): Visualize memory thrashing if trying to store intermediate results in lists.
+Mem Vis (Opt): Visualize exactly three variables (registers). Absolute $O(1)$ auxiliary space.

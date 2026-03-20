@@ -1,0 +1,13 @@
+ID: 1492
+Problem Title: The kth Factor of n
+Brute Force Method: Loop from 1 to n. Check if n % i == 0. Store all factors in a list and return the k-th element.
+BF Complexity Visuals: Linear Exhaustive Scan
+How to Draw BF: Draw a line from 1 to N. Check every single number. If it's a factor, drop it into a bucket. Pull the k-th item from the bucket. Label $O(n)$.
+Optimised Pattern: Square Root Factor Pairing
+Opt Vis. Technique: Symmetric Divisor Property
+Dry Run (Opt): Loop from 1 to √n. If i is a factor, it's the "small" factor. The "large" factor is n/i. Count the small ones; if you exceed k, the answer is i. Otherwise, calculate the k-th from the large ones.
+How to Draw (Opt): Draw a line at √n. For every factor found on the left, draw a "buddy" factor on the right side. Count up the left side, then count down the right side.
+Opt Complexity Visuals: Sub-linear Search
+How to Draw Opt Complexity: Draw an arrow that stops at √n. Label $O(√n)$.
+Mem Vis (BF): Full list of factors $O(n)$
+Mem Vis (Opt): A small list to store factors for the second-half calculation. Space $O(√n)$.

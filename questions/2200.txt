@@ -1,0 +1,13 @@
+ID: 2200
+Problem Title: Find All K-Distant Indices in an Array
+Brute Force Method: For every index `i`, scan the entire array to find if there exists an index `j` such that `nums[j] == key` and `abs(i - j) &lt;= k`.
+BF Complexity Visuals: A double loop checking the distance condition for every pair.
+How to Draw BF: Draw an array. For every index, draw arrows checking every other index for the 'key'. Write $O(N^2)$.
+Optimised Pattern: Two Pointers / Single-Pass Sliding Window.
+Opt Vis. Technique: A spotlight that illuminates a range around a target.
+Dry Run (Opt): Find all indices `j` where `nums[j] == key`. For each `j`, the range `[max(0, j-k), min(n-1, j+k)]` is valid. Use a pointer to keep track of the "last added index" to avoid duplicates.
+How to Draw (Opt): Draw an array. Circle all 'keys'. Draw a bracket of size 2k around each circle. Shade everything inside the brackets. The shaded indices are your answer.
+Opt Complexity Visuals: $O(N)$ linear time.
+How to Draw Opt Complexity: A single horizontal pass marking intervals.
+Mem Vis (BF): N iterations of scanning.
+Mem Vis (Opt): $O(N)$ for the result list.

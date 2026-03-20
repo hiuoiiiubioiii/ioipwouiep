@@ -1,0 +1,13 @@
+ID: 30
+Problem Title: Substring with Concatenation of All Words
+Brute Force Method: Generate Permutations Generate all possible mathematical permutations of the given words (O(W!)), combine them into strings, and search for them in the main string.
+BF Complexity Visuals: The Factorial Explosion Tree
+How to Draw BF: Draw a tree generating all word permutations. Note the staggering $O(W!)$ complexity, meaning even 10 words will immediately crash the program.
+Optimised Pattern: Sliding Window + Hash Maps
+Opt Vis. Technique: The Chunked Window Scanner
+Dry Run (Opt): Count word frequencies in a map. Slide a window across the string. Inside the window, jump by `word_length` chunks, checking if the chunked words match the target map's frequencies.
+How to Draw (Opt): Draw the main string. Bracket a window of size `W * len`. Inside the bracket, draw vertical lines slicing it into individual words. Compare those slices to a drawn Hash Map of target words.
+Opt Complexity Visuals: Chunked Linear Scan
+How to Draw Opt Complexity: Draw an outer loop looping `word_length` times (offset). Inside, draw a window sliding across the string $O(N)$. Total time is roughly $O(N \\text{cdot word}_\text{length})$.
+Mem Vis (BF): Draw gigabytes of permutations destroying the heap memory.
+Mem Vis (Opt): Draw two Hash Maps (one for the target words, one for the current window's words) storing at most W keys. Space is strictly $O(W)$.

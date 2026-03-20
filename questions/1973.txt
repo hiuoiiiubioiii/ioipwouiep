@@ -1,0 +1,13 @@
+ID: 1973
+Problem Title: Count Nodes Equal to Sum of Descendants
+Brute Force Method: For every node, launch a full recursive search on its children to sum all descendants.
+BF Complexity Visuals: Recursive Redundancy Tree
+How to Draw BF: Draw a tree. For each node, draw overlapping "summation waves" that visit lower nodes multiple times. $O(N^2)$.
+Optimised Pattern: Post-order Traversal (Bottom-Up)
+Opt Vis. Technique: Value Bubbling (Accumulation)
+Dry Run (Opt): Recursive DFS where each node returns the sum of its subtree to its parent. The parent then checks the condition and returns.
+How to Draw (Opt): Draw a tree. At the leaves, write their values. Draw arrows up. Each parent writes "My Val + Child Sums". Circle matches.
+Opt Complexity Visuals: Single-Pass Tree Depth
+How to Draw Opt Complexity: Draw a tree with a single snake-like line visiting every node exactly once. $O(N)$.
+Mem Vis (BF): Large call stack with repeated visits to the same memory addresses.
+Mem Vis (Opt): DFS recursion stack proportional to the height of the tree. $O(H)$ space.

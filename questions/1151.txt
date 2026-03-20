@@ -1,0 +1,13 @@
+ID: 1151
+Problem Title: Minimum Swaps to Group All 1's Together
+Brute Force Method: Check every possible window in the array. Count the number of zeros in each window and find the minimum.
+BF Complexity Visuals: Sliding Window Matrix Scan
+How to Draw BF: Draw an array. Draw a box of size K (total 1s). Move the box one step at a time, counting 0s inside. $O(N^2)$ if re-counting.
+Optimised Pattern: Fixed-Size Sliding Window
+Opt Vis. Technique: Moving Viewport Frame
+Dry Run (Opt): Count total 1s (K). Initial window [0, K-1] count 0s. Slide window: add new element, remove old. Update min 0s count.
+How to Draw (Opt): Draw an array. Draw a bracket over the first K elements. Slide the bracket, writing the count of 0s below each position.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight line through the array.
+Mem Vis (BF): Multiple sub-array copies
+Mem Vis (Opt): Constant $O(1)$ space using 3 variables.

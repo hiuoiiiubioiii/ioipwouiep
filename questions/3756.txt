@@ -1,0 +1,13 @@
+ID: 3756
+Problem Title: Concatenate Non-Zero Digits and Multiply by Sum II (Med)
+Brute Force Method: Loop through range [1, N]. For each, convert to string, remove '0', parse to BigInt, sum digits, multiply. $O(N \cdot \log N)$.
+BF Complexity Visuals: Linear enumeration with string manipulation.
+How to Draw BF: Draw a timeline. For every tick, draw a "process" box that turns "102" into "12" and "3", then multiplies them.
+Optimised Pattern: Digit DP (Combinatorial Math)
+Opt Vis. Technique: Digit-by-Digit Contribution Tree
+Dry Run (Opt): Instead of iterating N, count how many times each digit (1-9) appears in each position (units, tens, etc.) across all numbers up to N, excluding zeros.
+How to Draw (Opt): Draw a tree of height 10 (digits). Write "How many numbers have '5' in the hundreds place?". Multiply that count by the positional value and the sum component.
+Opt Complexity Visuals: $O(\log10(N)$) logarithmic time.
+How to Draw Opt Complexity: Draw a very short timeline (length ~15-18) representing digits of N.
+Mem Vis (BF): Massive string object creation (GC pressure).
+Mem Vis (Opt): $O(1)$ or $O(\log N)$ state variables.

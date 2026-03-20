@@ -1,0 +1,13 @@
+ID: 2144
+Problem Title: Minimum Cost of Buying Candies With Discount
+Brute Force Method: Generate all possible purchase and "free" combinations to find the absolute minimum cost.
+BF Complexity Visuals: Factorial search space of groups of three.
+How to Draw BF: Draw 6 candies. Try every way to pick 2 and take 1 for free. Write $O(N!)$.
+Optimised Pattern: Greedy (Sorting).
+Opt Vis. Technique: Grouping the most expensive items together to maximize the "free" value.
+Dry Run (Opt): Sort costs descending. Iterate through the array: buy the two most expensive, skip the third (it's free). Repeat.
+How to Draw (Opt): Draw candies in a row from largest to smallest. Circle 2, cross out 1. Circle 2, cross out 1. Sum the circled ones.
+Opt Complexity Visuals: $O(N \log N)$ sorting.
+How to Draw Opt Complexity: A sorting funnel followed by a single linear pass skipping every 3rd element.
+Mem Vis (BF): Recursive permutation arrays.
+Mem Vis (Opt): $O(1)$ extra space beyond the input array sorting.

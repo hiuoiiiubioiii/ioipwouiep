@@ -1,0 +1,13 @@
+ID: 2416
+Problem Title: Sum of Prefix Scores of Strings
+Brute Force Method: For every string, extract all its prefixes. For every prefix, loop through the entire array of strings to count how many start with that prefix.
+BF Complexity Visuals: N x N String Matching Web
+How to Draw BF: Draw a list of strings. From each prefix of String A, draw lines checking against every other string in the list. Label $O(N^2 \cdot L)$ where L is string length.
+Optimised Pattern: Trie (Prefix Tree) with Frequency Counters
+Opt Vis. Technique: Weighted Prefix Tree (Trie)
+Dry Run (Opt): Phase 1: Insert all strings into a Trie. Every time you pass through a node, increment its `count`. Phase 2: For each string, walk its path in the Trie and sum up the `count` of all visited nodes.
+How to Draw (Opt): Draw a Trie tree structure. Inside each node circle, write a number (the count of times it was visited). Draw a highlighted path down the tree, showing a running sum of those numbers.
+Opt Complexity Visuals: Trie Traversal Path
+How to Draw Opt Complexity: Draw a root node branching into paths. Label "Build Trie: $O(N \cdot L)$". Draw a line walking down a path. Label "Search: $O(N \cdot L)$". Total $O(N \cdot L)$.
+Mem Vis (BF): Draw massive arrays holding thousands of substring copies. $O(N \cdot L^2)$ Space.
+Mem Vis (Opt): Draw a Trie structure graph. Label $O(N \cdot L)$ space representing the Trie nodes and character arrays.

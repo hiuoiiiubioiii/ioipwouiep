@@ -1,0 +1,13 @@
+ID: 1483
+Problem Title: Kth Ancestor of a Tree Node
+Brute Force Method: For every `getKthAncestor(node, k)` call, jump to the parent `k` times using a simple `parent[node]` pointer.
+BF Complexity Visuals: Linear Jump Traversal
+How to Draw BF: Draw a tree. For a query (node, k=5), draw 5 arrows jumping up node-by-node. Label $O(K)$ per query.
+Optimised Pattern: Binary Lifting (Sparse Table)
+Opt Vis. Technique: Power-of-Two Precomputed Leaps
+Dry Run (Opt): Precompute `up[node][i]`, which is the 2^i-th ancestor of `node`. To find the K-th ancestor, decompose K into powers of 2 (binary representation) and jump accordingly.
+How to Draw (Opt): Draw a tree. Give each node a "Jetpack" with buttons: "Jump 1", "Jump 2", "Jump 4", "Jump 8". To jump 13, press 8, then 4, then 1. Total 3 jumps instead of 13.
+Opt Complexity Visuals: Logarithmic Jump Traversal
+How to Draw Opt Complexity: Draw binary representation of K. Label $O(\log N)$ per query, $O(N \log N)$ preprocessing.
+Mem Vis (BF): Standard Parent Array $O(N)$
+Mem Vis (Opt): A 2D array `up[N][log N]`. Space $O(N \log N)$.

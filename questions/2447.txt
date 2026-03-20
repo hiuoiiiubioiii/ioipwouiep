@@ -1,0 +1,13 @@
+ID: 2447
+Problem Title: Number of Subarrays With GCD Equal to K
+Brute Force Method: Nested loops (i, j). Maintain a running GCD for the subarray. If current GCD &lt; K, break (it can't recover). If GCD == K, increment count.
+BF Complexity Visuals: Pruned Nested Search
+How to Draw BF: Draw a right triangle (N^2). Color the cells that get "broken" early by the GCD property. Label $O(N^2 \cdot \log(\text{MaxVal})$).
+Optimised Pattern: Optimal Brute (Observation: GCD only decreases)
+Opt Vis. Technique: Stepping Stone Reduction
+Dry Run (Opt): Since GCD can only stay the same or decrease as you add numbers, you can't optimize much further than $O(N^2)$, but you can stop early when GCD &lt; K.
+How to Draw (Opt): Draw an array. Under index 'i', draw a chain of GCD results. Stop drawing the chain as soon as a number &lt; K appears or GCD becomes &lt; K.
+Opt Complexity Visuals: Sum of Arithmetic Series
+How to Draw Opt Complexity: Draw a triangle. Label $O(N^2)$. Note: For larger constraints, use a Map to track "count of current GCDs" in $O(N \cdot \log(\text{MaxVal})$).
+Mem Vis (BF): Draw one running GCD variable.
+Mem Vis (Opt): Draw a variable for count and current GCD. $O(1)$ Space.

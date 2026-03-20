@@ -1,0 +1,13 @@
+ID: 3357
+Problem Title: Minimize the Maximum Adjacent Element Difference
+Brute Force Method: Try filling missing elements with every possible number from 1 to 10^9. $O(\text{Infinite})$.
+BF Complexity Visuals: Infinite Guessing Grid
+How to Draw BF: Draw an array with blanks. Try slotting 1, then 2, then 3 into the blanks.
+Optimised Pattern: Binary Search on Answer
+Opt Vis. Technique: The Tolerance Tester
+Dry Run (Opt): Binary search the maximum allowed difference D. For a given D, determine the valid range [L, R] for the missing numbers that satisfies the difference constraint with their known neighbors. If valid, try a smaller D.
+How to Draw (Opt): Draw a number line of possible differences. Guess D=5. Look at the array blanks. "Can I pick a number that is within 5 of the left neighbor AND right neighbor?" If yes, guess a tighter D.
+Opt Complexity Visuals: Logarithmic Search $O(N \log(\text{Max}_\text{Val})$)
+How to Draw Opt Complexity: Draw a binary search tree of answers. At each node, draw an $O(N)$ validation scan.
+Mem Vis (BF): Storing every filled array permutation.
+Mem Vis (Opt): Range tracking variables. $O(1)$ space.

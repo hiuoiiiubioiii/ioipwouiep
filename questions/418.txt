@@ -1,0 +1,13 @@
+ID: 418
+Problem Title: Sentence Screen Fitting
+Brute Force Method: Greedy Simulation Place words word-by-word, row-by-row. If a word doesn't fit, move to the next row.
+BF Complexity Visuals: Scrolling Text
+How to Draw BF: Draw a screen. Write words until you hit the edge. Move down. Show $O(\text{Rows} \\text{cdot MaxWordsPerRow})$.
+Optimised Pattern: DP / Pre-calculated Jumps Join sentence with spaces. At each screen column start, pre-calculate which word the next row will start with.
+Opt Vis. Technique: Circular Loop Mapping
+Dry Run (Opt): Imagine the sentence as a repeating circular belt. Map each position on the belt to where the next "jump" lands.
+How to Draw (Opt): Draw a circle with words on the perimeter. Draw "jump" arrows from different starting points to their landing points after one 'Cols' length.
+Opt Complexity Visuals: Jump Table
+How to Draw Opt Complexity: Draw a table of size 'SentenceLength'. Show one jump per Row. $O(\text{Rows} + \text{SentenceLength})$.
+Mem Vis (BF): Screen Buffer Not much, but the simulation process is slow.
+Mem Vis (Opt): Jump Array Draw an array of integers representing "next index" pointers. $O(\text{SentenceLength})$.

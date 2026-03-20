@@ -1,0 +1,13 @@
+ID: 364
+Problem Title: Nested List Weight Sum II
+Brute Force Method: First, find the maximum depth of the nested list. Then, perform a second pass multiplying each integer by (max\_depth - current\_depth + 1).
+BF Complexity Visuals: Two-Pass Depth Normalization
+How to Draw BF: Draw a tree. In pass 1, find the height. In pass 2, write multipliers next to each leaf. $O(N)$.
+Optimised Pattern: Single-Pass Level Accumulation
+Opt Vis. Technique: Cumulative "Weight" Snowball
+Dry Run (Opt): Use a BFS-style approach. Maintain two variables: `levelSum` and `totalSum`. At each level, add all integers in the current level to `levelSum`. Then, add `levelSum` to `totalSum`. The earlier levels get added to the total more times.
+How to Draw (Opt): Draw a nested structure. Below it, draw a "Bucket". Drop all integers from level 1 into it, then add the bucket to the total. Drop level 2 integers into the *same* bucket, then add the bucket again.
+Opt Complexity Visuals: Linear Layered Summation
+How to Draw Opt Complexity: Draw a single pass through the list levels. $O(N)$.
+Mem Vis (BF): Stack/Queue for two separate traversals.
+Mem Vis (Opt): Queue for BFS or constant variables if using recursion. Draw one horizontal tape for the current level's items. $O(N)$ worst-case.

@@ -1,0 +1,13 @@
+ID: 1291
+Problem Title: Sequential Digits
+Brute Force Method: Iterate from `low` to `high`. For every number, check if all adjacent digits have a difference of 1 and are strictly increasing.
+BF Complexity Visuals: 1D Linear Range Exhaustion
+How to Draw BF: Draw a massive number line from 10 to 10^9. Draw a tiny magnifying glass over every single number. Write $O(\text{High} - \text{Low})$.
+Optimised Pattern: Sliding Window on Digit String "123456789"
+Opt Vis. Technique: Substring Frame over "123456789"
+Dry Run (Opt): All sequential numbers are substrings of "123456789". Try all possible window lengths (from length of `low` to length of `high`) and slide them across the string. If the resulting number is in range, add to result.
+How to Draw (Opt): Write "123456789" on paper. Draw a bracket of length 2: [12], [23]... then length 3: [123], [234]... and so on. Check each against the `low`/`high` boundaries.
+Opt Complexity Visuals: Constant-Bounded Substring Scan
+How to Draw Opt Complexity: Draw the string "123456789". Show about 36 possible windows. Write $O(1)$ because the max number of sequential digits is fixed (45 total).
+Mem Vis (BF): Draw nothing extra, but note the extreme time waste of millions of checks.
+Mem Vis (Opt): Draw a small result list and one constant string "123456789". Space: $O(1)$.

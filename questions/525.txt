@@ -1,0 +1,13 @@
+ID: 525
+Problem Title: Contiguous Array
+Brute Force Method: Nested loops to check every possible subarray, counting 0s and 1s, updating max length when equal. $O(N^2)$.
+BF Complexity Visuals: A triangle matrix where every cell represents the tally of a different subarray segment.
+How to Draw BF: Draw an array. Draw brackets covering size 2, then size 4, then size 6... recalculating 0s and 1s every time.
+Optimised Pattern: Prefix Sum (Treat 0 as -1) + Hash Map.
+Opt Vis. Technique: An altitude chart. 1 goes up a mountain, 0 goes down. If you return to an altitude you've been at before, the journey between was perfectly flat (equal 0s and 1s).
+Dry Run (Opt): Change 0s to -1s. Track running sum. If sum in Map, `maxLength = max(maxLength, i - map[sum])`. Else, `map[sum] = i`.
+How to Draw (Opt): Draw array (0s as -1s). Draw running sum below. Plot it on a line graph. Whenever the line hits the same Y-axis value, bracket that horizontal segment.
+Opt Complexity Visuals: A single pass lighting up every element exactly once. $O(N)$.
+How to Draw Opt Complexity: Draw an array and a single arrow traversing left-to-right.
+Mem Vis (BF): $O(1)$ memory, just two loop counters, but terrible time limit.
+Mem Vis (Opt): A Hash Map storing up to N unique altitude (prefix sum) records. $O(N)$.

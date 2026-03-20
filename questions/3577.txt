@@ -1,0 +1,13 @@
+ID: 3577
+Problem Title: Count the Number of Computer Unlocking Permutations (Med)
+Brute Force Method: Generate all N! permutations of keys and check if each fulfills the "unlocking" sequence rules.
+BF Complexity Visuals: Factorial Permutation Tree.
+How to Draw BF: Draw a tree where each node is a key. Each path to a leaf is a permutation. Count valid paths.
+Optimised Pattern: Dynamic Programming with Bitmask.
+Opt Vis. Technique: State Transition DAG.
+Dry Run (Opt): State = `(current_key, mask_of_used_keys)`. Transition to an unused key only if the "intermediate" key on the path is already used.
+How to Draw (Opt): Draw circles for keys. Shade keys in a "mask" (e.g., 1011). Draw a valid arrow to an unshaded key.
+Opt Complexity Visuals: $O(N^2 \cdot 2^N)$.
+How to Draw Opt Complexity: Draw a grid of size N x 2^N. Shade cells as they are filled based on previous column states.
+Mem Vis (BF): Exhaustive Path Lists: Draw massive lists of coordinate sequences in memory.
+Mem Vis (Opt): Memoization Table: Draw a 2D array of size N x 2^N storing integer counts.

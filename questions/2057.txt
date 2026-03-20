@@ -1,0 +1,13 @@
+ID: 2057
+Problem Title: Smallest Index With Equal Value
+Brute Force Method: Iterate the array and for each element, calculate the index modulo 10 and compare it to the value.
+BF Complexity Visuals: Sequential Scan
+How to Draw BF: Draw the array. Below each index, write its value and its modulo 10 result. Draw a loop checking each one-by-one.
+Optimised Pattern: Single-Pass Early Exit
+Opt Vis. Technique: Linear Playhead
+Dry Run (Opt): Start index `i` at 0. Check `i % 10 == nums[i]`. If true, return `i` immediately. Else, move to 1. If loop ends, return -1.
+How to Draw (Opt): Write indices 0 to N. Below index 0, write "0 % 10 = 0?". If it matches `nums[0]`, stop. Draw a single forward arrow.
+Opt Complexity Visuals: Single Horizontal Line
+How to Draw Opt Complexity: Draw a straight line. Total time $O(N)$.
+Mem Vis (BF): Standard variable overhead.
+Mem Vis (Opt): Single integer `i` in a register. Space $O(1)$.

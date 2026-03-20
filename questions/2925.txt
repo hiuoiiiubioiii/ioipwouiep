@@ -1,0 +1,13 @@
+ID: 2925
+Problem Title: Maximum Score After Applying Operations on a Tree
+Brute Force Method: Generate all 2^N combinations of keeping/removing node values, checking if every leaf path has &gt;0 sum.
+BF Complexity Visuals: Exponential Subset Tree
+How to Draw BF: Draw a binary tree of depth N representing "Keep" vs "Lose" for each node, blowing up to 2^N leaves.
+Optimised Pattern: Tree Dynamic Programming (Min Cost to Satisfy)
+Opt Vis. Technique: Bottom-Up Bubble Sinking
+Dry Run (Opt): Total Score = Total Sum - Min Cost. For a node, we must either "pay" its value (leaving it) OR "pay" the sum of the min costs of all its children. `cost[node] = min(val[node], sum(cost[children]))`.
+How to Draw (Opt): Draw the tree. Write the original values inside nodes. Starting from leaves, write the `cost` outside the node, bubbling up the `min(value, children_costs)` to the root.
+Opt Complexity Visuals: Bottom-Up Post-Order Traversal
+How to Draw Opt Complexity: Draw the tree, and trace a single continuous line wrapping around every node from bottom to top. Time strictly $O(N)$.
+Mem Vis (BF): Call stack exploring 2^N states.
+Mem Vis (Opt): $O(N)$ recursion call stack depth (or $O(1)$ extra space if iterative). Graph represented by Adjacency List $O(V+E)$.

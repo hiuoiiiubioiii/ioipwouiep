@@ -1,0 +1,13 @@
+ID: 1648
+Problem Title: Sell Diminishing-Valued Colored Balls
+Brute Force Method: Simulate selling one ball at a time: find the max value ball, sell it, decrement its count, and repeat k times.
+BF Complexity Visuals: Repetitive Max Selection
+How to Draw BF: Draw a list of numbers. Draw k arrows pointing to the maximum number each time. $O(k \cdot n)$ or $O(k \log n)$.
+Optimised Pattern: Binary Search on Value Threshold / Greedy Math
+Opt Vis. Technique: Horizontal Cut-off Line
+Dry Run (Opt): Binary search for a price P such that we can sell all balls with value &gt; P. Use Arithmetic Progression (AP) to calculate total profit.
+How to Draw (Opt): Draw inventory as a histogram (columns of balls). Draw a horizontal line at height P. Calculate the area of the bars above the line using the sum of AP formula.
+Opt Complexity Visuals: Logarithmic Search Range
+How to Draw Opt Complexity: Draw a number line from 0 to \max(\text{inventory}). Draw brackets halving the range until P is found. $O(n \log(\\text{max})$).
+Mem Vis (BF): Priority Queue: A tree-like structure being modified k times.
+Mem Vis (Opt): Variables + Sorting: A sorted array and a few integer variables for the math formulas.

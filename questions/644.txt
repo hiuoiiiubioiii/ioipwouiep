@@ -1,0 +1,13 @@
+ID: 644
+Problem Title: Maximum Average Subarray II
+Brute Force Method: Calculate every possible subarray of length `L &gt;= k`, compute its average, and track the maximum.
+BF Complexity Visuals: Explosive growth of subarray combinations.
+How to Draw BF: Draw an array. Draw brackets of length K, then K+1, up to N. For each, calculate average. Write $O(N^2)$.
+Optimised Pattern: Binary Search on Answer + Sliding Window.
+Opt Vis. Technique: Refining Range / Precision Converge.
+Dry Run (Opt): Binary search for the *value* of the average between `min_val` and `max_val`. For a mid-value, check if any subarray of length &gt;= K has an average &gt;= mid using a linear scan.
+How to Draw (Opt): Draw a number line of possible averages. Draw a "Check" box. If the check passes, discard the left half of the number line. Repeat.
+Opt Complexity Visuals: $O(N \cdot \log((\text{max}-\text{min})$/precision)).
+How to Draw Opt Complexity: Draw a line (N) inside a loop that halves the search space (log). Write $O(N \log V)$.
+Mem Vis (BF): Draw a 2D matrix storing all subarray averages.
+Mem Vis (Opt): Draw a single pass check. Space is $O(1)$ beyond the input array.

@@ -1,0 +1,13 @@
+ID: 870
+Problem Title: Advantage Shuffle
+Brute Force Method: Generate every permutation of array A and count how many elements are greater than B at the same index. Return the best one.
+BF Complexity Visuals: Permutation Matrix. $O(N!)$.
+How to Draw BF: Draw array A. Branch out to all possible orderings. For each ordering, draw a comparison line to array B. The tree is impossibly large.
+Optimised Pattern: Greedy Strategy (Tian Ji's Horse Racing).
+Opt Vis. Technique: The "Best Fit or Sacrifice" Tactic.
+Dry Run (Opt): Sort A and B (keep B's indices). For each element in B (from largest to smallest): If A's largest can beat it, use it. Otherwise, "sacrifice" A's smallest element against this powerhouse B element.
+How to Draw (Opt): Draw sorted A and sorted B. Draw a bridge between the top of A and top of B if A wins. If A loses, draw a bridge from the very bottom of A (smallest) to that top B.
+Opt Complexity Visuals: Sorting + Two Pointers. $O(N \log N)$.
+How to Draw Opt Complexity: Draw two parallel timelines with pointers at both ends (Left/Right) moving toward the center.
+Mem Vis (BF): Exhaustive Memory: Draw N! rows of permutations.
+Mem Vis (Opt): TreeMap or Sorted List: Draw two sorted arrays and an index-tracking Map.

@@ -1,0 +1,13 @@
+ID: 1105
+Problem Title: Filling Bookcase Shelves
+Brute Force Method: Recursion (Include/Exclude). For each book: 1. Place on current shelf (if fits). 2. Start a new shelf.
+BF Complexity Visuals: Binary Decision Tree
+How to Draw BF: Draw a book. Branch left: "Same Shelf" (update remaining width, track max height). Branch right: "New Shelf" (reset width, add previous max height).
+Optimised Pattern: 1D Dynamic Programming
+Opt Vis. Technique: Sliding Window DP Array
+Dry Run (Opt): Iterate books. For `dp[i]`, look back at previous books `j` to form a valid shelf. `dp[i] = min(dp[i], dp[j-1] + max_height)`.
+How to Draw (Opt): Draw the `dp` array. At index `i`, draw arrows pointing back to `j` (where width constraint holds). Write the `max_height` found in that window.
+Opt Complexity Visuals: Nested Loop Bracket Diagram
+How to Draw Opt Complexity: Draw an outer loop N. Inner loop goes back up to N steps. Draw an area representing $O(N^2)$ combinations checked.
+Mem Vis (BF): Deep Recursion Stack + State variables
+Mem Vis (Opt): Single 1D Array of size N+1. Draw boxes. Fill boxes left to right, representing optimal minimal height at each book count.

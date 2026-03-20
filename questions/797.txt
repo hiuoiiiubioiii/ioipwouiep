@@ -1,0 +1,13 @@
+ID: 797
+Problem Title: All Paths From Source to Target
+Brute Force Method: Exhaustively search every possible path using DFS, including cycles (though DAGs have none).
+BF Complexity Visuals: Exponential Path Tree
+How to Draw BF: Draw the graph. Branch into every possible neighbor. $O(2^N \\text{times} N)$.
+Optimised Pattern: Backtracking (DFS for DAG)
+Opt Vis. Technique: Recursive Depth Trace
+Dry Run (Opt): Use recursion to explore neighbors. Since it's a DAG, you don't need a "visited" set to prevent cycles, just a way to record the current path.
+How to Draw (Opt): Draw the graph nodes. Start at 0. Trace a path to N-1 with a pen. Backtrack to the last junction and take a different turn.
+Opt Complexity Visuals: Tree Leaf Count
+How to Draw Opt Complexity: Draw a tree where each leaf is a unique path from source to target. $O(2^N \\text{times} N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): Recursive stack and a list to store all paths (O(2^N \times N)).

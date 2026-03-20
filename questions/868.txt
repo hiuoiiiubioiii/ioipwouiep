@@ -1,0 +1,13 @@
+ID: 868
+Problem Title: Binary Gap
+Brute Force Method: Convert the number to a binary string. Use nested loops to find every '1' and then find the next '1', calculating distance.
+BF Complexity Visuals: String-Based Nested Scan. $O(\log N)$.
+How to Draw BF: Draw a binary string. Pick the first '1'. Scan all subsequent bits until you find another '1'. Repeat for every '1'.
+Optimised Pattern: Bit Manipulation (Right Shift) + Distance Tracker.
+Opt Vis. Technique: The "Conveyor Belt" Bit Check.
+Dry Run (Opt): Don't use strings. Use `n &amp; 1` to check the last bit. Shift right (`n &gt;&gt;= 1`). Keep a counter of steps since the last '1' was seen. Update max distance whenever a new '1' appears.
+How to Draw (Opt): Draw the number in binary. Draw a "Window" at the far right. Slide the number through the window. Every time a '1' passes, reset a "Steps" counter and update "Record Max."
+Opt Complexity Visuals: Single Pass Bits. $O(\text{bits})$.
+How to Draw Opt Complexity: Draw a straight horizontal line representing 32 bits. Each bit is visited exactly once.
+Mem Vis (BF): String Object: Draw a memory block for the binary string representation.
+Mem Vis (Opt): $O(1)$ Space: Draw two integer boxes: 'lastPos' and 'maxGap.'

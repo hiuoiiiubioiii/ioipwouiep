@@ -1,0 +1,13 @@
+ID: 606
+Problem Title: Construct String from Binary Tree
+Brute Force Method: Standard Preorder DFS that blindly adds parentheses for every null child, followed by string replacement loops to clean up empty "()" pairs.
+BF Complexity Visuals: A bloated tree with string manipulation loops appending to it.
+How to Draw BF: Draw a tree traversing left, right. At every empty spot, draw a heavy "()" block. Draw a big eraser scrubbing out the redundant blocks in a second pass. Write $O(N^2)$ for bad string concatenation.
+Optimised Pattern: Preorder DFS with Conditional Appending.
+Opt Vis. Technique: Recursive Call Stack with String Builder.
+Dry Run (Opt): Trace the tree. Add Node.val. If left child exists OR right child exists, add '('. Recurse left. Add ')'. If right child exists, add '('. Recurse right. Add ')'.
+How to Draw (Opt): Draw the binary tree. Trace the perimeter with a pencil. Write the number down. Only draw brackets when you dive into a subtree. Skip brackets if both children below are missing.
+Opt Complexity Visuals: Linear scan along the perimeter of the tree.
+How to Draw Opt Complexity: Draw an outline wrapping around the entire binary tree structure exactly once. Write $O(N)$ along the outline.
+Mem Vis (BF): Draw massive, separate string blocks being created, copied, and destroyed in memory at every recursive step.
+Mem Vis (Opt): Draw a single, expanding memory block (String Builder) and a tall, narrow stack of boxes representing $O(H)$ recursion height.

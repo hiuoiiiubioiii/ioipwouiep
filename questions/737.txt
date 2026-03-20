@@ -1,0 +1,13 @@
+ID: 737
+Problem Title: Sentence Similarity II
+Brute Force Method: For every word pair, perform a full BFS/DFS on the similarity graph to see if they are connected.
+BF Complexity Visuals: Repeated Graph Search
+How to Draw BF: Draw N word pairs. For each, draw a spider-web search across a graph of thousands of words. $O(N \cdot (V+E)$).
+Optimised Pattern: Disjoint Set Union (DSU)
+Opt Vis. Technique: Connected Island Groups
+Dry Run (Opt): Pre-process similarities. Union(word1, word2). For each word pair in sentences, check if `find(s1[i]) == find(s2[i])`.
+How to Draw (Opt): Draw words as dots. Draw lines for similarities. Circle each cluster. Check if two sentence words fall in the same circle.
+Opt Complexity Visuals: Inverse Ackermann Flatline
+How to Draw Opt Complexity: Draw a flat line representing the nearly constant time $O(α(V)$) for DSU lookups. Total $O(N + V)$.
+Mem Vis (BF): Recursive call stack for every single word comparison.
+Mem Vis (Opt): Parent array/map for DSU (O(V) where V is unique words).

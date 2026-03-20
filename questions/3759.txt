@@ -1,0 +1,13 @@
+ID: 3759
+Problem Title: Count Elements With at Least K Greater Values (Med)
+Brute Force Method: For every element in the array, run a second loop to count how many elements in the array are strictly greater than it. $O(N^2)$.
+BF Complexity Visuals: Nested Loop Grid.
+How to Draw BF: Draw the array. Pick one element. Draw arrows to every larger number. Tally them. Move to next element.
+Optimised Pattern: Sorting / Frequency Map + Suffix Sum
+Opt Vis. Technique: Sorted Rank Reference
+Dry Run (Opt): Sort the array descending. For any element at index `i`, there are `i` elements greater than or equal to it. Adjust for duplicates using a frequency map or `bisect_right`.
+How to Draw (Opt): Draw sorted array. Write indices 0 to N-1 above. For any number, the index tells you how many are "to its left" (greater).
+Opt Complexity Visuals: $O(N \log N)$ for sorting.
+How to Draw Opt Complexity: Draw a sorting curve followed by a single linear pass.
+Mem Vis (BF): N^2 comparisons.
+Mem Vis (Opt): $O(1)$ extra space (in-place sort).

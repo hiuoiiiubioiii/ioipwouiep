@@ -1,0 +1,13 @@
+ID: 3341
+Problem Title: Find Minimum Time to Reach Last Room I
+Brute Force Method: DFS with backtracking to find all possible paths from (0,0) to (n-1,m-1), tracking the wait time at each room.
+BF Complexity Visuals: Exploding Path Tree
+How to Draw BF: Draw a grid. From (0,0), draw arrows to all 4 neighbors. From each neighbor, draw 4 more. The "spaghetti" of paths shows $O(4^N \cdot M)$.
+Optimised Pattern: Dijkstra's Algorithm
+Opt Vis. Technique: Concentric Ripple Expansion
+Dry Run (Opt): Use a Priority Queue to store `(time, r, c)`. Always expand the room with the smallest "arrival time". Arrival time = `max(current_time, move_time) + 1`.
+How to Draw (Opt): Draw the grid. Write a number in each cell representing its threshold. Use a highlighter to "shade" cells as they are visited, writing the actual arrival time in a circle.
+Opt Complexity Visuals: Log-Linear Grid Sweep
+How to Draw Opt Complexity: Draw the grid area N x M. Inside, draw a small "log" symbol to represent the Heap operations. Proves $O(\text{NM} \log(\text{NM})$).
+Mem Vis (BF): Deep recursive stack holding every coordinate of the current path, potentially $O(\text{NM})$ depth but with massive branching.
+Mem Vis (Opt): A 2D `dist` array of size N x M and a Priority Queue (Min-Heap) holding active "frontiers".

@@ -1,0 +1,13 @@
+ID: 795
+Problem Title: Number of Subarrays with Bounded Maximum
+Brute Force Method: Generate every possible subarray and find the maximum element in each, checking if it falls in [L, R].
+BF Complexity Visuals: Nested Subarray Scan
+How to Draw BF: Draw the array. Draw brackets for every possible start and end. For each, scan the contents. $O(N^3)$.
+Optimised Pattern: Two-Pass Inclusion/Exclusion (At-Most K)
+Opt Vis. Technique: Subarray Count subtraction
+Dry Run (Opt): Count subarrays where all elements are \le R. Subtract subarrays where all elements are \le L-1. Formula for contiguous elements: n(n+1)/2.
+How to Draw (Opt): Draw the array. Shade groups of elements \le R. Calculate counts. Then shade groups of elements \le L-1 and subtract.
+Opt Complexity Visuals: Linear Counting Pass
+How to Draw Opt Complexity: Draw an array with a single arrow sweeping left-to-right. $O(N)$.
+Mem Vis (BF): List of all subarray objects.
+Mem Vis (Opt): $O(1)$ extra space (tracking current contiguous length).

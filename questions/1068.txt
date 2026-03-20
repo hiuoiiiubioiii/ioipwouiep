@@ -1,0 +1,13 @@
+ID: 1068
+Problem Title: Product Sales Analysis I
+Brute Force Method: (SQL) For every row in the `Sales` table, perform a subquery to look up the `product_name` and `year` in the `Product` table.
+BF Complexity Visuals: A repetitive lookup process for every sale record.
+How to Draw BF: Sales Table: [pid=1, year=2019]. Look up pid=1 in Product Table -&gt; "Nokia". Write $O(S \cdot P)$.
+Optimised Pattern: Inner Join.
+Opt Vis. Technique: A "Table Stitch". We align the two tables by their shared `product_id` column to create a wider, combined view.
+Dry Run (Opt): `SELECT p.product_name, s.year, s.price FROM Sales s JOIN Product p ON s.product_id = p.product_id`.
+How to Draw (Opt): Draw the Sales table and the Product table side-by-side. Draw lines connecting matching `product_id`s. Show the columns from both merging into a new result row.
+Opt Complexity Visuals: Single pass join (usually using a hash join or merge join internally).
+How to Draw Opt Complexity: Draw two tables merging into one. Write Time: $O(\text{Sales} + \text{Product})$.
+Mem Vis (BF): Multiple temporary sub-results stored in memory.
+Mem Vis (Opt): A hash table created by the DB engine for the join. $O(\text{Product})$ space.

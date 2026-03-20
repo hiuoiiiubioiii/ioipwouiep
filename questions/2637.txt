@@ -1,0 +1,13 @@
+ID: 2637
+Problem Title: Promise Time Limit
+Brute Force Method: Waiting for the promise to finish and manually checking time elapsed via `Date.now()`.
+BF Complexity Visuals: Post-hoc Time Check
+How to Draw BF: Draw a task finishing, then looking at a clock. If it's too late, it's already done too much work.
+Optimised Pattern: Promise.race() with Timer
+Opt Vis. Technique: Dual-Track Race
+Dry Run (Opt): Create two promises: the original task and a `setTimeout` that rejects after `t`. Use `Promise.race([task, limit])`. First one to finish wins.
+How to Draw (Opt): Draw two parallel runners: "Worker" and "Clock". Draw a finish line at time `t`. If "Clock" crosses first, the race ends with an Error.
+Opt Complexity Visuals: Constant Overhead Block
+How to Draw Opt Complexity: Draw the task block $O(T)$ and a small $O(1)$ box for the timer setup.
+Mem Vis (BF): N/A
+Mem Vis (Opt): Closure holding timer ID and resolve/reject references.

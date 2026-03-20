@@ -1,0 +1,13 @@
+ID: 2886
+Problem Title: Change Data Type
+Brute Force Method: Iterate through the 'grade' column. For each value, call int(value) and put it back into the DataFrame.
+BF Complexity Visuals: Type-Casting Loop
+How to Draw BF: Draw a column of floats (e.g., 85.0). Draw a "Caster" box that chops off the decimal for each row.
+Optimised Pattern: df['grade'].astype(int)
+Opt Vis. Technique: Memory Buffer Reinterpretation
+Dry Run (Opt): Visualize the memory block changing from "Wide" (Float64) to "Narrow" (Int32) representation.
+How to Draw (Opt): Draw a sequence of wide boxes. Draw a "Squeezer" that turns them into narrow, solid boxes.
+Opt Complexity Visuals: Linear $O(N)$
+How to Draw Opt Complexity: Draw a straight line y=x. Every element must be converted.
+Mem Vis (BF): $O(N)$ - Storing temporary Python integer objects.
+Mem Vis (Opt): $O(N)$ - One-time allocation of a new typed array.

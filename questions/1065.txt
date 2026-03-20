@@ -1,0 +1,13 @@
+ID: 1065
+Problem Title: Index Pairs of a String
+Brute Force Method: For every word in the dictionary, search the entire text string for its occurrences using `indexOf` or a nested loop.
+BF Complexity Visuals: Multiple search parties scanning the same terrain repeatedly.
+How to Draw BF: Text: "ababa", Words: ["aba", "ba"]. Search "aba" -&gt; [0,2], [2,4]. Search "ba" -&gt; [1,2], [3,4]. Write $O(\text{Words} \\text{cdot TextLen} \\text{cdot WordLen})$.
+Optimised Pattern: Trie (Prefix Tree).
+Opt Vis. Technique: A "Dictionary Overlay". We slide through the text and see which paths in our tree we can follow at each starting character.
+Dry Run (Opt): Build a Trie of all words. For each index i in the text, start a pointer at the Trie root and see how deep you can go starting from text[i]. Every "end of word" node reached is a valid pair.
+How to Draw (Opt): Draw the Trie. Under the text "ababa", draw arrows starting at 'a', 'b', etc., tracing paths in the Trie. Mark indices whenever a Trie "leaf" or "word-end" is hit.
+Opt Complexity Visuals: A single pass through the text with localized Trie depth walks.
+How to Draw Opt Complexity: Draw the text string with small depth-limited trees branching off each character. Write $O(\text{TextLen} \\text{cdot MaxWordLen})$.
+Mem Vis (BF): $O(\text{Words} \\text{cdot MaxWordLen})$ for storing words in a list/set.
+Mem Vis (Opt): $O(\text{TotalChars in Dictionary})$ for the Trie structure.

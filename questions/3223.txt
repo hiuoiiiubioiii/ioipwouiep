@@ -1,0 +1,13 @@
+ID: 3223
+Problem Title: Minimum Length of String After Operations
+Brute Force Method: Manually simulating string deletions, shifting array elements left and right to close gaps. $O(N^2)$.
+BF Complexity Visuals: Array Shifting Pipeline
+How to Draw BF: Draw an array. Erase two elements. Draw arrows forcing all elements on the right to manually slide leftward one by one to fill the hole.
+Optimised Pattern: Frequency Counting Map / Parity Math
+Opt Vis. Technique: Histogram Parity Pruning
+Dry Run (Opt): Count letter frequencies. The order of deletions doesn't matter. If a count is &gt;= 3, mathematically reduce it to 1 (if odd) or 2 (if even). Sum the remains.
+How to Draw (Opt): Draw a frequency table for A-Z. Cross out any number &gt;= 3 and replace it using the rule `count % 2 == 0 ? 2 : 1`. Sum the final column.
+Opt Complexity Visuals: Two-Pass Timeline
+How to Draw Opt Complexity: Draw a block for $O(N)$ string traversal to count. Draw a second block for $O(26)$ traversal to sum. Overall $O(N)$.
+Mem Vis (BF): New string allocations for every deletion.
+Mem Vis (Opt): Fixed size $O(26)$ integer frequency array (O(1) space).

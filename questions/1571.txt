@@ -1,0 +1,13 @@
+ID: 1571
+Problem Title: Warehouse Manager (SQL)
+Brute Force Method: Join `Warehouse` and `Products`. For every row, calculate `Width * Length * Height` in the application layer and then group by warehouse. $O(N \cdot M)$.
+BF Complexity Visuals: Row-by-Row Multiplication Grid
+How to Draw BF: Draw two tables. For every row in Table A, draw an arrow to Table B. Inside the arrow, draw a tiny 3D box being calculated before it lands in a "Warehouse Bin."
+Optimised Pattern: SQL Aggregation / JOIN
+Opt Vis. Technique: The Volumetric Funnel
+Dry Run (Opt): Perform a `JOIN` on `product_id`. Multiply the three dimensions to get the unit volume, multiply by `units`, and use `SUM()` with `GROUP BY` warehouse name.
+How to Draw (Opt): Draw the tables joined. For each warehouse, draw a single "Volume Bucket." Pour all the calculated product volumes into it. The final level in the bucket is the result.
+Opt Complexity Visuals: Hash/Merge Join Aggregation $O(N)$
+How to Draw Opt Complexity: Draw a pipeline. One pass through the data performs the join and the sum simultaneously.
+Mem Vis (BF): Application-side cache for all product dimensions. $O(P)$.
+Mem Vis (Opt): Zero application memory. DB uses internal aggregate buffer. $O(W)$ space.

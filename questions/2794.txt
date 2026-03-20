@@ -1,0 +1,13 @@
+ID: 2794
+Problem Title: Create Object from Two Arrays (JS)
+Brute Force Method: Iterate through keysArr. For each key, search valuesArr for the corresponding value. If found, add to object. $O(N²)$.
+BF Complexity Visuals: N² Array Index Search
+How to Draw BF: Draw two arrays. Pick Key 1, search the entire Value array for index 1. Pick Key 2, search again.
+Optimised Pattern: Linear Search Overhead (Visualizing indexOf being called repeatedly).
+Opt Vis. Technique: Single Pass Linear Mapping
+Dry Run (Opt): Index-Synchronized Transformation
+How to Draw (Opt): Iterate through keysArr once using index i. Use obj[keysArr[i]] = valuesArr[i]. If the key already exists in the object (using in operator), skip it to maintain the first-occurrence rule.
+Opt Complexity Visuals: Draw two parallel arrays. Draw an arrow pointing at both keysArr[0] and valuesArr[0]. Connect them to a property in a new Object. Move both arrows together.
+How to Draw Opt Complexity: Linear $O(N)$
+Mem Vis (BF): Draw a single horizontal arrow passing through both arrays. Label it $O(N)$.
+Mem Vis (Opt): Result Object (Draw a single dictionary in the heap storing the key-value pairs).

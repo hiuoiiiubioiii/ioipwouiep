@@ -1,0 +1,13 @@
+ID: 2079
+Problem Title: Watering Plants
+Brute Force Method: Actually simulate every step: move to plant, water, if empty move back to river, refill, move back to plant.
+BF Complexity Visuals: Physical Step Simulation
+How to Draw BF: Draw a river at -1. Draw plants at 0, 1, 2... Draw a line representing the feet moving back and forth. Count every single mark. $O(N + \text{Refills} \\text{cdot AverageDistance})$.
+Optimised Pattern: Math-Based Accumulator
+Opt Vis. Technique: Linear Path with Penalty Gaps
+Dry Run (Opt): Iterate through plants. Keep track of current water. If `water &lt; needed`, total steps += `2 * current_index` (back and forth) plus the normal step forward.
+How to Draw (Opt): Draw the plant line. Draw a tally marks for each forward step. At a refill, draw a long U-turn arrow back to the start and back to the current plant. Write the math below.
+Opt Complexity Visuals: Single Pass Counter
+How to Draw Opt Complexity: Draw one straight line (O(N)). Mathematical jumps are $O(1)$ inside the loop. Total time $O(N)$.
+Mem Vis (BF): Storing full coordinate histories of the robot's steps.
+Mem Vis (Opt): Three integer variables: `currentWater`, `totalSteps`, and `index`. Space $O(1)$.

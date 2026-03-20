@@ -1,0 +1,13 @@
+ID: 3550
+Problem Title: Smallest Index With Digit Sum Equal to Index (Easy)
+Brute Force Method: Convert index to string, sum characters, compare to index. Repeat until found.
+BF Complexity Visuals: Linear Search with String Conversion.
+How to Draw BF: Draw a number line. For each number, draw a balloon showing its digits. Sum them and check if it equals the coordinate. $O(N \cdot \log N)$.
+Optimised Pattern: Linear Scan with Mathematical Digit Extraction.
+Opt Vis. Technique: Single Stream Evaluation.
+Dry Run (Opt): Loop from 0 to N. Use `% 10` and `/ 10` to get digits. If `sum == index`, return immediately.
+How to Draw (Opt): Draw a table: `Index | Digits | Sum`. Write numbers 0, 1, 2... and stop as soon as the last two columns match.
+Opt Complexity Visuals: $O(N)$ or $O(\text{Constant})$ if limit is small.
+How to Draw Opt Complexity: Draw a straight arrow through the number line. Stop at the first "Golden Index."
+Mem Vis (BF): String Buffer: Draw temporary string objects being created and destroyed in the heap for every number.
+Mem Vis (Opt): Integer Variables: Draw one 'sum' variable and one 'temp' variable being reused for every loop iteration.

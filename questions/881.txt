@@ -1,0 +1,13 @@
+ID: 881
+Problem Title: Boats to Save People
+Brute Force Method: Try every combination of 2 people to see if they fit in a boat. This is like a variation of the knapsack problem.
+BF Complexity Visuals: Subset Pairing Tree. $O(2^N)$.
+How to Draw BF: Draw people as weights. Branch out every possible grouping into boats. It becomes an exhaustive search of partitions.
+Optimised Pattern: Sorting + Two Pointers (Greedy).
+Opt Vis. Technique: The "Heaviest + Lightest" Pairing.
+Dry Run (Opt): Sort the people by weight. Try to put the heaviest person (R) and the lightest person (L) on the same boat. If they fit, move both pointers. If not, the heaviest person *must* go alone; move only the R pointer.
+How to Draw (Opt): Draw a sorted line of weights. Draw a "Boat" bracket. Attempt to grab the far-left and far-right elements. If they don't fit, the bracket only takes the right-most element.
+Opt Complexity Visuals: Sorting Bottleneck. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a Sorting Funnel followed by a single inward-moving two-pointer scan.
+Mem Vis (BF): Recursion Stack/Partitions: Draw many overlapping lists of boat assignments.
+Mem Vis (Opt): $O(1)$ Pointers: Draw two small arrow icons (L, R) over the sorted array.

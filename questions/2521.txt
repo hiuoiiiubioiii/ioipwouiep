@@ -1,0 +1,13 @@
+ID: 2521
+Problem Title: Distinct Prime Factors of Product of Array
+Brute Force Method: Multiply every single number together into one giant integer (which causes data overflow), then mathematically factorize that massive result.
+BF Complexity Visuals: A massive, single multiplication node bursting into a gigantic, top-heavy factor tree.
+How to Draw BF: Write 2 * 4 * 3 = 24. Draw branches extending downwards from 24, breaking it into its absolute prime roots.
+Optimised Pattern: On-the-fly Trial Division + Hash Set deduplication.
+Opt Vis. Technique: Array elements acting as funnels, processing individually and dropping their prime factors into a single shared Hash Set bucket.
+Dry Run (Opt): Take the first array number. Divide it by i=2 upwards. If it divides cleanly, throw i into a Set and divide the number down. Move to the next array element. Count the final Set size.
+How to Draw (Opt): Draw the array. Below each number, draw a mini factor tree. Circle the prime leaf nodes. Draw arrows moving all circled primes into a single box (the Set). Count the unique numbers inside the box.
+Opt Complexity Visuals: $O(N \\text{cdot sqrt}(\text{MAX}_\text{VAL})$) sequence of independent, small mathematical loops.
+How to Draw Opt Complexity: Draw an array. Under each element, draw a small, bounded vertical line representing the maximum square-root iterations, showing the work scales linearly with the array size.
+Mem Vis (BF): Massive integer string allocation or BigInt library overhead.
+Mem Vis (Opt): $O(P)$ Hash Set space, where P is the strictly bounded maximum number of distinct primes.

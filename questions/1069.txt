@@ -1,0 +1,13 @@
+ID: 1069
+Problem Title: Product Sales Analysis II
+Brute Force Method: (SQL) Select all unique product IDs. For each ID, scan the entire Sales table to sum up the quantities.
+BF Complexity Visuals: A "Filter and Sum" loop repeated for every unique product.
+How to Draw BF: Product 1: Find all Sales with pid=1, sum quantities. Product 2: Repeat. Write $O(\text{UniqueProducts} \\text{cdot Sales})$.
+Optimised Pattern: Group By.
+Opt Vis. Technique: A "Sorting Bin". Toss every sale into a bin based on its `product_id`, then count the total in each bin.
+Dry Run (Opt): `SELECT product_id, SUM(quantity) AS total_quantity FROM Sales GROUP BY product_id`.
+How to Draw (Opt): Draw the Sales table. Circle all rows with `product_id` 1. Sum their quantities. Do the same for `product_id` 2.
+Opt Complexity Visuals: Single pass aggregation.
+How to Draw Opt Complexity: Draw a table being collapsed into a smaller summary table. Write Time: $O(\text{Sales})$.
+Mem Vis (BF): $O(\text{Sales})$ space for repeated sub-selections.
+Mem Vis (Opt): An internal hash map for grouping. $O(\text{UniqueProducts})$ space.

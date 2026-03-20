@@ -1,0 +1,13 @@
+ID: 3456
+Problem Title: Find Special Substring of Length K
+Brute Force Method: Generate every substring of length K and check all characters for equality and neighboring constraints. $O(N \cdot K)$
+BF Complexity Visuals: Sliding Window with Full Verification.
+How to Draw BF: Draw a K-sized box sliding across the string. Inside each box, draw K arrows checking if all letters match.
+Optimised Pattern: Linear Scan with Consecutive Counter. $O(N)$
+Opt Vis. Technique: Counter Waveform with Boundary Checks.
+Dry Run (Opt): Iterate. If s[i] == s[i-1], increment counter. If not, check if old counter == K (and verify neighbors). Reset counter.
+How to Draw (Opt): Draw the string. Underneath, write a running number that resets when characters change. Circle the number 'K' if it satisfies boundaries.
+Opt Complexity Visuals: Single Pass Progress Line.
+How to Draw Opt Complexity: Draw one straight arrow moving once across the string array.
+Mem Vis (BF): Temporary character lists or substring objects.
+Mem Vis (Opt): Two $O(1)$ integer variables (`count` and `result_found`).

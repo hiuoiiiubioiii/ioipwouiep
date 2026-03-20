@@ -1,0 +1,13 @@
+ID: 2483
+Problem Title: Minimum Penalty for a Shop
+Brute Force Method: For every possible closing hour `j` (from 0 to n), iterate through the entire string to calculate the penalty.
+BF Complexity Visuals: N-Iteration Penalty Scan
+How to Draw BF: Draw a timeline. Below each hour, draw a scan line checking the whole string. Label $O(N^2)$.
+Optimised Pattern: Prefix Sums / Single Pass Logic
+Opt Vis. Technique: Running Score Delta
+Dry Run (Opt): Start with initial penalty (all 'Y'). Iterate once: if 'Y', penalty decreases; if 'N', penalty increases. Track the index of the global minimum.
+How to Draw (Opt): Draw the 'Y/N' string. Below it, write a running score. Every 'Y' is a -1, every 'N' is a +1. Circle the lowest number in the sequence.
+Opt Complexity Visuals: Linear Progress Line
+How to Draw Opt Complexity: Draw one straight horizontal arrow. Label $O(N)$ Time.
+Mem Vis (BF): Draw a penalty variable.
+Mem Vis (Opt): Draw two integer variables: `min_penalty` and `best_hour`. $O(1)$ Space.

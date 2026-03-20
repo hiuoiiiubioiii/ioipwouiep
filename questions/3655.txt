@@ -1,0 +1,13 @@
+ID: 3655
+Problem Title: XOR After Range Multiplication Queries II (Hard)
+Brute Force Method: Same as Part I, but with a massive K or dynamic modulo properties that break standard Lazy Propagation.
+BF Complexity Visuals: Segment Tree Overflow.
+How to Draw BF: Draw the Segment Tree from 3653. Now imagine the numbers are so large they exceed 64-bit integers, or the XOR property doesn't distribute over multiplication.
+Optimised Pattern: Segment Tree where each node stores a "Bit Count" array (size 32 or 64). Multiplication by a power of 2 becomes a "Bit Shift" on the array.
+Opt Vis. Technique: Bit-Plane Layers.
+Dry Run (Opt): Think of the array as 32 separate layers (one for each bit). Multiplication affects these layers in predictable ways (shifting or flipping). Treat each bit independently.
+How to Draw (Opt): Draw 32 Segment Trees stacked vertically. When a range is multiplied by 2, show bit 0 moving to bit 1, bit 1 to bit 2, etc. across the whole range.
+Opt Complexity Visuals: Bitwise-Multiplied Tree Depth.
+How to Draw Opt Complexity: Write $O(32 \\text{times} Q \log N)$. Show that we are doing standard Segment Tree work, just repeated for each bit.
+Mem Vis (BF): Storing massive BigInts in every node of the tree.
+Mem Vis (Opt): A 2D array or 1D array with bit-packing: `tree[node][bit_pos]`. Space $O(N \\text{times} 32)$.

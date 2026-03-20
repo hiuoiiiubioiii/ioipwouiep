@@ -1,0 +1,13 @@
+ID: 3248
+Problem Title: Snake in Matrix
+Brute Force Method: Map the grid to a graph and use BFS to find the snake's final position. $O(N²)$.
+BF Complexity Visuals: Graph Traversal Map
+How to Draw BF: Draw an N x N grid. Represent the snake as a node. For every command, "search" for the neighboring node. Show unnecessary complexity for a simple grid.
+Optimised Pattern: Coordinate Math (i, j) Simulation
+Opt Vis. Technique: 1D to 2D Index Mapping
+Dry Run (Opt): Track `row` and `col`. Up: `row--`, Down: `row++`, Left: `col--`, Right: `col++`. The final position is `(row * n) + col`.
+How to Draw (Opt): Draw the grid. Start a pen at (0,0). Move the pen according to the commands "RIGHT", "DOWN". At the end, read the number under the pen.
+Opt Complexity Visuals: Linear Command Scan
+How to Draw Opt Complexity: Draw a line for the 'K' commands. Label each command as an $O(1)$ coordinate update. Total $O(K)$.
+Mem Vis (BF): Adjacency list of the entire grid.
+Mem Vis (Opt): Two scalar integers for row and column (O(1) space).

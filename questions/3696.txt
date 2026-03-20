@@ -1,0 +1,13 @@
+ID: 3696
+Problem Title: Maximum Distance Between Unequal Words I (Easy)
+Brute Force Method: Nested loops comparing every pair of words (i, j) and, if they are different, calculating j - i. $O(N^2)$.
+BF Complexity Visuals: Word-Pair Index Comparison.
+How to Draw BF: Draw a list of words. Connect index 0 to 1, 0 to 2, 0 to 3... Repeat for index 1. Calculate distances for all unequal pairs.
+Optimised Pattern: Single-pass: Find the first and last occurrence of different words. The max distance is either LastIndex - FirstIndex or LastIndex - SecondFirstIndex.
+Opt Vis. Technique: The "First and Last" Goalposts.
+Dry Run (Opt): You only care about the extreme ends. If the word at index 0 is "Apple" and the word at index N-1 is "Banana", that's your max. If the word at index N-1 is also "Apple", then the answer is N-1 minus the first index that isn't "Apple".
+How to Draw (Opt): Draw an array. Point to arr[0] and arr[N-1]. If they differ, distance = N-1. If not, scan inward from both ends to find the first mismatch.
+Opt Complexity Visuals: Two-Pointer Boundary Scan.
+How to Draw Opt Complexity: Draw two arrows starting at the ends and moving inward slightly. Total $O(N)$.
+Mem Vis (BF): Storing every distance value found in a list.
+Mem Vis (Opt): Three or four integer variables to store indices. Space $O(1)$.

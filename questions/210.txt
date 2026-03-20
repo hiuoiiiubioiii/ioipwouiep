@@ -1,0 +1,13 @@
+ID: 210
+Problem Title: Course Schedule II
+Brute Force Method: Brute force DFS without state tracking (visiting, visited), risking infinite loops.
+BF Complexity Visuals: Infinite Loop Graph: $O(V!)$.
+How to Draw BF: Draw a node tree that circles back on itself endlessly. Add a "stack overflow" explosion.
+Optimised Pattern: Topological Sort (DFS with 3 States or Kahn's BFS)
+Opt Vis. Technique: State-Colored Directed Graph
+Dry Run (Opt): Start at any unvisited node. Paint it GRAY (visiting). Go deep. When hitting dead end, paint BLACK (visited) and add to result list.
+How to Draw (Opt): Draw graph nodes. Shade them lightly (visiting). When a path finishes, shade them darkly (visited) and write the node in an array.
+Opt Complexity Visuals: V+E Sweep Area: $O(V + E)$ Time.
+How to Draw Opt Complexity: Draw a shape representing Vertices and Edges. Shade it once to represent a single complete traversal.
+Mem Vis (BF): Unbounded Recursion Stack.
+Mem Vis (Opt): 3-State Array + Result Stack: Draw an array with [0, 1, 2] (White, Gray, Black) and a separate output array filling up backwards.

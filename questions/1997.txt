@@ -1,0 +1,13 @@
+ID: 1997
+Problem Title: First Day Where You Have Been in All the Rooms
+Brute Force Method: Simulate the movement day-by-day based on the rules, manually counting visits per room.
+BF Complexity Visuals: Time-Series Simulation Line
+How to Draw BF: Draw a timeline from Day 0, Day 1... and mark the room position. Show the exponential length for large N. $O(2^N)$.
+Optimised Pattern: Dynamic Programming (Prefix Sum Transition)
+Opt Vis. Technique: Recursive State Revisit Map
+Dry Run (Opt): `dp[i]` is the days to reach room `i`. To reach `i+1`, you must reach `i`, go back to `nextVisit[i]`, return to `i`, and move forward.
+How to Draw (Opt): Draw rooms 1 to N. Draw a curved "revisit" arrow from `i` back to `nextVisit[i]`. Label the segments with DP transition times.
+Opt Complexity Visuals: Linear DP Dependency Graph
+How to Draw Opt Complexity: Draw N nodes. For each node, draw an arrow to the next, showing a single pass through the states. $O(N)$.
+Mem Vis (BF): A frequency map of all room visits during simulation.
+Mem Vis (Opt): A 1D DP array of size N storing long integers (modulo 10^9+7). $O(N)$ space.

@@ -1,0 +1,13 @@
+ID: 36
+Problem Title: Valid Sudoku
+Brute Force Method: Triple Pass Filtering Scan the entire 9x9 board three separate times: once for rows, once for columns, and once for the 3x3 sub-boxes.
+BF Complexity Visuals: The Clunky Scanner
+How to Draw BF: Draw a 9x9 grid. Draw an arrow scanning left-to-right 9 times. Then an arrow scanning top-to-bottom 9 times. Then 9 individual boxes scanning inside themselves.
+Optimised Pattern: Single Pass (Hash Sets)
+Opt Vis. Technique: The Triple Tally
+Dry Run (Opt): Iterate exactly once. As you read a number at `(row, col)`, check if it exists in `RowSet[row]`, `ColSet[col]`, or `BoxSet[(row/3)*3 + col/3]`. If not, add it to all three.
+How to Draw (Opt): Draw one cell at `(r, c)`. Draw three distinct buckets (Row, Col, Box) next to it. Drop the number into all three. If a bucket already has that number, draw a red "X" (Invalid).
+Opt Complexity Visuals: Single 9x9 Block
+How to Draw Opt Complexity: Draw a single 81-cell square. Shade it in progressively from top-left to bottom-right exactly once. $O(1)$ time (since the board is strictly 9x9, it's a constant 81 operations).
+Mem Vis (BF): $O(1)$ space, but the time waste is the real issue.
+Mem Vis (Opt): Draw 3 arrays of 9 HashSets. Since the board size is fixed (9x9), the space is technically bounded by a constant. $O(1)$ space complexity.

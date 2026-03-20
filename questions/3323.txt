@@ -1,0 +1,13 @@
+ID: 3323
+Problem Title: Minimize Connected Groups by Inserting Interval
+Brute Force Method: Try inserting the new interval starting at every single coordinate point. Recalculate overlapping groups from scratch every time.
+BF Complexity Visuals: Exhaustive Placement Timeline
+How to Draw BF: Draw a number line with existing intervals. Draw your new interval at position 0, count groups. Erase it, draw it at position 1, count groups. Very slow $O(N^2)$.
+Optimised Pattern: Merge Intervals + Binary Search
+Opt Vis. Technique: Bridging the Gaps (The Ruler Method)
+Dry Run (Opt): Merge all overlapping intervals first. For each merged interval's end point `e`, use binary search to find the furthest interval that starts before `e + k + 1`.
+How to Draw (Opt): Draw the merged intervals as solid blocks. Create a physical paper "ruler" of length `k`. Place the start of the ruler at the end of a block. Count how many other blocks the ruler covers.
+Opt Complexity Visuals: Logarithmic Jump Arrows
+How to Draw Opt Complexity: Draw an array of starting positions. From an endpoint, draw one sweeping arrow directly landing on the target index, proving $O(\log N)$ search time.
+Mem Vis (BF): Deep iteration stacks and temporary array allocations for every theoretical interval placement.
+Mem Vis (Opt): A single, neatly compacted 2D array of merged intervals taking $O(N)$ space.

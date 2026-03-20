@@ -1,0 +1,13 @@
+ID: 340
+Problem Title: Longest Substring with At Most K Distinct Characters
+Brute Force Method: Generate every possible substring (i, j) and check if the number of unique characters in it is \le k.
+BF Complexity Visuals: Triangular String Clipping
+How to Draw BF: Draw the string. Draw a bracket for every possible start and end point. Label $O(N^2)$ or $O(N^3)$.
+Optimised Pattern: Sliding Window + Hash Map (Two Pointers)
+Opt Vis. Technique: Expanding/Contracting Flexible Window
+Dry Run (Opt): Move `right` pointer to add characters to a Hash Map. If map size &gt; k, move `left` pointer and decrement counts until map size \le k. Update max length at each step.
+How to Draw (Opt): Draw the string. Draw a sliding "box" (window). Below it, draw a small Hash Map table. Show the box expanding right until the map has k+1 entries, then show the left side "shrinking".
+Opt Complexity Visuals: Two-Pointer Linear Sweep
+How to Draw Opt Complexity: Draw a string with two arrows (L and R). Show them both moving only from left to right. $O(N)$.
+Mem Vis (BF): List of all unique substrings. $O(N^2)$.
+Mem Vis (Opt): Hash Map of characters. Draw a table with 2 columns (Char, Frequency). Max size of map is k+1. $O(K)$.

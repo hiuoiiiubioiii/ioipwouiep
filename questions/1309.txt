@@ -1,0 +1,13 @@
+ID: 1309
+Problem Title: Decrypt String from Alphabet to Integer
+Brute Force Method: Scan left-to-right. On '1' or '2', branch into "single-digit" vs "double-digit" recursive paths, backtracking if a '#' is not found later.
+BF Complexity Visuals: Lookahead Reversal Branching
+How to Draw BF: Draw string as a tape. Move pointer right. When hitting 1 or 2, split into two paths, crossing one out upon hitting/missing '#'.
+Optimised Pattern: Single-Pass Reverse Scan (Right-to-Left Pointer)
+Opt Vis. Technique: Reverse Tape Reading
+Dry Run (Opt): Place pointer at string's end. If char is '#', read the two chars to its left, decode, and jump left by 3. Otherwise, decode the single char and jump left by 1.
+How to Draw (Opt): Draw string. Place arrow at end pointing left. Draw a big leap arc (3 chars wide) when landing on '#', and a small step arc (1 char wide) otherwise.
+Opt Complexity Visuals: Single Continuous Backward Arrow
+How to Draw Opt Complexity: Draw the string array with a single uninterrupted line starting at index N-1 and ending at 0, indicating strictly $O(N)$ ops.
+Mem Vis (BF): Recursive String Builder: Intermediate substring copies piling up in memory.
+Mem Vis (Opt): Static Output Buffer: Draw an empty `std::string` buffer. Fill backward, then apply a final `std::reverse` to avoid costly prepends.

@@ -1,0 +1,13 @@
+ID: 1269
+Problem Title: Number of Ways to Stay in the Same Place After Some Steps
+Brute Force Method: Standard DFS exploring all 3 choices (Left, Right, Stay) for every step. Without memoization, this explores every possible path.
+BF Complexity Visuals: 3-way Branching Decision Tree
+How to Draw BF: Draw a root (Index 0). Branch out to -1 (red X), 0, and 1. From each, branch out 3 ways again. The tree depth is 'Steps'. Write $O(3^\\text{text}{\text{Steps}})$.
+Optimised Pattern: Dynamic Programming (State Compression)
+Opt Vis. Technique: Pascal-like Triangle Transition
+Dry Run (Opt): `dp[i][j]` is the number of ways to be at index j after i steps. `dp[i][j] = dp[i-1][j-1] + dp[i-1][j] + dp[i-1][j+1]`. Since you can't return to 0 if you go too far, j is limited to `min(steps, arrLen)`.
+How to Draw (Opt): Draw a grid where rows are "Steps" and columns are "Indices". For a cell at `step 2, index 1`, draw three arrows coming from `step 1, index 0`, `step 1, index 1`, and `step 1, index 2`.
+Opt Complexity Visuals: Linear Layer Processing
+How to Draw Opt Complexity: Draw a rectangle of width `min(Steps, ArrLen)` and height `Steps`. Write $O(\text{Steps} \\text{cdot min}(\text{Steps}, \text{ArrLen})$).
+Mem Vis (BF): Draw a massive recursive call stack.
+Mem Vis (Opt): Draw two 1D arrays of size `min(Steps, ArrLen)` to represent the "current" and "previous" step counts. Space: $O(\text{Steps})$.

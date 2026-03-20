@@ -1,0 +1,13 @@
+ID: 2303
+Problem Title: Calculate Amount Paid in Taxes
+Brute Force Method: Iterate linearly through the tax brackets, computing tax for the overlapping portion of income.
+BF Complexity Visuals: Linear Step Ladder (O(N))
+How to Draw BF: Draw a number line. Slice it into segments based on bracket upper bounds.
+Optimised Pattern: Linear Iteration (Math/Simulation)
+Opt Vis. Technique: Filling Stepped Buckets
+Dry Run (Opt): Track `prev_bound`. For each bracket, tax the amount `min(income, upper) - prev_bound`. Subtract from total income.
+How to Draw (Opt): Draw buckets of varying widths (bracket limits). Shade the buckets up to the `income` level, multiplying shaded areas by the percentage.
+Opt Complexity Visuals: Single Straight Line (O(N))
+How to Draw Opt Complexity: Draw a straight line connecting N nodes (brackets).
+Mem Vis (BF): Draw the 2D array of `brackets` as a simple list of pairs.
+Mem Vis (Opt): Draw the same list of pairs, plus one accumulator variable box for `Total Tax`.

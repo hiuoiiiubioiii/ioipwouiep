@@ -1,0 +1,13 @@
+ID: 3760
+Problem Title: Maximum Substrings With Distinct Start (Med)
+Brute Force Method: Generate all possible substrings. For each, check if the first character is unique among all selected substrings. $O(N^2)$.
+BF Complexity Visuals: Sub-segment set selection.
+How to Draw BF: List all substrings. Circle groups of them where no two circled strings start with the same character. Find the biggest group.
+Optimised Pattern: Greedy Selection + Boolean Array/Set
+Opt Vis. Technique: Character Slot Filling
+Dry Run (Opt): Each character 'a-z' can only be the "start" of ONE substring in our set. To maximize length/count, greedily pick the longest or most restricted first.
+How to Draw (Opt): Draw 26 boxes (A-Z). When you pick a substring starting with 'G', put a checkmark in box 'G'. You can't use box 'G' again.
+Opt Complexity Visuals: $O(N)$ or $O(26\cdot N)$.
+How to Draw Opt Complexity: Draw a flat timeline with a small auxiliary 26-slot table below it.
+Mem Vis (BF): Massive set of strings.
+Mem Vis (Opt): Fixed-size boolean array (size 26) or small Hash Set.

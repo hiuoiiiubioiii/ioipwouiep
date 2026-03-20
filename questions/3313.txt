@@ -1,0 +1,13 @@
+ID: 3313
+Problem Title: Find the Last Marked Nodes in Tree
+Brute Force Method: Run a full BFS/DFS starting from every single node in the tree to find its farthest target.
+BF Complexity Visuals: Expanding Multi-Ripples
+How to Draw BF: Draw the tree N times. On each copy, pick a different start node and draw expanding concentric circles to find the last node. $O(N^2)$.
+Optimised Pattern: Tree Diameter Endpoints (2/3 DFS Passes)
+Opt Vis. Technique: Two-Pole Magnetic Anchors
+Dry Run (Opt): Find the tree's diameter endpoints (A and B). For ANY node in the tree, the farthest node (last marked) will ALWAYS be either A or B.
+How to Draw (Opt): Draw a messy tree. Find the two absolute extremes and mark them A and B. Pick any random node and draw lines to A and B; one of them is the answer.
+Opt Complexity Visuals: Parallel Traversal Timelines
+How to Draw Opt Complexity: Draw 3 horizontal lines stacked vertically. Each represents one $O(N)$ DFS pass (Find A, Find B, Calculate Distances).
+Mem Vis (BF): N separate queue structures initialized and destroyed repeatedly over time.
+Mem Vis (Opt): Two static 1D integer arrays of size N, storing distances from endpoint A and endpoint B.

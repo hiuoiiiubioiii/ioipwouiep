@@ -1,0 +1,13 @@
+ID: 2395
+Problem Title: Find Subarrays With Equal Sum
+Brute Force Method: Nested loops: For every pair of adjacent elements (i, i+1), iterate through all other adjacent pairs (j, j+1) to see if their sums are equal.
+BF Complexity Visuals: N-Squared Sum Comparison (O(N^2))
+How to Draw BF: Draw an array. Circle a pair, calculate sum. Then draw an arrow scanning every other pair in the array to see if their sum matches. Repeat for all pairs.
+Optimised Pattern: Hash Set (Single Pass)
+Opt Vis. Technique: Sum Occurrence Tally
+Dry Run (Opt): Iterate through the array once from 0 to N-2. Calculate `sum = nums[i] + nums[i+1]`. If `sum` is already in a Hash Set, return true. Otherwise, add it to the Set.
+How to Draw (Opt): Draw an array and an empty "Sum Bucket" (Set). Walk through the array, picking up two numbers at a time. Add them and try to throw the result in the bucket. If the bucket already has that number, you win!
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Each step performs a single $O(1)$ "look up and insert" into a Hash Set.
+Mem Vis (BF): Draw a list of all possible sums being compared against each other repeatedly.
+Mem Vis (Opt): Draw one Hash Set to store previously seen Integer sums.

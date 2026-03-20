@@ -1,0 +1,13 @@
+ID: 1173
+Problem Title: Immediate Food Delivery I (SQL)
+Brute Force Method: Fetch all rows, iterate and check `order_date == customer_pref_delivery_date`. Count them and divide by total.
+BF Complexity Visuals: Row-by-Row Conditional Tally
+How to Draw BF: Draw the table. For each row, put a checkmark if the two dates match. Count checkmarks vs total rows.
+Optimised Pattern: SUM(CASE) / AVG(IF)
+Opt Vis. Technique: Boolean Projection Funnel
+Dry Run (Opt): Select `AVG(order_date = customer_pref_delivery_date) * 100`. The boolean comparison returns 1 for True and 0 for False.
+How to Draw (Opt): Draw a "Gate". If dates match, a '1' falls through. If not, a '0' falls through. Sum the results and divide by the gate's total throughput.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single straight arrow through the table. Total time is $O(N)$.
+Mem Vis (BF): Memory-intensive list processing
+Mem Vis (Opt): Database-level aggregation. Zero extra memory in app layer.

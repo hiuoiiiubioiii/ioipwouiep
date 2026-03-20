@@ -1,0 +1,13 @@
+ID: 328
+Problem Title: Odd Even Linked List
+Brute Force Method: Iterate through the list and create two entirely new linked lists: one for odd-indexed nodes and one for even-indexed nodes. Join them at the end.
+BF Complexity Visuals: List Duplication (Parallel)
+How to Draw BF: Draw the original list. Below it, draw two new list headers. Draw arrows copying values into the new nodes. $O(N)$.
+Optimised Pattern: Two-Pointer In-Place Re-linking
+Opt Vis. Technique: Alternating Pointer Jump
+Dry Run (Opt): Maintain `odd` and `even` pointers. Set `odd.next = even.next`, then move `odd` to that node. Set `even.next = odd.next`, then move `even` to that node. Finally, link the end of the odd list to the head of the even list.
+How to Draw (Opt): Draw a linked list. Use a red pen for 'odd' pointers and blue for 'even'. Draw the 'next' arrows "skipping" nodes to connect to their own kind. Label the final jump from Odd-tail to Even-head.
+Opt Complexity Visuals: Linear Single-Pass Linkage
+How to Draw Opt Complexity: Draw a single line of nodes. Draw a single arrow path from start to end showing the re-wiring. $O(N)$.
+Mem Vis (BF): Two separate head nodes and N new nodes. $O(N)$.
+Mem Vis (Opt): Just 4 pointer variables (`odd`, `even`, `oddHead`, `evenHead`). Draw four small pointer boxes. $O(1)$ extra space.

@@ -1,0 +1,13 @@
+ID: 127
+Problem Title: Word Ladder
+Brute Force Method: BFS, but for every word, iterate through the entire dictionary of size N to find words with a 1-character difference.
+BF Complexity Visuals: An $O(N^2 \cdot L)$ grid showing every word being compared to every other word redundantly.
+How to Draw BF: Draw a column of words. Draw lines from the top word to every other word below it to check for differences. Move to the next word.
+Optimised Pattern: BFS with Character Mutation (a to z).
+Opt Vis. Technique: A ripple in a pond. The start word "pulses" and changes each of its letters one-by-one, only "hooking" words that actually exist in the set.
+Dry Run (Opt): Queue the start word. For each char in current word, replace it with a..z. If the new word is in the Set, enqueue it and remove from Set.
+How to Draw (Opt): Draw the start word. Draw 26 small tick marks for the first letter. Circle only the tick marks that match a real word. Repeat.
+Opt Complexity Visuals: $O(N \cdot 26 \cdot L)$ linear sweep through the dictionary space.
+How to Draw Opt Complexity: Draw a line representing the dictionary. Draw a focused laser beam moving from start to end, skipping all non-adjacent words.
+Mem Vis (BF): $O(N^2)$ comparison matrix storage (conceptual).
+Mem Vis (Opt): A Hash Set in heap memory providing $O(1)$ lookups, drastically reducing search space.

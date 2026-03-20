@@ -1,0 +1,13 @@
+ID: 744
+Problem Title: Find Smallest Letter Greater Than Target
+Brute Force Method: Linear scan through the array until a character &gt; target is found.
+BF Complexity Visuals: Linear Tape Scan
+How to Draw BF: Draw a row of letters. Move an arrow one box at a time from left to right. $O(N)$.
+Optimised Pattern: Binary Search (Left-most target)
+Opt Vis. Technique: Shrinking Boundaries
+Dry Run (Opt): Use `low` and `high`. If `letters[mid] &lt;= target`, `low = mid + 1`. Return `letters[low % n]` to handle the wrap-around case.
+How to Draw (Opt): Draw the array. Use two brackets `[ ]`. Show the brackets jumping to the middle and cutting the search space in half each time.
+Opt Complexity Visuals: Binary Search Funnel
+How to Draw Opt Complexity: Draw a line of length N, then N/2, then N/4. Write $O(\log N)$ at the bottom.
+Mem Vis (BF): N/A (single loop counter).
+Mem Vis (Opt): Two integer variables for pointers (O(1)).

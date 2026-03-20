@@ -1,0 +1,13 @@
+ID: 1964
+Problem Title: Find the Longest Valid Obstacle Course at Each Position
+Brute Force Method: For each position `i`, check all previous positions `j &lt; i` and find the max valid sequence length.
+BF Complexity Visuals: $O(N^2)$ Backwards Lookback
+How to Draw BF: Draw an array. For each element, draw arrows pointing to all preceding elements. $O(N^2)$.
+Optimised Pattern: Patience Sorting (LIS Variation)
+Opt Vis. Technique: Binary Search in Active Tails
+Dry Run (Opt): Maintain a `tails` array where `tails[i]` is the smallest tail of all increasing subsequences of length `i+1`. Use binary search to find insertion point.
+How to Draw (Opt): Draw a row of "piles" (like cards). Each new obstacle either starts a new pile or updates an existing one using binary search logic.
+Opt Complexity Visuals: Logarithmic Insertion Timeline
+How to Draw Opt Complexity: Draw N elements. For each, draw a binary search tree lookup/update. $O(N \log N)$.
+Mem Vis (BF): A 1D DP table of size N.
+Mem Vis (Opt): A `tails` array that grows up to size N. $O(N)$ space.

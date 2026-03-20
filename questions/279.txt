@@ -1,0 +1,13 @@
+ID: 279
+Problem Title: Perfect Squares
+Brute Force Method: Recursive backtracking: for n, try subtracting every perfect square i^2 &lt; n and solve for the remainder.
+BF Complexity Visuals: Exploding Recursive Tree: $O(n^{\\text{sqrt}{n}})$.
+How to Draw BF: Draw a tree where each node n has \sqrt{n} branches. The tree is extremely wide and deep.
+Optimised Pattern: Dynamic Programming (1D) or BFS
+Opt Vis. Technique: Staircase Fill (BFS Layers)
+Dry Run (Opt): DP: `dp[i] = min(dp[i - j*j] + 1)` for all j^2 \le i. BFS: Nodes are the remaining sum. Level 0 is n. Level 1 are n - j^2. First time you hit 0 is the answer.
+How to Draw (Opt): Draw an array from 0 to n. For each index i, draw arrows jumping back to i - 1, i - 4, i - 9... and find the smallest value there + 1.
+Opt Complexity Visuals: Weighted Graph Scan: $O(n\\text{sqrt}{n})$ Time.
+How to Draw Opt Complexity: Draw an array of length n. For each element, draw \sqrt{n} check-arrows. Total complexity is the area n \times \sqrt{n}.
+Mem Vis (BF): Recursion stack without memoization.
+Mem Vis (Opt): DP Array: Draw a 1D array of size n+1 in memory. Space: $O(n)$.

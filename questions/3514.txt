@@ -1,0 +1,13 @@
+ID: 3514
+Problem Title: Number of Unique XOR Triplets II (Med)
+Brute Force Method: $O(N^2)$ prefix XOR matching (fails on strict time limits).
+BF Complexity Visuals: 2D Diagonal Grid.
+How to Draw BF: Draw an N x N grid. Shade half of it. Area represents $O(N^2)$ operations.
+Optimised Pattern: Bit-by-Bit Counting / Mathematical Combinatorics.
+Opt Vis. Technique: Vertical Bit Matrix.
+Dry Run (Opt): Instead of horizontal array evaluation, look at the array vertically bit-by-bit. Count 1s and 0s at each bit position across all valid boundaries.
+How to Draw (Opt): Write numbers in binary, stacked vertically. Draw vertical boxes around each column. Count (zeros * ones) to find contribution to total XOR.
+Opt Complexity Visuals: Linear Scan over 32 bits.
+How to Draw Opt Complexity: Draw an array of length N. Draw 32 layers stacked on top. $O(32 \cdot N)$ -&gt; linear.
+Mem Vis (BF): Massive Hash Maps: Draw a bloated hash table holding up to N unique XOR sums.
+Mem Vis (Opt): Constant Size Array: Draw a small, fixed array of size 32 holding integer counts.

@@ -1,0 +1,13 @@
+ID: 2962
+Problem Title: Count Subarrays Where Max Element Appears at Least K Times
+Brute Force Method: Generate all $O(N^2)$ subarrays and count the frequency of the global max in each.
+BF Complexity Visuals: Subarray Scan Grid
+How to Draw BF: Draw a triangle area N^2/2. Label "TLE" for N=10^5.
+Optimised Pattern: Sliding Window (Two Pointers)
+Opt Vis. Technique: Expanding Right, Shrinking Left
+Dry Run (Opt): Identify the max element M. Expand `right` until count of M is k. All subarrays from this `right` to the end are valid. Move `left` to find more.
+How to Draw (Opt): Draw array. Circle all occurrences of max value. Draw a bracket that expands to the k-th circle. Add (N - right) to total.
+Opt Complexity Visuals: Two Sequential Passes (Linear)
+How to Draw Opt Complexity: Draw a straight line of length N. Each pointer only moves forward. T = $O(N)$.
+Mem Vis (BF): Storing frequency maps for all subarrays.
+Mem Vis (Opt): One integer for `max_val` and one `count` variable. Space $O(1)$.

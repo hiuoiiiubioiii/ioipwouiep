@@ -1,0 +1,13 @@
+ID: 2467
+Problem Title: Most Profitable Path in a Tree
+Brute Force Method: Find Bob's path to root first. Then, run a DFS for Alice to explore every leaf, checking the time Bob reaches each node to determine the split.
+BF Complexity Visuals: Dual BFS/DFS Tree Traversal
+How to Draw BF: Draw a tree. Draw a blue path for Bob and a red path for Alice. At each node, write the time step. Label $O(N)$.
+Optimised Pattern: Two-Pass DFS (Time Map + Profit DFS)
+Opt Vis. Technique: Temporal Graph Overlay
+Dry Run (Opt): Pass 1: DFS from Bob's start to find his path and node arrival times. Pass 2: DFS for Alice. At each node, compare `Alice_time` vs `Bob_time` to decide reward/cost.
+How to Draw (Opt): Draw the tree. Mark Bob's path nodes with `t=0, 1, 2...`. While running Alice's DFS, compare her current depth with Bob's recorded time at that node.
+Opt Complexity Visuals: Linear Tree Traversal
+How to Draw Opt Complexity: Draw two tree outlines with scan arrows. Label $O(N)$ Time.
+Mem Vis (BF): Draw the full adjacency list and Bob's path.
+Mem Vis (Opt): Draw adjacency list and a `bobArrival` array. $O(N)$ Space.

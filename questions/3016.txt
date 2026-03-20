@@ -1,0 +1,13 @@
+ID: 3016
+Problem Title: Minimum Number of Pushes to Type Word II
+Brute Force Method: Backtracking to test all combinations of mapping high-frequency characters to the shortest key depths.
+BF Complexity Visuals: Combinatorial Backtracking Tree
+How to Draw BF: Draw a decision tree assigning the most frequent character to key 2, then key 3, etc., backtracking on suboptimal paths.
+Optimised Pattern: Greedy Assignment + Frequency Sorting
+Opt Vis. Technique: Sorted Frequency Histogram
+Dry Run (Opt): Count all characters. Sort them so the highest frequency characters are grouped first. Greedily assign the top 8 to depth 1, the next 8 to depth 2, multiplying frequency by depth.
+How to Draw (Opt): Draw a bar chart where height is frequency. Sort bars descending. Draw vertical lines slicing the bars into chunks of 8. Multiply bar height by its chunk number (1, 2, 3...).
+Opt Complexity Visuals: Sorting Timeline Bar
+How to Draw Opt Complexity: Draw a block for "Count Freq $O(N)$", followed by a block for "Sort Array $O(26 \log 26)$".
+Mem Vis (BF): Heavy recursive state arrays tracking mapped keys.
+Mem Vis (Opt): A Hash Map (or size 26 integer array) mapping `Character -&gt; Frequency`.

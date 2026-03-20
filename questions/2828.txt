@@ -1,0 +1,13 @@
+ID: 2828
+Problem Title: Check if a String Is an Acronym of Words
+Brute Force Method: Iterate through all words, extract the first character of each, concatenate them into a new string, and then compare that string with the target acronym.
+BF Complexity Visuals: String Concatenation Pipeline
+How to Draw BF: Draw a series of "Word" boxes. For each, draw an arrow pulling out the first letter into a "Buffer" box. Finally, draw a comparison arrow to the "Acronym" string.
+Optimised Pattern: Early-Exit Linear Comparison
+Opt Vis. Technique: One-to-One Pointer Mapping
+Dry Run (Opt): First, check if words.length != acronym.length (immediate return). Then, iterate through words using index i and compare words[i][0] with acronym[i]. Exit at the first mismatch.
+How to Draw (Opt): Draw the list of words. Draw the acronym string below it. Draw vertical dashed lines connecting the first letter of each word to the corresponding letter in the acronym.
+Opt Complexity Visuals: Single Pass Scan
+How to Draw Opt Complexity: Draw a straight line $O(N)$ where N is the number of words. Since each char check is $O(1)$, total time is strictly linear.
+Mem Vis (BF): Visualize a new "Acronym Builder" string being dynamically reallocated in memory as letters are added (O(N) extra space).
+Mem Vis (Opt): Visualize $O(1)$ auxiliary space—no new strings created, just direct character-to-character comparisons.

@@ -1,0 +1,13 @@
+ID: 1931
+Problem Title: Painting a Grid With Three Different Colors
+Brute Force Method: Backtracking to try every possible color (3 colors) for every cell in the m x n grid, checking adjacent constraints.
+BF Complexity Visuals: Exponential Decision Tree (m*n depth)
+How to Draw BF: Draw a root node. Branch it 3 times (colors). For each branch, another 3. Total 3^{m \times n} leaf nodes. $O(3^{\text{MN}})$.
+Optimised Pattern: Bitmask / Profile DP
+Opt Vis. Technique: State Transition Adjacency Matrix
+Dry Run (Opt): Generate all valid vertical column profiles first. Then, use DP to count how many ways a column of type A can be placed next to type B.
+How to Draw (Opt): Draw a list of all 3-color permutations for one column. Draw arrows between "compatible" permutations (no same color in the same row).
+Opt Complexity Visuals: Iterative Matrix Layering
+How to Draw Opt Complexity: Draw N columns. For each column, draw a box representing the 3^M states. Total $O(N \cdot 3^{M} \cdot 3^{M})$.
+Mem Vis (BF): Deep recursion stack for every single cell in the grid.
+Mem Vis (Opt): A 1D array of size 3^M (storing counts for current column profiles). $O(3^M)$ space.

@@ -1,0 +1,13 @@
+ID: 2916
+Problem Title: Subarrays Distinct Element Sum of Squares II
+Brute Force Method: Generate all $O(N^2)$ subarrays, populate HashSets to count distincts, square, and sum. (TLE)
+BF Complexity Visuals: Nested Overlapping Brackets
+How to Draw BF: Draw the array. Draw physical brackets underneath grouping every possible sub-segment, highlighting the massive redundant counting.
+Optimised Pattern: Segment Tree with Lazy Propagation + Sweepline
+Opt Vis. Technique: Hierarchical Range Tree
+Dry Run (Opt): Sweep right. When adding A[i], find its last occurrence `j`. Add +1 to the segment tree range [j+1, i]. The tree dynamically tracks the sum of (x+1)^2 - x^2.
+How to Draw (Opt): Draw a binary tree representing array indices. Trace a path down the tree to update ranges, placing "lazy" tags on nodes to defer work.
+Opt Complexity Visuals: N Paths Down a Log(N) Tree
+How to Draw Opt Complexity: Draw an array of length N. From each element, draw a squiggly arrow pointing down a tree of height Log(N). Total Area = $O(N \log N)$.
+Mem Vis (BF): $O(N^2)$ individual HashSet memory blocks. $O(N^3)$ space.
+Mem Vis (Opt): Two arrays: `tree` of size 4N and `lazy` of size 4N. Plus a HashMap for last seen indices. Space $O(N)$.

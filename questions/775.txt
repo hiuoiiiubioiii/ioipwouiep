@@ -1,0 +1,13 @@
+ID: 775
+Problem Title: Global and Local Inversions
+Brute Force Method: Count all global inversions (i &lt; j, A[i] &gt; A[j]) and all local inversions (i, i+1, A[i] &gt; A[i+1]) and compare.
+BF Complexity Visuals: Nested Inversion Counting
+How to Draw BF: Draw an array. Draw lines between every pair to check for global inversions. $O(N^2)$.
+Optimised Pattern: Running Maximum Property
+Opt Vis. Technique: The "Too Far" Boundary
+Dry Run (Opt): All local inversions are global, so we only need to check if any non-local global inversions exist. This happens if A[i] &gt; \min(A[i+2 \dots n-1]).
+How to Draw (Opt): Draw the array. Move an arrow i. If the current number is bigger than any number found 2 steps ahead or further, return false.
+Opt Complexity Visuals: Single Pass Flatline
+How to Draw Opt Complexity: Draw an array with a single arrow and a "min-so-far" tracker from the right. $O(N)$.
+Mem Vis (BF): N/A.
+Mem Vis (Opt): $O(1)$ space (tracking one max or min variable).

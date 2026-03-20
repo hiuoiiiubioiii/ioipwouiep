@@ -1,0 +1,13 @@
+ID: 712
+Problem Title: Minimum ASCII Delete Sum for Two Strings
+Brute Force Method: Recursively generate all subsequences of both strings to find common ones, track max ASCII sum.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a binary tree. Each node splits into "keep" or "delete" a character, branching out 2^N.
+Optimised Pattern: Dynamic Programming (LCS Variant)
+Opt Vis. Technique: 2D DP Grid Fill
+Dry Run (Opt): Create a 2D array. `dp[i][j]` = min delete sum. If `s1[i] == s2[j]`, take diagonal `dp[i-1][j-1]`. Else, take `min(dp[i-1][j] + s1[i], dp[i][j-1] + s2[j])`.
+How to Draw (Opt): Draw a grid. s1 on top, s2 on left. Fill base cases (cumulative ASCII). Fill cells using arrows pointing from Top, Left, and Top-Left.
+Opt Complexity Visuals: Grid Area Shading
+How to Draw Opt Complexity: Draw a rectangle of size M x N. Shade the entire area left-to-right, top-to-bottom to show $O(M\cdot N)$ time.
+Mem Vis (BF): Deep call stack memory frames $O(M+N)$.
+Mem Vis (Opt): 2D grid block $O(M\cdot N)$ or two 1D array rows $O(\text{min}(M,N)$).

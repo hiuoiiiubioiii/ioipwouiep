@@ -1,0 +1,13 @@
+ID: 231
+Problem Title: Power of Two
+Brute Force Method: Repeatedly divide the number by 2. If you hit a remainder that isn't 0 (until you reach 1), it's not a power of 2.
+BF Complexity Visuals: Logarithmic Staircase: $O(\log N)$ Time.
+How to Draw BF: Draw a number N. Show it shrinking by half at each step until it hits 1. Count the steps.
+Optimised Pattern: Bit Manipulation: (n &gt; 0) \text{ and } (n \&amp; (n-1) == 0)
+Opt Vis. Technique: Binary Bit-Flip Highlight
+Dry Run (Opt): Write the number in binary. For powers of 2 (e.g., 8 is 1000), show that subtracting 1 (7 is 0111) creates a perfect mask where no bits overlap.
+How to Draw (Opt): Draw two 8-bit registers. Top: `1000`. Bottom: `0111`. Draw a vertical line showing that no '1's share a column.
+Opt Complexity Visuals: Instant Check: $O(1)$ Time.
+How to Draw Opt Complexity: Draw a single dot or a small box labeled "CPU Clock Cycle." Show that no matter how big N is, the AND operation takes 1 step.
+Mem Vis (BF): Variable Stack: One integer being overwritten.
+Mem Vis (Opt): Zero Extra Space: A single logic gate comparison.

@@ -1,0 +1,13 @@
+ID: 901
+Problem Title: Online Stock Spanner
+Brute Force Method: Store every price in a list. For every new price, scan backwards from the end of the list to count how many consecutive previous days had a lower or equal price.
+BF Complexity Visuals: Backward Linear Scan. $O(N^2)$ for N days.
+How to Draw BF: Draw a line graph. On day 10, draw an arrow pointing left that stops when it hits a higher peak. On day 11, draw a whole new arrow. The arrows overlap heavily.
+Optimised Pattern: Monotonic Stack (Pair of Price and Span).
+Opt Vis. Technique: The "Dominating Peak" Absorption.
+Dry Run (Opt): Maintain a stack of (price, span). When a new price comes, if it's >= stack top, "absorb" the top's span into the current span and pop. The stack only keeps "visible" peaks.
+How to Draw (Opt): Draw a series of bars. If a new tall bar comes, it "shadows" all shorter bars to its left. Combine the shadowed bars' counts into the new tall bar's total.
+Opt Complexity Visuals: Amortized Constant Time. $O(1)$ average per call.
+How to Draw Opt Complexity: Draw a timeline. Each price is pushed once and popped at most once. Total work is 2N.
+Mem Vis (BF): Full Price History: Draw a growing 1D array.
+Mem Vis (Opt): Monotonic Stack: Draw a stack containing only the decreasing "staircase" of prices.

@@ -1,0 +1,13 @@
+ID: 1600
+Problem Title: Throne Inheritance
+Brute Force Method: On every `getInheritanceOrder()` call, rebuild the entire tree and filter out dead members. $O(N^2)$.
+BF Complexity Visuals: Tree Re-Construction Matrix
+How to Draw BF: Draw a family tree. On every request, redraw the entire tree, but erase the nodes of people who have died. High overhead.
+Optimised Pattern: DFS / Preorder Traversal + Hash Set
+Opt Vis. Technique: The "Dead-Flag" Tree Traversal
+Dry Run (Opt): Store the family as an Adjacency List (Parent \rightarrow Children). Use a Hash Set to track the "Dead." The inheritance order is simply a Preorder Traversal, skipping nodes in the "Dead" set.
+How to Draw (Opt): Draw a standard tree. Put a red "X" over nodes of people who died. Trace a line starting from the Root, following the left-most branch first. Only write down names that don't have an "X".
+Opt Complexity Visuals: Preorder Traversal $O(N)$
+How to Draw Opt Complexity: Draw a single snaking line through the family tree. Each person (node) is visited exactly once.
+Mem Vis (BF): Copying and sorting name lists on every call.
+Mem Vis (Opt): A Hash Map for the tree and a Hash Set for the dead. $O(N)$ space.

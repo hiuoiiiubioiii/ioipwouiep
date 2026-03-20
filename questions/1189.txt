@@ -1,0 +1,13 @@
+ID: 1189
+Problem Title: Maximum Number of Balloons
+Brute Force Method: For every "balloon" found, remove the characters from the input string until no more "balloons" can be formed.
+BF Complexity Visuals: Destructive Subtraction Loop
+How to Draw BF: Draw the input string. Circle 'b', 'a', 'l', 'l', 'o', 'o', 'n'. Cross them out. Repeat. $O(N^2)$ in worst case string handling.
+Optimised Pattern: Frequency Map / Bottleneck Analysis
+Opt Vis. Technique: Ingredient Inventory Check
+Dry Run (Opt): Count frequencies of 'b', 'a', 'l', 'o', 'n' in the input. For 'l' and 'o', divide count by 2. The minimum value among all these counts is the answer.
+How to Draw (Opt): Draw a "Pantry" with jars for b, a, l, o, n. Write the required recipe amounts below (1, 1, 2, 2, 1). Divide your jars by the recipe and find the smallest result.
+Opt Complexity Visuals: Linear Scan $O(N)$
+How to Draw Opt Complexity: Draw a single pass through the string to fill the jars. $O(N)$.
+Mem Vis (BF): Multiple string copies
+Mem Vis (Opt): Fixed-size array `int[26]`. Draw one row of 26 boxes.

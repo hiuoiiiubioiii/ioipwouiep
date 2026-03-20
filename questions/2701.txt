@@ -1,0 +1,13 @@
+ID: 2701
+Problem Title: Consecutive Transactions with Increasing Amounts (SQL)
+Brute Force Method: Self-join on dates and amounts to find all possible consecutive pairs, then group.
+BF Complexity Visuals: Nested Loop / Cross Join Grid
+How to Draw BF: Draw a 2D grid (Rows = T1, Cols = T2). Highlight cells where T2.date = T1.date + 1 and T2.amount &gt; T1.amount. The visual area grows as $O(N^2)$.
+Optimised Pattern: Row-by-Row Memory Copy (Intermediate tables filling up Cartesian space).
+Opt Vis. Technique: Gaps and Islands Pattern (Window Functions / Sessionization)
+Dry Run (Opt): Timeline Partitioning
+How to Draw (Opt): Plot transactions on a horizontal timeline grouped by customer. Highlight consecutive days with increasing amounts as unified blocks (islands).
+Opt Complexity Visuals: Draw rows of data. Add a column amount &gt; prev_amount. Add a column date - row_number(). Box the rows that share the same calculated group ID.
+How to Draw Opt Complexity: Data Flow Pipeline
+Mem Vis (BF): Draw three boxes connected by arrows: Sort $O(N \log N)$ → Window Match $O(N)$ → Aggregate $O(N)$.
+Mem Vis (Opt): Partition Window Buffer (Draw a sliding window retaining only the current partition in memory).

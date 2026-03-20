@@ -1,0 +1,13 @@
+ID: 2156
+Problem Title: Find Substring With Given Hash Value
+Brute Force Method: Iterate through every possible substring of length k, calculate the rolling hash from scratch for each.
+BF Complexity Visuals: A sliding window where the entire window contents are re-processed at every step.
+How to Draw BF: Draw a string. Draw a bracket of size k. Draw arrows calculating hash. Move bracket 1 step. Redraw all arrows. $O(N \cdot k)$.
+Optimised Pattern: Rolling Hash (Rabin-Karp) - Reversed.
+Opt Vis. Technique: A "Sliding Window" that updates only the edges.
+Dry Run (Opt): Process the string from right to left. Subtract the contribution of the character leaving the window and add the new character. Using `(hash * power + val) % modulo`.
+How to Draw (Opt): Draw a string. Draw a bracket at the very end. Move it one character left. Write the math: `NewHash = (OldHash * power + NewChar - OldChar * power^k)`.
+Opt Complexity Visuals: $O(N)$ single linear pass.
+How to Draw Opt Complexity: A single horizontal arrow moving right-to-left across the string.
+Mem Vis (BF): Multiple $O(k)$ substring objects created and discarded.
+Mem Vis (Opt): $O(1)$ auxiliary space (storing current hash and power variables).

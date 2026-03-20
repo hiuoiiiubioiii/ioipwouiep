@@ -1,0 +1,13 @@
+ID: 1864
+Problem Title: Minimum Number of Swaps to Make the Binary String Alternate
+Brute Force Method: Generate all permutations of the binary string, check which are "alternating", and find the minimum swaps using inversion count.
+BF Complexity Visuals: Permutation forest.
+How to Draw BF: Draw a string. List all possible ways to rearrange 0s and 1s. Mark $O(N!)$.
+Optimised Pattern: Greedy Counting (Compare with two possible targets: "0101..." and "1010...").
+Opt Vis. Technique: Pattern matching masks.
+Dry Run (Opt): Count total 0s and 1s. If diff &gt; 1, impossible. Else, count mismatches against "0101..." and "1010...". The min swaps is `mismatches / 2` for a valid target.
+How to Draw (Opt): Write the input string. Below it, write "0101...". Circle the spots where they don't match. Repeat for "1010...". Count circles.
+Opt Complexity Visuals: Single linear pass.
+How to Draw Opt Complexity: Draw an arrow from 0 \dots N. Mark as $O(N)$.
+Mem Vis (BF): Massive list of permutations.
+Mem Vis (Opt): $O(1)$ stack variables (counts for 0s, 1s, and mismatches).

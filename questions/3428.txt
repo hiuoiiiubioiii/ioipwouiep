@@ -1,0 +1,13 @@
+ID: 3428
+Problem Title: Maximum and Minimum Sums of at Most K Subsequences
+Brute Force Method: Generate every possible subsequence of size 1 to K. For each, find the min and max, then sum them up. $O(2^N)$
+BF Complexity Visuals: Bounded Subsequence Tree.
+How to Draw BF: Draw a tree that branches for "take" or "skip", but prune all branches deeper than K. Even pruned, it remains massive.
+Optimised Pattern: Sorting + Contribution Technique + Combinatorics. $O(N \log N)$
+Opt Vis. Technique: Sorted Element Contribution Mapping.
+Dry Run (Opt): Sort the array. For `nums[i]`, count how many subsequences of size 1..K it is the "Maximum" in (all elements to its left) and "Minimum" in (all elements to its right).
+How to Draw (Opt): Draw the sorted array. Pick an element. Draw arrows to all smaller elements. Write the math formula (nCr) for choosing K-1 neighbors from those arrows.
+Opt Complexity Visuals: Sorting + Linear Math Pass.
+How to Draw Opt Complexity: Draw an $O(N \log N)$ sort step, then a single $O(N)$ loop that calls an $O(1)$ combination function at each step.
+Mem Vis (BF): A list of all generated subsequences stored in the heap.
+Mem Vis (Opt): Two 1D arrays for factorials/inverse factorials (to compute nCr in $O(1)$).

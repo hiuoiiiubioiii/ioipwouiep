@@ -1,0 +1,13 @@
+ID: 3096
+Problem Title: Minimum Levels to Gain More Points
+Brute Force Method: For every possible split point i, calculate the total sum of points for Alice (levels 0 to i) and Bob (levels i+1 to N-1).
+BF Complexity Visuals: Nested Scanning Tally
+How to Draw BF: Draw an array. Draw a "split line" that moves through every gap. For each gap, draw two scan arrows (left and right). $O(N^2)$.
+Optimised Pattern: Prefix Sum / Running Total
+Opt Vis. Technique: Balance Scale Overlap
+Dry Run (Opt): Calculate the total sum of the entire array once (treating 0 as -1). Use a prefix sum to get Alice's score in $O(1)$ and Bob's score as Total - Alice. Find the first index where Alice &gt; Bob.
+How to Draw (Opt): Draw the levels as a row of +1 and -1. Write the running prefix sum below it. Compare the prefix sum at each step against the "Remaining Total" calculated once.
+Opt Complexity Visuals: $O(N)$ Linear Pass
+How to Draw Opt Complexity: Draw one horizontal arrow across the array. Label it $O(N)$.
+Mem Vis (BF): Two separate arrays for Alice's and Bob's scores for every split.
+Mem Vis (Opt): A single integer for totalSum and currentSum taking $O(1)$ extra space.

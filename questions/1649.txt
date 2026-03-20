@@ -1,0 +1,13 @@
+ID: 1649
+Problem Title: Create Sorted Array through Instructions
+Brute Force Method: For each new number, iterate through the existing "sorted" part of the array to find the insertion point and shift elements.
+BF Complexity Visuals: Linear Shift / Search
+How to Draw BF: Draw an array. For every new insertion, draw arrows showing every element to the right moving one step over. $O(n^2)$.
+Optimised Pattern: Fenwick Tree (BIT) / Segment Tree
+Opt Vis. Technique: Prefix Sum Accumulator
+Dry Run (Opt): Use a Fenwick Tree to store frequency of numbers. For each instruction x, `cost += min(query(x-1), total_so_far - query(x))`. Update BIT with x.
+How to Draw (Opt): Draw a Binary Indexed Tree (a tree where each node covers a range of frequencies). Mark nodes that update when a new number "drops" into the tree.
+Opt Complexity Visuals: Logarithmic Tree Update
+How to Draw Opt Complexity: Draw a tree of height \log(\max). Show the update path from a leaf to the root for each of the n instructions. $O(n \log(\\text{max})$).
+Mem Vis (BF): Dynamic Array: A constantly resizing and shifting block of memory.
+Mem Vis (Opt): BIT Array: A static array where each index stores a cumulative frequency sum.

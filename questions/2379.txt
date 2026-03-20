@@ -1,0 +1,13 @@
+ID: 2379
+Problem Title: Minimum Recolors to Get K Consecutive Black Blocks
+Brute Force Method: Generate every possible substring of length K. For each, count how many 'W' (white) characters it contains. Pick the minimum count.
+BF Complexity Visuals: Nested Substring Scanning (O(N * K))
+How to Draw BF: Draw a string. Draw a fixed-width bracket of size K. Slide it one step at a time. Inside each bracket, draw a tiny arrow counting 'W's.
+Optimised Pattern: Sliding Window (Constant Space)
+Opt Vis. Technique: Running White-Count Frame
+Dry Run (Opt): Maintain a count of 'W' in the first K characters. Then, slide the window: if the character leaving was 'W', decrement count; if the character entering is 'W', increment count. Track the minimum count.
+How to Draw (Opt): Draw a string. Place a fixed-width "Window" over it. As the window slides, just update the "W-Count" based on the two characters at the window's edges.
+Opt Complexity Visuals: Single Pass Scan (O(N))
+How to Draw Opt Complexity: Draw a straight horizontal timeline. Each step only updates the edges of a sliding box.
+Mem Vis (BF): Draw many temporary string copies of length K in memory.
+Mem Vis (Opt): Draw two Integer variables: `min_recolors` and `current_w_count`.

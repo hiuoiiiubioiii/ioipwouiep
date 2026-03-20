@@ -1,0 +1,13 @@
+ID: 226
+Problem Title: Invert Binary Tree
+Brute Force Method: Create a brand new tree and mirror nodes while copying them.
+BF Complexity Visuals: Tree Duplication Graph: $O(N)$ Time and Space.
+How to Draw BF: Draw a tree on the left. Draw an empty tree space on the right. Draw arrows showing each node being "copied and flipped" into a new memory location.
+Optimised Pattern: Recursive or Iterative In-Place Swap (DFS)
+Opt Vis. Technique: Mirror Line Pivot Visualization
+Dry Run (Opt): Start at root. Use two fingers to swap the left and right pointers. Dive into the children and repeat until you hit leaf nodes.
+How to Draw (Opt): Draw a tree. Draw a vertical dashed line through the root. Use curved arrows to show the left child moving to the right and vice versa at every level.
+Opt Complexity Visuals: Traversal Path Area: $O(N)$ Time.
+How to Draw Opt Complexity: Draw a single continuous line snaking around every node (Euler Tour). Each node is visited once, resulting in linear time.
+Mem Vis (BF): Full Parallel Tree: Draw two complete trees in memory.
+Mem Vis (Opt): Recursion Stack / Queue: Draw a single vertical column for the call stack or a horizontal pipe for BFS. Space is $O(\text{Height})$.

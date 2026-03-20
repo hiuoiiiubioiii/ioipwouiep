@@ -1,0 +1,13 @@
+ID: 3249
+Problem Title: Count the Number of Good Nodes
+Brute Force Method: For every node, initiate a separate DFS to calculate the size of each child's subtree and compare them. $O(N²)$.
+BF Complexity Visuals: Redundant Subtree Scanning
+How to Draw BF: Draw a tree. Pick node A. Draw circles around all its children's subtrees. Erase. Pick node B. Repeat. Show the "double counting" of nodes in the circles.
+Optimised Pattern: Post-Order DFS (Bottom-Up Size Tally)
+Opt Vis. Technique: Subtree Weight Propagation
+Dry Run (Opt): Start at leaves (size 1). Return size to parent. Parent checks if all incoming size values are identical. If yes, count as "Good". Return total size (sum + 1) upwards.
+How to Draw (Opt): Draw the tree. At each leaf, write "1". Draw arrows up. At a parent, list the incoming numbers (e.g., 2, 2, 2). If all match, circle the parent. Write the sum + 1 next to it.
+Opt Complexity Visuals: Single Tree-Traversal Pass
+How to Draw Opt Complexity: Draw a single line tracing the tree in a DFS manner (down and then back up). Label the upward path as the $O(N)$ calculation step.
+Mem Vis (BF): Multiple recursion stacks and arrays for setiap node's check.
+Mem Vis (Opt): Single recursion stack depth H (O(H) space) + Subtree size variables.

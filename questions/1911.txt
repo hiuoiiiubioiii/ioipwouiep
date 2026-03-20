@@ -1,0 +1,13 @@
+ID: 1911
+Problem Title: Maximum Alternating Subsequence Sum
+Brute Force Method: Use recursion to generate every possible subsequence (pick or skip), calculating the alternating sum for each.
+BF Complexity Visuals: Exponential Decision Tree
+How to Draw BF: Draw a root node. Branch left for "pick", right for "skip". Keep branching until you have a massive tree of $O(2^N)$ leaves.
+Optimised Pattern: Dynamic Programming / State Machine
+Opt Vis. Technique: 2-State Transition Diagram
+Dry Run (Opt): Maintain two running totals: max sum ending on an 'even' index (adding) and an 'odd' index (subtracting). Update both sequentially.
+How to Draw (Opt): Draw two boxes labeled "Even (Add)" and "Odd (Subtract)". Draw arrows crisscrossing between them as a pointer moves across the array values.
+Opt Complexity Visuals: Parallel Linear Tracks
+How to Draw Opt Complexity: Draw two parallel horizontal lines representing $O(N)$ time. Draw vertical ticks connecting them at each step.
+Mem Vis (BF): Deep recursive call stack frames piling up in memory. $O(N)$ depth.
+Mem Vis (Opt): Exactly two integer variables (`even_sum`, `odd_sum`) in local scope. $O(1)$ space.

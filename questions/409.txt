@@ -1,0 +1,13 @@
+ID: 409
+Problem Title: Longest Palindrome
+Brute Force Method: Powerset Generation Generate all possible combinations of characters, check if they can form a palindrome. Keep max length.
+BF Complexity Visuals: Exponential Tree
+How to Draw BF: Draw a binary decision tree for each char (include vs exclude), leading to $O(2^N)$ leaf nodes.
+Optimised Pattern: Hash Map / Frequency Array Count char frequencies. Add all even counts. Add (odd-1) for odd counts. Add 1 if any odd exists.
+Opt Vis. Technique: Pairing Socks
+Dry Run (Opt): Dump all characters in a pile. Find matching pairs and place them on the left/right. If any singles are left, put exactly one in the middle.
+How to Draw (Opt): Write down letters. Tally them. Draw circles around pairs of 2. Draw one distinct box for a leftover character to sit in the center.
+Opt Complexity Visuals: Two-Phase Scan
+How to Draw Opt Complexity: Draw a long line traversing the string $O(N)$. Followed by a short, fixed-length line scanning the 128 ASCII array $O(1)$.
+Mem Vis (BF): String Combos Massive pool of substring arrays.
+Mem Vis (Opt): Fixed Array Draw a 128-slot pigeonhole box (ASCII map). $O(1)$ space.

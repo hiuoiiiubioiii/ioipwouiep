@@ -1,0 +1,13 @@
+ID: 822
+Problem Title: Card Flipping Game
+Brute Force Method: Try every possible configuration of flips (2^N) and for each, find the minimum value that doesn't appear on the back of any card.
+BF Complexity Visuals: Binary Flip Tree. $O(2^N)$ time.
+How to Draw BF: Draw a card. Branch into "Flip" and "Stay". For each branch, do it again for the next card. It becomes a standard massive decision tree.
+Optimised Pattern: Hash Set (Impossible Value Filtering).
+Opt Vis. Technique: Blacklist and Candidate Sieve.
+Dry Run (Opt): If a card has the SAME number on front and back, that number is "Cursed" (cannot be the answer). Put all cursed numbers in a Set. Now, scan all other numbers on all cards. The smallest one not in the Cursed Set wins.
+How to Draw (Opt): Draw two rows (Front/Back). Circle numbers that match vertically. Cross them out everywhere else they appear. Pick the smallest remaining number.
+Opt Complexity Visuals: Two Linear Scans. $O(N)$ time.
+How to Draw Opt Complexity: Draw two horizontal lines passing through the Front and Back arrays once each.
+Mem Vis (BF): Recursive Stack: Draw a stack N levels deep representing the state of every card flip.
+Mem Vis (Opt): Hash Set: Draw a single small box representing the "Blacklist" of numbers. $O(N)$ space.

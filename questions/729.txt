@@ -1,0 +1,13 @@
+ID: 729
+Problem Title: My Calendar I
+Brute Force Method: Keep a list of pairs. For every new booking, check it against every existing booking for overlaps.
+BF Complexity Visuals: Linear Collision Grid
+How to Draw BF: Draw a timeline. For each new segment, draw lines comparing it to every previous segment on the chart. $O(N^2)$.
+Optimised Pattern: Balanced BST / TreeMap (Ordered Map)
+Opt Vis. Technique: Interval Slotting
+Dry Run (Opt): Find the "floor" (booking starting before/at new) and "ceiling" (booking starting after). Check if the new interval overlaps with either neighbor.
+How to Draw (Opt): Draw a number line with existing bars. Draw the new bar. Draw arrows to the immediate left bar and immediate right bar only.
+Opt Complexity Visuals: Tree Depth Strike
+How to Draw Opt Complexity: Draw a BST. Highlight the path to the insertion point, representing $O(\log N)$ search time.
+Mem Vis (BF): Standard Array/List (O(N)).
+Mem Vis (Opt): Balanced Tree Structure (O(N) nodes, $O(\log N)$ access).

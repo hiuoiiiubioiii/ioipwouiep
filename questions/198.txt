@@ -1,0 +1,13 @@
+ID: 198
+Problem Title: House Robber
+Brute Force Method: Brute force recursion: For every house, you have two choices—rob it (and move to house i+2) or skip it (move to i+1).
+BF Complexity Visuals: A massive $O(2^N)$ binary decision tree showing the explosion of possibilities.
+How to Draw BF: Draw "House 1". Branch into "Rob" and "Skip". For each, branch again for "House 2". Show overlapping subproblems.
+Optimised Pattern: 1D Dynamic Programming (Iterative Tabulation).
+Opt Vis. Technique: "The Safety Gap." A single array where each house's value is the max of (current + 2-houses-ago) or (1-house-ago).
+Dry Run (Opt): dp[i] = max(dp[i-1], dp[i-2] + currentHouse). Use two variables (prev1, prev2) to optimize space.
+How to Draw (Opt): Draw a row of houses with values. Below, draw a row of "Max Profit" boxes. Fill each box by looking at the two boxes immediately to its left.
+Opt Complexity Visuals: $O(N)$ linear time. Every house is visited once.
+How to Draw Opt Complexity: Draw a single horizontal arrow through the array. Mark each box with a check as you compute its value from its neighbors.
+Mem Vis (BF): $O(2^N)$ recursive call stack depth leading to total memory exhaustion.
+Mem Vis (Opt): Visualize two integer variables in $O(1)$ stack memory. No heap array required for the optimized version.

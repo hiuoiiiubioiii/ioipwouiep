@@ -1,0 +1,13 @@
+ID: 56
+Problem Title: Merge Intervals
+Brute Force Method: All-Pairs Comparison Compare every interval with every other interval. If they overlap, merge them into a new interval and restart the process until no more merges occur.
+BF Complexity Visuals: The N² Bubble Merge
+How to Draw BF: Draw circles for intervals. Draw lines between every possible pair to check for overlaps. Tally the checks as $O(N²)$.
+Optimised Pattern: Sorting + Linear Scan
+Opt Vis. Technique: The Sweep Line (Timeline)
+Dry Run (Opt): Sort intervals by start time. Iterate through. If the current interval starts before the previous one ends, merge them by updating the end time to the max of both.
+How to Draw (Opt): Draw a horizontal timeline. Place intervals as segments above it. Draw a "Merge" bracket joining segments that physically touch or overlap.
+Opt Complexity Visuals: Sorting Log-Linearity
+How to Draw Opt Complexity: Draw an $O(N \log N)$ box for sorting, followed by a single straight line $O(N)$ for the merge pass. Total = $O(N \log N)$.
+Mem Vis (BF): Storing multiple intermediate lists of partially merged intervals during the nested loop process.
+Mem Vis (Opt): Draw a single output list. Because we only ever look at the "last merged" interval, space is $O(N)$ (or $O(\log N)$ for sorting).

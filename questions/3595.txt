@@ -1,0 +1,13 @@
+ID: 3595
+Problem Title: Once Twice (Med)
+Brute Force Method: Generate all subsequences and check if each element appears exactly once or twice.
+BF Complexity Visuals: 2^N Power Set Search.
+How to Draw BF: Draw an array. Draw a binary tree (2^N leaves). For each leaf, scan for frequency constraints. $O(2^N \cdot N)$.
+Optimised Pattern: Sliding Window + Frequency Map / Bitmask.
+Opt Vis. Technique: Validity Frame.
+Dry Run (Opt): Move a window. Maintain counts. If any count exceeds 2, shrink left. Count valid subarrays or use DP for subsequences based on bitmasks.
+How to Draw (Opt): Draw the string. Place two brackets. If a character appears a 3rd time, move the left bracket past its first occurrence.
+Opt Complexity Visuals: $O(N)$.
+How to Draw Opt Complexity: Draw a single string with two arrows (L and R) moving only forward. $O(N)$.
+Mem Vis (BF): Subsequence Heap: Draw massive lists of valid subsequences in memory.
+Mem Vis (Opt): Fixed-Size Frequency Array: Draw an array of size 26 (or 128) storing integer counts.

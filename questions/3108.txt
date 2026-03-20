@@ -1,0 +1,13 @@
+ID: 3108
+Problem Title: Min Cost Walk in Weighted Graph
+Brute Force Method: DFS/BFS to find all possible paths from source to target, tracking bitwise ANDs. Will infinite loop due to cycles.
+BF Complexity Visuals: Tangled web with infinite recursive loops.
+How to Draw BF: Draw a cyclic graph. Use colored pens to trace multiple infinite loops bouncing back and forth between nodes.
+Optimised Pattern: Disjoint Set Union (DSU) / Connected Components
+Opt Vis. Technique: Puddle Merging / Color-coded Islands
+Dry Run (Opt): Group connected nodes. As they merge, bitwise AND all their edge weights into one "island total". For queries: if nodes share an island, return the total. Else -1.
+How to Draw (Opt): Draw nodes as dots. Draw circles grouping connected dots. Inside the circle, write the cumulative Bitwise AND value of all inner edges.
+Opt Complexity Visuals: Forest of shallow, flat trees (Union-Find).
+How to Draw Opt Complexity: Draw nodes pointing to a common root. The tree height is nearly flat. **O(E α(N) + Q α(N))**.
+Mem Vis (BF): Exponential call stack holding visited paths and bitmasks.
+Mem Vis (Opt): Two arrays of size N: `parent[]` (for DSU) and `component_and[]` (storing the bitwise value).

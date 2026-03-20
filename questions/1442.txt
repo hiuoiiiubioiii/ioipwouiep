@@ -1,0 +1,13 @@
+ID: 1442
+Problem Title: Count Triplets That Can Form Two Arrays of Equal XOR
+Brute Force Method: Triple Nested Loops. Pick `i`, `j`, and `k`. Calculate XOR sum of `arr[i...j-1]` and `arr[j...k]`. If they are equal, increment count.
+BF Complexity Visuals: Cubic Subarray XOR Scans
+How to Draw BF: Draw an array. Draw three pointers i, j, k. Draw two boxes representing the XOR segments. Slide them through all combinations. Label $O(N⁴)$ or $O(N³)$ with prefix XOR.
+Optimised Pattern: Prefix XOR + Property of XOR
+Opt Vis. Technique: Zero-Sum Interval Matching
+Dry Run (Opt): If `XOR(i...k) == 0`, then any `j` between `i` and `k` works. Count is `(k - i)`. Use a Map to store prefix XOR frequencies and indices to find matches in $O(1)$.
+How to Draw (Opt): Draw a line of Prefix XOR values. If two points have the same Prefix XOR value, draw a bridge between them. Every integer point inside that bridge is a valid 'j'.
+Opt Complexity Visuals: One-Pass Hash Map Scan
+How to Draw Opt Complexity: Draw an arrow moving left-to-right once. Label $O(N)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): A Hash Map storing `XOR_value -&gt; [list of indices]`. Space $O(N)$.

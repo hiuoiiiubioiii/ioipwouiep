@@ -1,0 +1,13 @@
+ID: 179
+Problem Title: Largest Number
+Brute Force Method: Generate all possible permutations of the numbers (O(N!)) and find the maximum string.
+BF Complexity Visuals: A "Fractal Explosion" showing the impossible number of combinations (10! = 3.6 million).
+How to Draw BF: Draw 3 numbers. Draw 6 arrows showing all ways to arrange them. Draw 4 numbers and try to draw all 24 arrows.
+Optimised Pattern: Custom Greedy Sorting (Comparator: S1+S2 vs S2+S1).
+Opt Vis. Technique: A "Chain Link Comparison." Two strings are tested as A+B and B+A. The "heavier" concatenation dictates the order.
+Dry Run (Opt): Take "3" and "30". 3+30=330, 30+3=303. 330 &gt; 303, so "3" comes before "30". Repeat for all pairs.
+How to Draw (Opt): Draw two boxes. Put "9" in one, "91" in the other. Draw two combinations: "991" and "919". Circle the bigger one.
+Opt Complexity Visuals: $O(N \log N \cdot K)$ where K is the average length of the strings.
+How to Draw Opt Complexity: Draw a sorting tree (Merge Sort). At each comparison node, show the A+B logic being applied.
+Mem Vis (BF): $O(N!)$ space to store all permutations.
+Mem Vis (Opt): $O(N)$ space to store the string representations of the numbers for sorting.

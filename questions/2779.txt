@@ -1,0 +1,13 @@
+ID: 2779
+Problem Title: Maximum Beauty of an Array After Applying Operation
+Brute Force Method: Try every possible target value v. For each, count how many nums[i] can reach v within range k. $O(\text{Range} \cdot N)$.
+BF Complexity Visuals: Value-based Search Grid
+How to Draw BF: Draw a vertical axis of values. For every number, draw a bar of height 2k. Find the point where the most bars overlap.
+Optimised Pattern: Frequency Map over Range (Visualizing a large array tracking every possible integer value).
+Opt Vis. Technique: Sorting + Sliding Window
+Dry Run (Opt): Difference-Bounded Window
+How to Draw (Opt): Sort the array. Find the longest subarray where max - min &lt;= 2k. Use two pointers: expand right, and if the condition breaks, move left.
+Opt Complexity Visuals: Draw a sorted array. Draw a "Bracket" of fixed width 2k. Slide it over the boxes. Count how many boxes are inside the bracket at its densest point.
+How to Draw Opt Complexity: $O(N \log N)$ Sorting
+Mem Vis (BF): Draw a sort block followed by a single linear pass. Label the bottleneck as $O(N \log N)$.
+Mem Vis (Opt): In-place Array (Draw the array being sorted in memory; no extra data structures needed).

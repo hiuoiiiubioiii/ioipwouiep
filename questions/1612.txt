@@ -1,0 +1,13 @@
+ID: 1612
+Problem Title: Check If Two Expression Trees are Equivalent
+Brute Force Method: Traverse both trees, build two large strings, sort both, and compare.
+BF Complexity Visuals: Tangled String Sorting
+How to Draw BF: Draw two messy piles of letters passing through an $O(N \log N)$ sorting funnel.
+Optimised Pattern: DFS + Frequency Array (Counting)
+Opt Vis. Technique: Bucket Tallying / Neutralization
+Dry Run (Opt): DFS Tree 1: Add +1 to letter bucket. DFS Tree 2: Add -1 to bucket. Return true if all buckets are exactly 0.
+How to Draw (Opt): Draw an array of 26 slots. Draw +1s dropping in from one tree, and -1s dropping in from the second tree to cancel them out.
+Opt Complexity Visuals: Linear Tree Paths
+How to Draw Opt Complexity: Draw two tree structures with a single continuous arrow tracing through every node for $O(N)$ time.
+Mem Vis (BF): Large Strings: Draw two massive horizontal, contiguous text blocks.
+Mem Vis (Opt): Size-26 Array: Draw a fixed, small 26-slot grid holding integers.

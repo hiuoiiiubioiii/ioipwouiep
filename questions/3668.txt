@@ -1,0 +1,13 @@
+ID: 3668
+Problem Title: Restore Finishing Order (Easy)
+Brute Force Method: Sorting the participants and then searching for their IDs one by one in the original messy logs. $O(N^2)$.
+BF Complexity Visuals: Scan-and-Find Loops.
+How to Draw BF: Draw a list of results. For the 1st place finisher, scan the whole original log to find their entry. For the 2nd place, scan again.
+Optimised Pattern: Hash Map (ID to Rank) or Tuple Sorting. Store (Time, ID) pairs and sort them directly.
+Opt Vis. Technique: The "Leaderboard" Sort.
+Dry Run (Opt): Think of a race where everyone has a stopwatch. At the finish line, you just stack their stopwatches in order. The ID on the stopwatch tells you who won.
+How to Draw (Opt): Draw a table with two columns: Time and ID. Sort by the Time column. Read the ID column top to bottom.
+Opt Complexity Visuals: Linear Map + N log N Sort.
+How to Draw Opt Complexity: Draw one arrow to build the tuples $O(N)$, then the sort $O(N \log N)$. Total $O(N \log N)$.
+Mem Vis (BF): Multiple nested loops or temporary filtered lists.
+Mem Vis (Opt): An array of Tuples/Pairs. Space $O(N)$.

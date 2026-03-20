@@ -1,0 +1,13 @@
+ID: 439
+Problem Title: Ternary Expression Parser
+Brute Force Method: Recursive Evaluation Parse the first `T?` or `F?`, find the corresponding `:`, and recurse on the valid branch.
+BF Complexity Visuals: Branching Maze
+How to Draw BF: Draw the expression. Show arrows jumping forward to find colons, then backward. Redundant scanning. $O(N^2)$.
+Optimised Pattern: Stack (Right-to-Left) Scan the string backwards. If you hit a `?`, pop the next two values from the stack and push the result based on the condition.
+Opt Vis. Technique: Reverse Collapsing
+Dry Run (Opt): Imagine the expression is a spring being compressed from right to left. Each `?` "eats" the two results behind it.
+How to Draw (Opt): Draw the string. Scan backwards. Draw a "Stack" bucket. Push numbers/chars. When you hit `?`, draw a circle around the top two stack items and replace them.
+Opt Complexity Visuals: Single Pass
+How to Draw Opt Complexity: Draw one arrow moving from Right to Left. $O(N)$.
+Mem Vis (BF): Call Stack Depth of nested ternaries.
+Mem Vis (Opt): Value Stack Draw a vertical stack of characters. $O(N)$.

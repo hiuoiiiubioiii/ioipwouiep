@@ -1,0 +1,13 @@
+ID: 2709
+Problem Title: Greatest Common Divisor Traversal
+Brute Force Method: Build a graph where an edge exists if GCD(nums[i], nums[j]) &gt; 1. Iterate all N^2 pairs to calculate GCD, then run BFS/DFS to check if the graph is fully connected.
+BF Complexity Visuals: Dense N^2 Adjacency Matrix
+How to Draw BF: Draw nodes in a circle. Draw intersecting lines between every single pair where GCD &gt; 1. It becomes an unreadable spiderweb (O(N^2) time).
+Optimised Pattern: Massive NxN Grid Matrix (Highlighting the memory waste of storing every direct edge).
+Opt Vis. Technique: Prime Factorization + Disjoint Set Union (Union-Find)
+Dry Run (Opt): Bipartite Component Merging
+How to Draw (Opt): Factorize each number. Instead of linking numbers to numbers, link numbers to their Prime Factors using DSU. If two numbers share a prime factor, they naturally fall into the same connected component. Check if the DSU has only 1 component left.
+Opt Complexity Visuals: Draw squares for array indices and circles for prime numbers. Draw lines connecting squares to their respective prime circles. Lasso the connected components to see if they merge into one.
+How to Draw Opt Complexity: Sieve + DSU Tree Forests
+Mem Vis (BF): Draw a shallow, wide tree showing path compression. Label operations $O(α(N)$). Combine with prime factorization time $O(N √M)$ or $O(N \log \log M)$.
+Mem Vis (Opt): Parallel Arrays (Draw two arrays `parent` and `size/rank` of size N + Max Prime, demonstrating minimal linear space mapping).

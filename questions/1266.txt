@@ -1,0 +1,13 @@
+ID: 1266
+Problem Title: Minimum Time Visiting All Points
+Brute Force Method: Calculate the Manhattan distance or try to simulate step-by-step movement (up, down, left, right) for every point in the sequence.
+BF Complexity Visuals: Incremental Step Grid Walk
+How to Draw BF: Draw two points. Draw a path of many tiny arrows connecting them in an L-shape. Write $O(\text{Total Steps})$.
+Optimised Pattern: Chebyshev Distance (Max of ΔX, ΔY)
+Opt Vis. Technique: Diagonal Cutting
+Dry Run (Opt): Realize that you can move diagonally (1 step in both x and y simultaneously). The time taken between two points (x1, y1) and (x2, y2) is simply the maximum of |x2 - x1| and |y2 - y1|.
+How to Draw (Opt): Draw two points on a grid. Draw a diagonal line until you are aligned with one of the coordinates of the target, then a straight horizontal/vertical line. Label the total time as `max(dx, dy)`.
+Opt Complexity Visuals: Single Sequence Sweep
+How to Draw Opt Complexity: Draw an array of N points. Draw one continuous line jumping from point 1 to 2, 2 to 3, etc. Write $O(N)$.
+Mem Vis (BF): Draw an array of all individual unit-steps taken.
+Mem Vis (Opt): Draw exactly two integer variables for the current point and the total time. Space: $O(1)$.

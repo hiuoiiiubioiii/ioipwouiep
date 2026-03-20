@@ -1,0 +1,13 @@
+ID: 2821
+Problem Title: Delay the Resolution of Each Promise
+Brute Force Method: Using `while` loops to block the thread until time passes, completely freezing the browser.
+BF Complexity Visuals: Thread-Blocking Brick Wall
+How to Draw BF: Draw the JS Call Stack completely jammed by an infinite loop, preventing any other code from running.
+Optimised Pattern: setTimeout + Promise Wrapper
+Opt Vis. Technique: The Asynchronous Waiting Room
+Dry Run (Opt): Wrap the original function call in a new Promise. Inside, use `setTimeout` with the specified delay. When the timeout fires, execute the original function and `resolve()` or `reject()` the wrapper promise with its result.
+How to Draw (Opt): Draw a function entering a Waiting Room. Set a timer. The JS engine leaves and does other things. When the timer rings, the engine comes back, runs the function, and ships the result out.
+Opt Complexity Visuals: Non-Blocking Event Loop $O(1)$
+How to Draw Opt Complexity: Draw the JS Event Loop. The task is handed to the Web APIs, leaving the main stack empty and fast.
+Mem Vis (BF): Memory leaks from un-cleared intervals.
+Mem Vis (Opt): Closure holding the resolve/reject references. $O(1)$ space.

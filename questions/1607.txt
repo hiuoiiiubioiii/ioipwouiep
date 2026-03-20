@@ -1,0 +1,13 @@
+ID: 1607
+Problem Title: Sellers With No Sales (SQL/DB)
+Brute Force Method: Nested loop evaluating every seller against every single order (Cartesian check).
+BF Complexity Visuals: N-to-M Connections
+How to Draw BF: Draw S dots (sellers) and O dots (orders). Draw lines connecting every S to every O. $O(S \cdot O)$ execution.
+Optimised Pattern: Hash Anti-Join (LEFT JOIN + IS NULL)
+Opt Vis. Technique: Venn Diagram Exclusion
+Dry Run (Opt): Hash all sellers who made sales in 2020. Scan seller list; if not in hash, add to result.
+How to Draw (Opt): Draw two overlapping circles (Sellers, 2020 Sales). Shade ONLY the crescent moon on the Sellers side.
+Opt Complexity Visuals: Linear Table Scan
+How to Draw Opt Complexity: Draw two distinct columns. Draw a single straight line down each column. $O(S + O)$.
+Mem Vis (BF): Nested Loops (Memory Buffer): Draw a massive temporary grid holding all combinations.
+Mem Vis (Opt): Hash Set: Draw a bucket of 2020 seller IDs, and an array of all sellers passing through a filter.

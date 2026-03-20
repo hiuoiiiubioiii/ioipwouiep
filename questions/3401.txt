@@ -1,0 +1,13 @@
+ID: 3401
+Problem Title: Find Circular Gift Exchange Chains
+Brute Force Method: Unconstrained DFS/Joins tracing all paths, leading to exponential paths or redundant cycle checks.
+BF Complexity Visuals: Unpruned Recursion Tree.
+How to Draw BF: Draw a root node, branch out to every receiver. Keep branching even if a node repeats, creating a massive, tangled tree.
+Optimised Pattern: Recursive CTE (SQL) / Graph Cycle Detection with Visited Set.
+Opt Vis. Technique: Directed Graph with Cycle Highlighting.
+Dry Run (Opt): Trace an arrow from giver to receiver. Stop and highlight the path when you hit a node you've already colored.
+How to Draw (Opt): Draw nodes as circles (people). Draw directed arrows between them. Color loops in red once closed.
+Opt Complexity Visuals: Linear Graph Traversal (O(V + E)).
+How to Draw Opt Complexity: Draw V nodes and E edges. Check off each edge/node exactly once to show linear time bounding.
+Mem Vis (BF): Deeply stacked rectangular boxes representing max depth of recursive Call Stack frames.
+Mem Vis (Opt): A 1D array representing a Hash Set (Visited Array) alongside the graph to track state.

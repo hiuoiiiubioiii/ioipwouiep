@@ -1,0 +1,13 @@
+ID: 2128
+Problem Title: Remove All Ones With Row and Column Flips
+Brute Force Method: BFS/DFS exploring the state space of flipping every possible row or column until the matrix is all zeros.
+BF Complexity Visuals: Exponential explosion of matrix states.
+How to Draw BF: Draw a grid. Branch it out into R matrices (flipping each row), and C matrices (flipping each col). $O(2^(M+N)$).
+Optimised Pattern: Math / Binary Pattern Recognition.
+Opt Vis. Technique: Comparing visual stencils to a master template.
+Dry Run (Opt): For the grid to be solvable, every row must either be *exactly identical* to the first row, or the *exact bitwise inverse* of the first row.
+How to Draw (Opt): Write out Row 0. Write Row 1 below it. Check if R1 == R0 or R1 == ~R0. If not, draw a giant red X. It's impossible. Repeat for all rows.
+Opt Complexity Visuals: $O(M \cdot N)$ single pass matrix check.
+How to Draw Opt Complexity: A scanner locking onto Row 0, then sweeping down the remaining rows comparing them to the locked template.
+Mem Vis (BF): A massive Queue storing full 2D array states for BFS.
+Mem Vis (Opt): $O(1)$ extra space. Just comparing elements in-place.

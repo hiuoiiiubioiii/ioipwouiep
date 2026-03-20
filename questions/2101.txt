@@ -1,0 +1,13 @@
+ID: 2101
+Problem Title: Detonate the Maximum Bombs
+Brute Force Method: DFS from every single bomb after checking all $O(N^2)$ pairs.
+BF Complexity Visuals: Forest of N separate n-ary recursive trees.
+How to Draw BF: Draw N distinct root nodes, branching out into worst-case N-1 children each. Write $O(N^3)$ total.
+Optimised Pattern: Graph Traversal (Directed Graph) + BFS/DFS.
+Opt Vis. Technique: Directed Graph Adjacency List.
+Dry Run (Opt): Color source node red, expand wave (BFS) or deep path (DFS) coloring visited nodes orange.
+How to Draw (Opt): Draw circles for bombs, draw one-way arrows if bomb A radius covers center of bomb B.
+Opt Complexity Visuals: Graph Edge + Node summation formula. $O(N^2)$ edges + $O(N \cdot (V+E)$).
+How to Draw Opt Complexity: Draw N^2 grid for edge building, then V+E linear flow chart for traversal phase.
+Mem Vis (BF): N^2 Adjacency Matrix + Deep Call Stack.
+Mem Vis (Opt): Array of Lists mapping [Bomb Index] -&gt; [List of reachable indices].

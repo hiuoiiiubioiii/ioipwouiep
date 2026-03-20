@@ -1,0 +1,13 @@
+ID: 534
+Problem Title: Game Play Analysis III (SQL)
+Brute Force Method: Self-join the table where `t1.player_id = t2.player_id` and `t1.event_date &gt;= t2.event_date`, then group and sum.
+BF Complexity Visuals: A massive triangular join where each row connects to every "past" row. $O(N^2)$.
+How to Draw BF: Draw the table twice. Draw arrows from a row in Table A to all rows in Table B that occurred earlier for that user.
+Optimised Pattern: Window Function: `SUM(games_played) OVER(PARTITION BY player_id ORDER BY event_date)`.
+Opt Vis. Technique: A snow-ball rolling down a hill. As the ball passes each date (row), it picks up the value and carries it to the next.
+Dry Run (Opt): Group by Player. Sort by Date. For row N, value = current_val + sum of all previous rows in that partition.
+How to Draw (Opt): Draw a table. Group by player. Draw a running total column where each cell is the sum of the cell above it plus the current row's value.
+Opt Complexity Visuals: Single pass over sorted partitions. $O(N \log N)$ due to internal sorting.
+How to Draw Opt Complexity: Draw a sorted timeline with a single aggregator moving left to right.
+Mem Vis (BF): Temporary Cartesian product table in memory. $O(N^2)$.
+Mem Vis (Opt): $O(N)$ space for the result set/window state.

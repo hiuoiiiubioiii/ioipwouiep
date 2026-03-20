@@ -1,0 +1,13 @@
+ID: 3084
+Problem Title: Count Substrings Starting and Ending with Given Character
+Brute Force Method: Generate all possible substrings of the string. For each substring, check if the first and last characters match the target character.
+BF Complexity Visuals: $O(N²)$ Substring Matrix
+How to Draw BF: Draw a triangle where each cell (i, j) represents a substring. Shade cells where both boundaries match the target. Label as $O(N^2)$.
+Optimised Pattern: Combinatorics (Handshake Lemma)
+Opt Vis. Technique: Bucket Selection Logic
+Dry Run (Opt): Count the total frequency c of the target character. Any pair of these characters (including the character with itself) forms a valid substring. Total is fracc(c+1)2.
+How to Draw (Opt): Write the string. Circle every instance of the target character. Connect every circled character to every other circled character (and itself). Count the lines.
+Opt Complexity Visuals: $O(N)$ Linear Pass
+How to Draw Opt Complexity: Draw one straight arrow through the string. Label the final calculation as $O(1)$.
+Mem Vis (BF): Storing every generated substring in a list or set.
+Mem Vis (Opt): A single integer variable count to store frequencies.

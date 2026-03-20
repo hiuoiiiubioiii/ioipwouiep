@@ -1,0 +1,13 @@
+ID: 3654
+Problem Title: Minimum Sum After Divisible Sum Deletions (Med)
+Brute Force Method: Try deleting every possible subset of the array, checking if the sum of deleted elements is divisible by K, then finding the min remaining sum. $O(2^N)$.
+BF Complexity Visuals: Power Set Explosion.
+How to Draw BF: Draw the array. List every possible combination of removals. [1,2], [1,3], [1,2,3]... For N=100, this is 2^{100} combinations. Paper catches fire.
+Optimised Pattern: Dynamic Programming (Remainder DP). State = `dp[i][remainder]`. Find the maximum sum we can delete that leaves a remainder of R.
+Opt Vis. Technique: Modulo Bucket Filling.
+Dry Run (Opt): Imagine K buckets labeled 0 to K-1. For each number, decide: "Do I add this to a bucket's sum?" Update the buckets based on the new remainder.
+How to Draw (Opt): Draw a table with columns 0, 1, ..., K-1. As you process numbers, update the "Max Sum" for each column. Final answer = Total Sum - `dp[N][0]`.
+Opt Complexity Visuals: N \times K Grid Scan.
+How to Draw Opt Complexity: Draw a grid of size N (items) by K (remainders). Each cell is visited once. Total $O(N \\text{times} K)$.
+Mem Vis (BF): Storing all valid subsets in a massive nested list.
+Mem Vis (Opt): A 1D array of size K (storing max sums for each remainder). Space $O(K)$.

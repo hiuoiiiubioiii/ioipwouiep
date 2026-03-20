@@ -1,0 +1,13 @@
+ID: 3738
+Problem Title: Longest Non-Decreasing Subarray After Replacing at Most One Element (Med)
+Brute Force Method: Change every single element one by one to match its neighbor, then scan the array to find the longest non-decreasing streak. $O(N^2)$.
+BF Complexity Visuals: N parallel array timelines.
+How to Draw BF: Draw the array N times. In each copy, cross out one number and rewrite it. Bracket the longest rising sequence in each.
+Optimised Pattern: Dynamic Programming (Left &amp; Right Prefix/Suffix Arrays)
+Opt Vis. Technique: Left &amp; Right Streak Merging
+Dry Run (Opt): Precompute the longest non-decreasing streak ending at `i` (Left array) and starting at `i` (Right array). For any gap `i`, if `arr[i-1] &lt;= arr[i+1]`, the max length is `Left[i-1] + Right[i+1] + 1`.
+How to Draw (Opt): Draw the array. Above it, write streak counts moving left-to-right `[1,2,3...]`. Below it, write streak counts moving right-to-left `[...,3,2,1]`. Pick a number to "replace" and bridge the top and bottom streaks surrounding it.
+Opt Complexity Visuals: Three Linear Passes $O(N)$.
+How to Draw Opt Complexity: Draw three straight, parallel horizontal lines indicating the Left pass, Right pass, and Merge pass.
+Mem Vis (BF): $O(1)$ extra space if done purely in loops.
+Mem Vis (Opt): Two 1D DP arrays (Left and Right) taking $O(N)$ space.

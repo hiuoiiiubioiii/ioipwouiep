@@ -1,0 +1,13 @@
+ID: 1390
+Problem Title: Four Divisors
+Brute Force Method: For every number, iterate from 1 to the number itself and count how many divisors it has.
+BF Complexity Visuals: $O(N x \text{num})$ Linear Divisor Scan
+How to Draw BF: Draw a number. Scan every integer up to it. If N = 10^5, you are doing billions of checks.
+Optimised Pattern: Square Root Divisor Hunt
+Opt Vis. Technique: Mirrored Divisor Pairs
+Dry Run (Opt): Iterate from 1 to √num. If d divides num, then num/d also divides it. If you find more than 4 distinct divisors during the scan, short-circuit and stop.
+How to Draw (Opt): Draw a number. Mark its square root. Scan from 1 to the root. For every hit, write down its "partner" on the other side of the root. If you have exactly 2 hits (4 divisors), sum them.
+Opt Complexity Visuals: $O(N √\text{max}_\text{val})$
+How to Draw Opt Complexity: Draw a line covering only the root of the number. Show the scan stopping early as soon as a 5th divisor is found.
+Mem Vis (BF): $O(\text{num})$ List of Divisors: Storing all numbers in an array before counting.
+Mem Vis (Opt): $O(1)$ Counter: Only track `count` and `sum` during the √N loop.

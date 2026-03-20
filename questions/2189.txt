@@ -1,0 +1,13 @@
+ID: 2189
+Problem Title: Number of Ways to Build House of Cards
+Brute Force Method: Recursively try building the house level by level, ensuring the current level has fewer triangles than the one below.
+BF Complexity Visuals: A pyramid-building decision tree.
+How to Draw BF: Draw 3 cards for a triangle. Branch into how many triangles can be on the next level. $O(2^N)$.
+Optimised Pattern: 2D Dynamic Programming / Memoization.
+Opt Vis. Technique: A grid where each cell stores the ways to use `n` cards with `k` triangles on the base.
+Dry Run (Opt): `dp(cardsLeft, prevBase)`: Iterate through possible `currBase` (must be &lt; `prevBase`). Subtract `3 * currBase - 1` from `cardsLeft`.
+How to Draw (Opt): Draw a house of cards. Write the number of cards used. Move up a level and draw a smaller base. Track the remaining cards in a tally box.
+Opt Complexity Visuals: $O(N^2)$ state space.
+How to Draw Opt Complexity: A 2D matrix being filled row by row.
+Mem Vis (BF): Exponential recursive state space.
+Mem Vis (Opt): $O(N^2)$ memoization table.

@@ -1,0 +1,13 @@
+ID: 578
+Problem Title: Get Highest Answer Rate Question (SQL)
+Brute Force Method: Count all "show" events and "answer" events for every question separately, calculate the ratio for each, and sort.
+BF Complexity Visuals: Multiple table scans and manual math per question. $O(N^2)$.
+How to Draw BF: Draw a log. For Question 1, count "shows" and "answers". Calculate. Repeat for Question 2.
+Optimised Pattern: Group By + Aggregate Ratio + Order By.
+Opt Vis. Technique: A scoreboard. Every time a question is shown, the "Possible" score goes up. Every time it's answered, the "Actual" score goes up. Rank by Actual/Possible.
+Dry Run (Opt): `SELECT question_id FROM survey_log GROUP BY question_id ORDER BY COUNT(answer_id) / COUNT(CASE WHEN action='show' THEN 1 END) DESC LIMIT 1`.
+How to Draw (Opt): Draw a tally sheet. Columns: Question ID, Show Count, Answer Count. For each log entry, add a tick mark. Finally, divide Answer/Show and pick the highest.
+Opt Complexity Visuals: Hash-based grouping. $O(N)$.
+How to Draw Opt Complexity: Draw a log table flowing into a summarized Map of ratios.
+Mem Vis (BF): $O(1)$ extra space but very inefficient.
+Mem Vis (Opt): Hash Map for question stats. $O(\\text{text}{\text{Unique Questions}})$.

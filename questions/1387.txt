@@ -1,0 +1,13 @@
+ID: 1387
+Problem Title: Sort Integers by The Power Value
+Brute Force Method: For every integer in the range [lo, hi], calculate its power value from scratch by simulating the Collatz sequence repeatedly.
+BF Complexity Visuals: Redundant Collatz Trajectories
+How to Draw BF: Draw a number line. For each number, draw a path of arrows showing its transformations. Note how paths for different numbers eventually merge and repeat the same steps.
+Optimised Pattern: Recursion with Memoization (Top-Down DP)
+Opt Vis. Technique: Global Result Cache
+Dry Run (Opt): Store the power value of every number calculated in a Hash Map. If you reach a number you've seen before (like 4, 2, 1), instantly return its cached value.
+How to Draw (Opt): Draw a "Memory Bank" (Map). As you calculate a path, check the bank. If you find a match, stop the path and just add the bank's value to your current step count.
+Opt Complexity Visuals: $O(N \\text{cdot avg}_\text{path})$ with Cache
+How to Draw Opt Complexity: Draw a network of nodes where many paths converge into single cached nodes, proving that each unique number is calculated only once.
+Mem Vis (BF): Simulation State: Re-calculating the same values for 3, 5, 6, etc., over and over.
+Mem Vis (Opt): $O(\text{UniqueStates})$ Cache: Draw a Hash Map storing results of the function `f(n)`.

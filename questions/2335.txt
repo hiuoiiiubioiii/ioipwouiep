@@ -1,0 +1,13 @@
+ID: 2335
+Problem Title: Minimum Amount of Time to Fill Cups
+Brute Force Method: Recursively try every combination of filling two cups or one cup at a time, branching out to find the path with the minimum depth to reach `[0,0,0]`.
+BF Complexity Visuals: Exponential Pouring Tree (O(3^Sum))
+How to Draw BF: Draw an array of 3 numbers. Draw branches for decrementing (0,1), (1,2), (0,2), or just one alone. Repeat until all reach zero.
+Optimised Pattern: Greedy Math / Max Priority Queue
+Opt Vis. Technique: Leveling the Two Tallest Towers
+Dry Run (Opt): Sort the 3 numbers. Always decrement the two largest numbers. If the sum of the two smaller ones is less than the largest, the answer is just the largest. Otherwise, math trick: `ceil((a+b+c)/2)`.
+How to Draw (Opt): Draw 3 stacks of coins. Take one coin from the tallest stack and one from the second tallest. Repeat. If one stack is empty, just take from the tallest remaining.
+Opt Complexity Visuals: $O(1)$ Math Block (or $O(\text{Sum})$ PQ loop)
+How to Draw Opt Complexity: Draw 3 numbers instantly transforming into the final answer via one math equation.
+Mem Vis (BF): Draw a deep Call Stack holding arrays of size 3 in various stages of depletion.
+Mem Vis (Opt): Draw a Priority Queue (size 3) or literally just zero extra memory using the $O(1)$ math formula.

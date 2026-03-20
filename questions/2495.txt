@@ -1,0 +1,13 @@
+ID: 2495
+Problem Title: Number of Subarrays Having Even Product
+Brute Force Method: Generate every subarray (i, j). Calculate the product of all elements in each. Check if the product is even (`product % 2 == 0`).
+BF Complexity Visuals: Nested Subarray Scan
+How to Draw BF: Draw a right-triangle grid of all possible (start, end) pairs. Label $O(N^2)$.
+Optimised Pattern: Complementary Counting (Total - Odd)
+Opt Vis. Technique: Negative Space Subtraction
+Dry Run (Opt): A product is odd ONLY IF every element in the subarray is odd. Count subarrays with only odd numbers (using streaks). Subtract this from the total subarrays `n(n+1)/2`.
+How to Draw (Opt): Draw the array. Circle the "Islands" of consecutive odd numbers. For an island of length L, write `L(L+1)/2` inside. Subtract these from the total.
+Opt Complexity Visuals: Linear Streak Scan
+How to Draw Opt Complexity: Draw a single horizontal arrow. Label $O(N)$ Time.
+Mem Vis (BF): Draw a `long` variable for the product (risk of overflow).
+Mem Vis (Opt): Draw one `total` and one `odd_streak` variable. $O(1)$ Space.

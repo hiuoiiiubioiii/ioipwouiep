@@ -1,0 +1,13 @@
+ID: 2621
+Problem Title: Sleep (JS)
+Brute Force Method: Blocking `while` loop checking `Date.now()` (Busy waiting).
+BF Complexity Visuals: Infinite Loop Block
+How to Draw BF: Draw a circular arrow on the Main Thread spinning out of control, blocking everything else. $O(\text{Time})$.
+Optimised Pattern: Promises + setTimeout
+Opt Vis. Technique: Asynchronous Event Loop / Macrotask Queue
+Dry Run (Opt): Call function. Return a Promise. Push `setTimeout` to Web APIs. Main thread finishes immediately. Once timer pops, callback goes to queue, Event Loop pushes to Call Stack, Promise resolves.
+How to Draw (Opt): Draw three boxes: Call Stack, Web APIs, Callback Queue. Draw the timer moving to Web APIs, waiting, then dropping into the Queue to resolve the Promise.
+Opt Complexity Visuals: $O(1)$ Execution Timeline
+How to Draw Opt Complexity: Draw a flat $O(1)$ line representing immediate execution, and a dashed line for the asynchronous waiting period.
+Mem Vis (BF): CPU Registers locked
+Mem Vis (Opt): Promise object in Heap memory + Timer reference.

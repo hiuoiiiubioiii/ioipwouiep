@@ -1,0 +1,13 @@
+ID: 240
+Problem Title: Search a 2D Matrix II
+Brute Force Method: Linear scan through every row and every column.
+BF Complexity Visuals: Full Matrix Area: $O(M \cdot N)$ Time.
+How to Draw BF: Draw a grid and shade every single cell one by one.
+Optimised Pattern: Staircase Search (Top-Right Start)
+Opt Vis. Technique: Pathfinding Elimination
+Dry Run (Opt): Start at top-right. If target is smaller, move left (entire column is bigger). If target is larger, move down (entire row is smaller).
+How to Draw (Opt): Draw a grid. Place a pen at the top-right corner. Draw a jagged "staircase" path moving only Left or Down until target is hit.
+Opt Complexity Visuals: Manhattan Distance Line: $O(M + N)$ Time.
+How to Draw Opt Complexity: Draw a line from the top-right corner to the bottom-left. Show that the max distance is the sum of rows and columns.
+Mem Vis (BF): Just two loop indices.
+Mem Vis (Opt): Two Pointer variables (`row`, `col`). Draw two small boxes updating their values.

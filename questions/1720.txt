@@ -1,0 +1,13 @@
+ID: 1720
+Problem Title: Decode XORed Array
+Brute Force Method: Guess the next number from 0 to max_val, check if `guess XOR prev_val == encoded_val`. Repeat for every element.
+BF Complexity Visuals: Guess-and-Check Lock.
+How to Draw BF: Write encoded array. Guess numbers iteratively until the XOR matches. $O(N \\text{cdot MaxVal})$.
+Optimised Pattern: Bitwise XOR Properties (`A ^ B = C` implies `A ^ C = B`).
+Opt Vis. Technique: Domino Effect / Chain Reaction.
+Dry Run (Opt): Initialize `ans` array with `first`. Loop through `encoded`. The next number is simply `ans[i] ^ encoded[i]`. Push to `ans`.
+How to Draw (Opt): Draw `ans[0]`. Draw an arrow from `ans[0]` and `encoded[0]` into an XOR gate (⊕), outputting `ans[1]`. Chain this forward continuously.
+Opt Complexity Visuals: Single Linear Pass.
+How to Draw Opt Complexity: Draw array. Single arrow moving left to right. $O(N)$.
+Mem Vis (BF): Same as optimal (O(N) result array).
+Mem Vis (Opt): Result array of size N+1. $O(N)$ space.

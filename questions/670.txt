@@ -1,0 +1,13 @@
+ID: 670
+Problem Title: Maximum Swap
+Brute Force Method: Try every possible swap of two digits in the number. Convert to integer each time and track the maximum.
+BF Complexity Visuals: All-Pairs Digit Exchange.
+How to Draw BF: Write "2736". Swap (2,7), (2,3), (2,6), (7,3), etc. For each, write the new number. $O(D^2)$ where D is digits.
+Optimised Pattern: Greedy / Last-Position Tracking.
+Opt Vis. Technique: Right-to-Left Scanning / Opportunity Cost.
+Dry Run (Opt): Store the last occurrence index of each digit (0-9). Scan digits from left to right. For each digit, check if a larger digit (9 down to current+1) exists later in the number. Swap and break.
+How to Draw (Opt): Write the number. Write a small table: "Last 9 at index X, Last 8 at index Y...". Scan the number. At each spot, check the table for a better future.
+Opt Complexity Visuals: Single pass scan of digits.
+How to Draw Opt Complexity: Draw a straight line for the number scan. Write $O(D)$.
+Mem Vis (BF): Draw all possible swapped number strings.
+Mem Vis (Opt): Draw a fixed-size array of length 10 to store indices. $O(1)$ extra space.

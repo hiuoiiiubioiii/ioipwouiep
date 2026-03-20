@@ -1,0 +1,13 @@
+ID: 190
+Problem Title: Reverse Bits
+Brute Force Method: Convert the integer to a 32-bit binary string, reverse the string, and convert back to an integer.
+BF Complexity Visuals: "Format Conversion Overhead." Showing the heavy processing required to switch data types.
+How to Draw BF: Draw the number. Draw a 32-cell box. Fill with 0/1. Draw a second box and copy the bits in reverse.
+Optimised Pattern: Bit Manipulation (Extract and Shift).
+Opt Vis. Technique: "The Bit Conveyor Belt." You pick a bit from the right end of the input and drop it onto the left end of the result.
+Dry Run (Opt): Loop 32 times: result = (result &lt;&lt; 1) | (n &amp; 1); n &gt;&gt;= 1;.
+How to Draw (Opt): Draw two 32-bit slots. Draw an arrow from the LSB of 'n' to the LSB of 'res'. Show 'res' shifting left and 'n' shifting right.
+Opt Complexity Visuals: $O(1)$ time (or $O(32)$). The number of operations is fixed and constant regardless of the value.
+How to Draw Opt Complexity: Draw a single dot. In complexity analysis, a fixed number of operations (32) is constant time.
+Mem Vis (BF): $O(N)$ heap memory for string representations and object conversions.
+Mem Vis (Opt): Visualize a single 32-bit register in $O(1)$ stack memory.

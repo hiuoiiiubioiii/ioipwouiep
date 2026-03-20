@@ -1,0 +1,13 @@
+ID: 780
+Problem Title: Reaching Points
+Brute Force Method: BFS/DFS starting from (sx, sy) and trying both (x+y, y) and (x, x+y) transitions.
+BF Complexity Visuals: Forward Growth Tree
+How to Draw BF: Draw (sx, sy). Branch out two paths. Many paths exceed (tx, ty) quickly. $O(2^{\\text{max}(\text{tx}, \text{ty})$}).
+Optimised Pattern: Modulo Backtracking (Reverse Engineering)
+Opt Vis. Technique: Shrinking Target Path
+Dry Run (Opt): Start from (tx, ty). If tx &gt; ty, then tx = tx \pmod{ty}. This simulates multiple steps of (x-y) in one go. Stop when tx, ty hit sx, sy.
+How to Draw (Opt): Draw (tx, ty). Draw a single arrow back to a smaller pair using the modulo operator. If a coordinate hits sx or sy, check the remainder.
+Opt Complexity Visuals: Euclidean Algorithm Flow
+How to Draw Opt Complexity: Draw a single descending path. $O(\log(\\text{max}(\text{tx}, \text{ty})$)).
+Mem Vis (BF): Exponentially growing queue.
+Mem Vis (Opt): $O(1)$ space (just two variables).

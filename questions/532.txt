@@ -1,0 +1,13 @@
+ID: 532
+Problem Title: K-diff Pairs in an Array
+Brute Force Method: Nested loops. For every element `nums[i]`, search the rest of the array for an element `nums[j]` where `|nums[i] - nums[j]| == k`. Use a Set for unique pairs.
+BF Complexity Visuals: N x N comparison matrix where half the matrix is redundantly checked. $O(N^2)$.
+How to Draw BF: Draw N dots. Connect every dot to every other dot with a line, checking the difference of each connection.
+Optimised Pattern: Frequency Hash Map or Sorted Two-Pointers.
+Opt Vis. Technique: A dictionary/library index. For any number X, you check the shelf once to see if X+k or X-k exists.
+Dry Run (Opt): Count frequencies in Map. If k &gt; 0, check if `val + k` exists in Map. If k == 0, check if `count &gt; 1`.
+How to Draw (Opt): Write the numbers. Draw a Map table (Num : Freq). For each Key in the table, check if `Key + k` is also a Key in the table. Circle the pairs.
+Opt Complexity Visuals: Single pass to build Map + single pass over Map keys. $O(N)$.
+How to Draw Opt Complexity: Draw a timeline (Pass 1) followed by a small static table scan (Pass 2).
+Mem Vis (BF): $O(N^2)$ potentially to store all unique pair strings in a set.
+Mem Vis (Opt): A Hash Map with at most N unique entries. $O(N)$ space.

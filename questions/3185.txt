@@ -1,0 +1,13 @@
+ID: 3185
+Problem Title: Count Pairs That Form a Complete Day II
+Brute Force Method: Same as 3184. $O(N^2)$ (TLE due to N=5 x 10^5).
+BF Complexity Visuals: Infinite Comparison Web
+How to Draw BF: Draw 500,000 dots. Try connecting every pair. The page will turn solid black.
+Optimised Pattern: Frequency Array / Hashing (Long Int)
+Opt Vis. Technique: Scaled Bucket Counter
+Dry Run (Opt): Identical logic to 3184, but ensure the answer is a `long long` to prevent overflow. The fixed 24-bucket logic remains optimal.
+How to Draw (Opt): Exactly like 3184: Draw 24 buckets. The key is the high speed of processing large N through tiny constant buckets.
+Opt Complexity Visuals: Linear Scan (Scalable)
+How to Draw Opt Complexity: Draw a single horizontal arrow through a long array of N elements. $O(N)$.
+Mem Vis (BF): $O(N^2)$ matrix storage (Impossible).
+Mem Vis (Opt): Fixed array of size 24. $O(1)$ space.

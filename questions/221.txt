@@ -1,0 +1,13 @@
+ID: 221
+Problem Title: Maximal Square
+Brute Force Method: For every '1' in the matrix, check every possible square size by iterating through its sub-grid.
+BF Complexity Visuals: Volume Cube Graph: $O((M\cdot N)$^2) or $O(\text{min}(M,N)$^3).
+How to Draw BF: Draw a 2D grid. Pick one cell. Draw expanding squares from it. Shade the "volume" of checks for that cell. Repeat for all cells.
+Optimised Pattern: Dynamic Programming (2D Table or 1D Optimized)
+Opt Vis. Technique: Heatmap Propagation
+Dry Run (Opt): Each cell (i, j) looks at its top, left, and top-left neighbors. If M[i][j] is 1, take min(neighbors) + 1. The value represents the side of the largest square ending there.
+How to Draw (Opt): Draw the original grid. Below it, draw an empty grid. Fill values cell-by-cell. For a '1', look at three neighbors, find min, add 1. Circle the max value.
+Opt Complexity Visuals: Linear Matrix Sweep: $O(M \cdot N)$ Time.
+How to Draw Opt Complexity: Draw a single pass arrow snaking through every cell once. Mark T=1 for each step. Total = M * N.
+Mem Vis (BF): Nested Loop Indices: Just coordinate pointers.
+Mem Vis (Opt): DP Grid/Tape: Draw a 2D matrix (Space: $O(\text{MN})$) or a single row "rolling" array (Space: $O(N)$).

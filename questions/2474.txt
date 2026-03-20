@@ -1,0 +1,13 @@
+ID: 2474
+Problem Title: Customers With Strictly Increasing Purchases (SQL)
+Brute Force Method: Self-joins checking `year = year + 1` iteratively. $O(N^2)$.
+BF Complexity Visuals: Year-Over-Year Linking Chains
+How to Draw BF: Draw a customer. Draw an arrow from 2020 to 2021, then a separate check for 2021 to 2022.
+Optimised Pattern: Window Functions (LAG / Difference)
+Opt Vis. Technique: The Consecutive Delta Check
+Dry Run (Opt): Extract the Year. Group by Customer and Year. Use `LAG(price)` to get the previous year's total. Filter for `current &gt; prev` and `current_year - prev_year == 1`.
+How to Draw (Opt): Draw a timeline. Write purchase totals above years. Draw a minus sign between adjacent years. If the result is positive AND years are consecutive, it passes.
+Opt Complexity Visuals: Sorting + Window Scan $O(N \log N)$
+How to Draw Opt Complexity: Draw a sorting pipeline, followed by a single read-head scanning the differences.
+Mem Vis (BF): Nested subquery tables in memory.
+Mem Vis (Opt): Internal DB window buffer. $O(N)$ space.

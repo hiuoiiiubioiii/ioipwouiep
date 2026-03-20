@@ -1,0 +1,13 @@
+ID: 1296
+Problem Title: Divide Array in Sets of K Consecutive Numbers
+Brute Force Method: Sort the array. For the smallest available number X, search for X+1, X+2, dots, X+k-1. If all are found, remove them. Repeat until empty.
+BF Complexity Visuals: Nested Search and Destroy
+How to Draw BF: Draw a sorted array. For the first element, draw arrows searching for consecutive partners. If found, cross them out. Repeat. Write $O(N^2)$.
+Optimised Pattern: Frequency Map + Greedy Sorting
+Opt Vis. Technique: Consecutive Block Clearing
+Dry Run (Opt): Use a TreeMap to store `value -&gt; frequency`. Take the smallest key X. If it has frequency F, then X+1, dots, X+k-1 must each have at least frequency F. Subtract F from all. If any don't exist or have too low frequency, return False.
+How to Draw (Opt): Draw a table: [Num | Freq]. Pick the lowest Num. Draw a bracket of length K. Subtract the count from all numbers in that bracket. Show the bucket levels dropping simultaneously.
+Opt Complexity Visuals: Ordered Frequency Scanning
+How to Draw Opt Complexity: Draw a sorted frequency list. Draw a window of size K sliding across it. Write $O(N \log N)$.
+Mem Vis (BF): Draw a sorted array being modified/shortened repeatedly.
+Mem Vis (Opt): Draw a TreeMap or a sorted HashMap. Space: $O(N)$.

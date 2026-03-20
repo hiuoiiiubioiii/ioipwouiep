@@ -1,0 +1,13 @@
+ID: 3560
+Problem Title: Find Minimum Log Transportation Cost (Easy)
+Brute Force Method: Simulate all possible routes and transport methods for logs, calculating cost for each.
+BF Complexity Visuals: Route Permutation Map.
+How to Draw BF: Draw a map with multiple paths. Tally the cost for every single path individually. $O(N!)$.
+Optimised Pattern: Greedy / Single-Source Shortest Path (Dijkstra) or Prefix Min.
+Opt Vis. Technique: Cheapest Lead-in Path.
+Dry Run (Opt): Sort transport points. At each point, the min cost is the cost to reach it plus the local log-handling fee.
+How to Draw (Opt): Draw a sequence of points. Write the min-cost-to-reach below each point. For the next point, just pick `min(previous_costs) + current`.
+Opt Complexity Visuals: $O(N \log N)$ Sorting.
+How to Draw Opt Complexity: Draw an array. Draw a single arrow passing through it, maintaining one `min_cost` variable.
+Mem Vis (BF): Path Logs: Draw lists recording every intermediate movement and cost ever calculated.
+Mem Vis (Opt): Single State Variable: Draw one integer box `min_so_far` being updated.

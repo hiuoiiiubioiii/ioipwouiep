@@ -1,0 +1,13 @@
+ID: 1360
+Problem Title: Number of Days Between Two Dates
+Brute Force Method: Iterate day-by-day from the start date to the end date, manually checking for leap years and month boundaries.
+BF Complexity Visuals: $O(\text{Days})$ Linear Simulation
+How to Draw BF: Draw a calendar. Draw an arrow for every single day passed. If dates are 100 years apart, that's 36,500 arrows.
+Optimised Pattern: Days Since Epoch (1971) Calculation
+Opt Vis. Technique: Coordinate Geometry Projection
+Dry Run (Opt): Calculate total days from 1971 for both dates independently. Subtract the two numbers. Leap year logic: `y/4 - y/100 + y/400`.
+How to Draw (Opt): Draw two points on a timeline relative to an 'Origin' (1971). Calculate the distance from Origin to A and Origin to B. Subtract the segments.
+Opt Complexity Visuals: $O(1)$ Constant Math
+How to Draw Opt Complexity: Draw a calculator showing two fixed-length mathematical formulas being subtracted.
+Mem Vis (BF): Simulation State: Variables tracking current day/month/year.
+Mem Vis (Opt): Constant Registers: Only a few integers needed for the formula.

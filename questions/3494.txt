@@ -1,0 +1,13 @@
+ID: 3494
+Problem Title: Find the Minimum Amount of Time to Brew Potions
+Brute Force Method: Simulate every wizard and potion in real-time, checking for collisions at every millisecond. $O(\text{TotalTime} \cdot N)$
+BF Complexity Visuals: Dense Discrete Event Timeline.
+How to Draw BF: Draw a gantt chart. For every second, check if wizard i is free to take potion j.
+Optimised Pattern: Prefix Sums of Skill + Gap Analysis Formula. $O(N \cdot M)$
+Opt Vis. Technique: Assembly Line Bottleneck Search.
+Dry Run (Opt): Use prefix sums to get wizard work offsets. For each potion pair, find the maximum "wait time" caused by any wizard bottleneck.
+How to Draw (Opt): Draw the potions as blocks. For each block, calculate the "Safe Start Time" by looking at the previous potion's finish time at every wizard.
+Opt Complexity Visuals: N x M Matrix of Constraints.
+How to Draw Opt Complexity: Draw a rectangle of size N x M. Shade it to show you visit each potion-wizard pair exactly once.
+Mem Vis (BF): Massive simulation state array.
+Mem Vis (Opt): A single 1D array of size N for skill prefix sums.

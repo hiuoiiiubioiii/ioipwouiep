@@ -1,0 +1,13 @@
+ID: 3170
+Problem Title: Lexicographically Minimum String After Removing Stars
+Brute Force Method: Every time you see a star, scan the entire string backwards to find the smallest character and delete it. $O(N^2)$.
+BF Complexity Visuals: Backtracking Eraser
+How to Draw BF: Draw the string. Hit a star. Draw an arrow scanning all the way left to find the best letter, erase it, and shift the array.
+Optimised Pattern: Priority Queue / Array of Stacks
+Opt Vis. Technique: The 26-Bin Tie-Breaker
+Dry Run (Opt): Maintain 26 stacks (one for each letter a-z) storing their indices. When hitting a `*`, iterate from 'a' to 'z'. Pop from the first non-empty stack (smallest letter). The stack ensures you pop the *largest index* (closest to the star) for tie-breaking.
+How to Draw (Opt): Draw 26 vertical tubes. When reading 'c' at index 4, drop '4' into tube 'c'. Read '*'? Look at tube 'a', 'b', then 'c'. Pull the top number out of the first non-empty tube and cross out that index in your string.
+Opt Complexity Visuals: Linear Scan + Constant Lookup $O(N)$
+How to Draw Opt Complexity: Draw a timeline. At each step, inserting takes $O(1)$. Popping takes max 26 steps (O(1)).
+Mem Vis (BF): Full string copies.
+Mem Vis (Opt): 26 arrays/stacks and a boolean "deleted" array. $O(N)$ space.

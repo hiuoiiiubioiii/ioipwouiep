@@ -1,0 +1,13 @@
+ID: 2145
+Problem Title: Count the Hidden Sequences
+Brute Force Method: Try every possible starting value within `[lower, upper]` and simulate the sequence to see if it stays in bounds.
+BF Complexity Visuals: Multiple linear simulations starting from different points.
+How to Draw BF: Draw a range [1..100]. Start a sequence at 1, see if it breaks. Start at 2, see if it breaks. $O(\text{Range} \cdot N)$.
+Optimised Pattern: Prefix Sum + Range Math.
+Opt Vis. Technique: A rigid "shape" (the relative sequence) being slid up and down within a fixed window.
+Dry Run (Opt): Calculate the relative prefix sums. Find the `max_diff` and `min_diff` relative to the start. The "height" of the sequence is `max_diff - min_diff`. If this height fits in `upper - lower`, count the valid starting positions.
+How to Draw (Opt): Draw a mountain range (relative sequence). Measure the distance from the highest peak to the lowest valley. See how many ways this "mountain" can slide up and down between the `upper` and `lower` lines.
+Opt Complexity Visuals: $O(N)$ single pass to find min/max prefix sum.
+How to Draw Opt Complexity: A single straight horizontal line calculating two global variables (min/max).
+Mem Vis (BF): $O(\text{Range} \cdot N)$ simulation states.
+Mem Vis (Opt): $O(1)$ extra space (tracking only current_sum, min_sum, and max_sum).

@@ -1,0 +1,13 @@
+ID: 2651
+Problem Title: Calculate Delayed Arrival Time
+Brute Force Method: Using a 24-hour clock logic with multiple `if-else` conditions to handle overflow.
+BF Complexity Visuals: Conditional Branching Tree
+How to Draw BF: Draw a flowchart: Is time &gt; 24? Subtract 24. Is it still &gt; 24? Subtract again. $O(1)$ but messy logic.
+Optimised Pattern: Modulo Arithmetic (%)
+Opt Vis. Technique: Circular Clock Face
+Dry Run (Opt): Add `arrivalTime` and `delayedTime`. Apply `% 24`. This instantly "wraps" any value back into the 0-23 range.
+How to Draw (Opt): Draw a circle with 24 notches (0-23). Draw an arrow starting at `arrival`, moving `delayed` steps forward. Where it lands is the answer.
+Opt Complexity Visuals: $O(1)$ Calculation Block
+How to Draw Opt Complexity: Draw a single mathematical operation box. $O(1)$.
+Mem Vis (BF): N/A
+Mem Vis (Opt): $O(1)$ constant space for the result.

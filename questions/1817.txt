@@ -1,0 +1,13 @@
+ID: 1817
+Problem Title: Finding the Users Active Minutes
+Brute Force Method: Nested loops comparing every log entry to filter out duplicate minutes for each user manually.
+BF Complexity Visuals: N x N interaction grid of log comparisons.
+How to Draw BF: Draw a list of logs. For every log, draw lines connecting to every other log checking for matching user IDs and times.
+Optimised Pattern: Hash Map mapping User ID to a Hash Set of minutes.
+Opt Vis. Technique: Buckets (Users) containing unique marbles (minutes).
+Dry Run (Opt): Iterate logs. Map[user_id].add(time). Then, create an answer array. Iterate Map values, increment answer[set.size() - 1].
+How to Draw (Opt): Draw buckets labeled with User IDs. Toss "minute" numbers into them. Cross out duplicates. Count marbles in each bucket, tally in an array.
+Opt Complexity Visuals: Two-phase linear traversal (Logs -&gt; Map -&gt; Array).
+How to Draw Opt Complexity: Draw a flow chart: $O(N)$ log traversal -&gt; $O(U)$ map traversal -&gt; $O(K)$ array update.
+Mem Vis (BF): Large unsorted nested lists or multi-dimensional arrays.
+Mem Vis (Opt): Hash Map chaining to Hash Sets in memory.

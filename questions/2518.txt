@@ -1,0 +1,13 @@
+ID: 2518
+Problem Title: Number of Great Partitions
+Brute Force Method: Generate all 2^N possible partitions (subsets) of the array. For each, sum the elements in group A and group B. Check if both sums are >= K.
+BF Complexity Visuals: Binary inclusion/exclusion tree generating all possible 2^N subsets.
+How to Draw BF: Draw the array. For each element, draw a branch putting it in "Box A" and a branch putting it in "Box B". Calculate the sum of both boxes at the bottom of every branch.
+Optimised Pattern: 0/1 Knapsack Dynamic Programming (Inverse Problem). Find subsets summing to strictly less than K, and subtract from total subsets.
+Opt Vis. Technique: A 1D Dynamic Programming state array updating values iteratively, focusing only on the small boundary `[0, K-1]`.
+Dry Run (Opt): Calculate total possible subsets (2^N). Using a 1D array of size K, iterate through the numbers. For each number, update the array to count how many subsets form sums from 0 to K-1. Multiply this "bad" count by 2 (since a bad subset in Box A implies Box B is the other part) and subtract from 2^N.
+How to Draw (Opt): Draw a row of K boxes (indices 0 to K-1). Set box 0 to 1 (one way to make sum 0). Pick an array number `num`. Starting from the right of your boxes, add the value from index `i - num` to index `i`.
+Opt Complexity Visuals: An $O(N)$ loop wrapping an inner $O(K)$ loop, bounded by constraints. Time is $O(N \cdot K)$.
+How to Draw Opt Complexity: Draw the input array. Below it, draw the DP array of size K. Show an arrow sweeping the DP array backwards once for every element in the input array.
+Mem Vis (BF): Exponential space for storing 2^N combinations.
+Mem Vis (Opt): $O(K)$ 1D array space for the DP states.

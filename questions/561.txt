@@ -1,0 +1,13 @@
+ID: 561
+Problem Title: Array Partition I
+Brute Force Method: Generate every possible combination of pairs, find the sum of minimums for each combination, and pick the maximum.
+BF Complexity Visuals: Exponential growth of pair combinations. $O((2N)$! / (2^N * N!)).
+How to Draw BF: Draw 4 numbers. Draw lines connecting them in every possible pairing (1-2, 3-4; 1-3, 2-4; etc.).
+Optimised Pattern: Sorting + Greedy Pairing.
+Opt Vis. Technique: A buddy system where everyone stands in a line by height. To lose as little "height" as possible, you pair people with their closest height matches.
+Dry Run (Opt): Sort the array. Sum every element at an even index (0, 2, 4...).
+How to Draw (Opt): Write numbers. Sort them: [1, 2, 3, 4]. Circle the 1st and 3rd elements. Sum them.
+Opt Complexity Visuals: Sorting phase dominates. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a sorting timeline followed by a single pass jumping over every other element.
+Mem Vis (BF): A large list/set to store all possible pairing combinations.
+Mem Vis (Opt): Sorting space, usually $O(\log N)$ or $O(N)$ depending on the sort implementation.

@@ -1,0 +1,13 @@
+ID: 3225
+Problem Title: Maximum Score From Grid Operations
+Brute Force Method: Recursive backtracking testing all possible coloring combinations (black/white) for every single column configuration. $O(\text{Exponential})$.
+BF Complexity Visuals: Massive State Matrix Tree
+How to Draw BF: Draw an N x N grid. Branch out for every single column showing all 2^N possible coloring states, creating an impossibly wide tree.
+Optimised Pattern: Dynamic Programming (Column State Transitions)
+Opt Vis. Technique: Sliding Column Window
+Dry Run (Opt): Maintain states based on the number of black cells in the previous column. Calculate score contributions from the current column compared to the previous one to avoid recalculating the whole grid.
+How to Draw (Opt): Draw three adjacent columns. Highlight the middle column. Draw arrows pointing from the left column to the middle, calculating adjacency scores. Move the 3-column window one step right.
+Opt Complexity Visuals: Nested N^3 Cube
+How to Draw Opt Complexity: Draw a 3D block representing the transitions: iterating through N columns, previous state K, and current state J. Label it $O(N^3)$.
+Mem Vis (BF): Thousands of distinct 2D grid copies in the call stack.
+Mem Vis (Opt): A 2D DP table of size N x N tracking max scores (O(N^2) space).

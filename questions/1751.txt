@@ -1,0 +1,13 @@
+ID: 1751
+Problem Title: Maximum Number of Events That Can Be Attended II
+Brute Force Method: Recursive backtracking: For each event, either attend it (and skip all overlapping ones) or skip it. Try all combinations.
+BF Complexity Visuals: Binary Decision Tree.
+How to Draw BF: Draw a root. Branch "Attend" or "Skip". If attend, cross out all siblings that overlap. $O(2^N)$.
+Optimised Pattern: DP + Binary Search (Weighted Interval Scheduling).
+Opt Vis. Technique: Layered Suffix Maximization.
+Dry Run (Opt): Sort events by start time. Use DP `memo[idx][k]`. For `attend`, use binary search (`bisect_left`) to find the next event that starts after current event's end time.
+How to Draw (Opt): Draw timeline. Use a bracket for current event. Draw a dashed arrow skipping ahead to the first available event after the bracket ends.
+Opt Complexity Visuals: Grid Search with Logarithmic Jumps.
+How to Draw Opt Complexity: Draw an N x K grid. For each cell, draw a Log(N) search arrow. Label $O(N \cdot K \cdot \log N)$.
+Mem Vis (BF): Deep recursion stack. $O(N)$.
+Mem Vis (Opt): 2D Memoization Table of size N * K. $O(N \cdot K)$ space.

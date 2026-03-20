@@ -1,0 +1,13 @@
+ID: 3333
+Problem Title: Find the Original Typed String II
+Brute Force Method: Generate every possible string variation and count them. $O(\text{Exponential})$.
+BF Complexity Visuals: Variation Generation Tree
+How to Draw BF: Draw the string. At every repeated character, branch out for all possible typing lengths.
+Optimised Pattern: DP + Sliding Window (Prefix Sums)
+Opt Vis. Technique: The Bounded Knapsack Scanner
+Dry Run (Opt): Compress consecutive same chars into "blocks". We need to pick 1 to `length` chars from each block such that total length &gt;= K. Use DP with a sliding window to optimize the transition to $O(1)$.
+How to Draw (Opt): Draw blocks of numbers. Use a DP array to track "ways to reach length L". To update the next block, use a sliding window over the previous DP row to sum up valid combinations instantly.
+Opt Complexity Visuals: Sliding Window DP $O(\text{Blocks} \cdot K)$
+How to Draw Opt Complexity: Draw a grid. A window slides across the previous row to calculate the current cell in $O(1)$.
+Mem Vis (BF): Storing all string variations.
+Mem Vis (Opt): A 1D DP array of size K. $O(K)$ space.

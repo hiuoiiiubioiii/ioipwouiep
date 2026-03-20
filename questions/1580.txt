@@ -1,0 +1,13 @@
+ID: 1580
+Problem Title: Put Boxes Into the Warehouse II (Premium)
+Brute Force Method: Try every permutation of boxes and try to fit them from either the left or the right side of the warehouse. $O(B! \cdot 2^B)$.
+BF Complexity Visuals: Factorial Simulation Tree
+How to Draw BF: Draw boxes. Branch out for every possible sequence. For each box in the sequence, branch again for "Enter from Left" or "Enter from Right".
+Optimised Pattern: Greedy / Two Pointers / Preprocessing
+Opt Vis. Technique: The Bi-Directional Ceiling Normalization
+Dry Run (Opt): A box can enter from either side. Preprocess the warehouse so each room's height is the *maximum* of its "left-limited" height and "right-limited" height. Then sort boxes and use two pointers to fit them from the edges.
+How to Draw (Opt): Draw the warehouse. From the left, draw a "Low-Ceiling" line. From the right, draw another. The effective height of a room is the *better* of the two. Match the smallest boxes to the tightest effective spots.
+Opt Complexity Visuals: Sorting + Linear Scan $O(B \log B + W)$
+How to Draw Opt Complexity: Draw a sorting tree for boxes and a single linear pass for the warehouse preprocessing, followed by two pointers meeting in the middle.
+Mem Vis (BF): Storing all fitment combinations.
+Mem Vis (Opt): Modified warehouse array and sorted box list. $O(1)$ extra space beyond sorting.

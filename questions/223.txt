@@ -1,0 +1,13 @@
+ID: 223
+Problem Title: Rectangle Area
+Brute Force Method: Impossible to brute force via "counting pixels" for large coordinates. The mathematical approach is the default.
+BF Complexity Visuals: Coordinate Geometry Plot.
+How to Draw BF: Draw two overlapping rectangles on a Cartesian plane. Shade the union.
+Optimised Pattern: Inclusion-Exclusion Principle (Area1 + Area2 - Overlap)
+Opt Vis. Technique: 1D Projection Overlap
+Dry Run (Opt): Project both rectangles onto the X-axis and Y-axis. The intersection area is (overlapX * overlapY).
+How to Draw (Opt): Draw two horizontal lines (X-segments). Mark where they overlap. Do the same for vertical lines (Y-segments). The box formed by the overlaps is the intersection.
+Opt Complexity Visuals: Constant Time Block: $O(1)$.
+How to Draw Opt Complexity: Draw a single box. No loops, just arithmetic operations. T = constant.
+Mem Vis (BF): 8 Variable Boxes for coordinates.
+Mem Vis (Opt): Fixed Variables: Draw 4 "max/min" boxes to calculate the overlap boundaries.

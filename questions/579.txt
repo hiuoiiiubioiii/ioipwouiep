@@ -1,0 +1,13 @@
+ID: 579
+Problem Title: Find Cumulative Salary of an Employee (SQL)
+Brute Force Method: For every month, scan the table to find the current month and the two previous months for that employee and sum them.
+BF Complexity Visuals: Nested loop self-join for every row. $O(N^2)$.
+How to Draw BF: Draw a table. For the row "March", search for "February" and "January" for the same ID and add them.
+Optimised Pattern: Window Function (ROWS BETWEEN).
+Opt Vis. Technique: A "Moving Window" of size 3. As you move down the months for an employee, the window slides with you, summing everything inside it.
+Dry Run (Opt): Exclude max month per ID. Use `SUM(salary) OVER(PARTITION BY id ORDER BY month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)`.
+How to Draw (Opt): Draw an employee's salary history by month. Place a 3-month-long bracket over the current month and the two months above it. Sum them.
+Opt Complexity Visuals: Single pass over sorted partitions. $O(N \log N)$.
+How to Draw Opt Complexity: Draw a timeline where a box of fixed width 3 slides forward one step at a time.
+Mem Vis (BF): Temporary Cartesian product from self-joins. $O(N^2)$.
+Mem Vis (Opt): Buffer for the 3-row sliding window. $O(N)$.
