@@ -1,6 +1,6 @@
-# LeetCode Visual Study Guide
+# LeetCode Visual Study Guide (Downloadable)
 
-A premium, full-screen interactive study guide for all **3,873 LeetCode questions**.
+A premium, full-screen interactive study guide for all **3,873 LeetCode questions**, combined into a single downloadable HTML file (`master.html`) for full offline use.
 
 ## Features
 - 🟡 Deep black background with glowing yellow UI theme
